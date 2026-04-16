@@ -857,4 +857,3 @@ The portal, documentation, and AI interface are available in 12 languages:
   Licensed under the <a href="LICENSE">Business Source License 1.1 (BSL-1.1)</a>.<br>
   <a href="https://synalux.ai/docs/disclaimer">Legal & Medical Disclaimer</a>
 </p>
-
