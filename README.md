@@ -11,7 +11,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
-🌐 **Language / Язык / Limba:** [English](#-key-capabilities) · [Español](https://synalux.ai/docs?lang=es) · [Français](https://synalux.ai/docs?lang=fr) · [Português](https://synalux.ai/docs?lang=pt) · [Română](https://synalux.ai/docs?lang=ro) · [Українська](https://synalux.ai/docs?lang=uk) · [Русский](https://synalux.ai/docs?lang=ru) · [Deutsch](https://synalux.ai/docs?lang=de) · [日本語](https://synalux.ai/docs?lang=ja) · [한국어](https://synalux.ai/docs?lang=ko) · [中文](https://synalux.ai/docs?lang=zh) · [العربية](https://synalux.ai/docs?lang=ar)
+🌐 **Language / Язык / Limba:** [English](#-key-capabilities) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
 
 🎬 **[▶ Watch the Demo (5 min, narrated in 11 languages)](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
 
