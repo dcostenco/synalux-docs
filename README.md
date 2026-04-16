@@ -549,7 +549,7 @@ flowchart LR
     end
 
     subgraph DB ["Supabase PostgreSQL"]
-        G["RLS Policies\n(JWT → set_config)"]
+        G["RLS Policies\n(JWT -> set_config)"]
         H["Multi-Tenant Data\n(workspace_id isolation)"]
     end
 
