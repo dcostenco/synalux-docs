@@ -1,8 +1,8 @@
 # ✦ Synalux
 
-**Memory-Augmented AI for Healthcare & Engineering**
+**The Modular EHR Platform — AI-Native, HIPAA-Compliant, Specialty-Agnostic**
 
-> The first unified AI platform bridging agentic developer tools (VS Code) with a zero-install, HIPAA-compliant clinical workspace (Web/PWA). Powered by persistent knowledge graphs, 17 multimodal tools, and strict Role-Based Access Control (RBAC).
+> Synalux is an open, modular Electronic Health Record platform that morphs its clinical language, data models, and AI behavior to match any healthcare specialty — from ABA therapy to pediatrics to dermatology. Powered by persistent knowledge graphs, 26+ multimodal tools, stateless JWT→RLS multi-tenancy, and a "Clinician-in-the-Loop" AI sandbox where **no AI output touches your data without your explicit signature**.
 
 <p align="center">
   <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
@@ -19,10 +19,12 @@
 
 ## ⚡ The "Wow" Factors
 
-* **PHI Never Leaves the Device:** Using in-browser **WASM (WebAssembly) Whisper** for speech-to-text and a seamless bridge to **localhost Ollama**, Synalux Health allows clinics to generate ambient SOAP notes with *zero* cloud data transmission.
-* **Prompt-Level RBAC Validation:** Synalux doesn't just hide UI buttons; it cryptographically signs Tool ACLs (Access Control Lists). If an RBT (Behavior Technician) asks the AI to execute a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
-* **Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux listens, detects utterance boundaries via Voice Activity Detection (VAD), and silently builds structured FBA/BIP reports in real-time while filtering out background noise.
+* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
+* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
+* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
+* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
+* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
+* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
 
 ---
 
@@ -527,13 +529,66 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 
 Synalux is engineered for zero-trust environments.
 
+### Security Architecture — Multi-Tenant Request Flow
+
+```mermaid
+flowchart LR
+    subgraph Client
+        A["Browser / VS Code"]
+    end
+
+    subgraph Edge ["Vercel Edge (Next.js Middleware)"]
+        B["Auth Check\n(NextAuth Session)"]
+        C["JWT Signing\n(Ed25519 / 15 min TTL)"]
+    end
+
+    subgraph API ["Next.js API Routes"]
+        D["Tool ACL Enforcement\n(RBAC from workspace_roles)"]
+        E["AI Sandbox\n(ProposedChange)"]
+        F["HIPAA Audit Log\n(Immutable)"]
+    end
+
+    subgraph DB ["Supabase PostgreSQL"]
+        G["RLS Policies\n(JWT → set_config)"]
+        H["Multi-Tenant Data\n(workspace_id isolation)"]
+    end
+
+    A -->|"1. Google OAuth"| B
+    B -->|"2. Sign JWT with Ed25519"| C
+    C -->|"3. JWT in Authorization header"| D
+    D -->|"4. Stripped tool context"| E
+    E -->|"5. ProposedChange (Apply/Reject)"| F
+    F -->|"6. Audit trail written"| G
+    G -->|"7. RLS filters by workspace_id"| H
+```
+
+**Key insight:** Because JWTs carry `workspace_id` claims and Postgres RLS policies read them via `current_setting('request.jwt.claims')`, there are **no server-side session variables** and **no per-tenant connection pools**. This is what makes Synalux horizontally scalable — a critical advantage over legacy EHRs that use connection-per-session models.
+
+### Security Controls
+
 * **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
 * **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
 * **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR (Insecure Direct Object Reference) prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation.
+* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
+* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
 * **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
 * **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
+* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+
+### HIPAA Compliance Statement
+
+| HIPAA Requirement | Synalux Implementation |
+|---|---|
+| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
+| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
+| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
+| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
+| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
+| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
+| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
+| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+
+> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
 
 </details>
 
