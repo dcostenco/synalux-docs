@@ -531,35 +531,16 @@ Synalux is engineered for zero-trust environments.
 
 ### Security Architecture — Multi-Tenant Request Flow
 
-```mermaid
-flowchart LR
-    subgraph Client
-        A["Browser / VS Code"]
-    end
-
-    subgraph Edge ["Vercel Edge (Next.js Middleware)"]
-        B["Auth Check\n(NextAuth Session)"]
-        C["JWT Signing\n(Ed25519 / 15 min TTL)"]
-    end
-
-    subgraph API ["Next.js API Routes"]
-        D["Tool ACL Enforcement\n(RBAC from workspace_roles)"]
-        E["AI Sandbox\n(ProposedChange)"]
-        F["HIPAA Audit Log\n(Immutable)"]
-    end
-
-    subgraph DB ["Supabase PostgreSQL"]
-        G["RLS Policies\n(JWT -> set_config)"]
-        H["Multi-Tenant Data\n(workspace_id isolation)"]
-    end
-
-    A -->|"1. Google OAuth"| B
-    B -->|"2. Sign JWT with Ed25519"| C
-    C -->|"3. JWT in Authorization header"| D
-    D -->|"4. Stripped tool context"| E
-    E -->|"5. ProposedChange (Apply/Reject)"| F
-    F -->|"6. Audit trail written"| G
-    G -->|"7. RLS filters by workspace_id"| H
+```
+┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
+│   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
+│                 │     │                              │     │                              │     │                             │
+│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
+│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
+│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
+│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+└─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
+                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
 ```
 
 **Key insight:** Because JWTs carry `workspace_id` claims and Postgres RLS policies read them via `current_setting('request.jwt.claims')`, there are **no server-side session variables** and **no per-tenant connection pools**. This is what makes Synalux horizontally scalable — a critical advantage over legacy EHRs that use connection-per-session models.
