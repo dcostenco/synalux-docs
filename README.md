@@ -720,12 +720,53 @@ Synalux runs on a **serverless-first architecture** using 6 cloud services. No A
 
 | Service | Role | Current Plan | Cost | Free Tier Limit |
 |---------|------|-------------|------|-----------------|
-| **Vercel** | Hosting + Edge + CDN | Hobby | $0/mo | 100GB bandwidth, 100GB-hrs serverless |
-| **Supabase** | PostgreSQL + Auth + RLS | Free | $0/mo | 500MB DB, 50K MAU, 1GB storage |
+| **Vercel** | Hosting + Edge + CDN | Pro | $20/mo | Global CDN, auto-scaling |
+| **Supabase (US)** | PostgreSQL + Auth + RLS | Pro | $25/mo | West US (Oregon) — US/CA data |
+| **Supabase (EU)** | PostgreSQL + Auth + RLS | Pro | $0/mo (Micro included) | Central EU (Frankfurt) — GDPR data residency |
 | **Stripe** | Payments + Subscriptions | Standard | 2.9% + 30¢/txn | No monthly fee, unlimited products |
 | **Google Cloud** | Gemini AI + OAuth + Transcription | Free tier | $0/mo | 15 RPM Gemini, unlimited OAuth |
 | **OpenRouter** | Multi-model LLM routing | Free models | $0/mo | Unlimited `:free` model requests |
 | **GitHub** | Source control + CI/CD | Free | $0/mo | Unlimited private repos, 2000 CI min/mo |
+
+### Multi-Region Architecture (GDPR Compliant)
+
+Synalux routes patient data to the geographically correct database based on workspace country:
+
+```
+┌──────────────────────────────────────────────────────────────────────────┐
+│                        Vercel Edge Network                              │
+│              (auto-routes to nearest PoP worldwide)                     │
+├─────────────────────────────────┬────────────────────────────────────────┤
+│         US/CA Workspaces        │         EU/UK Workspaces               │
+│                                 │                                        │
+│  ┌───────────────────────────┐  │  ┌────────────────────────────────┐    │
+│  │  Supabase — US (Oregon)   │  │  │  Supabase — EU (Frankfurt)     │    │
+│  │  pjddaprqhwqxtcpdmprk    │  │  │  rkffbtabogjxxzxmgodv          │    │
+│  │  SSL Enforced ✅           │  │  │  SSL Enforced ✅                │    │
+│  │  21 migrations synced     │  │  │  21 migrations synced          │    │
+│  └───────────────────────────┘  │  └────────────────────────────────┘    │
+└─────────────────────────────────┴────────────────────────────────────────┘
+```
+
+**Data Residency Routing (`supabase-region.ts`):**
+
+| Workspace Country | Database Region | Supabase Instance |
+|-------------------|----------------|-------------------|
+| 🇺🇸 US, 🇨🇦 CA | West US (Oregon) | `pjddaprqhwqxtcpdmprk` |
+| 🇬🇧 UK, 🇩🇪 DE, 🇫🇷 FR, 🇳🇱 NL + 27 EU countries | Central EU (Frankfurt) | `rkffbtabogjxxzxmgodv` |
+
+**Locale-Aware Clinical Dictionaries (`clinical-dictionaries.ts`):**
+
+All clinical dropdowns auto-populate based on workspace country:
+
+| Dictionary | US | CA | UK | EU |
+|-----------|----|----|----|----|---|
+| Insurance Providers | Aetna, BCBS, Medicaid... | OAP, OHIP, Sun Life... | NHS, EHCP, Bupa... | AOK, CPAM, Allianz... |
+| Diagnosis Codes | ICD-10-CM | ICD-10-CA | ICD-10 + ICD-11 preview | ICD-10 + ICD-11 preview |
+| Billing Codes | CPT (97151-97158) | Hourly service codes | Service descriptions | Service descriptions |
+| Credentials | BCBA, RBT, NPI | BCBA, ONTABA RBA | UKBA(cert), HCPC | BCBA (legacy) |
+| Issuing Authorities | BACB, State Board | BACB, ONTABA, CIHI | UK-SBA, PSA, DBS | UK-SBA, BACB |
+| States/Provinces | 50 US states + DC | 13 provinces/territories | 4 UK regions | — |
 
 ### AI Models & Routing
 
@@ -857,6 +898,9 @@ synalux-private/
 │   │   ├── pricing-engine.ts # Enterprise pricing: per-country, volume, annual
 │   │   ├── platform-admin.ts # Platform super-admin + plan overrides
 │   │   ├── session-offline.ts# Offline-first session management + draft persistence
+│   │   ├── supabase-clients.ts # Service-role + RLS-enforced Supabase clients
+│   │   ├── supabase-region.ts # Multi-region router (US/EU) based on workspace country
+│   │   ├── clinical-dictionaries.ts # Locale-aware clinical ref data (US/CA/GB/EU)
 │   │   ├── region-config.ts  # Country/province configuration + tax rules
 │   │   ├── db.ts             # Supabase client + user management
 │   │   └── auth-options.ts   # NextAuth + Google OAuth
