@@ -654,6 +654,7 @@ Synalux is engineered for zero-trust environments.
 * **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
 * **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
 * **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
+* **ABA Precision Protocol Guardrails:** Deeply integrated with Prism MCP, Synalux enforces behavioral adherence rules limiting AI hallucinations and strictly isolating UI elements to guarantee HIPAA compliance and prevent duplication in CRUD operations.
 * **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
 * **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
 * **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
