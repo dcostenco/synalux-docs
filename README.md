@@ -34,7 +34,7 @@
 ### For IT & Compliance
 * **📴 Offline-safe sessions.** Timestamps are captured on the clinician's device. When they sign off a session at 3:45 PM in a dead zone, the billing time is 3:45 PM — not when the server got it at 4:00 PM. Admins see 🟢 Online / 🔴 Offline status for every session event.
 * **🔐 HIPAA built-in.** 15-minute idle timeout, no patient data in browser storage, encrypted at rest, audit logs for every action. Session drafts are automatically purged on logout.
-* **📊 89 tests passing.** Pricing engine, payment flow, offline sessions, and compliance scenarios — all covered by automated tests.
+* **📊 201 tests passing.** Pricing engine, payment flow, offline sessions, billing, database tools, and compliance scenarios — all covered by automated tests.
 
 <details>
 <summary><strong>🔧 Under the Hood (Technical Details)</strong></summary>
@@ -65,6 +65,11 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **E-Signatures** | BoldSign integration for parent/guardian consent |
 | **Data Tracking** | Behavioral targets, skill acquisition, frequency/duration data |
 | **Insurance** | Autism/ABA-specific payer rules, prior auth tracking |
+| **🧠 AI Mastery Predictions** | Trend-based prediction of target mastery timelines per skill |
+| **💡 AI Goal Suggestions** | Auto-recommend next targets based on mastered skills |
+| **📄 AI Progress Reports** | One-click generation of insurance-ready progress reports |
+| **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring |
+| **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars |
 
 </details>
 
@@ -856,8 +861,8 @@ synalux-private/
 │   │   ├── db.ts             # Supabase client + user management
 │   │   └── auth-options.ts   # NextAuth + Google OAuth
 │   ├── src/__tests__/        # Test suites
-│   │   ├── billing.test.ts   # Pricing engine + payment flow (28 tests)
-│   │   └── session-offline.test.ts # Offline sessions + compliance (61 tests)
+│   │   ├── billing.test.ts   # Pricing engine + payment flow (42 tests)
+│   │   └── session-offline.test.ts # Offline sessions + compliance (32 tests)
 │   └── supabase/             # Database migrations + seed data
 │       ├── seed_poc_part1.sql          # Core users/workspaces
 │       ├── seed_poc_part2b_*.sql       # HR tables + clinical catalogs
@@ -868,6 +873,7 @@ synalux-private/
 │       ├── seed_poc_part2g.sql         # Billing entries, SOAP notes, documents
 │       ├── seed_poc_part2h.sql         # Portal data (messages, consents, forms)
 │       ├── seed_poc_part2i_*.sql       # Per-practice billing config + Stripe Connect
+│       ├── seed_poc_part2q_module_tabs.sql  # 13 clinical modules (referrals, tasks, etc.)
 │       └── migrations/                 # Schema migrations
 │           ├── 20260417_payment_status_plan_override.sql  # Payment tracking + overrides
 │           └── 20260417_session_events.sql                # Offline session events
