@@ -1,34 +1,45 @@
 # ✦ Synalux
 
-**منصة السجل الصحي الإلكتروني المعياري — أصلية بالذكاء الاصطناعي، متوافقة مع HIPAA، لا تعتمد على تخصص**
+**منصتك لإدارة العيادة بالذكاء الاصطناعي**
 
-> Synalux هي منصة مفتوحة ومعيارية للسجل الصحي الإلكتروني تكيّف لغتها السريرية ونماذج بياناتها وسلوك الذكاء الاصطناعي لأي تخصص صحي — من علاج ABA إلى طب الأطفال والأمراض الجلدية. مدعومة برسوم بيانية معرفية مستمرة، وأكثر من 26 أداة متعددة الوسائط، وصندوق رمل AI "الطبيب في الحلقة" حيث **لا يمس أي ناتج AI بياناتك دون توقيعك الصريح**.
+> أدِر ممارستك الطبية بالكامل من منصة واحدة — سجلات المرضى، المواعيد، الفوترة، التواصل مع الفريق والتوثيق بالذكاء الاصطناعي. متوفر بـ 12 لغة. متوافق مع HIPAA.
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
 🌐 **Language / Язык / Limba:** [English](../../README.md) · [Español](README_es.md) · [Français](README_fr.md) · [Português](README_pt.md) · [Română](README_ro.md) · [Українська](README_uk.md) · [Русский](README_ru.md) · [Deutsch](README_de.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [中文](README_zh.md) · [العربية](README_ar.md)
 
-📌 **[→ العودة إلى النسخة الإنجليزية](../../README.md)**
+📌 **[← العودة إلى النسخة الإنجليزية](../../README.md)**
 
-🎬 **[▶ شاهد العرض التوضيحي (5 دقائق، مروي بـ 11 لغة)](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **فيديوهات توضيحية قريباً** — شاهد سير العمل الكامل: المرضى، المواعيد، الملاحظات، الفواتير ودردشة الفريق.
+
+---
+
+## 💡 لماذا Synalux؟
+
+### للأطباء والمعالجين
+* **🎙️ تحدث، لا تكتب.** أملِ ملاحظات الجلسة وسيحولها Synalux فوراً إلى ملاحظات SOAP منظمة — كل المعالجة تتم على جهازك.
+* **📴 يعمل بدون إنترنت.** ابدأ وأنهِ الجلسات حتى بدون اتصال. ملاحظاتك تُحفظ محلياً وتُزامن تلقائياً عند استعادة الاتصال.
+* **🛡️ ذكاء اصطناعي موثوق.** كل اقتراح من الذكاء الاصطناعي يُظهر مقارنة قبل/بعد. لا شيء يتغير في سجل المريض حتى توافق صراحةً.
+* **📝 أوراق أقل.** أنشئ FBA وBIP وتقارير التقدم — ثم أرسل للتوقيع الإلكتروني بنقرة واحدة.
+
+### لأصحاب العيادات والمديرين
+* **🏥 منصة واحدة لأي تخصص.**
+* **🌍 فوترة دولية.** اقبل المدفوعات بـ USD وCAD وGBP وEUR وAUD وNZD. خصومات الحجم التلقائية.
+* **💳 لا تخسر إيرادات أبداً.** المدفوعات الفاشلة تُعاد تلقائياً.
+* **👥 تحكم في من يرى ماذا.** 15 دوراً.
+
+### لتقنية المعلومات والامتثال
+* **📴 جلسات آمنة بدون اتصال.** الطوابع الزمنية تُسجل على جهاز الطبيب. يرى المديرون مؤشرات 🟢/🔴.
+* **🔐 HIPAA مدمج.** مهلة 15 دقيقة، بدون بيانات مرضى في المتصفح، تشفير.
+* **📊 89 اختباراً آلياً.**
 
 ---
 
-## ⚡ عوامل "Wow"
-
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
-
----
 
 ## 🏥 أنواع الممارسة المدعومة
 

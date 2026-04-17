@@ -1,12 +1,12 @@
 # ✦ Synalux
 
-**La plataforma EHR modular — Nativa en IA, compatible con HIPAA, agnóstica de especialidad**
+**Tu Plataforma de Gestión de Consultorio con IA**
 
-> Synalux es una plataforma de Historia Clínica Electrónica abierta y modular que adapta su lenguaje clínico, modelos de datos y comportamiento de IA para cualquier especialidad sanitaria — desde terapia ABA hasta pediatría y dermatología. Impulsada por grafos de conocimiento persistentes, más de 26 herramientas multimodales, multi-tenencia sin estado JWT→RLS, y un sandbox de IA "Clínico-en-el-bucle" donde **ninguna salida de IA toca sus datos sin su firma explícita**.
+> Gestiona toda tu práctica de salud desde una sola plataforma — historias clínicas, citas, facturación, comunicación de equipo y documentación asistida por IA. Funciona para terapia ABA, pediatría, salud mental, odontología, fisioterapia y dermatología. Disponible en 12 idiomas. Compatible con HIPAA.
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
@@ -15,20 +15,31 @@
 
 📌 **[← Volver a la versión en inglés](../../README.md)**
 
-🎬 **[▶ Ver la demostración (5 min, narrada en 11 idiomas)](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **Próximamente videos de demostración** — Vea el flujo completo: pacientes, citas, notas, facturación y chat de equipo en acción.
 
 ---
 
-## ⚡ Los factores "Wow"
+## 💡 ¿Por qué Synalux?
 
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
+### Para Clínicos
+* **🎙️ Habla, no escribas.** Dicta tus notas de sesión y Synalux las convierte en notas SOAP estructuradas al instante — todo procesado en tu dispositivo, nunca enviado a la nube.
+* **📴 Funciona sin conexión.** Inicia y termina sesiones incluso sin internet. Tus notas se guardan localmente y se sincronizan automáticamente cuando vuelves a estar en línea. Tu hora de cierre siempre es precisa para la facturación.
+* **🛡️ IA en la que puedes confiar.** Cada sugerencia de IA te muestra una comparación antes/después. Nada cambia en el expediente del paciente hasta que tú lo apruebas explícitamente.
+* **📝 Menos papeleo.** Genera FBAs, BIPs, informes de progreso y resúmenes de alta a partir de los datos de tu sesión — luego envía para firma electrónica con un clic.
+
+### Para Propietarios y Administradores de Consultorios
+* **🏥 Una plataforma para cualquier especialidad.** Todo el sistema se adapta a tu tipo de práctica — ABA, pediatría, salud mental, dental, fisioterapia o dermatología.
+* **🌍 Facturación internacional.** Acepta pagos en USD, CAD, GBP, EUR, AUD y NZD. Los descuentos por volumen se activan automáticamente a partir de 100, 500 y 1.000+ clientes. La facturación anual ahorra un 20%.
+* **💳 Nunca pierdas ingresos.** Los pagos fallidos se reintentan automáticamente. Ves alertas antes de que nadie pierda acceso. Los administradores pueden activar periodo de prueba ilimitado.
+* **👥 Controla quién ve qué.** 15 roles — desde médicos hasta especialistas en facturación y RRHH — cada uno con permisos específicos.
+
+### Para TI y Cumplimiento
+* **📴 Sesiones seguras offline.** Las marcas de tiempo se capturan en el dispositivo del clínico. Cuando cierran sesión a las 3:45 PM sin señal, el tiempo de facturación es 3:45 PM. Los administradores ven indicadores 🟢/🔴 para cada evento.
+* **🔐 HIPAA integrado.** Cierre por inactividad de 15 minutos, sin datos de pacientes en el navegador, cifrado en reposo, registros de auditoría para cada acción.
+* **📊 89 pruebas automatizadas.** Motor de precios, flujo de pago, sesiones offline y escenarios de cumplimiento — todos cubiertos.
 
 ---
+
 
 ## 🏥 Tipos de práctica soportados
 

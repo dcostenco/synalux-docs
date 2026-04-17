@@ -1,12 +1,12 @@
 # ✦ Synalux
 
-**モジュラーEHRプラットフォーム — AIネイティブ、HIPAA準拠、専門分野非依存**
+**AIを活用した診療管理プラットフォーム**
 
-> Synaluxは、臨床言語、データモデル、AIの動作をABA療法から小児科、皮膚科まであらゆる医療専門分野に適応させる、オープンでモジュラーな電子健康記録プラットフォームです。永続的なナレッジグラフ、26以上のマルチモーダルツール、ステートレスJWT→RLSマルチテナンシー、そして **AIの出力が明示的な署名なしにデータに触れない**「臨床医インザループ」AIサンドボックスを搭載。
+> 一つのプラットフォームで医療実践全体を管理 — 患者記録、予約、請求、チームコミュニケーション、AI支援ドキュメンテーション。12言語で利用可能。HIPAA準拠。
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
@@ -15,20 +15,31 @@
 
 📌 **[← 英語版に戻る](../../README.md)**
 
-🎬 **[▶ デモを見る（5分、11言語でナレーション）](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **デモ動画は近日公開** — 完全なワークフロー：患者、予約、記録、請求、チームチャット。
 
 ---
 
-## ⚡ "Wow"ファクター
+## 💡 なぜSynalux？
 
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
+### 臨床医の方へ
+* **🎙️ 話すだけ。** セッションノートを口述すれば、Synaluxが即座に構造化されたSOAPノートに変換します — すべてデバイス上で処理されます。
+* **📴 オフラインでも動作。** インターネットなしでもセッションの開始・終了が可能。メモはローカルに保存され、オンライン復帰時に自動同期されます。
+* **🛡️ 信頼できるAI。** すべてのAI提案はビフォー/アフター比較で表示。明示的な承認なしに患者記録は変更されません。
+* **📝 ペーパーワーク削減。** FBA、BIP、経過レポートを生成 — ワンクリックで電子署名に送信。
+
+### 経営者・管理者の方へ
+* **🏥 あらゆる専門分野に対応。**
+* **🌍 国際対応請求。** USD、CAD、GBP、EUR、AUD、NZDで決済可能。100、500、1,000+クライアントでボリュームディスカウント。
+* **💳 収益を逃さない。** 失敗した決済は自動でリトライ。
+* **👥 アクセスを制御。** 15のロール。
+
+### ITとコンプライアンスの方へ
+* **📴 安全なオフラインセッション。** タイムスタンプは臨床医のデバイスで記録。管理者は🟢/🔴インジケーターを確認できます。
+* **🔐 HIPAA内蔵。** 15分タイムアウト、ブラウザにPHIなし、暗号化。
+* **📊 89の自動テスト。**
 
 ---
+
 
 ## 🏥 サポート対象の診療タイプ
 

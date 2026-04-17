@@ -1,12 +1,12 @@
 # ✦ Synalux
 
-**모듈형 EHR 플랫폼 — AI 네이티브, HIPAA 준수, 전문 분야 불가지론**
+**AI 기반 진료 관리 플랫폼**
 
-> Synalux는 ABA 치료부터 소아과, 피부과까지 모든 의료 전문 분야에 맞춰 임상 언어, 데이터 모델, AI 행동을 적응시키는 개방형 모듈식 전자 건강 기록 플랫폼입니다. 영구 지식 그래프, 26개 이상의 멀티모달 도구, 상태 없는 JWT→RLS 멀티테넌시, 그리고 **AI 출력이 명시적 서명 없이는 데이터에 접근할 수 없는** "임상의-인-더-루프" AI 샌드박스로 구동됩니다.
+> 하나의 플랫폼에서 전체 의료 실무를 관리하세요 — 환자 기록, 일정, 청구, 팀 커뮤니케이션 및 AI 지원 문서화. 12개 언어로 이용 가능. HIPAA 준수.
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
@@ -15,20 +15,31 @@
 
 📌 **[← 영어 버전으로 돌아가기](../../README.md)**
 
-🎬 **[▶ 데모 보기 (5분, 11개 언어 나레이션)](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **데모 영상 곧 출시** — 전체 워크플로: 환자, 일정, 기록, 청구, 팀 채팅.
 
 ---
 
-## ⚡ "Wow" 팩터
+## 💡 왜 Synalux인가?
 
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
+### 임상의를 위해
+* **🎙️ 말하세요, 타이핑하지 마세요.** 세션 노트를 구술하면 Synalux가 즉시 구조화된 SOAP 노트로 변환합니다 — 모든 처리는 기기에서 이루어집니다.
+* **📴 오프라인에서도 작동.** 인터넷 없이도 세션을 시작하고 종료할 수 있습니다. 메모는 로컬에 저장되고 온라인 복귀 시 자동 동기화됩니다.
+* **🛡️ 신뢰할 수 있는 AI.** 모든 AI 제안은 전/후 비교를 보여줍니다. 명시적 승인 없이 환자 기록은 변경되지 않습니다.
+* **📝 서류 작업 감소.** FBA, BIP, 경과 보고서를 생성 — 클릭 한 번으로 전자 서명에 전송.
+
+### 의원 소유자 및 관리자를 위해
+* **🏥 모든 전문 분야를 위한 하나의 플랫폼.**
+* **🌍 국제 청구.** USD, CAD, GBP, EUR, AUD, NZD 결제 가능. 100, 500, 1,000+ 고객 시 볼륨 할인.
+* **💳 수익을 놓치지 마세요.** 실패한 결제는 자동 재시도.
+* **👥 접근 권한 제어.** 15개 역할.
+
+### IT 및 컴플라이언스를 위해
+* **📴 안전한 오프라인 세션.** 타임스탬프는 임상의 기기에서 기록. 관리자는 🟢/🔴 표시를 확인할 수 있습니다.
+* **🔐 HIPAA 내장.** 15분 타임아웃, 브라우저에 환자 데이터 없음, 암호화.
+* **📊 89개 자동 테스트.**
 
 ---
+
 
 ## 🏥 지원 진료 유형
 

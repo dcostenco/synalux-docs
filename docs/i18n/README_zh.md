@@ -1,34 +1,45 @@
 # ✦ Synalux
 
-**模块化EHR平台 — AI原生、HIPAA合规、专科无关**
+**您的AI驱动诊所管理平台**
 
-> Synalux是一个开放的模块化电子健康记录平台，能够将其临床语言、数据模型和AI行为适配到任何医疗专科——从ABA治疗到儿科再到皮肤科。由持久知识图谱、26+多模态工具、无状态JWT→RLS多租户架构，以及 临床医生在环 AI沙箱驱动，**任何AI输出在未经您明确签名的情况下都不会触及您的数据**。
+> 在一个平台上管理您的整个医疗实践 — 患者记录、排班、账单、团队沟通和AI辅助文档。支持12种语言。符合HIPAA标准。
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
 🌐 **Language / Язык / Limba:** [English](../../README.md) · [Español](README_es.md) · [Français](README_fr.md) · [Português](README_pt.md) · [Română](README_ro.md) · [Українська](README_uk.md) · [Русский](README_ru.md) · [Deutsch](README_de.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [中文](README_zh.md) · [العربية](README_ar.md)
 
-📌 **[← 返回英文版](../../README.md)**
+📌 **[← 返回英语版本](../../README.md)**
 
-🎬 **[▶ 观看演示（5分钟，11种语言旁白）](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **演示视频即将推出** — 查看完整工作流程：患者、排班、记录、账单和团队聊天。
+
+---
+
+## 💡 为什么选择Synalux？
+
+### 面向临床医生
+* **🎙️ 说，不用打字。** 口述会话笔记，Synalux立即将其转换为结构化SOAP笔记 — 全部在您的设备上处理。
+* **📴 离线工作。** 即使没有网络也可以开始和结束会话。笔记保存在本地，恢复连接后自动同步。
+* **🛡️ 值得信赖的AI。** 每个AI建议都显示前后对比。未经您明确批准，患者记录不会发生任何更改。
+* **📝 减少文书工作。** 生成FBA、BIP、进度报告 — 一键发送电子签名。
+
+### 面向诊所所有者和管理员
+* **🏥 一个平台适用于所有专科。**
+* **🌍 国际计费。** 接受USD、CAD、GBP、EUR、AUD、NZD付款。100、500、1000+客户时自动批量折扣。
+* **💳 永不错失收入。** 失败的付款自动重试。
+* **👥 控制谁能看到什么。** 15个角色。
+
+### 面向IT和合规
+* **📴 安全的离线会话。** 时间戳在临床医生设备上记录。管理员可以看到🟢/🔴指示器。
+* **🔐 内置HIPAA。** 15分钟超时，浏览器中无患者数据，加密。
+* **📊 89个自动化测试。**
 
 ---
 
-## ⚡ "Wow"因素
-
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
-
----
 
 ## 🏥 支持的诊疗类型
 

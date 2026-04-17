@@ -1,30 +1,51 @@
 # ✦ Synalux
 
-**The Modular EHR Platform — AI-Native, HIPAA-Compliant, Specialty-Agnostic**
+**Your AI-Powered Practice Management Platform**
 
-> Synalux is an open, modular Electronic Health Record platform that morphs its clinical language, data models, and AI behavior to match any healthcare specialty — from ABA therapy to pediatrics to dermatology. Powered by persistent knowledge graphs, 26+ multimodal tools, stateless JWT→RLS multi-tenancy, and a "Clinician-in-the-Loop" AI sandbox where **no AI output touches your data without your explicit signature**.
+> Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and AI-assisted documentation. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 12 languages. HIPAA-compliant.
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
-🌐 **Language / Язык / Limba:** [English](#-key-capabilities) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
+🌐 **Language / Язык / Limba:** [English](#-why-synalux) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
 
-🎬 **[▶ Watch the Demo (5 min, narrated in 11 languages)](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **Demo videos coming soon** — See the full workflow: patients, scheduling, notes, billing, and team chat in action.
 
 ---
 
-## ⚡ The "Wow" Factors
+## 💡 Why Synalux?
 
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
+### For Clinicians
+* **🎙️ Talk, don't type.** Dictate your session notes, and Synalux turns them into structured SOAP notes instantly — all processed on your device, never sent to the cloud.
+* **📴 Works offline.** Start and end sessions even without internet. Your notes are saved locally and sync automatically when you're back online. Your sign-off time is always accurate for billing — even if you're in a dead zone.
+* **🛡️ AI you can trust.** Every AI suggestion shows you a before/after comparison. Nothing changes in the patient record until you explicitly approve it.
+* **📝 Less paperwork.** Generate FBAs, BIPs, progress reports, and discharge summaries from your session data — then send for e-signature in one click.
+
+### For Practice Owners & Administrators
+* **🏥 One platform for any specialty.** The entire system adapts to your practice type — ABA, pediatrics, mental health, dental, PT, or dermatology. Same platform, different clinical language.
+* **🌍 International-ready billing.** Accept payments in USD, CAD, GBP, EUR, AUD, and NZD. Volume discounts kick in automatically at 100, 500, and 1,000+ clients. Annual billing saves 20%.
+* **💳 Never lose revenue.** Failed payments are automatically retried. You see warning banners before anyone loses access. Platform admins can override any account to unlimited trial.
+* **👥 Control who sees what.** 15 roles — from doctors to billing specialists to HR — each with specific permissions. Assign roles per country and per specialty.
+
+### For IT & Compliance
+* **📴 Offline-safe sessions.** Timestamps are captured on the clinician's device. When they sign off a session at 3:45 PM in a dead zone, the billing time is 3:45 PM — not when the server got it at 4:00 PM. Admins see 🟢 Online / 🔴 Offline status for every session event.
+* **🔐 HIPAA built-in.** 15-minute idle timeout, no patient data in browser storage, encrypted at rest, audit logs for every action. Session drafts are automatically purged on logout.
+* **📊 89 tests passing.** Pricing engine, payment flow, offline sessions, and compliance scenarios — all covered by automated tests.
+
+<details>
+<summary><strong>🔧 Under the Hood (Technical Details)</strong></summary>
+
+* **Stateless RLS:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security — no session variables, no connection pools per tenant.
+* **Persistent Memory:** Built on [Prism MCP](https://github.com/dcostenco/prism-mcp), the AI remembers context across sessions and reloads, isolated by workspace.
+* **Prompt-Level RBAC:** Tool ACLs are cryptographically signed. If a technician asks the AI to run a command they're not authorized for, the tool is stripped before the LLM sees it.
+* **Payment Webhook Lifecycle:** `invoice.payment_failed` → flag as `past_due` → auto-downgrade after 3 retries → webhook guards protect platform-admin overrides from ever being reverted.
+* **Offline Sync Engine:** Client-side `SessionEvent` objects with `connection_status` field, queued in localStorage, synced idempotently via UUID on reconnect.
+
+</details>
 
 ---
 
@@ -145,6 +166,39 @@ The billing module uses **Stripe Connect** to give each practice its own indepen
 | **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
 | **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
 
+**Multi-Country & Multi-Currency (NEW):**
+
+| Country | Currency | Standard | Advanced | Enterprise |
+|---------|----------|----------|----------|------------|
+| 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
+| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
+| 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
+| 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
+| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
+| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
+
+**Volume Discounts:**
+| Clients | Discount |
+|---------|----------|
+| 100+ | 10% off per-seat price |
+| 500+ | 20% off per-seat price |
+| 1,000+ | 30% off per-seat price |
+| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+
+**Payment Failure Lifecycle:**
+```
+Payment Failed → past_due (warning banner, keep access)
+  → 2nd retry → still past_due (urgent warning)
+  → 3rd retry failed → auto-downgrade to Free tier
+  → Stripe subscription.deleted → plan = 'free', sub cleared
+```
+
+**Platform Admin Overrides:**
+- Synalux platform admins can set any user to unlimited trial on any plan
+- Override users are **immune** to Stripe webhook downgrades
+- Admin sees 🟢/🔴 indicators for payment status
+- Full audit trail: who set the override, when, and why
+
 **Revenue Cycle Management:**
 - Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
 - ERA/EOB electronic remittance processing
@@ -165,6 +219,11 @@ The billing module uses **Stripe Connect** to give each practice its own indepen
 - Coordination of Benefits (COB)
 - Explanation of Benefits (EOB) tracking
 - Appeal management with letter templates
+
+**Automatic Tax Collection:**
+- Stripe Tax enabled per-country (VAT, GST, HST, PST)
+- Tax calculated automatically based on workspace country
+- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
 
 </details>
 
@@ -226,6 +285,36 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
 | **Waitlist** | Waitlisted appointment requests when slots are full |
 | **Reminders** | Automated appointment reminders (planned) |
+
+</details>
+
+<details>
+<summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+
+| Feature | Details |
+|---------|---------|
+| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
+| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
+| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
+| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
+| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
+| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
+| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
+| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
+| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
+| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+
+**Billing Compliance:**
+```
+Provider starts session at 2:00 PM (online) → 🟢
+  Connection drops at 2:30 PM
+Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
+  Connection restores at 4:00 PM → auto-sync
+Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
+  ↓
+Insurance billed: session 2:00 PM – 3:45 PM (accurate)
+Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+```
 
 </details>
 
@@ -502,16 +591,19 @@ Describe a task (e.g., *"Add Stripe checkout and write tests"*), and Synalux wil
 ---
 
 <details>
-<summary><h2>🔐 11 RBAC Roles</h2></summary>
+<summary><h2>🔐 15 RBAC Roles</h2></summary>
 
 Each role has a cryptographically signed Tool ACL and a server-injected system prompt:
 
 | Role | Tools | Target |
 |------|-------|--------|
 | 🧑‍💻 `coder` | terminal, git, vitest, node, browser | Software engineers |
-| 🏥 `bcba` | soap, voice, boldsign, file_manager | Board Certified Behavior Analysts |
-| 🧑‍⚕️ `rbt` | soap, voice, file_manager | Registered Behavior Technicians |
-| 🏢 `office` | file_manager, boldsign, slack | Office Managers |
+| 🏥 `doctor` | soap, voice, boldsign, file_manager | Physicians / BCBAs |
+| 🧑‍⚕️ `medical_technician` | soap, voice, file_manager | Technicians / RBTs |
+| 🏢 `office_manager` | file_manager, boldsign, slack, billing | Office Managers |
+| 👨‍💼 `practice_admin` | all clinical + admin | Practice Administrators |
+| 💰 `billing_specialist` | billing, claims, file_manager | Billing / Revenue Cycle |
+| 👥 `hr_manager` | staff, credentials, training | HR / People Ops |
 | 📋 `manager` | jira, confluence, slack, file_manager | Project Managers |
 | ✍️ `writer` | file_manager, browser, screenshot | Technical Writers |
 | 🔒 `security` | terminal, git, browser | Security Engineers |
@@ -519,6 +611,12 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 | ⚙️ `devops` | terminal, git, webhooks | DevOps/SRE |
 | 📊 `planner` | jira, confluence, webhooks | Product Managers |
 | 🚫 `restricted` | *(none)* | Read-only observers |
+| ⚡ `platform_admin` | **all** + plan overrides + user management | Synalux super-admins |
+
+**Country/Province-Specific Role Activation:**
+- Roles are activated per country and per medical specialty module
+- Each workspace's available roles depend on its configured country and practice type
+- Example: `billing_specialist` in Canada includes HST/GST tax configuration tools
 
 </details>
 
@@ -561,13 +659,14 @@ Synalux is engineered for zero-trust environments.
 | HIPAA Requirement | Synalux Implementation |
 |---|---|
 | **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
+| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` + `session_events` — every PHI access, session sign-off, and plan override is recorded with user, action, resource, and timestamp |
+| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature. Offline session timestamps preserve billing-accurate times via client-side capture. |
 | **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
 | **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
+| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted); offline drafts auto-purged on logout |
 | **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Session drafts in localStorage are purged on logout/idle timeout via `purgeLocalData()` |
+| **Offline Safety** | Connection loss doesn't compromise data — offline queue preserves events with client timestamps, syncs on reconnect. Admin sees 🟢/🔴 indicators for audit trail. |
 
 > **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
 
@@ -731,7 +830,11 @@ synalux-private/
 │   │   ├── page.tsx          # SOAP Notes workspace
 │   │   ├── chat/page.tsx     # AI Chat
 │   │   ├── team/page.tsx     # Team Chat (Pro+)
-│   │   └── layout.tsx        # App shell + sidebar
+│   │   ├── billing/page.tsx  # Clinical Billing (multi-currency)
+│   │   └── layout.tsx        # App shell + sidebar + offline monitor
+│   ├── src/app/admin/        # 🛡️ Admin Dashboard
+│   │   ├── subscriptions/    # Subscription management (multi-currency)
+│   │   └── users/            # User management + plan overrides
 │   ├── src/app/patient-portal/  # 🏥 Patient Portal
 │   │   └── page.tsx          # Dashboard, Documents, Appointments, Billing, Messages
 │   ├── src/app/api/v1/       # REST APIs
@@ -740,12 +843,21 @@ synalux-private/
 │   │   ├── pdf/route.ts      # Server-side PDF export
 │   │   ├── messages/         # Team Chat API
 │   │   ├── roles/            # RBAC management
-│   │   ├── billing/          # Stripe integration + checkout
-│   │   └── webhooks/stripe/  # Stripe webhook handler
+│   │   ├── billing/          # Stripe integration + multi-currency checkout
+│   │   ├── sessions/         # Offline-first session sign-off API
+│   │   ├── admin/            # Platform admin APIs (plan overrides)
+│   │   └── webhooks/stripe/  # Stripe webhook handler (payment lifecycle)
 │   ├── src/lib/              # Auth, DB, i18n, SOAP templates
-│   │   ├── stripe.ts         # Stripe Connect + Checkout + Portal
+│   │   ├── stripe.ts         # Stripe Connect + Multi-Currency Checkout + Portal
+│   │   ├── pricing-engine.ts # Enterprise pricing: per-country, volume, annual
+│   │   ├── platform-admin.ts # Platform super-admin + plan overrides
+│   │   ├── session-offline.ts# Offline-first session management + draft persistence
+│   │   ├── region-config.ts  # Country/province configuration + tax rules
 │   │   ├── db.ts             # Supabase client + user management
 │   │   └── auth-options.ts   # NextAuth + Google OAuth
+│   ├── src/__tests__/        # Test suites
+│   │   ├── billing.test.ts   # Pricing engine + payment flow (28 tests)
+│   │   └── session-offline.test.ts # Offline sessions + compliance (61 tests)
 │   └── supabase/             # Database migrations + seed data
 │       ├── seed_poc_part1.sql          # Core users/workspaces
 │       ├── seed_poc_part2b_*.sql       # HR tables + clinical catalogs
@@ -755,7 +867,10 @@ synalux-private/
 │       ├── seed_poc_part2f.sql         # HR module (staff/credentials/reviews)
 │       ├── seed_poc_part2g.sql         # Billing entries, SOAP notes, documents
 │       ├── seed_poc_part2h.sql         # Portal data (messages, consents, forms)
-│       └── seed_poc_part2i_*.sql       # Per-practice billing config + Stripe Connect
+│       ├── seed_poc_part2i_*.sql       # Per-practice billing config + Stripe Connect
+│       └── migrations/                 # Schema migrations
+│           ├── 20260417_payment_status_plan_override.sql  # Payment tracking + overrides
+│           └── 20260417_session_events.sql                # Offline session events
 ├── synalux-vscode/           # 🧑‍💻 VS Code extension
 │   ├── src/chat-panel.ts     # Agentic chat + tool execution
 │   ├── src/mcp-server.ts     # Local MCP tool dispatcher

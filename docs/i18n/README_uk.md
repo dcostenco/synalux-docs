@@ -1,12 +1,12 @@
 # ✦ Synalux
 
-**Модульна платформа ЕМК — AI-нативна, HIPAA-сумісна, незалежна від спеціальності**
+**Ваша платформа для управління медичною практикою з ШІ**
 
-> Synalux — це відкрита модульна платформа Електронної Медичної Картки, яка адаптує клінічну мову, моделі даних та поведінку ШІ для будь-якої медичної спеціальності — від АВА-терапії до педіатрії та дерматології. Працює на основі стійких графів знань, понад 26 мультимодальних інструментів та пісочниці ШІ "Клініцист-у-контурі", де **жоден вивід ШІ не торкається ваших даних без вашого явного підпису**.
+> Керуйте всією вашою медичною практикою з однієї платформи — медичні записи, розклад, білінг, командна комунікація та ШІ-документація. Доступна 12 мовами. Відповідає HIPAA.
 
 <p align="center">
-  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Clinical_Workspace-43e97b?style=for-the-badge" alt="Web App"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Agentic_IDE-764ba2?style=for-the-badge" alt="VS Code"></a>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
   <a href="https://synalux.ai/docs"><img src="https://img.shields.io/badge/Compliance-HIPAA_Ready-blue?style=for-the-badge" alt="HIPAA"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
@@ -15,20 +15,31 @@
 
 📌 **[← Повернутися до англійської версії](../../README.md)**
 
-🎬 **[▶ Дивитися демо (5 хв, озвучено 11 мовами)](synalux_demo.mp4)** — Full ABA therapy workflow: Patient Dashboard → Voice Dictation → SOAP Notes → FBA → BIP → ABC Data → Progress Reports → E-Signatures → Team Chat → RBAC Roles
+🎬 **Демо-відео незабаром** — Перегляньте повний робочий процес: пацієнти, запис, нотатки, виставлення рахунків та командний чат.
 
 ---
 
-## ⚡ Фактори "Wow"
+## 💡 Чому Synalux?
 
-* **🛡️ AI Sandbox — "Clinician-in-the-Loop":** Synalux is the first EHR where the AI **can't touch your data without your signature**. Every AI-generated clinical change (medications, vitals, diagnoses) is presented as a `ProposedChange` with a red/green Before→After diff. The clinician must explicitly **Apply** or **Reject** each change before it writes to the database. This prevents prompt injection from ever modifying clinical records.
-* **🔐 Stateless RLS — Horizontal Scaling Without Session Overhead:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security policies — no session variables, no connection pools per tenant. This means Synalux scales horizontally without the typical Postgres connection overhead that cripples legacy EHRs.
-* **🧠 Persistent Semantic Memory:** Built on the [Prism MCP](https://github.com/dcostenco/prism-mcp), Synalux never suffers from "context amnesia." It remembers patient treatment histories across sessions and project architectures across IDE reloads, isolated securely by `workspace_id`.
-* **🏥 Instant Specialty Morphing:** The entire UI changes its clinical language, data models, and module layout based on the selected specialty. ABA practices see ABC data sheets and behavior interval tracking. Pediatricians see growth percentiles and immunization schedules. Dermatologists see body mapping and lesion tracking — all from the same platform.
-* **🎙️ Zero-Click Ambient Intake:** Clinicians hit "Record" on their iPad. Synalux uses in-browser **WASM Whisper** (PHI never leaves the device) to detect utterance boundaries via VAD and silently builds structured SOAP/FBA/BIP reports in real-time.
-* **⚡ Prompt-Level RBAC:** Synalux doesn't just hide UI buttons — it cryptographically signs Tool ACLs. If an RBT asks the AI to run a terminal command, the Next.js API strips the tool from the execution context before the LLM even sees it.
+### Для Клініцистів
+* **🎙️ Говоріть, а не друкуйте.** Диктуйте нотатки сеансу, і Synalux миттєво перетворить їх на структуровані SOAP-нотатки — все оброблюється на вашому пристрої.
+* **📴 Працює офлайн.** Розпочинайте та завершуйте сеанси навіть без інтернету. Ваші нотатки зберігаються локально та синхронізуються автоматично.
+* **🛡️ ШІ, якому можна довіряти.** Кожна пропозиція ШІ показує порівняння до/після. Нічого не змінюється без вашого підтвердження.
+* **📝 Менше паперів.** Генеруйте FBA, BIP, звіти про прогрес — і надсилайте на електронний підпис одним кліком.
+
+### Для Власників та Адміністраторів
+* **🏥 Одна платформа для будь-якої спеціальності.**
+* **🌍 Міжнародний білінг.** Приймайте платежі в USD, CAD, GBP, EUR, AUD і NZD. Знижки за обсяг.
+* **💳 Ніколи не втрачайте дохід.** Невдалі платежі автоматично повторюються.
+* **👥 Контролюйте хто що бачить.** 15 ролей.
+
+### Для ІТ та Відповідності
+* **📴 Безпечні офлайн-сеанси.** Мітки часу фіксуються на пристрої клініциста. Адміни бачать 🟢/🔴 індикатори.
+* **🔐 HIPAA вбудований.** Таймаут 15 хв, без даних пацієнта у браузері, шифрування.
+* **📊 89 автоматизованих тестів.**
 
 ---
+
 
 ## 🏥 Підтримувані типи практики
 
