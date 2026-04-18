@@ -174,6 +174,23 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 </details>
 
+<details>
+<summary><h3>🐾 Veterinary Medicine</h3></summary>
+
+🔗 **[Read Detailed Veterinary Medicine Documentation](docs_source_en/veterinary_medicine.md)**
+
+| Feature | Details |
+|---------|---------|
+| **Clinical Records** | Animal health records with breed, species, weight tracking, vaccination history |
+| **RBAC Roles** | Veterinarian (full clinical), Vet Technician (intake, vitals, treatment) |
+| **Exams & Surgical Notes** | Species-specific exam templates, surgical reports, post-op care plans |
+| **Prescriptions** | Species-appropriate dosing, compounding pharmacy, controlled substance tracking |
+| **Vaccination Schedules** | Core/non-core vaccine protocols, automated wellness reminders |
+| **Diagnostic Imaging** | DICOM-compatible radiograph & ultrasound review with annotations |
+| **Billing** | Wellness plans, procedure bundles, pet insurance claim submission |
+
+</details>
+
 ---
 
 ## 📦 Platform Modules
