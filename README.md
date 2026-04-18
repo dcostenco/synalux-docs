@@ -41,6 +41,7 @@
 
 * **Stateless RLS:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security — no session variables, no connection pools per tenant.
 * **Persistent Memory:** Built on [Prism MCP](https://github.com/dcostenco/prism-mcp), the AI remembers context across sessions and reloads, isolated by workspace.
+* **Fine-Tuned Local LLM:** An embedded offline Copilot powered by `prism-coder:7b` acts as the routing engine, trained via SFT and GRPO to natively execute MCP tools without ever exposing patient context to cloud providers.
 * **Prompt-Level RBAC:** Tool ACLs are cryptographically signed. If a technician asks the AI to run a command they're not authorized for, the tool is stripped before the LLM sees it.
 * **Payment Webhook Lifecycle:** `invoice.payment_failed` → flag as `past_due` → auto-downgrade after 3 retries → webhook guards protect platform-admin overrides from ever being reverted.
 * **Offline Sync Engine:** Client-side `SessionEvent` objects with `connection_status` field, queued in localStorage, synced idempotently via UUID on reconnect.
