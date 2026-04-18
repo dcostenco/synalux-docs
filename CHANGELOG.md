@@ -12,6 +12,23 @@
 
 ---
 
+### 📱 Group Video Meetings & Security Remediations (Portal v0.13.0)
+
+#### Added
+- **Group Video Meetings:** Replaced 1:1 legacy interface with a scalable 6-peer mesh WebRTC topology. Features deterministic lexicographical peer negotiation and local thermal limits.
+- **Meeting Scheduler UI:** Schedule telehealth groups directly from within Team Chat.
+- **Enterprise Authenticated RSVPs:** Group invites send zero-PHI generic external emails dynamically linking back to an auth-gated, JWT-secured RSVP and meeting details landing page via `/app/accept-invite`.
+- **Practice Calendar Sync:** Telehealth group meetings now seamlessly integrate and populate the provider Practice Calendar with purple event markings indicating headcount.
+
+#### Security & Hardening
+- **E2E Isolation**: Enforced API limits (max 50 groups/day) + dynamic rate-limits dropped inbound DataChannel chat spam greater than 50 msg/sec to prevent WebRTC mesh disruption.
+- **Realtime Auth Isolation:** Upgraded `video:${roomId}` to strictly enforced `private:video:${roomId}` channels to prevent pub-sub hijacking.
+- **Atomic Rate Limits:** Prevented TOCTOU limits bypass on serverless clusters by wrapping meeting insertions into an explicit Pl/pgSQL RPC validated via `pg_try_advisory_xact_lock` 64-bit bounds.
+- **Strict RLS Privilege Separation:** Split broad `FOR ALL` migration policies into strict SELECT/UPDATE/DELETE + tightly constrained `FOR INSERT WITH CHECK` rules enforcing identity provenance via auth.uid().
+- **IDOR Prevention:** Replaced JS-based case-folding with Database-strict `ILIKE` enforcement, and purged Service Role bypass workflows in favor of purely delegated JWT client instantiations.
+
+---
+
 ### 📱 Mobile UI Hardening & Global AI Assistant (Portal v0.13.0)
 
 #### Added

@@ -694,6 +694,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 | Feature | Details |
 |---------|---------|
 | **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
+| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
+| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
 | **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
