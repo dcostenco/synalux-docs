@@ -9,6 +9,30 @@
 - GGUF export + Ollama modelfile
 ---
 
+## [0.13.0] - 2026-04-18
+
+### 📱 Mobile UI Hardening & Global AI Assistant (Portal v0.13.0)
+
+#### Added
+- **Global Floating AI Assistant** — accessible across all portal modules via FAB
+  - Fixed-position anchoring with Safe Area Inset (`env(safe-area-inset-bottom)`) accounting for iOS Home Indicator
+  - Sticky context retaining history via local DOM state to survive modal toggling
+- **Tier-Gated AI Routing**
+  - Paid/Advanced Tiers routed to `gemini-3.1-pro-preview` for clinical reasoning
+  - Free and Standard Tiers routed to `gemini-2.5-flash`
+- **Native OS Predictive Text** — optimized inputs across all modules
+  - Added `spellCheck={true}` and `autoCorrect="on"` to core FormField
+  - Uses native device keyboard algorithms instead of custom JS ghost-text, ensuring HIPAA compliance and zero layout shifts
+- **Update Tool Count** — increased platform capabilities from 15 to 17 tools across 12 UI languages.
+
+#### Fixed
+- **Mobile UI Overlaps** — resolved Z-index issues between the Floating Chat (z-100) and native toolbars
+- **TypeScript & CI/CD**
+  - Resolved `dbUserId` / `session.user.id` discrepancies in `layout.tsx`
+  - Fixed pre-initialized Supabase instances being incorrectly awaited
+  - Added missing `search` state params to resolves builds in Next.js pages
+
+---
 ## [0.12.14] - 2026-04-15
 
 ### 🛡️ Adversarial Behavioral Hardening — ABA Protocol v4 (Extension v0.12.14)
