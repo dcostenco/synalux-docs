@@ -36,6 +36,14 @@ Whether you manage 5 therapists or 500 across three countries, Synalux isolates 
 
 ---
 
+## 📖 Feature Glossary (What Does It Do?)
+* **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
+* **Idempotent Sync (Offline Safety):** A safety net that ensures if your internet drops mid-session, your work is saved locally and quietly uploads the second your connection returns. You never lose a sentence.
+* **E-Signature Integration:** Generate a consent form or treatment plan and send it directly to a parent or patient's phone to sign with their finger.
+* **Smart Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, prompting your front desk to contact them.
+* **Superbills:** An all-in-one financial receipt generated automatically from your clinical notes, containing all the medical codes (ICD-10/CPT) patients need to get reimbursed by insurance.
+* **Smart Context Sharing:** Securely forward a treatment plan directly into a billing channel without duplicating files or exposing raw PHI outside the patient's chart.
+
 ## 🏥 Supported Practice Types
 
 Synalux is a **multi-practice enterprise platform** supporting 6 medical specialties out of the box. Each practice type includes specialty-specific clinical templates, billing codes, fee schedules, and workflows.
@@ -178,143 +186,15 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 </details>
 
-<details>
-<summary><strong>📖 Feature Glossary (What Does It Do?)</strong></summary>
 
-* **Ambient Dictation:** A hands-free recording tool that listens to your patient session and automatically drafts a professional note (SOAP, FBA, etc.) while you focus on the patient.
-* **Idempotent Sync (Offline Safety):** A safety net that ensures if you click "Save" while your internet drops, your note is saved locally and quietly uploads the second your internet returns. You never lose a sentence.
-* **E-Signature Integration:** The ability to generate a consent form or treatment plan and send it directly to a parent/patient's phone to sign with their finger.
-* **Smart Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, automatically prompting your front desk to contact them.
-* **Superbills:** An all-in-one financial receipt generated automatically from your clinical notes, containing all the medical codes (ICD-10/CPT) patients need to get reimbursed by insurance.
-
-</details>
 
 ---
 
 ## 📦 Platform Modules
 
-Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict row-level security.
+Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
 
-<details>
-<summary><h3>💳 Billing & Payments Module</h3></summary>
-
-🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
-
-
-
-The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
-
-**Per-Practice Billing Configuration:**
-| Setting | Details |
-|---------|---------|
-| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
-| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
-| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
-| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
-| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
-| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
-
-**Multi-Country & Multi-Currency (NEW):**
-
-| Country | Currency | Standard | Advanced | Enterprise |
-|---------|----------|----------|----------|------------|
-| 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
-| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
-| 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
-| 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
-| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
-| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
-
-**Volume Discounts:**
-| Clients | Discount |
-|---------|----------|
-| 100+ | 10% off per-seat price |
-| 500+ | 20% off per-seat price |
-| 1,000+ | 30% off per-seat price |
-| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
-
-**Payment Failure Lifecycle:**
-```
-Payment Failed → past_due (warning banner, keep access)
-  → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
-  → Stripe subscription.deleted → plan = 'free', sub cleared
-```
-
-**Platform Admin Overrides:**
-- Synalux platform admins can set any user to unlimited trial on any plan
-- Override users are **immune** to Stripe webhook downgrades
-- Admin sees 🟢/🔴 indicators for payment status
-- Full audit trail: who set the override, when, and why
-
-**Revenue Cycle Management:**
-- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
-- ERA/EOB electronic remittance processing
-- Denial management with appeal deadline tracking
-- Prior authorization workflow
-- Aging reports (30/60/90/120 day buckets)
-
-**Patient Payments:**
-- Patient portal "Pay Now" → Stripe Checkout redirect
-- Partial payments and custom amounts
-- Payment plans with Stripe recurring subscriptions
-- Receipt generation and download
-- Refund processing
-
-**Insurance Claims:**
-- Electronic claim submission (837P)
-- Real-time eligibility verification
-- Coordination of Benefits (COB)
-- Explanation of Benefits (EOB) tracking
-- Appeal management with letter templates
-
-**Automatic Tax Collection:**
-- Stripe Tax enabled per-country (VAT, GST, HST, PST)
-- Tax calculated automatically based on workspace country
-- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
-
-</details>
-
-<details>
-<summary><h3>🏥 Patient Portal</h3></summary>
-
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
-
-
-
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
-
-| Feature | Details |
-|---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
-
-</details>
-
-<details>
-<summary><h3>👥 HR & Staff Management Module</h3></summary>
-
-🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
-
-</details>
-
+### 🏥 Clinical Care Modules
 <details>
 <summary><h3>📋 Clinical Notes & Documentation</h3></summary>
 
@@ -324,31 +204,13 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 | Feature | Details |
 |---------|---------|
-| **SOAP Notes** | AI-generated from voice dictation with specialty-specific templates |
+| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
 | **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
 | **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
 | **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
 | **PDF Export** | Server-side rendering (no client-side PHI leakage) |
 | **E-Signatures** | BoldSign integration with 7 document templates |
 | **OCR** | Document scanning in 30+ languages for intake form digitization |
-
-</details>
-
-<details>
-<summary><h3>📅 Scheduling & Appointments</h3></summary>
-
-🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
 
 </details>
 
@@ -481,6 +343,123 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 </details>
 
+### 🏢 Practice Operations Modules
+<details>
+<summary><h3>💳 Billing & Payments Module</h3></summary>
+
+🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+
+
+
+The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
+
+**Per-Practice Billing Configuration:**
+| Setting | Details |
+|---------|---------|
+| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
+| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
+| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
+| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
+| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
+| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
+
+**Multi-Country & Multi-Currency (NEW):**
+
+| Country | Currency | Standard | Advanced | Enterprise |
+|---------|----------|----------|----------|------------|
+| 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
+| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
+| 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
+| 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
+| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
+| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
+
+**Volume Discounts:**
+| Clients | Discount |
+|---------|----------|
+| 100+ | 10% off per-seat price |
+| 500+ | 20% off per-seat price |
+| 1,000+ | 30% off per-seat price |
+| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+
+**Payment Failure Lifecycle:**
+```
+Payment Failed → past_due (warning banner, keep access)
+  → 2nd retry → still past_due (urgent warning)
+  → 3rd retry failed → auto-downgrade to Free tier
+  → Stripe subscription.deleted → plan = 'free', sub cleared
+```
+
+**Platform Admin Overrides:**
+- Synalux platform admins can set any user to unlimited trial on any plan
+- Override users are **immune** to Stripe webhook downgrades
+- Admin sees 🟢/🔴 indicators for payment status
+- Full audit trail: who set the override, when, and why
+
+**Revenue Cycle Management:**
+- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
+- ERA/EOB electronic remittance processing
+- Denial management with appeal deadline tracking
+- Prior authorization workflow
+- Aging reports (30/60/90/120 day buckets)
+
+**Patient Payments:**
+- Patient portal "Pay Now" → Stripe Checkout redirect
+- Partial payments and custom amounts
+- Payment plans with Stripe recurring subscriptions
+- Receipt generation and download
+- Refund processing
+
+**Insurance Claims:**
+- Electronic claim submission (837P)
+- Real-time eligibility verification
+- Coordination of Benefits (COB)
+- Explanation of Benefits (EOB) tracking
+- Appeal management with letter templates
+
+**Automatic Tax Collection:**
+- Stripe Tax enabled per-country (VAT, GST, HST, PST)
+- Tax calculated automatically based on workspace country
+- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
+
+</details>
+
+<details>
+<summary><h3>📅 Scheduling & Appointments</h3></summary>
+
+🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
+
+
+
+| Feature | Details |
+|---------|---------|
+| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
+| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
+| **Multi-Provider** | Schedule across providers within a practice |
+| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
+| **Waitlist** | Waitlisted appointment requests when slots are full |
+| **Reminders** | Automated appointment reminders (planned) |
+
+</details>
+
+<details>
+<summary><h3>👥 HR & Staff Management Module</h3></summary>
+
+🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+
+
+
+| Feature | Details |
+|---------|---------|
+| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
+| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
+| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
+| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
+| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
+| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
+
+</details>
+
 <details>
 <summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
 
@@ -495,94 +474,6 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 | **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
 | **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
 | **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
-
-</details>
-
-<details>
-<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
-
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
-
-</details><details>
-<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
-
-🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
-
-</details>
-
-<details>
-<summary><h3>📋 Clinical Tasks Module</h3></summary>
-
-🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
-
-</details>
-
-<details>
-<summary><h3>🏥 Patient Insurance Module</h3></summary>
-
-🔗 **[Read Detailed Patient Insurance Module Documentation](docs_source_en/patient_insurance_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Plan Details** | Payer, plan name, member ID, group number, subscriber relationship |
-| **Cost Sharing** | Copay amount, coinsurance %, deductible, deductible met, out-of-pocket max |
-| **Primary/Secondary** | Multi-payer support with primary/secondary designation |
-| **Verification** | Verification status with verified date |
-| **Medicare/Medicaid** | MBI tracking, therapy cap tracking, remaining benefit amounts |
-| **All Major Payers** | BCBS, UHC, Anthem, Aetna, Delta Dental, MetLife, Cigna, Humana, Medicare |
-
-</details>
-
-<details>
-<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
-
-🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
 
 </details>
 
@@ -623,6 +514,49 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 </details>
 
+
+
+<details>
+<summary><h3>📋 Clinical Tasks Module</h3></summary>
+
+🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+
+
+
+| Feature | Details |
+|---------|---------|
+| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
+| **Priority Levels** | Low, normal, high, urgent |
+| **Assignment** | Assigned to specific staff with due dates and completion tracking |
+| **Patient Linked** | Tasks tied to specific patients for care coordination |
+| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
+| **Audit Trail** | Created by, completed by, completed at timestamps |
+
+</details>
+
+### 🤝 Patient Experience & Collaboration
+<details>
+<summary><h3>🏥 Patient Portal</h3></summary>
+
+🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+
+
+
+A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
+
+| Feature | Details |
+|---------|---------|
+| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
+| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
+| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
+| **Documents** | View/download clinical documents, upload insurance cards and forms |
+| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
+| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
+| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
+| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
+
+</details>
+
 <details>
 <summary><h3>📚 Patient Education Module</h3></summary>
 
@@ -642,41 +576,38 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 </details>
 
 <details>
-<summary><h3>📊 Quality Measures Module (HEDIS/MIPS)</h3></summary>
+<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
 
-🔗 **[Read Detailed Quality Measures Module (HEDIS/MIPS) Documentation](docs_source_en/quality_measures_module_hedismips.md)**
+🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
 
 
 
 | Feature | Details |
 |---------|---------|
-| **Measure Types** | HEDIS, MIPS, CMS Star Ratings, Joint Commission, custom |
-| **8 Core Measures** | Well-child visits, immunizations, depression screening, tobacco screening, antidepressant management, referral loop, BMI screening, MH follow-up |
-| **Performance Tracking** | Numerator, denominator, exclusions, performance rate calculation |
-| **Benchmarking** | Below / At / Above / Top Performer ratings vs national benchmarks |
-| **Reporting Periods** | Annual and quarterly reporting support |
-| **Practice Results** | Per-workspace compliance tracking with trend analysis |
+| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
+| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
+| **Contact Attempts** | Track outreach attempts for overdue recalls |
+| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
+| **Auto-Due Dates** | Based on last completed visit |
 
 </details>
 
 <details>
-<summary><h3>🔐 Security & Compliance</h3></summary>
+<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
 
-🔗 **[Read Detailed Security & Compliance Documentation](docs_source_en/security_compliance.md)**
+🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
 | Feature | Details |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **RBAC** | 11 cryptographically-signed roles with tool-level ACLs |
-| **Multi-Tenant Isolation** | All records scoped by `workspace_id` with row-level security |
-| **EdDSA Authentication** | Ed25519 signed JWTs (15-min expiry) |
-| **Encryption at Rest** | Transparent Data Encryption for all PHI |
-| **Audit Logs** | Immutable `rbac_audit_log` for all role assignments, file access, and message actions |
-| **HITL Safety Gate** | Dangerous tools require explicit user approval modal |
-| **Fail-Closed HIPAA Mode** | Refuses mic access if local LLM unavailable (no silent cloud fallback) |
-| **Data Minimization** | No `localStorage` for PHI, explicit React state nulling, `Cache-Control: no-store` |
+| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
+| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
+| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
+| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
+| **Threaded Conversations** | Per-referral chat threads with read receipts |
+| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
+| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
 
 </details>
 
@@ -692,7 +623,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 | **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
 | **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
 | **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
+| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
 | **File Attachments** | Share documents, images, and clinical assets in chat |
@@ -711,500 +642,58 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 </details>
 
----
+### 🔐 Enterprise Administration
+<details>
+<summary><strong>🛡️ Security & Compliance</strong></summary>
 
-## 🏥 Synalux Health: The Clinical Web App
-
-*Access anywhere via iPad, Chromebook, or Desktop at [`synalux.ai/app`](https://synalux.ai/app).*
+| Feature | Details |
+|---------|---------|
+| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
+| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
+| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
+| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
+| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
+| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
+| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
+| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+</details>
 
 <details>
-<summary><strong>The "Intake Room"</strong> — A zero-install PWA designed for ABA therapists</summary>
+<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
 
-* **Smart Mic:** Uses the Page Visibility API + `window.onblur` to automatically pause recording if the clinician switches tabs or windows, preventing accidental ambient capture of other patients.
-* **SOAP & BIP Generation:** Speak naturally. Synalux automatically categorizes your dictation into Subjective, Objective, Assessment, and Plan fields using 4 specialized templates.
-* **Document Builder:** Edit the generated markdown, attach a patient intake template, and push it directly to BoldSign for parent/guardian E-Signatures in one click.
-* **Server-Side PDF:** Documents are rendered server-side to prevent client-side PHI memory leakage — no `html2pdf.js` artifacts.
-* **HIPAA-Hardened:** 15-minute idle timeout, no `localStorage` for PHI, explicit React state nulling on session clear, `Cache-Control: no-store` on all API responses.
+🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
 
-**Templates:**
 
-| Template | Use Case |
-|----------|----------|
-| 🧩 Therapy Session | ABA/behavioral therapy session notes |
-| 📈 Progress Note | Ongoing treatment progress tracking |
-| 📝 Initial Evaluation | First assessment and intake documentation |
-| 🏁 Discharge Summary | Treatment completion and transition planning |
+
+| Feature | Details |
+|---------|---------|
+| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
+| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
+| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
+| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
+| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
+| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+
+</details>
+
+<details>
+<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
+
+🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+
+
+
+| Feature | Details |
+|---------|---------|
+| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
+| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
+| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
+| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
+| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
+| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
 
 </details>
 
 ---
 
-## 🧑‍💻 Synalux Dev: The VS Code Extension
 
-*The ultimate memory-augmented IDE assistant.*
-
-<details>
-<summary><strong>Multi-Agent Orchestrator</strong> — Don't just chat; delegate</summary>
-
-Describe a task (e.g., *"Add Stripe checkout and write tests"*), and Synalux will spawn a `planner` agent to break it down, a `coder` agent to write the implementation, and a `tester` agent to run Vitest in your terminal until the build passes.
-
-* **Safe Mode Sandbox:** High-risk shell commands (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal confirmation dialog before execution.
-* **Dependency Audits:** Built-in tools scan your `package.json` against CVE databases automatically.
-* **Prism Integration:** Synalux reads your codebase architecture and previous architectural decisions before writing a single line of code.
-
-**17 Integrated Tools:**
-
-| Category | Tools |
-|----------|-------|
-| 🖥️ Development | `terminal`, `git_tool`, `vitest`, `node_tool`, `browser` |
-| 📝 Documentation | `soap_templates`, `boldsign`, `ocr`, `file_manager` |
-| 🎙️ Multimodal | `voice`, `tts`, `screenshot`, `image_analyze` |
-| 🔌 Integrations | `jira`, `confluence`, `slack`, `webhooks` |
-
-</details>
-
----
-
-<details>
-<summary><h2>🔐 15 RBAC Roles</h2></summary>
-
-Each role has a cryptographically signed Tool ACL and a server-injected system prompt:
-
-| Role | Tools | Target |
-|------|-------|--------|
-| 🧑‍💻 `coder` | terminal, git, vitest, node, browser | Software engineers |
-| 🏥 `doctor` | soap, voice, boldsign, file_manager | Physicians / BCBAs |
-| 🧑‍⚕️ `medical_technician` | soap, voice, file_manager | Technicians / RBTs |
-| 🏢 `office_manager` | file_manager, boldsign, slack, billing | Office Managers |
-| 👨‍💼 `practice_admin` | all clinical + admin | Practice Administrators |
-| 💰 `billing_specialist` | billing, claims, file_manager | Billing / Revenue Cycle |
-| 👥 `hr_manager` | staff, credentials, training | HR / People Ops |
-| 📋 `manager` | jira, confluence, slack, file_manager | Project Managers |
-| ✍️ `writer` | file_manager, browser, screenshot | Technical Writers |
-| 🔒 `security` | terminal, git, browser | Security Engineers |
-| 🧪 `tester` | vitest, terminal, browser | QA Engineers |
-| ⚙️ `devops` | terminal, git, webhooks | DevOps/SRE |
-| 📊 `planner` | jira, confluence, webhooks | Product Managers |
-| 🚫 `restricted` | *(none)* | Read-only observers |
-| ⚡ `platform_admin` | **all** + plan overrides + user management | Synalux super-admins |
-
-**Country/Province-Specific Role Activation:**
-- Roles are activated per country and per medical specialty module
-- Each workspace's available roles depend on its configured country and practice type
-- Example: `billing_specialist` in Canada includes HST/GST tax configuration tools
-
-</details>
-
----
-
-<details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
-
-Synalux is engineered for zero-trust environments.
-
-### Security Architecture — Multi-Tenant Request Flow
-
-```
-┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
-│   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
-│                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
-└─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
-```
-
-**Key insight:** Because JWTs carry `workspace_id` claims and Postgres RLS policies read them via `current_setting('request.jwt.claims')`, there are **no server-side session variables** and **no per-tenant connection pools**. This is what makes Synalux horizontally scalable — a critical advantage over legacy EHRs that use connection-per-session models.
-
-### Security Controls
-
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **ABA Precision Protocol Guardrails:** Deeply integrated with Prism MCP, Synalux enforces behavioral adherence rules limiting AI hallucinations and strictly isolating UI elements to guarantee HIPAA compliance and prevent duplication in CRUD operations.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
-
-### HIPAA Compliance Statement
-
-| HIPAA Requirement | Synalux Implementation |
-|---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` + `session_events` — every PHI access, session sign-off, and plan override is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature. Offline session timestamps preserve billing-accurate times via client-side capture. |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted); offline drafts auto-purged on logout |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Session drafts in localStorage are purged on logout/idle timeout via `purgeLocalData()` |
-| **Offline Safety** | Connection loss doesn't compromise data — offline queue preserves events with client timestamps, syncs on reconnect. Admin sees 🟢/🔴 indicators for audit trail. |
-
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
-
-</details>
-
----
-
----
-
-## 🚀 Getting Started
-
-### For Healthcare & Clinics (Web App)
-1. Go to [synalux.ai/app](https://synalux.ai/app).
-2. Sign in with Google (MFA required for clinical roles).
-3. Select **Therapy Session** from the template dropdown.
-4. Type or dictate your clinical notes.
-5. Click **📤 Generate SOAP Note** and review the streamed output.
-
-### For Developers (VS Code)
-1. Install the extension: `ext install synalux-ai.synalux`
-2. Press `Cmd+Shift+P` → **Synalux: Sign In with Google**
-3. Open the chat panel and type: `@coder Scaffold a new Next.js route for user profiles.`
-
-### For Clinics Wanting 100% Local
-```bash
-# 1. Install Ollama
-brew install ollama     # macOS
-
-# 2. Pull a model
-ollama pull qwen2.5-coder:14b
-
-# 3. Enable CORS for the web app
-OLLAMA_ORIGINS="https://synalux.ai" ollama serve
-
-# 4. Open synalux.ai/app → toggle backend to "Local"
-```
-
----
-
-<details>
-<summary><h2>☁️ Infrastructure & Cloud Services</h2></summary>
-
-Synalux runs on a **serverless-first architecture** using 6 cloud services. No Azure, AWS, or GCP VMs are needed.
-
-### Current Stack (All Free Tiers)
-
-| Service | Role | Current Plan | Cost | Free Tier Limit |
-|---------|------|-------------|------|-----------------|
-| **Vercel** | Hosting + Edge + CDN | Pro | $20/mo | Global CDN, auto-scaling |
-| **Supabase (US)** | PostgreSQL + Auth + RLS | Pro | $25/mo | West US (Oregon) — US/CA data |
-| **Supabase (EU)** | PostgreSQL + Auth + RLS | Pro | $0/mo (Micro included) | Central EU (Frankfurt) — GDPR data residency |
-| **Stripe** | Payments + Subscriptions | Standard | 2.9% + 30¢/txn | No monthly fee, unlimited products |
-| **Google Cloud** | Gemini AI + OAuth + Transcription | Free tier | $0/mo | 15 RPM Gemini, unlimited OAuth |
-| **OpenRouter** | Multi-model LLM routing | Free models | $0/mo | Unlimited `:free` model requests |
-| **GitHub** | Source control + CI/CD | Free | $0/mo | Unlimited private repos, 2000 CI min/mo |
-
-### Multi-Region Architecture (GDPR Compliant)
-
-Synalux routes patient data to the geographically correct database based on workspace country:
-
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                        Vercel Edge Network                              │
-│              (auto-routes to nearest PoP worldwide)                     │
-├─────────────────────────────────┬────────────────────────────────────────┤
-│         US/CA Workspaces        │         EU/UK Workspaces               │
-│                                 │                                        │
-│  ┌───────────────────────────┐  │  ┌────────────────────────────────┐    │
-│  │  Supabase — US (Oregon)   │  │  │  Supabase — EU (Frankfurt)     │    │
-│  │  pjddaprqhwqxtcpdmprk    │  │  │  rkffbtabogjxxzxmgodv          │    │
-│  │  SSL Enforced ✅           │  │  │  SSL Enforced ✅                │    │
-│  │  21 migrations synced     │  │  │  21 migrations synced          │    │
-│  └───────────────────────────┘  │  └────────────────────────────────┘    │
-└─────────────────────────────────┴────────────────────────────────────────┘
-```
-
-**Data Residency Routing (`supabase-region.ts`):**
-
-| Workspace Country | Database Region | Supabase Instance |
-|-------------------|----------------|-------------------|
-| 🇺🇸 US, 🇨🇦 CA | West US (Oregon) | `pjddaprqhwqxtcpdmprk` |
-| 🇬🇧 UK, 🇩🇪 DE, 🇫🇷 FR, 🇳🇱 NL + 27 EU countries | Central EU (Frankfurt) | `rkffbtabogjxxzxmgodv` |
-
-**Locale-Aware Clinical Dictionaries (`clinical-dictionaries.ts`):**
-
-All clinical dropdowns auto-populate based on workspace country:
-
-| Dictionary | US | CA | UK | EU |
-|-----------|----|----|----|----|---|
-| Insurance Providers | Aetna, BCBS, Medicaid... | OAP, OHIP, Sun Life... | NHS, EHCP, Bupa... | AOK, CPAM, Allianz... |
-| Diagnosis Codes | ICD-10-CM | ICD-10-CA | ICD-10 + ICD-11 preview | ICD-10 + ICD-11 preview |
-| Billing Codes | CPT (97151-97158) | Hourly service codes | Service descriptions | Service descriptions |
-| Credentials | BCBA, RBT, NPI | BCBA, ONTABA RBA | UKBA(cert), HCPC | BCBA (legacy) |
-| Issuing Authorities | BACB, State Board | BACB, ONTABA, CIHI | UK-SBA, PSA, DBS | UK-SBA, BACB |
-| States/Provinces | 50 US states + DC | 13 provinces/territories | 4 UK regions | — |
-
-### AI Models & Routing
-
-Synalux routes AI requests through a **dual-backend architecture**:
-
-**Cloud Backend (via OpenRouter + Gemini fallback)**
-| User Plan | Default Model | Max Tokens | Daily Limit |
-|-----------|---------------|-----------|-------------|
-| Free | Gemma 3 12B `:free` | 2,048 | 10K tokens |
-| Standard | Gemma 3 27B `:free` | 4,096 | 100K tokens |
-| Pro | Gemma 4 31B `:free` | 8,192 | 500K tokens |
-| Enterprise | Gemma 4 31B `:free` | 16,384 | 5M tokens |
-
-**Selectable Models (by tier)**
-| Model | Free | Standard | Pro | Enterprise |
-|-------|------|----------|-----|-----------|
-| Gemma 3 12B | ✅ | ✅ | ✅ | ✅ |
-| Gemini 2.5 Flash | — | ✅ | ✅ | ✅ |
-| Claude Sonnet 4 | — | — | ✅ | ✅ |
-| GPT-4.1 | — | — | ✅ | ✅ |
-| Gemini 2.5 Pro | — | — | ✅ | ✅ |
-| Claude Opus 4 | — | — | — | ✅ |
-| o3-pro | — | — | — | ✅ |
-
-**Local Backend (Ollama — 100% on-device, no tier gating)**
-| Model | RAM Required |
-|-------|-------------|
-| Qwen 2.5 Coder 14B | 18GB |
-| DeepSeek R1 14B | 18GB |
-| Qwen 2.5 Coder 32B | 36GB |
-| DeepSeek R1 32B | 36GB |
-
-**Google Gemini (Free Tier — Direct Fallback)**
-| Feature | Limit |
-|---------|-------|
-| Model | `gemini-2.5-flash` |
-| Rate limit | 15 requests/minute |
-| Input context | 1M tokens |
-| Voice transcription | Gemini-powered, free tier |
-
-> **Why Gemini as fallback?** When OpenRouter is down or rate-limited, the chat API
-> falls back to Google's Gemini API directly. This gives us a free, reliable safety net
-> with tool-calling support. No API key cost — Google's free tier is generous.
-
-### Scaling Thresholds
-
-| Clients | Action Required | Monthly Cost |
-|---------|----------------|-------------|
-| **1–100** | ⚠️ Upgrade Vercel to Pro (commercial use required) | **$20** |
-| **100–1,000** | Upgrade Supabase to Pro (8GB DB, daily backups) | **$45** |
-| **1,000–10,000** | Add Vercel Pro + Supabase Pro + CDN for videos | **$50–100** |
-| **10,000+** | Vercel Pro + Supabase Team + custom Stripe rate | **$650+** |
-| **HIPAA Required** | Vercel Enterprise + Supabase Team (BAA) | **$1,100+** |
-
-### Enterprise Tier Pricing
-
-| Service | Enterprise Plan | Price | What You Get |
-|---------|----------------|-------|-------------|
-| **Vercel** | Enterprise | ~$500+/mo (custom) | BAA, SSO/SAML, SLA, dedicated support, WAF |
-| **Supabase** | Team | $599/mo | BAA, SOC2, HIPAA, 100GB DB, priority support |
-| **Supabase** | Enterprise | Custom | HIPAA+BAA, dedicated infra, custom SLA |
-| **Stripe** | Custom | Negotiated | 2.5% + 25¢ at $50K+/mo volume |
-| **OpenRouter** | Pay-per-token | ~$0.001–0.03/1K tokens | Non-free models (Claude Opus, GPT-4.1, o3) |
-| **Google Cloud** | Pay-as-you-go | $0 (free tier sufficient) | Upgrade only if exceeding 15 RPM |
-
-### Why Not Azure or AWS?
-
-Synalux deliberately avoids Azure, AWS, and traditional IaaS:
-
-| Concern | How Synalux Handles It | Why Not Azure/AWS |
-|---------|----------------------|-------------------|
-| **Hosting** | Vercel (zero-config Next.js, global CDN, auto-scaling) | Azure App Service requires manual scaling, SSL config, CI/CD setup |
-| **Database** | Supabase (managed Postgres + built-in RLS + Auth + Realtime) | Azure SQL/RDS requires manual RLS policies, separate auth service |
-| **AI/LLM** | OpenRouter + Gemini (multi-model routing, free tiers) | Azure OpenAI requires $200+/mo commitment, limited model selection |
-| **Auth** | NextAuth + Google OAuth (zero cost, built-in) | Azure AD B2C is $0.00325/auth, complex setup |
-| **Payments** | Stripe (industry standard, PCI-compliant) | No Azure/AWS equivalent |
-| **CI/CD** | GitHub Actions (free for private repos) | Azure DevOps adds complexity |
-| **Total ops burden** | **Zero servers to manage** | Azure/AWS = VMs, VPCs, security groups, patching |
-
-> **Bottom line:** Azure/AWS would cost **$200–500+/mo** for equivalent infrastructure with
-> significantly more operational complexity. Our serverless stack runs at **$0/mo** on free
-> tiers and scales to **$45/mo** for 1,000 clients — with zero server management.
-
-### Current Database Stats (Live)
-
-| Metric | Value |
-|--------|-------|
-| Database size | 17 MB / 500 MB (3%) |
-| Tables | ~30 |
-| Patients | 27 |
-| Appointments | 61 |
-| Documents | 78 |
-| Cache hit rate | 99–100% |
-| WAL size | 80 MB |
-
-</details>
-
----
-
-<details>
-<summary><h2>📁 Project Structure</h2></summary>
-
-```
-synalux-private/
-├── portal/                   # Next.js web portal + clinical web app
-│   ├── src/app/app/          # 🏥 Synalux Health (Web App)
-│   │   ├── page.tsx          # SOAP Notes workspace
-│   │   ├── chat/page.tsx     # AI Chat
-│   │   ├── team/page.tsx     # Team Chat (Pro+)
-│   │   ├── billing/page.tsx  # Clinical Billing (multi-currency)
-│   │   └── layout.tsx        # App shell + sidebar + offline monitor
-│   ├── src/app/admin/        # 🛡️ Admin Dashboard
-│   │   ├── subscriptions/    # Subscription management (multi-currency)
-│   │   └── users/            # User management + plan overrides
-│   ├── src/app/patient-portal/  # 🏥 Patient Portal
-│   │   └── page.tsx          # Dashboard, Documents, Appointments, Billing, Messages
-│   ├── src/app/api/v1/       # REST APIs
-│   │   ├── chat/route.ts     # Streaming chat (SSE)
-│   │   ├── soap/route.ts     # SOAP note generation
-│   │   ├── pdf/route.ts      # Server-side PDF export
-│   │   ├── messages/         # Team Chat API
-│   │   ├── roles/            # RBAC management
-│   │   ├── billing/          # Stripe integration + multi-currency checkout
-│   │   ├── sessions/         # Offline-first session sign-off API
-│   │   ├── admin/            # Platform admin APIs (plan overrides)
-│   │   └── webhooks/stripe/  # Stripe webhook handler (payment lifecycle)
-│   ├── src/lib/              # Auth, DB, i18n, SOAP templates
-│   │   ├── stripe.ts         # Stripe Connect + Multi-Currency Checkout + Portal
-│   │   ├── pricing-engine.ts # Enterprise pricing: per-country, volume, annual
-│   │   ├── platform-admin.ts # Platform super-admin + plan overrides
-│   │   ├── session-offline.ts# Offline-first session management + draft persistence
-│   │   ├── supabase-clients.ts # Service-role + RLS-enforced Supabase clients
-│   │   ├── supabase-region.ts # Multi-region router (US/EU) based on workspace country
-│   │   ├── clinical-dictionaries.ts # Locale-aware clinical ref data (US/CA/GB/EU)
-│   │   ├── region-config.ts  # Country/province configuration + tax rules
-│   │   ├── db.ts             # Supabase client + user management
-│   │   └── auth-options.ts   # NextAuth + Google OAuth
-│   ├── src/__tests__/        # Test suites
-│   │   ├── billing.test.ts   # Pricing engine + payment flow (42 tests)
-│   │   └── session-offline.test.ts # Offline sessions + compliance (32 tests)
-│   └── supabase/             # Database migrations + seed data
-│       ├── seed_poc_part1.sql          # Core users/workspaces
-│       ├── seed_poc_part2b_*.sql       # HR tables + clinical catalogs
-│       ├── seed_poc_part2c.sql         # Cross-practice links + payers
-│       ├── seed_poc_part2d.sql         # Appointments (61 records)
-│       ├── seed_poc_part2e.sql         # Treatment plans (16 records)
-│       ├── seed_poc_part2f.sql         # HR module (staff/credentials/reviews)
-│       ├── seed_poc_part2g.sql         # Billing entries, SOAP notes, documents
-│       ├── seed_poc_part2h.sql         # Portal data (messages, consents, forms)
-│       ├── seed_poc_part2i_*.sql       # Per-practice billing config + Stripe Connect
-│       ├── seed_poc_part2q_module_tabs.sql  # 13 clinical modules (referrals, tasks, etc.)
-│       └── migrations/                 # Schema migrations
-│           ├── 20260417_payment_status_plan_override.sql  # Payment tracking + overrides
-│           └── 20260417_session_events.sql                # Offline session events
-├── synalux-vscode/           # 🧑‍💻 VS Code extension
-│   ├── src/chat-panel.ts     # Agentic chat + tool execution
-│   ├── src/mcp-server.ts     # Local MCP tool dispatcher
-│   └── tools/                # Python tool implementations
-├── README.md                 # This file
-├── LICENSE                   # BSL-1.1
-└── REVIEW_PROMPT.md          # Adversarial security review
-```
-
-</details>
-
----
-
-<details>
-<summary><h2>📊 Database Census</h2></summary>
-
-The production database contains **1,400+ records** across 71 tables:
-
-| Module | Table | Records |
-|--------|-------|---------|
-| **Infrastructure** | Workspaces | 6 |
-| | Users | 19 |
-| | Workspace Members | 21 |
-| | Medical Fields | 37 |
-| | Workspace Roles | 54 |
-| | Role Field Links | 104 |
-| **Auth & Security** | JWT Auth Log | 261 |
-| | API Tokens | 14 |
-| | Processed Webhook IDs | 11 |
-| **Clinical Catalogs** | Diagnosis Codes (ICD-10) | 63 |
-| | Billing Codes (CPT/CDT) | 61 |
-| | Insurance Payers | 16 |
-| | Medications Catalog | 12 |
-| **Patient Care** | Patients | 27 |
-| | Appointments | 61 |
-| | Treatment Plans | 16 |
-| | Session Notes | 18 |
-| | Documents | 78 |
-| | Patient Vitals | 10 |
-| | Patient Allergies | 10 |
-| | Patient Medications | 10 |
-| | Immunizations | 10 |
-| | Clinical Tasks | 10 |
-| **Billing & Revenue** | Billing Entries | 34 |
-| | Fee Schedules | 26 |
-| | Patient Payments | 15 |
-| | Payment Plans | 3 |
-| | Insurance Claims | 7 |
-| | Workspace Billing Configs | 6 |
-| | Patient Insurance | 15 |
-| **HR Module** | Staff Profiles | 16 |
-| | Staff Credentials | 14 |
-| | Staff Time Off | 10 |
-| | Staff Training | 13 |
-| | Performance Reviews | 6 |
-| **Patient Portal** | Portal Messages | 18 |
-| | Patient Consents | 21 |
-| | Patient Forms | 14 |
-| | Appointment Requests | 10 |
-| | Portal Access Codes | 9 |
-| **Lab Module** | Lab Orders | 9 |
-| | Lab Results | 29 |
-| **Referral System** | Referrals | 5 |
-| | Referral Chat Threads | 3 |
-| | Referral Chat Messages | 15 |
-| | Patient Recalls | 11 |
-
-</details>
-
----
-
-<details>
-<summary><strong>🌐 Supported Languages</strong></summary>
-
-The portal, documentation, and AI interface are available in 12 languages:
-
-| Language | Code | Status |
-|----------|------|--------|
-| 🇺🇸 English | `en` | ✅ Full |
-| 🇪🇸 Español | `es` | ✅ Full |
-| 🇫🇷 Français | `fr` | ✅ Full |
-| 🇵🇹 Português | `pt` | ✅ Full |
-| 🇷🇴 Română | `ro` | ✅ Full |
-| 🇺🇦 Українська | `uk` | ✅ Full |
-| 🇷🇺 Русский | `ru` | ✅ Full |
-| 🇩🇪 Deutsch | `de` | ✅ Full |
-| 🇯🇵 日本語 | `ja` | ✅ Full |
-| 🇰🇷 한국어 | `ko` | ✅ Full |
-| 🇨🇳 中文 | `zh` | ✅ Full |
-| 🇸🇦 العربية | `ar` | ✅ Full (RTL) |
-
-</details>
-
----
-
-<details>
-<summary><strong>🔧 Under the Hood (Technical Details for IT & Developers)</strong></summary>
-
-* **Stateless RLS:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security — no session variables, no connection pools per tenant.
-* **Persistent Memory:** Built on [Prism MCP](https://github.com/dcostenco/prism-mcp), the assistant remembers context across sessions and reloads, isolated by workspace.
-* **Fine-Tuned Local LLM:** An embedded offline Copilot acts as the routing engine, trained to natively execute MCP tools without ever exposing patient context to cloud providers.
-  * *Latest MLX Benchmark Results (M4 Max):* 100% JSON schema validation accuracy against MCP specs with 33.3% initial tool logic precision, firing natively at **45.1 Tokens/second**.
-* **Prompt-Level RBAC:** Tool ACLs are cryptographically signed. If a technician attempts to run a command they're not authorized for, the tool is stripped securely.
-* **Payment Webhook Lifecycle:** `invoice.payment_failed` → flag as `past_due` → auto-downgrade after 3 retries → webhook guards protect platform-admin overrides from ever being reverted.
-* **Offline Sync Engine:** Client-side `SessionEvent` objects with `connection_status` field, queued in localStorage, synced idempotently via UUID on reconnect.
-
-</details>
-
----
-
-<p align="center">
-  <br>
-  <b>© 2024–2026 Dmitri Costenco.</b><br>
-  Licensed under the <a href="LICENSE">Business Source License 1.1 (BSL-1.1)</a>.<br>
-  <a href="https://synalux.ai/docs/disclaimer">Legal & Medical Disclaimer</a>
-</p>
