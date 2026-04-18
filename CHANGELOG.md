@@ -2,11 +2,11 @@
 
 ## [Unreleased] — Phase 1-4 (Model Training)
 
-### Planned
-- SFT fine-tuning on Prism reasoning traces
-- GRPO alignment for tool-use accuracy
-- Benchmark evaluation (retrieval, tool call, reasoning, efficiency)
-- GGUF export + Ollama modelfile
+### Completed
+- **SFT fine-tuning** on Prism reasoning traces to teach the model our exact tool implementations.
+- **GRPO alignment** for tool-use accuracy with deterministic schema penalty/reward.
+- **Benchmark evaluation** (retrieval, tool call, reasoning, efficiency) — verified correct behavior.
+- **GGUF export + Ollama** modelfile — successfully fused LoRA adapter into the base weights.
 ---
 
 ## [0.13.0] - 2026-04-18
