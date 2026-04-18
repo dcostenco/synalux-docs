@@ -1,15 +1,16 @@
 # Synalux — Changelog
 
-## [Unreleased] — Phase 1-4 (Model Training)
+## [0.13.1] - 2026-04-18 — Dynamic Compute & Semantic Tool RAG
 
 ### Completed
-- **SFT fine-tuning** on Prism reasoning traces to teach the model our exact tool implementations.
-- **GRPO alignment** for tool-use accuracy with deterministic schema penalty/reward.
-- **Benchmark evaluation** (retrieval, tool call, reasoning, efficiency) — verified correct behavior.
-- **GGUF export + Ollama** modelfile — successfully fused LoRA adapter into the base weights.
----
+- **Dynamic Hardware Routing** — Auto-scales between 7B, 14B, and 32B based natively on host memory availability (`hw.memsize`), solving Apple Silicon OOM errors seamlessly.
+- **Semantic Nomic Pruning** — Replaces massive 17-tool static prompts with 768-dim `nomic-embed-text` cosine similarity evaluations, feeding only the top-3 applicable MCP schemas into operations dynamically to maximize execution depth.
+- **SFT fine-tuning** — Processed Prism reasoning traces via `mlx_lm` to teach the model our exact tool implementations under newly hardened hyper-parameters (`--batch-size 1`).
+- **GRPO alignment** — Forced CoT tool-use accuracy within `<think>` wrapper boundaries through rigorous deterministic schema penalty (`-0.2` points) and logic rewards (`+0.5` points).
+- **Benchmark evaluation** — Upgraded and run mapping verification routines targeting tool call, reasoning depth, and efficiency.
+- **GGUF export + Ollama** modelfile — fused LoRA adapters pipeline established and validated.
 
-## [0.13.0] - 2026-04-18
+---
 
 ### 📱 Mobile UI Hardening & Global AI Assistant (Portal v0.13.0)
 
