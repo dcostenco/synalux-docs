@@ -1,5 +1,12 @@
 # Synalux — Changelog
 
+## [0.14.0] - 2026-04-18 — Cross-Workspace Identity & Signaling
+
+### Completed
+- **Peer-to-Peer Enterprise Video** — Deployed the `SynaluxVideoPanel` binding short-lived JWT handshake verifications routing authenticated clients natively through their OS OS-level default browsers, bypassing VS Code limitations via ephemeral `/api/v1/calls/generate-token`.
+- **Direct Workspace Messaging** — Extended Team Chat architectures across tenant boundaries utilizing `dm-ring:[targetUserId]` postgres channels dynamically validating cross-tenant contacts over secure WebSocket events.
+- **Deep Code Review Audit** — Uncovered and mitigated global `synalux.portalUrl` configuration injection paths, hardening VS Code API traffic boundaries. Built `Vitest` environments bypassing headless CI chromium bottlenecks in UI rendering.
+
 ## [0.13.1] - 2026-04-18 — Dynamic Compute & Semantic Tool RAG
 
 ### Completed

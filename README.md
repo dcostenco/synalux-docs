@@ -623,7 +623,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
 | **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
 | **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
+| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
+| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
 | **File Attachments** | Share documents, images, and clinical assets in chat |
@@ -643,8 +644,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 </details>
 
 ### 🔐 Enterprise Administration
-<details>
-<summary><strong>🛡️ Security & Compliance</strong></summary>
+    <details>
+    <summary><h3>🛡️ Security & Compliance</h3></summary>
 
 | Feature | Details |
 |---------|---------|
@@ -676,23 +677,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 </details>
 
-<details>
-<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
 
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
-
-</details>
 
 ---
 
