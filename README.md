@@ -56,6 +56,10 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary><h3>🧩 Applied Behavior Analysis (ABA)</h3></summary>
 
+🔗 **[Read Detailed Applied Behavior Analysis (ABA) Documentation](docs_source_en/applied_behavior_analysis_aba.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Clinical Templates** | FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary |
@@ -76,6 +80,10 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary><h3>👶 Pediatrics</h3></summary>
 
+🔗 **[Read Detailed Pediatrics Documentation](docs_source_en/pediatrics.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Clinical Templates** | Well-child exams, sick visits, immunization tracking, developmental screening |
@@ -89,6 +97,10 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 <details>
 <summary><h3>🦷 Dental & Orthodontics</h3></summary>
+
+🔗 **[Read Detailed Dental & Orthodontics Documentation](docs_source_en/dental_orthodontics.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -106,6 +118,10 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary><h3>🧠 Mental Health & Psychiatry</h3></summary>
 
+🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Clinical Templates** | Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans |
@@ -122,6 +138,10 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary><h3>🏃 Physical Therapy & Sports Medicine</h3></summary>
 
+🔗 **[Read Detailed Physical Therapy & Sports Medicine Documentation](docs_source_en/physical_therapy_sports_medicine.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Clinical Templates** | PT evaluation, ROM/strength assessment, functional outcome measures |
@@ -136,6 +156,10 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 <details>
 <summary><h3>🔬 Dermatology</h3></summary>
+
+🔗 **[Read Detailed Dermatology Documentation](docs_source_en/dermatology.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -158,6 +182,10 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 
 <details>
 <summary><h3>💳 Billing & Payments Module</h3></summary>
+
+🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+
+
 
 The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
 
@@ -235,6 +263,10 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>🏥 Patient Portal</h3></summary>
 
+🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+
+
+
 A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
 
 | Feature | Details |
@@ -253,6 +285,10 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary><h3>👥 HR & Staff Management Module</h3></summary>
 
+🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
@@ -266,6 +302,10 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 <details>
 <summary><h3>📋 Clinical Notes & Documentation</h3></summary>
+
+🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -282,6 +322,10 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary><h3>📅 Scheduling & Appointments</h3></summary>
 
+🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
@@ -295,6 +339,10 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 <details>
 <summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+
+🔗 **[Read Detailed Offline-First Clinical Sessions Documentation](docs_source_en/offline_first_clinical_sessions.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -326,6 +374,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>🧪 Lab Orders & Results Module</h3></summary>
 
+🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
@@ -344,6 +396,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>💊 Medications & Prescriptions Module</h3></summary>
 
+🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
@@ -359,6 +415,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>📊 Vitals & Measurements Module</h3></summary>
 
+🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
@@ -372,6 +432,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 <details>
 <summary><h3>⚠️ Allergies & Alerts Module</h3></summary>
+
+🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -387,6 +451,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>💉 Immunizations Module</h3></summary>
 
+🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
@@ -401,6 +469,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
 
+🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
@@ -414,6 +486,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
 
+🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
@@ -425,6 +501,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 </details><details>
 <summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
+
+🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -441,6 +521,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>📋 Clinical Tasks Module</h3></summary>
 
+🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
@@ -454,6 +538,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 <details>
 <summary><h3>🏥 Patient Insurance Module</h3></summary>
+
+🔗 **[Read Detailed Patient Insurance Module Documentation](docs_source_en/patient_insurance_module.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -469,6 +557,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>🔔 Recalls & Reminders Module</h3></summary>
 
+🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
@@ -481,6 +573,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 <details>
 <summary><h3>📦 Inventory Management Module</h3></summary>
+
+🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -497,6 +593,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>🧾 Superbills Module</h3></summary>
 
+🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
@@ -510,6 +610,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 <details>
 <summary><h3>📚 Patient Education Module</h3></summary>
+
+🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -525,6 +629,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>📊 Quality Measures Module (HEDIS/MIPS)</h3></summary>
 
+🔗 **[Read Detailed Quality Measures Module (HEDIS/MIPS) Documentation](docs_source_en/quality_measures_module_hedismips.md)**
+
+
+
 | Feature | Details |
 |---------|---------|
 | **Measure Types** | HEDIS, MIPS, CMS Star Ratings, Joint Commission, custom |
@@ -538,6 +646,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 <details>
 <summary><h3>🔐 Security & Compliance</h3></summary>
+
+🔗 **[Read Detailed Security & Compliance Documentation](docs_source_en/security_compliance.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
@@ -555,6 +667,10 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 <details>
 <summary><h3>💬 Team Chat & Communication</h3></summary>
+
+🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+
+
 
 | Feature | Details |
 |---------|---------|
