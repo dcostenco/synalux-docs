@@ -1,8 +1,8 @@
 # ✦ Synalux
 
-**Your AI-Powered Practice Management Platform**
+**Your Intelligent Practice Management Platform**
 
-> Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and AI-assisted documentation. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 12 languages. HIPAA-compliant.
+> Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and automated clinical charting. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 12 languages. HIPAA-compliant.
 
 <p align="center">
   <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
@@ -19,35 +19,20 @@
 
 ## 💡 Why Synalux?
 
-### For Clinicians
-* **🎙️ Talk, don't type.** Dictate your session notes, and Synalux turns them into structured SOAP notes instantly — all processed on your device, never sent to the cloud.
-* **📴 Works offline.** Start and end sessions even without internet. Your notes are saved locally and sync automatically when you're back online. Your sign-off time is always accurate for billing — even if you're in a dead zone.
-* **🛡️ AI you can trust.** Every AI suggestion shows you a before/after comparison. Nothing changes in the patient record until you explicitly approve it.
-* **📝 Less paperwork.** Generate FBAs, BIPs, progress reports, and discharge summaries from your session data — then send for e-signature in one click.
+### 🎙️ Talk. Don't Type.
+Synalux listens to your session and instantly writes a structured clinical note. Because it processes directly on your iPad or laptop, your patient's voice never goes to the cloud. It’s instant, private, and saves you 2 hours of paperwork every day.
 
-### For Practice Owners & Administrators
-* **🏥 One platform for any specialty.** The entire system adapts to your practice type — ABA, pediatrics, mental health, dental, PT, or dermatology. Same platform, different clinical language.
-* **🌍 International-ready billing.** Accept payments in USD, CAD, GBP, EUR, AUD, and NZD. Volume discounts kick in automatically at 100, 500, and 1,000+ clients. Annual billing saves 20%.
-* **💳 Never lose revenue.** Failed payments are automatically retried. You see warning banners before anyone loses access. Platform admins can override any account to unlimited trial.
-* **👥 Control who sees what.** 15 roles — from doctors to billing specialists to HR — each with specific permissions. Assign roles per country and per specialty.
+### 📴 Unbreakable Offline Mode
+Working in a clinic with spotty Wi-Fi? Keep charting. Synalux saves everything to your device instantly. When you reconnect, it syncs automatically. Your billing timestamps are always accurate to the minute, even in a dead zone.
 
-### For IT & Compliance
-* **📴 Offline-safe sessions.** Timestamps are captured on the clinician's device. When they sign off a session at 3:45 PM in a dead zone, the billing time is 3:45 PM — not when the server got it at 4:00 PM. Admins see 🟢 Online / 🔴 Offline status for every session event.
-* **🔐 HIPAA built-in.** 15-minute idle timeout, no patient data in browser storage, encrypted at rest, audit logs for every action. Session drafts are automatically purged on logout.
-* **📊 201 tests passing.** Pricing engine, payment flow, offline sessions, billing, database tools, and compliance scenarios — all covered by automated tests.
+### 🏢 One Platform. Total Control.
+Whether you manage 5 therapists or 500 across three countries, Synalux isolates patient records perfectly. Technicians only see what they need to see. Billing sees the numbers, doctors see the charts. Setup takes seconds.
 
-<details>
-<summary><strong>🔧 Under the Hood (Technical Details)</strong></summary>
-
-* **Stateless RLS:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security — no session variables, no connection pools per tenant.
-* **Persistent Memory:** Built on [Prism MCP](https://github.com/dcostenco/prism-mcp), the AI remembers context across sessions and reloads, isolated by workspace.
-* **Fine-Tuned Local LLM:** An embedded offline Copilot powered by `prism-coder:7b` acts as the routing engine, trained via SFT and GRPO to natively execute MCP tools without ever exposing patient context to cloud providers.
-  * *Latest MLX Benchmark Results (M4 Max):* 100% JSON schema validation accuracy against MCP specs with 33.3% initial tool logic precision, firing natively at **45.1 Tokens/second**.
-* **Prompt-Level RBAC:** Tool ACLs are cryptographically signed. If a technician asks the AI to run a command they're not authorized for, the tool is stripped before the LLM sees it.
-* **Payment Webhook Lifecycle:** `invoice.payment_failed` → flag as `past_due` → auto-downgrade after 3 retries → webhook guards protect platform-admin overrides from ever being reverted.
-* **Offline Sync Engine:** Client-side `SessionEvent` objects with `connection_status` field, queued in localStorage, synced idempotently via UUID on reconnect.
-
-</details>
+### 🛡️ Trust, Compliance & Security
+* **Zero-Cloud Privacy (Your Device, Your Data):** Unlike other platforms that send patient recordings to external servers, our clinical assistant runs 100% locally on your machine. We couldn't read your patient notes even if we wanted to.
+* **Military-Grade Encryption:** Every message, file, and patient record is scrambled using the same encryption standards required by the US Government and major banks. If a device is lost, the data remains unreadable.
+* **Ironclad Access Control:** 15 distinct staff roles ensure that a receptionist cannot read a psychotherapy note, and a medical technician cannot alter billing codes. Everyone operates in their own secure lane.
+* **Automated HIPAA Compliance:** Synalux enforces compliance for you: automatic 15-minute screen lockouts, secure data purging when a tab is closed, and unalterable audit trails showing exactly who opened which file and when.
 
 ---
 
@@ -71,9 +56,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **E-Signatures** | BoldSign integration for parent/guardian consent |
 | **Data Tracking** | Behavioral targets, skill acquisition, frequency/duration data |
 | **Insurance** | Autism/ABA-specific payer rules, prior auth tracking |
-| **🧠 AI Mastery Predictions** | Trend-based prediction of target mastery timelines per skill |
-| **💡 AI Goal Suggestions** | Auto-recommend next targets based on mastered skills |
-| **📄 AI Progress Reports** | One-click generation of insurance-ready progress reports |
+| **🧠 Data-Driven Mastery Predictions** | Trend-based prediction of target mastery timelines per skill |
+| **💡 Smart Treatment Recommendations** | Auto-recommend next targets based on mastered skills |
+| **📄 Automated Progress Reports** | One-click generation of insurance-ready progress reports |
 | **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring |
 | **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars |
 
@@ -190,6 +175,17 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Vaccination Schedules** | Core/non-core vaccine protocols, automated wellness reminders |
 | **Diagnostic Imaging** | DICOM-compatible radiograph & ultrasound review with annotations |
 | **Billing** | Wellness plans, procedure bundles, pet insurance claim submission |
+
+</details>
+
+<details>
+<summary><strong>📖 Feature Glossary (What Does It Do?)</strong></summary>
+
+* **Ambient Dictation:** A hands-free recording tool that listens to your patient session and automatically drafts a professional note (SOAP, FBA, etc.) while you focus on the patient.
+* **Idempotent Sync (Offline Safety):** A safety net that ensures if you click "Save" while your internet drops, your note is saved locally and quietly uploads the second your internet returns. You never lose a sentence.
+* **E-Signature Integration:** The ability to generate a consent form or treatment plan and send it directly to a parent/patient's phone to sign with their finger.
+* **Smart Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, automatically prompting your front desk to contact them.
+* **Superbills:** An all-in-one financial receipt generated automatically from your clinical notes, containing all the medical codes (ICD-10/CPT) patients need to get reimbursed by insurance.
 
 </details>
 
@@ -703,6 +699,18 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 </details>
 
+<details>
+<summary><h3>📞 Collaboration Practice Suite</h3></summary>
+
+| Feature | Details |
+|---------|---------|
+| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
+| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
+| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
+| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+
+</details>
+
 ---
 
 ## 🏥 Synalux Health: The Clinical Web App
@@ -1174,6 +1182,21 @@ The portal, documentation, and AI interface are available in 12 languages:
 | 🇰🇷 한국어 | `ko` | ✅ Full |
 | 🇨🇳 中文 | `zh` | ✅ Full |
 | 🇸🇦 العربية | `ar` | ✅ Full (RTL) |
+
+</details>
+
+---
+
+<details>
+<summary><strong>🔧 Under the Hood (Technical Details for IT & Developers)</strong></summary>
+
+* **Stateless RLS:** Multi-tenant data isolation uses signed JWTs mapped to Postgres Row-Level Security — no session variables, no connection pools per tenant.
+* **Persistent Memory:** Built on [Prism MCP](https://github.com/dcostenco/prism-mcp), the assistant remembers context across sessions and reloads, isolated by workspace.
+* **Fine-Tuned Local LLM:** An embedded offline Copilot acts as the routing engine, trained to natively execute MCP tools without ever exposing patient context to cloud providers.
+  * *Latest MLX Benchmark Results (M4 Max):* 100% JSON schema validation accuracy against MCP specs with 33.3% initial tool logic precision, firing natively at **45.1 Tokens/second**.
+* **Prompt-Level RBAC:** Tool ACLs are cryptographically signed. If a technician attempts to run a command they're not authorized for, the tool is stripped securely.
+* **Payment Webhook Lifecycle:** `invoice.payment_failed` → flag as `past_due` → auto-downgrade after 3 retries → webhook guards protect platform-admin overrides from ever being reverted.
+* **Offline Sync Engine:** Client-side `SessionEvent` objects with `connection_status` field, queued in localStorage, synced idempotently via UUID on reconnect.
 
 </details>
 
