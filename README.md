@@ -399,6 +399,31 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 </details>
 
 <details>
+<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+
+| Feature | Details |
+|---------|---------|
+| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
+| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
+| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
+| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
+| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
+
+</details>
+
+<details>
+<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
+
+| Feature | Details |
+|---------|---------|
+| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
+| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
+| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
+| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
+| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
+| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+
+</details><details>
 <summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
 
 | Feature | Details |
