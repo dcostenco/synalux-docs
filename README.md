@@ -1124,9 +1124,11 @@ Payment Failed → past_due (warning banner, keep access)
 </details>
 
 <details>
-<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+<summary><h3>⏱️ Timesheets & Payroll Module (Implemented ✅)</h3></summary>
 
 🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+
+*Note: The core API route (`/api/v1/payroll`) and database migrations for the Payroll module have been implemented with mocked calculation logic.*
 
 
 
