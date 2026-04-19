@@ -1091,7 +1091,9 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 - **Session Sign-Off:** Provider MUST sign off at session end — timestamp is the billing-accurate end time
 - **Admin Audit:** Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps
 - **Connection Monitor:** Sidebar shows real-time 🟢/🔴 status with pending sync count badge
-- **HIPAA Cleanup:** All local data purged on logout and idle timeout
+- **HIPAA Cleanup & ESAQ:** Emergency Session Auto-Quarantine securely vaults offline PHI via WebCrypto RSA keys on idle timeout
+- **Audio-Aware Idling:** Active microphone (e.g. WASM Whisper) intercepts idle timeouts to prevent false-positive logouts during long patient conversations
+- **Decoupled Calendar:** No forced logouts or forced syncs based on the scheduled calendar end time, allowing seamless clinical overtime
 - **Idempotent Sync:** Duplicate events prevented via client-generated UUIDs
 - **Time Drift Detection:** Server logs drift between client and server timestamps for audit
 - **Session Lifecycle:** `session_start` → `session_pause` → `session_resume` → `session_end`
@@ -1107,7 +1109,9 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 | **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
 | **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
 | **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
+| **HIPAA Cleanup & ESAQ** | Emergency Session Auto-Quarantine securely vaults offline PHI via WebCrypto RSA keys on idle timeout |
+| **Audio-Aware Idling** | Active microphone (e.g. WASM Whisper) intercepts idle timeouts to prevent false-positive logouts during long patient conversations |
+| **Decoupled Calendar** | No forced logouts or forced syncs based on the scheduled calendar end time, allowing seamless clinical overtime |
 | **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
 | **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
 | **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
