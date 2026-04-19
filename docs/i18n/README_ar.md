@@ -913,7 +913,7 @@ The production database contains **1,400+ records** across 71 tables:
 <details>
 <summary><strong>🌐 Supported Languages</strong></summary>
 
-The portal, documentation, and AI interface are available in 12 languages:
+The portal, documentation, and AI interface are available in 16 languages:
 
 | Language | Code | Status |
 |----------|------|--------|

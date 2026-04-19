@@ -316,9 +316,9 @@
 
 #### Voice Commands & Settings Panel
 - **Start/Stop Listening** — `synalux.startListening` / `synalux.stopListening` (Cmd+Shift+L)
-- **Natural language triggers** — type or say "start listening" / "stop listening" in chat (12 languages)
+- **Natural language triggers** — type or say "start listening" / "stop listening" in chat (16 languages)
 - **⚙️ Settings strip** — in-panel toggleable bar with:
-  - Language selector (12 languages with flag icons)
+  - Language selector (16 languages with flag icons)
   - Backend selector (Local / Cloud / Gemini)
   - All selections persist to VS Code user settings across sessions
 - **New setting**: `synalux.backend` (local / cloud / gemini)
@@ -453,7 +453,7 @@
 - **Stripe webhook** — new endpoint for integrations billing events
 - **VSIX** — built extension v0.6.0 (427 KB)
 
-### Pricing & i18n (12 languages)
+### Pricing & i18n (16 languages)
 - Advanced tier: +4 features (BoldSign e-signature, Zoom telehealth, Google/MS Workspace, Stripe Connect)
 - Enterprise tier: +3 features (DocuSign, Slack, BAA, non-repudiation audit trail)
 - Updated all 12 language translations for pricing features (f1–f11)
@@ -492,7 +492,7 @@
 ### Added
 - **RBAC System (HIPAA-Compliant)**
   - Multi-tenant workspace architecture (`workspaces` table)
-  - 9 default roles with i18n display names (12 languages): restricted, clinician, coder, reviewer, tester, documenter, planner, security, office_manager
+  - 9 default roles with i18n display names (16 languages): restricted, clinician, coder, reviewer, tester, documenter, planner, security, office_manager
   - OAuth-identity-bound admin rights — no shared passwords (HIPAA 164.312(a)(2)(i))
   - Server-side role enforcement — client never asserts its own role (confused deputy prevention)
   - Fail-closed offline behavior — sensitive tools rejected when portal unreachable
