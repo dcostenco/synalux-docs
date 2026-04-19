@@ -827,20 +827,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Templates** | FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary |
-| **Billing Codes** | 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group) |
-| **RBAC Roles** | BCBA (Full clinical), RBT (Session notes only), Office Manager |
-| **Voice Dictation** | Ambient session recording → auto-structured SOAP notes |
-| **E-Signatures** | BoldSign integration for parent/guardian consent |
-| **Data Tracking** | Behavioral targets, skill acquisition, frequency/duration data |
-| **Insurance** | Autism/ABA-specific payer rules, prior auth tracking |
-| **🧠 Data-Driven Mastery Predictions** | Trend-based prediction of target mastery timelines per skill |
-| **💡 Smart Treatment Recommendations** | Auto-recommend next targets based on mastered skills |
-| **📄 Automated Progress Reports** | One-click generation of insurance-ready progress reports |
-| **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring |
-| **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars |
+| **Clinical Templates** | FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Billing Codes** | 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **RBAC Roles** | BCBA (Full clinical), RBT (Session notes only), Office Manager. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **Voice Dictation** | Ambient session recording → auto-structured SOAP notes. Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit. |
+| **E-Signatures** | BoldSign integration for parent/guardian consent. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **Data Tracking** | Behavioral targets, skill acquisition, frequency/duration data. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Insurance** | Autism/ABA-specific payer rules, prior auth tracking. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **🧠 Data-Driven Mastery Predictions** | **How It Works:** Leverages a deterministic clinical velocity multiplier (`15%` of current score) to project mastery timelines. Extracts progress vs. target (e.g., 50% vs 80%) and calculates `Math.ceil(remaining / Math.max(1, current * 0.15))` to display badges like "~4 sessions" or "Near mastery". |
+| **💡 Smart Treatment Recommendations** | Analyzes all `status === 'mastered'` targets in the active Program Tree and queries the built-in curriculum database to automatically suggest the next logical clinical progression (e.g., advancing from "Echoics" to "Manding"). State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **📄 Automated Progress Reports** | Aggregates mastery predictions, phase-change lines, goal suggestions, and session frequency data into a single one-click export formatted specifically for insurance prior authorization renewals. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring. Personnel data leverages encryption-at-rest in Supabase, accessible only via Next.js API routes to administrators with specific JWT claims. |
+| **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 
 
 #### Recommended Workflow by Role
@@ -863,14 +863,14 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Templates** | Well-child exams, sick visits, immunization tracking, developmental screening |
-| **Billing Codes** | 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization) |
-| **Patient Portal** | Parent/guardian access, growth charts, immunization records, appointment booking |
-| **Asthma Management** | Action plans, peak flow tracking, rescue inhaler logs |
-| **ADHD Workflow** | Vanderbilt scoring, medication management, school accommodation letters |
-| **Insurance** | BCBS, UHC, Medicaid — auto-eligibility verification |
+| **Clinical Templates** | Well-child exams, sick visits, immunization tracking, developmental screening. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Billing Codes** | 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Patient Portal** | Parent/guardian access, growth charts, immunization records, appointment booking. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Asthma Management** | Action plans, peak flow tracking, rescue inhaler logs. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **ADHD Workflow** | Vanderbilt scoring, medication management, school accommodation letters. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Insurance** | BCBS, UHC, Medicaid — auto-eligibility verification. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 
 
 #### Recommended Workflow by Role
@@ -895,16 +895,16 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Templates** | Comprehensive exam, perio charting, treatment planning, operative notes |
-| **Billing Codes (CDT)** | D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho) |
-| **Treatment Sequencing** | Multi-phase treatment plans (Root canal → Crown → Follow-up) |
-| **Ortho Management** | Monthly adjustments, payment plans ($194/mo × 18 months), progress tracking |
-| **Implant Workflow** | Surgical planning, guided surgery, healing abutment, prosthesis phases |
-| **Perio Charting** | SRP quadrant tracking, pocket depths, bone loss classification |
-| **Payment Plans** | Stripe-powered installment plans with autopay for high-value procedures |
-| **Insurance** | Delta Dental, MetLife, Cigna — annual max tracking, pre-determination |
+| **Clinical Templates** | Comprehensive exam, perio charting, treatment planning, operative notes. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Billing Codes (CDT)** | D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Treatment Sequencing** | Multi-phase treatment plans (Root canal → Crown → Follow-up). State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Ortho Management** | Monthly adjustments, payment plans ($194/mo × 18 months), progress tracking. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Implant Workflow** | Surgical planning, guided surgery, healing abutment, prosthesis phases. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Perio Charting** | SRP quadrant tracking, pocket depths, bone loss classification. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Payment Plans** | Stripe-powered installment plans with autopay for high-value procedures. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Insurance** | Delta Dental, MetLife, Cigna — annual max tracking, pre-determination. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 
 
 #### Recommended Workflow by Role
@@ -929,16 +929,16 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Templates** | Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans |
-| **Billing Codes** | 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management) |
-| **Outcome Measures** | PHQ-9, GAD-7, PTSD-5, BDI-II — auto-scored with trend tracking |
-| **Medication Tracking** | Prescriptions, dose changes, side effects, drug interactions |
-| **Trauma Therapy (CPT)** | 12-session protocol, stuck point logs, impact statement drafts |
-| **Crisis Protocol** | Urgent message flags, safety plan templates, crisis hotline integration |
-| **Telehealth** | Zoom integration, consent tracking, session recording (with consent) |
-| **Insurance** | Anthem BCBS, Aetna, Cigna Behavioral — auth tracking for session limits |
+| **Clinical Templates** | Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Billing Codes** | 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Outcome Measures** | PHQ-9, GAD-7, PTSD-5, BDI-II — auto-scored with trend tracking. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Medication Tracking** | Prescriptions, dose changes, side effects, drug interactions. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Trauma Therapy (CPT)** | 12-session protocol, stuck point logs, impact statement drafts. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **Crisis Protocol** | Urgent message flags, safety plan templates, crisis hotline integration. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Telehealth** | Zoom integration, consent tracking, session recording (with consent). Media routing utilizes LiveKit SFU over WebRTC with Simulcast, bypassing outbound constraints via active-speaker routing. |
+| **Insurance** | Anthem BCBS, Aetna, Cigna Behavioral — auth tracking for session limits. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 
 
 #### Recommended Workflow by Role
@@ -962,15 +962,15 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Templates** | PT evaluation, ROM/strength assessment, functional outcome measures |
-| **Billing Codes** | 97162 (PT eval), 97110 (Exercise), 97116 (Gait), 97140 (Manual), 97530 (Functional) |
-| **Rehab Protocols** | ACL reconstruction, rotator cuff, chronic pain, neuro rehab — phased progression |
-| **Outcome Tracking** | ROM degrees, manual muscle testing (MMT), LEFS/DASH scores |
-| **Home Exercise Programs** | Auto-generated HEP with images, frequency, sets/reps |
-| **Work Comp / Sports** | Return-to-play protocols, FCE documentation, work restrictions |
-| **Insurance** | Medicare (therapy caps), workers' comp, auto-accident PIP — auth tracking |
+| **Clinical Templates** | PT evaluation, ROM/strength assessment, functional outcome measures. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Billing Codes** | 97162 (PT eval), 97110 (Exercise), 97116 (Gait), 97140 (Manual), 97530 (Functional). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Rehab Protocols** | ACL reconstruction, rotator cuff, chronic pain, neuro rehab — phased progression. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Outcome Tracking** | ROM degrees, manual muscle testing (MMT), LEFS/DASH scores. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Home Exercise Programs** | Auto-generated HEP with images, frequency, sets/reps. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Work Comp / Sports** | Return-to-play protocols, FCE documentation, work restrictions. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Insurance** | Medicare (therapy caps), workers' comp, auto-accident PIP — auth tracking. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 
 
 #### Recommended Workflow by Role
@@ -995,16 +995,16 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Templates** | Skin exam, biopsy reports, pathology tracking, phototherapy logs |
-| **Billing Codes** | 99214 (Office visit), 11102 (Biopsy), 17000 (Cryotherapy), 96401 (Chemo SC/IM) |
-| **Melanoma Screening** | Full-body mapping, dermoscopy documentation, ABCDE criteria |
-| **Accutane (iPLEDGE)** | Monthly labs (CBC, LFT, lipid), pregnancy testing, iPLEDGE compliance tracking |
-| **Biologics Management** | Humira/Dupixent dosing, prior auth, injection scheduling, phototherapy logs |
-| **Photo Documentation** | Lesion before/after tracking, body map annotations |
-| **Lab Integration** | Quest/LabCorp order routing, result auto-import |
-| **Insurance** | Prior auth for biologics, step therapy documentation, appeal templates |
+| **Clinical Templates** | Skin exam, biopsy reports, pathology tracking, phototherapy logs. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Billing Codes** | 99214 (Office visit), 11102 (Biopsy), 17000 (Cryotherapy), 96401 (Chemo SC/IM). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Melanoma Screening** | Full-body mapping, dermoscopy documentation, ABCDE criteria. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Accutane (iPLEDGE)** | Monthly labs (CBC, LFT, lipid), pregnancy testing, iPLEDGE compliance tracking. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Biologics Management** | Humira/Dupixent dosing, prior auth, injection scheduling, phototherapy logs. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Photo Documentation** | Lesion before/after tracking, body map annotations. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Lab Integration** | Quest/LabCorp order routing, result auto-import. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Insurance** | Prior auth for biologics, step therapy documentation, appeal templates. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 
 
 #### Recommended Workflow by Role
@@ -1028,15 +1028,15 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Clinical Records** | Animal health records with breed, species, weight tracking, vaccination history |
-| **RBAC Roles** | Veterinarian (full clinical), Vet Technician (intake, vitals, treatment) |
-| **Exams & Surgical Notes** | Species-specific exam templates, surgical reports, post-op care plans |
-| **Prescriptions** | Species-appropriate dosing, compounding pharmacy, controlled substance tracking |
-| **Vaccination Schedules** | Core/non-core vaccine protocols, automated wellness reminders |
-| **Diagnostic Imaging** | DICOM-compatible radiograph & ultrasound review with annotations |
-| **Billing** | Wellness plans, procedure bundles, pet insurance claim submission |
+| **Clinical Records** | Animal health records with breed, species, weight tracking, vaccination history. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **RBAC Roles** | Veterinarian (full clinical), Vet Technician (intake, vitals, treatment). RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **Exams & Surgical Notes** | Species-specific exam templates, surgical reports, post-op care plans. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Prescriptions** | Species-appropriate dosing, compounding pharmacy, controlled substance tracking. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Vaccination Schedules** | Core/non-core vaccine protocols, automated wellness reminders. Clinical flags map to the patient's UUID within isolated `workspace_id` schemas, verified in real-time by Supabase Edge Functions. |
+| **Diagnostic Imaging** | DICOM-compatible radiograph & ultrasound review with annotations. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Billing** | Wellness plans, procedure bundles, pet insurance claim submission. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 
 
 #### Recommended Workflow by Role
@@ -1069,16 +1069,15 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
-
+| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates. Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit. |
+| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission. Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit. |
+| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **PDF Export** | Server-side rendering (no client-side PHI leakage). State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **E-Signatures** | BoldSign integration with 7 document templates. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **OCR** | Document scanning in 30+ languages for intake form digitization. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
 </details>
 
 ### 📴 Offline-First Clinical Sessions
@@ -1101,20 +1100,20 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
-| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
-| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
-| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
-| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
-| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup & ESAQ** | Emergency Session Auto-Quarantine securely vaults offline PHI via WebCrypto RSA keys on idle timeout |
-| **Audio-Aware Idling** | Active microphone (e.g. WASM Whisper) intercepts idle timeouts to prevent false-positive logouts during long patient conversations |
-| **Decoupled Calendar** | No forced logouts or forced syncs based on the scheduled calendar end time, allowing seamless clinical overtime |
-| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
-| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
-| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **HIPAA Cleanup & ESAQ** | Emergency Session Auto-Quarantine securely vaults offline PHI via WebCrypto RSA keys on idle timeout. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **Audio-Aware Idling** | Active microphone (e.g. WASM Whisper) intercepts idle timeouts to prevent false-positive logouts during long patient conversations. Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit. |
+| **Decoupled Calendar** | No forced logouts or forced syncs based on the scheduled calendar end time, allowing seamless clinical overtime. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **Time Drift Detection** | Server logs drift between client and server timestamps for audit. Personnel data leverages encryption-at-rest in Supabase, accessible only via Next.js API routes to administrators with specific JWT claims. |
+| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end`. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 
 
 **Billing Compliance:**
@@ -1148,19 +1147,18 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
-
+| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat). HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical). HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D). HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import). HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
 </details>
 
 ### 💊 Medications & Prescriptions Module
@@ -1178,16 +1176,15 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
-
+| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic). Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
 </details>
 
 ### 📊 Vitals & Measurements Module
@@ -1204,15 +1201,14 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
-
+| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Pain Scale** | 0-10 numeric pain scale per visit. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC). State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Trend Tracking** | Historical vitals per patient for trend analysis. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Appointment Linked** | Vitals tied to specific appointment encounters. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
 </details>
 
 ### ⚠️ Allergies & Alerts Module
@@ -1229,15 +1225,14 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
-
+| **Allergen Types** | Drug, food, environmental, latex, contrast, other. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Severity Levels** | Mild, moderate, severe, life-threatening. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset). Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **NKDA Support** | Explicit "No Known Drug Allergies" documentation. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history). Clinical flags map to the patient's UUID within isolated `workspace_id` schemas, verified in real-time by Supabase Edge Functions. |
+| **Verification** | Provider verification with date stamps. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 </details>
 
 ### 💉 Immunizations Module
@@ -1254,15 +1249,14 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
-
+| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **VIS Compliance** | Vaccine Information Statement date tracking. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Registry Reporting** | State immunization registry submission tracking. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Immunocompromised** | Special vaccine recommendations for biologic patients. Clinical flags map to the patient's UUID within isolated `workspace_id` schemas, verified in real-time by Supabase Edge Functions. |
 </details>
 
 ### 🏢 Practice Operations Modules
@@ -1370,15 +1364,14 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
-
+| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled). Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Multi-Provider** | Schedule across providers within a practice. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Waitlist** | Waitlisted appointment requests when slots are full. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Reminders** | Automated appointment reminders (planned). Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
 </details>
 
 ### 👥 HR & Staff Management Module
@@ -1395,15 +1388,14 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
-
+| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Credentials** | License/certification tracking with expiration alerts and renewal workflows. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows. Personnel data leverages encryption-at-rest in Supabase, accessible only via Next.js API routes to administrators with specific JWT claims. |
+| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
 </details>
 
 ### ⏱️ Timesheets & Payroll Module (Implemented ✅)
@@ -1421,14 +1413,13 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
-
+| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
 </details>
 
 ### 📦 Inventory Management Module
@@ -1446,16 +1437,15 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
-
+| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines. Clinical flags map to the patient's UUID within isolated `workspace_id` schemas, verified in real-time by Supabase Edge Functions. |
+| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets. Clinical flags map to the patient's UUID within isolated `workspace_id` schemas, verified in real-time by Supabase Edge Functions. |
+| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 </details>
 
 ### 🧾 Superbills Module
@@ -1472,15 +1462,14 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
-
+| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed. Offline state is queued locally and opportunistically synced via Next.js API routes using idempotent conflict resolution. |
+| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
 </details>
 
 
@@ -1499,15 +1488,14 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
-
+| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Priority Levels** | Low, normal, high, urgent. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Assignment** | Assigned to specific staff with due dates and completion tracking. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **Patient Linked** | Tasks tied to specific patients for care coordination. Asynchronous payloads are strictly scoped to the `workspace_id` using PostgreSQL RLS policies, utilizing WebCrypto end-to-end encryption. |
+| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Audit Trail** | Created by, completed by, completed at timestamps. Personnel data leverages encryption-at-rest in Supabase, accessible only via Next.js API routes to administrators with specific JWT claims. |
 </details>
 
 ### 🤝 Patient Experience & Collaboration
@@ -1531,17 +1519,16 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
-
+| **Authentication** | Access code login (SHA-256 hashed), expiration tracking. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Messaging** | Threaded conversations with providers, urgent flags, read receipts. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Documents** | View/download clinical documents, upload insurance cards and forms. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Appointments** | View upcoming/past visits, request new appointments with preferred times. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research). Media routing utilizes LiveKit SFU over WebRTC with Simulcast, bypassing outbound constraints via active-speaker routing. |
 </details>
 
 ### 📚 Patient Education Module
@@ -1558,15 +1545,14 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
-
+| **Material Catalog** | 14 education documents across all specialties. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Multi-Language** | English + Spanish materials available. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive. Pharmacological state is normalized in PostgreSQL, triggering HIPAA audit logs while Next.js API routes expose data to authorized RBAC roles. |
+| **Delivery Methods** | Printed, portal upload, email, in-person, text. Asynchronous payloads are strictly scoped to the `workspace_id` using PostgreSQL RLS policies, utilizing WebCrypto end-to-end encryption. |
+| **Acknowledgment** | Track whether patient viewed/acknowledged the material. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 </details>
 
 ### 🔔 Recalls & Reminders Module
@@ -1582,14 +1568,13 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
-
+| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Contact Attempts** | Track outreach attempts for overdue recalls. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs. HL7/FHIR payloads are processed via Supabase Edge Functions into isolated PostgreSQL schemas, streaming to the React UI via Supabase Realtime. |
+| **Auto-Due Dates** | Based on last completed visit. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 </details>
 
 ### 🔄 Referrals & Cross-Practice Chat Module
@@ -1607,16 +1592,15 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
-
+| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
+| **Threaded Conversations** | Per-referral chat threads with read receipts. Scheduling operations rely on complex PostgreSQL joins handled by Next.js server actions, generating triple-logged HIPAA audit trails. |
+| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care). State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
 </details>
 
 ### 💬 Team Chat & Communication
@@ -1635,16 +1619,16 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
+| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
 | **Group Video Meetings** | LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users |
-| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration. |
-| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
-| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
-| **Channels** | Department-based channels (Clinical, Billing, Admin) |
-| **File Attachments** | Share documents, images, and clinical assets in chat |
+| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration. Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit. |
+| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel. Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+). Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit. |
+| **Channels** | Department-based channels (Clinical, Billing, Admin). Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger. |
+| **File Attachments** | Share documents, images, and clinical assets in chat. Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS. |
 
 
 #### 📊 Platform Usage Limits (Voice, Video & API)
@@ -1662,13 +1646,12 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (LiveKit)** | Bandwidth-aware SFU integration using Simulcast. Outbound constraints bypassed via selective stream active-speaker routing. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
-
+| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. Asynchronous payloads are strictly scoped to the `workspace_id` using PostgreSQL RLS policies, utilizing WebCrypto end-to-end encryption. |
+| **Video Consults (LiveKit)** | Bandwidth-aware SFU integration using Simulcast. Outbound constraints bypassed via selective stream active-speaker routing. Media routing utilizes LiveKit SFU over WebRTC with Simulcast, bypassing outbound constraints via active-speaker routing. |
+| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. Time-series tracking utilizes partitioned PostgreSQL tables, visualized on the Next.js frontend and gated by strict Supabase RLS. |
+| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
 </details>
 
 ### 🔐 Enterprise Administration
@@ -1686,17 +1669,16 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
-
+| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions. Signatures are cryptographically hashed via the WebCrypto API and persisted under strict PostgreSQL Row Level Security (RLS) policies. |
+| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback). Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
 </details>
 
 ### ⚙️ Platform Administration & White-Label
@@ -1713,15 +1695,14 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary>Click to view full details</summary>
 
-| Feature | Details |
+| Feature | How It Works |
 |---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
-
+| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations. Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails. |
+| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
+| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy. State is orchestrated by Next.js server actions mutating the Supabase PostgreSQL database under `workspace_id` RLS policies. |
+| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails. RBAC is enforced at the database layer via Supabase RLS policies mapped to JWT claims, ensuring fail-closed data isolation. |
 </details>
 
 
