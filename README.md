@@ -36,6 +36,331 @@ Whether you manage 5 therapists or 500 across three countries, Synalux isolates 
 
 ---
 
+## 🧠 Intelligent Chat & Clinical Assistant
+
+Synalux includes a **context-aware clinical assistant** available on every screen — web portal, patient detail, scheduling, billing, documents, and the VS Code extension. It is not a generic chatbot. It understands your practice type, your role, your active patient, and the screen you're on.
+
+> **The assistant bubble (💬) is pinned to the bottom-right corner of every page.** You can open it from any screen — patient charts, billing, scheduling, or the dashboard — and it will have context about what you're looking at.
+
+### 🌐 Web Portal — What You Can Do
+
+The web portal assistant is optimized for **clinical and administrative workflow acceleration**:
+
+| Capability | Example | How It Works |
+|------------|---------|--------------|
+| **SOAP Note Dictation** | Record a session → get a structured clinical note | WASM Whisper runs on-device. Audio **never** leaves your machine. |
+| **Clinical Q&A** | "What are the contraindications for Concerta in a patient with cardiac history?" | Powered by Gemini with medical context injection |
+| **Treatment Plan Drafts** | "Draft a BIP for tantrums maintained by escape" | Uses your practice type (ABA/peds/general) to select the right template |
+| **Billing Guidance** | "What CPT code for a 45-minute family guidance session?" | References the built-in CPT dictionary (97151–97158, 99213–99215) |
+| **Report Generation** | "Summarize this patient's last 3 sessions" | Reads session data from the workspace-scoped database |
+| **Translation** | "Translate this consent form to Spanish" | 12-language support with medical terminology awareness |
+| **Smart Context Sharing** | Generate a treatment plan → "Share to billing channel" | Forwards the document to the team chat without duplicating PHI |
+
+**What the Web Assistant Cannot Do:**
+- ❌ Read, write, or modify files on your computer
+- ❌ Execute terminal commands or scripts
+- ❌ Access external websites or APIs
+- ❌ Install software or change system settings
+- ❌ Access patient data from other workspaces (strict tenant isolation)
+
+### 💻 VS Code Extension — What You Can Do
+
+The VS Code extension is a **full-capability development and clinical tool** with local workspace access:
+
+| Tool | Description | Security |
+|------|-------------|----------|
+| **read_file** | Read any file in your workspace | Scoped to workspace root — path traversal blocked |
+| **list_files** | List directory contents with glob filtering | Hidden files and `node_modules` excluded by default |
+| **search_files** | Ripgrep-powered code search across the project | Capped at 50 results, 512KB max file size |
+| **run_command** | Execute terminal commands (npm, git, build, test) | Dangerous commands blocked (`rm -rf /`, `mkfs`, `dd`, fork bombs) |
+| **get_open_editors** | See which files are open and cursor position | Read-only VS Code API |
+| **open_url** | Open URLs in the default browser | Whitelisted to org-owned domains only |
+| **fetch_url** | Read web page content for analysis | HTML stripped, 1MB max, 15s timeout |
+| **supabase_cli** | Manage database (migrations, pull, push, status) | Uses authenticated Supabase CLI |
+| **stripe_cli** | Manage payments (webhooks, triggers, listen) | Uses authenticated Stripe CLI |
+
+**What the VS Code Assistant Cannot Do:**
+- ❌ Access files outside the open workspace folder
+- ❌ Run commands longer than 120 seconds
+- ❌ Access the internet without user-visible URLs
+- ❌ Modify system files, install packages globally, or change OS settings
+- ❌ Access patient data directly (must go through the API layer)
+
+### 🔒 Why These Restrictions Exist
+
+Every restriction is driven by **HIPAA compliance** and the principle of **least privilege**:
+
+| Restriction | Reason |
+|------------|--------|
+| **Web assistant has no file access** | A browser-based tool must not read/write the local filesystem — this prevents data exfiltration if a session token is compromised |
+| **VS Code tools are workspace-scoped** | Path traversal (`../../etc/passwd`) is blocked to prevent access to sensitive system files |
+| **URL whitelist for auto-open** | Prevents phishing attacks where a compromised model output could redirect users to malicious sites |
+| **Terminal command blocklist** | Prevents destructive operations that could wipe clinical data or compromise the host |
+| **Patient data requires API auth** | All PHI access goes through the audited API layer — the assistant cannot bypass audit logging |
+| **Role-based tool gating** | If your workspace role allows only 3 tools, the assistant is restricted to those 3 tools — even if the model requests others |
+
+### 🛡️ Three-Layer Safety Architecture
+
+```
+Layer 1: INPUT SANITIZATION
+  User message → strip XML injection tags → boundary-tag wrapping
+  Prevents: prompt injection, system prompt extraction
+
+Layer 2: ROLE-BASED TOOL GATING (RBAC)
+  /api/v1/roles/me → returns allowed tools for this user
+  Fail-closed: if role API fails, ALL tools are blocked (not allowed)
+  Prevents: privilege escalation, unauthorized tool execution
+
+Layer 3: OUTPUT GUARDRAILS (Rolling Window)
+  Model output → regex filter → strip refusals, meta-commentary, persona breaches
+  Prevents: prompt leakage, sycophantic patterns, hallucinated capabilities
+```
+
+### 📊 Web vs VS Code Comparison
+
+| Feature | Web Portal (💬) | VS Code Extension |
+|---------|----------------|-------------------|
+| **Available on every screen** | ✅ Yes — pinned bubble | ✅ Yes — sidebar panel |
+| **Conversation Mode (🗣️)** | ✅ Browser TTS + MediaRecorder | ✅ Native avlisten + macOS TTS |
+| **Clinical Q&A** | ✅ | ✅ |
+| **SOAP Dictation** | ✅ On-device Whisper | ✅ On-device Whisper |
+| **Treatment plan drafts** | ✅ | ✅ |
+| **Read local files** | ❌ | ✅ Workspace-scoped |
+| **Run terminal commands** | ❌ | ✅ With blocklist |
+| **Git operations** | ❌ | ✅ Full git tooling |
+| **Supabase CLI** | ❌ | ✅ Direct CLI access |
+| **Stripe CLI** | ❌ | ✅ Direct CLI access |
+| **Code search (ripgrep)** | ❌ | ✅ Workspace-scoped |
+| **Web page reading** | ❌ | ✅ With URL whitelist |
+| **Practice memory (Prism)** | ✅ Cloud-synced | ✅ Cloud-synced |
+| **Offline mode** | ✅ Queued sync | ✅ Local Ollama fallback |
+| **Audit logged** | ✅ Every request | ✅ Every request |
+| **Model selector** | ✅ Full chat page only | ✅ Settings panel |
+
+### 🗣️ Conversation Mode (Hands-Free Voice Chat)
+
+Conversation Mode turns the assistant into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Assistant, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
+
+**How it works:**
+
+```
+┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│  🎤 Listen   │ ──→ │ 📝 Transcribe │ ──→ │ 💬 Chat API  │ ──→ │ 🔊 Speak     │
+│ (auto-start) │     │ /api/v1/     │     │ /api/v1/chat │     │ (TTS)        │
+│              │     │ transcribe   │     │              │     │              │
+│ MediaRecorder│     │  ✅ AUDITED  │     │  ✅ AUDITED  │     │ SpeechSynth  │
+└──────────────┘     └──────────────┘     └──────────────┘     └──────┬───────┘
+       ▲                                                              │
+       └──────────────────────── LOOP ────────────────────────────────┘
+```
+
+**Every word is audit-logged.** The transcription goes through `/api/v1/transcribe` (audited). The message goes through `/api/v1/chat` (audited). Session START and STOP events are logged with word counts. There is no way to use Conversation Mode without generating a complete, immutable audit trail.
+
+| Feature | Web Portal | VS Code Extension |
+|---------|-----------|-------------------|
+| **Voice engine** | Browser MediaRecorder API | Native `avlisten` binary (compiled Swift) |
+| **Speech output** | Browser SpeechSynthesis API | macOS `say` command / Python TTS tool |
+| **HIPAA enforcement** | Forces local backend automatically | Forces local Ollama — fail-closed if unavailable |
+| **Session recording** | Not available (browser security) | Optional with AES-256-GCM encryption + consent flow |
+| **Auto-stop** | 15-second max per utterance | Configurable silence threshold (500ms–10s) |
+| **Transcript capture** | In-memory during session | Full transcript saved on stop |
+| **Activate** | 🗣️ button in chat input bar | 🎙️ button in chat panel |
+
+> ⚠️ **HIPAA Constraint:** Conversation Mode **always** forces the local backend (Ollama). Ambient clinical audio transcriptions will never be sent to cloud APIs. If the local backend is unavailable, Conversation Mode refuses to start (fail-closed design).
+
+### 🧠 Model Routing & Tier Architecture
+
+The intelligent assistant does **not** expose a model selector by default. The server automatically routes each request to the best model for the user's subscription tier:
+
+| Tier | Default Model | Max Tokens | Daily Limit | Model Selector Visible |
+|------|--------------|------------|-------------|----------------------|
+| **Free** | Gemini 2.5 Flash | 4,096 | 100 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| **Standard** | Gemini 3.1 Pro Exp | 8,192 | 2,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| **Advanced** | Gemini 3.1 Pro Exp | 16,384 | 5,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| **Enterprise** | Gemini 3.1 Pro Exp | 32,768 | 100,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+
+**Where the model selector appears:**
+- ✅ **Full chat page** (`/app/chat`) — users can override their tier default
+- ✅ **VS Code extension** — settings panel for model selection
+- ❌ **FloatChat bubble** — always uses `synalux-default`, server picks the tier model
+- ❌ **SOAP dictation** — fixed pipeline, no model choice
+
+**Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
+
+---
+
+## 🔐 Audit & Compliance Architecture
+
+Synalux enforces **universal audit logging** on every interaction with the system. This is not optional — it is baked into the API layer via middleware that cannot be bypassed.
+
+### Triple-Logging Architecture
+
+Every API request flows through three logging layers:
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                        INCOMING REQUEST                         │
+│  User → POST /api/v1/clinical?type=patients&patient_id=abc123  │
+└────────────────────────────┬─────────────────────────────────────┘
+                             │
+                    ┌────────▼────────┐
+                    │   withAudit()   │  ← Universal middleware wrapper
+                    │   middleware    │     Wraps all 57+ API routes
+                    └────────┬────────┘
+                             │
+            ┌────────────────┼────────────────┐
+            │                │                │
+    ┌───────▼──────┐  ┌──────▼──────┐  ┌──────▼─────────┐
+    │  LAYER 1     │  │  LAYER 2    │  │  LAYER 3       │
+    │  system_     │  │  admin_     │  │  hipaa_        │
+    │  audit_log   │  │  audit_log  │  │  access_log    │
+    │              │  │             │  │                │
+    │  ALWAYS      │  │  IF admin   │  │  IF PHI        │
+    │  (every req) │  │  Double     │  │  Access        │
+    └──────────────┘  └─────────────┘  └────────────────┘
+```
+
+| Log Table | What It Captures | When It Fires | Mutability |
+|-----------|-----------------|---------------|------------|
+| **system_audit_log** | Who, what, when, result, duration, IP, user agent | **Every request** (57 routes) | **Immutable** — no UPDATE or DELETE |
+| **admin_audit_log** | Full request body snapshot, before/after state | Admin mutations only (POST/PUT/DELETE on admin routes) | **Immutable** — append-only |
+| **hipaa_access_log** | Patient ID, action type (VIEW/EDIT), resource type | Any route touching patient data | **Immutable** — HIPAA retention |
+
+### 🔥 Fire-and-Forget Design
+
+Audit writes are **asynchronous and non-blocking**. A failure to log **never** crashes a clinical workflow:
+
+```typescript
+// The response is sent IMMEDIATELY — audit write happens in the background
+writeAuditLog(config, ctx, statusCode, durationMs, errorMessage)
+    .catch(err => console.error('[Audit] Async write failed:', err));
+return response;  // ← Clinical response is never delayed
+```
+
+**Why this matters:** In a healthcare environment, a database hiccup must never prevent a provider from saving a session note or viewing patient vitals. The audit layer degrades gracefully — the clinical workflow always takes priority.
+
+### 📋 Per-Module Audit Coverage
+
+Every module in the platform has explicit audit configuration. Here is the complete map:
+
+#### 🏥 Clinical Modules (PHI-Sensitive)
+
+| Route | Module | PHI Logged | Admin Double | What Gets Audited |
+|-------|--------|------------|-------------|-------------------|
+| `/api/v1/clinical` | `clinical` | ✅ Yes | — | Every patient query, form submission, treatment plan, lab order, medication, allergy, vitals, referral, task, recall, document, insurance, appointment, superbill, and assessment |
+| `/api/v1/patients/vitals` | `clinical_vitals` | ✅ Yes | — | Blood pressure, heart rate, temperature, SpO2, weight, height, pain scale recordings |
+| `/api/v1/patients/medications` | `clinical_meds` | ✅ Yes | — | Prescription creation, dose changes, discontinuation, refill requests |
+| `/api/v1/soap` | `soap` | ✅ Yes | — | Voice dictation → SOAP note conversion (SSE streaming) |
+| `/api/v1/esign` | `esign` | ✅ Yes | — | E-signature document creation, signing events, consent tracking |
+| `/api/v1/sessions/signoff` | `sessions` | ✅ Yes | — | Session start/end timestamps for billing-accurate records |
+| `/api/v1/tokens` | `tokens` | ✅ Yes | — | Patient portal access code generation and verification |
+| `/api/v1/patient-portal` | `patient_portal` | ✅ Yes | — | Patient-facing portal data access (appointments, billing, messages) |
+
+#### ⚙️ Admin Modules (Double-Audited)
+
+| Route | Module | PHI Logged | Admin Double | What Gets Audited |
+|-------|--------|------------|-------------|-------------------|
+| `/api/v1/admin/practice-config` | `admin` | — | ✅ Yes | Practice name, address, NPI, tax ID, specialty changes |
+| `/api/v1/admin/branding` | `admin` | — | ✅ Yes | Logo, colors, workspace theme modifications |
+| `/api/v1/admin/screen-config` | `admin` | — | ✅ Yes | Button labels, column visibility, UI customization |
+| `/api/v1/admin/dashboard-config` | `admin` | — | ✅ Yes | Widget layout, role-specific dashboard changes |
+| `/api/v1/admin/employee-overrides` | `admin` | — | ✅ Yes | Feature restrictions, screen restrictions per employee |
+| `/api/v1/admin/users/invite` | `admin` | — | ✅ Yes | Staff invitation emails, role assignment |
+| `/api/v1/admin/plan-override` | `admin` | — | ✅ Yes | Subscription plan overrides, trial extensions |
+| `/api/v1/roles` | `admin_roles` | — | ✅ Yes | Role assignment (POST), role change (PUT), member removal (DELETE) |
+| `/api/v1/workspaces` | `workspaces` | — | ✅ Yes | Workspace creation, settings modification |
+| `/api/v1/integrations` | `integrations` | — | ✅ Yes | Third-party service configuration (Stripe, Zoom, BoldSign) |
+| `/api/v1/break-glass` | `break_glass` | ✅ Yes | ✅ Yes | Emergency access override — **highest security level** |
+
+#### 💬 Communication Modules
+
+| Route | Module | PHI Logged | Admin Double | What Gets Audited |
+|-------|--------|------------|-------------|-------------------|
+| `/api/v1/messages` | `messages` | — | — | Channel messages sent, read, edited |
+| `/api/v1/messages/channels` | `messages` | — | — | Channel creation, membership changes |
+| `/api/v1/messages/upload` | `messages` | — | — | File attachments in team chat |
+| `/api/v1/direct-messages` | `direct_messages` | — | — | Private thread creation, message exchange |
+| `/api/v1/meetings` | `meetings` | — | — | Meeting scheduling, participant list |
+| `/api/v1/calls/generate-token` | `comms` | — | — | Voice/video call token generation |
+| `/api/v1/video/*` | `comms` | — | — | Telehealth session tokens, consent logging, ICE servers |
+| `/api/v1/team/webrtc-ring` | `comms` | — | — | Incoming call ring notifications |
+| `/api/v1/livekit/token` | `comms` | — | — | LiveKit room token generation |
+
+#### 🧠 Intelligent Assistant Modules
+
+| Route | Module | PHI Logged | Admin Double | What Gets Audited |
+|-------|--------|------------|-------------|-------------------|
+| `/api/v1/chat` | `ai_chat` | — | — | Every assistant conversation turn (prompt + response) |
+| `/api/v1/chat/health` | `ai_chat` | — | — | Health check for assistant availability |
+| `/api/v1/transcribe` | `ai_tools` | — | — | Voice-to-text transcription requests |
+| `/api/v1/translate` | `ai_tools` | — | — | Document translation requests |
+
+#### 💳 Billing & Auth Modules
+
+| Route | Module | PHI Logged | Admin Double | What Gets Audited |
+|-------|--------|------------|-------------|-------------------|
+| `/api/v1/billing/checkout` | `billing` | — | — | Stripe checkout session creation |
+| `/api/v1/billing/portal` | `billing` | — | — | Customer portal session creation |
+| `/api/v1/billing/usage` | `billing` | — | — | API usage metering queries |
+| `/api/v1/billing/edi` | `billing` | — | — | 837P claims submission, ERA/EOB processing |
+| `/api/v1/auth/*` | `auth` | — | — | JWT exchange, Supabase token, code exchange |
+
+#### 📁 Documents & Drive
+
+| Route | Module | PHI Logged | Admin Double | What Gets Audited |
+|-------|--------|------------|-------------|-------------------|
+| `/api/v1/pdf` | `documents` | — | — | PDF generation for clinical notes, consent forms |
+| `/api/v1/drive/[id]/*` | `drive` | — | — | Document access, state changes, sharing permissions |
+| `/api/v1/contacts/search` | `contacts` | — | — | Contact directory lookups |
+
+### 🛡️ Break-Glass: The Nuclear Option
+
+The **break-glass** endpoint is the most heavily audited route in the system. It allows a platform administrator to override normal access controls in an emergency (e.g., a provider is locked out and a patient needs immediate care).
+
+```
+Break-Glass Audit Trail:
+  ├─ system_audit_log     (who, when, from where)
+  ├─ admin_audit_log      (full request body snapshot — DOUBLE audit)
+  └─ hipaa_access_log     (which patient record was accessed — PHI audit)
+```
+
+Every break-glass event is **triple-logged** and **immutable**. There is no way to use this feature without leaving a permanent, tamper-proof record.
+
+### 🌐 External Interface Monitoring
+
+Synalux tracks the health and version of every external service the platform depends on:
+
+| Service | Type | What's Monitored |
+|---------|------|-----------------|
+| Supabase | Database | API version, SDK version, health status |
+| Stripe | Payments | API version (2024-12-18), webhook connectivity |
+| BoldSign | E-Signatures | API version, document creation status |
+| Google Gemini | Language Model | Model version, response latency |
+| LiveKit | Video/Voice | SFU version, room capacity, token generation |
+| Twilio | SMS/Voice | API version, delivery status |
+| SendGrid | Email | API version, delivery rate |
+| Zoom | Telehealth | SDK version, meeting creation status |
+| Quest Diagnostics | Lab Orders | Integration version, order routing |
+| LabCorp | Lab Orders | Integration version, result import |
+| Ollama | Local Models | Model version, memory usage, availability |
+
+Each external call is logged in `external_interface_log` with:
+- Request timestamp, response time, HTTP status
+- SDK version used, API version called
+- Error messages (if any)
+- Service degradation alerts (>500ms response, >1% error rate)
+
+### 📊 Audit Data Retention
+
+| Log Type | Retention | Reason |
+|----------|-----------|--------|
+| `system_audit_log` | 7 years | HIPAA requires 6-year minimum for covered entities |
+| `admin_audit_log` | 7 years | Administrative changes must be traceable for compliance audits |
+| `hipaa_access_log` | 7 years | PHI access records required by HIPAA Privacy Rule §164.530(j) |
+| `external_interface_log` | 1 year | Operational monitoring — no PHI content |
+
+---
+
 ## 📖 Feature Glossary (What Does It Do?)
 * **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
 * **Idempotent Sync (Offline Safety):** A safety net that ensures if your internet drops mid-session, your work is saved locally and quietly uploads the second your connection returns. You never lose a sentence.
@@ -624,7 +949,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **Group Video Meetings** | LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users |
 | **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
 | **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration. |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
+| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
 | **File Attachments** | Share documents, images, and clinical assets in chat |
