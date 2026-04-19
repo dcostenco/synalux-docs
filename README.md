@@ -818,9 +818,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **E-Signatures:** BoldSign integration for parent/guardian consent
 - **Data Tracking:** Behavioral targets, skill acquisition, frequency/duration data
 - **Insurance:** Autism/ABA-specific payer rules, prior auth tracking
-- **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill
-- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills
-- **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports
+- **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill ([How it works](docs_source_en/applied_behavior_analysis_aba.md#🧠-ai-mastery-predictions))
+- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#💡-ai-goal-suggestions))
+- **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports ([How it works](docs_source_en/applied_behavior_analysis_aba.md#📄-ai-progress-reports))
 - **🔍 Treatment Integrity:** Real-time DTT/NET fidelity monitoring with adherence scoring
 - **🌳 Program Tree View:** Hierarchical Program → Goal → Target tree with progress bars
 
