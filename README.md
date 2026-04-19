@@ -271,6 +271,9 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
 
+<details>
+<summary>Click to view architecture & how it works</summary>
+
 > **Architecture:** Keywords are **first-class prompt injections** stored in the database. The `description` field of each keyword is a natural language instruction that the AI engine interprets and executes when a user types `@keyword`. Admins can tune AI behavior per workspace without redeploying the application.
 
 #### How It Works
@@ -296,6 +299,8 @@ AI Engine:  Follows the instruction → generates a properly formatted SOAP note
 ```
 
 **Key design:** Keyword descriptions are **only injected when the user actually types them** (the "Expansion Strategy"). This means you never pay token costs for unused keywords — a workspace with 50 keywords configured only sends the 1-2 that the user activated.
+
+</details>
 
 #### Setup Guide
 
