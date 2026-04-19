@@ -19,6 +19,9 @@
 
 ## 💡 Why Synalux?
 
+<details>
+<summary>Click to view details</summary>
+
 ### 🎙️ Talk. Don't Type.
 Synalux listens to your session and instantly writes a structured clinical note. Because it processes directly on your iPad or laptop, your patient's voice never goes to the cloud. It’s instant, private, and saves you 2 hours of paperwork every day.
 
@@ -35,6 +38,7 @@ Whether you manage 5 therapists or 500 across three countries, Synalux isolates 
 * **Automated HIPAA Compliance:** Synalux enforces compliance for you: automatic 15-minute screen lockouts, secure data purging when a tab is closed, and unalterable audit trails showing exactly who opened which file and when.
 
 ---
+</details>
 
 ## 🧠 Intelligent Chat & Clinical Assistant
 
@@ -538,6 +542,9 @@ All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API
 
 Synalux enforces **universal audit logging** on every interaction with the system. This is not optional — it is baked into the API layer via middleware that cannot be bypassed.
 
+<details>
+<summary>Click to view details</summary>
+
 ### Triple-Logging Architecture
 
 Every API request flows through three logging layers:
@@ -706,18 +713,27 @@ Each external call is logged in `external_interface_log` with:
 | `external_interface_log` | 1 year | Operational monitoring — no PHI content |
 
 ---
+</details>
 
 ## 📖 Feature Glossary (What Does It Do?)
 * **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
+
+<details>
+<summary>Click to view details</summary>
+
 * **Idempotent Sync (Offline Safety):** A safety net that ensures if your internet drops mid-session, your work is saved locally and quietly uploads the second your connection returns. You never lose a sentence.
 * **E-Signature Integration:** Generate a consent form or treatment plan and send it directly to a parent or patient's phone to sign with their finger.
 * **Smart Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, prompting your front desk to contact them.
 * **Superbills:** An all-in-one financial receipt generated automatically from your clinical notes, containing all the medical codes (ICD-10/CPT) patients need to get reimbursed by insurance.
 * **Smart Context Sharing:** Securely forward a treatment plan directly into a billing channel without duplicating files or exposing raw PHI outside the patient's chart.
+</details>
 
 ## 🏥 Supported Practice Types
 
 Synalux is a **multi-practice enterprise platform** supporting 6 medical specialties out of the box. Each practice type includes specialty-specific clinical templates, billing codes, fee schedules, and workflows.
+
+<details>
+<summary>Click to view details</summary>
 
 <details>
 <summary><h3>🧩 Applied Behavior Analysis (ABA)</h3></summary>
@@ -902,10 +918,14 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 
 ---
+</details>
 
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
+
+<details>
+<summary>Click to view details</summary>
 
 ### 🏥 Clinical Care Modules
 <details>
@@ -1404,8 +1424,12 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 Synalux Enterprise utilizes a state-of-the-art **Selective Forwarding Unit (SFU)** powered by LiveKit to provide seamless, high-definition real-time communication (RTC) across both the Next.js Web Portal and the native VS Code Extension Webview. 
 
 By abandoning traditional P2P WebRTC Mesh architectures, Synalux guarantees stable CPU performance, minimal upstream bandwidth, and strict HIPAA-compliant data isolation.
+</details>
 
 ## 📊 Enterprise Capacity & Quotas
+
+<details>
+<summary>Click to view details</summary>
 
 | Feature | Synalux Standard | Synalux Enterprise | Notes |
 | :--- | :--- | :--- | :--- |
@@ -1414,20 +1438,33 @@ By abandoning traditional P2P WebRTC Mesh architectures, Synalux guarantees stab
 | **Maximum Call Duration** | Unlimited | **Unlimited** | JWT tokens are seamlessly refreshed in the background. |
 | **Video Resolution** | 720p HD | **1080p FHD** | Handled dynamically via WebRTC Simulcast. |
 | **Upstream Bandwidth** | `O(1)` | **`O(1)`** | Users upload exactly **1** stream, regardless of room size. |
+</details>
 
 ## ⚙️ The Bandwidth Degradation Engine
 To protect users on restrictive hospital networks or weak residential Wi-Fi, Synalux employs a native **Media Degradation Manager**:
+
+<details>
+<summary>Click to view details</summary>
+
 * **WebRTC Simulcast:** Clients automatically publish multiple video tracks (e.g., SD and HD). The LiveKit SFU detects receiver bandwidth and dynamically routes the optimal resolution without taxing the sender's CPU.
 * **Active-Speaker Optimization:** Non-speaking ("passive") participants are automatically identified by the SFU. The client UI dims inactive participants, and the server pauses their downstream video transmission to save network bandwidth, mirroring the behavior of Google Meet.
+</details>
 
 ## 🔒 HIPAA Compliance & Security Isolation
 Real-time communications in Synalux are strictly gated by the Next.js backend (`/api/v1/livekit/token`) using ephemeral, cryptographic JSON Web Tokens (JWTs).
 
+<details>
+<summary>Click to view details</summary>
+
 To prevent Lateral Access (e.g., a user brute-forcing their way into another clinic's telehealth call), room generation is cryptographically bound to the Supabase database roles:
 * **Workspace Channels:** Rooms are strictly generated as `ws_${workspaceId}_channel_${channelId}`.
 * **Encrypted Direct Messages:** Cross-practice DMs utilize an isolated `dm_thread_${channelId}` nomenclature, ensuring isolated 1-on-1 calls without compromising workspace-level ACLs.
+</details>
 
 ## 💻 Client-Specific Implementations
+
+<details>
+<summary>Click to view details</summary>
 
 ### VS Code Extension (`synalux-vscode`)
 * **Custom DOM Orchestration:** Due to the single-threaded nature of Electron renderer processes, the VS Code Webview handles `RoomEvent.TrackSubscribed` and `RoomEvent.ActiveSpeakersChanged` via hyper-optimized Vanilla JS DOM manipulation (avoiding heavy React virtual DOM diffing).
@@ -1436,3 +1473,4 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 ### Next.js Web Portal (`/portal`)
 * **React Components:** Leverages `@livekit/components-react` for a native, fully responsive `<VideoConference />` grid.
 * Provides the ultimate high-fidelity telehealth experience for administrators and providers operating outside the IDE.
+</details>
