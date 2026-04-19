@@ -10,7 +10,7 @@ Providers can "prescribe" education materials during encounters. Assigned materi
 
 ## Multi-Language Support
 
-Education materials available in 12 languages matching the platform's i18n support. Automatic language selection based on patient language preferences.
+Education materials available in 16 languages matching the platform's i18n support. Automatic language selection based on patient language preferences.
 
 ## Custom Content
 

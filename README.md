@@ -2,7 +2,7 @@
 
 **Your Intelligent Practice Management Platform**
 
-> Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and automated clinical charting. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 12 languages. HIPAA-compliant.
+> Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and automated clinical charting. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 16 languages. HIPAA-compliant.
 
 <p align="center">
   <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
@@ -11,7 +11,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
-🌐 **Language / Язык / Limba:** [English](#-why-synalux) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
+🌐 **Language / Язык / Limba:** 🇺🇸 [English (US)](#-why-synalux) · 🇬🇧 [English (UK)](#-why-synalux) · 🇦🇺 [English (AU)](#-why-synalux) · 🇪🇸 [Español (ES)](docs/i18n/README_es.md) · 🇲🇽 [Español (MX)](docs/i18n/README_es.md) · 🇫🇷 [Français](docs/i18n/README_fr.md) · 🇧🇷 [Português (BR)](docs/i18n/README_pt.md) · 🇵🇹 [Português (PT)](docs/i18n/README_pt.md) · 🇷🇴 [Română](docs/i18n/README_ro.md) · 🇺🇦 [Українська](docs/i18n/README_uk.md) · 🇷🇺 [Русский](docs/i18n/README_ru.md) · 🇩🇪 [Deutsch](docs/i18n/README_de.md) · 🇯🇵 [日本語](docs/i18n/README_ja.md) · 🇰🇷 [한국어](docs/i18n/README_ko.md) · 🇨🇳 [中文](docs/i18n/README_zh.md) · 🇸🇦 [العربية](docs/i18n/README_ar.md)
 
 🎬 **Demo videos coming soon** — See the full workflow: patients, scheduling, notes, billing, and team chat in action.
 
