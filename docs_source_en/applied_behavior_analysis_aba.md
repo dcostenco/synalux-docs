@@ -30,15 +30,22 @@ Navigating insurance requirements for ABA services can be complex. Synalux simpl
 
 ## 🧠 AI Mastery Predictions
 
-The Synalux platform leverages artificial intelligence to predict timelines for target mastery based on current trends in patient progress. This predictive analytics feature empowers therapists to set realistic goals and adjust treatment plans proactively.
+The Synalux platform leverages a deterministic, data-driven projection model to predict timelines for target mastery based on current trends in patient progress. Instead of a generic LLM, it uses a clinical velocity multiplier to provide transparent, mathematically sound estimates:
+
+1. **Data Extraction:** The engine extracts the raw numerical values from the patient's current progress and the final mastery criteria (e.g., current = 50%, target = 80%).
+2. **Velocity Calculation:** The timeline is calculated by determining the remaining progress (`target - current`) and dividing it by an estimated growth velocity per session. The algorithm uses a linear projection based on **15% of the current score** acting as the expected growth per session.
+3. **Timeline Generation:** The exact formula used is `sessionsEstimate = Math.ceil(remaining / Math.max(1, current * 0.15))`.
+4. **Clinical Display:** If the patient still has remaining progress, the UI displays a badge like **"~4 sessions"**. If the calculation determines the remaining amount is negligible, it flags the skill as **"Near mastery"**.
+
+This predictive analytics feature empowers therapists to set realistic goals and adjust treatment plans proactively.
 
 ## 💡 AI Goal Suggestions
 
-Building on the mastery predictions, Synalux’s AI provides automatic recommendations for the next targets based on skills that have already been mastered by the patient. This ensures a logical progression of learning objectives, enhancing the effectiveness of the therapy plan.
+Building on the mastery predictions, Synalux’s AI provides automatic recommendations for the next targets based on skills that have already been mastered by the patient. By analyzing the `status === 'mastered'` targets within the current Program Tree, the platform queries its built-in curriculum database to suggest the next logical progression of learning objectives (e.g., progressing from "Echoics" to "Manding"). This ensures a structured clinical continuum, enhancing the effectiveness of the therapy plan.
 
 ## 📄 AI Progress Reports
 
-Generating progress reports is streamlined with one-click functionality in Synalux. These reports are tailored to meet insurance requirements and provide clear, concise summaries of patient progress, ensuring compliance and satisfaction with third-party payers.
+Generating progress reports is streamlined with one-click functionality in Synalux. The platform aggregates the mastery predictions, goal suggestions, and session data across the reporting period. These reports are tailored to meet insurance requirements (such as summarizing phase-change lines and frequency trends) and provide clear, concise summaries of patient progress, ensuring compliance and rapid authorization renewals with third-party payers.
 
 ## 🔍 Treatment Integrity
 

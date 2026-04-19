@@ -14,14 +14,26 @@ Clinical notes are automatically saved to localStorage every time a keystroke is
 ## Session Sign-Off
 Providers are required to sign off at the end of each session. The timestamp recorded during this sign-off action serves as the accurate billing endpoint for the session, ensuring compliance with billing standards.
 
+### Decoupling Calendar from Session State (Clinical Overtime)
+To handle real-world clinical unpredictability (e.g., crisis intervention causing a 45-minute session to run 90 minutes), the system treats the calendar strictly as a guideline, not a kill-switch. There is **no forced sync or sign-off tied to the scheduled end time**. The clinical session state (`in_progress`) remains active indefinitely until the provider explicitly clicks "End Session" or the absolute inactivity timeout triggers. The billing module later compares the scheduled time vs. the actual time and automatically suggests appropriate extended CPT modifiers (e.g., prolonged service codes) during Superbill generation.
+
 ## Admin Audit
 Each event in a clinical session is marked with an indicator showing whether it occurred online (🟢) or offline (🔴). Additionally, timestamps for both client-side events and server syncs are logged, providing administrators with detailed audit trails for review.
 
 ## Connection Monitor
 A real-time connection status monitor is displayed in the sidebar. It shows a 🟢/🔴 status indicating whether the device is currently connected to the server and includes a badge that displays the count of pending sync items.
 
-## HIPAA Cleanup
-Upon logout or after an idle timeout, all local data stored in localStorage is securely purged. This ensures compliance with HIPAA regulations by preventing unauthorized access to sensitive patient information when devices are left unattended or when users log out.
+## HIPAA Cleanup & Emergency Session Auto-Quarantine (ESAQ)
+To resolve the conflict between HIPAA's strict "no plaintext PHI on unattended device" rule (§164.312(a)(2)(iv)) and the need to prevent data loss during an emergency (e.g., laptop battery dies, browser idles out), Synalux employs an **Asymmetric Emergency Vault** mechanism.
+
+Upon logout or after a 15-minute idle timeout, all local data is securely processed before purging:
+
+1. **Online Timeout (Quarantine State):** If the device is online when the timeout fires, it executes a beacon payload to a secure endpoint containing the unsynced drafts, tagged with the `last_active_timestamp`. The server saves this session with a `QUARANTINED` status. The Admin can then log in, review the Draft, confirm the actual end-time with the provider based on the last known activity, and manually sign off to release it for billing.
+2. **Offline Timeout (Asymmetric Emergency Vault):** If the device is offline, the app uses the native WebCrypto API to encrypt the existing offline queue entirely using a Server Public Key loaded during initial login (RSA-OAEP). The encrypted blob is stored as an `emergency_vault` in localStorage, and all readable PHI texts are immediately purged. This cryptographically seals the data from any malicious local actor.
+3. **Recovery Sync:** When the provider regains connectivity and logs back in, the app syncs the encrypted blob to the server, where it is decrypted using the Server Private Key and transitioned into the `QUARANTINED` state for Admin review.
+
+### Audio-Aware Idling (False Inactivity Safeguard)
+In therapy or psychiatric evaluations, a provider might actively converse with a patient for 30 minutes without touching the keyboard. To prevent false idle timeouts, Synalux features Audio-Aware Idling. If the microphone is active and capturing audio (e.g., via WASM Whisper dictation), continuous audio input counts as continuous user activity, preventing the 15-minute timeout entirely. If the mic is off, an audible chime and modal appear at the 14-minute mark to warn the provider.
 
 ## Idempotent Sync
 To prevent duplicate entries during the sync process, each event is assigned a unique client-generated UUID (Universally Unique Identifier). This mechanism ensures that only new or modified data is synced with the server, maintaining data integrity and preventing redundancy.
