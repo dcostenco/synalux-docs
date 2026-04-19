@@ -1,5 +1,12 @@
 # Synalux — Changelog
 
+## [0.14.1] - 2026-04-18 — Security Mitigations & Dashboard Resilience
+
+### Completed
+- **LiveKit Architecture Hardening** — Mitigated XSS risks inside VS Code Chromium instances using explicit generic Node DOM handlers (`document.createElement`) replacing all dynamically injected innerHTML string evaluations.
+- **Enterprise Rate Limiter / IDOR Fixes** — Enforced cross-practice pivot table bounds (`users_dm`) for incoming LiveKit Token Mints. Integrated strict Upstash Redis sliding windows, systematically destroying FDos API gateway bounds.
+- **Dashboard Configuration Resilience** — Eliminated component lifecycle freezes isolated natively around untracked dynamic user sessions stalling Admin layouts.
+
 ## [0.14.0] - 2026-04-18 — Cross-Workspace Identity & Signaling
 
 ### Completed

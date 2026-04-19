@@ -621,13 +621,17 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | Feature | Details |
 |---------|---------|
 | **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
-| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
+| **Group Video Meetings** | LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users |
 | **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
+| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration. |
 | **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
 | **File Attachments** | Share documents, images, and clinical assets in chat |
+
+#### 📊 Platform Usage Limits (Voice, Video & API)
+*   **Daily Video/Voice Calls**: **Unlimited** duration and count for Enterprise clients. There are no daily minute caps. Room capacity scales to 25+ participants using Simulcast and SFU routing.
+*   **API Rate Limits (Per User)**: Daily backend API execution is enforced individually: Free (100 tx/day), Standard (2,000 tx/day), Advanced (5,000 tx/day), Enterprise (Unlimited / 999,999 tx/day).
 
 </details>
 
@@ -637,7 +641,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | Feature | Details |
 |---------|---------|
 | **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
+| **Video Consults (LiveKit)** | Bandwidth-aware SFU integration using Simulcast. Outbound constraints bypassed via selective stream active-speaker routing. |
 | **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
 | **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
 
@@ -678,7 +682,42 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 </details>
 
 
-
 ---
 
+# 📞 Synalux Platform Limits & RTC Architecture
 
+Synalux Enterprise utilizes a state-of-the-art **Selective Forwarding Unit (SFU)** powered by LiveKit to provide seamless, high-definition real-time communication (RTC) across both the Next.js Web Portal and the native VS Code Extension Webview. 
+
+By abandoning traditional P2P WebRTC Mesh architectures, Synalux guarantees stable CPU performance, minimal upstream bandwidth, and strict HIPAA-compliant data isolation.
+
+## 📊 Enterprise Capacity & Quotas
+
+| Feature | Synalux Standard | Synalux Enterprise | Notes |
+| :--- | :--- | :--- | :--- |
+| **Concurrent Participants** | Up to 8 per room | **25+ (Scales to 100)** | Fully supports large clinical scrums and all-hands. |
+| **Daily Call Limits** | Unlimited | **Unlimited** | No hard caps on daily connection generation. |
+| **Maximum Call Duration** | Unlimited | **Unlimited** | JWT tokens are seamlessly refreshed in the background. |
+| **Video Resolution** | 720p HD | **1080p FHD** | Handled dynamically via WebRTC Simulcast. |
+| **Upstream Bandwidth** | `O(1)` | **`O(1)`** | Users upload exactly **1** stream, regardless of room size. |
+
+## ⚙️ The Bandwidth Degradation Engine
+To protect users on restrictive hospital networks or weak residential Wi-Fi, Synalux employs a native **Media Degradation Manager**:
+* **WebRTC Simulcast:** Clients automatically publish multiple video tracks (e.g., SD and HD). The LiveKit SFU detects receiver bandwidth and dynamically routes the optimal resolution without taxing the sender's CPU.
+* **Active-Speaker Optimization:** Non-speaking ("passive") participants are automatically identified by the SFU. The client UI dims inactive participants, and the server pauses their downstream video transmission to save network bandwidth, mirroring the behavior of Google Meet.
+
+## 🔒 HIPAA Compliance & Security Isolation
+Real-time communications in Synalux are strictly gated by the Next.js backend (`/api/v1/livekit/token`) using ephemeral, cryptographic JSON Web Tokens (JWTs).
+
+To prevent Lateral Access (e.g., a user brute-forcing their way into another clinic's telehealth call), room generation is cryptographically bound to the Supabase database roles:
+* **Workspace Channels:** Rooms are strictly generated as `ws_${workspaceId}_channel_${channelId}`.
+* **Encrypted Direct Messages:** Cross-practice DMs utilize an isolated `dm_thread_${channelId}` nomenclature, ensuring isolated 1-on-1 calls without compromising workspace-level ACLs.
+
+## 💻 Client-Specific Implementations
+
+### VS Code Extension (`synalux-vscode`)
+* **Custom DOM Orchestration:** Due to the single-threaded nature of Electron renderer processes, the VS Code Webview handles `RoomEvent.TrackSubscribed` and `RoomEvent.ActiveSpeakersChanged` via hyper-optimized Vanilla JS DOM manipulation (avoiding heavy React virtual DOM diffing).
+* **CSP & Corporate Firewalls:** The `livekit-client` is statically bundled via Webpack directly into the `.vsix` payload. This guarantees zero reliance on external CDNs (like `jsdelivr`), bypassing strict hospital/corporate Content Security Policies (CSP) and functioning securely behind VPNs.
+
+### Next.js Web Portal (`/portal`)
+* **React Components:** Leverages `@livekit/components-react` for a native, fully responsive `<VideoConference />` grid.
+* Provides the ultimate high-fidelity telehealth experience for administrators and providers operating outside the IDE.
