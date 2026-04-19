@@ -302,6 +302,9 @@ AI Engine:  Follows the instruction → generates a properly formatted SOAP note
 
 </details>
 
+<details>
+<summary>Click to view Setup Guide & Technical Integrations (Keywords, ValidatedInput, AddressSearch)</summary>
+
 #### Setup Guide
 
 **Step 1: Run the migration**
@@ -390,6 +393,7 @@ You press Tab → "the client demonstrated"
 | `session summary` | Session Summary: Today's session focused on |
 | `caregiver report` | caregiver reports that |
 
+</details>
 
 #### Default Keyword Reference
 
@@ -816,18 +820,18 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Applied Behavior Analysis (ABA) Documentation](docs_source_en/applied_behavior_analysis_aba.md)**
 
-- **Clinical Templates:** FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary
-- **Billing Codes:** 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group)
-- **RBAC Roles:** BCBA (Full clinical), RBT (Session notes only), Office Manager
-- **Voice Dictation:** Ambient session recording → auto-structured SOAP notes
-- **E-Signatures:** BoldSign integration for parent/guardian consent
-- **Data Tracking:** Behavioral targets, skill acquisition, frequency/duration data
-- **Insurance:** Autism/ABA-specific payer rules, prior auth tracking
-- **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill ([How it works](docs_source_en/applied_behavior_analysis_aba.md#🧠-ai-mastery-predictions))
-- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#💡-ai-goal-suggestions))
-- **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports ([How it works](docs_source_en/applied_behavior_analysis_aba.md#📄-ai-progress-reports))
-- **🔍 Treatment Integrity:** Real-time DTT/NET fidelity monitoring with adherence scoring
-- **🌳 Program Tree View:** Hierarchical Program → Goal → Target tree with progress bars
+- **Clinical Templates:** FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary ([How it works](docs_source_en/applied_behavior_analysis_aba.md#clinical-templates))
+- **Billing Codes:** 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group) ([How it works](docs_source_en/applied_behavior_analysis_aba.md#billing-codes))
+- **RBAC Roles:** BCBA (Full clinical), RBT (Session notes only), Office Manager ([How it works](docs_source_en/applied_behavior_analysis_aba.md#rbac-roles))
+- **Voice Dictation:** Ambient session recording → auto-structured SOAP notes ([How it works](docs_source_en/applied_behavior_analysis_aba.md#voice-dictation))
+- **E-Signatures:** BoldSign integration for parent/guardian consent ([How it works](docs_source_en/applied_behavior_analysis_aba.md#e-signatures))
+- **Data Tracking:** Behavioral targets, skill acquisition, frequency/duration data ([How it works](docs_source_en/applied_behavior_analysis_aba.md#data-tracking))
+- **Insurance:** Autism/ABA-specific payer rules, prior auth tracking ([How it works](docs_source_en/applied_behavior_analysis_aba.md#insurance))
+- **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill ([How it works](docs_source_en/applied_behavior_analysis_aba.md#data-driven-mastery-predictions))
+- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#smart-treatment-recommendations))
+- **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports ([How it works](docs_source_en/applied_behavior_analysis_aba.md#automated-progress-reports))
+- **🔍 Treatment Integrity:** Real-time DTT/NET fidelity monitoring with adherence scoring ([How it works](docs_source_en/applied_behavior_analysis_aba.md#treatment-integrity))
+- **🌳 Program Tree View:** Hierarchical Program → Goal → Target tree with progress bars ([How it works](docs_source_en/applied_behavior_analysis_aba.md#program-tree-view))
 
 <details>
 <summary>Click to view full details</summary>
