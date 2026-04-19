@@ -187,6 +187,343 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 **Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
 
+### ⚡ @Keywords — Configurable AI Command System
+
+The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
+
+> **Architecture:** Keywords are **first-class prompt injections** stored in the database. The `description` field of each keyword is a natural language instruction that the AI engine interprets and executes when a user types `@keyword`. Admins can tune AI behavior per workspace without redeploying the application.
+
+#### How It Works
+
+```
+User types:  "@soap Today's session focused on functional communication training"
+                    ↓
+SmartTextArea:  Shows @soap in dropdown → user selects → @soap prefixed
+                    ↓
+Chat API:  Scans message → finds @soap → looks up workspace_keywords table
+                    ↓
+DB Lookup:  SELECT description FROM workspace_keywords
+            WHERE key='soap' AND workspace_id=... AND enabled=true
+                    ↓
+Expanded:   <workspace_directives>
+              [KEYWORD @soap]: Generate a structured SOAP note from the session
+              description. Use ABA terminology throughout. In Subjective, include
+              caregiver report and client presentation. In Objective, document skill
+              acquisition data (trials, % correct, prompt levels)...
+            </workspace_directives>
+                    ↓
+AI Engine:  Follows the instruction → generates a properly formatted SOAP note
+```
+
+**Key design:** Keyword descriptions are **only injected when the user actually types them** (the "Expansion Strategy"). This means you never pay token costs for unused keywords — a workspace with 50 keywords configured only sends the 1-2 that the user activated.
+
+#### Setup Guide
+
+**Step 1: Run the migration**
+```bash
+# Apply the workspace_keywords table migration
+cd portal && npx supabase db push
+# Or manually run: supabase/migrations/028_workspace_keywords.sql
+```
+
+**Step 2: Seed default keywords for a workspace**
+```bash
+# Via API (admin must be authenticated):
+curl -X POST "https://synalux.ai/api/v1/keywords?action=seed" \
+  -H "Authorization: Bearer <admin_jwt>" \
+  -H "Content-Type: application/json" \
+  -d '{"specialty": "aba", "workspace_id": "<workspace_id>"}'
+
+# Supported specialties: aba, mental_health, pt_ot, peds, dental, derm, vet
+```
+
+**Step 3 (Optional): Add Google Places API key for address search**
+```env
+# In .env.local — enables the @address autocomplete feature
+GOOGLE_PLACES_API_KEY=your_google_places_api_key
+```
+
+#### Using @Keywords
+
+Type `@` in any smart text field to see the keyword dropdown:
+
+```
+┌─────────────────────────────────────────────┐
+│ COMMANDS                                     │
+│ 📝 @soap    Generate structured SOAP note    │
+│ 🔍 @fba     Draft a Functional Behavior...   │
+│ 📋 @bip     Create a Behavior Intervention.. │
+│ 📂 @drive   Search Practice Drive documents  │
+│ 👤 @patient Look up patient record           │
+│ 📅 @schedule Check appointments              │
+└─────────────────────────────────────────────┘
+```
+
+- **Arrow keys** → navigate the list
+- **Enter / Tab** → accept the selected keyword
+- **Escape** → dismiss the dropdown
+- **Type after @** → filter keywords (e.g., `@so` shows `@soap`)
+
+#### Clinical Ghost Text Completions (Tab to Accept)
+
+Beyond `@keywords`, the SmartTextArea provides inline **ghost text completions** for common clinical phrases. These appear as semi-transparent text that you accept with the Tab key:
+
+```
+You type:    "the client dem"
+Ghost shows: onstrated                          Tab ↹
+You press Tab → "the client demonstrated"
+```
+
+25+ built-in clinical completions:
+
+| You Type | Completes To |
+|----------|-------------|
+| `subj` | Subjective: Client presented with |
+| `objec` | Objective: During the session, the following was observed: |
+| `assess` | Assessment: Based on the data collected, |
+| `mastery crit` | mastery criteria of 80% or higher across 3 consecutive sessions |
+| `replacement beh` | replacement behavior was reinforced using |
+| `differential rein` | differential reinforcement of |
+| `functional comm` | functional communication training was implemented to teach |
+| `natural env` | natural environment teaching was facilitated during |
+| `parent training` | parent training was provided on the topic of |
+| `session summary` | Session Summary: Today's session focused on |
+| `caregiver report` | caregiver reports that |
+
+#### Default Keyword Reference
+
+<details>
+<summary><h4>🌐 Universal Keywords (All Practice Types)</h4></summary>
+
+These 12 keywords are available in every workspace regardless of practice type:
+
+| @Keyword | Icon | Label | AI Instruction |
+|----------|------|-------|----------------|
+| `@drive` | 📂 | Practice Drive | Search the Practice Drive for documents matching the user's query. Return titles, categories, and links. |
+| `@patient` | 👤 | Patient Lookup | Look up the patient's record — demographics, diagnoses, authorizations, and appointments. |
+| `@schedule` | 📅 | Schedule | Check availability, upcoming appointments, or conflicts for the referenced date/provider. |
+| `@billing` | 💳 | Billing | Look up outstanding claims, recent payments, authorization utilization, or generate invoice items. |
+| `@team` | 👥 | Team | Look up staff/provider credentials, NPI, schedule, caseload, or contact details. |
+| `@help` | ❓ | Help | Show all available @commands with descriptions and usage examples, grouped by category. |
+| `@note` | 📝 | Quick Note | Create a timestamped clinical note saved to Practice Drive, linked to current context. |
+| `@template` | 📄 | Templates | List available document templates for the current practice type. |
+| `@remind` | ⏰ | Reminder | Set a follow-up reminder for the referenced patient, task, or date. |
+| `@consent` | ✍️ | Consent Form | Generate or locate the appropriate consent form for the referenced procedure. |
+| `@report` | 📊 | Report | Generate a caseload, utilization, billing, compliance, or productivity report. |
+| `@esign` | 🖊️ | E-Signature | Send a document for electronic signature via BoldSign. |
+
+</details>
+
+<details>
+<summary><h4>🧠 ABA (Applied Behavior Analysis)</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@soap` | 📝 | SOAP Note | Structured SOAP with ABA terminology — skill acquisition data, prompt levels, behavior reduction data, program modifications. |
+| `@fba` | 🔍 | FBA Draft | Functional Behavior Assessment — antecedents, behaviors, consequences, hypothesized function (AEBC), data collection recommendations. |
+| `@bip` | 📋 | BIP Draft | Behavior Intervention Plan — replacement behaviors, reinforcement strategies, antecedent modifications, crisis procedures. |
+| `@abc` | 📊 | ABC Analysis | Analyze Antecedent-Behavior-Consequence data — identify patterns, categorize function, calculate conditional probabilities. |
+| `@dtt` | 📈 | DTT Data | Discrete Trial Training summary — trials correct/total, prompt levels, mastery progress, trend direction. |
+| `@program` | 🎯 | Treatment Program | Design program with operational definitions, task analysis, prompting hierarchy, mastery criteria, generalization plan. |
+| `@mastery` | 🏆 | Mastery Check | Review skill targets against criteria (80%+ across 3 consecutive sessions). Flag stalled programs (30+ sessions). |
+| `@parenttrain` | 👨‍👩‍👧 | Parent Training | Generate parent-friendly handout — plain language, step-by-step, real-world examples, data sheet template. |
+| `@graph` | 📉 | Graph Analysis | Analyze graphed data — trend direction (celeration), level, variability, phase changes, clinical significance. |
+| `@supervision` | 🎓 | Supervision Note | Supervision session — competency areas (BACB Task List), feedback, modeling, action items, hours logged. |
+
+</details>
+
+<details>
+<summary><h4>🧠 Mental Health & Psychiatry</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@soap` | 📝 | SOAP Note | Mental health SOAP — symptoms, MSE findings, treatment response, medication adherence, risk assessment. |
+| `@mse` | 🧠 | Mental Status Exam | Full MSE — appearance, behavior, speech, mood/affect, thought process/content, perception, cognition, insight, judgment. |
+| `@dap` | 📝 | DAP Note | Data-Assessment-Plan — observations, client statements, interventions used, clinical impressions, homework. |
+| `@safety` | 🛡️ | Safety Plan | Stanley-Brown format — warning signs, coping strategies, support contacts, means restriction, crisis resources (988). |
+| `@treatplan` | 📋 | Treatment Plan | DSM-5/ICD-10 presenting problems, measurable goals, interventions by modality (CBT, DBT, EMDR), discharge criteria. |
+| `@progress` | 📈 | Progress Note | Symptom changes, treatment response, medication adherence, SI/HI screening, goal progress. |
+| `@phq9` | 📉 | PHQ-9 Score | Interpret depression score (0-27 scale), compare to prior, recommend action. Flag item 9 (suicidal ideation). |
+| `@gad7` | 📉 | GAD-7 Score | Interpret anxiety score (0-21 scale), compare to prior, ≥5 point change = clinically significant. |
+| `@diagnosis` | 🩺 | Diagnostic Summary | Presenting complaints, DSM-5 criteria met, differential diagnoses, ICD-10 codes, clinical rationale. |
+| `@discharge` | 🏁 | Discharge Summary | Treatment course, outcomes, aftercare plan, relapse prevention, emergency contacts. |
+
+</details>
+
+<details>
+<summary><h4>🏃 Physical Therapy / Occupational Therapy</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@eval` | 📐 | PT/OT Evaluation | Comprehensive eval — history, ROM, MMT, sensation, balance, gait, functional assessment, plan of care. |
+| `@rom` | 🦿 | Range of Motion | ROM table: Joint \| Motion \| Active \| Passive \| Normal \| WNL. End-feel quality, bilateral comparison. |
+| `@functional` | 📋 | Functional Assessment | ADL levels, mobility status, Berg Balance, Timed Up and Go, overall functional limitation %. |
+| `@poc` | 📋 | Plan of Care | STG/LTG goals, treatment frequency, interventions, expected outcomes, discharge criteria. |
+| `@exercise` | 🏃 | Exercise Program | Home Exercise Program — sets, reps, hold time, frequency, precautions, progression criteria. |
+| `@dailynote` | 📝 | Daily Treatment Note | Subjective, interventions + time, patient response, objective measures, goal progress, CPT codes + units. |
+| `@reassess` | 🔄 | Reassessment | Compare initial → current function, goal status, continued medical necessity, plan modifications. |
+| `@discharge` | 🏁 | Discharge Summary | Initial vs discharge status, goals achieved, HEP provided, follow-up recommendations. |
+| `@precautions` | ⚠️ | Precautions | Weight-bearing status, ROM restrictions, activity limitations, advancement timeline. |
+| `@cpt` | 💲 | CPT Coding | Suggest CPT codes (97110, 97140, 97530, etc.) based on interventions. Calculate units (8-minute rule). |
+
+</details>
+
+<details>
+<summary><h4>👶 Pediatrics</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@wellchild` | 👶 | Well-Child Visit | Age-appropriate template — growth percentiles, milestones, immunizations, anticipatory guidance per Bright Futures. |
+| `@milestone` | 📏 | Developmental Milestones | Check gross/fine motor, language, cognitive, social-emotional against CDC norms. Flag delays, recommend referrals. |
+| `@growth` | 📈 | Growth Percentiles | CDC/WHO curves — height, weight, BMI, head circumference. Flag crossing 2+ percentile lines or >95th/<5th. |
+| `@immunize` | 💉 | Immunization Schedule | CDC/ACIP schedule — overdue (red), due today (green), upcoming (yellow). Catch-up schedule if behind. |
+| `@anticipatory` | 📚 | Anticipatory Guidance | Age-appropriate per Bright Futures — safety, nutrition, sleep, development, behavior, dental. |
+| `@soap` | 📝 | SOAP Note | Pediatric SOAP with developmental context, age-adjusted vitals, parent communication. |
+| `@asq` | 📋 | ASQ Screening | Interpret ASQ scores per domain — monitoring/referral zones, recommended evaluations. |
+| `@referral` | 📨 | Specialist Referral | Professional referral letter — clinical rationale, history, diagnostics, specific questions, urgency. |
+| `@schoolform` | 🏫 | School Form | Medical forms — physical, medication authorization, 504 plan, IEP support, allergy/asthma action plans. |
+| `@parentinstruct` | 👪 | Parent Instructions | 6th-grade reading level — condition explanation, warning signs, when to call, medication dosing chart. |
+
+</details>
+
+<details>
+<summary><h4>🦷 Dental</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@exam` | 🦷 | Dental Exam | Comprehensive exam — chief complaint, medical history, intra/extra-oral, periodontal screening, treatment plan. |
+| `@perio` | 📏 | Periodontal Charting | 6-site probing, BOP, recession, CAL, mobility, furcation. AAP 2017 classification. |
+| `@treatplan` | 📋 | Dental Treatment Plan | Sequenced phases (urgent → disease control → corrective → maintenance). CDT codes, fee estimates. |
+| `@postop` | 💊 | Post-Op Instructions | Procedure-specific care — pain management, bleeding control, diet, restrictions, warning signs. |
+| `@caries` | 🦠 | Caries Risk Assessment | CAMBRA methodology — risk/protective factors, classify low/moderate/high/extreme, preventive measures. |
+| `@radiograph` | 📸 | Radiograph Findings | Bone levels, pathology, restorations, caries detection. Compare with prior imaging. |
+| `@ada` | 🔢 | ADA Code Lookup | CDT procedure codes — nomenclature, descriptor, fee range, insurance coverage, documentation requirements. |
+| `@recall` | 🔁 | Recall Schedule | Risk-based intervals (3/4/6 months), radiograph schedule (ADA guidelines), fluoride, sealant reassessment. |
+
+</details>
+
+<details>
+<summary><h4>🔬 Dermatology</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@skinexam` | 🔍 | Skin Exam | Total body exam — lesion morphology, ABCDE criteria, dermoscopy, body map, prior comparison. |
+| `@biopsy` | 🔬 | Biopsy Report | Requisition (site, clinical DDx, type) OR interpret pathology with clinical-pathological correlation. |
+| `@photodoc` | 📸 | Photo Documentation | Structured photo notes — location, measurements, morphology, comparison to prior, clinical significance. |
+| `@treatplan` | 📋 | Treatment Plan | Diagnosis with ICD-10, topical/systemic meds, procedures, lab monitoring, patient education. |
+| `@cosmetic` | ✨ | Cosmetic Consultation | Patient goals, Fitzpatrick assessment, recommended procedures, expected outcomes, informed consent. |
+
+</details>
+
+<details>
+<summary><h4>🐾 Veterinary Medicine</h4></summary>
+
+| @Keyword | Icon | Label | AI Instruction Summary |
+|----------|------|-------|----------------------|
+| `@exam` | 🐾 | Clinical Exam | Signalment, history, system-by-system PE, differential diagnoses, diagnostic plan. |
+| `@soap` | 📝 | SOAP Note | Species-appropriate SOAP — weight, vitals (breed-specific ranges), BCS 1-9, dental grade. |
+| `@surgery` | ✂️ | Surgical Report | Anesthesia protocol, technique, intra-op findings, closure, post-op orders, pathology submission. |
+| `@rx` | 💊 | Prescription | Drug, dose (mg/kg), route, frequency, duration. Species-specific safety checks. |
+| `@vaccine` | 💉 | Vaccination Record | Core/non-core by species, age, lifestyle. Lot numbers, manufacturer, adverse reaction history. |
+| `@discharge` | 🏠 | Discharge Instructions | Client-friendly — medication schedule, activity restrictions, warning signs, recheck date. |
+| `@estimate` | 💰 | Cost Estimate | Itemized line items, low/high range, payment options (CareCredit, insurance). |
+| `@labresults` | 🧪 | Lab Interpretation | CBC, chemistry, urinalysis — species-specific reference ranges, clinical significance, client summary. |
+
+</details>
+
+#### Admin Configuration API
+
+Workspace administrators can customize keywords via the REST API:
+
+```bash
+# List all active keywords
+GET /api/v1/keywords
+
+# Create a custom keyword
+POST /api/v1/keywords
+{
+  "key": "intake",
+  "label": "Intake Assessment",
+  "icon": "📋",
+  "description": "Generate a comprehensive intake assessment form with demographics, presenting concerns, medical history, family history, social history, mental status observations, and initial diagnostic impressions.",
+  "category": "clinical"
+}
+
+# Update a keyword's AI instruction
+PUT /api/v1/keywords
+{
+  "id": "<keyword_uuid>",
+  "description": "Generate a SOAP note in our practice's preferred format: use bullet points in the Objective section and always include the supervision level."
+}
+
+# Disable a keyword (soft-delete)
+PUT /api/v1/keywords
+{ "id": "<keyword_uuid>", "enabled": false }
+
+# Permanently delete a keyword
+DELETE /api/v1/keywords
+{ "id": "<keyword_uuid>" }
+
+# Re-seed workspace with defaults (resets custom AI instructions)
+POST /api/v1/keywords?action=seed
+{ "specialty": "mental_health" }
+```
+
+#### Keyword Categories
+
+Keywords are organized into 5 categories for the admin panel:
+
+| Category | Badge | Purpose |
+|----------|-------|---------|
+| `clinical` | 🩺 | Assessments, exams, screenings, treatment programs |
+| `documentation` | 📝 | Notes, reports, summaries, referral letters |
+| `billing` | 💲 | CPT/CDT codes, claims, cost estimates, coding |
+| `admin` | ⚙️ | Scheduling, team, consent, drive, recalls |
+| `general` | 🌐 | Help, reminders, templates, cross-cutting |
+
+#### Field Validation (@ValidatedInput)
+
+For structured data entry fields (not free-text), Synalux provides automatic format validation and auto-formatting:
+
+| Field Type | Format | Example | Auto-Format |
+|-----------|--------|---------|-------------|
+| Phone | (XXX) XXX-XXXX | (555) 123-4567 | ✅ As-you-type |
+| ZIP | XXXXX or XXXXX-XXXX | 10001, 10001-2345 | ✅ |
+| Email | RFC 5322 | provider@clinic.com | Validates on blur |
+| NPI | 10-digit + Luhn checksum | 1234567893 | ✅ Validates checksum |
+| SSN | XXX-XX-XXXX (masked) | •••-••-1234 | ✅ Auto-mask |
+| Date | MM/DD/YYYY | 04/19/2026 | ✅ Calendar validity |
+| EIN | XX-XXXXXXX | 12-3456789 | ✅ As-you-type |
+| State | 2-letter code | NY, CA, FL | ✅ Validate 50+territories |
+| Fax | (XXX) XXX-XXXX | (555) 987-6543 | ✅ As-you-type |
+| URL | https://... | https://clinic.com | ✅ Auto-prefix |
+
+**Where ValidatedInput is used:** Phone, fax, ZIP, email, NPI, SSN, EIN, date, state, and URL fields across all forms.
+
+**Where ValidatedInput is NOT used:** Patient names, addresses (use `AddressSearch` instead), descriptions, notes, and free-text fields.
+
+#### Address Search (@AddressSearch)
+
+For address entry, Synalux provides a Google Places-powered search component:
+
+```
+User types:  "123 Main"
+               ↓ debounced (300ms)
+API Call:    GET /api/v1/address/autocomplete?q=123+Main
+               ↓
+Dropdown:    📍 123 Main Street
+                 New York, NY 10001
+             📍 123 Main Avenue
+                 Hartford, CT 06106
+               ↓ user selects
+Fields:      Street: "123 Main Street"
+             City:   "New York"
+             State:  "NY"
+             ZIP:    "10001"
+```
+
+All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API_KEY` environment variable. Falls back to manual entry if not configured.
+
 ---
 
 ## 🔐 Audit & Compliance Architecture
@@ -290,10 +627,11 @@ Every module in the platform has explicit audit configuration. Here is the compl
 
 | Route | Module | PHI Logged | Admin Double | What Gets Audited |
 |-------|--------|------------|-------------|-------------------|
-| `/api/v1/chat` | `ai_chat` | — | — | Every assistant conversation turn (prompt + response) |
+| `/api/v1/chat` | `ai_chat` | — | — | Every assistant conversation turn (prompt + response + @keyword expansion) |
 | `/api/v1/chat/health` | `ai_chat` | — | — | Health check for assistant availability |
 | `/api/v1/transcribe` | `ai_tools` | — | — | Voice-to-text transcription requests |
 | `/api/v1/translate` | `ai_tools` | — | — | Document translation requests |
+| `/api/v1/keywords` | `keywords` | — | ✅ Yes | @keyword CRUD — create, update, delete, and seed operations (admin only) |
 
 #### 💳 Billing & Auth Modules
 
