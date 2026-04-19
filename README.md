@@ -68,9 +68,21 @@ The web portal assistant is optimized for **clinical and administrative workflow
 - ❌ Access patient data from other workspaces (strict tenant isolation)
 
 </details>
-<details><summary><h3>💻 VS Code Extension — What You Can Do</h3></summary>
+### 💻 VS Code Extension — What You Can Do
 
 The VS Code extension is a **full-capability development and clinical tool** with local workspace access:
+
+- **read_file**
+- **list_files**
+- **search_files**
+- **run_command**
+- **get_open_editors**
+- **open_url**
+- **fetch_url**
+- **supabase_cli**
+- **stripe_cli**
+
+<details><summary>Click to view details</summary>
 
 | Tool | Description | Security |
 |------|-------------|----------|
@@ -1474,3 +1486,4 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 * **React Components:** Leverages `@livekit/components-react` for a native, fully responsive `<VideoConference />` grid.
 * Provides the ultimate high-fidelity telehealth experience for administrators and providers operating outside the IDE.
 </details>
+ails>
