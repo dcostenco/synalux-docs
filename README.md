@@ -52,7 +52,7 @@ The web portal assistant is optimized for **clinical and administrative workflow
 - **Billing Guidance:** "What CPT code for a 45-minute family guidance session?"
 - **Report Generation:** "Summarize this patient's last 3 sessions"
 - **Translation:** "Translate this consent form to Spanish"
-- **Smart Context Sharing:** Generate a treatment plan → "Share to billing channel"
+- **De-identified Clinical Routing:** Generate a treatment plan → "Forward de-identified data to billing (Requires Consent)"
 
 <details>
 <summary>Click to view full details</summary>
@@ -65,7 +65,7 @@ The web portal assistant is optimized for **clinical and administrative workflow
 | **Billing Guidance** | "What CPT code for a 45-minute family guidance session?" | References the built-in CPT dictionary (97151–97158, 99213–99215) |
 | **Report Generation** | "Summarize this patient's last 3 sessions" | Reads session data from the workspace-scoped database |
 | **Translation** | "Translate this consent form to Spanish" | 12-language support with medical terminology awareness |
-| **Smart Context Sharing** | Generate a treatment plan → "Share to billing channel" | Forwards the document to the team chat without duplicating PHI |
+| **De-identified Clinical Routing** | Generate a treatment plan → "Forward de-identified data to billing (Requires Consent)" | Forwards the document to the team chat without duplicating PHI (triggers mandatory auto-translated consent prompt) |
 
 
 **What the Web Assistant Cannot Do:**
@@ -806,7 +806,7 @@ Each external call is logged in `external_interface_log` with:
 * **E-Signature Integration:** Generate a consent form or treatment plan and send it directly to a parent or patient's phone to sign with their finger.
 * **Smart Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, prompting your front desk to contact them.
 * **Superbills:** An all-in-one financial receipt generated automatically from your clinical notes, containing all the medical codes (ICD-10/CPT) patients need to get reimbursed by insurance.
-* **Smart Context Sharing:** Securely forward a treatment plan directly into a billing channel without duplicating files or exposing raw PHI outside the patient's chart.
+* **De-identified Clinical Routing:** Securely forward a treatment plan directly into a billing channel without duplicating files or exposing raw PHI outside the patient's chart. All cross-boundary data routing triggers a mandatory, auto-translated user consent prompt.
 
 ## 🏥 Supported Practice Types
 
@@ -1616,7 +1616,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Group Video Meetings:** LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users
 - **Secure Scheduling:** Authenticated RSVPs utilizing zero-PHI email layouts for calendar links
 - **Voice & Video Calls:** Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration.
-- **Smart Context Sharing:** Generate treatment plan → "Share Session" → forward to billing channel
+- **De-identified Clinical Routing:** Generate treatment plan → "Forward Session" → route de-identified data to billing (Triggers Auto-Translated Consent)
 - **Voice-to-Action:** Voice commands → call, SMS, email, schedule (Pro+)
 - **Channels:** Department-based channels (Clinical, Billing, Admin)
 - **File Attachments:** Share documents, images, and clinical assets in chat
@@ -1630,7 +1630,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **Group Video Meetings** | LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users |
 | **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links<br><br><details><summary>How it works</summary>Tenant data is isolated per `workspace_id` via PostgreSQL RLS, while database triggers generate immutable HIPAA-compliant audit trails.</details> |
 | **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration.<br><br><details><summary>How it works</summary>Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit.</details> |
-| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel<br><br><details><summary>How it works</summary>Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger.</details> |
+| **De-identified Clinical Routing** | Generate treatment plan → "Forward Session" → route de-identified data to billing (Triggers Auto-Translated Consent)<br><br><details><summary>How it works</summary>Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger.</details> |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+)<br><br><details><summary>How it works</summary>Audio streams are processed via locally compiled WASM Whisper models, with state managed by React hooks to prevent PHI network transit.</details> |
 | **Channels** | Department-based channels (Clinical, Billing, Admin)<br><br><details><summary>How it works</summary>Transactions and billing arrays are processed via Stripe Connect API webhooks deployed as Supabase Edge Functions to update the PostgreSQL ledger.</details> |
 | **File Attachments** | Share documents, images, and clinical assets in chat<br><br><details><summary>How it works</summary>Templates render dynamically as Next.js server components, committing TypeScript-validated payloads to Supabase under tenant-specific RLS.</details> |
