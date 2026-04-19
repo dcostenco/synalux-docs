@@ -38,11 +38,11 @@ Whether you manage 5 therapists or 500 across three countries, Synalux isolates 
 
 ## 🧠 Intelligent Chat & Clinical Assistant
 
-Synalux includes a **context-aware clinical assistant** available on every screen — web portal, patient detail, scheduling, billing, documents, and the VS Code extension. It is not a generic chatbot. It understands your practice type, your role, your active patient, and the screen you're on.
+Synalux includes a context-aware clinical assistant available on every screen — web portal, patient detail, scheduling, billing, documents, and the VS Code extension. It is not a generic chatbot. It understands your practice type, your role, your active patient, and the screen you're on.
 
-> **The assistant bubble (💬) is pinned to the bottom-right corner of every page.** You can open it from any screen — patient charts, billing, scheduling, or the dashboard — and it will have context about what you're looking at.
+The assistant bubble (💬) is pinned to the bottom-right corner of every page. You can open it from any screen — patient charts, billing, scheduling, or the dashboard — and it will have context about what you're looking at.
 
-### 🌐 Web Portal — What You Can Do
+<details><summary><h3>🌐 Web Portal — What You Can Do</h3></summary>
 
 The web portal assistant is optimized for **clinical and administrative workflow acceleration**:
 
@@ -63,7 +63,8 @@ The web portal assistant is optimized for **clinical and administrative workflow
 - ❌ Install software or change system settings
 - ❌ Access patient data from other workspaces (strict tenant isolation)
 
-### 💻 VS Code Extension — What You Can Do
+</details>
+<details><summary><h3>💻 VS Code Extension — What You Can Do</h3></summary>
 
 The VS Code extension is a **full-capability development and clinical tool** with local workspace access:
 
@@ -86,7 +87,8 @@ The VS Code extension is a **full-capability development and clinical tool** wit
 - ❌ Modify system files, install packages globally, or change OS settings
 - ❌ Access patient data directly (must go through the API layer)
 
-### 🔒 Why These Restrictions Exist
+</details>
+<details><summary><h3>🔒 Why These Restrictions Exist</h3></summary>
 
 Every restriction is driven by **HIPAA compliance** and the principle of **least privilege**:
 
@@ -99,7 +101,8 @@ Every restriction is driven by **HIPAA compliance** and the principle of **least
 | **Patient data requires API auth** | All PHI access goes through the audited API layer — the assistant cannot bypass audit logging |
 | **Role-based tool gating** | If your workspace role allows only 3 tools, the assistant is restricted to those 3 tools — even if the model requests others |
 
-### 🛡️ Three-Layer Safety Architecture
+</details>
+<details><summary><h3>🛡️ Three-Layer Safety Architecture</h3></summary>
 
 ```
 Layer 1: INPUT SANITIZATION
@@ -116,7 +119,8 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
   Prevents: prompt leakage, sycophantic patterns, hallucinated capabilities
 ```
 
-### 📊 Web vs VS Code Comparison
+</details>
+<details><summary><h3>📊 Web vs VS Code Comparison</h3></summary>
 
 | Feature | Web Portal (💬) | VS Code Extension |
 |---------|----------------|-------------------|
@@ -137,7 +141,8 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 | **Audit logged** | ✅ Every request | ✅ Every request |
 | **Model selector** | ✅ Full chat page only | ✅ Settings panel |
 
-### 🗣️ Conversation Mode (Hands-Free Voice Chat)
+</details>
+<details><summary><h3>🗣️ Conversation Mode (Hands-Free Voice Chat)</h3></summary>
 
 Conversation Mode turns the assistant into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Assistant, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
 
@@ -168,7 +173,8 @@ Conversation Mode turns the assistant into a **hands-free, voice-driven clinical
 
 > ⚠️ **HIPAA Constraint:** Conversation Mode **always** forces the local backend (Ollama). Ambient clinical audio transcriptions will never be sent to cloud APIs. If the local backend is unavailable, Conversation Mode refuses to start (fail-closed design).
 
-### 🧠 Model Routing & Tier Architecture
+</details>
+<details><summary><h3>🧠 Model Routing & Tier Architecture</h3></summary>
 
 The intelligent assistant does **not** expose a model selector by default. The server automatically routes each request to the best model for the user's subscription tier:
 
@@ -187,7 +193,8 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 **Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
 
-### ⚡ @Keywords — Configurable AI Command System
+</details>
+<details><summary><h3>⚡ @Keywords — Configurable AI Command System</h3></summary>
 
 The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
 
@@ -524,6 +531,7 @@ Fields:      Street: "123 Main Street"
 
 All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API_KEY` environment variable. Falls back to manual entry if not configured.
 
+</details>
 ---
 
 ## 🔐 Audit & Compliance Architecture
@@ -733,6 +741,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring |
 | **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars |
 
+
+#### Recommended Workflow by Role
+- **Admin/Office Manager**: Manages prior authorizations, tracks utilization against insurance limits, and monitors staff compliance.
+- **BCBA (Provider)**: Designs treatment plans (BIPs), analyzes behavioral data graphs, and writes supervision notes.
+- **RBT (Technician)**: Collects ABC and DTT data during sessions, and generates ambient session notes using the mobile/web app.
+
 </details>
 
 <details>
@@ -750,6 +764,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Asthma Management** | Action plans, peak flow tracking, rescue inhaler logs |
 | **ADHD Workflow** | Vanderbilt scoring, medication management, school accommodation letters |
 | **Insurance** | BCBS, UHC, Medicaid — auto-eligibility verification |
+
+
+#### Recommended Workflow by Role
+- **Admin**: Coordinates immunization registries, schedules well-child visits, and manages parent portal access.
+- **Pediatrician**: Conducts exams using age-specific templates, reviews growth charts, and prescribes medications.
+- **Medical Assistant**: Records vitals, administers vaccines, and completes initial developmental screenings (e.g., ASQ).
 
 </details>
 
@@ -771,6 +791,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Payment Plans** | Stripe-powered installment plans with autopay for high-value procedures |
 | **Insurance** | Delta Dental, MetLife, Cigna — annual max tracking, pre-determination |
 
+
+#### Recommended Workflow by Role
+- **Admin**: Manages Stripe payment plans, submits pre-determinations to insurance, and handles recall scheduling.
+- **Dentist/Orthodontist**: Creates sequenced treatment plans, reviews radiographs, and signs off on clinical operative notes.
+- **Dental Hygienist**: Performs periodontal charting, takes X-rays, and provides patient education on oral hygiene.
+
 </details>
 
 <details>
@@ -791,6 +817,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Telehealth** | Zoom integration, consent tracking, session recording (with consent) |
 | **Insurance** | Anthem BCBS, Aetna, Cigna Behavioral — auth tracking for session limits |
 
+
+#### Recommended Workflow by Role
+- **Admin**: Checks insurance eligibility for behavioral health, manages telehealth Zoom links, and tracks session limits.
+- **Psychiatrist/Therapist**: Conducts evaluations, manages prescriptions (e-prescribing), and reviews patient-completed outcome measures (PHQ-9/GAD-7).
+- **Care Coordinator**: Monitors patient adherence, follows up on crisis protocol flags, and sends educational materials.
+
 </details>
 
 <details>
@@ -809,6 +841,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Home Exercise Programs** | Auto-generated HEP with images, frequency, sets/reps |
 | **Work Comp / Sports** | Return-to-play protocols, FCE documentation, work restrictions |
 | **Insurance** | Medicare (therapy caps), workers' comp, auto-accident PIP — auth tracking |
+
+
+#### Recommended Workflow by Role
+- **Admin**: Tracks Medicare therapy caps and workers' comp authorizations, and schedules recurring weekly visits.
+- **Physical Therapist**: Performs initial evaluations, designs Home Exercise Programs (HEP), and tracks functional outcome scores.
+- **PT Assistant (PTA)**: Executes daily treatment plans, records ROM/MMT measurements, and updates progress notes.
 
 </details>
 
@@ -830,6 +868,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Lab Integration** | Quest/LabCorp order routing, result auto-import |
 | **Insurance** | Prior auth for biologics, step therapy documentation, appeal templates |
 
+
+#### Recommended Workflow by Role
+- **Admin**: Manages iPLEDGE compliance documentation, routes lab orders, and schedules follow-up skin checks.
+- **Dermatologist**: Performs full-body exams, annotates body maps, interprets biopsies, and prescribes biologic therapies.
+- **Medical Assistant**: Takes clinical photos of lesions, assists with biopsies, and provides post-op care instructions to patients.
+
 </details>
 
 <details>
@@ -846,6 +890,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Vaccination Schedules** | Core/non-core vaccine protocols, automated wellness reminders |
 | **Diagnostic Imaging** | DICOM-compatible radiograph & ultrasound review with annotations |
 | **Billing** | Wellness plans, procedure bundles, pet insurance claim submission |
+
+
+#### Recommended Workflow by Role
+- **Admin**: Manages pet wellness plans, submits insurance claims, and sends automated vaccination reminders.
+- **Veterinarian**: Conducts clinical exams, performs surgeries, interprets lab results, and prescribes species-specific medications.
+- **Vet Technician**: Takes vitals, assists in surgery, administers vaccines, and provides discharge instructions to pet owners.
 
 </details>
 
