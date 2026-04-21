@@ -41,9 +41,14 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
-🌐 **Language / Язык / Limba:** [English](#-why-synalux) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
+🌐 **Language / Язык / Limba:** [English](#why-synalux) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
 
-🎬 **Demo videos coming soon** — See the full workflow: patients, scheduling, notes, billing, and team chat in action.
+### 🆕 What's New in v11.1 Elite Patch
+
+- **🎯 DDA Approval Letter (ABA):** Integrated new COMAR 10.22.02 compliant templates for Maryland DDA applications. Features one-click generation from the Treatment Plans tab with mandatory clinical lead signatures.
+- **🛡️ Black Screen Mitigation:** Hardened i18n hydration with automated locale normalization (e.g., `pt` → `pt-BR`). Added robust error boundaries to the navigation layer.
+- **🔗 Documentation Integrity:** Fixed 4 broken internal links and normalized all anchor slugs for full GitHub compatibility.
+- **🧠 AI Workflow Enhancements:** Replaced legacy supervision notes with `@dda` clinical drafting assistant for ABA practices.
 
 ---
 
@@ -791,9 +796,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **E-Signatures:** BoldSign integration for parent/guardian consent
 - **Data Tracking:** Behavioral targets, skill acquisition, frequency/duration data
 - **Insurance:** Autism/ABA-specific payer rules, prior auth tracking
-- **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill ([How it works](docs_source_en/applied_behavior_analysis_aba.md#🧠-ai-mastery-predictions))
-- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#💡-ai-goal-suggestions))
-- **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports ([How it works](docs_source_en/applied_behavior_analysis_aba.md#📄-ai-progress-reports))
+- **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill ([How it works](docs_source_en/applied_behavior_analysis_aba.md#data-driven-mastery-predictions))
+- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#smart-treatment-recommendations))
+- **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports ([How it works](docs_source_en/applied_behavior_analysis_aba.md#automated-progress-reports))
 - **🔍 Treatment Integrity:** Real-time DTT/NET fidelity monitoring with adherence scoring
 - **🌳 Program Tree View:** Hierarchical Program → Goal → Target tree with progress bars
 
