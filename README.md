@@ -1310,6 +1310,30 @@ The billing module uses **Stripe Connect** to give each practice its own indepen
 | 100+ | 10% off per-seat price |
 | 500+ | 20% off per-seat price |
 | 1,000+ | 30% off per-seat price |
+
+### 💰 Accounting & Global Finance Module
+
+![Global Finance Dashboard](docs/demo/37_cross_border_finance.png)
+
+- **Hierarchical Reporting:** Roll-up revenue from individual branches to HQ level for global visibility
+- **Multi-Currency Reconciliation:** Simultaneous support for USD, RON, and CAD with real-time conversion
+- **Regional Compliance:** Specialized reporting for US (Maryland DDA), Romania (VAT), and Canada
+- **CFO Dashboard:** Centralized view of accounts receivable, aging reports, and cash flow across all regions
+- **PostgREST-Level RLS:** Strict data isolation ensuring accountants only see their assigned regional data
+
+<details>
+<summary>Click to view full details</summary>
+
+| Feature | Details |
+|---------|---------|
+| **Hierarchical Reporting** | Roll-up revenue from individual branches to HQ level for global visibility |
+| **Multi-Currency Reconciliation** | Simultaneous support for USD, RON, and CAD with real-time conversion |
+| **Regional Compliance** | Specialized reporting for US (Maryland DDA), Romania (VAT), and Canada |
+| **CFO Dashboard** | Centralized view of accounts receivable, aging reports, and cash flow across all regions |
+| **PostgREST-Level RLS** | Strict data isolation ensuring accountants only see their assigned regional data |
+
+</details>
+
 | Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
 
 **Payment Failure Lifecycle:**
@@ -1735,6 +1759,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 </details>
 
 ### ⚙️ Platform Administration & White-Label
+
+![Platform Administration Dashboard](docs/demo/20_platform_admin.png)
 
 🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
 
