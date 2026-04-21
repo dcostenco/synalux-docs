@@ -10,11 +10,23 @@
 
 | 📊 1. Patient Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+| <img src="docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
 
-| 👶 4. Pediatrics | 🦴 5. Physical Therapy | 🦷 6. Dental & Orthodontics |
+| 📋 4. BIP Builder | 🔍 5. FBA Reports | 📊 6. ABC Data |
+|:---:|:---:|:---:|
+| <img src="docs/demo/06_bip_builder.png" width="100%" alt="BIP Builder"> | <img src="docs/demo/05_fba_report.png" width="100%" alt="FBA Reports"> | <img src="docs/demo/07_abc_data_collection.png" width="100%" alt="ABC Data"> |
+
+| 👶 7. Pediatrics | 🦴 8. Physical Therapy | 🦷 9. Dental & Orthodontics |
 |:---:|:---:|:---:|
 | <img src="docs/demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="docs/demo/32_physical_therapy.png" width="100%" alt="Physical Therapy Module"> | <img src="docs/demo/33_dental.png" width="100%" alt="Dental Module"> |
+
+| 🧠 10. Mental Health | 🏥 11. Patient Portal | 📅 12. Scheduling |
+|:---:|:---:|:---:|
+| <img src="docs/demo/31_mental_health.png" width="100%" alt="Mental Health Module"> | <img src="docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
+
+| 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
+|:---:|:---:|:---:|
+| <img src="docs/demo/13_billing_payments.png" width="100%" alt="Billing & Payments"> | <img src="docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
 
 ---
 
@@ -817,6 +829,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Applied Behavior Analysis (ABA) Documentation](docs_source_en/applied_behavior_analysis_aba.md)**
 
+![Clinical Templates & FBA Report](docs/demo/05_fba_report.png)
+![BIP Builder](docs/demo/06_bip_builder.png)
+
 - **Clinical Templates:** FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary
 - **Billing Codes:** 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group)
 - **RBAC Roles:** BCBA (Full clinical), RBT (Session notes only), Office Manager
@@ -922,6 +937,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 ### 🧠 Mental Health & Psychiatry
 
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
+
+![Mental Health Module](docs/demo/31_mental_health.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
@@ -1063,6 +1080,8 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 ### 📋 Clinical Notes & Documentation
 
 🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+
+![Clinical SOAP Notes](docs/demo/04_soap_note.png)
 
 - **SOAP Notes:** Auto-generated from voice dictation with specialty-specific templates
 - **Voice Dictation:** WASM Whisper on-device → zero cloud PHI transmission
@@ -1275,6 +1294,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 ### 💳 Billing & Payments Module
 
 🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+
+![Billing and Payments Dashboard](docs/demo/13_billing_payments.png)
 
 
 
@@ -1521,6 +1542,8 @@ Payment Failed → past_due (warning banner, keep access)
 
 🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
 
+![Patient Portal Dashboard](docs/demo/14_patient_portal.png)
+
 
 
 A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
@@ -1628,6 +1651,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 ### 💬 Team Chat & Communication
 
 🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+
+![Secure Team Chat](docs/demo/10_team_chat.png)
 
 - **E2E Encrypted Chat:** HIPAA-compliant team messaging within workspaces
 - **Group Video Meetings:** LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users
