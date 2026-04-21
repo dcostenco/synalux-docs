@@ -10,23 +10,23 @@
 
 | 📊 1. Patient Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
 |:---:|:---:|:---:|
-| <img src="docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
 
 | 📋 4. BIP Builder | 🔍 5. FBA Reports | 📊 6. ABC Data |
 |:---:|:---:|:---:|
-| <img src="docs/demo/06_bip_builder.png" width="100%" alt="BIP Builder"> | <img src="docs/demo/05_fba_report.png" width="100%" alt="FBA Reports"> | <img src="docs/demo/07_abc_data_collection.png" width="100%" alt="ABC Data"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/06_bip_builder.png" width="100%" alt="BIP Builder"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/05_fba_report.png" width="100%" alt="FBA Reports"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/07_abc_data_collection.png" width="100%" alt="ABC Data"> |
 
 | 👶 7. Pediatrics | 🦴 8. Physical Therapy | 🦷 9. Dental & Orthodontics |
 |:---:|:---:|:---:|
-| <img src="docs/demo/36_global_dash.png" width="100%" alt="Pediatrics Module"> | <img src="docs/demo/39_branch_isolation.png" width="100%" alt="Physical Therapy Module"> | <img src="docs/demo/37_cross_border_finance.png" width="100%" alt="Dental Module"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png" width="100%" alt="Pediatrics Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png" width="100%" alt="Physical Therapy Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Dental Module"> |
 
 | 🧠 10. Mental Health | 🏥 11. Patient Portal | 📅 12. Scheduling |
 |:---:|:---:|:---:|
-| <img src="docs/demo/36_global_dash.png" width="100%" alt="Mental Health Module"> | <img src="docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png" width="100%" alt="Mental Health Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
 
 | 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
 |:---:|:---:|:---:|
-| <img src="docs/demo/13_billing_payments.png" width="100%" alt="Billing & Payments"> | <img src="docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
 
 ---
 
@@ -218,20 +218,10 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 
 Conversation Mode turns the assistant into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Assistant, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
 
+![Conversation Mode & Clinical Voice Dictation](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
+
 **How it works:**
-
-```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  🎤 Listen   │ ──→ │ 📝 Transcribe │ ──→ │ 💬 Chat API  │ ──→ │ 🔊 Speak     │
-│ (auto-start) │     │ /api/v1/     │     │ /api/v1/chat │     │ (TTS)        │
-│              │     │ transcribe   │     │              │     │              │
-│ MediaRecorder│     │  ✅ AUDITED  │     │  ✅ AUDITED  │     │ SpeechSynth  │
-└──────────────┘     └──────────────┘     └──────────────┘     └──────┬───────┘
-       ▲                                                              │
-       └──────────────────────── LOOP ────────────────────────────────┘
-```
-
-**Every word is audit-logged.** The transcription goes through `/api/v1/transcribe` (audited). The message goes through `/api/v1/chat` (audited). Session START and STOP events are logged with word counts. There is no way to use Conversation Mode without generating a complete, immutable audit trail.
+Every word is audit-logged. The transcription goes through `/api/v1/transcribe` (audited). The message goes through `/api/v1/chat` (audited). Session START and STOP events are logged with word counts. There is no way to use Conversation Mode without generating a complete, immutable audit trail.
 
 - **Voice engine:** Browser MediaRecorder API
 - **Speech output:** Browser SpeechSynthesis API
@@ -296,25 +286,10 @@ The `@keyword` system is the **primary interface** between clinicians and the AI
 
 #### How It Works
 
-```
-User types:  "@soap Today's session focused on functional communication training"
-                    ↓
-SmartTextArea:  Shows @soap in dropdown → user selects → @soap prefixed
-                    ↓
-Chat API:  Scans message → finds @soap → looks up workspace_keywords table
-                    ↓
-DB Lookup:  SELECT description FROM workspace_keywords
-            WHERE key='soap' AND workspace_id=... AND enabled=true
-                    ↓
-Expanded:   <workspace_directives>
-              [KEYWORD @soap]: Generate a structured SOAP note from the session
-              description. Use ABA terminology throughout. In Subjective, include
-              caregiver report and client presentation. In Objective, document skill
-              acquisition data (trials, % correct, prompt levels)...
-            </workspace_directives>
-                    ↓
-AI Engine:  Follows the instruction → generates a properly formatted SOAP note
-```
+1.  **User Input:** You type `@soap` followed by your session description in any smart text field.
+2.  **Detection:** The system detects the `@` symbol and shows a dropdown of available commands.
+3.  **Expansion:** When you select a keyword, the system injects the specific clinical instructions for that command into the AI's logic.
+4.  **Generation:** The AI follows those instructions to generate a perfectly formatted clinical note, treatment plan, or report.
 
 **Key design:** Keyword descriptions are **only injected when the user actually types them** (the "Expansion Strategy"). This means you never pay token costs for unused keywords — a workspace with 50 keywords configured only sends the 1-2 that the user activated.
 
@@ -348,17 +323,7 @@ GOOGLE_PLACES_API_KEY=your_google_places_api_key
 
 Type `@` in any smart text field to see the keyword dropdown:
 
-```
-┌─────────────────────────────────────────────┐
-│ COMMANDS                                     │
-│ 📝 @soap    Generate structured SOAP note    │
-│ 🔍 @fba     Draft a Functional Behavior...   │
-│ 📋 @bip     Create a Behavior Intervention.. │
-│ 📂 @drive   Search Practice Drive documents  │
-│ 👤 @patient Look up patient record           │
-│ 📅 @schedule Check appointments              │
-└─────────────────────────────────────────────┘
-```
+![Intelligent Assistant & @Keywords](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/30_intelligent_assistant.png)
 
 - **Arrow keys** → navigate the list
 - **Enter / Tab** → accept the selected keyword
@@ -654,28 +619,7 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 Every API request flows through three logging layers:
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                        INCOMING REQUEST                         │
-│  User → POST /api/v1/clinical?type=patients&patient_id=abc123  │
-└────────────────────────────┬─────────────────────────────────────┘
-                             │
-                    ┌────────▼────────┐
-                    │   withAudit()   │  ← Universal middleware wrapper
-                    │   middleware    │     Wraps all 57+ API routes
-                    └────────┬────────┘
-                             │
-            ┌────────────────┼────────────────┐
-            │                │                │
-    ┌───────▼──────┐  ┌──────▼──────┐  ┌──────▼─────────┐
-    │  LAYER 1     │  │  LAYER 2    │  │  LAYER 3       │
-    │  system_     │  │  admin_     │  │  hipaa_        │
-    │  audit_log   │  │  audit_log  │  │  access_log    │
-    │              │  │             │  │                │
-    │  ALWAYS      │  │  IF admin   │  │  IF PHI        │
-    │  (every req) │  │  Double     │  │  Access        │
-    └──────────────┘  └─────────────┘  └────────────────┘
-```
+![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 | Log Table | What It Captures | When It Fires | Mutability |
 |-----------|-----------------|---------------|------------|
@@ -775,12 +719,10 @@ Every module in the platform has explicit audit configuration. Here is the compl
 
 The **break-glass** endpoint is the most heavily audited route in the system. It allows a platform administrator to override normal access controls in an emergency (e.g., a provider is locked out and a patient needs immediate care).
 
-```
-Break-Glass Audit Trail:
-  ├─ system_audit_log     (who, when, from where)
-  ├─ admin_audit_log      (full request body snapshot — DOUBLE audit)
-  └─ hipaa_access_log     (which patient record was accessed — PHI audit)
-```
+**Break-Glass Audit Trail:**
+*   **system_audit_log:** Tracks who, when, and from where the override was triggered.
+*   **admin_audit_log:** Captures a full request body snapshot (Double Audit).
+*   **hipaa_access_log:** Records which specific patient record was accessed (PHI Audit).
 
 Every break-glass event is **triple-logged** and **immutable**. There is no way to use this feature without leaving a permanent, tamper-proof record.
 
@@ -835,8 +777,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Applied Behavior Analysis (ABA) Documentation](docs_source_en/applied_behavior_analysis_aba.md)**
 
-![Clinical Templates & FBA Report](docs/demo/05_fba_report.png)
-![BIP Builder](docs/demo/06_bip_builder.png)
+![Clinical Templates & FBA Report](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/05_fba_report.png)
+![BIP Builder](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/06_bip_builder.png)
 
 - **Clinical Templates:** FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary
 - **Billing Codes:** 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group)
@@ -880,6 +822,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Pediatrics Documentation](docs_source_en/pediatrics.md)**
 
+![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+
 - **Clinical Templates:** Well-child exams, sick visits, immunization tracking, developmental screening
 - **Billing Codes:** 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization)
 - **Patient Portal:** Parent/guardian access, growth charts, immunization records, appointment booking
@@ -909,6 +853,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 ### 🦷 Dental & Orthodontics
 
 🔗 **[Read Detailed Dental & Orthodontics Documentation](docs_source_en/dental_orthodontics.md)**
+
+![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 - **Clinical Templates:** Comprehensive exam, perio charting, treatment planning, operative notes
 - **Billing Codes (CDT):** D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho)
@@ -942,9 +888,11 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🧠 Mental Health & Psychiatry
 
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
 
-![Mental Health Module](docs/demo/36_global_dash.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
@@ -978,6 +926,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🏃 Physical Therapy & Sports Medicine
 
+![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
+
 🔗 **[Read Detailed Physical Therapy & Sports Medicine Documentation](docs_source_en/physical_therapy_sports_medicine.md)**
 
 - **Clinical Templates:** PT evaluation, ROM/strength assessment, functional outcome measures
@@ -1009,6 +959,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 </details>
 
 ### 🔬 Dermatology
+
+![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
 
 🔗 **[Read Detailed Dermatology Documentation](docs_source_en/dermatology.md)**
 
@@ -1043,6 +995,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 </details>
 
 ### 🐾 Veterinary Medicine
+
+![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
 
 🔗 **[Read Detailed Veterinary Medicine Documentation](docs_source_en/veterinary_medicine.md)**
 
@@ -1087,7 +1041,7 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 
 🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
 
-![Clinical SOAP Notes](docs/demo/04_soap_note.png)
+![Clinical SOAP Notes](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 - **SOAP Notes:** Auto-generated from voice dictation with specialty-specific templates
 - **Voice Dictation:** WASM Whisper on-device → zero cloud PHI transmission
@@ -1163,7 +1117,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 🧪 Lab Orders & Results Module
 
-![Lab Orders](docs/demo/21_pharmacy.png)
+![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
 🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
 
@@ -1198,7 +1152,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 💊 Medications & Prescriptions Module
 
-![Medications & Prescriptions](docs/demo/21_pharmacy.png)
+![Medications & Prescriptions](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
 🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
 
@@ -1227,7 +1181,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 📊 Vitals & Measurements Module
 
-![Vitals & Measurements](docs/demo/02_patient_dashboard.png)
+![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
 
@@ -1254,7 +1208,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### ⚠️ Allergies & Alerts Module
 
-![Allergies & Alerts](docs/demo/02_patient_dashboard.png)
+![Allergies & Alerts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
 
@@ -1281,7 +1235,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 💉 Immunizations Module
 
-![Immunizations](docs/demo/02_patient_dashboard.png)
+![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
 
@@ -1311,7 +1265,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
 
-![Billing and Payments Dashboard](docs/demo/13_billing_payments.png)
+![Billing and Payments Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 
 
@@ -1558,7 +1512,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
 
-![Patient Portal Dashboard](docs/demo/14_patient_portal.png)
+![Patient Portal Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
 
 
@@ -1668,7 +1622,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
 
-![Secure Team Chat](docs/demo/10_team_chat.png)
+![Secure Team Chat](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
 
 - **E2E Encrypted Chat:** HIPAA-compliant team messaging within workspaces
 - **Group Video Meetings:** LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users
