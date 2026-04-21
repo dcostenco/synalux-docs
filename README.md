@@ -1,38 +1,8 @@
 # ✦ Synalux
 
-![Synalux Header](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/synalux_hero.png)
-
-**Your Advanced Practice Management Platform**
+**Your Intelligent Practice Management Platform**
 
 > Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and automated clinical charting. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 12 languages. HIPAA-compliant.
-
----
-
-## 📸 Product Specification
-
-| 📊 1. Practice Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
-|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/practice_dashboard_icon.png" width="100%" alt="Practice Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/clinical_notes_icon.png" width="100%" alt="Clinical SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/collaboration_icon.png" width="100%" alt="Secure Team Chat"> |
-
-| 📋 4. BIP Builder | 🔍 5. FBA Reports | 📊 6. ABC Data |
-|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/bip_builder_icon.png" width="100%" alt="BIP Builder"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/fba_reports_icon.png" width="100%" alt="FBA Reports"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/abc_data_icon.png" width="100%" alt="ABC Data"> |
-
-| 👶 7. Pediatrics | 🦴 8. Physical Therapy | 🦷 9. Dental & Orthodontics |
-|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/pediatrics_icon.png" width="100%" alt="Pediatrics Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/physical_therapy_icon.png" width="100%" alt="Physical Therapy Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/dental_icon.png" width="100%" alt="Dental Module"> |
-
-| 🧠 10. Mental Health | 🏥 11. Patient Portal | 📅 12. Scheduling |
-|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/mental_health_icon.png" width="100%" alt="Mental Health Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_icon.png" width="100%" alt="Patient Portal"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/scheduling_icon.png" width="100%" alt="Scheduling"> |
-
-| 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
-|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/billing_payments_icon.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/hr_team_icon.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/admin_settings_icon.png" width="100%" alt="Platform Admin"> |
-
-| 💰 16. Accounting & Finance | 🛡️ 17. Triple-Logging Audit | 🤝 18. Collaboration Suite |
-|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/finance_icon.png" width="100%" alt="Accounting & Finance"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_icon.png" width="100%" alt="Triple-Logging Audit"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/collaboration_icon.png" width="100%" alt="Collaboration Suite"> |
 
 ---
 
@@ -49,32 +19,46 @@
 
 ## 💡 Why Synalux?
 
-### 🎙️ Advanced Voice Documentation
-Synalux listens to your session and instantly drafts a professional clinical note. Because it processes directly on your device, your patient's voice never goes to the cloud. It’s private, secure, and saves providers up to 2 hours of paperwork every day.
+### 🎙️ Effortless Clinical Documentation
+Synalux listens to your session and instantly drafts a professional clinical note, letting you focus 100% on your patient. Because it processes entirely on your device, patient privacy is guaranteed — no clinical audio ever leaves your room.
+* **Benefit:** Save up to 2 hours of paperwork daily.
+* **Privacy:** HIPAA-compliant local processing.
 
-### 📴 Unbreakable Offline Mode
-Working in a clinic with spotty Wi-Fi? Keep charting. Synalux saves everything to your device instantly. When you reconnect, it syncs automatically. Your billing and session times are always accurate, even in a dead zone.
+![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/voice_dictation_ui.png)
 
-### 🏢 Global Practice Management
-Whether you manage 5 therapists or 500 across multiple countries, Synalux handles the complexity. Manage US, European, and Canadian branches from a single dashboard with automatic currency handling and regional compliance.
+### 📴 Work Anywhere, Even Offline
+Working in a clinic with spotty Wi-Fi or in a remote area? Keep charting. Synalux saves everything to your device instantly and securely. The moment you're back online, it syncs quietly in the background.
+* **Accuracy:** Billing and session times are captured in real-time.
+* **Safety:** Automatic local encryption keeps data safe until sync.
+
+![Offline Sync Status Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/offline_sync_ui.png)
+
+### 🏢 One Platform, Global Reach
+Whether you manage a single clinic or a global practice with hundreds of therapists, Synalux scales with you. Manage US, European, and Canadian branches from one dashboard with regional compliance and currency handling built-in.
+* **Control:** Branch isolation ensures data is only visible where it belongs.
+* **Insights:** High-level executive dashboards for practice owners.
+
+![Global Practice Dashboard Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/global_dashboard_ui.png)
 
 ### 🛡️ Pro-Security & Legal Safety
-* **On-Device Privacy:** Unlike other platforms, our clinical companion runs 100% on your local machine. Patient recordings are never sent to external servers.
-* **Military-Grade Encryption:** Every message, file, and patient record is secured using the highest global standards. If a device is lost, the data remains unreadable.
-* **Role-Based Access:** 15 distinct staff roles ensure that employees only see the data they need for their job. Receptionists, doctors, and billers each operate in their own secure lane.
-* **Automated Compliance:** Synalux enforces safety for you: automatic screen lockouts, secure data purging, and unalterable audit trails showing exactly who accessed which file.
+* **On-Device Privacy:** Unlike other platforms, our clinical engine runs 100% on your local machine.
+* **Military-Grade Encryption:** Every message and patient record is secured using AES-256-GCM.
+* **Role-Based Access:** 15 distinct staff roles ensure employees only see what they need for their job.
+* **Automated Compliance:** Automatic screen lockouts and unalterable audit trails protect your practice.
 
 ---
 
-## 🧠 Workflow Support & Clinical Companion
+## 🧠 Your Clinical Support Engine
 
-Synalux includes a context-aware clinical companion available on every screen — web portal, patient detail, scheduling, billing, documents, and the VS Code extension. It is not a generic template system. It understands your practice type, your role, your active patient, and the screen you're on.
+Synalux includes a context-aware clinical companion available on every screen. It isn't just a chatbot; it's a deeply integrated support system that understands your specialty, your patient, and your current task.
 
-The support bubble (💬) is pinned to the bottom-right corner of every page. You can open it from any screen — patient charts, billing, scheduling, or the dashboard — and it will have context about what you're looking at.
+![Smart Keyword Command Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/smart_keyword_ui.png)
+
+The support bubble (💬) is always there when you need it, providing instant access to your practice's knowledge base and clinical logic.
 
 ### 🌐 Web Portal — What You Can Do
 
-The web portal companion is optimized for **clinical and administrative workflow acceleration**. It provides a range of advanced tools directly in your browser:
+The web portal assistant is optimized for **clinical and administrative workflow acceleration**. It provides a range of intelligent tools directly in your browser:
 
 <details>
 <summary>Click to view full details</summary>
@@ -82,34 +66,30 @@ The web portal companion is optimized for **clinical and administrative workflow
 | Capability | Example | How It Works |
 |------------|---------|--------------|
 | **Clinical Voice Dictation** | Record a session → get a professional note | On-device processing. Audio **never** leaves your machine. |
-| **Clinical Q&A** | "Contraindications for Concerta in cardiac history?" | Secured logic with medical safety checks. |
+| **Clinical Q&A** | "Contraindications for Concerta in cardiac history?" | Secured intelligence with medical safety checks. |
 | **Treatment Plan Support** | "Draft a BIP for tantrums" | Automatically suggests drafts based on your practice specialty. |
-| **Advanced Billing Logic** | "What code for 45-minute family session?" | Cross-references built-in medical coding standards. |
+| **Smart Billing Logic** | "What code for 45-minute family session?" | Cross-references built-in medical coding standards. |
 | **Report Generation** | "Summarize this patient's last 3 sessions" | Analyzes your clinical records within your secure workspace. |
 | **Translation** | "Translate this consent form to Spanish" | 12-language support for clinical terminology. |
-| **Seamless Sharing** | Generate plan → "Share to billing channel" | Forwards documents securely without manual file copying. |
+| **Smart Sharing** | Generate plan → "Share to billing channel" | Forwards documents securely without manual file copying. |
 
 
-**What the Web Companion Cannot Do:**
+**What the Web Assistant Cannot Do:**
 - ❌ Read, write, or modify files on your computer
 - ❌ Execute terminal commands or scripts
 - ❌ Access external websites or APIs
 - ❌ Install software or change system settings
 - ❌ Access patient data from other workspaces (strict tenant isolation)
 </details>
-### 💻 VS Code Extension — What You Can Do
+### 💻 VS Code Extension — Clinical Tech Tooling
 
-The VS Code extension is a **full-capability development and clinical tool** with local workspace access:
+The VS Code extension is a **full-capability clinical technology tool** with direct workspace access. It’s perfect for administrators managing large practices or developers building on the platform.
 
-- **read_file:** Read any file in your workspace
-- **list_files:** List directory contents with glob filtering
-- **search_files:** Ripgrep-powered code search across the project
-- **run_command:** Execute terminal commands (npm, git, build, test)
-- **get_open_editors:** See which files are open and cursor position
-- **open_url:** Open URLs in the default browser
-- **fetch_url:** Read web page content for analysis
-- **supabase_cli:** Manage database (migrations, pull, push, status)
-- **stripe_cli:** Manage payments (webhooks, triggers, listen)
+![VS Code Clinical Extension Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/vscode_clinical_extension_ui.png)
+
+- **Search Everything:** Instant, workspace-wide search for any clinical record or code.
+- **Workflow Tools:** Run commands for database sync, billing processing, and more.
+- **Direct Access:** List and edit clinical documents with path-restricted security.
 
 <details>
 <summary>Click to view full details</summary>
@@ -127,7 +107,7 @@ The VS Code extension is a **full-capability development and clinical tool** wit
 | **stripe_cli** | Manage payments (webhooks, triggers, listen) | Uses authenticated Stripe CLI |
 
 
-**What the VS Code Companion Cannot Do:**
+**What the VS Code Assistant Cannot Do:**
 - ❌ Access files outside the open workspace folder
 - ❌ Run commands longer than 120 seconds
 - ❌ Access the internet without user-visible URLs
@@ -138,24 +118,24 @@ The VS Code extension is a **full-capability development and clinical tool** wit
 
 Every restriction is driven by **HIPAA compliance** and the principle of **least privilege**:
 
-- **Web companion has no file access:** A browser-based tool must not read/write the local filesystem — this prevents data exfiltration if a session token is compromised
+- **Web assistant has no file access:** A browser-based tool must not read/write the local filesystem — this prevents data exfiltration if a session token is compromised
 - **VS Code tools are workspace-scoped:** Path traversal (`../../etc/passwd`) is blocked to prevent access to sensitive system files
-- **URL whitelist for auto-open:** Prevents phishing attacks where a compromised system output could redirect users to malicious sites
+- **URL whitelist for auto-open:** Prevents phishing attacks where a compromised model output could redirect users to malicious sites
 - **Terminal command blocklist:** Prevents destructive operations that could wipe clinical data or compromise the host
-- **Patient data requires API auth:** All PHI access goes through the audited API layer — the companion cannot bypass audit logging
-- **Role-based tool gating:** If your workspace role allows only 3 tools, the companion is restricted to those 3 tools — even if the system requests others
+- **Patient data requires API auth:** All PHI access goes through the audited API layer — the assistant cannot bypass audit logging
+- **Role-based tool gating:** If your workspace role allows only 3 tools, the assistant is restricted to those 3 tools — even if the model requests others
 
 <details>
 <summary>Click to view full details</summary>
 
 | Restriction | Reason |
 |------------|--------|
-| **Web companion has no file access** | A browser-based tool must not read/write the local filesystem — this prevents data exfiltration if a session token is compromised |
+| **Web assistant has no file access** | A browser-based tool must not read/write the local filesystem — this prevents data exfiltration if a session token is compromised |
 | **VS Code tools are workspace-scoped** | Path traversal (`../../etc/passwd`) is blocked to prevent access to sensitive system files |
-| **URL whitelist for auto-open** | Prevents phishing attacks where a compromised system output could redirect users to malicious sites |
+| **URL whitelist for auto-open** | Prevents phishing attacks where a compromised model output could redirect users to malicious sites |
 | **Terminal command blocklist** | Prevents destructive operations that could wipe clinical data or compromise the host |
-| **Patient data requires API auth** | All PHI access goes through the audited API layer — the companion cannot bypass audit logging |
-| **Role-based tool gating** | If your workspace role allows only 3 tools, the companion is restricted to those 3 tools — even if the system requests others |
+| **Patient data requires API auth** | All PHI access goes through the audited API layer — the assistant cannot bypass audit logging |
+| **Role-based tool gating** | If your workspace role allows only 3 tools, the assistant is restricted to those 3 tools — even if the model requests others |
 
 </details>
 <details><summary><h3>🛡️ Three-Layer Safety Architecture</h3></summary>
@@ -171,7 +151,7 @@ Layer 2: ROLE-BASED TOOL GATING (RBAC)
   Prevents: privilege escalation, unauthorized tool execution
 
 Layer 3: OUTPUT GUARDRAILS (Rolling Window)
-  System output → regex filter → strip refusals, meta-commentary, persona breaches
+  Model output → regex filter → strip refusals, meta-commentary, persona breaches
   Prevents: prompt leakage, sycophantic patterns, hallucinated capabilities
 ```
 
@@ -181,7 +161,7 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 - **Available on every screen:** ✅ Yes — pinned bubble
 - **Conversation Mode (🗣️):** ✅ Browser TTS + MediaRecorder
 - **Clinical Q&A:** ✅
-- **SOAP Dictation:** ✅ On-device Voice Engine
+- **SOAP Dictation:** ✅ On-device Whisper
 - **Treatment plan drafts:** ✅
 - **Read local files:** ❌
 - **Run terminal commands:** ❌
@@ -193,7 +173,7 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 - **Practice memory (Prism):** ✅ Cloud-synced
 - **Offline mode:** ✅ Queued sync
 - **Audit logged:** ✅ Every request
-- **Engine selector:** ✅ Full chat page only
+- **Model selector:** ✅ Full chat page only
 
 <details>
 <summary>Click to view full details</summary>
@@ -203,7 +183,7 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 | **Available on every screen** | ✅ Yes — pinned bubble | ✅ Yes — sidebar panel |
 | **Conversation Mode (🗣️)** | ✅ Browser TTS + MediaRecorder | ✅ Native avlisten + macOS TTS |
 | **Clinical Q&A** | ✅ | ✅ |
-| **SOAP Dictation** | ✅ On-device Voice Engine | ✅ On-device Voice Engine |
+| **SOAP Dictation** | ✅ On-device Whisper | ✅ On-device Whisper |
 | **Treatment plan drafts** | ✅ | ✅ |
 | **Read local files** | ❌ | ✅ Workspace-scoped |
 | **Run terminal commands** | ❌ | ✅ With blocklist |
@@ -213,14 +193,14 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 | **Code search (ripgrep)** | ❌ | ✅ Workspace-scoped |
 | **Web page reading** | ❌ | ✅ With URL whitelist |
 | **Practice memory (Prism)** | ✅ Cloud-synced | ✅ Cloud-synced |
-| **Offline mode** | ✅ Queued sync | ✅ Local Processing fallback |
+| **Offline mode** | ✅ Queued sync | ✅ Local Ollama fallback |
 | **Audit logged** | ✅ Every request | ✅ Every request |
-| **Engine selector** | ✅ Full chat page only | ✅ Settings panel |
+| **Model selector** | ✅ Full chat page only | ✅ Settings panel |
 
 </details>
 ### 🗣️ Conversation Mode (Hands-Free Voice Chat)
 
-Conversation Mode turns the companion into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Companion, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
+Conversation Mode turns the assistant into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Assistant, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
 
 ![Conversation Mode & Clinical Voice Dictation](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
@@ -242,18 +222,18 @@ Every word is audit-logged. The transcription goes through `/api/v1/transcribe` 
 |---------|-----------|-------------------|
 | **Voice engine** | Browser MediaRecorder API | Native `avlisten` binary (compiled Swift) |
 | **Speech output** | Browser SpeechSynthesis API | macOS `say` command / Python TTS tool |
-| **HIPAA enforcement** | Forces local backend automatically | Forces local Local Processing — fail-closed if unavailable |
+| **HIPAA enforcement** | Forces local backend automatically | Forces local Ollama — fail-closed if unavailable |
 | **Session recording** | Not available (browser security) | Optional with AES-256-GCM encryption + consent flow |
 | **Auto-stop** | 15-second max per utterance | Configurable silence threshold (500ms–10s) |
 | **Transcript capture** | In-memory during session | Full transcript saved on stop |
 | **Activate** | 🗣️ button in chat input bar | 🎙️ button in chat panel |
 
 
-> ⚠️ **HIPAA Constraint:** Conversation Mode **always** forces the local backend (Local Processing). Ambient clinical audio transcriptions will never be sent to cloud APIs. If the local backend is unavailable, Conversation Mode refuses to start (fail-closed design).
+> ⚠️ **HIPAA Constraint:** Conversation Mode **always** forces the local backend (Ollama). Ambient clinical audio transcriptions will never be sent to cloud APIs. If the local backend is unavailable, Conversation Mode refuses to start (fail-closed design).
 </details>
-### 🧠 Engine Routing & Tier Architecture
+### 🧠 Model Routing & Tier Architecture
 
-The Advanced Companion does **not** expose a engine selector by default. The server automatically routes each request to the best engine for the user's subscription tier:
+The intelligent assistant does **not** expose a model selector by default. The server automatically routes each request to the best model for the user's subscription tier:
 
 - **Free:** Gemini 2.5 Flash
 - **Standard:** Gemini 3.1 Pro Exp
@@ -263,7 +243,7 @@ The Advanced Companion does **not** expose a engine selector by default. The ser
 <details>
 <summary>Click to view full details</summary>
 
-| Tier | Default Engine | Max Tokens | Daily Limit | Engine Selector Visible |
+| Tier | Default Model | Max Tokens | Daily Limit | Model Selector Visible |
 |------|--------------|------------|-------------|----------------------|
 | **Free** | Gemini 2.5 Flash | 4,096 | 100 | ❌ Hidden (FloatChat) / ✅ Full chat page |
 | **Standard** | Gemini 3.1 Pro Exp | 8,192 | 2,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
@@ -271,29 +251,29 @@ The Advanced Companion does **not** expose a engine selector by default. The ser
 | **Enterprise** | Gemini 3.1 Pro Exp | 32,768 | 100,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
 
 
-**Where the engine selector appears:**
+**Where the model selector appears:**
 - ✅ **Full chat page** (`/app/chat`) — users can override their tier default
-- ✅ **VS Code extension** — settings panel for engine selection
-- ❌ **FloatChat bubble** — always uses `synalux-default`, server picks the tier engine
-- ❌ **SOAP dictation** — fixed pipeline, no engine choice
+- ✅ **VS Code extension** — settings panel for model selection
+- ❌ **FloatChat bubble** — always uses `synalux-default`, server picks the tier model
+- ❌ **SOAP dictation** — fixed pipeline, no model choice
 
-**Server-side enforcement:** Even if a client sends a engine ID, the server validates it against `TIER_ALLOWED_ENGINES`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
+**Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
 </details>
-### ⚡ @Keywords — Configurable Command System
+### ⚡ @Keywords — Configurable AI Command System
 
-The `@keyword` system is the **primary interface** between clinicians and the clinical companion. Every Advanced text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific Workflow instructions.
+The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
 
 <details>
 <summary>Click to view full details</summary>
 
-> **Architecture:** Keywords are **first-class prompt injections** stored in the database. The `description` field of each keyword is a natural language instruction that the Engine interprets and executes when a user types `@keyword`. Admins can tune Automated behavior per workspace without redeploying the application.
+> **Architecture:** Keywords are **first-class prompt injections** stored in the database. The `description` field of each keyword is a natural language instruction that the AI engine interprets and executes when a user types `@keyword`. Admins can tune AI behavior per workspace without redeploying the application.
 
 #### How It Works
 
-1.  **User Input:** You type `@soap` followed by your session description in any Advanced text field.
+1.  **User Input:** You type `@soap` followed by your session description in any smart text field.
 2.  **Detection:** The system detects the `@` symbol and shows a dropdown of available commands.
-3.  **Expansion:** When you select a keyword, the system injects the specific clinical instructions for that command into the processing logic.
-4.  **Generation:** The system follows those instructions to generate a perfectly formatted clinical note, treatment plan, or report.
+3.  **Expansion:** When you select a keyword, the system injects the specific clinical instructions for that command into the AI's logic.
+4.  **Generation:** The AI follows those instructions to generate a perfectly formatted clinical note, treatment plan, or report.
 
 **Key design:** Keyword descriptions are **only injected when the user actually types them** (the "Expansion Strategy"). This means you never pay token costs for unused keywords — a workspace with 50 keywords configured only sends the 1-2 that the user activated.
 
@@ -325,9 +305,9 @@ GOOGLE_PLACES_API_KEY=your_google_places_api_key
 
 #### Using @Keywords
 
-Type `@` in any Advanced text field to see the keyword dropdown:
+Type `@` in any smart text field to see the keyword dropdown:
 
-![Advanced Companion & @Keywords](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/30_intelligent_assistant.png)
+![Intelligent Assistant & @Keywords](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/30_intelligent_assistant.png)
 
 - **Arrow keys** → navigate the list
 - **Enter / Tab** → accept the selected keyword
@@ -336,7 +316,7 @@ Type `@` in any Advanced text field to see the keyword dropdown:
 
 #### Clinical Ghost Text Completions (Tab to Accept)
 
-Beyond `@keywords`, the AdvancedTextArea provides inline **ghost text completions** for common clinical phrases. These appear as semi-transparent text that you accept with the Tab key:
+Beyond `@keywords`, the SmartTextArea provides inline **ghost text completions** for common clinical phrases. These appear as semi-transparent text that you accept with the Tab key:
 
 ```
 You type:    "the client dem"
@@ -383,7 +363,7 @@ You press Tab → "the client demonstrated"
 
 These 12 keywords are available in every workspace regardless of practice type:
 
-| @Keyword | Icon | Label | Workflow Instruction |
+| @Keyword | Icon | Label | AI Instruction |
 |----------|------|-------|----------------|
 | `@drive` | 📂 | Practice Drive | Search the Practice Drive for documents matching the user's query. Return titles, categories, and links. |
 | `@patient` | 👤 | Patient Lookup | Look up the patient's record — demographics, diagnoses, authorizations, and appointments. |
@@ -402,7 +382,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>🧠 ABA (Applied Behavior Analysis)</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@soap` | 📝 | SOAP Note | Structured SOAP with ABA terminology — skill acquisition data, prompt levels, behavior reduction data, program modifications. |
 | `@fba` | 🔍 | FBA Draft | Functional Behavior Assessment — antecedents, behaviors, consequences, hypothesized function (AEBC), data collection recommendations. |
@@ -420,7 +400,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>🧠 Mental Health & Psychiatry</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@soap` | 📝 | SOAP Note | Mental health SOAP — symptoms, MSE findings, treatment response, medication adherence, risk assessment. |
 | `@mse` | 🧠 | Mental Status Exam | Full MSE — appearance, behavior, speech, mood/affect, thought process/content, perception, cognition, insight, judgment. |
@@ -438,7 +418,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>🏃 Physical Therapy / Occupational Therapy</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@eval` | 📐 | PT/OT Evaluation | Comprehensive eval — history, ROM, MMT, sensation, balance, gait, functional assessment, plan of care. |
 | `@rom` | 🦿 | Range of Motion | ROM table: Joint \| Motion \| Active \| Passive \| Normal \| WNL. End-feel quality, bilateral comparison. |
@@ -456,7 +436,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>👶 Pediatrics</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@wellchild` | 👶 | Well-Child Visit | Age-appropriate template — growth percentiles, milestones, immunizations, anticipatory guidance per Bright Futures. |
 | `@milestone` | 📏 | Developmental Milestones | Check gross/fine motor, language, cognitive, social-emotional against CDC norms. Flag delays, recommend referrals. |
@@ -474,7 +454,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>🦷 Dental</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@exam` | 🦷 | Dental Exam | Comprehensive exam — chief complaint, medical history, intra/extra-oral, periodontal screening, treatment plan. |
 | `@perio` | 📏 | Periodontal Charting | 6-site probing, BOP, recession, CAL, mobility, furcation. AAP 2017 classification. |
@@ -490,7 +470,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>🔬 Dermatology</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@skinexam` | 🔍 | Skin Exam | Total body exam — lesion morphology, ABCDE criteria, dermoscopy, body map, prior comparison. |
 | `@biopsy` | 🔬 | Biopsy Report | Requisition (site, clinical DDx, type) OR interpret pathology with clinical-pathological correlation. |
@@ -503,7 +483,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 <details>
 <summary><h4>🐾 Veterinary Medicine</h4></summary>
 
-| @Keyword | Icon | Label | Workflow Summary |
+| @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@exam` | 🐾 | Clinical Exam | Signalment, history, system-by-system PE, differential diagnoses, diagnostic plan. |
 | `@soap` | 📝 | SOAP Note | Species-appropriate SOAP — weight, vitals (breed-specific ranges), BCS 1-9, dental grade. |
@@ -534,7 +514,7 @@ POST /api/v1/keywords
   "category": "clinical"
 }
 
-# Update a keyword's Automated instruction
+# Update a keyword's AI instruction
 PUT /api/v1/keywords
 {
   "id": "<keyword_uuid>",
@@ -549,7 +529,7 @@ PUT /api/v1/keywords
 DELETE /api/v1/keywords
 { "id": "<keyword_uuid>" }
 
-# Re-seed workspace with defaults (resets custom Workflow instructions)
+# Re-seed workspace with defaults (resets custom AI instructions)
 POST /api/v1/keywords?action=seed
 { "specialty": "mental_health" }
 ```
@@ -619,19 +599,17 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 </details>
 
-### Triple-Logging Architecture
+### Triple-Logging Infrastructure
 
-Every API request flows through three logging layers:
+Every interaction with your patient data is captured in three distinct, immutable layers. This ensures absolute accountability and creates a bulletproof audit trail for legal and HIPAA compliance.
 
-![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
+![Security Audit Logs Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
 
-| Log Table | What It Captures | When It Fires | Mutability |
-|-----------|-----------------|---------------|------------|
-| **system_audit_log** | Who, what, when, result, duration, IP, user agent | **Every request** (57 routes) | **Immutable** — no UPDATE or DELETE |
-| **admin_audit_log** | Full request body snapshot, before/after state | Admin mutations only (POST/PUT/DELETE on admin routes) | **Immutable** — append-only |
-| **hipaa_access_log** | Patient ID, action type (VIEW/EDIT), resource type | Any route touching patient data | **Immutable** — HIPAA retention |
+* **Clinical Audit:** Tracks every time a patient chart is opened or edited.
+* **System Audit:** Logs every background process and database mutation.
+* **Network Audit:** Captures IP addresses and request headers for every connection.
 
-### 🔥 Fire-and-Forget Design
+### 🔥 Fire-and-Forget Security Design
 
 Audit writes are **asynchronous and non-blocking**. A failure to log **never** crashes a clinical workflow:
 
@@ -691,14 +669,14 @@ Every module in the platform has explicit audit configuration. Here is the compl
 | `/api/v1/team/webrtc-ring` | `comms` | — | — | Incoming call ring notifications |
 | `/api/v1/livekit/token` | `comms` | — | — | LiveKit room token generation |
 
-#### 🧠 Advanced Companion Modules
+#### 🧠 Intelligent Assistant Modules
 
 | Route | Module | PHI Logged | Admin Double | What Gets Audited |
 |-------|--------|------------|-------------|-------------------|
-| `/api/v1/chat` | `clinical_chat` | — | — | Every companion conversation turn (prompt + response + @keyword expansion) |
-| `/api/v1/chat/health` | `clinical_chat` | — | — | Health check for companion availability |
-| `/api/v1/transcribe` | `clinical_tools` | — | — | Voice-to-text transcription requests |
-| `/api/v1/translate` | `clinical_tools` | — | — | Document translation requests |
+| `/api/v1/chat` | `ai_chat` | — | — | Every assistant conversation turn (prompt + response + @keyword expansion) |
+| `/api/v1/chat/health` | `ai_chat` | — | — | Health check for assistant availability |
+| `/api/v1/transcribe` | `ai_tools` | — | — | Voice-to-text transcription requests |
+| `/api/v1/translate` | `ai_tools` | — | — | Document translation requests |
 | `/api/v1/keywords` | `keywords` | — | ✅ Yes | @keyword CRUD — create, update, delete, and seed operations (admin only) |
 
 #### 💳 Billing & Auth Modules
@@ -739,14 +717,14 @@ Synalux tracks the health and version of every external service the platform dep
 | Supabase | Database | API version, SDK version, health status |
 | Stripe | Payments | API version (2024-12-18), webhook connectivity |
 | BoldSign | E-Signatures | API version, document creation status |
-| Google Gemini | Language Engine | Engine version, response latency |
+| Google Gemini | Language Model | Model version, response latency |
 | LiveKit | Video/Voice | SFU version, room capacity, token generation |
 | Twilio | SMS/Voice | API version, delivery status |
 | SendGrid | Email | API version, delivery rate |
 | Zoom | Telehealth | SDK version, meeting creation status |
 | Quest Diagnostics | Lab Orders | Integration version, order routing |
 | LabCorp | Lab Orders | Integration version, result import |
-| Local Processing | Local Engines | Engine version, memory usage, availability |
+| Ollama | Local Models | Model version, memory usage, availability |
 
 Each external call is logged in `external_interface_log` with:
 - Request timestamp, response time, HTTP status
@@ -769,9 +747,9 @@ Each external call is logged in `external_interface_log` with:
 * **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
 * **Idempotent Sync (Offline Safety):** A safety net that ensures if your internet drops mid-session, your work is saved locally and quietly uploads the second your connection returns. You never lose a sentence.
 * **E-Signature Integration:** Generate a consent form or treatment plan and send it directly to a parent or patient's phone to sign with their finger.
-* **Automated Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, prompting your front desk to contact them.
+* **Smart Recalls:** An automated system that tracks when a patient is due for their next 6-month checkup or monthly lab test, prompting your front desk to contact them.
 * **Superbills:** An all-in-one financial receipt generated automatically from your clinical notes, containing all the medical codes (ICD-10/CPT) patients need to get reimbursed by insurance.
-* **Integrated Context Sharing:** Securely forward a treatment plan directly into a billing channel without duplicating files or exposing raw PHI outside the patient's chart.
+* **Smart Context Sharing:** Securely forward a treatment plan directly into a billing channel without duplicating files or exposing raw PHI outside the patient's chart.
 
 ## 🏥 Supported Practice Types
 
@@ -792,7 +770,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Data Tracking:** Behavioral targets, skill acquisition, frequency/duration data
 - **Insurance:** Autism/ABA-specific payer rules, prior auth tracking
 - **🧠 Data-Driven Mastery Predictions:** Trend-based prediction of target mastery timelines per skill ([How it works](docs_source_en/applied_behavior_analysis_aba.md#data-driven-mastery-predictions))
-- **💡 Advanced Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#advanced-treatment-recommendations))
+- **💡 Smart Treatment Recommendations:** Auto-recommend next targets based on mastered skills ([How it works](docs_source_en/applied_behavior_analysis_aba.md#smart-treatment-recommendations))
 - **📄 Automated Progress Reports:** One-click generation of insurance-ready progress reports ([How it works](docs_source_en/applied_behavior_analysis_aba.md#automated-progress-reports))
 - **🔍 Treatment Integrity:** Real-time DTT/NET fidelity monitoring with adherence scoring
 - **🌳 Program Tree View:** Hierarchical Program → Goal → Target tree with progress bars
@@ -810,7 +788,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | **Data Tracking** | Behavioral targets, skill acquisition, frequency/duration data |
 | **Insurance** | Autism/ABA-specific payer rules, prior auth tracking |
 | **🧠 Data-Driven Mastery Predictions** | Trend-based prediction of target mastery timelines per skill |
-| **💡 Advanced Treatment Recommendations** | Auto-recommend next targets based on mastered skills |
+| **💡 Smart Treatment Recommendations** | Auto-recommend next targets based on mastered skills |
 | **📄 Automated Progress Reports** | One-click generation of insurance-ready progress reports |
 | **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring |
 | **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars |
@@ -826,7 +804,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Pediatrics Documentation](docs_source_en/pediatrics.md)**
 
-![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
+![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 - **Clinical Templates:** Well-child exams, sick visits, immunization tracking, developmental screening
 - **Billing Codes:** 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization)
@@ -851,14 +829,14 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 #### Recommended Workflow by Role
 - **Admin**: Coordinates immunization registries, schedules well-child visits, and manages parent portal access.
 - **Pediatrician**: Conducts exams using age-specific templates, reviews growth charts, and prescribes medications.
-- **Medical Support**: Records vitals, administers vaccines, and completes initial developmental screenings (e.g., ASQ).
+- **Medical Assistant**: Records vitals, administers vaccines, and completes initial developmental screenings (e.g., ASQ).
 </details>
 
 ### 🦷 Dental & Orthodontics
 
 🔗 **[Read Detailed Dental & Orthodontics Documentation](docs_source_en/dental_orthodontics.md)**
 
-![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
+![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 - **Clinical Templates:** Comprehensive exam, perio charting, treatment planning, operative notes
 - **Billing Codes (CDT):** D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho)
@@ -892,9 +870,11 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🧠 Mental Health & Psychiatry
 
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/31_mental_health.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
@@ -928,7 +908,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🏃 Physical Therapy & Sports Medicine
 
-![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/32_physical_therapy.png)
+![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Physical Therapy & Sports Medicine Documentation](docs_source_en/physical_therapy_sports_medicine.md)**
 
@@ -957,12 +937,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 #### Recommended Workflow by Role
 - **Admin**: Tracks Medicare therapy caps and workers' comp authorizations, and schedules recurring weekly visits.
 - **Physical Therapist**: Performs initial evaluations, designs Home Exercise Programs (HEP), and tracks functional outcome scores.
-- **PT Support (PTA)**: Executes daily treatment plans, records ROM/MMT measurements, and updates progress notes.
+- **PT Assistant (PTA)**: Executes daily treatment plans, records ROM/MMT measurements, and updates progress notes.
 </details>
 
 ### 🔬 Dermatology
 
-![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/34_dermatology.png)
+![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Dermatology Documentation](docs_source_en/dermatology.md)**
 
@@ -993,12 +973,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 #### Recommended Workflow by Role
 - **Admin**: Manages iPLEDGE compliance documentation, routes lab orders, and schedules follow-up skin checks.
 - **Dermatologist**: Performs full-body exams, annotates body maps, interprets biopsies, and prescribes biologic therapies.
-- **Medical Support**: Takes clinical photos of lesions, assists with biopsies, and provides post-op care instructions to patients.
+- **Medical Assistant**: Takes clinical photos of lesions, assists with biopsies, and provides post-op care instructions to patients.
 </details>
 
 ### 🐾 Veterinary Medicine
 
-![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/28_veterinary.png)
+![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Veterinary Medicine Documentation](docs_source_en/veterinary_medicine.md)**
 
@@ -1046,7 +1026,7 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 ![Clinical SOAP Notes](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 - **SOAP Notes:** Auto-generated from voice dictation with specialty-specific templates
-- **Voice Dictation:** WASM Voice Engine on-device → zero cloud PHI transmission
+- **Voice Dictation:** WASM Whisper on-device → zero cloud PHI transmission
 - **4 Note Templates:** Therapy Session, Progress Note, Initial Evaluation, Discharge Summary
 - **Documents:** Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped
 - **PDF Export:** Server-side rendering (no client-side PHI leakage)
@@ -1059,7 +1039,7 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 | Feature | Details |
 |---------|---------|
 | **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Voice Engine on-device → zero cloud PHI transmission |
+| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
 | **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
 | **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
 | **PDF Export** | Server-side rendering (no client-side PHI leakage) |
@@ -1079,7 +1059,7 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 - **Admin Audit:** Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps
 - **Connection Monitor:** Sidebar shows real-time 🟢/🔴 status with pending sync count badge
 - **HIPAA Cleanup & ESAQ:** Emergency Session Auto-Quarantine securely vaults offline PHI via WebCrypto RSA keys on idle timeout
-- **Audio-Aware Idling:** Active microphone (e.g. WASM Voice Engine) intercepts idle timeouts to prevent false-positive logouts during long patient conversations
+- **Audio-Aware Idling:** Active microphone (e.g. WASM Whisper) intercepts idle timeouts to prevent false-positive logouts during long patient conversations
 - **Decoupled Calendar:** No forced logouts or forced syncs based on the scheduled calendar end time, allowing seamless clinical overtime
 - **Idempotent Sync:** Duplicate events prevented via client-generated UUIDs
 - **Time Drift Detection:** Server logs drift between client and server timestamps for audit
@@ -1097,7 +1077,7 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 | **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
 | **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
 | **HIPAA Cleanup & ESAQ** | Emergency Session Auto-Quarantine securely vaults offline PHI via WebCrypto RSA keys on idle timeout |
-| **Audio-Aware Idling** | Active microphone (e.g. WASM Voice Engine) intercepts idle timeouts to prevent false-positive logouts during long patient conversations |
+| **Audio-Aware Idling** | Active microphone (e.g. WASM Whisper) intercepts idle timeouts to prevent false-positive logouts during long patient conversations |
 | **Decoupled Calendar** | No forced logouts or forced syncs based on the scheduled calendar end time, allowing seamless clinical overtime |
 | **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
 | **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
@@ -1119,7 +1099,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 🧪 Lab Orders & Results Module
 
-![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
+![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
 🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
 
@@ -1183,7 +1163,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 📊 Vitals & Measurements Module
 
-![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/29_vitals.png)
+![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
 
@@ -1237,7 +1217,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 💉 Immunizations Module
 
-![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
+![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
 
@@ -1522,7 +1502,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 📋 Clinical Tasks Module
 
-![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
+![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
 
 🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
 
@@ -1548,24 +1528,15 @@ Payment Failed → past_due (warning banner, keep access)
 </details>
 
 ### 🤝 Patient Experience & Collaboration
-### 🏥 Patient Portal
+### 🏥 Secure Patient Portal
 
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+Give your patients full control with a secure, authenticated portal. They can view appointments, sign documents, pay bills, and message their clinical team — all from their phone or computer.
 
-![Patient Portal Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
+![Patient Portal Onboarding Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
 
-
-
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
-
-- **Authentication:** Access code login (SHA-256 hashed), expiration tracking
-- **Dashboard:** Health overview with upcoming appointments, unread messages, pending documents, balance due
-- **Messaging:** Threaded conversations with providers, urgent flags, read receipts
-- **Documents:** View/download clinical documents, upload insurance cards and forms
-- **Appointments:** View upcoming/past visits, request new appointments with preferred times
-- **Billing:** View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts
-- **Forms:** Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online
-- **Consents:** Digital consent management (treatment, HIPAA, telehealth, medication, research)
+- **One-Click Access:** Secure login via practice-issued access codes.
+- **Secure Messaging:** Threaded conversations with full audit trails.
+- **Billing & Payments:** Review outstanding balances and pay via Stripe instantly.
 
 <details>
 <summary>Click to view full details</summary>
@@ -1585,7 +1556,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 ### 📚 Patient Education Module
 
-![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
+![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
 
@@ -1666,18 +1637,13 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 ### 💬 Team Chat & Communication
 
-🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+Coordinate care with your entire team in real-time. Whether you’re in the clinic or working remotely, Synalux keep your practice connected through secure channels.
 
-![Secure Team Chat](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
+![Telehealth Video Conference Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/telehealth_conference_ui.png)
 
-- **E2E Encrypted Chat:** HIPAA-compliant team messaging within workspaces
-- **Group Video Meetings:** LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users
-- **Secure Scheduling:** Authenticated RSVPs utilizing zero-PHI email layouts for calendar links
-- **Voice & Video Calls:** Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration.
-- **Integrated Context Sharing:** Generate treatment plan → "Share Session" → forward to billing channel
-- **Voice-to-Action:** Voice commands → call, SMS, email, schedule (Pro+)
-- **Channels:** Department-based channels (Clinical, Billing, Admin)
-- **File Attachments:** Share documents, images, and clinical assets in chat
+- **Department Channels:** Group chats for Clinical, Billing, and Admin teams.
+- **HD Video Meetings:** HIPAA-compliant telehealth and team stand-ups.
+- **File Sharing:** Securely share clinical records within your private practice workspace.
 
 <details>
 <summary>Click to view full details</summary>
@@ -1688,7 +1654,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **Group Video Meetings** | LiveKit SFU powered telehealth & team scrums scaling to 25+ concurrent users |
 | **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
 | **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only). Daily limits: Unlimited volume & duration. |
-| **Integrated Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
+| **Smart Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
 | **File Attachments** | Share documents, images, and clinical assets in chat |
@@ -1819,8 +1785,8 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 ## <details><summary>🛠️ Technical Appendix (For IT/Dev Teams)</summary>
 
 ### 🏗️ Elite Architecture & Clinical Logic
-*   **On-Device Engine:** High-performance clinical transcription and analysis are executed locally to ensure absolute data privacy and zero-latency processing.
-*   **Constant-Time Fact Recovery:** Employs advanced mathematical systems for instant retrieval of clinical records, regardless of database size.
+*   **On-Device AI:** High-performance clinical transcription and analysis are executed locally to ensure absolute data privacy and zero-latency processing.
+*   **Constant-Time Fact Recovery:** Employs advanced mathematical models for instant retrieval of clinical records, regardless of database size.
 *   **Global Branch Integration:** Multi-tenant infrastructure supporting US, European, and Canadian legal requirements within a single unified environment.
 
 ### 🛡️ Security Specification
@@ -1831,7 +1797,7 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 ### 📁 Technical Documentation
 *   **Accounting Interfaces:** [/docs/ACCOUNTING_INTERFACES.md](./docs/ACCOUNTING_INTERFACES.md)
 *   **Compliance Matrix:** [/docs/COMPLIANCE_MATRIX.md](./docs/COMPLIANCE_MATRIX.md)
-*   **Security System:** Detailed RLS and RBAC documentation available in the database schema.
+*   **Security Model:** Detailed RLS and RBAC documentation available in the database schema.
 
 </details>
 
@@ -1839,3 +1805,9 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 **Synalux v11.1 Elite**  
 *The Future of Global Behavioral Health Management.*
 
+### 🆕 What's New in v11.1 Elite Patch
+
+- **🎯 One-Click DDA Letters:** New automated templates for Maryland DDA applications. Generate and sign in seconds.
+- **🛡️ Faster Loading:** Improved reliability for international users with automated language detection and faster navigation.
+- **🔗 Verified Documentation:** All links and clinical guides have been verified for accuracy.
+- **🧠 Advanced Clinical Drafting:** Upgraded ABA supervision support with the new `@dda` assistant.
