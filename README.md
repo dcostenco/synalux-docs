@@ -18,11 +18,11 @@
 
 | 👶 7. Pediatrics | 🦴 8. Physical Therapy | 🦷 9. Dental & Orthodontics |
 |:---:|:---:|:---:|
-| <img src="docs/demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="docs/demo/32_physical_therapy.png" width="100%" alt="Physical Therapy Module"> | <img src="docs/demo/33_dental.png" width="100%" alt="Dental Module"> |
+| <img src="docs/demo/36_global_dash.png" width="100%" alt="Pediatrics Module"> | <img src="docs/demo/39_branch_isolation.png" width="100%" alt="Physical Therapy Module"> | <img src="docs/demo/37_cross_border_finance.png" width="100%" alt="Dental Module"> |
 
 | 🧠 10. Mental Health | 🏥 11. Patient Portal | 📅 12. Scheduling |
 |:---:|:---:|:---:|
-| <img src="docs/demo/31_mental_health.png" width="100%" alt="Mental Health Module"> | <img src="docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
+| <img src="docs/demo/36_global_dash.png" width="100%" alt="Mental Health Module"> | <img src="docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
 
 | 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
 |:---:|:---:|:---:|
@@ -944,7 +944,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
 
-![Mental Health Module](docs/demo/31_mental_health.png)
+![Mental Health Module](docs/demo/36_global_dash.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
