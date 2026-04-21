@@ -481,6 +481,14 @@ Un portail complet pour patients avec authentification, messagerie, documents, r
 |:---:|
 | <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
 
+| 🌍 11. Tableau de Bord Global | 💱 12. Finance Elite (Consolidation) | 🛡️ 13. Audit de Conformité |
+|:---:|:---:|:---:|
+| <img src="../demo/36_global_dash.png" width="100%" alt="Global Dash"> | <img src="../demo/37_cross_border_finance.png" width="100%" alt="Elite Finance"> | <img src="../demo/38_compliance_audit.png" width="100%" alt="Compliance Audit"> |
+
+| 📍 14. Gestion des Succursales |
+|:---:|
+| <img src="../demo/39_branch_isolation.png" width="50%" alt="Branch Manager"> |
+
 ## 🏥 Synalux Health : L'application web clinique
 
 *Access anywhere via iPad, Chromebook, or Desktop at [`synalux.ai/app`](https://synalux.ai/app).*

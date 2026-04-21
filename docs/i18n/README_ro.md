@@ -60,6 +60,14 @@
 |:---:|
 | <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
 
+| 🌍 11. Tabloul de Bord Global | 💱 12. Finanțe Elite (Consolidare) | 🛡️ 13. Audit de Conformitate |
+|:---:|:---:|:---:|
+| <img src="../demo/36_global_dash.png" width="100%" alt="Global Dash"> | <img src="../demo/37_cross_border_finance.png" width="100%" alt="Elite Finance"> | <img src="../demo/38_compliance_audit.png" width="100%" alt="Compliance Audit"> |
+
+| 📍 14. Managementul Sucursalelor |
+|:---:|
+| <img src="../demo/39_branch_isolation.png" width="50%" alt="Branch Manager"> |
+
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.

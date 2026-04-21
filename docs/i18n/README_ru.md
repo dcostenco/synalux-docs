@@ -553,6 +553,14 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 |:---:|
 | <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
 
+| 🌍 11. Глобальная панель управления | 💱 12. Элитные финансы (Консолидация) | 🛡️ 13. Аудит соответствия |
+|:---:|:---:|:---:|
+| <img src="../demo/36_global_dash.png" width="100%" alt="Global Dash"> | <img src="../demo/37_cross_border_finance.png" width="100%" alt="Elite Finance"> | <img src="../demo/38_compliance_audit.png" width="100%" alt="Compliance Audit"> |
+
+| 📍 14. Управление филиалами |
+|:---:|
+| <img src="../demo/39_branch_isolation.png" width="50%" alt="Branch Manager"> |
+
 ## 🏥 Synalux Health: Клиническое веб-приложение
 
 *Access anywhere via iPad, Chromebook, or Desktop at [`synalux.ai/app`](https://synalux.ai/app).*
