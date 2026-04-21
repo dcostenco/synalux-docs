@@ -41,7 +41,7 @@
 ---
 
 
-## 📦 Модули платформы
+## <a name="platform-modules"></a>📦 Модули платформы
 
 Каждый модуль поддерживает многопользовательскую среду, изолирован по рабочим пространствам и соответствует требованиям HIPAA со строгим контролем доступа.
 
@@ -49,26 +49,26 @@
 <details>
 <summary><h3>📋 Клинические записи и документация</h3></summary>
 
-🔗 **[Подробное описание: Клинические записи и документация документация](docs_source_ru/clinical_notes_documentation.md)**
+🔗 **[Подробное описание: Клинические записи и документация](../../docs_source_en/clinical_notes_documentation.md)**
 
 
 
 | Функция | Подробности |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
+| **SOAP Notes** | Автоматически сгенерированы из голосовой речи с использованием специализированных шаблонов |
+| **Голосовая речь** | WASM Whisper на устройстве → нулевое передача PHI в облако |
+| **4 Шаблона записей** | Сессия терапии, Прогресс-нота, Начальная оценка, Заключительный справочник |
+| **Документы** | Лабораторные результаты, Изображения, Согласия, Оценки, Планы лечения — все в области рабочего пространства |
+| **Экспорт PDF** | Серверная рендеринг (нет утечки PHI на стороне клиента) |
+| **Электронные подписи** | Интеграция с BoldSign и 7 шаблонами документов |
+| **Оптическая распознавание символов (OCR)** | Сканирование документов на 30+ языках для цифровизации анкет |
 
 </details>
 
 <details>
 <summary><h3>📴 Сеансы клиники в автономном режиме</h3></summary>
 
-🔗 **[Подробное описание: Сеансы клиники в автономном режиме документация](docs_source_ru/offline_first_clinical_sessions.md)**
+🔗 **[Подробное описание: Сеансы клиники в автономном режиме документация](../../docs_source_en/offline_first_clinical_sessions.md)**
 
 
 
@@ -100,31 +100,31 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 </details>
 
 <details>
-<summary><h3>🧪 Лабораторные назначения и результаты Module</h3></summary>
+<summary><h3>🧪 Модуль Лабораторных Назначений и Результатов</h3></summary>
 
-🔗 **[Подробное описание: Лабораторные назначения и результаты Module документация](docs_source_ru/lab_orders_results_module.md)**
+🔗 **[Подробное описание: Модуль Лабораторных Назначений и Результатов](../../docs_source_en/lab_orders_results_module.md)**
 
 
 
 | Функция | Подробности |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
+| **Лабораторные Назначения** | Отслеживание заказов с поставщиками (Quest, LabCorp, внутренние), приоритет (регулярный/срочный/статус) |
+| **Отслеживание Результатов** | Индивидуальные результаты тестов с диапазонами норм и флагами аномалий (низкий/высокий/критический) |
+| **Категории** | Хематология, Химия, Жир, Кожные заболевания, Гормоны щелочной железы, Витамин, Инфлюенция, Коагуляция |
+| **Аномальные Предупреждения** | Автоматическое выделение результатов за пределами диапазона (например, повышенный ТШС, низкий витамин D) |
+| **iPLEDGE Labs** | Месячное мониторинг Accutane: CBC, CMP, панель жировых кислот, LFT с отслеживанием тренда |
+| **Пре-хирургическое** | INR, PT, глюкоза, очистка A1C для зубных имплантатов и хирургических процедур |
+| **Мониторинг Лекарств** | Проверки щелочной железы при SSRIs, панели жировых кислот стимуляторов, базовые панели биологий |
+| **Цикл Заказа** | Заказано → Собрано → Отправлено → Получено → В процессе → Результаты получены → Проверено |
+| **Интеграция с поставщиками** | Quest Diagnostics, маршрутизация заказов LabCorp (план: электронный импорт результатов) |
+| **Связь с диагнозом** | Коды ICD-10 прикреплены к заказам для документации медицинской необходимости |
 
 </details>
 
 <details>
 <summary><h3>💊 Медикаменты и рецепты Module</h3></summary>
 
-🔗 **[Подробное описание: Медикаменты и рецепты Module документация](docs_source_ru/medications_prescriptions_module.md)**
+🔗 **[Подробное описание: Медикаменты и рецепты Module документация](../../docs_source_en/medications_prescriptions_module.md)**
 
 
 
@@ -143,7 +143,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>📊 Жизненные показатели и измерения Module</h3></summary>
 
-🔗 **[Подробное описание: Жизненные показатели и измерения Module документация](docs_source_ru/vitals_measurements_module.md)**
+🔗 **[Подробное описание: Жизненные показатели и измерения Module документация](../../docs_source_en/vitals_measurements_module.md)**
 
 
 
@@ -161,7 +161,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>⚠️ Аллергии и предупреждения Module</h3></summary>
 
-🔗 **[Подробное описание: Аллергии и предупреждения Module документация](docs_source_ru/allergies_alerts_module.md)**
+🔗 **[Подробное описание: Аллергии и предупреждения Module документация](../../docs_source_en/allergies_alerts_module.md)**
 
 
 
@@ -177,20 +177,20 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 </details>
 
 <details>
-<summary><h3>💉 Прививки и вакцинация Module</h3></summary>
+<summary><h3>💉 Модуль Прививки и вакцинации</h3></summary>
 
-🔗 **[Подробное описание: Прививки и вакцинация Module документация](docs_source_ru/immunizations_module.md)**
+🔗 **[Подробное описание: Прививки и вакцинация Module документация](../../docs_source_en/immunizations_module.md)**
 
 
 
 | Функция | Подробности |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
+| **Отслеживание прививок** | Коды CVX, номера доз, номера партий, производители |
+| **Администрирование** | Место (IM/SC/PO/IN/ID), путь (инъекция, подкожный ввод, внутрь рта, внутрь глаза, внутрь носа), провайдер, осуществляющий прививку |
+| **Соответствие требованиям VIS** | Отслеживание даты подписания Информационной визы по прививкам |
+| **Отчетность в реестре иммунизации** | Отслеживание подачи данных в государственный реестр иммунизации |
+| **Государственный календарь прививок** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
+| **Пациенты с ухудшенной иммунной системой** | Особые рекомендации по прививкам для биологических пациентов |
 
 </details>
 
@@ -198,7 +198,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 <details>
 <summary><h3>💳 Счета и платежи Module</h3></summary>
 
-🔗 **[Подробное описание: Счета и платежи Module документация](docs_source_ru/billing_payments_module.md)**
+🔗 **[Подробное описание: Счета и платежи Module документация](../../docs_source_en/billing_payments_module.md)**
 
 
 
@@ -278,7 +278,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>📅 Планирование и записи</h3></summary>
 
-🔗 **[Подробное описание: Планирование и записи документация](docs_source_ru/scheduling_appointments.md)**
+🔗 **[Подробное описание: Планирование и записи документация](../../docs_source_en/scheduling_appointments.md)**
 
 
 
@@ -296,7 +296,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>👥 Управление персоналом (HR) Module</h3></summary>
 
-🔗 **[Подробное описание: Управление персоналом (HR) Module документация](docs_source_ru/hr_staff_management_module.md)**
+🔗 **[Подробное описание: Управление персоналом (HR) Module документация](../../docs_source_en/hr_staff_management_module.md)**
 
 
 
@@ -314,7 +314,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>⏱️ Табели и расчет заработной платы Module</h3></summary>
 
-🔗 **[Подробное описание: Табели и расчет заработной платы Module документация](docs_source_ru/timesheets_payroll_module.md)**
+🔗 **[Подробное описание: Табели и расчет заработной платы Module документация](../../docs_source_en/timesheets_payroll_module.md)**
 
 
 
@@ -331,7 +331,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>📦 Управление запасами Module</h3></summary>
 
-🔗 **[Подробное описание: Управление запасами Module документация](docs_source_ru/inventory_management_module.md)**
+🔗 **[Подробное описание: Управление запасами Module документация](../../docs_source_en/inventory_management_module.md)**
 
 
 
@@ -350,7 +350,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>🧾 Сводные счета (Superbills) Module</h3></summary>
 
-🔗 **[Подробное описание: Сводные счета (Superbills) Module документация](docs_source_ru/superbills_module.md)**
+🔗 **[Подробное описание: Сводные счета (Superbills) Module документация](../../docs_source_en/superbills_module.md)**
 
 
 
@@ -370,7 +370,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>📋 Клинические задачи Module</h3></summary>
 
-🔗 **[Подробное описание: Клинические задачи Module документация](docs_source_ru/clinical_tasks_module.md)**
+🔗 **[Подробное описание: Клинические задачи Module документация](../../docs_source_en/clinical_tasks_module.md)**
 
 
 
@@ -389,7 +389,7 @@ Payment Failed → past_due (warning banner, keep access)
 <details>
 <summary><h3>🏥 Портал для пациентов</h3></summary>
 
-🔗 **[Подробное описание: Портал для пациентов документация](docs_source_ru/patient_portal.md)**
+🔗 **[Подробное описание: Портал для пациентов документация](../../docs_source_en/patient_portal.md)**
 
 
 
@@ -411,7 +411,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary><h3>📚 Обучение пациентов Module</h3></summary>
 
-🔗 **[Подробное описание: Обучение пациентов Module документация](docs_source_ru/patient_education_module.md)**
+🔗 **[Подробное описание: Обучение пациентов Module документация](../../docs_source_en/patient_education_module.md)**
 
 
 
@@ -429,7 +429,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary><h3>🔔 Вызовы и напоминания Module</h3></summary>
 
-🔗 **[Подробное описание: Вызовы и напоминания Module документация](docs_source_ru/recalls_reminders_module.md)**
+🔗 **[Подробное описание: Вызовы и напоминания Module документация](../../docs_source_en/recalls_reminders_module.md)**
 
 
 
@@ -446,7 +446,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary><h3>🔄 Направления и межклинический чат Module</h3></summary>
 
-🔗 **[Подробное описание: Направления и межклинический чат Module документация](docs_source_ru/referrals_cross_practice_chat_module.md)**
+🔗 **[Подробное описание: Направления и межклинический чат Module документация](../../docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
@@ -465,7 +465,9 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 <details>
 <summary><h3>💬 Командный чат и коммуникация</h3></summary>
 
-🔗 **[Подробное описание: Командный чат и коммуникация документация](docs_source_ru/team_chat_communication.md)**
+🔗 **[Подробное описание: Командный чат и коммуникация документация](../../docs_source_en/team_chat_communication.md)**
+- [Collaborative Editor Suite](../../docs_source_en/collaborative_editors_module.md)
+
 
 
 
@@ -500,20 +502,20 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 | Функция | Подробности |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+| **Соответствие с HIPAA** | Полный аудиторский след с журналом BAA, архитектура готовая к BAA |
+| **Строгий контроль доступа** | 11 ролей, цифровски подписанной с конкретными ограничениями доступа |
+| **Изоляция данных** | Все записи изолированы по клинике (`workspace_id`) для предотвращения кросс-контamination |
+| **Криптографический вход** | Короткие-lived токены (срок действия 15 минут) обеспечивают выход устаревших устройств |
+| **Шифрование в покое** | Шифрование прозрачных данных (AES-256) для всех медицинских данных |
+| **Неприкосновенные журналы аудита** | Независимые журналы для всех назначений ролей, доступа к файлам и действий с сообщениями |
+| **Режим HIPAA Fail-Closed** | Отказывает в доступе микрофону при недоступности местной обработки (нет тихого облачного отката) |
+| **Минимизация данных** | Нет кэширования браузера для PHI; конфиденциальная информация удаляется немедленно при закрытии вкладки |
 </details>
 
 <details>
 <summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
 
-🔗 **[Подробное описание: Platform Administration & White-Label документация](docs_source_ru/platform_administration_white_label.md)**
+🔗 **[Подробное описание: Platform Administration & White-Label документация](../../docs_source_en/platform_administration_white_label.md)**
 
 
 
@@ -531,6 +533,25 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 
 ---
+
+
+### 📸 Product Tour
+
+| 📊 1. Patient Dashboard | 🧠 2. AI Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 💉 4. Immunizations | 📦 5. Inventory Management | 🧪 6. Lab Orders & Results |
+|:---:|:---:|:---:|
+| <img src="../demo/24_immunizations.png" width="100%" alt="Immunizations Module"> | <img src="../demo/25_inventory.png" width="100%" alt="Inventory Management"> | <img src="../demo/26_lab_orders.png" width="100%" alt="Lab Orders & Results"> |
+
+| 👶 7. Pediatrics | 🐾 8. Veterinary Medicine | ❤️ 9. Vitals & Measurements |
+|:---:|:---:|:---:|
+| <img src="../demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="../demo/28_veterinary.png" width="100%" alt="Veterinary Medicine"> | <img src="../demo/29_vitals.png" width="100%" alt="Vitals & Measurements"> |
+
+| 🤖 10. Intelligent Clinical Assistant |
+|:---:|
+| <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
 
 ## 🏥 Synalux Health: Клиническое веб-приложение
 
@@ -608,51 +629,50 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 ---
 
 <details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
+<summary><h2>🛡️ Экспертиза безопасности и архитектура HIPAA</h2></summary>
 
-Synalux is engineered for zero-trust environments.
+Synalux проектирован для сред без доверия.
 
 ### Архитектура безопасности — Поток мультитенантных запросов
 
 ```
 ┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
-│   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
+│   Клиент        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
 │                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+│  Браузер /      │────▶│  1. Проверка аутентификации (NextAuth)    │────▶│  3. Ограничение доступа к инструментам (ACL)     │────▶│  6. Политики RLS            │
+│  VS Code        │     │  2. Подпись JWT (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
+│                 │     │     (срок действия 15 минут)             │     │     (ProposedChange)         │     │  7. Многотенантные данные       │
+│                 │     │                              │     │  5. Журнал аудита HIPAA          │     │     (изоляция workspace_id) │
 └─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
+                              Google OAuth                    Отредактированный контекст инструмента                   Фильтры RLS по workspace_id
 ```
 
 **Ключевой вывод:** JWT несут claims `workspace_id`, а политики RLS Postgres читают их через `current_setting('request.jwt.claims')`, поэтому нет **серверных переменных сессии** и **пулов соединений на тенант**. Это делает Synalux горизонтально масштабируемым.
 
 ### Контроль безопасности
 
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+* **Аутентификация EdDSA (Ed25519):** Статические API-токены демoted to refresh-only status. Все запросы к API аутентифицируются через короткие-lived (15 минут) JWTs, подписанные с использованием асимметричной криптографии.
+* **Прозрачная шифрование данных (TDE):** Все сообщения командной работы, документы и история сессий шифруются при хранении.
+* **Строгое минимизация данных:** Транскрипты веб-приложения существуют только в памяти React state и удаляются при закрытии вкладки. `localStorage` никогда не используется для PHI.
+* **Хранение файлов с ограничением MIME:** Клинические вложения ограничены строгой проверкой MIME на сервере и предоставляются исключительно через 15-минутные подписанную URL с предотвращением IDOR.
+* **Непрерывный журнал аудита:** Все назначения ролей, скачивания файлов и удаление сообщений записываются в `rbac_audit_log` для обеспечения непререкаемости соответствия. Записи журнала аудита добавляются только в конец — даже администраторы базы данных не могут изменять исторические записи.
+* **Шлюз безопасности HITL:** Дамагинги (`terminal`, `git_tool`, `browser`) требуют явного одобрения пользователя через модальное диалоговое окно перед выполнением — предотвращая нажатие кнопки для удаленного кода с использованием подделки запросов.
+* **Fail-Closed режим HIPAA:** Если локальный LLM (Ollama) недоступен во время приема голосовых данных, система отклоняет доступ к микрофону вместо того, чтобы тихо переключаться на обработку в облаке.
+* **Баннер с устаревшими данными (безопасность пациентов):** Если клинические данные не были обновлены в текущей сессии, баннер предупреждает врача, что предотвращает принятие решений о лечении на основе устаревших данных.
 
-### Соответствие HIPAA Statement
+### Соответствие требованиям HIPAA
 
-| HIPAA Requirement | Synalux Implementation |
+| Требование HIPAA | Реализация Synalux |
 |---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **§164.312(a)(1)** Управление доступом | RBAC на основе JWT с ограничениями ACL по инструментам; RLS обеспечивает изоляцию тенантов на уровне базы данных |
+| **§164.312(b)** Журнал аудита | Непрерывный `hipaa_audit_log` + `rbac_audit_log` — каждый доступ к PHI записывается с именем пользователя, действием, ресурсом и временем戳 |
+| **§164.312(c)(1)** Целостность | AI Sandbox (`ProposedChange`) гарантирует, что нет автоматических изменений в клинических данных без подписи врача |
+| **§164.312(d)** Аутентификация | JWT асимметричной криптографии (срок действия 15 минут); Google OAuth с MFA для медицинских ролей |
+| **§164.312(e)(1)** Безопасность передачи данных | TLS 1.3 на всех концах; подключения Supabase используют SSL; нет PHI в параметрах URL |
+| **§164.308(a)(1)** Анализ рисков | Адversarial security reviews (`REVIEW_PROMPT.md`); автоматические контрольные линии с использованием сканирования SSE с окном прокрутки |
+| Нет `localStorage` | Все клинические данные существуют в React state (удаляются при закрытии вкладки) или Postgres (защищены RLS). Нет хранения PHI в браузере |
 
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
+> **Область применения BAA:** Полная соответствия HIPAA с использованием BAA требует Vercel Enterprise и уровня команды Supabase. Подробнее см. [Инфраструктура и облачные услуги](#platform-modules) для цен.
 
 </details>
 

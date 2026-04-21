@@ -1,5 +1,11 @@
 # Synalux — Changelog
 
+## [0.14.2] - 2026-04-18 — UI Bug Fixes & Payload Sanitization
+
+### Completed
+- **Portal UI Fixes:** Fixed unclickable authorizations table, broken notifications link, and NaN-crashing timesheets.
+- **API Payload Sanitization:** Fixed "no suitable key" errors by automatically converting empty strings from React inputs into proper PostgreSQL `null` values for UUID and foreign key constraints on the clinical API.
+
 ## [0.14.1] - 2026-04-18 — Security Mitigations & Dashboard Resilience
 
 ### Completed

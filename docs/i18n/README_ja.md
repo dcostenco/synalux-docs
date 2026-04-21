@@ -41,182 +41,201 @@
 ---
 
 
+
+### 📸 Product Tour
+
+| 📊 1. Patient Dashboard | 🧠 2. AI Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 💉 4. Immunizations | 📦 5. Inventory Management | 🧪 6. Lab Orders & Results |
+|:---:|:---:|:---:|
+| <img src="../demo/24_immunizations.png" width="100%" alt="Immunizations Module"> | <img src="../demo/25_inventory.png" width="100%" alt="Inventory Management"> | <img src="../demo/26_lab_orders.png" width="100%" alt="Lab Orders & Results"> |
+
+| 👶 7. Pediatrics | 🐾 8. Veterinary Medicine | ❤️ 9. Vitals & Measurements |
+|:---:|:---:|:---:|
+| <img src="../demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="../demo/28_veterinary.png" width="100%" alt="Veterinary Medicine"> | <img src="../demo/29_vitals.png" width="100%" alt="Vitals & Measurements"> |
+
+| 🤖 10. Intelligent Clinical Assistant |
+|:---:|
+| <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
+
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
 
 ### 🏥 Clinical Care Modules
 <details>
-<summary><h3>📋 Clinical Notes & Documentation</h3></summary>
+<summary><h3>📋 クリニカル・ノートとドキュメント</h3></summary>
 
-🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+🔗 **[詳細なクライニカル・ノートとドキュメントのドキュメント](../../docs_source_en/clinical_notes_documentation.md)**
 
 
 
-| Feature | Details |
+| フィーチャー | 詳細 |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
+| **SOAP ノート** | 専門性に基づくテンプレートから音声記録によって自動生成 |
+| **音声記録** | WASM Whisper on-device → クラウドへの PHI 伝達なし |
+| **4 ノート・テンプレート** | 疾患治療セッション、進行記録、初診評価、出院要約 |
+| **文書** | 検査結果、画像、同意書、評価、治療計画 — 全てワークスペース範囲内 |
+| **PDF エクスポート** | サーバーサイドレンダリング（クライアントサイドでの PHI 泄露なし） |
+| **電子署名** | BoldSign との統合、7 ドキュメントテンプレート |
+| **OCR** | 30 語种以上の文書スキャンで入力フォームのデジタル化 |
 
 </details>
 
 <details>
-<summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+<summary><h3>📴 オフラインファーストクライニカルセッション</h3></summary>
 
-🔗 **[Read Detailed Offline-First Clinical Sessions Documentation](docs_source_en/offline_first_clinical_sessions.md)**
+🔗 **[オフラインファーストクライニカルセッションの詳細ドキュメントを読む](../../docs_source_en/offline_first_clinical_sessions.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
-| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
-| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
-| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
-| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
-| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
-| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
-| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
-| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+| **クライアントサイドタイムスタンプ** | セッション開始/終了時刻は提供者のデバイスでキャプチャ — バッキング、サーバーの受信時間とは関係ありません |
+| **オフラインキュー** | オフライン中にlocalStorageにイベントがキューイングされ、再接続時に自動的に同期されます |
+| **ドラフト永続化** | 毎キーストロークで臨床メモがlocalStorageに自動保存 — ブラウザクラッシュや接続失敗でも残ります |
+| **セッションサインオフ** | 提供者はセッション終了時にサインオフする必要があります — タイムスタンプは正確なバッキング終了時刻です |
+| **管理者監査** | 各イベントには 🟢オンライン / 🔴オフラインの指示と同期タイムスタンプが表示されます |
+| **接続モニター** | サイドバーにリアルタイムの 🟢/🔴状態と待機中の同期件数バッジが表示されます |
+| **HIPAAクリーンアップ** | ログアウトやアイドルタイムアウト時にローカルデータが完全に消去されます |
+| **一貫性のある同期** | クライアント生成のUUIDを使用して重複イベントを防ぎます |
+| **時差検出** | サーバーはクライアントとサーバーのタイムスタンプ間の時差を監視します |
+| **セッションライフサイクル** | `session_start` → `session_pause` → `session_resume` → `session_end` |
 
-**Billing Compliance:**
+**請求規制:**
 ```
-Provider starts session at 2:00 PM (online) → 🟢
-  Connection drops at 2:30 PM
-Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
-  Connection restores at 4:00 PM → auto-sync
-Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
+提供者が2:00 PMにセッションを開始 (オンライン) → 🟢
+  接続が2:30 PMに断落
+提供者が3:45 PMにセッションを終了 (オフライン) → 🔴 client_timestamp = 3:45 PM
+  接続が4:00 PMに戻る → 自動同期
+サーバーは: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
   ↓
-Insurance billed: session 2:00 PM – 3:45 PM (accurate)
-Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+保険会社に請求: 2:00 PMから3:45 PM (正確)
+管理者は: "セッションが3:45 PMで終了しました 🔴オフライン (同期時刻: 4:00 PM)"
 ```
 
 </details>
 
 <details>
-<summary><h3>🧪 Lab Orders & Results Module</h3></summary>
+<summary><h3>🧪 ラボオーダーと結果モジュール</h3></summary>
 
-🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
+🔗 **[ラボオーダーと結果モジュールの詳細ドキュメントを読む](../../docs_source_en/lab_orders_results_module.md)**
 
 
 
-| Feature | Details |
+| 功能 | 詳細 |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
+| **ラボオーダー** | ベンダー（Quest、LabCorp、内訳）との注文追跡、優先度（通常/緊急/即時） |
+| **結果追跡** | 個々のテスト結果と参照範囲、異常フラグ（低/高/危険） |
+| **カテゴリ** | 血液学、化学、脂質、肝臓、甲状腺、ビタミン、炎症、凝血 |
+| **異常警告** | 範囲外の結果の自動フラグging（例：高めのTSH、低めのビタミンD） |
+| **iPLEDGE Labs** | 月間アキュターン監視: CBC、CMP、脂質パネル、LFTsとトレンド追跡 |
+| **事前手術** | INR、PT、血糖、A1Cクリアランス（歯科_implantや手術手順） |
+| **薬物管理** | SSRI甲状腺検査、刺激薬脂質パネル、生物基準パネル |
+| **注文ライフサイクル** | 注文 → 集合 → 送信 → 受取 → 処理中 → 結果 → 認証 |
+| **ベンダー連携** | Quest Diagnostics、LabCorpオーダールーティング（計画: 电子結果インポート） |
+| **診断リンク** | ICD-10コードが注文に付いており、医療的必要性の記録 |
 
 </details>
 
 <details>
-<summary><h3>💊 Medications & Prescriptions Module</h3></summary>
+<summary><h3>💊薬剤・処方箋モジュール</h3></summary>
 
-🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
+🔗 **[詳細な薬剤・処方箋モジュールドキュメンテーションを読む](../../docs_source_en/medications_prescriptions_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
+| **薬品カタログ** | NDCコード、薬類、スケジュール、投与方法、一般的な剂量の12以上の薬剤 |
+| **有効な処方箋** | 1人当たりの薬剤リスト（投与量、頻度、処方医、薬局、補充追跡） |
+| **薬類** | SSRIs、刺激薬、リテノイド、生物系薬、ブロンドコラスターゲン、NSAIDs、抗生素、抗発作薬 |
+| **iPLEDGE追跡** | アキュターン・イソトレチンオインの監視（月間の検査要件） |
+| **ステータスライフサイクル** | 活動中 → 保留 → 中断 → 完了 → キャンセル |
+| **相互作用警告** | 薬剤固有の警告配列（セロトニン・シンдрーム、QTc、胎児毒性） |
+| **薬局ルーティング** | 1人当たりの処方箋用名前付き薬局（電子処方準備のため） |
 
 </details>
 
 <details>
-<summary><h3>📊 Vitals & Measurements Module</h3></summary>
+<summary><h3>📊 体調管理・測定モジュール</h3></summary>
 
-🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
+🔗 **[詳しい体調管理・測定モジュールのドキュメンテーションを読む](../../docs_source_en/vitals_measurements_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
+| **標準的な体調** | 血圧（舒張压/動脈圧）、心拍数、呼吸回数、体温（測定方法付き）、血酸素飽和度、体重、身長、BMI |
+| **痛みスケール** | 1週間ごとの0から10までの数字による痛みスケール |
+| **児童成長** | 腕围、体重/身長/BMI百分位（WHO/CDC） |
+| **物理治療評価** | ROM角度、機能的な評価（Oswestry、LEFS）、四頭筋活性化のメモ |
+| **トレンド追跡** | 1人の患者の歴史的な体調データ（トレンド分析用） |
+| **予約連携** | 特定の予約会議に関連付けられた体調 |
 
 </details>
 
 <details>
-<summary><h3>⚠️ Allergies & Alerts Module</h3></summary>
+<summary><h3>⚠️ すべての過敏症と警告モジュール</h3></summary>
 
-🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
+🔗 **[詳細なすべての過敏症と警告モジュールドキュメンテーションを読む](../../docs_source_en/allergies_alerts_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
+| **過敏原タイプ** | 薬物、食事、環境、ラテックス、対比剤、その他のもの |
+| **重大度レベル** | 軽微、中程度、重度、生命脅威 |
+| **反応追跡** | 特定の反応記録（アナフィルクセチキ、SJS、ヒビス、GIの不調） |
+| **NKDAサポート** | 明確な「知った過敏症がない」という記録 |
+| **臨床警告** | 重要な過敏症フラグ（ピニシリン → クリンドマシンを使用、ソルファ → SJS歴史） |
+| **確認** | プロバイダーの確認と日付スタンプ |
 
 </details>
 
 <details>
-<summary><h3>💉 Immunizations Module</h3></summary>
+<summary><h3>💉 接種管理モジュール</h3></summary>
 
-🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
+🔗 **[詳細な接種管理モジュールドキュメンテーションを読む](../../docs_source_en/immunizations_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
+| **接種追跡** | CVX コード、剂量番号、ロット番号、製造元 |
+| **施設** | 接種場所（IM/SC/PO/IN/ID）、接種方法（IM/SC/PO/IN/ID）、接種医療提供者 |
+| **VIS準拠** | Vaccine Information Statement の日付追跡 |
+| **レジストリ報告** | 州の接種レジストリへの提出状況 |
+| **CDCスケジュール** | DTaP、IPV、MMR、Varicella、Hep A/B、Influenza、Tdap |
+| **免疫低下患者向け** | 生物学的な患者向け特別な接種推奨 |
 
 </details>
 
 ### 🏢 Practice Operations Modules
 <details>
-<summary><h3>💳 Billing & Payments Module</h3></summary>
+<summary><h3>💳 請料・支払いモジュール</h3></summary>
 
-🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+🔗 **[詳細な請求・支払いモジュールドキュメンテーションを読む](../../docs_source_en/billing_payments_module.md)**
 
 
 
-The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
+請求モジュールは、**Stripe Connect**を使用して、各医療機関に独自の独立した決済処理アカウントを提供し、そのアカウントが医療機関管理者とリンクされています。
 
-**Per-Practice Billing Configuration:**
-| Setting | Details |
+**医療機関ごとの請求設定:**
+| 設定 | 詳細 |
 |---------|---------|
-| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
-| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
-| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
-| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
-| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
-| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
+| **Stripe Connect** | 各ワークスペースには独自の `acct_xxx` Stripe Connect アカウント |
+| **管理ユーザーが連携している** | Stripe アカウント所有権はワークスペース管理者ユーザーとリンクされています |
+| **料金スケジュール** | 標準、保険、医療保険、自費の各料金率 |
+| **決済方法** | クレジットカード、ACH/銀行振込、-cheque、現金 - 医療機関ごとに設定可能 |
+| **自動記録** | 自動的な決済記録、領収書送信、月間決算生成 |
+| **税金設定** | 標準的な税金率とNPI/EIN（1099報告用） |
 
-**Multi-Country & Multi-Currency (NEW):**
+**多国語対応・多通貨（新規）:**
 
-| Country | Currency | Standard | Advanced | Enterprise |
+| 国家 | 通貨 | 标準 | 高級版 | 大規模版 |
 |---------|----------|----------|----------|------------|
 | 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
 | 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
@@ -225,306 +244,306 @@ The billing module uses **Stripe Connect** to give each practice its own indepen
 | 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
 | 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
 
-**Volume Discounts:**
-| Clients | Discount |
+**ボリューム割引:**
+| 客数 | 割引 |
 |---------|----------|
-| 100+ | 10% off per-seat price |
-| 500+ | 20% off per-seat price |
-| 1,000+ | 30% off per-seat price |
-| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+| 100人以上 | 座席単価の10%オフ |
+| 500人以上 | 座席単価の20%オフ |
+| 1,000人以上 | 座席単価の30%オフ |
+| 年間請求 | 追加で20%オフ（ボリューム割引と重複して適用され、最大45%まで） |
 
-**Payment Failure Lifecycle:**
+**決済失敗ライフサイクル:**
 ```
-Payment Failed → past_due (warning banner, keep access)
-  → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
+決済が失敗 → past_due (警告バナー、アクセスを保持)
+  → 2回目のリトライ → still past_due (緊急警告)
+  → 3回目のリトライが失敗 → 自動的にFreeタブへ降格
   → Stripe subscription.deleted → plan = 'free', sub cleared
 ```
 
-**Platform Admin Overrides:**
-- Synalux platform admins can set any user to unlimited trial on any plan
-- Override users are **immune** to Stripe webhook downgrades
-- Admin sees 🟢/🔴 indicators for payment status
-- Full audit trail: who set the override, when, and why
+**プラットフォーム管理者のオーバーライド:**
+- Synaluxプラットフォーム管理者は、任意のユーザーを任意のプランで無限期間試用に設定できます
+- オーバーライドユーザーはStripeウェブフック降格から免疫です
+- 管理者は決済状態の緑色/赤色のインジケーターを確認できます
+- 完全な監査ログ: 誰がオーバーライドを設定したか、いつ、なぜ
 
-**Revenue Cycle Management:**
-- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
-- ERA/EOB electronic remittance processing
-- Denial management with appeal deadline tracking
-- Prior authorization workflow
-- Aging reports (30/60/90/120 day buckets)
+**収益サイクル管理:**
+- 確保保険請求ライフサイクル追跡（下書き → 提出 → 承認 → 支払/拒否 → 上訴）
+- ERA/EOB電子決済処理
+- 拒否管理と上訴期限追跡
+- 前提承認ワークフロー
+- 諱滞報告（30日、60日、90日、120日のバケット）
 
-**Patient Payments:**
-- Patient portal "Pay Now" → Stripe Checkout redirect
-- Partial payments and custom amounts
-- Payment plans with Stripe recurring subscriptions
-- Receipt generation and download
-- Refund processing
+**患者決済:**
+- パートナー・ポータル「今すぐ支払う」→ Stripe Checkoutリダイレクト
+- 部分的な決済とカスタム額
+- ステップ・リサイクルメント（Stripe再帰的サブスクリプション）
+- 領収書生成とダウンロード
+- 返金処理
 
-**Insurance Claims:**
-- Electronic claim submission (837P)
-- Real-time eligibility verification
-- Coordination of Benefits (COB)
-- Explanation of Benefits (EOB) tracking
-- Appeal management with letter templates
+**保険請求:**
+- 电子化された請求提出（837P）
+- 実時的な資格確認
+- 协調保険（COB）
+- 説明書・保険（EOB）追跡
+- 上訴管理とテンプレート
 
-**Automatic Tax Collection:**
-- Stripe Tax enabled per-country (VAT, GST, HST, PST)
-- Tax calculated automatically based on workspace country
-- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
+**自動税金収集:**
+- Stripe Taxが有効な国（VAT、GST、HST、PST）
+- 国のワークスペースに基づいて自動的に税金計算
+- カナダの多地方税規制に準拠（联邦GST + 地方PST/HST）
+
+<details>
+<summary><h3>📅 排程と予約</h3></summary>
+
+🔗 **[詳細な排程と予約ドキュメンテーションを読む](../../docs_source_en/scheduling_appointments.md)**
+
+
+
+| 機能 | 詳細 |
+|---------|---------|
+| **予約状態** | 予定 → 確定 → 中途 → 完了 (+ キャンセル、欠席、再スケジュール) |
+| **患者ポータルのリクエスト** | 患者が好む日時で予約を依頼 → スタッフが確認または拒否 |
+| **多医療提供者** | 事務所内の医療提供者間でスケジュール |
+| **定期的な訪問** | 毎週のセッション、毎月のチェックアップ、歯科調整 |
+| **待機リスト** | スロットがいっぱいの場合、待機中の予約リクエスト |
+| **リマインダー** | 自動化された予約リマインダー（計画中） |
 
 </details>
 
 <details>
-<summary><h3>📅 Scheduling & Appointments</h3></summary>
+<summary><h3>👥 HR & Staff Management モジュール</h3></summary>
 
-🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
+🔗 **[HR & Staff Management モジュールの詳細ドキュメントを読む](../../docs_source_en/hr_staff_management_module.md)**
 
 
 
-| Feature | Details |
+| 特徴 | 詳細 |
 |---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
+| **スタッフプロフィール** | 雇用タイプ、雇用日、給与/時給率、専門性、部門追跡 |
+| **資格証明書** | ライセンス/認定の追跡と期限警報、更新ワークフロー |
+| **休暇** | 有休、病假、CE、産休、喪失、裁判所出庭 — 承認ワークフロー |
+| **トレーニング** | HIPAA、BLS、CPR の準拠トレーニングの追跡（期限日と達成状況） |
+| **パフォーマンスレビュー** | 年間/半期レビュー、評価、目標、改善計画、認知 |
+| **新規採用** | 保留中の採用状態、資格証明書の確認パイプライン、トレーニング割り当て |
 
 </details>
 
 <details>
-<summary><h3>👥 HR & Staff Management Module</h3></summary>
+<summary><h3>⏱️ タイムシートと給与モジュール</h3></summary>
 
-🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+🔗 **[詳細なタイムシートと給与モジュールのドキュメンテーションを読む](../../docs_source_en/timesheets_payroll_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
+| **自動生成** | サインされた臨床セッションノートから自動的にタイムシートが生成されます |
+| **非請求可能時間** | 管理者時間、運転時間、研修、病院準備時間を追跡します |
+| **承認ワークフロー** | 社員提出 → 監督者のレビュー → 給与処理 |
+| **給与エクスポート** | ADP、Gusto、Paycomとネイティブに統合されたタイムシートをエクスポートします |
+| **準拠性** | 40時間超労働警告、必須休憩時間の追跡、有給休暇累積の可視化 |
 
 </details>
 
 <details>
-<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+<summary><h3>📦 在庫管理モジュール</h3></summary>
 
-🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+🔗 **[在庫管理モジュールの詳細ドキュメントを読む](../../docs_source_en/inventory_management_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
+| **カテゴリ** | 牙科用品、ワクチン、薬剤品、生物系製品、PPE、外科用品、実験室用品、事務 |
+| **在庫管理** | 所持数量、再注文レベル、再注文量、単位コスト |
+| **ロットと有効期限** | ロット番号、有効期限、ワクチンのFIFO回転 |
+| **供給元管理** | ヘンリー・シェイン、パター森デンタル、ノーベルバイオケア、マッケソン、サンフィリスト |
+| **ステータス警告** | 在庫あり、在庫不足、無在庫、有効期限切れ、廃止 |
+| **保管場所** | ワクチンフリーズ（2-8°C）、生物系フリーズ、オペラトリーケース、鍵付きケース |
+| **専門品目** | 置換固定装置（$285）、生物系ペン（$2,850）、コロステリセーションカンスタッパー |
 
 </details>
 
 <details>
-<summary><h3>📦 Inventory Management Module</h3></summary>
+<summary><h3>🧾 超請求モジュール</h3></summary>
 
-🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
+🔗 **[詳細な超請求モジュールドキュメンテーションを読む](../../docs_source_en/superbills_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
-
-</details>
-
-<details>
-<summary><h3>🧾 Superbills Module</h3></summary>
-
-🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
+| **対面ベース** | 1回の訪問につき、診断コードと手術コード付きの超請求書 |
+| **マルチコード** | ICD-10 対策配列 + CPT/CDT 手術配列 + モディファイア (-25, -59) |
+| **財務分解** | 請求額、保険が請求した額、患者負担金、調整 |
+| **ステータスライフサイクル** | 草稿 → 审査 → 提出 → 支払 / 拒否 / 上訴 |
+| **すべての専門分野** | 健康保険受診、植牙、正骨科、精神療法、物理療法、皮膚科手術 |
+| **医療保険免除** | 医療保険契約義務の自動調整追跡 |
 
 </details>
 
 
 
 <details>
-<summary><h3>📋 Clinical Tasks Module</h3></summary>
+<summary><h3>📋 クリニカルタスクモジュール</h3></summary>
 
-🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+🔗 **[詳細なクリニカルタスクモジュールドキュメンテーションを読む](../../docs_source_en/clinical_tasks_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
+| **タスクカテゴリ** | ラボフォロー、事前認証、スケジューリング、文書作成、請求、患者電話、処方箋再発行、紹介 |
+| **優先度レベル** | 低い、通常、高め、緊急 |
+| **割り当て** | 特定のスタッフに委任され、期限と完了追跡 |
+| **患者連携** | 患者との連携でタスクが関連付けられ、ケアコーディネーション |
+| **状況追跡** | 開始 → 処理中 → 完了 / 中止 / 延期 |
+| **監査履歴** | 作成者、完了者、完了時刻 |
 
 </details>
 
 ### 🤝 Patient Experience & Collaboration
 <details>
-<summary><h3>🏥 Patient Portal</h3></summary>
+<summary><h3>🏥 パートナー</h3></summary>
 
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+🔗 **[パートナーの詳細ドキュメントを読む](../../docs_source_en/patient_portal.md)**
 
 
 
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
+認証、メッセージング、文書、予約、請求に関する機能が備えた完全な患者向けポータル。
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
+| **認証** | アクセスコードログイン（SHA-256ハッシュ化）、有効期限追跡 |
+| **ダッシュボード** | 健康概要、今後の予約、未読のメッセージ、保留中の文書、請求残高 |
+| **メッセージング** | プロバイダーとのスレッド化された会話、緊急フラグ、読み取り確認 |
+| **文書** | クリニカル文書の表示/ダウンロード、保険証明書とフォームのアップロード |
+| **予約** | 今後の訪問や過去の訪問を表示し、好む時間帯で新しい予約を依頼 |
+| **請求** | 請求残高、請求履歴（CPTコード付き）、Stripeを通じたオンライン決済、支払い計画、領収書 |
+| **フォーム** | 受付フォームの完了、PHQ-9/GAD-7 問卷、電子的な同意書 |
+| **同意書** | 電子的な同意書管理（治療、HIPAA、テレヘルス、薬剤師、研究） |
 
 </details>
 
 <details>
-<summary><h3>📚 Patient Education Module</h3></summary>
+<summary><h3>📚 患者教育モジュール</h3></summary>
 
-🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
+🔗 **[患者教育モジュールの詳細ドキュメントを読む](../../docs_source_en/patient_education_module.md)**
 
 
 
-| Feature | Details |
+| 特徴 | 詳細 |
 |---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
+| **素材カタログ** | 全ての専門分野で14の教育文書 |
+| **多言語対応** | 英語 + スペイン語の資料が利用可能 |
+| **カテゴリ** | 状態, 薬物, 手術, 生活様式, 院後, 家庭運動, 安全性, 预防 |
+| **配信方法** | 印刷版, ポータルアップロード, メール, 現場, テキスト |
+| **認知状況追跡** | 患者が素材を確認/承認したかどうかを追跡 |
+| **専門分野の例** | EpiPenガイド, Accutane安全性, ACLリハビリテーション, CBT家庭作業, 置換物院後 |
 
 </details>
 
 <details>
-<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
+<summary><h3>🔔 再発とリマインダーモジュール</h3></summary>
 
-🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
+🔗 **[再発とリマインダーモジュールの詳細ドキュメントを読む](../../docs_source_en/recalls_reminders_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
+| **再発タイプ** | 卫生、年度検診、随訪、検体復査、画像学的評価、検査、ワクチン接種、薬剤師レビュー |
+| **状況追跡** | 期日 → 過due → 設定 → 完了 → キャンセル |
+| **連絡試行回数** | 過dueな再発に対する連絡試行を追跡する |
+| **医療機関固有の機能** | 牙科6ヶ月間の清掃、皮膚科年度的な皮膚検査、アキュターン月間の検体 |
+| **自動期日設定** | 最終完了訪問に基づいて |
 
 </details>
 
 <details>
-<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
+<summary><h3>🔄 参考と跨学科チャットモジュール</h3></summary>
 
-🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
+🔗 **[詳細な参考と跨学科チャットモジュールドキュメンテーションを読む](../../docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
+| **参照追跡** | 医療機関、専門性、理由、診断コード、緊急度、認証追跡 |
+| **ステータスライフサイクル** | 待機 → 送信 → 承認 → スケジュール → 完了 / 期限切れ / 拒否 |
+| **跨学科チャット** | 医療機関管理者/事務担当者間のHIPAA準拠メッセージング |
+| **添付ファイル共有** | 医療機関間で画像、X線写真、文書、検査結果、処方箋を送信 |
+| **スレッド化された会話** | 1つの参照につき1つのチャットスレッド（既読確認付き） |
+| **実際の例** | 小児科→精神科（ADHD）、皮膚科→理療科（銀屑病性アラートリティ）、理療科→皮膚科（傷ついた部位のケア） |
+| **認証追跡** | 認証番号、有効期限、前回認証要件フラグ |
 
 </details>
 
 <details>
-<summary><h3>💬 Team Chat & Communication</h3></summary>
+<summary><h3>💬 チームチャットとコミュニケーション</h3></summary>
 
-🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+🔗 **[チームチャットとコミュニケーションの詳細ドキュメントを読む](../../docs_source_en/team_chat_communication.md)**
+- [Collaborative Editor Suite](../../docs_source_en/collaborative_editors_module.md)
 
 
 
-| Feature | Details |
+
+| 機能 | 詳細 |
 |---------|---------|
-| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
-| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
-| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
-| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
-| **Channels** | Department-based channels (Clinical, Billing, Admin) |
-| **File Attachments** | Share documents, images, and clinical assets in chat |
+| **E2E暗号化チャット** | ワークスペース内のHIPAA準拠のチームメッセージング |
+| **グループビデオミーティング** | スケーラブルな6人参加者のmesh WebRTC HIPAA準拠のテレセラシーとチームスタンドアップ |
+| **安全なスケジュール管理** | 認証されたRSVP、カレンダーリンク用のゼロ-PHIメールレイアウト |
+| **音声およびビデオ通話** | 安全な音声およびビデオ会議（エンタープライズ版のみ） |
+| **AIコンテキスト共有** | 治療計画生成 → 「セッションを共有」→ 請求チャネルに転送 |
+| **音声からアクションへ** | 音声コマンド → 呼び出し、SMS、メール、スケジュール（プロプラン） |
+| **チャンネル** | ディビジョンに基づくチャンネル（臨床、請求、管理） |
+| **ファイル添付** | チャットで文書、画像、および臨床アセットを共有 |
 
 </details>
 
 <details>
-<summary><h3>📞 Collaboration Practice Suite</h3></summary>
+<summary><h3>📞 コラボレーションプラクティス・スイート</h3></summary>
 
-| Feature | Details |
+| フィーチャー | 詳細 |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+| **中央ダッシュボード** | ルーターがメトリクスを効率的に集約化します。コマンドセンターはミスったタスクをネイティブに分離します。 |
+| **ビデオカウンセリング (WebRTC)** | Twilio TURN/STUN ノードを使用して、中間ボックスを避ける安全な P2P ビデオストリーミングの高度なセキュリティ。 |
+| **RLS ゲートィング** | 暗黙的なアイデンティティ追跡により、サーバーサイドのクロステナントデータリークをネイティブに排除し、Advanced/Pro の制限に厳密にマッピングします。 |
+| **臨床タスク** | ウェルスコープ内での内部医療リマインダー、承認、およびキューングがセキュアに分離されます。 |
 
 </details>
 
 ### 🔐 Enterprise Administration
     <details>
-    <summary><h3>🛡️ Security & Compliance</h3></summary>
+    <summary><h3>🛡️ セキュリティと準拠性</h3></summary>
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+| **HIPAA準拠** | 完全なHIPAA監査トラック、BAA対応のアーキテクチャ |
+| **厳格なアクセス制御** | 特定のアクセス制限を持つ11つの暗号化署名ロール |
+| **データ隔離** | クリニック（workspace_id）ごとにすべてのレコードが分離してクロス汚染を防ぐ |
+| **暗号化ログイン** | 15分間有効な短時間トークンで、古いデバイスがログアウトされるようにする |
+| **静止中の暗号化** | 全ての健康情報に対する透明データ暗号化（AES-256） |
+| **改ざん不能な監査ログ** | ロール割り当て、ファイルアクセス、メッセージアクションに関する不変ログ |
+| **フェイルクローズHIPAAモード** | 本地処理が利用できない場合、マイクへのアクセスを拒否（静かなクラウドフォールバックなし） |
+| **データ最小化** | ブラウザキャッシュにPHIがない；タブが閉じられると敏感なデータが即座に消去される |
 </details>
 
 <details>
-<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
+<summary><h3>⚙️ プラットフォーム管理と白ラベル化</h3></summary>
 
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+🔗 **[プラットフォーム管理と白ラベル化の詳細ドキュメントを読む](../../docs_source_en/platform_administration_white_label.md)**
 
 
 
-| Feature | Details |
+| 機能 | 詳細 |
 |---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+| **マルチテナントアーキテクチャ** | 分離されたワークスペース、専門性に基づく独自のブランドと設定 |
+| **動的なワークスペース** | 医療機関ロゴ、主要な住所、および SSR を介して動的に取得される色テーマ |
+| **モジュールの利用可能** | プラットフォーム管理者は、医療機関の専門性に基づいてモジュールをドラッグアンドドロップまたは非表示にできます |
+| **従業員機能トグル** | 基本的な役割を `restricted_features` JSONB 配列でオーバーライドし、実行時に API ブロックを強制します |
+| **スクリーンビルダーズ** | 医療機関ごとのボタンのリネーム、データグリッド列の非表示、または標準的な UI コピーのオーバーライド |
+| **ブレーキグラス監査** | プラットフォーム管理者のすべてのアクションが HIPAA 合格の監査記録に記録されます |
 
 </details>
 
@@ -608,9 +627,9 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 ---
 
 <details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
+<summary><h2>🛡️ 企業セキュリティとHIPAAアーキテクチャ</h2></summary>
 
-Synalux is engineered for zero-trust environments.
+Synaluxはゼロトラスト環境に設計されています。
 
 ### セキュリティアーキテクチャ — マルチテナントリクエストフロー
 
@@ -618,41 +637,40 @@ Synalux is engineered for zero-trust environments.
 ┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
 │   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
 │                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+│  ブラウザ /      │────▶│  1. 認証チェック (NextAuth)    │────▶│  3. ツールACLの強制実施     │────▶│  6. RLSポリシー              │
+│  VS Code        │     │  2. JWT署名 (Ed25519)    │     │  4. AIサンドボックス          │     │     (JWT → set_config)      │
+│                 │     │     (15分の有効期限)         │     │     (ProposedChange)         │     │  7. マルチテナントデータ      │
+│                 │     │                              │     │  5. HIPAA監査ログ            │     │     (workspace_id隔離)      │
 └─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
+                              Google OAuth                    Stripped tool context                   RLSフィルター by workspace_id
 ```
 
 **重要な洞察：** JWTが`workspace_id`クレームを持ち、PostgresのRLSポリシーが`current_setting('request.jwt.claims')`を通じてそれを読み取るため、**サーバーサイドのセッション変数**も**テナントごとの接続プール**もありません。これがSynaluxを水平スケーラブルにする要因です。
 
 ### セキュリティコントロール
 
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+* **EdDSA (Ed25519) 認証:** 静的APIトークンは再認証のみの状態に降格します。すべてのAPIリクエストは、非対称暗号化を使用して短時間（15分）のJWTで認証されます。
+* **透明データ暗号化 (TDE):** 全てのチームメッセージ、生成されたドキュメント、セッション履歴は静止中に暗号化されます。
+* **厳格なデータ最小化:** WebアプリのトランSCRIPTはReact状態メモリに厳密に保存され、タブが閉じられるとガベージコレクションされます。`localStorage`にはPHIは決して使用されません。
+* **MIME制限付きファイルストレージ:** クリничスな添付ファイルは厳格なサーバーサイドのMIME検証によって制限され、15分間有効な署名付きURLでIDOR防止により exclusivley 提供されます。
+* **不変監査ログ:** すべての役割割り当て、ファイルダウンロード、メッセージ削除は`rbac_audit_log`に永久に記録され、規範性の非復帰性を確保します。監査行は追加のみ — 単なるデータベース管理者も歴史的エントリを修正することはできません。
+* **HITLセーフガート:** 危険なツール (`terminal`, `git_tool`, `browser`) の実行前にモーダルダイアログを通じて明確なユーザーの承認が必要です — 提示注入によるゼロクリックRCEを防ぎます。
+* **失効したHIPAAモード:** クリニックスな音声入力中にローカルLLM（Ollama）が利用できない場合、システムは静默的にクラウド処理にフォールバックせず、マイクを開くのを拒否します。
+* **StaleDataBanner (患者安全):** クリニックスなデータが現在のセッションで更新されていない場合、バナーが医師に警告し、非最新情報に基づいて治療決定を防ぎます。
 
-### HIPAAコンプライアンス Statement
+### HIPAA コンプライアンス ステートメント
 
-| HIPAA Requirement | Synalux Implementation |
+| HIPAA 要件 | Synalux 実装 |
 |---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **§164.312(a)(1)** アクセス制御 | JWTベースのRBACとツールごとのACL；RLSはデータベース層でテナント隔離を強制します |
+| **§164.312(b)** 監査制御 | 不変な `hipaa_audit_log` + `rbac_audit_log` — すべてのPHIアクセスがユーザー、操作、リソース、タイムスタンプとともに記録されます |
+| **§164.312(c)(1)** 完全性 | AIサンドボックス (`ProposedChange`) は医師署名なしで臨床データへの自動化された書き込みを防ぎます |
+| **§164.312(d)** 認証 | 非対称暗号化を使用した15分有効期限のJWT (Google OAuthとMFA)；臨床役割用 |
+| **§164.312(e)(1)** 伝送セキュリティ | 全てのエンドポイントでTLS 1.3が強制されます；Supabase接続はSSLを使用します；URLパラメータにはPHIはありません |
+| **§164.308(a)(1)** リスク分析 | 敵対的なセキュリティレビュー (`REVIEW_PROMPT.md`)；ローリングウィンドウSSEスキャンによる自動出力ガードルール |
+| **LocalStorageなし** | 全ての臨床データはReact状態（タブが閉じられるとガベージコレクション）またはPostgres（RLS保護）に存在します。PHIのブラウザ内永続化はありません |
 
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
+> **BAAカバレッジ:** BAAで完全なHIPAA準拠にはVercel EnterpriseとSupabase Teamタグが必要です。料金については[プラットフォームモジュール](#platform-modules)を参照してください。
 
 </details>
 

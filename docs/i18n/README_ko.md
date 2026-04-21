@@ -41,490 +41,507 @@
 ---
 
 
+
+### 📸 Product Tour
+
+| 📊 1. Patient Dashboard | 🧠 2. AI Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 💉 4. Immunizations | 📦 5. Inventory Management | 🧪 6. Lab Orders & Results |
+|:---:|:---:|:---:|
+| <img src="../demo/24_immunizations.png" width="100%" alt="Immunizations Module"> | <img src="../demo/25_inventory.png" width="100%" alt="Inventory Management"> | <img src="../demo/26_lab_orders.png" width="100%" alt="Lab Orders & Results"> |
+
+| 👶 7. Pediatrics | 🐾 8. Veterinary Medicine | ❤️ 9. Vitals & Measurements |
+|:---:|:---:|:---:|
+| <img src="../demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="../demo/28_veterinary.png" width="100%" alt="Veterinary Medicine"> | <img src="../demo/29_vitals.png" width="100%" alt="Vitals & Measurements"> |
+
+| 🤖 10. Intelligent Clinical Assistant |
+|:---:|
+| <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
+
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
 
 ### 🏥 Clinical Care Modules
 <details>
-<summary><h3>📋 Clinical Notes & Documentation</h3></summary>
+<summary><h3>📋 의료 기록 및 문서화</h3></summary>
 
-🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+🔗 **[의료 기록 및 문서화 자세한 내용](../../docs_source_en/clinical_notes_documentation.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
+| **SOAP 기록** | 전문성에 따른 템플릿을 사용하여 음성 녹음으로 자동 생성됨 |
+| **음성 녹음** | WASM Whisper 장치 내에서 → 클라이언트 측 PHI 유출 없이 클라우드로 |
+| **4개의 기록 템플릿** | 치료 세션, 진단 보고서, 초기 평가, 퇴원 요약 |
+| **문서** | 검사 결과, 영상, 동의서, 평가, 치료 계획 등 모든 작업 공간 범위 내 |
+| **PDF 내보내기** | 서버 측 렌더링 (클라이언트 측 PHI 유출 없음) |
+| **전자 서명** | BoldSign와 7개 문서 템플릿 통합 |
+| **OCR** | 30여 가지 언어로 문서 스캔하여 입원 양식 디지털화 |
 
 </details>
 
 <details>
-<summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+<summary><h3>📴 오프라인 우선 의료 세션</h3></summary>
 
-🔗 **[Read Detailed Offline-First Clinical Sessions Documentation](docs_source_en/offline_first_clinical_sessions.md)**
+🔗 **[오프라인 우선 의료 세션 자세한 문서](../../docs_source_en/offline_first_clinical_sessions.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
-| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
-| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
-| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
-| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
-| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
-| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
-| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
-| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+| **클라이언트 측 타임스탬프** | 제공자의 장치에서 회话 시작/종료 시간을 캡처 — 청구에 사용, 서버 수신 시간이 아님 |
+| **오프라인 대기열** | 오프라인 상태일 때 localStorage에 이벤트가 큐업되고 재연결 시 자동 동기화 |
+| **임시 저장소 지속성** | 키보드 입력마다 클라이언트 측에서 의료 기록이 자동으로 localStorage에 저장 — 브라우저 크래시, 연결 손실에도 계속됨 |
+| **세션 서명 확인** | 제공자는 회话 종료 시 반드시 서명해야 함 — 타임스탬프는 청구 정확한 종료 시간 |
+| **관리자 감사** | 각 이벤트에는 🟢 온라인 / 🔴 오프라인 표시가 있으며 동기화 타임스탬프가 표시됨 |
+| **연결 모니터링** | 사이드바에 실시간 🟢/🔴 상태와 대기 중인 동기화 카운트 배지 표시 |
+| **HIPAA 클리닝업** | 로그아웃 및 유휴 타임아웃 시 모든 로컬 데이터 제거 |
+| **중복 방지** | 클라이언트에서 생성한 UUID를 통해 중복 이벤트 방지 |
+| **타임 드리프트 감지** | 서버는 클라이언트와 서버의 타임스탬프 간의 차이를 로그하여 감사 |
+| **세션 라이프사이클** | `session_start` → `session_pause` → `session_resume` → `session_end` |
 
-**Billing Compliance:**
+**청구 준수:**
 ```
-Provider starts session at 2:00 PM (online) → 🟢
-  Connection drops at 2:30 PM
-Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
-  Connection restores at 4:00 PM → auto-sync
-Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
+제공자가 2:00 오후에 세션을 시작함 (온라인) → 🟢
+  연결이 2:30 오후에 끊김
+제공자가 3:45 오후에 세션을 종료함 (오프라인) → 🔴 client_timestamp = 3:45 오후
+  연결이 4:00 오후에 복구됨 → 자동 동기화
+서버는: client_timestamp = 3:45 오후, sync_timestamp = 4:00 오후
   ↓
-Insurance billed: session 2:00 PM – 3:45 PM (accurate)
-Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+보험사가 청구: 세션 2:00 오후 – 3:45 오후 (정확)
+관리자는: "세션이 3:45 오후 🔴 오프라인으로 종료됨 (동기화 4:00 오후)"
 ```
 
 </details>
 
 <details>
-<summary><h3>🧪 Lab Orders & Results Module</h3></summary>
+<summary><h3>🧪 Laborator리 검사 및 결과 모듈</h3></summary>
 
-🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
+🔗 **[Laborator리 검사 및 결과 모듈 자세한 문서](../../docs_source_en/lab_orders_results_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
+| **검사 주문** | 공급업체(Quest, LabCorp, 내부)와의 주문 추적, 우선순위(일반/즉시/비상) |
+| **결과 추적** | 개별 테스트 결과 및 참조 범위와 비정상 플래그 (저/고/치명적) |
+| **범주** | 혈액학, 화학, 지방산, 간, 체질환, 비타민, 염증, 혈결합 |
+| **비정상 알림** | 범위外 결과 자동 플래그 (예: 높은 TSH, 낮은 비타민 D) |
+| **iPLEDGE Labs** | 월간 약물 모니터링: CBC, CMP, 지방산 패널, LFTs와 추세 추적 |
+| **수술 전 검사** | 치과 수술에 대한 INR, PT, 당당도, A1C 클리어런스 |
+| **약물 모니터링** | SSRI 체질환 확인, 스텐트 뇌장 패널, 생물학적 기준 패널 |
+| **주문 생명 주기** | 주문됨 → 수집됨 → 전송됨 → 수신됨 → 진행 중 → 결과 도출됨 → 검토됨 |
+| **공급업체 통합** | Quest Diagnostics, LabCorp 주문 라우팅 (계획: 전자 결과 가져오기) |
+| **진단 연결** | 의료 필요성 문서화용 ICD-10 코드가 주문에 첨부됨 |
 
 </details>
 
 <details>
-<summary><h3>💊 Medications & Prescriptions Module</h3></summary>
+<summary><h3>💊 약물 및 처방전 모듈</h3></summary>
 
-🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
+🔗 **[약물 및 처방전 모듈 자세한 문서](../../docs_source_en/medications_prescriptions_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
+| **약물 카탈로그** | NDC 코드, 약물 클래스, 일정, 경로, 일반적인 복용량 포함의 12개 이상의 약물 |
+| **활성 처방전** | 환자별 약물 목록, 복용량, 빈도, 처방사, 약국, 재고 추적 |
+| **약물 클래스** | SSRIs, 스타일리즈, 리테노이드, 비오티클, 브로노콜라이터, NSAIDs, 항생제, 항발기질환제 |
+| **iPLEDGE 추적** | 약물 치료 모니터링 (월별 검사 요구 사항 포함) |
+| **상태 라이프사이클** | 활성 → 일시 중지 → 중단 → 완료 → 취소 |
+| **반응 경고** | 약물별 특정 경고 배열 (세로톤 증후군, QTc, 유전자 변이성) |
+| **약국 라우팅** | 처방전 당 이름된 약국으로 e-처방 준비 |
 
 </details>
 
 <details>
-<summary><h3>📊 Vitals & Measurements Module</h3></summary>
+<summary><h3>📊 진단 및 측정 모듈</h3></summary>
 
-🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
+🔗 **[진단 및 측정 모듈 자세한 문서](../../docs_source_en/vitals_measurements_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
+| **표준 진단** | 혈압(수축기/이완기), 심박수, 호흡수, 온도(측정 방법 포함), 산소饱도도, 체중, 키, BMI |
+| **통증 지수** | 방문 당 0-10의 숫자 통증 지수 |
+| **아동 성장 추적** | 머리 둘레, 체중/키/BMI 백분위수 (WHO/CDC) |
+| **물리치료 평가** | 관절 운동도, 기능 점수(Oswestry, LEFS), 다리 활성화 노트 |
+| **추세 추적** | 환자별 역사적인 진단 정보(추세 분석용) |
+| **예약 연결됨** | 특정 예약에 연결된 진단 |
 
 </details>
 
 <details>
-<summary><h3>⚠️ Allergies & Alerts Module</h3></summary>
+<summary><h3>⚠️ 알레르기 및 경고 모듈</h3></summary>
 
-🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
+🔗 **[자세한 알레르기 및 경고 모듈 문서](../../docs_source_en/allergies_alerts_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
+| **알레르기 유형** | 약물, 음식, 환경, 라텍, 대조성, 기타 |
+| **중증도 수준** | 가볍게, 중간, 심각하게, 생명 위협적 |
+| **반응 추적** | 특정 반응 문서화 (분열성 알레르기, SJS, 피부 발진, 배변 불편) |
+| **NKDA 지원** | 명시적인 "알레르기가 없는 것" 문서화 |
+| **의료 경고** | 심각한 알레르기 표시 (펜일린 → 클린다민 사용, 소울라 → SJS 이력) |
+| **확인** | 의사 확인 및 날짜 스탬프 |
 
 </details>
 
 <details>
-<summary><h3>💉 Immunizations Module</h3></summary>
+<summary><h3>💉 백신 모듈</h3></summary>
 
-🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
+🔗 **[자세한 백신 모듈 문서](../../docs_source_en/immunizations_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
+| **백신 추적** | CVX 코드, 접종 수, 일련 번호, 제조사 |
+| **접종** | 위치, 경로 (IM/SC/PO/IN/ID), 접종 의사 |
+| **VIS 준수** | 백신 정보 문단 추적 |
+| **레지스트리 보고** | 주별 백신 레지스트리 제출 추적 |
+| **CDC 일정** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
+| **백신 저항성 증상** | 생물학적 환자용 특별 백신 권장 사항 |
 
 </details>
 
 ### 🏢 Practice Operations Modules
 <details>
-<summary><h3>💳 Billing & Payments Module</h3></summary>
+<summary><h3>💳 결제 및 결제 모듈</h3></summary>
 
-🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+🔗 **[결제 및 결제 모듈 자세한 문서](../../docs_source_en/billing_payments_module.md)**
 
 
 
-The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
+결제 모듈은 각 연료에 자체 독립적인 결제 처리 계정을 제공하며, 이 계정은 연료 관리자와 연결됩니다.
 
-**Per-Practice Billing Configuration:**
-| Setting | Details |
+**연료별 결제 구성:**
+| 설정 | 세부 정보 |
 |---------|---------|
-| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
-| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
-| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
-| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
-| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
-| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
+| **Stripe Connect** | 각 워크스페이스에는 고유한 `acct_xxx` Stripe Connect 계정 |
+| **관리자 연결됨** | Stripe 계정 소유권은 워크스페이스 관리자 사용자와 연결됩니다 |
+| **수수료 일정** | 표준, 보험, 복지, 개인 지불에 대한 연료별 수수료 일정 |
+| **결제 방법** | 신용 카드, ACH/은행 이체, 체크, 현금 — 연료별로 구성 가능 |
+| **자동 게시** | 자동 결제 게시, 영수증 전송 및 월간 보고서 생성 |
+| **세금 구성** | 연료별 세율과 1099 신고용 NPI/EIN |
 
-**Multi-Country & Multi-Currency (NEW):**
+**다국적 & 다국화폐 (새로운 기능):**
 
-| Country | Currency | Standard | Advanced | Enterprise |
+| 국가 | 화폐 | 표준 | 고급 | 업계 |
 |---------|----------|----------|----------|------------|
-| 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
-| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
-| 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
-| 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
-| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
-| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
+| 🇺🇸 미국 | USD | $19/월 | $49/월 | $99/월 |
+| 🇨🇦 캐나다 | CAD | C$25/월 | C$65/월 | C$129/월 |
+| 🇬🇧 영국 | GBP | £15/월 | £39/월 | £79/월 |
+| 🇩🇪フランス 유럽 연합 | EUR | €18/월 | €45/월 | €89/월 |
+| 🇦🇺 호주 | AUD | A$29/월 | A$75/월 | A$149/월 |
+| 🇳🇿 뉴질랜드 | NZD | NZ$32/월 | NZ$82/월 | NZ$159/월 |
 
-**Volume Discounts:**
-| Clients | Discount |
+**부피 할인:**
+| 고객 수 | 할인 |
 |---------|----------|
-| 100+ | 10% off per-seat price |
-| 500+ | 20% off per-seat price |
-| 1,000+ | 30% off per-seat price |
-| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+| 100+ | 각 좌석 가격에 대해 10% 할인 |
+| 500+ | 각 좌석 가격에 대해 20% 할인 |
+| 1,000+ | 각 좌석 가격에 대해 30% 할인 |
+| 연간 결제 | 추가로 20% 할인 (부피와 함께 총액 45% 미만까지 적용) |
 
-**Payment Failure Lifecycle:**
+**결제 실패 라이프사이클:**
 ```
-Payment Failed → past_due (warning banner, keep access)
-  → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
+결제 실패 → past_due (경고 표시, 접근 유지)
+  → 2차 재시도 → 여전히 past_due (급한 경고)
+  → 3차 재시도 실패 → 자동으로 무료 계획으로 다운그레이드
   → Stripe subscription.deleted → plan = 'free', sub cleared
 ```
 
-**Platform Admin Overrides:**
-- Synalux platform admins can set any user to unlimited trial on any plan
-- Override users are **immune** to Stripe webhook downgrades
-- Admin sees 🟢/🔴 indicators for payment status
-- Full audit trail: who set the override, when, and why
+**플랫폼 관리자 오버라이드:**
+- Synalux 플랫폼 관리는 모든 사용자를 어떤 계획에든 무제한 체험으로 설정할 수 있습니다.
+- 오버라이드된 사용자는 Stripe 웹후크 다운그레이드에 **면역**됩니다.
+- 관리자는 결제 상태를 🟢/🔴 표시합니다.
+- 전체 감사 기록: 오버라이드 설정자, 시간, 이유
 
-**Revenue Cycle Management:**
-- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
-- ERA/EOB electronic remittance processing
-- Denial management with appeal deadline tracking
-- Prior authorization workflow
-- Aging reports (30/60/90/120 day buckets)
+**영수원 관리:**
+- 보험 청구서 라이프사이클 추적 (초안 → 제출 → 수용 → 지불/거부 → 재심청)
+- ERA/EOB 전자 송금 처리
+- 거부 관리와 재심청 기한 추적
+- 사전 승인 워크플로우
+- 연체 보고서 (30일, 60일, 90일, 120일 단위)
 
-**Patient Payments:**
-- Patient portal "Pay Now" → Stripe Checkout redirect
-- Partial payments and custom amounts
-- Payment plans with Stripe recurring subscriptions
-- Receipt generation and download
-- Refund processing
+**환급:**
+- 환급 처리
 
-**Insurance Claims:**
-- Electronic claim submission (837P)
-- Real-time eligibility verification
-- Coordination of Benefits (COB)
-- Explanation of Benefits (EOB) tracking
-- Appeal management with letter templates
+**보험 청구서:**
+- 전자 청구서 제출 (837P)
+- 실시간 적합성 확인
+- 보조 협정 (COB)
+- 설명서 (EOB) 추적
+- 재심청 관리와 템플릿
 
-**Automatic Tax Collection:**
-- Stripe Tax enabled per-country (VAT, GST, HST, PST)
-- Tax calculated automatically based on workspace country
-- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
+**자동 세금 수집:**
+- Stripe Tax 국가별로 활성화됨 (VAT, GST, HST, PST)
+- 워크스페이스 국가에 따라 자동으로 계산됩니다.
+- 캐나다의 다국적 지역 세법 준수 (국가별 GST + 지역별 PST/HST)
 
 </details>
 
 <details>
-<summary><h3>📅 Scheduling & Appointments</h3></summary>
+<summary><h3>📅 예약 및 진료</h3></summary>
 
-🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
+🔗 **[예약 및 진료 자세한 문서](../../docs_source_en/scheduling_appointments.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
+| **진료 예약 상태** | 예약 → 확정 → 진행 중 → 완료 (+ 취소, 미참석, 재예약) |
+| **환자 포털 요청** | 환자가 선호하는 날짜/시간으로 진료 예약을 요청 → 직원이 확인하거나 거부 |
+| **다중 제공업체** | 연계 내의 여러 의사에 걸쳐 예약 스케줄링 |
+| **주기적인 방문** | 주간 치료 세션, 월별 검진, 정신과 조정 |
+| **대기열** | 공간이 가득 찬 경우 대기열 진료 예약 요청 |
+| **알림** | 자동화된 진료 예약 알림 (예정됨) |
 
 </details>
 
 <details>
-<summary><h3>👥 HR & Staff Management Module</h3></summary>
+<summary><h3>👥 인사 및 직원 관리 모듈</h3></summary>
 
-🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+🔗 **[인사 및 직원 관리 모듈 자세한 문서](../../docs_source_en/hr_staff_management_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
+| **직원 프로필** | 고용 유형, 입사일, 급여/시간당 요금, 전문성, 부서 추적 |
+| **증명서 관리** | 허가서/인증서 추적 및 만료 알림과 갱신 워크플로우 |
+| **휴가 관리** | 연차, 질병, CE, 출산, 병원ization, 재판 — 승인 워크플로우 |
+| **교육 관리** | 준수 교육 추적 (HIPAA, BLS, CPR) 및 만료일과 완료 상태 |
+| **성과 평가** | 연간/반기별 평가와 등급, 목표, 개선 계획, 인정 |
+| **입사 지원** | 대기 중인 입사 지원 상태, 자격증 확인 파이프라인, 교육 할당 |
 
 </details>
 
 <details>
-<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+<summary><h3>⏱️ 시간표 및 급여 모듈</h3></summary>
 
-🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+🔗 **[자세한 시간표 및 급여 모듈 문서](../../docs_source_en/timesheets_payroll_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
+| **자동 생성** | 서명된 의료 세션 노트에서 자동으로 시간표 생성 |
+| **비결제 시간 추적** | 관리자 시간, 운전 시간, 교육 및 클리닉 준비 시간 추적 |
+| **승인 흐름** | 직원 제출 → 지도관 검토 → 급여 처리 |
+| **급여 내보내기** | ADP, Gusto, Paycom과 통합된 원시 시간표 내보내기 |
+| **준수성** | 40시간 초과 경고, 필수적인 휴식 추적, PTO 적립 가시성 |
 
 </details>
 
 <details>
-<summary><h3>📦 Inventory Management Module</h3></summary>
+<summary><h3>📦 재고 관리 모듈</h3></summary>
 
-🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
+🔗 **[재고 관리 모듈 자세한 문서](../../docs_source_en/inventory_management_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
+| **카테고리** | 치과 재료, 백신, 약물, 생체학적 물질, 개인 보호 장비, 수술용품, laborator리 재료, 오피스 |
+| **재고 추적** | 현재 재고량, 재고 수준, 재고 재구매 양, 단위 비용 |
+| **로트 및 만료일** | 로트 번호, 만료일, 백신의 FIFO 회전 |
+| **공급업체 추적** | 헤니어 스키언, 패터슨 치과, 노벨 블리카이어, 맥케슨, sanofi 파스터 |
+| **상태 알림** | 재고 있음, 부족한 재고, 재고 없음, 만료됨, 중단됨 |
+| **보관 위치** | 백신 출하함 (2-8°C), 생체학적 출하함, 오피스 카비닛, 잠긴 카비닛 |
+| **특수한 물품** | 인플란트 티어 ($285), 생체학적 떡 ($2,850), 쿨러 캐니스터 |
 
 </details>
 
 <details>
-<summary><h3>🧾 Superbills Module</h3></summary>
+<summary><h3>🧾 상급 진단서 모듈</h3></summary>
 
-🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
+🔗 **[상급 진단서 모듈 자세한 문서](../../docs_source_en/superbills_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
+| **진료 기반** | 방문 당 하나의 상급 진단서와 진단 코드 + 수술 코드 |
+| **다중 코드** | ICD-10 진단 배열 + CPT/CDT 수술 배열 + 모더파이어 (-25, -59) |
+| **재정 분석** | 총 청구액, 보험 청구, 환자 공제금, 조정 |
+| **상태 라이프사이클** | 초안 → 검토 → 제출 → 지불 / 거부 / 소송 |
+| **모든 전문 분야** | 아끼기 방문, 인플란트, 정신과, 심리치료, 물리치료 재활, 피부 절차 |
+| **메이커베이크 오프스 해지** | 메이커베이크 계약 의무 자동 조정 추적 |
 
 </details>
 
 
 
 <details>
-<summary><h3>📋 Clinical Tasks Module</h3></summary>
+<summary><h3>📋 의료 작업 모듈</h3></summary>
 
-🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+🔗 **[의료 작업 모듈 자세한 문서](../../docs_source_en/clinical_tasks_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
+| **작업 카테고리** | 검사随访, 사전 승인, 일정 관리, 문서화, 청구, 환자 전화, 재발급, 의료참조 |
+| **우선 순위 레벨** | 낮음, 정상, 높음, 긴급 |
+| **할당** | 특정 직원에게 할당되며 마감일과 완료 추적 |
+| **환자 연결됨** | 환자에 대한 작업으로 의료 협력 |
+| **진행 상태 추적** | 열림 → 진행 중 → 완료 / 취소 / 미보류 |
+| **검토 기록** | 생성한 사람, 완료한 사람, 완료 시간戳 |
 
 </details>
 
 ### 🤝 Patient Experience & Collaboration
 <details>
-<summary><h3>🏥 Patient Portal</h3></summary>
+<summary><h3>병원 포털</h3></summary>
 
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+🔗 **[환자 포털 자세한 문서](../../docs_source_en/patient_portal.md)**
 
 
 
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
+인증, 메시지, 문서, 진료 예약, 청구 등이 포함된 완전 기능의 환자 대면 포털입니다.
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
+| **인증** | 암호화된 접근 코드 로그인 (SHA-256 해시), 만료 추적 |
+| **대시보드** | 건강 개요, 예정된 진료 예약, 미확인 메시지, 대기 문서, 임금 지불 |
+| **메시징** | 의사와의 쓰레드형 대화, 긴급 표시, 읽음 확인 |
+| **문서** | 의료 문서 보고/다운로드, 보험 카드 및 양식 업로드 |
+| **진료 예약** | 예정된/지난 방문 보기, 선호 시간으로 새로운 진료 예약 요청 |
+| **청구** | 임금 확인, CPT 코드와 함께 청구 이력, 슬라임트를 통한 온라인 결제, 결제 계획, 영수증 |
+| **양식** | 입원 양식 완성, PHQ-9/GAD-7 질문naire, 온라인 동의서 |
+| **동의서** | 디지털 동의서 관리 (진료, HIPAA, 텔레메디션, 약물, 연구) |
 
 </details>
 
 <details>
-<summary><h3>📚 Patient Education Module</h3></summary>
+<summary><h3>📚 환자 교육 모듈</h3></summary>
 
-🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
+🔗 **[환자 교육 모듈 문서 읽기](../../docs_source_en/patient_education_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
+| **재료 카탈로그** | 전문 분야별로 14개의 교육 문서 |
+| **다국어 지원** | 영어 + 스페인어 자료 사용 가능 |
+| **카테고리** | 증상, 약물, 절차, 생활 습관, 수술 후, 집에서 운동, 안전, 예방 |
+| **배포 방법** | 인쇄물, 포털 업로드, 이메일, 인해면, 텍스트 |
+| **인증 확인** | 환자가 자료를 보고 인정했는지 추적 |
+| **전문 분야 예시** | EpiPen 가이드, Accutane 안전 정보, ACL 재활, CBT 과제, 심장 인플레이트 수술 후 |
 
 </details>
 
 <details>
-<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
+<summary><h3>🔔 재고 및 알림 모듈</h3></summary>
 
-🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
+🔗 **[재고 및 알림 모듈의 자세한 문서를 읽으십시오](../../docs_source_en/recalls_reminders_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
+| **재고 유형** | 위생, 연간 검진, 따르기, laborator리 재검토, 이미징, 스크린링, 백신 접종, 약물 검토 |
+| **상태 추적** | 지정 → 만료 → 예약됨 → 완료됨 → 취소됨 |
+| **연락 시도 추적** | 연체된 재고에 대한 연락 시도를 추적합니다. |
+| **공인별** | 치과 6개월 청결, 피부검진, 약물 복용 |
+| **자동 만료일** | 마지막 완료 방문 기준으로 설정됨 |
 
 </details>
 
 <details>
-<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
+<summary><h3>🔄 진단서 및 연계 전문가 챗 모듈</h3></summary>
 
-🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
+🔗 **[진단서 및 연계 전문가 챗 모듈 자세한 문서](../../docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
+| **진단서 추적** | 의사/의사, 전공 분야, 이유, 진단 코드, 긴급도, 인증 추적 |
+| **상태 라이프사이클** | 대기 중 → 보낸 상태 → 수락됨 → 일정에 예약됨 → 완료 / 만료됨 / 거절됨 |
+| **연계 전문가 챗** | 연계 전문가/사무실 관리자 간 HIPAA 준수 메시징 |
+| **파일 공유** | 진단서, X선 영상, 문서, 검사 결과, 처방전 등 사이클로 교환 |
+| **스레드형 대화** | 각 진단서에 대한 챗 스레드와 읽음 확인 표시 |
+| **실제 사례** | 소아과→정신건강의료원 (ADHD), 피부과→물리치료사 (질환성 발진증), 물리치료사→피부과 (상처 치료) |
+| **인증 추적** | 인증 번호, 만료일, 사전 인증 필수 표시 |
 
 </details>
 
 <details>
-<summary><h3>💬 Team Chat & Communication</h3></summary>
+<summary><h3>💬 팀 채팅 및 커뮤니케이션</h3></summary>
 
-🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+🔗 **[팀 채팅 및 커뮤니케이션 자세한 문서](../../docs_source_en/team_chat_communication.md)**
+- [Collaborative Editor Suite](../../docs_source_en/collaborative_editors_module.md)
 
 
 
-| Feature | Details |
+
+| 기능 | 세부 정보 |
 |---------|---------|
-| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
-| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
-| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
-| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
-| **Channels** | Department-based channels (Clinical, Billing, Admin) |
-| **File Attachments** | Share documents, images, and clinical assets in chat |
+| **E2E 암호화된 챗** | 작업 공간 내에서 HIPAA 준수 팀 메시징 |
+| **그룹 비디오 미팅** | 확장 가능한 6인 이상의 피어 메쉬 WebRTC HIPAA 준수 원격 진료 및 팀 스탠드업 |
+| **보안 일정 관리** | 인증된 참석자 신청을 사용하여 캘린더 링크를 보낼 수 있는 zero-PHI 이메일 레이아웃 |
+| **음성 및 비디오 통화** | 보안 음성 및 비디오 회의 (기업용만) |
+| **AI 문맥 공유** | 치료 계획 생성 → "세션 공유" → 청구 채널로 전달 |
+| **음성으로 액션** | 음성 명령 → 전화, 문자 메시지, 이메일, 일정 예약 (프리미엄+) |
+| **채널** | 부서 기반 채널 (의료, 청구, 관리) |
+| **파일 첨부** | 챗에서 문서, 이미지 및 의료 자산 공유 |
 
 </details>
 
 <details>
-<summary><h3>📞 Collaboration Practice Suite</h3></summary>
+<summary><h3>📞 협업 연습 허브</h3></summary>
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+| **중앙 집중형 대시보드** | 효율적으로 라우터 맵핑 통합 메트릭. 명령 센터에서 누락된 작업을 자체로 분리합니다. |
+| **비디오 상담 (WebRTC)** | Twilio TURN/STUN 노드를 사용하여 중간 박스를 피하는 보안 강화된 P2P 비디오 스트리밍. |
+| **RLS 제어** | 서버 사이드 테넌트 간 데이터 유출을 방지하기 위해 암시적 식별 추적을 사용합니다. 고급/프로 한도에 정확히 매핑됩니다. |
+| **의료 작업** | 워크스페이스 내에서 안전하게 분리된 내부 클INIC 알림, 승인 및 대기열입니다. |
 
 </details>
 
 ### 🔐 Enterprise Administration
     <details>
-    <summary><h3>🛡️ Security & Compliance</h3></summary>
+    <summary><h3>🛡️ 보안 및 준수</h3></summary>
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+| **HIPAA 준수** | 전체 HIPAA 감사 로그, BAA 준비된 아키텍처 |
+| **엄격한 접근 제어** | 특정 액세스 한도를 가진 11개의 암호화 서명된 역할 |
+| **데이터 분리** | 모든 기록은 클리닉(`workspace_id`)별로 분리되어 서로 오염되지 않도록 합니다 |
+| **암호화 로그인** | 단기 토큰(15분 만료)이 사용 중인 장치를 로그아웃합니다 |
+| **휴식 시 암호화** | 모든 건강 정보에 대한 투명 데이터 암호화(AES-256) |
+| **변조 방지 감사 로그** | 역할 할당, 파일 접근 및 메시지 동작에 대한 불변 로그 |
+| **실패 시 HIPAA 모드** | 로컬 처리가 사용 가능하지 않으면 마이크 액세스를 거부합니다(静默 클라우드 뒤로기 기능 없음) |
+| **데이터 최소화** | PHI에 대한 브라우저 캐시가 없습니다; 탭이 닫히면 민감한 데이터는 즉시 지워집니다 |
 </details>
 
 <details>
-<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
+<summary><h3>⚙️ 플랫폼 관리 및 블라인드 레이블링</h3></summary>
 
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+🔗 **[플랫폼 관리 및 블라인드 레이블링 자세한 문서](../../docs_source_en/platform_administration_white_label.md)**
 
 
 
-| Feature | Details |
+| 기능 | 세부 정보 |
 |---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+| **다중 테넌트 아키텍처** | 분리된 작업 공간과 전용 브랜딩 및 구성 |
+| **동적 워크스페이스** | 클라니컬 특화에 따라 실시간으로 가져오는 연습 로고, 주소, 색상 테마 |
+| **모듈 사용 가능성** | 플랫폼 관리자는 클리닉 전문 분야에 따라 모듈을 드래그 및 드롭하거나 숨길 수 있습니다. |
+| **직원 기능 토글링** | 기본 역할을 `restricted_features` JSONB 배열로 재정의하여 런타임에 API 차단을 강제합니다. |
+| **스クリーン 빌더** | 연습별 버튼 이름 변경, 데이터 그리드 열 숨기기 또는 표준 UI 복사본 재정의 |
+| **브레이크-그라스 감사** | 모든 플랫폼 관리자 작업이 HIPAA 준수 감사 기록에 로깅됩니다. |
 
 </details>
 
@@ -608,51 +625,50 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 ---
 
 <details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
+<summary><h2>🛡️ 기업 보안 및 HIPAA 아키텍처</h2></summary>
 
-Synalux is engineered for zero-trust environments.
+Synalux는 신뢰할 수 없는 환경에 최적화되었습니다.
 
 ### 보안 아키텍처 — 멀티테넌트 요청 흐름
 
 ```
 ┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
-│   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
+│   클라이언트      │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
 │                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+│  브라우저 /      │────▶│  1. 인증 확인 (NextAuth)    │────▶│  3. 도구 ACL 강제 적용     │────▶│  6. RLS 정책               │
+│  VS Code        │     │  2. JWT 서명 (Ed25519)    │     │  4. AI 샌드박스             │     │     (JWT → set_config)      │
+│                 │     │     (15분 TTL)             │     │     (ProposedChange)         │     │  7. 다중 테넌트 데이터       │
+│                 │     │                              │     │  5. HIPAA 감사 로그          │     │     (workspace_id 분리)    │
 └─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
+                              Google OAuth                    제거된 도구 맥락                   workspace_id별 RLS 필터
 ```
 
 **핵심 인사이트:** JWT가 `workspace_id` 클레임을 전달하고 Postgres RLS 정책이 `current_setting('request.jwt.claims')`를 통해 읽기 때문에, **서버 측 세션 변수**도 **테넌트당 연결 풀**도 없습니다. 이것이 Synalux를 수평적으로 확장 가능하게 만드는 요인입니다.
 
 ### 보안 제어
 
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+* **EdDSA (Ed25519) 인증:** 정적 API 토큰은 갱신만 가능한 상태로 내려갑니다. 모든 API 요청은 짧은 수명(15분)의 비대칭 암호화를 사용하여 JWT를 통해 인증됩니다.
+* **투명한 데이터 암호화 (TDE):** 팀 메시지, 생성된 문서 및 세션 기록은 휴식 시에 암호화됩니다.
+* **엄격한 데이터 최소화:** 웹 앱 트랜스크립트는 React 상태 메모리에서만 유지되며 탭이 닫힐 때 즉시 가비지 컬렉션됩니다. `localStorage`에는 PHI가 jamais 사용됩니다.
+* **MIME 제한된 파일 저장:** 의료 첨부 파일은 엄격한 서버 측 MIME 확인을 통해 제한되고 15분의 서명 URL로 제공되며 IDOR 예방으로 인해 전송되지 않습니다.
+* **불변 감사 로그:** 모든 역할 할당, 파일 다운로드 및 메시지 삭제는 `rbac_audit_log`에 영구적으로 기록됩니다. 감사 행은 추가하지 않음 — 심지어 데이터베이스 관리자도 역사적 항목을 수정할 수 없습니다.
+* **HITL 안전 게이트:** 위험한 도구(`terminal`, `git_tool`, `browser`)는 실행하기 전에 모달 대화상자를 통해 명시적인 사용자의 승인을 받아야 합니다 — 프롬프트 주입으로 인해 클릭 없이 RCE를 방지합니다.
+* **실패한 HIPAA 모드:** 의료 음성 입력 중 로컬 LLM (Ollama)이 사용할 수 없는 경우, 시스템은 마이크를 열지 않고 대신 클라우드 처리로 자동으로 전환하지 않습니다.
+* **만료된 데이터 배너 (환자 안전):** 의료 데이터가 현재 세션에서 새로 고침되지 않은 경우, 배너는 의사에게 알리며 퇴행 결정을 기반으로한 정보를 사용할 수 없습니다.
 
 ### HIPAA 규정 준수 Statement
 
-| HIPAA Requirement | Synalux Implementation |
+| HIPAA 요구 사항 | Synalux 구현 |
 |---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **§164.312(a)(1)** 접근 제어 | JWT 기반 RBAC와 도구별 ACL; RLS는 데이터베이스 레이어에서 테넌트 분리를 강제합니다 |
+| **§164.312(b)** 감사 제어 | 불변 `hipaa_audit_log` + `rbac_audit_log` — 모든 PHI 액세스는 사용자, 동작, 리소스 및 시간戳와 함께 기록됩니다 |
+| **§164.312(c)(1)** 정합성 | AI 샌드박스 (`ProposedChange`)가 의료 데이터에 클리닉사의 서명 없이 자동 쓰기 방지합니다 |
+| **§164.312(d)** 인증 | 비대칭 JWT (15분 TTL); MFA를 사용한 Google OAuth 클리닉 역할 |
+| **§164.312(e)(1)** 전송 보안 | 모든 엔드포인트에서 TLS 1.3이 강제 적용됩니다; Supabase 연결은 SSL을 사용하며 URL 매개변수에 PHI가 없습니다 |
+| **§164.308(a)(1)** 위험 분석 | 적대적 보안 검토 (`REVIEW_PROMPT.md`); 슬라이딩 윈도우 SSE 스캐닝으로 자동 출력 가드라인 |
+| **No LocalStorage** | 모든 의료 데이터는 React 상태에 저장되며 탭이 닫힐 때 즉시 가비지 컬렉션됩니다. 또는 RLS 보호된 Postgres에 있습니다. PHI는 브라우저에 영구적으로 저장되지 않습니다 |
 
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
+> **BAA 보장:** BAA를 사용하여 전체 HIPAA 준수를 위해서는 Vercel Enterprise + Supabase Team 계급이 필요합니다. 가격은 [인프라 및 클라우드 서비스](#platform-modules)를 참조하세요.
 
 </details>
 

@@ -41,490 +41,509 @@
 ---
 
 
+
+### 📸 Product Tour
+
+| 📊 1. Patient Dashboard | 🧠 2. AI Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 💉 4. Immunizations | 📦 5. Inventory Management | 🧪 6. Lab Orders & Results |
+|:---:|:---:|:---:|
+| <img src="../demo/24_immunizations.png" width="100%" alt="Immunizations Module"> | <img src="../demo/25_inventory.png" width="100%" alt="Inventory Management"> | <img src="../demo/26_lab_orders.png" width="100%" alt="Lab Orders & Results"> |
+
+| 👶 7. Pediatrics | 🐾 8. Veterinary Medicine | ❤️ 9. Vitals & Measurements |
+|:---:|:---:|:---:|
+| <img src="../demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="../demo/28_veterinary.png" width="100%" alt="Veterinary Medicine"> | <img src="../demo/29_vitals.png" width="100%" alt="Vitals & Measurements"> |
+
+| 🤖 10. Intelligent Clinical Assistant |
+|:---:|
+| <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
+
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
 
 ### 🏥 Clinical Care Modules
 <details>
-<summary><h3>📋 Clinical Notes & Documentation</h3></summary>
+<summary><h3>📋 Notele clinice și documentația</h3></summary>
 
-🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+🔗 **[Citiți detaliile despre Notele clinice și documentația](../../docs_source_en/clinical_notes_documentation.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
+| **Note SOAP** | Generate automat din dictat vocal cu templatelor specifice ale specialităților |
+| **Dictat vocal** | WASM Whisper pe dispozitiv → transmisie nulă de PHI către cloud |
+| **4 modele de note** | Sesizare terapeutică, Notă de progres, Evaluare inițială, Rezumat la ieșire |
+| **Documente** | Rezultatele laboratoriale, imagini, consente, evaluări, planuri de tratament — toate în cadrul spațiului de lucru |
+| **Export PDF** | Renderare server-side (fără fugă de PHI la client) |
+| **Semnăturile electronice** | Integrare cu BoldSign pentru 7 modele de documente |
+| **OCR** | Scanning a documentelor în 30+ limbaje pentru digitalizarea formularului de admitere |
 
 </details>
 
 <details>
-<summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+<summary><h3>📴 Sesții clinice offline-first</h3></summary>
 
-🔗 **[Read Detailed Offline-First Clinical Sessions Documentation](docs_source_en/offline_first_clinical_sessions.md)**
+🔗 **[Citiți documentația detaliată despre sesții clinice offline-first](../../docs_source_en/offline_first_clinical_sessions.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
-| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
-| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
-| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
-| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
-| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
-| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
-| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
-| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+| **Timestamp-uri la client** | Timpul de început/încheiere al sesiunilor capturat pe dispozitivul furnizorului — utilizat pentru facturare, nu timpul de primire a receipt-ului de la server |
+| **Coada offline** | Evenimentele sunt enqueued în localStorage atunci când este offline și se sincronizează automat la reconectare |
+| **Persistență a bocșelilor temporare** | Notările clinice sunt salvate automat în localStorage pe fiecare tastatură — supraviețuiesc o pereche de crash al browserului sau pierderea conexiunii |
+| **Finalizarea sesiunilor** | Furnizorul trebuie să finalizeze sesiunea prin semnare — timpul este acuratatul în ceea ce privește facturarea |
+| **Audit administtrativ** | fiecare eveniment arată un indicator verde/roșu pentru online/offline cu timestamp-uri de sincronizare |
+| **Monitorul conexiunii** | bara laterală arată statutul real-time verde/roșu cu pictograma de badge a numărului de sincronizări în așteptare |
+| **Curatarea HIPAA** | toate datele locale sunt șterse la logout și la expirarea temporară |
+| **Sincronizare idempotenta** | Evită duplicarea evenimentelor prin UUID-uri generate de client |
+| **Detectarea deviației în timp** | serverul își loghează deviația între timestamp-urile clientului și serverului pentru audit |
+| **Ciclu de viață al sesiunilor** | `session_start` → `session_pause` → `session_resume` → `session_end` |
 
-**Billing Compliance:**
+**Conformitatea cu facturarea:**
 ```
-Provider starts session at 2:00 PM (online) → 🟢
-  Connection drops at 2:30 PM
-Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
-  Connection restores at 4:00 PM → auto-sync
-Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
+Furnizorul începe sesiunea la 14:00 (online) → 🟢
+  Conexiunea se pierde la 14:30
+Furnizorul finalizează sesiunea la 15:45 (offline) → 🔴 client_timestamp = 15:45
+  Conexiunea se restabilește la 16:00 → sincronizare automată
+Server-ul înregistrează: client_timestamp = 15:45, sync_timestamp = 16:00
   ↓
-Insurance billed: session 2:00 PM – 3:45 PM (accurate)
-Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+Asigurarea își este facturată: sesiunea de la 14:00 - 15:45 (acuratat)
+Admin vede: "Sesiunea s-a încheiat la 15:45 🔴 Offline (sincronizată la 16:00)"
 ```
 
-</details>
-
 <details>
-<summary><h3>🧪 Lab Orders & Results Module</h3></summary>
+<summary><h3>🧪 Modul Comenzi și Rezultate Laboratoriale</h3></summary>
 
-🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului Comenzi și Rezultate Laboratoriale](../../docs_source_en/lab_orders_results_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
-
-</details>
-
-<details>
-<summary><h3>💊 Medications & Prescriptions Module</h3></summary>
-
-🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
+| **Comenzi Laboratoriale** | Urmărire comenzi cu furnizori (Quest, LabCorp, intern), prioritate (routine/urgent/stat) |
+| **Urmărire Rezultate** | Rezultate individuale de test cu zone referință și semnale abnormale (low/high/critical) |
+| **Categorii** | Hematologie, Chemistrie, Lipid, Fizionemă, Tiroxina, Vitamine, Inflamație, Coagulație |
+| **Alerți Abnormale** | Marcare automată a rezultatelor în afara zonei de referință (ex: TSH ridicată, vitamina D scăzută) |
+| **iPLEDGE Labs** | Monitorizare lunar Accutane: CBC, CMP, panel lipide, LFT cu urmărire a trendului |
+| **Pre-Surgical** | INR, PT, glicemie, clarificarea A1C pentru implanturi dentare și proceduri chirurgice |
+| **Urmărire Medicamentelor** | Verificări tiroxine SSRIs, paneli lipide stimulante, panouri de bază biologice |
+| **Viitorul Comenzii** | Plasată → Colectată → Trimisă → Recepută → În progres → Rezultatată → Examinată |
+| **Integrare cu Furnizori** | Quest Diagnostics, rutele de comandă LabCorp (planificat: import automat rezultate electronice) |
+| **Legături la Diagnosă** | Codurile ICD-10 atașate comenzilor pentru documentația necesară medicală |
 
 </details>
 
 <details>
-<summary><h3>📊 Vitals & Measurements Module</h3></summary>
+<summary><h3>💊 Modul de Medicamente și Prescripții</h3></summary>
 
-🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului de Medicamente și Prescripții](../../docs_source_en/medications_prescriptions_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
+| **Catalog al medicamentelor** | 12+ medicamente cu coduri NDC, clase de medicament, reglementări, rute, dosi comune |
+| **Prescripțiile active** | Lista per-patient a medicamentelor cu dosa, frecvența, prescrise de, farmacie, urmărire a renouărilor |
+| **Clase de medicamente** | SSRIs, stimulante, retinoidi, biologice, bronchodilatoare, NSAIDs, antibioce, anticonvulsantii |
+| **Urmărirea iPLEDGE** | Monitorizarea isotretinoinei Accutane cu cerințele de laborator lunare |
+| **Ciclu de statut** | Activ → În așteptare → Discontinuat → Completat → Anulat |
+| **Avertismente de interacțiune** | Avertismentii specifice medicamentelor (sindromul serotonin, QTc, teratogenice) |
+| **Rutele ale farmaciei** | Farmacie numită per prescriție pentru pregătirea e-prescripciei |
 
 </details>
 
 <details>
-<summary><h3>⚠️ Allergies & Alerts Module</h3></summary>
+<summary><h3>📊 Modul Vital & Măsurări</h3></summary>
 
-🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului Vital & Măsurări](../../docs_source_en/vitals_measurements_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
+| **Vitale Standard** | BP (sistolic/diastolic), HR, RR, temp (cu metodă), SpO2, greutate, înălțime, BMI |
+| **Scara de Dolor** | Scara numerică de dolor de la 0-10 pe vizită |
+| **Crescerea Pediatrică** | Circumferința crânului, procentile de greutate/înălțime/BMI (WHO/CDC) |
+| **Evaluările PT** | Grade ROM, notele de funcție (Oswestry, LEFS), observațiile legate de activarea cuadriceps |
+| **Urmărire a Trendurilor** | Vitale istorice pe pacient pentru analiză a trendurilor |
+| **Încheiările la Consultări** | Vitale legate de întâlniri specifice ale consultărilor |
 
 </details>
 
 <details>
-<summary><h3>💉 Immunizations Module</h3></summary>
+<summary><h3>⚠️ Modul Allergii și Alerte</h3></summary>
 
-🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului Allergii și Alerte](../../docs_source_en/allergies_alerts_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
+| **Tipuri de Allergeni** | Medicament, aliment, mediu, lămâie, contrast, altă |
+| **Niveluri de Severitate** | Mild, moderat, sever, amenințant pentru viața |
+| **Urmărire a Reacțiilor** | Documentare specifică a reacțiilor (anafilaxie, SJS, urci, pericolositate intestinală) |
+| **Sprijin NKDA** | Documentare explicită "Nicio Allergie la Medicamente Cunoscută" |
+| **Alerte Cliniči** | Semnale critică de alergie (Penicillin → folosiți clindamicina, Sulfa → istoric SJS) |
+| **Verificare** | Verificare a medicului cu marcajuri datelor |
+
+</details>
+
+<details>
+<summary><h3>💉 Modul de Vaccinări</h3></summary>
+
+🔗 **[Citește Documentația Detaliată a Modulului de Vaccinări](../../docs_source_en/immunizations_module.md)**
+
+
+
+| Funcție | Detalii |
+|---------|---------|
+| **Urmărire a Vaccinelor** | Coduri CVX, numere de dosi, numere de lot, fabricante |
+| **Administrare** | Locație, cale (IM/SC/PO/IN/ID), medic care administrează vaccinul |
+| **Conformitate cu VIS** | Urmărire a datelor declarațiilor de informații despre vaccin |
+| **Raportare în Registru** | Urmărire a trimitărilor în registru de vacinări la nivel statal |
+| **Program CDC** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
+| **Immunocompromisi** | Recomandări speciale pentru pacienți biologici |
 
 </details>
 
 ### 🏢 Practice Operations Modules
 <details>
-<summary><h3>💳 Billing & Payments Module</h3></summary>
+<summary><h3>💳 Modul de Facturare și Plăți</h3></summary>
 
-🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului de Facturare și Plăți](../../docs_source_en/billing_payments_module.md)**
 
 
 
-The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
+Modulul de facturare folosește **Stripe Connect** pentru a oferi fiecărui practică propriul cont independent de procesare a platilor legat de administratorul practicii.
 
-**Per-Practice Billing Configuration:**
-| Setting | Details |
+**Configurația Per-Practică:**
+| Setare | Detalii |
 |---------|---------|
-| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
-| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
-| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
-| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
-| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
-| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
+| **Stripe Connect** | Fiecare spațiu de lucru are propriul cont `acct_xxx` Stripe Connect |
+| **Admin Ligat** | Proprietatea contului Stripe este legată de utilizatorul admin al spațiului de lucru |
+| **Scheleme de Taxe** | Scheleme de taxe per-practică cu tarife standard, asigurare, medicamentar și plata propriu |
+| **Metode de Plată** | Carduri de credit, transfer bancar ACH, chitante, efectuat — configurabil pe practică |
+| **Plata Automată** | Postarea automată a platilor, trimiterea de facturi și generarea rapoartelor lunare |
+| **Configurație a Taxelor** | Tarife per-practică de taxe și NPI/EIN pentru raportarea 1099 |
 
-**Multi-Country & Multi-Currency (NEW):**
+**Multicountry și Multimonetar (NOU):**
 
-| Country | Currency | Standard | Advanced | Enterprise |
+|Țară|Monedă|Standard|Avansat|Enterprise|
 |---------|----------|----------|----------|------------|
-| 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
-| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
-| 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
-| 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
-| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
-| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
+| 🇺🇸 USA | USD | $19/lună | $49/lună | $99/lună |
+| 🇨🇦 Canada | CAD | C$25/lună | C$65/lună | C$129/lună |
+| 🇬🇧 UK | GBP | £15/lună | £39/lună | £79/lună |
+| 🇩🇪🇫🇷 UE | EUR | €18/lună | €45/lună | €89/lună |
+| 🇦🇺 Australia | AUD | A$29/lună | A$75/lună | A$149/lună |
+| 🇳🇿 New Zealand | NZD | NZ$32/lună | NZ$82/lună | NZ$159/lună |
 
-**Volume Discounts:**
-| Clients | Discount |
+**Reduceri Volume:**
+| Clienți | Reducere |
 |---------|----------|
-| 100+ | 10% off per-seat price |
-| 500+ | 20% off per-seat price |
-| 1,000+ | 30% off per-seat price |
-| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+| 100+ | 10% reducere pe preț per loc |
+| 500+ | 20% reducere pe preț per loc |
+| 1.000+ | 30% reducere pe preț per loc |
+| Facturare anuală | Reducere suplimentară de 20% (acumulează cu volum, limitat la 45%) |
 
-**Payment Failure Lifecycle:**
+**Ciclu de viazări a platilor:**
 ```
-Payment Failed → past_due (warning banner, keep access)
-  → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
-  → Stripe subscription.deleted → plan = 'free', sub cleared
+Plata eșuată → past_due (bannere de avertisment, mențin accesul)
+  → 2-a încercare → încă past_due (avertisment urgent)
+  → 3-a încercare eșuată → demote automat la nivel gratuit
+  → Stripe subscription.deleted → plan = 'free', sub ștergut
 ```
 
-**Platform Admin Overrides:**
-- Synalux platform admins can set any user to unlimited trial on any plan
-- Override users are **immune** to Stripe webhook downgrades
-- Admin sees 🟢/🔴 indicators for payment status
-- Full audit trail: who set the override, when, and why
+**Suprascrieri Admin Platform:**
+- Adminii platformei Synalux pot seta orice utilizator pe o probă nesfaturită fără limită pe orice plan
+- Utilizatorii suprascrisi sunt **imunizați** la diminuarea plăților prin webhooks Stripe
+- Adminul vede indicatoare verde/roșu pentru starea platii
+- Trajectorie completă: cine a setat suprascrierea, când și de ce
 
-**Revenue Cycle Management:**
-- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
-- ERA/EOB electronic remittance processing
-- Denial management with appeal deadline tracking
-- Prior authorization workflow
-- Aging reports (30/60/90/120 day buckets)
+**Gestionarea Ciclului Facturării:**
+- Urmărire a ciclului vieții asigurărilor (blocată → depozitată → acceptată → platit/refuzat → apel)
+- Procesare electronică a remiterilor de plata (ERA/EOB)
+- Gestionarea refuzelor cu urmărire a termenului de apel
+- Lucrul cu autorizările antecipate
+- Rapoarte de vechime (bucketuri de 30/60/90/120 zile)
 
-**Patient Payments:**
-- Patient portal "Pay Now" → Stripe Checkout redirect
-- Partial payments and custom amounts
-- Payment plans with Stripe recurring subscriptions
-- Receipt generation and download
-- Refund processing
+**Platii ale Pacientilor:**
+- Portal pacient "Plată acum" → redirectionare către Stripe Checkout
+- Plăți parțiale și sume personalizate
+- Planuri de plată cu abonamente recurrente Stripe
+- Generarea și descărcarea facturilor
+- Procesarea refundărilor
 
-**Insurance Claims:**
-- Electronic claim submission (837P)
-- Real-time eligibility verification
-- Coordination of Benefits (COB)
-- Explanation of Benefits (EOB) tracking
-- Appeal management with letter templates
+**Asigurări:**
+- Submitare electronică a asigurărilor (837P)
+- Verificare în timp real a eligibilității
+- Coordonarea beneficiilor (COB)
+- Urmărire a explicațiilor de beneficii (EOB)
+- Gestionarea apelurilor cu sablonuri de lașuri
 
-**Automatic Tax Collection:**
-- Stripe Tax enabled per-country (VAT, GST, HST, PST)
-- Tax calculated automatically based on workspace country
-- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
-
-</details>
-
-<details>
-<summary><h3>📅 Scheduling & Appointments</h3></summary>
-
-🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
+**Colectarea Automată a Taxelor:**
+- Stripe Tax activat pe țară (VAT, GST, HST, PST)
+- Calcul automat al taxei în funcție de țara spațiului de lucru
+- Conform cu regulile multistatelor canadene (federale GST + provinciale PST/HST)
 
 </details>
 
 <details>
-<summary><h3>👥 HR & Staff Management Module</h3></summary>
+<summary><h3>📅 Planificare & Călătorii Medicali</h3></summary>
 
-🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+🔗 **[Citește Documentația Detaliată a Planificării și Călătoriilor Medicali](../../docs_source_en/scheduling_appointments.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
+| **Stări ale Călătoriilor Medicali** | Programat → Confirmat → În desfășurare → Complet (+ anulat, nesemnat, reprogramat) |
+| **Cereri din Portalul Pacientului** | Pacienții solicitez călătorii medicali cu o dată și oră preferate → personalul își confirme sau respinge |
+| **Multiprovocatori** | Programare între mai mulți practicieni în același practicen |
+| **Vizite Recurente** | Sesiuni terapeutice săptămâne, consultări lunare, ajustări ortopedice |
+| **Lista de Așteptare** | Cereri de călătorii medicali din lista de așteptare când spațiile sunt pline |
+| **Reamintiri Automatice** | Reamintiri automatice pentru călătorii medicali (programate) |
 
 </details>
 
 <details>
-<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+<summary><h3>👥 Modul HR și Management al Personalului</h3></summary>
 
-🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului HR și Management al Personalului](../../docs_source_en/hr_staff_management_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
+| **Profilurile de Personal** | Tipul angajatului, data angajării, salariu/tarif orar, specialități, urmărire a departamentelor |
+| **Credențiale** | Urmărire a licenților/certificărilor cu alerte de expirare și fluxuri de renovare |
+| **Timpul liber** | Vacanță, bolnavie, CE, maternitate, tristețe, judecătoria — fluxuri de aprobare |
+| **Formațiune** | Urmărire a formei de conformitate (HIPAA, BLS, CPR) cu termenii limitării și starea completării |
+| **Evaluările de Performanță** | Evaluări anuale/semianuale cu note, obiective, planuri de îmbunătățire și acordare |
+| **Bineînțeles** | Stare în așteptare pentru oprimerea, pipeline verificare credențiale, atribuiri de formare |
 
 </details>
 
 <details>
-<summary><h3>📦 Inventory Management Module</h3></summary>
+<summary><h3>⏱️ Modulele Timesheets & Salariu</h3></summary>
 
-🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
+🔗 **[Citiți Documentația Detaliată a Modulului Timesheets & Salariu](../../docs_source_en/timesheets_payroll_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
+| **Generare Automată** | Timesheets generat automat din notele clinice semnate |
+| **Timp Necodificabil** | Monitorizarea timpului admin, timp de călătorie, formarea și pregătirea cliniică |
+| **Fluxuri de Aprobare** | Împreună cu angajații → Verificare supervisorului → Procesare salariu |
+| **Export Salariu** | Export automat integrat cu ADP, Gusto și Paycom |
+| **Conformitate** | Avertismente pentru timp suplimentar de 40 ore, urmărire obligatorie a pauzilor, vizibilitatea acruțirii PTO |
 
 </details>
 
 <details>
-<summary><h3>🧾 Superbills Module</h3></summary>
+<summary><h3>📦 Modul de Management al Inventarului</h3></summary>
 
-🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului de Management al Inventarului](../../docs_source_en/inventory_management_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
+| **Categorii** | Suplimente dentare, vaccinuri, medicamente, biologice, PPE, chirurgicală, echipamente laboratoriale, birou |
+| **Urmărire a Stocului** | Cantitatea pe stoc, nivelul de reînordonare, cantitatea de reînordonare, cost unitar |
+| **Lot & Expirare** | Numerele de lot, datele de expirare, rotatia FIFO pentru vaccinuri |
+| **Urmărire a Fornitorilor** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
+| **Alerți de Statut** | În stoc, stoc scăzut, iesit din stoc, expirat, discontinuat |
+| **Locații de Stocare** | Frig pentru vaccinuri (2-8°C), frig biologic, cajetarii chirurgicali, cajetarii închise |
+| **Articole Esențiale** | Fixuri implantare ($285), peni biologice ($2.850), canisteri de cryoterapie |
+
+</details>
+
+<details>
+<summary><h3>🧾 Modul Superbills</h3></summary>
+
+🔗 **[Citează Documentația Detaliată a Modulului Superbills](../../docs_source_en/superbills_module.md)**
+
+
+
+| Funcție | Detalii |
+|---------|---------|
+| **Pe bază de întâlnire** | O superbilă pe vizită cu codificarea diagnosticului + codificările procedurale |
+| **Codificare Multicodificată** | Arrays de diagnose ICD-10 + arrays de proceduri CPT/CDT + modifieri (-25, -59) |
+| **Descompunere financiară** | Totalul cheltuielilor, achitarea asigurării, copay al pacientului, ajustările |
+| **Ciclu de statut** | Proiectare → Verificare → Transmisie → Plată / Refuzat / În apel |
+| **Toate specializările** | Consultări pentru copii boli, implanturi, ortopedie, terapie psihologică, rehabilitație PT, proceduri dermatologice |
+| **Scutiri medicare automate** | Monitorizarea automată a ajustărilor pentru obligațiile contractuale de medicare |
 
 </details>
 
 
 
 <details>
-<summary><h3>📋 Clinical Tasks Module</h3></summary>
+<summary><h3>📋 Modulul de sarcini clinice</h3></summary>
 
-🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+🔗 **[Citiți documentația detaliată a modulului de sarcini clinice](../../docs_source_en/clinical_tasks_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
+| **Categorii ale sarcinilor** | urmărire laborator, autorizare anterioară, programare, documentare, facturare, apel la pacient, reîncărcare, referință |
+| **Niveluri de prioritate** | scăzut, normal, înalt, urgent |
+| **Atribuirea** | atribuită personalului specific cu termeni limită și urmărire a finalizărilor |
+| **Pacient legat** | sarcini legate de pacienți specifice pentru coordonarea îngrijirii |
+| **Urmărire a stării** | deschis → în curs → complet / anulat / șters |
+| **Trațeala auditivă** | creat de, finalizat de, ora finalizări |
 
 </details>
 
 ### 🤝 Patient Experience & Collaboration
 <details>
-<summary><h3>🏥 Patient Portal</h3></summary>
+<summary><h3>🏥 Portal Pacient</h3></summary>
 
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+🔗 **[Citiți Documentația Detaliată a Portalului Pacient](../../docs_source_en/patient_portal.md)**
 
 
 
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
+Un portal pacient complet cu autentificare, mesaje, documente, întâlniri și facturare.
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
+| **Autentificare** | Login prin cod de acces (hash SHA-256), urmărire a expirării |
+| **Tablou de bord** | Panou cu o perspectivă asupra sănătății, întâlniri imediat înainte, mesaje nesemnate, documente în așteptare, echilibru datorat |
+| **Mesaje** | Conversații thread-uri cu practicieni, indicatoare urgente, acorduri de citire |
+| **Documente** | Consultări/download documente clinice, încarcă cardurile de asigurare și formule |
+| **Întâlniri** | Consultări imediat înainte/pasătoare, cerere de noi întâlniri cu ore preferate |
+| **Facturare** | Consultări echilibru, istoric facturare cu coduri CPT, plată online prin Stripe, planuri de plată, receipt-uri |
+| **Formule** | Completă formulele de admiție, questionare PHQ-9/GAD-7, formule de acord online |
+| **Acorduri** | Management digital al acordurilor (tratament, HIPAA, telemedicină, medicamente, cercetare) |
 
 </details>
 
 <details>
-<summary><h3>📚 Patient Education Module</h3></summary>
+<summary><h3>📚 Modul de Educație a Pacientului</h3></summary>
 
-🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
+🔗 **[Citește Documentația Detaliată al Modulului de Educație a Pacientului](../../docs_source_en/patient_education_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
+| **Catalog de Materiale** | 14 documente educaționale pe toate specialitățile |
+| **Multilingvă** | Materiale în engleză și spaniolă disponibile |
+| **Categorii** | Stare, medicament, procedură, stil de viață, pos-operativ, exerciții la domiciliu, siguranță, prevenție |
+| **Metode de Livrare** | Impresionat, încărcare prin portal, e-mail, în presență, text |
+| **Apreciere** | Monitorizează dacă pacientul a văzut/acknowledged materialul |
+| **Exemple de Specialități** | Guiă EpiPen, siguranța Accutane, rehabilitare ACL, teme de lucru pentru CBT, pos-operativ implant |
 
 </details>
 
 <details>
-<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
+<summary><h3>🔔 Modul de Recall-uri și Recordări</h3></summary>
 
-🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
+🔗 **[Citește Documentația Detaliată a Modulului de Recall-uri și Recordări](../../docs_source_en/recalls_reminders_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
+| **Tipuri de Recall** | Higiene, examen anual, urmărire, recheck laborator, imagistic, screening, vaccinare, revizuire medicamentară |
+| **Urmărire Statutului** | Încheiat → Trecut → Programat → Completat → Anulat |
+| **Încercări de Contact** | Urmărește încercările de contact pentru recall-uri trecute |
+| **Specificale Practicii** | Dental 6-luni de curățenie, derm annual verificare piel, laborator Accutane lunar |
+| **Datele Automatice de Expirare** | Bazează-și pe ultimul vizită completat |
 
 </details>
 
 <details>
-<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
+<summary><h3>🔄 Modul Referințe și Chat Cross-Practică</h3></summary>
 
-🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
+🔗 **[Citiți Documentația Detaliată a Modulului de Referințe și Chat Cross-Practică](../../docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
+| **Urmărire Referințe** | Provoasă/destinatar, specialitate, motiv, coduri de diagnostic, urgență, urmărire autorizare |
+| **Ciclu Stare** | În așteptare → Trimis → Acceptat → Programat → Complet / Expirat / Refuzat |
+| **Chat Cross-Practică** | Mesajare HIPAA-compliant între administrații practicii/managerii birouri |
+| **Compartimentalizare a Fișierelor Atașate** | Trimite imagini, rații, documente, rezultate laboratoriale, prescriziuni între practicii |
+| **Conversații Threaded** | Threaduri de chat pe referință cu acordări de citere |
+| **Exemple Reale** | Peds→Psychiatry (ADHD), Derm→PT (artrita psoriatică), PT→Derm (curățenie cutanată) |
+| **Urmărire Autorizare** | Numere de autorizare, date de expirare, indicatoare de necesitate pentru autorizare anterioară |
 
 </details>
 
 <details>
-<summary><h3>💬 Team Chat & Communication</h3></summary>
+<summary><h3>💬 Chat și comunicare echipă</h3></summary>
 
-🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+🔗 **[Citiți documentația detaliată despre Chat și comunicare echipă](../../docs_source_en/team_chat_communication.md)**
+- [Collaborative Editor Suite](../../docs_source_en/collaborative_editors_module.md)
 
 
 
-| Feature | Details |
+
+| Funcție | Detalii |
 |---------|---------|
-| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
-| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
-| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
-| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
-| **Channels** | Department-based channels (Clinical, Billing, Admin) |
-| **File Attachments** | Share documents, images, and clinical assets in chat |
+| **Chat criptat pe nivelul întregului sistem (E2E)** | Mesajare în cadrul echipelor de lucru, conform standardelor HIPAA |
+| **Reuniri video grup** | Reuniuni WebRTC mesh scalabile pentru 6 participanți, compatibile cu telemedicină și standup-uri echipale (HIPAA) |
+| **Programare sigură** | RSVP autentificat utilizând formatele de email zero-PHI pentru legături călendare |
+| **Câlligările vocale și video** | Conferenciuni vocale și video sigure (doar pentru echipa) |
+| **Compartează contextul prin AI** | Generarea planului de tratament → "Comparteți sesiunea" → împreună cu billing channel |
+| **Comandă vocală → acțiune** | Comenzi vocale → apel, SMS, e-mail, programare (Pro+) |
+| **Canale** | Canale bazate pe departament (clinice, facturare, admin) |
+| **Atașamente de fișiere** | Împărtășiți documente, imagini și resurse clinice în chat |
 
 </details>
 
 <details>
-<summary><h3>📞 Collaboration Practice Suite</h3></summary>
+<summary><h3>📞 Suite de practică de colaborare</h3></summary>
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+| **Tabloul centralizat** | Rutează mapele metrice agregate eficient. Centru comandă izolând sarcinile nerezolvate în mod nativ. |
+| **Consultații video (WebRTC)** | Stream video P2P avansată și sigură folosind noduri TURN/STUN Twilio, evitând intermediarii. |
+| **RLS Gating** | Urmărire implicită a identității eliminând fugă date între-tenanți la server natively, mapezând strict la limitele Advanced/Pro. |
+| ** sarcini clinice** | Amintiri internale ale clinciei, aprobări și ștergerea izolate pe per workspace în mod sigur. |
 
 </details>
 
 ### 🔐 Enterprise Administration
     <details>
-    <summary><h3>🛡️ Security & Compliance</h3></summary>
+    <summary><h3>🛡️ Securitate și Conformitate</h3></summary>
 
-| Feature | Details |
+| Funcție | Detalii |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+| **Conformitatea HIPAA** | Traiul audit HIPAA complet, arhitectură pregătită pentru BAA |
+| **Controlul Accesului Riguros** | 11 roluri semnate criptografic cu limite specifice de acces |
+| **Isolarea Datelor** | Toate registrele sunt izolate după clincă (`workspace_id`) pentru a preveni contaminarea cruzată |
+| **Autentificare Criptografică** | Tokene temporare (expirare în 15 minute) asigură logout automatizat pentru dispozitive obsolete |
+| **Criptografia la Repositoriul de Date** | Transparent Data Encryption (AES-256) pentru toate informațiile medicale |
+| **Jurnali Audit Imutabile** | Jurnali imutabile pentru toate atribuiriile rolurilor, accesul la fișiere și acțiunile mesajelor |
+| **Modul Securității HIPAA în Mod Faill Closed** | Refuză accesul la microfon dacă procesarea locală nu este disponibilă (fără fallback silențios cloud) |
+| **Minimizare a Datelor** | Nicio memorie cache browser pentru PHI; date sensibile sunt șterse imediat atunci când o fereastră se închide |
 </details>
 
 <details>
 <summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
 
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+🔗 **[Read Detailed Platform Administration & White-Label Documentation](../../docs_source_en/platform_administration_white_label.md)**
 
 
 
 | Feature | Details |
 |---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+| **Arhitectura Multitenant** | Spațiuri de lucru izolate cu branding și configurații dedicate |
+| **Workspace dinamic** | Logo, adresă principală și tematizare în timp real prin SSR |
+| **Disponibilitatea modulurilor** | Administrația Platform poate glisăza sau ascunde module pe baza specializării clinice |
+| **Comutarea caracteristicilor angajaților** | Suprascrie rolurile de bază cu `restricted_features` JSONB arrays aplicând blocare API la runtime |
+| **Constructori de ecrane** | Capacitatea practicii de a redenumi butoane, ascunde coloanele datagrid sau suprascrie copia standard UI |
+| **Audit Break-Glass** | Toate acțiunile administrației platformă sunt înregistrate în urmări audituale HIPAA-compatibile |
 
 </details>
 
@@ -608,9 +627,9 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 ---
 
 <details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
+<summary><h2>🛡️ Securitatea Enterprise și Arhitectura HIPAA</h2></summary>
 
-Synalux is engineered for zero-trust environments.
+Synalux este proiectat pentru mediile de securitate zero-trust.
 
 ### Arhitectura de securitate — Fluxul cererilor multi-tenant
 
@@ -618,41 +637,41 @@ Synalux is engineered for zero-trust environments.
 ┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
 │   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
 │                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+│  Browser /      │────▶│  1. Verificare autenticație (NextAuth)    │────▶│  3. Aplicarea drepturilor de acces la instrumente (ACL)     │────▶│  6. Politici RLS            │
+│  VS Code        │     │  2. Semnare JWT (Ed25519)    │     │  4. Sandbox AI               │     │     (JWT → set_config)      │
+│                 │     │     (TTL de 15 minute)             │     │     (ProposedChange)         │     │  7. Datele multi-tenant       │
+│                 │     │                              │     │  5. Jurnal audit HIPAA          │     │     (izolare workspace_id)   │
 └─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
+                              Google OAuth                    Contextul instrument răspins                   Filtre RLS după workspace_id
 ```
 
-**Perspectivă cheie:** Deoarece JWT-urile poartă claim-uri `workspace_id` și politicile RLS PostgreSQL le citesc prin `current_setting('request.jwt.claims')`, nu există **variabile de sesiune server-side** și nici **pool-uri de conexiuni per tenant**. Aceasta face Synalux scalabil orizontal.
+**Perspectivă cheie:** Deoarece JWT-urile au claim-uri `workspace_id` și politicile RLS PostgreSQL le citesc prin `current_setting('request.jwt.claims')`, nu există **variabile de sesiune server-side** și nici **pool-uri de conexiuni per tenant**. Aceasta face Synalux scalabil orizontal.
 
 ### Controale de securitate
 
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+* **Autentificare cu EdDSA (Ed25519):** Token-urile API statice sunt demote la starea de doar actualizare. Toate cererile API sunt autentificate prin JWT-uri scurte (15 minute) semnate cu criptografia asimetrică.
+* **Criptografie transparentă a datelor (TDE):** Toate mesajele, documentele generate și istoricii sesiunilor sunt criptate în repos.
+* **Minimizarea strictă a datelor:** Transcripturile Web App live doar în memorie React state și sunt colectate de garbage collector la închiderea unui tab. `localStorage` nu este folosit pentru PHI.
+* **Stocare cu verificare MIME:**
+  - Atașamentele clinice sunt restricționate prin verificarea server-side strictă a tipurilor MIME și sunt servite exclusiv prin URL-uri semnate cu IDOR prevenită (15 minute).
+* **Jurnali audit imutabile:** Toate atribuiriile rolului, descărcările de fișiere și ștergerile de mesaje sunt înregistrate permanent în `rbac_audit_log` pentru non-repudiație conformitatei. Rândurile din jurnalul audit sunt append-only — chiar adminii bazei de date nu pot modifica istoricul.
+* **Portughești de siguranță HITL:** Instrumentele periculoase (`terminal`, `git_tool`, `browser`) necesită o aprobare explicită utilizatorului prin un dialog modal înainte de executare — prevenind zero-click RCE prin injecție de prompt.
+* **Modul HIPAA fail-closed:** Dacă LLM local (Ollama) nu este disponibil în timpul intake-ului vocal clinic, sistemul rafușează deschiderea microfonului în loc să renunțe silențios la procesarea cloud.
+* **Bannere de siguranță ale datelor obsolete (Siguranța pacienților):** Dacă datele clinice nu au fost rafușate în sesiunea curentă, o banner îl avertizează clinicianul, prevenind deciziile terapeutice bazate pe informații obsolete.
 
-### Conformitate HIPAA Statement
+### Declarația de conformitate HIPAA
 
-| HIPAA Requirement | Synalux Implementation |
+| Cerință HIPAA | Implementare Synalux |
 |---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **§164.312(a)(1)** Controlul accesului | RBAC bazat pe JWT cu ACL-uri per-instrument; RLS asigură izolare tenant la nivelul bazei de date |
+| **§164.312(b)** Controlele auditului | Jurnal audit imutabil `hipaa_audit_log` + `rbac_audit_log` — toate accesurile cu PHI sunt înregistrate cu utilizator, acțiune, resursă și timestamp |
+| **§164.312(c)(1)** Integritatea | Sandbox AI (`ProposedChange`) asigură nicio scriere automatizată la datele clinice fără semnatura a unui clinician |
+| **§164.312(d)** Autentificare | JWT-uri asymmetrice (TTL de 15 minute); Google OAuth cu MFA pentru rolurile clinice |
+| **§164.312(e)(1)** Securitatea transmisiei | TLS 1.3 aplicat pe toate endpoint-urile; conexiunile Supabase folosesc SSL; nu există PHI în parametri URL |
+| **§164.308(a)(1)** Analiza riscurilor | Reviewuri de securitate adversariale (`REVIEW_PROMPT.md`); barriere automatice cu verificare SSE pe ferestre glisante |
+| **Nicio persistență a localStorage** | Toate datele clinice live în React state (colectate de garbage collector la închiderea unui tab) sau Postgres (protejate prin RLS). Zero persistență a PHI în browser |
 
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
+> **Covrind BAA:** Complianța totală cu HIPAA necesită Vercel Enterprise + Supabase Team tier. Consultați [Modulele de infrastructură și servicii cloud](#platform-modules) pentru prețuri.
 
 </details>
 

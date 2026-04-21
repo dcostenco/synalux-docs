@@ -41,490 +41,512 @@
 ---
 
 
+
+### 📸 Product Tour
+
+| 📊 1. Patient Dashboard | 🧠 2. AI Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 💉 4. Immunizations | 📦 5. Inventory Management | 🧪 6. Lab Orders & Results |
+|:---:|:---:|:---:|
+| <img src="../demo/24_immunizations.png" width="100%" alt="Immunizations Module"> | <img src="../demo/25_inventory.png" width="100%" alt="Inventory Management"> | <img src="../demo/26_lab_orders.png" width="100%" alt="Lab Orders & Results"> |
+
+| 👶 7. Pediatrics | 🐾 8. Veterinary Medicine | ❤️ 9. Vitals & Measurements |
+|:---:|:---:|:---:|
+| <img src="../demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="../demo/28_veterinary.png" width="100%" alt="Veterinary Medicine"> | <img src="../demo/29_vitals.png" width="100%" alt="Vitals & Measurements"> |
+
+| 🤖 10. Intelligent Clinical Assistant |
+|:---:|
+| <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
+
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
 
 ### 🏥 Clinical Care Modules
 <details>
-<summary><h3>📋 Clinical Notes & Documentation</h3></summary>
+<summary><h3>📋 Кліничні записки та документи</h3></summary>
 
-🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+🔗 **[Докладна інформація про кліничні записки та документи](../../docs_source_en/clinical_notes_documentation.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
+| **Записки SOAP** | Автоматично створені з голосової диктації за допомогою спеціалізованих шаблонів |
+| **Голосова диктація** | WASM Whisper на пристрої → нульове передача PHI до обліку |
+| **4 шаблони записок** | Сесія лікаря, Прогресна записка, Початкова оцінка, Висновки з прийняття |
+| **Документи** | Результати лабораторних досліджень, зображення, підписи, оцінки, плани лікування — всі документи в рамках праціового простору |
+| **Експорт у формат PDF** | Серверна рендеринг (немає утечок PHI на стороні клієнта) |
+| **Е-підписи** | Інтеграція з BoldSign за допомогою 7 шаблонів документів |
+| **ОКР** | Сканування документів у 30+ мовах для цифрової додаткової форматується |
 
 </details>
 
 <details>
-<summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+<summary><h3>📴 Першовід'яльні медичні сесії офлайн</h3></summary>
 
-🔗 **[Read Detailed Offline-First Clinical Sessions Documentation](docs_source_en/offline_first_clinical_sessions.md)**
+🔗 **[Докладна документація про першовід'яльні медичні сесії офлайн](../../docs_source_en/offline_first_clinical_sessions.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
-| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
-| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
-| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
-| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
-| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
-| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
-| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
-| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+| **Часові метки на стороні клієнта** | Початок/кінець сесії захищені на працюючому пристрої — використовуються для розрахунку платежів, а не часу отримання підтвердження сервером |
+| **Офлайн черга** | Події чергується у localStorage при офлайн-статусі, автоматично синхронізується при з'явленні з'єднання |
+| **Збереження чернеток** | Медичні замітки автоматично зберігаються у localStorage на кожному клавіатурному введенні — пропонують життя після краху браузера або втрати з'єднання |
+| **Закриття сесії** | Медичний працівник повинен закрити сесію — часовий позначка є точним часом розрахунку платежів |
+| **Аудит адміністратора** | Кожна подія показує індикатор онлайн/оффлайн з часами синхронізації |
+| **Монітор з'єднання** | Бокова панель показує реальну стан з'єднання (зелений/червоний) з позначкою очікуваного числа синхронізацій |
+| **Очищення даних за ПІК** | Всі локальні дані видаляються при вихіді та превищенні часу бездіяльності |
+| **Ідемпотентна синхронізація** | Дублікати з'являються через клієнтський UUID |
+| **Виявлення відрізаного часу** | Сервер логує відрізане значення між часами на працюючому пристрої та сервері для аудиту |
+| **Життєцикл сесії** | `session_start` → `session_pause` → `session_resume` → `session_end` |
 
-**Billing Compliance:**
+**Співвідповідальність за розрахунки:**
 ```
-Provider starts session at 2:00 PM (online) → 🟢
-  Connection drops at 2:30 PM
-Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
-  Connection restores at 4:00 PM → auto-sync
-Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
+Медичний працівник починає сесію о 14:00 (онлайн) → 🟢
+  З'єднання втрачається о 14:30
+Медичний працівник закриває сесію о 15:45 (оффлайн) → 🔴 client_timestamp = 15:45
+  З'єднання повертається о 16:00 → автоматна синхронізація
+Сервер записує: client_timestamp = 15:45, sync_timestamp = 16:00
   ↓
-Insurance billed: session 2:00 PM – 3:45 PM (accurate)
-Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+Застраховане сплачує: сесія від 14:00 до 15:45 (точний час)
+Адміністратор бачить: "Сесія закрита о 15:45 🔴 Офлайн (синхронізовано о 16:00)"
 ```
 
 </details>
 
 <details>
-<summary><h3>🧪 Lab Orders & Results Module</h3></summary>
+<summary><h3>🧪 Модуль лабораторних запитів та результатів</h3></summary>
 
-🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
+🔗 **[Докладна документація по модулю лабораторних запитів та результатів](../../docs_source_en/lab_orders_results_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
+| **Лабораторні запити** | Трacking запитів до постачальників (Quest, LabCorp, внутрішньо), пріоритет (зазвичай/ургентний/стат) |
+| **Tracking результатів** | Результати окремих тестів з діапазонами норм та позначками ненормальних значень (низький/високий/критичний) |
+| **Категорії** | Хематологія, Хімічна аналітика, Липиди, Гепатологічна аналітика, Імунологічна аналітика, Вітамини, Ударне відчуття, Коглюзовані |
+| **Попередження про ненормальні значення** | Автоматичне позначення результатів за межами дозволених (наприклад, збільшене TSH, низький рівень вітаміну D) |
+| **iPLEDGE Labs** | Місячний контроль за Accutane: CBC, CMP, панель липидів, LFT з відстеженням тенденцій |
+| **Перед хирургією** | INR, PT, глюкоза, очищення A1C для зубних протезів та хирургічних процедури |
+| **Моніторинг ліків** | Перевірка TSH на SSRI, панель липидів за стимуляцією, базова панель біологічних показників |
+| **Життєцикл запиту** | Замовлено → Взяття викладача → Послати на перевірку → Отримати результати → У роботі → Результативний → Переглянути |
+| **Інтеграція з постачальниками** | Quest Diagnostics, маршрутизація запитів LabCorp (планується: електронне завантаження результатів) |
+| **Посилання на діагнози** | Коди ICD-10 прикріплені до запитів для документації про медичну необхідність |
 
 </details>
 
 <details>
-<summary><h3>💊 Medications & Prescriptions Module</h3></summary>
+<summary><h3>💊 Модуль ліків та рецептур</h3></summary>
 
-🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
+🔗 **[Докладна документація по модулю ліків та рецептур](../../docs_source_en/medications_prescriptions_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
+| **Каталог ліків** | 12+ медикаментів з кодами NDC, класами ліків, режимами дозування, шляхами вживання, типовими дозами |
+| **Активні рецептури** | Персональний список медикаментів з дозою, частотою, лікаря, аптеки та контролем перезапитувань |
+| **Класи ліків** | SSRIs, стимулятори, ретиноїди, біологічні препарати, дистролітири, НАСЗ, антибактеріальні, противовтратаєння |
+| **iPLEDGE моніторинг** | Моніторинг Accutane isotretinoin з обов'язковими лабораторними перевірками кожного місяця |
+| **Життєвий цикл статусу** | Активний → На паузі → Зупинено → Виконано → скасовано |
+| **Попередження про взаємодії** | Масив попереджень згідно з медикаментом (синдром серотоніну, QTc, тератогенічність) |
+| **Перевірка аптеки** | Іменовані аптеки на кожен рецепт для готовності до е-прескрипції |
 
 </details>
 
 <details>
-<summary><h3>📊 Vitals & Measurements Module</h3></summary>
+<summary><h3>📊 Модуль Відстеження стану та вимірювань</h3></summary>
 
-🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
+🔗 **[Докладна документація по модулю Відстеження стану та вимірювань](../../docs_source_en/vitals_measurements_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
+| **Стандартні показники стану** | БП (систолічний/діастолічний), ЧСК, ЧР, температура (з методом), СпО2, вага, зрілість, ІМТ |
+| **Шкала болевого досвіду** | Номерна шкала болевого досвіду на кожен визит (0-10) |
+| **Розвиток у дитинстві** | Грудина, вага/висота/ІМТ за перцентилі (WHO/CDC) |
+| **Оцінки фізичної терапевтичної діяльності** | Кріжові рухи (градуси), функціональні оцінки (Oswestry, LEFS), замітки про активування квадратних мускул |
+| **Відстеження тенденцій** | Історичні показники стану за кожного pacientа для аналізу тенденцій |
+| **Посилання на запис у зустрічі** | Показники стану пов'язані з конкретними записами у зустрічах |
 
 </details>
 
 <details>
-<summary><h3>⚠️ Allergies & Alerts Module</h3></summary>
+<summary><h3>⚠️ Модуль Аллергій та Аlerтів</h3></summary>
 
-🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
+🔗 **[Докладна документація по модулю Аллергій та Аlerтів](../../docs_source_en/allergies_alerts_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
+| **Типи алергенів** | Ліки, їжа, середовище, латекс, контраст, інший |
+| **Рівні тяжести** | Мідький, середньотяжений, важливий, смертельний |
+| **Відстеження реакцій** | Документування конкретних реакцій (анапафлаксія, SJS, чищолипиди, зміщення виробництва) |
+| **Підтримка NKDA** | Ясне документування "Немає відомих лікотворних алергій" |
+| **Клінічні алерти** | Критичні позначки алергії (пеніциллін → використання кліндамцину, суфона → історія SJS) |
+| **Перевірка** | Перевірка лікаря з датовими позначками |
 
 </details>
 
 <details>
-<summary><h3>💉 Immunizations Module</h3></summary>
+<summary><h3>💉 Модуль вакцинацій</h3></summary>
 
-🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
+🔗 **[Докладна документація по модулю вакцинацій](../../docs_source_en/immunizations_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
+| **Відстеження вакцин** | Коди CVX, номера доз, номери партій, виробники |
+| **Проведення** | Місце (IM/SC/PO/IN/ID), шлях (IM/SC/PO/IN/ID), проводить лікаря |
+| **Відповідність до ВІС** | Відстеження дати випуску інформаційного письма про вакцину |
+| **Звітність у реєстрі вакцинацій** | Відстеження подачі звіту до станського реєстру вакцинацій |
+| **Розклад ЦНІДК** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
+| **Вакцинировані після хвороби захворюванням** | Особливі рекомендації вакцин для біологічних пацієнтів |
 
 </details>
 
 ### 🏢 Practice Operations Modules
 <details>
-<summary><h3>💳 Billing & Payments Module</h3></summary>
+<summary><h3>💳 Модуль платежів та рахунку</h3></summary>
 
-🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+🔗 **[Докладна документація по модулю платежів та рахунку](../../docs_source_en/billing_payments_module.md)**
 
 
 
-The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
+Модуль платежів використовує **Stripe Connect**, щоб надати кожному офіс своїй незалежної системі обробки платежів, пов'язаної з адміністратором офісу.
 
-**Per-Practice Billing Configuration:**
-| Setting | Details |
+**Конфігурація платежів на рівні офісу:**
+| Налаштування | Деталі |
 |---------|---------|
-| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
-| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
-| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
-| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
-| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
-| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
+| **Stripe Connect** | Кожен працювальник має свій власний `acct_xxx` аккаунт Stripe Connect |
+| **Адміністратор пов'язаний** | Владельство аккаунту Stripe пов'язане з користувачем адміністратора працювальника |
+| **Розклади комісій** | Розклади комісій на рівні офісу з стандартними, страхувальними, медичними та самоплачними ставками |
+| **Методи оплати** | Кредитна карта, ACH/перевод банку, чек, готівка — налаштовується на рівні офісу |
+| **Автоматичне публічування платежів** | Автоматичне публічування платежів, надсилання квитанцій та генерація місячних звітів |
+| **Конфігурація податків** | Податкові ставки на рівні офісу та NPI/EIN для звітування 1099 |
 
-**Multi-Country & Multi-Currency (NEW):**
+**Мульти-країна та мульти-валюта (нове):**
 
-| Country | Currency | Standard | Advanced | Enterprise |
-|---------|----------|----------|----------|------------|
-| 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
-| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
-| 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
-| 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
-| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
-| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
+| Країна | Валюта | Стандартний | Розширенний | Бізнес |
+|---------|----------|-------------|------------|-----------|
+| 🇺🇸 США | USD | $19/міс. | $49/міс. | $99/міс. |
+| 🇨🇦 Канада | CAD | C$25/міс. | C$65/міс. | C$129/міс. |
+| 🇬🇧 Велика Британия | GBP | £15/міс. | £39/міс. | £79/міс. |
+| 🇩🇪フランス | EUR | €18/міс. | €45/міс. | €89/міс. |
+| 🇦🇺 Австралія | AUD | A$29/міс. | A$75/міс. | A$149/міс. |
+| 🇳🇿 Нова Зеландія | NZD | NZ$32/міс. | NZ$82/міс. | NZ$159/міс. |
 
-**Volume Discounts:**
-| Clients | Discount |
+**Знижки за обсяг:**
+| Клієнтів | Знижка |
 |---------|----------|
-| 100+ | 10% off per-seat price |
-| 500+ | 20% off per-seat price |
-| 1,000+ | 30% off per-seat price |
-| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+| 100+ | 10% знижка на ціну за місце для кожного клієнта |
+| 500+ | 20% знижка на ціну за місце для кожного клієнта |
+| 1,000+ | 30% знижка на ціну за місце для кожного клієнта |
+| Розрахунок річно | Додаткова знижка 20% (збирається разом з обсяговими, обмежена до 45%) |
 
-**Payment Failure Lifecycle:**
+**Життєцикл неуспішних платежів:**
 ```
-Payment Failed → past_due (warning banner, keep access)
-  → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
-  → Stripe subscription.deleted → plan = 'free', sub cleared
+Неуспішний платник → past_due (попередження про термін, залишає доступ)
+  → повторна спроба → все ще past_due (уривне попередження)
+  → третя спроба неуспішна → автоматне пониження до безкоштовного рівня
+  → Stripe subscription.deleted → план = 'free', схвалення очищене
 ```
 
-**Platform Admin Overrides:**
-- Synalux platform admins can set any user to unlimited trial on any plan
-- Override users are **immune** to Stripe webhook downgrades
-- Admin sees 🟢/🔴 indicators for payment status
-- Full audit trail: who set the override, when, and why
+**Переваги платформи адміністратора:**
+- Адміністратори Synalux можуть встановити будь-якого користувача на безкоштовний пробний період на будь-який план
+- Користувачі, які були переважені, **безпечно** від Stripe webhook понижень
+- Адміністратор може побачити індикатори зелених/червоних для статусу платежів
+- повний доклад: хто встановив перевагу, коли та чому
 
-**Revenue Cycle Management:**
-- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
-- ERA/EOB electronic remittance processing
-- Denial management with appeal deadline tracking
-- Prior authorization workflow
-- Aging reports (30/60/90/120 day buckets)
+**Манажмент циклу рахунків:**
+- Трекування життєцикла страхувальних клам (черновик → поданий → прийнятий → оплачений/затверджений → залучення)
+- Електронний обробник елементів розмови (ERA/EOB)
+- Манажмент відмов з дотриманням дедлайну
+- Робочий процес попередньої авторизації
+- Звіт про старінку (контейнири 30/60/90/120 днів)
 
-**Patient Payments:**
-- Patient portal "Pay Now" → Stripe Checkout redirect
-- Partial payments and custom amounts
-- Payment plans with Stripe recurring subscriptions
-- Receipt generation and download
-- Refund processing
+**Оплата клієнтами:**
+- Платформа клієнтів "Оплатити зараз" → перенаправлення на Stripe Checkout
+- Часткові платежі та власні суми
+- Розрахунки з підписками Stripe
+- Генерація та завантаження квитанцій
+- Обробка повернень
 
-**Insurance Claims:**
-- Electronic claim submission (837P)
-- Real-time eligibility verification
-- Coordination of Benefits (COB)
-- Explanation of Benefits (EOB) tracking
-- Appeal management with letter templates
+**Страхувальні клами:**
+- Електронне подача страхувальних клам (837P)
+- Перевірка реального доступності вчасно
+- Координація переваг (COB)
+- Трекування елементів розмови (EOB)
+- Манажмент залучення з шаблонами листів
 
-**Automatic Tax Collection:**
-- Stripe Tax enabled per-country (VAT, GST, HST, PST)
-- Tax calculated automatically based on workspace country
-- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
-
-</details>
-
-<details>
-<summary><h3>📅 Scheduling & Appointments</h3></summary>
-
-🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
+**Автоматична податкова колекція:**
+- Stripe Tax включено на кожну країну (VAT, GST, HST, PST)
+- Податки автоматично обчислюються на основі країни працювальника
+- Співпадає з правилами податків Канади для декількох провінцій (федеральні GST + локальні PST/HST)
 
 </details>
 
 <details>
-<summary><h3>👥 HR & Staff Management Module</h3></summary>
+<summary><h3>📅 Планування та запис на зустрічі</h3></summary>
 
-🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+🔗 **[Докладна документація по плануванню та запису на зустрічі](../../docs_source_en/scheduling_appointments.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
+| **Статуси запису** | Заплановано → Підтверджено → У роботі → Виконано (+ скасовано, не прийнято, перенесено) |
+| **Запитання пацієнтів на порталі** | Пацієнти запитують запис на зустріч з вибраним датою та часом → персонал підтверджує або відхилює |
+| **Мульти-провайдери** | Планування за межами провайдерів всього офіційного лікаря |
+| **Періодичні відвідування** | Терапевтичні сесії на тиждень, періодичні перевірки за місяць, корекції ортотерапевтичних розташувань |
+| **Очікування** | Запити на запис на зустріч при повному зайнятому графіку |
+| **Нагадування** | Автоматичні нагадування про запис (планове) |
 
 </details>
 
 <details>
-<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+<summary><h3>👥 Модуль управління персоналом та працівниками</h3></summary>
 
-🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+🔗 **[Докладна документація по модулю управління персоналом та працівниками](../../docs_source_en/hr_staff_management_module.md)**
 
 
 
-| Feature | Details |
+| Особливість | Деталі |
 |---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
+| **Профілі працівників** | Тип роботи, дата прийняття на работу, зарплата/годинна ставка, спеціальності, відстеження відділу |
+| **Кваліфікації** | Ведення досвіду про освіту та кваліфікаційних документів з нагадуваннями про терміни дійсності та процесами оновлення |
+| **Відпустки** | Вихідний, больничний, освіта за професією, родинний випуск, розлучення через смерть, судовий зосередження — процеси затвердження |
+| **Тренування** | Ведення досвіду про повинності (HL7, FHIR, DTaP) з термінами завершення та статусом виконання |
+| **Перевірка працездатності** | Річний/піврічний перегляд з оцінками, мета-планами, планами покращення та признанням |
+| **Вступ до роботи** | Позначка очікуваного статусу вступу, процес верифікації кваліфікаційних документів, надавання завдань на тренування |
 
 </details>
 
 <details>
-<summary><h3>📦 Inventory Management Module</h3></summary>
+<summary><h3>⏱️ Тайм-шети та модуль оплати</h3></summary>
 
-🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
+🔗 **[Доклад про деталі модуля тайм-шетів та оплати](../../docs_source_en/timesheets_payroll_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
+| **Автоматичне створення** | Тайм-шети автоматично створюються на основі підписаних клаузничних записів |
+| **Небачна робота** | Ведення часу адміністратора, водія, навчання та приготування клініки |
+| **Роботи з одобрюванням** | Питомець надсилання → Перевірка під часу розгляду → Обробка оплати |
+| **Експорт оплати** | Експортувати тайм-шети, інтегрований з ADP, Gusto та Paycom |
+| **Співвідповідальність** | Попередження про перевищення 40 годинних додаткових оплат, вимушене відстеження перерывів, видимість накопичення PTO |
 
 </details>
 
 <details>
-<summary><h3>🧾 Superbills Module</h3></summary>
+<summary><h3>📦 Модуль управління складом</h3></summary>
 
-🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
+🔗 **[Докладна документація по модулю управління складом](../../docs_source_en/inventory_management_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
+| **Категорії** | Страви для зубних хирургів, вакцини, ліки, біологичні препарати, ППЗ, хирургічний засоби, лабораторна техніка, офіційне місце роботи |
+| **Трacking складу** | Кількість на складі, рівень перебудови, кількість для перебудови, вартість за одиницю |
+| **Лот та термін дійності** | Номер лоту, дата закінчення терміну дії, FIFO для вакцини |
+| **Tracking постачальників** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
+| **Попередження про стан** | На складі, низький рівень на складі, відсутній на складі, закінчився термін дії, зупинено |
+| **Місця для зберігання** | Холодильник для вакцини (2-8°C), холодильник для біологичних препаратів, кабінети для офіційного місця роботи, закриті кабінети |
+| **Специальні предмети** | Заглушка для імплантів ($285), біологичний підставник ($2 850), контейнери для криотерапії |
+
+</details>
+
+<details>
+<summary><h3>🧾 Модуль Супербілів</h3></summary>
+
+🔗 **[Докладна документація по модулю Супербілів](../../docs_source_en/superbills_module.md)**
+
+
+
+| Функція | Деталі |
+|---------|---------|
+| **На основі зустрічі** | Один супербіль на відвідку з кодами діагностики та процедури |
+| **Мульти-коди** | Масиви діагнозів ICD-10 + масиви процедур CPT/CDT + модифікатори (-25, -59) |
+| **Фінансова розбірка** | загальна вартість, страхуване бачення, взяття пацієнтом, коригування |
+| **Життєвий цикл статусу** | Чернетка → Перегляд → Суттєво передано → Оплачено / Відхилено / Зароблено |
+| **Всі спеціальності** | відвідування дитини, імплантати, ортохромотерапія, психотерапія, реабілітація фізичної терапією, процедури дерматології |
+| **Відстрочення Medicare** | автоматичне відстеження коригувань за договорними обов'язками Medicare |
 
 </details>
 
 
 
 <details>
-<summary><h3>📋 Clinical Tasks Module</h3></summary>
+<summary><h3>📋 Модуль клінічних завдань</h3></summary>
 
-🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+🔗 **[Докладна документація по модулю клінічних завдань](../../docs_source_en/clinical_tasks_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
+| **Категорії завдань** | Перевірка лабораторних даних, попередня авторизація, розкладування, документування, оплата, зв'язок з pacientом, заповнення рецепту, посилання |
+| **Рівні пріоритету** | Низький, нормальний, високий, срочний |
+| **Видавання завдань** | Видати особам з опевнованими правами доступу з датами завершення та контролем виконання |
+| **Пов'язані з pacientом** | Завдання пов'язані з конкретними pacієнтами для координації догляду |
+| **Контролювати статус** | Відкрите → У роботі → Виконано / скасовано / відложено |
+| **Аудитний друк** | Створення, завершення, час завершення |
 
 </details>
 
 ### 🤝 Patient Experience & Collaboration
 <details>
-<summary><h3>🏥 Patient Portal</h3></summary>
+<summary><h3>🏥 Платформа для пацієнтів</h3></summary>
 
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+🔗 **[Докладна документація по платформі для пацієнтів](../../docs_source_en/patient_portal.md)**
 
 
 
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
+Повнофункциональний портал для пацієнтів з автентифікацією, повідомленнями, документами, записями на прийняття та рахунками.
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
+| **Автентифікація** | Вхід за кодом (SHA-256 хешування), відстеження терміну дійсності |
+| **Панель керування** | Загальний перегляд здоров'я з наступними записями на прийняття, непрочитаними повідомленнями, очікуваними документами та сумісну вартістью |
+| **Повідомлення** | Тредові розмови з лікарями, прапорці на срочність, квитання про прочитання |
+| **Документи** | Перегляд/завантаження медичних документів, завантаження страхових карт та форм |
+| **Записи на прийняття** | Перегляд майбутніх/ минулого відвідувань, запит нових записів з урахуванням бажаних часів |
+| **Рахунки** | Перегляд суми, історії розрахунків з кодами CPT, оплата онлайн через Stripe, плани платежів, квитанції |
+| **Форми** | Заповнення форм прийняття, анкети PHQ-9/GAD-7, додаткові формули онлайн |
+| **Згоди** | Електронне управління згодами (лікування, HIPAA, телемедична консультація, ліки, дослідження) |
 
 </details>
 
 <details>
-<summary><h3>📚 Patient Education Module</h3></summary>
+<summary><h3>📚 Модуль освіти для pacientsьких</h3></summary>
 
-🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
+🔗 **[Докладна документація по модулю освіти для pacientsьких](../../docs_source_en/patient_education_module.md)**
 
 
 
-| Feature | Details |
+| Особливість | Деталі |
 |---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
+| **Каталог матеріалів** | 14 освітні документи по всій громаді |
+| **Мови мовою** | Матеріали англійською та іспанською мовами доступні |
+| **Категорії** | Спеціальність, лікивання, процедури, життя, післяоперативний період, домашнє вправлення, безпека, профілактика |
+| **Методи доставки** | Печатане, завантаження на портал, електронна пошта, офіційне місце, текстовий повідомлення |
+| **Підтвердження** | Трacking того, чи переглянув або підтвердив pacient матеріал |
+| **Приклади спеціальностей** | Рукавички для EpiPen, безпека Accutane, реабілітація з ACL, домашнє завдання за CBT, післяоперативний період для імплантів |
 
 </details>
 
 <details>
-<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
+<summary><h3>🔔 Модуль Повторних Перевірок та Напоминань</h3></summary>
 
-🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
+🔗 **[Докладна документація по модулю Повторних Перевірок та Напоминань](../../docs_source_en/recalls_reminders_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
+| **Типи повторних перевірок** | Гігієнічна, річний осередок, наслідковий, лабораторний переказ, зображення, дослідження, вакцинація, медичне огляду |
+| **Відстеження статусу** | Через → Застаріло → Планувано → Виконано → скасовано |
+| **Слідкування за спробами зв'язку** | Слідкувати за спробами зв'язку для застарілих повторних перевірок |
+| **Персональні для практики** | Дентальний очищення кожні 6 місяців, дерматологічна річна осередок шкіри, лабораторні перекази Accutane кожен місяць |
+| **Автоматичні дати виконання** | На основі останнього завершеного відвідування |
 
 </details>
 
 <details>
-<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
+<summary><h3>🔄 Перекази та чат між практиками</h3></summary>
 
-🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
+🔗 **[Докладна документація по модулю Перекази та чат між практиками](../../docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
+| **Відстеження переказів** | Від/до лікаря, спеціальності, причини, кодів діагностики, срочності, відстеження авторизації |
+| **Життєцикл статусу** | Очікується → Відправлено → Прийнято → Заплановано → Виконано / Срок дійсності закінчився / Відхилено |
+| **Чат між практиками** | Незалежний віртуальний офіційний чат для адміністраторів та офіційних менеджерів практик, зберігаючи конфіденційність даних за умови HIPAA |
+| **Поділитися прикріпленими файлами** | Пересилання зображень, рентгенологічних снимків, документів, лабораторних доказів та рецептур на електронній формі між практиками |
+| **Тематичні теми** | Пересилання зображень, рентгенологічних снимків, документів, лабораторних доказів та рецептур на електронній формі між практиками |
+| **Чати за переказами** | Чати за кожним переказом з підтвердженням читання |
+| **Приклади вживання** | Детектив → психотерапевт (ADHD), дерматолог → фізіотерапевт (псоріатична артрит), фізіотерапевт → дерматолог (лікування ран) |
+| **Відстеження авторизації** | Номери авторизації, дати закінчення дійсності, прапорчики про необхідність попередньої авторизації |
 
 </details>
 
 <details>
-<summary><h3>💬 Team Chat & Communication</h3></summary>
+<summary><h3>💬 Тимовий чат та комунікація</h3></summary>
 
-🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+🔗 **[Докладна документація по командному чату та комунікації](../../docs_source_en/team_chat_communication.md)**
+- [Collaborative Editor Suite](../../docs_source_en/collaborative_editors_module.md)
 
 
 
-| Feature | Details |
+
+| Функція | Деталі |
 |---------|---------|
-| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
-| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
-| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
-| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
-| **Channels** | Department-based channels (Clinical, Billing, Admin) |
-| **File Attachments** | Share documents, images, and clinical assets in chat |
+| **Е2E шифрований чат** | Командне повідомлення згідно з нормою HIPAA всередені працівних просторів |
+| **Групові відео-зустринання** | Масштабовані 6-пірні mesh WebRTC HIPAA-свідомі зустринання та командні стендапи |
+| **Безпечне розкладування** | Авторизовані RSVP, використовуючи шаблони без особистої інформації для електронних посилань календаря |
+| **Звукова та відеоконференція** | Безпечна звукова та відеоконференція (тільки для корпоративних) |
+| **Передача контексту AI** | Створення плану лікування → "Розлити сесію" → передача до каналу рахунку |
+| **Голосовий діалог** | Голосові команди → дзвінок, SMS, електронна пошта, запланування (Pro+) |
+| **Канали** | Канали на основі відділів (Класичний медичний, Бачення, Адміністрація) |
+| **Висновки чату** | Передавання документів, зображень та медичної артикуляції в чат |
 
 </details>
 
 <details>
-<summary><h3>📞 Collaboration Practice Suite</h3></summary>
+<summary><h3>📞 Пакет для співпраці</h3></summary>
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+| **Центральний дашборд** | Ефективне розподілення агрегованих метрик. Центр команди для автоматичного виявлення пропущених завдань. |
+| **Відео консультації (WebRTC)** | Розширене безпекне P2P-відеотранслювання за допомогою узгоджувальних вузлів Twilio TURN/STUN, що забезпечує безпосереднє з'єднання без прокладників. |
+| **Контроль доступу на основі ролей (RLS)** | Неявне відстеження ідентичності, що забезпечує безпосереднє з'єднання з даними між організаціями, обмежене на Advanced/Pro ліміти. |
+| **Кліничні завдання** | Внутрішні нагадування, перевірки та черги клінічних завдань, що розташовані окремо для кожного працюваного місця з безпеки. |
 
 </details>
 
 ### 🔐 Enterprise Administration
     <details>
-    <summary><h3>🛡️ Security & Compliance</h3></summary>
+    <summary><h3>🛡️ Безпека та Співвідповідальність</h3></summary>
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+| **Співвідповідальність за HIPAA** | повний журнал аудиту HIPAA, архітектура готова до BAA |
+| **Строгий контроль доступу** | 11 ролей з криптографично підписаними ключами з конкретними обмеженнями доступу |
+| **Ізоляція даних** | всі записи ізольовані за клінікою (`workspace_id`) для запобігання перетворенню даних |
+| **Криптографічний вход** | короткострокові токени (15 хвилин) забезпечують вихід з непотрібних пристроїв |
+| **Шифрування при вимкненні** | Шифрування даних за замком (AES-256) для всього медичного контенту |
+| **Незмінювані журнали аудиту** | незмінювані журнали для всіх присвоєнь ролей, доступу до файлів та дій з повідомленнями |
+| **Режим HIPAA з закриттям при невдалому виконанні** | відхиляє доступ до мікрофону, якщо локальний обробка недоступна (немає падаючого хмарного резерву) |
+| **Мінімізація даних** | немає кешування в браузері для ПІШ; чутливі дані видаляються миттєво при закритті вкладки |
 </details>
 
 <details>
-<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
+<summary><h3>⚙️ Платформа адміністрування та брендування</h3></summary>
 
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+🔗 **[Докладна документація по платформі адміністрування та брендуванню](../../docs_source_en/platform_administration_white_label.md)**
 
 
 
-| Feature | Details |
+| Функція | Деталі |
 |---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+| **Мульти-тенантна архітектура** | Ізоловані працівні простори з власним брендом та конфігурацією |
+| **Динамічні працівні простори** | Логотип практики, основний адрес та тематичне оформлення динамічно отримане через SSR |
+| **Доступ до модулів** | Адміністратори платформи можуть перетягувати або приховувати модулі на основі спеціалізації кlinikи |
+| **Перемикач функцій для працівників** | Перевизначити базові ролі за допомогою масивів JSONB `restricted_features`, що заблокують API на розмірку часу виконання |
+| **Будувачі екранів** | Власний назва кнопок, приховування стовпців датагриди або перезапис стандартного тексту інтерфейсу користувача на кожній практиці |
+| **Аудит зупинки** | Всі дії адміністраторів платформи логуються до журналів аудиту, що відповідають стандартам HIPAA |
 
 </details>
 
@@ -608,51 +630,50 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 ---
 
 <details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
+<summary><h2>🛡️ Бізнес-безпека та архітектура HIPAA</h2></summary>
 
-Synalux is engineered for zero-trust environments.
+Synalux спроєктувано для середовищ без довіри.
 
 ### Архітектура безпеки — Потік мультитенантних запитів
 
 ```
 ┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
-│   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
+│   Клієнт        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
 │                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+│  Браузер /      │────▶│  1. Перевірка автентифікації (NextAuth)    │────▶│  3. Виконання контроля доступу до інструментів     │────▶│  6. Політики RLS            │
+│  VS Code        │     │  2. Підпис JWT (Ed25519)    │     │  4. AI Сандбокс               │     │     (JWT → set_config)      │
+│                 │     │     (15 хв TTL)             │     │     (ProposedChange)         │     │  7. Мульти-тенантні дані       │
+│                 │     │                              │     │  5. Журнал аудиту HIPAA          │     │     (isоляція workspace_id) │
 └─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
+                              Google OAuth                    Стриpped tool context                   Фільтри RLS за workspace_id
 ```
 
-**Ключовий висновок:** JWT несуть claim-и `workspace_id`, а політики RLS Postgres читають їх через `current_setting('request.jwt.claims')`, тому немає **серверних змінних сесії** та **пулів з'єднань на тенант**. Це робить Synalux горизонтально масштабованим.
+**Ключовий висновок:** JWT містять claim-и `workspace_id`, а політики RLS Postgres читають їх через `current_setting('request.jwt.claims')`, тому немає **серверних змінних сесії** та **пулів з'єднань на тенант**. Це робить Synalux горизонтально масштабованим.
 
-### Контроль безпеки
+### Керування безпекою
 
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+* **EdDSA (Ed25519) автентифікація:** Статичні API токени демотаціоновані до статусу лише для оновлення. Усі запити до API аутентифіковані через короткострокові (15 хв) JWT, підписані асиметричною криптографією.
+* **Прозрачная шифрування даних (TDE):** Усі повідомлення команди, створені документи та історії сеансів зашифровані в режимі відпочинку.
+* **Строге мінімізація даних:** Транскрипти веб-апплікацій живуть строго у пам'яті React і збираються за грубою очисткою, коли закривається вкладка. `localStorage` ніколи не використовується для персональних даних.
+* **Майм-гейтед файлова сховища:** Кліничні прикріплення обмежені строгим серверним перевірки MIME та надані лише через 15 хв підписаний URL з уникненням IDOR.
+* **Незмінювані журнали аудиту:** Кожне присвоєння ролі, завантаження файлу та видалення повідомлення записуються навсегда у `rbac_audit_log` для забезпечення нерозмовуваної відповідальності. Рядки журнала додавані лише — навіть адміністратори бази даних не можуть змінювати історичні записи.
+* **Безпека відповідної людини (HITL) гейт:** Денежний інструмент (`terminal`, `git_tool`, `browser`) вимагає підтвердження користувачем через модальне діалогове вікно перед виконанням — забезпечуючи безпеку неразом розуміння через впровадження.
+* **Закриття безпеки (Fail-Closed HIPAA):** Якщо локальний LLM (Ollama) недоступний під час прийняття голосового даних, система відмовляється відкриттю мікрофону замість тихливого повернення до обробки в обліці.
+* **Панель незакритої інформації (Patient Safety):** Якщо кліничні дані не оновлені у поточному сеансі, панель повідомляє лікаря, заборонюючи роботи з застарілою інформацією.
 
-### Відповідність HIPAA Statement
+### Відповідність вимоги HIPAA
 
-| HIPAA Requirement | Synalux Implementation |
+| Вимога HIPAA | Реалізація Synalux |
 |---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **§164.312(a)(1)** Керування доступом | РБAC на основі JWT з окремими ACL для інструментів; RLS забезпечує ізоляцію тенантів на рівні бази даних |
+| **§164.312(b)** Керування аудитом | Незмінювані `hipaa_audit_log` + `rbac_audit_log` — кожне доступ до персональних даних записується з інформацією про користувача, дію, ресурс та час |
+| **§164.312(c)(1)** Цілісність | AI Сандбокс (`ProposedChange`) забезпечує неможливість автоматичних записів в кліничні дані без підпису лікаря |
+| **§164.312(d)** Аутентифікація | Асиметричні JWT (15 хв TTL); Google OAuth з MFA для ролей кліника |
+| **§164.312(e)(1)** Безпека передачі даних | TLS 1.3 використовується на всіх ендпоїнтах; підключення до Supabase захищені SSL; немає персональних даних у параметрах URL |
+| **§164.308(a)(1)** Ризик-аналіз | Атакована безпекова перевірка (`REVIEW_PROMPT.md`); автоматичні контрольні майданчики з рухомим вікном SSE |
+| **Немає localStorage** | Усі кліничні дані живуть у React (збираються за грубою очисткою, коли закривається вкладка) або Postgres (з захистом RLS). Немає збереження персональних даних у браузері |
 
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
+> **Змістовна покриття BAA:** Повне виконання HIPAA з BAA потребує Vercel Enterprise та Supabase Team. Дивіться [Інфраструктура та обліці](#platform-modules) для цін.
 
 </details>
 

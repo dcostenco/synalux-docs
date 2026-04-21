@@ -41,490 +41,511 @@
 ---
 
 
+
+### 📸 Product Tour
+
+| 📊 1. Patient Dashboard | 🧠 2. AI Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 💉 4. Immunizations | 📦 5. Inventory Management | 🧪 6. Lab Orders & Results |
+|:---:|:---:|:---:|
+| <img src="../demo/24_immunizations.png" width="100%" alt="Immunizations Module"> | <img src="../demo/25_inventory.png" width="100%" alt="Inventory Management"> | <img src="../demo/26_lab_orders.png" width="100%" alt="Lab Orders & Results"> |
+
+| 👶 7. Pediatrics | 🐾 8. Veterinary Medicine | ❤️ 9. Vitals & Measurements |
+|:---:|:---:|:---:|
+| <img src="../demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="../demo/28_veterinary.png" width="100%" alt="Veterinary Medicine"> | <img src="../demo/29_vitals.png" width="100%" alt="Vitals & Measurements"> |
+
+| 🤖 10. Intelligent Clinical Assistant |
+|:---:|
+| <img src="../demo/30_intelligent_assistant.png" width="50%" alt="Intelligent Clinical Assistant"> |
+
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
 
 ### 🏥 Clinical Care Modules
 <details>
-<summary><h3>📋 Clinical Notes & Documentation</h3></summary>
+<summary><h3>📋 Patientenakte & Dokumentation</h3></summary>
 
-🔗 **[Read Detailed Clinical Notes & Documentation Documentation](docs_source_en/clinical_notes_documentation.md)**
+🔗 **[Detaillierte Patientenakten & Dokumentation](../../docs_source_en/clinical_notes_documentation.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
+| **SOAP-Arbeitsblätter** | Automatisch von Sprachbefehlen mit spezialisierten Vorlagen generiert |
+| **Sprachbefehle** | WASM Whisper auf Gerät → keine Übertragung von PHI an den Cloud |
+| **4 Arbeitsblattvorlagen** | Therapienachweis, Fortschrittsbericht, Anamnese, Entlassungsbericht |
+| **Dokumente** | Laborergebnisse, Bilder, Einwilligungen, Bewertungen, Behandlungspläne — alle im Arbeitsbereichsbezirk |
+| **PDF-Export** | Serverseitige Generierung (keine PHI-Lecks auf dem Client) |
+| **E-Signaturen** | BoldSign-Integration mit 7 Dokumentvorlagen |
+| **Optische Zeichenerkennung (OCR)** | Dokumentenabfrage in über 30 Sprachen für die Digitalisierung von Einwilligungsformularen |
 
 </details>
 
 <details>
-<summary><h3>📴 Offline-First Clinical Sessions</h3></summary>
+<summary><h3>📴 Vor Ort-zuerst klinische Sitzungen</h3></summary>
 
-🔗 **[Read Detailed Offline-First Clinical Sessions Documentation](docs_source_en/offline_first_clinical_sessions.md)**
+🔗 **[Weitere Informationen zu Vor Ort-zuerst klinischen Sitzungen](../../docs_source_en/offline_first_clinical_sessions.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Client-Side Timestamps** | Session start/end times captured on the provider's device — used for billing, not server receipt time |
-| **Offline Queue** | Events queued in localStorage when offline, auto-synced on reconnect |
-| **Draft Persistence** | Clinical notes auto-saved to localStorage on every keystroke — survives browser crash, connection loss |
-| **Session Sign-Off** | Provider MUST sign off at session end — timestamp is the billing-accurate end time |
-| **Admin Audit** | Each event shows 🟢 Online / 🔴 Offline indicator with sync timestamps |
-| **Connection Monitor** | Sidebar shows real-time 🟢/🔴 status with pending sync count badge |
-| **HIPAA Cleanup** | All local data purged on logout and idle timeout |
-| **Idempotent Sync** | Duplicate events prevented via client-generated UUIDs |
-| **Time Drift Detection** | Server logs drift between client and server timestamps for audit |
-| **Session Lifecycle** | `session_start` → `session_pause` → `session_resume` → `session_end` |
+| **Clientseitige Zeitstempel** | Beginn/Ende der Sitzung auf dem Anbietersgerät erfasst — für die Rechnung, nicht die Zeit des Servers |
+| **Offline-Schlangenwarteschlange** | Ereignisse werden im localStorage gespeichert, wenn offline und werden automatisch synchronisiert, sobald eine Verbindung wiederhergestellt wird |
+| **Entwurfspersistenz** | Klinische Notizen werden bei jedem Tastendruck automatisch im localStorage gespeichert — überlebt einen Browserabsturz oder eine Verbindungsverlust |
+| **Sitzungsschlussbestätigung** | Der Anbieter muss die Sitzung beenden — der Zeitstempel ist der genaue Rechnungsaufschlusszeitpunkt |
+| **Admin-Audit** | Jedes Ereignis zeigt einen 🟢 Online / 🔴 Offline-Anzeiger mit synchronen Zeitstempeln an |
+| **Verbindungsüberwachung** | Die Seitenleiste zeigt den realen 🟢/🔴 Status mit einem Ausstößchen der wartenden Synchronisationsanzahl |
+| **HIPAA-Cleanup** | Alle lokalen Daten werden bei Abmeldung und nach dem Leerlauf gelöscht |
+| **Idempotente Synchronisierung** | Duplikate Ereignisse werden durch clientseitig generierte UUIDs verhindert |
+| **Zeitschießungserkennung** | Der Server protokolliert die Schießung zwischen Client und Server-Zeitstempeln für den Überwachungsfall |
+| **Lebenszyklus der Sitzung** | `session_start` → `session_pause` → `session_resume` → `session_end` |
 
-**Billing Compliance:**
+**Rechnungsgemäße Konformität:**
 ```
-Provider starts session at 2:00 PM (online) → 🟢
-  Connection drops at 2:30 PM
-Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
-  Connection restores at 4:00 PM → auto-sync
-Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
+Der Anbieter beginnt die Sitzung um 14:00 Uhr (online) → 🟢
+  Die Verbindung bricht um 14:30 Uhr ab
+Der Anbieter endet die Sitzung um 15:45 Uhr (offline) → 🔴 client_timestamp = 15:45 Uhr
+  Die Verbindung wird wiederhergestellt um 16:00 Uhr → automatische Synchronisierung
+Der Server protokolliert: client_timestamp = 15:45 Uhr, sync_timestamp = 16:00 Uhr
   ↓
-Insurance billed: session 2:00 PM – 3:45 PM (accurate)
-Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+Die Versicherung wird bezahlt: Sitzung von 14:00 Uhr bis 15:45 Uhr (genau)
+Der Admin sieht: "Sitzung beendet um 15:45 Uhr 🔴 Offline (synchronisiert um 16:00 Uhr)"
 ```
 
 </details>
 
 <details>
-<summary><h3>🧪 Lab Orders & Results Module</h3></summary>
+<summary><h3>🧪 Lab Orders &amp; Results Modul</h3></summary>
 
-🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
+🔗 **[Lab Orders &amp; Results Modul detaillierte Dokumentation lesen](../../docs_source_en/lab_orders_results_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
+| **Lab Orders** | Bestellverfolgung mit Lieferanten (Quest, LabCorp, intern), Priorität (regelmäßig/Dringend/Kritisch) |
+| **Ergebnisverfolgung** | Einzelne Testergebnisse mit Referenzbereichen und Abnormalflags (niedrig/hoch/kritisch) |
+| **Kategorien** | Hematologie, Chemie, Lipide, Leber, Thyroxine, Vitaminen, Inflammation, Kautionsfähigkeit |
+| **Abnormalwarnungen** | Automatische Kennzeichnung von Ergebnissen außerhalb des Bereichs (z. B. erhöhter TSH, niedriger Vitamin D) |
+| **iPLEDGE Labs** | Monatliche Überwachung von Accutane: CBC, CMP, Lipidpanel, LFTs mit Trendverfolgung |
+| **Vor chirurgischem Prozedere** | INR, PT, Glucose, A1C für Zahnteilkauter und chirurgische Verfahren |
+| **Medikamentenüberwachung** | SSRI Thyroxinprüfungen, Stimmulant-Lipidpanel, biologisches Grundlage-Panel |
+| **Bestelllebenszyklus** | Bestellt → Sammelt → Sendet → Empfängt → In Bearbeitung → Geprüft → Überprüft |
+| **Lieferantenintegration** | Quest Diagnostics, LabCorp-Bestellrouting (geplant: elektronische Ergebnisimport) |
+| **Diagnoseverknüpfung** | ICD-10-Codes an Bestellungen für medizinische Notwendigkeit-Dokumentation |
 
 </details>
 
 <details>
-<summary><h3>💊 Medications & Prescriptions Module</h3></summary>
+<summary><h3>💊 Medikamente & Rezepte Modul</h3></summary>
 
-🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
+🔗 **[Detaillierte Dokumentation zum Medikamente & Rezepte Modul](../../docs_source_en/medications_prescriptions_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
+| **Medikamentenkatalog** | 12+ Medikamente mit NDC-Codes, Medikamentengruppen, Zeitpunkte, Wege der Anwendung, häufige Dosierungen |
+| **Aktive Rezepte** | Patientenspezifische Medikamentenliste mit Dosis, Häufigkeit, Arzt, Apotheken, Fortlaufendes Nachverfolgen von Verschuldungen |
+| **Medikamentengruppen** | SSRIs, Stimmstoffe, Retinoidien, Biologika, Bronchodilatoren, NSAIDs, Antibiotika, Antikonvulsiva |
+| **iPLEDGE-Überwachung** | Überwachung von Acutane mit Isotretinoin im Monatsablauf der Laboruntersuchungen |
+| **Statuslebenszyklus** | Aktiv → Auf Halt → Beendet → Abgeschlossen → Storniert |
+| **Wechselwirkungswarnungen** | Medikamentenspezifische Warnungsmatrix (Serotonin-Syndrom, QTc, teratogen) |
+| **Apothekenrouting** | Namhafte Apotheken pro Rezept für die Bereitschaft zur elektronischen Vorschriftenabgabe |
 
 </details>
 
 <details>
-<summary><h3>📊 Vitals & Measurements Module</h3></summary>
+<summary><h3>📊 Vitalzeichen & Messwerte-Modul</h3></summary>
 
-🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
+🔗 **[Detaillierte Dokumentation zum Vitalzeichen & Messwerte-Modul](../../docs_source_en/vitals_measurements_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
+| **Standard-Vitalzeichen** | BP (systolisch/diastolis), HR, RR, temp (mit Methode), SpO2, Gewicht, Größe, BMI |
+| **Schmerzskala** | 0-10 numerische Schmerzskala pro Besuch |
+| **Pediatrisches Wachstum** | Kopfumfang, Gewicht/Größe/BMI-Percentile (WHO/CDC) |
+| **PT-Bewertungen** | ROM-Degree, funktionalen Punkte (Oswestry, LEFS), Quadaktivierungsinformationen |
+| **Trendverfolgung** | Historische Vitalzeichen pro Patient für Trendanalyse |
+| **Termin verbunden** | Vitalzeichen an spezifische Terminbegegnungen gebunden |
 
 </details>
 
 <details>
-<summary><h3>⚠️ Allergies & Alerts Module</h3></summary>
+<summary><h3>⚠️ Allergien & Warnungen-Modul</h3></summary>
 
-🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
+🔗 **[Detaillierte Dokumentation des Allergien & Warnungen-Moduls](../../docs_source_en/allergies_alerts_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
+| **Allergentypen** | Medikament, Lebensmittel, Umwelt, Latex, Kontrast, anderer |
+| **Schweregradstufen** | Leicht, mittel, schwer, lebensbedrohlich |
+| **Reaktionsverfolgung** | Spezifische Reaktionsdokumentation (anaphylaxis, SJS, Schuppenröteln, Verdauungsstörungen) |
+| **NKDA-Unterstützung** | Explizite Dokumentation von "keinen bekannten Medikamentenallergien" |
+| **Klinische Warnungen** |kritische Allergieflags (Penicillin → clindamycin verwenden, Sulfa → SJS-Geschichte) |
+| **Überprüfung** | Überprüfung durch Arzt mit Datumsmarkierung |
 
 </details>
 
 <details>
-<summary><h3>💉 Immunizations Module</h3></summary>
+<summary><h3>💉 Immunizations-Modul</h3></summary>
 
-🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
+🔗 **[Detaillierte Dokumentation des Immunizations-Moduls](../../docs_source_en/immunizations_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
+| **Impfungstracking** | CVX-Codes, Dosennummern, Lotnummern, Hersteller |
+| **Verabreichung** | Standort, Route (IM/SC/PO/IN/ID), Verabreicher |
+| **VIS-Konformität** | Tracking der Datumseingabe des Impfinformationsscheins |
+| **Registrierungsberichterstattung** | Überwachung der Abgabe an die Bundesimmunisierungsinstitutionen |
+| **CDC-Schichtplanung** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
+| **Immunsupprimierte Patienten** | Besondere Impfempfehlungen für biologische Patienten |
 
 </details>
 
 ### 🏢 Practice Operations Modules
 <details>
-<summary><h3>💳 Billing & Payments Module</h3></summary>
+<summary><h3>💳 Abrechnung & Zahlungenmodul</h3></summary>
 
-🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
+🔗 **[Abruf der detaillierten Dokumentation zum Abrechnung & Zahlungenmodul](../../docs_source_en/billing_payments_module.md)**
 
 
 
-The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
+Das Abrechnungsmodul verwendet **Stripe Connect**, um jedem Büro seine eigene unabhängige Zahlungsverarbeitungsaccount zu geben, der mit dem Büroadministrator verbunden ist.
 
-**Per-Practice Billing Configuration:**
-| Setting | Details |
+**Bürospezifische Abrechnungskonfiguration:**
+| Einstellung | Details |
 |---------|---------|
-| **Stripe Connect** | Each workspace has its own `acct_xxx` Stripe Connect account |
-| **Admin Linked** | Stripe account ownership is linked to the workspace admin user |
-| **Fee Schedules** | Per-practice fee schedules with standard, insurance, Medicare, and self-pay rates |
-| **Payment Methods** | Credit card, ACH/bank transfer, check, cash — configurable per practice |
-| **Auto-Posting** | Automatic payment posting, receipt sending, and monthly statement generation |
-| **Tax Configuration** | Per-practice tax rates and NPI/EIN for 1099 reporting |
+| **Stripe Connect** | Jedes Arbeitsbereich hat seinen eigenen `acct_xxx` Stripe Connect Account |
+| **Admin verknüpft** | Besitzer des Stripe-Kontos ist der Workspace-Admin-Benutzer |
+| **Gebührenpläne** | Bürospezifische Gebührenpläne mit Standard-, Versicherungs-, Medicare- und Selbstzahlungsraten |
+| **Zahlungsmethoden** | Kreditkarte, ACH/Banküberweisung, Überweisung, Bargeld — konfigurierbar pro Büro |
+| **Automatische Buchung** | Automatische Zahlungsbuchung, Rechnungsendung und Monatsberichtsgenerierung |
+| **Steuerkonfiguration** | Bürospezifische Steuersätze und NPI/EIN für 1099-Berichte |
 
-**Multi-Country & Multi-Currency (NEW):**
+**Mehrere Länder & Währungen (NEU):**
 
-| Country | Currency | Standard | Advanced | Enterprise |
+| Land | Währung | Standard | Fortgeschritten | Unternehmensklasse |
 |---------|----------|----------|----------|------------|
 | 🇺🇸 USA | USD | $19/mo | $49/mo | $99/mo |
-| 🇨🇦 Canada | CAD | C$25/mo | C$65/mo | C$129/mo |
+| 🇨🇦 Kanada | CAD | C$25/mo | C$65/mo | C$129/mo |
 | 🇬🇧 UK | GBP | £15/mo | £39/mo | £79/mo |
 | 🇩🇪🇫🇷 EU | EUR | €18/mo | €45/mo | €89/mo |
-| 🇦🇺 Australia | AUD | A$29/mo | A$75/mo | A$149/mo |
-| 🇳🇿 New Zealand | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
+| 🇦🇺 Australien | AUD | A$29/mo | A$75/mo | A$149/mo |
+| 🇳🇿 Neuseeland | NZD | NZ$32/mo | NZ$82/mo | NZ$159/mo |
 
-**Volume Discounts:**
-| Clients | Discount |
+**Mengenrabatte:**
+| Kunden | Rabatt |
 |---------|----------|
-| 100+ | 10% off per-seat price |
-| 500+ | 20% off per-seat price |
-| 1,000+ | 30% off per-seat price |
-| Annual billing | Additional 20% off (stacks with volume, capped at 45%) |
+| 100+ | 10% pro Sitzungspreis abzug |
+| 500+ | 20% pro Sitzungspreis abzug |
+| 1.000+ | 30% pro Sitzungspreis abzug |
+| Jährliche Abrechnung | zusätzlicher 20% abzug (stapft mit Mengenrabatten, begrenzt auf 45%) |
 
-**Payment Failure Lifecycle:**
+**Lebenszyklus der Zahlungsfehler:**
 ```
-Payment Failed → past_due (warning banner, keep access)
-  → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
-  → Stripe subscription.deleted → plan = 'free', sub cleared
+Zahlung fehlgeschlagen → past_due (Warnbanner, Zugriff beibehalten)
+  → 2. Versuch → immer noch past_due (dringliche Warnung)
+  → 3. Versuch fehlgeschlagen → automatische Abstufung auf Free-Tier
+  → Stripe subscription.deleted → plan = 'free', Subklarierung
 ```
 
-**Platform Admin Overrides:**
-- Synalux platform admins can set any user to unlimited trial on any plan
-- Override users are **immune** to Stripe webhook downgrades
-- Admin sees 🟢/🔴 indicators for payment status
-- Full audit trail: who set the override, when, and why
+**Plattformadministratoren:**
+- Synalux-Plattformadministratoren können jeden Benutzer für jedes Angebot unbeschränkten Versuchszeitraums setzen
+- Überladene Benutzer sind **unbefugt**, von Stripe-Webhook-Abstufungen zu betroffen
+- Admin sieht 🟢/🔴 Indikatoren für Zahlungsstatus
+- Vollständige Auditverlauf: Wer den Überzug gesetzt hat, wann und warum
 
-**Revenue Cycle Management:**
-- Insurance claim lifecycle tracking (draft → submitted → accepted → paid/denied → appeal)
-- ERA/EOB electronic remittance processing
-- Denial management with appeal deadline tracking
-- Prior authorization workflow
-- Aging reports (30/60/90/120 day buckets)
+**Rechtmachungskette:**
+- Lebenszyklus der Versicherungsaufträge (Entwurf → eingereicht → akzeptiert → bezahlt/abgelehnt → Antrag)
+- elektronische Reimbursementverarbeitung von ERA/EOB
+- Verwaltung abgelehnter Aufträge mit Ablaufdatum der Antragsstellung
+- Vorbehaltserklärungsworkflow
+- Alterungsberichte (30/60/90/120 Tage)
 
-**Patient Payments:**
-- Patient portal "Pay Now" → Stripe Checkout redirect
-- Partial payments and custom amounts
-- Payment plans with Stripe recurring subscriptions
-- Receipt generation and download
-- Refund processing
+**Patientenzahlungen:**
+- Patientenportal "Jetzt bezahlen" → Weiterleitung zu Stripe Checkout
+- Teilzahlungen und benutzerdefinierte Beträge
+- Zahlungspläne mit wiederkehrenden Abonnements von Stripe
+- Rechnungsstellung und Download
+- Rückforderungsverarbeitung
 
-**Insurance Claims:**
-- Electronic claim submission (837P)
-- Real-time eligibility verification
-- Coordination of Benefits (COB)
-- Explanation of Benefits (EOB) tracking
-- Appeal management with letter templates
+**Versicherungsaufträge:**
+- elektronische Versicherungsauftragsabgabe (837P)
+- Echtzeit-Berechtigungsprüfung
+- Koordinierung der Vorteile (COB)
+- Überwachung von Erklärungen der Leistungen (EOB)
+- Verwaltung von Anträgen mit Vorbehaltserklärungsvorlagen
 
-**Automatic Tax Collection:**
-- Stripe Tax enabled per-country (VAT, GST, HST, PST)
-- Tax calculated automatically based on workspace country
-- Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
-
-</details>
-
-<details>
-<summary><h3>📅 Scheduling & Appointments</h3></summary>
-
-🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
-
-
-
-| Feature | Details |
-|---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
+**Automatische Steuerabholung:**
+- Stripe Tax pro Land aktiviert (USt, GST, HST, PST)
+- Steuer automatisch basierend auf dem Arbeitsbereichsland berechnet
+- Konform mit kanadischen Mehrprovinzsteuerregeln (federal GST + provincial PST/HST)
 
 </details>
 
 <details>
-<summary><h3>👥 HR & Staff Management Module</h3></summary>
+<summary><h3>📅 Terminplanung & Termine</h3></summary>
 
-🔗 **[Read Detailed HR & Staff Management Module Documentation](docs_source_en/hr_staff_management_module.md)**
+🔗 **[Detaillierte Terminplanung & Termine Dokumentation](../../docs_source_en/scheduling_appointments.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
+| **Terminzustände** | Geplant → Bestätigt → Im Gange → Abgeschlossen (+ storniert, nicht erschienen, neu geplant) |
+| **Patientenportale Anfragen** | Patienten beantragen Termine mit bevorzugter Datum/Zeit → Mitarbeiter bestätigen oder ablehnen |
+| **Mehrere Anbieter** | Termine über mehrere Anbieter in einer Praxis vereinbaren |
+| **Regelmäßige Besuche** | Wöchentliche Therapien, monatliche Kontrollbesuche, Ortho-Anpassungen |
+| **Warteliste** | Terminanfragen auf der Warteliste bei vollständigen Terminketten |
+| **Erinnerungen** | Automatische Terminerinnerungen (geplant) |
 
 </details>
 
 <details>
-<summary><h3>⏱️ Timesheets & Payroll Module</h3></summary>
+<summary><h3>👥 HR & Mitarbeiterverwaltung-Modul</h3></summary>
 
-🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
+🔗 **[Detaillierte Dokumentation zum HR & Mitarbeiterverwaltung-Modul](../../docs_source_en/hr_staff_management_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
+| **Mitarbeiterprofile** | Beschäftigungsart, Eintrittsdatum, Gehalt/Stundensatz, Spezialfertigkeiten, Abteilungstracking |
+| **Qualifikationen** | Lizenz/Zertifizierungstracking mit Ablaufbenachrichtigungen und Neuerlassungsabläufe |
+| **Zeitferien** | Urlaubsferien, Krankheitstage, CE-Ferien, Maternity- und Bereitschaftsferien, Justitia - Genehmigungsabläufe |
+| **Schulungen** | Konformitäts-Schulungstracking (HIPAA, BLS, CPR) mit Fälligkeitsdaten und Abschlussstatus |
+| **Leistungsüberwachung** | Jahres- oder Halbjährliche Bewertungen mit Bewertungen, Ziele, Verbesserungspläne und Bestätigung |
+| **Onboarding** | Ausstehender Onboarding-Zustand, Qualifikationsprüfungsaufbau, Schulungsausrichtungen |
 
 </details>
 
 <details>
-<summary><h3>📦 Inventory Management Module</h3></summary>
+<summary><h3>⏱️ Zeiterfassung & Lohnabrechnungsmodule</h3></summary>
 
-🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
+🔗 **[Detaillierte Dokumentation zum Zeiterfassung & Lohnabrechnungsmodule](../../docs_source_en/timesheets_payroll_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
+| **Automatische Generierung** | Zeiterfassungen werden automatisch aus verfassten klinischen Sitzungsnoten generiert |
+| **Nicht-berechnete Zeit** | Verfolgen Sie Admin-Zeit, Fahrzeit, Schulung und Klinikvorbereitung |
+| **Genehmigungsabläufe** | Mitarbeiterabgabe → Abteilungsleiterprüfung → Lohnverarbeitung |
+| **Lohnabrechnungsexport** | Zeiterfassungen werden nativ mit ADP, Gusto und Paycom integriert exportiert |
+| **Konformität** | 40-Stunden-Overtime-Warnungen, Pflichtpausenverfolgung, Sichtbarkeit der PTO-Akkretion |
 
 </details>
 
 <details>
-<summary><h3>🧾 Superbills Module</h3></summary>
+<summary><h3>📦 Inventarverwaltungsmodul</h3></summary>
 
-🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
+🔗 **[Detaillierte Dokumentation zum Inventarverwaltungsmodul](../../docs_source_en/inventory_management_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
+| **Kategorien** | Zahnaerztliche Zubehör, Impfstoffe, Medikamente, Biologika, PPE, chirurgisches Gerät, Laborversorgung, Büro |
+| **Bestandsverfolgung** | Lagerbestand, Bestellniveau, Bestellmenge, Einheitskosten |
+| **Lot & Ablaufdatum** | Lotnummern, Ablaufdaten, FIFO-Rotation für Impfstoffe |
+| **Lieferantenverfolgung** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
+| **Status-Warnungen** | In Lagerhaltung, Niedrigbestand, Ausverkauft, Verfallen, Abgeschafft |
+| **Speicherorte** | Impfstoffkühlschrank (2-8°C), Biologik-Kühlschrank, Praxiskabinett, verschlossene Kabinett |
+| **Sonderelemente** | Implantationsvorrichtungen ($285), biologische Stift ($2.850), Cryotherapiekanister |
+
+</details>
+
+<details>
+<summary><h3>🧾 Superbills-Modul</h3></summary>
+
+🔗 **[Detaillierte Dokumentation zum Superbills-Modul](../../docs_source_en/superbills_module.md)**
+
+
+
+| Funktion | Details |
+|---------|---------|
+| **Aufenthaltsbasiert** | Ein Superbill pro Besuch mit Diagnose- und Prozedurcodes |
+| **Mehrere Codes** | ICD-10-Diagnosearray + CPT/CDT-Prozedurarray + Modifizierer (-25, -59) |
+| **Finanzliche Aufschlüsselung** | Gesamtkosten, versicherte Rechnung, Patienten-Kopfzahl, Abgleiche |
+| **Lebenszyklus des Status** | Entwurf → Überprüfung → eingereicht → bezahlt / abgelehnt / angefochten |
+| **Alle Fachrichtungen** | Kinderbesuche, Implante, Ortho, Psychotherapie, PT-Rehabilitation, Dermatologische Prozeduren |
+| **Medikar-Abschreibungen** | Automatische Verfolgung von Versicherungsverpflichtungen |
 
 </details>
 
 
 
 <details>
-<summary><h3>📋 Clinical Tasks Module</h3></summary>
+<summary><h3>📋 Medizinische Aufgabenmodul</h3></summary>
 
-🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
+🔗 **[Detaillierte Dokumentation zum Medizinischen Aufgabenmodul](../../docs_source_en/clinical_tasks_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
+| **Aufgabenkategorien** | Laborbefragung, Vorabgenehmigung, Terminplanung, Dokumentation, Abrechnung, Anrufen des Patienten, Erneuerung, Weiterverweis |
+| **Prioritätsniveaus** | Niedrig, Normal, Hoch, Dringend |
+| **Zuordnung** | Zu bestimmten Mitarbeitern mit Fälligkeitsdaten und Fortschrittsverfolgung |
+| **Patient verknüpft** | Aufgaben sind mit spezifischen Patienten verbunden für die Versorgungskoordination |
+| **Statusverfolgung** | Offen → In Bearbeitung → Abgeschlossen / Storniert / Verzögert |
+| **Auditprotokoll** | Erstellt von, abgeschlossen von, abgeschlossen am Zeitpunkt |
 
 </details>
 
 ### 🤝 Patient Experience & Collaboration
 <details>
-<summary><h3>🏥 Patient Portal</h3></summary>
+<summary><h3>Patientenportal</h3></summary>
 
-🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
+🔗 **[Patientenportal-Dokumentation lesen](../../docs_source_en/patient_portal.md)**
 
 
 
-A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
+Ein voll funktionaler Patientenportals mit Authentifizierung, Nachrichtenversand, Dokumentenverwaltung, Terminplanung und Rechnungsabrechnung.
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
+| **Authentifizierung** | Zugangscode-Login (SHA-256 gehasht), Ablaufverfolgung |
+| **Dashboard** | Gesundheitsübersicht mit bevorstehenden Terminen, ungelesenen Nachrichten, ausstehenden Dokumenten, offener Rechnungsbetrag |
+| **Nachrichtenversand** | Themenförmige Konversationen mit Arzten, Notfallflags, Bestätigungsbestätigungen |
+| **Dokumente** | Klinische Dokumente ansehen/downloaden, Versicherungskarten und Formulare hochladen |
+| **Terminplanung** | bevorstehende/vergangene Besuche anzeigen, neue Terminanfragen mit gewünschten Zeiten stellen |
+| **Rechnungsabrechnung** | offener Rechnungsbetrag ansehen, Rechnungsgeschichte mit CPT-Codes, Online-Zahlung über Stripe, Zahlungsmöglichkeiten, Rechnungen |
+| **Formulare** | Intake-Formulare abschließen, PHQ-9/GAD-7 Fragebögen online beantworten, Zustimmungsformulare online abgeben |
+| **Zustimmungen** | Digitale Zustimmungsinformationen (Behandlung, HIPAA, Telemedizin, Medikamente, Forschung) verwalten |
 
 </details>
 
 <details>
-<summary><h3>📚 Patient Education Module</h3></summary>
+<summary><h3>📚 Patientenbildungsmodul</h3></summary>
 
-🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
+🔗 **[Lesen Sie die detaillierte Dokumentation zum Patientenbildungsmodul](../../docs_source_en/patient_education_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
+| **Materialkatalog** | 14 Bildungsunterlagen über alle Fachgebiete |
+| **Mehrere Sprachen** | Materialien auf Englisch und Spanischen verfügbar |
+| **Kategorien** | Erkrankung, Medikament, Verfahren, Lebensstil, nach chirurgischer Behandlung, Hausübung, Sicherheit, Prävention |
+| **Liefermethoden** | gedruckt, Hochladen in das Portal, E-Mail, persönlich, SMS |
+| **Bestätigung** | Nachvollziehen, ob der Patient das Material gelesen hat oder bestätigt hat |
+| **Beispiele für Fachgebiete** | Anleitung zum EpiPen, Sicherheitsinformationen zu Accutane, ACL-Rehabilitation, Übungsaufgaben zu CBT, nach chirurgischer Behandlung von Implantaten |
 
 </details>
 
 <details>
-<summary><h3>🔔 Recalls & Reminders Module</h3></summary>
+<summary><h3>🔔 Austrufungen & Erinnerungen-Modul</h3></summary>
 
-🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
+🔗 **[Detaillierte Dokumentation zum Austrufungen & Erinnerungen-Modul](../../docs_source_en/recalls_reminders_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
+| **Austrufungstypen** | Hygiene, jährliche Prüfung, Nachsorge, Laborneueprüfung, Bildgebung, Screening, Impfung, Medikamenteneinsprache |
+| **Statusverfolgung** | Fällig → Verzögerung → Geplant → Abgeschlossen → Storniert |
+| **Kontaktaufnahmen verfolgen** | Nachwirksamkeitsversuche für veraltete Austrufe verfolgen |
+| **Praxisspezifisch** | Zahnschutz 6-Monatsreinigungen, Dermatologie jährliche Hautuntersuchungen, Accutane monatliche Laboruntersuchungen |
+| **Automatische Fälligkeitsdatum** | Basierend auf dem letzten abgeschlossenen Besuch |
 
 </details>
 
 <details>
-<summary><h3>🔄 Referrals & Cross-Practice Chat Module</h3></summary>
+<summary><h3>🔄 Weiterleitungen & Interpraktionschat-Modul</h3></summary>
 
-🔗 **[Read Detailed Referrals & Cross-Practice Chat Module Documentation](docs_source_en/referrals_cross_practice_chat_module.md)**
+🔗 **[Weitere Informationen zum Weiterleitungs- und Interpraktionschat-Modul](../../docs_source_en/referrals_cross_practice_chat_module.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
+| **Weiterleitungsverfolgung** | Von/Bis Anbieter, Fachrichtung, Grund, Diagnosecodes, Dringlichkeit, Authentifizierungstracking |
+| **Lebenszyklus des Status** | Ausstehend → Gesendet → Akzeptiert → Geplant → Abgeschlossen / Verfallen / Ablehnt |
+| **Interpraktionschat** | HIPAA-konformes Messaging zwischen Praxisadministratoren/Arbeitsverwaltungen |
+| **Dateiübertragung** | Bilder, Röntgenaufnahmen, Dokumente, Laborergebnisse, Rezepte zwischen Praxen senden |
+| **Themenförderte Diskussionen** | Chat-Themen pro Weiterleitung mit Lesebestätigungen |
+| **Praktische Beispiele** | Peds→Psychiatry (ADHD), Derm→PT (psoriatische Arthritis), PT→Derm (Wundpflege) |
+| **Authentifizierungstracking** | Auth-Nummern, Ablaufdatum, Vorbehaltliche Authentifizierungsanforderungen |
 
 </details>
 
 <details>
-<summary><h3>💬 Team Chat & Communication</h3></summary>
+<summary><h3>💬 Team-Chat & Kommunikation</h3></summary>
 
-🔗 **[Read Detailed Team Chat & Communication Documentation](docs_source_en/team_chat_communication.md)**
+🔗 **[Read Detailed Team Chat & Communication Documentation](../../docs_source_en/team_chat_communication.md)**
+- [Collaborative Editor Suite](../../docs_source_en/collaborative_editors_module.md)
 
 
 
-| Feature | Details |
+
+| Funktion | Details |
 |---------|---------|
-| **E2E Encrypted Chat** | HIPAA-compliant team messaging within workspaces |
-| **Group Video Meetings** | Scalable 6-peer mesh WebRTC HIPAA-compliant telehealth & team standups |
-| **Secure Scheduling** | Authenticated RSVPs utilizing zero-PHI email layouts for calendar links |
-| **Voice & Video Calls** | Secure voice and video conferencing (Enterprise only) |
-| **AI Context Sharing** | Generate treatment plan → "Share Session" → forward to billing channel |
-| **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
-| **Channels** | Department-based channels (Clinical, Billing, Admin) |
-| **File Attachments** | Share documents, images, and clinical assets in chat |
+| **E2E-verschlüsselte Chat** | HIPAA-konforme Teamnachrichten innerhalb von Arbeitsbereichen |
+| **Gruppenvideoveranstaltungen** | Skalierbare 6-Peer-mesh WebRTC HIPAA-konforme Telemedizin & Team-Statusmитtelung |
+| **Sichere Terminvereinbarung** | Authentifizierte RSVPs mit null-PHI-E-Mail-Vorlagen für Kalenderlinks |
+| **Sprach- und Videokonferenzen** | Sichere Sprach- und Videokonferenzen (nur für Unternehmen) |
+| **Künstliche Intelligenz-Kontextteilen** | Behandlungsplan generieren → "Sitzung teilen" → an die Rechnungskanäle weiterleiten |
+| **Sprach-zu-Aktion** | Sprachbefehle → Anrufen, SMS senden, E-Mail senden, Termin vereinbaren (Pro+) |
+| **Kanäle** | Abteilungsorientierte Kanäle (Klinik, Rechnungskontrolle, Verwaltung) |
+| **Dateianhänge teilen** | Dokumente, Bilder und klinische Ressourcen im Chat teilen |
 
 </details>
 
 <details>
-<summary><h3>📞 Collaboration Practice Suite</h3></summary>
+<summary><h3>Kollaborationspraktikens Suite</h3></summary>
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (WebRTC)** | Advanced secure P2P video streaming using Twilio TURN/STUN nodes avoiding middleboxes. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+| **zentraler Dashboard** | Router-Mapping von Aggregatmetriken effizient. Kommandozentrum isoliert verpasste Aufgaben nativ. |
+| **Videoberatungen (WebRTC)** | Fortgeschrittene sichere P2P-Videoübertragung mit Twilio TURN/STUN-Knoten, um Mittelboxen zu vermeiden. |
+| **RLS-Gatekeeper** | Implizite Identitätstracking ohne Serverseitige Datenlecks zwischen Mandanten nativ auf Advanced/Pro-Begrenzungen abgebildet. |
+| **Klinische Aufgaben** | Interne Klinik-Warnungen, Genehmigungen und Warteschlangen isoliert pro Arbeitsbereich sicher. |
 
 </details>
 
 ### 🔐 Enterprise Administration
     <details>
-    <summary><h3>🛡️ Security & Compliance</h3></summary>
+    <summary><h3>🛡️ Sicherheit & Konformität</h3></summary>
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
+| **HIPAA-Konformität** | Vollständiger HIPAA-Auditverlauf, BAA-bereitschaftige Architektur |
+| ** strenge Zugriffssteuerung** | 11 kryptografisch signierte Rollen mit spezifischen Zugriffsgrenzen |
+| **Datenisolation** | Alle Datensätze werden durch Klinik (`workspace_id`) isoliert, um Kreuzkontamination zu vermeiden |
+| **Kryptographische Anmeldung** | Kurzlebige Token (15-minütliche Ablaufzeit) stellen sicher, dass abgelaufene Geräte ausgeloggt werden |
+| **Verschlüsselung im Ruhezustand** | Transparente Datenverschlüsselung (AES-256) für alle Gesundheitsinformationen |
+| **Unveränderliche Auditprotokolle** | Unveränderliche Protokolle für alle Rollenzuweisungen, Dateizugriffe und Nachrichtenaktionen |
+| **Fail-Closed HIPAA-Modus** | Verweigert Mikrofonzugriff, wenn lokale Verarbeitung nicht verfügbar ist (kein stilles Cloud-Fallback) |
+| **Datenreduktion** | Keine Browser-Caching für PHI; sensible Daten werden sofort gelöscht, wenn ein Tab geschlossen wird |
 </details>
 
 <details>
-<summary><h3>⚙️ Platform Administration & White-Label</h3></summary>
+<summary><h3>⚙️ Plattformverwaltung & White-Labeling</h3></summary>
 
-🔗 **[Read Detailed Platform Administration & White-Label Documentation](docs_source_en/platform_administration_white_label.md)**
+🔗 **[Weitere Informationen zur Plattformverwaltung und White-Labeling](../../docs_source_en/platform_administration_white_label.md)**
 
 
 
-| Feature | Details |
+| Funktion | Details |
 |---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
+| **Mehrfachmietarchitektur** | Trennte Arbeitsbereiche mit dedizierter Markenidentität und Konfigurationen |
+| **Dynamische Arbeitsbereiche** | Praxislogo, primäre Adresse und Farbschemata dynamisch über SSR abgerufen |
+| **Modulverfügbarkeit** | Plattformadministratoren können Module basierend auf der Klinikspecialisierung ziehen oder verstecken |
+| **Funktionsumstellung für Mitarbeiter** | Basissrollen mit `restricted_features` JSONB-Arrays überschreiben, um API-Bereiche zur Laufzeit zu blockieren |
+| **Bildschirmkonstruktoren** | Praxisübergreifende Möglichkeit, Schaltflächen umbenannt zu lassen, Spalten in der Datengrid-Tabelle zu verstecken oder Standard-UI-Kopien zu überschreiben |
+| **Break-Glass-Auditing** | Alle Aktionen von Plattformadministratoren werden in HIPAA-konforme Auditräume protokolliert |
 
 </details>
 
@@ -608,9 +629,9 @@ Each role has a cryptographically signed Tool ACL and a server-injected system p
 ---
 
 <details>
-<summary><h2>🛡️ Enterprise Security & HIPAA Architecture</h2></summary>
+<summary><h2>🛡️ Unternehmenssicherheit & HIPAA-Architektur</h2></summary>
 
-Synalux is engineered for zero-trust environments.
+Synalux ist für Zero-Trust-Umgebungen konzipiert.
 
 ### Sicherheitsarchitektur — Multi-Tenant-Anfragefluss
 
@@ -618,43 +639,40 @@ Synalux is engineered for zero-trust environments.
 ┌─────────────────┐     ┌──────────────────────────────┐     ┌──────────────────────────────┐     ┌─────────────────────────────┐
 │   Client        │     │   Vercel Edge (Middleware)    │     │   Next.js API Routes         │     │   Supabase PostgreSQL       │
 │                 │     │                              │     │                              │     │                             │
-│  Browser /      │────▶│  1. Auth Check (NextAuth)    │────▶│  3. Tool ACL Enforcement     │────▶│  6. RLS Policies            │
-│  VS Code        │     │  2. JWT Signing (Ed25519)    │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
-│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant Data       │
-│                 │     │                              │     │  5. HIPAA Audit Log          │     │     (workspace_id isolation) │
+│  Browser /      │────▶│  1. Authentifizierung (NextAuth)│────▶│  3. Tool-Zugriffssteuerung    │────▶│  6. RLS-Richtlinien            │
+│  VS Code        │     │  2. JWT-Signatur (Ed25519)   │     │  4. AI Sandbox               │     │     (JWT → set_config)      │
+│                 │     │     (15 min TTL)             │     │     (ProposedChange)         │     │  7. Multi-Tenant-Daten        │
+│                 │     │                              │     │  5. HIPAA-Auditprotokoll       │     │     (workspace_id-Isolation)  │
 └─────────────────┘     └──────────────────────────────┘     └──────────────────────────────┘     └─────────────────────────────┘
-                              Google OAuth                    Stripped tool context                   RLS filters by workspace_id
+                              Google OAuth                    Entfernter Werkzeugkontext                   RLS-Filter nach workspace_id
 ```
 
-**Wichtiger Punkt:** Da JWTs `workspace_id`-Claims tragen und Postgres-RLS-Richtlinien diese über `current_setting('request.jwt.claims')` lesen, gibt es **keine serverseitigen Sitzungsvariablen** und **keine Verbindungspools pro Tenant**. Das macht Synalux horizontal skalierbar.
+**Wichtiger Punkt:** Da JWTs `workspace_id`-Claims tragen und Postgres-RLS-Richtlinien diese über `current_setting('request.jwt.claims')` lesen, gibt es **keine serverseitigen Sitzungsvariablen** und **keine Verbindungspools pro Mandant**. Das macht Synalux horizontal skalierbar.
 
 ### Sicherheitskontrollen
 
-* **EdDSA (Ed25519) Authentication:** Static API tokens are demoted to refresh-only status. All API requests are authenticated via short-lived (15 min) JWTs signed with asymmetric cryptography.
-* **Transparent Data Encryption (TDE):** All team messages, generated documents, and session histories are encrypted at rest.
-* **Strict Data Minimization:** Web App transcripts live strictly in React state memory and are garbage-collected the moment a tab is closed. `localStorage` is never used for PHI.
-* **MIME-Gated File Storage:** Clinical attachments are restricted by strict server-side MIME verification and served exclusively via 15-minute signed URLs with IDOR prevention.
-* **Immutable Audit Logs:** Every role assignment, file download, and message deletion is permanently recorded in the `rbac_audit_log` for compliance non-repudiation. Audit rows are append-only — even database admins cannot modify historical entries.
-* **HITL Safety Gate:** Dangerous tools (`terminal`, `git_tool`, `browser`) require explicit user approval via a modal dialog before execution — preventing zero-click RCE via prompt injection.
-* **Fail-Closed HIPAA Mode:** If the local LLM (Ollama) is unavailable during clinical voice intake, the system refuses to open the microphone rather than silently falling back to cloud processing.
-* **StaleDataBanner (Patient Safety):** If clinical data hasn't been refreshed in the current session, a banner alerts the clinician, preventing treatment decisions based on outdated information.
+* **EdDSA (Ed25519) Authentifizierung:** Statische API-Token werden zum Aktualisierungsstatus degradiert. Alle API-Anfragen werden über kurze Lebensdauer-JWTs mit asymmetrischer Kryptografie durchgeführt, die von Google OAuth mit MFA für medizinische Rollen verifiziert werden.
+* **Transparente Datenverschlüsselung (TDE):** Alle Teamnachrichten, generierte Dokumente und Sitzungsverläufe werden im Ruhezustand verschlüsselt.
+* ** strenge Datenminimalisierung:** Web-App-Aufzeichnungen leben strikt in der React State-Memory und werden beim Schließen eines Tabs durch den Müllsammler gelöscht. `localStorage` wird niemals für PHI verwendet.
+* **MIME-gesteuerter Datei Speicher:** Klinische Anhänge werden durch strenge serverseitige MIME-Überprüfung eingeschränkt und werden ausschließlich über 15-minütige signierte URLs mit IDOR-Schutz zur Verfügung gestellt.
+* **unveränderliche Auditprotokolle:** Jede Rollenzuweisung, Dateiherunterladen und Nachrichtenlöschung wird im `rbac_audit_log` für die Konformität nicht-repudiierbar dauerhaft aufgezeichnet. Auditzeilen sind anhängbar — sogar Datenbankadministratoren können historische Einträge nicht ändern.
+* **HITL-Sicherheitsgate:** Gefährliche Werkzeuge (`terminal`, `git_tool`, `browser`) erfordern explizite Benutzerbestätigung durch ein Modaldialog vor der Ausführung, um einen Null-Klick-RCE über Anforderungsinjektion zu verhindern.
+* **Schließe-Hoch HIPAA-Modus:** Wenn die lokale LLM (Ollama) während der klinischen Stimmeingabe nicht verfügbar ist, schließt das System den Mikrofon anstelle einer sanften Rückfallung zum Cloudverarbeitung ab.
+* **StaleDataBanner (Patientensicherheit):** Wenn klinische Daten in der aktuellen Sitzung nicht aktualisiert wurden, wird ein Banner angezeigt, um den Arzt zu informieren und Entscheidungen aufgrund veralteter Informationen zu verhindern.
 
-### HIPAA-Konformität Statement
+### HIPAA-Konformitätserklärung
 
-| HIPAA Requirement | Synalux Implementation |
+| HIPAA-Anforderung | Synalux-Implementierung |
 |---|---|
-| **§164.312(a)(1)** Access Control | JWT-based RBAC with per-tool ACLs; RLS enforces tenant isolation at the database layer |
-| **§164.312(b)** Audit Controls | Immutable `hipaa_audit_log` + `rbac_audit_log` — every PHI access is recorded with user, action, resource, and timestamp |
-| **§164.312(c)(1)** Integrity | AI Sandbox (`ProposedChange`) ensures no automated writes to clinical data without clinician signature |
-| **§164.312(d)** Authentication | Ed25519 asymmetric JWTs (15 min TTL); Google OAuth with MFA for clinical roles |
-| **§164.312(e)(1)** Transmission Security | TLS 1.3 enforced on all endpoints; Supabase connections use SSL; no PHI in URL parameters |
-| **§164.310(d)(1)** Data Encryption | AES-256 at rest (Supabase TDE); WASM Whisper for on-device transcription (PHI never transmitted) |
-| **§164.308(a)(1)** Risk Analysis | Adversarial security reviews (`REVIEW_PROMPT.md`); automated output guardrails with rolling-window SSE scanning |
-| **No LocalStorage** | All clinical data lives in React state (garbage-collected on tab close) or Postgres (RLS-protected). Zero browser persistence of PHI |
+| **§164.312(a)(1)** Zugriffskontrolle | JWT-basierte RBAC mit Werkzeug-zu-Zugriffssteuerungen; RLS erzwungen die Mandantenisolation auf der Datenbankebene |
+| **§164.312(b)** Auditkontrolle | Unveränderliches `hipaa_audit_log` + `rbac_audit_log` — jede PHI-Zugriff wird mit Benutzer, Aktion, Ressource und Zeitstempel protokolliert |
+| **§164.312(c)(1)** Integrität | AI Sandbox (`ProposedChange`) stellt sicher, dass keine automatischen Schreibvorgänge auf klinische Daten durchgeführt werden, ohne die Unterschrift des Arztes |
+| **§164.312(d)** Authentifizierung | Kurze Lebensdauer-JWTs mit asymmetrischer Kryptografie (15 min TTL); Google OAuth mit MFA für medizinische Rollen |
+| **§164.312(e)(1)** Übertragungssicherheit | TLS 1.3 auf allen Endpunkten erzwungen; Supabase-Verbindungen verwenden SSL; keine PHI in URL-Parametern |
+| **§164.308(a)(1)** Risikobewertung | Feindliche Sicherheitsüberprüfungen (`REVIEW_PROMPT.md`); automatische Ausgabe-Grenzen mit rollierendem Fenster SSE-Scannen |
+| Kein localStorage | Alle klinischen Daten leben im React State (wird beim Schließen eines Tabs durch den Müllsammler gelöscht) oder in Postgres (geschützt durch RLS). Keine Browser持久isierung von PHI |
 
-> **BAA Coverage:** Full HIPAA compliance with BAA requires Vercel Enterprise + Supabase Team tier. See [Infrastructure & Cloud Services](#-infrastructure--cloud-services) for pricing.
-
-</details>
+> **BAA-Umfang:** Vollständige HIPAA-Konformität mit BAA erfordert Vercel Enterprise + Supabase Team-Tier. Weitere Informationen finden Sie unter [Infrastruktur & Cloud-Dienste](#platform-modules).
 
 ---
 
