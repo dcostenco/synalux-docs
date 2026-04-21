@@ -33,7 +33,7 @@ Automate the "paperwork nightmare" of ABA. Integrated FBA/BIP, ABC data collecti
 
 ### 🦷 [Dental & Orthodontics](docs_source_en/dental_orthodontics.md)
 AI-assisted periodontal charting, multi-phase implant sequencing, and automated orthodontic payment plans.
-![Dental & Ortho Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33.png)
+![Dental & Ortho Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
 
 ### 🧠 [Mental Health & Psychiatry](docs_source_en/mental_health_psychiatry.md)
 Trauma-informed clinical suite with PHQ-9/GAD-7 trend tracking and integrated HIPAA-compliant telehealth.
@@ -89,21 +89,21 @@ Synalux listens to your session and instantly drafts a professional clinical not
 * **Benefit:** Save up to 2 hours of paperwork daily.
 * **Privacy:** HIPAA-compliant local processing.
 
-![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/voice_dictation_ui.png)
+![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
 ### 📴 Work Anywhere, Even Offline
 Working in a clinic with spotty Wi-Fi or in a remote area? Keep charting. Synalux saves everything to your device instantly and securely. The moment you're back online, it syncs quietly in the background.
 * **Accuracy:** Billing and session times are captured in real-time.
 * **Safety:** Automatic local encryption keeps data safe until sync.
 
-![Offline Sync Status Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/offline_sync_ui.png)
+![Offline Sync Status Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
 
 ### 🏢 One Platform, Global Reach
 Whether you manage a single clinic or a global practice with hundreds of therapists, Synalux scales with you. Manage US, European, and Canadian branches from one dashboard with regional compliance and currency handling built-in.
 * **Control:** Branch isolation ensures data is only visible where it belongs.
 * **Insights:** High-level executive dashboards for practice owners.
 
-![Global Practice Dashboard Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/global_dashboard_ui.png)
+![Global Practice Dashboard Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
 
 ### 🛡️ Pro-Security & Legal Safety
 * **On-Device Privacy:** Unlike other platforms, our clinical engine runs 100% on your local machine.
@@ -117,7 +117,7 @@ Whether you manage a single clinic or a global practice with hundreds of therapi
 
 Synalux includes a context-aware clinical companion available on every screen. It isn't just a chatbot; it's a deeply integrated support system that understands your specialty, your patient, and your current task.
 
-![Smart Keyword Command Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/smart_keyword_ui.png)
+![Smart Keyword Command Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/30_intelligent_assistant.png)
 
 The support bubble (💬) is always there when you need it, providing instant access to your practice's knowledge base and clinical logic.
 
@@ -150,7 +150,7 @@ The web portal assistant is optimized for **clinical and administrative workflow
 
 The VS Code extension is a **full-capability clinical technology tool** with direct workspace access. It’s perfect for administrators managing large practices or developers building on the platform.
 
-![VS Code Clinical Extension Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/vscode_clinical_extension_ui.png)
+![VS Code Clinical Extension Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
 
 - **Search Everything:** Instant, workspace-wide search for any clinical record or code.
 - **Workflow Tools:** Run commands for database sync, billing processing, and more.
@@ -668,7 +668,7 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 Every interaction with your patient data is captured in three distinct, immutable layers. This ensures absolute accountability and creates a bulletproof audit trail for legal and HIPAA compliance.
 
-![Security Audit Logs Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Security Audit Logs Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 * **Clinical Audit:** Tracks every time a patient chart is opened or edited.
 * **System Audit:** Logs every background process and database mutation.
@@ -869,7 +869,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Pediatrics Documentation](docs_source_en/pediatrics.md)**
 
-![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
 - **Clinical Templates:** Well-child exams, sick visits, immunization tracking, developmental screening
 - **Billing Codes:** 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization)
@@ -901,7 +901,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Dental & Orthodontics Documentation](docs_source_en/dental_orthodontics.md)**
 
-![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
 
 - **Clinical Templates:** Comprehensive exam, perio charting, treatment planning, operative notes
 - **Billing Codes (CDT):** D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho)
@@ -935,11 +935,11 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🧠 Mental Health & Psychiatry
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/31_mental_health.png)
 
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/31_mental_health.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
@@ -973,7 +973,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🏃 Physical Therapy & Sports Medicine
 
-![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/32_physical_therapy.png)
 
 🔗 **[Read Detailed Physical Therapy & Sports Medicine Documentation](docs_source_en/physical_therapy_sports_medicine.md)**
 
@@ -1007,7 +1007,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🔬 Dermatology
 
-![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/34_dermatology.png)
 
 🔗 **[Read Detailed Dermatology Documentation](docs_source_en/dermatology.md)**
 
@@ -1043,7 +1043,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🐾 Veterinary Medicine
 
-![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/28_veterinary.png)
 
 🔗 **[Read Detailed Veterinary Medicine Documentation](docs_source_en/veterinary_medicine.md)**
 
@@ -1164,7 +1164,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 🧪 Lab Orders & Results Module
 
-![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
 
 🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
 
@@ -1228,7 +1228,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 📊 Vitals & Measurements Module
 
-![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/29_vitals.png)
 
 🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
 
@@ -1255,7 +1255,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### ⚠️ Allergies & Alerts Module
 
-![Allergies & Alerts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Allergies & Alerts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
 
@@ -1282,7 +1282,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 💉 Immunizations Module
 
-![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
 
 🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
 
@@ -1312,7 +1312,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
 
-![Billing and Payments Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+![Billing and Payments Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 
 
@@ -1538,7 +1538,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 🧾 Superbills Module
 
-![Superbills Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+![Superbills Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
 
@@ -1567,7 +1567,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 📋 Clinical Tasks Module
 
-![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
+![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
 
 🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
 
@@ -1597,7 +1597,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 Give your patients full control with a secure, authenticated portal. They can view appointments, sign documents, pay bills, and message their clinical team — all from their phone or computer.
 
-![Patient Portal Onboarding Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
+![Patient Portal Onboarding Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
 - **One-Click Access:** Secure login via practice-issued access codes.
 - **Secure Messaging:** Threaded conversations with full audit trails.
@@ -1621,7 +1621,7 @@ Give your patients full control with a secure, authenticated portal. They can vi
 
 ### 📚 Patient Education Module
 
-![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
 🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
 
@@ -1704,7 +1704,7 @@ Give your patients full control with a secure, authenticated portal. They can vi
 
 Coordinate care with your entire team in real-time. Whether you’re in the clinic or working remotely, Synalux keep your practice connected through secure channels.
 
-![Telehealth Video Conference Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/telehealth_conference_ui.png)
+![Telehealth Video Conference Mockup](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/17_telehealth.png)
 
 - **Department Channels:** Group chats for Clinical, Billing, and Admin teams.
 - **HD Video Meetings:** HIPAA-compliant telehealth and team stand-ups.
