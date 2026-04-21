@@ -1870,6 +1870,18 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 **Synalux v11.1 Elite**  
 *The Future of Global Behavioral Health Management.*
 
+### 🧠 Cognitive Performance (Held-Out Benchmark)
+
+Synalux v11.1 Elite utilizes **Structural GRPO (Group Relative Policy Optimization)** for tool-use and clinical reasoning alignment. Results below are from a **held-out test set** (prompts never seen during training).
+
+| Metric | **Score** | **N** | **Target** | **Status** |
+|:-------|:---:|:---:|:---:|:---:|
+| **Tool Selection** | 40.0% | 15 | 95.0% | 🔧 In Progress |
+| **JSON Validity** | 100.0% | 15 | 95.0% | ✅ Passing |
+| **Parameter Accuracy** | 80.0% | 15 | 95.0% | 🔧 In Progress |
+
+> **Methodology**: Results from [`training/benchmark.py`](https://github.com/dcostenco/prism-mcp/blob/main/training/benchmark.py) against `prism-coder:7b` (GRPO-aligned Qwen-7B). The benchmark uses a held-out prompt set distinct from training data. Self-validation benchmarks in `benchmarks/` evaluate training data format quality — not model inference accuracy.
+
 ### 🆕 What's New in v11.1 Elite Patch
 
 - **🎯 One-Click DDA Letters:** New automated templates for Maryland DDA applications. Generate and sign in seconds.
