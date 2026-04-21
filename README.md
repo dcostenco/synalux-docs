@@ -10,7 +10,7 @@
 
 | 📊 1. Practice Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Practice Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Practice Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
 
 | 📋 4. BIP Builder | 🔍 5. FBA Reports | 📊 6. ABC Data |
 |:---:|:---:|:---:|
@@ -18,19 +18,19 @@
 
 | 👶 7. Pediatrics | 🦴 8. Physical Therapy | 🦷 9. Dental & Orthodontics |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Pediatrics Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Physical Therapy Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Dental Module"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/32_physical_therapy.png" width="100%" alt="Physical Therapy Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png" width="100%" alt="Dental Module"> |
 
 | 🧠 10. Mental Health | 🏥 11. Patient Portal | 📅 12. Scheduling |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Mental Health Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/31_mental_health.png" width="100%" alt="Mental Health Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
 
 | 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
 
 | 💰 16. Accounting & Finance | 🛡️ 17. Triple-Logging Audit | 🤝 18. Collaboration Suite |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Accounting & Finance"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Triple-Logging Audit"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png" width="100%" alt="Collaboration Suite"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Accounting & Finance"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png" width="100%" alt="Triple-Logging Audit"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png" width="100%" alt="Collaboration Suite"> |
 
 ---
 
@@ -628,7 +628,7 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 Every API request flows through three logging layers:
 
-![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png)
+![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 | Log Table | What It Captures | When It Fires | Mutability |
 |-----------|-----------------|---------------|------------|
@@ -831,7 +831,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Pediatrics Documentation](docs_source_en/pediatrics.md)**
 
-![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
 - **Clinical Templates:** Well-child exams, sick visits, immunization tracking, developmental screening
 - **Billing Codes:** 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization)
@@ -863,7 +863,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Dental & Orthodontics Documentation](docs_source_en/dental_orthodontics.md)**
 
-![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+![Dental Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
 
 - **Clinical Templates:** Comprehensive exam, perio charting, treatment planning, operative notes
 - **Billing Codes (CDT):** D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho)
@@ -897,11 +897,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🧠 Mental Health & Psychiatry
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
-
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/31_mental_health.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
@@ -935,7 +933,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🏃 Physical Therapy & Sports Medicine
 
-![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/32_physical_therapy.png)
 
 🔗 **[Read Detailed Physical Therapy & Sports Medicine Documentation](docs_source_en/physical_therapy_sports_medicine.md)**
 
@@ -969,7 +967,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🔬 Dermatology
 
-![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/34_dermatology.png)
 
 🔗 **[Read Detailed Dermatology Documentation](docs_source_en/dermatology.md)**
 
@@ -1005,7 +1003,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🐾 Veterinary Medicine
 
-![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/28_veterinary.png)
 
 🔗 **[Read Detailed Veterinary Medicine Documentation](docs_source_en/veterinary_medicine.md)**
 
@@ -1126,7 +1124,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 🧪 Lab Orders & Results Module
 
-![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+![Lab Orders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
 
 🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
 
@@ -1190,7 +1188,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 📊 Vitals & Measurements Module
 
-![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Vitals & Measurements](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/29_vitals.png)
 
 🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
 
@@ -1244,7 +1242,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 💉 Immunizations Module
 
-![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Immunizations](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
 
 🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
 
@@ -1529,7 +1527,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 📋 Clinical Tasks Module
 
-![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
+![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
 
 🔗 **[Read Detailed Clinical Tasks Module Documentation](docs_source_en/clinical_tasks_module.md)**
 
@@ -1592,7 +1590,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 ### 📚 Patient Education Module
 
-![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
 🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
 
