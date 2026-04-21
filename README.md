@@ -8,9 +8,9 @@
 
 ## 📸 Product Specification
 
-| 📊 1. Patient Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
+| 📊 1. Practice Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Practice Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
 
 | 📋 4. BIP Builder | 🔍 5. FBA Reports | 📊 6. ABC Data |
 |:---:|:---:|:---:|
@@ -26,7 +26,7 @@
 
 | 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
 
 | 💰 16. Accounting & Finance | 🛡️ 17. Triple-Logging Audit | 🤝 18. Collaboration Suite |
 |:---:|:---:|:---:|
@@ -1269,7 +1269,7 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
 
-![Billing and Payments Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+![Billing and Payments Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 
 
