@@ -18,11 +18,11 @@
 
 | 👶 7. Pediatrics | 🦴 8. Physical Therapy | 🦷 9. Dental & Orthodontics |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png" width="100%" alt="Pediatrics Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png" width="100%" alt="Physical Therapy Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Dental Module"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Pediatrics Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="Physical Therapy Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Dental Module"> |
 
 | 🧠 10. Mental Health | 🏥 11. Patient Portal | 📅 12. Scheduling |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png" width="100%" alt="Mental Health Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Mental Health Module"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png" width="100%" alt="Patient Portal"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png" width="100%" alt="Scheduling"> |
 
 | 💳 13. Billing & Payments | 👥 14. HR & Staffing | 🛠️ 15. Platform Admin |
 |:---:|:---:|:---:|
@@ -30,7 +30,7 @@
 
 | 💰 16. Accounting & Finance | 🛡️ 17. Triple-Logging Audit | 🤝 18. Collaboration Suite |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Accounting & Finance"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png" width="100%" alt="Triple-Logging Audit"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png" width="100%" alt="Collaboration Suite"> |
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Accounting & Finance"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Triple-Logging Audit"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png" width="100%" alt="Collaboration Suite"> |
 
 ---
 
@@ -623,7 +623,7 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 Every API request flows through three logging layers:
 
-![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
+![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png)
 
 | Log Table | What It Captures | When It Fires | Mutability |
 |-----------|-----------------|---------------|------------|
@@ -826,7 +826,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 🔗 **[Read Detailed Pediatrics Documentation](docs_source_en/pediatrics.md)**
 
-![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+![Pediatrics Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 - **Clinical Templates:** Well-child exams, sick visits, immunization tracking, developmental screening
 - **Billing Codes:** 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization)
@@ -892,11 +892,11 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🧠 Mental Health & Psychiatry
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Mental Health & Psychiatry Documentation](docs_source_en/mental_health_psychiatry.md)**
 
-![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+![Mental Health Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 - **Clinical Templates:** Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans
 - **Billing Codes:** 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management)
@@ -930,7 +930,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🏃 Physical Therapy & Sports Medicine
 
-![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
+![Physical Therapy Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Physical Therapy & Sports Medicine Documentation](docs_source_en/physical_therapy_sports_medicine.md)**
 
@@ -964,7 +964,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🔬 Dermatology
 
-![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
+![Dermatology Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Dermatology Documentation](docs_source_en/dermatology.md)**
 
@@ -1000,7 +1000,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 ### 🐾 Veterinary Medicine
 
-![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
+![Veterinary Medicine Module](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 🔗 **[Read Detailed Veterinary Medicine Documentation](docs_source_en/veterinary_medicine.md)**
 
