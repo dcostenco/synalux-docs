@@ -1355,6 +1355,8 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 📅 Scheduling & Appointments
 
+![Scheduling Dashboard](docs/demo/15_scheduling.png)
+
 ![Scheduling Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png)
 
 🔗 **[Read Detailed Scheduling & Appointments Documentation](docs_source_en/scheduling_appointments.md)**
@@ -1381,6 +1383,8 @@ Payment Failed → past_due (warning banner, keep access)
 </details>
 
 ### 👥 HR & Staff Management Module
+
+![HR & Staff Management](docs/demo/16_hr_management.png)
 
 ![HR & Staff Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
 
@@ -1436,6 +1440,8 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 📦 Inventory Management Module
 
+![Inventory Management Dashboard](docs/demo/25_inventory.png)
+
 ![Inventory Management Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/25_inventory.png)
 
 🔗 **[Read Detailed Inventory Management Module Documentation](docs_source_en/inventory_management_module.md)**
@@ -1465,6 +1471,8 @@ Payment Failed → past_due (warning banner, keep access)
 
 ### 🧾 Superbills Module
 
+![Superbills Dashboard](docs/demo/37_cross_border_finance.png)
+
 ![Superbills Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 🔗 **[Read Detailed Superbills Module Documentation](docs_source_en/superbills_module.md)**
@@ -1493,6 +1501,8 @@ Payment Failed → past_due (warning banner, keep access)
 
 
 ### 📋 Clinical Tasks Module
+
+![Clinical Tasks Dashboard](docs/demo/16_hr_management.png)
 
 ![Clinical Tasks Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
 
@@ -1557,6 +1567,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 ### 📚 Patient Education Module
 
+![Patient Education Dashboard](docs/demo/02_patient_dashboard.png)
+
 ![Patient Education Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Patient Education Module Documentation](docs_source_en/patient_education_module.md)**
@@ -1584,6 +1596,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 ### 🔔 Recalls & Reminders Module
 
+![Recalls & Reminders](docs/demo/15_scheduling.png)
+
 ![Recalls & Reminders](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png)
 
 🔗 **[Read Detailed Recalls & Reminders Module Documentation](docs_source_en/recalls_reminders_module.md)**
@@ -1608,6 +1622,8 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 </details>
 
 ### 🔄 Referrals & Cross-Practice Chat Module
+
+![Referrals & Cross-Practice Chat](docs/demo/10_team_chat.png)
 
 ![Referrals & Cross-Practice Chat](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
 
