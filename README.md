@@ -28,6 +28,10 @@
 |:---:|:---:|:---:|
 | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png" width="100%" alt="Billing & Payments"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png" width="100%" alt="HR & Staffing"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png" width="100%" alt="Platform Admin"> |
 
+| 💰 16. Accounting & Finance | 🛡️ 17. Triple-Logging Audit | 🤝 18. Collaboration Suite |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png" width="100%" alt="Accounting & Finance"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png" width="100%" alt="Triple-Logging Audit"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png" width="100%" alt="Collaboration Suite"> |
+
 ---
 
 <p align="center">
@@ -619,7 +623,7 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 Every API request flows through three logging layers:
 
-![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
+![Triple-Logging & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/39_branch_isolation.png)
 
 | Log Table | What It Captures | When It Fires | Mutability |
 |-----------|-----------------|---------------|------------|
