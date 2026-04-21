@@ -4,6 +4,20 @@
 
 > Run your entire healthcare practice from one platform — patient records, scheduling, billing, team communication, and automated clinical charting. Works for ABA therapy, pediatrics, mental health, dentistry, physical therapy, and dermatology. Available in 12 languages. HIPAA-compliant.
 
+---
+
+## 📸 Product Specification
+
+| 📊 1. Patient Dashboard | 🧠 2. Clinical SOAP Notes | 💬 3. Secure Team Chat |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/02_patient_dashboard.png" width="100%" alt="Patient Dashboard"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png" width="100%" alt="AI SOAP Notes"> | <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png" width="100%" alt="Secure Team Chat"> |
+
+| 👶 4. Pediatrics | 🦴 5. Physical Therapy | 🦷 6. Dental & Orthodontics |
+|:---:|:---:|:---:|
+| <img src="docs/demo/27_pediatrics.png" width="100%" alt="Pediatrics Module"> | <img src="docs/demo/32_physical_therapy.png" width="100%" alt="Physical Therapy Module"> | <img src="docs/demo/33_dental.png" width="100%" alt="Dental Module"> |
+
+---
+
 <p align="center">
   <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Web_App-Try_It_Free-43e97b?style=for-the-badge" alt="Web App"></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=synalux-ai.synalux"><img src="https://img.shields.io/badge/VS_Code-Developer_Tools-764ba2?style=for-the-badge" alt="VS Code"></a>
@@ -19,20 +33,20 @@
 
 ## 💡 Why Synalux?
 
-### 🎙️ Talk. Don't Type.
-Synalux listens to your session and instantly writes a structured clinical note. Because it processes directly on your iPad or laptop, your patient's voice never goes to the cloud. It’s instant, private, and saves you 2 hours of paperwork every day.
+### 🎙️ Smart Voice Documentation
+Synalux listens to your session and instantly drafts a professional clinical note. Because it processes directly on your device, your patient's voice never goes to the cloud. It’s private, secure, and saves providers up to 2 hours of paperwork every day.
 
 ### 📴 Unbreakable Offline Mode
-Working in a clinic with spotty Wi-Fi? Keep charting. Synalux saves everything to your device instantly. When you reconnect, it syncs automatically. Your billing timestamps are always accurate to the minute, even in a dead zone.
+Working in a clinic with spotty Wi-Fi? Keep charting. Synalux saves everything to your device instantly. When you reconnect, it syncs automatically. Your billing and session times are always accurate, even in a dead zone.
 
-### 🏢 One Platform. Total Control.
-Whether you manage 5 therapists or 500 across three countries, Synalux isolates patient records perfectly. Technicians only see what they need to see. Billing sees the numbers, doctors see the charts. Setup takes seconds.
+### 🏢 Global Practice Management
+Whether you manage 5 therapists or 500 across multiple countries, Synalux handles the complexity. Manage US, European, and Canadian branches from a single dashboard with automatic currency handling and regional compliance.
 
-### 🛡️ Trust, Compliance & Security
-* **Zero-Cloud Privacy (Your Device, Your Data):** Unlike other platforms that send patient recordings to external servers, our clinical assistant runs 100% locally on your machine. We couldn't read your patient notes even if we wanted to.
-* **Military-Grade Encryption:** Every message, file, and patient record is scrambled using the same encryption standards required by the US Government and major banks. If a device is lost, the data remains unreadable.
-* **Ironclad Access Control:** 15 distinct staff roles ensure that a receptionist cannot read a psychotherapy note, and a medical technician cannot alter billing codes. Everyone operates in their own secure lane.
-* **Automated HIPAA Compliance:** Synalux enforces compliance for you: automatic 15-minute screen lockouts, secure data purging when a tab is closed, and unalterable audit trails showing exactly who opened which file and when.
+### 🛡️ Pro-Security & Legal Safety
+* **On-Device Privacy:** Unlike other platforms, our clinical assistant runs 100% on your local machine. Patient recordings are never sent to external servers.
+* **Military-Grade Encryption:** Every message, file, and patient record is secured using the highest global standards. If a device is lost, the data remains unreadable.
+* **Role-Based Access:** 15 distinct staff roles ensure that employees only see the data they need for their job. Receptionists, doctors, and billers each operate in their own secure lane.
+* **Automated Compliance:** Synalux enforces safety for you: automatic screen lockouts, secure data purging, and unalterable audit trails showing exactly who accessed which file.
 
 ---
 
@@ -44,28 +58,20 @@ The assistant bubble (💬) is pinned to the bottom-right corner of every page. 
 
 ### 🌐 Web Portal — What You Can Do
 
-The web portal assistant is optimized for **clinical and administrative workflow acceleration**:
-
-- **SOAP Note Dictation:** Record a session → get a structured clinical note
-- **Clinical Q&A:** "What are the contraindications for Concerta in a patient with cardiac history?"
-- **Treatment Plan Drafts:** "Draft a BIP for tantrums maintained by escape"
-- **Billing Guidance:** "What CPT code for a 45-minute family guidance session?"
-- **Report Generation:** "Summarize this patient's last 3 sessions"
-- **Translation:** "Translate this consent form to Spanish"
-- **Smart Context Sharing:** Generate a treatment plan → "Share to billing channel"
+The web portal assistant is optimized for **clinical and administrative workflow acceleration**. It provides a range of intelligent tools directly in your browser:
 
 <details>
 <summary>Click to view full details</summary>
 
 | Capability | Example | How It Works |
 |------------|---------|--------------|
-| **SOAP Note Dictation** | Record a session → get a structured clinical note | WASM Whisper runs on-device. Audio **never** leaves your machine. |
-| **Clinical Q&A** | "What are the contraindications for Concerta in a patient with cardiac history?" | Powered by Gemini with medical context injection |
-| **Treatment Plan Drafts** | "Draft a BIP for tantrums maintained by escape" | Uses your practice type (ABA/peds/general) to select the right template |
-| **Billing Guidance** | "What CPT code for a 45-minute family guidance session?" | References the built-in CPT dictionary (97151–97158, 99213–99215) |
-| **Report Generation** | "Summarize this patient's last 3 sessions" | Reads session data from the workspace-scoped database |
-| **Translation** | "Translate this consent form to Spanish" | 12-language support with medical terminology awareness |
-| **Smart Context Sharing** | Generate a treatment plan → "Share to billing channel" | Forwards the document to the team chat without duplicating PHI |
+| **Clinical Voice Dictation** | Record a session → get a professional note | On-device processing. Audio **never** leaves your machine. |
+| **Clinical Q&A** | "Contraindications for Concerta in cardiac history?" | Secured intelligence with medical safety checks. |
+| **Treatment Plan Support** | "Draft a BIP for tantrums" | Automatically suggests drafts based on your practice specialty. |
+| **Smart Billing Logic** | "What code for 45-minute family session?" | Cross-references built-in medical coding standards. |
+| **Report Generation** | "Summarize this patient's last 3 sessions" | Analyzes your clinical records within your secure workspace. |
+| **Translation** | "Translate this consent form to Spanish" | 12-language support for clinical terminology. |
+| **Smart Sharing** | Generate plan → "Share to billing channel" | Forwards documents securely without manual file copying. |
 
 
 **What the Web Assistant Cannot Do:**
@@ -1764,3 +1770,28 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 ### Next.js Web Portal (`/portal`)
 * **React Components:** Leverages `@livekit/components-react` for a native, fully responsive `<VideoConference />` grid.
 * Provides the ultimate high-fidelity telehealth experience for administrators and providers operating outside the IDE.
+
+---
+
+## <details><summary>🛠️ Technical Appendix (For IT/Dev Teams)</summary>
+
+### 🏗️ Elite Architecture & Clinical Logic
+*   **On-Device AI:** High-performance clinical transcription and analysis are executed locally to ensure absolute data privacy and zero-latency processing.
+*   **Constant-Time Fact Recovery:** Employs advanced mathematical models for instant retrieval of clinical records, regardless of database size.
+*   **Global Branch Integration:** Multi-tenant infrastructure supporting US, European, and Canadian legal requirements within a single unified environment.
+
+### 🛡️ Security Specification
+*   **Adversarial Hardening:** 21-round security audit with 90+ remediations for data integrity and threat prevention.
+*   **Network Isolation:** Built-in safeguards against lateral data access and unauthorized network requests.
+*   **Type-Safe Clinical Schemas:** Rigorous data validation at every layer to prevent clinical errors and ensure database consistency.
+
+### 📁 Technical Documentation
+*   **Accounting Interfaces:** [/docs/ACCOUNTING_INTERFACES.md](./docs/ACCOUNTING_INTERFACES.md)
+*   **Compliance Matrix:** [/docs/COMPLIANCE_MATRIX.md](./docs/COMPLIANCE_MATRIX.md)
+*   **Security Model:** Detailed RLS and RBAC documentation available in the database schema.
+
+</details>
+
+---
+**Synalux v11.1 Elite**  
+*The Future of Global Behavioral Health Management.*
