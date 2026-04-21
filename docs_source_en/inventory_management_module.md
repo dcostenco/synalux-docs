@@ -1,18 +1,52 @@
-# Inventory Management Module
+# 📦 Smart Inventory & Supply Chain
 
-## Stock Tracking
+Synalux v11.1 Elite provides an enterprise-grade inventory system designed to prevent stock-outs, minimize waste, and track the high-value assets of your practice—from dental implants and biologics to vaccines and office supplies.
 
-Real-time inventory levels for medications, supplies, and equipment. Barcode scanning support for receiving and dispensing workflows with lot number tracking.
+---
 
-## Auto-Reorder
+## 📉 Real-Time Stock Tracking
+Maintain absolute visibility into your clinic's physical assets across all storage locations.
+*   **Multi-Location:** Track stock across the vaccine fridge, surgical suites, and administrative closets.
+*   **Barcode Ready:** Instantly receive or dispense items using standard barcode and QR scanners.
+*   **Lot & Expiry Tracking:** Precision logging of lot numbers and expiration dates for every unit.
 
-Configurable minimum stock thresholds with automatic purchase order generation. Vendor management with preferred supplier tracking and price comparison.
+![Inventory Management Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/25_inventory.png)
 
-## Expiration Management
+---
 
-Track expiration dates with automated alerts for soon-to-expire items. FEFO (First Expired, First Out) dispensing recommendations to minimize waste.
+## 🔔 Automated Reorder Engine
+Stop running out of critical supplies. Let our engine handle the procurement lifecycle.
+*   **Minimum Thresholds:** Set "Low Stock" alerts for every item category.
+*   **Vendor Management:** One-click purchase order generation for Henry Schein, Patterson, and McKesson.
+*   **Price Comparison:** Track unit costs over time and identify savings opportunities across suppliers.
 
-## Cost Tracking
+![Vendor & Supplier Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
 
-Item-level cost tracking with markup configuration. Generate profitability reports per item category for practice financial management and budgeting.
+---
 
+## 💉 Clinical Safety & Expiration
+Protect your patients and your bottom line with intelligent expiration management.
+*   **Expiry Alerts:** Automated daily reports of items expiring within 30, 60, and 90 days.
+*   **FEFO Dispensing:** "First Expired, First Out" logic suggests which units to use first to minimize waste.
+*   **Recall Management:** Instantly identify and quarantine specific lot numbers in the event of a manufacturer recall.
+
+![Medication & Vaccine Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
+
+---
+
+## 💰 Cost Control & Profitability
+Understand the true cost of every procedure.
+*   **Unit Cost Tracking:** Monitor inflation and supplier price hikes in real-time.
+*   **Markup Configuration:** Automatically suggest procedure prices based on current material costs.
+*   **Shrinkage Reports:** Identify and investigate discrepancies between physical counts and system records.
+
+![Financial Analytics Roll-up](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+---
+
+## 🔐 Security & Audit
+*   **Dispensing Logs:** Every item removed from inventory is linked to a specific staff ID and patient record.
+*   **Physical Count Audits:** Streamlined workflow for quarterly or annual physical inventory verification.
+*   **Role-Based Access:** Restrict who can approve purchase orders or edit unit costs.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

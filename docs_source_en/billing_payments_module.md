@@ -1,98 +1,60 @@
-# Billing & Payments Module
+# 💳 Billing & Revenue Cycle Management
 
-The Synalux platform's Billing & Payments Module leverages Stripe Connect to provide each practice with an independent payment processing account managed by the workspace administrator. This ensures secure and efficient financial management tailored to each practice's specific needs.
+Synalux v11.1 Elite provides a high-performance financial engine designed to maximize collections and minimize administrative overhead. From automated Stripe Connect onboarding to complex multi-country tax handling and real-time insurance eligibility, we ensure your practice stays profitable.
 
-## Per-Practice Billing Configuration
+---
 
-### Stripe Connect
-Each workspace is equipped with its own dedicated Stripe Connect account (`acct_xxx`), ensuring seamless and isolated payment processing for every practice.
+## ⚡ Stripe Connect for Every Practice
+Get paid faster with your own dedicated payment infrastructure.
+*   **Instant Onboarding:** Each branch gets a dedicated Stripe account (`acct_xxx`) in minutes.
+*   **Admin Ownership:** The practice owner retains full control over the Stripe dashboard and payouts.
+*   **Low Rates:** Benefit from enterprise-level transaction fees pre-negotiated by Synalux.
 
-### Admin Linked
-The Stripe account ownership is directly linked to the designated workspace administrator, facilitating easy management and control over financial transactions.
+![Stripe Connect Integration](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
-### Fee Schedules
-Practices can define custom fee schedules that include standard rates, insurance billing, Medicare payments, and self-pay arrangements, allowing flexible pricing strategies.
+---
 
-### Payment Methods
-A variety of payment methods are supported, including credit cards, ACH/bank transfers, checks, and cash. Practices have the flexibility to configure these options according to their requirements.
+## 🌍 Global Multi-Currency Support
+Scale your practice across borders without the headache of manual conversion.
+*   **Local Currencies:** Support for USD, CAD, RON, EUR, GBP, AUD, and NZD.
+*   **Dynamic Tax Engine:** Automatically calculates VAT, GST, HST, or PST based on the branch location.
+*   **HQ Roll-up:** HQ admins see a unified financial dashboard with all regional revenue converted to their base currency.
 
-### Auto-Posting
-The module automates payment posting, receipt generation, and monthly statement creation, streamlining financial management processes and saving time for administrators.
+![Global Finance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
-### Tax Configuration
-Practices can set up per-practice tax rates along with necessary identifiers like NPI/EIN for accurate 1099 reporting, ensuring compliance with tax regulations.
+---
 
-## Multi-Country & Multi-Currency
+## 🏥 Insurance & RCM Suite
+Close the loop on every claim with automated Revenue Cycle Management (RCM).
+*   **Electronic Claims (837P):** Submit claims directly to thousands of payers from the clinical chart.
+*   **Real-Time Eligibility:** Instantly verify if a patient's insurance is active before the session begins.
+*   **ERA/EOB Processing:** Automatically post insurance payments and reconcile denials.
+*   **Aging Reports:** Visual 30/60/90/120 day buckets to track outstanding accounts receivable.
 
-The Billing & Payments Module supports multiple countries and currencies, offering tiered pricing to accommodate different business sizes and needs:
+![Revenue Cycle Management Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
 
-| Country     | Currency   | Standard | Advanced | Enterprise |
-|-------------|------------|----------|----------|------------|
-| 🇺🇸 USA      | USD        | $19/mo   | $49/mo   | $99/mo     |
-| 🇨🇦 Canada   | CAD        | C$25/mo  | C$65/mo  | C$129/mo   |
-| 🇬🇧 UK       | GBP        | £15/mo   | £39/mo   | £79/mo     |
-| 🇩🇪🇫🇷 EU     | EUR        | €18/mo   | €45/mo   | €89/mo     |
-| 🇦🇺 Australia| AUD        | A$29/mo  | A$75/mo  | A$149/mo   |
-| 🇳🇿 New Zealand| NZD      | NZ$32/mo | NZ$82/mo | NZ$159/mo  |
+---
 
-## Volume Discounts
+## ✍️ Patient-Friendly Payments
+Improve patient satisfaction with transparent and convenient payment options.
+*   **One-Click Portal Payments:** Patients can view and pay their balance instantly via the Secure Patient Portal.
+*   **Payment Plans:** Offer automated monthly installments for high-value treatments (e.g., $194/mo for Ortho).
+*   **Auto-Receipts:** Professional, branded receipts are automatically generated and sent to the patient.
 
-To incentivize growth, Synalux offers volume discounts based on the number of clients:
+![Patient Portal Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
-- **100+ Clients:** 10% off per-seat price
-- **500+ Clients:** 20% off per-seat price
-- **1,000+ Clients:** 30% off per-seat price
+---
 
-Additionally, practices that opt for annual billing receive an extra 20% discount, stacking with volume discounts but capped at a maximum of 45%.
+## 📋 Comprehensive Fee Schedules
+*   **Multi-Payer Rates:** Set different rates for Medicare, Commercial Insurance, and Self-Pay.
+*   **CPT/CDT Support:** Pre-loaded with all major medical and dental procedure codes.
+*   **Auto-Adjustment:** Automatically apply contractual write-offs for insurance-based billing.
 
-## Payment Failure Lifecycle
+---
 
-The payment failure lifecycle is designed to maintain service continuity while ensuring financial health:
+## 🔐 Compliance & Financial Audit
+*   **Immutable Ledger:** Every transaction is logged with a permanent, unalterable audit trail.
+*   **PCI-DSS Level 1:** Credit card data never touches our servers—handled entirely by Stripe.
+*   **1099 Reporting:** Automated generation of year-end tax documents for your providers.
 
-- **Payment Failed:** Triggers `past_due` status with a warning banner.
-- **2nd Retry Failure:** Urgent warning displayed.
-- **3rd Retry Failure:** Automatic downgrade to the Free tier.
-- **Stripe Subscription Deleted:** Plan set to 'free', and subscription cleared.
-
-## Platform Admin Overrides
-
-Synalux platform administrators have powerful tools at their disposal:
-
-- Set any user to an unlimited trial on any plan.
-- Override users are immune to Stripe webhook downgrades.
-- Administrators view 🟢/🔴 indicators for payment status.
-- Comprehensive audit trails document who set overrides, when, and why.
-
-## Revenue Cycle Management
-
-Efficiently manage the revenue cycle with features that track:
-
-- Insurance claim lifecycle from draft to acceptance or denial.
-- ERA/EOB electronic remittance processing.
-- Denial management with deadline tracking.
-- Prior authorization workflow.
-- Aging reports categorized into 30/60/90/120-day buckets.
-
-## Patient Payments
-
-Facilitate patient payments through:
-
-- A "Pay Now" option in the patient portal that redirects to Stripe Checkout.
-- Acceptance of partial and custom payment amounts.
-- Setup of payment plans using Stripe recurring subscriptions.
-- Generation and download of receipts.
-- Processing of refunds efficiently.
-
-## Insurance Claims
-
-Streamline insurance claim processes with:
-
-- Electronic submission of claims (837P).
-- Real-time eligibility verification.
-- Coordination of Benefits (COB) handling.
-- Tracking of Explanation of Benefits (EOB).
-- Management of appeals using customizable letter templates.
-
-## Automatic Tax Collection
-
-Ensure compliance with automatic tax calculations enabled per-country for VAT, GST, HST, and PST. The system adheres to Canadian multi-province tax rules, applying federal GST along with provincial PST/HST as necessary.
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

@@ -1,27 +1,50 @@
-# Allergies & Alerts Module
+# ⚠️ Clinical Allergies & Safety Alerts
 
-The Allergies & Alerts Module is designed to provide comprehensive management and monitoring of patient allergies and adverse reactions within the Synalux platform, ensuring accurate and timely information for clinical decision-making.
+Synalux v11.1 Elite provides a bulletproof clinical safety infrastructure. By centralizing allergy data and cross-referencing it with every medication and procedure, we help your clinical team prevent adverse events and improve patient outcomes.
 
-## Allergen Types
+---
 
-The module supports a wide range of allergen types, including drugs, foods, environmental factors, latex, contrast materials, and other substances. This categorization allows healthcare providers to input and track specific allergens accurately, facilitating informed patient care.
+## 🛑 Real-Time Prescription Hardening
+Stop adverse drug events (ADEs) before they happen.
+*   **Interaction Alerts:** If a provider prescribes a medication with a known allergy (e.g., Penicillin), the system triggers a "Hard-Stop" modal.
+*   **Cross-Sensitivity Engine:** Smart logic flags potential cross-reactions (e.g., if a patient is allergic to Sulfa, we flag sulfonamide medications).
+*   **Alternative Suggestions:** The system automatically suggests safe alternatives based on the practice's preferred formulary.
 
-## Severity Levels
+![Clinical Medication Alerts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
-Allergies can be classified into severity levels: mild, moderate, severe, and life-threatening. These categories enable the clinical team to quickly assess the risk level associated with each allergy, ensuring appropriate interventions are taken to manage potential reactions effectively.
+---
 
-## Reaction Tracking
+## 🧬 Comprehensive Allergen Profiling
+Track more than just drug allergies.
+*   **Drug & Food:** Detailed tracking for common allergens like Latex, Shellfish, Peanuts, and Contrast Materials.
+*   **Environmental Factors:** Manage seasonal and environmental triggers for pediatric and primary care patients.
+*   **Severity Levels:** Color-coded severity indicators (Mild 🟡, Moderate 🟠, Severe 🔴, Life-Threatening 💀).
 
-The module includes detailed reaction tracking capabilities, documenting specific types of adverse reactions such as anaphylaxis, Stevens-Johnson syndrome (SJS), hives, and gastrointestinal upset. This feature supports thorough patient histories and aids in the identification of trends or patterns in allergic responses.
+![Patient Safety Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
-## NKDA Support
+---
 
-For patients with no known drug allergies (NKDA), the module provides a dedicated option to explicitly document this status. This ensures clarity in patient records, reducing the likelihood of unnecessary tests or precautions for non-allergenic substances.
+## 🩹 Reaction & History Tracking
+Understand the "Why" and "How" of every allergic event.
+*   **Reaction Taxonomy:** Categorize reactions by clinical presentation (Hives, Anaphylaxis, SJS, GI Upset).
+*   **NKDA Support:** One-click documentation for "No Known Drug Allergies" with a mandatory provider timestamp.
+*   **Verification Logs:** Every allergy entry requires a clinician's digital signature to ensure data integrity.
 
-## Clinical Alerts
+---
 
-Critical allergy flags are integrated into the module, providing alerts based on specific allergen-provider interactions. For example, if penicillin is prescribed to a patient allergic to it, an alert may suggest using clindamycin instead. Similarly, the system will flag patients with a history of sulfa reactions, cautioning against sulfonamide medications.
+## 🔔 Practice-Wide Safety Flags
+Ensure every staff member is aware of the patient's critical needs.
+*   **Banner Alerts:** High-visibility allergy banners appear at the top of every clinical and administrative screen.
+*   **Intake Integration:** Allergies are automatically pulled from the Patient Portal intake forms for clinician review.
+*   **Wristband Printing:** Generate barcoded patient wristbands with critical allergy icons for surgical or day-clinic environments.
 
-## Verification
+![Clinical Profile & Alerts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
-Provider verification is a key feature in ensuring data integrity within the module. All entries related to allergies and reactions require confirmation from a healthcare provider, complete with date stamps for each update. This process enhances accountability and ensures that all recorded information is accurate and up-to-date.
+---
+
+## 🔐 Security & Audit
+*   **Historical Archive:** We never delete allergy data; we "Inactivate" it with a required clinical rationale.
+*   **Audit Trail:** Track who added, verified, or updated every allergy in the patient's chart.
+*   **Role-Based Gating:** Ensure that only authorized clinical staff can override or clear a medication alert.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

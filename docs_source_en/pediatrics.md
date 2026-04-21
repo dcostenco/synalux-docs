@@ -1,21 +1,67 @@
-# Pediatrics
+# 👶 Pediatrics
 
-The Synalux Pediatrics module is specifically designed to streamline pediatric care management, providing healthcare providers with comprehensive tools tailored for young patients. This module encompasses a range of features that enhance clinical efficiency, patient engagement, and health outcomes.
+Synalux v11.1 Elite provides a kid-friendly, parent-approved clinical environment. From automated growth percentiles to proactive immunization alerts and ADHD Vanderbilt scoring, we help pediatricians focus on the milestones that matter.
 
-## Clinical Templates
-Tailored to the needs of pediatricians, the Clinical Templates feature includes pre-designed forms for well-child exams, sick visits, immunization tracking, and developmental screenings. These templates ensure consistency in documentation and facilitate quick data entry, allowing providers to focus more on patient care.
+---
 
-## Billing Codes
-The Pediatrics module supports a variety of billing codes essential for pediatric practices, including 99392–99395 for preventive services, 99213–99215 for office visits, and 90460 for immunizations. This comprehensive coverage ensures accurate billing and reimbursement, maintaining financial health for the practice.
+## 📏 Growth & Milestone Tracking
+Monitor child development with precision using integrated WHO/CDC growth curves.
+*   **Auto-Percentiles:** Instantly calculate weight-for-age, length-for-age, and BMI percentiles.
+*   **Milestone Checklists:** Track gross motor, fine motor, language, and social-emotional development.
+*   **Visual Growth Charts:** Parents can view and download their child's growth progress directly from the portal.
 
-## Patient Portal
-Enhancing parental involvement and patient engagement, the Pediatrics module offers a robust Patient Portal that includes parent/guardian access to growth charts, immunization records, and appointment booking capabilities. This feature supports informed decision-making and proactive healthcare management at home.
+![Pediatric Growth Charts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
-## Asthma Management
-Asthma is a common concern in pediatric practices. The Asthma Management feature provides tools for creating action plans, tracking peak flow readings, and logging the use of rescue inhalers. These resources help providers manage asthma effectively and educate parents on how to support their child's condition outside of the clinic.
+---
 
-## ADHD Workflow
-The ADHD Workflow feature integrates Vanderbilt scoring, medication management, and school accommodation letter generation into one streamlined process. This helps healthcare providers efficiently assess and manage ADHD in children, ensuring that treatment plans are both comprehensive and effective.
+## 💉 Smart Immunization Management
+Never miss a dose. Our clinical engine tracks the complete CDC/ACIP vaccine schedule.
+*   **Proactive Alerts:** Automatic notifications for due and overdue vaccines (DTaP, MMR, Hep B, etc.).
+*   **Registry Ready:** Export vaccine records for state registries or school forms in one click.
+*   **VIS Documentation:** Integrated Vaccine Information Statement (VIS) tracking for compliance.
 
-## Insurance
-Effortlessly handling insurance matters is crucial for pediatric practices. The Synalux Pediatrics module supports auto-eligibility verification for BCBS, UHC, Medicaid, and other major insurers. This feature reduces administrative burdens and ensures accurate patient eligibility, streamlining the insurance process for providers and patients alike.
+![Immunization Records](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
+
+---
+
+## 🏠 Parent Portal & Engagement
+Empower parents with 24/7 access to their child's health information.
+*   **Secure Messaging:** Direct communication between parents and the pediatric team.
+*   **Digital Intake:** Parents can complete ASQ or Vanderbilt forms from their phone before the visit.
+*   **School & Camp Forms:** Instant generation of pre-populated physical forms and medication authorizations.
+
+![Patient Portal Onboarding](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
+
+---
+
+## 🧠 Specialized Pediatric Workflows
+*   **ADHD Management:** Digital Vanderbilt scoring, medication monitoring, and school accommodation letters.
+*   **Asthma Action Plans:** Automated peak flow tracking and rescue inhaler logs.
+*   **Well-Child Exams:** Age-specific templates for Bright Futures compliance (Newborn to 21 years).
+
+---
+
+## 🎙️ Hands-Free Clinical Charting
+Spend less time at the computer and more time with the child.
+*   **Ambient SOAP Notes:** WASM-powered voice dictation drafts your pediatric notes in real-time.
+*   **Kid-Friendly UI:** High-speed iPad interface optimized for the dynamic environment of a pediatric exam room.
+
+![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
+
+---
+
+## 🧾 Billing & Insurance Verification
+*   **Pediatric Coding:** Support for 99392–99395 (Preventive) and 90460 (Immunization).
+*   **Real-Time Eligibility:** Instantly verify Medicaid, BCBS, and UHC coverage during check-in.
+*   **Automatic Superbills:** Itemized receipts for out-of-network reimbursement, including all ICD-10/CPT codes.
+
+![Pediatric Billing & Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+---
+
+## 🔐 Security & Compliance
+*   **HIPAA Audit Trails:** Strict tracking of all access to sensitive pediatric records.
+*   **Parental Consent:** Secure digital signatures for treatment and telehealth via BoldSign.
+*   **Offline-First:** Your charts save locally even if the clinic Wi-Fi drops during a busy flu season.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

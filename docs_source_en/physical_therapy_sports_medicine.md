@@ -1,31 +1,62 @@
-# Physical Therapy & Sports Medicine
+# 🏃 Physical Therapy & Sports Medicine
 
-The Synalux Physical Therapy & Sports Medicine module is designed to streamline clinical workflows, enhance patient care, and optimize billing processes. This comprehensive toolset supports therapists and clinicians in delivering high-quality care while maintaining operational efficiency.
+Synalux v11.1 Elite is built for high-performance recovery. From automated Range of Motion (ROM) tracking to evidence-based rehab protocols and Home Exercise Programs (HEP), we provide the tools to get your patients moving again.
 
-## Clinical Templates
+---
 
-Streamlined clinical documentation starts with the use of our robust clinical templates. These include standardized PT evaluation forms, ROM/strength assessment protocols, and functional outcome measures to ensure consistent and thorough patient assessments.
+## 📏 Precision ROM & Strength Tracking
+Measure progress with objective clinical data.
+*   **Active/Passive ROM:** Digital entry for joint-specific degrees with bilateral comparison.
+*   **MMT Scoring:** Standardized Manual Muscle Testing (0-5 scale) with trend tracking.
+*   **Functional Outcomes:** Built-in scoring for LEFS (Lower Extremity Functional Scale) and DASH (Disabilities of the Arm, Shoulder and Hand).
 
-## Billing Codes
+![PT Evaluation & ROM Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/32_physical_therapy.png)
 
-Accurate billing is essential for financial health. The module supports a variety of relevant billing codes, including 97162 (Physical Therapy Evaluation), 97110 (Therapeutic Exercise), 97116 (Gait Training), 97140 (Manual Therapy), and 97530 (Functional Training). This comprehensive coverage ensures that providers can bill accurately for all services rendered.
+---
 
-## Rehab Protocols
+## 🏋️ Automated Home Exercise Programs (HEP)
+Extend the clinic into the patient's home with professional, easy-to-follow exercise guides.
+*   **Visual Guides:** Auto-generated instructions with high-clarity images and videos.
+*   **Sets & Reps:** Customizable frequency and duration for every exercise.
+*   **Portal Access:** Patients can view their HEP and log completions directly from the Secure Patient Portal.
 
-Our module includes detailed rehab protocols tailored to common conditions such as ACL reconstruction, rotator cuff injuries, chronic pain management, and neurologic rehabilitation. These protocols are structured in phased progressions, guiding therapists through each step of the recovery process with precision and consistency.
+![Home Exercise Program Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
-## Outcome Tracking
+---
 
-Continuous monitoring is crucial for evaluating patient progress and adjusting treatment plans accordingly. The module tracks various outcome measures including range of motion in degrees, manual muscle testing (MMT) scores, and functional assessment tools like LEFS and DASH scores, providing a clear picture of each patient's recovery journey.
+## 🏥 Phased Rehab Protocols
+Standardize care for complex post-surgical and orthopedic cases.
+*   **ACL & Rotator Cuff:** Evidence-based, phased progressions (e.g., Phase I: Protection → Phase IV: Return to Sport).
+*   **Neuro Rehab:** Specialized protocols for stroke recovery and chronic neurological conditions.
+*   **Return-to-Play:** Objective criteria for athletes to safely transition back to full competition.
 
-## Home Exercise Programs
+![Rehab Protocol Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
 
-Effortlessly create personalized home exercise programs (HEPs) for your patients with our auto-generated templates. Each program includes detailed instructions complete with images, frequency guidelines, and sets/reps, ensuring that patients can follow their prescribed regimen accurately at home.
+---
 
-## Work Comp / Sports
+## 📝 High-Speed Daily Treatment Notes
+Document your sessions without falling behind.
+*   **Ambient SOAP Notes:** Use voice dictation to capture the patient's subjective report and your objective findings.
+*   **CPT Suggestion Engine:** Automatically identifies codes like 97110 (Exercise), 97116 (Gait), 97140 (Manual), and 97530 (Functional) based on your interventions.
+*   **8-Minute Rule Calc:** Built-in logic to ensure compliant unit billing for Medicare and commercial payers.
 
-The module is equipped to handle the specific requirements of work compensation and sports-related injuries. Features include return-to-play protocols, formal capacity evaluations (FCE) documentation, and work restrictions management, making it easier to navigate these complex cases with confidence.
+![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
-## Insurance
+---
 
-Navigating insurance authorizations and coverage details can be challenging. Our platform supports a range of insurance types including Medicare (with therapy caps), workers' compensation, and personal injury protection (PIP). The module automates the tracking process for insurance authorizations, ensuring that providers stay informed about coverage limits and pre-authorization statuses.
+## 🧾 Workers' Comp & PIP Management
+Navigate complex legal and insurance requirements with ease.
+*   **FCE Documentation:** Comprehensive Functional Capacity Evaluation templates.
+*   **Work Restrictions:** Professional letter generation for employers and case managers.
+*   **Authorization Vault:** Track authorized visits vs. utilized visits for Workers' Comp and PIP cases.
+
+![PT Billing & Insurance Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+---
+
+## 🔐 Security & Compliance
+*   **HIPAA Audit Trails:** Every access to clinical data is tracked and immutable.
+*   **E-Signatures:** Secure digital signatures for evaluations and plans of care via BoldSign.
+*   **Offline-First:** Your notes save locally even if the gym's Wi-Fi is spotty.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

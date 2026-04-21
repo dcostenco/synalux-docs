@@ -1,36 +1,62 @@
-# Team Chat & Communication
+# 💬 Team Chat & Clinical Communication
 
-## Secure Messaging
+Synalux v11.1 Elite keeps your entire practice connected through a high-security, HIPAA-compliant collaboration hub. Coordinate care in real-time, conduct HD video scrums, and share clinical assets securely without ever leaving the platform.
 
-HIPAA-compliant real-time messaging between team members. End-to-end encrypted channels with configurable message retention policies and audit trails.
+---
 
-## Channels & Groups
+## 🔐 HIPAA-Compliant Team Channels
+Keep your practice organized and your patient data private.
+*   **Department Channels:** Dedicated spaces for #clinical, #billing, #front-desk, and #management.
+*   **Threaded Conversations:** Stay focused on specific topics without cluttering the main channel.
+*   **Urgent Mentions:** Use @urgent to trigger immediate notifications for time-sensitive clinical alerts.
 
-Create topic-based channels (e.g., #clinical, #billing, #urgent) and direct message groups. Channel-level access controls for sensitive clinical discussions.
+![Team Chat Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
 
-## File Sharing
+---
 
-Share documents, images, and clinical resources within chat. Files inherit workspace-level encryption and access controls for HIPAA compliance.
+## 📹 Enterprise Video Scrums (LiveKit SFU)
+Conduct high-definition telehealth and team meetings with rock-solid stability.
+*   **Massive Capacity:** Support for 25+ concurrent participants with crystal-clear 1080p FHD video.
+*   **Bandwidth Optimized:** Our SFU architecture ensures you only upload 1 stream, no matter how many people are in the room.
+*   **Active-Speaker Routing:** The UI dynamically highlights the person speaking and dims background participants to save your CPU.
 
-## Notifications
+![HD Video Conference Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/telehealth_conference_ui.png)
 
-Configurable notification preferences per channel. @mentions, urgent flags, and do-not-disturb scheduling for work-life balance and emergency escalation.
+---
 
-## Enterprise Video Calls (LiveKit SFU)
+## 📂 Secure Clinical File Sharing
+Share the right information with the right people, instantly.
+*   **Contextual Sharing:** Forward a treatment plan or lab result directly into a billing or clinical channel.
+*   **Encryption at Rest:** Every file shared in chat is secured with AES-256-GCM and inherits workspace RLS policies.
+*   **Mobile Review:** Clinicians can securely view X-rays, photos, and PDFs on their tablets during sessions.
 
-Synalux Enterprise utilizes a state-of-the-art **Selective Forwarding Unit (SFU)** powered by LiveKit to provide seamless, high-definition real-time communication (RTC) across both the Next.js Web Portal and the native VS Code Extension Webview. 
+![Clinical Asset Sharing](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
 
-### 📊 Enterprise Capacity & Quotas
+---
 
-| Feature | Synalux Standard | Synalux Enterprise | Notes |
-| :--- | :--- | :--- | :--- |
-| **Concurrent Participants** | Up to 8 per room | **25+ (Scales to 100)** | Fully supports large clinical scrums and all-hands. |
-| **Daily Call Limits** | Unlimited | **Unlimited** | No hard caps on daily connection generation. |
-| **Maximum Call Duration** | Unlimited | **Unlimited** | JWT tokens are seamlessly refreshed in the background. |
-| **Video Resolution** | 720p HD | **1080p FHD** | Handled dynamically via WebRTC Simulcast. |
-| **Upstream Bandwidth** | `O(1)` | **`O(1)`** | Users upload exactly **1** stream, regardless of room size. |
+## 🔄 Cross-Practice Collaboration
+Bridge the gap between your branches and external partners.
+*   **Referral Threads:** Dedicated chat groups for coordinating care with external specialists.
+*   **HQ Announcements:** Broadcast critical organization-wide updates to all branches simultaneously.
+*   **Global Directory:** Quickly find and message providers and staff across your entire enterprise network.
 
-### 🔒 Cross-Practice Data Isolation
-Room generation is cryptographically bound:
-* **Workspace Channels:** Rooms are strictly generated as `ws_${workspaceId}_channel_${channelId}`.
-* **Encrypted Direct Messages:** Cross-practice DMs utilize an isolated `dm_thread_${channelId}` nomenclature, ensuring isolated 1-on-1 calls without compromising workspace-level ACLs.
+![Global Practice Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+
+---
+
+## 📊 Capacity & Performance
+| Feature | Synalux Standard | Synalux Enterprise |
+| :--- | :--- | :--- |
+| **Room Capacity** | 8 Participants | **25+ (Scales to 100)** |
+| **Daily Call Volume** | Unlimited | **Unlimited** |
+| **Video Resolution** | 720p HD | **1080p FHD** |
+| **Network Impact** | Mesh (Heavy) | **SFU (Lightweight)** |
+
+---
+
+## 🔐 Security & Compliance
+*   **Zero-PHI Notifications:** Email and push alerts never contain patient names or sensitive data.
+*   **Access Expiration:** Temporary staff (e.g., interns) are automatically removed from channels on their end-date.
+*   **Tamper-Proof Logs:** A permanent, searchable audit trail of every message and file access.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

@@ -1,27 +1,62 @@
-# Patient Portal
+# 🏥 Secure Patient Portal
 
-The Synalux Patient Portal is a comprehensive platform designed to enhance patient engagement and streamline communication with healthcare providers. This full-featured portal offers seamless access to essential health information, secure messaging capabilities, document management, appointment scheduling, and billing services.
+Synalux v11.1 Elite empowers your patients to take control of their healthcare journey. Our secure, mobile-optimized portal provides a seamless bridge between the patient and the clinical team—reducing administrative friction and improving care outcomes.
 
-## Authentication
-Access to the Patient Portal is secured through a robust authentication mechanism that utilizes SHA-256 hashed access codes for login. Additionally, the system includes expiration tracking to ensure security and compliance with best practices in patient data protection.
+---
 
-## Dashboard
-The intuitive dashboard provides patients with a health overview at a glance, highlighting key information such as upcoming appointments, unread messages from providers, pending documents requiring review or signature, and any outstanding balance due. This feature enables proactive management of healthcare activities and finances.
+## 📱 Mobile-First Patient Experience
+Patients can manage their health from any device, anywhere. No app download required.
+*   **One-Click Login:** Secure access via practice-issued codes with SHA-256 hashing.
+*   **Intuitive Dashboard:** A single view for upcoming appointments, unread messages, and pending tasks.
+*   **Real-Time Alerts:** Push notifications (via browser) for new test results or appointment reminders.
 
-## Messaging
-Patients can engage in threaded conversations directly with their healthcare providers through the secure messaging system. The portal includes urgent message flags to prioritize critical communications and read receipts for confirmation of message delivery. This ensures effective and timely communication between patients and their care teams.
+![Patient Portal Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
-## Documents
-The Document section allows patients to view and download clinical documents related to their health, including test results, treatment plans, and discharge summaries. Patients can also upload important insurance cards and additional forms directly through the portal, streamlining administrative processes and reducing paperwork.
+---
 
-## Appointments
-In the Appointments module, patients have access to a list of upcoming and past visits with their providers. They can request new appointments at preferred times using an easy-to-use scheduling tool, enhancing convenience and patient satisfaction.
+## ✍️ Digital Intake & Consents
+Eliminate the clipboard. Collect everything before the patient walks through the door.
+*   **Smart Forms:** Mobile-friendly intake, PHQ-9/GAD-7, and Vanderbilt questionnaires.
+*   **E-Signatures:** Legally-binding digital signatures for HIPAA, Telehealth, and Financial policies via BoldSign.
+*   **Document Upload:** Patients can securely snap and upload photos of insurance cards and prior records.
 
-## Billing
-The Billing feature provides detailed billing information, including current balance and payment history broken down by CPT codes for transparency. Patients may pay bills online via Stripe integration or set up convenient payment plans to manage their financial obligations with ease. Receipts are readily available for all transactions, ensuring complete traceability.
+![Patient Portal Onboarding](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
 
-## Forms
-The portal includes an integrated forms section where patients can complete essential intake forms, mental health assessments like the PHQ-9 and GAD-7 questionnaires, and consent forms directly online. This not only saves time but also ensures that all necessary information is accurately captured and readily available to healthcare providers.
+---
 
-## Consents
-The Digital Consent Management feature facilitates the electronic signing of various types of consents, including treatment, HIPAA, telehealth, medication management, and research participation agreements. This modern approach simplifies the consent process, reduces paperwork, and enhances patient convenience while maintaining compliance with relevant regulations.
+## 💬 Secure Clinical Messaging
+Threaded, HIPAA-compliant communication that keeps the conversation professional and private.
+*   **Provider Threads:** Dedicated channels for clinical questions, refill requests, and billing inquiries.
+*   **Read Receipts:** Peace of mind for patients knowing their message was seen.
+*   **Urgent Flags:** Automated prioritization for messages containing safety-critical keywords.
+
+![Patient Messaging Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
+
+---
+
+## 💳 Billing & Online Payments
+Transparent financial management that improves collection rates.
+*   **Stripe Integration:** Secure, one-click payments for copays and self-pay balances.
+*   **Payment Plans:** Automated installments for high-value dental or orthodontic procedures.
+*   **Itemized Statements:** Clear breakdown of charges with CPT/CDT codes for patient records.
+
+![Patient Billing & Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+---
+
+## 📅 Scheduling & Requests
+Reduce no-shows and fill your calendar with easy appointment management.
+*   **Request New Visits:** Patients select their preferred dates and times for staff approval.
+*   **Visit History:** Full visibility into past and upcoming appointments with specific providers.
+*   **Preparation Guides:** Automated instructions sent to the portal before specialized procedures (e.g., surgery prep).
+
+![Patient Scheduling Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png)
+
+---
+
+## 🔐 Privacy & Trust
+*   **Encryption at Rest:** All portal data is secured with AES-256-GCM encryption.
+*   **Access Expiration:** Secure codes automatically expire after use or timeout to prevent unauthorized access.
+*   **Audit Trail:** Patients can see a log of when their records were accessed, ensuring full transparency.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

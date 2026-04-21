@@ -1,23 +1,62 @@
-# Timesheets & Payroll Module
+# ⏱️ Timesheets & Payroll Integration
 
-The Timesheets & Payroll Module streamlines the process of timesheet management and payroll processing, ensuring accuracy, efficiency, and compliance with labor laws.
+Synalux v11.1 Elite bridges the gap between clinical work and financial compensation. By automatically generating timesheets from signed session notes, we eliminate manual entry errors, reduce fraud, and ensure your team is paid accurately and on time.
 
-## Auto-Generation
+---
 
-Timesheets are automatically generated from signed clinical session notes, eliminating the need for manual data entry. This feature not only saves time but also reduces the likelihood of human error in recording hours worked.
+## ⚡ Auto-Generated from Clinical Notes
+Stop chasing staff for their hours. Timesheets build themselves as the work is done.
+*   **Sign-off Trigger:** The moment a provider signs a clinical note, the session duration is instantly logged to their timesheet.
+*   **Verification:** Timestamps are captured from the provider's device (Offline-First) ensuring accuracy even without Wi-Fi.
+*   **Fraud Prevention:** Sessions cannot be logged without a corresponding clinical record or appointment.
 
-## Non-Billable Time
+![Clinical Session Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
-The module allows employees to track non-billable activities such as admin time, drive time, training sessions, and clinic preparation. This ensures that all work is accounted for accurately, providing a comprehensive view of an employee's day.
+---
 
-## Approval Workflows
+## 🚗 Tracking Non-Billable Time
+Account for every minute of the work day, not just face-to-face time.
+*   **Administrative Tasks:** Log time for report writing, emails, and phone calls.
+*   **Drive Time & Mileage:** Integrated tracking for home-based providers (essential for ABA and Mobile Health).
+*   **Training & Prep:** Record hours for mandatory HIPAA training or clinic preparation.
 
-A robust approval workflow system is integrated into the module, facilitating a seamless process from employee submission to supervisor review and finally to payroll processing. This multi-step verification helps maintain data integrity and accountability.
+![Staff Dashboard View](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
 
-## Payroll Export
+---
 
-Timesheets can be exported directly to popular payroll services including ADP, Gusto, and Paycom. The native integration simplifies the export process, saving time and effort in preparing payroll data for payment.
+## 🔄 Multi-Step Approval Workflows
+Ensure data integrity with a professional supervisor review process.
+*   **Staff Submission:** Employees review and submit their weekly or bi-weekly blocks.
+*   **Supervisor Audit:** Clinical directors compare timesheets against clinical data in one view.
+*   **Payroll Lock:** Once approved, timesheets are locked to prevent unauthorized changes before export.
 
-## Compliance
+![Timesheet Approval Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
-The Timesheets & Payroll Module includes features designed to ensure compliance with labor laws. It provides warnings for 40-hour workweeks to help manage overtime effectively, tracks mandatory breaks to comply with state regulations, and allows visibility into PTO accruals to prevent overuse of time off.
+---
+
+## 📤 Native Payroll Exports
+Export your data directly to the industry's most popular payroll providers.
+*   **ADP & Gusto:** One-click CSV or API export formatted exactly for your provider.
+*   **Paycom Integration:** Full support for multi-department and multi-state labor codes.
+*   **Custom Templates:** Create your own export format for local or specialized accounting software.
+
+![Global Financial Roll-up](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+---
+
+## ⚖️ Labor Compliance & PTO
+Protect your practice from overtime surprises and labor disputes.
+*   **Overtime Alerts:** Automated warnings when a staff member approaches the 40-hour threshold.
+*   **Mandatory Breaks:** Tracking and alerts for state-mandated rest and meal periods.
+*   **PTO Accrual:** Real-time visibility for staff into their earned vacation and sick leave balances.
+
+![HR Compliance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
+
+---
+
+## 🔐 Security & Audit
+*   **Immutable Logs:** Every edit to a timesheet is logged with the reason and the author's ID.
+*   **Role-Based Access:** Front-line staff can only see their own timesheets; managers see their department.
+*   **Financial Audit Trail:** 7-year retention of all payroll-related data for tax and legal compliance.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

@@ -1,25 +1,63 @@
-# Dental & Orthodontics
+# 🦷 Dental & Orthodontics
 
-## Clinical Templates
-The Synalux platform provides comprehensive clinical templates designed to streamline your workflow. These templates cover essential aspects such as comprehensive exams, periodontal charting, treatment planning, and operative notes, ensuring that every patient's journey is meticulously documented.
+Synalux v11.1 Elite provides a specialized clinical suite for modern dental and orthodontic practices. From AI-assisted periodontal charting to multi-phase implant sequencing and automated payment plans, we handle the complexity so you can focus on the smile.
 
-## Billing Codes (CDT)
-Efficient billing is crucial for the success of any dental practice. The Synalux platform supports a range of Common Dental Terminology (CDT) codes including D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), and D8080 (Ortho). This feature ensures that your billing processes are accurate and compliant with industry standards.
+---
 
-## Treatment Sequencing
-For complex cases, Synalux offers robust treatment sequencing capabilities. You can create multi-phase treatment plans that outline each step of the process in detail. For example, a typical plan might involve a root canal followed by a crown and then scheduled follow-up appointments to monitor progress.
+## 🦷 Precision Periodontal Charting
+Capture every pocket depth and recession value with speed and accuracy. 
+*   **6-Site Probing:** Comprehensive recording for every tooth.
+*   **BOP & Furcation Tracking:** Visual indicators for bleeding on probing and furcation involvement.
+*   **Comparison Views:** Instantly compare current charting with historical data to track bone loss or healing.
 
-## Ortho Management
-Orthodontic care requires regular attention and adjustments. The Synalux platform facilitates monthly orthodontic adjustments with ease. It also offers flexible payment plans starting at $194 per month for up to 18 months, making high-quality orthodontic treatment accessible to more patients. Progress tracking is seamless, allowing you to monitor patient progress in real-time.
+![Dental Perio Charting](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33.png)
+*(Note: Placeholder for actual Perio UI)*
 
-## Implant Workflow
-Managing implant cases involves multiple phases from surgical planning to prosthesis placement. Synalux supports guided surgery and tracks each phase of the implant workflow including healing abutment stages, ensuring that every step is meticulously planned and executed.
+---
 
-## Perio Charting
-Periodontal charting is crucial for accurate assessment and management of gum disease. The Synalux platform includes detailed perio charting features such as SRP quadrant tracking, pocket depths, and bone loss classification, providing you with the tools necessary to perform comprehensive periodontal evaluations.
+## 🏗️ Multi-Phase Implant Sequencing
+Manage complex implant cases from initial surgical planning to final prosthesis.
+*   **Surgical Phase:** Track implant fixture placement, torque values, and healing abutment sizes.
+*   **Restorative Phase:** Manage impressions, lab tracking for custom abutments, and final crown delivery.
+*   **Lab Integration:** Real-time status updates for your preferred dental labs.
 
-## Payment Plans
-Handling high-value procedures can be streamlined with Synalux's Stripe-powered installment plans. These autopay options make it easier for patients to manage their payments, ensuring that they receive the care they need without financial burden.
+![Implant Workflow](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+*Managing surgical and restorative components in the clinical vault.*
 
-## Insurance
-Navigating insurance claims can be challenging but Synalux simplifies the process by integrating support for major insurers such as Delta Dental, MetLife, and Cigna. The platform tracks annual maximums and offers pre-determination capabilities, helping you manage insurance-related tasks more efficiently.
+---
+
+## 🦷 Orthodontic Journey Manager
+Scale your ortho practice with automated adjustment tracking and recurring billing.
+*   **Monthly Adjustments:** One-click recording of wire changes, elastics, and progress.
+*   **Photo Tracking:** Securely store and compare intra-oral photos across the 18-24 month treatment plan.
+*   **Ortho Payment Plans:** Automated Stripe-powered installments (e.g., $194/mo) with zero-touch reconciliation.
+
+![Ortho Progress Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
+
+---
+
+## 📋 Comprehensive Treatment Planning
+Present clear, sequenced plans to patients that improve case acceptance.
+*   **CDT Integration:** Pre-loaded with D0150, D0210, D2740, D3330, D6010, and D8080.
+*   **Priority Phases:** Group treatments into Urgent, Disease Control, and Corrective phases.
+*   **Pre-Determinations:** Send electronic pre-auths to Delta Dental, MetLife, and Cigna instantly.
+
+![Treatment Planning Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+
+---
+
+## 💳 High-Value Financial Management
+*   **Stripe Installments:** Offer patients flexible "Pay Over Time" options for crowns and implants.
+*   **Annual Max Tracking:** Real-time visibility into the patient's remaining insurance benefits.
+*   **Superbills:** Automated generation of CDT-compliant receipts for out-of-network reimbursement.
+
+![Dental Billing & Cross-Border Finance](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+---
+
+## 🔐 Compliance & Patient Safety
+*   **Medication Alerts:** System-wide warnings for patients on blood thinners or bisphosphonates.
+*   **Consent Vault:** Digital signatures for extractions, bone grafts, and surgical procedures via BoldSign.
+*   **HIPAA Audit Trail:** Every radiograph view and chart note is tracked and timestamped.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

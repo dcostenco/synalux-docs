@@ -1,35 +1,61 @@
-# Dermatology
+# 🔬 Dermatology
 
-The Synalux Dermatology module is designed to streamline clinical workflows, enhance patient care, and ensure compliance with best practices in dermatological treatment. Here are the key features that make this module an indispensable tool for dermatologists:
+Synalux v11.1 Elite provides a visually-driven clinical suite for modern dermatology. From high-resolution photo documentation and full-body lesion mapping to automated iPLEDGE and biologics tracking, we ensure clinical precision for every patient.
 
-## Clinical Templates
+---
 
-Tailored to meet the specific needs of dermatological practice, the clinical templates include comprehensive forms for skin exams, biopsy reports, pathology tracking, and phototherapy logs. These templates ensure consistency and accuracy in documentation, facilitating efficient patient management.
+## 🔍 Full-Body Lesion Mapping
+Track every mole, lesion, and biopsy with anatomical precision.
+*   **Interactive Body Map:** Pin lesions on a 3D-rotatable anatomical model.
+*   **ABCDE Criteria:** Built-in templates for melanoma screening with dermoscopy integration.
+*   **Comparison Engine:** Side-by-side photo comparison to monitor lesion changes over months or years.
 
-## Billing Codes
+![Dermatology Body Mapping](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/34_dermatology.png)
 
-The module supports accurate billing with a selection of relevant codes including 99214 (Office visit), 11102 (Biopsy), 17000 (Cryotherapy), and 96401 (Chemo SC/IM). This feature simplifies the billing process, reducing errors and ensuring timely reimbursement.
+---
 
-## Melanoma Screening
+## 🧪 Biopsy & Pathology Tracking
+Close the loop on every specimen.
+*   **Specimen Logs:** Track every biopsy from the operatory to the lab (Quest/LabCorp).
+*   **Pathology Correlation:** Auto-import pathology results and correlate them with clinical photos.
+*   **Abnormal Alerts:** Immediate notification for malignant or atypical pathology findings.
 
-Enhance your melanoma screening protocols with full-body mapping capabilities, detailed dermoscopy documentation, and adherence to the ABCDE criteria. These tools aid in early detection and accurate diagnosis, crucial for effective patient care.
+![Biopsy & Lab Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
 
-## Accutane (iPLEDGE) Management
+---
 
-The Accutane management feature includes automated scheduling of monthly labs such as CBC, LFT, and lipid tests, as well as pregnancy testing. It also ensures compliance with the iPLEDGE program requirements, providing a streamlined approach to managing patients on this medication.
+## 💊 Biologics & Accutane (iPLEDGE)
+Manage high-complexity medication regimens with automated compliance.
+*   **iPLEDGE Dashboard:** Monthly lab tracking (CBC, LFT, pregnancy) with automated reminders.
+*   **Biologics Vault:** Track Humira, Dupixent, and Skyrizi dosing, injection sites, and prior authorizations.
+*   **Phototherapy Logs:** Integrated recording of UV doses and treatment response.
 
-## Biologics Management
+![Medication & Biologics Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
-Streamline biologics administration with tools for Humira/Dupixent dosing, prior authorization management, injection scheduling, and phototherapy logs. These features help maintain accurate records and comply with insurance guidelines.
+---
 
-## Photo Documentation
+## 📝 High-Speed Derm SOAP Notes
+Document complex skin exams in seconds.
+*   **Ambient Voice Dictation:** WASM-powered voice engine drafts your notes while you perform the exam.
+*   **Derm-Specific Keywords:** Use `@biopsy`, `@cryo`, or `@skinexam` to trigger pre-formatted clinical instructions.
+*   **Tab-to-Accept:** Ghost-text for common morphology descriptions (e.g., "well-demarcated erythematous plaque...").
 
-Track lesion progression before and after treatment with ease using the photo documentation feature. The module also supports body map annotations, providing a visual record of patient conditions over time.
+![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
-## Lab Integration
+---
 
-Seamlessly integrate lab orders for Quest or LabCorp directly from the Synalux platform, ensuring timely submission. Additionally, results are automatically imported into the system, saving valuable time and improving workflow efficiency.
+## 🧾 Billing & Prior Authorizations
+*   **Surgical Coding:** Direct support for 11102 (Biopsy), 17000 (Cryotherapy), and complex repairs.
+*   **Auth Tracking:** Monitor biologic prior authorizations and renewal dates in real-time.
+*   **Patient Payments:** Offer Stripe-powered payment plans for cosmetic procedures.
 
-## Insurance Management
+![Dermatology Billing Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
-The insurance management tools include automated prior authorization requests for biologics, step therapy documentation, and appeal templates. These features help navigate insurance requirements smoothly, minimizing administrative burden and maximizing patient care quality.
+---
+
+## 🔐 Security & Compliance
+*   **HIPAA Photo Security:** All clinical photos are encrypted at rest and never stored in the device's camera roll.
+*   **E-Signatures:** Secure consent for biopsies and surgical procedures via BoldSign.
+*   **Full Audit Trail:** Every photo view and chart edit is tracked and timestamped.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

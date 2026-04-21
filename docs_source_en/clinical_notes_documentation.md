@@ -1,22 +1,62 @@
-# Clinical Notes & Documentation
+# 📝 Intelligent Clinical Documentation
 
-## SOAP Notes
-Leverage our advanced AI technology to transform voice dictation into detailed SOAP notes using specialty-specific templates, ensuring accuracy and efficiency in documenting patient care.
+Synalux v11.1 Elite transforms the clinical note from a chore into an automated byproduct of your session. Our WASM-powered voice engine and specialty-specific templates ensure 100% documentation compliance with zero cloud PHI transmission.
 
-## Voice Dictation
-Experience seamless and secure transcription with on-device processing powered by WASM Whisper. Your sensitive patient health information (PHI) remains confidential as it is never transmitted to the cloud.
+---
 
-## 4 Note Templates
-Streamline your documentation process with a selection of four tailored note templates designed for different clinical scenarios: Therapy Session, Progress Note, Initial Evaluation, and Discharge Summary.
+## 🎙️ Ambient SOAP Notes (AI-Assisted)
+Spend your session looking at the patient, not the screen.
+*   **Automatic Structuring:** Our engine identifies Subjective, Objective, Assessment, and Plan components from your conversation.
+*   **Specialty-Specific Logic:** Notes are tailored for ABA, Mental Health, Pediatrics, Dental, and PT/OT.
+*   **WASM Whisper Engine:** All transcription happens locally on your device. Audio never leaves your room.
 
-## Documents
-Access and manage all essential documents within your workspace scope. This includes lab results, imaging reports, consent forms, assessments, and treatment plans, providing you with quick access to the information you need.
+![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
-## PDF Export
-Ensure data integrity and security during export by utilizing server-side rendering for generating PDFs. This method prevents any potential leakage of patient health information on the client side.
+---
 
-## E-Signatures
-Simplify the signing process with our integration of BoldSign, offering a secure platform to manage e-signatures across seven different document templates.
+## 📄 Professional Clinical Templates
+Standardize care across your entire practice with high-fidelity templates.
+*   **Therapy Session:** Detailed tracking of interventions and patient response.
+*   **Initial Evaluation:** Comprehensive intake with medical history and diagnostic impressions.
+*   **Progress Note:** Outcome-focused summaries for insurance authorization.
+*   **Discharge Summary:** Final transition planning and aftercare instructions.
 
-## OCR
-Effortlessly digitize intake forms and other documents using our Optical Character Recognition (OCR) technology. Capable of processing over 30 languages, this feature accelerates data entry and ensures accuracy in patient record management.
+![SOAP Note Template Example](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+
+---
+
+## 🖊️ Secure E-Signatures (BoldSign)
+Close the loop on consent and compliance with integrated digital signatures.
+*   **One-Click Signing:** Send documents directly to the patient's phone or tablet for an instant signature.
+*   **7+ Document Types:** Ready-to-use templates for HIPAA, Telehealth, and Financial policies.
+*   **Automatic Filing:** Signed documents are instantly vaulted in the patient's Practice Drive.
+
+![E-Signature Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/09_esignature.png)
+
+---
+
+## 📂 The Practice Drive
+A centralized, HIPAA-compliant vault for every clinical asset.
+*   **Lab & Imaging:** Securely store and view high-resolution X-rays, photos, and lab reports.
+*   **OCR Digitization:** Convert paper intake forms into searchable digital data in 30+ languages.
+*   **Secure PDF Export:** Generate professional, branded PDFs for referrals and insurance audits.
+
+![Practice Drive Document Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+
+---
+
+## ⚡ @Keyword Acceleration
+Speed up your typing with intelligent, context-aware commands.
+*   **Expansion Logic:** Type `@soap` or `@mse` to instantly expand pre-formatted clinical sections.
+*   **Ghost Text:** Tab-to-accept completions for common medical and behavioral phrases.
+
+![Intelligent Assistant & @Keywords](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/30_intelligent_assistant.png)
+
+---
+
+## 🔐 Security & Compliance
+*   **No Cloud PHI:** Clinical audio and raw transcriptions are processed locally—never sent to external AI servers.
+*   **Immutable Audit Trail:** Every note creation, edit, and sign-off event is permanently logged.
+*   **Role-Based Gating:** Ensure sensitive psychotherapy or psychiatric notes are only visible to authorized providers.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)

@@ -1,56 +1,56 @@
-# Offline-First Clinical Sessions
+# 📴 Offline-First Clinical Workflow
 
-The Offline-First Clinical Sessions module is designed to ensure continuity and accuracy in clinical workflows, even when internet connectivity is inconsistent. This module captures essential data locally on the provider's device and syncs it with the server once a connection is re-established. Below are detailed descriptions of each feature:
+Synalux v11.1 Elite is built for the real world. Whether you're in a rural clinic with spotty Wi-Fi or a hospital basement with zero signal, our offline-first engine ensures your data is saved instantly and synced securely the moment you're back online.
 
-## Client-Side Timestamps
-Session start and end times are captured on the provider's device using client-side timestamps. These timestamps are critical for billing purposes, as they reflect the actual start and end times of the clinical session rather than the time at which data was received by the server.
+---
 
-## Offline Queue
-When a connection to the server is lost, events are automatically queued in the browser's localStorage. As soon as connectivity is restored, these queued events are synced with the server, ensuring that no data is lost during offline periods.
+## ⚡ Zero-Data-Loss Drafting
+Type with confidence knowing every keystroke is protected.
+*   **Local Persistence:** Clinical notes are saved to your device's secure local storage as you type.
+*   **Crash Recovery:** If your browser or tablet crashes, your draft is waiting for you exactly where you left off.
+*   **Real-Time Status:** A subtle indicator in the sidebar shows your current sync status and the number of pending items.
 
-## Draft Persistence
-Clinical notes are automatically saved to localStorage every time a keystroke is made. This feature ensures that all work is preserved even if the provider experiences a browser crash or connection loss, maintaining the integrity of the clinical documentation process.
+![Offline Sync Status Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/offline_sync_ui.png)
 
-## Session Sign-Off
-Providers are required to sign off at the end of each session. The timestamp recorded during this sign-off action serves as the accurate billing endpoint for the session, ensuring compliance with billing standards.
+---
 
-### Decoupling Calendar from Session State (Clinical Overtime)
-To handle real-world clinical unpredictability (e.g., crisis intervention causing a 45-minute session to run 90 minutes), the system treats the calendar strictly as a guideline, not a kill-switch. There is **no forced sync or sign-off tied to the scheduled end time**. The clinical session state (`in_progress`) remains active indefinitely until the provider explicitly clicks "End Session" or the absolute inactivity timeout triggers. The billing module later compares the scheduled time vs. the actual time and automatically suggests appropriate extended CPT modifiers (e.g., prolonged service codes) during Superbill generation.
+## 🕒 Precision Billing (Client-Side Timestamps)
+Capture accurate session durations for 100% billing compliance.
+*   **Real Start/End Times:** We record timestamps from your device, not when the server receives the data.
+*   **Clinical Overtime:** The calendar is a guide, not a switch. Sessions stay active until you explicitly sign off.
+*   **Sync Transparency:** Admins see both the clinical event time and the server sync time in the audit log.
 
-## Admin Audit
-Each event in a clinical session is marked with an indicator showing whether it occurred online (🟢) or offline (🔴). Additionally, timestamps for both client-side events and server syncs are logged, providing administrators with detailed audit trails for review.
+![Clinical Session Lifecycle Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
-## Connection Monitor
-A real-time connection status monitor is displayed in the sidebar. It shows a 🟢/🔴 status indicating whether the device is currently connected to the server and includes a badge that displays the count of pending sync items.
+---
 
-## HIPAA Cleanup & Emergency Session Auto-Quarantine (ESAQ)
-To resolve the conflict between HIPAA's strict "no plaintext PHI on unattended device" rule (§164.312(a)(2)(iv)) and the need to prevent data loss during an emergency (e.g., laptop battery dies, browser idles out), Synalux employs an **Asymmetric Emergency Vault** mechanism.
+## 🛡️ Emergency Session Auto-Quarantine (ESAQ)
+Maintain HIPAA compliance even during an unexpected timeout or battery failure.
+*   **Asymmetric Vaulting:** If your device idles out while offline, your drafts are instantly encrypted using a server-only public key.
+*   **Zero-Plaintext:** Sensitive PHI is purged from your browser's readable memory, leaving only an encrypted "emergency vault" blob.
+*   **Recovery Sync:** Log back in on any device to securely restore and complete your quarantined sessions.
 
-Upon logout or after a 15-minute idle timeout, all local data is securely processed before purging:
+---
 
-1. **Online Timeout (Quarantine State):** If the device is online when the timeout fires, it executes a beacon payload to a secure endpoint containing the unsynced drafts, tagged with the `last_active_timestamp`. The server saves this session with a `QUARANTINED` status. The Admin can then log in, review the Draft, confirm the actual end-time with the provider based on the last known activity, and manually sign off to release it for billing.
-2. **Offline Timeout (Asymmetric Emergency Vault):** If the device is offline, the app uses the native WebCrypto API to encrypt the existing offline queue entirely using a Server Public Key loaded during initial login (RSA-OAEP). The encrypted blob is stored as an `emergency_vault` in localStorage, and all readable PHI texts are immediately purged. This cryptographically seals the data from any malicious local actor.
-3. **Recovery Sync:** When the provider regains connectivity and logs back in, the app syncs the encrypted blob to the server, where it is decrypted using the Server Private Key and transitioned into the `QUARANTINED` state for Admin review.
+## 🎙️ Audio-Aware Idling
+Stay logged in during long patient conversations without touching your device.
+*   **Mic Detection:** If WASM Whisper is active and listening, the system prevents idle timeouts entirely.
+*   **Hands-Free Liberty:** Focus 100% on the patient—your session won't time out as long as the conversation continues.
 
-### Audio-Aware Idling (False Inactivity Safeguard)
-In therapy or psychiatric evaluations, a provider might actively converse with a patient for 30 minutes without touching the keyboard. To prevent false idle timeouts, Synalux features Audio-Aware Idling. If the microphone is active and capturing audio (e.g., via WASM Whisper dictation), continuous audio input counts as continuous user activity, preventing the 15-minute timeout entirely. If the mic is off, an audible chime and modal appear at the 14-minute mark to warn the provider.
+![Ambient Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
-## Idempotent Sync
-To prevent duplicate entries during the sync process, each event is assigned a unique client-generated UUID (Universally Unique Identifier). This mechanism ensures that only new or modified data is synced with the server, maintaining data integrity and preventing redundancy.
+---
 
-## Time Drift Detection
-The system logs any discrepancies between client-side timestamps and server timestamps. These logs are used for audit purposes to detect and address any time drift issues that may affect the accuracy of clinical session records.
+## 🔄 Idempotent Background Sync
+*   **Smart Reconciliation:** Our sync engine prevents duplicate records even if you switch devices mid-session.
+*   **Conflict Resolution:** If a note is edited on two devices, Synalux helps you choose the correct version.
+*   **Time Drift Logic:** Automated detection and correction of device clock inaccuracies for audit integrity.
 
-## Session Lifecycle
-The lifecycle of a clinical session is represented by a series of states: `session_start`, `session_pause`, `session_resume`, and `session_end`. This structured approach helps in accurately tracking the progression of sessions, from initiation to completion.
+---
 
-**Billing Compliance Example:**
-```
-Provider starts session at 2:00 PM (online) → 🟢
-Connection drops at 2:30 PM
-Provider ends session at 3:45 PM (offline) → 🔴 client_timestamp = 3:45 PM
-Connection restores at 4:00 PM → auto-sync
-Server records: client_timestamp = 3:45 PM, sync_timestamp = 4:00 PM
-↓
-Insurance billed: session 2:00 PM – 3:45 PM (accurate)
-Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
+## 🔐 Security & Audit
+*   **RSA-2048 Encryption:** Offline data is secured with industry-standard asymmetric encryption.
+*   **Immutable Logs:** Every 🟢 Online and 🔴 Offline event is tracked with its original device ID.
+*   **Role-Based Gating:** Access to offline drafts is restricted to the original author and authorized clinical directors.
+
+![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
