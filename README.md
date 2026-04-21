@@ -1163,6 +1163,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 🧪 Lab Orders & Results Module
 
+![Lab Orders](docs/demo/21_pharmacy.png)
+
 🔗 **[Read Detailed Lab Orders & Results Module Documentation](docs_source_en/lab_orders_results_module.md)**
 
 - **Lab Orders:** Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat)
@@ -1196,6 +1198,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 💊 Medications & Prescriptions Module
 
+![Medications & Prescriptions](docs/demo/21_pharmacy.png)
+
 🔗 **[Read Detailed Medications & Prescriptions Module Documentation](docs_source_en/medications_prescriptions_module.md)**
 
 - **Drug Catalog:** 12+ medications with NDC codes, drug classes, schedules, routes, common doses
@@ -1223,6 +1227,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### 📊 Vitals & Measurements Module
 
+![Vitals & Measurements](docs/demo/02_patient_dashboard.png)
+
 🔗 **[Read Detailed Vitals & Measurements Module Documentation](docs_source_en/vitals_measurements_module.md)**
 
 - **Standard Vitals:** BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI
@@ -1248,6 +1254,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 
 ### ⚠️ Allergies & Alerts Module
 
+![Allergies & Alerts](docs/demo/02_patient_dashboard.png)
+
 🔗 **[Read Detailed Allergies & Alerts Module Documentation](docs_source_en/allergies_alerts_module.md)**
 
 - **Allergen Types:** Drug, food, environmental, latex, contrast, other
@@ -1272,6 +1280,8 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 </details>
 
 ### 💉 Immunizations Module
+
+![Immunizations](docs/demo/02_patient_dashboard.png)
 
 🔗 **[Read Detailed Immunizations Module Documentation](docs_source_en/immunizations_module.md)**
 
