@@ -1764,3 +1764,24 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 ### Next.js Web Portal (`/portal`)
 * **React Components:** Leverages `@livekit/components-react` for a native, fully responsive `<VideoConference />` grid.
 * Provides the ultimate high-fidelity telehealth experience for administrators and providers operating outside the IDE.
+
+---
+
+## 🏥 Clinical Command Center
+
+Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice Administrators. 
+
+![Dashboard Preview](https://raw.githubusercontent.com/dcostenco/synalux-private/main/portal/public/dashboard-preview.png)
+
+#### Core Modules:
+
+- **📋 Clinical SOAP Generator**: Real-time dictation synthesis with WASM-based local Whisper. Generates insurance-compliant SOAP notes in seconds.
+- **📊 Data Collection & EVV**: Comprehensive clinical data tracking (DTT, Duration, ABC) with integrated Electronic Visit Verification.
+- **🧠 Active Insights**: GRPO-aligned clinical reasoning identifies target mastery and plateaus automatically.
+- **⏱️ Practice Management**: Integrated timesheets, authorizations tracking, and billing claims automation.
+
+![SOAP Generator](https://raw.githubusercontent.com/dcostenco/synalux-private/main/portal/public/soap-notes-preview.png)
+
+---
+
+© 2024–2026 Dmitri Costenco. All rights reserved.
