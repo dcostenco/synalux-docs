@@ -242,22 +242,24 @@ Conversation Mode turns the assistant into a **hands-free, voice-driven clinical
 </details>
 ### 🧠 Model Routing & Tier Architecture
 
-The intelligent assistant does **not** expose a model selector by default. The server automatically routes each request to the best model for the user's subscription tier:
+Synalux uses a **dual-engine architecture** — Prism-Coder handles tool-calling locally, while Gemini handles general LLM tasks (translation, summarization, code generation):
 
-- **Free:** Gemini 2.5 Flash
-- **Standard:** Gemini 3.1 Pro Exp
-- **Advanced:** Gemini 3.1 Pro Exp
-- **Enterprise:** Gemini 3.1 Pro Exp
+- **Tool-Calling (MCP):** 🧠 Prism-Coder 7B (local, all tiers) → ☁️ Cloud Coder fallback (Standard+)
+- **General LLM:** ☁️ Gemini 2.5 Flash (Free) → ☁️ Gemini 3.1 Pro (Standard+)
 
 <details>
 <summary>Click to view full details</summary>
 
-| Tier | Default Model | Max Tokens | Daily Limit | Model Selector Visible |
-|------|--------------|------------|-------------|----------------------|
-| **Free** | Gemini 2.5 Flash | 4,096 | 100 | ❌ Hidden (FloatChat) / ✅ Full chat page |
-| **Standard** | Gemini 3.1 Pro Exp | 8,192 | 2,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
-| **Advanced** | Gemini 3.1 Pro Exp | 16,384 | 5,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
-| **Enterprise** | Gemini 3.1 Pro Exp | 32,768 | 100,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| Tier | 🧠 Tool-Calling Engine | ☁️ Cloud Coder Fallback | ☁️ General LLM | Max Tokens | Daily LLM Limit |
+|------|---|---|---|---|---|
+| **Free** | Prism-Coder 7B (local) | ❌ | Gemini 2.5 Flash | 4,096 | 100 |
+| **Standard** | Prism-Coder 7B (local) | ✅ 100/day | Gemini 3.1 Pro | 8,192 | 2,000 |
+| **Advanced** | Prism-Coder 7B (local) | ✅ 1,000/day | Gemini 3.1 Pro | 16,384 | 5,000 |
+| **Enterprise** | Prism-Coder 7B (local) | ✅ Unlimited | Gemini 3.1 Pro | 32,768 | 100,000 |
+
+> 🧠 **Prism-Coder 7B** is the **preferred default** for all tool-calling. It runs on-device via Ollama with grammar-constrained JSON output (100% validity). Cloud Coder (Standard+) provides the same model hosted on Fireworks AI for users without local GPU.
+>
+> ☁️ **Gemini** handles everything Prism-Coder doesn't: translation, summarization, code generation, document analysis, and creative tasks.
 
 
 **Where the model selector appears:**
