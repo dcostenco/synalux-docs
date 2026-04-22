@@ -123,19 +123,7 @@ Every restriction is driven by **HIPAA compliance** and the principle of **least
 - **Patient data requires API auth:** All PHI access goes through the audited API layer — the assistant cannot bypass audit logging
 - **Role-based tool gating:** If your workspace role allows only 3 tools, the assistant is restricted to those 3 tools — even if the model requests others
 
-<details>
-<summary>Click to view full details</summary>
 
-| Restriction | Reason |
-|------------|--------|
-| **Web assistant has no file access** | A browser-based tool must not read/write the local filesystem — this prevents data exfiltration if a session token is compromised |
-| **VS Code tools are workspace-scoped** | Path traversal (`../../etc/passwd`) is blocked to prevent access to sensitive system files |
-| **URL whitelist for auto-open** | Prevents phishing attacks where a compromised model output could redirect users to malicious sites |
-| **Terminal command blocklist** | Prevents destructive operations that could wipe clinical data or compromise the host |
-| **Patient data requires API auth** | All PHI access goes through the audited API layer — the assistant cannot bypass audit logging |
-| **Role-based tool gating** | If your workspace role allows only 3 tools, the assistant is restricted to those 3 tools — even if the model requests others |
-
-</details>
 <details><summary><h3>🛡️ Three-Layer Safety Architecture</h3></summary>
 
 ```
@@ -173,29 +161,6 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 - **Audit logged:** ✅ Every request
 - **Model selector:** ✅ Full chat page only
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Web Portal (💬) | VS Code Extension |
-|---------|----------------|-------------------|
-| **Available on every screen** | ✅ Yes — pinned bubble | ✅ Yes — sidebar panel |
-| **Conversation Mode (🗣️)** | ✅ Browser TTS + MediaRecorder | ✅ Native avlisten + macOS TTS |
-| **Clinical Q&A** | ✅ | ✅ |
-| **SOAP Dictation** | ✅ On-device Whisper | ✅ On-device Whisper |
-| **Treatment plan drafts** | ✅ | ✅ |
-| **Read local files** | ❌ | ✅ Workspace-scoped |
-| **Run terminal commands** | ❌ | ✅ With blocklist |
-| **Git operations** | ❌ | ✅ Full git tooling |
-| **Supabase CLI** | ❌ | ✅ Direct CLI access |
-| **Stripe CLI** | ❌ | ✅ Direct CLI access |
-| **Code search (ripgrep)** | ❌ | ✅ Workspace-scoped |
-| **Web page reading** | ❌ | ✅ With URL whitelist |
-| **Practice memory (Prism)** | ✅ Cloud-synced | ✅ Cloud-synced |
-| **Offline mode** | ✅ Queued sync | ✅ Local Ollama fallback |
-| **Audit logged** | ✅ Every request | ✅ Every request |
-| **Model selector** | ✅ Full chat page only | ✅ Settings panel |
-
-</details>
 ### 🗣️ Conversation Mode (Hands-Free Voice Chat)
 
 Conversation Mode turns the assistant into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Assistant, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
@@ -203,14 +168,14 @@ Conversation Mode turns the assistant into a **hands-free, voice-driven clinical
 **How it works:**
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  🎤 Listen   │ ──→ │ 📝 Transcribe │ ──→ │ 💬 Chat API  │ ──→ │ 🔊 Speak     │
-│ (auto-start) │     │ /api/v1/     │     │ /api/v1/chat │     │ (TTS)        │
-│              │     │ transcribe   │     │              │     │              │
-│ MediaRecorder│     │  ✅ AUDITED  │     │  ✅ AUDITED  │     │ SpeechSynth  │
-└──────────────┘     └──────────────┘     └──────────────┘     └──────┬───────┘
-       ▲                                                              │
-       └──────────────────────── LOOP ────────────────────────────────┘
+┌────────────────┐     ┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+│  🎤 Listen      │ ──→ │ 📝 Transcribe   │ ──→ │ 💬 Chat API    │ ──→ │ 🔊 Speak       │
+│  (auto-start)   │     │  /api/v1/       │     │  /api/v1/chat  │     │  (TTS)         │
+│                 │     │  transcribe     │     │                │     │                │
+│  MediaRecorder  │     │  ✅ AUDITED     │     │  ✅ AUDITED    │     │  SpeechSynth   │
+└────────────────┘     └────────────────┘     └────────────────┘     └───────┬────────┘
+       ▲                                                                     │
+       └─────────────────────────── LOOP ────────────────────────────────────┘
 ```
 
 **Every word is audit-logged.** The transcription goes through `/api/v1/transcribe` (audited). The message goes through `/api/v1/chat` (audited). Session START and STOP events are logged with word counts. There is no way to use Conversation Mode without generating a complete, immutable audit trail.
@@ -272,6 +237,9 @@ The intelligent assistant does **not** expose a model selector by default. The s
 The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
 
 > **Architecture:** Keywords are **first-class prompt injections** stored in the database. The `description` field of each keyword is a natural language instruction that the AI engine interprets and executes when a user types `@keyword`. Admins can tune AI behavior per workspace without redeploying the application.
+
+<details>
+<summary><strong>How It Works, Setup Guide, @Keyword Reference, Ghost Text, Admin API, Field Validation & Address Search</strong></summary>
 
 #### How It Works
 
@@ -367,23 +335,6 @@ You press Tab → "the client demonstrated"
 - **`parent training`:** parent training was provided on the topic of
 - **`session summary`:** Session Summary: Today's session focused on
 - **`caregiver report`:** caregiver reports that
-
-<details>
-<summary>Click to view full details</summary>
-
-| You Type | Completes To |
-|----------|-------------|
-| `subj` | Subjective: Client presented with |
-| `objec` | Objective: During the session, the following was observed: |
-| `assess` | Assessment: Based on the data collected, |
-| `mastery crit` | mastery criteria of 80% or higher across 3 consecutive sessions |
-| `replacement beh` | replacement behavior was reinforced using |
-| `differential rein` | differential reinforcement of |
-| `functional comm` | functional communication training was implemented to teach |
-| `natural env` | natural environment teaching was facilitated during |
-| `parent training` | parent training was provided on the topic of |
-| `session summary` | Session Summary: Today's session focused on |
-| `caregiver report` | caregiver reports that |
 
 
 #### Default Keyword Reference
@@ -620,11 +571,16 @@ Fields:      Street: "123 Main Street"
 All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API_KEY` environment variable. Falls back to manual entry if not configured.
 
 </details>
+</details>
+
 ---
 
 ## 🔐 Audit & Compliance Architecture
 
 Synalux enforces **universal audit logging** on every interaction with the system. This is not optional — it is baked into the API layer via middleware that cannot be bypassed.
+
+<details>
+<summary><strong>Triple-Logging, Fire-and-Forget, Per-Module Coverage, Break-Glass, External Monitoring & Retention</strong></summary>
 
 ### Triple-Logging Architecture
 
@@ -793,6 +749,8 @@ Each external call is logged in `external_interface_log` with:
 | `hipaa_access_log` | 7 years | PHI access records required by HIPAA Privacy Rule §164.530(j) |
 | `external_interface_log` | 1 year | Operational monitoring — no PHI content |
 
+</details>
+
 ---
 
 ## 📖 Feature Glossary (What Does It Do?)
@@ -825,25 +783,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **🌳 Program Tree View:** Hierarchical Program → Goal → Target tree with progress bars
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Templates** | FBA, BIP, ABC Data Collection, Session Notes, Progress Reports, Discharge Summary |
-| **Billing Codes** | 97151 (Assessment), 97153 (Protocol), 97155 (Modification), 97156 (Family Guidance), 97157 (Group) |
-| **RBAC Roles** | BCBA (Full clinical), RBT (Session notes only), Office Manager |
-| **Voice Dictation** | Ambient session recording → auto-structured SOAP notes |
-| **E-Signatures** | BoldSign integration for parent/guardian consent |
-| **Data Tracking** | Behavioral targets, skill acquisition, frequency/duration data |
-| **Insurance** | Autism/ABA-specific payer rules, prior auth tracking |
-| **🧠 Data-Driven Mastery Predictions** | Trend-based prediction of target mastery timelines per skill |
-| **💡 Smart Treatment Recommendations** | Auto-recommend next targets based on mastered skills |
-| **📄 Automated Progress Reports** | One-click generation of insurance-ready progress reports |
-| **🔍 Treatment Integrity** | Real-time DTT/NET fidelity monitoring with adherence scoring |
-| **🌳 Program Tree View** | Hierarchical Program → Goal → Target tree with progress bars |
-
-
-#### Recommended Workflow by Role
 - **Admin/Office Manager**: Manages prior authorizations, tracks utilization against insurance limits, and monitors staff compliance.
 - **BCBA (Provider)**: Designs treatment plans (BIPs), analyzes behavioral data graphs, and writes supervision notes.
 - **RBT (Technician)**: Collects ABC and DTT data during sessions, and generates ambient session notes using the mobile/web app.
@@ -861,19 +802,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Insurance:** BCBS, UHC, Medicaid — auto-eligibility verification
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Templates** | Well-child exams, sick visits, immunization tracking, developmental screening |
-| **Billing Codes** | 99392–99395 (Preventive), 99213–99215 (Office visits), 90460 (Immunization) |
-| **Patient Portal** | Parent/guardian access, growth charts, immunization records, appointment booking |
-| **Asthma Management** | Action plans, peak flow tracking, rescue inhaler logs |
-| **ADHD Workflow** | Vanderbilt scoring, medication management, school accommodation letters |
-| **Insurance** | BCBS, UHC, Medicaid — auto-eligibility verification |
-
-
-#### Recommended Workflow by Role
 - **Admin**: Coordinates immunization registries, schedules well-child visits, and manages parent portal access.
 - **Pediatrician**: Conducts exams using age-specific templates, reviews growth charts, and prescribes medications.
 - **Medical Assistant**: Records vitals, administers vaccines, and completes initial developmental screenings (e.g., ASQ).
@@ -893,21 +823,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Insurance:** Delta Dental, MetLife, Cigna — annual max tracking, pre-determination
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Templates** | Comprehensive exam, perio charting, treatment planning, operative notes |
-| **Billing Codes (CDT)** | D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho) |
-| **Treatment Sequencing** | Multi-phase treatment plans (Root canal → Crown → Follow-up) |
-| **Ortho Management** | Monthly adjustments, payment plans ($194/mo × 18 months), progress tracking |
-| **Implant Workflow** | Surgical planning, guided surgery, healing abutment, prosthesis phases |
-| **Perio Charting** | SRP quadrant tracking, pocket depths, bone loss classification |
-| **Payment Plans** | Stripe-powered installment plans with autopay for high-value procedures |
-| **Insurance** | Delta Dental, MetLife, Cigna — annual max tracking, pre-determination |
-
-
-#### Recommended Workflow by Role
 - **Admin**: Manages Stripe payment plans, submits pre-determinations to insurance, and handles recall scheduling.
 - **Dentist/Orthodontist**: Creates sequenced treatment plans, reviews radiographs, and signs off on clinical operative notes.
 - **Dental Hygienist**: Performs periodontal charting, takes X-rays, and provides patient education on oral hygiene.
@@ -927,21 +844,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Insurance:** Anthem BCBS, Aetna, Cigna Behavioral — auth tracking for session limits
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Templates** | Psychiatric eval, psychotherapy notes, CBT/CPT protocols, safety plans |
-| **Billing Codes** | 90791 (Psych eval), 90834/90837 (Therapy 45/60min), 99214 (Med management) |
-| **Outcome Measures** | PHQ-9, GAD-7, PTSD-5, BDI-II — auto-scored with trend tracking |
-| **Medication Tracking** | Prescriptions, dose changes, side effects, drug interactions |
-| **Trauma Therapy (CPT)** | 12-session protocol, stuck point logs, impact statement drafts |
-| **Crisis Protocol** | Urgent message flags, safety plan templates, crisis hotline integration |
-| **Telehealth** | Zoom integration, consent tracking, session recording (with consent) |
-| **Insurance** | Anthem BCBS, Aetna, Cigna Behavioral — auth tracking for session limits |
-
-
-#### Recommended Workflow by Role
 - **Admin**: Checks insurance eligibility for behavioral health, manages telehealth Zoom links, and tracks session limits.
 - **Psychiatrist/Therapist**: Conducts evaluations, manages prescriptions (e-prescribing), and reviews patient-completed outcome measures (PHQ-9/GAD-7).
 - **Care Coordinator**: Monitors patient adherence, follows up on crisis protocol flags, and sends educational materials.
@@ -960,20 +864,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Insurance:** Medicare (therapy caps), workers' comp, auto-accident PIP — auth tracking
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Templates** | PT evaluation, ROM/strength assessment, functional outcome measures |
-| **Billing Codes** | 97162 (PT eval), 97110 (Exercise), 97116 (Gait), 97140 (Manual), 97530 (Functional) |
-| **Rehab Protocols** | ACL reconstruction, rotator cuff, chronic pain, neuro rehab — phased progression |
-| **Outcome Tracking** | ROM degrees, manual muscle testing (MMT), LEFS/DASH scores |
-| **Home Exercise Programs** | Auto-generated HEP with images, frequency, sets/reps |
-| **Work Comp / Sports** | Return-to-play protocols, FCE documentation, work restrictions |
-| **Insurance** | Medicare (therapy caps), workers' comp, auto-accident PIP — auth tracking |
-
-
-#### Recommended Workflow by Role
 - **Admin**: Tracks Medicare therapy caps and workers' comp authorizations, and schedules recurring weekly visits.
 - **Physical Therapist**: Performs initial evaluations, designs Home Exercise Programs (HEP), and tracks functional outcome scores.
 - **PT Assistant (PTA)**: Executes daily treatment plans, records ROM/MMT measurements, and updates progress notes.
@@ -993,21 +885,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Insurance:** Prior auth for biologics, step therapy documentation, appeal templates
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Templates** | Skin exam, biopsy reports, pathology tracking, phototherapy logs |
-| **Billing Codes** | 99214 (Office visit), 11102 (Biopsy), 17000 (Cryotherapy), 96401 (Chemo SC/IM) |
-| **Melanoma Screening** | Full-body mapping, dermoscopy documentation, ABCDE criteria |
-| **Accutane (iPLEDGE)** | Monthly labs (CBC, LFT, lipid), pregnancy testing, iPLEDGE compliance tracking |
-| **Biologics Management** | Humira/Dupixent dosing, prior auth, injection scheduling, phototherapy logs |
-| **Photo Documentation** | Lesion before/after tracking, body map annotations |
-| **Lab Integration** | Quest/LabCorp order routing, result auto-import |
-| **Insurance** | Prior auth for biologics, step therapy documentation, appeal templates |
-
-
-#### Recommended Workflow by Role
 - **Admin**: Manages iPLEDGE compliance documentation, routes lab orders, and schedules follow-up skin checks.
 - **Dermatologist**: Performs full-body exams, annotates body maps, interprets biopsies, and prescribes biologic therapies.
 - **Medical Assistant**: Takes clinical photos of lesions, assists with biopsies, and provides post-op care instructions to patients.
@@ -1026,25 +905,12 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Billing:** Wellness plans, procedure bundles, pet insurance claim submission
 
 <details>
-<summary>Click to view full details</summary>
+<summary>Recommended Workflow by Role</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Clinical Records** | Animal health records with breed, species, weight tracking, vaccination history |
-| **RBAC Roles** | Veterinarian (full clinical), Vet Technician (intake, vitals, treatment) |
-| **Exams & Surgical Notes** | Species-specific exam templates, surgical reports, post-op care plans |
-| **Prescriptions** | Species-appropriate dosing, compounding pharmacy, controlled substance tracking |
-| **Vaccination Schedules** | Core/non-core vaccine protocols, automated wellness reminders |
-| **Diagnostic Imaging** | DICOM-compatible radiograph & ultrasound review with annotations |
-| **Billing** | Wellness plans, procedure bundles, pet insurance claim submission |
-
-
-#### Recommended Workflow by Role
 - **Admin**: Manages pet wellness plans, submits insurance claims, and sends automated vaccination reminders.
 - **Veterinarian**: Conducts clinical exams, performs surgeries, interprets lab results, and prescribes species-specific medications.
 - **Vet Technician**: Takes vitals, assists in surgery, administers vaccines, and provides discharge instructions to pet owners.
 </details>
-
 
 
 ---
@@ -1052,6 +918,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 ## 📦 Platform Modules
 
 Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict role-based access.
+
+<details>
+<summary><strong>Clinical Care, Practice Operations, Patient Experience & Enterprise Administration — Full Module Reference</strong></summary>
 
 ### 🏥 Clinical Care Modules
 ### 📋 Clinical Notes & Documentation
@@ -1066,20 +935,6 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 - **E-Signatures:** BoldSign integration with 7 document templates
 - **OCR:** Document scanning in 30+ languages for intake form digitization
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **SOAP Notes** | Auto-generated from voice dictation with specialty-specific templates |
-| **Voice Dictation** | WASM Whisper on-device → zero cloud PHI transmission |
-| **4 Note Templates** | Therapy Session, Progress Note, Initial Evaluation, Discharge Summary |
-| **Documents** | Lab results, imaging, consents, assessments, treatment plans — all workspace-scoped |
-| **PDF Export** | Server-side rendering (no client-side PHI leakage) |
-| **E-Signatures** | BoldSign integration with 7 document templates |
-| **OCR** | Document scanning in 30+ languages for intake form digitization |
-
-</details>
 
 ### 📴 Offline-First Clinical Sessions
 
@@ -1145,23 +1000,6 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 - **Vendor Integration:** Quest Diagnostics, LabCorp order routing (planned: electronic result import)
 - **Diagnosis Linking:** ICD-10 codes attached to orders for medical necessity documentation
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Lab Orders** | Order tracking with vendor (Quest, LabCorp, in-house), priority (routine/urgent/stat) |
-| **Result Tracking** | Individual test results with reference ranges and abnormal flags (low/high/critical) |
-| **Categories** | Hematology, Chemistry, Lipid, Liver, Thyroid, Vitamin, Inflammation, Coagulation |
-| **Abnormal Alerts** | Automatic flagging of out-of-range results (e.g., elevated TSH, low Vitamin D) |
-| **iPLEDGE Labs** | Monthly Accutane monitoring: CBC, CMP, lipid panel, LFTs with trend tracking |
-| **Pre-Surgical** | INR, PT, glucose, A1C clearance for dental implants and surgical procedures |
-| **Medication Monitoring** | SSRI thyroid checks, stimulant lipid panels, biologic baseline panels |
-| **Order Lifecycle** | Ordered → Collected → Sent → Received → In Progress → Resulted → Reviewed |
-| **Vendor Integration** | Quest Diagnostics, LabCorp order routing (planned: electronic result import) |
-| **Diagnosis Linking** | ICD-10 codes attached to orders for medical necessity documentation |
-
-</details>
 
 ### 💊 Medications & Prescriptions Module
 
@@ -1175,20 +1013,6 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 - **Interaction Warnings:** Drug-specific warnings array (serotonin syndrome, QTc, teratogenic)
 - **Pharmacy Routing:** Named pharmacy per prescription for e-prescribe readiness
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Drug Catalog** | 12+ medications with NDC codes, drug classes, schedules, routes, common doses |
-| **Active Prescriptions** | Per-patient medication list with dose, frequency, prescriber, pharmacy, refill tracking |
-| **Drug Classes** | SSRIs, stimulants, retinoids, biologics, bronchodilators, NSAIDs, antibiotics, anticonvulsants |
-| **iPLEDGE Tracking** | Accutane isotretinoin monitoring with monthly lab requirements |
-| **Status Lifecycle** | Active → On Hold → Discontinued → Completed → Cancelled |
-| **Interaction Warnings** | Drug-specific warnings array (serotonin syndrome, QTc, teratogenic) |
-| **Pharmacy Routing** | Named pharmacy per prescription for e-prescribe readiness |
-
-</details>
 
 ### 📊 Vitals & Measurements Module
 
@@ -1201,19 +1025,6 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 - **Trend Tracking:** Historical vitals per patient for trend analysis
 - **Appointment Linked:** Vitals tied to specific appointment encounters
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Standard Vitals** | BP (systolic/diastolic), HR, RR, temp (with method), SpO2, weight, height, BMI |
-| **Pain Scale** | 0-10 numeric pain scale per visit |
-| **Pediatric Growth** | Head circumference, weight/height/BMI percentiles (WHO/CDC) |
-| **PT Assessments** | ROM degrees, functional scores (Oswestry, LEFS), quad activation notes |
-| **Trend Tracking** | Historical vitals per patient for trend analysis |
-| **Appointment Linked** | Vitals tied to specific appointment encounters |
-
-</details>
 
 ### ⚠️ Allergies & Alerts Module
 
@@ -1226,19 +1037,6 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 - **Clinical Alerts:** Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history)
 - **Verification:** Provider verification with date stamps
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Allergen Types** | Drug, food, environmental, latex, contrast, other |
-| **Severity Levels** | Mild, moderate, severe, life-threatening |
-| **Reaction Tracking** | Specific reaction documentation (anaphylaxis, SJS, hives, GI upset) |
-| **NKDA Support** | Explicit "No Known Drug Allergies" documentation |
-| **Clinical Alerts** | Critical allergy flags (Penicillin → use clindamycin, Sulfa → SJS history) |
-| **Verification** | Provider verification with date stamps |
-
-</details>
 
 ### 💉 Immunizations Module
 
@@ -1251,25 +1049,11 @@ Admin sees: "Session ended 3:45 PM 🔴 Offline (synced 4:00 PM)"
 - **CDC Schedule:** DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap
 - **Immunocompromised:** Special vaccine recommendations for biologic patients
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Vaccine Tracking** | CVX codes, dose numbers, lot numbers, manufacturers |
-| **Administration** | Site, route (IM/SC/PO/IN/ID), administering provider |
-| **VIS Compliance** | Vaccine Information Statement date tracking |
-| **Registry Reporting** | State immunization registry submission tracking |
-| **CDC Schedule** | DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, Tdap |
-| **Immunocompromised** | Special vaccine recommendations for biologic patients |
-
-</details>
 
 ### 🏢 Practice Operations Modules
 ### 💳 Billing & Payments Module
 
 🔗 **[Read Detailed Billing & Payments Module Documentation](docs_source_en/billing_payments_module.md)**
-
 
 
 The billing module uses **Stripe Connect** to give each practice its own independent payment processing account linked to the practice administrator.
@@ -1367,19 +1151,6 @@ Payment Failed → past_due (warning banner, keep access)
 - **Waitlist:** Waitlisted appointment requests when slots are full
 - **Reminders:** Automated appointment reminders (planned)
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Appointment States** | Scheduled → Confirmed → In-Progress → Completed (+ cancelled, no-show, rescheduled) |
-| **Patient Portal Requests** | Patients request appointments with preferred date/time → staff confirms or denies |
-| **Multi-Provider** | Schedule across providers within a practice |
-| **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
-| **Waitlist** | Waitlisted appointment requests when slots are full |
-| **Reminders** | Automated appointment reminders (planned) |
-
-</details>
 
 ### 👥 HR & Staff Management Module
 
@@ -1392,19 +1163,6 @@ Payment Failed → past_due (warning banner, keep access)
 - **Performance Reviews:** Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment
 - **Onboarding:** Pending onboarding status, credential verification pipeline, training assignments
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Staff Profiles** | Employment type, hire date, salary/hourly rate, specialties, department tracking |
-| **Credentials** | License/certification tracking with expiration alerts and renewal workflows |
-| **Time Off** | Vacation, sick, CE, maternity, bereavement, jury duty — approval workflows |
-| **Training** | Compliance training tracking (HIPAA, BLS, CPR) with due dates and completion status |
-| **Performance Reviews** | Annual/semi-annual reviews with ratings, goals, improvement plans, and acknowledgment |
-| **Onboarding** | Pending onboarding status, credential verification pipeline, training assignments |
-
-</details>
 
 ### ⏱️ Timesheets & Payroll Module (Implemented ✅)
 
@@ -1418,18 +1176,6 @@ Payment Failed → past_due (warning banner, keep access)
 - **Payroll Export:** Export timesheets natively integrated with ADP, Gusto, and Paycom
 - **Compliance:** 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Auto-Generation** | Timesheets automatically generated from signed clinical session notes |
-| **Non-Billable Time** | Track admin time, drive time, training, and clinic prep |
-| **Approval Workflows** | Employee submission → Supervisor review → Payroll processing |
-| **Payroll Export** | Export timesheets natively integrated with ADP, Gusto, and Paycom |
-| **Compliance** | 40-hour overtime warnings, mandatory break tracking, PTO accrual visibility |
-
-</details>
 
 ### 📦 Inventory Management Module
 
@@ -1443,20 +1189,6 @@ Payment Failed → past_due (warning banner, keep access)
 - **Storage Locations:** Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets
 - **Specialty Items:** Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Categories** | Dental supplies, vaccines, medications, biologics, PPE, surgical, lab supplies, office |
-| **Stock Tracking** | Quantity on hand, reorder level, reorder quantity, unit cost |
-| **Lot & Expiry** | Lot numbers, expiration dates, FIFO rotation for vaccines |
-| **Supplier Tracking** | Henry Schein, Patterson Dental, Nobel Biocare, McKesson, Sanofi Pasteur |
-| **Status Alerts** | In stock, low stock, out of stock, expired, discontinued |
-| **Storage Locations** | Vaccine fridge (2-8°C), biologic fridge, operatory cabinets, locked cabinets |
-| **Specialty Items** | Implant fixtures ($285), biologic pens ($2,850), cryotherapy canisters |
-
-</details>
 
 ### 🧾 Superbills Module
 
@@ -1468,21 +1200,6 @@ Payment Failed → past_due (warning banner, keep access)
 - **Status Lifecycle:** Draft → Review → Submitted → Paid / Denied / Appealed
 - **All Specialties:** Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures
 - **Medicare Write-offs:** Automatic adjustment tracking for Medicare contractual obligations
-
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Encounter-Based** | One superbill per visit with diagnosis + procedure codes |
-| **Multi-Code** | ICD-10 diagnosis arrays + CPT/CDT procedure arrays + modifiers (-25, -59) |
-| **Financial Breakdown** | Total charge, insurance billed, patient copay, adjustments |
-| **Status Lifecycle** | Draft → Review → Submitted → Paid / Denied / Appealed |
-| **All Specialties** | Well-child visits, implants, ortho, psychotherapy, PT rehab, derm procedures |
-| **Medicare Write-offs** | Automatic adjustment tracking for Medicare contractual obligations |
-
-</details>
-
 
 
 ### 📋 Clinical Tasks Module
@@ -1496,25 +1213,11 @@ Payment Failed → past_due (warning banner, keep access)
 - **Status Tracking:** Open → In Progress → Completed / Cancelled / Deferred
 - **Audit Trail:** Created by, completed by, completed at timestamps
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Task Categories** | Lab follow-up, prior auth, scheduling, documentation, billing, call patient, refill, referral |
-| **Priority Levels** | Low, normal, high, urgent |
-| **Assignment** | Assigned to specific staff with due dates and completion tracking |
-| **Patient Linked** | Tasks tied to specific patients for care coordination |
-| **Status Tracking** | Open → In Progress → Completed / Cancelled / Deferred |
-| **Audit Trail** | Created by, completed by, completed at timestamps |
-
-</details>
 
 ### 🤝 Patient Experience & Collaboration
 ### 🏥 Patient Portal
 
 🔗 **[Read Detailed Patient Portal Documentation](docs_source_en/patient_portal.md)**
-
 
 
 A full-featured patient-facing portal with authentication, messaging, documents, appointments, and billing.
@@ -1528,21 +1231,6 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Forms:** Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online
 - **Consents:** Digital consent management (treatment, HIPAA, telehealth, medication, research)
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Authentication** | Access code login (SHA-256 hashed), expiration tracking |
-| **Dashboard** | Health overview with upcoming appointments, unread messages, pending documents, balance due |
-| **Messaging** | Threaded conversations with providers, urgent flags, read receipts |
-| **Documents** | View/download clinical documents, upload insurance cards and forms |
-| **Appointments** | View upcoming/past visits, request new appointments with preferred times |
-| **Billing** | View balance, billing history with CPT codes, pay online via Stripe, payment plans, receipts |
-| **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
-| **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
-
-</details>
 
 ### 📚 Patient Education Module
 
@@ -1555,19 +1243,6 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Acknowledgment:** Track whether patient viewed/acknowledged the material
 - **Specialty Examples:** EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Material Catalog** | 14 education documents across all specialties |
-| **Multi-Language** | English + Spanish materials available |
-| **Categories** | Condition, medication, procedure, lifestyle, post-op, home exercise, safety, preventive |
-| **Delivery Methods** | Printed, portal upload, email, in-person, text |
-| **Acknowledgment** | Track whether patient viewed/acknowledged the material |
-| **Specialty Examples** | EpiPen guide, Accutane safety, ACL rehab, CBT homework, implant post-op |
-
-</details>
 
 ### 🔔 Recalls & Reminders Module
 
@@ -1579,18 +1254,6 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Practice-Specific:** Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs
 - **Auto-Due Dates:** Based on last completed visit
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Recall Types** | Hygiene, annual exam, follow-up, lab recheck, imaging, screening, vaccination, med review |
-| **Status Tracking** | Due → Overdue → Scheduled → Completed → Cancelled |
-| **Contact Attempts** | Track outreach attempts for overdue recalls |
-| **Practice-Specific** | Dental 6-month cleanings, derm annual skin checks, Accutane monthly labs |
-| **Auto-Due Dates** | Based on last completed visit |
-
-</details>
 
 ### 🔄 Referrals & Cross-Practice Chat Module
 
@@ -1604,20 +1267,6 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Real Examples:** Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care)
 - **Authorization Tracking:** Auth numbers, expiry dates, prior auth requirement flags
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Referral Tracking** | From/to provider, specialty, reason, diagnosis codes, urgency, auth tracking |
-| **Status Lifecycle** | Pending → Sent → Accepted → Scheduled → Completed / Expired / Declined |
-| **Cross-Practice Chat** | HIPAA-compliant messaging between practice admins/office managers |
-| **Attachment Sharing** | Send images, X-rays, documents, lab results, prescriptions between practices |
-| **Threaded Conversations** | Per-referral chat threads with read receipts |
-| **Real Examples** | Peds→Psychiatry (ADHD), Derm→PT (psoriatic arthritis), PT→Derm (wound care) |
-| **Authorization Tracking** | Auth numbers, expiry dates, prior auth requirement flags |
-
-</details>
 
 ### 💬 Team Chat & Communication
 
@@ -1659,17 +1308,6 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **RLS Gating:** Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits.
 - **Clinical Tasks:** Internal clinic reminders, approvals, and queueing isolated per workspace securely.
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (LiveKit)** | Bandwidth-aware SFU integration using Simulcast. Outbound constraints bypassed via selective stream active-speaker routing. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
-
-</details>
 
 ### 🔐 Enterprise Administration
     ### 🛡️ Security & Compliance
@@ -1683,21 +1321,6 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Fail-Closed HIPAA Mode:** Refuses microphone access if local processing is unavailable (no silent cloud fallback)
 - **Data Minimization:** No browser caching for PHI; sensitive data is wiped instantly when a tab closes
 
-<details>
-<summary>Click to view full details</summary>
-
-| Feature | Details |
-|---------|---------|
-| **HIPAA Compliance** | Full HIPAA audit trail, BAA-ready architecture |
-| **Strict Access Control** | 11 cryptographically-signed roles with specific access limits |
-| **Data Isolation** | All records are isolated by clinic (`workspace_id`) to prevent cross-contamination |
-| **Cryptographic Login** | Short-lived tokens (15-min expiry) ensure stale devices are logged out |
-| **Encryption at Rest** | Transparent Data Encryption (AES-256) for all health information |
-| **Tamper-Proof Audit Logs** | Immutable logs for all role assignments, file access, and message actions |
-| **Fail-Closed HIPAA Mode** | Refuses microphone access if local processing is unavailable (no silent cloud fallback) |
-| **Data Minimization** | No browser caching for PHI; sensitive data is wiped instantly when a tab closes |
-
-</details>
 
 ### ⚙️ Platform Administration & White-Label
 
@@ -1710,20 +1333,9 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 - **Screen Builders:** Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy
 - **Break-Glass Auditing:** All platform admin actions logged to HIPAA-compliant audit trails
 
-<details>
-<summary>Click to view full details</summary>
 
-| Feature | Details |
-|---------|---------|
-| **Multi-Tenant Architecture** | Isolated workspaces with dedicated branding and configurations |
-| **Dynamic Workspaces** | Practice logo, primary address, and color theming dynamically fetched via SSR |
-| **Module Availability** | Platform Admins can drag-and-drop or hide modules based on the clinic specialization |
-| **Employee Feature Toggling** | Override base roles with `restricted_features` JSONB arrays enforcing API blocks at runtime |
-| **Screen Builders** | Per-practice ability to rename buttons, hide datagrid columns, or override standard UI copy |
-| **Break-Glass Auditing** | All platform admin actions logged to HIPAA-compliant audit trails |
 
 </details>
-
 
 ---
 
