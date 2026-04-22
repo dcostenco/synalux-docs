@@ -640,6 +640,7 @@ OLLAMA_ORIGINS="https://synalux.ai" ollama serve
 ---
 
 <details>
+<a name="platform-modules"></a>
 <summary><h2>☁️ Infrastructure & Cloud Services</h2></summary>
 
 Synalux runs on a **serverless-first architecture** using 6 cloud services. No Azure, AWS, or GCP VMs are needed.
