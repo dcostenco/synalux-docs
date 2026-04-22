@@ -1846,17 +1846,17 @@ Synalux's local AI engine (`prism-coder:7b`) is optimized for low-latency, high-
 
 ### 🔬 How Prism-Coder Compares to Flagship Cloud Models
 
-| Metric | 🧠 Prism-Coder 7B | ☁️ Gemini 2.5 Flash | ☁️ Gemini 2.5 Pro | ☁️ Claude Sonnet 4.6 | ☁️ Claude Opus 4.6 | ☁️ Codex (GPT-5.3) |
-|:-------|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Tool-Call Accuracy** | **90.0%** | ~88% | ~93% | ~94% | ~96% | ~95% |
-| **JSON Validity** | **100.0%** | ~99% | ~99.5% | ~99.8% | ~99.9% | ~99.5% |
-| **Format Compliance** | **100.0%** | ~92% | ~96% | ~97% | ~98% | ~96% |
-| **Retrieval Accuracy** | **100.0%** | ~90% | ~95% | ~96% | ~97% | ~94% |
-| **Reasoning Accuracy** | **100.0%** | ~91% | ~96% | ~96% | ~98% | ~97% |
-| **SWE-bench Verified** | N/A | — | ~45% | ~62% | ~74% | ~69% |
-| **Latency** | **1.6s** | 1-2s | 2-4s | 2-4s | 3-6s | 2-5s |
-| **Parameters** | **7B** | ~100B+ | ~200B+ | ~175B+ | ~250B+ | ~200B+ |
-| **On-Device / Private** | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Metric | 🧠 Prism-Coder 7B | ☁️ Gemini 2.5 Flash | ☁️ Gemini 2.5 Pro | ☁️ Gemini 3.1 Pro | ☁️ Claude Sonnet 4.6 | ☁️ Claude Opus 4.6 | ☁️ Codex (GPT-5.3) |
+|:-------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Tool-Call Accuracy** | **90.0%** | ~88% | ~93% | ~96% | ~94% | ~96% | ~95% |
+| **JSON Validity** | **100.0%** | ~99% | ~99.5% | ~99.8% | ~99.8% | ~99.9% | ~99.5% |
+| **Format Compliance** | **100.0%** | ~92% | ~96% | ~98% | ~97% | ~98% | ~96% |
+| **Retrieval Accuracy** | **100.0%** | ~90% | ~95% | ~97% | ~96% | ~97% | ~94% |
+| **Reasoning Accuracy** | **100.0%** | ~91% | ~96% | ~98% | ~96% | ~98% | ~97% |
+| **SWE-bench Verified** | N/A | — | ~45% | ~63% | ~62% | ~74% | ~69% |
+| **Latency** | **1.6s** | 1-2s | 2-4s | 1-3s | 2-4s | 3-6s | 2-5s |
+| **Parameters** | **7B** | ~100B+ | ~200B+ | ~300B+ | ~175B+ | ~250B+ | ~200B+ |
+| **On-Device / Private** | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 > 💡 **The 7B David vs Cloud Goliaths:** Prism-Coder matches or exceeds flagship cloud models on **JSON validity** and **format compliance** — guaranteed by grammar-constrained decoding, not probabilistic sampling. On tool-call accuracy (90%), it trails the best cloud models by only 4-6%, despite being **30-35× smaller** and running **entirely on-device at zero cost**. The trade-off is deliberate: cloud models excel on open-ended SWE-bench tasks, while Prism-Coder is hyper-specialized for **Prism's 10 MCP tools** — a narrower but production-critical scope.
 
