@@ -1771,7 +1771,7 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 
 Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice Administrators. 
 
-![Dashboard Preview](https://raw.githubusercontent.com/dcostenco/synalux-private/main/portal/public/dashboard-preview.png)
+![Dashboard Preview](portal/public/dashboard-preview.png)
 
 #### Core Modules:
 
@@ -1780,7 +1780,7 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 - **🧠 Active Insights**: GRPO-aligned clinical reasoning identifies target mastery and plateaus automatically.
 - **⏱️ Practice Management**: Integrated timesheets, authorizations tracking, and billing claims automation.
 
-![SOAP Generator](https://raw.githubusercontent.com/dcostenco/synalux-private/main/portal/public/soap-notes-preview.png)
+![SOAP Generator](portal/public/soap-notes-preview.png)
 
 ---
 
