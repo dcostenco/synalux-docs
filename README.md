@@ -1806,6 +1806,8 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 
 ![SOAP Generator](images/soap-notes-preview.png)
 
+![Data Collection & EVV](images/data-collection-preview.png)
+
 ---
 
 ## ◈ Prism Coder IDE — Desktop IDE for Developers
