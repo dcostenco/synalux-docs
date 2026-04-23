@@ -648,6 +648,10 @@ All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API
 </details>
 ---
 
+![Weekly Scheduling — provider calendar with color-coded appointments and patient popovers](images/scheduling-preview.png)
+
+![Team Messenger — HIPAA-encrypted channels with file sharing and AI assistant](images/team-chat-preview.png)
+
 ## 🔐 Audit & Compliance Architecture
 
 Synalux enforces **universal audit logging** on every interaction with the system. This is not optional — it is baked into the API layer via middleware that cannot be bypassed.
