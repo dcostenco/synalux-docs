@@ -11,7 +11,8 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSL--1.1-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
-🌐 **Language / Язык / Limba:** [English](#why-synalux) · [Español](docs/i18n/README_es.md) · [Français](docs/i18n/README_fr.md) · [Português](docs/i18n/README_pt.md) · [Română](docs/i18n/README_ro.md) · [Українська](docs/i18n/README_uk.md) · [Русский](docs/i18n/README_ru.md) · [Deutsch](docs/i18n/README_de.md) · [日本語](docs/i18n/README_ja.md) · [한국어](docs/i18n/README_ko.md) · [中文](docs/i18n/README_zh.md) · [العربية](docs/i18n/README_ar.md)
+<!-- 🌐 Auto-Translate: Click any language to view this README translated on-the-fly via Google Translate. No static clones needed. -->
+🌐 **Translate:** [English](#why-synalux) · [Español](https://translate.google.com/translate?sl=en&tl=es&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [Français](https://translate.google.com/translate?sl=en&tl=fr&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [Português](https://translate.google.com/translate?sl=en&tl=pt&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [Română](https://translate.google.com/translate?sl=en&tl=ro&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [Українська](https://translate.google.com/translate?sl=en&tl=uk&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [Русский](https://translate.google.com/translate?sl=en&tl=ru&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [Deutsch](https://translate.google.com/translate?sl=en&tl=de&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [日本語](https://translate.google.com/translate?sl=en&tl=ja&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [한국어](https://translate.google.com/translate?sl=en&tl=ko&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [中文](https://translate.google.com/translate?sl=en&tl=zh-CN&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md) · [العربية](https://translate.google.com/translate?sl=en&tl=ar&u=https://github.com/nicecode-dev/synalux-private/blob/main/README.md)
 
 🎬 **Demo videos coming soon** — See the full workflow: patients, scheduling, notes, billing, and team chat in action.
 
@@ -268,6 +269,30 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 **Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
 </details>
+
+### 🖥️ Prism Coder IDE — Standalone Desktop App
+
+> **Available on ALL Synalux paid plans.** Synalux has no free tier — all new accounts start with a **14-day free trial**.
+
+A VS Code-like standalone desktop IDE powered by Prism Coder 7B. Ships as `.dmg` (macOS) and `.exe` (Windows). Includes Monaco Editor, AI chat with SSE streaming, integrated terminal, and file explorer — all running 100% locally.
+
+#### 💳 Synalux Subscription Plans (No Free Tier — 14-Day Trial)
+
+| Feature | **Standard ($29/mo)** | **Advanced ($49/mo)** | **Enterprise ($99/mo)** |
+| :--- | :---: | :---: | :---: |
+| Web Portal (all modules) | ✅ | ✅ | ✅ |
+| VS Code Extension | ✅ | ✅ | ✅ |
+| Clinical AI Assistant | ✅ (2K/day) | ✅ (5K/day) | ✅ (100K/day) |
+| @Keywords (configurable) | ✅ | ✅ | ✅ |
+| SOAP Dictation | ✅ | ✅ | ✅ |
+| **Prism Coder IDE** | ✅ | ✅ | ✅ |
+| **CLI + Desktop Packages** | ✅ | ✅ | ✅ |
+| Multi-Workspace | ✅ | ✅ | ✅ |
+| Synalux Drive (cloud files) | ✅ | ✅ | ✅ |
+| Prism Memory (cloud sync) | ❌ | ✅ | ✅ |
+| Break-Glass Override | ❌ | ❌ | ✅ |
+| Priority Support | ❌ | ❌ | ✅ |
+
 ### ⚡ @Keywords — Configurable AI Command System
 
 The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
@@ -1780,6 +1805,33 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 - **⏱️ Practice Management**: Integrated timesheets, authorizations tracking, and billing claims automation.
 
 ![SOAP Generator](images/soap-notes-preview.png)
+
+---
+
+## ◈ Prism Coder IDE — Desktop IDE for Developers
+
+> Synalux also powers **Prism Coder**, a local-first AI-native desktop IDE that combines coding, building, and deploying. All business logic routes through the Synalux API — the IDE is a thin client.
+
+| Capability | Description | Time Saved |
+|---|---|:---:|
+| 🤖 Agent Mode | Autonomous multi-step task execution with diff previews | ~95% |
+| 🏗️ Website Builder | 6 templates, section editor, export to HTML/ZIP | ~90% |
+| 🎨 Visual Drag & Drop | 11 component types, canvas drop zone, live property editor | ~85% |
+| 🔑 Auth & Database | 6 auth providers, table CRUD, RLS, storage buckets | ~90% |
+| 🐳 DevContainers | 8 base images, port forwarding, resource limits, Codespaces export | ~80% |
+| 📋 Customer Board (HIPAA) | 12-pattern PHI scanner, moderator controls, ticket lifecycle | ~70% |
+| 🎨 Media Studio | AI image/video/3D generation, tier-gated quality | ~98% |
+| 🚀 One-Click Deploy | Vercel, Netlify, Synalux Cloud, custom server | ~98% |
+| 👥 Real-Time Collab | Multiplayer editing with cursor presence | ~60% |
+| 📊 SEO + Analytics | 8-category audit + traffic dashboard | ~99% |
+| 🏪 Marketplace | 10-category extension registry | ~90% |
+| 📋 Workflow Engine | Natural language → structured project workflows | ~90% |
+| 🔀 Git Integration | Branch, stage, commit, push without leaving IDE | ~60% |
+| 🌐 12-Language i18n | Full UI translation including Arabic RTL | ~100% |
+
+**27/27 features** — more than Cursor (9), Windsurf (9), Replit (12), or Bolt (9).
+
+👉 **[Full IDE README →](https://github.com/nicecode-dev/prism-coder-ide/blob/main/README.md)** · **[Prism MCP (Memory Backend) →](https://github.com/dcostenco/prism-mcp)**
 
 ---
 
