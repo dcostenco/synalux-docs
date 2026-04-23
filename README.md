@@ -242,24 +242,22 @@ Conversation Mode turns the assistant into a **hands-free, voice-driven clinical
 </details>
 ### 🧠 Model Routing & Tier Architecture
 
-Synalux uses a **dual-engine architecture** — Prism-Coder handles tool-calling locally, while Gemini handles general LLM tasks (translation, summarization, code generation):
+The intelligent assistant does **not** expose a model selector by default. The server automatically routes each request to the best model for the user's subscription tier:
 
-- **Tool-Calling (MCP):** 🧠 Prism-Coder 7B (local, all tiers) → ☁️ Cloud Coder fallback (Standard+)
-- **General LLM:** ☁️ Gemini 2.5 Flash (Free) → ☁️ Gemini 3.1 Pro (Standard+)
+- **Free:** Gemini 2.5 Flash
+- **Standard:** Gemini 3.1 Pro Exp
+- **Advanced:** Gemini 3.1 Pro Exp
+- **Enterprise:** Gemini 3.1 Pro Exp
 
 <details>
 <summary>Click to view full details</summary>
 
-| Tier | 🧠 Tool-Calling Engine | ☁️ Cloud Coder Fallback | ☁️ General LLM | Max Tokens | Daily LLM Limit |
-|------|---|---|---|---|---|
-| **Free** | Prism-Coder 7B (local) | ❌ | Gemini 2.5 Flash | 4,096 | 100 |
-| **Standard** | Prism-Coder 7B (local) | ✅ 100/day | Gemini 3.1 Pro | 8,192 | 2,000 |
-| **Advanced** | Prism-Coder 7B (local) | ✅ 1,000/day | Gemini 3.1 Pro | 16,384 | 5,000 |
-| **Enterprise** | Prism-Coder 7B (local) | ✅ Unlimited | Gemini 3.1 Pro | 32,768 | 100,000 |
-
-> 🧠 **Prism-Coder 7B** is the **preferred default** for all tool-calling. It runs on-device via Ollama with grammar-constrained JSON output (100% validity). Cloud Coder (Standard+) provides the same model hosted on Fireworks AI for users without local GPU.
->
-> ☁️ **Gemini** handles everything Prism-Coder doesn't: translation, summarization, code generation, document analysis, and creative tasks.
+| Tier | Default Model | Max Tokens | Daily Limit | Model Selector Visible |
+|------|--------------|------------|-------------|----------------------|
+| **Free** | Gemini 2.5 Flash | 4,096 | 100 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| **Standard** | Gemini 3.1 Pro Exp | 8,192 | 2,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| **Advanced** | Gemini 3.1 Pro Exp | 16,384 | 5,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| **Enterprise** | Gemini 3.1 Pro Exp | 32,768 | 100,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
 
 
 **Where the model selector appears:**
@@ -883,8 +881,6 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 </details>
 
 ### 🦷 Dental & Orthodontics
-
-🔗 **[Read Detailed Dental & Orthodontics Documentation](docs_source_en/dental_orthodontics.md)**
 
 - **Clinical Templates:** Comprehensive exam, perio charting, treatment planning, operative notes
 - **Billing Codes (CDT):** D0150 (Exam), D0210 (FMX), D2740 (Crown), D3330 (RCT), D6010 (Implant), D8080 (Ortho)
@@ -1784,85 +1780,6 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 - **⏱️ Practice Management**: Integrated timesheets, authorizations tracking, and billing claims automation.
 
 ![SOAP Generator](images/soap-notes-preview.png)
-
----
-
-### 🧠 Cognitive Performance (Prism-Coder 7B Benchmarks)
-
-Synalux's local AI engine (`prism-coder:7b`) is optimized for low-latency, high-validity tool orchestration. Benchmarked on a **held-out test set of 20 prompts** spanning tool calls, retrieval, reasoning, and adversarial edge cases.
-
-**v6.0** uses Ollama Structured Output — grammar-constrained decoding that **guarantees valid JSON at the token level**, eliminating all format compliance issues.
-
-| Metric | Score | Details |
-|:-------|:---:|:---|
-| **Overall Accuracy** | **90.0%** (18/20) | Correct tool selection or correct abstention |
-| **JSON Validity** | **100.0%** | Grammar-constrained decoding — physically cannot produce invalid JSON |
-| **Format Compliance** | **100.0%** | Structured output via Ollama `format` parameter |
-| **Tool-Call Accuracy** | **100.0%** (7/7) | All 10 MCP tools tested — perfect mapping |
-| **Retrieval Accuracy** | **100.0%** (3/3) | `session_search`, `session_list`, `knowledge_search` |
-| **Reasoning Accuracy** | **100.0%** (5/5) | Correctly abstains from tools on pure coding questions |
-| **Edge Case Accuracy** | **60.0%** (3/5) | Multi-tool intent + semantic ambiguity |
-| **Generation Speed** | **47.0 Tok/sec** | Apple M4 Max, 36GB |
-| **Avg Latency** | **1.6s** | Per-prompt inference time |
-
-<details>
-<summary><strong>📋 Full Test Breakdown (20 Prompts)</strong></summary>
-
-| # | Category | Prompt | Expected | Got | |
-|:--|:---------|:-------|:---------|:----|:--|
-| 1 | tool_call | "Show me the context for synalux-portal" | `session_load_context` | `session_load_context` | ✅ |
-| 2 | tool_call | "Record this work: migrated Stripe webhooks to v2" | `session_save` | `session_save` | ✅ |
-| 3 | retrieval | "Search past sessions for OAuth2 refresh flow" | `session_search` | `session_search` | ✅ |
-| 4 | retrieval | "Show all sessions for synalux-docs" | `session_list` | `session_list` | ✅ |
-| 5 | tool_call | "Remove the session about the failed deploy" | `session_delete` | `session_delete` | ✅ |
-| 6 | tool_call | "Remember this: Supabase RLS requires JWT" | `knowledge_save` | `knowledge_save` | ✅ |
-| 7 | retrieval | "What do we know about edge function cold starts?" | `knowledge_search` | `knowledge_search` | ✅ |
-| 8 | tool_call | "Connect the RBAC session to the auth session" | `memory_link` | `memory_link` | ✅ |
-| 9 | tool_call | "Transfer frontend task from dev to QA agent" | `session_handoff` | `session_handoff` | ✅ |
-| 10 | tool_call | "Should local or cloud handle this CSS fix?" | `session_task_route` | `session_task_route` | ✅ |
-| 11 | reasoning | "Difference between REST and GraphQL?" | `direct_answer` | `direct_answer` | ✅ |
-| 12 | reasoning | "How does garbage collection work in Go?" | `direct_answer` | `direct_answer` | ✅ |
-| 13 | reasoning | "Explain the CAP theorem" | `direct_answer` | `direct_answer` | ✅ |
-| 14 | reasoning | "Pros and cons of microservices?" | `direct_answer` | `direct_answer` | ✅ |
-| 15 | reasoning | "Bash one-liner to find large files" | `direct_answer` | `direct_answer` | ✅ |
-| 16 | edge | "Load context AND save this session" | `session_load_context` | `session_task_route` | ❌ |
-| 17 | edge | "What is Prism?" | `direct_answer` | `direct_answer` | ✅ |
-| 18 | edge | "Search for résumé templates in knowledge base" | `knowledge_search` | `knowledge_search` | ✅ |
-| 19 | edge | "List sessions" | `session_list` | `session_list` | ✅ |
-| 20 | edge | "Save a note about CI/CD with GitHub Actions..." | `session_save` | `knowledge_save` | ❌ |
-
-</details>
-
-#### 📈 Accuracy Progression
-
-| Version | Accuracy | JSON Valid | Format | Key Breakthrough |
-|:--------|:--------:|:----------:|:------:|:-----------------|
-| v1.0 (Baseline) | 33% | N/A | 0% | Raw Modelfile, basic parser |
-| v3.0 (Few-shot) | 80% | N/A | 0% | 11 few-shot examples, temp 0.1 |
-| v3.2 (Disambiguation) | 90% | N/A | 0% | Tool disambiguation section |
-| **v6.0 (Structured Output)** | **90%** | **100%** | **100%** | **Grammar-constrained decoding** |
-
-> **Methodology**: Results from [`training/benchmark_structured.py`](https://github.com/dcostenco/prism-mcp/blob/main/training/benchmark_structured.py) against `prism-coder:7b` (GRPO-aligned Qwen-7B). The v6.0 benchmark uses Ollama's `format` parameter with JSON schema for grammar-constrained decoding. 20 test prompts across 4 categories (tool calls, retrieval, reasoning, edge cases).
-
----
-
-### 🔬 How Prism-Coder Compares to Flagship Cloud Models
-
-| Metric | 🧠 Prism-Coder 7B | ☁️ Gemini 2.5 Flash | ☁️ Gemini 2.5 Pro | ☁️ Gemini 3.1 Pro | ☁️ Claude Sonnet 4.6 | ☁️ Claude Opus 4.6 | ☁️ Codex (GPT-5.3) |
-|:-------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Tool-Call Accuracy** | **90.0%** | ~88% | ~93% | ~96% | ~94% | ~96% | ~95% |
-| **JSON Validity** | **100.0%** | ~99% | ~99.5% | ~99.8% | ~99.8% | ~99.9% | ~99.5% |
-| **Format Compliance** | **100.0%** | ~92% | ~96% | ~98% | ~97% | ~98% | ~96% |
-| **Retrieval Accuracy** | **100.0%** | ~90% | ~95% | ~97% | ~96% | ~97% | ~94% |
-| **Reasoning Accuracy** | **100.0%** | ~91% | ~96% | ~98% | ~96% | ~98% | ~97% |
-| **SWE-bench Verified** | N/A | — | ~45% | ~63% | ~62% | ~74% | ~69% |
-| **Latency** | **1.6s** | 1-2s | 2-4s | 1-3s | 2-4s | 3-6s | 2-5s |
-| **Parameters** | **7B** | ~100B+ | ~200B+ | ~300B+ | ~175B+ | ~250B+ | ~200B+ |
-| **On-Device / Private** | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-
-> 💡 **The 7B David vs Cloud Goliaths:** Prism-Coder matches or exceeds flagship cloud models on **JSON validity** and **format compliance** — guaranteed by grammar-constrained decoding, not probabilistic sampling. On tool-call accuracy (90%), it trails the best cloud models by only 4-6%, despite being **30-35× smaller** and running **entirely on-device at zero cost**. The trade-off is deliberate: cloud models excel on open-ended SWE-bench tasks, while Prism-Coder is hyper-specialized for **Prism's 10 MCP tools** — a narrower but production-critical scope.
-
-> 🧪 **Verifiable Proof**: View the [Benchmark Source](https://github.com/dcostenco/prism-mcp/blob/main/training/benchmark_structured.py), [GRPO Training Script](https://github.com/dcostenco/prism-mcp/blob/main/training/grpo_align.py), and [Modelfile](https://github.com/dcostenco/prism-mcp/blob/main/training/Modelfile) to audit our methodology.
 
 ---
 
