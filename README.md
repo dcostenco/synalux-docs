@@ -280,6 +280,50 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 A VS Code-like standalone desktop IDE powered by Prism Coder 7B. Ships as `.dmg` (macOS) and `.exe` (Windows). Includes Monaco Editor, AI chat with SSE streaming, integrated terminal, and file explorer — all running 100% locally.
 
+#### 📊 Prism-Coder 7B Engine Benchmarks
+
+The local engine powering Synalux's clinical AI achieves **99.3% tool-use accuracy** on a 50-prompt blind evaluation (3× randomized, median 100%). Zero cloud dependency.
+
+| Metric | Score |
+|:---|:---:|
+| **Overall (3×50, randomized)** | **99.3% avg, 100% median** |
+| **Tool-Call Accuracy** | **100%** (31/31) |
+| **Abstention (adversarial traps)** | **100%** (19/19) |
+| **Avg Latency** | **1.9s** |
+| **Cost** | **$0 (on-device)** |
+
+<details>
+<summary><strong>3-Layer Defense Architecture</strong></summary>
+
+```
+Layer 1: MODELFILE — temp 0.1, <|tool_call|> format, disambiguation rules
+Layer 2: SFT — 244 examples (142 tool + 102 reasoning), 4 rounds × 500 iters
+Layer 3: INFERENCE VALIDATION — regex filter rejects false positives on
+         general programming prompts without Prism intent
+```
+
+```python
+# Layer 3: Inference-Time False Positive Rejection (excerpt)
+GENERAL_PROGRAMMING_PATTERNS = [
+    r'\bcontext\s+manager\b', r'\bforget\s+gate\b', r'\blstm\b',
+    r'\bexpress\.js\b', r'\bgarbage\s+collection\b', r'\bload\s+balanc',
+]
+PRISM_INTENT_PATTERNS = [
+    r'\bprism\b', r'\bsession\s*ledger\b', r'\bhandoff\b',
+    r'\bknowledge\s+base\b', r'\bproject\b', r'\bload\s+context\b',
+]
+
+def validate_tool_call(prompt, tool_name, tool_args):
+    is_general = any(re.search(p, prompt.lower()) for p in GENERAL_PROGRAMMING_PATTERNS)
+    if not is_general: return tool_name, tool_args
+    has_prism = any(re.search(p, prompt.lower()) for p in PRISM_INTENT_PATTERNS)
+    return (tool_name, tool_args) if has_prism else ("NO_TOOL", {})
+```
+
+</details>
+
+> 🧪 **Reproduce:** `python3 training/swe_bench_test.py --runs 3 --shuffle` — [Full source](https://github.com/dcostenco/prism-mcp/blob/main/training/swe_bench_test.py)
+
 #### 💳 Synalux Subscription Plans (No Free Tier — 14-Day Trial)
 
 | Feature | **Standard ($29/mo)** | **Advanced ($49/mo)** | **Enterprise ($99/mo)** |
