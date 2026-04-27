@@ -929,6 +929,21 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin/Office Manager**: Manages prior authorizations, tracks utilization against insurance limits, and monitors staff compliance.
 - **BCBA (Provider)**: Designs treatment plans (BIPs), analyzes behavioral data graphs, and writes supervision notes.
 - **RBT (Technician)**: Collects ABC and DTT data during sessions, and generates ambient session notes using the mobile/web app.
+
+#### 📊 How We Compare — ABA Therapy
+
+| Feature | Synalux | CentralReach | Rethink | Catalyst | Hi Rasmus |
+|---|:---:|:---:|:---:|:---:|:---:|
+| ABA Data Collection | ✅ | ✅ | ✅ | ✅ | ✅ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Mastery Predictions | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Smart Treatment Recs | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Program Tree View | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Insurance Claims | ✅ | ✅ | ❌ | ❌ | ❌ |
+| E-Signatures | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 6 types | ABA only | ABA only | ABA only | ABA only |
+| Offline Mode | ✅ | ❌ | ❌ | ✅ | ❌ |
+
 </details>
 
 ### 👶 Pediatrics
@@ -959,6 +974,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin**: Coordinates immunization registries, schedules well-child visits, and manages parent portal access.
 - **Pediatrician**: Conducts exams using age-specific templates, reviews growth charts, and prescribes medications.
 - **Medical Assistant**: Records vitals, administers vaccines, and completes initial developmental screenings (e.g., ASQ).
+
+#### 📊 How We Compare — Pediatrics
+
+| Feature | Synalux | PCC | Office Practicum | Athenahealth | DrChrono |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Well-Child Templates | ✅ | ✅ | ✅ | ✅ | Partial |
+| Growth Chart Tracking | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Immunization Registry | ✅ | ✅ | ✅ | ✅ | ❌ |
+| ADHD Workflow | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Asthma Action Plans | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Parent Portal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 6 types | Peds only | Peds only | General | General |
+
 </details>
 
 ### 🦷 Dental & Orthodontics
@@ -991,6 +1020,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin**: Manages Stripe payment plans, submits pre-determinations to insurance, and handles recall scheduling.
 - **Dentist/Orthodontist**: Creates sequenced treatment plans, reviews radiographs, and signs off on clinical operative notes.
 - **Dental Hygienist**: Performs periodontal charting, takes X-rays, and provides patient education on oral hygiene.
+
+#### 📊 How We Compare — Dental & Orthodontics
+
+| Feature | Synalux | Dentrix | Open Dental | Curve Dental | Eaglesoft |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Perio Charting | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Treatment Sequencing | ✅ | ✅ | ✅ | Partial | ✅ |
+| Ortho Management | ✅ | Add-on | ✅ | ❌ | Add-on |
+| Implant Workflow | ✅ | Partial | ❌ | ❌ | Partial |
+| CDT Auto-Coding | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Payment Plans | ✅ Stripe | 3rd party | ❌ | ❌ | 3rd party |
+| Cloud-Native | ✅ | ❌ (server) | ❌ (server) | ✅ | ❌ (server) |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+
 </details>
 
 ### 🧠 Mental Health & Psychiatry
@@ -1025,6 +1068,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin**: Checks insurance eligibility for behavioral health, manages telehealth Zoom links, and tracks session limits.
 - **Psychiatrist/Therapist**: Conducts evaluations, manages prescriptions (e-prescribing), and reviews patient-completed outcome measures (PHQ-9/GAD-7).
 - **Care Coordinator**: Monitors patient adherence, follows up on crisis protocol flags, and sends educational materials.
+
+#### 📊 How We Compare — Mental Health
+
+| Feature | Synalux | SimplePractice | TherapyNotes | Valant | TheraNest |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Outcome Measures (PHQ-9/GAD-7) | ✅ Auto-scored | ✅ | ✅ | ✅ | Partial |
+| Crisis Protocol | ✅ | ❌ | ❌ | ❌ | ❌ |
+| CPT Trauma Protocol | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Telehealth Built-In | ✅ | ✅ | ✅ | ✅ | ✅ |
+| E-Prescribing | ✅ | ❌ | ❌ | ✅ | ❌ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 6 types | MH only | MH only | MH only | MH only |
+| Insurance Claims | ✅ | ✅ | ✅ | ✅ | ✅ |
+
 </details>
 
 ### 🏃 Physical Therapy & Sports Medicine
@@ -1057,6 +1114,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin**: Tracks Medicare therapy caps and workers' comp authorizations, and schedules recurring weekly visits.
 - **Physical Therapist**: Performs initial evaluations, designs Home Exercise Programs (HEP), and tracks functional outcome scores.
 - **PT Assistant (PTA)**: Executes daily treatment plans, records ROM/MMT measurements, and updates progress notes.
+
+#### 📊 How We Compare — Physical Therapy
+
+| Feature | Synalux | WebPT | Clinicient | TheraOffice | Net Health |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Rehab Protocols | ✅ | ✅ | ✅ | ✅ | ✅ |
+| HEP Generation | ✅ | ✅ | ❌ | ❌ | ✅ |
+| Outcome Tracking (LEFS/DASH) | ✅ | ✅ | ✅ | Partial | ✅ |
+| Workers' Comp | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Return-to-Play | ✅ | ❌ | ❌ | ❌ | Partial |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Medicare Cap Tracking | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Multi-Specialty | ✅ 6 types | PT only | PT only | PT only | PT/OT |
+
 </details>
 
 ### 🔬 Dermatology
@@ -1091,6 +1162,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin**: Manages iPLEDGE compliance documentation, routes lab orders, and schedules follow-up skin checks.
 - **Dermatologist**: Performs full-body exams, annotates body maps, interprets biopsies, and prescribes biologic therapies.
 - **Medical Assistant**: Takes clinical photos of lesions, assists with biopsies, and provides post-op care instructions to patients.
+
+#### 📊 How We Compare — Dermatology
+
+| Feature | Synalux | ModMed (EMA) | Nextech | AdvancedMD | DrChrono |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Body Mapping | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Dermoscopy Docs | ✅ | ✅ | ✅ | ❌ | Partial |
+| iPLEDGE Tracking | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Biologics Management | ✅ | ✅ | Partial | ❌ | ❌ |
+| Photo Before/After | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Lab Integration | ✅ | ✅ | ✅ | ✅ | ✅ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 6 types | Derm only | Derm/Plastic | General | General |
+
 </details>
 
 ### 🐾 Veterinary Medicine
@@ -1123,6 +1208,20 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 - **Admin**: Manages pet wellness plans, submits insurance claims, and sends automated vaccination reminders.
 - **Veterinarian**: Conducts clinical exams, performs surgeries, interprets lab results, and prescribes species-specific medications.
 - **Vet Technician**: Takes vitals, assists in surgery, administers vaccines, and provides discharge instructions to pet owners.
+
+#### 📊 How We Compare — Veterinary Medicine
+
+| Feature | Synalux | IDEXX (Cornerstone) | eVetPractice | Shepherd | Digitail |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Species-Specific Templates | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Vaccine Protocols | ✅ | ✅ | ✅ | ✅ | ✅ |
+| DICOM Imaging | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Controlled Substance Log | ✅ | ✅ | Partial | ❌ | ❌ |
+| Wellness Plans | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Pet Insurance Claims | ✅ | Partial | ❌ | ❌ | ❌ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Cloud-Native | ✅ | ❌ (server) | ✅ | ✅ | ✅ |
+
 </details>
 
 
