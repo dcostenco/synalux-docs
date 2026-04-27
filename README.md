@@ -276,7 +276,7 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 ### 🖥️ Prism Coder IDE — Standalone Desktop App
 
-> **Available on ALL Synalux paid plans.** Synalux has no free tier — all new accounts start with a **14-day free trial**.
+> **Available on ALL Synalux plans.** Start with a 30-day free trial on Standard, then choose the plan that fits your practice.
 
 A VS Code-like standalone desktop IDE powered by Prism Coder 7B. Ships as `.dmg` (macOS) and `.exe` (Windows). Includes Monaco Editor, AI chat with SSE streaming, integrated terminal, and file explorer — all running 100% locally.
 
@@ -324,11 +324,14 @@ def validate_tool_call(prompt, tool_name, tool_args):
 
 > 🧪 **Reproduce:** `python3 training/swe_bench_test.py --runs 3 --shuffle` — [Full source](https://github.com/dcostenco/prism-mcp/blob/main/training/swe_bench_test.py)
 
-#### 💳 Synalux Subscription Plans (No Free Tier — 14-Day Trial)
+#### 💳 Synalux Subscription Plans
 
-| Feature | **Standard ($29/mo)** | **Advanced ($49/mo)** | **Enterprise ($99/mo)** |
+| Feature | **Standard ($19/u/mo)** | **Advanced ($49/u/mo)** | **Enterprise ($99/u/mo)** |
 | :--- | :---: | :---: | :---: |
-| Web Portal (all modules) | ✅ | ✅ | ✅ |
+| Users | 5 | 15 | Unlimited |
+| Patients | Unlimited | Unlimited | Unlimited |
+| Core Modules | 8 | 16 | All 21 |
+| Web Portal | ✅ | ✅ | ✅ |
 | VS Code Extension | ✅ | ✅ | ✅ |
 | Clinical AI Assistant | ✅ (2K/day) | ✅ (5K/day) | ✅ (100K/day) |
 | @Keywords (configurable) | ✅ | ✅ | ✅ |
@@ -340,6 +343,8 @@ def validate_tool_call(prompt, tool_name, tool_args):
 | Prism Memory (cloud sync) | ❌ | ✅ | ✅ |
 | Break-Glass Override | ❌ | ❌ | ✅ |
 | Priority Support | ❌ | ❌ | ✅ |
+
+> 🧪 **30-day free trial** on Standard — no credit card required.
 
 ### ⚡ @Keywords — Configurable AI Command System
 
@@ -1512,8 +1517,8 @@ The billing module uses **Stripe Connect** to give each practice its own indepen
 ```
 Payment Failed → past_due (warning banner, keep access)
   → 2nd retry → still past_due (urgent warning)
-  → 3rd retry failed → auto-downgrade to Free tier
-  → Stripe subscription.deleted → plan = 'free', sub cleared
+  → 3rd retry failed → auto-suspend account (read-only access)
+  → Stripe subscription.deleted → subscription cleared, account suspended
 ```
 
 **Platform Admin Overrides:**
@@ -1896,7 +1901,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 #### 📊 Platform Usage Limits (Voice, Video & API)
 *   **Daily Video/Voice Calls**: **Unlimited** duration and count for Enterprise clients. There are no daily minute caps. Room capacity scales to 25+ participants using Simulcast and SFU routing.
-*   **API Rate Limits (Per User)**: Daily backend API execution is enforced individually: Free (100 tx/day), Standard (2,000 tx/day), Advanced (5,000 tx/day), Enterprise (Unlimited / 999,999 tx/day).
+*   **API Rate Limits (Per User)**: Daily backend API execution is enforced individually: Standard (2,000 tx/day), Advanced (5,000 tx/day), Enterprise (Unlimited / 999,999 tx/day).
 </details>
 
 ### 📞 Collaboration Practice Suite
@@ -2036,18 +2041,20 @@ Live support widget replacing phone-only support:
 - **FAQ auto-response**: 8-entry knowledge base covers password reset, data migration, HIPAA, voice dictation, prior auth
 - **Smart routing**: tickets auto-routed to Revenue Cycle, Clinical Support, Engineering, Data Migration teams
 
-### 🎁 Free Tier
+### 💳 Pricing Plans
 
-| | Free | Standard | Advanced | Enterprise |
-|---|:---:|:---:|:---:|:---:|
-| **Price** | $0/mo | $19/mo | $49/mo | $99/mo |
-| **Users** | 1 | 5 | 15 | Unlimited |
-| **Patients** | 25 | Unlimited | Unlimited | Unlimited |
-| **Modules** | 3 | 8 | 16 | All 21 |
-| **AI Voice** | ❌ | ❌ | ✅ | ✅ |
-| **AI Prior Auth** | ❌ | ❌ | ✅ | ✅ |
-| **DORA Metrics** | ❌ | ❌ | ❌ | ✅ |
-| **Support** | Community | Email | Priority | Dedicated + SLA |
+| | Standard | Advanced | Enterprise |
+|---|:---:|:---:|:---:|
+| **Price** | $19/u/mo | $49/u/mo | $99/u/mo |
+| **Users** | 5 | 15 | Unlimited |
+| **Patients** | Unlimited | Unlimited | Unlimited |
+| **Modules** | 8 | 16 | All 21 |
+| **AI Voice** | ❌ | ✅ | ✅ |
+| **AI Prior Auth** | ❌ | ✅ | ✅ |
+| **DORA Metrics** | ❌ | ❌ | ✅ |
+| **Support** | Email | Priority | Dedicated + SLA |
+
+> 🧪 **30-day free trial** on Standard — no credit card required.
 
 ## 📊 Enterprise Capacity & Quotas
 
@@ -2108,17 +2115,17 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 
 ### SCM Features by Tier
 
-| Feature | Free | Standard | Advanced | Enterprise |
-|---|:---:|:---:|:---:|:---:|
-| **Code Search** | Exact only | +Regex, Symbol | +Semantic | +Semantic |
-| **AI Review** | 5/month | 50/month | 500/month | Unlimited |
-| **Security Scan** | Secrets only | +License, Docker | +IaC, CVE | +Custom rules |
-| **DORA Metrics** | — | Basic (4 KPIs) | Full + trends | Custom dashboards |
-| **IDE Session** | 1 hr/day | 4 hr/day | 12 hr/day | Unlimited |
-| **HIPAA Rules** | — | — | ✅ | ✅ |
-| **SSO/SAML** | — | — | — | ✅ |
-| **Stacked PRs** | — | ✅ | ✅ | ✅ |
-| **API calls/day** | 100 | 2,000 | 5,000 | Unlimited |
+| Feature | Standard | Advanced | Enterprise |
+|---|:---:|:---:|:---:|
+| **Code Search** | Exact, Regex, Symbol | +Semantic | +Semantic |
+| **AI Review** | 50/month | 500/month | Unlimited |
+| **Security Scan** | Secrets, License, Docker | +IaC, CVE | +Custom rules |
+| **DORA Metrics** | Basic (4 KPIs) | Full + trends | Custom dashboards |
+| **IDE Session** | 4 hr/day | 12 hr/day | Unlimited |
+| **HIPAA Rules** | — | ✅ | ✅ |
+| **SSO/SAML** | — | — | ✅ |
+| **Stacked PRs** | ✅ | ✅ | ✅ |
+| **API calls/day** | 2,000 | 5,000 | Unlimited |
 
 <details>
 <summary>📊 How We Compare — SCM vs GitHub / GitLab / Bitbucket (click to expand)</summary>
@@ -2136,8 +2143,8 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 | **SSO/SAML** | Enterprise | Enterprise ($21/u) | Premium ($29/u) | Premium ($6/u) | Enterprise |
 | **IDE Plugin** | Prism CLI | VS Code, JetBrains | VS Code | VS Code | VS Code, JetBrains |
 | **Self-Hosted** | Enterprise | Enterprise | ✅ Free CE | Data Center | ✅ |
-| **Free Tier** | ✅ 3 repos | ✅ Unlimited public | ✅ 5 users | ✅ 5 users | ✅ Limited |
-| **Starting Price** | $12/mo | $4/u/mo | $29/u/mo | $3/u/mo | $49/u/mo |
+| **Free Tier** | ✅ 30-day trial | ✅ Unlimited public | ✅ 5 users | ✅ 5 users | ✅ Limited |
+| **Starting Price** | $19/u/mo | $4/u/mo | $29/u/mo | $3/u/mo | $49/u/mo |
 
 </details>
 
