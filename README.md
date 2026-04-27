@@ -2168,13 +2168,13 @@ prism scm dora --repo synalux/portal --period 2024-Q4
 <summary>📸 Screenshots — SCM CLI in action (click to expand)</summary>
 
 #### Code Search (Semantic Mode)
-![prism scm search — semantic code search across repos](images/scm_search_cli.png)
+![prism scm search — semantic code search across repos](images/scm_search_cli.jpg)
 
 #### AI Review with HIPAA Check
-![prism scm review — AI code review with HIPAA compliance](images/scm_review_cli.png)
+![prism scm review — AI code review with HIPAA compliance](images/scm_review_cli.jpg)
 
 #### Security Scan
-![prism scm scan — secret detection and Dockerfile analysis](images/scm_scan_cli.png)
+![prism scm scan — secret detection and Dockerfile analysis](images/scm_scan_cli.jpg)
 
 </details>
 
