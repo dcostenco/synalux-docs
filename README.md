@@ -1980,6 +1980,75 @@ Synalux Enterprise utilizes a state-of-the-art **Selective Forwarding Unit (SFU)
 
 By abandoning traditional P2P WebRTC Mesh architectures, Synalux guarantees stable CPU performance, minimal upstream bandwidth, and strict HIPAA-compliant data isolation.
 
+## 🚀 Quick-Win Feature Suite
+
+### 📋 AI Prior Authorization Drafting
+
+Auto-generate prior authorization letters from clinical data — supports **10 US payers** with specialty-specific medical necessity language.
+
+| Payer | Format | Avg Response | Attachments Required |
+|---|:---:|:---:|---|
+| Aetna | Structured | 5 days | Treatment plan, progress notes |
+| Blue Cross Blue Shield | Structured | 7 days | Treatment plan |
+| UnitedHealthcare | Narrative | 5 days | Treatment plan, assessment |
+| Cigna | Structured | 10 days | Treatment plan, progress notes, assessment |
+| Anthem BCBS | Structured | 7 days | Treatment plan |
+| Humana | Narrative | 10 days | Treatment plan, progress notes |
+| Medicare (CMS) | Structured | 14 days | Treatment plan, progress notes, assessment |
+| Medicaid | Structured | 14 days | Treatment plan, assessment |
+| TRICARE | Structured | 5 days | Treatment plan |
+| Kaiser Permanente | Narrative | 7 days | Treatment plan, assessment |
+
+Specialties auto-detected from CPT codes: **ABA** (97151-97157), **Mental Health** (90791/90837), **PT** (97110/97162), **Dental** (CDT D-codes), **Dermatology**, **Pediatrics**.
+
+### 🔄 One-Click Competitor Data Migration
+
+Import patient data from **8 competitor platforms** via CSV/JSON upload:
+
+| Source | Specialty | Export Format | Key Fields Mapped |
+|---|---|:---:|---|
+| **Portia Pro** | ABA | CSV | Clients, sessions, billing codes, diagnosis |
+| **CentralReach** | ABA | CSV | Participants, authorizations, learner data |
+| **SimplePractice** | Mental Health | CSV | Clients, appointments, insurance, diagnosis |
+| **TherapyNotes** | Mental Health | CSV | Patients, session notes, insurance |
+| **Dentrix** | Dental | CSV | Patient charts, treatment plans, ledgers |
+| **WebPT** | Physical Therapy | CSV | Patients, evaluations, exercises |
+| **ModMed (EMA)** | Dermatology | CSV | Patients, encounters, photos |
+| **IDEXX Cornerstone** | Veterinary | CSV | Animals, visits, vaccinations |
+
+Features: field mapping, date normalization, duplicate detection, validation with error/warning reports.
+
+### 📊 Public Uptime Status Page
+
+Real-time system health dashboard at `status.synalux.ai`:
+
+- **8 monitored components**: Portal, API, Database, Auth, Chat, Telehealth, Billing, Storage
+- **SLA target**: 99.9% (≤43.8 min downtime/month)
+- **Incident logging** with severity levels and resolution tracking
+- Critical components (Portal, API, Database, Auth) trigger overall outage status
+
+### 💬 In-App Chat Support
+
+Live support widget replacing phone-only support:
+
+- **6 categories**: Billing, Clinical, Technical, Account, Onboarding, Data Migration
+- **Auto-priority detection**: "system down" → urgent (5 min SLA), "can't access" → high (15 min)
+- **FAQ auto-response**: 8-entry knowledge base covers password reset, data migration, HIPAA, voice dictation, prior auth
+- **Smart routing**: tickets auto-routed to Revenue Cycle, Clinical Support, Engineering, Data Migration teams
+
+### 🎁 Free Tier
+
+| | Free | Standard | Advanced | Enterprise |
+|---|:---:|:---:|:---:|:---:|
+| **Price** | $0/mo | $19/mo | $49/mo | $99/mo |
+| **Users** | 1 | 5 | 15 | Unlimited |
+| **Patients** | 25 | Unlimited | Unlimited | Unlimited |
+| **Modules** | 3 | 8 | 16 | All 21 |
+| **AI Voice** | ❌ | ❌ | ✅ | ✅ |
+| **AI Prior Auth** | ❌ | ❌ | ✅ | ✅ |
+| **DORA Metrics** | ❌ | ❌ | ❌ | ✅ |
+| **Support** | Community | Email | Priority | Dedicated + SLA |
+
 ## 📊 Enterprise Capacity & Quotas
 
 | Feature | Synalux Standard | Synalux Enterprise | Notes |
