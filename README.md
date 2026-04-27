@@ -1159,6 +1159,19 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 | **E-Signatures** | BoldSign integration with 7 document templates |
 | **OCR** | Document scanning in 30+ languages for intake form digitization |
 
+#### 📊 How We Compare — Clinical Notes
+
+| Feature | Synalux | SimplePractice | TherapyNotes | Jane App | DrChrono |
+|---|:---:|:---:|:---:|:---:|:---:|
+| AI Voice Dictation (on-device) | ✅ | ❌ | ❌ | ❌ | ❌ |
+| SOAP Note Auto-Generation | ✅ | Partial | ❌ | ❌ | ✅ |
+| Zero-Cloud PHI Transmission | ✅ | ❌ | ❌ | ❌ | ❌ |
+| E-Signatures | ✅ | ✅ | ❌ | ✅ | ✅ |
+| OCR (30+ languages) | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Multi-Specialty Templates | 6 types | 3 types | 2 types | 4 types | 5 types |
+| PDF Export (server-side) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Offline Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+
 </details>
 
 ### 📴 Offline-First Clinical Sessions
@@ -1434,6 +1447,21 @@ Payment Failed → past_due (warning banner, keep access)
 - Stripe Tax enabled per-country (VAT, GST, HST, PST)
 - Tax calculated automatically based on workspace country
 - Compliant with Canadian multi-province tax rules (federal GST + provincial PST/HST)
+
+#### 📊 How We Compare — Billing & Payments
+
+| Feature | Synalux | SimplePractice | TherapyNotes | Jane App | Tebra |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Insurance Claims (837P) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ERA Auto-Post (835) | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Superbill Generation | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Multi-Currency | ✅ | ❌ | ❌ | CAD only | ❌ |
+| Stripe/PayPal Integration | Both | Stripe | ❌ | Stripe | ❌ |
+| Auth Utilization Tracking | ✅ | Partial | Partial | ❌ | ✅ |
+| Batch Claim Submission | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Auto Tax Calculation | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Sliding Scale Fees | ✅ | ✅ | ❌ | ❌ | ❌ |
+
 </details>
 
 ### 📅 Scheduling & Appointments
@@ -1458,6 +1486,19 @@ Payment Failed → past_due (warning banner, keep access)
 | **Recurring Visits** | Weekly therapy sessions, monthly check-ups, ortho adjustments |
 | **Waitlist** | Waitlisted appointment requests when slots are full |
 | **Reminders** | Automated appointment reminders (planned) |
+
+#### 📊 How We Compare — Scheduling
+
+| Feature | Synalux | SimplePractice | Acuity | Jane App | Calendly |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Multi-Provider Calendar | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Patient Self-Scheduling | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Waitlist Management | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Recurring Visits | ✅ | ✅ | ✅ | ✅ | ❌ |
+| HIPAA Compliant | ✅ | ✅ | BAA | ✅ | ❌ |
+| Offline Scheduling | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Appointment States (7) | ✅ | 4 states | 3 states | 5 states | 2 states |
+| Integrated Billing Link | ✅ | ✅ | ❌ | ✅ | ❌ |
 
 </details>
 
@@ -1622,6 +1663,19 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **Forms** | Complete intake forms, PHQ-9/GAD-7 questionnaires, consent forms online |
 | **Consents** | Digital consent management (treatment, HIPAA, telehealth, medication, research) |
 
+#### 📊 How We Compare — Patient Portal
+
+| Feature | Synalux | SimplePractice | Jane App | Athenahealth | Epic MyChart |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Online Bill Pay | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Secure Messaging | ✅ | ✅ | ❌ | ✅ | ✅ |
+| Appointment Requests | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Digital Intake Forms | ✅ | ✅ | ✅ | ✅ | ✅ |
+| PHQ-9/GAD-7 Screening | ✅ | ❌ | ❌ | ✅ | ✅ |
+| 5 Consent Types | ✅ | 2 types | 1 type | 3 types | 3 types |
+| Read Receipts | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Language | 12 langs | 2 langs | 2 langs | 3 langs | 8 langs |
+
 </details>
 
 ### 📚 Patient Education Module
@@ -1725,6 +1779,19 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 | **Voice-to-Action** | Voice commands → call, SMS, email, schedule (Pro+) |
 | **Channels** | Department-based channels (Clinical, Billing, Admin) |
 | **File Attachments** | Share documents, images, and clinical assets in chat |
+
+#### 📊 How We Compare — Team Communication
+
+| Feature | Synalux | Slack | Microsoft Teams | Klara | Spruce Health |
+|---|:---:|:---:|:---:|:---:|:---:|
+| E2E Encryption | ✅ | Enterprise | ❌ | ✅ | ✅ |
+| HIPAA Compliant | ✅ | BAA available | BAA available | ✅ | ✅ |
+| Video Conferencing | ✅ (25+) | Huddles (50) | ✅ (1000) | ❌ | ❌ |
+| Clinical Context Sharing | ✅ | ❌ | ❌ | Partial | Partial |
+| Voice-to-Action | ✅ | ❌ | Cortana | ❌ | ❌ |
+| Department Channels | ✅ | ✅ | ✅ | ❌ | ❌ |
+| EHR Integration | Native | Plugin | Plugin | ✅ | ✅ |
+| Telehealth Built-In | ✅ | ❌ | ❌ | ❌ | ✅ |
 
 
 #### 📊 Platform Usage Limits (Voice, Video & API)
@@ -1883,6 +1950,27 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 | **SSO/SAML** | — | — | — | ✅ |
 | **Stacked PRs** | — | ✅ | ✅ | ✅ |
 | **API calls/day** | 100 | 2,000 | 5,000 | Unlimited |
+
+<details>
+<summary>📊 How We Compare — SCM vs GitHub / GitLab / Bitbucket (click to expand)</summary>
+
+| Feature | Synalux SCM | GitHub | GitLab | Bitbucket | Sourcegraph |
+|---|:---:|:---:|:---:|:---:|:---:|
+| **Code Search** | Exact, Regex, Symbol, Semantic | Exact, Regex | Basic | Basic | Exact, Regex, Structural |
+| **AI Code Review** | Built-in (all tiers) | Copilot (paid add-on) | Duo (Ultimate only) | ❌ | ❌ |
+| **Secret Detection** | ✅ Free tier | Push Protection (paid) | ✅ Ultimate | ❌ | ❌ |
+| **License Scanning** | ✅ Standard+ | ❌ | ✅ Ultimate | ❌ | ❌ |
+| **Dockerfile Analysis** | ✅ Standard+ | ❌ | Container Scanning | ❌ | ❌ |
+| **DORA Metrics** | ✅ Standard+ | ❌ (3rd party) | ✅ Ultimate | ❌ | ❌ |
+| **HIPAA Compliance** | ✅ Advanced+ | Enterprise BAA | Ultimate BAA | Enterprise BAA | ❌ |
+| **Stacked PRs** | ✅ Standard+ | ❌ (Graphite) | ❌ | ❌ | ❌ |
+| **SSO/SAML** | Enterprise | Enterprise ($21/u) | Premium ($29/u) | Premium ($6/u) | Enterprise |
+| **IDE Plugin** | Prism CLI | VS Code, JetBrains | VS Code | VS Code | VS Code, JetBrains |
+| **Self-Hosted** | Enterprise | Enterprise | ✅ Free CE | Data Center | ✅ |
+| **Free Tier** | ✅ 3 repos | ✅ Unlimited public | ✅ 5 users | ✅ 5 users | ✅ Limited |
+| **Starting Price** | $12/mo | $4/u/mo | $29/u/mo | $3/u/mo | $49/u/mo |
+
+</details>
 
 ### CLI Integration (`prism scm`)
 
