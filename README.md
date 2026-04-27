@@ -932,17 +932,18 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 
 #### 📊 How We Compare — ABA Therapy
 
-| Feature | Synalux | CentralReach | Rethink | Catalyst | Hi Rasmus |
-|---|:---:|:---:|:---:|:---:|:---:|
-| ABA Data Collection | ✅ | ✅ | ✅ | ✅ | ✅ |
-| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Mastery Predictions | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Smart Treatment Recs | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Program Tree View | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Insurance Claims | ✅ | ✅ | ❌ | ❌ | ❌ |
-| E-Signatures | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Multi-Specialty | ✅ 6 types | ABA only | ABA only | ABA only | ABA only |
-| Offline Mode | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Feature | Synalux | CentralReach | Rethink | Catalyst | Hi Rasmus | Portia Pro |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| ABA Data Collection | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Mastery Predictions | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Smart Treatment Recs | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Program Tree View | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Insurance Claims | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ |
+| E-Signatures | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 6 types | ABA only | ABA only | ABA only | ABA only | ABA only |
+| Offline Mode | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ |
+| Starts at | $29/mo | Custom | Custom | Custom | Custom | $30/mo |
 
 </details>
 
