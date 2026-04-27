@@ -1904,9 +1904,13 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 *   **API Rate Limits (Per User)**: Daily backend API execution is enforced individually: Standard (2,000 tx/day), Advanced (5,000 tx/day), Enterprise (Unlimited / 999,999 tx/day).
 </details>
 
-### 📞 Collaboration Practice Suite
+### 📞 Team Collaboration Hub
 
-- **Centralized Dashboard:** Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively.
+- **Centralized Dashboard:** Real-time metrics aggregation — missed calls, active chats, clinical tasks, and active sprint status in a single overview pane.
+- **Kanban Board:** 5-column drag-and-drop board (Backlog → To Do → In Progress → Review → Done) with task cards showing priority, labels, assignees, and due dates. Filter by label for rapid triage.
+- **Sprint Tracker:** Scrum-style sprint management with planning/active/completed statuses, progress bars, velocity tracking, capacity planning, and per-sprint task breakdown by column.
+- **Team Reports:** Four analytics panels — Task Distribution by status, Priority Breakdown, Team Workload bars, and Sprint Velocity chart across completed sprints.
+- **New Task Modal:** Quick task creation with title input and 4-level priority selector (low/normal/high/urgent). Tasks auto-assigned to Backlog column.
 - **Video Consults (LiveKit):** Bandwidth-aware SFU integration using Simulcast. Outbound constraints bypassed via selective stream active-speaker routing.
 - **RLS Gating:** Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits.
 - **Clinical Tasks:** Internal clinic reminders, approvals, and queueing isolated per workspace securely.
@@ -1916,10 +1920,31 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 
 | Feature | Details |
 |---------|---------|
-| **Centralized Dashboard** | Router mapping aggregate metrics efficiently. Command center isolating missed tasks natively. |
-| **Video Consults (LiveKit)** | Bandwidth-aware SFU integration using Simulcast. Outbound constraints bypassed via selective stream active-speaker routing. |
-| **RLS Gating** | Implicit identity tracking eliminating server-side cross-tenant data leaks natively mapping strictly to Advanced/Pro limits. |
-| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace securely. |
+| **Centralized Dashboard** | Real-time metrics aggregation — missed calls, active chats, clinical tasks, and active sprint status |
+| **Kanban Board** | 5-column drag-and-drop (Backlog/To Do/In Progress/Review/Done) with labels, priorities, assignees, due dates, and label filtering |
+| **Sprint Tracker** | Scrum sprints with planning/active/completed statuses, progress bars, velocity and capacity metrics |
+| **Team Reports** | Task distribution, priority breakdown, team workload bars, sprint velocity chart |
+| **New Task Modal** | Quick creation with title, 4-level priority (low/normal/high/urgent), auto-backlog assignment |
+| **Video Consults (LiveKit)** | Bandwidth-aware SFU integration using Simulcast. Active-speaker routing. |
+| **RLS Gating** | Implicit identity tracking eliminating cross-tenant data leaks |
+| **Clinical Tasks** | Internal clinic reminders, approvals, and queueing isolated per workspace |
+
+#### 📊 How We Compare — Team Collaboration & Project Management
+
+| Feature | Synalux | Asana | Monday.com | Jira | ClickUp | Notion |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Kanban Board | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Sprint Planning | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ |
+| Velocity Tracking | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ |
+| HIPAA Compliant | ✅ | BAA ($) | BAA ($) | BAA ($) | Enterprise | ❌ |
+| Integrated Video Calls | ✅ (25+) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Clinical Task Labels | ✅ | Custom | Custom | Custom | Custom | Custom |
+| Team Workload Reports | ✅ | Business+ | Pro+ | Premium | Business+ | ❌ |
+| EHR Integration | Native | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Drag-and-Drop Tasks | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Label Filtering | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Built-in Team Chat | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Starting Price | $19/u/mo | $10.99/u/mo | $9/u/mo | $7.75/u/mo | $7/u/mo | $8/u/mo |
 
 </details>
 
