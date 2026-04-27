@@ -1866,6 +1866,56 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 
 ---
 
+## 🔀 Synalux SCM — Source Control & Developer Intelligence
+
+> Integrated code search, AI review, security scanning, and DORA metrics — available via the Prism CLI (`prism scm`) and the Synalux web portal. All engines run on the Synalux backend; the CLI is a thin API client.
+
+### SCM Features by Tier
+
+| Feature | Free | Standard | Advanced | Enterprise |
+|---|:---:|:---:|:---:|:---:|
+| **Code Search** | Exact only | +Regex, Symbol | +Semantic | +Semantic |
+| **AI Review** | 5/month | 50/month | 500/month | Unlimited |
+| **Security Scan** | Secrets only | +License, Docker | +IaC, CVE | +Custom rules |
+| **DORA Metrics** | — | Basic (4 KPIs) | Full + trends | Custom dashboards |
+| **IDE Session** | 1 hr/day | 4 hr/day | 12 hr/day | Unlimited |
+| **HIPAA Rules** | — | — | ✅ | ✅ |
+| **SSO/SAML** | — | — | — | ✅ |
+| **Stacked PRs** | — | ✅ | ✅ | ✅ |
+| **API calls/day** | 100 | 2,000 | 5,000 | Unlimited |
+
+### CLI Integration (`prism scm`)
+
+```bash
+# Semantic code search across repos
+prism scm search "handleAuth" --mode semantic --repo synalux/portal
+
+# AI code review with HIPAA compliance
+prism scm review src/db.ts --hipaa --json
+
+# Security scan — secrets, licenses, Dockerfiles
+prism scm scan .env Dockerfile --json
+
+# DORA metrics
+prism scm dora --repo synalux/portal --period 2024-Q4
+```
+
+<details>
+<summary>📸 Screenshots — SCM CLI in action (click to expand)</summary>
+
+#### Code Search (Semantic Mode)
+![prism scm search — semantic code search across repos](images/scm_search_cli.png)
+
+#### AI Review with HIPAA Check
+![prism scm review — AI code review with HIPAA compliance](images/scm_review_cli.png)
+
+#### Security Scan
+![prism scm scan — secret detection and Dockerfile analysis](images/scm_scan_cli.png)
+
+</details>
+
+---
+
 ## ◈ Prism Coder IDE — Desktop IDE for Developers
 
 > Synalux also powers **Prism Coder**, a local-first AI-native desktop IDE that combines coding, building, and deploying. All business logic routes through the Synalux API — the IDE is a thin client.
