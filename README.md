@@ -531,7 +531,7 @@ These 12 keywords are available in every workspace regardless of practice type:
 | @Keyword | Icon | Label | AI Instruction Summary |
 |----------|------|-------|----------------------|
 | `@eval` | 📐 | PT/OT Evaluation | Comprehensive eval — history, ROM, MMT, sensation, balance, gait, functional assessment, plan of care. |
-| `@rom` | 🦿 | Range of Motion | ROM table: Joint \| Motion \| Active \| Passive \| Normal \| WNL. End-feel quality, bilateral comparison. |
+| `@rom` | 🦿 | Range of Motion | ROM table: `Joint`, `Motion`, `Active`, `Passive`, `Normal`, `WNL`. End-feel quality, bilateral comparison. |
 | `@functional` | 📋 | Functional Assessment | ADL levels, mobility status, Berg Balance, Timed Up and Go, overall functional limitation %. |
 | `@poc` | 📋 | Plan of Care | STG/LTG goals, treatment frequency, interventions, expected outcomes, discharge criteria. |
 | `@exercise` | 🏃 | Exercise Program | Home Exercise Program — sets, reps, hold time, frequency, precautions, progression criteria. |
