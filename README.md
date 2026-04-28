@@ -36,9 +36,9 @@ Whether you manage 5 therapists or 500 across three countries, Synalux isolates 
 * **Ironclad Access Control:** 15 distinct staff roles ensure that a receptionist cannot read a psychotherapy note, and a medical technician cannot alter billing codes. Everyone operates in their own secure lane.
 * **Automated HIPAA Compliance:** Synalux enforces compliance for you: automatic 15-minute screen lockouts, secure data purging when a tab is closed, and unalterable audit trails showing exactly who opened which file and when.
 
-![Patient Records — demographics, diagnoses, authorizations, and session history in one view](images/patient-records-preview.jpg)
+![Patient Records — demographics, diagnoses, authorizations, and session history in one view](docs/demo/02_patient_dashboard.png)
 
-![Billing & Claims Dashboard — claim tracking, superbill generation, and authorization utilization](images/billing-claims-preview.jpg)
+![Billing & Claims Dashboard — claim tracking, superbill generation, and authorization utilization](docs/demo/13_billing_payments.png)
 
 ---
 
@@ -702,17 +702,17 @@ All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API
 </details>
 ---
 
-![Weekly Scheduling — provider calendar with color-coded appointments and patient popovers](images/scheduling-preview.jpg)
+![Weekly Scheduling — provider calendar with color-coded appointments and patient popovers](docs/demo/15_scheduling.png)
 
-![Team Messenger — HIPAA-encrypted channels with file sharing and AI assistant](images/team-chat-preview.jpg)
+![Team Messenger — HIPAA-encrypted channels with file sharing and AI assistant](docs/demo/10_team_chat.png)
 
-![Clinical AI Assistant — @soap dictation generates structured SOAP notes in seconds](images/clinical-ai-preview.jpg)
+![Clinical AI Assistant — @soap dictation generates structured SOAP notes in seconds](docs/demo/30_intelligent_assistant.png)
 
 ## 🔐 Audit & Compliance Architecture
 
 Synalux enforces **universal audit logging** on every interaction with the system. This is not optional — it is baked into the API layer via middleware that cannot be bypassed.
 
-![HIPAA Audit Log — immutable triple-logging with 100% route coverage](images/audit-log-preview.jpg)
+![HIPAA Audit Log — immutable triple-logging with 100% route coverage](docs/demo/38_compliance_audit.png)
 
 ### Triple-Logging Architecture
 
@@ -2131,7 +2131,7 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 
 ![SOAP Generator](docs/demo/04_soap_note.png)
 
-![Data Collection & EVV](images/data-collection-preview.png)
+![Data Collection & EVV](docs/demo/07_abc_data_collection.png)
 
 ---
 
@@ -2194,13 +2194,13 @@ prism scm dora --repo synalux/portal --period 2024-Q4
 <summary>📸 Screenshots — SCM CLI in action (click to expand)</summary>
 
 #### Code Search (Semantic Mode)
-![prism scm search — semantic code search across repos](images/scm_search_cli.jpg)
+![prism scm search — semantic code search across repos](docs/demo/scm/scm_search_cli.png)
 
 #### AI Review with HIPAA Check
-![prism scm review — AI code review with HIPAA compliance](images/scm_review_cli.jpg)
+![prism scm review — AI code review with HIPAA compliance](docs/demo/scm/scm_review_cli.png)
 
 #### Security Scan
-![prism scm scan — secret detection and Dockerfile analysis](images/scm_scan_cli.jpg)
+![prism scm scan — secret detection and Dockerfile analysis](docs/demo/scm/scm_scan_cli.png)
 
 </details>
 
