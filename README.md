@@ -464,6 +464,7 @@ You press Tab → "the client demonstrated"
 | `session summary` | Session Summary: Today's session focused on |
 | `caregiver report` | caregiver reports that |
 
+</details>
 
 #### Default Keyword Reference
 
@@ -1949,7 +1950,7 @@ A full-featured patient-facing portal with authentication, messaging, documents,
 </details>
 
 ### 🔐 Enterprise Administration
-    ### 🛡️ Security & Compliance
+### 🛡️ Security & Compliance
 
 - **HIPAA Compliance:** Full HIPAA audit trail, BAA-ready architecture
 - **Strict Access Control:** 11 cryptographically-signed roles with specific access limits
@@ -2119,7 +2120,7 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 
 Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice Administrators. 
 
-![Dashboard Preview](images/dashboard-preview.png)
+![Dashboard Preview](docs/demo/02_patient_dashboard.png)
 
 #### Core Modules:
 
@@ -2128,7 +2129,7 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 - **🧠 Active Insights**: GRPO-aligned clinical reasoning identifies target mastery and plateaus automatically.
 - **⏱️ Practice Management**: Integrated timesheets, authorizations tracking, and billing claims automation.
 
-![SOAP Generator](images/soap-notes-preview.png)
+![SOAP Generator](docs/demo/04_soap_note.png)
 
 ![Data Collection & EVV](images/data-collection-preview.png)
 
