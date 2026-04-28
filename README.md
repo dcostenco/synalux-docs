@@ -224,15 +224,15 @@ Conversation Mode turns the assistant into a **hands-free, voice-driven clinical
 
 **How it works:**
 
-```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  🎤 Listen   │ ──→ │ 📝 Transcribe │ ──→ │ 💬 Chat API  │ ──→ │ 🔊 Speak     │
-│ (auto-start) │     │ /api/v1/     │     │ /api/v1/chat │     │ (TTS)        │
-│              │     │ transcribe   │     │              │     │              │
-│ MediaRecorder│     │  ✅ AUDITED  │     │  ✅ AUDITED  │     │ SpeechSynth  │
-└──────────────┘     └──────────────┘     └──────────────┘     └──────┬───────┘
-       ▲                                                              │
-       └──────────────────────── LOOP ────────────────────────────────┘
+```mermaid
+flowchart LR
+    A["🎤 Listen<br>(auto-start)<br><br>MediaRecorder"]
+    B["📝 Transcribe<br>/api/v1/transcribe<br>✅ AUDITED"]
+    C["💬 Chat API<br>/api/v1/chat<br>✅ AUDITED"]
+    D["🔊 Speak<br>(TTS)<br><br>SpeechSynth"]
+
+    A --> B --> C --> D
+    D -- "LOOP" --> A
 ```
 
 **Every word is audit-logged.** The transcription goes through `/api/v1/transcribe` (audited). The message goes through `/api/v1/chat` (audited). Session START and STOP events are logged with word counts. There is no way to use Conversation Mode without generating a complete, immutable audit trail.
@@ -292,7 +292,7 @@ The intelligent assistant does **not** expose a model selector by default. The s
 
 ### 🖥️ Prism Coder IDE — Standalone Desktop App
 
-> **Available on ALL Synalux plans.** Start with a 30-day free trial on Standard, then choose the plan that fits your practice.
+> **Available on ALL Synalux plans.** Start with a 14-day free trial on any paid plan, then choose the tier that fits your practice.
 
 A VS Code-like standalone desktop IDE powered by Prism Coder 7B. Ships as `.dmg` (macOS) and `.exe` (Windows). Includes Monaco Editor, AI chat with SSE streaming, integrated terminal, and file explorer — all running 100% locally.
 
@@ -375,7 +375,7 @@ def validate_tool_call(prompt, tool_name, tool_args):
 | Break-Glass Override | ❌ | ❌ | ✅ |
 | Priority Support | ❌ | ❌ | ✅ |
 
-> 🧪 **30-day free trial** on Standard — no credit card required.
+> 🧪 **14-day free trial** on all paid plans — no credit card required.
 
 ### ⚡ @Keywords — Configurable AI Command System
 
@@ -1663,7 +1663,7 @@ Payment Failed → past_due (warning banner, keep access)
 
 </details>
 
-### ⏱️ Timesheets & Payroll Module (Implemented ✅)
+### ⏱️ Timesheets & Payroll Module
 
 🔗 **[Read Detailed Timesheets & Payroll Module Documentation](docs_source_en/timesheets_payroll_module.md)**
 
@@ -2110,7 +2110,7 @@ Live support widget replacing phone-only support:
 | **DORA Metrics** | ❌ | ❌ | ✅ |
 | **Support** | Email | Priority | Dedicated + SLA |
 
-> 🧪 **30-day free trial** on Standard — no credit card required.
+> 🧪 **14-day free trial** on all paid plans — no credit card required.
 
 ## 📊 Enterprise Capacity & Quotas
 
@@ -2199,7 +2199,7 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 | **SSO/SAML** | Enterprise | Enterprise ($21/u) | Premium ($29/u) | Premium ($6/u) | Enterprise |
 | **IDE Plugin** | Prism CLI | VS Code, JetBrains | VS Code | VS Code | VS Code, JetBrains |
 | **Self-Hosted** | Enterprise | Enterprise | ✅ Free CE | Data Center | ✅ |
-| **Free Tier** | ✅ 30-day trial | ✅ Unlimited public | ✅ 5 users | ✅ 5 users | ✅ Limited |
+| **Free Tier** | ✅ 14-day trial | ✅ Unlimited public | ✅ 5 users | ✅ 5 users | ✅ Limited |
 | **Starting Price** | $19/u/mo | $4/u/mo | $29/u/mo | $3/u/mo | $49/u/mo |
 
 </details>
