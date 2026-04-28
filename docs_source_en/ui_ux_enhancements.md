@@ -25,3 +25,11 @@ import CommandPalette from '@/components/ui/CommandPalette';
 
 Test covered automatically via Playwright mapping (`tests/ui/deep-ui.spec.ts`). Testing ensures the `Escape` key effectively triggers the overlay dropdown dismount to preserve accessibility standards.
 </details>
+
+## Smart "First Available" Booking Widget
+
+Designed to eliminate friction for patients trying to book quick appointments. It masks complex scheduling matrices under an intuitive "First Available" list. Located natively in the scheduling flow (`components/ui/SmartBookingWidget.tsx`).
+
+## Floating AI Assistant
+
+Provides clinicians with an omni-present contextual side-panel (`components/ui/FloatingAIAssistant.tsx`). Instead of clicking back and forth between tabs to draft notes, the Assistant is pre-loaded with the active patient's context to draft SOAP notes and summarize histories dynamically.
