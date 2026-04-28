@@ -206,6 +206,9 @@ Layer 3: OUTPUT GUARDRAILS (Rolling Window)
 
 Conversation Mode turns the assistant into a **hands-free, voice-driven clinical companion** — similar to speaking with Siri or Google Assistant, but purpose-built for healthcare workflows. Available on both the **web portal** and the **VS Code extension**.
 
+<details>
+<summary>View Architecture Workflow</summary>
+
 **How it works:**
 
 ```
@@ -220,6 +223,8 @@ Conversation Mode turns the assistant into a **hands-free, voice-driven clinical
 ```
 
 **Every word is audit-logged.** The transcription goes through `/api/v1/transcribe` (audited). The message goes through `/api/v1/chat` (audited). Session START and STOP events are logged with word counts. There is no way to use Conversation Mode without generating a complete, immutable audit trail.
+
+</details>
 
 - **Voice engine:** Browser MediaRecorder API
 - **Speech output:** Browser SpeechSynthesis API
@@ -406,6 +411,9 @@ GOOGLE_PLACES_API_KEY=your_google_places_api_key
 
 Type `@` in any smart text field to see the keyword dropdown:
 
+<details>
+<summary>View @Keywords Menu Layout</summary>
+
 ```
 ┌─────────────────────────────────────────────┐
 │ COMMANDS                                     │
@@ -422,6 +430,8 @@ Type `@` in any smart text field to see the keyword dropdown:
 - **Enter / Tab** → accept the selected keyword
 - **Escape** → dismiss the dropdown
 - **Type after @** → filter keywords (e.g., `@so` shows `@soap`)
+
+</details>
 
 #### Clinical Ghost Text Completions (Tab to Accept)
 
@@ -644,6 +654,9 @@ POST /api/v1/keywords?action=seed
 { "specialty": "mental_health" }
 ```
 
+<details>
+<summary>View Keyword Categories & Validation Details</summary>
+
 #### Keyword Categories
 
 Keywords are organized into 5 categories for the admin panel:
@@ -718,6 +731,9 @@ Synalux enforces **universal audit logging** on every interaction with the syste
 
 Every API request flows through three logging layers:
 
+<details>
+<summary>View Triple-Logging Architecture Diagram</summary>
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                        INCOMING REQUEST                         │
@@ -747,6 +763,8 @@ Every API request flows through three logging layers:
 | **admin_audit_log** | Full request body snapshot, before/after state | Admin mutations only (POST/PUT/DELETE on admin routes) | **Immutable** — append-only |
 | **hipaa_access_log** | Patient ID, action type (VIEW/EDIT), resource type | Any route touching patient data | **Immutable** — HIPAA retention |
 
+</details>
+
 ### 🔥 Fire-and-Forget Design
 
 Audit writes are **asynchronous and non-blocking**. A failure to log **never** crashes a clinical workflow:
@@ -763,6 +781,9 @@ return response;  // ← Clinical response is never delayed
 ### 📋 Per-Module Audit Coverage
 
 Every module in the platform has explicit audit configuration. Here is the complete map:
+
+<details>
+<summary>View Complete Module Audit Map</summary>
 
 #### 🏥 Clinical Modules (PHI-Sensitive)
 
@@ -835,6 +856,8 @@ Every module in the platform has explicit audit configuration. Here is the compl
 | `/api/v1/drive/[id]/*` | `drive` | — | — | Document access, state changes, sharing permissions |
 | `/api/v1/contacts/search` | `contacts` | — | — | Contact directory lookups |
 
+</details>
+
 ### 🛡️ Break-Glass: The Nuclear Option
 
 The **break-glass** endpoint is the most heavily audited route in the system. It allows a platform administrator to override normal access controls in an emergency (e.g., a provider is locked out and a patient needs immediate care).
@@ -849,6 +872,9 @@ Break-Glass Audit Trail:
 Every break-glass event is **triple-logged** and **immutable**. There is no way to use this feature without leaving a permanent, tamper-proof record.
 
 ### 🌐 External Interface Monitoring
+
+<details>
+<summary>View Monitored External Services</summary>
 
 Synalux tracks the health and version of every external service the platform depends on:
 
@@ -871,6 +897,8 @@ Each external call is logged in `external_interface_log` with:
 - SDK version used, API version called
 - Error messages (if any)
 - Service degradation alerts (>500ms response, >1% error rate)
+
+</details>
 
 ### 📊 Audit Data Retention
 

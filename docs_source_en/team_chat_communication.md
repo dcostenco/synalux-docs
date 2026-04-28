@@ -10,7 +10,12 @@ Keep your practice organized and your patient data private.
 *   **Threaded Conversations:** Stay focused on specific topics without cluttering the main channel.
 *   **Urgent Mentions:** Use @urgent to trigger immediate notifications for time-sensitive clinical alerts.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Team Chat Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Conduct high-definition telehealth and team meetings with rock-solid stability.
 *   **Bandwidth Optimized:** Our SFU architecture ensures you only upload 1 stream, no matter how many people are in the room.
 *   **Active-Speaker Routing:** The UI dynamically highlights the person speaking and dims background participants to save your CPU.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![HD Video Conference Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/telehealth_conference_ui.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Share the right information with the right people, instantly.
 *   **Encryption at Rest:** Every file shared in chat is secured with AES-256-GCM and inherits workspace RLS policies.
 *   **Mobile Review:** Clinicians can securely view X-rays, photos, and PDFs on their tablets during sessions.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Clinical Asset Sharing](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+
+</details>
 
 ---
 
@@ -40,7 +55,12 @@ Bridge the gap between your branches and external partners.
 *   **HQ Announcements:** Broadcast critical organization-wide updates to all branches simultaneously.
 *   **Global Directory:** Quickly find and message providers and staff across your entire enterprise network.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Global Practice Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+
+</details>
 
 ---
 
@@ -59,4 +79,9 @@ Bridge the gap between your branches and external partners.
 *   **Access Expiration:** Temporary staff (e.g., interns) are automatically removed from channels on their end-date.
 *   **Tamper-Proof Logs:** A permanent, searchable audit trail of every message and file access.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

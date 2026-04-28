@@ -10,8 +10,13 @@ Capture every pocket depth and recession value with speed and accuracy.
 *   **BOP & Furcation Tracking:** Visual indicators for bleeding on probing and furcation involvement.
 *   **Comparison Views:** Instantly compare current charting with historical data to track bone loss or healing.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Dental Perio Charting](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33.png)
 *(Note: Placeholder for actual Perio UI)*
+
+</details>
 
 ---
 
@@ -21,8 +26,13 @@ Manage complex implant cases from initial surgical planning to final prosthesis.
 *   **Restorative Phase:** Manage impressions, lab tracking for custom abutments, and final crown delivery.
 *   **Lab Integration:** Real-time status updates for your preferred dental labs.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Implant Workflow](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 *Managing surgical and restorative components in the clinical vault.*
+
+</details>
 
 ---
 
@@ -32,7 +42,12 @@ Scale your ortho practice with automated adjustment tracking and recurring billi
 *   **Photo Tracking:** Securely store and compare intra-oral photos across the 18-24 month treatment plan.
 *   **Ortho Payment Plans:** Automated Stripe-powered installments (e.g., $194/mo) with zero-touch reconciliation.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Ortho Progress Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
+
+</details>
 
 ---
 
@@ -42,7 +57,12 @@ Present clear, sequenced plans to patients that improve case acceptance.
 *   **Priority Phases:** Group treatments into Urgent, Disease Control, and Corrective phases.
 *   **Pre-Determinations:** Send electronic pre-auths to Delta Dental, MetLife, and Cigna instantly.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Treatment Planning Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+
+</details>
 
 ---
 
@@ -51,7 +71,12 @@ Present clear, sequenced plans to patients that improve case acceptance.
 *   **Annual Max Tracking:** Real-time visibility into the patient's remaining insurance benefits.
 *   **Superbills:** Automated generation of CDT-compliant receipts for out-of-network reimbursement.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Dental Billing & Cross-Border Finance](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+</details>
 
 ---
 
@@ -60,4 +85,9 @@ Present clear, sequenced plans to patients that improve case acceptance.
 *   **Consent Vault:** Digital signatures for extractions, bone grafts, and surgical procedures via BoldSign.
 *   **HIPAA Audit Trail:** Every radiograph view and chart note is tracked and timestamped.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

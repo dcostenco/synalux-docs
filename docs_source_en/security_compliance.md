@@ -10,7 +10,12 @@ Exceed the federal standards for data protection.
 *   **Encryption in Transit:** Every connection is protected by TLS 1.3 with high-strength cipher suites.
 *   **Zero-Knowledge Options:** For psychiatry and sensitive therapy, notes are encrypted with keys that only the provider can access.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security Architecture & Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Absolute accountability for every action taken on the platform.
 *   **Contextual Logging:** Know exactly who looked at a chart, from which IP address, and for how long.
 *   **Administrative Oversight:** HQ admins can review organization-wide security posture in real-time.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security Audit Logs UI](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Enforce the "Principle of Least Privilege" with granular precision.
 *   **Employee Overrides:** Overrule base roles to restrict specific high-risk features (e.g., "Export to Excel").
 *   **Branch Isolation:** Providers in one branch cannot access records in another unless explicitly authorized.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![RBAC Role Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
+
+</details>
 
 ---
 

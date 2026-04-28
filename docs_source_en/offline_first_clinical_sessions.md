@@ -10,7 +10,12 @@ Type with confidence knowing every keystroke is protected.
 *   **Crash Recovery:** If your browser or tablet crashes, your draft is waiting for you exactly where you left off.
 *   **Real-Time Status:** A subtle indicator in the sidebar shows your current sync status and the number of pending items.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Offline Sync Status Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/offline_sync_ui.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Capture accurate session durations for 100% billing compliance.
 *   **Clinical Overtime:** The calendar is a guide, not a switch. Sessions stay active until you explicitly sign off.
 *   **Sync Transparency:** Admins see both the clinical event time and the server sync time in the audit log.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Clinical Session Lifecycle Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+
+</details>
 
 ---
 
@@ -37,7 +47,12 @@ Stay logged in during long patient conversations without touching your device.
 *   **Mic Detection:** If WASM Whisper is active and listening, the system prevents idle timeouts entirely.
 *   **Hands-Free Liberty:** Focus 100% on the patient—your session won't time out as long as the conversation continues.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Ambient Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
+
+</details>
 
 ---
 
@@ -53,4 +68,9 @@ Stay logged in during long patient conversations without touching your device.
 *   **Immutable Logs:** Every 🟢 Online and 🔴 Offline event is tracked with its original device ID.
 *   **Role-Based Gating:** Access to offline drafts is restricted to the original author and authorized clinical directors.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

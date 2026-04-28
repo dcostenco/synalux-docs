@@ -10,7 +10,12 @@ Scale your practice globally without losing control.
 *   **Hierarchy at a Glance:** Roll-up financial and operational metrics from individual clinics to the HQ dashboard.
 *   **Instant Provisioning:** Deploy a new branch with pre-configured clinical templates and billing rules in seconds.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Global Branch Network Manager](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Make Synalux look and feel like your own proprietary platform.
 *   **Themed Portals:** Your patient portal and staff dashboard instantly adopt your clinical brand identity.
 *   **Custom Domain Support:** Host your clinical portal on your own domain (e.g., portal.yourclinic.com).
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Platform White-Labeling Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/20_platform_admin.png)
+
+</details>
 
 ---
 
@@ -30,8 +40,13 @@ Customize the platform for your specific clinical needs.
 *   **Screen Builders:** Rename buttons, hide unnecessary table columns, and override standard UI text.
 *   **Role Personalization:** Create specialized dashboards for different staff levels (Front Desk vs. Senior Doctor).
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Module Configuration Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
 *Example of a customized "Technician-Only" dashboard view.*
+
+</details>
 
 ---
 
@@ -41,7 +56,12 @@ Enforce the principle of "Least Privilege" across your team.
 *   **API-Level Blocking:** Security policies are enforced at the server layer, not just in the UI.
 *   **IP Whitelisting:** Restrict clinical access to known office or VPN IP addresses for maximum security.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security Policy Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
+
+</details>
 
 ---
 
@@ -51,7 +71,12 @@ Maintain absolute accountability in emergency situations.
 *   **Triple-Logging:** Every admin action, break-glass event, and PHI access is triple-logged and immutable.
 *   **Audit Vault:** Export 7-year compliant audit logs for HIPAA or insurance inspections instantly.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit Logs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>
 
 ---
 
@@ -60,4 +85,9 @@ Maintain absolute accountability in emergency situations.
 *   **Centralized Invoicing:** Manage your enterprise subscription and Stripe Connect accounts from the HQ vault.
 *   **Volume Discounts:** Automated tiered pricing for large-scale practices with 100+ clinicians.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Enterprise Financial Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+</details>

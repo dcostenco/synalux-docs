@@ -10,7 +10,12 @@ Stop chasing staff for their hours. Timesheets build themselves as the work is d
 *   **Verification:** Timestamps are captured from the provider's device (Offline-First) ensuring accuracy even without Wi-Fi.
 *   **Fraud Prevention:** Sessions cannot be logged without a corresponding clinical record or appointment.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Clinical Session Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Account for every minute of the work day, not just face-to-face time.
 *   **Drive Time & Mileage:** Integrated tracking for home-based providers (essential for ABA and Mobile Health).
 *   **Training & Prep:** Record hours for mandatory HIPAA training or clinic preparation.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Staff Dashboard View](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Ensure data integrity with a professional supervisor review process.
 *   **Supervisor Audit:** Clinical directors compare timesheets against clinical data in one view.
 *   **Payroll Lock:** Once approved, timesheets are locked to prevent unauthorized changes before export.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Timesheet Approval Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
+
+</details>
 
 ---
 
@@ -40,7 +55,12 @@ Export your data directly to the industry's most popular payroll providers.
 *   **Paycom Integration:** Full support for multi-department and multi-state labor codes.
 *   **Custom Templates:** Create your own export format for local or specialized accounting software.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Global Financial Roll-up](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+</details>
 
 ---
 
@@ -50,7 +70,12 @@ Protect your practice from overtime surprises and labor disputes.
 *   **Mandatory Breaks:** Tracking and alerts for state-mandated rest and meal periods.
 *   **PTO Accrual:** Real-time visibility for staff into their earned vacation and sick leave balances.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![HR Compliance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
+
+</details>
 
 ---
 
@@ -59,4 +84,9 @@ Protect your practice from overtime surprises and labor disputes.
 *   **Role-Based Access:** Front-line staff can only see their own timesheets; managers see their department.
 *   **Financial Audit Trail:** 7-year retention of all payroll-related data for tax and legal compliance.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

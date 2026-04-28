@@ -10,7 +10,12 @@ Patients can manage their health from any device, anywhere. No app download requ
 *   **Intuitive Dashboard:** A single view for upcoming appointments, unread messages, and pending tasks.
 *   **Real-Time Alerts:** Push notifications (via browser) for new test results or appointment reminders.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Patient Portal Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Eliminate the clipboard. Collect everything before the patient walks through the
 *   **E-Signatures:** Legally-binding digital signatures for HIPAA, Telehealth, and Financial policies via BoldSign.
 *   **Document Upload:** Patients can securely snap and upload photos of insurance cards and prior records.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Patient Portal Onboarding](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Threaded, HIPAA-compliant communication that keeps the conversation professional
 *   **Read Receipts:** Peace of mind for patients knowing their message was seen.
 *   **Urgent Flags:** Automated prioritization for messages containing safety-critical keywords.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Patient Messaging Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
+
+</details>
 
 ---
 
@@ -40,7 +55,12 @@ Transparent financial management that improves collection rates.
 *   **Payment Plans:** Automated installments for high-value dental or orthodontic procedures.
 *   **Itemized Statements:** Clear breakdown of charges with CPT/CDT codes for patient records.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Patient Billing & Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+</details>
 
 ---
 
@@ -50,7 +70,12 @@ Reduce no-shows and fill your calendar with easy appointment management.
 *   **Visit History:** Full visibility into past and upcoming appointments with specific providers.
 *   **Preparation Guides:** Automated instructions sent to the portal before specialized procedures (e.g., surgery prep).
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Patient Scheduling Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png)
+
+</details>
 
 ---
 
@@ -59,4 +84,9 @@ Reduce no-shows and fill your calendar with easy appointment management.
 *   **Access Expiration:** Secure codes automatically expire after use or timeout to prevent unauthorized access.
 *   **Audit Trail:** Patients can see a log of when their records were accessed, ensuring full transparency.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

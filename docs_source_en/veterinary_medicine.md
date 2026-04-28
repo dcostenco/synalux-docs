@@ -10,7 +10,12 @@ Manage diverse patient populations with anatomical and physiological precision.
 *   **Breed-Aware Vitals:** Automated flags for out-of-range vitals based on species and breed.
 *   **Growth Curves:** Track weight and body condition score (BCS 1-9) against species norms.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Veterinary Exam Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/28_veterinary.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Review radiographs, ultrasounds, and dental X-rays with professional-grade tools
 *   **Annotation Tools:** Mark findings directly on the image and link them to the clinical SOAP note.
 *   **Cloud Archiving:** Secure, HIPAA-compliant (and AVMA-aligned) storage for all diagnostic assets.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Veterinary Radiograph Review](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Ensure safety and precision in the operating suite.
 *   **Surgical Reports:** Pre-populated templates for common procedures (Spay/Neuter, Dental, Orthopedic).
 *   **Post-Op Care:** Automated generation of client-friendly discharge instructions with medication dosing.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Surgical Note Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+
+</details>
 
 ---
 
@@ -40,7 +55,12 @@ Drive practice growth with proactive preventive care.
 *   **Wellness Plans:** Offer bundled services (e.g., Puppy/Kitten packs) with Stripe-powered monthly billing.
 *   **Auto-Reminders:** SMS and email alerts for upcoming vaccinations and annual exams.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Vaccination Records](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
+
+</details>
 
 ---
 
@@ -49,7 +69,12 @@ Drive practice growth with proactive preventive care.
 *   **Compounding Support:** Manage complex prescriptions with specific concentration and flavoring details.
 *   **Controlled Substances:** Digital double-signature logs for narcotics and sedative tracking.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Medication & Pharmacy Vault](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+
+</details>
 
 ---
 
@@ -58,7 +83,12 @@ Drive practice growth with proactive preventive care.
 *   **Insurance Integration:** Direct claim submission for Trupanion, Nationwide, and Pumpkin.
 *   **Stripe Payments:** Accept payments at the front desk or via the Client Portal.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Veterinary Billing Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+</details>
 
 ---
 
@@ -67,4 +97,9 @@ Drive practice growth with proactive preventive care.
 *   **Audit Trails:** Every chart view and medication edit is tracked and immutable.
 *   **Offline-First:** Document field visits or farm calls even without a data connection.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

@@ -10,7 +10,12 @@ Stop taking notes and start listening. Our WASM-powered voice engine drafts your
 *   **Specialty Templates:** Auto-drafts for Psychiatric Evaluations, CBT/CPT protocols, and DAP/SOAP notes.
 *   **Risk Assessment:** AI automatically flags keywords related to self-harm or crisis for immediate clinician review.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Monitor clinical progress with auto-scored, validated instruments.
 *   **Visual Trends:** Graphs showing symptom improvement or regression over time.
 *   **Tab-to-Accept:** Ghost-text completions for common clinical observations (e.g., "Client reports improved sleep...").
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Outcome Measure Trends](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Conduct secure sessions from anywhere with one-click Zoom & LiveKit integration.
 *   **Session Recording:** Securely record sessions (with multi-party consent) for supervision or training.
 *   **Virtual Waiting Room:** A professional, branded experience for patients before the session begins.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Telehealth Video Conference Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/telehealth_conference_ui.png)
+
+</details>
 
 ---
 
@@ -40,7 +55,12 @@ Equip your practice with a bulletproof safety infrastructure.
 *   **Urgent Flags:** Real-time notifications for the clinical team when a patient triggers a safety alert.
 *   **988 Integration:** Direct access to crisis resources within the patient portal.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Crisis Protocol & Safety Planning](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/31_mental_health.png)
+
+</details>
 
 ---
 
@@ -50,7 +70,12 @@ Manage complex psychiatric regimens with built-in safety checks.
 *   **Lab Integration:** Order and track metabolic panels for patients on antipsychotics or mood stabilizers (Quest/LabCorp).
 *   **Refill Requests:** Manage pharmacy communications directly from the medication vault.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Medication Vault](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+
+</details>
 
 ---
 
@@ -59,7 +84,12 @@ Manage complex psychiatric regimens with built-in safety checks.
 *   **Auth Tracking:** Monitor remaining sessions for Anthem, Aetna, and Cigna in real-time.
 *   **Stripe Payments:** Patients can pay copays or self-pay balances through the Secure Patient Portal.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Mental Health Billing Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+</details>
 
 ---
 
@@ -68,4 +98,9 @@ Manage complex psychiatric regimens with built-in safety checks.
 *   **Role-Based Access:** Restrict front-desk staff from seeing sensitive psychotherapy notes.
 *   **Full Audit Trail:** Know exactly who accessed a patient's chart and when.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

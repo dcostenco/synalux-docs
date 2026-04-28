@@ -10,7 +10,12 @@ Track every mole, lesion, and biopsy with anatomical precision.
 *   **ABCDE Criteria:** Built-in templates for melanoma screening with dermoscopy integration.
 *   **Comparison Engine:** Side-by-side photo comparison to monitor lesion changes over months or years.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Dermatology Body Mapping](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/34_dermatology.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Close the loop on every specimen.
 *   **Pathology Correlation:** Auto-import pathology results and correlate them with clinical photos.
 *   **Abnormal Alerts:** Immediate notification for malignant or atypical pathology findings.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Biopsy & Lab Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
+
+</details>
 
 ---
 
@@ -30,7 +40,12 @@ Manage high-complexity medication regimens with automated compliance.
 *   **Biologics Vault:** Track Humira, Dupixent, and Skyrizi dosing, injection sites, and prior authorizations.
 *   **Phototherapy Logs:** Integrated recording of UV doses and treatment response.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Medication & Biologics Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+
+</details>
 
 ---
 
@@ -40,7 +55,12 @@ Document complex skin exams in seconds.
 *   **Derm-Specific Keywords:** Use `@biopsy`, `@cryo`, or `@skinexam` to trigger pre-formatted clinical instructions.
 *   **Tab-to-Accept:** Ghost-text for common morphology descriptions (e.g., "well-demarcated erythematous plaque...").
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
+
+</details>
 
 ---
 
@@ -49,7 +69,12 @@ Document complex skin exams in seconds.
 *   **Auth Tracking:** Monitor biologic prior authorizations and renewal dates in real-time.
 *   **Patient Payments:** Offer Stripe-powered payment plans for cosmetic procedures.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Dermatology Billing Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+</details>
 
 ---
 
@@ -58,4 +83,9 @@ Document complex skin exams in seconds.
 *   **E-Signatures:** Secure consent for biopsies and surgical procedures via BoldSign.
 *   **Full Audit Trail:** Every photo view and chart edit is tracked and timestamped.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>

@@ -10,7 +10,12 @@ Get paid faster with your own dedicated payment infrastructure.
 *   **Admin Ownership:** The practice owner retains full control over the Stripe dashboard and payouts.
 *   **Low Rates:** Benefit from enterprise-level transaction fees pre-negotiated by Synalux.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Stripe Connect Integration](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+
+</details>
 
 ---
 
@@ -20,7 +25,12 @@ Scale your practice across borders without the headache of manual conversion.
 *   **Dynamic Tax Engine:** Automatically calculates VAT, GST, HST, or PST based on the branch location.
 *   **HQ Roll-up:** HQ admins see a unified financial dashboard with all regional revenue converted to their base currency.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Global Finance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+</details>
 
 ---
 
@@ -31,7 +41,12 @@ Close the loop on every claim with automated Revenue Cycle Management (RCM).
 *   **ERA/EOB Processing:** Automatically post insurance payments and reconcile denials.
 *   **Aging Reports:** Visual 30/60/90/120 day buckets to track outstanding accounts receivable.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Revenue Cycle Management Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
+
+</details>
 
 ---
 
@@ -41,7 +56,12 @@ Improve patient satisfaction with transparent and convenient payment options.
 *   **Payment Plans:** Offer automated monthly installments for high-value treatments (e.g., $194/mo for Ortho).
 *   **Auto-Receipts:** Professional, branded receipts are automatically generated and sent to the patient.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Patient Portal Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
+
+</details>
 
 ---
 
@@ -57,4 +77,9 @@ Improve patient satisfaction with transparent and convenient payment options.
 *   **PCI-DSS Level 1:** Credit card data never touches our servers—handled entirely by Stripe.
 *   **1099 Reporting:** Automated generation of year-end tax documents for your providers.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+
+</details>
