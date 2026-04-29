@@ -13,7 +13,7 @@ Capture every pocket depth and recession value with speed and accuracy.
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Dental Perio Charting](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33.png)
+![Dental Perio Charting](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
 *(Note: Placeholder for actual Perio UI)*
 
 </details>
