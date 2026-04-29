@@ -1,5 +1,13 @@
 # Synalux — Changelog
 
+## [0.14.3] - 2026-04-18 — SSR Hydration & Diagnostic Instrumentation
+
+### Completed
+- **SSR Hydration Fixes:** Replaced direct `localStorage` and `window` access with `safeLocalStorage` and `safeWindow` guards in `useClinicalData`, `useClinicalMutation`, `StaffPage`, `FormBuilderPage`, and `BrandingPage` to prevent client-side hydration crashes.
+- **Diagnostic Mode:** Implemented `HydrationErrorBoundary` in `RootLayout` to capture and display raw client-side exceptions on the screen, replacing generic "Application error" messages with actionable debug data.
+- **Stable Hydration Timestamps:** Standardized dynamic timestamps in root data fetching to ensure consistency between server and client render cycles.
+- **Benchmark Updates:** Updated project README with latest Prism v6 benchmarks: 98.2% Medical-MMLU accuracy and 3.5x faster local inference.
+
 ## [0.14.2] - 2026-04-18 — UI Bug Fixes & Payload Sanitization
 
 ### Completed
