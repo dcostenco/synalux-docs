@@ -758,7 +758,7 @@ Synalux deliberately avoids Azure, AWS, and traditional IaaS:
 <summary><h2>📁 Project Structure</h2></summary>
 
 ```
-synalux-docs/
+synalux-private/
 ├── portal/                   # Next.js web portal + clinical web app
 │   ├── src/app/app/          # 🏥 Synalux Health (Web App)
 │   │   ├── page.tsx          # SOAP Notes workspace

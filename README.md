@@ -263,32 +263,76 @@ flowchart LR
 </details>
 ### 🧠 Model Routing & Tier Architecture
 
-The intelligent assistant does **not** expose a model selector by default. The server automatically routes each request to the best model for the user's subscription tier:
+The server automatically routes each request to the best model for the user's subscription tier. All Synalux products (Portal, PrismAAC, Prism Coder) use the same `/api/v1/chat` endpoint.
 
 - **Free:** Gemini 2.5 Flash
-- **Standard:** Gemini 3.1 Pro Exp
-- **Advanced:** Gemini 3.1 Pro Exp
-- **Enterprise:** Gemini 3.1 Pro Exp
+- **Standard:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
+- **Advanced:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
+- **Enterprise:** Claude Opus 4 (fallback: Gemini 2.5 Flash)
 
 <details>
 <summary>Click to view full details</summary>
 
-| Tier | Default Model | Max Tokens | Daily Limit | Model Selector Visible |
-|------|--------------|------------|-------------|----------------------|
-| **Free** | Gemini 2.5 Flash | 4,096 | 100 | ❌ Hidden (FloatChat) / ✅ Full chat page |
-| **Standard** | Gemini 3.1 Pro Exp | 8,192 | 2,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
-| **Advanced** | Gemini 3.1 Pro Exp | 16,384 | 5,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
-| **Enterprise** | Gemini 3.1 Pro Exp | 32,768 | 100,000 | ❌ Hidden (FloatChat) / ✅ Full chat page |
+| Tier | Default Model | Fallback | Max Tokens | Daily Limit |
+|------|--------------|----------|------------|-------------|
+| **Free** | Gemini 2.5 Flash | — | 4,096 | 100 |
+| **Standard** | Claude Sonnet 4 | Gemini 2.5 Flash | 8,192 | 2,000 |
+| **Advanced** | Claude Sonnet 4 | Gemini 2.5 Flash | 16,384 | 5,000 |
+| **Enterprise** | Claude Opus 4 | Gemini 2.5 Flash | 32,768 | 100,000 |
 
+**Products using this routing:**
+- ✅ **Synalux Portal** — web app chat, FloatChat, SOAP dictation
+- ✅ **PrismAAC** — AI Chat for AAC users, caregiver note parsing (`source: prism-aac`)
+- ✅ **Prism Coder IDE** — coding assistant
+- ✅ **VS Code Extension** — inline coding
 
-**Where the model selector appears:**
-- ✅ **Full chat page** (`/app/chat`) — users can override their tier default
-- ✅ **VS Code extension** — settings panel for model selection
-- ❌ **FloatChat bubble** — always uses `synalux-default`, server picks the tier model
-- ❌ **SOAP dictation** — fixed pipeline, no model choice
+**Offline fallback:** All products fall back to `prism-coder:7b` via local Ollama when the API is unreachable.
 
 **Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
 </details>
+
+### 📱 PrismAAC — Augmentative Communication
+
+Evidence-based AAC web app for children with motor impairments and complex communication needs. Built on 19 peer-reviewed citations, aligned with BACB Ethics Code and ASHA AAC guidelines.
+
+**Repo:** [dcostenco/prism-aac](https://github.com/dcostenco/prism-aac) · **Access:** `synalux.ai/prism-aac` · **Enterprise:** Included with Synalux Enterprise
+
+#### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **Keyboard + categories simultaneously** | Category panel slides in alongside the keyboard — child never loses typing access |
+| **Adaptive word prediction** | 3-tier engine (bigram + frequency + recency), LAMP-stable slots for muscle memory |
+| **Modified Fitzgerald Key colors** | Words color-coded by grammar type (Goossens' et al., 1992): pronouns=yellow, verbs=green, nouns=orange |
+| **Restaurant ordering flows** | Step-by-step sequences (Chipotle, Subway, etc.) — caregiver-editable, not hardcoded |
+| **Math keyboard** | 30 symbols (basic + advanced) for academic support |
+| **Caregiver notes + action engine** | BCBA types "Add McDonald's ordering flow" → AI parses → [Apply] button executes |
+| **Motor accessibility** | 25mm+ buttons, haptic + audio + visual feedback, undo, focus rings, prefers-reduced-motion |
+| **AI Chat** | Child asks questions, gets short color-coded responses, taps to speak (authorship preserved) |
+| **Cross-device sync** | Supabase hivemind — predictions, phrases, notes sync across iPad/laptop/desktop |
+| **Offline-first** | Full AAC works without internet. AI falls back to prism-coder:7b locally |
+| **Clinical documentation** | Every config change timestamped with author name (BACB Ethics 2.01) |
+| **12 languages** | EN active; ES, FR, PT, RO, UK, RU, DE, JA, KO, ZH, AR planned |
+
+#### Screenshots
+
+| Home — keyboard + predictions | Categories + keyboard simultaneous |
+|---|---|
+| ![Home](docs/screenshots/home.png) | ![Categories](docs/screenshots/categories-open.png) |
+
+| Food ordering + restaurant flows | Math keyboard |
+|---|---|
+| ![Food](docs/screenshots/food-ordering.png) | ![Math](docs/screenshots/math-panel.png) |
+
+#### AI Routing
+Same `/api/v1/chat` endpoint as portal (`source: prism-aac`). Free tier gets Gemini 2.5 Flash. Paid tiers get Claude Sonnet/Opus with Gemini fallback. Web search available for homework questions.
+
+#### Do No Harm — Clinical Safety
+- Default vocabulary cannot be deleted (only hidden, restorable)
+- Keyboard always visible regardless of panel state
+- AI never auto-inserts or auto-speaks on behalf of the child
+- All changes require explicit [Apply] confirmation
+- App works fully offline — no network = no communication loss
 
 ### 🖥️ Prism Coder IDE — Standalone Desktop App
 
