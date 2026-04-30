@@ -430,6 +430,9 @@ def validate_tool_call(prompt, tool_name, tool_args):
 
 > 🧪 **14-day free trial** on all paid plans — no credit card required.
 
+<details>
+<summary><strong>⚡ @Keywords — Configurable AI Command System</strong> — admin API, validation rules, address search <em>(technical · click to expand)</em></summary>
+
 ### ⚡ @Keywords — Configurable AI Command System
 
 The `@keyword` system is the **primary interface** between clinicians and the AI assistant. Every smart text field — chat, session notes, progress notes, description fields — supports `@keyword` commands that trigger practice-specific AI instructions.
@@ -791,6 +794,11 @@ All address fields auto-populate from the selection. Requires `GOOGLE_PLACES_API
 
 ![Clinical AI Assistant — @soap dictation generates structured SOAP notes in seconds](images/clinical-ai-preview.jpg)
 
+</details>
+
+<details>
+<summary><strong>🔐 Audit & Compliance Architecture</strong> — triple-logging, break-glass, retention <em>(technical · click to expand)</em></summary>
+
 ## 🔐 Audit & Compliance Architecture
 
 Synalux enforces **universal audit logging** on every interaction with the system. This is not optional — it is baked into the API layer via middleware that cannot be bypassed.
@@ -965,6 +973,8 @@ Each external call is logged in `external_interface_log` with:
 | `external_interface_log` | 1 year | Operational monitoring — no PHI content |
 
 ---
+
+</details>
 
 ## 📖 Feature Glossary (What Does It Do?)
 * **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
@@ -2187,6 +2197,9 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 * **Workspace Channels:** Rooms are strictly generated as `ws_${workspaceId}_channel_${channelId}`.
 * **Encrypted Direct Messages:** Cross-practice DMs utilize an isolated `dm_thread_${channelId}` nomenclature, ensuring isolated 1-on-1 calls without compromising workspace-level ACLs.
 
+<details>
+<summary><strong>💻 Client-Specific Implementations</strong> — VS Code extension internals, Next.js portal architecture <em>(technical · click to expand)</em></summary>
+
 ## 💻 Client-Specific Implementations
 
 ### VS Code Extension (`synalux-vscode`)
@@ -2198,6 +2211,8 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 * Provides the ultimate high-fidelity telehealth experience for administrators and providers operating outside the IDE.
 
 ---
+
+</details>
 
 ## 🏥 Clinical Command Center
 
@@ -2217,6 +2232,9 @@ Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice A
 ![Data Collection & EVV](images/data-collection-preview.png)
 
 ---
+
+<details>
+<summary><strong>🔀 Synalux SCM — Source Control & Developer Intelligence</strong> — CLI commands, AI review, security scan, DORA metrics <em>(technical · click to expand)</em></summary>
 
 ## 🔀 Synalux SCM — Source Control & Developer Intelligence
 
@@ -2288,6 +2306,8 @@ prism scm dora --repo synalux/portal --period 2024-Q4
 </details>
 
 ---
+
+</details>
 
 ## ◈ Prism Coder IDE — Desktop IDE for Developers
 
