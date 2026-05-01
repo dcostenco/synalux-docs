@@ -308,6 +308,7 @@ Evidence-based AAC web app for children with motor impairments and complex commu
 | **Math keyboard** | 30 symbols (basic + advanced) for academic support |
 | **Caregiver notes + action engine** | BCBA types "Add McDonald's ordering flow" → AI parses → [Apply] button executes |
 | **Motor accessibility** | 25mm+ buttons, haptic + audio + visual feedback, undo, focus rings, prefers-reduced-motion |
+| **Head/eye tracking (FREE)** | Camera-based cursor + dwell click for severe motor impairment. No special hardware — uses any device camera. Configurable dwell time, sensitivity, smoothing. The only AAC app offering free camera-based head tracking. |
 | **AI Chat** | Child asks questions, gets short color-coded responses, taps to speak (authorship preserved) |
 | **Cross-device sync** | Supabase hivemind — predictions, phrases, notes sync across iPad/laptop/desktop |
 | **Offline-first** | Full AAC works without internet. AI falls back to prism-coder:7b locally |
