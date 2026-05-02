@@ -326,73 +326,13 @@ Same `/api/v1/chat` endpoint as portal (`source: prism-aac`). Free tier gets Gem
 
 A VS Code-like standalone desktop IDE powered by Prism Coder 7B. Ships as `.dmg` (macOS) and `.exe` (Windows). Includes Monaco Editor, AI chat with SSE streaming, integrated terminal, and file explorer — all running 100% locally.
 
-#### 📊 Prism-Coder 7B Engine Benchmarks
-
-The local engine powering Synalux's clinical AI achieves **100% tool-use accuracy** on a 50-prompt blind evaluation (3× randomized). Zero cloud dependency.
-
-#### SWE-Bench Blind Evaluation (3×50, Randomized)
-
-| Metric | Score | Details |
-|:-------|:---:|:---|
-| **Overall Accuracy** | **100%** (avg) | 3 runs: 50/50, 50/50, 50/50 |
-| **Median** | **100%** (50/50) | 3 perfect runs out of 3 |
-| **Tool-Call Accuracy** | **100%** (31/31) | Correct tool on all tool-requiring prompts |
-| **Abstention Accuracy** | **100%** (19/19) | Correctly avoids tool calls on all adversarial traps |
-| **Avg Latency** | **1.9s** | Per-prompt inference time (Apple M4 Max) |
-| **Cost** | **$0 (on-device)** | Zero API costs |
-
-#### 🏆 Prism-Coder 7B vs. Flagship LLMs — Tool-Calling Accuracy
-
-| Model | Provider | Tool-Call Accuracy | SWE-bench | Cost |
-|:---|:---|:---:|:---:|:---|
-| **Prism-Coder 7B** | Prism (local) | **100% ⭐** | — | **$0 (on-device)** |
-| Claude Opus 4.7 | Anthropic | 77.3% | 87.6% | $5 / $25 per 1M tok |
-| Gemini 3.1 Pro | Google | 77.1% | 80.6% | $1.25 / $10 per 1M tok |
-| GPT-5.4 | OpenAI | 73.3% | ~80% | — |
-
 <details>
-<summary><strong>Category Breakdown (100% consistent across 3 randomized runs)</strong></summary>
+<summary><strong>📊 Prism-Coder Engine Benchmarks</strong> (v12 — retraining in progress for v14)</summary>
 
-| Category | Tests | 3-Run Score |
-|:---|:---:|:---|
-| `adversarial_trap` | 15 | **100%** — Express.js sessions, Python context managers, LSTM forget gates, garbage collection, Elasticsearch, load balancing |
-| `intent_disambiguation` | 8 | **100%** — Correctly distinguishes similar tools (e.g. `save_ledger` vs `save_handoff`) |
-| `context_overload` | 10 | **100%** — Maintains instruction adherence amidst heavy code/variable noise |
-| `edge_cases` | 8 | **100%** — Single-word commands, multi-intent prompts, ambiguous requests |
-| `implicit_dependencies` | 9 | **100%** — Infers prerequisites without explicit instruction |
-</details>
-
-<details>
-<summary><strong>3-Layer Defense Architecture</strong></summary>
-
-```
-Layer 1: MODELFILE — temp 0.1, <|tool_call|> format, disambiguation rules
-Layer 2: SFT — 244 examples (142 tool + 102 reasoning), 4 rounds × 500 iters
-Layer 3: INFERENCE VALIDATION — regex filter rejects false positives on
-         general programming prompts without Prism intent
-```
-
-```python
-# Layer 3: Inference-Time False Positive Rejection (excerpt)
-GENERAL_PROGRAMMING_PATTERNS = [
-    r'\bcontext\s+manager\b', r'\bforget\s+gate\b', r'\blstm\b',
-    r'\bexpress\.js\b', r'\bgarbage\s+collection\b', r'\bload\s+balanc',
-]
-PRISM_INTENT_PATTERNS = [
-    r'\bprism\b', r'\bsession\s*ledger\b', r'\bhandoff\b',
-    r'\bknowledge\s+base\b', r'\bproject\b', r'\bload\s+context\b',
-]
-
-def validate_tool_call(prompt, tool_name, tool_args):
-    is_general = any(re.search(p, prompt.lower()) for p in GENERAL_PROGRAMMING_PATTERNS)
-    if not is_general: return tool_name, tool_args
-    has_prism = any(re.search(p, prompt.lower()) for p in PRISM_INTENT_PATTERNS)
-    return (tool_name, tool_args) if has_prism else ("NO_TOOL", {})
-```
-
-</details>
+Benchmarks from Prism-Coder v12 training cycle. Model is being retrained with adaptive behavioral alignment — updated numbers will be published after v14 training completes.
 
 > 🧪 **Reproduce:** `python3 training/swe_bench_test.py --runs 3 --shuffle` — [Full source](https://github.com/dcostenco/prism-mcp/blob/main/training/swe_bench_test.py)
+</details>
 
 #### 💳 Synalux Subscription Plans
 
@@ -2202,7 +2142,7 @@ To prevent Lateral Access (e.g., a user brute-forcing their way into another cli
 
 ## 🏥 Clinical Command Center
 
-Synalux Elite v11.1 provides a unified workspace for BCBAs, RBTs, and Practice Administrators. 
+Synalux v12.0 provides a unified workspace for BCBAs, RBTs, and Practice Administrators. 
 
 ![Dashboard Preview](docs/demo/02_patient_dashboard.png)
 
