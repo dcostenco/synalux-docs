@@ -21,22 +21,7 @@
 <a name="why-synalux"></a>
 ## 💡 Why Synalux?
 ### 🎙️ Talk. Don't Type.
-Synalux listens to your session and instantly writes a structured clinical note. Powered by the **Prism v6 engine**, it achieves **98.2% accuracy** on the **Medical-MMLU** benchmark, outperforming general-purpose models by 14%. Because it processes directly on your iPad or laptop, your patient's voice never goes to the cloud. It’s **3.5x faster** than traditional cloud-based transcribers, saves you 2 hours of paperwork every day, and works 100% offline.
-
----
-
-## 🚀 Performance Benchmarks (Synalux v1.2)
-
-Our proprietary Prism-6 model architecture is specifically optimized for medical and clinical reasoning.
-
-| Benchmark | Synalux v1.2 | GPT-4o | Claude 3.5 Sonnet |
-|-----------|--------------|--------|-------------------|
-| **Medical-MMLU (Accuracy)** | **98.2%** | 94.1% | 93.8% |
-| **Tool Call Accuracy (MCP)** | **99.4%** | 92.0% | 97.2% |
-| **Inference Latency (Local)** | **42ms** | N/A (Cloud) | N/A (Cloud) |
-| **Context Compression** | **94%** | 0% | 0% |
-
-*Results based on internal testing against 5,000+ real-world clinical scenarios. Local inference measured on Apple M4 Max (36GB RAM).*
+Synalux listens to your session and instantly writes a structured clinical note. Because it processes directly on your iPad or laptop, your patient’s voice never goes to the cloud. It saves you 2 hours of paperwork every day and works 100% offline.
 
 ---
 
