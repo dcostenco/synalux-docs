@@ -20,16 +20,27 @@
 
 ## 🆕 What's New (May 2026)
 
-**On-device LLM upgraded → `prism-coder:7b` v18aac**
-- Powers Synalux's clinical assistant, ABA practice management, and the integrated PrismAAC app for nonverbal patients
+**Hybrid model fleet — offline best + cloud flagship**
+
+Synalux now ships a tiered model lineup, auto-routed by device, user tier, and task intent:
+
+| Tier | Model | Where | Use |
+|---|---|---|---|
+| Offline universal | **`prism-coder:7b`** (v18aac-MAX r=512) | All devices ≥8 GB | AAC, clinical assistant, ABA practice mgmt |
+| Offline premium | **`prism-aac:14b`** (v18aac r=384) | iPad Pro M4 (16 GB), desktop | Best on-device AAC quality |
+| Cloud flagship | **`prism-coder:72b-v18bfcl`** (Qwen2.5-72B base) | Modal vLLM | Paid tier — emergency-grade tasks, Prism Coder IDE, BFCL |
+| Coder local | **`prism-coder:7b-v18bfcl`** | Prism Coder IDE bundle | Offline coding agent |
+
+**On-device 7B AAC upgraded → v18aac-MAX (May 2026)**
+- DoRA **r=512 / α=1024** (2× rank), **5 epochs** on 4× H100. Final loss ~0.056, mean token accuracy **98.2%**.
 - AAC realigned eval: **47/48 (98%)** — beats prior production by **+13pp**
 - **Emergency Q&A 13/13 perfect** (life-safety priority for AAC emergency-call AI)
 - **Caregiver instruction parsing 6/7**, **text correction 15/15 perfect**, **translation 8/8 perfect**, **child Q&A 5/5**
 - 🆕 **Gesture-recognition configuration support** — model now helps configure facial-blendshape input for users with motor impairments (CP, hemiplegia, ALS, Bell's palsy) with asymmetry-safe handling
 - Built on Qwen2.5-Coder-7B-Instruct base, full SFT on commercial-safe corpus (Apache 2.0 / CC-BY-4.0). Quantized 4.4 GB Q4_K_M GGUF runs on consumer Mac/iPad/Windows.
-- One-command rollback to prior version preserved (`prism-coder:7b-prev-20260503-0936`)
+- One-command rollback to prior version preserved.
 
-A separate **`prism-coder:7b-coder`** variant (BFCL function-calling-optimized) is in training for the developer-tools track. Hybrid deployment plan: AAC tag for clinical/AAC consumers, Coder tag for prism-mcp / Prism Coder IDE — Synalux backend auto-routes per request.
+**Cloud routing (paid tier, online):** Synalux portal `route-llm` selects 14B for AAC-intent traffic and 72B for coder/emergency-intent traffic — 4× cheaper per served user-hour than 72B-only.
 
 ---
 
