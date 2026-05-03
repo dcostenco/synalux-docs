@@ -18,6 +18,21 @@
 
 ---
 
+## 🆕 What's New (May 2026)
+
+**On-device LLM upgraded → `prism-coder:7b` v18aac**
+- Powers Synalux's clinical assistant, ABA practice management, and the integrated PrismAAC app for nonverbal patients
+- AAC realigned eval: **47/48 (98%)** — beats prior production by **+13pp**
+- **Emergency Q&A 13/13 perfect** (life-safety priority for AAC emergency-call AI)
+- **Caregiver instruction parsing 6/7**, **text correction 15/15 perfect**, **translation 8/8 perfect**, **child Q&A 5/5**
+- 🆕 **Gesture-recognition configuration support** — model now helps configure facial-blendshape input for users with motor impairments (CP, hemiplegia, ALS, Bell's palsy) with asymmetry-safe handling
+- Built on Qwen2.5-Coder-7B-Instruct base, full SFT on commercial-safe corpus (Apache 2.0 / CC-BY-4.0). Quantized 4.4 GB Q4_K_M GGUF runs on consumer Mac/iPad/Windows.
+- One-command rollback to prior version preserved (`prism-coder:7b-prev-20260503-0936`)
+
+A separate **`prism-coder:7b-coder`** variant (BFCL function-calling-optimized) is in training for the developer-tools track. Hybrid deployment plan: AAC tag for clinical/AAC consumers, Coder tag for prism-mcp / Prism Coder IDE — Synalux backend auto-routes per request.
+
+---
+
 <a name="why-synalux"></a>
 ## 💡 Why Synalux?
 ### 🎙️ Talk. Don't Type.
