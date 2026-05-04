@@ -20,6 +20,20 @@
 
 ## 🆕 What's New (May 2026)
 
+**Competitor Gap Update — New Features Added!**
+
+Based on our recent competitive analysis (vs. CentralReach, SimplePractice, WebPT, and Healthie), we've added the most highly requested features by providers:
+- **Military-Grade Auto-Save:** Aggressive local-storage backups for Clinical Notes to ensure you never lose your charting data on a page refresh.
+- **Picture-in-Picture Telehealth:** Dietitians and Therapists can now pop-out their video stream while navigating the calendar or client's chart.
+- **Group Session Workflow:** A dedicated bulk-action UI for ABA and group therapy to track multiple clients simultaneously.
+- **Automated Waitlist Management:** Automatically texts the next patient in line when a cancellation occurs.
+- **8-Minute Rule CPT Calculator:** Built-in Medicare compliance calculator for Physical Therapy time inputs.
+- **Native e-Fax Integration:** Send and check status on clinical faxes directly from the portal—no more 3rd party subscriptions.
+
+<p align="center">
+  <img src="docs/assets/group-session-screenshot.png" alt="Group Session Workspace Screenshot" width="800" />
+</p>
+
 **Hybrid model fleet — offline best + cloud flagship**
 
 Synalux now ships a tiered model lineup, auto-routed by device, user tier, and task intent:
