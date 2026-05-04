@@ -1,5 +1,26 @@
 # Synalux — Changelog
 
+## [0.14.4] - 2026-05-04 — Prism Coder 14B sibling + tier-aware local routing
+
+### Completed
+- **Prism Coder 7B promoted** — `prism-coder:7b` swapped from v18max (BFCL 47.2%) to v18clean-epoch0 (BFCL **88.1%** 3-run StdDev 0%, AAC realigned 47/48, targeted caregiver 20/20). Old prod retained as `prism-coder:7b-prev-20260504-1325` for rollback.
+- **Prism Coder 14B sibling shipped** — new `prism-coder:14b` tag from Qwen2.5-Coder-14B base + AAC SYSTEM directive. BFCL **85.9%** (StdDev 0%), AAC realigned 46/48, targeted caregiver 18/20.
+- **Tier-aware local routing** in `/api/v1/prism-aac/chat`: free tier unchanged (7B simple → cloud complex); standard / advanced / enterprise now route **medium-length AAC queries (5–40 words) to local 14B** before falling through to Claude. Cuts paid-tier per-query cost from ~$0.01–0.05 (Claude) to $0 (local Ollama).
+- **/app/chat model selector** gains `prism-coder:14b` option for direct power-user access.
+- New constants in `chat/llm-backends/config.ts`: `LOCAL_PRISM_MODEL_14B`, `LOCAL_PRISM_14B_CONTEXT_LIMIT = 32_768`.
+- Synalux/Prism-Memory SFT data extractor (`scripts/synalux_sft_pipeline.py`) staged for the upcoming Prism Coder 32B / 72B campaign — 5,721 anonymized training rows from local SQLite + Prism Supabase, zero PII leaks across 5-pattern audit.
+
+### Promotion gates passed
+| Gate | 7B v18clean-epoch0 | 14B v18coder-base |
+|---|---|---|
+| BFCL median (3-run) | 88.1% (StdDev 0.00%) | 85.9% (StdDev 0.00%) |
+| caregiver realigned | 6/7 | 6/7 |
+| caregiver targeted | 20/20 | 18/20 |
+| emergency_qa | 13/13 | 13/13 |
+| text_correct | 15/15 | 14/15 |
+| translate | 8/8 | 8/8 |
+| ask_ai | 5/5 | 5/5 |
+
 ## [0.14.3] - 2026-04-18 — SSR Hydration & Diagnostic Instrumentation
 
 ### Completed
