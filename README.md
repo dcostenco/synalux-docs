@@ -169,6 +169,25 @@ The VS Code extension is a **full-capability development and clinical tool** wit
 - ❌ Modify system files, install packages globally, or change OS settings
 - ❌ Access patient data directly (must go through the API layer)
 </details>
+
+### 🛠️ Builder — Copilot Configuration (Practice Admins)
+
+The Copilot is deeply integrated with the Synalux **Dashboard Builder**. If you are a Practice Admin, the Copilot serves as your operational assistant, allowing you to configure the practice layout and module settings entirely through conversational chat. This capability is available via the Web Portal chat as well as external tools like the VS Code extension or Prism Coder standalone.
+
+**What you can do:**
+- **Add Modules:** "Add a Nutrition module to the dashboard."
+- **Remove Modules:** "Remove the Billing module from the main view."
+- **Deploy Changes:** "Deploy my dashboard changes to all clinical users."
+- **Query Layout Blocks:** "What design elements and core modules are available for me to add?"
+
+Because of our **Role-Based Empowerment (RBAC)** governance, the Copilot executes these operational commands instantly without artificial AI-imposed limitations, provided your user account has the necessary permissions.
+
+<p align="center">
+  <img src="docs/assets/copilot-builder-screenshot.png" alt="Copilot Dashboard Builder Configuration" width="800" />
+  <br/>
+  <em>Example: Practice Admin configuring the dashboard using natural language commands.</em>
+</p>
+
 ### 🔒 Why These Restrictions Exist
 
 Every restriction is driven by **HIPAA compliance** and the principle of **least privilege**:
