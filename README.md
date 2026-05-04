@@ -67,6 +67,16 @@ Whether you manage 5 therapists or 500 across three countries, Synalux isolates 
 
 ![Billing & Claims Dashboard — claim tracking, superbill generation, and authorization utilization](images/billing-claims-preview.jpg)
 
+### 📧 Unified Mail Client & AAC Integration
+**Communicate without leaving the portal.**
+An integrated IMAP/SMTP mail client built directly into Synalux. Includes a "Vibe Interface" designed for accessibility. Send emails with native support for AAC word prediction and multi-language AI auto-correction for users with motor impairments.
+![Unified Mail](images/mail-vibe.png)
+
+### 📂 Practice Drive
+**Secure document storage & sharing.**
+A touch-friendly CSS Grid interface to manage PDFs, images, and clinical documents natively. Easily attach files directly into the Mail composer.
+![Practice Drive](images/drive-vibe.png)
+
 ---
 
 ## 🧠 Intelligent Chat & Clinical Assistant
