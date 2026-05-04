@@ -1002,6 +1002,9 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | Program Tree View | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
 | Insurance Claims | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ |
 | E-Signatures | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Unified Mail (IMAP) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Practice Drive (Docs) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| AAC Vibe Interface | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Multi-Specialty | ✅ 6 types | ABA only | ABA only | ABA only | ABA only | ABA only |
 | Offline Mode | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ |
 | Starts at | $29/mo | Custom | Custom | Custom | Custom | $30/mo |
