@@ -1005,7 +1005,8 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | Unified Mail (IMAP) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Practice Drive (Docs) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | AAC Vibe Interface | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Specialty | ✅ 6 types | ABA only | ABA only | ABA only | ABA only | ABA only |
+| Nutritionist Module | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 7 types | ABA only | ABA only | ABA only | ABA only | ABA only |
 | Offline Mode | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ |
 | Starts at | $29/mo | Custom | Custom | Custom | Custom | $30/mo |
 
@@ -1051,7 +1052,44 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | Asthma Action Plans | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Parent Portal | ✅ | ✅ | ✅ | ✅ | ✅ |
 | AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Specialty | ✅ 6 types | Peds only | Peds only | General | General |
+| Multi-Specialty | ✅ 7 types | Peds only | Peds only | General | General |
+
+</details>
+
+### 🥗 Nutrition & Dietetics
+
+- **Clinical Templates:** Initial assessment, follow-up, meal planning, macro/micro tracking, eating disorder recovery
+- **Billing Codes:** 97802 (MNT Initial), 97803 (MNT Follow-up), 97804 (Group MNT), S9470 (Nutritional counseling)
+- **Meal Planning:** Drag-and-drop meal builders, recipe databases, automated grocery list generation
+- **Progress Tracking:** Weight, BMI, body fat percentage, hydration, sleep, energy levels
+- **Patient App:** Daily food logging, photo journals, automated compliance checking against plans
+- **Insurance Verification:** Real-time eligibility checks for dietetics coverage (which often varies wildly by payer)
+
+<details>
+<summary>Click to view full details</summary>
+
+| Feature | Details |
+|---------|---------|
+| **Clinical Templates** | Initial assessment, follow-up, meal planning, macro/micro tracking |
+| **Billing Codes** | 97802 (MNT Initial), 97803 (MNT Follow-up), 97804 (Group) |
+| **Meal Planning** | Drag-and-drop meal builders, recipe databases, grocery lists |
+| **Progress Tracking** | Weight, BMI, body fat percentage, hydration, sleep, energy |
+| **Patient App** | Daily food logging, photo journals, compliance checking |
+
+#### Recommended Workflow by Role
+- **Admin**: Coordinates insurance verification for MNT codes and manages patient intake forms.
+- **Dietitian**: Conducts initial assessments, builds personalized meal plans, and reviews food logs.
+- **Patient**: Logs meals, uploads photos of food, and tracks hydration via the mobile Patient Portal.
+
+#### 📊 How We Compare — Nutrition & Dietetics
+
+| Feature | Synalux | SimplePractice | Healthie | Practice Better | NutriAdmin |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Meal Plan Builder | ✅ | ❌ | ❌ | ✅ | ✅ |
+| Food Log Photos | ✅ | ❌ | ❌ | ✅ | ✅ |
+| Insurance Claims | ✅ | ✅ | ✅ | ✅ | ✅ |
+| AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Specialty | ✅ 7 types | General | General | Nutrition | Nutrition |
 
 </details>
 
@@ -1144,7 +1182,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | Telehealth Built-In | ✅ | ✅ | ✅ | ✅ | ✅ |
 | E-Prescribing | ✅ | ❌ | ❌ | ✅ | ❌ |
 | AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Specialty | ✅ 6 types | MH only | MH only | MH only | MH only |
+| Multi-Specialty | ✅ 7 types | MH only | MH only | MH only | MH only |
 | Insurance Claims | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 </details>
@@ -1191,7 +1229,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | Return-to-Play | ✅ | ❌ | ❌ | ❌ | Partial |
 | AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Medicare Cap Tracking | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Multi-Specialty | ✅ 6 types | PT only | PT only | PT only | PT/OT |
+| Multi-Specialty | ✅ 7 types | PT only | PT only | PT only | PT/OT |
 
 </details>
 
@@ -1239,7 +1277,7 @@ Synalux is a **multi-practice enterprise platform** supporting 6 medical special
 | Photo Before/After | ✅ | ✅ | ✅ | ❌ | ✅ |
 | Lab Integration | ✅ | ✅ | ✅ | ✅ | ✅ |
 | AI Voice Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Specialty | ✅ 6 types | Derm only | Derm/Plastic | General | General |
+| Multi-Specialty | ✅ 7 types | Derm only | Derm/Plastic | General | General |
 
 </details>
 
@@ -1332,7 +1370,7 @@ Every module is multi-tenant, workspace-scoped, and HIPAA-compliant with strict 
 | Zero-Cloud PHI Transmission | ✅ | ❌ | ❌ | ❌ | ❌ |
 | E-Signatures | ✅ | ✅ | ❌ | ✅ | ✅ |
 | OCR (30+ languages) | ✅ | ❌ | ❌ | ❌ | ✅ |
-| Multi-Specialty Templates | 6 types | 3 types | 2 types | 4 types | 5 types |
+| Multi-Specialty Templates | 7 types | 3 types | 2 types | 4 types | 5 types |
 | PDF Export (server-side) | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Offline Dictation | ✅ | ❌ | ❌ | ❌ | ❌ |
 
