@@ -188,6 +188,16 @@ Because of our **Role-Based Empowerment (RBAC)** governance, the Copilot execute
   <em>Example: Practice Admin configuring the dashboard using natural language commands.</em>
 </p>
 
+### 📝 Interactive Forms for Complex Data Entry
+
+When performing complex operational tasks, the Copilot prioritizes data integrity and strict constraint enforcement. Instead of attempting to silently create complex records (like Patient Profiles) through backend APIs and guessing required fields (e.g., DOB, Gender, or clinical history), the Copilot intelligently delegates the action to Synalux's interactive UI forms.
+
+For example:
+- **User:** "Create a new patient record for John Doe."
+- **Copilot:** "I can help with that. Please fill out the patient intake form here to ensure all constraints are met:" followed by an interactive **📝 Open New Patient Form** button right in the chat flow.
+
+This guarantees that all necessary client-side validations, dynamic field rules, and strict HIPAA constraints are met before saving the data.
+
 ### 🔒 Why These Restrictions Exist
 
 Every restriction is driven by **HIPAA compliance** and the principle of **least privilege**:
