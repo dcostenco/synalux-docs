@@ -1,5 +1,36 @@
 # Synalux — Changelog
 
+## [12.3.0] - 2026-05-05 — Copilot pinned to local prism-coder:14b, voice button, TTS auth route fix
+
+### Copilot widget (FloatingAIAssistant)
+- **Pinned to local `prism-coder:14b`.** Was routing to Gemini Advanced — both leaked clinical context to a cloud provider AND deadlocked on the mandated `<|synalux_think|>` tags (Gemini emits the open tag per the system-prompt example, but the closer gets eaten in the SSE pipeline → widget froze on `*Thinking...*` indefinitely). Server-side `isCopilot` flag in `/api/v1/chat/route.ts` now FORCES backend=`local` regardless of body — no silent fallback to cloud.
+- **🎤 Voice button added.** Single-utterance MediaRecorder → POST `/api/v1/transcribe` → append transcript. Disabled when MediaRecorder unsupported. Mirror of the main `/app/chat` voice pattern.
+- **11-test suite** at `src/components/ui/__tests__/FloatingAIAssistant.test.tsx` pinning: header label "Prism-Coder 14B", wire format (`backend=local` + `model=prism-coder:14b` + `source=copilot`), no-cloud-fallback regression guards, SSE streaming, interactive `[OPEN_FORM_PATIENT]` token, error surfaces (503 → `[Error]:` with fetch called once — no silent retry), full mic flow.
+
+### Chat page (`/app/chat`) TTS upgrade
+- **`speakText` now POSTs `/api/v1/tts`** instead of using browser `speechSynthesis`. Paid users get Inworld 1.5 natural voices instead of the OS-default robotic voice. Browser TTS becomes a last-resort fallback (offline / 503 / unauth).
+- **New `src/lib/tts-client.ts` module** — pure helpers + thin browser wrappers:
+  - `stripMarkdownForSpeech` — strip backticks/bold/headings/links
+  - `escapeSsml` + `buildSsml` — well-formed `<speak xml:lang>` with XML-escape on the locale (no script-tag injection), 5000-char inner cap
+  - `fetchTtsAudio` — POST to `/api/v1/tts`, throws on non-OK so caller can fall back
+  - `playAudioBlob` — `HTMLAudioElement` promise wrapper, revokes object URL
+- **20-test suite** at `src/lib/__tests__/tts-client.test.ts` covering markdown strip, SSML XML correctness, fetch contract, AbortSignal forwarding, audio lifecycle including autoplay-rejection cleanup.
+
+### TTS routing fix (regression — see Inworld pipeline below)
+- **`/api/v1/tts` no longer 503s when `AZURE_SPEECH_KEY` is unset.** Production env has `INWORLD_API_KEY` set and `AZURE_SPEECH_KEY` UNSET — Inworld covers all 15 paid-tier langs and Azure is dead-code fallback. The route had a pre-existing early Azure-key gate at line 84 that 503'd every paid call before Inworld got a chance, which made the chat page fall back to robotic browser TTS. Mirror of `c6d56b4` which fixed the same bug in `/api/v1/tts/public/route.ts`.
+- **5-test suite** at `src/app/api/v1/tts/route.test.ts` pins: Inworld path works without Azure key, Azure 503s lazily when reached and key is unset, Inworld error → Azure fallthrough → 503 cleanly, body validation still 400s, 5000-char cap preserved.
+
+### Skill: `modal-training-resilience`
+- New skill at `skills/modal-training-resilience/` capturing the 7 fixes learned from the Phase 1 32B Modal-timeout incident (lost 481 steps to a 14h kill at step 3481/5499). Compacted to 141 total lines across `SKILL.md` + 3 references (`graceful_exit_callback.py`, `watchdog.sh`, `chain_phases.sh`). Pre-launch checklist for any future training run >2h.
+
+### Skills directory cleanup
+- Extracted 4 legacy `.skill` ZIP archives into proper directory format. Recovered `ABA_ORIGIN.md` (was only in ZIP) and the entire `headless-compilation-verification` skill (directory variant was empty). Created `dead-link-prevention/` from its archive (no directory existed). Net: 51 skills, all in uniform directory shape, 0 ZIPs, 0 content lost.
+
+### Other
+- `chore(gitignore)`: ignore `*.tsbuildinfo` (TypeScript incremental build cache regenerates per `tsc` run, polluted git status).
+
+---
+
 ## [0.14.4] - 2026-05-04 — Prism Coder 14B sibling + tier-aware local routing
 
 ### Completed
