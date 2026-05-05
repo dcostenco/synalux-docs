@@ -656,48 +656,35 @@ Synalux runs on a **serverless-first architecture** using 6 cloud services. No A
 | **OpenRouter** | Multi-model LLM routing | Free models | $0/mo | Unlimited `:free` model requests |
 | **GitHub** | Source control + CI/CD | Free | $0/mo | Unlimited private repos, 2000 CI min/mo |
 
-### AI Models & Routing
+### 🧠 Model Routing & Tier Architecture
 
-Synalux routes AI requests through a **dual-backend architecture**:
+The server automatically routes each request to the best model for the user's subscription tier. All Synalux products (Portal, PrismAAC, Prism Coder) use the same `/api/v1/chat` endpoint.
 
-**Cloud Backend (via OpenRouter + Gemini fallback)**
-| User Plan | Default Model | Max Tokens | Daily Limit |
-|-----------|---------------|-----------|-------------|
-| Free | Gemma 3 12B `:free` | 2,048 | 10K tokens |
-| Standard | Gemma 3 27B `:free` | 4,096 | 100K tokens |
-| Pro | Gemma 4 31B `:free` | 8,192 | 500K tokens |
-| Enterprise | Gemma 4 31B `:free` | 16,384 | 5M tokens |
+- **Free:** Gemini 2.5 Flash
+- **Standard:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
+- **Advanced:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
+- **Enterprise:** Claude Opus 4 (fallback: Gemini 2.5 Flash)
 
-**Selectable Models (by tier)**
-| Model | Free | Standard | Pro | Enterprise |
-|-------|------|----------|-----|-----------|
-| Gemma 3 12B | ✅ | ✅ | ✅ | ✅ |
-| Gemini 2.5 Flash | — | ✅ | ✅ | ✅ |
-| Claude Sonnet 4 | — | — | ✅ | ✅ |
-| GPT-4.1 | — | — | ✅ | ✅ |
-| Gemini 2.5 Pro | — | — | ✅ | ✅ |
-| Claude Opus 4 | — | — | — | ✅ |
-| o3-pro | — | — | — | ✅ |
+<details>
+<summary>Click to view full details</summary>
 
-**Local Backend (Ollama — 100% on-device, no tier gating)**
-| Model | RAM Required |
-|-------|-------------|
-| Qwen 2.5 Coder 14B | 18GB |
-| DeepSeek R1 14B | 18GB |
-| Qwen 2.5 Coder 32B | 36GB |
-| DeepSeek R1 32B | 36GB |
+| Tier | Default Model | Fallback | Max Tokens | Daily Limit |
+|------|--------------|----------|------------|-------------|
+| **Free** | Gemini 2.5 Flash | — | 4,096 | 100 |
+| **Standard** | Claude Sonnet 4 | Gemini 2.5 Flash | 8,192 | 2,000 |
+| **Advanced** | Claude Sonnet 4 | Gemini 2.5 Flash | 16,384 | 5,000 |
+| **Enterprise** | Claude Opus 4 | Gemini 2.5 Flash | 32,768 | Unlimited |
 
-**Google Gemini (Free Tier — Direct Fallback)**
-| Feature | Limit |
-|---------|-------|
-| Model | `gemini-2.5-flash` |
-| Rate limit | 15 requests/minute |
-| Input context | 1M tokens |
-| Voice transcription | Gemini-powered, free tier |
+**Products using this routing:**
+- ✅ **Synalux Portal** — web app chat, FloatChat, SOAP dictation
+- ✅ **PrismAAC** — AI Chat for AAC users, caregiver note parsing (`source: prism-aac`)
+- ✅ **Prism Coder IDE** — coding assistant
+- ✅ **VS Code Extension** — inline coding
 
-> **Why Gemini as fallback?** When OpenRouter is down or rate-limited, the chat API
-> falls back to Google's Gemini API directly. This gives us a free, reliable safety net
-> with tool-calling support. No API key cost — Google's free tier is generous.
+**Offline fallback:** All products fall back to `prism-coder:7b` via local Ollama when the API is unreachable.
+
+**Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
+</details>
 
 ### Scaling Thresholds
 

@@ -360,7 +360,7 @@ The server automatically routes each request to the best model for the user's su
 | **Free** | Gemini 2.5 Flash | — | 4,096 | 100 |
 | **Standard** | Claude Sonnet 4 | Gemini 2.5 Flash | 8,192 | 2,000 |
 | **Advanced** | Claude Sonnet 4 | Gemini 2.5 Flash | 16,384 | 5,000 |
-| **Enterprise** | Claude Opus 4 | Gemini 2.5 Flash | 32,768 | 100,000 |
+| **Enterprise** | Claude Opus 4 | Gemini 2.5 Flash | 32,768 | Unlimited |
 
 **Products using this routing:**
 - ✅ **Synalux Portal** — web app chat, FloatChat, SOAP dictation
