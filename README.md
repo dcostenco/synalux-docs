@@ -31,10 +31,6 @@ Based on our recent competitive analysis (vs. CentralReach, SimplePractice, WebP
 - **Native e-Fax Integration:** Send and check status on clinical faxes directly from the portal—no more 3rd party subscriptions.
 - **Voice Picker for Paid Plans:** Pick a male / female voice with a built-in preview, saved per language. Powered by Inworld 1.5 (sub-200ms latency in 15 languages) with Azure Neural fallback for the rest.
 
-<p align="center">
-  <img src="docs/assets/group-session-screenshot.png" alt="Group Session Workspace Screenshot" width="800" />
-</p>
-
 **Hybrid model fleet — offline best + cloud flagship**
 
 Synalux now ships a tiered model lineup, auto-routed by device, user tier, and task intent:
@@ -194,7 +190,7 @@ The Copilot is deeply integrated with the Synalux **Dashboard Builder**. If you 
 Because of our **Role-Based Empowerment (RBAC)** governance, the Copilot executes these operational commands instantly without artificial AI-imposed limitations, provided your user account has the necessary permissions.
 
 <p align="center">
-  <img src="docs/assets/copilot-builder-screenshot.png" alt="Copilot Dashboard Builder Configuration" width="800" />
+  <img src="portal/docs/images/dashboard-builder.png" alt="Copilot Dashboard Builder Configuration" width="800" />
   <br/>
   <em>Example: Practice Admin configuring the dashboard using natural language commands.</em>
 </p>
@@ -1006,6 +1002,21 @@ Each external call is logged in `external_interface_log` with:
 ---
 
 </details>
+
+## 🔀 Public Route Aliases & Redirects
+
+A handful of public URLs are kept as **redirects** so external bookmarks, marketing links, and old patient handouts keep working when the underlying route moves. Direct visits to these URLs land on the canonical page automatically — no 404s.
+
+| Public URL | Lands on | Why |
+|---|---|---|
+| `synalux.ai/staff` | `/app/staff` | Legacy marketing link; staff management lives under the authenticated `/app/*` tree |
+| `synalux.ai/team` | `/team/admin` | Public team page redirects to admin view; both routes are real |
+| `synalux.ai/patient` | `/patient-portal` | Short alias for the patient-facing portal |
+| `synalux.ai/admin/branches` | (no redirect — real page) | HQ branch network manager |
+| `synalux.ai/telehealth` | (no redirect — real page) | Lobby listing joinable + upcoming sessions |
+| `synalux.ai/app/call` | (no redirect — real page) | Staff call hub with start-meeting CTA |
+
+All authenticated areas (`/app/*`, `/admin/*`, `/mail/*`, `/drive/*`) redirect to `/auth` when no session is present. **A CI test (`portal/src/__tests__/route-coverage.test.ts`) walks the entire `app/` tree and fails the build if any segment has dynamic children but no parent index page** — the class of bug that previously left `/telehealth` and `/app/call` returning silent 404s.
 
 ## 📖 Feature Glossary (What Does It Do?)
 * **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
