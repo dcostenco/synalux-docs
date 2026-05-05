@@ -29,6 +29,7 @@ Based on our recent competitive analysis (vs. CentralReach, SimplePractice, WebP
 - **Automated Waitlist Management:** Automatically texts the next patient in line when a cancellation occurs.
 - **8-Minute Rule CPT Calculator:** Built-in Medicare compliance calculator for Physical Therapy time inputs.
 - **Native e-Fax Integration:** Send and check status on clinical faxes directly from the portal—no more 3rd party subscriptions.
+- **Voice Picker for Paid Plans:** Pick a male / female voice with a built-in preview, saved per language. Powered by Inworld 1.5 (sub-200ms latency in 15 languages) with Azure Neural fallback for the rest.
 
 <p align="center">
   <img src="docs/assets/group-session-screenshot.png" alt="Group Session Workspace Screenshot" width="800" />
@@ -90,6 +91,16 @@ An integrated IMAP/SMTP mail client built directly into Synalux. Includes a "Vib
 **Secure document storage & sharing.**
 A touch-friendly CSS Grid interface to manage PDFs, images, and clinical documents natively. Easily attach files directly into the Mail composer.
 ![Practice Drive](images/drive-vibe.png)
+
+### 🗣️ Voice & Text-to-Speech
+**Sound like yourself — paid plans get to choose the voice.**
+Synalux ships with a curated voice catalog covering 15 languages on **Inworld 1.5** (sub-200ms latency, more natural-sounding voices) and falls back to **Azure Neural** for the remaining 125+ languages so no patient is left without a voice.
+
+- **Default for paid tiers** — Inworld 1.5 is automatic for any paid-tier user speaking one of the 15 supported languages. No flag, no setup. Free tier and unsupported languages get Azure Neural.
+- **Voice picker (paid only)** — Settings → Voice → choose by gender, preview a sample, save per language. Same UI in PrismAAC and the Synalux portal.
+- **Single source of truth** — `GET /api/v1/tts/voices` returns the curated catalog; both clients consume it. Adding or updating a voice happens in one place (`portal/src/shared/voice-catalog.ts`), no client redeploy needed.
+- **Voice failover** — if Inworld fails (network, region, quota), the route silently falls back to Azure Neural so the user always hears their utterance. Audit headers (`X-TTS-Backend`, `X-TTS-Voice`, `X-TTS-Route-Reason`) record which path served each request.
+- **HIPAA / BAA** — both backends are HIPAA-eligible. Inworld requires Growth tier ($1,500/mo) for BAA; Azure BAA is included with standard Microsoft enterprise agreements.
 
 ---
 
@@ -391,6 +402,21 @@ Evidence-based AAC web app for children with motor impairments and complex commu
 
 #### AI Routing
 Same `/api/v1/chat` endpoint as portal (`source: prism-aac`). Free tier gets Gemini 2.5 Flash. Paid tiers get Claude Sonnet/Opus with Gemini fallback. Web search available for homework questions.
+
+#### Voice — Pick the One That Sounds Like You
+
+Settings → **Voice** lets paid-tier users choose the voice that speaks for them. Pick by gender, hear a preview, and your choice is remembered per language. Free-tier users still get the platform default voice — speed and volume sliders are available to everyone.
+
+| What you get | Free tier | Paid tier |
+|---|---|---|
+| Speed + volume control | ✅ | ✅ |
+| Default voice per language | ✅ | ✅ |
+| Voice picker (male / female / specific name) | — | ✅ |
+| Inworld 1.5 ultra-low-latency voices (15 languages) | — | ✅ default |
+| Azure Neural fallback (140+ locales) | ✅ | ✅ |
+| Per-language voice memory | — | ✅ |
+
+Voice choice and the catalog itself are managed by the Synalux portal — both PrismAAC and the portal pull from the same `/api/v1/tts/voices` endpoint, so adding or updating a voice happens in one place.
 
 #### Do No Harm — Clinical Safety
 - Default vocabulary cannot be deleted (only hidden, restorable)
