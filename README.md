@@ -29,7 +29,7 @@ Based on our recent competitive analysis (vs. CentralReach, SimplePractice, WebP
 - **Automated Waitlist Management:** Automatically texts the next patient in line when a cancellation occurs.
 - **8-Minute Rule CPT Calculator:** Built-in Medicare compliance calculator for Physical Therapy time inputs.
 - **Native e-Fax Integration:** Send and check status on clinical faxes directly from the portal—no more 3rd party subscriptions.
-- **Voice Picker for Paid Plans:** Pick a male / female voice with a built-in preview, saved per language. Powered by Inworld 1.5 (sub-200ms latency in 15 languages) with Azure Neural fallback for the rest.
+- **Universal Inworld 2.0 voices for ALL tiers (free + paid):** Every Synalux user gets natural-sounding Inworld TTS-2 across 100+ languages by default. Voice picker remains paid-only (curated voice catalog with previews); free tier gets the locale default voice. Azure Neural is the implicit fallback when Inworld is unreachable. Per-call cost is recouped through engagement / retention.
 
 **Hybrid model fleet — offline best + cloud flagship**
 
@@ -89,14 +89,25 @@ A touch-friendly CSS Grid interface to manage PDFs, images, and clinical documen
 ![Practice Drive](images/drive-vibe.png)
 
 ### 🗣️ Voice & Text-to-Speech
-**Sound like yourself — paid plans get to choose the voice.**
-Synalux ships with a curated voice catalog covering 15 languages on **Inworld 1.5** (sub-200ms latency, more natural-sounding voices) and falls back to **Azure Neural** for the remaining 125+ languages so no patient is left without a voice.
+**Best-in-class voice for every user — no quality cliff between tiers.**
+Synalux runs **Inworld TTS-2** as the default backend for everyone (free, standard, advanced, enterprise) — 100+ languages, EXPRESSIVE delivery mode, natural-language steering tags. **Azure Neural** stays as the implicit fallback for moments when Inworld is unreachable. Updated 2026-05-05.
 
-- **Default for paid tiers** — Inworld 1.5 is automatic for any paid-tier user speaking one of the 15 supported languages. No flag, no setup. Free tier and unsupported languages get Azure Neural.
-- **Voice picker (paid only)** — Settings → Voice → choose by gender, preview a sample, save per language. Same UI in PrismAAC and the Synalux portal.
-- **Single source of truth** — `GET /api/v1/tts/voices` returns the curated catalog; both clients consume it. Adding or updating a voice happens in one place (`portal/src/shared/voice-catalog.ts`), no client redeploy needed.
-- **Voice failover** — if Inworld fails (network, region, quota), the route silently falls back to Azure Neural so the user always hears their utterance. Audit headers (`X-TTS-Backend`, `X-TTS-Voice`, `X-TTS-Route-Reason`) record which path served each request.
-- **HIPAA / BAA** — both backends are HIPAA-eligible. Inworld requires Growth tier ($1,500/mo) for BAA; Azure BAA is included with standard Microsoft enterprise agreements.
+| Capability | Free | Standard | Advanced | Enterprise |
+|---|---|---|---|---|
+| **Inworld TTS-2 voice synthesis** | ✅ default | ✅ default | ✅ default | ✅ default |
+| 100+ languages on Inworld 2.0 | ✅ | ✅ | ✅ | ✅ |
+| Azure Neural fallback on Inworld error | ✅ | ✅ | ✅ | ✅ |
+| **Voice picker** (gender, preview, save per language) | ❌ locale default | ✅ | ✅ | ✅ |
+| Auto-tone (adaptive style — calm, urgent, cheerful, …) | ❌ | ✅ | ✅ | ✅ |
+| Inworld steering tags (free-form natural language) | ❌ | ✅ | ✅ | ✅ |
+| HIPAA-eligible voice backends | ✅ Azure | ✅ both | ✅ both | ✅ both + BAA |
+| Per-utterance audit headers (`X-TTS-Backend`, etc.) | ✅ | ✅ | ✅ | ✅ |
+
+- **Universal access (May 2026 change)** — Inworld TTS-2 is now the default for ALL tiers. Per-call cost is recouped via higher engagement and retention; no more quality cliff between free and paid.
+- **Voice picker remains paid-only** — Settings → Voice lets paid users browse the curated catalog by gender, preview each voice, and save per-language preferences. Free tier ships with the locale default Inworld voice (still 2.0, still 100+ langs).
+- **Single source of truth** — `GET /api/v1/tts/voices` returns the curated catalog; both PrismAAC and the Synalux portal consume it. Catalog updates live in one place: `portal/src/shared/voice-catalog.ts`.
+- **Voice failover** — if Inworld fails (network, region, quota), the route silently falls back to Azure Neural so the user always hears their utterance. Audit headers record which path served each request.
+- **HIPAA / BAA** — both backends are HIPAA-eligible. Inworld requires Growth tier ($1,500/mo) for BAA; Azure BAA is included with standard Microsoft enterprise agreements. Enterprise tier customers receive both BAAs by default.
 
 ---
 
