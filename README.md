@@ -30,6 +30,7 @@ Based on our recent competitive analysis (vs. CentralReach, SimplePractice, WebP
 - **8-Minute Rule CPT Calculator:** Built-in Medicare compliance calculator for Physical Therapy time inputs.
 - **Native e-Fax Integration:** Send and check status on clinical faxes directly from the portal—no more 3rd party subscriptions.
 - **Universal Inworld 2.0 voices for ALL tiers (free + paid):** Every Synalux user gets natural-sounding Inworld TTS-2 across 100+ languages by default. Voice picker remains paid-only (curated voice catalog with previews); free tier gets the locale default voice. Azure Neural is the implicit fallback when Inworld is unreachable. Per-call cost is recouped through engagement / retention.
+- **🆕 `synalux.ai/coder` web surface:** Prism Coder IDE is now also available as a browser app, joining `/mail`, `/drive`, and `/source` as a top-level product surface on synalux.ai. Same OAuth, same `/api/v1/chat` model routing, same Synalux Assistant in the corner. Free tier sees the landing page + IDE download CTA; Standard+ unlocks the in-browser editor. Cross-links into Mail / Drive / Source workspaces share the single sign-in.
 
 **Hybrid model fleet — offline best + cloud flagship**
 
@@ -432,11 +433,20 @@ Voice choice and the catalog itself are managed by the Synalux portal — both P
 - All changes require explicit [Apply] confirmation
 - App works fully offline — no network = no communication loss
 
-### 🖥️ Prism Coder IDE — Standalone Desktop App
+### 🖥️ Prism Coder IDE — Standalone Desktop App + Web Surface
 
 > **Available on ALL Synalux plans.** Start with a 14-day free trial on any paid plan, then choose the tier that fits your practice.
 
 A VS Code-like standalone desktop IDE powered by Prism Coder 7B. Ships as `.dmg` (macOS) and `.exe` (Windows). Includes Monaco Editor, AI chat with SSE streaming, integrated terminal, and file explorer — all running 100% locally.
+
+**🆕 Web surface at `synalux.ai/coder`** — same product, browser delivery. Standard+ tier required for the editor; Free tier sees the landing page + IDE download. Web surface and desktop app both use the canonical `/api/v1/chat` endpoint, so the model routing (Claude Sonnet 4 / Opus 4 by tier, Gemini 2.5 Flash fallback, `prism-coder:7b` offline) is identical across delivery modes.
+
+**Cross-product integration** (works in both desktop IDE and web surface):
+- **Mail** — open thread context as a "what does this code change for the user?" prompt; assistant drafts replies citing repo state
+- **Drive** — browse Drive files as a workspace tree; opening a `.zip` or repo folder mounts it as a project root
+- **Source** — clone a Synalux Source repo with one click; PR drafts pre-fill commit messages from agent edits
+- **Chat** — the same Synalux Assistant floats in the corner; routes through `/api/v1/chat` with `source: prism-coder` so the system prompt is code-aware
+- All four use a single OAuth session — no separate sign-in.
 
 <details>
 <summary><strong>📊 Prism-Coder Engine Benchmarks</strong> (v12 — retraining in progress for v14)</summary>
@@ -1027,7 +1037,7 @@ A handful of public URLs are kept as **redirects** so external bookmarks, market
 | `synalux.ai/telehealth` | (no redirect — real page) | Lobby listing joinable + upcoming sessions |
 | `synalux.ai/app/call` | (no redirect — real page) | Staff call hub with start-meeting CTA |
 
-All authenticated areas (`/app/*`, `/admin/*`, `/mail/*`, `/drive/*`) redirect to `/auth` when no session is present. **A CI test (`portal/src/__tests__/route-coverage.test.ts`) walks the entire `app/` tree and fails the build if any segment has dynamic children but no parent index page** — the class of bug that previously left `/telehealth` and `/app/call` returning silent 404s.
+All authenticated areas (`/app/*`, `/admin/*`, `/mail/*`, `/drive/*`, `/source/*`, `/coder/*`) redirect to `/auth` when no session is present. `/coder` additionally tier-gates editor functionality at the content level — Free signed-in users see the landing page + IDE download CTA, Standard+ unlocks the in-browser editor. **A CI test (`portal/src/__tests__/route-coverage.test.ts`) walks the entire `app/` tree and fails the build if any segment has dynamic children but no parent index page** — the class of bug that previously left `/telehealth` and `/app/call` returning silent 404s.
 
 ## 📖 Feature Glossary (What Does It Do?)
 * **Ambient Dictation:** A hands-free recording tool that listens to your session and automatically drafts a professional clinical note while you focus entirely on the patient.
