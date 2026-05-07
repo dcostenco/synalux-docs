@@ -63,8 +63,9 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 | **Banking Reconciliation** | Double-entry GL. Native bank-feed adapters (VictoriaBank, Banca Transilvania, Amex, Chase). |
 | **Telehealth Suite** | LiveKit SFU. Bandwidth-adaptive. No patient-side downloads. |
 | **Patient Portal** | Family signs documents, pays, sees progress reports — from their phone. |
-| **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac). |
+| **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac). Phrase ranking + caregiver-correction harvesting use [Prism v14.0.0 algorithms](https://github.com/dcostenco/prism-coder/blob/main/docs/WOW_FEATURES.md) (spreading activation, ACT-R decay, lesson-rate gotcha persistence). |
 | **Prism Coder IDE** | Local-first AI IDE. Standalone macOS/Windows app + web preview at `/coder`. Repo: [`prism-coder`](https://github.com/dcostenco/prism-coder). |
+| **Audit Hooks Framework** | Pre-push security audit + pre-execution prompt-audit gate, both grounded in cited Prism v14.0.0 algorithm exports (327 tests pin the constants). Lives at `~/.agent/skills/hooks/`. |
 | **No-Code Dashboard Builder** | Drag widgets to build BCBA / Admin / RBT views. |
 | **Smart Scheduling** | Conflict checking + patient-provider matching. |
 
