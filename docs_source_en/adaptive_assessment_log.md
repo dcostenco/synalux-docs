@@ -154,6 +154,19 @@ The assistant **must not**:
 4. Score record persists in the chart and appears on the trend graph.
 5. When drafting reports, the AI assistant references the typed scores by date and instrument label.
 
+## Screenshots
+
+> Screenshots are placed under `docs/demo/adaptive_assessment_log/` in this repo. The form schema is workspace-admin-editable via `/admin/form-builder` (see [Synalux Dev Rule 6](../../../synalux-private/DEV_RULES.md)), so the screenshots show the seed default — your tenant may look different after admin customization.
+
+| Screen | Image |
+|---|---|
+| New record (seed default — top-level metadata + composite scores) | `docs/demo/adaptive_assessment_log/01_new_record.png` |
+| Record list / trend chart in the client chart | `docs/demo/adaptive_assessment_log/02_trend.png` |
+| Practice admin editing the form via `/admin/form-builder` | `docs/demo/adaptive_assessment_log/03_admin_form_builder.png` |
+| Source-PDF attachment view (audit-logged on every open) | `docs/demo/adaptive_assessment_log/04_source_pdf_view.png` |
+
+UI behavior is pinned by the test at `portal/src/__tests__/adaptive-assessment-log-form.test.tsx` — 5 cases covering the seed-default field set, free-tier filtering of the standard-tier subdomain JSON field, the audit-logged Source-PDF control, and required-field validation on submit.
+
 ## Audit & Compliance
 
 - All record creates / updates / deletes are PHI-tier audited (see Triple-Logging Architecture in the platform README).
