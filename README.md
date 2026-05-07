@@ -74,7 +74,7 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 
 | | Free | Standard | Advanced | Enterprise |
 |---|---|---|---|---|
-| AI assistant | ✅ Gemini Flash | ✅ Claude Sonnet 4 | ✅ Claude Sonnet 4 | ✅ Claude Opus 4 |
+| AI assistant | ✅ Gemini 2.5 Flash | ✅ Claude Sonnet 4 ¹ | ✅ Claude Sonnet 4 ¹ | ✅ Claude Sonnet 4 ¹ |
 | Mail / Calendar / Drive | ✅ | ✅ | ✅ | ✅ |
 | Telehealth | — | ✅ | ✅ + Zoom | ✅ + Zoom |
 | Voice (Inworld 2.0) | ✅ default voice | ✅ all voices | ✅ + clinical dictation | ✅ + voice cloning |
@@ -82,6 +82,11 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 | Browser automation | — | — | ✅ | ✅ |
 | Banking & GL | — | — | ✅ | ✅ |
 | Multi-workspace HQ | — | — | — | ✅ |
+
+¹ Tier-aware automatic fallback when Anthropic API is unavailable:
+Standard → Gemini 3 Flash Preview · Advanced/Enterprise → Gemini 3 Pro Preview.
+Free tier autocorrect/prediction runs on Gemini 2.5 Flash-Lite for cost
++ latency (Romanian diacritics + multilingual coverage validated).
 
 [See full pricing →](https://synalux.ai/pricing)
 
