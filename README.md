@@ -35,7 +35,7 @@ Real-time insurance eligibility. EDI 837P claims. Stripe Connect for copays. Bui
 Trial data on a tablet at a remote school? Collect, save, sync when you're back.
 
 ### 🔒 Provably secure
-Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tokens are AES-256-GCM encrypted. Read the design at [`portal/docs/security/oauth-token-isolation.md`](portal/docs/security/oauth-token-isolation.md).
+Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tokens are AES-256-GCM encrypted. See the public [Auth & MFA module page](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md); full Pattern C OAuth token isolation spec lives in the private engineering repo.
 
 ---
 
@@ -94,14 +94,19 @@ Free tier autocorrect/prediction runs on Gemini 2.5 Flash-Lite for cost
 
 ## For developers
 
-This is a monorepo. Each major component has its own README:
+This is a monorepo (private engineering repo). Public-facing docs live at
+[github.com/dcostenco/synalux-docs](https://github.com/dcostenco/synalux-docs)
+— including 25+ per-module pages under
+[`docs_source_en/`](https://github.com/dcostenco/synalux-docs/tree/main/docs_source_en).
+
+Top-level layout (private):
 
 | Path | What |
 |---|---|
-| [`portal/`](portal/README.md) | Next.js 15 web app (`synalux.ai`) |
-| [`prism-coder-ide/`](prism-coder-ide/README.md) | Electron desktop IDE |
+| `portal/` | Next.js 15 web app (`synalux.ai`) — see `portal/README.md` |
+| `prism-coder-ide/` | Electron desktop IDE — see `prism-coder-ide/README.md` |
 | `supabase/` | Top-level migrations |
-| `docs/` | i18n READMEs + architecture docs |
+| `docs/` | i18n README translations + internal architecture docs |
 
 Quickstart for the portal:
 ```bash
@@ -110,24 +115,32 @@ npm install
 npm run dev    # http://localhost:3000
 ```
 
-Full env-var matrix, security docs, and the Verified Shipping discipline are in [`portal/README.md`](portal/README.md).
+Full env-var matrix, security docs, and the Verified Shipping discipline are in `portal/README.md` (private repo).
 
 ---
 
 <details>
-<summary>📚 Detailed docs that exist today</summary>
+<summary>📚 Detailed docs</summary>
 
-- [`portal/docs/security/`](portal/docs/security/) — OAuth token isolation (Pattern C), audit chain integrity, KEK rotation, encryption design
-- [`portal/docs/process/verified-shipping.md`](portal/docs/process/verified-shipping.md) — Verified Shipping discipline
-- [`portal/docs/process/copy-ui-parity.md`](portal/docs/process/copy-ui-parity.md) — Rule 11: every feature claim must have a clickable flow
-- [`portal/docs/PHASE_3_PORTAL_ENDPOINTS.md`](portal/docs/PHASE_3_PORTAL_ENDPOINTS.md) — Synalux portal API endpoints reference
-- [`portal/docs/tts-1.5-vs-tts-2.md`](portal/docs/tts-1.5-vs-tts-2.md) — Inworld TTS upgrade rationale
-- [`docs/COMPLIANCE_MATRIX.md`](docs/COMPLIANCE_MATRIX.md) — HIPAA / regulatory matrix
-- [`docs/feature-gap-assessment.md`](docs/feature-gap-assessment.md) — vs CentralReach / SimplePractice / WebPT / Healthie
-- [`docs/web_manual.md`](docs/web_manual.md) — end-user manual
-- [`docs/Synalux_Manual_Test_Cases.docx`](docs/Synalux_Manual_Test_Cases.docx) — manual test plan
+**Public** ([synalux-docs](https://github.com/dcostenco/synalux-docs)) — 60+ pages in `docs_source_en/`. Highlights:
+- [Auth & MFA](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md) — sign-in, TOTP/passkey, break-glass override
+- [Voice / TTS Architecture](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/voice_tts_architecture.md) — 4-tier fallback (Inworld → Kokoro → Web Speech → espeak)
+- [Telehealth (LiveKit)](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/telehealth_livekit.md) — bandwidth-adaptive video
+- [Language Support Matrix](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/language_support.md) — coverage per surface across 25 locales
+- [Prism AAC](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/prism_aac.md), [Mail](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/mail.md), [Drive](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/drive.md), [Calendar](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/calendar.md), and [more](https://github.com/dcostenco/synalux-docs/tree/main/docs_source_en).
 
-The original 2443-line README is preserved in git history. To browse the prior version (deep feature catalog, @keyword reference, model routing details, per-tier capability matrix, builder configuration, audit architecture): `git show HEAD~1:README.md`. Specific sections are recoverable with `git log -p README.md`.
+**Internal** (this private repo, not publicly accessible):
+- `portal/docs/security/` — OAuth token isolation (Pattern C), audit chain integrity, KEK rotation, encryption design
+- `portal/docs/process/verified-shipping.md` — Verified Shipping discipline
+- `portal/docs/process/copy-ui-parity.md` — Rule 11: every feature claim must have a clickable flow
+- `portal/docs/PHASE_3_PORTAL_ENDPOINTS.md` — Synalux portal API endpoints reference
+- `portal/docs/tts-1.5-vs-tts-2.md` — Inworld TTS upgrade rationale
+- `docs/COMPLIANCE_MATRIX.md` — HIPAA / regulatory matrix
+- `docs/feature-gap-assessment.md` — vs CentralReach / SimplePractice / WebPT / Healthie
+- `docs/web_manual.md` — end-user manual
+- `docs/Synalux_Manual_Test_Cases.docx` — manual test plan
+
+The original 2443-line README is preserved in git history. To browse the prior version: `git show HEAD~1:README.md`.
 
 </details>
 
