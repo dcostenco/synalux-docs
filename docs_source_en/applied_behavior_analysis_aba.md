@@ -69,6 +69,19 @@ Generate insurance-ready assessments in minutes, not hours.
 
 ---
 
+## 📋 Adaptive Assessment Log
+
+A **score log** for externally-administered standardized assessments (adaptive functioning, verbal-behavior, cognitive, language, behavior-rating, autism-specific, sensory). The credentialed clinician administers and scores the instrument on the publisher's official platform; Synalux stores the typed-in standard scores alongside the rest of the chart and trends them over time.
+
+* **Instrument-agnostic by design:** one module covers every supported instrument the clinician chooses (Vineland-3, ABAS-3, VB-MAPP, ABLLS-R, AFLS, Bayley-4, BASC-3, ADOS-2, and more).
+* **Not an instrument:** Synalux does not administer, score, or reproduce any standardized assessment. The schema uses generic psychometric vocabulary so it never becomes a derivative of any one instrument.
+* **AI assistant integration:** when drafting medical-necessity letters, BIPs, or DDA narratives, the BCBA assistant pulls the latest typed-in scores and quotes them verbatim — it never simulates, predicts, or normatively interprets.
+* **Audit:** PHI-tier triple-logging on every create / update / delete. Source-PDF attachments are encrypted at rest, served via short-TTL access URLs, audit-logged on every view, and excluded from AI training and embedding pipelines.
+
+🔗 [Read the full Adaptive Assessment Log documentation](./adaptive_assessment_log.md)
+
+---
+
 ## 💳 Billing & Authorization Tracking
 Avoid denials with built-in insurance logic.
 *   **CPT Integration:** Direct support for 97151, 97153, 97155, and 97156.
