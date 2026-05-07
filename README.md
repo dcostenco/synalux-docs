@@ -151,9 +151,9 @@ The original 2443-line README is preserved in git history. To browse the prior v
 - **Production**: synalux.ai (latest deploy: v12.4.0)
 - **Releases**: [github.com/dcostenco/synalux-private/releases](https://github.com/dcostenco/synalux-private/releases)
 - **Current sprint**: chat-provider expansion (Telegram, SMS, WhatsApp, FB Messenger, Viber)
-- **Pre-release audit**: `npm run check:dead-buttons` + Verified Shipping discipline ([`portal/docs/process/verified-shipping.md`](portal/docs/process/verified-shipping.md))
+- **Pre-release audit**: `npm run check:dead-buttons` + Verified Shipping discipline (see `portal/docs/process/verified-shipping.md` in this private repo)
 
 ---
 
 ## License
-BUSL-1.1 — see [LICENSE](LICENSE).
+BUSL-1.1 — see [`LICENSE`](https://github.com/dcostenco/synalux-docs/blob/main/LICENSE).
