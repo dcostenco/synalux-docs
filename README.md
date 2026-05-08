@@ -59,7 +59,6 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 |---|---|
 | **Ambient AI Documentation** | Whisper WASM transcription, automatic SOAP structuring, ABC data extraction. 16+ languages. |
 | **BCBA Command Center** | Touch-optimized field interface. Trial data offline (Dexie.js + IndexedDB). EVV linked to payroll. |
-| **Adaptive Assessment Log** | Instrument-agnostic score log for externally-administered standardized assessments. The credentialed clinician scores on the publisher's platform and types the standard scores into Synalux for trending and report integration. Synalux is not an instrument and does not reproduce items, rubrics, or normative tables. [Details](docs_source_en/adaptive_assessment_log.md). |
 | **Billing & Insurance** | EDI 837P, 835 ERA parser, real-time eligibility, Stripe Connect, Medicare-correct CPT. |
 | **Banking Reconciliation** | Double-entry GL. Native bank-feed adapters (VictoriaBank, Banca Transilvania, Amex, Chase). |
 | **Telehealth Suite** | LiveKit SFU. Bandwidth-adaptive. No patient-side downloads. |

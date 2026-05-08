@@ -46,7 +46,7 @@
 ### VS Code Extension (v0.12.4)
 - [x] 20+ multimodal tools (voice, OCR, terminal, Git, browser)
 - [x] Multi-agent orchestrator (planner → coder → tester)
-- [x] Prism MCP persistent memory integration
+- [x] Prism Coder persistent memory integration
 - [x] Local workspace tools (file ops, search, commands)
 
 ---
