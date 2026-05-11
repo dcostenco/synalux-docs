@@ -188,7 +188,6 @@ The original 2443-line README is preserved in git history. To browse the prior v
                               └──────────────────────────────┘
 ```
 
-**Monthly cost at <100 users: ~$15–25/mo**
 
 | Service | Provider | Cost/mo |
 |---|---|---|
