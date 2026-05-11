@@ -150,50 +150,53 @@ The original 2443-line README is preserved in git history. To browse the prior v
 ## Infrastructure
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│                        CLIENT LAYER                                   │
-│  prism-aac (iOS/Web PWA)      │      Synalux Portal (Web)            │
-│  Vercel — free                 │      Vercel — free                   │
-└───────────┬────────────────────────────────┬────────────────────────┘
-            │ AAC inference                   │ portal + AI chat
-            ▼                                 ▼
-┌───────────────────────────────────────────────────────────────────────┐
-│                    SYNALUX ROUTER  (Vercel)                           │
-│  POST /api/v1/prism-aac/inference                                     │
-│  ├─ JWT auth required (no anonymous access)                           │
-│  ├─ Subscription tier check (free/standard/pro/enterprise)            │
-│  ├─ Auto complexity classifier → 14B / 30B-A3B / QwQ-32B             │
-│  └─ Proxy to RunPod (secret key, never exposed to client)            │
-└───────────┬───────────────────────────────────────────────────────────┘
-            │
-            ▼
-┌───────────────────────────────────┐   ┌─────────────────────────────┐
-│       RUNPOD SERVERLESS           │   │    prism-mcp MEMORY         │
-│  Qwen3-14B   A100 40GB  ~200ms    │   │  Primary:  Railway  $5/mo   │
-│  Qwen3-30B   L40  46GB  ~500ms    │   │  Standby:  Fly.io   ~$0/mo  │
-│  QwQ-32B     A100 80GB  ~3-5s     │   │  Fallback: Supabase direct  │
-│  $0 idle — pay per request        │   │  /healthz monitored 30s     │
-└───────────────────────────────────┘   └──────────────┬──────────────┘
-                                                        │
-            ┌───────────────────────────────────────────┘
-            ▼
-┌───────────────────────────┐   ┌────────────────────────────────┐
-│  ON-DEVICE (free tier)    │   │  SUPABASE (data layer)         │
-│  Qwen3-1.7B GGUF Q4_K_M  │   │  session ledgers, knowledge    │
-│  iOS CoreML / Android     │   │  handoffs, billing, audit      │
-│  ~50ms, fully offline     │   │  99.99% SLA — source of truth  │
-└───────────────────────────┘   └────────────────────────────────┘
+  CLIENTS
+  ┌─────────────────────┐  ┌──────────────────────────────┐
+  │  prism-aac (iOS/web)│  │  Synalux Portal (web)        │
+  │  Vercel  —  free    │  │  Vercel  —  free             │
+  └──────────┬──────────┘  └──────────────┬───────────────┘
+             │ AAC inference               │ portal + AI chat
+             ▼                             ▼
+  ┌────────────────────────────────────────────────────────┐
+  │  SYNALUX ROUTER  (Vercel)                              │
+  │                                                        │
+  │  POST /api/v1/prism-aac/inference                      │
+  │  • JWT auth required  (no anonymous access)            │
+  │  • Subscription tier check  (free / standard / pro)   │
+  │  • Auto complexity classifier  14B · 30B · QwQ-32B    │
+  │  • Proxy to RunPod  (secret key, never exposed)        │
+  └──────────┬─────────────────────────────┬──────────────┘
+             │ model inference              │ memory
+             ▼                             ▼
+  ┌───────────────────────┐  ┌──────────────────────────────┐
+  │  RUNPOD SERVERLESS    │  │  prism-mcp SERVER            │
+  │                       │  │                              │
+  │  Qwen3-14B  ~200ms    │  │  ● Railway  $5/mo   primary  │
+  │  Qwen3-30B  ~500ms    │  │  ● Fly.io   ~$0/mo  standby  │
+  │  QwQ-32B    ~3-5s     │  │  ● Supabase direct  fallback │
+  │                       │  │                              │
+  │  $0 idle              │  │  failover: Railway → Fly.io  │
+  └──────────┬────────────┘  │           → Supabase REST   │
+             │               └──────────────┬───────────────┘
+             ▼                              ▼
+  ┌───────────────────────┐  ┌──────────────────────────────┐
+  │  ON-DEVICE  (free)    │  │  SUPABASE                    │
+  │  Qwen3-1.7B Q4_K_M    │  │  session ledgers             │
+  │  iOS CoreML/Android   │  │  knowledge graph             │
+  │  ~50ms · offline      │  │  handoffs, billing, audit    │
+  └───────────────────────┘  │  99.99% SLA  source of truth │
+                              └──────────────────────────────┘
 ```
 
-**Monthly cost at <100 users: ~$5-25/mo**
+**Monthly cost at <100 users: ~$15–25/mo**
 
 | Service | Provider | Cost/mo |
 |---|---|---|
 | prism-aac + portal | Vercel | Free |
 | prism-mcp primary | Railway Hobby | $5 |
 | prism-mcp standby | Fly.io (auto-stop) | ~$0 |
-| AI inference (fine-tuned models) | RunPod serverless | ~$10-20 |
-| Model weights storage | HuggingFace Hub (private) | Free |
+| AI inference | RunPod serverless | ~$10–20 |
+| Model weights | HuggingFace Hub (private) | Free |
 | Database | Supabase | Free tier |
 
 ## Status
