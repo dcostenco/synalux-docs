@@ -153,7 +153,7 @@ The original 2443-line README is preserved in git history. To browse the prior v
   CLIENTS
   ┌─────────────────────┐  ┌──────────────────────────────┐
   │  prism-aac (iOS/web)│  │  Synalux Portal (web)        │
-  │  Vercel  —  free    │  │  Vercel  —  free             │
+  │  Vercel             │  │  Vercel                      │
   └──────────┬──────────┘  └──────────────┬───────────────┘
              │ AAC inference               │ portal + AI chat
              ▼                             ▼
@@ -171,32 +171,21 @@ The original 2443-line README is preserved in git history. To browse the prior v
   ┌───────────────────────┐  ┌──────────────────────────────┐
   │  RUNPOD SERVERLESS    │  │  prism-mcp SERVER            │
   │                       │  │                              │
-  │  Qwen3-14B  ~200ms    │  │  ● Railway  $5/mo   primary  │
-  │  Qwen3-30B  ~500ms    │  │  ● Fly.io   ~$0/mo  standby  │
-  │  QwQ-32B    ~3-5s     │  │  ● Supabase direct  fallback │
+  │  Qwen3-14B  ~200ms    │  │  Primary   — Railway         │
+  │  Qwen3-30B  ~500ms    │  │  Standby   — Fly.io          │
+  │  QwQ-32B    ~3-5s     │  │  Fallback  — Supabase REST   │
   │                       │  │                              │
-  │  $0 idle              │  │  failover: Railway → Fly.io  │
-  └──────────┬────────────┘  │           → Supabase REST   │
+  └──────────┬────────────┘  │  auto-failover chain         │
              │               └──────────────┬───────────────┘
              ▼                              ▼
   ┌───────────────────────┐  ┌──────────────────────────────┐
-  │  ON-DEVICE  (free)    │  │  SUPABASE                    │
+  │  ON-DEVICE            │  │  SUPABASE                    │
   │  Qwen3-1.7B Q4_K_M    │  │  session ledgers             │
   │  iOS CoreML/Android   │  │  knowledge graph             │
   │  ~50ms · offline      │  │  handoffs, billing, audit    │
-  └───────────────────────┘  │  99.99% SLA  source of truth │
+  └───────────────────────┘  │  source of truth             │
                               └──────────────────────────────┘
 ```
-
-
-| Service | Provider | Cost/mo |
-|---|---|---|
-| prism-aac + portal | Vercel | Free |
-| prism-mcp primary | Railway Hobby | $5 |
-| prism-mcp standby | Fly.io (auto-stop) | ~$0 |
-| AI inference | RunPod serverless | ~$10–20 |
-| Model weights | HuggingFace Hub (private) | Free |
-| Database | Supabase | Free tier |
 
 ## Status
 
