@@ -94,7 +94,7 @@ ollama pull dcostenco/prism-coder:32b   # 19 GB  — enterprise/reasoning
 ```
 
 Set `LOCAL_LLM_URL=http://localhost:11434` in portal config. Auto-routing: 1.7B → 14B → 32B → cloud fallback.
-All models: 100% Synalux internal BFCL eval · [Ollama install](https://ollama.com/install)
+Routing accuracy ([100-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), May 2026): **14B = 99% · 32B = 97% · 1.7B = 86%** · invented tools = 0 · [Ollama install](https://ollama.com/install)
 
 ---
 
