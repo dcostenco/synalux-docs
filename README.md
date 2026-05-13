@@ -94,7 +94,18 @@ ollama pull dcostenco/prism-coder:32b   # 19 GB  — enterprise/reasoning
 ```
 
 Set `LOCAL_LLM_URL=http://localhost:11434` in portal config. Auto-routing: 1.7B → 14B → 32B → cloud fallback.
-Routing accuracy ([100-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), May 2026): **14B = 99% · 32B = 97% · 1.7B = 86%** · invented tools = 0 · [Ollama install](https://ollama.com/install)
+
+Routing accuracy — [100-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3 rounds, May 2026:
+
+| Model | Accuracy | Avg latency | Invented tools |
+|---|---|---|---|
+| Sonnet 4 (cloud) | **99%** | 3.2s | 0 |
+| prism-coder:14b (local) | **100%** | 9.0s | 0 |
+| Opus 4.7 (cloud) | **98%** | 3.0s | 0 |
+| prism-coder:32b (local) | **100%** | 3.6s | 0 |
+| prism-coder:1b7 (local) | **96%** | 6.0s | 0 |
+
+[Ollama install](https://ollama.com/install)
 
 ---
 
