@@ -163,7 +163,7 @@ The original 2443-line README is preserved in git history. To browse the prior v
   │  POST /api/v1/prism-aac/inference                      │
   │  • JWT auth required  (no anonymous access)            │
   │  • Subscription tier check  (free / standard / pro)   │
-  │  • Auto complexity classifier  14B · 30B · QwQ-32B    │
+  │  • Auto complexity classifier  1.7B → 14B → 32B        │
   │  • Proxy to RunPod  (secret key, never exposed)        │
   └──────────┬─────────────────────────────┬──────────────┘
              │ model inference              │ memory
@@ -171,17 +171,18 @@ The original 2443-line README is preserved in git history. To browse the prior v
   ┌───────────────────────┐  ┌──────────────────────────────┐
   │  RUNPOD SERVERLESS    │  │  prism-mcp SERVER            │
   │                       │  │                              │
-  │  Qwen3-14B  ~200ms    │  │  Primary   — Railway         │
-  │  Qwen3-30B  ~500ms    │  │  Standby   — Fly.io          │
-  │  QwQ-32B    ~3-5s     │  │  Fallback  — Supabase REST   │
+  │  prism-coder:14b ✅   │  │  Primary   — Railway         │
+  │  (warm, keepalive)    │  │  Standby   — Fly.io          │
+  │  prism-coder:32b ✅   │  │  Fallback  — Supabase REST   │
+  │  (cold start, pro+)   │  │                              │
   │                       │  │                              │
   └──────────┬────────────┘  │  auto-failover chain         │
              │               └──────────────┬───────────────┘
              ▼                              ▼
   ┌───────────────────────┐  ┌──────────────────────────────┐
   │  ON-DEVICE            │  │  SUPABASE                    │
-  │  Qwen3-1.7B Q4_K_M    │  │  session ledgers             │
-  │  iOS CoreML/Android   │  │  knowledge graph             │
+  │  prism-coder:1b7-v19  │  │  session ledgers             │
+  │  Qwen3-1.7B Q8, Ollama│  │  knowledge graph             │
   │  ~50ms · offline      │  │  handoffs, billing, audit    │
   └───────────────────────┘  │  source of truth             │
                               └──────────────────────────────┘
