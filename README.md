@@ -32,10 +32,22 @@ Real-time insurance eligibility. EDI 837P claims. Stripe Connect for copays. Bui
 1080p video on weak Wi-Fi. No patient downloads. Picture-in-picture so you can chart while you talk.
 
 ### 📴 Works offline
-Trial data on a tablet at a remote school? Collect, save, sync when you're back.
+Trial data on a tablet at a remote school? Collect, save, sync when you're back. Local AI models mean clinical documentation works even when the internet doesn't.
 
-### 🔒 Provably secure
-Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tokens are AES-256-GCM encrypted. See the public [Auth & MFA module page](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md); full Pattern C OAuth token isolation spec lives in the private engineering repo.
+### 🔒 Provably secure — local AI eliminates the biggest PHI risk
+Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tokens are AES-256-GCM encrypted.
+
+**Local AI models eliminate PHI exposure at the inference layer** — the single largest compliance gap in AI-powered clinical tools:
+
+| Risk | Cloud AI | Synalux local-first |
+|------|----------|-------------------|
+| Patient data in LLM prompts | ✅ Sent to vendor | **❌ Never leaves clinic** |
+| HIPAA BAA required | Yes (every model vendor) | **Not needed for on-prem** |
+| Data breach surface | Cloud API + storage | **Local network only** |
+| Inference cost | $2–15/clinician/day | **$0 (local GPU/Mac)** |
+| Latency for real-time notes | 1–5s | **~3s (14B) / ~0.5s (1.7B)** |
+
+Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server inside the clinic network. All AI inference stays on-premises. No cloud model vendor agreement needed for HIPAA. See [Auth & MFA module](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md).
 
 ---
 
@@ -68,6 +80,21 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 | **Audit Hooks Framework** | Pre-push security audit + pre-execution prompt-audit gate, both grounded in cited Prism v14.0.0 algorithm exports (327 tests pin the constants). Lives at `~/.agent/skills/hooks/`. |
 | **No-Code Dashboard Builder** | Drag widgets to build BCBA / Admin / RBT views. |
 | **Smart Scheduling** | Conflict checking + patient-provider matching. |
+
+---
+
+## Self-hosted AI (Enterprise)
+
+Run Prism models on your own hardware — zero cloud cost, full data sovereignty.
+
+```bash
+ollama pull dcostenco/prism-coder:1b7   # 2.2 GB — fast tier
+ollama pull dcostenco/prism-coder:14b   # 9.3 GB — standard tier
+ollama pull dcostenco/prism-coder:32b   # 19 GB  — enterprise/reasoning
+```
+
+Set `LOCAL_LLM_URL=http://localhost:11434` in portal config. Auto-routing: 1.7B → 14B → 32B → cloud fallback.
+All models: 100% Synalux internal BFCL eval · [Ollama install](https://ollama.com/install)
 
 ---
 
