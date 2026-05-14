@@ -116,7 +116,7 @@ Routing accuracy — [100-case Prism eval](https://github.com/dcostenco/prism-co
 | AI assistant | ✅ Gemini 2.5 Flash | ✅ Claude Sonnet 4 ¹ | ✅ Claude Sonnet 4 ¹ | ✅ Claude Sonnet 4 ¹ |
 | Mail / Calendar / Drive | ✅ | ✅ | ✅ | ✅ |
 | Telehealth | — | ✅ | ✅ + Zoom | ✅ + Zoom |
-| Voice (Inworld 2.0) | ✅ default voice | ✅ all voices | ✅ + clinical dictation | ✅ + voice cloning |
+| Voice (Inworld TTS-2) | ✅ default voice | ✅ all voices | ✅ + clinical dictation | ✅ + voice cloning |
 | BoldSign e-Signature | — | — | ✅ 7 templates | ✅ unlimited |
 | Browser automation | — | — | ✅ | ✅ |
 | Banking & GL | — | — | ✅ | ✅ |
@@ -200,7 +200,7 @@ The original 2443-line README is preserved in git history. To browse the prior v
   │                                                        │
   │  POST /api/v1/prism-aac/inference                      │
   │  • JWT auth required  (no anonymous access)            │
-  │  • Subscription tier check  (free / standard / pro)   │
+  │  • Subscription tier check  (free / standard / advanced / enterprise)   │
   │  • Auto complexity classifier  1.7B → 14B → 32B        │
   │  • Proxy to RunPod  (secret key, never exposed)        │
   └──────────┬─────────────────────────────┬──────────────┘
