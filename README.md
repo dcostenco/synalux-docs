@@ -2,7 +2,7 @@
 
 **Run your entire practice from one screen.**
 
-Patient charts, scheduling, billing, team chat, telehealth, clinical documentation — for ABA, pediatrics, mental health, dentistry, PT, and dermatology. HIPAA-compliant. 12 languages. Works offline.
+Patient charts, scheduling, billing, team chat, telehealth, clinical documentation — for ABA, pediatrics, mental health, dentistry, PT, dermatology, veterinary, nutrition, and family medicine. HIPAA-compliant. 12 languages. Works offline.
 
 <p align="center">
   <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Try_It-Free-43e97b?style=for-the-badge" alt="Try Free"></a>
@@ -23,7 +23,7 @@ Speak the session. Synalux dictates, structures into SOAP, codes, and files it. 
 Google Calendar + Outlook in one view. Schedule with **Google Meet, Microsoft Teams, or Zoom** in one click — never bounces you out to another tab.
 
 ### 📨 Mail without switching tabs
-Gmail + Outlook + Slack + Discord + Telegram + WhatsApp + SMS — all read and replied to inside Synalux.
+Gmail + Outlook + Slack + Discord + Telegram + WhatsApp + SMS — all read and replied to inside Synalux. AI-suggested quick replies. TTS read-aloud for accessibility.
 
 ### 💸 Get paid faster
 Real-time insurance eligibility. EDI 837P claims. Stripe Connect for copays. Built-in CPT calculator catches the Medicare 8-minute rule and remainder rollover most practices miss.
@@ -78,7 +78,12 @@ Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server i
 | **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac). Phrase ranking + caregiver-correction harvesting use [Prism v14.0.0 algorithms](https://github.com/dcostenco/prism-coder/blob/main/docs/WOW_FEATURES.md) (spreading activation, ACT-R decay, lesson-rate gotcha persistence). |
 | **Prism Coder IDE** | Local-first AI IDE. Standalone macOS/Windows app + web preview at `/coder`. Repo: [`prism-coder`](https://github.com/dcostenco/prism-coder). |
 | **Audit Hooks Framework** | Pre-push security audit + pre-execution prompt-audit gate, both grounded in cited Prism v14.0.0 algorithm exports (327 tests pin the constants). Lives at `~/.agent/skills/hooks/`. |
-| **No-Code Dashboard Builder** | Drag widgets to build BCBA / Admin / RBT views. |
+| **Inventory & Assets** | SKU tracking, physical-count audit, purchase orders, fixed-asset depreciation (straight-line + declining balance). |
+| **Staff Performance & Payroll** | KPI weights per role, bonus calculations, draft payroll viewer, manual recompute. |
+| **Form Builder** | Drag-and-drop custom forms. Undo/redo, preview, publish, per-element validation rules + conditional logic. |
+| **General Ledger** | Manual journal entries (balanced double-entry), full paginated ledger, monthly accrual posting with idempotency guard. |
+| **Global Deploy** | Push HQ configuration (forms, KPIs, GL rules) to all branch workspaces in one click. |
+| **No-Code Dashboard Builder** | Drag widgets to build practice-specific views — 10 specialty templates (ABA, dental, peds, mental health, PT, derm, vet, nutrition, family, general). |
 | **Smart Scheduling** | Conflict checking + patient-provider matching. |
 
 ---
@@ -142,8 +147,9 @@ Top-level layout (private):
 
 | Path | What |
 |---|---|
-| `portal/` | Next.js 15 web app (`synalux.ai`) — see `portal/README.md` |
+| `portal/` | Next.js 15 web app (`synalux.ai`) — 339 test files, 4993 tests — see `portal/README.md` |
 | `prism-coder-ide/` | Electron desktop IDE — see `prism-coder-ide/README.md` |
+| `synalux-vscode/` | VS Code extension for Synalux integration |
 | `supabase/` | Top-level migrations |
 | `docs/` | i18n README translations + internal architecture docs |
 
@@ -228,9 +234,10 @@ The original 2443-line README is preserved in git history. To browse the prior v
 
 ## Status
 
-- **Production**: synalux.ai (latest deploy: v12.4.0)
+- **Production**: synalux.ai (latest tag: v13.0.0, v14 features shipping)
 - **Releases**: [github.com/dcostenco/synalux-private/releases](https://github.com/dcostenco/synalux-private/releases)
-- **Current sprint**: chat-provider expansion (Telegram, SMS, WhatsApp, FB Messenger, Viber)
+- **v14 highlights**: 23 Coming Soon features implemented (inventory, GL, staff performance, form builder, AI replies, TTS, global deploy, compliance resolution); military-grade security audit — 0 CRITICAL findings across 18 new API routes
+- **Current sprint**: practice-type-aware onboarding templates (roles, forms, KPIs, chart of accounts per specialty)
 - **Pre-release audit**: `npm run check:dead-buttons` + Verified Shipping discipline (see `portal/docs/process/verified-shipping.md` in this private repo)
 
 ---
