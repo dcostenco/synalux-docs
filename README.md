@@ -227,8 +227,8 @@ The original 2443-line README is preserved in git history. To browse the prior v
              ▼                              ▼
   ┌───────────────────────┐  ┌──────────────────────────────┐
   │  ON-DEVICE            │  │  SUPABASE                    │
-  │  prism-coder:1b7-v19  │  │  session ledgers             │
-  │  Qwen3-1.7B Q8, Ollama│  │  knowledge graph             │
+  │  prism-coder:1b7      │  │  session ledgers             │
+  │  1.7B Q4_K_M, Ollama  │  │  knowledge graph             │
   │  ~50ms · offline      │  │  handoffs, billing, audit    │
   └───────────────────────┘  │  source of truth             │
                               └──────────────────────────────┘
