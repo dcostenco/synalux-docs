@@ -210,17 +210,17 @@ The original 2443-line README is preserved in git history. To browse the prior v
   │  • JWT auth required  (no anonymous access)            │
   │  • Subscription tier check  (free / standard / advanced / enterprise)   │
   │  • Auto complexity classifier  1.7B → 14B → 32B        │
-  │  • Proxy to RunPod  (secret key, never exposed)        │
+  │  • Cloud: OpenRouter  (Claude/Gemini, key never exposed)│
   └──────────┬─────────────────────────────┬──────────────┘
              │ model inference              │ memory
              ▼                             ▼
   ┌───────────────────────┐  ┌──────────────────────────────┐
-  │  RUNPOD SERVERLESS    │  │  prism-mcp SERVER            │
+  │  OPENROUTER / LOCAL   │  │  prism-mcp SERVER            │
   │                       │  │                              │
-  │  prism-coder:14b ✅   │  │  Primary   — Railway         │
-  │  (warm, keepalive)    │  │  Standby   — Fly.io          │
-  │  prism-coder:32b ✅   │  │  Fallback  — Supabase REST   │
-  │  (cold start, pro+)   │  │                              │
+  │  Cloud: Claude Sonnet │  │  Primary   — Railway         │
+  │  Local:  prism-coder  │  │  Standby   — Fly.io          │
+  │   :14b (98%) :8b (96%)│  │  Fallback  — Supabase REST   │
+  │   :32b (97%) :1b7(88%)│  │                              │
   │                       │  │                              │
   └──────────┬────────────┘  │  auto-failover chain         │
              │               └──────────────┬───────────────┘

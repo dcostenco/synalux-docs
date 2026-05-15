@@ -707,7 +707,7 @@ Synalux este proiectat pentru mediile de securitate zero-trust.
 brew install ollama     # macOS
 
 # 2. Pull a model
-ollama pull qwen2.5-coder:14b
+ollama pull prism-coder:14b
 
 # 3. Enable CORS for the web app
 OLLAMA_ORIGINS="https://synalux.ai" ollama serve
@@ -759,7 +759,7 @@ The server automatically routes each request to the best model for the user's su
 - ✅ **Prism Coder IDE** — coding assistant
 - ✅ **VS Code Extension** — inline coding
 
-**Offline fallback:** All products fall back to `prism-coder:7b` via local Ollama when the API is unreachable.
+**Offline fallback:** All products fall back to `prism-coder:14b` via local Ollama when the API is unreachable.
 
 **Server-side enforcement:** Even if a client sends a model ID, the server validates it against `TIER_ALLOWED_MODELS`. A free-tier user requesting `claude-sonnet-4` will be silently downgraded to their tier default.
 </details>
