@@ -5,9 +5,18 @@
 ---
 
 ## 🧠 Local-First AI
-*   **Bundled `prism-coder` model** runs against local Ollama; no cloud dependency for completion / chat / refactor.
-*   **Cloud upgrade** to Claude Sonnet 4 / Gemini 3 Pro available for paid tiers via the Synalux portal — same routing as [AI chat](team_chat_communication.md).
-*   **Air-gapped mode** — disable cloud entirely; works fully offline against the local Synalux Coder model.
+*   **Bundled `prism-coder` model fleet** runs against local Ollama; no cloud dependency for completion / chat / refactor.
+*   **Model fleet** — 4 sizes, all offline-capable:
+
+| Model | Size | Accuracy | Target Device |
+|---|---|---|---|
+| `prism-coder:14b` | 8.4 GB | 98% | Mac / iPad Pro 16 GB+ |
+| `prism-coder:8b` | 4.7 GB | 96% | iPhone / iPad 8 GB |
+| `prism-coder:32b` | 18 GB | 97.3% | Mac M2 Ultra+ 64 GB |
+| `prism-coder:1b7` | 1.1 GB | 88% | Any Apple device |
+
+*   **Cloud upgrade** to Claude Sonnet 4 / Gemini 2.5 Pro available for paid tiers via OpenRouter — same routing as [AI chat](team_chat_communication.md).
+*   **Air-gapped mode** — disable cloud entirely; works fully offline against the local model.
 
 ---
 
@@ -38,8 +47,8 @@ Windows-22.x CI hookTimeout regression was fixed in 2026-Q2; the build now passe
 | Web preview at /coder | ✅ | ✅ | ✅ | ✅ |
 | Standalone macOS app | ✅ | ✅ | ✅ | ✅ |
 | Standalone Windows app (signed) | ✅ | ✅ | ✅ | ✅ |
-| Local prism-coder:7b | ✅ | ✅ | ✅ | ✅ |
-| Local prism-coder:14b (32K context) | — | ✅ | ✅ | ✅ |
-| Cloud upgrade — Claude Sonnet 4 | — | ✅ | ✅ | ✅ |
-| Cloud upgrade — Gemini 3 Pro | — | — | ✅ | ✅ |
+| Local prism-coder (all sizes) | ✅ | ✅ | ✅ | ✅ |
+| Cloud — Claude Sonnet 4 | — | ✅ | ✅ | ✅ |
+| Cloud — Gemini 2.5 Pro | — | — | ✅ | ✅ |
+| Cloud — Claude Opus 4 | — | — | — | ✅ |
 | Air-gapped enterprise build | — | — | — | ✅ |

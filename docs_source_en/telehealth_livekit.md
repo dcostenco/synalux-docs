@@ -43,13 +43,18 @@ The [Calendar module](calendar.md) creator picks the right conferencing provider
 ## 🏗️ Architecture
 
 ```
-POST /api/v1/livekit/token       Mint a per-participant LiveKit JWT (workspace + role-scoped)
-POST /api/v1/meetings            Create a telehealth meeting (resolves room URL + token)
-GET  /api/v1/meetings/:id        Read meeting status + participant list
-PATCH /api/v1/meetings/:id       Update (extend duration, add participant)
-DELETE /api/v1/meetings/:id      End meeting + flush recording to Drive
-POST /api/v1/calls/:id/join      Mark participant joined (audit + presence)
-GET  /api/v1/video/:id/recording Recording metadata + signed playback URL
+POST /api/v1/livekit/token         Mint a per-participant LiveKit JWT (workspace + role-scoped)
+POST /api/v1/meetings              Create a telehealth meeting (resolves room URL + token)
+GET  /api/v1/meetings/:id          Read meeting status + participant list
+PATCH /api/v1/meetings/:id         Update (extend duration, add participant)
+DELETE /api/v1/meetings/:id        End meeting + flush recording to Drive
+POST /api/v1/meetings/:id/invite   Send join link via Mail / SMS
+POST /api/v1/meetings/:id/rsvp     Patient RSVP confirmation
+GET  /api/v1/meetings/verify-token Validate meeting join token
+POST /api/v1/calls/generate-token  Generate per-call auth token
+GET  /api/v1/video/auth-token      Video auth for recording
+GET  /api/v1/video/ice-servers     STUN/TURN server list
+POST /api/v1/video/consent-log     Record consent for recording
 ```
 
 | Layer | Tech |

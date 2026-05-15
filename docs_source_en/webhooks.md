@@ -27,18 +27,18 @@ Outbound webhooks for workspace events. Receive HTTP POSTs at your endpoint when
 *   **Retry policy**: exponential backoff (1m, 5m, 30m, 2h, 12h) for non-2xx responses.
 *   **Dead-letter queue** after 5 failures — admin gets an email + the failed event surfaces in the workspace inbox.
 *   **Idempotency** — every event has a stable `event_id` you can use as a deduplication key.
-*   **Inbound webhooks** for messaging providers (Telegram / WhatsApp / Viber / SMS / Messenger / Instagram) live at `/api/v1/webhooks/<provider>` — see each provider page.
+*   **Inbound webhooks** for messaging providers (Telegram / WhatsApp / Viber / SMS / Messenger / Instagram) live at `/api/v1/<provider>/webhook` — see each provider page.
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-POST /api/v1/webhooks                       Configure outbound endpoints (admin)
-GET  /api/v1/webhooks                       List configured endpoints
-DELETE /api/v1/webhooks/:id                 Remove
-GET  /api/v1/webhooks/:id/deliveries        Recent delivery attempts (success / fail / status)
-POST /api/v1/webhooks/:id/replay/:event_id  Manual replay of a failed delivery
+POST /api/v1/admin/webhooks                       Configure outbound endpoints (admin)
+GET  /api/v1/admin/webhooks                       List configured endpoints
+DELETE /api/v1/admin/webhooks/:id                 Remove
+GET  /api/v1/admin/webhooks/:id/deliveries        Recent delivery attempts (success / fail / status)
+POST /api/v1/admin/webhooks/:id/replay/:event_id  Manual replay of a failed delivery
 ```
 
 ---

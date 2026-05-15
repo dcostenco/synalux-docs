@@ -6,7 +6,7 @@
 
 ## 📨 Telegram Bot API Integration
 Send and receive Telegram messages from inside Synalux's unified chat surface. No separate Telegram app for staff to monitor.
-*   **Webhook-driven** — incoming messages POST to `/api/v1/webhooks/telegram` and surface in the Synalux chat surface in real time.
+*   **Webhook-driven** — incoming messages POST to `/api/v1/telegram/webhook` and surface in the Synalux chat surface in real time.
 *   **Send** — outbound replies via `/api/v1/telegram/send`. Workspace-scoped bot token; one bot per workspace.
 *   **Bot setup** — provide your bot token from `@BotFather` in the workspace settings; webhook URL auto-registers via `setWebhook`.
 *   **Media support** — text, images, documents, voice notes (transcribed via the Transcription module on receipt).
@@ -24,7 +24,7 @@ End-to-end implementation of the Telegram Login Widget for sign-in.
 ## 🏗️ Architecture
 
 ```
-POST /api/v1/webhooks/telegram      Webhook ingress (validated against bot token + IP allowlist)
+POST /api/v1/telegram/webhook      Webhook ingress (validated against bot token + IP allowlist)
 POST /api/v1/telegram/send          Outbound message (workspace-scoped)
 GET  /api/v1/telegram/auth/callback Login Widget callback (HMAC-validated)
 ```

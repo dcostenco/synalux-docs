@@ -5,7 +5,7 @@ Connect a Viber Bot to send + receive Viber messages from the unified Synalux ch
 ---
 
 ## 📨 Viber Bot API
-*   **Webhook ingress** — `/api/v1/webhooks/viber` receives incoming user messages + delivery / seen events.
+*   **Webhook ingress** — `/api/v1/viber/webhook` receives incoming user messages + delivery / seen events.
 *   **Outbound** — `/api/v1/viber/send` posts via Viber's `send_message` endpoint with rich keyboards + carousel cards supported.
 *   **Bot setup** — register a public account at [partners.viber.com](https://partners.viber.com), copy the auth token into Synalux workspace settings; webhook URL auto-set via `set_webhook`.
 
@@ -14,7 +14,7 @@ Connect a Viber Bot to send + receive Viber messages from the unified Synalux ch
 ## 🏗️ Architecture
 
 ```
-POST /api/v1/webhooks/viber    Viber events (validated against bot auth token)
+POST /api/v1/viber/webhook    Viber events (validated against bot auth token)
 POST /api/v1/viber/send        Outbound (text / picture / file / rich media)
 ```
 

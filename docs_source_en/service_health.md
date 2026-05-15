@@ -31,9 +31,10 @@ Internal monitoring of every Synalux dependency (database, OAuth providers, Live
 ## 🏗️ Architecture
 
 ```
-GET  /api/v1/admin/service-health           Aggregate health snapshot (admin-only)
-POST /api/v1/cron/health-check              Cron-driven probe of every dependency
-GET  /api/v1/admin/service-health/incidents Recent incidents + resolution status
+GET  /api/v1/cron/services-health            Aggregate health snapshot (cron-driven)
+GET  /api/v1/cron/tts-health                TTS provider latency + availability
+GET  /api/v1/cron/chain-health-nightly      Nightly deep probe of all dependencies
+GET  /api/v1/integrations/chain-health      Integration health dashboard
 ```
 
 Probes run every 60 seconds via Vercel Cron; results written to `service_health_checks` with TTL retention.

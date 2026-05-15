@@ -22,10 +22,13 @@ Send + receive fax for healthcare workflows where it's still required (referrals
 ## 🏗️ Architecture
 
 ```
-POST /api/v1/fax/send         Outbound (PDF + recipient + cover sheet)
-GET  /api/v1/fax/inbox        Inbound queue (workspace-scoped)
-GET  /api/v1/fax/:id/status   Delivery status
-GET  /api/v1/fax/:id/pdf      Signed download URL for received PDF
+⚠️ API routes are planned but not yet deployed. The fax service library
+(`lib/fax-service.ts`) is implemented; API surface ships in next release.
+
+POST /api/v1/fax/send         Outbound (PDF + recipient + cover sheet)       [planned]
+GET  /api/v1/fax/inbox        Inbound queue (workspace-scoped)               [planned]
+GET  /api/v1/fax/:id/status   Delivery status                               [planned]
+GET  /api/v1/fax/:id/pdf      Signed download URL for received PDF           [planned]
 ```
 
 ---

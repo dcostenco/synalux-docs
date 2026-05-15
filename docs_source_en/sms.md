@@ -6,7 +6,7 @@ Two-way SMS via Twilio for appointment reminders, intake links, and patient comm
 
 ## 📨 Twilio SMS — Send + Receive
 *   **Outbound** — `/api/v1/sms/send` posts to Twilio's Messages API with workspace-scoped account SID + auth token.
-*   **Inbound webhook** — `/api/v1/webhooks/twilio` receives replies and surfaces them in the chat thread (workspace's Twilio number → workspace inbox).
+*   **Inbound webhook** — `/api/v1/sms/webhook` receives replies and surfaces them in the chat thread (workspace's Twilio number → workspace inbox).
 *   **Delivery tracking** — Twilio status callbacks update message rows (queued / sent / delivered / failed).
 *   **Number rental** — instructions to provision a Twilio number with messaging A2P 10DLC compliance.
 
@@ -16,7 +16,7 @@ Two-way SMS via Twilio for appointment reminders, intake links, and patient comm
 
 ```
 POST /api/v1/sms/send                Outbound SMS (workspace-scoped Twilio creds)
-POST /api/v1/webhooks/twilio         Inbound + delivery status webhook
+POST /api/v1/sms/webhook         Inbound + delivery status webhook
 GET  /api/v1/sms/numbers             List rented Twilio numbers per workspace
 ```
 

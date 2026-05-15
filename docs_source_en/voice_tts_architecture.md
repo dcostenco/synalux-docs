@@ -44,9 +44,9 @@ Synalux absorbs Inworld TTS-2 cost for these languages on the free tier so users
 
 ```
 POST /api/v1/tts                Generate TTS audio (auto tier-route based on lang + tier + connectivity)
-GET  /api/v1/voices             List available voices for the user's tier + language
+POST /api/v1/tts/public         Anonymous TTS for AAC widgets (rate-limited per IP)
+GET  /api/v1/tts/voices         List available voices for the user's tier + language
 POST /api/v1/voices/clone       Submit a voice-clone training sample (paid)
-GET  /api/v1/voices/clone/:id   Check clone training status
 ```
 
 Routing logic:

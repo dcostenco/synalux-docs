@@ -5,7 +5,7 @@ Bring the Synalux AI assistant + chat panel into VSCode without leaving your edi
 ---
 
 ## ✨ Features
-*   **Chat panel** — same AI assistant as `synalux.ai/chat` (Claude Sonnet 4 paid default, tier-aware Gemini-3 fallback) but rendered in VSCode's sidebar.
+*   **Chat panel** — same AI assistant as `synalux.ai/chat` (Claude Sonnet 4 paid default, Claude Haiku 3.5 fallback) but rendered in VSCode's sidebar.
 *   **Backend router** — same model routing logic as the web `/chat` (gemini direct → OpenRouter → fallback chain).
 *   **Gemini OAuth** — sign-in via Gemini OAuth supported as an alternative to NextAuth Google.
 
@@ -25,6 +25,6 @@ Source: `synalux-vscode/src/` in `synalux-private`.
 ---
 
 ## 💳 Plans
-Available on every tier — feature parity gated on the underlying chat backend (free → Gemini 2.5 Flash, paid → Claude Sonnet 4 + tier-aware fallback).
+Available on every tier — feature parity gated on the underlying chat backend (free → Claude Haiku 3.5, paid → Claude Sonnet 4 + Claude Haiku fallback). Local prism-coder via Ollama supported on all tiers.
 
 See the [Mobile AI](mobile_ai.md) page for the equivalent on phones.

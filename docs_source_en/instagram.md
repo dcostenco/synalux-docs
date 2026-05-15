@@ -6,7 +6,7 @@ Connect an Instagram Business / Creator account to receive + reply to Instagram 
 
 ## 📨 Instagram Direct Messaging
 *   **Built on the Messenger Platform** — Instagram DMs use Meta's Messenger infrastructure under the hood; Synalux uses the same provider abstraction.
-*   **Webhook ingress** — `/api/v1/webhooks/instagram` receives DMs from connected Instagram Business accounts.
+*   **Webhook ingress** — `/api/v1/instagram/webhook` receives DMs from connected Instagram Business accounts.
 *   **Send** — `/api/v1/instagram/send` posts via Meta's `/me/messages` endpoint with `appsecret_proof` on every call.
 *   **Story mentions, comment replies** — receive notifications when your account is mentioned or commented on; reply inline.
 
@@ -22,7 +22,7 @@ Connect an Instagram Business / Creator account to receive + reply to Instagram 
 ## 🏗️ Architecture
 
 ```
-POST /api/v1/webhooks/instagram        DMs / story mentions / comment replies
+POST /api/v1/instagram/webhook        DMs / story mentions / comment replies
 POST /api/v1/instagram/send            Outbound DM (appsecret_proof protected)
 ```
 

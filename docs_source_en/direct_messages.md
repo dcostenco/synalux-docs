@@ -15,10 +15,10 @@ Internal staff-to-staff direct messaging within the workspace. Slack-like 1:1 + 
 ## 🏗️ Architecture
 
 ```
-GET  /api/v1/direct-messages                         List threads visible to user
-POST /api/v1/direct-messages                         Send a new message (creates or appends to thread)
-GET  /api/v1/direct-messages/:thread/messages        Read thread history
-PATCH /api/v1/direct-messages/:thread/read           Mark read (write receipt)
+GET  /api/v1/direct-messages                  List threads visible to user
+POST /api/v1/direct-messages                  Send a new message (creates or appends to thread)
+GET  /api/v1/direct-messages/:threadId        Read thread history + send in thread
+PATCH /api/v1/direct-messages/:threadId       Mark read (write receipt)
 ```
 
 | Layer | Tech |

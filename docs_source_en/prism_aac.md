@@ -36,7 +36,7 @@ For older or higher-functioning users, a full keyboard with multilingual predict
 *   **Per-user learning** — prediction model adapts to the child's vocabulary over weeks.
 *   **Autocorrect** — fixes hurried/motor-impaired typing (typos, dropped letters, missing diacritics) via Gemini 2.5 Flash-Lite. Multilingual: en/ru/ro/es/uk/pl + Cyrillic/Hebrew/Arabic script detection.
 *   **Word completion** — partial → full word in 750ms median (`hw` → `how are you`).
-*   **Local-first** — when prism-coder:7b is running on the device, autocorrect runs offline with zero network.
+*   **Local-first** — when prism-coder:14b is running on the device, autocorrect runs offline with zero network.
 
 ---
 
@@ -60,7 +60,7 @@ Pre-built sentence chains for common situations — restaurants, doctor visits, 
 Graph-paper canvas with KaTeX rendering. Designed for school-age users who need to do math without speech.
 *   **Drawing surface** — pen + eraser, snapping grid, geometric figures (circle, triangle, parallelogram).
 *   **KaTeX equation editor** — write `\frac{x^2}{y}` and have it rendered + spoken aloud.
-*   **AI tutor (paid)** — speaks answers, explains step by step. Backed by Claude Sonnet 4 with tier-aware Gemini-3 fallback.
+*   **AI tutor (paid)** — speaks answers, explains step by step. Backed by Claude Sonnet 4 with Claude Haiku 3.5 fallback.
 *   **Save & share** — exports to caregiver notes for homework review.
 
 <details>
@@ -158,7 +158,7 @@ Voice picker (paid): all 60+ Inworld voices, including child voices, accents, an
 |---|---|---|
 | `/api/v1/text/correct` | Autocorrect + word completion | **Gemini 2.5 Flash-Lite** (multilingual bench-validated; 752ms avg; 4.3× cheaper than 2.5 Flash) |
 | `/api/v1/prism-aac/predict` | 5-word continuation prediction | **Gemini 2.5 Flash-Lite** (free tier); Claude Haiku/Sonnet (paid) |
-| `/api/v1/prism-aac/chat` | AAC AI assistant | Local prism-coder:7b (simple) → 14b (medium, paid) → **Claude Sonnet 4** (complex paid). Fallback: Gemini 3 Flash/Pro Preview by tier. |
+| `/api/v1/prism-aac/chat` | AAC AI assistant | Local prism-coder:14b (primary) → **Claude Sonnet 4** (cloud paid). Fallback: Claude Haiku 3.5 / Gemini 2.5 Flash by tier. |
 | `/api/v1/prism-aac/tts` | Text-to-speech | Inworld TTS-2 + Azure Neural fallback |
 | `/api/v1/translate` | Sentence translation | Gemini 2.5 Flash + offline dictionary fallback |
 | `/api/v1/transcribe` | Voice → text | Whisper (WASM, in-browser primary) |

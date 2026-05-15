@@ -51,10 +51,13 @@ Adding a new mail provider (e.g. Outlook) is ~30 LOC because all providers go th
 ## 🏗️ Architecture
 
 ```
-GET /api/v1/mail/inbox       List threads (folder=inbox|spam|all)
-GET /api/v1/mail/thread/:id  Full thread with quoted history
-POST /api/v1/mail/send       Send / reply (validates attachments)
-POST /api/v1/mail/sync       Force-sync from provider (bulk pull)
+GET  /api/v1/mail/inbox            List threads (folder=inbox|spam|all)
+GET  /api/v1/mail/thread/:id       Full thread with quoted history
+POST /api/v1/mail/send             Send / reply (validates attachments)
+POST /api/v1/mail/sync             Force-sync from provider (bulk pull)
+GET  /api/v1/mail/ai-inbox         AI-categorized inbox (smart priority)
+GET  /api/v1/mail/suggest-replies  AI-generated reply suggestions
+GET  /api/v1/mail/settings         Per-user mail preferences
 ```
 
 | Layer | Tech |
@@ -62,7 +65,7 @@ POST /api/v1/mail/sync       Force-sync from provider (bulk pull)
 | Frontend | Next.js 15 App Router, server components |
 | OAuth | NextAuth + per-provider adapter (currently Gmail) |
 | Storage | Postgres (Supabase) with RLS; `mail_threads`, `mail_messages`, `oauth_tokens`, `oauth_token_access_log` |
-| Encryption | AES-256-GCM via `lib/credential-vault.ts` |
+| Encryption | AES-256-GCM via `lib/oauth-crypto.ts` |
 | Audit | `withAudit({ module: 'mail' })` middleware |
 | Provider abstraction | `lib/message-providers/` — extend with ~30 LOC for new provider |
 

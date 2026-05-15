@@ -156,14 +156,21 @@ The assistant **must not**:
 
 ## Screenshots
 
-> Screenshots are placed under `docs/demo/adaptive_assessment_log/` in this repo. The form schema is workspace-admin-editable via `/admin/form-builder` (see [Synalux Dev Rule 6](../../../synalux-private/DEV_RULES.md)), so the screenshots show the seed default — your tenant may look different after admin customization.
+> The form schema is workspace-admin-editable via `/admin/form-builder` (see Synalux Dev Rule 6 in `synalux-private/DEV_RULES.md`), so the screenshot below shows the seed default — your tenant may look different after admin customization.
 
-| Screen | Image |
+### New record (seed default — top-level metadata + composite scores)
+
+![Adaptive Assessment Log new-record form](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/40_adaptive_assessment_log_new_record.png)
+
+Free-tier view of the runtime form at `/adaptive-assessment-log/form`. Captured against the seed schema with the standard-tier subdomain JSON and pairwise-difference fields correctly filtered out by the route's tier gate. The capture spec is `portal/tests/ui/adaptive-assessment-log-screenshot.spec.ts` — re-run it to refresh the image whenever the seed schema changes.
+
+### Pending capture (when those UI surfaces ship)
+
+| Screen | Status |
 |---|---|
-| New record (seed default — top-level metadata + composite scores) | `docs/demo/adaptive_assessment_log/01_new_record.png` |
-| Record list / trend chart in the client chart | `docs/demo/adaptive_assessment_log/02_trend.png` |
-| Practice admin editing the form via `/admin/form-builder` | `docs/demo/adaptive_assessment_log/03_admin_form_builder.png` |
-| Source-PDF attachment view (audit-logged on every open) | `docs/demo/adaptive_assessment_log/04_source_pdf_view.png` |
+| Record list / trend chart in the client chart | TBD — trend view not yet built |
+| Practice admin editing the form via `/admin/form-builder` | TBD — form-builder edit flow needs to load existing `form_configs` first |
+| Source-PDF attachment view (audit-logged on every open) | TBD — viewer flow not yet built |
 
 UI behavior is pinned by the test at `portal/src/__tests__/adaptive-assessment-log-form.test.tsx` — 5 cases covering the seed-default field set, free-tier filtering of the standard-tier subdomain JSON field, the audit-logged Source-PDF control, and required-field validation on submit.
 

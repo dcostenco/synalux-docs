@@ -1,14 +1,18 @@
 # 🔬 Research
 
-Multi-source synthesis across web, internal knowledge, and recent papers. Used by the AI assistant to answer "what's the current evidence for X" without leaving Synalux.
+Multi-source clinical research synthesis across academic databases, web, and internal knowledge. Used by the AI assistant to answer "what's the current evidence for X" without leaving Synalux.
 
 ---
 
 ## 🧠 What It Does
-*   **Web search** — Brave Search API for real-time results.
-*   **Paper analysis** — Gemini 2.5 Flash with thinking enabled for synthesis of clinical / technical documents.
+*   **Academic discovery** — parallel search across three free, high-signal sources:
+    - **PubMed** (NCBI) — clinical papers, medical evidence
+    - **ERIC** (Dept. of Education) — ABA, education research, special needs literature
+    - **Semantic Scholar** — AI-powered academic TLDRs, cross-discipline papers
+*   **Web fallback** — DuckDuckGo (free, no API key) when academic sources return insufficient results.
+*   **Web search** (non-research) — Firecrawl via `POST /api/v1/web-search` for general queries (tier-gated, separate from research).
+*   **Synthesis** — Gemini 2.5 Flash with thinking enabled combines all sources into a cited clinical summary.
 *   **Knowledge search** — internal Prism MCP knowledge base (workspace-scoped) — see `synalux-private` for the full Prism architecture.
-*   **Synthesis** — combines all three into a cited summary the assistant can quote in chat.
 
 ---
 
@@ -22,9 +26,9 @@ The synthesis output is **cited inline** so a clinician can verify each claim ag
 ---
 
 ## 🏗️ Architecture
-*   `lib/services/research/synthesis.ts` — core synthesizer.
-*   `POST /api/v1/research` — execute a research query; streams results.
-*   Uses Gemini 2.5 Flash for synthesis (Thinking mode enabled — leaves the chat-default Sonnet 4 alone).
+*   `lib/services/research/googleSearch.ts` — discovery service (PubMed + ERIC + Semantic Scholar + DuckDuckGo fallback).
+*   `lib/services/research/synthesis.ts` — Gemini 2.5 Flash synthesizer (Thinking mode enabled).
+*   `POST /api/v1/research/search` — execute a research query; streams results.
 
 ---
 

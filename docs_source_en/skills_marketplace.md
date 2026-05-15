@@ -22,10 +22,13 @@ Each skill declares its OAuth scopes, tool surface (functions exposed to the AI)
 *   **Sandboxed execution** — skills can't reach beyond their declared scopes; enforced at the dispatcher layer.
 
 ```
-GET  /api/v1/marketplace                List available skills
-POST /api/v1/marketplace/install        Install a skill into the current workspace
-DELETE /api/v1/marketplace/install/:id  Uninstall (revokes scopes + tool exposure)
-GET  /api/v1/skills                     List installed skills for the user's workspace
+GET  /api/v1/marketplace/catalog          Browse available skills
+POST /api/v1/marketplace/install         Install a skill into the current workspace
+POST /api/v1/marketplace/uninstall       Uninstall (revokes scopes + tool exposure)
+GET  /api/v1/marketplace/installed       List installed skills for the workspace
+GET  /api/v1/marketplace/module/:slug    Skill detail page
+GET  /api/v1/skills/content              Skill content for runtime
+GET  /api/v1/skills/routing              Skill routing rules for AI dispatcher
 ```
 
 ---

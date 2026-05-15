@@ -49,7 +49,7 @@ POST /api/v1/session/heartbeat    Idle-keepalive ping
 | Layer | Tech |
 |---|---|
 | Session | NextAuth + Postgres adapter; JWT cookies, HttpOnly + Secure + SameSite=Lax |
-| MFA storage | Encrypted at rest (AES-256-GCM via `lib/credential-vault.ts`) |
+| MFA storage | Encrypted at rest (AES-256-GCM via `lib/oauth-crypto.ts`) |
 | Audit | `withAudit({ module: 'auth' })` on every endpoint; break-glass rows pinned to immutable table |
 
 ---
