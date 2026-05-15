@@ -234,6 +234,49 @@ The original 2443-line README is preserved in git history. To browse the prior v
                               └──────────────────────────────┘
 ```
 
+## Tech Notes — Service Routing
+
+### LLM Backends
+
+| Surface | Primary | Fallback | Local |
+|---|---|---|---|
+| AI Chat (web) | Gemini 2.5 Flash (direct API) | OpenRouter → Claude Sonnet 4 | prism-coder:14b via Ollama |
+| AI Chat (paid tiers) | Claude Sonnet 4 (OpenRouter) | Claude Haiku 3.5 (OpenRouter) | prism-coder:14b via Ollama |
+| Prism Coder (tool-calling) | Claude Haiku 3.5 (OpenRouter) | — | prism-coder:14b via Ollama |
+| TTS Steering | Claude Haiku 3.5 (OpenRouter) | Surface default (no model) | — |
+| Prism AAC | Local prism-coder:14b | Gemini 2.5 Flash / Claude Sonnet 4 | prism-coder:8b / :1b7 |
+
+### Web Search
+
+| Surface | Primary | Fallback |
+|---|---|---|
+| AI Chat `@search` | Firecrawl | — |
+| Prism MCP agents (cloud) | Firecrawl | Brave Search |
+| Prism MCP server (local) | Brave Search (via MCP tools) | — |
+| Clinical research | PubMed + ERIC + Semantic Scholar | DuckDuckGo |
+
+### TTS (Text-to-Speech)
+
+| Tier | Engine | Offline |
+|---|---|---|
+| 1 | Inworld TTS-2 (cloud) | — |
+| 1.5 | Kokoro-82M neural (WASM) | en/es/fr/pt/ja/zh |
+| 2 | OS Web Speech API premium voices | all |
+| 3 | WASM espeak-ng | all |
+
+Subsidized languages (free Inworld): `ro` `uk` `ru` `de` `ko` `ar`
+
+### Other Services
+
+| Service | Provider | Purpose |
+|---|---|---|
+| Payments | Stripe | Subscriptions, checkout, billing portal |
+| Email | Resend | Transactional (invites, shares, meetings) |
+| Video | LiveKit | Telehealth, case conferences |
+| SMS | Twilio | Emergency alerts, caregiver notifications |
+| Fax | SRFax / Phaxio / Documo | Healthcare referrals, prior auth |
+| Translation | Offline phrase dictionary (1,261 × 20 langs) | AAC, Watch |
+
 ## Status
 
 - **Production**: synalux.ai (latest tag: v13.0.0, v14 features shipping)
