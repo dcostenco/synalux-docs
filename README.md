@@ -45,7 +45,7 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 | HIPAA BAA required | Yes (every model vendor) | **Not needed for on-prem** |
 | Data breach surface | Cloud API + storage | **Local network only** |
 | Inference cost | $2–15/clinician/day | **$0 (local GPU/Mac)** |
-| Latency for real-time notes | 1–5s | **~3s (14B) / ~0.5s (1.7B)** |
+| Latency for real-time notes | 1–5s | **~1.1s (14B) / ~0.8s (8B) / ~1.6s (1.7B)** |
 
 Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server inside the clinic network. All AI inference stays on-premises. No cloud model vendor agreement needed for HIPAA. See [Auth & MFA module](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md).
 
@@ -93,22 +93,24 @@ Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server i
 Run Prism models on your own hardware — zero cloud cost, full data sovereignty.
 
 ```bash
-ollama pull dcostenco/prism-coder:1b7   # 2.2 GB — fast tier
-ollama pull dcostenco/prism-coder:14b   # 9.3 GB — standard tier
-ollama pull dcostenco/prism-coder:32b   # 19 GB  — enterprise/reasoning
+ollama pull dcostenco/prism-coder:1b7   # 2.2 GB  · ~1.6s · any device
+ollama pull dcostenco/prism-coder:8b    # 4.7 GB  · ~0.8s · iPhone/iPad 8GB
+ollama pull dcostenco/prism-coder:14b   # 8.4 GB  · ~1.1s · Mac M2+ / iPad Pro 16GB
+ollama pull dcostenco/prism-coder:32b   # 19 GB   · ~2.5s · Mac M2 Ultra+
 ```
 
-Set `LOCAL_LLM_URL=http://localhost:11434` in portal config. Auto-routing: 1.7B → 14B → 32B → cloud fallback.
+Set `LOCAL_LLM_URL=http://localhost:11434` in portal config. Cascade: 14B → 8B → 1.7B → cloud fallback.
 
-Routing accuracy — [100-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3 rounds, May 2026:
+Routing accuracy — [100-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3-seed mean, May 15 2026:
 
-| Model | Accuracy | Avg latency | Invented tools |
-|---|---|---|---|
-| Sonnet 4 (cloud) | **99%** | 3.2s | 0 |
-| prism-coder:14b (local) | **100%** | 9.0s | 0 |
-| Opus 4.7 (cloud) | **98%** | 3.0s | 0 |
-| prism-coder:32b (local) | **100%** | 3.6s | 0 |
-| prism-coder:1b7 (local) | **96%** | 6.0s | 0 |
+| Model | Accuracy | Latency | AAC | Invented tools |
+|---|---|---|---|---|
+| Sonnet 4 (cloud) | **99%** | 3.2s | 100% | 0 |
+| **prism-coder:14b** (local) | **98%** | **1.1s** | **100%** | 0 |
+| Opus 4.7 (cloud) | **98%** | 3.0s | 100% | 0 |
+| **prism-coder:32b** (local) | **97.3%** | 2.5s | 100% | 0 |
+| **prism-coder:8b** (local) | **96%** | **0.8s** | **100%** | 0 |
+| prism-coder:1.7b (local) | **88%** | 1.6s | **100%** | 0 |
 
 [Ollama install](https://ollama.com/install)
 
