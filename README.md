@@ -99,20 +99,29 @@ ollama pull dcostenco/prism-coder:14b   # 8.4 GB  · ~1.1s · Mac M2+ / iPad Pro
 ollama pull dcostenco/prism-coder:32b   # 19 GB   · ~2.5s · Mac M2 Ultra+
 ```
 
-Set `LOCAL_LLM_URL=http://localhost:11434` in portal config. Cascade: 14B → 8B → 1.7B → cloud fallback.
+Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
 
-Routing accuracy — [100-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3-seed mean, May 15 2026:
+**Desktop/server cascade**: 14B → 32B → Claude Opus fallback (99% served locally, Opus engaged <1%)  
+**Mobile/offline cascade**: 14B → 8B → 1.7B
 
-| Model | Accuracy | Latency | AAC | Invented tools |
-|---|---|---|---|---|
-| Sonnet 4 (cloud) | **99%** | 3.2s | 100% | 0 |
-| **prism-coder:14b** (local) | **98%** | **1.1s** | **100%** | 0 |
-| Opus 4.7 (cloud) | **98%** | 3.0s | 100% | 0 |
-| **prism-coder:32b** (local) | **97.3%** | 2.5s | 100% | 0 |
-| **prism-coder:8b** (local) | **96%** | **0.8s** | **100%** | 0 |
-| prism-coder:1.7b (local) | **88%** | 1.6s | **100%** | 0 |
+Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3-seed mean, May 2026:
 
-[Ollama install](https://ollama.com/install)
+| Model | Accuracy | vs Opus¹ | Latency | AAC | Edge cases | Tier |
+|---|---|---|---|---|---|---|
+| **prism-coder:32b** v33 (local) | **99.0%** | +1.9% | 2.5s | **100%** | **100%** | Desktop tier 2 |
+| **prism-coder:8b** v35 (local) | **98.0%** | +0.9% | **0.8s** | **100%** | **100%** | Mobile tier 2 |
+| **14B→32B cascade** (local) | **99.0%** | +1.9% | ~1.1s² | **100%** | **100%** | Desktop primary |
+| **prism-coder:14b** v33 (local) | **97.1%** | =0% | **1.1s** | **100%** | **100%** | Desktop tier 1 |
+| Claude Opus 4.7 (cloud) | 97.1% | etalon | 3.0s | 100% | 83% | Cloud fallback |
+| prism-coder:1.7b v41 (local) | **96.1%** | -1.0% | 1.6s | **100%** | 83% | On-device tier 3 |
+| Sonnet 4 (cloud) | 99% | +1.9% | 3.2s | 100% | 83% | Cloud primary |
+
+¹ Claude Opus 4.7 is the etalon (gold standard). Measured in the [cascade eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus).  
+² 97% of requests served by 14B at 1.1s; 32B handles the 2% 14B misses; Opus for the 1% both miss.
+
+**Fine-tuned local models beat Opus on edge cases** (100% vs 83%) — compound/multi-intent routing where Opus confuses similar tools. This is the category that breaks most prompt-engineered systems.
+
+[Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py) · [Per-model solo eval →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100/benchmark.py) · [Ollama install](https://ollama.com/install)
 
 ---
 
@@ -219,8 +228,8 @@ The original 2443-line README is preserved in git history. To browse the prior v
   │                       │  │                              │
   │  Cloud: Claude Sonnet │  │  Primary   — Railway         │
   │  Local:  prism-coder  │  │  Standby   — Fly.io          │
-  │   :14b (98%) :8b (96%)│  │  Fallback  — Supabase REST   │
-  │   :32b (97%) :1b7(88%)│  │                              │
+  │   :32b (99%) :14b(97%)│  │  Fallback  — Supabase REST   │
+  │   :8b (98%)  :1b7(96%)│  │                              │
   │                       │  │                              │
   └──────────┬────────────┘  │  auto-failover chain         │
              │               └──────────────┬───────────────┘
