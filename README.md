@@ -260,8 +260,8 @@ The original 2443-line README is preserved in git history. To browse the prior v
 | Surface | Primary | Fallback |
 |---|---|---|
 | AI Chat `@search` | Firecrawl | — |
-| Prism MCP agents (cloud) | Firecrawl | Brave Search |
-| Prism MCP server (local) | Brave Search (via MCP tools) | — |
+| Prism MCP agents (cloud) | Firecrawl | — |
+| Prism MCP server (local) | Firecrawl (via MCP tools) | — |
 | Clinical research | PubMed + ERIC + Semantic Scholar | DuckDuckGo |
 
 ### TTS (Text-to-Speech)
