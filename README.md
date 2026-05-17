@@ -270,7 +270,7 @@ The original 2443-line README is preserved in git history. To browse the prior v
 |---|---|---|
 | 1 | Inworld TTS-2 (cloud) | — |
 | 1.5 | Kokoro-82M neural (WASM) | en/es/fr/pt/ja/zh |
-| 2 | OS Web Speech API premium voices | all |
+| 2 | OS Web Speech API | all |
 | 3 | WASM espeak-ng | all |
 
 Subsidized languages (free Inworld): `ro` `uk` `ru` `de` `ko` `ar`
