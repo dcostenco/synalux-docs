@@ -69,15 +69,15 @@ Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server i
 
 | | What it does |
 |---|---|
-| **Ambient AI Documentation** | Whisper WASM transcription, automatic SOAP structuring, ABC data extraction. 16+ languages. |
-| **BCBA Command Center** | Touch-optimized field interface. Trial data offline (Dexie.js + IndexedDB). EVV linked to payroll. |
-| **Billing & Insurance** | EDI 837P, 835 ERA parser, real-time eligibility, Stripe Connect, Medicare-correct CPT. |
-| **Banking Reconciliation** | Double-entry GL. Native bank-feed adapters (VictoriaBank, Banca Transilvania, Amex, Chase). |
-| **Telehealth Suite** | LiveKit SFU. Bandwidth-adaptive. No patient-side downloads. |
+| **Ambient AI Documentation** | Speak the session — dictates, structures into SOAP notes, and codes automatically. 16+ languages. |
+| **BCBA Command Center** | Touch-optimized field interface for in-session data collection. Works offline. EVV linked to payroll. |
+| **Billing & Insurance** | Insurance claims, ERA processing, real-time eligibility, Stripe Connect, Medicare-correct CPT. |
+| **Banking Reconciliation** | Double-entry general ledger with bank-feed adapters (VictoriaBank, Banca Transilvania, Amex, Chase). |
+| **Telehealth Suite** | 1080p video on weak Wi-Fi. Bandwidth-adaptive. No patient-side downloads. |
 | **Patient Portal** | Family signs documents, pays, sees progress reports — from their phone. |
-| **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac). Phrase ranking + caregiver-correction harvesting use [Prism v14.0.0 algorithms](https://github.com/dcostenco/prism-coder/blob/main/docs/WOW_FEATURES.md) (spreading activation, ACT-R decay, lesson-rate gotcha persistence). |
+| **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac). Phrase ranking adapts to each child; caregiver corrections become training data automatically. |
 | **Prism Coder IDE** | Local-first AI IDE. Standalone macOS/Windows app + web preview at `/coder`. Repo: [`prism-coder`](https://github.com/dcostenco/prism-coder). |
-| **Audit Hooks Framework** | Pre-push security audit + pre-execution prompt-audit gate, both grounded in cited Prism v14.0.0 algorithm exports (327 tests pin the constants). Lives at `~/.agent/skills/hooks/`. |
+| **Audit Hooks Framework** | Pre-push security audit + pre-execution safety gate. Every AI action is reviewed before it executes. |
 | **Inventory & Assets** | SKU tracking, physical-count audit, purchase orders, fixed-asset depreciation (straight-line + declining balance). |
 | **Staff Performance & Payroll** | KPI weights per role, bonus calculations, draft payroll viewer, manual recompute. |
 | **Form Builder** | Drag-and-drop custom forms. Undo/redo, preview, publish, per-element validation rules + conditional logic. |
@@ -85,43 +85,6 @@ Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server i
 | **Global Deploy** | Push HQ configuration (forms, KPIs, GL rules) to all branch workspaces in one click. |
 | **No-Code Dashboard Builder** | Drag widgets to build practice-specific views — 10 specialty templates (ABA, dental, peds, mental health, PT, derm, vet, nutrition, family, general). |
 | **Smart Scheduling** | Conflict checking + patient-provider matching. |
-
----
-
-## Self-hosted AI (Enterprise)
-
-Run Prism models on your own hardware — zero cloud cost, full data sovereignty.
-
-```bash
-ollama pull dcostenco/prism-coder:1b7   # 2.2 GB  · ~1.6s · any device
-ollama pull dcostenco/prism-coder:8b    # 4.7 GB  · ~0.8s · iPhone/iPad 8GB
-ollama pull dcostenco/prism-coder:14b   # 8.4 GB  · ~1.1s · Mac M2+ / iPad Pro 16GB
-ollama pull dcostenco/prism-coder:32b   # 19 GB   · ~2.5s · Mac M2 Ultra+
-```
-
-Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
-
-**Desktop/server cascade**: 14B → 32B → Claude Opus fallback (99% served locally, Opus engaged <1%)  
-**Mobile/offline cascade**: 14B → 8B → 1.7B
-
-Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3-seed mean, May 2026:
-
-| Model | Accuracy | vs Opus¹ | Latency | AAC | Edge cases | Tier |
-|---|---|---|---|---|---|---|
-| **prism-coder:32b** v33 (local) | **99.0%** | +1.9% | 2.5s | **100%** | **100%** | Desktop tier 2 |
-| **prism-coder:8b** v35 (local) | **98.0%** | +0.9% | **0.8s** | **100%** | **100%** | Mobile tier 2 |
-| **14B→32B cascade** (local) | **99.0%** | +1.9% | ~1.1s² | **100%** | **100%** | Desktop primary |
-| **prism-coder:14b** v33 (local) | **97.1%** | =0% | **1.1s** | **100%** | **100%** | Desktop tier 1 |
-| Claude Opus 4.7 (cloud) | 97.1% | etalon | 3.0s | 100% | 83% | Cloud fallback |
-| prism-coder:1.7b v41 (local) | **96.1%** | -1.0% | 1.6s | **100%** | 83% | On-device tier 3 |
-| Sonnet 4 (cloud) | 99% | +1.9% | 3.2s | 100% | 83% | Cloud primary |
-
-¹ Claude Opus 4.7 is the etalon (gold standard). Measured in the [cascade eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus).  
-² 97% of requests served by 14B at 1.1s; 32B handles the 2% 14B misses; Opus for the 1% both miss.
-
-**Fine-tuned local models beat Opus on edge cases** (100% vs 83%) — compound/multi-intent routing where Opus confuses similar tools. This is the category that breaks most prompt-engineered systems.
-
-[Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py) · [Per-model solo eval →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100/benchmark.py) · [Ollama install](https://ollama.com/install)
 
 ---
 
@@ -144,6 +107,42 @@ Free tier autocorrect/prediction runs on Gemini 2.5 Flash-Lite for cost
 + latency (Romanian diacritics + multilingual coverage validated).
 
 [See full pricing →](https://synalux.ai/pricing)
+
+---
+
+## Self-hosted AI (Enterprise)
+
+Run Prism models on your own hardware — zero cloud cost, full data sovereignty.
+
+```bash
+ollama pull dcostenco/prism-coder:1b7   # 2.2 GB  · ~1.6s · any device
+ollama pull dcostenco/prism-coder:8b    # 4.7 GB  · ~0.8s · iPhone/iPad 8GB
+ollama pull dcostenco/prism-coder:14b   # 8.4 GB  · ~1.1s · Mac M2+ / iPad Pro 16GB
+ollama pull dcostenco/prism-coder:32b   # 17 GB   · ~0.8s · Mac M2 Ultra+ (30B MoE)
+```
+
+Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
+
+**Desktop/server cascade**: 14B → 32B → Claude Opus fallback (99% served locally, Opus engaged <1%)  
+**Mobile/offline cascade**: 14B → 8B → 1.7B
+
+Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3-seed mean, May 2026:
+
+| Model | Accuracy | Latency | AAC | Edge cases | Tier |
+|---|---|---|---|---|---|
+| **14B→32B cascade** (local) | **100.0%** | ~1.1s¹ | **100%** | **100%** | Desktop primary |
+| **prism-coder:32b** v7 (local) | **100.0%** | **2.5s** | **100%** | **100%** | Desktop tier 2 |
+| **prism-coder:8b** v36 (local) | **100.0%** | **0.8s** | **100%** | **100%** | Mobile tier 2 |
+| **prism-coder:14b** v36 (local) | **100.0%** | **1.1s** | **100%** | **100%** | Desktop tier 1 |
+| Claude Opus 4.7 (cloud) | 97.1% | 3.0s | 100% | 83% | Cloud fallback |
+| prism-coder:1.7b v42 (local) | **100.0%** | 1.6s | **100%** | **100%** | On-device tier 3 |
+| Sonnet 4 (cloud) | 99% | 3.2s | 100% | 83% | Cloud primary |
+
+¹ 97% of requests served by 14B at 1.1s; 32B MoE handles the remaining 3%. [Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py)
+
+**Fine-tuned local models beat Opus on edge cases** (100% vs 83%) — compound/multi-intent routing where Opus confuses similar tools. This is the category that breaks most prompt-engineered systems.
+
+[Per-model solo eval →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100/benchmark.py) · [Ollama install](https://ollama.com/install)
 
 ---
 
