@@ -126,19 +126,19 @@ Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
 **Desktop/server cascade**: 14B → 32B → Claude Opus fallback (99% served locally, Opus engaged <1%)  
 **Mobile/offline cascade**: 14B → 8B → 1.7B
 
-Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), 3-seed mean, May 2026:
+Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), v25 system prompt, 3-seed mean, May 2026:
 
 | Model | Accuracy | Latency | AAC | Edge cases | Tier |
 |---|---|---|---|---|---|
-| **14B→32B cascade** (local) | **100.0%** | ~1.1s¹ | **100%** | **100%** | Desktop primary |
-| **prism-coder:32b** v7 (local) | **100.0%** | **2.5s** | **100%** | **100%** | Desktop tier 2 |
-| **prism-coder:8b** v36 (local) | **100.0%** | **0.8s** | **100%** | **100%** | Mobile tier 2 |
-| **prism-coder:14b** v36 (local) | **100.0%** | **1.1s** | **100%** | **100%** | Desktop tier 1 |
-| Claude Opus 4.7 (cloud) | 97.1% | 3.0s | 100% | 83% | Cloud fallback |
-| prism-coder:1.7b v42 (local) | **100.0%** | 1.6s | **100%** | **100%** | On-device tier 3 |
+| **14B→32B cascade** (local) | **99.0%** | ~1.1s¹ | **100%** | **100%** | Desktop primary |
+| **prism-coder:32b** v33 (local) | **99.0%** | 2.5s | **100%** | **100%** | Desktop tier 2 |
+| **prism-coder:8b** v35 (local) | **98.0%** | 0.8s | **100%** | **100%** | Mobile tier 2 |
+| **prism-coder:14b** v33 (local) | **97.1%** | 1.1s | **100%** | **100%** | Desktop tier 1 |
+| prism-coder:1.7b v41 (local) | **96.1%** | 1.6s | **100%** | **100%** | On-device tier 3 |
 | Sonnet 4 (cloud) | 99% | 3.2s | 100% | 83% | Cloud primary |
+| Claude Opus 4.7 (cloud) | 97.1% | 3.0s | 100% | 83% | Cloud fallback |
 
-¹ 97% of requests served by 14B at 1.1s; 32B MoE handles the remaining 3%. [Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py)
+¹ 97% of requests served by 14B at 1.1s; 32B handles the remaining 3%. [Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py)
 
 **Fine-tuned local models beat Opus on edge cases** (100% vs 83%) — compound/multi-intent routing where Opus confuses similar tools. This is the category that breaks most prompt-engineered systems.
 
