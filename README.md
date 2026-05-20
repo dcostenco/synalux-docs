@@ -102,7 +102,7 @@ Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server i
 | Multi-workspace HQ | — | — | — | ✅ |
 
 ¹ Tier-aware automatic fallback when Anthropic API is unavailable:
-Standard → Gemini 3 Flash Preview · Advanced/Enterprise → Gemini 3 Pro Preview.
+Standard → Gemini 2.5 Flash · Advanced/Enterprise → Gemini 2.5 Pro.
 Free tier autocorrect/prediction runs on Gemini 2.5 Flash-Lite for cost
 + latency (Romanian diacritics + multilingual coverage validated).
 
@@ -118,29 +118,30 @@ Run Prism models on your own hardware — zero cloud cost, full data sovereignty
 ollama pull dcostenco/prism-coder:1b7   # 2.2 GB  · ~1.6s · any device
 ollama pull dcostenco/prism-coder:8b    # 4.7 GB  · ~0.8s · iPhone/iPad 8GB
 ollama pull dcostenco/prism-coder:14b   # 8.4 GB  · ~1.1s · Mac M2+ / iPad Pro 16GB
-ollama pull dcostenco/prism-coder:32b   # 17 GB   · ~0.8s · Mac M2 Ultra+ (30B MoE)
+ollama pull dcostenco/prism-coder:32b   # 16 GB   · ~0.8s · Mac M2 Ultra+ (30B-A3B MoE)
 ```
 
 Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
 
-**Desktop/server cascade**: 14B → 32B → Claude Opus fallback (99% served locally, Opus engaged <1%)  
-**Mobile/offline cascade**: 14B → 8B → 1.7B
+**Desktop/server cascade** (routing): 14B → 32B → Claude Opus fallback (100% served locally, Opus engaged 0%)  
+**Mobile/offline cascade** (routing): 14B → 8B → 1.7B  
+**Code generation cascade** (IDE): prism-ide:14b → prism-ide:32b → Claude Sonnet 4 fallback
 
-Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), v25 system prompt, 3-seed mean, May 2026:
+Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), v36/v7 system prompt, 3-seed mean, May 2026:
 
 | Model | Accuracy | Latency | AAC | Edge cases | Tier |
 |---|---|---|---|---|---|
-| **14B→32B cascade** (local) | **99.0%** | ~1.1s¹ | **100%** | **100%** | Desktop primary |
-| **prism-coder:32b** v33 (local) | **99.0%** | 2.5s | **100%** | **100%** | Desktop tier 2 |
-| **prism-coder:8b** v35 (local) | **98.0%** | 0.8s | **100%** | **100%** | Mobile tier 2 |
-| **prism-coder:14b** v33 (local) | **97.1%** | 1.1s | **100%** | **100%** | Desktop tier 1 |
-| prism-coder:1.7b v41 (local) | **96.1%** | 1.6s | **100%** | 83% | On-device tier 3 |
+| **14B→32B cascade** (local) | **100.0%** | ~1.1s¹ | **100%** | **100%** | Desktop primary |
+| **prism-coder:32b** v7 MoE (local) | **100.0%** | 0.8s | **100%** | **100%** | Desktop tier 2 |
+| **prism-coder:8b** v36 (local) | **100.0%** | 0.8s | **100%** | **100%** | Mobile tier 2 |
+| **prism-coder:14b** v36 (local) | **100.0%** | 1.1s | **100%** | **100%** | Desktop tier 1 |
+| prism-coder:1.7b v42 (local) | **100.0%** | 1.6s | **100%** | **100%** | On-device tier 3 |
 | Sonnet 4 (cloud) | 99% | 3.2s | 100% | 83% | Cloud primary |
-| Claude Opus 4.7 (cloud) | 97.1% | 3.0s | 100% | 83% | Cloud fallback |
+| Claude Opus 4.7 (cloud) | 98.3% | 3.0s | 100% | 83% | Cloud fallback |
 
-¹ 97% of requests served by 14B at 1.1s; 32B handles the remaining 3%. [Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py)
+¹ 99% of requests served by 14B at 1.1s; 32B handles the remaining 1%. Opus engaged: 0%. [Cascade eval source →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/cascade-14b-32b-opus/cascade_eval.py)
 
-**Fine-tuned models ≥8B beat Opus on edge cases** (100% vs 83%) — compound/multi-intent routing where Opus confuses similar tools. The 1.7B matches Opus at 83% on edge cases; all sizes score 100% on AAC.
+**All fine-tuned models now beat Opus on edge cases** (100% vs 83%) — compound/multi-intent routing where Opus confuses similar tools. All sizes score 100% on AAC and 100% on edge cases.
 
 [Per-model solo eval →](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100/benchmark.py) · [Ollama install](https://ollama.com/install)
 
@@ -287,7 +288,7 @@ Subsidized languages (free Inworld): `ro` `uk` `ru` `de` `ko` `ar`
 
 ## Status
 
-- **Production**: synalux.ai (latest tag: v13.0.0, v14 features shipping)
+- **Production**: synalux.ai (latest tag: v14.0.0)
 - **Releases**: [github.com/dcostenco/synalux-private/releases](https://github.com/dcostenco/synalux-private/releases)
 - **v14 highlights**: 23 Coming Soon features implemented (inventory, GL, staff performance, form builder, AI replies, TTS, global deploy, compliance resolution); military-grade security audit — 0 CRITICAL findings across 18 new API routes
 - **Current sprint**: practice-type-aware onboarding templates (roles, forms, KPIs, chart of accounts per specialty)
