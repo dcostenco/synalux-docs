@@ -27,7 +27,7 @@
 - [x] Superbill / CPT/CDT coding
 
 ### Business Modules
-- [x] Stripe billing with subscription tiers (Free/Standard/Pro/Enterprise)
+- [x] Stripe billing with subscription tiers (Free/Standard/Advanced/Enterprise)
 - [x] Fee schedules per practice
 - [x] HR / staff management (credentials, PTO, reviews)
 - [x] Inventory management

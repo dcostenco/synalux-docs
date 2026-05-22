@@ -730,7 +730,7 @@ Synalux runs on a **serverless-first architecture** using 6 cloud services. No A
 The server automatically routes each request to the best model for the user's subscription tier. All Synalux products (Portal, PrismAAC, Prism Coder) use the same `/api/v1/chat` endpoint.
 
 - **Free:** Gemini 2.5 Flash
-- **Standard:** Claude Sonnet 4 (fallback: Gemini 2.5 Pro)
+- **Standard:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
 - **Advanced:** Claude Sonnet 4 (fallback: Gemini 2.5 Pro)
 - **Enterprise:** Claude Sonnet 4 (fallback: Gemini 2.5 Pro)
 
