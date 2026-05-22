@@ -45,7 +45,7 @@ Every PHI access is immutably logged with a tamper-evident hash chain. OAuth tok
 | HIPAA BAA required | Yes (every model vendor) | **Not needed for on-prem** |
 | Data breach surface | Cloud API + storage | **Local network only** |
 | Inference cost | $2–15/clinician/day | **$0 (local GPU/Mac)** |
-| Latency for real-time notes | 1–5s | **~1.1s (14B) / ~0.8s (8B) / ~1.6s (1.7B)** |
+| Latency for real-time notes | 1–5s | **~1.1s (14B) / ~0.8s (8B) / ~1.6s (1b7)** |
 
 Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server inside the clinic network. All AI inference stays on-premises. No cloud model vendor agreement needed for HIPAA. See [Auth & MFA module](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md).
 
@@ -123,8 +123,8 @@ ollama pull dcostenco/prism-coder:32b   # 16 GB   · ~0.8s · Mac M2 Ultra+ (30B
 
 Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
 
-**Desktop/server cascade** (routing): 14B → 32B → Claude Opus fallback (100% served locally, Opus engaged 0%)  
-**Mobile/offline cascade** (routing): 14B → 8B → 1.7B  
+**Desktop/server cascade** (routing): 14B → 32B → Claude Sonnet 4 fallback (100% served locally, cloud engaged 0%)  
+**Mobile/offline cascade** (routing): 14B → 8B → 1b7  
 **Code generation cascade** (IDE): prism-coder:14b → prism-coder:32b → Claude Sonnet 4 fallback
 
 Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), v36/v7 system prompt, 3-seed mean, May 2026:
@@ -180,7 +180,7 @@ Full env-var matrix, security docs, and the Verified Shipping discipline are in 
 
 **Public** ([synalux-docs](https://github.com/dcostenco/synalux-docs)) — 60+ pages in `docs_source_en/`. Highlights:
 - [Auth & MFA](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md) — sign-in, TOTP/passkey, break-glass override
-- [Voice / TTS Architecture](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/voice_tts_architecture.md) — 4-tier fallback (Inworld → Kokoro → Web Speech → espeak)
+- [Voice / TTS Architecture](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/voice_tts_architecture.md) — 5-tier fallback (Inworld → Azure Neural → Kokoro → Web Speech → espeak)
 - [Telehealth (LiveKit)](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/telehealth_livekit.md) — bandwidth-adaptive video
 - [Language Support Matrix](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/language_support.md) — coverage per surface across 25 locales
 - [Prism AAC](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/prism_aac.md), [Mail](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/mail.md), [Drive](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/drive.md), [Calendar](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/calendar.md), and [more](https://github.com/dcostenco/synalux-docs/tree/main/docs_source_en).
