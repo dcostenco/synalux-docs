@@ -217,9 +217,9 @@ The original 2443-line README is preserved in git history. To browse the prior v
   │                                                        │
   │  POST /api/v1/prism-aac/inference                      │
   │  • JWT auth required  (no anonymous access)            │
-  │  • Subscription tier check  (free / standard / advanced / enterprise)   │
-  │  • Auto complexity classifier  1.7B → 14B → 32B        │
-  │  • Cloud: OpenRouter  (Claude/Gemini, key never exposed)│
+  │  • Tier check: free / standard / advanced / enterprise │
+  │  • Auto complexity classifier  1b7 → 8b → 14b → 32b   │
+  │  • Cloud: OpenRouter (Claude/Gemini, key hidden)       │
   └──────────┬─────────────────────────────┬──────────────┘
              │ model inference              │ memory
              ▼                             ▼
@@ -268,8 +268,9 @@ The original 2443-line README is preserved in git history. To browse the prior v
 
 | Tier | Engine | Offline |
 |---|---|---|
-| 1 | Inworld TTS-2 (cloud) | — |
-| 1.5 | Kokoro-82M neural (WASM) | en/es/fr/pt/ja/zh |
+| 1 | Inworld TTS-2 (cloud, 100+ langs) | — |
+| 1.2 | Azure Neural TTS (cloud fallback) | — |
+| 1.5 | Kokoro-82M neural (WASM offline) | en/es/fr/pt/ja/zh |
 | 2 | OS Web Speech API | all |
 | 3 | WASM espeak-ng | all |
 

@@ -733,9 +733,9 @@ Synalux runs on a **serverless-first architecture** using 6 cloud services. No A
 The server automatically routes each request to the best model for the user's subscription tier. All Synalux products (Portal, PrismAAC, Prism Coder) use the same `/api/v1/chat` endpoint.
 
 - **Free:** Gemini 2.5 Flash
-- **Standard:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
-- **Advanced:** Claude Sonnet 4 (fallback: Gemini 2.5 Flash)
-- **Enterprise:** Claude Opus 4 (fallback: Gemini 2.5 Flash)
+- **Standard:** Claude Sonnet 4 (fallback: Gemini 2.5 Pro)
+- **Advanced:** Claude Sonnet 4 (fallback: Gemini 2.5 Pro)
+- **Enterprise:** Claude Sonnet 4 (fallback: Gemini 2.5 Pro)
 
 <details>
 <summary>Click to view full details</summary>
@@ -744,8 +744,8 @@ The server automatically routes each request to the best model for the user's su
 |------|--------------|----------|------------|-------------|
 | **Free** | Gemini 2.5 Flash | — | 4,096 | 100 |
 | **Standard** | Claude Sonnet 4 | Gemini 2.5 Flash | 8,192 | 2,000 |
-| **Advanced** | Claude Sonnet 4 | Gemini 2.5 Flash | 16,384 | 5,000 |
-| **Enterprise** | Claude Opus 4 | Gemini 2.5 Flash | 32,768 | Unlimited |
+| **Advanced** | Claude Sonnet 4 | Gemini 2.5 Pro | 16,384 | 5,000 |
+| **Enterprise** | Claude Sonnet 4 | Gemini 2.5 Pro | 32,768 | Unlimited |
 
 **Products using this routing:**
 - ✅ **Synalux Portal** — web app chat, FloatChat, SOAP dictation
