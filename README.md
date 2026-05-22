@@ -75,7 +75,7 @@ Enterprise deployments run `prism-coder:14b` and `:32b` on a Mac or GPU server i
 | **Banking Reconciliation** | Double-entry general ledger with bank-feed adapters (VictoriaBank, Banca Transilvania, Amex, Chase). |
 | **Telehealth Suite** | 1080p video on weak Wi-Fi. Bandwidth-adaptive. No patient-side downloads. |
 | **Patient Portal** | Family signs documents, pays, sees progress reports — from their phone. |
-| **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac). Phrase ranking adapts to each child; caregiver corrections become training data automatically. |
+| **PrismAAC** | Augmentative & Alternative Communication for users with motor impairments. Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac) · [App Store](https://apps.apple.com/app/id6764692277). Phrase ranking adapts to each child; caregiver corrections become training data automatically. |
 | **Prism Coder IDE** | Local-first AI IDE. Standalone macOS/Windows app + web preview at `/coder`. Repo: [`prism-coder`](https://github.com/dcostenco/prism-coder). |
 | **Audit Hooks Framework** | Pre-push security audit + pre-execution safety gate. Every AI action is reviewed before it executes. |
 | **Inventory & Assets** | SKU tracking, physical-count audit, purchase orders, fixed-asset depreciation (straight-line + declining balance). |
@@ -115,7 +115,7 @@ Free tier autocorrect/prediction runs on Gemini 2.5 Flash-Lite for cost
 Run Prism models on your own hardware — zero cloud cost, full data sovereignty.
 
 ```bash
-ollama pull dcostenco/prism-coder:1b7   # 2.2 GB  · ~1.6s · any device
+ollama pull dcostenco/prism-coder:1b7   # 1.1 GB  · ~1.6s · any device
 ollama pull dcostenco/prism-coder:8b    # 4.7 GB  · ~0.8s · iPhone/iPad 8GB
 ollama pull dcostenco/prism-coder:14b   # 8.4 GB  · ~1.1s · Mac M2+ / iPad Pro 16GB
 ollama pull dcostenco/prism-coder:32b   # 16 GB   · ~0.8s · Mac M2 Ultra+ (30B-A3B MoE)
@@ -125,7 +125,7 @@ Set `LOCAL_LLM_URL=http://localhost:11434` in portal config.
 
 **Desktop/server cascade** (routing): 14B → 32B → Claude Opus fallback (100% served locally, Opus engaged 0%)  
 **Mobile/offline cascade** (routing): 14B → 8B → 1.7B  
-**Code generation cascade** (IDE): prism-ide:14b → prism-ide:32b → Claude Sonnet 4 fallback
+**Code generation cascade** (IDE): prism-coder:14b → prism-coder:32b → Claude Sonnet 4 fallback
 
 Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-coder/tree/main/tests/benchmarks/prism-routing-100), v36/v7 system prompt, 3-seed mean, May 2026:
 
@@ -135,7 +135,7 @@ Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-co
 | **prism-coder:32b** v7 MoE (local) | **100.0%** | 0.8s | **100%** | **100%** | Desktop tier 2 |
 | **prism-coder:8b** v36 (local) | **100.0%** | 0.8s | **100%** | **100%** | Mobile tier 2 |
 | **prism-coder:14b** v36 (local) | **100.0%** | 1.1s | **100%** | **100%** | Desktop tier 1 |
-| prism-coder:1.7b v42 (local) | **100.0%** | 1.6s | **100%** | **100%** | On-device tier 3 |
+| prism-coder:1b7 v42 (local) | **100.0%** | 1.6s | **100%** | **100%** | On-device tier 3 |
 | Sonnet 4 (cloud) | 99% | 3.2s | 100% | 83% | Cloud primary |
 | Claude Opus 4.7 (cloud) | 98.3% | 3.0s | 100% | 83% | Cloud fallback |
 
@@ -228,8 +228,8 @@ The original 2443-line README is preserved in git history. To browse the prior v
   │                       │  │                              │
   │  Cloud: Claude Sonnet │  │  Primary   — Railway         │
   │  Local:  prism-coder  │  │  Standby   — Fly.io          │
-  │   :32b (99%) :14b(97%)│  │  Fallback  — Supabase REST   │
-  │   :8b (98%)  :1b7(96%)│  │                              │
+  │   :32b(100%):14b(100%)│  │  Fallback  — Supabase REST   │
+  │   :8b(100%) :1b7(100%)│  │                              │
   │                       │  │                              │
   └──────────┬────────────┘  │  auto-failover chain         │
              │               └──────────────┬───────────────┘
