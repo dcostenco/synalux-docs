@@ -1,6 +1,6 @@
 # ForgeCoach
 
-**Military-grade AI fitness coaching for iPhone, iPad, and Apple Watch.**
+**AI fitness coaching for iPhone, iPad, and Apple Watch.**
 
 Track recovery, predict fatigue, generate periodized programs, and get coached in real time — in 23 languages. Fully offline with on-device AI (Pro+).
 
