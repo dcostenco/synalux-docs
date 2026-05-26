@@ -1,17 +1,17 @@
-# ForgeCoach
+# PrismCoach
 
 **AI fitness coaching for iPhone, iPad, and Apple Watch.**
 
 Track recovery, predict fatigue, generate periodized programs, and get coached in real time — in 23 languages. Fully offline with on-device AI (Pro+).
 
 <p align="center">
-  <a href="https://apps.apple.com/app/forgecoach/id123456789"><img src="https://img.shields.io/badge/App_Store-Download-0D96F6?style=for-the-badge&logo=apple" alt="App Store"></a>
-  <a href="https://forgecoach.app/subscribe"><img src="https://img.shields.io/badge/Pricing-Free_·_Pro_·_Elite-43e97b?style=for-the-badge" alt="Pricing"></a>
+  <a href="https://apps.apple.com/app/prismcoach/id123456789"><img src="https://img.shields.io/badge/App_Store-Download-0D96F6?style=for-the-badge&logo=apple" alt="App Store"></a>
+  <a href="https://prismcoach.app/subscribe"><img src="https://img.shields.io/badge/Pricing-Free_·_Pro_·_Elite-43e97b?style=for-the-badge" alt="Pricing"></a>
   <img src="https://img.shields.io/badge/iOS_17+-watchOS_10+-764ba2?style=for-the-badge" alt="iOS 17+ watchOS 10+">
   <img src="https://img.shields.io/badge/Tests-904_passing-brightgreen?style=for-the-badge" alt="Tests">
 </p>
 
-🌐 **Translations:** [Español](docs/i18n/forgecoach_es.md) · [Français](docs/i18n/forgecoach_fr.md) · [Português](docs/i18n/forgecoach_pt.md) · [Română](docs/i18n/forgecoach_ro.md) · [Українська](docs/i18n/forgecoach_uk.md) · [Русский](docs/i18n/forgecoach_ru.md) · [Deutsch](docs/i18n/forgecoach_de.md) · [日本語](docs/i18n/forgecoach_ja.md) · [한국어](docs/i18n/forgecoach_ko.md) · [中文](docs/i18n/forgecoach_zh.md) · [العربية](docs/i18n/forgecoach_ar.md)
+🌐 **Translations:** [Español](docs/i18n/prismcoach_es.md) · [Français](docs/i18n/prismcoach_fr.md) · [Português](docs/i18n/prismcoach_pt.md) · [Română](docs/i18n/prismcoach_ro.md) · [Українська](docs/i18n/prismcoach_uk.md) · [Русский](docs/i18n/prismcoach_ru.md) · [Deutsch](docs/i18n/prismcoach_de.md) · [日本語](docs/i18n/prismcoach_ja.md) · [한국어](docs/i18n/prismcoach_ko.md) · [中文](docs/i18n/prismcoach_zh.md) · [العربية](docs/i18n/prismcoach_ar.md)
 
 ---
 
@@ -63,7 +63,7 @@ Six science-backed periodization templates covering every major training goal, p
 | Full Body | 3-day compound emphasis | General fitness |
 | Deload / Maintenance | 1-day active recovery | Regeneration |
 
-- **AI-generated programs** (Elite) — describe your goal and constraints; ForgeCoach generates a custom multi-week block using Prism 8B or Claude Sonnet
+- **AI-generated programs** (Elite) — describe your goal and constraints; PrismCoach generates a custom multi-week block using Prism 8B or Claude Sonnet
 - **JSON Program Generator** — programs are typed Swift models; the engine generates a full 8-week program in < 500 ms on-device
 - **Watch sync** — active program is cached on Apple Watch for offline training (< 100 KB payload)
 
@@ -243,7 +243,7 @@ flowchart LR
     classDef vhigh fill:#cc0000,color:#fff
 ```
 
-Siri Shortcut: *"Check my injury risk in ForgeCoach"* — returns ACWR ratio + recommendation via `CheckInjuryRiskIntent`.
+Siri Shortcut: *"Check my injury risk in PrismCoach"* — returns ACWR ratio + recommendation via `CheckInjuryRiskIntent`.
 
 ### Volume Landmarks — MEV / MAV / MRV
 
@@ -295,7 +295,7 @@ Score = 50 (base)
 | 40–59 | Active Recovery | 50% |
 | < 40 | Rest Day | 0% |
 
-Missing sensors degrade gracefully — the base score of 50 always applies even if no wearable data is available. Siri Shortcut: *"Check my readiness in ForgeCoach"*.
+Missing sensors degrade gracefully — the base score of 50 always applies even if no wearable data is available. Siri Shortcut: *"Check my readiness in PrismCoach"*.
 
 ### HR-Adaptive Rest Timer
 
@@ -446,9 +446,9 @@ Phase transitions debounce 500 ms to avoid flickering during rapid state changes
 
 Full native macOS app alongside iPhone and iPad.
 
-- **Menu bar companion** — 260 px popover with Body Battery ring, now-playing music controls (play/pause, skip), and deep-link to open the full app (`forgecoach://open`)
+- **Menu bar companion** — 260 px popover with Body Battery ring, now-playing music controls (play/pause, skip), and deep-link to open the full app (`prismcoach://open`)
 - **Dashboard view** — full program view, AI coach chat, and nutrition summary in a native macOS window
-- **Menu commands** — `MacMenuCommands` wires keyboard shortcuts and `File` / `Coach` menu items to the same ForgeCoachCore engines used on iOS
+- **Menu commands** — `MacMenuCommands` wires keyboard shortcuts and `File` / `Coach` menu items to the same PrismCoachCore engines used on iOS
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/mac_01_dashboard.png" width="480" alt="macOS Dashboard">
@@ -460,7 +460,7 @@ Full native macOS app alongside iPhone and iPad.
 
 ## ☁️ iCloud Sync (Elite)
 
-`CloudKitSyncEngine` keeps workouts, profile, meal logs, and rep sets in sync across all your devices using a private CloudKit zone (`ForgeCoachZone`).
+`CloudKitSyncEngine` keeps workouts, profile, meal logs, and rep sets in sync across all your devices using a private CloudKit zone (`PrismCoachZone`).
 
 - **Append-only workouts** — sessions are never deleted remotely; soft-deleted locally with a flag
 - **Profile conflict resolution** — last-write-wins using `lastModifiedAt`; server wins on equal timestamps
@@ -470,7 +470,7 @@ Full native macOS app alongside iPhone and iPad.
 
 ```mermaid
 flowchart LR
-    D1["📱 iPhone"] -->|push workouts + profile| CK["☁️ iCloud\nForgeCoachZone\nprivate container"]
+    D1["📱 iPhone"] -->|push workouts + profile| CK["☁️ iCloud\nPrismCoachZone\nprivate container"]
     D2["💻 macOS"] -->|push + pull| CK
     D3["⌚ Apple Watch\n(via iPhone bridge)"] -->|push rep sets| CK
     CK -->|pull changes + token| D1
@@ -485,11 +485,11 @@ Five App Shortcuts registered via `AppShortcutsProvider` (iOS 16.4 +, watchOS 9.
 
 | Shortcut | Siri phrase | What it does |
 |---|---|---|
-| Start Workout | "Start workout in ForgeCoach" | Opens app and begins session |
-| Log Meal | "Log what I ate in ForgeCoach" | Parses NLP description → macros |
-| Check Readiness | "Am I ready to train in ForgeCoach" | Sleep + HRV + Body Battery → score |
-| Generate Program | "Create a program in ForgeCoach" | Runs JSONProgramGenerator, opens app |
-| Injury Risk | "How is my training load in ForgeCoach" | ACWR ratio → risk tier + recommendation |
+| Start Workout | "Start workout in PrismCoach" | Opens app and begins session |
+| Log Meal | "Log what I ate in PrismCoach" | Parses NLP description → macros |
+| Check Readiness | "Am I ready to train in PrismCoach" | Sleep + HRV + Body Battery → score |
+| Generate Program | "Create a program in PrismCoach" | Runs JSONProgramGenerator, opens app |
+| Injury Risk | "How is my training load in PrismCoach" | ACWR ratio → risk tier + recommendation |
 
 ---
 
@@ -548,7 +548,7 @@ Coaching and UI available in English, Spanish, French, Portuguese, German, Itali
 | **Monthly** | Free | $8.99/mo | $17.99/mo |
 | **Annual** | Free | $69.99/yr | $129.99/yr |
 
-Subscribe at [forgecoach.app/subscribe](https://forgecoach.app/subscribe) — web payment via Stripe. No in-app purchase required.
+Subscribe at [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — web payment via Stripe. No in-app purchase required.
 
 ---
 
@@ -573,7 +573,7 @@ All biometric data stays on-device. No analytics SDK. No third-party crash repor
 - **HealthKit** — read-only except workout session writes; described in App Store privacy label
 - **AI prompts (Pro)** — never sends data to any server
 - **AI prompts (Elite)** — sends anonymized training context to Prism inference server (no PII, no HealthKit data)
-- **Subscription check** — email sent over HTTPS to `api.forgecoach.app`; stored in Keychain with 24-hour TTL and 48-hour grace window
+- **Subscription check** — email sent over HTTPS to `api.prismcoach.app`; stored in Keychain with 24-hour TTL and 48-hour grace window
 - **Cycle data** — FemmeEngine data is CoreData-only, never synced
 
 ---

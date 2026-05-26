@@ -1,4 +1,4 @@
-# 🏋️ ForgeCoach
+# 🏋️ PrismCoach
 
 **Coach fitness IA de niveau militaire.** Application iPhone · iPad · Apple Watch. Suit la récupération, prédit la fatigue, génère des programmes d'entraînement et vous accompagne en temps réel — dans 23 langues. Fonctionne entièrement hors ligne avec un modèle IA embarqué (Pro+). Dépôt autonome : [`forge-watch`](https://github.com/dcostenco/forge-watch).
 
@@ -16,7 +16,7 @@ Votre score de disponibilité principal — une combinaison de la HRV nocturne, 
 <details>
 <summary>Voir la Capture d'Écran — Tableau de Bord</summary>
 
-![ForgeCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
+![PrismCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
 *Tableau de bord Batterie Corporelle — score de disponibilité composite, tendance hebdomadaire et raccourcis d'action rapide.*
 
 </details>
@@ -36,7 +36,7 @@ Suivi de la fatigue par muscle dans 14 régions anatomiques à l'aide d'un canva
 <details>
 <summary>Voir la Capture d'Écran — Carte Musculaire</summary>
 
-![ForgeCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
+![PrismCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
 *Carte de récupération musculaire — 14 régions codées par couleur selon la charge. La superposition clignotante indique les muscles cibles du jour.*
 
 </details>
@@ -56,14 +56,14 @@ Six modèles de périodisation basés sur la science couvrant tous les principau
 | Corps Entier | Accent sur les composés sur 3 jours | Remise en forme générale |
 | Décharge / Maintien | Récupération active sur 1 jour | Régénération |
 
-*   **Programmes générés par IA** (Elite) — décrivez votre objectif et vos contraintes ; ForgeCoach génère un bloc personnalisé sur plusieurs semaines avec Prism 8B ou Claude Sonnet.
+*   **Programmes générés par IA** (Elite) — décrivez votre objectif et vos contraintes ; PrismCoach génère un bloc personnalisé sur plusieurs semaines avec Prism 8B ou Claude Sonnet.
 *   **Générateur de Programmes JSON** — les programmes sont représentés sous forme de modèles Swift typés ; le moteur peut générer un programme complet de 8 semaines en < 500 ms sur l'appareil.
 *   **Synchronisation Watch** — le programme actif est mis en cache sur l'Apple Watch pour un coaching hors ligne (charge utile < 100 Ko).
 
 <details>
 <summary>Voir la Capture d'Écran — Programmes</summary>
 
-![ForgeCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
+![PrismCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
 *Programmes d'entraînement — six modèles de périodisation avec des programmes personnalisés générés par IA pour Elite.*
 
 </details>
@@ -83,7 +83,7 @@ Journal de repas alimenté par NLP — décrivez la nourriture en langage nature
 <details>
 <summary>Voir la Capture d'Écran — Nutrition</summary>
 
-![ForgeCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
+![PrismCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
 *Suivi nutritionnel — journalisation NLP des repas, objectifs macros quotidiens et suivi de l'hydratation.*
 
 </details>
@@ -104,7 +104,7 @@ Coaching conversationnel qui connaît votre état de récupération, votre derni
 <details>
 <summary>Voir la Capture d'Écran — Coach IA</summary>
 
-![ForgeCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
+![PrismCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
 *Coach IA — coach conversationnel contextuel avec sortie vocale et informations proactives.*
 
 </details>
@@ -126,7 +126,7 @@ Application compagnon complète — pas seulement des notifications. Suivi de se
 <details>
 <summary>Voir la Capture d'Écran — Tableau de Bord Watch</summary>
 
-![ForgeCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
+![PrismCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
 *Compagnon Apple Watch — tableau de bord Batterie Corporelle d'un coup d'œil avec anneau de récupération.*
 
 </details>
@@ -179,7 +179,7 @@ Coaching IA parlé dans votre langue.
 
 ## 🏗️ Architecture
 
-*   **ForgeCoachCore** — package Swift partagé (SPM) contenant tous les moteurs, modèles et logique métier. Consommé par l'app iOS, l'app Mac Catalyst et l'extension watchOS.
+*   **PrismCoachCore** — package Swift partagé (SPM) contenant tous les moteurs, modèles et logique métier. Consommé par l'app iOS, l'app Mac Catalyst et l'extension watchOS.
 *   **llama.cpp (Metal)** — inférence sur l'appareil pour le modèle Prism 1.7B GGUF via un package SPM local (`_llama_cpp_local`). iOS/macOS uniquement ; exclu de watchOS à la compilation.
 *   **Pont WatchConnectivity** — `WatchBridge` synchronise les batteries musculaires, la batterie corporelle et les indicateurs de fonctionnalité de manière bidirectionnelle entre l'iPhone et la Watch en temps réel.
 *   **Synchronisation CloudKit** — `CloudKitSyncEngine` réplique l'historique des entraînements et le profil utilisateur sur les appareils en utilisant des tokens de changement CKRecord avec résolution des conflits.
@@ -193,7 +193,7 @@ Coaching IA parlé dans votre langue.
 *   **Local d'abord** — toutes les données biométriques restent sur l'appareil. Pas de SDK d'analyse. Pas de rapport de crash tiers.
 *   **HealthKit** — accès en lecture seule sauf pour l'écriture des sessions d'entraînement. Décrit dans l'étiquette de confidentialité de l'App Store.
 *   **Prompts IA** — le niveau Pro n'envoie jamais de données à aucun serveur. Le niveau Elite envoie un contexte d'entraînement anonymisé au serveur d'inférence Prism (pas de PII, pas de données HealthKit).
-*   **Vérification d'abonnement** — e-mail envoyé via HTTPS à `api.forgecoach.app/subscription/check`. E-mail stocké dans Keychain avec TTL de 24 heures et fenêtre de grâce de 48 heures.
+*   **Vérification d'abonnement** — e-mail envoyé via HTTPS à `api.prismcoach.app/subscription/check`. E-mail stocké dans Keychain avec TTL de 24 heures et fenêtre de grâce de 48 heures.
 *   **Données de cycle** — les données du Moteur Femme sont uniquement CoreData, jamais synchronisées.
 
 ---
@@ -218,7 +218,7 @@ Coaching IA parlé dans votre langue.
 | **Mensuel** | Gratuit | 8,99 $/mois | 17,99 $/mois |
 | **Annuel** | Gratuit | 69,99 $/an | 129,99 $/an |
 
-Abonnez-vous sur [forgecoach.app/subscribe](https://forgecoach.app/subscribe) — paiement web via Stripe. Aucun achat intégré requis.
+Abonnez-vous sur [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — paiement web via Stripe. Aucun achat intégré requis.
 
 ---
 

@@ -1,4 +1,4 @@
-# 🏋️ ForgeCoach
+# 🏋️ PrismCoach
 
 **Antrenor de fitness AI de nivel militar.** Aplicație iPhone · iPad · Apple Watch. Urmărește recuperarea, prezice oboseala, generează programe de antrenament și te antrenează în timp real — în 23 de limbi. Funcționează complet offline cu un model AI pe dispozitiv (Pro+). Depozit independent: [`forge-watch`](https://github.com/dcostenco/forge-watch).
 
@@ -16,7 +16,7 @@ Scorul tău principal de pregătire — o combinație a HRV nocturn, a tendințe
 <details>
 <summary>Vezi Captură de Ecran — Tablou de Bord</summary>
 
-![ForgeCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
+![PrismCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
 *Tabloul de bord al Bateriei Corpului — scor compus de pregătire, tendință săptămânală și scurtături de acțiune rapidă.*
 
 </details>
@@ -36,7 +36,7 @@ Urmărirea oboselii per mușchi în 14 regiuni anatomice folosind un canvas de h
 <details>
 <summary>Vezi Captură de Ecran — Harta Musculară</summary>
 
-![ForgeCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
+![PrismCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
 *Harta de recuperare musculară — 14 regiuni codificate prin culori în funcție de încărcare. Suprapunerea pulsantă arată mușchii vizați azi.*
 
 </details>
@@ -56,14 +56,14 @@ Urmărirea oboselii per mușchi în 14 regiuni anatomice folosind un canvas de h
 | Corp Întreg | Focus pe compuse pe 3 zile | Fitness general |
 | Descărcare / Menținere | Recuperare activă o zi | Regenerare |
 
-*   **Programe generate de AI** (Elite) — descrie-ți obiectivul și constrângerile; ForgeCoach generează un bloc personalizat de mai multe săptămâni folosind Prism 8B sau Claude Sonnet.
+*   **Programe generate de AI** (Elite) — descrie-ți obiectivul și constrângerile; PrismCoach generează un bloc personalizat de mai multe săptămâni folosind Prism 8B sau Claude Sonnet.
 *   **Generator de Programe JSON** — programele sunt reprezentate ca modele Swift tipizate; motorul poate genera un program complet de 8 săptămâni în < 500 ms pe dispozitiv.
 *   **Sincronizare Watch** — programul activ se stochează în cache pe Apple Watch pentru antrenament offline (sarcină utilă < 100 KB).
 
 <details>
 <summary>Vezi Captură de Ecran — Programe</summary>
 
-![ForgeCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
+![PrismCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
 *Programe de antrenament — șase șabloane de periodizare cu programe personalizate generate de AI pentru Elite.*
 
 </details>
@@ -83,7 +83,7 @@ Jurnal de mese susținut de NLP — descrie mâncarea în limbaj natural, obțin
 <details>
 <summary>Vezi Captură de Ecran — Nutriție</summary>
 
-![ForgeCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
+![PrismCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
 *Tracker de nutriție — înregistrarea meselor prin NLP, obiective zilnice de macronutrienți și urmărirea hidratării.*
 
 </details>
@@ -104,7 +104,7 @@ Antrenament conversațional care îți cunoaște starea de recuperare, ultima se
 <details>
 <summary>Vezi Captură de Ecran — Antrenorul AI</summary>
 
-![ForgeCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
+![PrismCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
 *Antrenorul AI — antrenor conversațional conștient de context cu ieșire vocală și perspective proactive.*
 
 </details>
@@ -126,7 +126,7 @@ Aplicație însoțitoare completă — nu doar notificări. Urmărirea independe
 <details>
 <summary>Vezi Captură de Ecran — Tabloul de Bord Watch</summary>
 
-![ForgeCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
+![PrismCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
 *Însoțitor Apple Watch — tabloul de bord rapid al Bateriei Corpului cu inelul de recuperare.*
 
 </details>
@@ -179,7 +179,7 @@ Antrenament AI vorbit în limba ta.
 
 ## 🏗️ Arhitectură
 
-*   **ForgeCoachCore** — pachet Swift partajat (SPM) conținând toate motoarele, modelele și logica de afaceri. Utilizat de aplicația iOS, aplicația Mac Catalyst și extensia watchOS.
+*   **PrismCoachCore** — pachet Swift partajat (SPM) conținând toate motoarele, modelele și logica de afaceri. Utilizat de aplicația iOS, aplicația Mac Catalyst și extensia watchOS.
 *   **llama.cpp (Metal)** — inferență pe dispozitiv pentru modelul Prism 1.7B GGUF printr-un pachet SPM local (`_llama_cpp_local`). Doar iOS/macOS; exclus din watchOS la compilare.
 *   **Puntea WatchConnectivity** — `WatchBridge` sincronizează bateriile musculare, bateria corpului și marcajele de funcții bidirecțional între iPhone și Watch în timp real.
 *   **Sincronizare CloudKit** — `CloudKitSyncEngine` replicase istoricul antrenamentelor și profilul utilizatorului pe dispozitive folosind tokenuri de modificare CKRecord cu rezolvarea conflictelor.
@@ -193,7 +193,7 @@ Antrenament AI vorbit în limba ta.
 *   **Local în primul rând** — toate datele biometrice rămân pe dispozitiv. Fără SDK de analiză. Fără raportare de erori terță parte.
 *   **HealthKit** — acces doar pentru citire cu excepția scrierilor sesiunilor de antrenament. Descris în eticheta de confidențialitate din App Store.
 *   **Prompturi AI** — nivelul Pro nu trimite niciodată date la niciun server. Nivelul Elite trimite context de antrenament anonimizat la serverul de inferență Prism (fără PII, fără date HealthKit).
-*   **Verificarea abonamentului** — e-mail trimis prin HTTPS la `api.forgecoach.app/subscription/check`. E-mailul stocat în Keychain cu TTL de 24 de ore și fereastră de grație de 48 de ore.
+*   **Verificarea abonamentului** — e-mail trimis prin HTTPS la `api.prismcoach.app/subscription/check`. E-mailul stocat în Keychain cu TTL de 24 de ore și fereastră de grație de 48 de ore.
 *   **Date de ciclu** — datele Motorului Femme sunt doar CoreData, niciodată sincronizate.
 
 ---
@@ -218,7 +218,7 @@ Antrenament AI vorbit în limba ta.
 | **Lunar** | Gratuit | $8,99/lună | $17,99/lună |
 | **Anual** | Gratuit | $69,99/an | $129,99/an |
 
-Abonează-te la [forgecoach.app/subscribe](https://forgecoach.app/subscribe) — checkout web susținut de Stripe. Nu este necesară achiziția din aplicație.
+Abonează-te la [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — checkout web susținut de Stripe. Nu este necesară achiziția din aplicație.
 
 ---
 

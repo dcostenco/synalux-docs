@@ -1,4 +1,4 @@
-# 🏋️ ForgeCoach
+# 🏋️ PrismCoach
 
 **مدرّب لياقة بدنية بالذكاء الاصطناعي بمستوى عسكري.** تطبيق iPhone · iPad · Apple Watch. يتتبع التعافي، ويتنبأ بالتعب، ويولّد برامج تدريبية، ويقدم التدريب في الوقت الفعلي — بـ 23 لغة. يعمل بالكامل دون اتصال بالإنترنت عبر نموذج ذكاء اصطناعي على الجهاز (Pro+). مستودع مستقل: [`forge-watch`](https://github.com/dcostenco/forge-watch).
 
@@ -16,7 +16,7 @@
 <details>
 <summary>عرض لقطة الشاشة — لوحة التحكم</summary>
 
-![ForgeCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
+![PrismCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
 *لوحة تحكم بطارية الجسم — درجة الاستعداد المركّبة والاتجاه الأسبوعي واختصارات الإجراءات السريعة.*
 
 </details>
@@ -36,7 +36,7 @@
 <details>
 <summary>عرض لقطة الشاشة — خريطة العضلات</summary>
 
-![ForgeCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
+![PrismCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
 *خريطة تعافي العضلات — 14 منطقة مرمَّزة بالألوان وفق درجة الشحن. يُظهر التراكب النابض عضلات اليوم المستهدفة.*
 
 </details>
@@ -56,14 +56,14 @@
 | الجسم الكامل | تركيز على التمارين المركّبة 3 أيام | اللياقة العامة |
 | التخفيف / الصيانة | تعافٍ نشط يوم واحد | التجديد |
 
-*   **برامج بالذكاء الاصطناعي** (Elite) — صِف هدفك وقيودك؛ يولّد ForgeCoach كتلة مخصصة متعددة الأسابيع باستخدام Prism 8B أو Claude Sonnet.
+*   **برامج بالذكاء الاصطناعي** (Elite) — صِف هدفك وقيودك؛ يولّد PrismCoach كتلة مخصصة متعددة الأسابيع باستخدام Prism 8B أو Claude Sonnet.
 *   **مولّد برامج JSON** — تُمثَّل البرامج كنماذج Swift مكتوبة؛ يمكن للمحرك توليد برنامج كامل مدته 8 أسابيع في أقل من 500 مللي ثانية على الجهاز.
 *   **مزامنة Watch** — يُخزَّن البرنامج النشط مؤقتاً على Apple Watch للتدريب دون اتصال (حمولة < 100 KB).
 
 <details>
 <summary>عرض لقطة الشاشة — البرامج</summary>
 
-![ForgeCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
+![PrismCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
 *برامج التدريب — ستة قوالب دورية مع برامج مخصصة بالذكاء الاصطناعي لـ Elite.*
 
 </details>
@@ -83,7 +83,7 @@
 <details>
 <summary>عرض لقطة الشاشة — التغذية</summary>
 
-![ForgeCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
+![PrismCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
 *متتبع التغذية — تسجيل الوجبات بـ NLP وأهداف المغذيات الكبرى اليومية وتتبع الترطيب.*
 
 </details>
@@ -104,7 +104,7 @@
 <details>
 <summary>عرض لقطة الشاشة — المدرّب الذكي</summary>
 
-![ForgeCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
+![PrismCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
 *المدرّب الذكي — مدرب محادثاتي واعٍ بالسياق مع مخرج صوتي ورؤى استباقية.*
 
 </details>
@@ -126,7 +126,7 @@
 <details>
 <summary>عرض لقطة الشاشة — لوحة تحكم Watch</summary>
 
-![ForgeCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
+![PrismCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
 *المرافق Apple Watch — لوحة تحكم بطارية الجسم القابلة للتصفح مع حلقة التعافي.*
 
 </details>
@@ -179,7 +179,7 @@
 
 ## 🏗️ البنية المعمارية
 
-*   **ForgeCoachCore** — حزمة Swift مشتركة (SPM) تحتوي على جميع المحركات والنماذج ومنطق الأعمال. تستخدمها تطبيقات iOS وMac Catalyst وامتداد watchOS.
+*   **PrismCoachCore** — حزمة Swift مشتركة (SPM) تحتوي على جميع المحركات والنماذج ومنطق الأعمال. تستخدمها تطبيقات iOS وMac Catalyst وامتداد watchOS.
 *   **llama.cpp (Metal)** — استدلال على الجهاز لنموذج Prism 1.7B GGUF عبر حزمة SPM محلية (`_llama_cpp_local`). لـ iOS/macOS فقط؛ مستبعد من watchOS وقت التحويل البرمجي.
 *   **جسر WatchConnectivity** — يُزامن `WatchBridge` بطاريات العضلات وبطارية الجسم وعلامات الميزات ثنائياً بين iPhone وWatch في الوقت الفعلي.
 *   **مزامنة CloudKit** — يُنسخ `CloudKitSyncEngine` سجل التمارين وملف المستخدم عبر الأجهزة باستخدام رموز تغيير CKRecord وحل النزاعات.
@@ -193,7 +193,7 @@
 *   **محلي أولاً** — تبقى جميع البيانات البيومترية على الجهاز. لا SDK تحليلات. لا تقارير أعطال من طرف ثالث.
 *   **HealthKit** — وصول للقراءة فقط باستثناء كتابة جلسات التمرين. موضح في ملصق الخصوصية على App Store.
 *   **Prompts الذكاء الاصطناعي** — لا يُرسل مستوى Pro أي بيانات إلى أي خادم. يرسل مستوى Elite سياق تدريب مُجهَّل إلى خادم استدلال Prism (بدون معلومات تعريف شخصية، بدون بيانات HealthKit).
-*   **التحقق من الاشتراك** — يُرسَل البريد الإلكتروني عبر HTTPS إلى `api.forgecoach.app/subscription/check`. يُخزَّن البريد في Keychain مع TTL مدته 24 ساعة ونافذة سماح 48 ساعة.
+*   **التحقق من الاشتراك** — يُرسَل البريد الإلكتروني عبر HTTPS إلى `api.prismcoach.app/subscription/check`. يُخزَّن البريد في Keychain مع TTL مدته 24 ساعة ونافذة سماح 48 ساعة.
 *   **بيانات الدورة** — بيانات محرك Femme محلية فقط في CoreData، لا تتزامن أبداً.
 
 ---
@@ -218,7 +218,7 @@
 | **شهري** | مجاني | $8.99/شهر | $17.99/شهر |
 | **سنوي** | مجاني | $69.99/سنة | $129.99/سنة |
 
-اشترك على [forgecoach.app/subscribe](https://forgecoach.app/subscribe) — دفع إلكتروني مدعوم بـ Stripe. لا يلزم الشراء داخل التطبيق.
+اشترك على [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — دفع إلكتروني مدعوم بـ Stripe. لا يلزم الشراء داخل التطبيق.
 
 ---
 

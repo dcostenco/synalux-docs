@@ -1,4 +1,4 @@
-# 🏋️ ForgeCoach
+# 🏋️ PrismCoach
 
 **ИИ-тренер по фитнесу военного класса.** Приложение для iPhone · iPad · Apple Watch. Отслеживает восстановление, прогнозирует усталость, генерирует программы тренировок и тренирует в реальном времени — на 23 языках. Полностью работает офлайн благодаря модели ИИ на устройстве (Pro+). Отдельный репозиторий: [`forge-watch`](https://github.com/dcostenco/forge-watch).
 
@@ -16,7 +16,7 @@
 <details>
 <summary>Просмотреть скриншот — Панель управления</summary>
 
-![ForgeCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
+![PrismCoach Dashboard — Body Battery](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_01_dashboard.png)
 *Панель управления зарядом тела — комплексная оценка готовности, недельный тренд и ярлыки быстрых действий.*
 
 </details>
@@ -36,7 +36,7 @@
 <details>
 <summary>Просмотреть скриншот — Карта мышц</summary>
 
-![ForgeCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
+![PrismCoach Muscle Recovery Map](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_02_muscles.png)
 *Карта восстановления мышц — 14 зон, закодированных цветом по уровню заряда. Пульсирующий слой показывает целевые мышцы дня.*
 
 </details>
@@ -56,14 +56,14 @@
 | Всё тело | 3 дня с акцентом на базовые | Общая физическая подготовка |
 | Разгрузка / Поддержание | 1 день активного восстановления | Регенерация |
 
-*   **Программы, сгенерированные ИИ** (Elite) — опишите свою цель и ограничения; ForgeCoach генерирует полностью кастомный многонедельный блок с помощью Prism 8B или Claude Sonnet.
+*   **Программы, сгенерированные ИИ** (Elite) — опишите свою цель и ограничения; PrismCoach генерирует полностью кастомный многонедельный блок с помощью Prism 8B или Claude Sonnet.
 *   **Генератор программ JSON** — программы представлены в виде типизированных Swift-моделей; движок может сгенерировать полную 8-недельную программу менее чем за 500 мс на устройстве.
 *   **Синхронизация с Watch** — активная программа кэшируется на Apple Watch для офлайн-тренировок (размер пакета < 100 КБ).
 
 <details>
 <summary>Просмотреть скриншот — Программы</summary>
 
-![ForgeCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
+![PrismCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
 *Программы тренировок — шесть шаблонов периодизации и программы, сгенерированные ИИ, для Elite.*
 
 </details>
@@ -83,7 +83,7 @@
 <details>
 <summary>Просмотреть скриншот — Питание</summary>
 
-![ForgeCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
+![PrismCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
 *Трекер питания — запись приёма пищи через NLP, дневные цели по макронутриентам и отслеживание гидратации.*
 
 </details>
@@ -104,7 +104,7 @@
 <details>
 <summary>Просмотреть скриншот — ИИ-тренер</summary>
 
-![ForgeCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
+![PrismCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
 *ИИ-тренер — контекстно-зависимый разговорный тренер с голосовым выводом и проактивными подсказками.*
 
 </details>
@@ -126,7 +126,7 @@
 <details>
 <summary>Просмотреть скриншот — Панель Watch</summary>
 
-![ForgeCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
+![PrismCoach Apple Watch](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png)
 *Компаньон Apple Watch — панель заряда тела с быстрым обзором и кольцом восстановления.*
 
 </details>
@@ -179,7 +179,7 @@
 
 ## 🏗️ Архитектура
 
-*   **ForgeCoachCore** — общий Swift-пакет (SPM), содержащий все движки, модели и бизнес-логику. Используется iOS-приложением, Mac Catalyst-приложением и расширением watchOS.
+*   **PrismCoachCore** — общий Swift-пакет (SPM), содержащий все движки, модели и бизнес-логику. Используется iOS-приложением, Mac Catalyst-приложением и расширением watchOS.
 *   **llama.cpp (Metal)** — вывод на устройстве для модели Prism 1.7B GGUF через локальный пакет SPM (`_llama_cpp_local`). Только для iOS/macOS; исключено из watchOS при компиляции.
 *   **Мост WatchConnectivity** — `WatchBridge` двунаправленно синхронизирует заряды мышц, заряд тела и флаги функций между iPhone и Watch в реальном времени.
 *   **Синхронизация CloudKit** — `CloudKitSyncEngine` реплицирует историю тренировок и профиль пользователя между устройствами с использованием токенов изменений CKRecord и разрешением конфликтов.
@@ -193,7 +193,7 @@
 *   **Локальный приоритет** — все биометрические данные остаются на устройстве. Без SDK аналитики. Без сторонних отчётов о сбоях.
 *   **HealthKit** — доступ только для чтения, кроме записи тренировочных сессий. Описано в метке конфиденциальности App Store.
 *   **ИИ-промпты** — уровень Pro никогда не отправляет данные на какой-либо сервер. Уровень Elite отправляет анонимизированный контекст тренировки на сервер вывода Prism (без PII, без данных HealthKit).
-*   **Проверка подписки** — электронная почта отправляется через HTTPS на `api.forgecoach.app/subscription/check`. Электронная почта хранится в Keychain с TTL 24 часа и льготным окном 48 часов.
+*   **Проверка подписки** — электронная почта отправляется через HTTPS на `api.prismcoach.app/subscription/check`. Электронная почта хранится в Keychain с TTL 24 часа и льготным окном 48 часов.
 *   **Данные цикла** — данные двигателя Femme хранятся только в CoreData, никогда не синхронизируются.
 
 ---
@@ -218,7 +218,7 @@
 | **Ежемесячно** | Бесплатно | $8,99/мес. | $17,99/мес. |
 | **Ежегодно** | Бесплатно | $69,99/год | $129,99/год |
 
-Подпишитесь на [forgecoach.app/subscribe](https://forgecoach.app/subscribe) — веб-оформление заказа на основе Stripe. Покупки в приложении не требуются.
+Подпишитесь на [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — веб-оформление заказа на основе Stripe. Покупки в приложении не требуются.
 
 ---
 
