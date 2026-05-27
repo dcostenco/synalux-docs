@@ -48,7 +48,7 @@ Your single readiness score — a composite of overnight HRV, resting heart-rate
 
 ── TRAINING PROGRAMS ──
 
-Six science-backed periodization templates: PPL, 5/3/1 Wendler, GZCLP, PHUL, Full Body, Deload. Elite subscribers get AI-generated custom multi-week programs built by Prism 8B or Claude Sonnet.
+Six science-backed periodization templates: PPL, 5/3/1 Wendler, GZCLP, PHUL, Full Body, Deload. Elite subscribers get AI-generated custom multi-week programs built by Prism 4B or Claude Sonnet.
 
 ── NUTRITION ENGINE ──
 
@@ -137,8 +137,8 @@ Prism AAC is an augmentative and alternative communication (AAC) app for people 
 
 Prism AAC automatically selects the best local model based on your device:
 
-• iPad Pro 16 GB — Prism 14B model (97.1% routing accuracy)
-• iPhone / iPad Air — Prism 8B model (98.0% routing accuracy)
+• iPad Pro (16 GB) — Prism 14B model (100% routing accuracy)
+• iPhone / iPad (8 GB+) — Prism 4B model (100% routing accuracy)
 • Any other device — Prism 1.7B model (100% routing accuracy)
 • SmolLM2-360M — activates on low-RAM devices so phrase generation never stops
 
@@ -199,7 +199,7 @@ AAC,augmentative,nonverbal,speech,autism,ALS,aphasia,offline,picture,communicati
 
 ### What's New (version 1.4.0)
 ```
-On-device AI — no internet needed for phrase generation, prediction, or translation. Three model tiers select automatically: 14B (iPad Pro 16GB), 8B (iPhone/iPad Air), 1.7B (all others).
+On-device AI — no internet needed for phrase generation, prediction, or translation. Three model tiers select automatically: 14B (iPad Pro 16GB), 4B (iPhone/iPad 8GB+), 1.7B (all others).
 
 Offline phrase dictionary: 1,261 phrases × 20 languages built into the app.
 
