@@ -139,7 +139,7 @@ Prism AAC automatically selects the best local model based on your device:
 
 • iPad Pro 16 GB — Prism 14B model (97.1% routing accuracy)
 • iPhone / iPad Air — Prism 8B model (98.0% routing accuracy)
-• Any other device — Prism 1.7B model (96.1% routing accuracy)
+• Any other device — Prism 1.7B model (100% routing accuracy)
 • SmolLM2-360M — activates on low-RAM devices so phrase generation never stops
 
 All models run via Metal GPU acceleration. Instant responses, fully private.
