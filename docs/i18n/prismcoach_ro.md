@@ -95,7 +95,7 @@ Jurnal de mese susținut de NLP — descrie mâncarea în limbaj natural, obțin
 Antrenament conversațional care îți cunoaște starea de recuperare, ultima sesiune și contextul programului.
 
 *   **Nivel Gratuit** — fără AI (doar șabloane de programe statice).
-*   **Pro — Prism 1.7B pe dispozitiv** — rulează prin llama.cpp cu accelerare Metal. Zero rețea, complet privat. Răspunde la întrebările despre antrenamentul tău, sugerează corecții de formă, ajustează volumul de azi pe baza pregătirii.
+*   **Pro — Prism 1.7B pe dispozitiv** — rulează prin llama.cpp cu accelerare Metal. Zero rețea, complet privat. Când RAM-ul liber este ≥ 1.600 MB, folosește Prism Coder 1.7B (pe dispozitiv, Metal); când RAM-ul liber este de 450–799 MB, folosește SmolLM2-360M (185 MB, pe dispozitiv); antrenamentul nu eșuează niciodată, se degradează doar grațios. Răspunde la întrebările despre antrenamentul tău, sugerează corecții de formă, ajustează volumul de azi pe baza pregătirii.
 *   **Elite — cascadă Prism 1.7B → 8B → Claude Sonnet** — mai întâi pe dispozitiv; escaladează la serverul de inferență Prism (8B) pentru întrebări complexe; revine la Claude Sonnet pentru antrenament nuanțat.
 *   **Fereastra de context** — ForgeMemoryStore injectează ultimele 3 sesiuni, săptămâna activă a programului, încărcăturile musculare actuale și scorul bateriei corpului în fiecare prompt.
 *   **Ieșire vocală** — răspunsurile AI sunt citite prin ForgeTTSEngine: Synalux cloud TTS (MP3, 24 kHz) cu AVSpeechSynthesizer ca alternativă offline. Șase tonuri de antrenament: Prietenos, Calm, Entuziasmat, Precis, Empatic, Plin de Speranță.
@@ -115,7 +115,8 @@ Antrenament conversațional care îți cunoaște starea de recuperare, ultima se
 
 Aplicație însoțitoare completă — nu doar notificări. Urmărirea independentă a sesiunilor de pe încheietură.
 
-*   **5 file Watch** — Tablou de Bord (Bateria Corpului), Harta Musculară, Jurnal de Antrenament, Test de Tap al Sistemului Nervos Central, Setări.
+*   **6 file Watch** — Tablou de Bord (Bateria Corpului), Harta Musculară, Jurnal de Antrenament, Watch AI Coach, Test de Tap al Sistemului Nervos Central, Setări.
+*   **Watch AI Coach** — IA conversațională completă pe încheietură: interogările sunt transmise spre iPhone-ul asociat prin WatchConnectivity; iPhone-ul rulează cascada pe dispozitiv 1.7B → 360M → cloud și trimite răspunsul înapoi; trece la o stare clară „iPhone inaccesibil" când conexiunea eșuează.
 *   **Sesiune de antrenament** — înregistrează seriile (exercițiu, greutate, repetări, RPE) direct de pe încheietură. Cronometru de odihnă de 90 de secunde cu numărătoare inversă haptică.
 *   **Testul de Tap al Sistemului Nervos Central** — test de tap rapid de 10 secunde înainte de antrenament. Măsoară tapuri/sec; semnalează oboseala neuromusculară dacă este sub linia de bază personală.
 *   **Metronom Haptic** — haptice ritmice în timpul circuitelor AMRAP/EMOM.
@@ -212,6 +213,8 @@ Antrenament AI vorbit în limba ta.
 | Aplicație însoțitoare Apple Watch | — | ✅ | ✅ |
 | Motorul Femme (urmărirea ciclului) | — | ✅ | ✅ |
 | Antrenor AI — Prism 1.7B pe dispozitiv | — | ✅ | ✅ |
+| SmolLM2-360M pe dispozitiv (rezervă RAM scăzut) | — | ✅ | ✅ |
+| Watch AI Coach (releu) | — | ✅ | ✅ |
 | Antrenor AI — server Prism 8B | — | — | ✅ |
 | Antrenor AI — cascadă Claude Sonnet | — | — | ✅ |
 | Programe personalizate generate de AI | — | — | ✅ |

@@ -95,7 +95,7 @@ Registro de comidas impulsado por NLP — describe la comida en lenguaje natural
 Entrenamiento conversacional que conoce tu estado de recuperación, tu última sesión y el contexto del programa.
 
 *   **Nivel Gratuito** — sin IA (solo plantillas de programas estáticos).
-*   **Pro — Prism 1.7B en el dispositivo** — funciona mediante llama.cpp con aceleración Metal. Sin conexión de red, completamente privado. Responde preguntas sobre tu entrenamiento, sugiere correcciones de técnica, ajusta el volumen del día según la preparación.
+*   **Pro — Prism 1.7B en el dispositivo** — funciona mediante llama.cpp con aceleración Metal. Sin conexión de red, completamente privado. Cuando la RAM libre es ≥ 1.600 MB, usa Prism Coder 1.7B (en el dispositivo, Metal); cuando la RAM libre es de 450–799 MB, usa SmolLM2-360M (185 MB, en el dispositivo); el entrenamiento nunca falla, solo degrada gradualmente. Responde preguntas sobre tu entrenamiento, sugiere correcciones de técnica, ajusta el volumen del día según la preparación.
 *   **Elite — cascada Prism 1.7B → 8B → Claude Sonnet** — primero en el dispositivo; escala al servidor de inferencia Prism (8B) para preguntas complejas; recurre a Claude Sonnet para un entrenamiento más matizado.
 *   **Ventana de contexto** — ForgeMemoryStore inyecta las últimas 3 sesiones, la semana activa del programa, las cargas musculares actuales y la puntuación de batería corporal en cada prompt.
 *   **Salida de voz** — las respuestas de la IA se verbalizan mediante ForgeTTSEngine: Synalux cloud TTS (MP3, 24 kHz) con respaldo AVSpeechSynthesizer sin conexión. Seis tonos de entrenamiento: Amigable, Tranquilo, Entusiasta, Preciso, Empático, Esperanzador.
@@ -115,7 +115,8 @@ Entrenamiento conversacional que conoce tu estado de recuperación, tu última s
 
 App complementaria completa — no solo notificaciones. Seguimiento de sesión independiente en la muñeca.
 
-*   **5 pestañas en el Watch** — Panel (Batería Corporal), Mapa Muscular, Registro de Entrenamiento, Test de Toque del SNC, Ajustes.
+*   **6 pestañas en el Watch** — Panel (Batería Corporal), Mapa Muscular, Registro de Entrenamiento, Entrenador IA Watch, Test de Toque del SNC, Ajustes.
+*   **Entrenador IA Watch** — IA conversacional completa en tu muñeca: las consultas se retransmiten al iPhone emparejado a través de WatchConnectivity; el iPhone ejecuta la cascada en el dispositivo 1.7B → 360M → nube y transmite la respuesta de vuelta; se activa un estado claro de "iPhone no disponible" cuando la conexión falla.
 *   **Sesión de entrenamiento** — registra series (ejercicio, peso, repeticiones, RPE) directamente desde la muñeca. Temporizador de descanso de 90 segundos con cuenta regresiva háptica.
 *   **Test de Toque del SNC** — test de toque rápido de 10 segundos antes del entrenamiento. Mide toques/seg; señala fatiga neuromuscular si está por debajo de la línea base personal.
 *   **Marcapasos Háptico** — hápticos rítmicos durante los circuitos AMRAP/EMOM.
@@ -212,6 +213,8 @@ Entrenamiento con IA hablado en tu idioma.
 | App complementaria Apple Watch | — | ✅ | ✅ |
 | Motor Femme (seguimiento del ciclo) | — | ✅ | ✅ |
 | Entrenador IA — Prism 1.7B en el dispositivo | — | ✅ | ✅ |
+| SmolLM2-360M en el dispositivo (reserva con RAM baja) | — | ✅ | ✅ |
+| Entrenador IA Watch (retransmisión) | — | ✅ | ✅ |
 | Entrenador IA — servidor Prism 8B | — | — | ✅ |
 | Entrenador IA — cascada Claude Sonnet | — | — | ✅ |
 | Programas personalizados generados por IA | — | — | ✅ |

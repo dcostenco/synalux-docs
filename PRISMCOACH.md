@@ -97,13 +97,27 @@ NLP-driven meal logging — describe the food in plain language, get the macros.
 
 Conversational coaching that knows your recovery state, last session, and program context.
 
-| Tier | Route | Latency | Privacy |
+| Subscription | AI Source | Latency | Privacy |
 |---|---|---|---|
 | Free | No AI — static templates only | — | — |
-| Pro | Prism 1.7B on-device (Metal) | ~500 ms | 100% local — no network |
-| Elite | Prism 1.7B → 8B → Claude Sonnet | ~500 ms / ~1.5 s / ~3 s | Anon context to Prism server; Claude for complex queries |
+| Pro | On-device cascade (see below) | ~300–800 ms | 100% local — no network |
+| Elite | On-device → Prism 8B → Claude Sonnet | ~300 ms – 3 s | Anon context for cloud tiers; local tiers are air-gapped |
 
-- **Context window** — ForgeMemoryStore injects last 3 sessions, active program week, current muscle loads, and Body Battery score into every prompt
+### Memory-Aware On-Device Tiers
+
+PrismCoach polls free RAM every 2 seconds via `os_proc_available_memory()` and selects the best available AI source automatically — coaching never fails, it degrades gracefully.
+
+| Free RAM | Tier | AI Source |
+|---|---|---|
+| ≥ 1,600 MB | Full AI | Prism Coder 1.7B — on-device (Metal, GGUF Q4_K_M, ~1.2 GB) |
+| 800–1,599 MB | Cloud AI | Synalux cloud API (network required) |
+| 450–799 MB | Mini AI | SmolLM2-360M — on-device (Metal, GGUF Q3_K_S, ~185 MB) |
+| 300–449 MB | Core Only | No AI — workouts + tracking still work |
+| < 300 MB | Emergency | Model unloaded to prevent OS jetsam kill |
+
+- **Prism Coder 1.7B** — fine-tuned on strength & conditioning corpus; 4096-token context with full biometric state injection; full Metal GPU offload
+- **SmolLM2-360M** — fills the gap when the 1.7B won't fit; ~185 MB total VRAM footprint; safe on any A14+ device; uses compact biometric context (≤120 chars)
+- **Context window** — injects last 3 sessions, active program week, current muscle loads, and Body Battery into every prompt
 - **Voice output** — AI responses spoken via ForgeTTSEngine: Synalux cloud TTS (MP3, 24 kHz) with AVSpeechSynthesizer offline fallback; 6 coaching tones: Friendly, Calm, Enthusiastic, Precise, Empathetic, Hopeful
 - **Proactive coaching** — ProactiveCoachEngine surfaces unsolicited insights ("Your HRV dropped 15% — consider reducing intensity today") based on 7 trigger types
 - **Velocity-based feedback** — wrist-mounted bar velocity estimation via CoreMotion flags neuromuscular fatigue when bar speed drops > 15%
@@ -120,7 +134,8 @@ Conversational coaching that knows your recovery state, last session, and progra
 
 Full companion app — not just notifications. Independent wrist-side session tracking.
 
-- **5 watch tabs** — Dashboard (Body Battery), Muscle Map, Workout Log, CNS Tap Test, Settings
+- **6 watch tabs** — Dashboard (Body Battery), Muscle Map, Workout Log, Watch AI Coach, CNS Tap Test, Settings
+- **Watch AI Coach** — full conversational AI on your wrist: queries relay to the paired iPhone over WatchConnectivity; iPhone runs the on-device 1.7B → 360M → cloud cascade and streams the reply back; falls back to a clear "iPhone not reachable" state
 - **Workout session** — log sets (exercise, weight, reps, RPE) directly from your wrist; 90-second rest timer with haptic countdown
 - **CNS Tap Test** — 10-second rapid-tap test before training; measures taps/sec and flags neuromuscular fatigue below personal baseline
 - **Haptic Pacer** — rhythmic haptics during AMRAP/EMOM circuits
@@ -128,12 +143,13 @@ Full companion app — not just notifications. Independent wrist-side session tr
 - **Phone sync** — WatchConnectivity bridge pushes muscle batteries, body battery, and feature flags bidirectionally in real time
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png" width="180" alt="Watch Dashboard">
-  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_02_bodymap.png" width="180" alt="Watch Body Map">
-  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_03_workout.png" width="180" alt="Watch Workout">
-  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_04_cns.png" width="180" alt="Watch CNS Test">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_01_dashboard.png" width="155" alt="Watch Dashboard">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_02_bodymap.png" width="155" alt="Watch Body Map">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_03_workout.png" width="155" alt="Watch Workout">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_04_aicoach.png" width="155" alt="Watch AI Coach">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_05_cns.png" width="155" alt="Watch CNS Test">
 </p>
-<p align="center"><em>Apple Watch companion — Body Battery ring, muscle map, live workout logging, and CNS tap test.</em></p>
+<p align="center"><em>Apple Watch companion — Body Battery ring, muscle map, live workout logging, AI coach relay, and CNS tap test.</em></p>
 
 ---
 
@@ -509,8 +525,8 @@ Cycle-phase metric adjustments for female athletes (optional, never synced off-d
 Coaching and UI available in English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Russian, Ukrainian, Romanian, Czech, Hungarian, Swedish, Norwegian, Finnish, Japanese, Korean, Mandarin, Arabic, Hindi, Turkish, Hebrew.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_06_settings.png" width="280" alt="Settings">
-  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_05_settings.png" width="180" alt="Watch Settings">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_07_settings.png" width="280" alt="Settings">
+  <img src="https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/watch_06_settings.png" width="180" alt="Watch Settings">
 </p>
 <p align="center"><em>Settings — language picker, subscription tier, AI routing, TTS voice selection, and FemmeEngine toggle.</em></p>
 
@@ -538,7 +554,9 @@ Coaching and UI available in English, Spanish, French, Portuguese, German, Itali
 | Sleep-Training Readiness Loop | — | ✅ | ✅ |
 | ACWR injury risk tracking | — | ✅ | ✅ |
 | VBT — bar velocity + power output | — | ✅ | ✅ |
-| AI Coach — Prism 1.7B on-device | — | ✅ | ✅ |
+| AI Coach — Prism 1.7B on-device (Metal) | — | ✅ | ✅ |
+| AI Coach — SmolLM2-360M on-device (low-RAM fallback) | — | ✅ | ✅ |
+| Watch AI Coach relay | — | ✅ | ✅ |
 | Autonomous voice coach (full workout) | — | — | ✅ |
 | AI Coach — Prism 8B server | — | — | ✅ |
 | AI Coach — Claude Sonnet cascade | — | — | ✅ |

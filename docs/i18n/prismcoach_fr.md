@@ -95,7 +95,7 @@ Journal de repas alimenté par NLP — décrivez la nourriture en langage nature
 Coaching conversationnel qui connaît votre état de récupération, votre dernière séance et le contexte de votre programme.
 
 *   **Niveau Gratuit** — pas d'IA (modèles de programmes statiques uniquement).
-*   **Pro — Prism 1.7B embarqué** — fonctionne via llama.cpp avec accélération Metal. Zéro réseau, entièrement privé. Répond aux questions sur votre entraînement, suggère des corrections de forme, ajuste le volume du jour selon la disponibilité.
+*   **Pro — Prism 1.7B embarqué** — fonctionne via llama.cpp avec accélération Metal. Zéro réseau, entièrement privé. Quand la RAM libre est ≥ 1 600 Mo, utilise Prism Coder 1.7B (sur l'appareil, Metal) ; quand la RAM libre est de 450–799 Mo, utilise SmolLM2-360M (185 Mo, sur l'appareil) ; le coaching ne tombe jamais en panne, il se dégrade simplement progressivement. Répond aux questions sur votre entraînement, suggère des corrections de forme, ajuste le volume du jour selon la disponibilité.
 *   **Elite — cascade Prism 1.7B → 8B → Claude Sonnet** — embarqué en premier ; escalade vers le serveur d'inférence Prism (8B) pour les questions complexes ; bascule sur Claude Sonnet pour un coaching nuancé.
 *   **Fenêtre de contexte** — ForgeMemoryStore injecte les 3 dernières séances, la semaine active du programme, les charges musculaires actuelles et le score de batterie corporelle dans chaque prompt.
 *   **Sortie vocale** — les réponses de l'IA sont vocalisées via ForgeTTSEngine : Synalux cloud TTS (MP3, 24 kHz) avec repli AVSpeechSynthesizer hors ligne. Six tons de coaching : Amical, Calme, Enthousiaste, Précis, Empathique, Plein d'Espoir.
@@ -115,7 +115,8 @@ Coaching conversationnel qui connaît votre état de récupération, votre derni
 
 Application compagnon complète — pas seulement des notifications. Suivi de session indépendant au poignet.
 
-*   **5 onglets Watch** — Tableau de bord (Batterie Corporelle), Carte Musculaire, Journal d'Entraînement, Test de Tap SNC, Paramètres.
+*   **6 onglets Watch** — Tableau de bord (Batterie Corporelle), Carte Musculaire, Journal d'Entraînement, Coach IA Watch, Test de Tap SNC, Paramètres.
+*   **Coach IA Watch** — IA conversationnelle complète au poignet : les requêtes sont relayées à l'iPhone couplé via WatchConnectivity ; l'iPhone exécute la cascade sur l'appareil 1.7B → 360M → cloud et diffuse la réponse en retour ; bascule sur un état clair "iPhone non joignable" en cas d'échec de connexion.
 *   **Session d'entraînement** — enregistrez les séries (exercice, poids, répétitions, RPE) directement depuis le poignet. Minuterie de repos de 90 secondes avec compte à rebours haptique.
 *   **Test de Tap SNC** — test de tap rapide de 10 secondes avant l'entraînement. Mesure les taps/sec ; signale la fatigue neuromusculaire si en dessous de la ligne de base personnelle.
 *   **Métronome Haptique** — haptiques rythmiques durant les circuits AMRAP/EMOM.
@@ -212,6 +213,8 @@ Coaching IA parlé dans votre langue.
 | Application compagnon Apple Watch | — | ✅ | ✅ |
 | Moteur Femme (suivi du cycle) | — | ✅ | ✅ |
 | Coach IA — Prism 1.7B embarqué | — | ✅ | ✅ |
+| SmolLM2-360M sur l'appareil (secours faible RAM) | — | ✅ | ✅ |
+| Coach IA Watch (relais) | — | ✅ | ✅ |
 | Coach IA — serveur Prism 8B | — | — | ✅ |
 | Coach IA — cascade Claude Sonnet | — | — | ✅ |
 | Programmes personnalisés générés par IA | — | — | ✅ |

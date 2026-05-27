@@ -95,7 +95,7 @@ NLP-gestütztes Mahlzeitenprotokoll — beschreiben Sie Lebensmittel in natürli
 Gesprächsbasiertes Coaching, das Ihren Erholungszustand, Ihre letzte Einheit und den Programmkontext kennt.
 
 *   **Gratis-Stufe** — keine KI (nur statische Programmvorlagen).
-*   **Pro — Prism 1.7B auf dem Gerät** — läuft via llama.cpp mit Metal-Beschleunigung. Kein Netzwerk, vollständig privat. Beantwortet Fragen zu Ihrem Training, schlägt Korrekturen der Ausführungstechnik vor, passt das heutige Volumen basierend auf der Bereitschaft an.
+*   **Pro — Prism 1.7B auf dem Gerät** — läuft via llama.cpp mit Metal-Beschleunigung. Kein Netzwerk, vollständig privat. Bei ≥ 1.600 MB freiem RAM wird Prism Coder 1.7B (auf dem Gerät, Metal) verwendet; bei 450–799 MB freiem RAM SmolLM2-360M (185 MB, auf dem Gerät); Coaching fällt nie aus, sondern degradiert nur schrittweise. Beantwortet Fragen zu Ihrem Training, schlägt Korrekturen der Ausführungstechnik vor, passt das heutige Volumen basierend auf der Bereitschaft an.
 *   **Elite — Prism 1.7B → 8B → Claude Sonnet Kaskade** — zuerst auf dem Gerät; eskaliert für komplexe Fragen zum Prism-Inferenzserver (8B); greift für nuanciertes Coaching auf Claude Sonnet zurück.
 *   **Kontextfenster** — ForgeMemoryStore injiziert die letzten 3 Einheiten, die aktive Programmwoche, aktuelle Muskelladungen und den Körperbatterie-Score in jeden Prompt.
 *   **Sprachausgabe** — KI-Antworten werden über ForgeTTSEngine vorgelesen: Synalux Cloud TTS (MP3, 24 kHz) mit AVSpeechSynthesizer-Offline-Fallback. Sechs Coaching-Töne: Freundlich, Ruhig, Begeistert, Präzise, Einfühlsam, Hoffnungsvoll.
@@ -115,7 +115,8 @@ Gesprächsbasiertes Coaching, das Ihren Erholungszustand, Ihre letzte Einheit un
 
 Vollständige Companion-App — nicht nur Benachrichtigungen. Unabhängiges Sitzungs-Tracking am Handgelenk.
 
-*   **5 Watch-Tabs** — Dashboard (Körperbatterie), Muskelkarte, Workout-Logger, ZNS-Tap-Test, Einstellungen.
+*   **6 Watch-Tabs** — Dashboard (Körperbatterie), Muskelkarte, Workout-Logger, Watch KI-Coach, ZNS-Tap-Test, Einstellungen.
+*   **Watch KI-Coach** — vollständige konversationelle KI am Handgelenk: Anfragen werden über WatchConnectivity an das gekoppelte iPhone weitergeleitet; das iPhone führt die Gerätekaskade 1.7B → 360M → Cloud aus und streamt die Antwort zurück; bei fehlendem iPhone-Kontakt wird ein klar verständlicher „iPhone nicht erreichbar"-Zustand angezeigt.
 *   **Trainingseinheit** — Sätze direkt vom Handgelenk protokollieren (Übung, Gewicht, Wiederholungen, RPE). 90-Sekunden-Pausentimer mit haptischem Countdown.
 *   **ZNS-Tap-Test** — 10-Sekunden-Schnelltipp-Test vor dem Training. Misst Taps/Sek.; markiert neuromuskuläre Ermüdung bei Unterschreitung der persönlichen Baseline.
 *   **Haptischer Taktgeber** — rhythmische Haptik während AMRAP/EMOM-Circuits.
@@ -212,6 +213,8 @@ KI-Coaching laut in Ihrer Sprache gesprochen.
 | Apple Watch Companion App | — | ✅ | ✅ |
 | Femme Engine (Zyklus-Tracking) | — | ✅ | ✅ |
 | KI-Coach — Prism 1.7B auf dem Gerät | — | ✅ | ✅ |
+| SmolLM2-360M auf dem Gerät (Fallback bei wenig RAM) | — | ✅ | ✅ |
+| Watch KI-Coach (Relay) | — | ✅ | ✅ |
 | KI-Coach — Prism 8B Server | — | — | ✅ |
 | KI-Coach — Claude Sonnet Kaskade | — | — | ✅ |
 | KI-generierte individuelle Programme | — | — | ✅ |
