@@ -594,7 +594,7 @@ Providers prescribe education materials during encounters — patients see them 
 </details>
 
 
-### 🩺 Clinical Management
+### 🏷️ Clinical Management
 
 <details>
 <summary><strong>💊 Medications & Prescriptions</strong> — Prescribe in seconds, stay DEA-compliant — 12,000 drugs, EPCS, and refill requests built in</summary>
@@ -970,6 +970,17 @@ A high-security collaboration hub — coordinate care in real-time, run HD video
 
 ---
 
+---
+
+<p align="center">
+  <strong>Ready to see it in action?</strong><br><br>
+  <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Start_Free_Trial-43e97b?style=for-the-badge" alt="Start Free Trial"></a>
+  &nbsp;
+  <a href="https://synalux.ai/pricing"><img src="https://img.shields.io/badge/See_Pricing-764ba2?style=for-the-badge" alt="See Pricing"></a>
+  &nbsp;
+  <a href="mailto:sales@synalux.ai"><img src="https://img.shields.io/badge/Talk_to_Sales-blue?style=for-the-badge" alt="Talk to Sales"></a>
+</p>
+
 ## Plans
 
 | | Free | Standard | Advanced | Enterprise |
@@ -1031,60 +1042,9 @@ Routing accuracy — [102-case Prism eval](https://github.com/dcostenco/prism-co
 
 ---
 
-## For developers
-
-This is a monorepo (private engineering repo). Public-facing docs live at
-[github.com/dcostenco/synalux-docs](https://github.com/dcostenco/synalux-docs)
-— including 25+ per-module pages under
-[`docs_source_en/`](https://github.com/dcostenco/synalux-docs/tree/main/docs_source_en).
-
-Top-level layout (private):
-
-| Path | What |
-|---|---|
-| `portal/` | Next.js 15 web app (`synalux.ai`) — 339 test files, 4993 tests — see `portal/README.md` |
-| `prism-coder-ide/` | Electron desktop IDE — see `prism-coder-ide/README.md` |
-| `synalux-vscode/` | VS Code extension for Synalux integration |
-| `supabase/` | Top-level migrations |
-| `docs/` | i18n README translations + internal architecture docs |
-
-Quickstart for the portal:
-```bash
-cd portal
-npm install
-npm run dev    # http://localhost:3000
-```
-
-Full env-var matrix, security docs, and the Verified Shipping discipline are in `portal/README.md` (private repo).
-
----
 
 <details>
-<summary>📚 Detailed docs</summary>
-
-**Public** ([synalux-docs](https://github.com/dcostenco/synalux-docs)) — 60+ pages in `docs_source_en/`. Highlights:
-- [Auth & MFA](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/auth_mfa.md) — sign-in, TOTP/passkey, break-glass override
-- [Voice / TTS Architecture](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/voice_tts_architecture.md) — 5-tier fallback (Inworld → Azure Neural → Kokoro → Web Speech → espeak)
-- [Telehealth (LiveKit)](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/telehealth_livekit.md) — bandwidth-adaptive video
-- [Language Support Matrix](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/language_support.md) — coverage per surface across 25 locales
-- [Prism AAC](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/prism_aac.md), [Mail](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/mail.md), [Drive](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/drive.md), [Calendar](https://github.com/dcostenco/synalux-docs/blob/main/docs_source_en/calendar.md), and [more](https://github.com/dcostenco/synalux-docs/tree/main/docs_source_en).
-
-**Internal** (this private repo, not publicly accessible):
-- `portal/docs/security/` — OAuth token isolation (Pattern C), audit chain integrity, KEK rotation, encryption design
-- `portal/docs/process/verified-shipping.md` — Verified Shipping discipline
-- `portal/docs/process/copy-ui-parity.md` — Rule 11: every feature claim must have a clickable flow
-- `portal/docs/PHASE_3_PORTAL_ENDPOINTS.md` — Synalux portal API endpoints reference
-- `portal/docs/tts-1.5-vs-tts-2.md` — Inworld TTS upgrade rationale
-- `docs/COMPLIANCE_MATRIX.md` — HIPAA / regulatory matrix
-- `docs/feature-gap-assessment.md` — vs CentralReach / SimplePractice / WebPT / Healthie
-- `docs/web_manual.md` — end-user manual
-- `docs/Synalux_Manual_Test_Cases.docx` — manual test plan
-
-The original 2443-line README is preserved in git history. To browse the prior version: `git show HEAD~1:README.md`.
-
-</details>
-
----
+<summary><strong>⚙️ Infrastructure & routing details</strong> — for developers and enterprise IT</summary>
 
 ## Infrastructure
 
@@ -1171,13 +1131,12 @@ Subsidized languages (free Inworld): `ro` `uk` `ru` `de` `ko` `ar`
 | Fax | SRFax / Phaxio / Documo | Healthcare referrals, prior auth |
 | Translation | Offline phrase dictionary (1,261 × 20 langs) | AAC, Watch |
 
+</details>
+
 ## Status
 
-- **Production**: synalux.ai (latest tag: v14.0.0)
-- **Releases**: [github.com/dcostenco/synalux-private/releases](https://github.com/dcostenco/synalux-private/releases)
-- **v14 highlights**: 23 Coming Soon features implemented (inventory, GL, staff performance, form builder, AI replies, TTS, global deploy, compliance resolution); military-grade security audit — 0 CRITICAL findings across 18 new API routes
-- **Current sprint**: practice-type-aware onboarding templates (roles, forms, KPIs, chart of accounts per specialty)
-- **Pre-release audit**: `npm run check:dead-buttons` + Verified Shipping discipline (see `portal/docs/process/verified-shipping.md` in this private repo)
+- **Production**: [synalux.ai](https://synalux.ai) — v14.0.0
+- **v14 highlights**: inventory management, GL double-entry, staff performance, form builder, AI replies, global branch deploy, compliance resolution — military-grade security audit with 0 CRITICAL findings across 18 new API routes
 
 ---
 
