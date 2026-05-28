@@ -1,0 +1,369 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT NAV (210px) ===== -->
+  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+  <rect x="210" y="0" width="1" height="1024" fill="#2D3148"/>
+
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+
+  <text x="16" y="67"  font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Tip Pooling</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Auto-Gratuity</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Cash Management</text>
+
+  <!-- Active: Labor Compliance -->
+  <rect x="0" y="440" width="210" height="36" fill="#1E2240"/>
+  <rect x="0" y="440" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="463" font-size="12" font-weight="700" fill="#F59E0B">Labor Compliance</text>
+
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="535" font-size="12" fill="#8B92A5">Menu Scheduling</text>
+  <text x="16" y="571" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="607" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="643" font-size="12" fill="#8B92A5">Tax Exempt</text>
+  <text x="16" y="679" font-size="12" fill="#8B92A5">Label Printer</text>
+  <text x="16" y="715" font-size="12" fill="#8B92A5">Training Mode</text>
+
+  <!-- ===== MAIN CONTENT AREA ===== -->
+
+  <!-- Page header bar -->
+  <rect x="210" y="0" width="1156" height="56" fill="#1A1D2E"/>
+  <rect x="210" y="56" width="1156" height="1" fill="#2D3148"/>
+  <text x="228" y="30" font-size="20" font-weight="700" fill="#F1F5F9">Labor Compliance</text>
+  <text x="228" y="48" font-size="11" fill="#64748B">CA daily overtime · federal weekly OT · tip credit · minor labor · predictive scheduling</text>
+  <!-- Export button -->
+  <rect x="1232" y="11" width="118" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1291" y="33" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">Export Report</text>
+
+  <!-- ===================================================================== -->
+  <!-- CARD 1 — Overtime Rules (full width)                                   -->
+  <!-- ===================================================================== -->
+  <rect x="218" y="66" width="1130" height="420" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Card header -->
+  <text x="234" y="91" font-size="14" font-weight="700" fill="#F1F5F9">Overtime Compliance</text>
+  <text x="234" y="108" font-size="11" fill="#64748B">Current Pay Period: May 26 – Jun 1, 2026</text>
+  <!-- CA OT ALERT badge -->
+  <rect x="1178" y="74" width="154" height="26" rx="5" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="1255" y="92" font-size="11" font-weight="700" fill="#EF4444" text-anchor="middle">CA OT ALERT — 1 staff</text>
+
+  <!-- Table header row -->
+  <rect x="218" y="120" width="1130" height="30" fill="#13162A"/>
+  <text x="234"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">NAME</text>
+  <text x="354"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">ROLE</text>
+  <text x="454"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">MON</text>
+  <text x="504"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">TUE</text>
+  <text x="554"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">WED</text>
+  <text x="604"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">THU</text>
+  <text x="654"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">FRI</text>
+  <text x="704"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">SAT</text>
+  <text x="760"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">WK HRS</text>
+  <text x="820"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">DAILY OT</text>
+  <text x="900"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">WKLY OT</text>
+  <text x="980"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">EST OT PAY</text>
+  <text x="1100" y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">STATUS</text>
+
+  <!-- Divider -->
+  <rect x="218" y="150" width="1130" height="1" fill="#2D3148"/>
+
+  <!-- ROW 1 — Carlos R. (OT alert) -->
+  <rect x="218" y="151" width="1130" height="44" fill="#1C1215"/>
+  <text x="234"  y="171" font-size="12" font-weight="600" fill="#F1F5F9">Carlos R.</text>
+  <text x="354"  y="171" font-size="11" fill="#94A3B8">Cook</text>
+  <!-- Mon 9.5h OT -->
+  <rect x="446" y="156" width="48" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="470"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9.5h ⚠</text>
+  <!-- Tue 8h -->
+  <text x="516"  y="171" font-size="11" fill="#94A3B8">8h</text>
+  <!-- Wed 9h OT -->
+  <rect x="546" y="156" width="44" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="568"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9h ⚠</text>
+  <!-- Thu 8h -->
+  <text x="616"  y="171" font-size="11" fill="#94A3B8">8h</text>
+  <!-- Fri 9.5h OT -->
+  <rect x="646" y="156" width="48" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="670"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9.5h ⚠</text>
+  <!-- Sat — -->
+  <text x="716"  y="171" font-size="11" fill="#64748B">—</text>
+  <!-- Wk hours -->
+  <text x="760"  y="171" font-size="12" font-weight="700" fill="#EF4444">44h</text>
+  <!-- Daily OT -->
+  <text x="820"  y="171" font-size="12" font-weight="700" fill="#EF4444">3.5h</text>
+  <!-- Wkly OT -->
+  <text x="900"  y="171" font-size="12" font-weight="700" fill="#F59E0B">4h</text>
+  <!-- Est OT Pay -->
+  <text x="980"  y="171" font-size="12" font-weight="700" fill="#EF4444">+$63.00</text>
+  <!-- Status badge -->
+  <rect x="1090" y="158" width="108" height="22" rx="4" fill="#EF4444"/>
+  <text x="1144" y="173" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">CA OT ALERT</text>
+  <!-- Row 2 note -->
+  <text x="234"  y="189" font-size="10" fill="#64748B">Daily OT (§510): 0.5h×1.5 on Mon/Wed/Fri · Weekly OT: 4h×1.5 over 40h federal threshold</text>
+
+  <!-- Divider -->
+  <rect x="218" y="196" width="1130" height="1" fill="#2D3148"/>
+
+  <!-- ROW 2 — Sarah M. -->
+  <rect x="218" y="197" width="1130" height="36" fill="#1A1D2E"/>
+  <text x="234"  y="220" font-size="12" font-weight="600" fill="#F1F5F9">Sarah M.</text>
+  <text x="354"  y="220" font-size="11" fill="#94A3B8">Server</text>
+  <text x="466"  y="220" font-size="11" fill="#94A3B8">6h</text>
+  <text x="516"  y="220" font-size="11" fill="#94A3B8">6h</text>
+  <text x="566"  y="220" font-size="11" fill="#64748B">—</text>
+  <text x="616"  y="220" font-size="11" fill="#94A3B8">6h</text>
+  <text x="666"  y="220" font-size="11" fill="#94A3B8">6h</text>
+  <text x="716"  y="220" font-size="11" fill="#94A3B8">6h</text>
+  <text x="760"  y="220" font-size="12" fill="#94A3B8">30h</text>
+  <text x="820"  y="220" font-size="11" fill="#64748B">—</text>
+  <text x="900"  y="220" font-size="11" fill="#64748B">—</text>
+  <text x="980"  y="220" font-size="11" fill="#64748B">—</text>
+  <rect x="1090" y="207" width="84" height="22" rx="4" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
+  <text x="1132" y="222" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">No OT</text>
+
+  <!-- Divider -->
+  <rect x="218" y="233" width="1130" height="1" fill="#2D3148"/>
+
+  <!-- ROW 3 — John D. -->
+  <rect x="218" y="234" width="1130" height="36" fill="#1A1D2E"/>
+  <text x="234"  y="257" font-size="12" font-weight="600" fill="#F1F5F9">John D.</text>
+  <text x="354"  y="257" font-size="11" fill="#94A3B8">Server</text>
+  <text x="466"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="516"  y="257" font-size="11" fill="#94A3B8">8h</text>
+  <text x="566"  y="257" font-size="11" fill="#94A3B8">8h</text>
+  <text x="616"  y="257" font-size="11" fill="#94A3B8">8h</text>
+  <text x="666"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="716"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="760"  y="257" font-size="12" fill="#94A3B8">24h</text>
+  <text x="820"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="900"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="980"  y="257" font-size="11" fill="#64748B">—</text>
+  <rect x="1090" y="244" width="84" height="22" rx="4" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
+  <text x="1132" y="259" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">No OT</text>
+
+  <!-- Divider -->
+  <rect x="218" y="270" width="1130" height="1" fill="#2D3148"/>
+
+  <!-- ROW 4 — Ana L. -->
+  <rect x="218" y="271" width="1130" height="36" fill="#1A1D2E"/>
+  <text x="234"  y="294" font-size="12" font-weight="600" fill="#F1F5F9">Ana L.</text>
+  <text x="354"  y="294" font-size="11" fill="#94A3B8">Cashier</text>
+  <text x="466"  y="294" font-size="11" fill="#94A3B8">5h</text>
+  <text x="516"  y="294" font-size="11" fill="#94A3B8">5h</text>
+  <text x="566"  y="294" font-size="11" fill="#94A3B8">5h</text>
+  <text x="616"  y="294" font-size="11" fill="#94A3B8">5h</text>
+  <text x="666"  y="294" font-size="11" fill="#94A3B8">5h</text>
+  <text x="716"  y="294" font-size="11" fill="#64748B">—</text>
+  <text x="760"  y="294" font-size="12" fill="#94A3B8">25h</text>
+  <text x="820"  y="294" font-size="11" fill="#64748B">—</text>
+  <text x="900"  y="294" font-size="11" fill="#64748B">—</text>
+  <text x="980"  y="294" font-size="11" fill="#64748B">—</text>
+  <rect x="1090" y="281" width="84" height="22" rx="4" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
+  <text x="1132" y="296" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">No OT</text>
+
+  <!-- Divider -->
+  <rect x="218" y="307" width="1130" height="1" fill="#2D3148"/>
+
+  <!-- ROW 5 — Dan O. -->
+  <rect x="218" y="308" width="1130" height="36" fill="#1A1D2E"/>
+  <text x="234"  y="331" font-size="12" font-weight="600" fill="#F1F5F9">Dan O.</text>
+  <text x="354"  y="331" font-size="11" fill="#94A3B8">Manager</text>
+  <text x="466"  y="331" font-size="11" fill="#94A3B8">8h</text>
+  <text x="516"  y="331" font-size="11" fill="#94A3B8">8h</text>
+  <text x="566"  y="331" font-size="11" fill="#94A3B8">8h</text>
+  <text x="616"  y="331" font-size="11" fill="#94A3B8">8h</text>
+  <text x="666"  y="331" font-size="11" fill="#94A3B8">8h</text>
+  <text x="716"  y="331" font-size="11" fill="#64748B">—</text>
+  <text x="760"  y="331" font-size="12" font-weight="700" fill="#F59E0B">40h</text>
+  <text x="820"  y="331" font-size="11" fill="#64748B">—</text>
+  <text x="900"  y="331" font-size="11" fill="#64748B">—</text>
+  <text x="980"  y="331" font-size="11" fill="#64748B">—</text>
+  <rect x="1090" y="318" width="158" height="22" rx="4" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1169" y="333" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="middle">At limit — any shift = OT</text>
+
+  <!-- Divider -->
+  <rect x="218" y="344" width="1130" height="1" fill="#2D3148"/>
+
+  <!-- Rules legend -->
+  <rect x="218" y="345" width="1130" height="78" fill="#13162A" rx="0"/>
+  <text x="234" y="364" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="0.5">OT RULES LEGEND</text>
+  <rect x="234" y="370" width="320" height="44" rx="5" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
+  <text x="246" y="386" font-size="10" font-weight="700" fill="#EF4444">🔴 CA Daily OT — Labor Code §510</text>
+  <text x="246" y="400" font-size="10" fill="#94A3B8">&gt;8h/day = 1.5×   |   &gt;12h/day = 2×</text>
+  <text x="246" y="413" font-size="10" fill="#64748B">7th consecutive day: first 8h = 1.5×, after = 2×</text>
+
+  <rect x="566" y="370" width="300" height="44" rx="5" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="578" y="386" font-size="10" font-weight="700" fill="#F59E0B">🟡 Federal Weekly OT — FLSA</text>
+  <text x="578" y="400" font-size="10" fill="#94A3B8">&gt;40h/week = 1.5×   |   No daily OT at federal level</text>
+  <text x="578" y="413" font-size="10" fill="#64748B">CA daily OT applies in addition to federal weekly OT</text>
+
+  <rect x="878" y="370" width="452" height="44" rx="5" fill="#131A1E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="890" y="386" font-size="10" font-weight="700" fill="#8B5CF6">📋 Export Schema — ADP / Gusto CA Payroll Compliance</text>
+  <text x="890" y="400" font-size="10" fill="#94A3B8">pos_shifts.daily_hours decimal[]  ← per-day array required for CA daily OT calc</text>
+  <text x="890" y="413" font-size="10" fill="#64748B">Columns: [mon, tue, wed, thu, fri, sat, sun] — zero-padded for days off</text>
+
+  <!-- Card 1 bottom border (rounds bottom of card at y=486) -->
+  <!-- The card rect already handles this -->
+
+  <!-- ===================================================================== -->
+  <!-- CARD 2 — Tip Credit (left half)                                        -->
+  <!-- ===================================================================== -->
+  <rect x="218" y="498" width="553" height="248" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="234" y="522" font-size="14" font-weight="700" fill="#F1F5F9">Tip Credit Compliance</text>
+  <text x="234" y="538" font-size="11" fill="#64748B">FLSA §3(m) — Tipped Minimum Wage</text>
+
+  <!-- State row -->
+  <rect x="234" y="548" width="520" height="1" fill="#2D3148"/>
+  <text x="234" y="565" font-size="11" fill="#94A3B8">Venue State:</text>
+  <rect x="318" y="552" width="100" height="22" rx="4" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="368" y="567" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="middle">California</text>
+
+  <!-- Prohibited banner -->
+  <rect x="234" y="580" width="520" height="38" rx="6" fill="#2D1515" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="254" y="596" font-size="12" font-weight="700" fill="#EF4444">❌  PROHIBITED IN CA — Full minimum wage required</text>
+  <text x="254" y="611" font-size="11" fill="#FCA5A5">CA Labor Code §351: All tips belong to the employee. Tip credit = $0.</text>
+
+  <!-- Min wage -->
+  <text x="234" y="634" font-size="11" fill="#94A3B8">CA Minimum Wage (2026):</text>
+  <text x="390" y="634" font-size="12" font-weight="700" fill="#10B981">$16.50 / hr (base, no credit allowed)</text>
+
+  <!-- Block badge -->
+  <rect x="234" y="642" width="342" height="24" rx="5" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
+  <text x="405" y="658" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Tip credit clock-in blocked for CA staff</text>
+
+  <!-- States blocking table -->
+  <text x="234" y="681" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">STATES PROHIBITING TIP CREDIT</text>
+  <!-- 8 state chips -->
+  <rect x="234" y="686" width="36" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="252" y="700" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">CA</text>
+  <rect x="278" y="686" width="36" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="296" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">MN</text>
+  <rect x="322" y="686" width="34" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="339" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">OR</text>
+  <rect x="364" y="686" width="36" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="382" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">WA</text>
+  <rect x="408" y="686" width="34" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="425" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">NV</text>
+  <rect x="450" y="686" width="32" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="466" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">AK</text>
+  <rect x="490" y="686" width="34" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="507" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">MT</text>
+  <rect x="532" y="686" width="30" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="547" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">HI</text>
+
+  <text x="234" y="724" font-size="10" fill="#64748B">Federal tipped minimum: $2.13/hr — allowed in 42 states</text>
+  <text x="234" y="738" font-size="10" fill="#F97316">⚠ Alert: scheduling tipped staff below $16.50 base → warning fired at clock-in</text>
+
+  <!-- ===================================================================== -->
+  <!-- CARD 3 — Minor Labor (right half)                                      -->
+  <!-- ===================================================================== -->
+  <rect x="783" y="498" width="565" height="248" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="799" y="522" font-size="14" font-weight="700" fill="#F1F5F9">Minor Labor Restrictions</text>
+  <text x="799" y="538" font-size="11" fill="#64748B">FLSA §3(l) — Child Labor Provisions</text>
+
+  <!-- Minors count badge -->
+  <rect x="1231" y="505" width="100" height="26" rx="5" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="1281" y="522" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="middle">2 minors on clock</text>
+
+  <rect x="799" y="548" width="532" height="1" fill="#2D3148"/>
+
+  <!-- Jamie L. row -->
+  <rect x="799" y="554" width="532" height="60" rx="5" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="813" y="573" font-size="12" font-weight="700" fill="#F1F5F9">Jamie L.</text>
+  <text x="877" y="573" font-size="10" fill="#94A3B8">Age 17</text>
+  <text x="924" y="573" font-size="10" fill="#64748B">Clock-in: 3:30 PM</text>
+  <text x="1070" y="573" font-size="10" fill="#64748B">School day — max 3h</text>
+  <rect x="813" y="579" width="504" height="1" fill="#2D3148" opacity="0.4"/>
+  <text x="813" y="597" font-size="10" fill="#64748B">Elapsed:</text>
+  <!-- Progress bar background -->
+  <rect x="860" y="588" width="340" height="12" rx="6" fill="#13162A"/>
+  <!-- Progress fill ~92% of 3h = 2h45min -->
+  <rect x="860" y="588" width="313" height="12" rx="6" fill="#F59E0B"/>
+  <text x="1208" y="599" font-size="10" font-weight="700" fill="#F59E0B">2h 45min</text>
+  <text x="813" y="609" font-size="10" font-weight="700" fill="#F59E0B">⚠ Approaching 3h school-day limit — 15 min remaining</text>
+
+  <!-- Kai M. row -->
+  <rect x="799" y="622" width="532" height="50" rx="5" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
+  <text x="813" y="641" font-size="12" font-weight="700" fill="#F1F5F9">Kai M.</text>
+  <text x="857" y="641" font-size="10" fill="#94A3B8">Age 16</text>
+  <text x="903" y="641" font-size="10" fill="#64748B">Clock-in: 4:00 PM</text>
+  <text x="1046" y="641" font-size="10" fill="#64748B">No school — max 8h</text>
+  <rect x="813" y="647" width="504" height="1" fill="#2D3148" opacity="0.4"/>
+  <text x="813" y="663" font-size="10" fill="#64748B">Elapsed:</text>
+  <rect x="860" y="654" width="340" height="12" rx="6" fill="#13162A"/>
+  <!-- 4h / 8h = 50% -->
+  <rect x="860" y="654" width="170" height="12" rx="6" fill="#10B981"/>
+  <text x="1208" y="665" font-size="10" font-weight="700" fill="#10B981">4h in — OK</text>
+
+  <!-- Equipment block -->
+  <rect x="799" y="680" width="532" height="1" fill="#2D3148"/>
+  <text x="799" y="697" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">EQUIPMENT AUTO-BLOCKED FOR MINORS</text>
+  <rect x="799" y="702" width="90" height="22" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="844" y="717" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Slicer</text>
+  <rect x="897" y="702" width="100" height="22" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="947" y="717" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Deep Fryer</text>
+  <rect x="1005" y="702" width="144" height="22" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="1077" y="717" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Commercial Mixer</text>
+
+  <!-- Toggle -->
+  <text x="799" y="737" font-size="10" fill="#94A3B8">Block clock-in for minors during school hours</text>
+  <!-- Toggle ON -->
+  <rect x="1094" y="727" width="44" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1128" cy="737" r="8" fill="#FFF"/>
+  <text x="1148" y="740" font-size="10" font-weight="700" fill="#10B981">ON</text>
+
+  <!-- ===================================================================== -->
+  <!-- CARD 4 — Predictive Scheduling (full width)                            -->
+  <!-- ===================================================================== -->
+  <rect x="218" y="758" width="1130" height="208" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="234" y="782" font-size="14" font-weight="700" fill="#F1F5F9">Fair Workweek Compliance</text>
+  <text x="234" y="798" font-size="11" fill="#64748B">Predictive Scheduling — Advance notice requirements by jurisdiction</text>
+
+  <!-- Jurisdiction -->
+  <text x="234" y="820" font-size="11" fill="#94A3B8">Jurisdiction (auto-detected):</text>
+  <rect x="388" y="808" width="120" height="24" rx="5" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="448" y="824" font-size="12" font-weight="700" fill="#8B5CF6" text-anchor="middle">Chicago, IL</text>
+
+  <text x="520" y="820" font-size="11" fill="#64748B">Requirement:</text>
+  <text x="604" y="820" font-size="11" font-weight="700" fill="#F1F5F9">Schedules must be posted 7+ days in advance</text>
+
+  <!-- Status warning -->
+  <rect x="234" y="832" width="1096" height="52" rx="6" fill="#1C1A0A" stroke="#F97316" stroke-width="1.5"/>
+  <text x="252" y="852" font-size="13" font-weight="700" fill="#F97316">⚠  Week of Jun 2 not published</text>
+  <text x="252" y="870" font-size="11" fill="#94A3B8">5 days until posting required (deadline: May 26) — premium pay applies for any last-minute changes after publication</text>
+  <rect x="1125" y="839" width="190" height="38" rx="5" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
+  <text x="1220" y="855" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Penalty: Premium Pay</text>
+  <text x="1220" y="870" font-size="10" fill="#94A3B8" text-anchor="middle">for late schedule changes</text>
+
+  <!-- Info row -->
+  <rect x="234" y="892" width="1096" height="1" fill="#2D3148"/>
+
+  <text x="234" y="912" font-size="11" fill="#64748B">Cities with predictive scheduling laws: Chicago · NYC · Seattle · Philadelphia · San Francisco · Emeryville · Los Angeles (hospitality)</text>
+
+  <!-- Action buttons -->
+  <rect x="234" y="926" width="220" height="36" rx="7" fill="#F59E0B"/>
+  <text x="344" y="949" font-size="13" font-weight="700" fill="#0F1117" text-anchor="middle">Publish Jun 2 Schedule</text>
+
+  <text x="468" y="948" font-size="12" fill="#8B5CF6" text-decoration="underline">View predictive scheduling laws by city →</text>
+
+  <!-- ===================================================================== -->
+  <!-- DB SCHEMA FOOTER                                                        -->
+  <!-- ===================================================================== -->
+  <rect x="218" y="974" width="1130" height="46" rx="6" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="990" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">DB SCHEMA</text>
+  <text x="234" y="1005" font-size="10" fill="#8B5CF6" font-family="monospace">pos_shifts.daily_hours decimal[]</text>
+  <text x="440" y="1005" font-size="10" fill="#64748B" font-family="monospace">· pos_staff.dob date · pos_staff.is_minor boolean</text>
+  <text x="234" y="1017" font-size="10" fill="#8B5CF6" font-family="monospace">pos_labor_config(venue_id, jurisdiction, tip_credit_allowed boolean, predictive_scheduling_days smallint, minor_max_school_day_hours smallint)</text>
+
+</svg>

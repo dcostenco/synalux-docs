@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+  <!-- Overlay -->
+  <rect width="1366" height="1024" fill="#000000" opacity="0.55"/>
+
+  <!-- Modal card -->
+  <rect x="60" y="30" width="1246" height="964" rx="20" fill="#13162A"/>
+  <rect x="60" y="30" width="1246" height="964" rx="20" fill="none" stroke="#2D3050" stroke-width="1"/>
+
+  <!-- Header -->
+  <rect x="60" y="30" width="1246" height="68" rx="20" fill="#1A1D2E"/>
+  <rect x="60" y="80" width="1246" height="18" fill="#1A1D2E"/>
+  <text x="100" y="65" fill="#E2E8F0" font-size="22" font-weight="700">Split Check — Table 3</text>
+  <text x="100" y="88" fill="#94A3B8" font-size="14">5 guests · $124.00 total · 78 min</text>
+
+  <!-- Split mode selector -->
+  <rect x="820" y="42" width="280" height="44" rx="10" fill="#1E2235"/>
+  <rect x="822" y="44" width="88" height="40" rx="8" fill="#F59E0B"/>
+  <text x="866" y="69" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">By Seat</text>
+  <text x="966" y="69" fill="#64748B" font-size="13" text-anchor="middle">By Item</text>
+  <text x="1058" y="69" fill="#64748B" font-size="13" text-anchor="middle">Even Split</text>
+
+  <!-- Close -->
+  <rect x="1258" y="42" width="38" height="38" rx="8" fill="#1E2235"/>
+  <text x="1277" y="65" fill="#64748B" font-size="20" text-anchor="middle">✕</text>
+
+  <!-- ===== BY SEAT VIEW ===== -->
+  <!-- Original order on left -->
+  <rect x="80" y="108" width="380" height="860" rx="12" fill="#0F1117"/>
+  <text x="100" y="140" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">ORIGINAL ORDER</text>
+
+  <!-- All items list -->
+  <!-- Seat 1 header -->
+  <rect x="90" y="148" width="360" height="24" rx="4" fill="#1E2235"/>
+  <circle cx="110" cy="160" r="10" fill="#F59E0B"/>
+  <text x="110" y="164" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">1</text>
+  <text x="128" y="164" fill="#F59E0B" font-size="12" font-weight="700">Seat 1</text>
+
+  <text x="102" y="192" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="192" fill="#E2E8F0" font-size="13">Classic Burger</text>
+  <text x="436" y="192" fill="#E2E8F0" font-size="13" text-anchor="end">$12.00</text>
+  <text x="102" y="210" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="210" fill="#E2E8F0" font-size="13">Draft Beer</text>
+  <text x="436" y="210" fill="#E2E8F0" font-size="13" text-anchor="end">$6.00</text>
+  <text x="436" y="228" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">$18.00</text>
+
+  <!-- Seat 2 header -->
+  <rect x="90" y="240" width="360" height="24" rx="4" fill="#1E2235"/>
+  <circle cx="110" cy="252" r="10" fill="#3B82F6"/>
+  <text x="110" y="256" fill="white" font-size="10" font-weight="700" text-anchor="middle">2</text>
+  <text x="128" y="256" fill="#3B82F6" font-size="12" font-weight="700">Seat 2</text>
+
+  <text x="102" y="284" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="284" fill="#E2E8F0" font-size="13">Fish &amp; Chips</text>
+  <text x="436" y="284" fill="#E2E8F0" font-size="13" text-anchor="end">$16.00</text>
+  <text x="102" y="302" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="302" fill="#E2E8F0" font-size="13">Lemonade</text>
+  <text x="436" y="302" fill="#E2E8F0" font-size="13" text-anchor="end">$3.50</text>
+  <text x="436" y="320" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">$19.50</text>
+
+  <!-- Seat 3 header -->
+  <rect x="90" y="332" width="360" height="24" rx="4" fill="#1E2235"/>
+  <circle cx="110" cy="344" r="10" fill="#22C55E"/>
+  <text x="110" y="348" fill="white" font-size="10" font-weight="700" text-anchor="middle">3</text>
+  <text x="128" y="348" fill="#22C55E" font-size="12" font-weight="700">Seat 3</text>
+
+  <text x="102" y="376" fill="#94A3B8" font-size="12">2×</text>
+  <text x="120" y="376" fill="#E2E8F0" font-size="13">BBQ Ribs</text>
+  <text x="436" y="376" fill="#E2E8F0" font-size="13" text-anchor="end">$48.00</text>
+  <text x="102" y="394" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="394" fill="#E2E8F0" font-size="13">Draft Beer</text>
+  <text x="436" y="394" fill="#E2E8F0" font-size="13" text-anchor="end">$6.00</text>
+  <text x="436" y="412" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">$54.00</text>
+
+  <!-- Seat 4 -->
+  <rect x="90" y="424" width="360" height="24" rx="4" fill="#1E2235"/>
+  <circle cx="110" cy="436" r="10" fill="#A855F7"/>
+  <text x="110" y="440" fill="white" font-size="10" font-weight="700" text-anchor="middle">4</text>
+  <text x="128" y="440" fill="#A855F7" font-size="12" font-weight="700">Seat 4</text>
+
+  <text x="102" y="468" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="468" fill="#E2E8F0" font-size="13">Caesar Salad</text>
+  <text x="436" y="468" fill="#E2E8F0" font-size="13" text-anchor="end">$8.00</text>
+  <text x="102" y="486" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="486" fill="#E2E8F0" font-size="13">Soft Drink</text>
+  <text x="436" y="486" fill="#E2E8F0" font-size="13" text-anchor="end">$3.00</text>
+  <text x="436" y="504" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">$11.00</text>
+
+  <!-- Seat 5 -->
+  <rect x="90" y="516" width="360" height="24" rx="4" fill="#1E2235"/>
+  <circle cx="110" cy="528" r="10" fill="#F97316"/>
+  <text x="110" y="532" fill="white" font-size="10" font-weight="700" text-anchor="middle">5</text>
+  <text x="128" y="528" fill="#F97316" font-size="12" font-weight="700">Seat 5</text>
+
+  <text x="102" y="560" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="560" fill="#E2E8F0" font-size="13">Vegan Burger</text>
+  <text x="436" y="560" fill="#E2E8F0" font-size="13" text-anchor="end">$14.00</text>
+  <text x="102" y="578" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="578" fill="#E2E8F0" font-size="13">Lemonade</text>
+  <text x="436" y="578" fill="#E2E8F0" font-size="13" text-anchor="end">$3.50</text>
+
+  <!-- Shared items (fractional) -->
+  <rect x="90" y="598" width="360" height="24" rx="4" fill="#2D2000"/>
+  <text x="102" y="614" fill="#F59E0B" font-size="12" font-weight="700">Shared Items (split equally)</text>
+
+  <text x="102" y="642" fill="#94A3B8" font-size="12">1×</text>
+  <text x="120" y="642" fill="#E2E8F0" font-size="13">Nachos (shared)</text>
+  <text x="436" y="642" fill="#E2E8F0" font-size="13" text-anchor="end">$12.00</text>
+  <text x="120" y="660" fill="#64748B" font-size="11">→ Split 5 ways: $2.40 each</text>
+
+  <!-- Grand total -->
+  <rect x="90" y="692" width="360" height="1" fill="#2D3050"/>
+  <text x="102" y="720" fill="#E2E8F0" font-size="16" font-weight="700">Grand Total</text>
+  <text x="436" y="720" fill="#F59E0B" font-size="20" font-weight="700" text-anchor="end">$124.00</text>
+  <text x="102" y="742" fill="#94A3B8" font-size="13">Before tax · Before tip</text>
+
+  <!-- ===== SPLIT CHECKS PANELS (3 per row) ===== -->
+  <!-- Check 1 — Seat 1 -->
+  <rect x="480" y="108" width="280" height="340" rx="12" fill="#0F1117" stroke="#F59E0B" stroke-width="2"/>
+  <!-- Check header -->
+  <rect x="480" y="108" width="280" height="52" rx="12" fill="#2D1A00"/>
+  <rect x="480" y="140" width="280" height="20" fill="#2D1A00"/>
+  <circle cx="506" cy="134" r="18" fill="#F59E0B"/>
+  <text x="506" y="139" fill="#0F1117" font-size="14" font-weight="700" text-anchor="middle">1</text>
+  <text x="534" y="128" fill="#F59E0B" font-size="16" font-weight="700">Check 1 — Seat 1</text>
+  <text x="534" y="146" fill="#94A3B8" font-size="12">Guest: Maria G.</text>
+
+  <text x="500" y="184" fill="#E2E8F0" font-size="13">1× Classic Burger</text>
+  <text x="748" y="184" fill="#E2E8F0" font-size="13" text-anchor="end">$12.00</text>
+  <text x="500" y="204" fill="#E2E8F0" font-size="13">1× Draft Beer</text>
+  <text x="748" y="204" fill="#E2E8F0" font-size="13" text-anchor="end">$6.00</text>
+  <text x="500" y="224" fill="#64748B" font-size="12">¹⁄₅ Nachos (shared)</text>
+  <text x="748" y="224" fill="#64748B" font-size="12" text-anchor="end">$2.40</text>
+  <rect x="496" y="232" width="260" height="1" fill="#2D3050"/>
+  <text x="500" y="252" fill="#94A3B8" font-size="12">Subtotal</text>
+  <text x="748" y="252" fill="#E2E8F0" font-size="12" text-anchor="end">$20.40</text>
+  <text x="500" y="270" fill="#94A3B8" font-size="12">Tax</text>
+  <text x="748" y="270" fill="#E2E8F0" font-size="12" text-anchor="end">$1.73</text>
+  <text x="500" y="290" fill="#94A3B8" font-size="12">Tip (18%)</text>
+  <text x="748" y="290" fill="#E2E8F0" font-size="12" text-anchor="end">$3.67</text>
+  <rect x="496" y="298" width="260" height="1" fill="#2D3050"/>
+  <text x="500" y="320" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
+  <text x="748" y="320" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="end">$25.80</text>
+
+  <!-- Payment status: Unpaid -->
+  <rect x="496" y="332" width="260" height="36" rx="8" fill="#22C55E"/>
+  <text x="626" y="355" fill="white" font-size="14" font-weight="700" text-anchor="middle">💳 Charge $25.80</text>
+
+  <text x="626" y="394" fill="#22C55E" font-size="12" text-anchor="middle">✓ Paid — Card</text>
+  <rect x="496" y="402" width="260" height="30" rx="6" fill="#1A3320"/>
+  <text x="626" y="421" fill="#22C55E" font-size="12" text-anchor="middle">Receipt: SMS ✓  ·  Print ›</text>
+
+  <!-- Check 2 — Seat 2 -->
+  <rect x="778" y="108" width="280" height="340" rx="12" fill="#0F1117" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="778" y="108" width="280" height="52" rx="12" fill="#10202D"/>
+  <rect x="778" y="140" width="280" height="20" fill="#10202D"/>
+  <circle cx="804" cy="134" r="18" fill="#3B82F6"/>
+  <text x="804" y="139" fill="white" font-size="14" font-weight="700" text-anchor="middle">2</text>
+  <text x="832" y="128" fill="#3B82F6" font-size="16" font-weight="700">Check 2 — Seat 2</text>
+  <text x="832" y="146" fill="#94A3B8" font-size="12">Guest: Carlos R.</text>
+
+  <text x="798" y="184" fill="#E2E8F0" font-size="13">1× Fish &amp; Chips</text>
+  <text x="1046" y="184" fill="#E2E8F0" font-size="13" text-anchor="end">$16.00</text>
+  <text x="798" y="204" fill="#E2E8F0" font-size="13">1× Lemonade</text>
+  <text x="1046" y="204" fill="#E2E8F0" font-size="13" text-anchor="end">$3.50</text>
+  <text x="798" y="224" fill="#64748B" font-size="12">¹⁄₅ Nachos (shared)</text>
+  <text x="1046" y="224" fill="#64748B" font-size="12" text-anchor="end">$2.40</text>
+  <rect x="794" y="232" width="260" height="1" fill="#2D3050"/>
+  <text x="798" y="252" fill="#94A3B8" font-size="12">Subtotal</text>
+  <text x="1046" y="252" fill="#E2E8F0" font-size="12" text-anchor="end">$21.90</text>
+  <text x="798" y="270" fill="#94A3B8" font-size="12">Tax</text>
+  <text x="1046" y="270" fill="#E2E8F0" font-size="12" text-anchor="end">$1.86</text>
+  <text x="798" y="290" fill="#94A3B8" font-size="12">Tip (20%)</text>
+  <text x="1046" y="290" fill="#E2E8F0" font-size="12" text-anchor="end">$4.38</text>
+  <rect x="794" y="298" width="260" height="1" fill="#2D3050"/>
+  <text x="798" y="320" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
+  <text x="1046" y="320" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="end">$28.14</text>
+
+  <rect x="794" y="332" width="260" height="36" rx="8" fill="#22C55E"/>
+  <text x="924" y="355" fill="white" font-size="14" font-weight="700" text-anchor="middle">💳 Charge $28.14</text>
+
+  <!-- Check 3 — Seat 3 -->
+  <rect x="1076" y="108" width="270" height="340" rx="12" fill="#0F1117" stroke="#22C55E" stroke-width="2"/>
+  <rect x="1076" y="108" width="270" height="52" rx="12" fill="#0D2B12"/>
+  <rect x="1076" y="140" width="270" height="20" fill="#0D2B12"/>
+  <circle cx="1100" cy="134" r="18" fill="#22C55E"/>
+  <text x="1100" y="139" fill="white" font-size="14" font-weight="700" text-anchor="middle">3</text>
+  <text x="1128" y="128" fill="#22C55E" font-size="16" font-weight="700">Check 3 — Seat 3</text>
+  <text x="1128" y="146" fill="#94A3B8" font-size="12">Guest: Sam + partner</text>
+
+  <text x="1094" y="184" fill="#E2E8F0" font-size="13">2× BBQ Ribs</text>
+  <text x="1338" y="184" fill="#E2E8F0" font-size="13" text-anchor="end">$48.00</text>
+  <text x="1094" y="204" fill="#E2E8F0" font-size="13">1× Draft Beer</text>
+  <text x="1338" y="204" fill="#E2E8F0" font-size="13" text-anchor="end">$6.00</text>
+  <text x="1094" y="224" fill="#64748B" font-size="12">¹⁄₅ Nachos (shared)</text>
+  <text x="1338" y="224" fill="#64748B" font-size="12" text-anchor="end">$2.40</text>
+  <rect x="1090" y="232" width="252" height="1" fill="#2D3050"/>
+  <text x="1094" y="252" fill="#94A3B8" font-size="12">Subtotal</text>
+  <text x="1338" y="252" fill="#E2E8F0" font-size="12" text-anchor="end">$56.40</text>
+  <text x="1094" y="270" fill="#94A3B8" font-size="12">Tax</text>
+  <text x="1338" y="270" fill="#E2E8F0" font-size="12" text-anchor="end">$4.79</text>
+  <text x="1094" y="290" fill="#94A3B8" font-size="12">Tip (18%)</text>
+  <text x="1338" y="290" fill="#E2E8F0" font-size="12" text-anchor="end">$10.15</text>
+  <rect x="1090" y="298" width="252" height="1" fill="#2D3050"/>
+  <text x="1094" y="320" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
+  <text x="1338" y="320" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="end">$71.34</text>
+
+  <rect x="1090" y="332" width="252" height="36" rx="8" fill="#22C55E"/>
+  <text x="1216" y="355" fill="white" font-size="14" font-weight="700" text-anchor="middle">💳 Charge $71.34</text>
+
+  <!-- ===== Second row: Seat 4, 5, + Summary ===== -->
+  <!-- Check 4 — Seat 4 -->
+  <rect x="480" y="468" width="280" height="310" rx="12" fill="#0F1117" stroke="#A855F7" stroke-width="2"/>
+  <rect x="480" y="468" width="280" height="52" rx="12" fill="#1A0D2B"/>
+  <rect x="480" y="500" width="280" height="20" fill="#1A0D2B"/>
+  <circle cx="506" cy="494" r="18" fill="#A855F7"/>
+  <text x="506" y="499" fill="white" font-size="14" font-weight="700" text-anchor="middle">4</text>
+  <text x="534" y="488" fill="#A855F7" font-size="16" font-weight="700">Check 4 — Seat 4</text>
+  <text x="534" y="506" fill="#94A3B8" font-size="12">Guest: Lisa T.</text>
+  <text x="500" y="542" fill="#E2E8F0" font-size="13">1× Caesar Salad</text>
+  <text x="748" y="542" fill="#E2E8F0" font-size="13" text-anchor="end">$8.00</text>
+  <text x="500" y="562" fill="#E2E8F0" font-size="13">1× Soft Drink</text>
+  <text x="748" y="562" fill="#E2E8F0" font-size="13" text-anchor="end">$3.00</text>
+  <text x="500" y="582" fill="#64748B" font-size="12">¹⁄₅ Nachos</text>
+  <text x="748" y="582" fill="#64748B" font-size="12" text-anchor="end">$2.40</text>
+  <rect x="496" y="590" width="260" height="1" fill="#2D3050"/>
+  <text x="500" y="620" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
+  <text x="748" y="620" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="end">$17.47</text>
+  <rect x="496" y="632" width="260" height="36" rx="8" fill="#22C55E"/>
+  <text x="626" y="655" fill="white" font-size="14" font-weight="700" text-anchor="middle">💳 Charge $17.47</text>
+
+  <!-- Check 5 — Seat 5 -->
+  <rect x="778" y="468" width="280" height="310" rx="12" fill="#0F1117" stroke="#F97316" stroke-width="2"/>
+  <rect x="778" y="468" width="280" height="52" rx="12" fill="#2D1400"/>
+  <rect x="778" y="500" width="280" height="20" fill="#2D1400"/>
+  <circle cx="804" cy="494" r="18" fill="#F97316"/>
+  <text x="804" y="499" fill="white" font-size="14" font-weight="700" text-anchor="middle">5</text>
+  <text x="832" y="488" fill="#F97316" font-size="16" font-weight="700">Check 5 — Seat 5</text>
+  <text x="832" y="506" fill="#94A3B8" font-size="12">Guest: Ahmed K.</text>
+  <text x="798" y="542" fill="#E2E8F0" font-size="13">1× Vegan Burger</text>
+  <text x="1046" y="542" fill="#E2E8F0" font-size="13" text-anchor="end">$14.00</text>
+  <text x="798" y="562" fill="#E2E8F0" font-size="13">1× Lemonade</text>
+  <text x="1046" y="562" fill="#E2E8F0" font-size="13" text-anchor="end">$3.50</text>
+  <text x="798" y="582" fill="#64748B" font-size="12">¹⁄₅ Nachos</text>
+  <text x="1046" y="582" fill="#64748B" font-size="12" text-anchor="end">$2.40</text>
+  <rect x="794" y="590" width="260" height="1" fill="#2D3050"/>
+  <text x="798" y="620" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
+  <text x="1046" y="620" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="end">$22.98</text>
+  <rect x="794" y="632" width="260" height="36" rx="8" fill="#22C55E"/>
+  <text x="924" y="655" fill="white" font-size="14" font-weight="700" text-anchor="middle">💳 Charge $22.98</text>
+
+  <!-- Summary panel -->
+  <rect x="1076" y="468" width="270" height="480" rx="12" fill="#13162A"/>
+  <text x="1096" y="502" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">SPLIT SUMMARY</text>
+
+  <text x="1096" y="530" fill="#94A3B8" font-size="13">Check 1 — Seat 1</text>
+  <rect x="1096" y="538" width="180" height="6" rx="3" fill="#22C55E"/>
+  <text x="1338" y="534" fill="#22C55E" font-size="12" font-weight="700" text-anchor="end">Paid ✓</text>
+  <text x="1096" y="558" fill="#E2E8F0" font-size="14" font-weight="700">$25.80</text>
+
+  <text x="1096" y="584" fill="#94A3B8" font-size="13">Check 2 — Seat 2</text>
+  <rect x="1096" y="592" width="160" height="6" rx="3" fill="#2D3050"/>
+  <text x="1338" y="588" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">Unpaid</text>
+  <text x="1096" y="612" fill="#E2E8F0" font-size="14" font-weight="700">$28.14</text>
+
+  <text x="1096" y="638" fill="#94A3B8" font-size="13">Check 3 — Seat 3</text>
+  <rect x="1096" y="646" width="160" height="6" rx="3" fill="#2D3050"/>
+  <text x="1338" y="642" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">Unpaid</text>
+  <text x="1096" y="666" fill="#E2E8F0" font-size="14" font-weight="700">$71.34</text>
+
+  <text x="1096" y="692" fill="#94A3B8" font-size="13">Check 4 — Seat 4</text>
+  <rect x="1096" y="700" width="160" height="6" rx="3" fill="#2D3050"/>
+  <text x="1338" y="696" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">Unpaid</text>
+  <text x="1096" y="720" fill="#E2E8F0" font-size="14" font-weight="700">$17.47</text>
+
+  <text x="1096" y="746" fill="#94A3B8" font-size="13">Check 5 — Seat 5</text>
+  <rect x="1096" y="754" width="160" height="6" rx="3" fill="#2D3050"/>
+  <text x="1338" y="750" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">Unpaid</text>
+  <text x="1096" y="774" fill="#E2E8F0" font-size="14" font-weight="700">$22.98</text>
+
+  <rect x="1090" y="786" width="256" height="1" fill="#2D3050"/>
+
+  <text x="1096" y="814" fill="#94A3B8" font-size="13">Collected so far</text>
+  <text x="1338" y="814" fill="#22C55E" font-size="14" font-weight="700" text-anchor="end">$25.80</text>
+
+  <text x="1096" y="838" fill="#94A3B8" font-size="13">Remaining</text>
+  <text x="1338" y="838" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$139.93</text>
+
+  <text x="1096" y="862" fill="#E2E8F0" font-size="16" font-weight="700">Grand Total</text>
+  <text x="1338" y="862" fill="#F59E0B" font-size="20" font-weight="700" text-anchor="end">$165.73</text>
+
+  <rect x="1090" y="876" width="256" height="50" rx="10" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
+  <text x="1218" y="906" fill="#60A5FA" font-size="13" font-weight="600" text-anchor="middle">Print All Checks</text>
+
+  <!-- Bottom controls -->
+  <rect x="80" y="930" width="380" height="50" rx="10" fill="#1E2235"/>
+  <text x="270" y="961" fill="#94A3B8" font-size="14" text-anchor="middle">Reassign Items Between Checks</text>
+
+  <rect x="478" y="930" width="380" height="50" rx="10" fill="#1E2235"/>
+  <text x="668" y="961" fill="#94A3B8" font-size="14" text-anchor="middle">Change Split Mode</text>
+
+  <rect x="876" y="930" width="450" height="50" rx="10" fill="#22C55E"/>
+  <text x="1101" y="961" fill="white" font-size="16" font-weight="700" text-anchor="middle">💳 Charge Next Unpaid Check</text>
+
+  <!-- Screen label -->
+  <text x="683" y="1014" fill="#0F1117" font-size="11" text-anchor="middle">Synalux POS — Split Check (F08 Order Ops Core · F09 Payment Ops Core · iPad Landscape 1366×1024)</text>
+</svg>

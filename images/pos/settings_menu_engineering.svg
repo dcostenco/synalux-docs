@@ -1,0 +1,406 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  BACKGROUND                                        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  LEFT SIDEBAR (210px)                              -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+
+  <!-- Logo / title -->
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+
+  <!-- Nav groups -->
+  <!-- Restaurant Info -->
+  <rect x="0" y="44" width="210" height="32" fill="none"/>
+  <text x="16" y="65" font-size="12" fill="#64748B">Restaurant Info</text>
+
+  <!-- Menu Builder -->
+  <rect x="0" y="76" width="210" height="32" fill="none"/>
+  <text x="16" y="97" font-size="12" fill="#94A3B8">Menu Builder</text>
+
+  <!-- Taxes -->
+  <rect x="0" y="108" width="210" height="32" fill="none"/>
+  <text x="16" y="129" font-size="12" fill="#94A3B8">Taxes</text>
+
+  <!-- Employees -->
+  <rect x="0" y="140" width="210" height="32" fill="none"/>
+  <text x="16" y="161" font-size="12" fill="#94A3B8">Employees</text>
+
+  <!-- Equipment -->
+  <rect x="0" y="172" width="210" height="32" fill="none"/>
+  <text x="16" y="193" font-size="12" fill="#94A3B8">Equipment</text>
+
+  <!-- Floor Plans -->
+  <rect x="0" y="204" width="210" height="32" fill="none"/>
+  <text x="16" y="225" font-size="12" fill="#94A3B8">Floor Plans</text>
+
+  <!-- Payments -->
+  <rect x="0" y="236" width="210" height="32" fill="none"/>
+  <text x="16" y="257" font-size="12" fill="#94A3B8">Payments</text>
+
+  <!-- ── Reports section header ── -->
+  <text x="16" y="292" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.08em">REPORTS</text>
+
+  <!-- Sales Summary -->
+  <rect x="0" y="300" width="210" height="32" fill="none"/>
+  <text x="16" y="321" font-size="12" fill="#94A3B8">Sales Summary</text>
+
+  <!-- Labor Report -->
+  <rect x="0" y="332" width="210" height="32" fill="none"/>
+  <text x="16" y="353" font-size="12" fill="#94A3B8">Labor Report</text>
+
+  <!-- Menu Engineering — HIGHLIGHTED -->
+  <rect x="0" y="364" width="210" height="36" fill="#1E2240" rx="0"/>
+  <rect x="0" y="364" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="386" font-size="12" font-weight="700" fill="#F59E0B">Menu Engineering</text>
+
+  <!-- Item Mix -->
+  <rect x="0" y="400" width="210" height="32" fill="none"/>
+  <text x="16" y="421" font-size="12" fill="#94A3B8">Item Mix</text>
+
+  <!-- Void/Comp Report -->
+  <rect x="0" y="432" width="210" height="32" fill="none"/>
+  <text x="16" y="453" font-size="12" fill="#94A3B8">Void / Comp Report</text>
+
+  <!-- Inventory -->
+  <rect x="0" y="476" width="210" height="32" fill="none"/>
+  <text x="16" y="497" font-size="12" fill="#94A3B8">Inventory</text>
+
+  <!-- Integrations -->
+  <rect x="0" y="508" width="210" height="32" fill="none"/>
+  <text x="16" y="529" font-size="12" fill="#94A3B8">Integrations</text>
+
+  <!-- Advantage Prog. -->
+  <rect x="0" y="540" width="210" height="32" fill="none"/>
+  <text x="16" y="561" font-size="12" fill="#94A3B8">Advantage Prog.</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  TOP HEADER BAR                                    -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="210" y="0" width="1156" height="56" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="228" y="24" font-size="18" font-weight="700" fill="#F1F5F9">Menu Engineering</text>
+  <text x="228" y="44" font-size="11" fill="#64748B">Star / Plow Horse / Puzzle / Dog — Popularity × Contribution Margin analysis</text>
+
+  <!-- Date range selector -->
+  <rect x="938" y="12" width="148" height="32" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="952" y="32" font-size="12" fill="#94A3B8">Last 30 days  ▾</text>
+
+  <!-- Export to CSV -->
+  <rect x="1094" y="12" width="110" height="32" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1106" y="32" font-size="12" fill="#94A3B8">Export to CSV</text>
+
+  <!-- Print Report -->
+  <rect x="1212" y="12" width="100" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1226" y="32" font-size="12" font-weight="700" fill="#000">Print Report</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  TOP SECTION — QUADRANT CHART (420px tall)         -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Card background -->
+  <rect x="218" y="64" width="1130" height="426" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Section title -->
+  <text x="234" y="88" font-size="14" font-weight="700" fill="#F1F5F9">Performance Quadrant</text>
+  <text x="830" y="88" font-size="11" fill="#64748B">Bubble size = revenue volume  ·  Apr 27 – May 26, 2026</text>
+
+  <!-- ──────────────────────────────────────────── -->
+  <!--  Chart area: origin at (340, 458), size 950×340 -->
+  <!--  Left margin for Y-axis label, bottom for X-axis -->
+  <!--  Chart inner box: x1=350, y1=100, x2=1310, y2=458 -->
+  <!-- ──────────────────────────────────────────── -->
+
+  <!-- Y-axis label (rotated) -->
+  <text transform="translate(234,290) rotate(-90)" text-anchor="middle" font-size="12" font-weight="600" fill="#94A3B8">Contribution Margin ($)</text>
+  <!-- Y-axis ticks: low→high bottom to top -->
+  <text x="243" y="460" font-size="10" fill="#64748B" text-anchor="middle">Low</text>
+  <text x="243" y="282" font-size="10" fill="#64748B" text-anchor="middle">Mid</text>
+  <text x="243" y="105" font-size="10" fill="#64748B" text-anchor="middle">High</text>
+
+  <!-- X-axis label -->
+  <text x="830" y="490" text-anchor="middle" font-size="12" font-weight="600" fill="#94A3B8">Popularity (Orders)</text>
+  <!-- X-axis ticks -->
+  <text x="351" y="476" font-size="10" fill="#64748B" text-anchor="middle">Low</text>
+  <text x="830" y="476" font-size="10" fill="#64748B" text-anchor="middle">Mid</text>
+  <text x="1309" y="476" font-size="10" fill="#64748B" text-anchor="middle">High</text>
+
+  <!-- Chart border box -->
+  <rect x="260" y="96" width="1080" height="370" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Midpoint dashed dividers -->
+  <!-- Vertical (x = 800) -->
+  <line x1="800" y1="96" x2="800" y2="466" stroke="#64748B" stroke-width="1" stroke-dasharray="6,4"/>
+  <!-- Horizontal (y = 281) -->
+  <line x1="260" y1="281" x2="1340" y2="281" stroke="#64748B" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- ── Quadrant labels ── -->
+
+  <!-- TOP LEFT: PLOW HORSE (amber) -->
+  <text x="290" y="126" font-size="16" font-weight="800" fill="#F59E0B" opacity="0.85">PLOW HORSE</text>
+  <text x="290" y="144" font-size="11" fill="#F59E0B" opacity="0.6">High volume, low margin</text>
+
+  <!-- TOP RIGHT: STAR (green) -->
+  <text x="830" y="126" font-size="16" font-weight="800" fill="#10B981" opacity="0.85">⭐ STAR</text>
+  <text x="830" y="144" font-size="11" fill="#10B981" opacity="0.6">High volume, high margin</text>
+
+  <!-- BOTTOM LEFT: DOG (red) -->
+  <text x="290" y="430" font-size="16" font-weight="800" fill="#EF4444" opacity="0.85">🐕 DOG</text>
+  <text x="290" y="448" font-size="11" fill="#EF4444" opacity="0.6">Low volume, low margin</text>
+
+  <!-- BOTTOM RIGHT: PUZZLE (purple) -->
+  <text x="830" y="430" font-size="16" font-weight="800" fill="#8B5CF6" opacity="0.85">🧩 PUZZLE</text>
+  <text x="830" y="448" font-size="11" fill="#8B5CF6" opacity="0.6">Low volume, high margin</text>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!--  PLOT DOTS                                        -->
+  <!--  Chart box: x=[260..1340], y=[96..466]           -->
+  <!--  Midpoint x=800, midpoint y=281                  -->
+  <!--  TOP RIGHT (STAR)  → x>800, y<281                -->
+  <!--  TOP LEFT (PLOW)   → x<800, y<281                -->
+  <!--  BOTTOM LEFT (DOG) → x<800, y>281                -->
+  <!--  BOTTOM RIGHT (PUZZLE)→ x>800, y>281             -->
+  <!-- ══════════════════════════════════════════════════ -->
+
+  <!-- ── STARS (green) ── -->
+
+  <!-- Classic Burger — largest dot (most ordered), deep right, high up -->
+  <circle cx="1220" cy="140" r="20" fill="#10B981" opacity="0.85"/>
+  <text x="1198" y="120" font-size="11" font-weight="700" fill="#10B981">Classic Burger</text>
+
+  <!-- French Fries — high volume, good margin -->
+  <circle cx="1090" cy="170" r="14" fill="#10B981" opacity="0.8"/>
+  <text x="1068" y="156" font-size="11" fill="#10B981">French Fries</text>
+
+  <!-- Draft Beer — high volume, solid margin -->
+  <circle cx="1000" cy="200" r="12" fill="#10B981" opacity="0.75"/>
+  <text x="978" y="186" font-size="11" fill="#10B981">Draft Beer</text>
+
+  <!-- ── PLOW HORSES (amber) ── -->
+
+  <!-- Kids Mac & Cheese — very high volume, low margin -->
+  <circle cx="680" cy="148" r="15" fill="#F59E0B" opacity="0.85"/>
+  <text x="640" y="135" font-size="11" font-weight="600" fill="#F59E0B">Kids Mac &amp; Cheese</text>
+
+  <!-- House Salad — moderate-high volume, low margin -->
+  <circle cx="560" cy="172" r="12" fill="#F59E0B" opacity="0.8"/>
+  <text x="538" y="158" font-size="11" fill="#F59E0B">House Salad</text>
+
+  <!-- Soft Drinks — high volume, very low margin -->
+  <circle cx="720" cy="250" r="11" fill="#F59E0B" opacity="0.75"/>
+  <text x="698" y="238" font-size="11" fill="#F59E0B">Soft Drinks</text>
+
+  <!-- ── DOGS (red) ── -->
+
+  <!-- Onion Rings -->
+  <circle cx="400" cy="380" r="10" fill="#EF4444" opacity="0.85"/>
+  <text x="378" y="366" font-size="11" fill="#EF4444">Onion Rings</text>
+
+  <!-- Chicken Tenders -->
+  <circle cx="520" cy="410" r="9" fill="#EF4444" opacity="0.8"/>
+  <text x="498" y="396" font-size="11" fill="#EF4444">Chicken Tenders</text>
+
+  <!-- Veggie Wrap -->
+  <circle cx="350" cy="440" r="8" fill="#EF4444" opacity="0.75"/>
+  <text x="328" y="428" font-size="11" fill="#EF4444">Veggie Wrap</text>
+
+  <!-- Decaf Coffee -->
+  <circle cx="450" cy="450" r="7" fill="#EF4444" opacity="0.7"/>
+  <text x="428" y="440" font-size="11" fill="#EF4444">Decaf Coffee</text>
+
+  <!-- ── PUZZLES (purple) ── -->
+
+  <!-- Wagyu Burger — low volume, very high margin -->
+  <circle cx="870" cy="160" r="13" fill="#8B5CF6" opacity="0.85"/>
+  <text x="848" y="147" font-size="11" font-weight="600" fill="#8B5CF6">Wagyu Burger</text>
+
+  <!-- Lobster Bisque — low volume, high margin -->
+  <circle cx="950" cy="240" r="10" fill="#8B5CF6" opacity="0.8"/>
+  <text x="928" y="228" font-size="11" fill="#8B5CF6">Lobster Bisque</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  BOTTOM SECTION — 4 ACTION CARDS                   -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Section title -->
+  <text x="234" y="524" font-size="14" font-weight="700" fill="#F1F5F9">Recommendations &amp; Actions</text>
+
+  <!-- Card layout: 4 cards, each ~270px wide, 16px gap, starting x=218 -->
+  <!-- Card width = (1130 - 3*16) / 4 = (1130 - 48) / 4 = 270.5 → use 270 -->
+  <!-- x1=218, x2=504, x3=790, x4=1076 -->
+
+  <!-- ── Card 1: STARS (green) ── -->
+  <rect x="218" y="534" width="270" height="390" rx="8" fill="#0D2B22" stroke="#10B981" stroke-width="1.5"/>
+  <!-- Top accent bar -->
+  <rect x="218" y="534" width="270" height="4" rx="2" fill="#10B981"/>
+
+  <text x="234" y="564" font-size="13" font-weight="800" fill="#10B981">⭐ STARS</text>
+  <rect x="334" y="549" width="62" height="20" rx="10" fill="#10B981" opacity="0.2"/>
+  <text x="344" y="563" font-size="11" font-weight="700" fill="#10B981">3 items</text>
+
+  <text x="234" y="588" font-size="11" fill="#94A3B8">Promote heavily. Feature on menu</text>
+  <text x="234" y="604" font-size="11" fill="#94A3B8">board. Train servers to suggest.</text>
+
+  <!-- Divider -->
+  <line x1="234" y1="616" x2="472" y2="616" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Item list -->
+  <rect x="234" y="626" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="249" cy="644" r="5" fill="#10B981"/>
+  <text x="262" y="649" font-size="12" font-weight="600" fill="#F1F5F9">Classic Burger</text>
+  <text x="420" y="649" font-size="11" fill="#10B981">★ Top</text>
+
+  <rect x="234" y="670" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="249" cy="688" r="5" fill="#10B981"/>
+  <text x="262" y="693" font-size="12" fill="#F1F5F9">French Fries</text>
+
+  <rect x="234" y="714" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="249" cy="732" r="5" fill="#10B981"/>
+  <text x="262" y="737" font-size="12" fill="#F1F5F9">Draft Beer</text>
+
+  <!-- Action button -->
+  <rect x="234" y="880" width="238" height="34" rx="6" fill="#10B981"/>
+  <text x="321" y="901" font-size="12" font-weight="700" fill="#000" text-anchor="middle">Feature on Board</text>
+
+  <!-- Key metric -->
+  <rect x="234" y="768" width="238" height="96" rx="6" fill="#0F1117"/>
+  <text x="249" y="790" font-size="11" fill="#64748B">Avg contribution margin</text>
+  <text x="249" y="812" font-size="22" font-weight="800" fill="#10B981">$6.40</text>
+  <text x="249" y="834" font-size="11" fill="#64748B">Combined monthly orders</text>
+  <text x="249" y="852" font-size="18" font-weight="700" fill="#F1F5F9">2,847</text>
+
+  <!-- ── Card 2: PLOW HORSES (amber) ── -->
+  <rect x="504" y="534" width="270" height="390" rx="8" fill="#2B1F08" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="504" y="534" width="270" height="4" rx="2" fill="#F59E0B"/>
+
+  <text x="520" y="564" font-size="13" font-weight="800" fill="#F59E0B">PLOW HORSES</text>
+  <rect x="638" y="549" width="62" height="20" rx="10" fill="#F59E0B" opacity="0.2"/>
+  <text x="648" y="563" font-size="11" font-weight="700" fill="#F59E0B">3 items</text>
+
+  <text x="520" y="588" font-size="11" fill="#94A3B8">Increase price gradually. Reduce</text>
+  <text x="520" y="604" font-size="11" fill="#94A3B8">portion cost. They drive traffic.</text>
+
+  <line x1="520" y1="616" x2="758" y2="616" stroke="#2D3148" stroke-width="1"/>
+
+  <rect x="520" y="626" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="535" cy="644" r="5" fill="#F59E0B"/>
+  <text x="548" y="649" font-size="12" fill="#F1F5F9">Kids Mac &amp; Cheese</text>
+
+  <rect x="520" y="670" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="535" cy="688" r="5" fill="#F59E0B"/>
+  <text x="548" y="693" font-size="12" fill="#F1F5F9">House Salad</text>
+
+  <rect x="520" y="714" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="535" cy="732" r="5" fill="#F59E0B"/>
+  <text x="548" y="737" font-size="12" fill="#F1F5F9">Soft Drinks</text>
+
+  <rect x="520" y="880" width="238" height="34" rx="6" fill="#F59E0B"/>
+  <text x="607" y="901" font-size="12" font-weight="700" fill="#000" text-anchor="middle">Adjust Pricing</text>
+
+  <rect x="520" y="768" width="238" height="96" rx="6" fill="#0F1117"/>
+  <text x="535" y="790" font-size="11" fill="#64748B">Avg contribution margin</text>
+  <text x="535" y="812" font-size="22" font-weight="800" fill="#F59E0B">$1.85</text>
+  <text x="535" y="834" font-size="11" fill="#64748B">Combined monthly orders</text>
+  <text x="535" y="852" font-size="18" font-weight="700" fill="#F1F5F9">3,192</text>
+
+  <!-- ── Card 3: PUZZLES (purple) ── -->
+  <rect x="790" y="534" width="270" height="390" rx="8" fill="#1A1230" stroke="#8B5CF6" stroke-width="1.5"/>
+  <rect x="790" y="534" width="270" height="4" rx="2" fill="#8B5CF6"/>
+
+  <text x="806" y="564" font-size="13" font-weight="800" fill="#8B5CF6">🧩 PUZZLES</text>
+  <rect x="908" y="549" width="62" height="20" rx="10" fill="#8B5CF6" opacity="0.2"/>
+  <text x="918" y="563" font-size="11" font-weight="700" fill="#8B5CF6">2 items</text>
+
+  <text x="806" y="588" font-size="11" fill="#94A3B8">Reposition on menu. Reduce</text>
+  <text x="806" y="604" font-size="11" fill="#94A3B8">price to test volume. Train staff.</text>
+
+  <line x1="806" y1="616" x2="1044" y2="616" stroke="#2D3148" stroke-width="1"/>
+
+  <rect x="806" y="626" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="821" cy="644" r="5" fill="#8B5CF6"/>
+  <text x="834" y="649" font-size="12" fill="#F1F5F9">Wagyu Burger</text>
+  <text x="996" y="649" font-size="11" fill="#8B5CF6">$18.50</text>
+
+  <rect x="806" y="670" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="821" cy="688" r="5" fill="#8B5CF6"/>
+  <text x="834" y="693" font-size="12" fill="#F1F5F9">Lobster Bisque</text>
+  <text x="996" y="693" font-size="11" fill="#8B5CF6">$12.80</text>
+
+  <rect x="806" y="880" width="238" height="34" rx="6" fill="#8B5CF6"/>
+  <text x="893" y="901" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Reposition Items</text>
+
+  <rect x="806" y="768" width="238" height="96" rx="6" fill="#0F1117"/>
+  <text x="821" y="790" font-size="11" fill="#64748B">Avg contribution margin</text>
+  <text x="821" y="812" font-size="22" font-weight="800" fill="#8B5CF6">$15.65</text>
+  <text x="821" y="834" font-size="11" fill="#64748B">Combined monthly orders</text>
+  <text x="821" y="852" font-size="18" font-weight="700" fill="#F1F5F9">312</text>
+
+  <!-- ── Card 4: DOGS (red) ── -->
+  <rect x="1076" y="534" width="270" height="390" rx="8" fill="#2B0A0A" stroke="#EF4444" stroke-width="1.5"/>
+  <rect x="1076" y="534" width="270" height="4" rx="2" fill="#EF4444"/>
+
+  <text x="1092" y="564" font-size="13" font-weight="800" fill="#EF4444">🐕 DOGS</text>
+  <rect x="1162" y="549" width="62" height="20" rx="10" fill="#EF4444" opacity="0.2"/>
+  <text x="1172" y="563" font-size="11" font-weight="700" fill="#EF4444">4 items</text>
+
+  <text x="1092" y="588" font-size="11" fill="#94A3B8">Consider removing. If keeping,</text>
+  <text x="1092" y="604" font-size="11" fill="#94A3B8">raise price. Avoid promoting.</text>
+
+  <line x1="1092" y1="616" x2="1330" y2="616" stroke="#2D3148" stroke-width="1"/>
+
+  <rect x="1092" y="626" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="1107" cy="644" r="5" fill="#EF4444"/>
+  <text x="1120" y="649" font-size="12" fill="#F1F5F9">Onion Rings</text>
+
+  <rect x="1092" y="670" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="1107" cy="688" r="5" fill="#EF4444"/>
+  <text x="1120" y="693" font-size="12" fill="#F1F5F9">Chicken Tenders</text>
+
+  <rect x="1092" y="714" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="1107" cy="732" r="5" fill="#EF4444"/>
+  <text x="1120" y="737" font-size="12" fill="#F1F5F9">Veggie Wrap</text>
+
+  <rect x="1092" y="758" width="238" height="36" rx="6" fill="#0F1117"/>
+  <circle cx="1107" cy="776" r="5" fill="#EF4444"/>
+  <text x="1120" y="781" font-size="12" fill="#F1F5F9">Decaf Coffee</text>
+
+  <rect x="1092" y="880" width="238" height="34" rx="6" fill="#EF4444"/>
+  <text x="1179" y="901" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Review &amp; Remove</text>
+
+  <rect x="1092" y="808" width="238" height="56" rx="6" fill="#0F1117"/>
+  <text x="1107" y="828" font-size="11" fill="#64748B">Avg contribution margin</text>
+  <text x="1107" y="850" font-size="22" font-weight="800" fill="#EF4444">$0.92</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  BOTTOM ACTION BAR                                  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="218" y="936" width="1130" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="234" y="967" font-size="12" fill="#64748B">Report period:</text>
+  <rect x="326" y="948" width="148" height="28" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="340" y="967" font-size="12" fill="#94A3B8">Last 30 days  ▾</text>
+
+  <text x="500" y="967" font-size="12" fill="#64748B">Apr 27 – May 26, 2026</text>
+
+  <!-- Spacer line -->
+  <line x1="700" y1="952" x2="700" y2="980" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Export to CSV -->
+  <rect x="716" y="948" width="120" height="28" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="736" y="967" font-size="12" fill="#94A3B8">↓ Export to CSV</text>
+
+  <!-- Print Report -->
+  <rect x="848" y="948" width="110" height="28" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="866" y="967" font-size="12" fill="#94A3B8">🖨 Print Report</text>
+
+  <!-- Share with Manager -->
+  <rect x="970" y="948" width="148" height="28" rx="6" fill="#F59E0B"/>
+  <text x="990" y="967" font-size="12" font-weight="700" fill="#000">↗ Share with Manager</text>
+
+  <!-- Generated timestamp -->
+  <text x="1256" y="967" font-size="10" fill="#64748B">Generated May 26, 2026</text>
+
+</svg>

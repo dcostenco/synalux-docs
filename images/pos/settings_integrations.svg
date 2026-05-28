@@ -1,0 +1,552 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT NAV SIDEBAR ===== -->
+  <rect x="0" y="0" width="200" height="1024" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Advantage Prog.</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <!-- Active nav item -->
+  <rect x="0" y="404" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="404" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="427" font-size="12" font-weight="600" fill="#F59E0B">Integrations</text>
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Inventory</text>
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="535" font-size="12" fill="#8B92A5">Forms</text>
+
+  <!-- ===== HEADER ===== -->
+  <rect x="200" y="0" width="1166" height="60" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Integrations</text>
+  <text x="220" y="52" font-size="11" fill="#8B92A5">Connect your tools. All data flows through Synalux &#8212; no double-entry.</text>
+
+  <!-- ===== FILTER TABS ===== -->
+  <rect x="200" y="60" width="1166" height="44" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- All tab - active -->
+  <rect x="212" y="70" width="36" height="24" rx="5" fill="#F59E0B"/>
+  <text x="220" y="87" font-size="11" font-weight="600" fill="#000">All</text>
+  <!-- Connected (6) -->
+  <rect x="256" y="70" width="98" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="266" y="87" font-size="11" fill="#94A3B8">Connected</text>
+  <rect x="332" y="74" width="16" height="16" rx="8" fill="#10B981"/>
+  <text x="336" y="86" font-size="9" font-weight="700" fill="#FFF">6</text>
+  <!-- Available -->
+  <rect x="362" y="70" width="66" height="24" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="372" y="87" font-size="11" fill="#64748B">Available</text>
+  <!-- Delivery -->
+  <rect x="436" y="70" width="58" height="24" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="446" y="87" font-size="11" fill="#64748B">Delivery</text>
+  <!-- Accounting -->
+  <rect x="502" y="70" width="76" height="24" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="512" y="87" font-size="11" fill="#64748B">Accounting</text>
+  <!-- Payroll -->
+  <rect x="586" y="70" width="56" height="24" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="596" y="87" font-size="11" fill="#64748B">Payroll</text>
+  <!-- Communication -->
+  <rect x="650" y="70" width="104" height="24" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="660" y="87" font-size="11" fill="#64748B">Communication</text>
+  <!-- Loyalty -->
+  <rect x="762" y="70" width="52" height="24" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="772" y="87" font-size="11" fill="#64748B">Loyalty</text>
+
+  <!-- ===== MAIN CONTENT AREA ===== -->
+  <!-- Grid area: x=204 to x=1038 (834px wide), 4 cols -->
+  <!-- Detail panel: x=1042 to x=1362 (320px wide) -->
+
+  <!-- ============================================================ -->
+  <!--  ROW 1 LABEL -->
+  <!-- ============================================================ -->
+  <text x="212" y="124" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">DELIVERY &amp; ONLINE ORDERING</text>
+
+  <!-- ===== ROW 1, COL 1: DoorDash Drive (CONNECTED) ===== -->
+  <rect x="204" y="130" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <!-- Logo circle -->
+  <circle cx="228" cy="158" r="18" fill="#CC0000"/>
+  <text x="218" y="163" font-size="11" font-weight="700" fill="#FFF">DD</text>
+  <!-- Status -->
+  <circle cx="252" cy="145" r="5" fill="#10B981"/>
+  <!-- Name -->
+  <text x="262" y="153" font-size="12" font-weight="700" fill="#F1F5F9">DoorDash Drive</text>
+  <text x="262" y="167" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <!-- Info lines -->
+  <text x="212" y="187" font-size="9" fill="#94A3B8">Menu synced &#8226; Orders flowing</text>
+  <text x="212" y="200" font-size="9" fill="#94A3B8">142 orders today</text>
+  <text x="212" y="212" font-size="8" fill="#64748B">source='doordash'</text>
+  <!-- Manage button -->
+  <rect x="212" y="222" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="228" y="238" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 1, COL 2: Uber Eats (CONNECTED) ===== -->
+  <rect x="408" y="130" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="432" cy="158" r="18" fill="#000000"/>
+  <text x="421" y="163" font-size="11" font-weight="700" fill="#06C167">UE</text>
+  <circle cx="456" cy="145" r="5" fill="#10B981"/>
+  <text x="466" y="153" font-size="12" font-weight="700" fill="#F1F5F9">Uber Eats</text>
+  <text x="466" y="167" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="416" y="187" font-size="9" fill="#94A3B8">Menu synced &#8226; Orders flowing</text>
+  <text x="416" y="200" font-size="9" fill="#94A3B8">89 orders today</text>
+  <text x="416" y="212" font-size="8" fill="#64748B">source='ubereats'</text>
+  <rect x="416" y="222" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="432" y="238" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 1, COL 3: Grubhub (NOT CONNECTED) ===== -->
+  <rect x="612" y="130" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="636" cy="158" r="18" fill="#F63440"/>
+  <text x="625" y="163" font-size="11" font-weight="700" fill="#FFF">GH</text>
+  <circle cx="660" cy="145" r="5" fill="#64748B"/>
+  <text x="670" y="153" font-size="12" font-weight="700" fill="#F1F5F9">Grubhub</text>
+  <text x="670" y="167" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="620" y="187" font-size="9" fill="#64748B">Order injection + menu push</text>
+  <text x="620" y="200" font-size="9" fill="#64748B">Real-time order sync</text>
+  <rect x="620" y="222" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="636" y="238" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 1, COL 4: Toast Online (NOT CONNECTED) ===== -->
+  <rect x="816" y="130" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="840" cy="158" r="18" fill="#FF6900"/>
+  <text x="830" y="163" font-size="11" font-weight="700" fill="#FFF">TO</text>
+  <circle cx="864" cy="145" r="5" fill="#64748B"/>
+  <text x="874" y="153" font-size="12" font-weight="700" fill="#F1F5F9">Toast Online</text>
+  <text x="874" y="167" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="824" y="187" font-size="9" fill="#64748B">N/A for non-Toast users</text>
+  <text x="824" y="200" font-size="9" fill="#64748B">Toast-native only</text>
+  <rect x="824" y="222" width="78" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="836" y="238" font-size="10" fill="#94A3B8">Learn More</text>
+
+  <!-- ============================================================ -->
+  <!--  ROW 2 LABEL -->
+  <!-- ============================================================ -->
+  <text x="212" y="288" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">RESERVATIONS</text>
+
+  <!-- ===== ROW 2, COL 1: OpenTable (CONNECTED) ===== -->
+  <rect x="204" y="294" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="228" cy="320" r="18" fill="#DA3743"/>
+  <text x="218" y="325" font-size="11" font-weight="700" fill="#FFF">OT</text>
+  <circle cx="252" cy="307" r="5" fill="#10B981"/>
+  <text x="262" y="315" font-size="12" font-weight="700" fill="#F1F5F9">OpenTable</text>
+  <text x="262" y="329" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="212" y="349" font-size="9" fill="#94A3B8">Reservations syncing</text>
+  <text x="212" y="362" font-size="9" fill="#94A3B8">18 covers tonight</text>
+  <rect x="212" y="382" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="228" y="398" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 2, COL 2: Resy (NOT CONNECTED) ===== -->
+  <rect x="408" y="294" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="432" cy="320" r="18" fill="#1A1A2E"/>
+  <text x="424" y="325" font-size="11" font-weight="700" fill="#E8D5FF">RE</text>
+  <circle cx="456" cy="307" r="5" fill="#64748B"/>
+  <text x="466" y="315" font-size="12" font-weight="700" fill="#F1F5F9">Resy</text>
+  <text x="466" y="329" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="416" y="349" font-size="9" fill="#64748B">Reservation management</text>
+  <text x="416" y="362" font-size="9" fill="#64748B">Waitlist + floor sync</text>
+  <rect x="416" y="382" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="432" y="398" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 2, COL 3: Yelp Reservations (NOT CONNECTED) ===== -->
+  <rect x="612" y="294" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="636" cy="320" r="18" fill="#C41200"/>
+  <text x="626" y="325" font-size="11" font-weight="700" fill="#FFF">YR</text>
+  <circle cx="660" cy="307" r="5" fill="#64748B"/>
+  <text x="670" y="315" font-size="12" font-weight="700" fill="#F1F5F9">Yelp Reservations</text>
+  <text x="670" y="329" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="620" y="349" font-size="9" fill="#64748B">Yelp guest bookings</text>
+  <text x="620" y="362" font-size="9" fill="#64748B">2-way sync support</text>
+  <rect x="620" y="382" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="636" y="398" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 2, COL 4: SevenRooms (NOT CONNECTED) ===== -->
+  <rect x="816" y="294" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="840" cy="320" r="18" fill="#2D3748"/>
+  <text x="830" y="325" font-size="11" font-weight="700" fill="#A78BFA">7R</text>
+  <circle cx="864" cy="307" r="5" fill="#64748B"/>
+  <text x="874" y="315" font-size="12" font-weight="700" fill="#F1F5F9">SevenRooms</text>
+  <text x="874" y="329" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="824" y="349" font-size="9" fill="#64748B">Enterprise reservations</text>
+  <text x="824" y="362" font-size="9" fill="#64748B">CRM + guest profiles</text>
+  <rect x="824" y="382" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="840" y="398" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ============================================================ -->
+  <!--  ROW 3 LABEL -->
+  <!-- ============================================================ -->
+  <text x="212" y="448" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">ACCOUNTING</text>
+
+  <!-- ===== ROW 3, COL 1: QuickBooks Online (CONNECTED) ===== -->
+  <rect x="204" y="454" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="228" cy="480" r="18" fill="#2CA01C"/>
+  <text x="217" y="485" font-size="11" font-weight="700" fill="#FFF">QB</text>
+  <circle cx="252" cy="467" r="5" fill="#10B981"/>
+  <text x="262" y="475" font-size="11" font-weight="700" fill="#F1F5F9">QuickBooks Online</text>
+  <text x="262" y="489" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="212" y="509" font-size="9" fill="#94A3B8">Daily sync enabled</text>
+  <text x="212" y="522" font-size="9" fill="#94A3B8">Last sync: 6:00 PM</text>
+  <rect x="212" y="542" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="228" y="558" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 3, COL 2: Xero (NOT CONNECTED) ===== -->
+  <rect x="408" y="454" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="432" cy="480" r="18" fill="#1AB4D7"/>
+  <text x="420" y="485" font-size="12" font-weight="700" fill="#FFF">XE</text>
+  <circle cx="456" cy="467" r="5" fill="#64748B"/>
+  <text x="466" y="475" font-size="12" font-weight="700" fill="#F1F5F9">Xero</text>
+  <text x="466" y="489" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="416" y="509" font-size="9" fill="#64748B">Cloud accounting</text>
+  <text x="416" y="522" font-size="9" fill="#64748B">Daily P&amp;L export</text>
+  <rect x="416" y="542" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="432" y="558" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 3, COL 3: Restaurant365 (NOT CONNECTED) ===== -->
+  <rect x="612" y="454" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="636" cy="480" r="18" fill="#1E3A5F"/>
+  <text x="625" y="485" font-size="11" font-weight="700" fill="#60A5FA">R3</text>
+  <circle cx="660" cy="467" r="5" fill="#64748B"/>
+  <text x="670" y="475" font-size="11" font-weight="700" fill="#F1F5F9">Restaurant365</text>
+  <text x="670" y="489" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <rect x="700" y="463" width="56" height="14" rx="4" fill="#7C3AED"/>
+  <text x="706" y="474" font-size="8" fill="#FFF">ENTERPRISE</text>
+  <text x="620" y="509" font-size="9" fill="#64748B">Full restaurant ERP</text>
+  <text x="620" y="522" font-size="9" fill="#64748B">Inventory + accounting</text>
+  <rect x="620" y="542" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="636" y="558" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 3, COL 4: MarketMan (NOT CONNECTED) ===== -->
+  <rect x="816" y="454" width="196" height="136" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="840" cy="480" r="18" fill="#0D4F8B"/>
+  <text x="829" y="485" font-size="11" font-weight="700" fill="#FFF">MM</text>
+  <circle cx="864" cy="467" r="5" fill="#64748B"/>
+  <text x="874" y="475" font-size="12" font-weight="700" fill="#F1F5F9">MarketMan</text>
+  <text x="874" y="489" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="824" y="509" font-size="9" fill="#64748B">Inventory management</text>
+  <text x="824" y="522" font-size="9" fill="#64748B">COGS + ordering</text>
+  <rect x="824" y="542" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="840" y="558" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ============================================================ -->
+  <!--  ROW 4 LABEL -->
+  <!-- ============================================================ -->
+  <text x="212" y="608" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">PAYROLL &amp; HR</text>
+
+  <!-- ===== ROW 4, COL 1: Gusto (CONNECTED) ===== -->
+  <rect x="204" y="614" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="228" cy="640" r="18" fill="#F45D48"/>
+  <text x="217" y="645" font-size="12" font-weight="700" fill="#FFF">GU</text>
+  <circle cx="252" cy="627" r="5" fill="#10B981"/>
+  <text x="262" y="635" font-size="12" font-weight="700" fill="#F1F5F9">Gusto</text>
+  <text x="262" y="649" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="212" y="669" font-size="9" fill="#94A3B8">Timeclock exports to payroll</text>
+  <text x="212" y="682" font-size="9" fill="#94A3B8">Next payroll: Jun 1</text>
+  <rect x="212" y="700" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="228" y="716" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 4, COL 2: ADP (NOT CONNECTED) ===== -->
+  <rect x="408" y="614" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="432" cy="640" r="18" fill="#CC0000"/>
+  <text x="420" y="645" font-size="12" font-weight="700" fill="#FFF">ADP</text>
+  <circle cx="456" cy="627" r="5" fill="#64748B"/>
+  <text x="466" y="635" font-size="11" font-weight="700" fill="#F1F5F9">ADP Workforce Now</text>
+  <text x="466" y="649" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="416" y="669" font-size="9" fill="#64748B">Enterprise HR + payroll</text>
+  <text x="416" y="682" font-size="9" fill="#64748B">Timeclock export</text>
+  <rect x="416" y="700" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="432" y="716" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 4, COL 3: Square Payroll (NOT CONNECTED) ===== -->
+  <rect x="612" y="614" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="636" cy="640" r="18" fill="#111111"/>
+  <text x="625" y="645" font-size="11" font-weight="700" fill="#FFF">SQ</text>
+  <circle cx="660" cy="627" r="5" fill="#64748B"/>
+  <text x="670" y="635" font-size="12" font-weight="700" fill="#F1F5F9">Square Payroll</text>
+  <text x="670" y="649" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="620" y="669" font-size="9" fill="#64748B">Payroll + benefits</text>
+  <text x="620" y="682" font-size="9" fill="#64748B">Contractor support</text>
+  <rect x="620" y="700" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="636" y="716" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 4, COL 4: Homebase (NOT CONNECTED) ===== -->
+  <rect x="816" y="614" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="840" cy="640" r="18" fill="#2D5BE3"/>
+  <text x="829" y="645" font-size="11" font-weight="700" fill="#FFF">HB</text>
+  <circle cx="864" cy="627" r="5" fill="#64748B"/>
+  <text x="874" y="635" font-size="12" font-weight="700" fill="#F1F5F9">Homebase</text>
+  <text x="874" y="649" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="824" y="669" font-size="9" fill="#64748B">Scheduling + timeclock</text>
+  <text x="824" y="682" font-size="9" fill="#64748B">Team messaging</text>
+  <rect x="824" y="700" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="840" y="716" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ============================================================ -->
+  <!--  ROW 5 LABEL -->
+  <!-- ============================================================ -->
+  <text x="212" y="770" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">COMMUNICATION</text>
+
+  <!-- ===== ROW 5, COL 1: Twilio (CONNECTED) ===== -->
+  <rect x="204" y="776" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="228" cy="802" r="18" fill="#F22F46"/>
+  <text x="218" y="807" font-size="11" font-weight="700" fill="#FFF">TW</text>
+  <circle cx="252" cy="789" r="5" fill="#10B981"/>
+  <text x="262" y="797" font-size="12" font-weight="700" fill="#F1F5F9">Twilio</text>
+  <text x="262" y="811" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="212" y="831" font-size="9" fill="#94A3B8">SMS receipts &#8226; SMS loyalty</text>
+  <text x="212" y="844" font-size="9" fill="#94A3B8">Voice ordering enabled</text>
+  <rect x="212" y="862" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="228" y="878" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 5, COL 2: SendGrid (CONNECTED) ===== -->
+  <rect x="408" y="776" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="432" cy="802" r="18" fill="#1A82E2"/>
+  <text x="420" y="807" font-size="11" font-weight="700" fill="#FFF">SG</text>
+  <circle cx="456" cy="789" r="5" fill="#10B981"/>
+  <text x="466" y="797" font-size="12" font-weight="700" fill="#F1F5F9">SendGrid</text>
+  <text x="466" y="811" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="416" y="831" font-size="9" fill="#94A3B8">Email receipts &#8226; Marketing</text>
+  <text x="416" y="844" font-size="9" fill="#94A3B8">Transactional + campaigns</text>
+  <rect x="416" y="862" width="72" height="24" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="432" y="878" font-size="10" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 5, COL 3: Mailchimp (NOT CONNECTED) ===== -->
+  <rect x="612" y="776" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="636" cy="802" r="18" fill="#FFE01B"/>
+  <text x="623" y="807" font-size="12" font-weight="700" fill="#241C15">MC</text>
+  <circle cx="660" cy="789" r="5" fill="#64748B"/>
+  <text x="670" y="797" font-size="12" font-weight="700" fill="#F1F5F9">Mailchimp</text>
+  <text x="670" y="811" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="620" y="831" font-size="9" fill="#64748B">Email marketing</text>
+  <text x="620" y="844" font-size="9" fill="#64748B">Customer list sync</text>
+  <rect x="620" y="862" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="636" y="878" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 5, COL 4: Podium (NOT CONNECTED) ===== -->
+  <rect x="816" y="776" width="196" height="140" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="840" cy="802" r="18" fill="#4A154B"/>
+  <text x="828" y="807" font-size="12" font-weight="700" fill="#E879F9">PO</text>
+  <circle cx="864" cy="789" r="5" fill="#64748B"/>
+  <text x="874" y="797" font-size="12" font-weight="700" fill="#F1F5F9">Podium</text>
+  <text x="874" y="811" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="824" y="831" font-size="9" fill="#64748B">Reviews + messaging</text>
+  <text x="824" y="844" font-size="9" fill="#64748B">Google review requests</text>
+  <rect x="824" y="862" width="66" height="24" rx="5" fill="#F59E0B"/>
+  <text x="840" y="878" font-size="10" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ============================================================ -->
+  <!--  ROW 6 LABEL -->
+  <!-- ============================================================ -->
+  <text x="212" y="932" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">OTHER</text>
+
+  <!-- ===== ROW 6, COL 1: Google Analytics (SETUP NEEDED) ===== -->
+  <rect x="204" y="938" width="196" height="76" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="228" cy="960" r="14" fill="#E37400"/>
+  <text x="218" y="965" font-size="10" font-weight="700" fill="#FFF">GA</text>
+  <circle cx="248" cy="948" r="5" fill="#F59E0B"/>
+  <text x="258" y="956" font-size="11" font-weight="700" fill="#F1F5F9">Google Analytics</text>
+  <text x="258" y="968" font-size="9" fill="#F59E0B">&#9651; Setup Needed</text>
+  <text x="212" y="984" font-size="9" fill="#64748B">Online menu tracking</text>
+  <rect x="212" y="996" width="90" height="20" rx="4" fill="#F59E0B"/>
+  <text x="222" y="1010" font-size="9" font-weight="600" fill="#000">Finish Setup</text>
+
+  <!-- ===== ROW 6, COL 2: Meta Pixel (NOT CONNECTED) ===== -->
+  <rect x="408" y="938" width="196" height="76" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="432" cy="960" r="14" fill="#0866FF"/>
+  <text x="420" y="965" font-size="11" font-weight="700" fill="#FFF">MP</text>
+  <circle cx="452" cy="948" r="5" fill="#64748B"/>
+  <text x="462" y="956" font-size="11" font-weight="700" fill="#F1F5F9">Meta Pixel</text>
+  <text x="462" y="968" font-size="9" fill="#64748B">&#9679; Not Connected</text>
+  <text x="416" y="984" font-size="9" fill="#64748B">Ad conversion tracking</text>
+  <rect x="416" y="996" width="66" height="20" rx="4" fill="#F59E0B"/>
+  <text x="432" y="1010" font-size="9" font-weight="600" fill="#000">Connect</text>
+
+  <!-- ===== ROW 6, COL 3: Stripe Terminal (CONNECTED) ===== -->
+  <rect x="612" y="938" width="196" height="76" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="636" cy="960" r="14" fill="#635BFF"/>
+  <text x="625" y="965" font-size="11" font-weight="700" fill="#FFF">ST</text>
+  <circle cx="656" cy="948" r="5" fill="#10B981"/>
+  <text x="666" y="956" font-size="11" font-weight="700" fill="#F1F5F9">Stripe Terminal</text>
+  <text x="666" y="968" font-size="9" fill="#10B981">&#9679; Connected</text>
+  <text x="620" y="984" font-size="9" fill="#94A3B8">2 readers online</text>
+  <rect x="620" y="996" width="72" height="20" rx="4" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="632" y="1010" font-size="9" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ===== ROW 6, COL 4: Apple Pay / Google Pay (CONNECTED) ===== -->
+  <rect x="816" y="938" width="196" height="76" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
+  <circle cx="840" cy="960" r="14" fill="#1C1C1E"/>
+  <text x="831" y="965" font-size="9" font-weight="700" fill="#FFF">&#65040;</text>
+  <circle cx="860" cy="948" r="5" fill="#10B981"/>
+  <text x="870" y="956" font-size="10" font-weight="700" fill="#F1F5F9">Apple Pay / Google Pay</text>
+  <text x="870" y="968" font-size="9" fill="#10B981">&#9679; Active</text>
+  <text x="824" y="984" font-size="9" fill="#94A3B8">via Stripe Terminal</text>
+  <rect x="824" y="996" width="72" height="20" rx="4" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="836" y="1010" font-size="9" font-weight="600" fill="#F59E0B">Manage</text>
+
+  <!-- ============================================================ -->
+  <!--  DETAIL PANEL — RIGHT SIDE (x=1042, w=320)                 -->
+  <!-- ============================================================ -->
+  <rect x="1042" y="60" width="320" height="964" rx="0" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Panel header -->
+  <rect x="1042" y="60" width="320" height="52" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Back arrow -->
+  <text x="1056" y="91" font-size="14" fill="#64748B">&#8592;</text>
+  <text x="1078" y="86" font-size="14" font-weight="700" fill="#F1F5F9">DoorDash Drive</text>
+  <rect x="1200" y="76" width="72" height="22" rx="11" fill="#052E16" stroke="#10B981" stroke-width="1"/>
+  <circle cx="1213" cy="87" r="4" fill="#10B981"/>
+  <text x="1220" y="92" font-size="10" font-weight="600" fill="#10B981">Connected</text>
+
+  <!-- Connected info -->
+  <text x="1056" y="132" font-size="10" font-weight="600" fill="#64748B">CONNECTED</text>
+  <text x="1056" y="148" font-size="11" fill="#94A3B8">May 1, 2026 by Dmitri</text>
+  <text x="1056" y="163" font-size="10" font-weight="600" fill="#64748B">STORE ID</text>
+  <text x="1056" y="178" font-size="11" fill="#F1F5F9" font-family="monospace">DD-9284-SYNALUX</text>
+
+  <!-- Divider -->
+  <line x1="1056" y1="190" x2="1348" y2="190" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Menu sync section -->
+  <text x="1056" y="208" font-size="11" font-weight="700" fill="#F1F5F9">Menu Sync</text>
+  <text x="1056" y="223" font-size="10" fill="#94A3B8">Auto-sync every 15 min</text>
+  <rect x="1268" y="211" width="72" height="22" rx="5" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1280" y="226" font-size="9" font-weight="600" fill="#F59E0B">Sync Now</text>
+  <text x="1056" y="240" font-size="10" fill="#64748B">Last sync: 6:47 PM &#8212; 48 items synced</text>
+
+  <!-- Divider -->
+  <line x1="1056" y1="252" x2="1348" y2="252" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Orders stats -->
+  <text x="1056" y="270" font-size="11" font-weight="700" fill="#F1F5F9">Orders</text>
+  <rect x="1056" y="278" width="130" height="48" rx="6" fill="#1A1D2E"/>
+  <text x="1074" y="298" font-size="20" font-weight="700" fill="#F1F5F9">142</text>
+  <text x="1074" y="316" font-size="9" fill="#64748B">today</text>
+  <rect x="1196" y="278" width="150" height="48" rx="6" fill="#1A1D2E"/>
+  <text x="1214" y="298" font-size="20" font-weight="700" fill="#F1F5F9">3,847</text>
+  <text x="1214" y="316" font-size="9" fill="#64748B">this month</text>
+
+  <!-- Commission rate -->
+  <line x1="1056" y1="340" x2="1348" y2="340" stroke="#2D3148" stroke-width="1"/>
+  <text x="1056" y="358" font-size="11" font-weight="700" fill="#F1F5F9">Commission Rate</text>
+  <text x="1056" y="374" font-size="10" fill="#94A3B8">15% (informational only)</text>
+
+  <!-- Toggles section -->
+  <line x1="1056" y1="386" x2="1348" y2="386" stroke="#2D3148" stroke-width="1"/>
+  <text x="1056" y="404" font-size="11" font-weight="700" fill="#F1F5F9">Settings</text>
+
+  <!-- Toggle: Auto-markup -->
+  <rect x="1056" y="412" width="290" height="44" rx="6" fill="#1A1D2E"/>
+  <text x="1068" y="430" font-size="10" font-weight="600" fill="#F1F5F9">Auto-markup DoorDash prices by 15%</text>
+  <text x="1068" y="446" font-size="9" fill="#64748B">Prices inflated to offset commission</text>
+  <!-- Toggle ON -->
+  <rect x="1302" y="420" width="36" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1326" cy="430" r="8" fill="#FFF"/>
+
+  <!-- Toggle: Auto-hide 86'd items -->
+  <rect x="1056" y="462" width="290" height="44" rx="6" fill="#1A1D2E"/>
+  <text x="1068" y="480" font-size="10" font-weight="600" fill="#F1F5F9">86'd items auto-hidden on DoorDash</text>
+  <text x="1068" y="496" font-size="9" fill="#64748B">Unavailable items removed instantly</text>
+  <!-- Toggle ON -->
+  <rect x="1302" y="470" width="36" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1326" cy="480" r="8" fill="#FFF"/>
+
+  <!-- Toggle: Accept mode -->
+  <rect x="1056" y="512" width="290" height="44" rx="6" fill="#1A1D2E"/>
+  <text x="1068" y="530" font-size="10" font-weight="600" fill="#F1F5F9">Accept Mode</text>
+  <!-- Toggle pills -->
+  <rect x="1200" y="518" width="68" height="20" rx="5" fill="#10B981"/>
+  <text x="1210" y="532" font-size="9" font-weight="700" fill="#FFF">Auto</text>
+  <rect x="1274" y="518" width="70" height="20" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1280" y="532" font-size="9" fill="#64748B">Manual</text>
+  <text x="1068" y="546" font-size="9" fill="#64748B">Orders auto-accepted into KDS</text>
+
+  <!-- Toggle: Tablet-free -->
+  <rect x="1056" y="562" width="290" height="44" rx="6" fill="#1A1D2E"/>
+  <text x="1068" y="580" font-size="10" font-weight="600" fill="#F1F5F9">Tablet-free: Inject direct to KDS</text>
+  <text x="1068" y="596" font-size="9" fill="#64748B">No separate DoorDash tablet needed</text>
+  <!-- Toggle ON -->
+  <rect x="1302" y="570" width="36" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1326" cy="580" r="8" fill="#FFF"/>
+
+  <!-- Error log section -->
+  <line x1="1056" y1="616" x2="1348" y2="616" stroke="#2D3148" stroke-width="1"/>
+  <text x="1056" y="634" font-size="11" font-weight="700" fill="#F1F5F9">Recent Activity</text>
+  <!-- Log rows -->
+  <rect x="1056" y="640" width="290" height="24" rx="4" fill="#1A1D2E"/>
+  <circle cx="1068" cy="652" r="4" fill="#10B981"/>
+  <text x="1078" y="656" font-size="9" fill="#94A3B8">6:47 PM</text>
+  <text x="1116" y="656" font-size="9" fill="#F1F5F9">Menu sync success — 48 items</text>
+
+  <rect x="1056" y="668" width="290" height="24" rx="4" fill="#1A1D2E"/>
+  <circle cx="1068" cy="680" r="4" fill="#10B981"/>
+  <text x="1078" y="684" font-size="9" fill="#94A3B8">5:32 PM</text>
+  <text x="1116" y="684" font-size="9" fill="#F1F5F9">Order #4421 injected to KDS</text>
+
+  <rect x="1056" y="696" width="290" height="24" rx="4" fill="#1A1D2E"/>
+  <circle cx="1068" cy="708" r="4" fill="#10B981"/>
+  <text x="1078" y="712" font-size="9" fill="#94A3B8">4:15 PM</text>
+  <text x="1116" y="712" font-size="9" fill="#F1F5F9">Order #4418 auto-accepted</text>
+
+  <!-- Disconnect button -->
+  <line x1="1056" y1="730" x2="1348" y2="730" stroke="#2D3148" stroke-width="1"/>
+  <text x="1180" y="754" font-size="11" font-weight="600" fill="#EF4444" text-anchor="middle">Disconnect Integration</text>
+
+  <!-- ============================================================ -->
+  <!--  WORKFLOW INTEGRATION BOX (bottom, amber border)            -->
+  <!-- ============================================================ -->
+  <!-- Note: This box sits under the grid columns (left of detail panel) -->
+  <!-- Positioned below row 6 cards at y~1020 is too tight; place inline at bottom of visible area -->
+  <!-- We'll overlay it across the full grid width at the bottom -->
+
+  <!-- Workflow box — fits across grid area, below row 6 -->
+  <!-- Grid area ends at y=1014 (row6 end). Use a compact strip. -->
+  <!-- Since the detail panel occupies x=1042 to end, workflow box fits x=204 to x=1034 -->
+  <!-- We have limited height. Let's position it starting just after the row 5 group content ends. -->
+  <!-- Row 5 ends at y=916; Row 6 label is 932, cards 938-1014. -->
+  <!-- Actually we can use a compact banner below the last set of cards. -->
+  <!-- Given the 1024px height, let's tuck the workflow box as a narrow strip below cards. -->
+
+  <!-- The detail panel right side goes to 1024. Let the workflow box span beneath rows 1-5 -->
+  <!-- only in the main grid area. We'll put it at y=758 to y=930 (the area to the right of row5). -->
+  <!-- Actually it works best below row 6 cards if we use x=204..1034 y=nothing_left. -->
+  <!-- Place workflow integration box WITHIN detail panel area doesn't make sense. -->
+  <!-- Let's overlay it as an amber-bordered box just above the bottom, spanning full content width. -->
+  <!-- Final choice: compact amber box from y=774 to y=930 at x=1044..1358, below "Other" section. -->
+  <!-- Actually let's put it below row 5 in the space that's not used by row 6 cards x-range. -->
+  <!-- The cleanest solution: place workflow box at x=204,y=774 spanning to x=1034 (same width as grid) -->
+  <!-- height = 930-774 = 156px, rows 6 cards don't exist at that x range. Overlap issue. -->
+  <!-- BEST: Place workflow box spanning FULL width (x=204 to x=1034) starting after all 6 rows. -->
+  <!-- But 6 rows of cards already reach y=1014 within the 1024px canvas. -->
+  <!-- So let's make row 5 and row 6 slightly compact and fit workflow at very bottom. -->
+  <!-- Looking at actual numbers: row6 ends ~y=1014, canvas is 1024. Only 10px left. -->
+  <!-- Compromise: reduce card heights slightly for rows 5 & 6 or put workflow in the detail panel. -->
+  <!-- DECISION: Put workflow box in detail panel, below disconnect line. -->
+  <rect x="1056" y="766" width="290" height="148" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1068" y="784" font-size="10" font-weight="700" fill="#F59E0B">Workflow Integration</text>
+  <text x="1068" y="800" font-size="9" fill="#94A3B8">Delivery orders &#8594; pos_orders</text>
+  <text x="1068" y="814" font-size="9" fill="#94A3B8">(source='doordash'|'ubereats')</text>
+  <text x="1068" y="828" font-size="9" fill="#94A3B8">&#8594; same KDS queue as dine-in</text>
+  <text x="1068" y="842" font-size="9" fill="#94A3B8">&#8594; same inventory depletion</text>
+  <text x="1068" y="856" font-size="9" fill="#94A3B8">&#8594; same reports</text>
+  <text x="1068" y="872" font-size="9" fill="#64748B">No separate tablet needed.</text>
+  <text x="1068" y="886" font-size="9" fill="#64748B">Menu changes push to all channels</text>
+  <text x="1068" y="900" font-size="9" fill="#64748B">within 15 min.</text>
+  <text x="1068" y="916" font-size="9" fill="#64748B">Accounting: Supabase Edge Fn</text>
+  <text x="1068" y="930" font-size="9" fill="#64748B">&#8594; QuickBooks REST API @ 2am</text>
+
+  <!-- ============================================================ -->
+  <!--  SECTION: Compact row label + summary stats                 -->
+  <!-- (Top area of detail panel, connection summary)              -->
+  <!-- Already done above. Bottom strip of panel.                  -->
+  <!-- ============================================================ -->
+
+  <!-- Integration count summary strip at very bottom of detail panel -->
+  <rect x="1042" y="956" width="320" height="68" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1056" y="978" font-size="10" font-weight="600" fill="#64748B">INTEGRATION SUMMARY</text>
+  <text x="1056" y="996" font-size="11" fill="#10B981">6 Connected</text>
+  <text x="1142" y="996" font-size="11" fill="#F59E0B">1 Setup Needed</text>
+  <text x="1256" y="996" font-size="11" fill="#64748B">17 Available</text>
+  <text x="1056" y="1014" font-size="9" fill="#64748B">All synced data stored in Supabase &#8226; Zero external POS tablets</text>
+
+</svg>

@@ -1,0 +1,356 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT NAV SIDEBAR ===== -->
+  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+
+  <!-- Nav items -->
+  <text x="16" y="67"  font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="99"  font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="131" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="163" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="195" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="227" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="259" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="291" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="323" font-size="12" fill="#8B92A5">Inventory</text>
+
+  <!-- Compliance section header -->
+  <text x="16" y="360" font-size="9" font-weight="700" fill="#64748B" letter-spacing="1">COMPLIANCE</text>
+  <text x="16" y="388" font-size="12" fill="#8B92A5">Tax Exempt</text>
+
+  <!-- Active: Data Privacy -->
+  <rect x="0" y="398" width="210" height="34" fill="#1E2240" rx="4"/>
+  <rect x="0" y="398" width="3"   height="34" fill="#F59E0B"/>
+  <text x="16" y="420" font-size="12" font-weight="600" fill="#F59E0B">&#128274; Data Privacy</text>
+
+  <text x="16" y="452" font-size="12" fill="#8B92A5">Audit Log</text>
+  <text x="16" y="484" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="516" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="548" font-size="12" fill="#8B92A5">Forms</text>
+
+  <!-- ===== HEADER BAR ===== -->
+  <rect x="210" y="0" width="1156" height="58" fill="#1A1D2E"/>
+  <text x="228" y="30" font-size="18" font-weight="700" fill="#F1F5F9">Data Privacy &amp; Compliance</text>
+  <text x="228" y="48" font-size="11" fill="#94A3B8">CCPA &#183; GDPR &#183; CASL &#183; TCPA — deletion requests, consent records, retention schedules</text>
+  <!-- Last updated badge -->
+  <rect x="1180" y="14" width="172" height="26" rx="6" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1192" y="31" font-size="10" fill="#64748B">Last review: May 1, 2026</text>
+
+  <!-- divider -->
+  <rect x="210" y="58" width="1156" height="1" fill="#2D3148"/>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 1 — Compliance Status (top strip)                      -->
+  <!-- ============================================================ -->
+  <rect x="218" y="68" width="1140" height="90" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="88" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="0.5">REGULATORY COMPLIANCE STATUS</text>
+
+  <!-- Chip 1: CCPA - Compliant -->
+  <rect x="234" y="96" width="258" height="50" rx="7" fill="#0F1117" stroke="#10B981" stroke-width="1"/>
+  <rect x="234" y="96" width="4"   height="50" rx="2" fill="#10B981"/>
+  <text x="248" y="114" font-size="11" font-weight="700" fill="#F1F5F9">CCPA (California)</text>
+  <rect x="332" y="102" width="68" height="17" rx="8" fill="#064E3B"/>
+  <text x="341" y="114" font-size="9"  font-weight="700" fill="#10B981">&#10003; Compliant</text>
+  <text x="248" y="134" font-size="9"  fill="#94A3B8">Data deletion within 45 days &#10003;</text>
+
+  <!-- Chip 2: GDPR - Review needed -->
+  <rect x="502" y="96" width="258" height="50" rx="7" fill="#0F1117" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="502" y="96" width="4"   height="50" rx="2" fill="#F59E0B"/>
+  <text x="516" y="114" font-size="11" font-weight="700" fill="#F1F5F9">GDPR (EU)</text>
+  <rect x="590" y="102" width="90" height="17" rx="8" fill="#451A03"/>
+  <text x="599" y="114" font-size="9"  font-weight="700" fill="#F59E0B">&#9888; Review needed</text>
+  <text x="516" y="134" font-size="9"  fill="#94A3B8">DPA with SendGrid not signed</text>
+
+  <!-- Chip 3: CASL - Compliant -->
+  <rect x="770" y="96" width="258" height="50" rx="7" fill="#0F1117" stroke="#10B981" stroke-width="1"/>
+  <rect x="770" y="96" width="4"   height="50" rx="2" fill="#10B981"/>
+  <text x="784" y="114" font-size="11" font-weight="700" fill="#F1F5F9">CASL (Canada)</text>
+  <rect x="880" y="102" width="68" height="17" rx="8" fill="#064E3B"/>
+  <text x="889" y="114" font-size="9"  font-weight="700" fill="#10B981">&#10003; Compliant</text>
+  <text x="784" y="134" font-size="9"  fill="#94A3B8">SMS consent logged &#10003;</text>
+
+  <!-- Chip 4: CAN-SPAM - Compliant -->
+  <rect x="1038" y="96" width="258" height="50" rx="7" fill="#0F1117" stroke="#10B981" stroke-width="1"/>
+  <rect x="1038" y="96" width="4"   height="50" rx="2" fill="#10B981"/>
+  <text x="1052" y="114" font-size="11" font-weight="700" fill="#F1F5F9">CAN-SPAM</text>
+  <rect x="1128" y="102" width="68" height="17" rx="8" fill="#064E3B"/>
+  <text x="1137" y="114" font-size="9"  font-weight="700" fill="#10B981">&#10003; Compliant</text>
+  <text x="1052" y="134" font-size="9"  fill="#94A3B8">Unsubscribe honored &#10003;</text>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 2 — Data Deletion Requests (left, 600px wide)          -->
+  <!-- ============================================================ -->
+  <rect x="218" y="170" width="608" height="546" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Panel 2 header -->
+  <text x="234" y="192" font-size="13" font-weight="700" fill="#F1F5F9">Customer Data Deletion Requests</text>
+  <rect x="756" y="174" width="0" height="0"/><!-- spacer -->
+
+  <!-- Table header -->
+  <rect x="218" y="200" width="608" height="26" fill="#0F1117"/>
+  <text x="228" y="217" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">DATE</text>
+  <text x="296" y="217" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">CUSTOMER</text>
+  <text x="398" y="217" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">REQUEST TYPE</text>
+  <text x="524" y="217" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">STATUS</text>
+  <text x="640" y="217" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">ACTION</text>
+  <rect x="218" y="226" width="608" height="1" fill="#2D3148"/>
+
+  <!-- Row 1: Maria G. — Processing -->
+  <rect x="218" y="227" width="608" height="42" fill="#1A1D2E"/>
+  <text x="228" y="244" font-size="10" fill="#94A3B8">May 24</text>
+  <text x="228" y="258" font-size="9"  fill="#64748B">45d deadline</text>
+  <text x="296" y="244" font-size="10" font-weight="600" fill="#F1F5F9">Maria G.</text>
+  <text x="296" y="258" font-size="9"  fill="#64748B">maria@email.com</text>
+  <text x="398" y="244" font-size="10" fill="#F1F5F9">Delete all data</text>
+  <text x="398" y="258" font-size="9"  fill="#64748B">Deadline: Jun 8</text>
+  <!-- Processing badge -->
+  <rect x="524" y="231" width="84" height="18" rx="9" fill="#1E3A5F"/>
+  <text x="534" y="244" font-size="9"  font-weight="700" fill="#60A5FA">&#8635; Processing</text>
+  <!-- Action button -->
+  <rect x="640" y="232" width="44" height="18" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="651" y="244" font-size="9"  fill="#94A3B8">View</text>
+  <rect x="218" y="269" width="608" height="1" fill="#2D3148"/>
+
+  <!-- Row 2: Chen L. — Completed -->
+  <rect x="218" y="270" width="608" height="42" fill="#1A1D2E"/>
+  <text x="228" y="287" font-size="10" fill="#94A3B8">May 18</text>
+  <text x="296" y="287" font-size="10" font-weight="600" fill="#F1F5F9">Chen L.</text>
+  <text x="296" y="301" font-size="9"  fill="#64748B">phone only</text>
+  <text x="398" y="287" font-size="10" fill="#F1F5F9">Delete account</text>
+  <text x="398" y="301" font-size="9"  fill="#64748B">Completed May 20</text>
+  <!-- Completed badge -->
+  <rect x="524" y="274" width="80" height="18" rx="9" fill="#064E3B"/>
+  <text x="533" y="287" font-size="9"  font-weight="700" fill="#10B981">&#10003; Completed</text>
+  <!-- Action button -->
+  <rect x="640" y="274" width="56" height="18" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="648" y="287" font-size="9"  fill="#94A3B8">Receipt</text>
+  <rect x="218" y="312" width="608" height="1" fill="#2D3148"/>
+
+  <!-- Row 3: Anonymous — Completed -->
+  <rect x="218" y="313" width="608" height="42" fill="#1A1D2E"/>
+  <text x="228" y="330" font-size="10" fill="#94A3B8">May 10</text>
+  <text x="296" y="330" font-size="10" font-weight="600" fill="#64748B">(anonymous)</text>
+  <text x="296" y="344" font-size="9"  fill="#64748B">test@test.com</text>
+  <text x="398" y="330" font-size="10" fill="#F1F5F9">Opt-out marketing</text>
+  <text x="398" y="344" font-size="9"  fill="#64748B">Completed</text>
+  <!-- Completed badge -->
+  <rect x="524" y="317" width="80" height="18" rx="9" fill="#064E3B"/>
+  <text x="533" y="330" font-size="9"  font-weight="700" fill="#10B981">&#10003; Completed</text>
+  <!-- Action button -->
+  <rect x="640" y="317" width="56" height="18" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="648" y="330" font-size="9"  fill="#94A3B8">Receipt</text>
+  <rect x="218" y="355" width="608" height="1" fill="#2D3148"/>
+
+  <!-- Row 4: James R. — Exported -->
+  <rect x="218" y="356" width="608" height="42" fill="#1A1D2E"/>
+  <text x="228" y="373" font-size="10" fill="#94A3B8">Apr 29</text>
+  <text x="296" y="373" font-size="10" font-weight="600" fill="#F1F5F9">James R.</text>
+  <text x="296" y="387" font-size="9"  fill="#64748B">james@r.com</text>
+  <text x="398" y="373" font-size="10" fill="#F1F5F9">Export my data</text>
+  <text x="398" y="387" font-size="9"  fill="#64748B">Exported May 2</text>
+  <!-- Exported badge -->
+  <rect x="524" y="360" width="74" height="18" rx="9" fill="#1E1B4B"/>
+  <text x="533" y="373" font-size="9"  font-weight="700" fill="#8B5CF6">&#8595; Exported</text>
+  <!-- Action button -->
+  <rect x="640" y="360" width="66" height="18" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="646" y="373" font-size="9"  fill="#94A3B8">Download</text>
+  <rect x="218" y="398" width="608" height="1" fill="#2D3148"/>
+
+  <!-- Action buttons row -->
+  <rect x="228" y="408" width="160" height="28" rx="6" fill="#F59E0B"/>
+  <text x="253" y="426" font-size="10" font-weight="700" fill="#000">+ Submit Deletion Request</text>
+  <rect x="398" y="408" width="214" height="28" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="412" y="426" font-size="10" fill="#94A3B8">Export Customer Data (GDPR Art. 20)</text>
+
+  <!-- What gets deleted section -->
+  <rect x="218" y="446" width="608" height="1" fill="#2D3148"/>
+  <text x="234" y="463" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">WHAT GETS DELETED PER REQUEST</text>
+
+  <!-- Deleted items -->
+  <text x="234" y="482" font-size="10" fill="#10B981">&#10003;</text>
+  <text x="248" y="482" font-size="10" fill="#F1F5F9">pos_customers row</text>
+  <text x="356" y="482" font-size="10" fill="#64748B">&#8594; anonymized (name, email, phone &#8594; "DELETED")</text>
+
+  <text x="234" y="500" font-size="10" fill="#10B981">&#10003;</text>
+  <text x="248" y="500" font-size="10" fill="#F1F5F9">pos_loyalty_events</text>
+  <text x="356" y="500" font-size="10" fill="#64748B">&#8594; retained aggregate only, customer_id nulled</text>
+
+  <text x="234" y="518" font-size="10" fill="#10B981">&#10003;</text>
+  <text x="248" y="518" font-size="10" fill="#F1F5F9">Email/SMS consent records</text>
+  <text x="356" y="518" font-size="10" fill="#64748B">&#8594; deleted</text>
+
+  <text x="234" y="536" font-size="10" fill="#10B981">&#10003;</text>
+  <text x="248" y="536" font-size="10" fill="#F1F5F9">Marketing campaign history</text>
+  <text x="356" y="536" font-size="10" fill="#64748B">&#8594; anonymized</text>
+
+  <text x="234" y="556" font-size="10" fill="#F97316">&#9888;</text>
+  <text x="248" y="556" font-size="10" fill="#F1F5F9">pos_payments</text>
+  <text x="356" y="556" font-size="10" fill="#64748B">&#8594; retained 7 years (financial records — legal basis)</text>
+
+  <text x="234" y="574" font-size="10" fill="#F97316">&#9888;</text>
+  <text x="248" y="574" font-size="10" fill="#F1F5F9">pos_audit_log</text>
+  <text x="356" y="574" font-size="10" fill="#64748B">&#8594; retained 7 years (dram shop, tax compliance)</text>
+
+  <!-- DB schema box -->
+  <rect x="228" y="586" width="580" height="116" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="240" y="603" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">DB SCHEMA</text>
+  <text x="240" y="620" font-size="9" fill="#8B5CF6" font-family="monospace,monospace">pos_privacy_requests</text>
+  <text x="352" y="620" font-size="9" fill="#64748B" font-family="monospace,monospace">(id, customer_id, request_type, requested_at, deadline,</text>
+  <text x="240" y="634" font-size="9" fill="#64748B" font-family="monospace,monospace">                     completed_at, completed_by, notes)</text>
+  <text x="240" y="649" font-size="9" fill="#8B5CF6" font-family="monospace,monospace">pos_marketing_consent</text>
+  <text x="362" y="649" font-size="9" fill="#64748B" font-family="monospace,monospace">(customer_id, channel, consented_at, consent_method,</text>
+  <text x="240" y="663" font-size="9" fill="#64748B" font-family="monospace,monospace">                      revoked_at, ip_address, consent_text_version)</text>
+  <text x="240" y="678" font-size="9" fill="#10B981" font-family="monospace,monospace">UPDATE pos_customers SET name='DELETED', email=null, phone=null WHERE id=X</text>
+  <text x="240" y="693" font-size="9" fill="#10B981" font-family="monospace,monospace">-- Cron: DELETE pos_customers WHERE created_at &lt; NOW()-interval '2 years'</text>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 3 — SMS/Email Consent (right 546px)                    -->
+  <!-- ============================================================ -->
+  <rect x="836" y="170" width="522" height="546" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Panel 3 header -->
+  <text x="854" y="192" font-size="13" font-weight="700" fill="#F1F5F9">Marketing Consent Records</text>
+
+  <!-- Email marketing -->
+  <rect x="836" y="200" width="522" height="1" fill="#2D3148"/>
+  <text x="854" y="220" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">EMAIL MARKETING</text>
+  <rect x="854" y="228" width="490" height="56" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <!-- Opted in -->
+  <text x="868" y="246" font-size="18" font-weight="700" fill="#10B981">1,024</text>
+  <text x="868" y="260" font-size="9"  fill="#64748B">opted in</text>
+  <!-- Opted out -->
+  <text x="968" y="246" font-size="18" font-weight="700" fill="#EF4444">87</text>
+  <text x="968" y="260" font-size="9"  fill="#64748B">opted out</text>
+  <!-- Pending -->
+  <text x="1040" y="246" font-size="18" font-weight="700" fill="#F59E0B">43</text>
+  <text x="1040" y="260" font-size="9"  fill="#64748B">pending confirm</text>
+  <text x="1130" y="246" font-size="9"  fill="#8B5CF6">CASL</text>
+  <text x="1130" y="260" font-size="9"  fill="#64748B">double opt-in</text>
+
+  <!-- SMS marketing -->
+  <text x="854" y="303" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">SMS MARKETING (TCPA)</text>
+  <rect x="854" y="310" width="490" height="56" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="868" y="328" font-size="18" font-weight="700" fill="#10B981">684</text>
+  <text x="868" y="342" font-size="9"  fill="#64748B">written consent on file</text>
+  <text x="988" y="328" font-size="18" font-weight="700" fill="#EF4444">12</text>
+  <text x="988" y="342" font-size="9"  fill="#64748B">opted out</text>
+  <text x="1050" y="325" font-size="9"  fill="#64748B" text-anchor="middle">Auto-adds to</text>
+  <text x="1050" y="339" font-size="9"  fill="#64748B" text-anchor="middle">suppression list</text>
+  <text x="1050" y="353" font-size="9"  fill="#F59E0B" text-anchor="middle">on STOP reply</text>
+
+  <!-- Push notifications -->
+  <text x="854" y="385" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">PUSH NOTIFICATIONS</text>
+  <rect x="854" y="392" width="490" height="36" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="868" y="415" font-size="18" font-weight="700" fill="#10B981">412</text>
+  <text x="916" y="415" font-size="10" fill="#64748B">enabled</text>
+
+  <!-- TCPA warning -->
+  <rect x="854" y="438" width="490" height="60" rx="6" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+  <text x="868" y="455" font-size="10" font-weight="700" fill="#EF4444">&#9888; TCPA Compliance Notice</text>
+  <text x="868" y="470" font-size="9"  fill="#94A3B8">Each SMS marketing send requires documented written consent.</text>
+  <text x="868" y="483" font-size="9"  fill="#94A3B8">Violation: $500–$1,500 per text. System blocks sends to</text>
+  <text x="868" y="496" font-size="9"  fill="#94A3B8">suppressed numbers automatically.</text>
+
+  <!-- CASL double opt-in -->
+  <rect x="854" y="508" width="490" height="60" rx="6" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="868" y="525" font-size="10" font-weight="700" fill="#8B5CF6">&#9679; Double Opt-In Flow (CASL — Canada)</text>
+  <text x="868" y="540" font-size="9"  fill="#94A3B8">Signup &#8594; confirmation email sent &#8594; must click confirm within</text>
+  <text x="868" y="554" font-size="9"  fill="#94A3B8">10 days. Pending 43 awaiting confirmation before any send.</text>
+  <text x="868" y="568" font-size="9"  fill="#64748B">Unconfirmed records auto-expire after 10 days.</text>
+
+  <!-- Consent export button -->
+  <rect x="854" y="580" width="182" height="28" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="872" y="598" font-size="10" fill="#94A3B8">Export Consent Records</text>
+  <rect x="1046" y="580" width="148" height="28" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="1064" y="598" font-size="10" fill="#94A3B8">Suppression List</text>
+
+  <!-- Consent stats summary -->
+  <rect x="854" y="618" width="490" height="80" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="868" y="636" font-size="9"  font-weight="700" fill="#64748B" letter-spacing="0.5">CONSENT AUDIT TRAIL</text>
+  <text x="868" y="652" font-size="9"  fill="#94A3B8">&#10003; consent_method stored per record (web-form / POS / import)</text>
+  <text x="868" y="666" font-size="9"  fill="#94A3B8">&#10003; ip_address captured at consent time</text>
+  <text x="868" y="680" font-size="9"  fill="#94A3B8">&#10003; consent_text_version links to exact disclosure copy</text>
+  <text x="868" y="694" font-size="9"  fill="#94A3B8">&#10003; revoked_at timestamp auto-set on STOP / unsubscribe</text>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 4 — Data Retention Settings (bottom full width)        -->
+  <!-- ============================================================ -->
+  <rect x="218" y="726" width="1140" height="282" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="748" font-size="13" font-weight="700" fill="#F1F5F9">Data Retention Schedules</text>
+  <text x="910" y="748" font-size="10" fill="#64748B">&#8635; Cron enforces deletion nightly at 02:00 UTC</text>
+
+  <!-- Table header -->
+  <rect x="218" y="754" width="1140" height="26" fill="#0F1117"/>
+  <text x="234" y="771" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">DATA TYPE</text>
+  <text x="502" y="771" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">RETENTION PERIOD</text>
+  <text x="726" y="771" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">LEGAL BASIS</text>
+  <text x="960" y="771" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.5">DELETABLE ON REQUEST</text>
+  <rect x="218" y="780" width="1140" height="1" fill="#2D3148"/>
+
+  <!-- Row 1 -->
+  <rect x="218" y="781" width="1140" height="36" fill="#1A1D2E"/>
+  <text x="234" y="799" font-size="10" font-weight="600" fill="#F1F5F9">Customer PII (name / email / phone)</text>
+  <text x="234" y="812" font-size="9"  fill="#64748B">pos_customers.name, .email, .phone</text>
+  <text x="502" y="799" font-size="10" fill="#F1F5F9">2 years after last visit</text>
+  <text x="726" y="799" font-size="10" fill="#94A3B8">Business records / loyalty</text>
+  <rect x="960" y="786" width="90" height="18" rx="9" fill="#064E3B"/>
+  <text x="975" y="799" font-size="9"  font-weight="700" fill="#10B981">&#10003; Deletable</text>
+  <rect x="218" y="817" width="1140" height="1" fill="#2D3148"/>
+
+  <!-- Row 2 -->
+  <rect x="218" y="818" width="1140" height="36" fill="#1A1D2E"/>
+  <text x="234" y="836" font-size="10" font-weight="600" fill="#F1F5F9">Payment records</text>
+  <text x="234" y="849" font-size="9"  fill="#64748B">pos_payments</text>
+  <text x="502" y="836" font-size="10" fill="#F97316">7 years</text>
+  <text x="726" y="836" font-size="10" fill="#94A3B8">IRS Rev. Proc. 98-25 / financial law</text>
+  <rect x="960" y="823" width="108" height="18" rx="9" fill="#2D1515"/>
+  <text x="972" y="836" font-size="9"  font-weight="700" fill="#EF4444">&#10007; Not deletable</text>
+  <rect x="218" y="854" width="1140" height="1" fill="#2D3148"/>
+
+  <!-- Row 3 -->
+  <rect x="218" y="855" width="1140" height="36" fill="#1A1D2E"/>
+  <text x="234" y="873" font-size="10" font-weight="600" fill="#F1F5F9">Audit log</text>
+  <text x="234" y="886" font-size="9"  fill="#64748B">pos_audit_log</text>
+  <text x="502" y="873" font-size="10" fill="#F97316">7 years</text>
+  <text x="726" y="873" font-size="10" fill="#94A3B8">Dram shop liability / state tax law</text>
+  <rect x="960" y="860" width="108" height="18" rx="9" fill="#2D1515"/>
+  <text x="972" y="873" font-size="9"  font-weight="700" fill="#EF4444">&#10007; Not deletable</text>
+  <rect x="218" y="891" width="1140" height="1" fill="#2D3148"/>
+
+  <!-- Row 4 -->
+  <rect x="218" y="892" width="1140" height="36" fill="#1A1D2E"/>
+  <text x="234" y="910" font-size="10" font-weight="600" fill="#F1F5F9">Order history</text>
+  <text x="234" y="923" font-size="9"  fill="#64748B">pos_orders</text>
+  <text x="502" y="910" font-size="10" fill="#F1F5F9">3 years</text>
+  <text x="726" y="910" font-size="10" fill="#94A3B8">Business / loyalty analytics</text>
+  <rect x="960" y="897" width="118" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="970" y="910" font-size="9"  font-weight="700" fill="#F59E0B">~ Anonymizable</text>
+  <rect x="218" y="928" width="1140" height="1" fill="#2D3148"/>
+
+  <!-- Row 5 -->
+  <rect x="218" y="929" width="1140" height="36" fill="#1A1D2E"/>
+  <text x="234" y="947" font-size="10" font-weight="600" fill="#F1F5F9">Loyalty points history</text>
+  <text x="234" y="960" font-size="9"  fill="#64748B">pos_loyalty_events</text>
+  <text x="502" y="947" font-size="10" fill="#F1F5F9">Until account deleted</text>
+  <text x="726" y="947" font-size="10" fill="#94A3B8">Customer benefit</text>
+  <rect x="960" y="934" width="90" height="18" rx="9" fill="#064E3B"/>
+  <text x="975" y="947" font-size="9"  font-weight="700" fill="#10B981">&#10003; Deletable</text>
+  <rect x="218" y="965" width="1140" height="1" fill="#2D3148"/>
+
+  <!-- Row 6 -->
+  <rect x="218" y="966" width="1140" height="36" fill="#1A1D2E"/>
+  <text x="234" y="984" font-size="10" font-weight="600" fill="#F1F5F9">Marketing consent records</text>
+  <text x="234" y="997" font-size="9"  fill="#64748B">pos_marketing_consent</text>
+  <text x="502" y="984" font-size="10" fill="#F97316">Permanent log</text>
+  <text x="726" y="984" font-size="10" fill="#94A3B8">TCPA defense / FCC mandate</text>
+  <rect x="960" y="971" width="138" height="18" rx="9" fill="#2D1515"/>
+  <text x="968" y="984" font-size="9"  font-weight="700" fill="#EF4444">&#10007; Required for defense</text>
+
+  <!-- Footer note -->
+  <text x="234" y="1014" font-size="9" fill="#64748B">Retention schedules reviewed quarterly by compliance lead. Last updated: May 1, 2026. Consult legal counsel for jurisdiction-specific obligations.</text>
+
+</svg>

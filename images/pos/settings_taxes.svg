@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1366" height="900" fill="#0F1117"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1366" height="54" fill="#1A1D2E"/>
+  <rect x="0" y="54" width="1366" height="1" fill="#2D3050"/>
+  <text x="24" y="34" fill="#F59E0B" font-size="16" font-weight="700">Synalux POS</text>
+  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">⚙ Back Office — Tax Configuration</text>
+  <text x="1300" y="34" fill="#94A3B8" font-size="13" text-anchor="end">Admin · John S.</text>
+
+  <!-- Left nav -->
+  <rect x="0" y="55" width="200" height="845" fill="#13162A"/>
+  <rect x="200" y="55" width="1" height="845" fill="#2D3050"/>
+
+  <text x="100" y="90" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">BACK OFFICE</text>
+  <rect x="8" y="98" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="118" font-size="14">🏪</text>
+  <text x="50" y="122" fill="#CBD5E1" font-size="13">Restaurant Info</text>
+  <rect x="8" y="144" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="164" font-size="14">🍔</text>
+  <text x="50" y="168" fill="#CBD5E1" font-size="13">Menu Builder</text>
+  <rect x="8" y="190" width="184" height="40" rx="8" fill="#F59E0B"/>
+  <text x="24" y="210" font-size="14">💰</text>
+  <text x="50" y="214" fill="#0F1117" font-size="13" font-weight="700">Taxes</text>
+  <rect x="8" y="236" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="256" font-size="14">👥</text>
+  <text x="50" y="260" fill="#CBD5E1" font-size="13">Employees</text>
+  <rect x="8" y="282" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="302" font-size="14">🖨</text>
+  <text x="50" y="306" fill="#CBD5E1" font-size="13">Equipment</text>
+  <rect x="8" y="328" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="348" font-size="14">🏠</text>
+  <text x="50" y="352" fill="#CBD5E1" font-size="13">Floor Plans</text>
+  <rect x="8" y="374" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="394" font-size="14">💳</text>
+  <text x="50" y="398" fill="#CBD5E1" font-size="13">Payments</text>
+  <rect x="8" y="420" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="440" font-size="14">📊</text>
+  <text x="50" y="444" fill="#CBD5E1" font-size="13">Reports</text>
+  <rect x="8" y="466" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="486" font-size="14">🎁</text>
+  <text x="50" y="490" fill="#CBD5E1" font-size="13">Advantage Prog.</text>
+  <rect x="8" y="512" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="532" font-size="14">🔗</text>
+  <text x="50" y="536" fill="#CBD5E1" font-size="13">Integrations</text>
+
+  <!-- Main content -->
+  <rect x="210" y="65" width="1146" height="824" fill="#0F1117"/>
+
+  <!-- Page title + add button -->
+  <text x="230" y="104" fill="#E2E8F0" font-size="22" font-weight="700">Tax Zones</text>
+  <text x="230" y="126" fill="#64748B" font-size="13">Configure tax rates for each jurisdiction. Assign zones to revenue centers.</text>
+  <rect x="1140" y="76" width="200" height="40" rx="8" fill="#F59E0B"/>
+  <text x="1240" y="101" fill="#0F1117" font-size="14" font-weight="700" text-anchor="middle">+ Add Tax Zone</text>
+
+  <!-- Region quick-select tabs -->
+  <rect x="224" y="142" width="1130" height="40" rx="8" fill="#13162A"/>
+  <rect x="228" y="146" width="100" height="32" rx="6" fill="#F59E0B"/>
+  <text x="278" y="166" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">🇺🇸 USA</text>
+  <rect x="334" y="146" width="100" height="32" rx="6" fill="#1E2235"/>
+  <text x="384" y="166" fill="#94A3B8" font-size="13" text-anchor="middle">🇨🇦 Canada</text>
+  <rect x="440" y="146" width="100" height="32" rx="6" fill="#1E2235"/>
+  <text x="490" y="166" fill="#94A3B8" font-size="13" text-anchor="middle">🇪🇺 EU/VAT</text>
+  <rect x="546" y="146" width="100" height="32" rx="6" fill="#1E2235"/>
+  <text x="596" y="166" fill="#94A3B8" font-size="13" text-anchor="middle">🇬🇧 UK</text>
+  <rect x="652" y="146" width="80" height="32" rx="6" fill="#1E2235"/>
+  <text x="692" y="166" fill="#94A3B8" font-size="13" text-anchor="middle">Custom</text>
+
+  <!-- ===== USA TAX ZONES ===== -->
+  <!-- Table header -->
+  <rect x="224" y="196" width="1130" height="36" rx="8" fill="#1A1D2E"/>
+  <text x="244" y="218" fill="#64748B" font-size="12" font-weight="700">ZONE NAME</text>
+  <text x="500" y="218" fill="#64748B" font-size="12" font-weight="700">JURISDICTION</text>
+  <text x="680" y="218" fill="#64748B" font-size="12" font-weight="700">RATE</text>
+  <text x="780" y="218" fill="#64748B" font-size="12" font-weight="700">APPLIES TO</text>
+  <text x="960" y="218" fill="#64748B" font-size="12" font-weight="700">INCLUSIVE</text>
+  <text x="1060" y="218" fill="#64748B" font-size="12" font-weight="700">ACTIVE</text>
+  <text x="1180" y="218" fill="#64748B" font-size="12" font-weight="700" text-anchor="middle">ACTIONS</text>
+
+  <!-- Zone row 1 - CA State Sales Tax -->
+  <rect x="224" y="236" width="1130" height="52" rx="6" fill="#1A1D2E"/>
+  <text x="244" y="258" fill="#E2E8F0" font-size="14" font-weight="600">CA State Sales Tax</text>
+  <text x="244" y="276" fill="#64748B" font-size="11">California · State</text>
+  <text x="500" y="263" fill="#94A3B8" font-size="13">State</text>
+  <text x="680" y="263" fill="#F59E0B" font-size="16" font-weight="700">6.25%</text>
+  <text x="780" y="258" fill="#94A3B8" font-size="12">All taxable items</text>
+  <text x="780" y="276" fill="#64748B" font-size="11">Excl: grocery, medicine</text>
+  <rect x="956" y="247" width="40" height="20" rx="10" fill="#1E2235"/>
+  <text x="976" y="261" fill="#64748B" font-size="11" text-anchor="middle">Off</text>
+  <!-- Toggle active -->
+  <rect x="1056" y="247" width="40" height="20" rx="10" fill="#22C55E"/>
+  <circle cx="1086" cy="257" r="8" fill="white"/>
+  <text x="1180" y="263" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- Zone row 2 - CA County Tax -->
+  <rect x="224" y="294" width="1130" height="52" rx="6" fill="#0F1117"/>
+  <text x="244" y="316" fill="#E2E8F0" font-size="14" font-weight="600">LA County Tax</text>
+  <text x="244" y="334" fill="#64748B" font-size="11">Los Angeles County · County</text>
+  <text x="500" y="321" fill="#94A3B8" font-size="13">County</text>
+  <text x="680" y="321" fill="#F59E0B" font-size="16" font-weight="700">1.00%</text>
+  <text x="780" y="316" fill="#94A3B8" font-size="12">All taxable items</text>
+  <rect x="956" y="305" width="40" height="20" rx="10" fill="#1E2235"/>
+  <text x="976" y="319" fill="#64748B" font-size="11" text-anchor="middle">Off</text>
+  <rect x="1056" y="305" width="40" height="20" rx="10" fill="#22C55E"/>
+  <circle cx="1086" cy="315" r="8" fill="white"/>
+  <text x="1180" y="321" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- Zone row 3 - Alcohol -->
+  <rect x="224" y="352" width="1130" height="52" rx="6" fill="#1A1D2E"/>
+  <rect x="224" y="352" width="4" height="52" rx="2" fill="#EF4444"/>
+  <text x="244" y="374" fill="#E2E8F0" font-size="14" font-weight="600">CA Alcohol Excise</text>
+  <text x="244" y="392" fill="#64748B" font-size="11">California · Category-specific</text>
+  <text x="500" y="379" fill="#94A3B8" font-size="13">State</text>
+  <text x="680" y="379" fill="#EF4444" font-size="16" font-weight="700">3.30%</text>
+  <text x="780" y="374" fill="#EF4444" font-size="12">Alcohol only</text>
+  <text x="780" y="392" fill="#64748B" font-size="11">Category: alcohol</text>
+  <rect x="956" y="363" width="40" height="20" rx="10" fill="#1E2235"/>
+  <text x="976" y="377" fill="#64748B" font-size="11" text-anchor="middle">Off</text>
+  <rect x="1056" y="363" width="40" height="20" rx="10" fill="#22C55E"/>
+  <circle cx="1086" cy="373" r="8" fill="white"/>
+  <text x="1180" y="379" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- ===== CANADA SECTION ===== -->
+  <rect x="224" y="420" width="1130" height="30" rx="4" fill="#13162A"/>
+  <text x="244" y="439" fill="#64748B" font-size="12" font-weight="700">🇨🇦 CANADA — GST/PST/HST/QST</text>
+
+  <!-- Canada row 1 - GST -->
+  <rect x="224" y="456" width="1130" height="52" rx="6" fill="#1A1D2E"/>
+  <text x="244" y="478" fill="#E2E8F0" font-size="14" font-weight="600">GST — Federal</text>
+  <text x="244" y="496" fill="#64748B" font-size="11">Canada Federal · All provinces</text>
+  <text x="500" y="483" fill="#94A3B8" font-size="13">Federal</text>
+  <text x="680" y="483" fill="#F59E0B" font-size="16" font-weight="700">5.00%</text>
+  <text x="780" y="483" fill="#94A3B8" font-size="12">All taxable items</text>
+  <rect x="956" y="467" width="40" height="20" rx="10" fill="#1E2235"/>
+  <text x="976" y="481" fill="#64748B" font-size="11" text-anchor="middle">Off</text>
+  <rect x="1056" y="467" width="40" height="20" rx="10" fill="#22C55E"/>
+  <circle cx="1086" cy="477" r="8" fill="white"/>
+  <text x="1180" y="483" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- Canada row 2 - BC PST -->
+  <rect x="224" y="514" width="1130" height="52" rx="6" fill="#0F1117"/>
+  <text x="244" y="536" fill="#E2E8F0" font-size="14" font-weight="600">BC PST</text>
+  <text x="244" y="554" fill="#64748B" font-size="11">British Columbia · Provincial · Compound: No</text>
+  <text x="500" y="541" fill="#94A3B8" font-size="13">Provincial</text>
+  <text x="680" y="541" fill="#F59E0B" font-size="16" font-weight="700">7.00%</text>
+  <text x="780" y="536" fill="#94A3B8" font-size="12">Restaurant services</text>
+  <text x="780" y="554" fill="#64748B" font-size="11">On top of GST (not compound)</text>
+  <rect x="956" y="525" width="40" height="20" rx="10" fill="#1E2235"/>
+  <text x="976" y="539" fill="#64748B" font-size="11" text-anchor="middle">Off</text>
+  <rect x="1056" y="525" width="40" height="20" rx="10" fill="#22C55E"/>
+  <circle cx="1086" cy="535" r="8" fill="white"/>
+  <text x="1180" y="541" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- Canada row 3 - QST -->
+  <rect x="224" y="572" width="1130" height="52" rx="6" fill="#1A1D2E"/>
+  <text x="244" y="594" fill="#E2E8F0" font-size="14" font-weight="600">QST — Quebec</text>
+  <text x="244" y="612" fill="#64748B" font-size="11">Quebec · Provincial · Compound: Yes (on GST+amount)</text>
+  <text x="500" y="599" fill="#94A3B8" font-size="13">Provincial</text>
+  <text x="680" y="599" fill="#F59E0B" font-size="16" font-weight="700">9.975%</text>
+  <text x="780" y="594" fill="#94A3B8" font-size="12">All taxable items</text>
+  <text x="780" y="612" fill="#EF4444" font-size="11">⚠ Compound — applies on (amount + GST)</text>
+  <rect x="956" y="583" width="40" height="20" rx="10" fill="#1E2235"/>
+  <text x="976" y="597" fill="#64748B" font-size="11" text-anchor="middle">Off</text>
+  <rect x="1056" y="583" width="40" height="20" rx="10" fill="#1E2235"/>
+  <circle cx="1066" cy="593" r="8" fill="white" opacity="0.5"/>
+  <text x="1180" y="599" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- ===== VAT SECTION ===== -->
+  <rect x="224" y="640" width="1130" height="30" rx="4" fill="#13162A"/>
+  <text x="244" y="659" fill="#64748B" font-size="12" font-weight="700">🇪🇺 EU/UK — VAT (Inclusive Pricing)</text>
+
+  <!-- UK VAT row -->
+  <rect x="224" y="676" width="1130" height="52" rx="6" fill="#1A1D2E"/>
+  <text x="244" y="698" fill="#E2E8F0" font-size="14" font-weight="600">UK VAT — Standard</text>
+  <text x="244" y="716" fill="#64748B" font-size="11">United Kingdom · Value Added Tax</text>
+  <text x="500" y="703" fill="#94A3B8" font-size="13">National</text>
+  <text x="680" y="703" fill="#F59E0B" font-size="16" font-weight="700">20.00%</text>
+  <text x="780" y="698" fill="#94A3B8" font-size="12">Alcohol, processed food</text>
+  <text x="780" y="716" fill="#3B82F6" font-size="11">⬤ Inclusive — price shown includes VAT</text>
+  <!-- Inclusive toggle ON -->
+  <rect x="952" y="687" width="44" height="22" rx="11" fill="#3B82F6"/>
+  <circle cx="986" cy="698" r="9" fill="white"/>
+  <rect x="1056" y="687" width="40" height="20" rx="10" fill="#1E2235"/>
+  <circle cx="1066" cy="697" r="8" fill="white" opacity="0.5"/>
+  <text x="1180" y="703" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- EU Germany row -->
+  <rect x="224" y="734" width="1130" height="52" rx="6" fill="#0F1117"/>
+  <text x="244" y="756" fill="#E2E8F0" font-size="14" font-weight="600">DE VAT — Restaurant</text>
+  <text x="244" y="774" fill="#64748B" font-size="11">Germany · 7% reduced rate for restaurant services</text>
+  <text x="500" y="761" fill="#94A3B8" font-size="13">National</text>
+  <text x="680" y="761" fill="#F59E0B" font-size="16" font-weight="700">7.00%</text>
+  <text x="780" y="756" fill="#94A3B8" font-size="12">Restaurant food service</text>
+  <text x="780" y="774" fill="#3B82F6" font-size="11">⬤ Inclusive</text>
+  <rect x="952" y="745" width="44" height="22" rx="11" fill="#3B82F6"/>
+  <circle cx="986" cy="756" r="9" fill="white"/>
+  <rect x="1056" y="745" width="40" height="20" rx="10" fill="#1E2235"/>
+  <circle cx="1066" cy="755" r="8" fill="white" opacity="0.5"/>
+  <text x="1180" y="761" fill="#60A5FA" font-size="12" text-anchor="middle">Edit · ×</text>
+
+  <!-- Tax Formula info box -->
+  <rect x="224" y="800" width="550" height="80" rx="10" fill="#10202D"/>
+  <text x="244" y="822" fill="#60A5FA" font-size="13" font-weight="700">📐 Tax Calculation Formula</text>
+  <text x="244" y="842" fill="#94A3B8" font-size="12">US: subtotal × rate = tax (added to total)</text>
+  <text x="244" y="858" fill="#94A3B8" font-size="12">CA compound: (subtotal + GST) × PST_rate</text>
+  <text x="244" y="874" fill="#94A3B8" font-size="12">VAT inclusive: tax = price − (price ÷ (1 + rate))</text>
+
+  <!-- Assign to revenue center -->
+  <rect x="790" y="800" width="564" height="80" rx="10" fill="#2D1A00"/>
+  <text x="810" y="822" fill="#F59E0B" font-size="13" font-weight="700">📍 Assign Zones to Revenue Centers</text>
+  <text x="810" y="842" fill="#94A3B8" font-size="12">Each zone must be linked to one or more revenue centers.</text>
+  <text x="810" y="858" fill="#94A3B8" font-size="12">Revenue center → pos_revenue_centers.tax_zone_ids[]</text>
+  <text x="810" y="874" fill="#F59E0B" font-size="12">Configure in Floor Plans → Revenue Center settings</text>
+
+  <text x="683" y="895" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS — Tax Configuration (F10 Open/Close Day + F14 Reporting · Back Office · 1366×900)</text>
+</svg>

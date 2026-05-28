@@ -1,0 +1,424 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+
+  <!-- ══════════════════════════════════════════════
+       BACKGROUND
+  ══════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ══════════════════════════════════════════════
+       LEFT SIDEBAR  (width 220)
+  ══════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="220" height="1024" fill="#13162A"/>
+  <!-- Top logo bar -->
+  <rect x="0" y="0" width="220" height="52" fill="#0D0F1E"/>
+  <text x="18" y="22" font-size="11" font-weight="700" fill="#F59E0B" letter-spacing="2">SYNALUX</text>
+  <text x="18" y="39" font-size="10" fill="#64748B" letter-spacing="1">POINT OF SALE</text>
+
+  <!-- Section label -->
+  <text x="18" y="76" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1.5">SETTINGS</text>
+
+  <!-- Nav items -->
+  <text x="18" y="104" font-size="13" fill="#94A3B8">Menu Builder</text>
+  <text x="18" y="132" font-size="13" fill="#94A3B8">Employees</text>
+  <text x="18" y="160" font-size="13" fill="#94A3B8">Taxes &amp; Fees</text>
+  <text x="18" y="188" font-size="13" fill="#94A3B8">Discounts</text>
+  <text x="18" y="216" font-size="13" fill="#94A3B8">Gift Cards</text>
+  <text x="18" y="244" font-size="13" fill="#94A3B8">Loyalty</text>
+  <text x="18" y="272" font-size="13" fill="#94A3B8">Printers &amp; Routing</text>
+  <text x="18" y="300" font-size="13" fill="#94A3B8">Label Printer</text>
+  <text x="18" y="328" font-size="13" fill="#94A3B8">Cash Management</text>
+  <text x="18" y="356" font-size="13" fill="#94A3B8">Tip Pooling</text>
+  <text x="18" y="384" font-size="13" fill="#94A3B8">Inventory</text>
+  <text x="18" y="412" font-size="13" fill="#94A3B8">Recipes</text>
+  <text x="18" y="440" font-size="13" fill="#94A3B8">Price Levels</text>
+  <text x="18" y="468" font-size="13" fill="#94A3B8">Revenue Centers</text>
+  <!-- ACTIVE ITEM -->
+  <rect x="0" y="479" width="220" height="36" fill="#1E2240" rx="0"/>
+  <rect x="0" y="479" width="3" height="36" fill="#F59E0B"/>
+  <text x="18" y="502" font-size="13" font-weight="600" fill="#F59E0B">Scale / Weight Pricing</text>
+  <!-- continue nav -->
+  <text x="18" y="535" font-size="13" fill="#94A3B8">Auto Gratuity</text>
+  <text x="18" y="563" font-size="13" fill="#94A3B8">Tax Exempt</text>
+  <text x="18" y="591" font-size="13" fill="#94A3B8">Combos</text>
+  <text x="18" y="619" font-size="13" fill="#94A3B8">Scheduling</text>
+  <text x="18" y="647" font-size="13" fill="#94A3B8">Integrations</text>
+  <text x="18" y="675" font-size="13" fill="#94A3B8">Training Mode</text>
+  <text x="18" y="703" font-size="13" fill="#94A3B8">House Accounts</text>
+  <text x="18" y="731" font-size="13" fill="#94A3B8">Forms</text>
+  <text x="18" y="759" font-size="13" fill="#94A3B8">Equipment</text>
+  <text x="18" y="787" font-size="13" fill="#94A3B8">Reports</text>
+  <!-- bottom user pill -->
+  <rect x="10" y="980" width="200" height="34" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="28" cy="997" r="10" fill="#2D3148"/>
+  <text x="25" y="1001" font-size="10" fill="#94A3B8">D</text>
+  <text x="44" y="995" font-size="11" font-weight="600" fill="#F1F5F9">Dmitri C.</text>
+  <text x="44" y="1008" font-size="10" fill="#64748B">Admin</text>
+
+  <!-- ══════════════════════════════════════════════
+       TOPBAR  (right of sidebar)
+  ══════════════════════════════════════════════ -->
+  <rect x="220" y="0" width="1146" height="52" fill="#1A1D2E" stroke="#2D3148" stroke-width="0" />
+  <line x1="220" y1="52" x2="1366" y2="52" stroke="#2D3148" stroke-width="1"/>
+  <!-- Breadcrumb -->
+  <text x="240" y="22" font-size="11" fill="#64748B">Settings</text>
+  <text x="295" y="22" font-size="11" fill="#64748B">›</text>
+  <text x="308" y="22" font-size="11" fill="#F59E0B">Scale &amp; Weight Pricing</text>
+  <!-- Page title -->
+  <text x="240" y="42" font-size="20" font-weight="700" fill="#F1F5F9">Scale &amp; Weight-Based Pricing</text>
+  <!-- Save button top-right -->
+  <rect x="1254" y="12" width="92" height="30" rx="6" fill="#F59E0B"/>
+  <text x="1267" y="31" font-size="12" font-weight="700" fill="#000">Save Changes</text>
+
+  <!-- ══════════════════════════════════════════════
+       MAIN CONTENT  — left column  x=240
+       RIGHT PANEL   — x=888, width=448
+  ══════════════════════════════════════════════ -->
+
+  <!-- ─────────────────────────────────────────
+       CARD 1: Scale Connection
+  ───────────────────────────────────────── -->
+  <rect x="240" y="68" width="620" height="218" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Card header -->
+  <rect x="240" y="68" width="620" height="38" rx="8" fill="#1E2240"/>
+  <rect x="240" y="90" width="620" height="16" fill="#1E2240"/>
+  <text x="260" y="92" font-size="13" font-weight="700" fill="#F1F5F9">Scale Connection</text>
+
+  <!-- Connection type tabs -->
+  <text x="260" y="127" font-size="11" fill="#94A3B8">Connection Type</text>
+  <!-- RS-232 tab (active) -->
+  <rect x="260" y="133" width="76" height="26" rx="5" fill="#F59E0B"/>
+  <text x="278" y="150" font-size="11" font-weight="700" fill="#000">RS-232</text>
+  <!-- USB tab -->
+  <rect x="342" y="133" width="52" height="26" rx="5" fill="#2D3148"/>
+  <text x="356" y="150" font-size="11" fill="#94A3B8">USB</text>
+  <!-- Bluetooth tab -->
+  <rect x="400" y="133" width="78" height="26" rx="5" fill="#2D3148"/>
+  <text x="416" y="150" font-size="11" fill="#94A3B8">Bluetooth</text>
+
+  <!-- RS-232 config fields row -->
+  <!-- Port -->
+  <text x="260" y="180" font-size="10" fill="#64748B">PORT</text>
+  <rect x="260" y="186" width="120" height="26" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="272" y="203" font-size="11" fill="#F1F5F9">/dev/ttyUSB0</text>
+  <!-- Baud Rate -->
+  <text x="396" y="180" font-size="10" fill="#64748B">BAUD RATE</text>
+  <rect x="396" y="186" width="88" height="26" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="408" y="203" font-size="11" fill="#F1F5F9">9600</text>
+  <!-- Protocol dropdown -->
+  <text x="498" y="180" font-size="10" fill="#64748B">PROTOCOL</text>
+  <rect x="498" y="186" width="152" height="26" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="510" y="203" font-size="11" fill="#F1F5F9">Mettler-Toledo</text>
+  <text x="634" y="203" font-size="10" fill="#64748B">▼</text>
+
+  <!-- Status row -->
+  <!-- Green connected badge -->
+  <rect x="260" y="226" width="134" height="24" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <circle cx="276" cy="238" r="4" fill="#10B981"/>
+  <text x="284" y="242" font-size="11" font-weight="600" fill="#10B981">Scale Connected</text>
+  <!-- Live weight display -->
+  <rect x="406" y="222" width="96" height="32" rx="6" fill="#0F1117" stroke="#10B981" stroke-width="1"/>
+  <text x="416" y="233" font-size="9" fill="#10B981">LIVE WEIGHT</text>
+  <text x="416" y="248" font-size="15" font-weight="700" fill="#10B981">0.000 lb</text>
+  <!-- Test Connection button -->
+  <rect x="512" y="224" width="120" height="28" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="528" y="242" font-size="11" fill="#94A3B8">Test Connection</text>
+  <!-- Tare Scale button -->
+  <rect x="640" y="224" width="100" height="28" rx="5" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="664" y="242" font-size="11" fill="#F59E0B">Tare Scale</text>
+
+  <!-- ─────────────────────────────────────────
+       CARD 2: Weight-Priced Items Table
+  ───────────────────────────────────────── -->
+  <rect x="240" y="302" width="620" height="374" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Card header row -->
+  <rect x="240" y="302" width="620" height="36" rx="8" fill="#1E2240"/>
+  <rect x="240" y="322" width="620" height="16" fill="#1E2240"/>
+  <text x="260" y="326" font-size="13" font-weight="700" fill="#F1F5F9">Weight-Priced Items</text>
+  <text x="718" y="326" font-size="11" fill="#64748B">5 items</text>
+
+  <!-- Table header -->
+  <rect x="240" y="338" width="620" height="28" fill="#13162A"/>
+  <text x="260" y="356" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.8">ITEM NAME</text>
+  <text x="446" y="356" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.8">UNIT</text>
+  <text x="510" y="356" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.8">PRICE / UNIT</text>
+  <text x="614" y="356" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.8">PLU CODE</text>
+  <text x="710" y="356" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.8">ACTIVE</text>
+  <text x="780" y="356" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.8">EDIT</text>
+
+  <!-- Row 1 — Roast Beef (amber highlight — selected) -->
+  <rect x="240" y="366" width="620" height="38" fill="#1E1A0F"/>
+  <rect x="240" y="366" width="3" height="38" fill="#F59E0B"/>
+  <text x="260" y="389" font-size="12" font-weight="600" fill="#F1F5F9">Roast Beef</text>
+  <text x="446" y="389" font-size="12" fill="#94A3B8">per lb</text>
+  <text x="510" y="389" font-size="12" font-weight="600" fill="#10B981">$12.99/lb</text>
+  <rect x="610" y="373" width="52" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="621" y="388" font-size="11" fill="#94A3B8">4011</text>
+  <circle cx="726" cy="386" r="7" fill="#10B981"/>
+  <text x="723" y="390" font-size="9" font-weight="700" fill="#fff">✓</text>
+  <text x="782" y="389" font-size="11" fill="#64748B">✎</text>
+
+  <!-- Row 2 — Potato Salad -->
+  <rect x="240" y="404" width="620" height="38" fill="#1A1D2E"/>
+  <text x="260" y="427" font-size="12" fill="#F1F5F9">Potato Salad</text>
+  <text x="446" y="427" font-size="12" fill="#94A3B8">per lb</text>
+  <text x="510" y="427" font-size="12" font-weight="600" fill="#10B981">$5.49/lb</text>
+  <rect x="610" y="411" width="52" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="621" y="426" font-size="11" fill="#94A3B8">4022</text>
+  <circle cx="726" cy="424" r="7" fill="#10B981"/>
+  <text x="723" y="428" font-size="9" font-weight="700" fill="#fff">✓</text>
+  <text x="782" y="427" font-size="11" fill="#64748B">✎</text>
+
+  <!-- Row 3 — Mixed Olives -->
+  <rect x="240" y="442" width="620" height="38" fill="#13162A"/>
+  <text x="260" y="465" font-size="12" fill="#F1F5F9">Mixed Olives</text>
+  <text x="446" y="465" font-size="12" fill="#94A3B8">per lb</text>
+  <text x="510" y="465" font-size="12" font-weight="600" fill="#10B981">$8.99/lb</text>
+  <rect x="610" y="449" width="52" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="621" y="464" font-size="11" fill="#94A3B8">4033</text>
+  <circle cx="726" cy="462" r="7" fill="#10B981"/>
+  <text x="723" y="466" font-size="9" font-weight="700" fill="#fff">✓</text>
+  <text x="782" y="465" font-size="11" fill="#64748B">✎</text>
+
+  <!-- Row 4 — Cheddar Cheese -->
+  <rect x="240" y="480" width="620" height="38" fill="#1A1D2E"/>
+  <text x="260" y="503" font-size="12" fill="#F1F5F9">Cheddar Cheese</text>
+  <text x="446" y="503" font-size="12" fill="#94A3B8">per lb</text>
+  <text x="510" y="503" font-size="12" font-weight="600" fill="#10B981">$7.49/lb</text>
+  <rect x="610" y="487" width="52" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="621" y="502" font-size="11" fill="#94A3B8">4044</text>
+  <circle cx="726" cy="500" r="7" fill="#10B981"/>
+  <text x="723" y="504" font-size="9" font-weight="700" fill="#fff">✓</text>
+  <text x="782" y="503" font-size="11" fill="#64748B">✎</text>
+
+  <!-- Row 5 — House Salad Bar -->
+  <rect x="240" y="518" width="620" height="38" fill="#13162A"/>
+  <text x="260" y="541" font-size="12" fill="#F1F5F9">House Salad Bar</text>
+  <text x="446" y="541" font-size="12" fill="#94A3B8">per oz</text>
+  <text x="510" y="541" font-size="12" font-weight="600" fill="#10B981">$0.65/oz</text>
+  <rect x="610" y="525" width="52" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="621" y="540" font-size="11" fill="#94A3B8">4055</text>
+  <circle cx="726" cy="538" r="7" fill="#10B981"/>
+  <text x="723" y="542" font-size="9" font-weight="700" fill="#fff">✓</text>
+  <text x="782" y="541" font-size="11" fill="#64748B">✎</text>
+
+  <!-- divider -->
+  <line x1="240" y1="556" x2="860" y2="556" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Add Weight Item button -->
+  <rect x="260" y="566" width="160" height="30" rx="6" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="278" y="585" font-size="12" font-weight="600" fill="#F59E0B">+ Add Weight Item</text>
+
+  <!-- info note -->
+  <rect x="260" y="606" width="580" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="274" y="620" font-size="10" fill="#8B5CF6">ℹ</text>
+  <text x="288" y="620" font-size="10" fill="#94A3B8">Unit types supported: lb · oz · kg · g  —  price stored in</text>
+  <text x="288" y="631" font-size="10" fill="#94A3B8">price_per_unit_cents; computed at ring-up: weight × unit_price</text>
+
+  <!-- ─────────────────────────────────────────
+       CARD 3: Supported Hardware
+  ───────────────────────────────────────── -->
+  <rect x="240" y="694" width="620" height="106" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="240" y="694" width="620" height="34" rx="8" fill="#1E2240"/>
+  <rect x="240" y="712" width="620" height="16" fill="#1E2240"/>
+  <text x="260" y="717" font-size="13" font-weight="700" fill="#F1F5F9">Supported Hardware</text>
+
+  <!-- hardware badges -->
+  <rect x="260" y="740" width="110" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="270" y="753" font-size="9" fill="#8B5CF6">BRAND</text>
+  <text x="270" y="766" font-size="11" font-weight="700" fill="#F1F5F9">Mettler-Toledo</text>
+
+  <rect x="380" y="740" width="90" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="390" y="753" font-size="9" fill="#8B5CF6">BRAND</text>
+  <text x="390" y="766" font-size="11" font-weight="700" fill="#F1F5F9">Hobart</text>
+
+  <rect x="480" y="740" width="68" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="490" y="753" font-size="9" fill="#8B5CF6">BRAND</text>
+  <text x="490" y="766" font-size="11" font-weight="700" fill="#F1F5F9">CAS</text>
+
+  <rect x="558" y="740" width="88" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="568" y="753" font-size="9" fill="#8B5CF6">BRAND</text>
+  <text x="568" y="766" font-size="11" font-weight="700" fill="#F1F5F9">Brecknell</text>
+
+  <rect x="656" y="740" width="90" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="666" y="753" font-size="9" fill="#8B5CF6">BRAND</text>
+  <text x="666" y="766" font-size="11" font-weight="700" fill="#F1F5F9">Fairbanks</text>
+
+  <!-- ─────────────────────────────────────────
+       CARD 4: DB Schema
+  ───────────────────────────────────────── -->
+  <rect x="240" y="816" width="620" height="184" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="240" y="816" width="620" height="34" rx="8" fill="#1E2240"/>
+  <rect x="240" y="834" width="620" height="16" fill="#1E2240"/>
+  <text x="260" y="838" font-size="13" font-weight="700" fill="#F1F5F9">Database Schema</text>
+  <rect x="680" y="820" width="80" height="22" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="694" y="835" font-size="10" fill="#64748B">PostgreSQL</text>
+
+  <!-- Code block background -->
+  <rect x="252" y="858" width="596" height="132" rx="6" fill="#0A0C14"/>
+  <!-- SQL code text -->
+  <text x="268" y="875" font-size="10.5" fill="#8B5CF6" font-family="'SF Mono',Menlo,Consolas,monospace">pos_menu_items</text><text x="376" y="875" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">.price_per_unit_cents </text><text x="559" y="875" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">int</text><text x="576" y="875" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">  -- price per unit (lb/oz/kg/g)</text>
+  <text x="268" y="891" font-size="10.5" fill="#8B5CF6" font-family="'SF Mono',Menlo,Consolas,monospace">pos_menu_items</text><text x="376" y="891" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">.unit_type </text><text x="448" y="891" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">varchar</text><text x="494" y="891" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">         -- 'lb'|'oz'|'kg'|'g'|'each'</text>
+  <text x="268" y="907" font-size="10.5" fill="#8B5CF6" font-family="'SF Mono',Menlo,Consolas,monospace">pos_menu_items</text><text x="376" y="907" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">.plu_code </text><text x="443" y="907" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">varchar</text><text x="489" y="907" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">          -- barcode/PLU for scale lookup</text>
+  <text x="268" y="923" font-size="10.5" fill="#10B981" font-family="'SF Mono',Menlo,Consolas,monospace">pos_scale_config</text><text x="376" y="923" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace"> (venue_id, connection_type </text><text x="559" y="923" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">varchar</text><text x="605" y="923" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">, port </text><text x="636" y="923" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">varchar</text><text x="682" y="923" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">,</text>
+  <text x="284" y="939" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">baud_rate </text><text x="350" y="939" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">int</text><text x="366" y="939" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">, protocol </text><text x="440" y="939" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">varchar</text><text x="486" y="939" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">, tare_grams </text><text x="566" y="939" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">decimal</text><text x="612" y="939" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">)</text>
+  <text x="268" y="955" font-size="10.5" fill="#10B981" font-family="'SF Mono',Menlo,Consolas,monospace">pos_order_items</text><text x="372" y="955" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">.weight_units </text><text x="459" y="955" font-size="10.5" fill="#F59E0B" font-family="'SF Mono',Menlo,Consolas,monospace">decimal</text><text x="505" y="955" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">     -- actual weight captured</text>
+  <text x="268" y="979" font-size="10.5" fill="#64748B" font-family="'SF Mono',Menlo,Consolas,monospace">-- price = weight_units × price_per_unit_cents (computed at ring-up)</text>
+
+  <!-- ══════════════════════════════════════════════
+       RIGHT PANEL: Live Register Preview
+  ══════════════════════════════════════════════ -->
+  <rect x="876" y="68" width="462" height="822" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Panel header -->
+  <rect x="876" y="68" width="462" height="40" rx="10" fill="#1E2240"/>
+  <rect x="876" y="92" width="462" height="16" fill="#1E2240"/>
+  <text x="896" y="93" font-size="13" font-weight="700" fill="#F1F5F9">Live Register Preview</text>
+  <!-- green live dot -->
+  <circle cx="1088" cy="89" r="4" fill="#10B981"/>
+  <text x="1096" y="93" font-size="10" fill="#10B981">LIVE</text>
+
+  <!-- Mini register mockup border -->
+  <rect x="896" y="118" width="422" height="560" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Register top bar -->
+  <rect x="896" y="118" width="422" height="36" rx="8" fill="#13162A"/>
+  <rect x="896" y="138" width="422" height="16" fill="#13162A"/>
+  <text x="912" y="142" font-size="11" fill="#64748B">Register 1  ·  Table 7  ·  Server: Maria</text>
+  <rect x="1268" y="124" width="36" height="24" rx="4" fill="#2D3148"/>
+  <text x="1278" y="140" font-size="10" fill="#94A3B8">···</text>
+
+  <!-- Order items area header -->
+  <rect x="896" y="154" width="422" height="24" fill="#0F1117"/>
+  <text x="912" y="169" font-size="10" font-weight="600" fill="#64748B" letter-spacing="1">ORDER ITEMS</text>
+  <text x="1224" y="169" font-size="10" fill="#64748B">Check #1042</text>
+
+  <!-- Previous items on ticket (greyed out) -->
+  <rect x="896" y="178" width="422" height="30" fill="#0F1117"/>
+  <text x="912" y="197" font-size="11" fill="#64748B">Draft Beer  ×1</text>
+  <text x="1248" y="197" font-size="11" fill="#64748B">$6.50</text>
+  <rect x="896" y="208" width="422" height="30" fill="#0F1117"/>
+  <text x="912" y="227" font-size="11" fill="#64748B">Sourdough Bread  ×1</text>
+  <text x="1248" y="227" font-size="11" fill="#64748B">$4.25</text>
+  <line x1="910" y1="240" x2="1310" y2="240" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- WEIGHT ITEM highlight box -->
+  <rect x="906" y="248" width="402" height="118" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Item name + PLU badge -->
+  <text x="922" y="267" font-size="13" font-weight="700" fill="#F1F5F9">Roast Beef</text>
+  <rect x="1042" y="255" width="56" height="18" rx="4" fill="#2D3148"/>
+  <text x="1050" y="268" font-size="9" fill="#94A3B8">PLU: 4011</text>
+  <!-- Scale reading  -->
+  <rect x="1130" y="252" width="164" height="44" rx="6" fill="#0F1117" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1144" y="267" font-size="9" font-weight="600" fill="#10B981">SCALE READING</text>
+  <text x="1144" y="288" font-size="22" font-weight="800" fill="#10B981">1.247 lb</text>
+
+  <!-- Calculation -->
+  <text x="922" y="295" font-size="11" fill="#94A3B8">1.247 lb</text>
+  <text x="975" y="295" font-size="11" fill="#64748B">×</text>
+  <text x="988" y="295" font-size="11" fill="#F59E0B">$12.99/lb</text>
+  <text x="1054" y="295" font-size="11" fill="#64748B">=</text>
+  <text x="1068" y="295" font-size="15" font-weight="800" fill="#F1F5F9">$16.20</text>
+
+  <!-- Add to Order button -->
+  <rect x="922" y="306" width="372" height="50" rx="8" fill="#F59E0B"/>
+  <text x="1050" y="336" font-size="16" font-weight="800" fill="#000">Add to Order  +$16.20</text>
+
+  <!-- line separator -->
+  <line x1="910" y1="380" x2="1310" y2="380" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Note strip -->
+  <rect x="906" y="388" width="402" height="44" rx="6" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="922" y="403" font-size="10" fill="#8B5CF6">ℹ  PLU MODE</text>
+  <text x="922" y="418" font-size="10" fill="#94A3B8">Weight captured automatically when item scanned (PLU mode).</text>
+
+  <!-- Subtotal section -->
+  <rect x="896" y="444" width="422" height="80" fill="#0F1117"/>
+  <line x1="910" y1="444" x2="1310" y2="444" stroke="#2D3148" stroke-width="1"/>
+  <text x="912" y="466" font-size="11" fill="#94A3B8">Subtotal</text>
+  <text x="1248" y="466" font-size="11" fill="#94A3B8">$26.95</text>
+  <text x="912" y="484" font-size="11" fill="#94A3B8">Tax (8.5%)</text>
+  <text x="1248" y="484" font-size="11" fill="#94A3B8">$2.29</text>
+  <line x1="910" y1="492" x2="1310" y2="492" stroke="#2D3148" stroke-width="1"/>
+  <text x="912" y="510" font-size="14" font-weight="700" fill="#F1F5F9">Total</text>
+  <text x="1236" y="510" font-size="14" font-weight="700" fill="#F59E0B">$29.24</text>
+
+  <!-- Payment buttons row -->
+  <rect x="896" y="534" width="422" height="56" rx="0" fill="#0F1117"/>
+  <rect x="906" y="540" width="124" height="40" rx="6" fill="#10B981"/>
+  <text x="930" y="564" font-size="12" font-weight="700" fill="#000">Cash</text>
+  <rect x="1038" y="540" width="124" height="40" rx="6" fill="#2D3148"/>
+  <text x="1058" y="564" font-size="12" font-weight="600" fill="#F1F5F9">Card</text>
+  <rect x="1170" y="540" width="124" height="40" rx="6" fill="#2D3148"/>
+  <text x="1184" y="564" font-size="12" font-weight="600" fill="#F1F5F9">Split Check</text>
+
+  <!-- ─────────────────────────────────────────
+       Scale illustration (decorative) in right panel
+  ───────────────────────────────────────── -->
+  <rect x="896" y="602" width="422" height="268" rx="8" fill="#0F1117"/>
+  <text x="1080" y="636" font-size="11" font-weight="600" fill="#64748B" text-anchor="middle">SCALE DIAGRAM</text>
+
+  <!-- Scale body -->
+  <rect x="1010" y="650" width="140" height="90" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <!-- Scale platform (top) -->
+  <rect x="998" y="640" width="164" height="18" rx="4" fill="#2D3148"/>
+  <!-- Scale display window -->
+  <rect x="1022" y="660" width="96" height="30" rx="4" fill="#0A0C14" stroke="#10B981" stroke-width="1"/>
+  <text x="1030" y="670" font-size="8" fill="#10B981">WEIGHT</text>
+  <text x="1028" y="683" font-size="14" font-weight="800" fill="#10B981">1.247</text>
+  <text x="1095" y="683" font-size="8" fill="#10B981">lb</text>
+  <!-- Scale base -->
+  <rect x="1022" y="740" width="116" height="10" rx="3" fill="#2D3148"/>
+  <!-- Scale feet -->
+  <rect x="1028" y="750" width="14" height="8" rx="2" fill="#1E2240"/>
+  <rect x="1118" y="750" width="14" height="8" rx="2" fill="#1E2240"/>
+  <!-- RS-232 cable -->
+  <path d="M 1010 700 Q 970 700 950 720 Q 930 740 900 740" stroke="#F59E0B" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <circle cx="900" cy="740" r="4" fill="#F59E0B"/>
+  <text x="905" y="737" font-size="9" fill="#F59E0B">RS-232</text>
+  <!-- Arrow pointing to weight on register -->
+  <path d="M 1080 650 L 1080 620" stroke="#10B981" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <!-- tare button label -->
+  <rect x="1022" y="706" width="55" height="20" rx="4" fill="#2D3148"/>
+  <text x="1030" y="719" font-size="9" fill="#94A3B8">TARE</text>
+  <rect x="1083" y="706" width="55" height="20" rx="4" fill="#2D3148"/>
+  <text x="1091" y="719" font-size="9" fill="#94A3B8">ZERO</text>
+
+  <!-- scale brand label -->
+  <text x="1045" y="738" font-size="8" fill="#64748B">Mettler-Toledo</text>
+
+  <!-- signal flow labels -->
+  <text x="912" y="770" font-size="10" fill="#64748B">Signal flow:</text>
+  <rect x="912" y="778" width="72" height="22" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="920" y="793" font-size="9" fill="#94A3B8">Scale HW</text>
+  <text x="990" y="791" font-size="10" fill="#F59E0B">→</text>
+  <rect x="1002" y="778" width="58" height="22" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1009" y="793" font-size="9" fill="#94A3B8">RS-232</text>
+  <text x="1066" y="791" font-size="10" fill="#F59E0B">→</text>
+  <rect x="1078" y="778" width="46" height="22" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1085" y="793" font-size="9" fill="#94A3B8">POS API</text>
+  <text x="1130" y="791" font-size="10" fill="#F59E0B">→</text>
+  <rect x="1142" y="778" width="70" height="22" rx="4" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1150" y="793" font-size="9" fill="#F59E0B">Ring-up</text>
+
+  <!-- update interval note -->
+  <text x="912" y="822" font-size="10" fill="#64748B">Poll interval:</text>
+  <text x="990" y="822" font-size="10" font-weight="600" fill="#F1F5F9">250 ms</text>
+  <text x="1040" y="822" font-size="10" fill="#64748B">  |  Stability threshold:</text>
+  <text x="1178" y="822" font-size="10" font-weight="600" fill="#F1F5F9">±0.002 lb</text>
+  <text x="912" y="840" font-size="10" fill="#64748B">Auto-lock on stable weight for 3 consecutive reads</text>
+
+  <!-- Bottom config note -->
+  <rect x="896" y="870" width="422" height="20" fill="#0F1117"/>
+  <line x1="896" y1="870" x2="1318" y2="870" stroke="#2D3148" stroke-width="1"/>
+  <text x="912" y="858" font-size="10" fill="#94A3B8">Config stored in</text>
+  <text x="1008" y="858" font-size="10" fill="#8B5CF6" font-family="'SF Mono',Menlo,Consolas,monospace">pos_scale_config</text>
+  <text x="1124" y="858" font-size="10" fill="#94A3B8">per venue_id</text>
+
+  <!-- ══════════════════════════════════════════════
+       BOTTOM STATUS BAR
+  ══════════════════════════════════════════════ -->
+  <rect x="220" y="1004" width="1146" height="20" fill="#0D0F1E"/>
+  <circle cx="240" cy="1014" r="4" fill="#10B981"/>
+  <text x="250" y="1018" font-size="9" fill="#64748B">Scale daemon: running  ·  Last ping: 0.1s ago  ·  Firmware: MT-3200 v4.2.1  ·  Calibrated: 2026-05-01</text>
+  <text x="1260" y="1018" font-size="9" fill="#64748B">synalux-pos v3.7.2</text>
+
+</svg>

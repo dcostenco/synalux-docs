@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1440" height="900" fill="#0F1117"/>
+  <!-- Left Nav -->
+  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <rect x="0" y="116" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="116" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="139" font-size="12" font-weight="600" fill="#F59E0B">Loyalty</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Menu Scheduling</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Rounding</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Reservations</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Inventory</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Integrations</text>
+
+  <!-- Header -->
+  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Loyalty Program &amp; Customer Profiles</text>
+  <text x="220" y="50" font-size="11" fill="#8B92A5">Points · Tiers · Rewards · Customer lookup · Visit history — pos_customers + pos_loyalty_events</text>
+  <rect x="1296" y="12" width="124" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1312" y="32" font-size="12" font-weight="600" fill="#000">+ Add Customer</text>
+
+  <!-- Stats -->
+  <rect x="202" y="58" width="234" height="76" rx="8" fill="#1A1D2E"/>
+  <text x="222" y="82" font-size="12" fill="#8B92A5">Total Members</text>
+  <text x="222" y="108" font-size="28" font-weight="700" fill="#FFFFFF">4,821</text>
+  <rect x="446" y="58" width="234" height="76" rx="8" fill="#1A1D2E"/>
+  <text x="466" y="82" font-size="12" fill="#8B92A5">Active (30d)</text>
+  <text x="466" y="108" font-size="28" font-weight="700" fill="#10B981">1,203</text>
+  <rect x="690" y="58" width="234" height="76" rx="8" fill="#1A1D2E"/>
+  <text x="710" y="82" font-size="12" fill="#8B92A5">Points Issued (30d)</text>
+  <text x="710" y="108" font-size="28" font-weight="700" fill="#F59E0B">84,200</text>
+  <rect x="934" y="58" width="234" height="76" rx="8" fill="#1A1D2E"/>
+  <text x="954" y="82" font-size="12" fill="#8B92A5">Rewards Redeemed</text>
+  <text x="954" y="108" font-size="28" font-weight="700" fill="#7C3AED">$2,840</text>
+  <rect x="1178" y="58" width="260" height="76" rx="8" fill="#1A1D2E"/>
+  <text x="1198" y="82" font-size="12" fill="#8B92A5">Avg Visits / Member</text>
+  <text x="1198" y="108" font-size="28" font-weight="700" fill="#FFFFFF">6.2</text>
+
+  <!-- Left: Customer list -->
+  <rect x="200" y="144" width="400" height="756" fill="#13162A"/>
+  <rect x="212" y="156" width="376" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="177" font-size="12" fill="#6B7280">🔍 Search by name, phone, email…</text>
+
+  <!-- Filter chips -->
+  <rect x="212" y="196" width="376" height="28" fill="none"/>
+  <rect x="212" y="198" width="52" height="22" rx="11" fill="#F59E0B"/>
+  <text x="222" y="213" font-size="10" font-weight="600" fill="#000">All</text>
+  <rect x="272" y="198" width="62" height="22" rx="11" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="282" y="213" font-size="10" fill="#8B92A5">Gold Tier</text>
+  <rect x="342" y="198" width="70" height="22" rx="11" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="352" y="213" font-size="10" fill="#8B92A5">Silver Tier</text>
+  <rect x="420" y="198" width="64" height="22" rx="11" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="430" y="213" font-size="10" fill="#8B92A5">New (7d)</text>
+  <rect x="492" y="198" width="60" height="22" rx="11" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="502" y="213" font-size="10" fill="#8B92A5">Lapsed</text>
+
+  <!-- Customer rows -->
+  <!-- Selected - Maria G -->
+  <rect x="212" y="228" width="376" height="68" rx="6" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="238" cy="262" r="18" fill="#7C3AED"/>
+  <text x="228" y="267" font-size="14" font-weight="700" fill="#FFF">MG</text>
+  <text x="266" y="252" font-size="12" font-weight="600" fill="#F59E0B">Maria Garcia</text>
+  <text x="266" y="268" font-size="10" fill="#8B92A5">maria.g@email.com · (310) 555-2841</text>
+  <rect x="266" y="276" width="42" height="16" rx="8" fill="#B45309"/>
+  <text x="274" y="288" font-size="9" fill="#FDE68A">GOLD</text>
+  <text x="316" y="288" font-size="10" fill="#F59E0B">4,820 pts</text>
+  <text x="528" y="262" font-size="10" fill="#8B92A5">23 visits</text>
+
+  <!-- John S -->
+  <rect x="212" y="304" width="376" height="68" rx="6" fill="#1A1D2E"/>
+  <circle cx="238" cy="338" r="18" fill="#0369A1"/>
+  <text x="228" y="343" font-size="14" font-weight="700" fill="#FFF">JS</text>
+  <text x="266" y="328" font-size="12" font-weight="600" fill="#FFFFFF">John Smith</text>
+  <text x="266" y="344" font-size="10" fill="#8B92A5">johnsmith@email.com · (424) 555-0091</text>
+  <rect x="266" y="352" width="50" height="16" rx="8" fill="#374151"/>
+  <text x="274" y="364" font-size="9" fill="#9CA3AF">SILVER</text>
+  <text x="324" y="364" font-size="10" fill="#8B92A5">1,240 pts</text>
+  <text x="528" y="338" font-size="10" fill="#8B92A5">8 visits</text>
+
+  <!-- Aisha D -->
+  <rect x="212" y="380" width="376" height="68" rx="6" fill="#1A1D2E"/>
+  <circle cx="238" cy="414" r="18" fill="#B45309"/>
+  <text x="228" y="419" font-size="14" font-weight="700" fill="#FFF">AD</text>
+  <text x="266" y="404" font-size="12" font-weight="600" fill="#FFFFFF">Aisha Diallo</text>
+  <text x="266" y="420" font-size="10" fill="#8B92A5">aisha.d@email.com · (213) 555-7712</text>
+  <rect x="266" y="428" width="42" height="16" rx="8" fill="#B45309"/>
+  <text x="274" y="440" font-size="9" fill="#FDE68A">GOLD</text>
+  <text x="316" y="440" font-size="10" fill="#F59E0B">3,100 pts</text>
+  <text x="528" y="414" font-size="10" fill="#8B92A5">17 visits</text>
+
+  <!-- Tom W - new -->
+  <rect x="212" y="456" width="376" height="68" rx="6" fill="#1A1D2E"/>
+  <circle cx="238" cy="490" r="18" fill="#065F46"/>
+  <text x="228" y="495" font-size="14" font-weight="700" fill="#FFF">TW</text>
+  <text x="266" y="480" font-size="12" font-weight="600" fill="#FFFFFF">Tom Wang</text>
+  <text x="266" y="496" font-size="10" fill="#8B92A5">twang@email.com · (562) 555-3342</text>
+  <rect x="266" y="504" width="42" height="16" rx="8" fill="#1E3A5F"/>
+  <text x="274" y="516" font-size="9" fill="#93C5FD">NEW</text>
+  <text x="316" y="516" font-size="10" fill="#8B92A5">120 pts</text>
+  <text x="528" y="490" font-size="10" fill="#8B92A5">2 visits</text>
+
+  <!-- Lapsed -->
+  <rect x="212" y="532" width="376" height="68" rx="6" fill="#1A1D2E" opacity="0.5"/>
+  <circle cx="238" cy="566" r="18" fill="#6B7280"/>
+  <text x="228" y="571" font-size="14" font-weight="700" fill="#FFF">RL</text>
+  <text x="266" y="556" font-size="12" font-weight="600" fill="#6B7280">Roberto Lagos</text>
+  <text x="266" y="572" font-size="10" fill="#4B5563">roberto@email.com</text>
+  <rect x="266" y="580" width="50" height="16" rx="8" fill="#374151"/>
+  <text x="274" y="592" font-size="9" fill="#6B7280">LAPSED</text>
+  <text x="324" y="592" font-size="10" fill="#4B5563">810 pts</text>
+  <text x="528" y="566" font-size="10" fill="#4B5563">Last: 9 months ago</text>
+
+  <!-- ===== Center: Customer Detail ===== -->
+  <rect x="600" y="144" width="500" height="756" fill="#0F1117"/>
+
+  <rect x="616" y="156" width="468" height="96" rx="8" fill="#1A1D2E"/>
+  <circle cx="660" cy="204" r="32" fill="#7C3AED"/>
+  <text x="643" y="212" font-size="22" font-weight="700" fill="#FFF">MG</text>
+  <text x="706" y="182" font-size="17" font-weight="700" fill="#FFFFFF">Maria Garcia</text>
+  <rect x="706" y="190" width="42" height="18" rx="9" fill="#B45309"/>
+  <text x="714" y="203" font-size="10" fill="#FDE68A">GOLD</text>
+  <text x="706" y="218" font-size="11" fill="#8B92A5">maria.g@email.com · (310) 555-2841</text>
+  <text x="706" y="234" font-size="11" fill="#8B92A5">Member since 2024-11-03 · 23 visits</text>
+
+  <!-- Points balance + action -->
+  <rect x="616" y="264" width="228" height="80" rx="8" fill="#1A1D2E"/>
+  <text x="636" y="290" font-size="12" fill="#8B92A5">Points Balance</text>
+  <text x="636" y="322" font-size="32" font-weight="700" fill="#F59E0B">4,820</text>
+  <rect x="856" y="264" width="228" height="80" rx="8" fill="#1A1D2E"/>
+  <text x="876" y="290" font-size="12" fill="#8B92A5">Total Lifetime Spend</text>
+  <text x="876" y="322" font-size="28" font-weight="700" fill="#FFFFFF">$1,240</text>
+
+  <!-- Redeem reward -->
+  <rect x="616" y="356" width="468" height="60" rx="8" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
+  <text x="636" y="380" font-size="12" font-weight="600" fill="#93C5FD">Redeem Reward</text>
+  <text x="636" y="398" font-size="11" fill="#D1D5DB">4,820 pts → apply to current order or issue reward</text>
+  <rect x="968" y="366" width="100" height="30" rx="6" fill="#F59E0B"/>
+  <text x="984" y="385" font-size="12" font-weight="600" fill="#000">Redeem Now</text>
+
+  <!-- Visit history -->
+  <text x="616" y="438" font-size="12" font-weight="600" fill="#FFFFFF">Visit History</text>
+  <rect x="616" y="448" width="468" height="36" fill="#13162A"/>
+  <text x="632" y="471" font-size="10" fill="#6B7280">DATE</text>
+  <text x="740" y="471" font-size="10" fill="#6B7280">ORDER TOTAL</text>
+  <text x="860" y="471" font-size="10" fill="#6B7280">POINTS EARNED</text>
+  <text x="980" y="471" font-size="10" fill="#6B7280">REWARDS USED</text>
+
+  <rect x="616" y="484" width="468" height="30" fill="#1A1D2E"/>
+  <text x="632" y="504" font-size="11" fill="#D1D5DB">2026-05-27</text>
+  <text x="740" y="504" font-size="11" fill="#FFFFFF">$68.50</text>
+  <text x="860" y="504" font-size="11" fill="#10B981">+68 pts</text>
+  <text x="980" y="504" font-size="11" fill="#6B7280">—</text>
+
+  <rect x="616" y="514" width="468" height="30" fill="#13162A"/>
+  <text x="632" y="534" font-size="11" fill="#D1D5DB">2026-05-20</text>
+  <text x="740" y="534" font-size="11" fill="#FFFFFF">$42.00</text>
+  <text x="860" y="534" font-size="11" fill="#10B981">+42 pts</text>
+  <text x="980" y="534" font-size="11" fill="#7C3AED">Free Entrée</text>
+
+  <rect x="616" y="544" width="468" height="30" fill="#1A1D2E"/>
+  <text x="632" y="564" font-size="11" fill="#D1D5DB">2026-05-14</text>
+  <text x="740" y="564" font-size="11" fill="#FFFFFF">$91.20</text>
+  <text x="860" y="564" font-size="11" fill="#10B981">+91 pts</text>
+  <text x="980" y="564" font-size="11" fill="#6B7280">—</text>
+
+  <!-- Notes / allergy / preferences -->
+  <text x="616" y="596" font-size="12" font-weight="600" fill="#FFFFFF">Preferences &amp; Notes</text>
+  <rect x="616" y="604" width="468" height="80" rx="6" fill="#1A1D2E"/>
+  <text x="636" y="628" font-size="11" fill="#D1D5DB">Dietary: Gluten-free preference</text>
+  <text x="636" y="646" font-size="11" fill="#D1D5DB">Note: Prefers corner booth</text>
+  <text x="636" y="664" font-size="11" fill="#D1D5DB">Birthday: June 15 → auto-bonus 200pts on birthday</text>
+  <text x="636" y="680" font-size="10" fill="#6B7280">Stored in pos_customers.preferences jsonb</text>
+
+  <!-- ===== Right: Program Config ===== -->
+  <rect x="1116" y="144" width="304" height="756" fill="#1A1D2E"/>
+  <text x="1136" y="174" font-size="13" font-weight="700" fill="#FFFFFF">Program Settings</text>
+
+  <!-- Earn rate -->
+  <text x="1136" y="204" font-size="10" fill="#8B92A5">EARN RATE</text>
+  <rect x="1136" y="210" width="264" height="40" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1152" y="236" font-size="16" font-weight="700" fill="#F59E0B">1 pt</text>
+  <text x="1196" y="236" font-size="13" fill="#8B92A5">per $1 spent</text>
+
+  <!-- Tiers -->
+  <text x="1136" y="270" font-size="10" fill="#8B92A5">TIERS (pos_loyalty_tiers)</text>
+  <rect x="1136" y="276" width="264" height="28" rx="4" fill="#065F46"/>
+  <text x="1152" y="295" font-size="11" fill="#6EE7B7">Bronze — 0+ pts</text>
+  <text x="1340" y="295" font-size="11" fill="#6EE7B7">1×</text>
+  <rect x="1136" y="310" width="264" height="28" rx="4" fill="#374151"/>
+  <text x="1152" y="329" font-size="11" fill="#D1D5DB">Silver — 1,000+ pts</text>
+  <text x="1340" y="329" font-size="11" fill="#D1D5DB">1.2×</text>
+  <rect x="1136" y="344" width="264" height="28" rx="4" fill="#B45309"/>
+  <text x="1152" y="363" font-size="11" fill="#FDE68A">Gold — 3,000+ pts</text>
+  <text x="1340" y="363" font-size="11" fill="#FDE68A">1.5×</text>
+
+  <!-- Rewards -->
+  <text x="1136" y="396" font-size="10" fill="#8B92A5">REWARDS (pos_loyalty_rewards)</text>
+  <rect x="1136" y="402" width="264" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1152" y="420" font-size="11" fill="#D1D5DB">500 pts → $5 off</text>
+  <rect x="1136" y="436" width="264" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1152" y="454" font-size="11" fill="#D1D5DB">1,000 pts → Free entrée</text>
+  <rect x="1136" y="470" width="264" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1152" y="488" font-size="11" fill="#D1D5DB">2,000 pts → Free meal (2 people)</text>
+  <rect x="1136" y="504" width="120" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1148" y="519" font-size="10" fill="#F59E0B">+ Add Reward</text>
+
+  <!-- Birthday bonus -->
+  <text x="1136" y="546" font-size="10" fill="#8B92A5">BIRTHDAY BONUS</text>
+  <rect x="1136" y="552" width="264" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1152" y="573" font-size="12" fill="#FFFFFF">+200 bonus points</text>
+  <rect x="1354" y="558" width="38" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1382" cy="568" r="8" fill="#FFFFFF"/>
+
+  <!-- Signup channels -->
+  <text x="1136" y="604" font-size="10" fill="#8B92A5">SIGNUP CHANNELS</text>
+  <rect x="1136" y="610" width="264" height="80" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1152" y="630" font-size="11" fill="#D1D5DB">✓ Register (cashier enrolls)</text>
+  <text x="1152" y="648" font-size="11" fill="#D1D5DB">✓ Online ordering checkout</text>
+  <text x="1152" y="666" font-size="11" fill="#D1D5DB">✓ QR code at table</text>
+  <text x="1152" y="682" font-size="11" fill="#6B7280">○ Mobile app (future)</text>
+
+  <!-- Workflow note -->
+  <rect x="1136" y="702" width="264" height="80" rx="6" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
+  <text x="1152" y="724" font-size="11" font-weight="600" fill="#93C5FD">Register Workflow</text>
+  <text x="1152" y="742" font-size="10" fill="#D1D5DB">Phone# lookup at checkout</text>
+  <text x="1152" y="758" font-size="10" fill="#D1D5DB">Auto-earn + age-verify cross-check</text>
+  <text x="1152" y="774" font-size="10" fill="#D1D5DB">Prompt: "Earn points? Enter phone"</text>
+
+  <text x="720" y="886" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Loyalty · pos_customers + pos_loyalty_events — phone lookup · tiers · birthday bonus</text>
+</svg>

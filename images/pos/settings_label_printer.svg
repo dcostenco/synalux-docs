@@ -1,0 +1,474 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEFT NAV SIDEBAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="200" height="1024" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Printer Routing</text>
+  <!-- Active item: Label Printer -->
+  <rect x="0" y="260" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="260" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="283" font-size="12" font-weight="600" fill="#F59E0B">Label Printers</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <text x="16" y="535" font-size="12" fill="#8B92A5">Discounts</text>
+  <text x="16" y="571" font-size="12" fill="#8B92A5">Inventory</text>
+  <text x="16" y="607" font-size="12" fill="#8B92A5">Forms</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TOP BAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="200" y="0" width="1166" height="60" fill="#1A1D2E"/>
+  <text x="220" y="26" font-size="18" font-weight="700" fill="#F1F5F9">Label &amp; Barcode Printer</text>
+  <text x="220" y="46" font-size="11" fill="#8B92A5">Print price labels, shelf tags, inventory barcodes, and item stickers</text>
+  <!-- Save button -->
+  <rect x="1240" y="14" width="100" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1268" y="34" font-size="12" font-weight="600" fill="#000">Save</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- THREE-COLUMN LAYOUT DIVIDERS -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- Left panel: x=200, w=380 -->
+  <!-- Center panel: x=580, w=620 -->
+  <!-- Right panel: x=1200, w=366 (actually to 1366) -->
+  <rect x="200" y="60" width="380" height="964" fill="#0F1117"/>
+  <rect x="580" y="60" width="620" height="964" fill="#0F1117"/>
+  <rect x="1200" y="60" width="166" height="964" fill="#0F1117"/>
+  <line x1="580" y1="60" x2="580" y2="1024" stroke="#2D3148" stroke-width="1"/>
+  <line x1="1200" y1="60" x2="1200" y2="1024" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- LEFT PANEL — PRINTER CONFIGURATION -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Section Header: Connected Printers -->
+  <text x="212" y="90" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">CONNECTED PRINTERS</text>
+
+  <!-- ── Zebra ZD420 Card ── -->
+  <rect x="208" y="100" width="360" height="92" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Online dot -->
+  <circle cx="224" cy="118" r="5" fill="#10B981"/>
+  <text x="234" y="122" font-size="13" font-weight="700" fill="#F1F5F9">Zebra ZD420</text>
+  <!-- Primary badge -->
+  <rect x="310" y="109" width="52" height="18" rx="9" fill="#7C3AED"/>
+  <text x="316" y="121" font-size="9" font-weight="700" fill="#DDD6FE">Primary</text>
+  <!-- Online label -->
+  <text x="224" y="136" font-size="10" fill="#10B981">● Online</text>
+  <text x="270" y="136" font-size="10" fill="#64748B">USB + Bluetooth</text>
+  <text x="224" y="151" font-size="10" fill="#64748B">203 DPI / 4" width</text>
+  <!-- Buttons -->
+  <rect x="215" y="160" width="82" height="24" rx="5" fill="#92400E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="229" y="176" font-size="10" font-weight="600" fill="#FCD34D">Print Test</text>
+  <rect x="305" y="160" width="72" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="318" y="176" font-size="10" fill="#94A3B8">Configure</text>
+
+  <!-- ── Brother QL-820NWB Card ── -->
+  <rect x="208" y="200" width="360" height="92" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="224" cy="218" r="5" fill="#10B981"/>
+  <text x="234" y="222" font-size="13" font-weight="700" fill="#F1F5F9">Brother QL-820NWB</text>
+  <text x="224" y="236" font-size="10" fill="#10B981">● Online</text>
+  <text x="270" y="236" font-size="10" fill="#64748B">WiFi</text>
+  <text x="224" y="251" font-size="10" fill="#64748B">300 DPI / 2.4" or 4" width</text>
+  <rect x="215" y="260" width="82" height="24" rx="5" fill="#92400E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="229" y="276" font-size="10" font-weight="600" fill="#FCD34D">Print Test</text>
+  <rect x="305" y="260" width="72" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="318" y="276" font-size="10" fill="#94A3B8">Configure</text>
+
+  <!-- ── Zebra ZD620 Offline Card ── -->
+  <rect x="208" y="300" width="360" height="80" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1" opacity="0.7"/>
+  <circle cx="224" cy="318" r="5" fill="#64748B"/>
+  <text x="234" y="322" font-size="13" font-weight="700" fill="#64748B">Zebra ZD620</text>
+  <text x="224" y="338" font-size="10" fill="#64748B">● Offline</text>
+  <text x="340" y="322" font-size="16" fill="#F97316">⚠</text>
+  <text x="224" y="353" font-size="10" fill="#64748B">Last seen: 2 days ago</text>
+  <text x="224" y="368" font-size="9" fill="#EF4444">Connection lost — check USB/network</text>
+
+  <!-- + Add Printer button -->
+  <rect x="208" y="390" width="360" height="34" rx="7" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="348" y="411" font-size="12" font-weight="600" fill="#F59E0B" text-anchor="middle">+ Add Printer</text>
+
+  <!-- Section Header: Label Types -->
+  <text x="212" y="450" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">LABEL TYPES / TEMPLATES</text>
+
+  <!-- Label type rows -->
+  <!-- Price Label -->
+  <rect x="208" y="458" width="360" height="30" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="477" font-size="11" fill="#F1F5F9">Price Label (shelf tag)</text>
+  <text x="370" y="477" font-size="9" fill="#64748B">2.25" × 1.25"</text>
+  <rect x="500" y="463" width="58" height="16" rx="8" fill="#064E3B"/>
+  <text x="511" y="475" font-size="9" fill="#10B981">Default</text>
+  <!-- Barcode/SKU Label -->
+  <rect x="208" y="492" width="360" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="510" font-size="11" fill="#F1F5F9">Barcode / SKU Label</text>
+  <text x="370" y="510" font-size="9" fill="#64748B">2" × 1"</text>
+  <!-- Allergen Label -->
+  <rect x="208" y="524" width="360" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="542" font-size="11" fill="#F1F5F9">Allergen Label</text>
+  <text x="370" y="542" font-size="9" fill="#64748B">2" × 1"</text>
+  <!-- Prep Label -->
+  <rect x="208" y="556" width="360" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="574" font-size="11" fill="#F1F5F9">Prep Label (kitchen)</text>
+  <text x="340" y="574" font-size="9" fill="#64748B">4" × 2"</text>
+  <text x="218" y="585" font-size="8" fill="#64748B">item, date, expiry, initials</text>
+  <!-- Ingredient Label -->
+  <rect x="208" y="592" width="360" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="610" font-size="11" fill="#F1F5F9">Ingredient Label</text>
+  <text x="340" y="610" font-size="9" fill="#64748B">4" × 2"</text>
+  <text x="430" y="610" font-size="8" fill="#F97316">FDA req.</text>
+  <!-- Catering Label -->
+  <rect x="208" y="624" width="360" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="642" font-size="11" fill="#F1F5F9">Catering Label</text>
+  <text x="340" y="642" font-size="9" fill="#64748B">4" × 3"</text>
+  <!-- Create Custom -->
+  <text x="218" y="668" font-size="11" fill="#F59E0B" text-decoration="underline">+ Create Custom Template</text>
+
+  <!-- Section Header: Print Triggers -->
+  <text x="212" y="698" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">PRINT TRIGGERS</text>
+
+  <!-- Toggle rows -->
+  <!-- Toggle: Auto-print new item — OFF -->
+  <rect x="208" y="706" width="360" height="42" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="722" font-size="10" fill="#F1F5F9">Auto-print label when new item added</text>
+  <!-- OFF toggle -->
+  <rect x="512" y="714" width="42" height="20" rx="10" fill="#334155"/>
+  <circle cx="524" cy="724" r="8" fill="#64748B"/>
+  <text x="504" y="740" font-size="8" fill="#64748B">OFF</text>
+
+  <!-- Toggle: Print on PO receipt — ON -->
+  <rect x="208" y="752" width="360" height="36" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="774" font-size="10" fill="#F1F5F9">Print receiving label on PO receipt scan</text>
+  <!-- ON toggle -->
+  <rect x="512" y="758" width="42" height="20" rx="10" fill="#065F46"/>
+  <circle cx="545" cy="768" r="8" fill="#10B981"/>
+  <text x="516" y="788" font-size="8" fill="#10B981">ON</text>
+
+  <!-- Toggle: Reprint on price change — ON + amber note -->
+  <rect x="208" y="792" width="360" height="50" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="810" font-size="10" fill="#F1F5F9">Reprint label when price changes</text>
+  <rect x="512" y="798" width="42" height="20" rx="10" fill="#065F46"/>
+  <circle cx="545" cy="808" r="8" fill="#10B981"/>
+  <text x="218" y="830" font-size="9" fill="#F59E0B">⚠ Price changes require new shelf tag</text>
+
+  <!-- Toggle: Prep/expiry labels from KDS — ON -->
+  <rect x="208" y="846" width="360" height="36" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="218" y="868" font-size="10" fill="#F1F5F9">Print prep/expiry labels from KDS</text>
+  <rect x="512" y="852" width="42" height="20" rx="10" fill="#065F46"/>
+  <circle cx="545" cy="862" r="8" fill="#10B981"/>
+  <text x="516" y="880" font-size="8" fill="#10B981">ON</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CENTER PANEL — LABEL PREVIEW & DESIGNER -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- TABS -->
+  <rect x="590" y="68" width="600" height="36" fill="#13162A"/>
+  <!-- Price Label tab active -->
+  <rect x="590" y="68" width="140" height="36" fill="#1A1D2E" rx="4"/>
+  <rect x="590" y="96" width="140" height="4" fill="#F59E0B"/>
+  <text x="625" y="90" font-size="11" font-weight="700" fill="#F59E0B">Price Label</text>
+  <!-- Other tabs -->
+  <text x="748" y="90" font-size="11" fill="#64748B">Barcode Label</text>
+  <text x="870" y="90" font-size="11" fill="#64748B">Prep Label</text>
+  <text x="980" y="90" font-size="11" fill="#64748B">Allergen Label</text>
+
+  <!-- Label size picker -->
+  <text x="596" y="124" font-size="10" fill="#94A3B8">Label Size:</text>
+  <rect x="650" y="112" width="96" height="22" rx="4" fill="#1E2240" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="658" y="127" font-size="10" font-weight="600" fill="#F59E0B">2.25" × 1.25"</text>
+  <rect x="754" y="112" width="76" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="762" y="127" font-size="10" fill="#64748B">4" × 2"</text>
+  <rect x="838" y="112" width="76" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="846" y="127" font-size="10" fill="#64748B">4" × 3"</text>
+  <rect x="922" y="112" width="60" height="22" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="930" y="127" font-size="10" fill="#64748B">Custom</text>
+
+  <!-- LIVE LABEL PREVIEW — white label mockup -->
+  <text x="596" y="154" font-size="11" font-weight="700" fill="#94A3B8">LIVE PREVIEW</text>
+  <!-- White label bg with shadow -->
+  <rect x="630" y="162" width="340" height="175" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- White label surface -->
+  <rect x="650" y="174" width="300" height="150" rx="4" fill="#FFFFFF"/>
+  <!-- Business name -->
+  <text x="800" y="194" font-size="9" font-weight="700" fill="#333" text-anchor="middle" letter-spacing="2">SYNALUX BISTRO</text>
+  <!-- Divider line -->
+  <line x1="665" y1="198" x2="935" y2="198" stroke="#DDD" stroke-width="0.5"/>
+  <!-- Item name large -->
+  <text x="800" y="218" font-size="16" font-weight="700" fill="#111" text-anchor="middle">Classic Burger</text>
+
+  <!-- BARCODE — realistic SVG barcode lines -->
+  <!-- Bar pattern: varying widths of black bars with white gaps -->
+  <g transform="translate(670,225)">
+    <!-- Start guard -->
+    <rect x="0" y="0" width="2" height="48" fill="#111"/>
+    <rect x="3" y="0" width="1" height="48" fill="#111"/>
+    <rect x="5" y="0" width="1" height="48" fill="#111"/>
+    <!-- Data bars (representative Code 128 pattern) -->
+    <rect x="8" y="0" width="3" height="40" fill="#111"/>
+    <rect x="13" y="0" width="1" height="40" fill="#111"/>
+    <rect x="16" y="0" width="2" height="40" fill="#111"/>
+    <rect x="20" y="0" width="1" height="40" fill="#111"/>
+    <rect x="23" y="0" width="3" height="40" fill="#111"/>
+    <rect x="28" y="0" width="2" height="40" fill="#111"/>
+    <rect x="32" y="0" width="1" height="40" fill="#111"/>
+    <rect x="35" y="0" width="3" height="40" fill="#111"/>
+    <rect x="40" y="0" width="1" height="40" fill="#111"/>
+    <rect x="43" y="0" width="2" height="40" fill="#111"/>
+    <rect x="47" y="0" width="1" height="40" fill="#111"/>
+    <rect x="50" y="0" width="3" height="40" fill="#111"/>
+    <rect x="55" y="0" width="2" height="40" fill="#111"/>
+    <rect x="59" y="0" width="1" height="40" fill="#111"/>
+    <rect x="62" y="0" width="3" height="40" fill="#111"/>
+    <rect x="67" y="0" width="1" height="40" fill="#111"/>
+    <rect x="70" y="0" width="2" height="40" fill="#111"/>
+    <rect x="74" y="0" width="3" height="40" fill="#111"/>
+    <rect x="79" y="0" width="1" height="40" fill="#111"/>
+    <rect x="82" y="0" width="2" height="40" fill="#111"/>
+    <rect x="86" y="0" width="3" height="40" fill="#111"/>
+    <rect x="91" y="0" width="1" height="40" fill="#111"/>
+    <rect x="94" y="0" width="2" height="40" fill="#111"/>
+    <rect x="98" y="0" width="1" height="40" fill="#111"/>
+    <rect x="101" y="0" width="3" height="40" fill="#111"/>
+    <rect x="106" y="0" width="2" height="40" fill="#111"/>
+    <rect x="110" y="0" width="1" height="40" fill="#111"/>
+    <rect x="113" y="0" width="3" height="40" fill="#111"/>
+    <rect x="118" y="0" width="1" height="40" fill="#111"/>
+    <rect x="121" y="0" width="2" height="40" fill="#111"/>
+    <rect x="125" y="0" width="1" height="40" fill="#111"/>
+    <rect x="128" y="0" width="3" height="40" fill="#111"/>
+    <rect x="133" y="0" width="2" height="40" fill="#111"/>
+    <rect x="137" y="0" width="1" height="40" fill="#111"/>
+    <rect x="140" y="0" width="3" height="40" fill="#111"/>
+    <rect x="145" y="0" width="2" height="40" fill="#111"/>
+    <rect x="149" y="0" width="1" height="40" fill="#111"/>
+    <rect x="152" y="0" width="2" height="40" fill="#111"/>
+    <rect x="156" y="0" width="3" height="40" fill="#111"/>
+    <!-- End guard -->
+    <rect x="161" y="0" width="2" height="48" fill="#111"/>
+    <rect x="164" y="0" width="1" height="48" fill="#111"/>
+    <rect x="166" y="0" width="2" height="48" fill="#111"/>
+    <!-- SKU text below barcode -->
+    <text x="84" y="58" font-size="8" fill="#555" text-anchor="middle">SKU-1042</text>
+  </g>
+
+  <!-- Price large -->
+  <text x="800" y="296" font-size="22" font-weight="700" fill="#111" text-anchor="middle">$18.00</text>
+
+  <!-- Allergen icons row -->
+  <!-- Wheat -->
+  <circle cx="742" cy="314" r="8" fill="#F59E0B"/>
+  <text x="742" y="318" font-size="7" font-weight="700" fill="#000" text-anchor="middle">W</text>
+  <!-- Dairy -->
+  <circle cx="757" cy="314" r="8" fill="#60A5FA"/>
+  <text x="757" y="318" font-size="7" font-weight="700" fill="#000" text-anchor="middle">D</text>
+  <!-- Egg -->
+  <circle cx="772" cy="314" r="8" fill="#FBBF24"/>
+  <text x="772" y="318" font-size="7" font-weight="700" fill="#000" text-anchor="middle">E</text>
+  <text x="790" y="318" font-size="8" fill="#777">Contains allergens</text>
+
+  <!-- DESIGNER CONTROLS -->
+  <text x="596" y="360" font-size="11" font-weight="700" fill="#94A3B8">DESIGNER CONTROLS</text>
+
+  <!-- Fields to include — two-column checkbox grid -->
+  <text x="596" y="378" font-size="10" fill="#64748B">Fields to include:</text>
+  <!-- Row 1 -->
+  <rect x="596" y="383" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="610" y="392" font-size="10" fill="#F1F5F9">Business name</text>
+  <rect x="720" y="383" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="734" y="392" font-size="10" fill="#F1F5F9">Item name</text>
+  <!-- Row 2 -->
+  <rect x="596" y="400" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="610" y="409" font-size="10" fill="#F1F5F9">Barcode</text>
+  <rect x="720" y="400" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="734" y="409" font-size="10" fill="#F1F5F9">SKU</text>
+  <!-- Row 3 -->
+  <rect x="596" y="417" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="610" y="426" font-size="10" fill="#F1F5F9">Price</text>
+  <rect x="720" y="417" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="734" y="426" font-size="10" fill="#F1F5F9">Allergens</text>
+  <!-- Row 4 — unchecked -->
+  <rect x="596" y="434" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="610" y="443" font-size="10" fill="#64748B">Description</text>
+  <rect x="720" y="434" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="734" y="443" font-size="10" fill="#64748B">Calories</text>
+  <!-- Row 5 -->
+  <rect x="596" y="451" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <text x="610" y="460" font-size="10" fill="#F1F5F9">Date (prep labels)</text>
+
+  <!-- Font size slider -->
+  <text x="596" y="482" font-size="10" fill="#64748B">Font size (item name):</text>
+  <rect x="730" y="474" width="180" height="8" rx="4" fill="#1E2240"/>
+  <rect x="730" y="474" width="90" height="8" rx="4" fill="#F59E0B"/>
+  <circle cx="820" cy="478" r="7" fill="#F59E0B" stroke="#FFF" stroke-width="2"/>
+  <text x="920" y="483" font-size="10" fill="#F1F5F9">14pt</text>
+
+  <!-- Barcode type dropdown -->
+  <text x="596" y="504" font-size="10" fill="#64748B">Barcode type:</text>
+  <rect x="700" y="493" width="200" height="24" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="712" y="509" font-size="10" fill="#F1F5F9">Code 128 (default)</text>
+  <text x="886" y="509" font-size="10" fill="#64748B">▼</text>
+
+  <!-- Action buttons row -->
+  <rect x="596" y="528" width="120" height="30" rx="6" fill="#F59E0B"/>
+  <text x="623" y="547" font-size="11" font-weight="700" fill="#000">Save Template</text>
+  <rect x="724" y="528" width="140" height="30" rx="6" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="741" y="547" font-size="11" font-weight="600" fill="#F59E0B">Print Test Label</text>
+  <rect x="872" y="528" width="110" height="30" rx="6" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="893" y="547" font-size="11" font-weight="600" fill="#8B5CF6">Batch Print</text>
+
+  <!-- BATCH PRINT SECTION -->
+  <text x="596" y="582" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">BATCH PRINT</text>
+  <rect x="588" y="590" width="600" height="130" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="600" y="612" font-size="12" font-weight="600" fill="#F1F5F9">Batch Print All Inventory Labels</text>
+  <text x="600" y="630" font-size="11" fill="#94A3B8">248 items ready for printing</text>
+  <!-- Filters -->
+  <text x="600" y="652" font-size="10" fill="#64748B">Filter by:</text>
+  <!-- Category dropdown -->
+  <rect x="655" y="642" width="130" height="22" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="663" y="656" font-size="10" fill="#94A3B8">Category: All ▼</text>
+  <!-- Low Stock checkbox -->
+  <rect x="795" y="645" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="808" y="654" font-size="10" fill="#64748B">Low Stock Only</text>
+  <!-- New Items checkbox -->
+  <rect x="910" y="645" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="923" y="654" font-size="10" fill="#64748B">New Items Only</text>
+  <!-- Estimate -->
+  <text x="600" y="676" font-size="10" fill="#64748B">Estimate: 248 labels → approx. 4 min print time</text>
+  <!-- Print All button -->
+  <rect x="600" y="685" width="200" height="28" rx="6" fill="#F59E0B"/>
+  <text x="635" y="703" font-size="11" font-weight="700" fill="#000">Print All (Zebra ZD420)</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- RIGHT PANEL — RECENT PRINT JOBS -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <text x="1210" y="90" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">PRINT JOBS</text>
+
+  <!-- Job 1 — Completed -->
+  <rect x="1205" y="98" width="150" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1213" y="114" font-size="10" font-weight="700" fill="#F1F5F9">12 labels</text>
+  <text x="1213" y="128" font-size="9" fill="#94A3B8">Batch inventory</text>
+  <text x="1213" y="142" font-size="9" fill="#64748B">6:30 PM — Zebra ZD420</text>
+  <circle cx="1213" cy="157" r="4" fill="#10B981"/>
+  <text x="1220" y="160" font-size="9" fill="#10B981">Completed ✓</text>
+
+  <!-- Job 2 — Completed -->
+  <rect x="1205" y="176" width="150" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1213" y="192" font-size="10" font-weight="700" fill="#F1F5F9">1 label</text>
+  <text x="1213" y="206" font-size="9" fill="#94A3B8">Classic Burger price change</text>
+  <text x="1213" y="220" font-size="9" fill="#64748B">5:15 PM — QL-820NWB</text>
+  <circle cx="1213" cy="235" r="4" fill="#10B981"/>
+  <text x="1220" y="238" font-size="9" fill="#10B981">Completed ✓</text>
+
+  <!-- Job 3 — Completed -->
+  <rect x="1205" y="254" width="150" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1213" y="270" font-size="10" font-weight="700" fill="#F1F5F9">4 labels</text>
+  <text x="1213" y="284" font-size="9" fill="#94A3B8">New items (PO received)</text>
+  <text x="1213" y="298" font-size="9" fill="#64748B">4:02 PM — Zebra ZD420</text>
+  <circle cx="1213" cy="313" r="4" fill="#10B981"/>
+  <text x="1220" y="316" font-size="9" fill="#10B981">Completed ✓</text>
+
+  <!-- Job 4 — Completed -->
+  <rect x="1205" y="332" width="150" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1213" y="348" font-size="10" font-weight="700" fill="#F1F5F9">1 label</text>
+  <text x="1213" y="362" font-size="9" fill="#94A3B8">Prep label — KDS</text>
+  <text x="1213" y="376" font-size="9" fill="#64748B">3:45 PM — Zebra ZD420</text>
+  <circle cx="1213" cy="391" r="4" fill="#10B981"/>
+  <text x="1220" y="394" font-size="9" fill="#10B981">Completed ✓</text>
+
+  <!-- Job 5 — ERROR (amber row) -->
+  <rect x="1205" y="410" width="150" height="80" rx="6" fill="#451A03" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1213" y="426" font-size="10" font-weight="700" fill="#F97316">ERROR</text>
+  <text x="1213" y="440" font-size="9" fill="#F59E0B">Zebra ZD620 offline</text>
+  <text x="1213" y="454" font-size="9" fill="#64748B">2:30 PM</text>
+  <text x="1213" y="468" font-size="9" fill="#94A3B8">Rerouted to ZD420</text>
+  <text x="1213" y="480" font-size="9" fill="#10B981">✓ Recovered</text>
+
+  <!-- Print queue count -->
+  <text x="1280" y="510" font-size="10" fill="#64748B" text-anchor="middle">— Queue empty —</text>
+
+  <!-- WORKFLOW INTEGRATION BOX -->
+  <rect x="1205" y="530" width="150" height="460" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1280" y="550" font-size="9" font-weight="700" fill="#F59E0B" text-anchor="middle">INTEGRATION</text>
+  <text x="1213" y="568" font-size="8" fill="#94A3B8">BarcodeBridge.swift</text>
+  <text x="1213" y="582" font-size="8" fill="#94A3B8">handles label print</text>
+  <text x="1213" y="596" font-size="8" fill="#94A3B8">jobs via WKWebView</text>
+  <text x="1213" y="610" font-size="8" fill="#94A3B8">bridge.</text>
+  <line x1="1213" y1="618" x2="1346" y2="618" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="1213" y="632" font-size="8" fill="#64748B">Label data from:</text>
+  <text x="1213" y="646" font-size="8" fill="#8B5CF6">pos_menu_items</text>
+  <text x="1213" y="660" font-size="8" fill="#8B5CF6">pos_inventory</text>
+  <line x1="1213" y1="668" x2="1346" y2="668" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="1213" y="682" font-size="8" fill="#64748B">Print queue table:</text>
+  <text x="1213" y="696" font-size="8" fill="#8B5CF6">pos_label_print</text>
+  <text x="1213" y="710" font-size="8" fill="#8B5CF6">_queue</text>
+  <text x="1213" y="724" font-size="8" fill="#64748B">Status: pending/</text>
+  <text x="1213" y="738" font-size="8" fill="#64748B">sent/done/error</text>
+  <line x1="1213" y1="746" x2="1346" y2="746" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="1213" y="760" font-size="8" fill="#64748B">Prep labels fire</text>
+  <text x="1213" y="774" font-size="8" fill="#64748B">from KDS auto.</text>
+  <line x1="1213" y1="782" x2="1346" y2="782" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="1213" y="796" font-size="8" fill="#64748B">PDF417 on prep</text>
+  <text x="1213" y="810" font-size="8" fill="#64748B">encodes: item_id,</text>
+  <text x="1213" y="824" font-size="8" fill="#64748B">batch_date,</text>
+  <text x="1213" y="838" font-size="8" fill="#64748B">expiry_date for</text>
+  <text x="1213" y="852" font-size="8" fill="#64748B">scan-to-verify.</text>
+  <line x1="1213" y1="860" x2="1346" y2="860" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="1213" y="874" font-size="8" fill="#64748B">Price change →</text>
+  <text x="1213" y="888" font-size="8" fill="#64748B">auto-reprint via</text>
+  <text x="1213" y="902" font-size="8" fill="#64748B">updated_at hook</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- CENTER PANEL BOTTOM — WORKFLOW INTEGRATION (wider) -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <rect x="588" y="742" width="600" height="266" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="600" y="762" font-size="10" font-weight="700" fill="#F59E0B">WORKFLOW INTEGRATION</text>
+  <text x="600" y="780" font-size="9" fill="#94A3B8">BarcodeBridge.swift handles label print jobs via WKWebView bridge. Label data from pos_menu_items + pos_inventory.</text>
+  <text x="600" y="798" font-size="9" fill="#94A3B8">Print job queue: pos_label_print_queue (status: pending / sent / done / error).</text>
+  <text x="600" y="816" font-size="9" fill="#94A3B8">Prep labels auto-generated from KDS when item fires. PDF417 on prep labels encodes: item_id, batch_date,</text>
+  <text x="600" y="834" font-size="9" fill="#94A3B8">expiry_date for scan-to-verify workflows.</text>
+  <text x="600" y="852" font-size="9" fill="#94A3B8">Price change → auto-reprint trigger via pos_menu_items updated_at webhook.</text>
+  <line x1="600" y1="864" x2="1178" y2="864" stroke="#2D3148" stroke-width="0.5"/>
+  <!-- DB table pills -->
+  <text x="600" y="882" font-size="9" fill="#64748B">DB Tables:</text>
+  <rect x="660" y="872" width="120" height="18" rx="9" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="668" y="884" font-size="8" fill="#C4B5FD">pos_label_print_queue</text>
+  <rect x="790" y="872" width="96" height="18" rx="9" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="798" y="884" font-size="8" fill="#C4B5FD">pos_menu_items</text>
+  <rect x="896" y="872" width="80" height="18" rx="9" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="904" y="884" font-size="8" fill="#C4B5FD">pos_inventory</text>
+  <line x1="600" y1="898" x2="1178" y2="898" stroke="#2D3148" stroke-width="0.5"/>
+  <!-- Printer model chips -->
+  <text x="600" y="916" font-size="9" fill="#64748B">Supported Printers:</text>
+  <rect x="710" y="906" width="86" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="718" y="918" font-size="8" fill="#FCD34D">Zebra ZD420 (USB)</text>
+  <rect x="806" y="906" width="110" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="814" y="918" font-size="8" fill="#FCD34D">Zebra ZD620 (Eth/BT)</text>
+  <rect x="926" y="906" width="120" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="934" y="918" font-size="8" fill="#FCD34D">Brother QL-820NWB (WiFi)</text>
+  <!-- Label formats -->
+  <text x="600" y="940" font-size="9" fill="#64748B">Label Formats:</text>
+  <rect x="668" y="930" width="66" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="676" y="942" font-size="8" fill="#6EE7B7">Code 128</text>
+  <rect x="742" y="930" width="52" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="750" y="942" font-size="8" fill="#6EE7B7">EAN-13</text>
+  <rect x="802" y="930" width="52" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="810" y="942" font-size="8" fill="#6EE7B7">QR Code</text>
+  <rect x="862" y="930" width="44" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="870" y="942" font-size="8" fill="#6EE7B7">PDF417</text>
+  <text x="600" y="970" font-size="9" fill="#64748B">Print commands via ESC/POS or ZPL depending on printer driver.</text>
+  <text x="600" y="988" font-size="9" fill="#64748B">BarcodeBridge calls window.labelPrint(jobJSON) → native handler queues to connected printer.</text>
+
+</svg>

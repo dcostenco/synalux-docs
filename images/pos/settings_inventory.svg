@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1440" height="900" fill="#0F1117"/>
+  <!-- Left Nav -->
+  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Cash Management</text>
+  <rect x="0" y="116" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="116" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="139" font-size="12" font-weight="600" fill="#F59E0B">Inventory</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Receipts</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Reservations</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Reports</text>
+
+  <!-- Header -->
+  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Inventory Management</text>
+  <text x="220" y="50" font-size="11" fill="#8B92A5">Stock levels · Depletion tracking · Low-stock alerts · 86'd auto-trigger — pos_inventory table</text>
+  <rect x="1136" y="12" width="160" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1158" y="32" font-size="12" font-weight="600" fill="#000">+ Add Inventory Item</text>
+  <rect x="1304" y="12" width="116" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1318" y="32" font-size="12" fill="#D1D5DB">Print Count Sheet</text>
+
+  <!-- Alert strip -->
+  <rect x="220" y="68" width="1200" height="44" rx="8" fill="#7F1D1D" stroke="#991B1B" stroke-width="1"/>
+  <text x="244" y="88" font-size="12" font-weight="700" fill="#FCA5A5">⚠ 3 items critically low — auto-86'd on register &amp; online menu</text>
+  <text x="244" y="104" font-size="11" fill="#FCA5A5">Salmon (0 portions) · Buffalo Wings (1 portion) · Lobster Bisque (2 portions)</text>
+
+  <!-- Tabs -->
+  <rect x="200" y="120" width="1240" height="36" fill="#13162A"/>
+  <rect x="208" y="124" width="100" height="28" rx="6" fill="#1E2240"/>
+  <text x="234" y="143" font-size="12" font-weight="600" fill="#F59E0B">All Items</text>
+  <rect x="316" y="124" width="100" height="28" rx="6"/>
+  <text x="334" y="143" font-size="12" fill="#8B92A5">Low Stock (3)</text>
+  <rect x="424" y="124" width="96" height="28" rx="6"/>
+  <text x="438" y="143" font-size="12" fill="#8B92A5">86'd Items (3)</text>
+  <rect x="528" y="124" width="100" height="28" rx="6"/>
+  <text x="544" y="143" font-size="12" fill="#8B92A5">By Category</text>
+  <rect x="636" y="124" width="100" height="28" rx="6"/>
+  <text x="654" y="143" font-size="12" fill="#8B92A5">Depletion Log</text>
+
+  <!-- ===== Main inventory table ===== -->
+  <rect x="200" y="156" width="1240" height="36" fill="#1E2240"/>
+  <text x="220" y="179" font-size="10" font-weight="600" fill="#6B7280">ITEM</text>
+  <text x="420" y="179" font-size="10" font-weight="600" fill="#6B7280">SKU</text>
+  <text x="510" y="179" font-size="10" font-weight="600" fill="#6B7280">UNIT</text>
+  <text x="580" y="179" font-size="10" font-weight="600" fill="#6B7280">ON HAND</text>
+  <text x="670" y="179" font-size="10" font-weight="600" fill="#6B7280">THRESHOLD</text>
+  <text x="780" y="179" font-size="10" font-weight="600" fill="#6B7280">STATUS</text>
+  <text x="880" y="179" font-size="10" font-weight="600" fill="#6B7280">SOLD TODAY</text>
+  <text x="980" y="179" font-size="10" font-weight="600" fill="#6B7280">DEPLETION/HR</text>
+  <text x="1100" y="179" font-size="10" font-weight="600" fill="#6B7280">86 AT ZERO</text>
+  <text x="1220" y="179" font-size="10" font-weight="600" fill="#6B7280">ADJUST</text>
+  <text x="1330" y="179" font-size="10" font-weight="600" fill="#6B7280">EDIT</text>
+
+  <!-- Salmon - critically low -->
+  <rect x="200" y="192" width="1240" height="36" fill="#7F1D1D"/>
+  <text x="220" y="215" font-size="12" font-weight="600" fill="#FCA5A5">🐟 Atlantic Salmon</text>
+  <text x="420" y="215" font-size="11" fill="#FCA5A5">ENT-012</text>
+  <text x="510" y="215" font-size="11" fill="#FCA5A5">portions</text>
+  <text x="580" y="215" font-size="14" font-weight="700" fill="#EF4444">0</text>
+  <text x="670" y="215" font-size="11" fill="#FCA5A5">5</text>
+  <rect x="772" y="200" width="54" height="20" rx="10" fill="#991B1B"/>
+  <text x="782" y="214" font-size="9" fill="#FCA5A5">86'd ✓</text>
+  <text x="880" y="215" font-size="11" fill="#FCA5A5">12</text>
+  <text x="980" y="215" font-size="11" fill="#FCA5A5">1.5/hr</text>
+  <rect x="1092" y="200" width="50" height="20" rx="10" fill="#991B1B"/>
+  <circle cx="1132" cy="210" r="8" fill="#FFFFFF"/>
+  <rect x="1212" y="200" width="80" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1224" y="214" font-size="10" fill="#D1D5DB">+/− Stock</text>
+  <rect x="1322" y="200" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1334" y="214" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- Wings - 1 portion -->
+  <rect x="200" y="228" width="1240" height="36" fill="#7C2D12" opacity="0.6"/>
+  <text x="220" y="251" font-size="12" font-weight="600" fill="#FCA5A5">🍗 Buffalo Wings</text>
+  <text x="420" y="251" font-size="11" fill="#FCA5A5">APP-010</text>
+  <text x="510" y="251" font-size="11" fill="#FCA5A5">orders</text>
+  <text x="580" y="251" font-size="14" font-weight="700" fill="#EF4444">1</text>
+  <text x="670" y="251" font-size="11" fill="#FCA5A5">8</text>
+  <rect x="772" y="236" width="54" height="20" rx="10" fill="#991B1B"/>
+  <text x="782" y="250" font-size="9" fill="#FCA5A5">86'd ✓</text>
+  <text x="880" y="251" font-size="11" fill="#FCA5A5">47</text>
+  <text x="980" y="251" font-size="11" fill="#FCA5A5">5.9/hr</text>
+  <rect x="1092" y="236" width="50" height="20" rx="10" fill="#991B1B"/>
+  <circle cx="1132" cy="246" r="8" fill="#FFFFFF"/>
+
+  <!-- Burger - low stock warning -->
+  <rect x="200" y="264" width="1240" height="36" fill="#7C2D12" opacity="0.3"/>
+  <text x="220" y="287" font-size="12" fill="#FDE68A">🍔 Burger Deluxe</text>
+  <text x="420" y="287" font-size="11" fill="#8B92A5">BURG-001</text>
+  <text x="510" y="287" font-size="11" fill="#8B92A5">portions</text>
+  <text x="580" y="287" font-size="14" font-weight="700" fill="#F59E0B">4</text>
+  <text x="670" y="287" font-size="11" fill="#8B92A5">10</text>
+  <rect x="772" y="272" width="64" height="20" rx="10" fill="#B45309"/>
+  <text x="778" y="286" font-size="9" fill="#FDE68A">LOW ⚠</text>
+  <text x="880" y="287" font-size="11" fill="#8B92A5">28</text>
+  <text x="980" y="287" font-size="11" fill="#F59E0B">3.5/hr</text>
+  <text x="1092" y="278" font-size="10" fill="#6B7280">Est 86 in ~1hr</text>
+
+  <!-- Margherita Pizza - OK -->
+  <rect x="200" y="300" width="1240" height="36" fill="#1A1D2E"/>
+  <text x="220" y="323" font-size="12" fill="#D1D5DB">🍕 Margherita Pizza</text>
+  <text x="420" y="323" font-size="11" fill="#8B92A5">PIZ-001</text>
+  <text x="510" y="323" font-size="11" fill="#8B92A5">pies</text>
+  <text x="580" y="323" font-size="14" font-weight="700" fill="#10B981">18</text>
+  <text x="670" y="323" font-size="11" fill="#8B92A5">5</text>
+  <rect x="772" y="308" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="784" y="322" font-size="9" fill="#6EE7B7">In Stock</text>
+  <text x="880" y="323" font-size="11" fill="#8B92A5">22</text>
+  <text x="980" y="323" font-size="11" fill="#8B92A5">2.8/hr</text>
+  <rect x="1092" y="308" width="50" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1132" cy="318" r="8" fill="#FFFFFF"/>
+
+  <!-- Draft Beer - OK -->
+  <rect x="200" y="336" width="1240" height="36" fill="#13162A"/>
+  <text x="220" y="359" font-size="12" fill="#D1D5DB">🍺 Draft Beer (keg)</text>
+  <text x="420" y="359" font-size="11" fill="#8B92A5">BAR-001</text>
+  <text x="510" y="359" font-size="11" fill="#8B92A5">pints</text>
+  <text x="580" y="359" font-size="14" font-weight="700" fill="#10B981">124</text>
+  <text x="670" y="359" font-size="11" fill="#8B92A5">20</text>
+  <rect x="772" y="344" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="784" y="358" font-size="9" fill="#6EE7B7">In Stock</text>
+  <text x="880" y="359" font-size="11" fill="#8B92A5">64</text>
+  <text x="980" y="359" font-size="11" fill="#8B92A5">8.0/hr</text>
+  <rect x="1092" y="344" width="50" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1132" cy="354" r="8" fill="#FFFFFF"/>
+
+  <!-- Caesar Salad -->
+  <rect x="200" y="372" width="1240" height="36" fill="#1A1D2E"/>
+  <text x="220" y="395" font-size="12" fill="#D1D5DB">🥗 Caesar Salad</text>
+  <text x="420" y="395" font-size="11" fill="#8B92A5">SAL-002</text>
+  <text x="510" y="395" font-size="11" fill="#8B92A5">portions</text>
+  <text x="580" y="395" font-size="14" font-weight="700" fill="#10B981">31</text>
+  <text x="670" y="395" font-size="11" fill="#8B92A5">8</text>
+  <rect x="772" y="380" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="784" y="394" font-size="9" fill="#6EE7B7">In Stock</text>
+  <text x="880" y="395" font-size="11" fill="#8B92A5">18</text>
+  <text x="980" y="395" font-size="11" fill="#8B92A5">2.3/hr</text>
+
+  <!-- Stock adjustment panel (right-side drawer) -->
+  <rect x="960" y="444" width="480" height="440" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="984" y="474" font-size="13" font-weight="700" fill="#F59E0B">Adjust Stock — Burger Deluxe</text>
+  <text x="984" y="490" font-size="10" fill="#8B92A5">pos_inventory.id = INV-BURG-001</text>
+
+  <text x="984" y="520" font-size="10" fill="#8B92A5">CURRENT ON HAND</text>
+  <text x="984" y="544" font-size="36" font-weight="700" fill="#F59E0B">4</text>
+  <text x="1024" y="544" font-size="16" fill="#8B92A5">portions</text>
+
+  <text x="984" y="576" font-size="10" fill="#8B92A5">ADJUSTMENT TYPE</text>
+  <rect x="984" y="582" width="432" height="36" rx="6" fill="#0F1117"/>
+  <rect x="992" y="588" width="100" height="22" rx="4" fill="#F59E0B"/>
+  <text x="1014" y="603" font-size="11" font-weight="600" fill="#000">Restock (+)</text>
+  <rect x="1100" y="588" width="100" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1118" y="603" font-size="11" fill="#6B7280">Usage (−)</text>
+  <rect x="1208" y="588" width="100" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1226" y="603" font-size="11" fill="#6B7280">Set Exact</text>
+  <rect x="1316" y="588" width="90" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1330" y="603" font-size="11" fill="#6B7280">Waste</text>
+
+  <text x="984" y="640" font-size="10" fill="#8B92A5">QUANTITY</text>
+  <rect x="984" y="646" width="180" height="44" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1048" y="676" font-size="28" font-weight="700" fill="#FFFFFF">20</text>
+  <text x="1176" y="676" font-size="14" fill="#8B92A5">→ new total: 24</text>
+
+  <text x="984" y="712" font-size="10" fill="#8B92A5">REASON NOTE</text>
+  <rect x="984" y="718" width="432" height="30" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="996" y="738" font-size="11" fill="#D1D5DB">Delivery from Star Beef — 20 fresh patties</text>
+
+  <!-- Low-stock alert settings -->
+  <text x="984" y="772" font-size="10" fill="#8B92A5">LOW STOCK THRESHOLD</text>
+  <rect x="984" y="778" width="180" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1000" y="797" font-size="12" fill="#FFFFFF">10 portions</text>
+  <text x="1176" y="797" font-size="10" fill="#6B7280">← alert sent below this</text>
+
+  <text x="984" y="830" font-size="10" fill="#8B92A5">AUTO-86 WHEN ZERO</text>
+  <rect x="984" y="836" width="432" height="28" rx="4" fill="#0F1117"/>
+  <text x="1000" y="855" font-size="12" fill="#D1D5DB">86 on register &amp; online menu when stock = 0</text>
+  <rect x="1366" y="842" width="44" height="20" rx="10" fill="#10B981"/>
+  <circle cx="1400" cy="852" r="8" fill="#FFFFFF"/>
+
+  <rect x="984" y="874" width="200" height="36" rx="6" fill="#F59E0B"/>
+  <text x="1046" y="897" font-size="13" font-weight="600" fill="#000">Save Adjustment</text>
+
+  <!-- Left area: workflow note -->
+  <rect x="200" y="444" width="736" height="216" rx="8" fill="#1A1D2E"/>
+  <text x="224" y="472" font-size="13" font-weight="700" fill="#FFFFFF">Inventory Workflow Integration</text>
+  <text x="224" y="496" font-size="11" fill="#D1D5DB">1. <tspan font-weight="600">Auto-depletion:</tspan> Each order line deducts from pos_inventory.quantity — configurable per item</text>
+  <text x="224" y="516" font-size="11" fill="#D1D5DB">2. <tspan font-weight="600">Low-stock alert:</tspan> Push notification to manager iPad + SMS when quantity ≤ threshold</text>
+  <text x="224" y="536" font-size="11" fill="#D1D5DB">3. <tspan font-weight="600">Auto-86:</tspan> quantity = 0 → item grayed on register &amp; hidden on online menu — no manual step needed</text>
+  <text x="224" y="556" font-size="11" fill="#D1D5DB">4. <tspan font-weight="600">KDS note:</tspan> Low-stock items show "LOW STOCK" badge on KDS ticket for kitchen awareness</text>
+  <text x="224" y="576" font-size="11" fill="#D1D5DB">5. <tspan font-weight="600">Restock:</tspan> Barcode scanner can scan delivery label → pre-fills item + batch quantity for fast entry</text>
+  <text x="224" y="596" font-size="11" fill="#D1D5DB">6. <tspan font-weight="600">Reports:</tspan> Daily depletion report, waste log, cost-of-goods-sold estimation per category</text>
+  <text x="224" y="620" font-size="10" fill="#6B7280">DB: pos_inventory (current stock) + pos_inventory_events (full audit log of adjustments)</text>
+  <text x="224" y="636" font-size="10" fill="#6B7280">No hardcodes — all thresholds, units, auto-86 flags from DB per item</text>
+
+  <text x="720" y="886" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Inventory · pos_inventory — auto-depletion · low-stock alerts · auto-86 · no hardcodes</text>
+</svg>

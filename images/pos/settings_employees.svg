@@ -1,0 +1,315 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1440" height="900" fill="#0F1117"/>
+
+  <!-- Left Nav Sidebar -->
+  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <rect x="0" y="152" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="152" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="175" font-size="12" font-weight="600" fill="#F59E0B">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Advantage Prog.</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Integrations</text>
+
+  <!-- Header -->
+  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Employees &amp; Roles</text>
+  <text x="220" y="50" font-size="11" fill="#8B92A5">Role-based permissions · PIN auth · Timeclock · Schedules — all stored in pos_employees / pos_roles</text>
+  <rect x="1150" y="12" width="100" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1172" y="32" font-size="12" font-weight="600" fill="#000000">+ Add Staff</text>
+  <rect x="1260" y="12" width="120" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1278" y="32" font-size="12" fill="#D1D5DB">Export Timeclock</text>
+
+  <!-- Tabs -->
+  <rect x="200" y="56" width="1240" height="40" fill="#13162A"/>
+  <rect x="204" y="60" width="120" height="32" rx="6" fill="#1E2240"/>
+  <text x="236" y="81" font-size="12" font-weight="600" fill="#F59E0B">Staff List</text>
+  <rect x="330" y="60" width="120" height="32" rx="6" fill="none"/>
+  <text x="354" y="81" font-size="12" fill="#8B92A5">Roles &amp; RBAC</text>
+  <rect x="456" y="60" width="120" height="32" rx="6" fill="none"/>
+  <text x="476" y="81" font-size="12" fill="#8B92A5">Timeclock</text>
+  <rect x="582" y="60" width="120" height="32" rx="6" fill="none"/>
+  <text x="604" y="81" font-size="12" fill="#8B92A5">Schedules</text>
+
+  <!-- ===== LEFT: Staff List ===== -->
+  <rect x="200" y="96" width="420" height="804" fill="#13162A"/>
+
+  <!-- Search + filter -->
+  <rect x="212" y="108" width="260" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="129" font-size="12" fill="#6B7280">🔍 Search employees…</text>
+  <rect x="480" y="108" width="128" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="494" y="129" font-size="12" fill="#8B92A5">All Roles ▾</text>
+
+  <!-- Column headers -->
+  <rect x="212" y="148" width="396" height="28" fill="#0F1117"/>
+  <text x="268" y="166" font-size="10" font-weight="600" fill="#6B7280">NAME</text>
+  <text x="390" y="166" font-size="10" font-weight="600" fill="#6B7280">ROLE</text>
+  <text x="480" y="166" font-size="10" font-weight="600" fill="#6B7280">STATUS</text>
+  <text x="548" y="166" font-size="10" font-weight="600" fill="#6B7280">CLOCKED</text>
+
+  <!-- Employee rows -->
+  <!-- Maria Santos - Manager - active/selected -->
+  <rect x="212" y="176" width="396" height="56" rx="4" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="238" cy="204" r="16" fill="#7C3AED"/>
+  <text x="232" y="209" font-size="12" font-weight="700" fill="#FFFFFF">MS</text>
+  <text x="262" y="199" font-size="12" font-weight="600" fill="#F59E0B">Maria Santos</text>
+  <text x="262" y="215" font-size="10" fill="#8B92A5">maria@example.com</text>
+  <rect x="382" y="192" width="64" height="20" rx="10" fill="#1E3A5F"/>
+  <text x="392" y="206" font-size="10" fill="#93C5FD">Manager</text>
+  <rect x="472" y="193" width="54" height="18" rx="9" fill="#065F46"/>
+  <text x="482" y="206" font-size="9" fill="#6EE7B7">● Active</text>
+  <text x="540" y="204" font-size="10" fill="#10B981">3h 22m</text>
+
+  <!-- Carlos Ruiz - Server -->
+  <rect x="212" y="238" width="396" height="56" rx="4" fill="#1A1D2E"/>
+  <circle cx="238" cy="266" r="16" fill="#0369A1"/>
+  <text x="232" y="271" font-size="12" font-weight="700" fill="#FFFFFF">CR</text>
+  <text x="262" y="261" font-size="12" fill="#D1D5DB">Carlos Ruiz</text>
+  <text x="262" y="277" font-size="10" fill="#8B92A5">carlos@example.com</text>
+  <rect x="382" y="254" width="50" height="20" rx="10" fill="#1F2937"/>
+  <text x="393" y="268" font-size="10" fill="#9CA3AF">Server</text>
+  <rect x="472" y="255" width="54" height="18" rx="9" fill="#065F46"/>
+  <text x="482" y="268" font-size="9" fill="#6EE7B7">● Active</text>
+  <text x="540" y="266" font-size="10" fill="#10B981">5h 08m</text>
+
+  <!-- Aisha Johnson - Bartender -->
+  <rect x="212" y="300" width="396" height="56" rx="4" fill="#1A1D2E"/>
+  <circle cx="238" cy="328" r="16" fill="#B45309"/>
+  <text x="232" y="333" font-size="12" font-weight="700" fill="#FFFFFF">AJ</text>
+  <text x="262" y="323" font-size="12" fill="#D1D5DB">Aisha Johnson</text>
+  <text x="262" y="339" font-size="10" fill="#8B92A5">aisha@example.com</text>
+  <rect x="382" y="316" width="62" height="20" rx="10" fill="#1F2937"/>
+  <text x="390" y="330" font-size="10" fill="#9CA3AF">Bartender</text>
+  <rect x="472" y="317" width="54" height="18" rx="9" fill="#065F46"/>
+  <text x="482" y="330" font-size="9" fill="#6EE7B7">● Active</text>
+  <text x="540" y="328" font-size="10" fill="#10B981">4h 45m</text>
+
+  <!-- Tom Park - Cook -->
+  <rect x="212" y="362" width="396" height="56" rx="4" fill="#1A1D2E"/>
+  <circle cx="238" cy="390" r="16" fill="#065F46"/>
+  <text x="232" y="395" font-size="12" font-weight="700" fill="#FFFFFF">TP</text>
+  <text x="262" y="385" font-size="12" fill="#D1D5DB">Tom Park</text>
+  <text x="262" y="401" font-size="10" fill="#8B92A5">tom@example.com</text>
+  <rect x="382" y="378" width="44" height="20" rx="10" fill="#1F2937"/>
+  <text x="393" y="392" font-size="10" fill="#9CA3AF">Cook</text>
+  <rect x="472" y="379" width="54" height="18" rx="9" fill="#065F46"/>
+  <text x="482" y="392" font-size="9" fill="#6EE7B7">● Active</text>
+  <text x="540" y="390" font-size="10" fill="#10B981">6h 02m</text>
+
+  <!-- Sarah Chen - Host — scheduled off -->
+  <rect x="212" y="424" width="396" height="56" rx="4" fill="#1A1D2E"/>
+  <circle cx="238" cy="452" r="16" fill="#6B7280"/>
+  <text x="232" y="457" font-size="12" font-weight="700" fill="#FFFFFF">SC</text>
+  <text x="262" y="447" font-size="12" fill="#D1D5DB">Sarah Chen</text>
+  <text x="262" y="463" font-size="10" fill="#8B92A5">sarah@example.com</text>
+  <rect x="382" y="440" width="38" height="20" rx="10" fill="#1F2937"/>
+  <text x="393" y="454" font-size="10" fill="#9CA3AF">Host</text>
+  <rect x="472" y="441" width="56" height="18" rx="9" fill="#374151"/>
+  <text x="478" y="454" font-size="9" fill="#9CA3AF">○ Off-duty</text>
+
+  <!-- Timeclock note -->
+  <rect x="212" y="500" width="396" height="52" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="520" font-size="10" fill="#8B92A5">Timeclock: clock-in/out via PIN at register</text>
+  <text x="228" y="534" font-size="10" fill="#8B92A5">pos_timeclock_entries: employee_id, clock_in, clock_out</text>
+  <text x="228" y="548" font-size="10" fill="#8B92A5">Payroll export: CSV / ADP / Gusto integration</text>
+
+  <!-- ===== CENTER-RIGHT: Employee Detail + RBAC ===== -->
+  <rect x="620" y="96" width="820" height="804" fill="#0F1117"/>
+
+  <!-- Employee detail header -->
+  <rect x="636" y="108" width="788" height="80" rx="8" fill="#1A1D2E"/>
+  <circle cx="676" cy="148" r="28" fill="#7C3AED"/>
+  <text x="660" y="155" font-size="20" font-weight="700" fill="#FFFFFF">MS</text>
+  <text x="716" y="132" font-size="18" font-weight="700" fill="#FFFFFF">Maria Santos</text>
+  <text x="716" y="152" font-size="12" fill="#8B92A5">Employee #104 · Hired 2024-03-12 · Rate: $22.50/hr</text>
+  <text x="716" y="170" font-size="11" fill="#F59E0B">Role: Manager</text>
+  <!-- PIN reset -->
+  <rect x="1200" y="120" width="100" height="28" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1218" y="139" font-size="11" fill="#D1D5DB">Reset PIN</text>
+  <rect x="1308" y="120" width="100" height="28" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1326" y="139" font-size="11" fill="#D1D5DB">Edit Profile</text>
+
+  <!-- 4-digit PIN display -->
+  <rect x="636" y="200" width="380" height="84" rx="8" fill="#1A1D2E"/>
+  <text x="654" y="222" font-size="11" font-weight="600" fill="#8B92A5">REGISTER PIN (4-digit)</text>
+  <text x="654" y="244" font-size="11" fill="#6B7280">Encrypted in DB — never stored plaintext</text>
+  <rect x="654" y="254" width="44" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="666" y="269" font-size="16" fill="#FFFFFF">●</text>
+  <rect x="704" y="254" width="44" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="716" y="269" font-size="16" fill="#FFFFFF">●</text>
+  <rect x="754" y="254" width="44" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="766" y="269" font-size="16" fill="#FFFFFF">●</text>
+  <rect x="804" y="254" width="44" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="816" y="269" font-size="16" fill="#FFFFFF">●</text>
+  <rect x="862" y="254" width="100" height="20" rx="4" fill="#F59E0B"/>
+  <text x="874" y="269" font-size="11" font-weight="600" fill="#000000">Change PIN</text>
+
+  <!-- Role selector -->
+  <rect x="1026" y="200" width="398" height="84" rx="8" fill="#1A1D2E"/>
+  <text x="1044" y="222" font-size="11" font-weight="600" fill="#8B92A5">ROLE (pos_roles)</text>
+  <rect x="1044" y="232" width="360" height="36" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1060" y="255" font-size="13" font-weight="600" fill="#FFFFFF">Manager</text>
+  <text x="1355" y="255" font-size="20" fill="#6B7280">▾</text>
+  <text x="1044" y="278" font-size="10" fill="#8B92A5">Roles define all permission gates below — customize per-employee overrides if needed</text>
+
+  <!-- RBAC Permissions Matrix -->
+  <text x="636" y="310" font-size="14" font-weight="700" fill="#FFFFFF">Role-Based Access Control (RBAC)</text>
+  <text x="636" y="328" font-size="11" fill="#8B92A5">pos_role_permissions table — all permission checks server-side via Supabase RLS</text>
+
+  <!-- Matrix header -->
+  <rect x="636" y="336" width="788" height="32" fill="#13162A"/>
+  <text x="652" y="357" font-size="11" font-weight="600" fill="#6B7280">PERMISSION</text>
+  <text x="850" y="357" font-size="10" font-weight="600" fill="#6B7280">OWNER</text>
+  <text x="916" y="357" font-size="10" font-weight="600" fill="#6B7280">MANAGER</text>
+  <text x="1000" y="357" font-size="10" font-weight="600" fill="#6B7280">SUPERVISOR</text>
+  <text x="1090" y="357" font-size="10" font-weight="600" fill="#6B7280">SERVER</text>
+  <text x="1160" y="357" font-size="10" font-weight="600" fill="#6B7280">BARTENDER</text>
+  <text x="1260" y="357" font-size="10" font-weight="600" fill="#6B7280">COOK</text>
+  <text x="1330" y="357" font-size="10" font-weight="600" fill="#6B7280">HOST</text>
+  <!-- Override col -->
+  <text x="1392" y="357" font-size="10" font-weight="600" fill="#F59E0B">THIS USER</text>
+
+  <!-- Permission rows -->
+  <!-- Row helper macros: ✓ green, — gray, custom amber -->
+  <!-- Open/Close Day -->
+  <rect x="636" y="368" width="788" height="32" fill="#1A1D2E"/>
+  <text x="652" y="389" font-size="11" fill="#D1D5DB">Open / Close Day</text>
+  <text x="860" y="389" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="389" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="389" font-size="13" fill="#6B7280">—</text>
+  <text x="1098" y="389" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="389" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="389" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="389" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="389" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Void Items -->
+  <rect x="636" y="400" width="788" height="32" fill="#13162A"/>
+  <text x="652" y="421" font-size="11" fill="#D1D5DB">Void Items</text>
+  <text x="860" y="421" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="421" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="421" font-size="13" fill="#10B981">✓</text>
+  <text x="1098" y="421" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="421" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="421" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="421" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="421" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Apply Discounts -->
+  <rect x="636" y="432" width="788" height="32" fill="#1A1D2E"/>
+  <text x="652" y="453" font-size="11" fill="#D1D5DB">Apply Discounts</text>
+  <text x="860" y="453" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="453" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="453" font-size="13" fill="#10B981">✓</text>
+  <text x="1098" y="453" font-size="13" fill="#10B981">✓</text>
+  <text x="1176" y="453" font-size="13" fill="#10B981">✓</text>
+  <text x="1270" y="453" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="453" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="453" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Comp Meals -->
+  <rect x="636" y="464" width="788" height="32" fill="#13162A"/>
+  <text x="652" y="485" font-size="11" fill="#D1D5DB">Comp Meals</text>
+  <text x="860" y="485" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="485" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="485" font-size="13" fill="#6B7280">—</text>
+  <text x="1098" y="485" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="485" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="485" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="485" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="485" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Access Reports -->
+  <rect x="636" y="496" width="788" height="32" fill="#1A1D2E"/>
+  <text x="652" y="517" font-size="11" fill="#D1D5DB">Access Reports</text>
+  <text x="860" y="517" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="517" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="517" font-size="13" fill="#10B981">✓</text>
+  <text x="1098" y="517" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="517" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="517" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="517" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="517" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Edit Menu Prices -->
+  <rect x="636" y="528" width="788" height="32" fill="#13162A"/>
+  <text x="652" y="549" font-size="11" fill="#D1D5DB">Edit Menu / Prices</text>
+  <text x="860" y="549" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="549" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="549" font-size="13" fill="#6B7280">—</text>
+  <text x="1098" y="549" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="549" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="549" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="549" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="549" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Age Verification Override -->
+  <rect x="636" y="560" width="788" height="32" fill="#1A1D2E"/>
+  <text x="652" y="581" font-size="11" fill="#D1D5DB">Age Verification Override</text>
+  <text x="860" y="581" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="581" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="581" font-size="13" fill="#10B981">✓</text>
+  <text x="1098" y="581" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="581" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="581" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="581" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="581" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Refund Payments -->
+  <rect x="636" y="592" width="788" height="32" fill="#13162A"/>
+  <text x="652" y="613" font-size="11" fill="#D1D5DB">Refund Payments</text>
+  <text x="860" y="613" font-size="13" fill="#10B981">✓</text>
+  <text x="930" y="613" font-size="13" fill="#10B981">✓</text>
+  <text x="1018" y="613" font-size="13" fill="#6B7280">—</text>
+  <text x="1098" y="613" font-size="13" fill="#6B7280">—</text>
+  <text x="1176" y="613" font-size="13" fill="#6B7280">—</text>
+  <text x="1270" y="613" font-size="13" fill="#6B7280">—</text>
+  <text x="1340" y="613" font-size="13" fill="#6B7280">—</text>
+  <text x="1404" y="613" font-size="13" fill="#10B981">✓</text>
+
+  <!-- Timeclock section -->
+  <text x="636" y="648" font-size="13" font-weight="600" fill="#FFFFFF">Timeclock — Today</text>
+  <rect x="636" y="656" width="788" height="100" rx="8" fill="#1A1D2E"/>
+  <!-- Timeclock entries table -->
+  <rect x="652" y="668" width="760" height="24" fill="#13162A"/>
+  <text x="664" y="684" font-size="10" fill="#6B7280">DATE</text>
+  <text x="750" y="684" font-size="10" fill="#6B7280">CLOCK IN</text>
+  <text x="840" y="684" font-size="10" fill="#6B7280">CLOCK OUT</text>
+  <text x="940" y="684" font-size="10" fill="#6B7280">HOURS</text>
+  <text x="1000" y="684" font-size="10" fill="#6B7280">BREAK</text>
+  <text x="1060" y="684" font-size="10" fill="#6B7280">TOTAL</text>
+  <text x="1120" y="684" font-size="10" fill="#6B7280">NOTE</text>
+
+  <text x="664" y="706" font-size="11" fill="#D1D5DB">2026-05-27</text>
+  <text x="750" y="706" font-size="11" fill="#D1D5DB">09:12 AM</text>
+  <text x="840" y="706" font-size="11" fill="#8B92A5">— still in</text>
+  <text x="940" y="706" font-size="11" fill="#10B981">3h 22m</text>
+  <text x="1000" y="706" font-size="11" fill="#8B92A5">30m</text>
+  <text x="1060" y="706" font-size="11" fill="#10B981">2h 52m</text>
+  <text x="1120" y="706" font-size="11" fill="#6B7280">Manager shift</text>
+
+  <text x="664" y="728" font-size="11" fill="#8B92A5">2026-05-26</text>
+  <text x="750" y="728" font-size="11" fill="#8B92A5">11:30 AM</text>
+  <text x="840" y="728" font-size="11" fill="#8B92A5">09:45 PM</text>
+  <text x="940" y="728" font-size="11" fill="#8B92A5">10h 15m</text>
+  <text x="1000" y="728" font-size="11" fill="#8B92A5">45m</text>
+  <text x="1060" y="728" font-size="11" fill="#8B92A5">9h 30m</text>
+  <text x="1120" y="728" font-size="11" fill="#6B7280">Closing shift</text>
+
+  <!-- Save / deactivate actions -->
+  <rect x="636" y="775" width="200" height="36" rx="6" fill="#F59E0B"/>
+  <text x="688" y="798" font-size="13" font-weight="600" fill="#000000">Save Changes</text>
+  <rect x="846" y="775" width="180" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="884" y="798" font-size="12" fill="#D1D5DB">View Full Timeclock</text>
+  <rect x="1236" y="775" width="188" height="36" rx="6" fill="#7F1D1D"/>
+  <text x="1258" y="798" font-size="12" fill="#FCA5A5">Deactivate Employee</text>
+
+  <text x="720" y="880" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Employees · All permissions via pos_role_permissions RLS — no hardcodes</text>
+</svg>

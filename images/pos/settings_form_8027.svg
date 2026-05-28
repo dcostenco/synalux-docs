@@ -1,0 +1,384 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT SIDEBAR (210px) ===== -->
+  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+  <rect x="210" y="0" width="1" height="1024" fill="#2D3148"/>
+
+  <!-- Logo / App name -->
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <rect x="0" y="40" width="210" height="1" fill="#2D3148"/>
+
+  <!-- Nav groups -->
+  <text x="16" y="60" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">GENERAL</text>
+  <text x="16" y="81" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="125" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="147" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="169" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="191" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="213" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="235" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
+  <text x="16" y="257" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <text x="16" y="279" font-size="12" fill="#8B92A5">Auto-Gratuity</text>
+  <text x="16" y="301" font-size="12" fill="#8B92A5">Tip Pooling</text>
+  <text x="16" y="323" font-size="12" fill="#8B92A5">Cash Management</text>
+  <text x="16" y="345" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="367" font-size="12" fill="#8B92A5">Menu Scheduling</text>
+
+  <rect x="0" y="380" width="210" height="1" fill="#2D3148"/>
+  <text x="16" y="398" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">REPORTS</text>
+  <text x="16" y="419" font-size="12" fill="#8B92A5">Sales Reports</text>
+  <text x="16" y="441" font-size="12" fill="#8B92A5">Labor Reports</text>
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Tip Reports</text>
+
+  <!-- Sub-section: Tax &amp; Compliance -->
+  <text x="16" y="487" font-size="10" font-weight="600" fill="#94A3B8">  Tax &amp; Compliance</text>
+
+  <!-- Active nav item: IRS Form 8027 -->
+  <rect x="0" y="494" width="210" height="34" fill="#1E2240"/>
+  <rect x="0" y="494" width="3" height="34" fill="#F59E0B"/>
+  <text x="20" y="508" font-size="11" font-weight="700" fill="#F59E0B">    IRS Form 8027</text>
+  <text x="20" y="522" font-size="10" fill="#FCD34D">    Tip Income Return</text>
+
+  <text x="16" y="545" font-size="12" fill="#8B92A5">Tax Exempt</text>
+
+  <rect x="0" y="558" width="210" height="1" fill="#2D3148"/>
+  <text x="16" y="576" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">INTEGRATIONS</text>
+  <text x="16" y="597" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="619" font-size="12" fill="#8B92A5">Advantage Prog.</text>
+  <text x="16" y="641" font-size="12" fill="#8B92A5">Label Printer</text>
+  <text x="16" y="663" font-size="12" fill="#8B92A5">Training Mode</text>
+
+  <!-- ===== MAIN CONTENT AREA ===== -->
+
+  <!-- Top header bar -->
+  <rect x="211" y="0" width="1155" height="52" fill="#1A1D2E"/>
+  <rect x="211" y="52" width="1155" height="1" fill="#2D3148"/>
+  <text x="228" y="24" font-size="16" font-weight="700" fill="#F1F5F9">IRS Form 8027 — Employer's Annual Information Return of Tip Income</text>
+  <text x="228" y="43" font-size="11" fill="#64748B">Annual filing requirement for large food and beverage establishments · Tax Year 2025</text>
+
+  <!-- Purple legal banner -->
+  <rect x="218" y="60" width="1140" height="46" rx="6" fill="#1E1B33" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="234" y="78" font-size="11" font-weight="700" fill="#A78BFA">⚖ Filing Requirement:</text>
+  <text x="340" y="78" font-size="11" fill="#C4B5FD">Required for large food/beverage establishments (annual gross receipts &gt;$1M OR employs &gt;10 tipped employees on a typical day).</text>
+  <text x="234" y="97" font-size="11" fill="#C4B5FD">Due: February 28 of the following year (March 31 if e-filing). Failure to file or underreporting = 20% excise tax on allocated tips.</text>
+
+  <!-- ===== VERTICAL DIVIDER between left and right sections ===== -->
+  <rect x="928" y="114" width="1" height="898" fill="#2D3148"/>
+
+  <!-- ============================================================ -->
+  <!-- LEFT SECTION (x=211, w=715) — Form 8027 Data Summary        -->
+  <!-- ============================================================ -->
+
+  <!-- Section header -->
+  <text x="228" y="131" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="1">FORM 8027 DATA SUMMARY</text>
+  <rect x="218" y="136" width="702" height="1" fill="#2D3148"/>
+
+  <!-- Tax Year + Venue row -->
+  <text x="228" y="156" font-size="11" fill="#94A3B8">Tax Year</text>
+  <rect x="228" y="162" width="130" height="30" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="244" y="182" font-size="12" fill="#F1F5F9">2025</text>
+  <text x="366" y="182" font-size="12" fill="#64748B">▼</text>
+
+  <text x="420" y="156" font-size="11" fill="#94A3B8">Venue</text>
+  <rect x="420" y="162" width="240" height="30" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="436" y="182" font-size="12" fill="#F1F5F9">Downtown Burger Co.</text>
+  <text x="648" y="182" font-size="12" fill="#64748B">▼</text>
+
+  <!-- Form data table card -->
+  <rect x="218" y="202" width="702" height="448" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Table header -->
+  <rect x="218" y="202" width="702" height="34" rx="8" fill="#21253A"/>
+  <rect x="218" y="224" width="702" height="12" fill="#21253A"/>
+  <text x="236" y="224" font-size="11" font-weight="700" fill="#94A3B8">LINE</text>
+  <text x="300" y="224" font-size="11" font-weight="700" fill="#94A3B8">DESCRIPTION</text>
+  <text x="830" y="224" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="end">AMOUNT</text>
+  <rect x="218" y="236" width="702" height="1" fill="#2D3148"/>
+
+  <!-- Line 1 -->
+  <rect x="218" y="237" width="702" height="30" fill="#1A1D2E"/>
+  <text x="236" y="257" font-size="11" font-weight="700" fill="#8B5CF6">1</text>
+  <text x="300" y="257" font-size="11" fill="#F1F5F9">Total charged tips this year</text>
+  <text x="830" y="257" font-size="12" font-weight="600" fill="#10B981" text-anchor="end">$84,240.00</text>
+  <rect x="218" y="267" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 2 -->
+  <rect x="218" y="268" width="702" height="30" fill="#181B2E"/>
+  <text x="236" y="288" font-size="11" font-weight="700" fill="#8B5CF6">2</text>
+  <text x="300" y="288" font-size="11" fill="#F1F5F9">Total charge receipts (food+beverage on which tips were charged)</text>
+  <text x="830" y="288" font-size="12" font-weight="600" fill="#F1F5F9" text-anchor="end">$421,200.00</text>
+  <rect x="218" y="298" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 3 -->
+  <rect x="218" y="299" width="702" height="30" fill="#1A1D2E"/>
+  <text x="236" y="319" font-size="11" font-weight="700" fill="#8B5CF6">3</text>
+  <text x="300" y="319" font-size="11" fill="#F1F5F9">Total service charges paid as wages (auto-grat)</text>
+  <text x="830" y="319" font-size="12" font-weight="600" fill="#F1F5F9" text-anchor="end">$12,300.00</text>
+  <rect x="218" y="329" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 4 -->
+  <rect x="218" y="330" width="702" height="30" fill="#181B2E"/>
+  <text x="236" y="350" font-size="11" font-weight="700" fill="#8B5CF6">4</text>
+  <text x="300" y="350" font-size="11" fill="#F1F5F9">Total tips reported by tipped employees</text>
+  <text x="830" y="350" font-size="12" font-weight="600" fill="#10B981" text-anchor="end">$96,540.00</text>
+  <rect x="218" y="360" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 5 -->
+  <rect x="218" y="361" width="702" height="30" fill="#1A1D2E"/>
+  <text x="236" y="381" font-size="11" font-weight="700" fill="#8B5CF6">5</text>
+  <text x="300" y="381" font-size="11" fill="#F1F5F9">Gross receipts from food/beverage operations</text>
+  <text x="830" y="381" font-size="12" font-weight="600" fill="#F1F5F9" text-anchor="end">$842,400.00</text>
+  <rect x="218" y="391" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 6 — highlighted row (no allocation needed) -->
+  <rect x="218" y="392" width="702" height="36" fill="#0F1F12"/>
+  <text x="236" y="413" font-size="11" font-weight="700" fill="#8B5CF6">6</text>
+  <text x="300" y="408" font-size="11" fill="#F1F5F9">Allocated tips (if total reported &lt; 8% × gross receipts)</text>
+  <text x="300" y="423" font-size="10" fill="#10B981">✓ No allocation needed — reported tips exceed 8% threshold</text>
+  <text x="830" y="418" font-size="12" font-weight="700" fill="#10B981" text-anchor="end">$0.00</text>
+  <rect x="218" y="428" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 7 -->
+  <rect x="218" y="429" width="702" height="30" fill="#1A1D2E"/>
+  <text x="236" y="449" font-size="11" font-weight="700" fill="#8B5CF6">7</text>
+  <text x="300" y="449" font-size="11" fill="#F1F5F9">Number of tipped employees on a typical business day</text>
+  <text x="830" y="449" font-size="12" font-weight="600" fill="#F59E0B" text-anchor="end">14</text>
+  <rect x="218" y="459" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Line 8 -->
+  <rect x="218" y="460" width="702" height="30" fill="#181B2E"/>
+  <text x="236" y="480" font-size="11" font-weight="700" fill="#8B5CF6">8</text>
+  <text x="300" y="480" font-size="11" fill="#F1F5F9">Did you file Form 8027 for calendar year 2024?</text>
+  <rect x="752" y="466" width="44" height="18" rx="4" fill="#0F2518" stroke="#10B981" stroke-width="1"/>
+  <text x="774" y="479" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle">Yes</text>
+  <rect x="218" y="490" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- 8% test summary row -->
+  <rect x="218" y="491" width="702" height="52" fill="#151A2C"/>
+  <text x="236" y="509" font-size="10" font-weight="700" fill="#F59E0B">8% Minimum Test</text>
+  <text x="236" y="525" font-size="11" fill="#94A3B8">8% × $842,400 = </text>
+  <text x="336" y="525" font-size="11" font-weight="700" fill="#F59E0B">$67,392</text>
+  <text x="390" y="525" font-size="11" fill="#94A3B8">(minimum reportable)</text>
+  <text x="236" y="540" font-size="11" fill="#94A3B8">Actual reported: </text>
+  <text x="325" y="540" font-size="11" font-weight="700" fill="#10B981">$96,540</text>
+  <text x="385" y="540" font-size="11" fill="#10B981">← EXCEEDS minimum ✅ — No tip allocation required</text>
+  <rect x="218" y="543" width="702" height="1" fill="#2D3148" opacity="0.5"/>
+
+  <!-- Per-employee allocation mini-table -->
+  <rect x="218" y="544" width="702" height="106" fill="#1A1D2E"/>
+  <text x="236" y="562" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">PER-EMPLOYEE ALLOCATIONS (would apply if total &lt; 8% threshold)</text>
+  <rect x="218" y="566" width="702" height="1" fill="#2D3148"/>
+
+  <!-- Mini table header -->
+  <rect x="218" y="567" width="702" height="22" fill="#21253A"/>
+  <text x="234" y="582" font-size="10" font-weight="700" fill="#64748B">SERVER</text>
+  <text x="440" y="582" font-size="10" font-weight="700" fill="#64748B">TIPS REPORTED</text>
+  <text x="590" y="582" font-size="10" font-weight="700" fill="#64748B">ALLOC. PROPORTION</text>
+  <text x="816" y="582" font-size="10" font-weight="700" fill="#64748B" text-anchor="end">ALLOCATED AMT</text>
+  <rect x="218" y="589" width="702" height="1" fill="#2D3148"/>
+
+  <!-- Employee rows — all $0 -->
+  <text x="234" y="605" font-size="10" fill="#64748B">All servers (14 tipped employees)</text>
+  <text x="440" y="605" font-size="10" fill="#10B981">$96,540.00 total</text>
+  <text x="590" y="605" font-size="10" fill="#10B981">N/A — exceeds floor</text>
+  <text x="816" y="605" font-size="10" font-weight="700" fill="#10B981" text-anchor="end">$0.00</text>
+  <rect x="218" y="610" width="702" height="1" fill="#2D3148" opacity="0.4"/>
+
+  <text x="234" y="630" font-size="10" fill="#64748B" font-style="italic">No allocation required. If gross receipts &gt; $1M and reported tips fall below 8%, allocation would be</text>
+  <text x="234" y="643" font-size="10" fill="#64748B" font-style="italic">prorated to each server: (server gross rcpts / total gross rcpts) × (8% × total gross rcpts − tips reported)</text>
+
+  <!-- Action buttons row -->
+  <rect x="218" y="661" width="228" height="36" rx="7" fill="#F59E0B"/>
+  <text x="332" y="684" font-size="12" font-weight="700" fill="#0F1117" text-anchor="middle">⬇ Generate 8027 PDF</text>
+
+  <rect x="454" y="661" width="228" height="36" rx="7" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="568" y="684" font-size="12" font-weight="600" fill="#A78BFA" text-anchor="middle">⚡ E-file via IRS FIRE</text>
+
+  <rect x="690" y="661" width="228" height="36" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="804" y="684" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">↗ Export CSV</text>
+
+  <!-- DB Schema card -->
+  <rect x="218" y="707" width="702" height="100" rx="7" fill="#111420" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="724" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">DB SCHEMA</text>
+  <text x="234" y="741" font-size="10" font-family="monospace" fill="#8B92A5">pos_form_8027_data (venue_id, tax_year, charged_tips, charge_receipts,</text>
+  <text x="234" y="756" font-size="10" font-family="monospace" fill="#8B92A5">  service_charges_as_wages, tips_reported_by_employees, gross_receipts,</text>
+  <text x="234" y="771" font-size="10" font-family="monospace" fill="#8B92A5">  allocated_tips, typical_tipped_employees, generated_at, filed_at,</text>
+  <text x="234" y="786" font-size="10" font-family="monospace" fill="#8B92A5">  irs_confirmation_number)</text>
+  <text x="234" y="801" font-size="10" font-family="monospace" fill="#64748B">-- Computed from: pos_payments + pos_auto_grat_distributions + pos_cash_tip_declarations</text>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT SECTION (x=929, w=429) — Chart + Employee Breakdown   -->
+  <!-- ============================================================ -->
+
+  <text x="946" y="131" font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="1">ANNUAL TIP SUMMARY — 2025</text>
+  <rect x="936" y="136" width="418" height="1" fill="#2D3148"/>
+
+  <!-- Bar chart card -->
+  <rect x="936" y="143" width="418" height="220" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="952" y="162" font-size="11" font-weight="600" fill="#94A3B8">Monthly Tip Totals (Jan–Dec 2025)</text>
+
+  <!-- Chart axes -->
+  <line x1="972" y1="175" x2="972" y2="335" stroke="#2D3148" stroke-width="1"/>
+  <line x1="972" y1="335" x2="1340" y2="335" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Y-axis labels -->
+  <text x="968" y="179" font-size="9" fill="#64748B" text-anchor="end">$12K</text>
+  <text x="968" y="217" font-size="9" fill="#64748B" text-anchor="end">$9K</text>
+  <text x="968" y="255" font-size="9" fill="#64748B" text-anchor="end">$6K</text>
+  <text x="968" y="293" font-size="9" fill="#64748B" text-anchor="end">$3K</text>
+  <text x="968" y="335" font-size="9" fill="#64748B" text-anchor="end">$0</text>
+
+  <!-- Gridlines -->
+  <line x1="972" y1="218" x2="1340" y2="218" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="972" y1="256" x2="1340" y2="256" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="972" y1="296" x2="1340" y2="296" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <!-- Bars: Monthly tips approx in $K: Jan=5.8, Feb=6.2, Mar=7.1, Apr=8.0, May=9.2, Jun=9.8, Jul=10.4, Aug=10.1, Sep=8.8, Oct=7.5, Nov=6.9, Dec=10.4 -->
+  <!-- Scale: max=$12K maps to 156px height. $1K = 13px -->
+  <!-- Bar width=22, gap=7, start x=977 -->
+
+  <!-- Jan 5.8K → 75px -->
+  <rect x="977" y="260" width="22" height="75" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="988" y="347" font-size="8" fill="#64748B" text-anchor="middle">Jan</text>
+
+  <!-- Feb 6.2K → 81px -->
+  <rect x="1006" y="254" width="22" height="81" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="1017" y="347" font-size="8" fill="#64748B" text-anchor="middle">Feb</text>
+
+  <!-- Mar 7.1K → 92px -->
+  <rect x="1035" y="243" width="22" height="92" rx="3" fill="#10B981" opacity="0.85"/>
+  <text x="1046" y="347" font-size="8" fill="#64748B" text-anchor="middle">Mar</text>
+
+  <!-- Apr 8.0K → 104px -->
+  <rect x="1064" y="231" width="22" height="104" rx="3" fill="#10B981" opacity="0.85"/>
+  <text x="1075" y="347" font-size="8" fill="#64748B" text-anchor="middle">Apr</text>
+
+  <!-- May 9.2K → 120px -->
+  <rect x="1093" y="215" width="22" height="120" rx="3" fill="#10B981"/>
+  <text x="1104" y="347" font-size="8" fill="#64748B" text-anchor="middle">May</text>
+
+  <!-- Jun 9.8K → 127px -->
+  <rect x="1122" y="208" width="22" height="127" rx="3" fill="#10B981"/>
+  <text x="1133" y="347" font-size="8" fill="#64748B" text-anchor="middle">Jun</text>
+
+  <!-- Jul 10.4K → 135px -->
+  <rect x="1151" y="200" width="22" height="135" rx="3" fill="#10B981"/>
+  <text x="1162" y="347" font-size="8" fill="#64748B" text-anchor="middle">Jul</text>
+
+  <!-- Aug 10.1K → 131px -->
+  <rect x="1180" y="204" width="22" height="131" rx="3" fill="#10B981"/>
+  <text x="1191" y="347" font-size="8" fill="#64748B" text-anchor="middle">Aug</text>
+
+  <!-- Sep 8.8K → 114px -->
+  <rect x="1209" y="221" width="22" height="114" rx="3" fill="#10B981" opacity="0.9"/>
+  <text x="1220" y="347" font-size="8" fill="#64748B" text-anchor="middle">Sep</text>
+
+  <!-- Oct 7.5K → 98px -->
+  <rect x="1238" y="237" width="22" height="98" rx="3" fill="#10B981" opacity="0.85"/>
+  <text x="1249" y="347" font-size="8" fill="#64748B" text-anchor="middle">Oct</text>
+
+  <!-- Nov 6.9K → 90px -->
+  <rect x="1267" y="245" width="22" height="90" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="1278" y="347" font-size="8" fill="#64748B" text-anchor="middle">Nov</text>
+
+  <!-- Dec 10.4K → 135px -->
+  <rect x="1296" y="200" width="22" height="135" rx="3" fill="#F59E0B"/>
+  <text x="1307" y="347" font-size="8" fill="#F59E0B" text-anchor="middle">Dec</text>
+
+  <!-- Total label -->
+  <text x="952" y="360" font-size="10" fill="#94A3B8">Annual total: </text>
+  <text x="1020" y="360" font-size="10" font-weight="700" fill="#10B981">$96,540.00</text>
+  <text x="1090" y="360" font-size="10" fill="#64748B">across 12 months</text>
+
+  <!-- Employee breakdown table -->
+  <rect x="936" y="373" width="418" height="188" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="952" y="392" font-size="11" font-weight="700" fill="#94A3B8">Top 5 Tipped Employees — 2025</text>
+  <rect x="936" y="397" width="418" height="1" fill="#2D3148"/>
+
+  <!-- Column headers -->
+  <rect x="936" y="398" width="418" height="20" fill="#21253A"/>
+  <text x="952" y="412" font-size="10" font-weight="700" fill="#64748B">EMPLOYEE</text>
+  <text x="1150" y="412" font-size="10" font-weight="700" fill="#64748B">ROLE</text>
+  <text x="1340" y="412" font-size="10" font-weight="700" fill="#64748B" text-anchor="end">TIPS REPORTED</text>
+  <rect x="936" y="418" width="418" height="1" fill="#2D3148"/>
+
+  <!-- Row 1 -->
+  <rect x="936" y="419" width="418" height="28" fill="#1A1D2E"/>
+  <text x="952" y="437" font-size="11" fill="#F1F5F9">Maria T.</text>
+  <text x="1150" y="437" font-size="11" fill="#94A3B8">Server</text>
+  <text x="1340" y="437" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$13,420.00</text>
+  <rect x="936" y="447" width="418" height="1" fill="#2D3148" opacity="0.4"/>
+
+  <!-- Row 2 -->
+  <rect x="936" y="448" width="418" height="28" fill="#181B2E"/>
+  <text x="952" y="466" font-size="11" fill="#F1F5F9">James K.</text>
+  <text x="1150" y="466" font-size="11" fill="#94A3B8">Bartender</text>
+  <text x="1340" y="466" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$12,180.00</text>
+  <rect x="936" y="476" width="418" height="1" fill="#2D3148" opacity="0.4"/>
+
+  <!-- Row 3 -->
+  <rect x="936" y="477" width="418" height="28" fill="#1A1D2E"/>
+  <text x="952" y="495" font-size="11" fill="#F1F5F9">Priya N.</text>
+  <text x="1150" y="495" font-size="11" fill="#94A3B8">Server</text>
+  <text x="1340" y="495" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$11,760.00</text>
+  <rect x="936" y="505" width="418" height="1" fill="#2D3148" opacity="0.4"/>
+
+  <!-- Row 4 -->
+  <rect x="936" y="506" width="418" height="28" fill="#181B2E"/>
+  <text x="952" y="524" font-size="11" fill="#F1F5F9">Carlos M.</text>
+  <text x="1150" y="524" font-size="11" fill="#94A3B8">Server</text>
+  <text x="1340" y="524" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$10,940.00</text>
+  <rect x="936" y="534" width="418" height="1" fill="#2D3148" opacity="0.4"/>
+
+  <!-- Row 5 -->
+  <rect x="936" y="535" width="418" height="26" fill="#1A1D2E"/>
+  <text x="952" y="552" font-size="11" fill="#F1F5F9">Aisha B.</text>
+  <text x="1150" y="552" font-size="11" fill="#94A3B8">Bartender</text>
+  <text x="1340" y="552" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$9,870.00</text>
+  <rect x="936" y="561" width="418" height="28" fill="#21253A"/>
+  <text x="952" y="579" font-size="10" fill="#64748B">+ 9 additional tipped employees…</text>
+
+  <!-- Legal guidance card — amber border -->
+  <rect x="936" y="574" width="418" height="120" rx="7" fill="#1A1208" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="952" y="592" font-size="10" font-weight="700" fill="#F59E0B">⚠ Tip Allocation Formula (if needed)</text>
+  <rect x="936" y="597" width="418" height="1" fill="#F59E0B" opacity="0.3"/>
+  <text x="952" y="612" font-size="10" fill="#FDE68A">Employee allocation =</text>
+  <text x="952" y="627" font-size="10" font-family="monospace" fill="#FCD34D">  (employee_gross_receipts / total_gross_receipts)</text>
+  <text x="952" y="641" font-size="10" font-family="monospace" fill="#FCD34D">  × (8% × total_gross_receipts − total_tips_reported)</text>
+  <text x="952" y="658" font-size="10" fill="#94A3B8">This year: 8% × $842,400 = $67,392 floor.</text>
+  <text x="952" y="672" font-size="10" fill="#94A3B8">Reported $96,540 &gt; $67,392 → formula yields $0 for all employees.</text>
+  <text x="952" y="686" font-size="10" fill="#10B981">✓ No allocation required for tax year 2025.</text>
+
+  <!-- Integration note card -->
+  <rect x="936" y="703" width="418" height="80" rx="7" fill="#111420" stroke="#2D3148" stroke-width="1"/>
+  <text x="952" y="720" font-size="10" font-weight="700" fill="#94A3B8">↻ Auto-Population Sources</text>
+  <text x="952" y="736" font-size="10" fill="#64748B">• pos_payments.tip_cents (charged tips)</text>
+  <text x="952" y="750" font-size="10" fill="#64748B">• pos_auto_grat_distributions (service charges as wages)</text>
+  <text x="952" y="764" font-size="10" fill="#64748B">• pos_cash_tip_declarations (cash tip reports)</text>
+  <text x="952" y="778" font-size="10" fill="#64748B">Reconciled with Gusto/ADP W-2 Box 7 (tip fields) annually.</text>
+
+  <!-- Status bar at bottom of right section -->
+  <rect x="936" y="791" width="418" height="44" rx="7" fill="#0F2518" stroke="#10B981" stroke-width="1"/>
+  <text x="952" y="809" font-size="10" font-weight="700" fill="#10B981">✅ 8027 Status: Ready to file</text>
+  <text x="952" y="825" font-size="10" fill="#94A3B8">Last generated: Jan 15, 2026  ·  Not yet e-filed  ·  Due Feb 28, 2026</text>
+
+  <!-- Bottom info bar across full width -->
+  <rect x="211" y="840" width="1155" height="1" fill="#2D3148"/>
+  <rect x="211" y="841" width="1155" height="42" fill="#1A1D2E"/>
+  <text x="228" y="858" font-size="10" fill="#64748B">Downtown Burger Co.  ·  EIN: 47-XXXXXXX  ·  Form 8027 — Tax Year 2025  ·  Synalux POS v4.2</text>
+  <text x="228" y="873" font-size="10" fill="#64748B">This form is informational. Review with a licensed CPA or tax attorney before filing with the IRS.</text>
+  <text x="1330" y="858" font-size="10" fill="#64748B" text-anchor="end">Powered by Synalux</text>
+
+  <!-- Filing history row -->
+  <rect x="218" y="815" width="702" height="24" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="831" font-size="10" fill="#64748B">Prior filings:  </text>
+  <text x="308" y="831" font-size="10" fill="#94A3B8">2024 — Filed 2025-02-21 ·</text>
+  <text x="430" y="831" font-size="10" fill="#94A3B8">2023 — Filed 2024-02-19 ·</text>
+  <text x="552" y="831" font-size="10" fill="#94A3B8">2022 — Filed 2023-02-26 ·</text>
+  <text x="674" y="831" font-size="10" fill="#10B981">All on-time ✓</text>
+
+</svg>

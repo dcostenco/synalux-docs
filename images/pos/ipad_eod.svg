@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
+  <text x="20" y="24" font-size="11" fill="#8B92A5">← Register</text>
+  <text x="20" y="44" font-size="18" font-weight="700" fill="#FFFFFF">End of Day — Close &amp; Z-Report</text>
+  <text x="400" y="34" font-size="12" fill="#8B92A5">2026-05-27 · Manager: Maria Santos · Location: The Restaurant</text>
+  <rect x="1100" y="12" width="120" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1128" y="32" font-size="12" fill="#D1D5DB">Print Z-Report</text>
+  <rect x="1228" y="12" width="120" height="32" rx="6" fill="#EF4444"/>
+  <text x="1250" y="32" font-size="13" font-weight="700" fill="#FFF">Close Day</text>
+
+  <!-- ===== Left: Cash Drawer Count ===== -->
+  <rect x="0" y="56" width="480" height="968" fill="#13162A"/>
+  <text x="20" y="86" font-size="14" font-weight="700" fill="#FFFFFF">Cash Drawer Count</text>
+  <text x="20" y="102" font-size="11" fill="#8B92A5">Count physical cash — compare to expected</text>
+
+  <!-- Denomination table -->
+  <rect x="12" y="112" width="456" height="32" fill="#1E2240"/>
+  <text x="28" y="132" font-size="10" font-weight="600" fill="#6B7280">DENOMINATION</text>
+  <text x="180" y="132" font-size="10" font-weight="600" fill="#6B7280">COUNT</text>
+  <text x="280" y="132" font-size="10" font-weight="600" fill="#6B7280">TOTAL</text>
+  <text x="380" y="132" font-size="10" font-weight="600" fill="#6B7280">QUICK ENTRY</text>
+
+  <!-- Bills -->
+  <rect x="12" y="144" width="456" height="32" fill="#1A1D2E"/>
+  <text x="28" y="164" font-size="12" fill="#D1D5DB">$100 bills</text>
+  <rect x="168" y="150" width="80" height="22" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="165" font-size="12" fill="#FFFFFF">3</text>
+  <text x="278" y="164" font-size="12" fill="#FFFFFF">$300.00</text>
+  <rect x="374" y="150" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="382" y="165" font-size="12" fill="#6B7280">−</text>
+  <rect x="404" y="150" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="412" y="165" font-size="12" fill="#6B7280">+</text>
+
+  <rect x="12" y="176" width="456" height="32" fill="#13162A"/>
+  <text x="28" y="196" font-size="12" fill="#D1D5DB">$50 bills</text>
+  <rect x="168" y="182" width="80" height="22" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="197" font-size="12" fill="#FFFFFF">6</text>
+  <text x="278" y="196" font-size="12" fill="#FFFFFF">$300.00</text>
+  <rect x="374" y="182" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="382" y="197" font-size="12" fill="#6B7280">−</text>
+  <rect x="404" y="182" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="412" y="197" font-size="12" fill="#6B7280">+</text>
+
+  <rect x="12" y="208" width="456" height="32" fill="#1A1D2E"/>
+  <text x="28" y="228" font-size="12" fill="#D1D5DB">$20 bills</text>
+  <rect x="168" y="214" width="80" height="22" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="229" font-size="12" fill="#FFFFFF">14</text>
+  <text x="278" y="228" font-size="12" fill="#FFFFFF">$280.00</text>
+  <rect x="374" y="214" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <rect x="404" y="214" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+
+  <rect x="12" y="240" width="456" height="32" fill="#13162A"/>
+  <text x="28" y="260" font-size="12" fill="#D1D5DB">$10 bills</text>
+  <rect x="168" y="246" width="80" height="22" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="261" font-size="12" fill="#FFFFFF">8</text>
+  <text x="278" y="260" font-size="12" fill="#FFFFFF">$80.00</text>
+  <rect x="374" y="246" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <rect x="404" y="246" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+
+  <rect x="12" y="272" width="456" height="32" fill="#1A1D2E"/>
+  <text x="28" y="292" font-size="12" fill="#D1D5DB">$5 bills</text>
+  <rect x="168" y="278" width="80" height="22" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="293" font-size="12" fill="#FFFFFF">12</text>
+  <text x="278" y="292" font-size="12" fill="#FFFFFF">$60.00</text>
+  <rect x="374" y="278" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <rect x="404" y="278" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+
+  <rect x="12" y="304" width="456" height="32" fill="#13162A"/>
+  <text x="28" y="324" font-size="12" fill="#D1D5DB">$1 bills</text>
+  <rect x="168" y="310" width="80" height="22" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="325" font-size="12" fill="#FFFFFF">23</text>
+  <text x="278" y="324" font-size="12" fill="#FFFFFF">$23.00</text>
+  <rect x="374" y="310" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <rect x="404" y="310" width="24" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+
+  <!-- Coins section -->
+  <rect x="12" y="336" width="456" height="24" fill="#1E2240"/>
+  <text x="28" y="352" font-size="10" font-weight="600" fill="#8B92A5">COINS</text>
+
+  <rect x="12" y="360" width="456" height="28" fill="#1A1D2E"/>
+  <text x="28" y="378" font-size="11" fill="#D1D5DB">Quarters ($0.25)</text>
+  <rect x="168" y="366" width="80" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="380" font-size="11" fill="#FFFFFF">48</text>
+  <text x="278" y="378" font-size="11" fill="#FFFFFF">$12.00</text>
+
+  <rect x="12" y="388" width="456" height="28" fill="#13162A"/>
+  <text x="28" y="406" font-size="11" fill="#D1D5DB">Dimes ($0.10)</text>
+  <rect x="168" y="394" width="80" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="408" font-size="11" fill="#FFFFFF">31</text>
+  <text x="278" y="406" font-size="11" fill="#FFFFFF">$3.10</text>
+
+  <rect x="12" y="416" width="456" height="28" fill="#1A1D2E"/>
+  <text x="28" y="434" font-size="11" fill="#D1D5DB">Nickels ($0.05)</text>
+  <rect x="168" y="422" width="80" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="436" font-size="11" fill="#FFFFFF">14</text>
+  <text x="278" y="434" font-size="11" fill="#FFFFFF">$0.70</text>
+
+  <rect x="12" y="444" width="456" height="28" fill="#13162A"/>
+  <text x="28" y="462" font-size="11" fill="#D1D5DB">Pennies ($0.01)</text>
+  <rect x="168" y="450" width="80" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="196" y="464" font-size="11" fill="#FFFFFF">62</text>
+  <text x="278" y="462" font-size="11" fill="#FFFFFF">$0.62</text>
+
+  <!-- Total counted -->
+  <rect x="12" y="480" width="456" height="52" fill="#1E2240"/>
+  <text x="28" y="500" font-size="12" fill="#8B92A5">Total Counted</text>
+  <text x="28" y="524" font-size="26" font-weight="700" fill="#FFFFFF">$1,059.42</text>
+
+  <!-- Variance -->
+  <rect x="12" y="540" width="456" height="52" fill="#065F46" stroke="#10B981" stroke-width="1"/>
+  <text x="28" y="560" font-size="12" fill="#8B92A5">Expected Cash</text>
+  <text x="288" y="560" font-size="12" fill="#8B92A5">Difference</text>
+  <text x="28" y="582" font-size="22" font-weight="700" fill="#FFFFFF">$1,060.00</text>
+  <text x="288" y="582" font-size="22" font-weight="700" fill="#EF4444">−$0.58</text>
+
+  <!-- Over/Short note -->
+  <rect x="12" y="600" width="456" height="44" rx="6" fill="#7F1D1D" stroke="#991B1B" stroke-width="1"/>
+  <text x="28" y="620" font-size="12" font-weight="600" fill="#FCA5A5">SHORT $0.58 — Variance reason required</text>
+  <text x="28" y="636" font-size="10" fill="#FCA5A5">Tip: counted 62 pennies, expected 64 — check penny tray</text>
+
+  <!-- Variance note -->
+  <text x="12" y="664" font-size="10" fill="#8B92A5">VARIANCE NOTE (required if over/short)</text>
+  <rect x="12" y="670" width="456" height="52" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="24" y="692" font-size="11" fill="#D1D5DB">Possible penny count error — recounted 3x,</text>
+  <text x="24" y="708" font-size="11" fill="#D1D5DB">may have been removed for lobby jar.</text>
+
+  <!-- Paid in/out summary -->
+  <rect x="12" y="734" width="220" height="60" rx="6" fill="#1A1D2E"/>
+  <text x="28" y="752" font-size="10" fill="#8B92A5">Paid-In today</text>
+  <text x="28" y="780" font-size="20" font-weight="700" fill="#10B981">+$45.00</text>
+  <rect x="244" y="734" width="224" height="60" rx="6" fill="#1A1D2E"/>
+  <text x="260" y="752" font-size="10" fill="#8B92A5">Paid-Out today</text>
+  <text x="260" y="780" font-size="20" font-weight="700" fill="#EF4444">−$22.80</text>
+
+  <!-- Starting drawer -->
+  <rect x="12" y="804" width="456" height="44" rx="6" fill="#1A1D2E"/>
+  <text x="28" y="824" font-size="11" fill="#8B92A5">Starting Drawer (set at Open)</text>
+  <text x="320" y="824" font-size="13" font-weight="700" fill="#8B92A5">$200.00</text>
+  <text x="28" y="840" font-size="10" fill="#6B7280">Leave in drawer for tomorrow:</text>
+  <rect x="248" y="830" width="100" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="272" y="844" font-size="11" fill="#FFFFFF">$200.00</text>
+
+  <!-- ===== Center: Z-Report Summary ===== -->
+  <rect x="480" y="56" width="560" height="968" fill="#1A1D2E"/>
+  <text x="500" y="86" font-size="14" font-weight="700" fill="#FFFFFF">Z-Report — Daily Summary</text>
+  <text x="500" y="102" font-size="10" fill="#8B92A5">2026-05-27 · Business day closes upon submission</text>
+
+  <!-- Sales summary -->
+  <rect x="496" y="112" width="528" height="180" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="516" y="136" font-size="11" font-weight="600" fill="#8B92A5">SALES SUMMARY</text>
+  <rect x="516" y="144" width="492" height="1" fill="#374151"/>
+  <text x="516" y="164" font-size="12" fill="#D1D5DB">Gross Sales</text>
+  <text x="920" y="164" font-size="12" font-weight="700" fill="#FFFFFF">$4,821.40</text>
+  <text x="516" y="184" font-size="12" fill="#D1D5DB">Refunds / Voids</text>
+  <text x="920" y="184" font-size="12" fill="#EF4444">−$134.00</text>
+  <text x="516" y="204" font-size="12" fill="#D1D5DB">Discounts Applied</text>
+  <text x="920" y="204" font-size="12" fill="#F59E0B">−$212.50</text>
+  <text x="516" y="224" font-size="12" fill="#D1D5DB">Comps</text>
+  <text x="920" y="224" font-size="12" fill="#F59E0B">−$45.00</text>
+  <rect x="516" y="232" width="492" height="1" fill="#374151"/>
+  <text x="516" y="252" font-size="14" font-weight="700" fill="#FFFFFF">Net Sales</text>
+  <text x="920" y="252" font-size="14" font-weight="700" fill="#10B981">$4,429.90</text>
+  <text x="516" y="270" font-size="11" fill="#8B92A5">vs yesterday: <tspan fill="#10B981">+$342 ↑8.4%</tspan></text>
+
+  <!-- Tax breakdown -->
+  <rect x="496" y="304" width="528" height="140" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="516" y="328" font-size="11" font-weight="600" fill="#8B92A5">TAX COLLECTED</text>
+  <text x="516" y="348" font-size="12" fill="#D1D5DB">CA State (6.25%)</text>
+  <text x="920" y="348" font-size="12" fill="#FFFFFF">$276.87</text>
+  <text x="516" y="368" font-size="12" fill="#D1D5DB">LA County (1.00%)</text>
+  <text x="920" y="368" font-size="12" fill="#FFFFFF">$44.30</text>
+  <text x="516" y="388" font-size="12" fill="#D1D5DB">Alcohol Excise (3.30%)</text>
+  <text x="920" y="388" font-size="12" fill="#FFFFFF">$38.12</text>
+  <rect x="516" y="396" width="492" height="1" fill="#374151"/>
+  <text x="516" y="416" font-size="13" font-weight="700" fill="#FFFFFF">Total Tax</text>
+  <text x="920" y="416" font-size="13" font-weight="700" fill="#FFFFFF">$359.29</text>
+
+  <!-- Tender breakdown -->
+  <rect x="496" y="456" width="528" height="200" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="516" y="480" font-size="11" font-weight="600" fill="#8B92A5">TENDER BREAKDOWN</text>
+  <text x="516" y="500" font-size="12" fill="#D1D5DB">Cash</text>
+  <text x="920" y="500" font-size="12" fill="#FFFFFF">$1,060.00</text>
+  <text x="516" y="520" font-size="12" fill="#D1D5DB">Credit/Debit (Stripe)</text>
+  <text x="920" y="520" font-size="12" fill="#FFFFFF">$2,841.20</text>
+  <text x="516" y="540" font-size="12" fill="#D1D5DB">Gift Cards</text>
+  <text x="920" y="540" font-size="12" fill="#FFFFFF">$340.50</text>
+  <text x="516" y="560" font-size="12" fill="#D1D5DB">Mobile Pay (Apple/Google)</text>
+  <text x="920" y="560" font-size="12" fill="#FFFFFF">$188.20</text>
+  <text x="516" y="580" font-size="12" fill="#D1D5DB">House Account</text>
+  <text x="920" y="580" font-size="12" fill="#FFFFFF">$0.00</text>
+  <rect x="516" y="588" width="492" height="1" fill="#374151"/>
+  <text x="516" y="608" font-size="13" font-weight="700" fill="#FFFFFF">Total Receipts</text>
+  <text x="920" y="608" font-size="13" font-weight="700" fill="#10B981">$4,429.90</text>
+  <text x="516" y="626" font-size="10" fill="#F59E0B">Cash Rounding total: +$0.38</text>
+  <text x="516" y="642" font-size="10" fill="#8B92A5">Stripe batch ID: pi_3xyz… · batch pending</text>
+
+  <!-- Tips -->
+  <rect x="496" y="668" width="252" height="80" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="516" y="692" font-size="11" fill="#8B92A5">Tips Collected</text>
+  <text x="516" y="718" font-size="24" font-weight="700" fill="#F59E0B">$521.40</text>
+  <rect x="760" y="668" width="264" height="80" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="780" y="692" font-size="11" fill="#8B92A5">Orders Processed</text>
+  <text x="780" y="718" font-size="24" font-weight="700" fill="#FFFFFF">142</text>
+
+  <!-- Cover count -->
+  <rect x="496" y="760" width="252" height="80" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="516" y="784" font-size="11" fill="#8B92A5">Covers (guests)</text>
+  <text x="516" y="810" font-size="24" font-weight="700" fill="#FFFFFF">381</text>
+  <rect x="760" y="760" width="264" height="80" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="780" y="784" font-size="11" fill="#8B92A5">Avg Check (per cover)</text>
+  <text x="780" y="810" font-size="24" font-weight="700" fill="#FFFFFF">$11.63</text>
+
+  <!-- ===== Right: Server + Category breakdown ===== -->
+  <rect x="1040" y="56" width="326" height="968" fill="#13162A"/>
+  <text x="1060" y="86" font-size="13" font-weight="700" fill="#FFFFFF">By Server</text>
+
+  <rect x="1052" y="96" width="302" height="40" fill="#1E2240"/>
+  <text x="1068" y="120" font-size="10" fill="#6B7280">SERVER</text>
+  <text x="1200" y="120" font-size="10" fill="#6B7280">SALES</text>
+  <text x="1280" y="120" font-size="10" fill="#6B7280">TIPS</text>
+
+  <rect x="1052" y="136" width="302" height="32" fill="#1A1D2E"/>
+  <text x="1068" y="156" font-size="11" fill="#D1D5DB">Carlos R.</text>
+  <text x="1200" y="156" font-size="11" fill="#FFFFFF">$1,204</text>
+  <text x="1280" y="156" font-size="11" fill="#10B981">$148</text>
+
+  <rect x="1052" y="168" width="302" height="32" fill="#13162A"/>
+  <text x="1068" y="188" font-size="11" fill="#D1D5DB">Maria S.</text>
+  <text x="1200" y="188" font-size="11" fill="#FFFFFF">$982</text>
+  <text x="1280" y="188" font-size="11" fill="#10B981">$122</text>
+
+  <rect x="1052" y="200" width="302" height="32" fill="#1A1D2E"/>
+  <text x="1068" y="220" font-size="11" fill="#D1D5DB">Aisha J. (Bar)</text>
+  <text x="1200" y="220" font-size="11" fill="#FFFFFF">$841</text>
+  <text x="1280" y="220" font-size="11" fill="#10B981">$104</text>
+
+  <rect x="1052" y="232" width="302" height="32" fill="#13162A"/>
+  <text x="1068" y="252" font-size="11" fill="#D1D5DB">Sarah C. (Host)</text>
+  <text x="1200" y="252" font-size="11" fill="#6B7280">—</text>
+  <text x="1280" y="252" font-size="11" fill="#6B7280">—</text>
+
+  <!-- By category -->
+  <text x="1060" y="290" font-size="13" font-weight="700" fill="#FFFFFF">By Category</text>
+  <rect x="1052" y="300" width="302" height="32" fill="#1E2240"/>
+  <text x="1068" y="320" font-size="10" fill="#6B7280">CATEGORY</text>
+  <text x="1268" y="320" font-size="10" fill="#6B7280">SALES</text>
+
+  <rect x="1052" y="332" width="302" height="28" fill="#1A1D2E"/>
+  <text x="1068" y="350" font-size="11" fill="#D1D5DB">Entrees</text>
+  <text x="1268" y="350" font-size="11" fill="#FFFFFF">$1,841</text>
+  <rect x="1052" y="360" width="302" height="28" fill="#13162A"/>
+  <text x="1068" y="378" font-size="11" fill="#D1D5DB">Alcohol</text>
+  <text x="1268" y="378" font-size="11" fill="#FFFFFF">$923</text>
+  <rect x="1052" y="388" width="302" height="28" fill="#1A1D2E"/>
+  <text x="1068" y="406" font-size="11" fill="#D1D5DB">Appetizers</text>
+  <text x="1268" y="406" font-size="11" fill="#FFFFFF">$621</text>
+  <rect x="1052" y="416" width="302" height="28" fill="#13162A"/>
+  <text x="1068" y="434" font-size="11" fill="#D1D5DB">Drinks (non-alc)</text>
+  <text x="1268" y="434" font-size="11" fill="#FFFFFF">$412</text>
+  <rect x="1052" y="444" width="302" height="28" fill="#1A1D2E"/>
+  <text x="1068" y="462" font-size="11" fill="#D1D5DB">Desserts</text>
+  <text x="1268" y="462" font-size="11" fill="#FFFFFF">$188</text>
+  <rect x="1052" y="472" width="302" height="28" fill="#13162A"/>
+  <text x="1068" y="490" font-size="11" fill="#D1D5DB">Kids Menu</text>
+  <text x="1268" y="490" font-size="11" fill="#FFFFFF">$244</text>
+
+  <!-- Void/comp log -->
+  <text x="1060" y="530" font-size="12" font-weight="600" fill="#FFFFFF">Voids &amp; Comps</text>
+  <rect x="1052" y="540" width="302" height="28" fill="#1E2240"/>
+  <text x="1068" y="558" font-size="10" fill="#6B7280">ITEM</text>
+  <text x="1220" y="558" font-size="10" fill="#6B7280">REASON</text>
+  <text x="1310" y="558" font-size="10" fill="#6B7280">$</text>
+  <rect x="1052" y="568" width="302" height="28" fill="#1A1D2E"/>
+  <text x="1068" y="586" font-size="10" fill="#D1D5DB">Salmon (T4)</text>
+  <text x="1220" y="586" font-size="9" fill="#F59E0B">Complaint</text>
+  <text x="1310" y="586" font-size="10" fill="#EF4444">$28</text>
+  <rect x="1052" y="596" width="302" height="28" fill="#13162A"/>
+  <text x="1068" y="614" font-size="10" fill="#D1D5DB">Draft Beer ×2</text>
+  <text x="1220" y="614" font-size="9" fill="#8B92A5">Spill</text>
+  <text x="1310" y="614" font-size="10" fill="#EF4444">$15</text>
+  <rect x="1052" y="624" width="302" height="28" fill="#1A1D2E"/>
+  <text x="1068" y="642" font-size="10" fill="#D1D5DB">Staff meal (1)</text>
+  <text x="1220" y="642" font-size="9" fill="#8B92A5">Comp</text>
+  <text x="1310" y="642" font-size="10" fill="#EF4444">$24</text>
+
+  <!-- Close Day button area -->
+  <rect x="1052" y="848" width="302" height="60" rx="8" fill="#EF4444"/>
+  <text x="1140" y="880" font-size="14" font-weight="700" fill="#FFFFFF">Close Day &amp; Print</text>
+  <text x="1140" y="896" font-size="10" fill="#FCA5A5">Cannot be undone</text>
+
+  <text x="683" y="1010" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · EOD · pos_eod_reports — cash count · Z-report · variance tracking · Stripe batch</text>
+</svg>

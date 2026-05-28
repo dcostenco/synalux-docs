@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1440" height="900" fill="#0F1117"/>
+  <!-- Left Nav -->
+  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Equipment</text>
+  <rect x="0" y="188" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="188" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="211" font-size="12" font-weight="600" fill="#F59E0B">Discounts &amp; Promos</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Menu Scheduling</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Advantage Prog.</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Integrations</text>
+
+  <!-- Header -->
+  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Discounts &amp; Promotions</text>
+  <text x="220" y="50" font-size="11" fill="#8B92A5">Happy hour · Coupons · BOGO · % off · Fixed off · Auto promos — stored in pos_discounts</text>
+  <rect x="1260" y="12" width="160" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1278" y="32" font-size="12" font-weight="600" fill="#000">+ New Discount</text>
+
+  <!-- Discount type tabs -->
+  <rect x="200" y="56" width="1240" height="40" fill="#13162A"/>
+  <rect x="208" y="62" width="100" height="28" rx="6" fill="#1E2240"/>
+  <text x="232" y="81" font-size="12" font-weight="600" fill="#F59E0B">All (12)</text>
+  <rect x="316" y="62" width="110" height="28" rx="6" fill="none"/>
+  <text x="334" y="81" font-size="12" fill="#8B92A5">Happy Hour (3)</text>
+  <rect x="434" y="62" width="90" height="28" rx="6" fill="none"/>
+  <text x="452" y="81" font-size="12" fill="#8B92A5">Coupons (4)</text>
+  <rect x="532" y="62" width="70" height="28" rx="6" fill="none"/>
+  <text x="548" y="81" font-size="12" fill="#8B92A5">BOGO (2)</text>
+  <rect x="610" y="62" width="80" height="28" rx="6" fill="none"/>
+  <text x="626" y="81" font-size="12" fill="#8B92A5">Auto (3)</text>
+
+  <!-- ===== Discount List (left) ===== -->
+  <rect x="200" y="96" width="460" height="804" fill="#13162A"/>
+
+  <!-- Happy Hour row -->
+  <rect x="212" y="108" width="436" height="72" rx="6" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="212" y="108" width="6" height="72" rx="3" fill="#F59E0B"/>
+  <text x="234" y="132" font-size="13" font-weight="700" fill="#F59E0B">Happy Hour — 20% off drinks</text>
+  <text x="234" y="150" font-size="10" fill="#8B92A5">Mon–Fri 4:00 PM – 6:00 PM · Alcohol category · Auto-applies</text>
+  <text x="234" y="166" font-size="10" fill="#8B92A5">pos_discounts.id = DISC-001 · trigger: time_window</text>
+  <rect x="546" y="118" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="560" y="132" font-size="9" fill="#6EE7B7">● Active</text>
+  <rect x="546" y="144" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="558" y="158" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- BOGO Wings row -->
+  <rect x="212" y="188" width="436" height="72" rx="6" fill="#1A1D2E"/>
+  <rect x="212" y="188" width="6" height="72" rx="3" fill="#3B82F6"/>
+  <text x="234" y="212" font-size="13" font-weight="600" fill="#FFFFFF">BOGO Wings — Buy 1 get 1 free</text>
+  <text x="234" y="228" font-size="10" fill="#8B92A5">Tuesday only · Wings SKU: APP-010 · Manual apply</text>
+  <text x="234" y="244" font-size="10" fill="#8B92A5">trigger: manual · discount_type: bogo</text>
+  <rect x="546" y="198" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="560" y="212" font-size="9" fill="#6EE7B7">● Active</text>
+  <rect x="546" y="224" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="558" y="238" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- Employee 30% off -->
+  <rect x="212" y="268" width="436" height="72" rx="6" fill="#1A1D2E"/>
+  <rect x="212" y="268" width="6" height="72" rx="3" fill="#10B981"/>
+  <text x="234" y="292" font-size="13" font-weight="600" fill="#FFFFFF">Employee Discount — 30% off</text>
+  <text x="234" y="308" font-size="10" fill="#8B92A5">All items · Requires manager PIN · Manual</text>
+  <text x="234" y="324" font-size="10" fill="#8B92A5">trigger: manual · role_required: manager</text>
+  <rect x="546" y="278" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="560" y="292" font-size="9" fill="#6EE7B7">● Active</text>
+  <rect x="546" y="304" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="558" y="318" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- Coupon SAVE10 -->
+  <rect x="212" y="348" width="436" height="72" rx="6" fill="#1A1D2E"/>
+  <rect x="212" y="348" width="6" height="72" rx="3" fill="#7C3AED"/>
+  <text x="234" y="372" font-size="13" font-weight="600" fill="#FFFFFF">Coupon SAVE10 — $10 off $50+</text>
+  <text x="234" y="388" font-size="10" fill="#8B92A5">Min order $50 · Single use · Expires 2026-06-30</text>
+  <text x="234" y="404" font-size="10" fill="#8B92A5">trigger: coupon_code · used: 147/500</text>
+  <rect x="546" y="358" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="560" y="372" font-size="9" fill="#6EE7B7">● Active</text>
+  <rect x="546" y="384" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="558" y="398" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- Loyalty 5th visit -->
+  <rect x="212" y="428" width="436" height="72" rx="6" fill="#1A1D2E"/>
+  <rect x="212" y="428" width="6" height="72" rx="3" fill="#F59E0B"/>
+  <text x="234" y="452" font-size="13" font-weight="600" fill="#FFFFFF">Loyalty Reward — 5th visit free entrée</text>
+  <text x="234" y="468" font-size="10" fill="#8B92A5">Auto-applies to loyalty members · Entrée category</text>
+  <text x="234" y="484" font-size="10" fill="#8B92A5">trigger: loyalty_punch · punch_count: 5</text>
+  <rect x="546" y="438" width="54" height="20" rx="10" fill="#065F46"/>
+  <text x="560" y="452" font-size="9" fill="#6EE7B7">● Active</text>
+
+  <!-- Senior 10% -->
+  <rect x="212" y="508" width="436" height="72" rx="6" fill="#1A1D2E"/>
+  <rect x="212" y="508" width="6" height="72" rx="3" fill="#6B7280"/>
+  <text x="234" y="532" font-size="13" font-weight="600" fill="#6B7280">Senior Discount — 10% off</text>
+  <text x="234" y="548" font-size="10" fill="#6B7280">All items · Mon–Thu before 5 PM · Manual</text>
+  <text x="234" y="564" font-size="10" fill="#6B7280">Status: paused</text>
+  <rect x="546" y="518" width="54" height="20" rx="10" fill="#374151"/>
+  <text x="556" y="532" font-size="9" fill="#9CA3AF">○ Paused</text>
+
+  <!-- Schema box -->
+  <rect x="212" y="596" width="436" height="120" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="618" font-size="11" font-weight="600" fill="#8B92A5">pos_discounts schema</text>
+  <text x="228" y="636" font-size="10" fill="#6B7280">id, name, name_i18n jsonb</text>
+  <text x="228" y="652" font-size="10" fill="#6B7280">discount_type: pct | fixed | bogo | comp</text>
+  <text x="228" y="668" font-size="10" fill="#6B7280">trigger: manual | time_window | coupon_code | loyalty_punch</text>
+  <text x="228" y="684" font-size="10" fill="#6B7280">applies_to: jsonb — category_ids, item_ids, or "all"</text>
+  <text x="228" y="700" font-size="10" fill="#6B7280">time_start, time_end, days_of_week integer[]</text>
+  <text x="228" y="716" font-size="10" fill="#6B7280">min_order_cents, max_uses, role_required</text>
+
+  <!-- ===== Right: Edit Panel ===== -->
+  <rect x="660" y="96" width="780" height="804" fill="#0F1117"/>
+
+  <!-- Panel header -->
+  <rect x="676" y="108" width="748" height="48" rx="8" fill="#1A1D2E"/>
+  <text x="696" y="132" font-size="15" font-weight="700" fill="#F59E0B">Edit: Happy Hour — 20% off drinks</text>
+  <text x="696" y="148" font-size="10" fill="#8B92A5">pos_discounts.id = DISC-001</text>
+
+  <!-- Name -->
+  <text x="676" y="180" font-size="10" fill="#8B92A5">NAME (name_i18n jsonb)</text>
+  <rect x="676" y="186" width="748" height="30" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="692" y="206" font-size="13" fill="#FFFFFF">Happy Hour — 20% off drinks</text>
+
+  <!-- Type selector -->
+  <text x="676" y="236" font-size="10" fill="#8B92A5">DISCOUNT TYPE</text>
+  <rect x="676" y="242" width="180" height="32" rx="6" fill="#F59E0B"/>
+  <text x="726" y="263" font-size="12" font-weight="600" fill="#000">% Percentage</text>
+  <rect x="864" y="242" width="120" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="898" y="263" font-size="12" fill="#6B7280">$ Fixed</text>
+  <rect x="992" y="242" width="80" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1012" y="263" font-size="12" fill="#6B7280">BOGO</text>
+  <rect x="1080" y="242" width="80" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1100" y="263" font-size="12" fill="#6B7280">Comp</text>
+  <rect x="1168" y="242" width="80" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1186" y="263" font-size="12" fill="#6B7280">Free Item</text>
+  <rect x="1256" y="242" width="168" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1272" y="263" font-size="12" fill="#6B7280">Loyalty Punch</text>
+
+  <!-- Value -->
+  <text x="676" y="298" font-size="10" fill="#8B92A5">VALUE</text>
+  <rect x="676" y="304" width="120" height="38" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+  <text x="720" y="329" font-size="22" font-weight="700" fill="#F59E0B">20%</text>
+
+  <!-- Trigger -->
+  <text x="820" y="298" font-size="10" fill="#8B92A5">TRIGGER</text>
+  <rect x="820" y="304" width="604" height="38" rx="6" fill="#1A1D2E"/>
+  <rect x="828" y="312" width="120" height="22" rx="4" fill="#F59E0B"/>
+  <text x="848" y="327" font-size="11" font-weight="600" fill="#000">Time Window</text>
+  <rect x="956" y="312" width="100" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="976" y="327" font-size="11" fill="#6B7280">Manual</text>
+  <rect x="1064" y="312" width="110" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1078" y="327" font-size="11" fill="#6B7280">Coupon Code</text>
+  <rect x="1182" y="312" width="110" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1196" y="327" font-size="11" fill="#6B7280">Auto (always)</text>
+
+  <!-- Time window config -->
+  <rect x="676" y="358" width="748" height="110" rx="8" fill="#1A1D2E"/>
+  <text x="696" y="380" font-size="11" font-weight="600" fill="#8B92A5">TIME WINDOW</text>
+  <text x="696" y="398" font-size="10" fill="#8B92A5">Start</text>
+  <rect x="696" y="404" width="100" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="712" y="423" font-size="12" fill="#FFFFFF">4:00 PM</text>
+  <text x="808" y="398" font-size="10" fill="#8B92A5">End</text>
+  <rect x="808" y="404" width="100" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="824" y="423" font-size="12" fill="#FFFFFF">6:00 PM</text>
+  <text x="924" y="398" font-size="10" fill="#8B92A5">Days of Week</text>
+  <rect x="924" y="404" width="32" height="28" rx="4" fill="#F59E0B"/>
+  <text x="934" y="423" font-size="11" font-weight="600" fill="#000">M</text>
+  <rect x="962" y="404" width="32" height="28" rx="4" fill="#F59E0B"/>
+  <text x="972" y="423" font-size="11" font-weight="600" fill="#000">T</text>
+  <rect x="1000" y="404" width="32" height="28" rx="4" fill="#F59E0B"/>
+  <text x="1010" y="423" font-size="11" font-weight="600" fill="#000">W</text>
+  <rect x="1038" y="404" width="32" height="28" rx="4" fill="#F59E0B"/>
+  <text x="1048" y="423" font-size="11" font-weight="600" fill="#000">Th</text>
+  <rect x="1076" y="404" width="32" height="28" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1086" y="423" font-size="11" fill="#6B7280">F</text>
+  <rect x="1114" y="404" width="32" height="28" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1124" y="423" font-size="11" fill="#6B7280">Sa</text>
+  <rect x="1152" y="404" width="32" height="28" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1162" y="423" font-size="11" fill="#6B7280">Su</text>
+  <text x="696" y="458" font-size="10" fill="#6B7280">Revenue center: All · Override: manager PIN not required</text>
+
+  <!-- Applies to -->
+  <text x="676" y="490" font-size="10" fill="#8B92A5">APPLIES TO (pos_discounts.applies_to jsonb)</text>
+  <rect x="676" y="496" width="748" height="60" rx="6" fill="#1A1D2E"/>
+  <rect x="692" y="508" width="80" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="710" y="524" font-size="11" fill="#6B7280">All Items</text>
+  <rect x="780" y="508" width="82" height="24" rx="4" fill="#F59E0B"/>
+  <text x="790" y="524" font-size="11" font-weight="600" fill="#000">Category ✓</text>
+  <rect x="870" y="508" width="82" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="890" y="524" font-size="11" fill="#6B7280">Specific Items</text>
+  <text x="692" y="548" font-size="11" fill="#D1D5DB">Selected: <tspan fill="#F59E0B">Alcohol</tspan> · <tspan fill="#F59E0B">Drinks</tspan> · <tspan fill="#F59E0B">Cocktails</tspan></text>
+
+  <!-- Requires / restrictions -->
+  <text x="676" y="578" font-size="10" fill="#8B92A5">REQUIREMENTS &amp; RESTRICTIONS</text>
+  <rect x="676" y="584" width="748" height="80" rx="6" fill="#1A1D2E"/>
+  <text x="696" y="606" font-size="11" fill="#D1D5DB">Min order amount:</text>
+  <rect x="840" y="594" width="100" height="24" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="856" y="610" font-size="11" fill="#6B7280">None</text>
+  <text x="696" y="632" font-size="11" fill="#D1D5DB">Max uses per day:</text>
+  <rect x="840" y="622" width="100" height="24" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="856" y="638" font-size="11" fill="#6B7280">Unlimited</text>
+  <text x="960" y="632" font-size="11" fill="#D1D5DB">Role required:</text>
+  <rect x="1060" y="622" width="120" height="24" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="1072" y="638" font-size="11" fill="#6B7280">None (auto)</text>
+  <text x="696" y="656" font-size="10" fill="#6B7280">Stackable with other discounts: NO · Priority: 10</text>
+
+  <!-- Workflow integration note -->
+  <rect x="676" y="680" width="748" height="80" rx="6" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
+  <text x="696" y="702" font-size="11" font-weight="600" fill="#93C5FD">Workflow Integration</text>
+  <text x="696" y="720" font-size="10" fill="#D1D5DB">Time-window discounts auto-apply at register when current time falls within window.</text>
+  <text x="696" y="736" font-size="10" fill="#D1D5DB">Cashier sees amber banner "Happy Hour Active — 20% off drinks applied" on order ticket.</text>
+  <text x="696" y="752" font-size="10" fill="#D1D5DB">Reports: discount_report RPC tracks savings amount, items discounted, revenue center split.</text>
+
+  <!-- Save -->
+  <rect x="676" y="778" width="180" height="36" rx="6" fill="#F59E0B"/>
+  <text x="732" y="801" font-size="13" font-weight="600" fill="#000">Save Discount</text>
+  <rect x="866" y="778" width="120" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="898" y="801" font-size="12" fill="#D1D5DB">Cancel</text>
+  <rect x="1244" y="778" width="180" height="36" rx="6" fill="#7F1D1D"/>
+  <text x="1282" y="801" font-size="12" fill="#FCA5A5">Delete Discount</text>
+
+  <text x="720" y="886" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Discounts · pos_discounts — time-window / coupon / BOGO / auto · no hardcodes</text>
+</svg>

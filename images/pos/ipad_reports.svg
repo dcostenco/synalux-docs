@@ -1,0 +1,491 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== TOP NAV BAR ===== -->
+  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
+  <!-- Logo -->
+  <rect x="16" y="14" width="28" height="28" rx="6" fill="#F59E0B"/>
+  <text x="22" y="33" font-size="14" font-weight="800" fill="#0F1117">S</text>
+  <text x="52" y="36" font-size="16" font-weight="700" fill="#F1F5F9">Synalux POS</text>
+
+  <!-- Nav Tabs -->
+  <text x="200" y="36" font-size="13" fill="#64748B">Register</text>
+  <text x="280" y="36" font-size="13" fill="#64748B">Tables</text>
+  <text x="350" y="36" font-size="13" fill="#64748B">Orders</text>
+  <text x="420" y="36" font-size="13" fill="#64748B">Menu</text>
+  <text x="490" y="36" font-size="13" fill="#F59E0B" font-weight="600">Reports</text>
+  <rect x="490" y="52" width="56" height="3" rx="1.5" fill="#F59E0B"/>
+  <text x="560" y="36" font-size="13" fill="#64748B">Settings</text>
+
+  <!-- Right side -->
+  <circle cx="1220" cy="28" r="14" fill="#2D3148"/>
+  <text x="1213" y="33" font-size="12" font-weight="700" fill="#F59E0B">D</text>
+  <text x="1238" y="24" font-size="12" font-weight="600" fill="#F1F5F9">Dmitri (Owner)</text>
+  <text x="1238" y="40" font-size="11" fill="#64748B">7:15 PM · May 27, 2026</text>
+
+  <!-- ===== FILTER BAR ===== -->
+  <rect x="0" y="56" width="1366" height="52" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Date range buttons -->
+  <rect x="288" y="67" width="60" height="30" rx="6" fill="#F59E0B"/>
+  <text x="303" y="87" font-size="12" font-weight="600" fill="#0F1117">Today</text>
+
+  <rect x="354" y="67" width="72" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="364" y="87" font-size="12" fill="#94A3B8">Yesterday</text>
+
+  <rect x="432" y="67" width="72" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="441" y="87" font-size="12" fill="#94A3B8">This Week</text>
+
+  <rect x="510" y="67" width="80" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="520" y="87" font-size="12" fill="#94A3B8">This Month</text>
+
+  <rect x="596" y="67" width="60" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="608" y="87" font-size="12" fill="#94A3B8">Custom</text>
+
+  <!-- Revenue Center dropdown -->
+  <rect x="680" y="67" width="150" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="696" y="87" font-size="12" fill="#94A3B8">All Centers</text>
+  <text x="813" y="87" font-size="10" fill="#64748B">▼</text>
+
+  <!-- Export buttons -->
+  <rect x="1140" y="67" width="96" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1155" y="87" font-size="12" fill="#94A3B8">Export CSV</text>
+  <rect x="1244" y="67" width="96" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1259" y="87" font-size="12" fill="#94A3B8">Export PDF</text>
+
+  <!-- ===== LEFT PANEL — Report Type List ===== -->
+  <rect x="0" y="108" width="280" height="916" fill="#13162A"/>
+
+  <!-- Sales Section -->
+  <text x="16" y="134" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">SALES</text>
+
+  <!-- Sales Summary - active -->
+  <rect x="0" y="140" width="280" height="34" fill="#1E2240"/>
+  <rect x="0" y="140" width="3" height="34" fill="#F59E0B"/>
+  <text x="20" y="162" font-size="13" font-weight="600" fill="#F59E0B">Sales Summary</text>
+
+  <rect x="0" y="174" width="280" height="34" fill="transparent"/>
+  <text x="20" y="196" font-size="13" fill="#94A3B8">Product Mix Report</text>
+
+  <rect x="0" y="208" width="280" height="34" fill="transparent"/>
+  <text x="20" y="230" font-size="13" fill="#94A3B8">Hourly Sales Breakdown</text>
+
+  <rect x="0" y="242" width="280" height="34" fill="transparent"/>
+  <text x="20" y="264" font-size="13" fill="#94A3B8">Revenue by Category</text>
+
+  <rect x="0" y="276" width="280" height="34" fill="transparent"/>
+  <text x="20" y="298" font-size="13" fill="#94A3B8">Discounts &amp; Comps</text>
+
+  <!-- Staff Section -->
+  <text x="16" y="328" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">STAFF</text>
+
+  <rect x="0" y="334" width="280" height="34" fill="transparent"/>
+  <text x="20" y="356" font-size="13" fill="#94A3B8">Server Performance</text>
+
+  <rect x="0" y="368" width="280" height="34" fill="transparent"/>
+  <text x="20" y="390" font-size="13" fill="#94A3B8">Labor vs. Sales</text>
+
+  <rect x="0" y="402" width="280" height="34" fill="transparent"/>
+  <text x="20" y="424" font-size="13" fill="#94A3B8">Tip Report</text>
+
+  <rect x="0" y="436" width="280" height="34" fill="transparent"/>
+  <text x="20" y="458" font-size="13" fill="#94A3B8">Time Clock Summary</text>
+
+  <!-- Inventory Section -->
+  <text x="16" y="488" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">INVENTORY</text>
+
+  <rect x="0" y="494" width="280" height="34" fill="transparent"/>
+  <text x="20" y="516" font-size="13" fill="#94A3B8">Inventory Depletion</text>
+
+  <rect x="0" y="528" width="280" height="34" fill="transparent"/>
+  <text x="20" y="550" font-size="13" fill="#94A3B8">Low Stock Alert Log</text>
+
+  <rect x="0" y="562" width="280" height="34" fill="transparent"/>
+  <text x="20" y="584" font-size="13" fill="#94A3B8">Waste Log</text>
+
+  <!-- Financial Section -->
+  <text x="16" y="614" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">FINANCIAL</text>
+
+  <rect x="0" y="620" width="280" height="34" fill="transparent"/>
+  <text x="20" y="642" font-size="13" fill="#94A3B8">End-of-Day Z-Report</text>
+
+  <rect x="0" y="654" width="280" height="34" fill="transparent"/>
+  <text x="20" y="676" font-size="13" fill="#94A3B8">Tender Breakdown</text>
+
+  <rect x="0" y="688" width="280" height="34" fill="transparent"/>
+  <text x="20" y="710" font-size="13" fill="#94A3B8">Gift Card Liability</text>
+
+  <rect x="0" y="722" width="280" height="34" fill="transparent"/>
+  <text x="20" y="744" font-size="13" fill="#94A3B8">Tax Collected</text>
+
+  <rect x="0" y="756" width="280" height="34" fill="transparent"/>
+  <text x="20" y="778" font-size="13" fill="#94A3B8">Advantage/Cash Discount</text>
+
+  <!-- Customers Section -->
+  <text x="16" y="808" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">CUSTOMERS</text>
+
+  <rect x="0" y="814" width="280" height="34" fill="transparent"/>
+  <text x="20" y="836" font-size="13" fill="#94A3B8">Loyalty Activity</text>
+
+  <rect x="0" y="848" width="280" height="34" fill="transparent"/>
+  <text x="20" y="870" font-size="13" fill="#94A3B8">Customer Visit Frequency</text>
+
+  <rect x="0" y="882" width="280" height="34" fill="transparent"/>
+  <text x="20" y="904" font-size="13" fill="#94A3B8">New vs. Returning</text>
+
+  <!-- Left panel border right -->
+  <line x1="280" y1="108" x2="280" y2="1024" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ===== RIGHT PANEL — Sales Summary ===== -->
+  <!-- Report header -->
+  <text x="296" y="131" font-size="17" font-weight="700" fill="#F1F5F9">Sales Summary — Today, May 27, 2026</text>
+  <text x="296" y="149" font-size="12" fill="#64748B">Updated 7:14 PM</text>
+
+  <!-- ===== KPI CARDS ROW ===== -->
+  <!-- Gross Sales Card -->
+  <rect x="296" y="160" width="188" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="312" y="183" font-size="11" fill="#64748B">GROSS SALES</text>
+  <text x="312" y="218" font-size="26" font-weight="700" fill="#F1F5F9">$4,847.50</text>
+  <rect x="312" y="232" width="54" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="318" y="245" font-size="11" font-weight="600" fill="#10B981">↑ 12% vs yesterday</text>
+
+  <!-- Net Sales Card -->
+  <rect x="492" y="160" width="188" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="508" y="183" font-size="11" fill="#64748B">NET SALES</text>
+  <text x="508" y="218" font-size="26" font-weight="700" fill="#F1F5F9">$4,391.20</text>
+  <text x="508" y="245" font-size="11" fill="#64748B">after discounts/comps</text>
+
+  <!-- Total Orders Card -->
+  <rect x="688" y="160" width="188" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="704" y="183" font-size="11" fill="#64748B">TOTAL ORDERS</text>
+  <text x="704" y="218" font-size="26" font-weight="700" fill="#F1F5F9">127</text>
+  <rect x="704" y="232" width="38" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="710" y="245" font-size="11" font-weight="600" fill="#10B981">↑ 8% vs yesterday</text>
+
+  <!-- Avg Check Card -->
+  <rect x="884" y="160" width="188" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="900" y="183" font-size="11" fill="#64748B">AVG CHECK</text>
+  <text x="900" y="218" font-size="26" font-weight="700" fill="#F1F5F9">$38.19</text>
+  <text x="900" y="245" font-size="11" fill="#64748B">per order</text>
+
+  <!-- ===== CHARTS ROW ===== -->
+  <!-- Sales by Hour Chart (left) -->
+  <rect x="296" y="272" width="510" height="220" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="312" y="296" font-size="13" font-weight="600" fill="#F1F5F9">Sales by Hour</text>
+  <text x="764" y="296" font-size="11" fill="#64748B">Today</text>
+
+  <!-- Chart grid lines -->
+  <line x1="312" y1="460" x2="790" y2="460" stroke="#2D3148" stroke-width="1"/>
+  <line x1="312" y1="430" x2="790" y2="430" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="312" y1="400" x2="790" y2="400" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="312" y1="370" x2="790" y2="370" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="312" y1="340" x2="790" y2="340" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <line x1="312" y1="310" x2="790" y2="310" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <!-- Y-axis labels -->
+  <text x="296" y="463" font-size="9" fill="#64748B" text-anchor="middle">$0</text>
+  <text x="296" y="433" font-size="9" fill="#64748B" text-anchor="middle">$200</text>
+  <text x="296" y="403" font-size="9" fill="#64748B" text-anchor="middle">$400</text>
+  <text x="296" y="373" font-size="9" fill="#64748B" text-anchor="middle">$600</text>
+  <text x="296" y="343" font-size="9" fill="#64748B" text-anchor="middle">$800</text>
+
+  <!-- Bars: max=$840, chart height=150px (310 to 460), scale=150/840 -->
+  <!-- 11am: $180 → height=32 -->
+  <rect x="316" y="428" width="28" height="32" rx="3" fill="#F59E0B" fill-opacity="0.6"/>
+  <text x="330" y="473" font-size="8" fill="#64748B" text-anchor="middle">11a</text>
+
+  <!-- 12pm: $620 → height=111 -->
+  <rect x="354" y="349" width="28" height="111" rx="3" fill="#F59E0B" fill-opacity="0.7"/>
+  <text x="368" y="473" font-size="8" fill="#64748B" text-anchor="middle">12p</text>
+
+  <!-- 1pm: $540 → height=96 -->
+  <rect x="392" y="364" width="28" height="96" rx="3" fill="#F59E0B" fill-opacity="0.7"/>
+  <text x="406" y="473" font-size="8" fill="#64748B" text-anchor="middle">1p</text>
+
+  <!-- 2pm: $290 → height=52 -->
+  <rect x="430" y="408" width="28" height="52" rx="3" fill="#F59E0B" fill-opacity="0.6"/>
+  <text x="444" y="473" font-size="8" fill="#64748B" text-anchor="middle">2p</text>
+
+  <!-- 3pm: $180 → height=32 -->
+  <rect x="468" y="428" width="28" height="32" rx="3" fill="#F59E0B" fill-opacity="0.6"/>
+  <text x="482" y="473" font-size="8" fill="#64748B" text-anchor="middle">3p</text>
+
+  <!-- 4pm: $320 → height=57 -->
+  <rect x="506" y="403" width="28" height="57" rx="3" fill="#F59E0B" fill-opacity="0.6"/>
+  <text x="520" y="473" font-size="8" fill="#64748B" text-anchor="middle">4p</text>
+
+  <!-- 5pm: $580 → height=104 -->
+  <rect x="544" y="356" width="28" height="104" rx="3" fill="#F59E0B" fill-opacity="0.7"/>
+  <text x="558" y="473" font-size="8" fill="#64748B" text-anchor="middle">5p</text>
+
+  <!-- 6pm: $720 → height=129 -->
+  <rect x="582" y="331" width="28" height="129" rx="3" fill="#F59E0B" fill-opacity="0.8"/>
+  <text x="596" y="473" font-size="8" fill="#64748B" text-anchor="middle">6p</text>
+
+  <!-- 7pm: $840 → height=150, HIGHLIGHTED (current hour) -->
+  <rect x="620" y="310" width="28" height="150" rx="3" fill="#F59E0B"/>
+  <rect x="618" y="308" width="32" height="154" rx="4" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="634" y="473" font-size="8" fill="#F59E0B" font-weight="700" text-anchor="middle">7p</text>
+
+  <!-- 8pm: $680 → height=121 -->
+  <rect x="658" y="339" width="28" height="121" rx="3" fill="#F59E0B" fill-opacity="0.7"/>
+  <text x="672" y="473" font-size="8" fill="#64748B" text-anchor="middle">8p</text>
+
+  <!-- 9pm: $490 → height=88 -->
+  <rect x="696" y="372" width="28" height="88" rx="3" fill="#F59E0B" fill-opacity="0.5"/>
+  <text x="710" y="473" font-size="8" fill="#64748B" text-anchor="middle">9p</text>
+
+  <!-- 10pm: $207 → height=37 -->
+  <rect x="734" y="423" width="28" height="37" rx="3" fill="#F59E0B" fill-opacity="0.3"/>
+  <text x="748" y="473" font-size="8" fill="#64748B" text-anchor="middle">10p</text>
+
+  <!-- Revenue by Category Chart (right) -->
+  <rect x="816" y="272" width="452" height="220" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="832" y="296" font-size="13" font-weight="600" fill="#F1F5F9">Revenue by Category</text>
+
+  <!-- Horizontal bars: max=$1240, bar area width=240 -->
+  <!-- Burgers & Sandwiches: $1240 (26%) amber -->
+  <text x="832" y="321" font-size="11" fill="#94A3B8">Burgers &amp; Sandwiches</text>
+  <rect x="832" y="325" width="240" height="16" rx="3" fill="#F59E0B"/>
+  <text x="1080" y="337" font-size="11" fill="#F1F5F9">$1,240</text>
+  <text x="1140" y="337" font-size="10" fill="#64748B">26%</text>
+
+  <!-- Beverages-Alcohol: $980 (20%) blue -->
+  <text x="832" y="357" font-size="11" fill="#94A3B8">Beverages — Alcohol</text>
+  <rect x="832" y="361" width="190" height="16" rx="3" fill="#3B82F6"/>
+  <text x="1080" y="373" font-size="11" fill="#F1F5F9">$980</text>
+  <text x="1124" y="373" font-size="10" fill="#64748B">20%</text>
+
+  <!-- Appetizers: $620 (13%) green -->
+  <text x="832" y="393" font-size="11" fill="#94A3B8">Appetizers</text>
+  <rect x="832" y="397" width="120" height="16" rx="3" fill="#10B981"/>
+  <text x="1080" y="409" font-size="11" fill="#F1F5F9">$620</text>
+  <text x="1116" y="409" font-size="10" fill="#64748B">13%</text>
+
+  <!-- Salads: $480 (10%) purple -->
+  <text x="832" y="429" font-size="11" fill="#94A3B8">Salads</text>
+  <rect x="832" y="433" width="93" height="16" rx="3" fill="#8B5CF6"/>
+  <text x="1080" y="445" font-size="11" fill="#F1F5F9">$480</text>
+  <text x="1116" y="445" font-size="10" fill="#64748B">10%</text>
+
+  <!-- Desserts: $390 (8%) pink -->
+  <text x="832" y="465" font-size="11" fill="#94A3B8">Desserts</text>
+  <rect x="832" y="469" width="75" height="16" rx="3" fill="#EC4899"/>
+  <text x="1080" y="481" font-size="11" fill="#F1F5F9">$390</text>
+  <text x="1112" y="481" font-size="10" fill="#64748B">8%</text>
+
+  <!-- Other: $681 (14%) gray -->
+  <text x="832" y="500" font-size="11" fill="#94A3B8">Other</text>
+  <rect x="832" y="503" width="132" height="16" rx="3" fill="#475569"/>
+  <text x="1080" y="516" font-size="11" fill="#F1F5F9">$681</text>
+  <text x="1116" y="516" font-size="10" fill="#64748B">14%</text>
+
+  <!-- ===== DETAILED BREAKDOWN TABLE ===== -->
+  <rect x="296" y="504" width="972" height="320" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="312" y="527" font-size="13" font-weight="600" fill="#F1F5F9">Detailed Breakdown</text>
+
+  <!-- Table Header -->
+  <rect x="296" y="534" width="972" height="30" rx="0" fill="#13162A"/>
+  <text x="312" y="554" font-size="11" font-weight="600" fill="#64748B">CATEGORY</text>
+  <text x="532" y="554" font-size="11" font-weight="600" fill="#64748B">ORDERS</text>
+  <text x="620" y="554" font-size="11" font-weight="600" fill="#64748B">REVENUE</text>
+  <text x="730" y="554" font-size="11" font-weight="600" fill="#64748B">AVG ITEM PRICE</text>
+  <text x="870" y="554" font-size="11" font-weight="600" fill="#64748B">% OF TOTAL</text>
+  <text x="980" y="554" font-size="11" font-weight="600" fill="#64748B">VS YESTERDAY</text>
+  <line x1="296" y1="564" x2="1268" y2="564" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Row 1: Burgers & Sandwiches -->
+  <rect x="296" y="564" width="972" height="30" fill="#1A1D2E"/>
+  <text x="312" y="584" font-size="12" fill="#F1F5F9">Burgers &amp; Sandwiches</text>
+  <text x="543" y="584" font-size="12" fill="#F1F5F9">48</text>
+  <text x="620" y="584" font-size="12" fill="#F1F5F9">$1,240.00</text>
+  <text x="745" y="584" font-size="12" fill="#F1F5F9">$25.83</text>
+  <text x="893" y="584" font-size="12" fill="#F1F5F9">26%</text>
+  <text x="985" y="584" font-size="12" fill="#10B981">↑ 9%</text>
+  <line x1="296" y1="594" x2="1268" y2="594" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 2: Beverages - Alcohol -->
+  <rect x="296" y="594" width="972" height="30" fill="#161929"/>
+  <text x="312" y="614" font-size="12" fill="#F1F5F9">Beverages — Alcohol</text>
+  <text x="543" y="614" font-size="12" fill="#F1F5F9">62</text>
+  <text x="620" y="614" font-size="12" fill="#F1F5F9">$980.00</text>
+  <text x="745" y="614" font-size="12" fill="#F1F5F9">$15.81</text>
+  <text x="893" y="614" font-size="12" fill="#F1F5F9">20%</text>
+  <text x="985" y="614" font-size="12" fill="#10B981">↑ 14%</text>
+  <line x1="296" y1="624" x2="1268" y2="624" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 3: Appetizers -->
+  <rect x="296" y="624" width="972" height="30" fill="#1A1D2E"/>
+  <text x="312" y="644" font-size="12" fill="#F1F5F9">Appetizers</text>
+  <text x="543" y="644" font-size="12" fill="#F1F5F9">31</text>
+  <text x="620" y="644" font-size="12" fill="#F1F5F9">$620.00</text>
+  <text x="745" y="644" font-size="12" fill="#F1F5F9">$20.00</text>
+  <text x="893" y="644" font-size="12" fill="#F1F5F9">13%</text>
+  <text x="985" y="644" font-size="12" fill="#10B981">↑ 5%</text>
+  <line x1="296" y1="654" x2="1268" y2="654" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 4: Salads -->
+  <rect x="296" y="654" width="972" height="30" fill="#161929"/>
+  <text x="312" y="674" font-size="12" fill="#F1F5F9">Salads</text>
+  <text x="543" y="674" font-size="12" fill="#F1F5F9">24</text>
+  <text x="620" y="674" font-size="12" fill="#F1F5F9">$480.00</text>
+  <text x="745" y="674" font-size="12" fill="#F1F5F9">$20.00</text>
+  <text x="893" y="674" font-size="12" fill="#F1F5F9">10%</text>
+  <text x="985" y="674" font-size="12" fill="#EF4444">↓ 3%</text>
+  <line x1="296" y1="684" x2="1268" y2="684" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 5: Desserts -->
+  <rect x="296" y="684" width="972" height="30" fill="#1A1D2E"/>
+  <text x="312" y="704" font-size="12" fill="#F1F5F9">Desserts</text>
+  <text x="543" y="704" font-size="12" fill="#F1F5F9">19</text>
+  <text x="620" y="704" font-size="12" fill="#F1F5F9">$390.00</text>
+  <text x="745" y="704" font-size="12" fill="#F1F5F9">$20.53</text>
+  <text x="893" y="704" font-size="12" fill="#F1F5F9">8%</text>
+  <text x="985" y="704" font-size="12" fill="#10B981">↑ 2%</text>
+  <line x1="296" y1="714" x2="1268" y2="714" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 6: Non-Alcoholic Beverages -->
+  <rect x="296" y="714" width="972" height="30" fill="#161929"/>
+  <text x="312" y="734" font-size="12" fill="#F1F5F9">Non-Alcoholic Beverages</text>
+  <text x="543" y="734" font-size="12" fill="#F1F5F9">55</text>
+  <text x="620" y="734" font-size="12" fill="#F1F5F9">$385.50</text>
+  <text x="745" y="734" font-size="12" fill="#F1F5F9">$7.01</text>
+  <text x="893" y="734" font-size="12" fill="#F1F5F9">8%</text>
+  <text x="985" y="734" font-size="12" fill="#10B981">↑ 11%</text>
+  <line x1="296" y1="744" x2="1268" y2="744" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 7: Kids Menu -->
+  <rect x="296" y="744" width="972" height="30" fill="#1A1D2E"/>
+  <text x="312" y="764" font-size="12" fill="#F1F5F9">Kids Menu</text>
+  <text x="543" y="764" font-size="12" fill="#F1F5F9">12</text>
+  <text x="620" y="764" font-size="12" fill="#F1F5F9">$156.00</text>
+  <text x="745" y="764" font-size="12" fill="#F1F5F9">$13.00</text>
+  <text x="893" y="764" font-size="12" fill="#F1F5F9">3%</text>
+  <text x="985" y="764" font-size="12" fill="#64748B">— 0%</text>
+  <line x1="296" y1="774" x2="1268" y2="774" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Row 8: Other / Specials -->
+  <rect x="296" y="774" width="972" height="30" fill="#161929"/>
+  <text x="312" y="794" font-size="12" fill="#F1F5F9">Specials &amp; Other</text>
+  <text x="543" y="794" font-size="12" fill="#F1F5F9">27</text>
+  <text x="620" y="794" font-size="12" fill="#F1F5F9">$525.50</text>
+  <text x="745" y="794" font-size="12" fill="#F1F5F9">$19.46</text>
+  <text x="893" y="794" font-size="12" fill="#F1F5F9">11%</text>
+  <text x="985" y="794" font-size="12" fill="#10B981">↑ 7%</text>
+  <line x1="296" y1="804" x2="1268" y2="804" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Totals row -->
+  <rect x="296" y="804" width="972" height="20" fill="#1E2240"/>
+  <text x="312" y="819" font-size="12" font-weight="700" fill="#F1F5F9">Totals</text>
+  <text x="535" y="819" font-size="12" font-weight="700" fill="#F1F5F9">278</text>
+  <text x="620" y="819" font-size="12" font-weight="700" fill="#F59E0B">$4,777.00</text>
+  <text x="745" y="819" font-size="12" font-weight="700" fill="#F1F5F9">$17.18</text>
+  <text x="893" y="819" font-size="12" font-weight="700" fill="#F1F5F9">100%</text>
+  <text x="985" y="819" font-size="12" font-weight="700" fill="#10B981">↑ 8.3%</text>
+
+  <!-- ===== WORKFLOW INTEGRATION BOX ===== -->
+  <rect x="296" y="836" width="972" height="82" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="316" y="856" font-size="11" font-weight="700" fill="#F59E0B">Workflow Integration</text>
+  <text x="316" y="874" font-size="10" fill="#94A3B8">All reports query Supabase RPC functions (no raw SQL from client)</text>
+  <text x="316" y="889" font-size="10" fill="#64748B" font-family="monospace,monospace">report_sales_summary(location_id, date_from, date_to, revenue_center_id)</text>
+  <text x="316" y="904" font-size="10" fill="#64748B" font-family="monospace,monospace">CSV export: /api/pos/reports/export?type=sales&amp;format=csv  |  Scheduled: pos_report_schedules (daily/weekly/monthly)</text>
+
+  <!-- ===== QUICK INSIGHTS SIDEBAR ===== -->
+  <!-- Sidebar separator -->
+  <line x1="1086" y1="108" x2="1086" y2="1024" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1086" y="108" width="280" height="916" fill="#13162A"/>
+
+  <text x="1102" y="134" font-size="13" font-weight="700" fill="#F1F5F9">Quick Insights</text>
+  <text x="1240" y="134" font-size="10" fill="#64748B">Today</text>
+
+  <!-- Top Seller -->
+  <rect x="1102" y="144" width="248" height="50" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1118" y="163" font-size="10" font-weight="700" fill="#F59E0B">TOP SELLER</text>
+  <text x="1118" y="181" font-size="12" font-weight="600" fill="#F1F5F9">Classic Burger — 34 orders</text>
+
+  <!-- Slowest -->
+  <rect x="1102" y="200" width="248" height="50" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="1115" cy="218" r="4" fill="#EF4444"/>
+  <text x="1124" y="222" font-size="10" font-weight="700" fill="#EF4444">SLOWEST ITEM</text>
+  <text x="1118" y="238" font-size="12" fill="#94A3B8">Soup du Jour — 3 orders</text>
+
+  <!-- Best Server -->
+  <rect x="1102" y="256" width="248" height="50" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1118" y="275" font-size="10" font-weight="700" fill="#8B5CF6">BEST SERVER</text>
+  <text x="1118" y="292" font-size="12" font-weight="600" fill="#F1F5F9">Marcus — $892 revenue</text>
+
+  <!-- Peak Hour -->
+  <rect x="1102" y="312" width="248" height="50" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1118" y="331" font-size="10" font-weight="700" fill="#10B981">PEAK HOUR</text>
+  <text x="1118" y="348" font-size="12" font-weight="600" fill="#F1F5F9">7PM — $840</text>
+
+  <!-- Divider -->
+  <line x1="1102" y1="372" x2="1350" y2="372" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Discounts, Comps, Voids -->
+  <text x="1102" y="390" font-size="11" fill="#94A3B8">Discounts Given</text>
+  <text x="1340" y="390" font-size="11" fill="#F97316" text-anchor="end">$287.40</text>
+  <text x="1102" y="406" font-size="10" fill="#64748B">5.9% of gross sales</text>
+
+  <text x="1102" y="425" font-size="11" fill="#94A3B8">Comps Issued</text>
+  <text x="1340" y="425" font-size="11" fill="#F97316" text-anchor="end">$143.00</text>
+  <text x="1102" y="441" font-size="10" fill="#64748B">2.9% of gross sales</text>
+
+  <text x="1102" y="460" font-size="11" fill="#94A3B8">Voids</text>
+  <text x="1340" y="460" font-size="11" fill="#EF4444" text-anchor="end">4 — $92.50</text>
+
+  <!-- Divider -->
+  <line x1="1102" y1="476" x2="1350" y2="476" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Tender Breakdown -->
+  <text x="1102" y="494" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">TENDER</text>
+
+  <text x="1102" y="514" font-size="11" fill="#94A3B8">Cash Collected</text>
+  <text x="1340" y="514" font-size="11" fill="#F1F5F9" text-anchor="end">$1,240.30</text>
+
+  <text x="1102" y="532" font-size="11" fill="#94A3B8">Card Revenue</text>
+  <text x="1340" y="532" font-size="11" fill="#F1F5F9" text-anchor="end">$2,891.40</text>
+
+  <text x="1102" y="550" font-size="11" fill="#94A3B8">Gift Cards</text>
+  <text x="1340" y="550" font-size="11" fill="#F1F5F9" text-anchor="end">$259.50</text>
+
+  <!-- Divider -->
+  <line x1="1102" y1="566" x2="1350" y2="566" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Tax & Tips -->
+  <text x="1102" y="584" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">TAXES &amp; TIPS</text>
+
+  <text x="1102" y="604" font-size="11" fill="#94A3B8">Tax Collected</text>
+  <text x="1340" y="604" font-size="11" fill="#F1F5F9" text-anchor="end">$456.30</text>
+
+  <text x="1102" y="622" font-size="11" fill="#94A3B8">Tips</text>
+  <text x="1340" y="622" font-size="11" fill="#10B981" text-anchor="end">$618.90</text>
+
+  <!-- Mini tip rate indicator -->
+  <text x="1102" y="640" font-size="10" fill="#64748B">Avg tip rate: 14.1%</text>
+
+  <!-- Divider -->
+  <line x1="1102" y1="654" x2="1350" y2="654" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Payment split mini donut label area -->
+  <text x="1102" y="672" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">PAYMENT SPLIT</text>
+
+  <!-- Simple bar breakdown -->
+  <text x="1102" y="692" font-size="10" fill="#94A3B8">Cash</text>
+  <rect x="1148" y="682" width="120" height="12" rx="3" fill="#2D3148"/>
+  <rect x="1148" y="682" width="43" height="12" rx="3" fill="#10B981"/>
+  <text x="1276" y="692" font-size="10" fill="#64748B">28%</text>
+
+  <text x="1102" y="710" font-size="10" fill="#94A3B8">Card</text>
+  <rect x="1148" y="700" width="120" height="12" rx="3" fill="#2D3148"/>
+  <rect x="1148" y="700" width="73" height="12" rx="3" fill="#3B82F6"/>
+  <text x="1276" y="710" font-size="10" fill="#64748B">59%</text>
+
+  <text x="1102" y="728" font-size="10" fill="#94A3B8">Gift</text>
+  <rect x="1148" y="718" width="120" height="12" rx="3" fill="#2D3148"/>
+  <rect x="1148" y="718" width="16" height="12" rx="3" fill="#8B5CF6"/>
+  <text x="1276" y="728" font-size="10" fill="#64748B">13%</text>
+
+</svg>

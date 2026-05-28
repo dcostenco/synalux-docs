@@ -1,0 +1,436 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- Left Nav Sidebar -->
+  <rect x="0" y="0" width="200" height="1024" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Schedules</text>
+  <!-- Active item: Break Tracking -->
+  <rect x="0" y="330" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="330" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="353" font-size="12" font-weight="600" fill="#F59E0B">Break Tracking</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Gift Cards</text>
+
+  <!-- ===== HEADER ===== -->
+  <rect x="200" y="0" width="1166" height="60" fill="#1A1D2E"/>
+  <text x="220" y="26" font-size="18" font-weight="700" fill="#FFFFFF">Break Tracking &amp; Labor Compliance</text>
+  <text x="220" y="48" font-size="11" fill="#8B92A5">Discrete paid/unpaid break clock events per shift. CA/NY labor law compliance. Missed break alerts.</text>
+  <rect x="1230" y="14" width="120" height="30" rx="6" fill="#F59E0B"/>
+  <text x="1258" y="34" font-size="12" font-weight="600" fill="#000000">Save Settings</text>
+
+  <!-- ===== LEGAL ALERT BANNER ===== -->
+  <rect x="200" y="60" width="1166" height="64" fill="#1C1810" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="220" y="81" font-size="13" font-weight="700" fill="#F59E0B">⚖ Labor Law Alert</text>
+  <text x="220" y="98" font-size="11" fill="#FCD34D">California: 30-min unpaid meal break for shifts &gt; 5 hrs; 10-min paid rest per 4 hrs worked. Missed break = premium pay penalty ($1/hr extra). New York: similar</text>
+  <text x="220" y="115" font-size="11" fill="#FCD34D">requirements apply. Configure break rules below to avoid labor law violations and payroll penalties.</text>
+
+  <!-- ===== TWO-PANEL LAYOUT ===== -->
+
+  <!-- ===== LEFT PANEL: Break Rules Configuration (x=200, w=480) ===== -->
+  <rect x="200" y="124" width="480" height="900" fill="#13162A"/>
+
+  <!-- Section: Break Rules by State -->
+  <rect x="212" y="134" width="456" height="22" fill="none"/>
+  <text x="212" y="150" font-size="13" font-weight="700" fill="#F1F5F9">Break Rules by State</text>
+  <line x1="212" y1="155" x2="656" y2="155" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- State Selector -->
+  <rect x="212" y="162" width="456" height="34" rx="6" fill="#0F1117" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="228" y="184" font-size="12" fill="#F1F5F9">🗺 New York</text>
+  <text x="620" y="184" font-size="12" fill="#F59E0B">▾</text>
+  <text x="360" y="184" font-size="10" fill="#94A3B8">(matches pos_config.tax_zone)</text>
+
+  <!-- NY Rules card -->
+  <rect x="212" y="202" width="456" height="88" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="224" y="222" font-size="11" font-weight="600" fill="#94A3B8">NY-SPECIFIC RULES</text>
+  <text x="224" y="242" font-size="11" fill="#F1F5F9">Meal Break (unpaid):</text>
+  <text x="340" y="242" font-size="11" fill="#94A3B8">30 min for shifts &gt; 6 hours</text>
+  <text x="224" y="260" font-size="11" fill="#F1F5F9">Rest Break:</text>
+  <text x="340" y="260" font-size="11" fill="#64748B">Not required by NY law (recommended)</text>
+  <text x="224" y="278" font-size="11" fill="#F1F5F9">Missed meal penalty:</text>
+  <text x="340" y="278" font-size="11" fill="#EF4444">$1.00 extra per hour worked</text>
+
+  <!-- Quick-set chips -->
+  <text x="212" y="308" font-size="10" fill="#64748B">QUICK-SET:</text>
+  <rect x="275" y="294" width="76" height="22" rx="11" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="293" y="309" font-size="10" fill="#94A3B8">California</text>
+  <rect x="357" y="294" width="76" height="22" rx="11" fill="#1E2240" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="376" y="309" font-size="10" font-weight="600" fill="#F59E0B">New York</text>
+  <rect x="439" y="294" width="60" height="22" rx="11" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="454" y="309" font-size="10" fill="#94A3B8">Federal</text>
+  <rect x="505" y="294" width="56" height="22" rx="11" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="520" y="309" font-size="10" fill="#94A3B8">Custom</text>
+
+  <!-- Section: Break Configuration -->
+  <text x="212" y="338" font-size="13" font-weight="700" fill="#F1F5F9">Break Configuration</text>
+  <line x1="212" y1="343" x2="656" y2="343" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Break Config Table Header -->
+  <rect x="212" y="348" width="456" height="22" fill="#0F1117"/>
+  <text x="216" y="363" font-size="9" font-weight="600" fill="#64748B">BREAK TYPE</text>
+  <text x="295" y="363" font-size="9" font-weight="600" fill="#64748B">DURATION</text>
+  <text x="348" y="363" font-size="9" font-weight="600" fill="#64748B">PAID?</text>
+  <text x="392" y="363" font-size="9" font-weight="600" fill="#64748B">TRIGGERS</text>
+  <text x="462" y="363" font-size="9" font-weight="600" fill="#64748B">PROMPT?</text>
+  <text x="521" y="363" font-size="9" font-weight="600" fill="#64748B">REQD?</text>
+  <text x="566" y="363" font-size="9" font-weight="600" fill="#64748B">EDIT</text>
+
+  <!-- Row 1: Meal Break -->
+  <rect x="212" y="370" width="456" height="34" fill="#1A1D2E"/>
+  <rect x="212" y="370" width="3" height="34" fill="#EF4444"/>
+  <text x="220" y="385" font-size="10" font-weight="600" fill="#F1F5F9">Meal Break</text>
+  <text x="220" y="398" font-size="9" fill="#64748B">Unpaid</text>
+  <text x="295" y="391" font-size="10" fill="#F1F5F9">30 min</text>
+  <rect x="348" y="376" width="28" height="16" rx="3" fill="#1E3A5F"/>
+  <text x="352" y="388" font-size="9" fill="#93C5FD">No</text>
+  <text x="385" y="388" font-size="9" fill="#94A3B8">5 hrs on</text>
+  <text x="462" y="388" font-size="9" fill="#10B981">Yes (alert)</text>
+  <rect x="521" y="376" width="34" height="16" rx="8" fill="#065F46"/>
+  <text x="527" y="388" font-size="9" fill="#6EE7B7">Yes</text>
+  <text x="566" y="388" font-size="10" fill="#F59E0B">✎</text>
+
+  <!-- Row 2: Rest Break -->
+  <rect x="212" y="404" width="456" height="34" fill="#1A1D2E" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="0"/>
+  <rect x="212" y="404" width="3" height="34" fill="#10B981"/>
+  <text x="220" y="419" font-size="10" font-weight="600" fill="#F1F5F9">Rest Break</text>
+  <text x="220" y="432" font-size="9" fill="#64748B">Paid</text>
+  <text x="295" y="425" font-size="10" fill="#F1F5F9">10 min</text>
+  <rect x="348" y="410" width="28" height="16" rx="3" fill="#065F46"/>
+  <text x="351" y="422" font-size="9" fill="#6EE7B7">Yes</text>
+  <text x="385" y="422" font-size="9" fill="#94A3B8">4 hrs on</text>
+  <text x="462" y="419" font-size="9" fill="#10B981">Yes</text>
+  <text x="462" y="430" font-size="8" fill="#64748B">(prompt)</text>
+  <rect x="521" y="410" width="52" height="16" rx="8" fill="#1E3A5F"/>
+  <text x="525" y="422" font-size="9" fill="#93C5FD">Recom.</text>
+  <text x="566" y="422" font-size="10" fill="#F59E0B">✎</text>
+
+  <!-- Row 3: Short Break -->
+  <rect x="212" y="438" width="456" height="34" fill="#1A1D2E"/>
+  <rect x="212" y="438" width="3" height="34" fill="#8B5CF6"/>
+  <text x="220" y="453" font-size="10" font-weight="600" fill="#F1F5F9">Short Break</text>
+  <text x="220" y="466" font-size="9" fill="#64748B">Paid</text>
+  <text x="295" y="459" font-size="10" fill="#F1F5F9">5 min</text>
+  <rect x="348" y="444" width="28" height="16" rx="3" fill="#065F46"/>
+  <text x="351" y="456" font-size="9" fill="#6EE7B7">Yes</text>
+  <text x="385" y="453" font-size="9" fill="#94A3B8">Mgr disc.</text>
+  <text x="462" y="456" font-size="9" fill="#64748B">No</text>
+  <text x="521" y="456" font-size="9" fill="#64748B">No</text>
+  <text x="566" y="456" font-size="10" fill="#F59E0B">✎</text>
+
+  <rect x="212" y="472" width="456" height="1" fill="#2D3148"/>
+  <text x="212" y="489" font-size="11" fill="#F59E0B" text-decoration="underline">+ Add Break Rule</text>
+
+  <!-- Section: Break Enforcement -->
+  <text x="212" y="514" font-size="13" font-weight="700" fill="#F1F5F9">Break Enforcement</text>
+  <line x1="212" y1="519" x2="656" y2="519" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Toggle rows -->
+  <!-- Alert manager toggle ON -->
+  <rect x="212" y="526" width="456" height="44" rx="4" fill="#1A1D2E"/>
+  <text x="224" y="543" font-size="11" font-weight="600" fill="#F1F5F9">Alert manager if employee hasn't taken meal break</text>
+  <!-- Toggle ON -->
+  <rect x="614" y="530" width="40" height="22" rx="11" fill="#10B981"/>
+  <circle cx="643" cy="541" r="9" fill="#FFFFFF"/>
+  <text x="224" y="560" font-size="10" fill="#94A3B8">After 5 hrs 15 min on shift without break  ·  Push notification + register badge</text>
+
+  <!-- Auto-clock toggle OFF -->
+  <rect x="212" y="574" width="456" height="28" rx="4" fill="#1A1D2E"/>
+  <text x="224" y="592" font-size="11" fill="#94A3B8">Auto-clock break start (staff must manually start)</text>
+  <rect x="614" y="578" width="40" height="22" rx="11" fill="#374151"/>
+  <circle cx="625" cy="589" r="9" fill="#9CA3AF"/>
+
+  <!-- Require manager approval toggle OFF -->
+  <rect x="212" y="606" width="456" height="28" rx="4" fill="#1A1D2E"/>
+  <text x="224" y="624" font-size="11" fill="#94A3B8">Require manager approval to skip break</text>
+  <rect x="614" y="610" width="40" height="22" rx="11" fill="#374151"/>
+  <circle cx="625" cy="621" r="9" fill="#9CA3AF"/>
+
+  <!-- Premium pay toggle ON -->
+  <rect x="212" y="638" width="456" height="44" rx="4" fill="#1A1D2E"/>
+  <text x="224" y="655" font-size="11" font-weight="600" fill="#F1F5F9">Premium pay — log premium pay if break missed</text>
+  <rect x="614" y="642" width="40" height="22" rx="11" fill="#10B981"/>
+  <circle cx="643" cy="653" r="9" fill="#FFFFFF"/>
+  <text x="224" y="672" font-size="10" fill="#94A3B8">Premium rate: $1.00/hr  (New York standard)</text>
+
+  <!-- Grace period -->
+  <rect x="212" y="686" width="456" height="28" rx="4" fill="#1A1D2E"/>
+  <text x="224" y="704" font-size="11" fill="#94A3B8">Grace period:</text>
+  <rect x="320" y="690" width="90" height="20" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="328" y="704" font-size="10" fill="#F1F5F9">5 minutes</text>
+  <text x="418" y="704" font-size="10" fill="#64748B">before penalty applies</text>
+
+  <!-- Section: Break Prompt -->
+  <text x="212" y="732" font-size="13" font-weight="700" fill="#F1F5F9">Break Prompt (on register)</text>
+  <line x1="212" y1="737" x2="656" y2="737" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Reminder appears on -->
+  <text x="212" y="754" font-size="10" fill="#64748B">REMINDER APPEARS ON:</text>
+  <circle cx="223" cy="769" r="5" fill="#F59E0B"/>
+  <text x="233" y="773" font-size="11" fill="#F1F5F9">Staff's register screen</text>
+  <circle cx="343" cy="769" r="5" fill="#2D3148" stroke="#64748B" stroke-width="1.5"/>
+  <text x="353" y="773" font-size="11" fill="#64748B">Manager's display</text>
+  <circle cx="463" cy="769" r="5" fill="#2D3148" stroke="#64748B" stroke-width="1.5"/>
+  <text x="473" y="773" font-size="11" fill="#64748B">Both</text>
+
+  <!-- Reminder style -->
+  <text x="212" y="793" font-size="10" fill="#64748B">REMINDER STYLE:</text>
+  <circle cx="223" cy="808" r="5" fill="#F59E0B"/>
+  <text x="233" y="812" font-size="11" fill="#F1F5F9">Soft reminder (dismissible)</text>
+  <circle cx="383" cy="808" r="5" fill="#2D3148" stroke="#64748B" stroke-width="1.5"/>
+  <text x="393" y="812" font-size="11" fill="#64748B">Hard block (requires manager)</text>
+
+  <!-- Reminder text field -->
+  <text x="212" y="832" font-size="10" fill="#64748B">REMINDER TEXT:</text>
+  <rect x="212" y="838" width="456" height="36" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="220" y="852" font-size="10" fill="#94A3B8">You've been on shift for 5+ hours. Please take your 30-min meal break.</text>
+
+  <!-- After break taken -->
+  <rect x="212" y="880" width="456" height="28" rx="4" fill="#1A1D2E"/>
+  <text x="224" y="898" font-size="11" fill="#94A3B8">Show return-to-work notification after break</text>
+  <rect x="614" y="884" width="40" height="22" rx="11" fill="#10B981"/>
+  <circle cx="643" cy="895" r="9" fill="#FFFFFF"/>
+
+  <!-- Save button -->
+  <rect x="212" y="920" width="200" height="36" rx="6" fill="#F59E0B"/>
+  <text x="266" y="943" font-size="13" font-weight="700" fill="#000000">Save Settings</text>
+
+  <!-- ===== RIGHT PANEL (x=680, w=686) ===== -->
+  <rect x="680" y="124" width="686" height="900" fill="#0F1117"/>
+
+  <!-- Current Shift Status Cards -->
+  <text x="692" y="148" font-size="13" font-weight="700" fill="#F1F5F9">Current Shift Status</text>
+
+  <!-- Card: Marcus — OVERDUE -->
+  <rect x="692" y="156" width="158" height="72" rx="6" fill="#1C1410" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="702" y="174" font-size="11" font-weight="700" fill="#F59E0B">Marcus</text>
+  <text x="702" y="190" font-size="10" fill="#94A3B8">On shift: 5h 42min</text>
+  <rect x="702" y="196" width="126" height="20" rx="4" fill="#7C1D1D"/>
+  <text x="706" y="210" font-size="9" font-weight="600" fill="#FCA5A5">⚠ Meal break OVERDUE!</text>
+
+  <!-- Card: Sarah — ON BREAK -->
+  <rect x="858" y="156" width="158" height="72" rx="6" fill="#0A1E15" stroke="#10B981" stroke-width="1.5"/>
+  <text x="868" y="174" font-size="11" font-weight="700" fill="#10B981">Sarah</text>
+  <text x="868" y="190" font-size="10" fill="#94A3B8">On break since 6:50 PM</text>
+  <rect x="868" y="196" width="136" height="20" rx="4" fill="#065F46"/>
+  <text x="872" y="210" font-size="9" font-weight="600" fill="#6EE7B7">Paid rest break — 15 min</text>
+
+  <!-- Card: Tyler — Clocked Out -->
+  <rect x="1024" y="156" width="158" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1034" y="174" font-size="11" font-weight="700" fill="#94A3B8">Tyler</text>
+  <text x="1034" y="190" font-size="10" fill="#64748B">Clocked out</text>
+  <text x="1034" y="208" font-size="10" fill="#64748B">6:00 PM</text>
+
+  <!-- Card: Jennifer — Due Soon -->
+  <rect x="1190" y="156" width="164" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1200" y="174" font-size="11" font-weight="700" fill="#F1F5F9">Jennifer</text>
+  <text x="1200" y="190" font-size="10" fill="#94A3B8">On shift: 3h 20min</text>
+  <rect x="1200" y="196" width="142" height="20" rx="4" fill="#1F2937"/>
+  <text x="1204" y="210" font-size="9" fill="#94A3B8">Rest break due in 40 min</text>
+
+  <!-- ===== BREAK LOG TABLE ===== -->
+  <text x="692" y="252" font-size="13" font-weight="700" fill="#F1F5F9">Break Log — Today</text>
+
+  <!-- Table Header -->
+  <rect x="692" y="258" width="662" height="24" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="698" y="274" font-size="9" font-weight="600" fill="#64748B">EMPLOYEE</text>
+  <text x="770" y="274" font-size="9" font-weight="600" fill="#64748B">SHIFT START</text>
+  <text x="840" y="274" font-size="9" font-weight="600" fill="#64748B">BREAK TYPE</text>
+  <text x="930" y="274" font-size="9" font-weight="600" fill="#64748B">BRK START</text>
+  <text x="996" y="274" font-size="9" font-weight="600" fill="#64748B">BRK END</text>
+  <text x="1055" y="274" font-size="9" font-weight="600" fill="#64748B">DURATION</text>
+  <text x="1115" y="274" font-size="9" font-weight="600" fill="#64748B">PAID</text>
+  <text x="1155" y="274" font-size="9" font-weight="600" fill="#64748B">STATUS</text>
+
+  <!-- Row 1: Marcus — OVERDUE -->
+  <rect x="692" y="282" width="662" height="36" fill="#2D1010" stroke="#EF4444" stroke-width="0.5"/>
+  <circle cx="710" cy="300" r="12" fill="#7C1D1D"/>
+  <text x="705" y="304" font-size="9" font-weight="700" fill="#FCA5A5">MR</text>
+  <text x="726" y="298" font-size="11" font-weight="600" fill="#FCA5A5">Marcus</text>
+  <text x="726" y="311" font-size="9" fill="#94A3B8">Johnson</text>
+  <text x="772" y="304" font-size="10" fill="#F1F5F9">2:00 PM</text>
+  <text x="840" y="300" font-size="10" fill="#F1F5F9">Meal Break</text>
+  <text x="840" y="312" font-size="8" fill="#64748B">Unpaid</text>
+  <text x="934" y="304" font-size="10" fill="#64748B">—</text>
+  <text x="1000" y="304" font-size="10" fill="#64748B">—</text>
+  <text x="1059" y="304" font-size="10" fill="#64748B">—</text>
+  <text x="1117" y="304" font-size="10" fill="#64748B">No</text>
+  <rect x="1152" y="288" width="72" height="20" rx="4" fill="#7C1D1D"/>
+  <text x="1157" y="302" font-size="9" font-weight="700" fill="#FCA5A5">⚠ OVERDUE</text>
+
+  <!-- Row 2: Sarah — ON BREAK (active) -->
+  <rect x="692" y="318" width="662" height="36" fill="#071F12" stroke="#10B981" stroke-width="0.5"/>
+  <circle cx="710" cy="336" r="12" fill="#065F46"/>
+  <text x="707" y="340" font-size="9" font-weight="700" fill="#6EE7B7">SC</text>
+  <text x="726" y="334" font-size="11" font-weight="600" fill="#6EE7B7">Sarah</text>
+  <text x="726" y="347" font-size="9" fill="#94A3B8">Chen</text>
+  <text x="772" y="340" font-size="10" fill="#F1F5F9">3:30 PM</text>
+  <text x="840" y="336" font-size="10" fill="#F1F5F9">Rest Break</text>
+  <text x="840" y="348" font-size="8" fill="#10B981">Paid</text>
+  <text x="930" y="340" font-size="10" fill="#F1F5F9">6:50 PM</text>
+  <text x="1000" y="340" font-size="10" fill="#10B981">Active...</text>
+  <text x="1059" y="340" font-size="10" fill="#10B981">15 min</text>
+  <text x="1117" y="340" font-size="10" fill="#10B981">Yes</text>
+  <rect x="1148" y="324" width="84" height="20" rx="4" fill="#065F46"/>
+  <text x="1152" y="338" font-size="9" font-weight="700" fill="#6EE7B7">● ON BREAK</text>
+
+  <!-- Row 3: Sarah — Earlier Rest Break completed -->
+  <rect x="692" y="354" width="662" height="34" fill="#1A1D2E"/>
+  <circle cx="710" cy="371" r="12" fill="#065F46"/>
+  <text x="707" y="375" font-size="9" font-weight="700" fill="#6EE7B7">SC</text>
+  <text x="726" y="369" font-size="10" fill="#94A3B8">Sarah</text>
+  <text x="726" y="381" font-size="9" fill="#64748B">Chen</text>
+  <text x="772" y="375" font-size="10" fill="#94A3B8">3:30 PM</text>
+  <text x="840" y="371" font-size="10" fill="#94A3B8">Rest Break</text>
+  <text x="840" y="383" font-size="8" fill="#10B981">Paid</text>
+  <text x="930" y="375" font-size="10" fill="#94A3B8">5:15 PM</text>
+  <text x="1000" y="375" font-size="10" fill="#94A3B8">5:25 PM</text>
+  <text x="1059" y="375" font-size="10" fill="#94A3B8">10 min</text>
+  <text x="1117" y="375" font-size="10" fill="#10B981">Yes</text>
+  <text x="1152" y="375" font-size="10" fill="#10B981">Completed ✓</text>
+
+  <!-- Row 4: Tyler — Meal Break completed -->
+  <rect x="692" y="388" width="662" height="34" fill="#1A1D2E"/>
+  <circle cx="710" cy="405" r="12" fill="#1E3A5F"/>
+  <text x="707" y="409" font-size="9" font-weight="700" fill="#93C5FD">TW</text>
+  <text x="726" y="403" font-size="10" fill="#94A3B8">Tyler</text>
+  <text x="726" y="415" font-size="9" fill="#64748B">Wong</text>
+  <text x="772" y="409" font-size="10" fill="#94A3B8">10:00 AM</text>
+  <text x="840" y="405" font-size="10" fill="#94A3B8">Meal Break</text>
+  <text x="840" y="417" font-size="8" fill="#64748B">Unpaid</text>
+  <text x="930" y="409" font-size="10" fill="#94A3B8">1:00 PM</text>
+  <text x="1000" y="409" font-size="10" fill="#94A3B8">1:30 PM</text>
+  <text x="1059" y="409" font-size="10" fill="#94A3B8">30 min</text>
+  <text x="1117" y="409" font-size="10" fill="#64748B">No</text>
+  <text x="1152" y="409" font-size="10" fill="#10B981">Completed ✓</text>
+
+  <!-- Row 5: Tyler — Rest Break completed -->
+  <rect x="692" y="422" width="662" height="34" fill="#1A1D2E"/>
+  <circle cx="710" cy="439" r="12" fill="#1E3A5F"/>
+  <text x="707" y="443" font-size="9" font-weight="700" fill="#93C5FD">TW</text>
+  <text x="726" y="437" font-size="10" fill="#94A3B8">Tyler</text>
+  <text x="726" y="449" font-size="9" fill="#64748B">Wong</text>
+  <text x="772" y="443" font-size="10" fill="#94A3B8">10:00 AM</text>
+  <text x="840" y="439" font-size="10" fill="#94A3B8">Rest Break</text>
+  <text x="840" y="451" font-size="8" fill="#10B981">Paid</text>
+  <text x="930" y="443" font-size="10" fill="#94A3B8">12:15 PM</text>
+  <text x="1000" y="443" font-size="10" fill="#94A3B8">12:25 PM</text>
+  <text x="1059" y="443" font-size="10" fill="#94A3B8">10 min</text>
+  <text x="1117" y="443" font-size="10" fill="#10B981">Yes</text>
+  <text x="1152" y="443" font-size="10" fill="#10B981">Completed ✓</text>
+
+  <!-- Row 6: Jennifer — Due -->
+  <rect x="692" y="456" width="662" height="34" fill="#1A1D2E"/>
+  <circle cx="710" cy="473" r="12" fill="#312E81"/>
+  <text x="708" y="477" font-size="9" font-weight="700" fill="#C4B5FD">JL</text>
+  <text x="726" y="471" font-size="10" fill="#94A3B8">Jennifer</text>
+  <text x="726" y="483" font-size="9" fill="#64748B">Lopez</text>
+  <text x="772" y="477" font-size="10" fill="#94A3B8">4:00 PM</text>
+  <text x="840" y="473" font-size="10" fill="#64748B">Rest Break</text>
+  <text x="840" y="485" font-size="8" fill="#10B981">Paid</text>
+  <text x="930" y="477" font-size="10" fill="#64748B">—</text>
+  <text x="1000" y="477" font-size="10" fill="#64748B">—</text>
+  <text x="1059" y="477" font-size="10" fill="#64748B">—</text>
+  <text x="1117" y="477" font-size="10" fill="#10B981">Yes</text>
+  <text x="1152" y="477" font-size="10" fill="#64748B">Due at 8:00 PM</text>
+
+  <!-- Break Actions -->
+  <rect x="692" y="498" width="662" height="1" fill="#2D3148"/>
+  <text x="692" y="518" font-size="11" font-weight="600" fill="#94A3B8">BREAK ACTIONS</text>
+  <rect x="692" y="526" width="188" height="34" rx="6" fill="#7C1D1D" stroke="#EF4444" stroke-width="1"/>
+  <text x="704" y="540" font-size="11" font-weight="700" fill="#FCA5A5">⚡ Force Break — Marcus</text>
+  <text x="704" y="554" font-size="9" fill="#EF4444">Manager manually starts break</text>
+  <rect x="890" y="526" width="168" height="34" rx="6" fill="#1C1810" stroke="#F59E0B" stroke-width="1"/>
+  <text x="910" y="543" font-size="11" font-weight="600" fill="#F59E0B">Log Missed Break</text>
+  <text x="902" y="556" font-size="9" fill="#94A3B8">Triggers premium pay calc</text>
+  <text x="1068" y="543" font-size="11" fill="#F59E0B" text-decoration="underline">Override</text>
+  <text x="1068" y="556" font-size="9" fill="#64748B">mgr: mark completed</text>
+
+  <!-- Missed Breaks / Premium Pay Log -->
+  <rect x="692" y="574" width="662" height="120" rx="6" fill="#1A1010" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="706" y="594" font-size="12" font-weight="700" fill="#EF4444">Missed Breaks / Premium Pay Log</text>
+  <!-- Header row -->
+  <rect x="706" y="600" width="634" height="18" fill="#2D1010"/>
+  <text x="710" y="613" font-size="9" font-weight="600" fill="#64748B">DATE</text>
+  <text x="760" y="613" font-size="9" font-weight="600" fill="#64748B">EMPLOYEE</text>
+  <text x="840" y="613" font-size="9" font-weight="600" fill="#64748B">BREAK TYPE</text>
+  <text x="940" y="613" font-size="9" font-weight="600" fill="#64748B">STATUS</text>
+  <text x="1010" y="613" font-size="9" font-weight="600" fill="#64748B">PREMIUM PAY OWED</text>
+  <!-- Row 1 -->
+  <rect x="706" y="618" width="634" height="26" fill="#1C1010"/>
+  <text x="710" y="635" font-size="10" fill="#94A3B8">Today</text>
+  <text x="760" y="635" font-size="10" fill="#F1F5F9">Marcus</text>
+  <text x="840" y="635" font-size="10" fill="#F1F5F9">Meal Break</text>
+  <rect x="940" y="622" width="52" height="16" rx="3" fill="#7C1D1D"/>
+  <text x="944" y="634" font-size="9" font-weight="700" fill="#FCA5A5">MISSED</text>
+  <text x="1010" y="635" font-size="10" fill="#EF4444">$0.75 owed (42 min × $1/hr)</text>
+  <!-- Row 2 -->
+  <rect x="706" y="644" width="634" height="26" fill="#1A1010"/>
+  <text x="710" y="661" font-size="10" fill="#94A3B8">Yesterday</text>
+  <text x="760" y="661" font-size="10" fill="#F1F5F9">Jamie (New Hire)</text>
+  <text x="840" y="661" font-size="10" fill="#F1F5F9">Rest Break</text>
+  <rect x="940" y="648" width="52" height="16" rx="3" fill="#7C1D1D"/>
+  <text x="944" y="660" font-size="9" font-weight="700" fill="#FCA5A5">MISSED</text>
+  <text x="1010" y="661" font-size="10" fill="#EF4444">$1.00 owed</text>
+  <!-- Export button -->
+  <rect x="706" y="676" width="180" height="22" rx="4" fill="#312E81"/>
+  <text x="718" y="691" font-size="10" font-weight="600" fill="#C4B5FD">Export Premium Pay Report →</text>
+  <text x="900" y="691" font-size="9" fill="#64748B">Feeds Gusto payroll · earnings code BRKPREM</text>
+
+  <!-- Timeclock Integration — Shift Timeline -->
+  <rect x="692" y="706" width="662" height="134" rx="6" fill="#100B1E" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="706" y="726" font-size="12" font-weight="700" fill="#8B5CF6">Timeclock Integration — Shift Timeline: Marcus</text>
+  <text x="706" y="742" font-size="10" fill="#64748B">Visual representation of break events embedded in full shift record</text>
+
+  <!-- Timeline bar -->
+  <rect x="706" y="752" width="634" height="30" rx="4" fill="#1A1D2E"/>
+  <!-- Green: 2:00–5:30 worked -->
+  <rect x="706" y="752" width="265" height="30" rx="4" fill="#065F46"/>
+  <!-- Amber: 5:30–7:42 overdue -->
+  <rect x="971" y="752" width="155" height="30" fill="#78350F"/>
+  <!-- Red cap: current (overdue) -->
+  <rect x="1126" y="752" width="214" height="30" rx="4" fill="#7C1D1D"/>
+
+  <!-- Timeline labels -->
+  <text x="706" y="748" font-size="9" fill="#64748B">2:00 PM</text>
+  <text x="810" y="748" font-size="8" fill="#10B981">WORKED</text>
+  <text x="960" y="748" font-size="9" fill="#64748B">5:30 PM</text>
+  <text x="970" y="772" font-size="8" font-weight="700" fill="#F59E0B">BREAK DUE</text>
+  <text x="1125" y="748" font-size="9" fill="#64748B">7:00 PM</text>
+  <text x="1200" y="772" font-size="8" font-weight="700" fill="#EF4444">OVERDUE</text>
+  <text x="1310" y="748" font-size="9" fill="#EF4444">7:42 NOW</text>
+
+  <!-- Time labels -->
+  <text x="706" y="798" font-size="10" fill="#94A3B8">CLOCK IN: 2:00 PM</text>
+  <text x="820" y="798" font-size="10" fill="#F59E0B">MEAL BREAK DUE: 5:30 PM (not taken)</text>
+  <text x="1100" y="798" font-size="10" fill="#EF4444">NOW: 7:42 PM</text>
+
+  <!-- Summary stats -->
+  <rect x="706" y="808" width="634" height="26" fill="#1A1D2E" rx="4"/>
+  <text x="716" y="825" font-size="10" fill="#94A3B8">Total paid time:</text>
+  <text x="806" y="825" font-size="10" font-weight="700" fill="#F1F5F9">5h 42min</text>
+  <text x="880" y="825" font-size="10" fill="#94A3B8">Breaks taken:</text>
+  <text x="956" y="825" font-size="10" font-weight="700" fill="#EF4444">0</text>
+  <text x="990" y="825" font-size="10" fill="#94A3B8">Premium pay owed:</text>
+  <text x="1102" y="825" font-size="10" font-weight="700" fill="#EF4444">TBD (break still active)</text>
+
+  <!-- ===== WORKFLOW INTEGRATION (full width bottom, amber border) ===== -->
+  <rect x="200" y="854" width="1166" height="140" rx="0" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="216" y="874" font-size="11" font-weight="700" fill="#F59E0B">Workflow &amp; Schema Integration</text>
+  <text x="216" y="892" font-size="10" fill="#94A3B8">pos_shifts: clock_in, clock_out, break_mins (legacy total).</text>
+  <text x="216" y="908" font-size="10" fill="#F1F5F9">NEW: pos_shift_breaks { shift_id, break_type varchar, started_at timestamptz, ended_at timestamptz, paid boolean, missed boolean, premium_pay_cents integer }</text>
+  <text x="216" y="924" font-size="10" fill="#94A3B8">Alert cron (every 15 min): check active shifts → if shift_duration − total_break_min &gt; threshold → push alert to manager device + register badge.</text>
+  <text x="216" y="940" font-size="10" fill="#94A3B8">Premium pay calc: hours_worked_after_required_break_due × premium_rate → INSERT pos_premium_pay_log. Gusto export: earnings code "BRKPREM".</text>
+  <text x="216" y="956" font-size="10" fill="#94A3B8">iPad break flow: staff taps "Start Break" → INSERT pos_shift_breaks (started_at=NOW) → register optionally locked → "End Break" → UPDATE row (ended_at, duration computed).</text>
+  <text x="216" y="972" font-size="10" fill="#8B5CF6">pos_premium_pay_log linked to Gusto via payroll_integration_id. CA requires 1-hour premium (not $1); NY: $1/hr extra. Rule engine reads state from pos_config.tax_zone.</text>
+</svg>

@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1440" height="900" fill="#0F1117"/>
+
+  <!-- Left Nav Sidebar -->
+  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
+  <rect x="0" y="332" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="332" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="355" font-size="12" font-weight="600" fill="#F59E0B">Advantage Prog.</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Integrations</text>
+
+  <!-- Header -->
+  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Advantage / Dual Pricing Program</text>
+  <text x="220" y="50" font-size="11" fill="#8B92A5">Cash discount framing — customers paying cash receive a discount vs. the card price · pos_config table</text>
+
+  <!-- ===== Legal explainer card ===== -->
+  <rect x="220" y="72" width="980" height="88" rx="8" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="248" y="98" font-size="14" font-weight="700" fill="#F59E0B">⚖ Legal Framing — Cash Discount vs. Surcharge</text>
+  <text x="248" y="118" font-size="12" fill="#D1D5DB">This program is a CASH DISCOUNT — the base price shown is the card price. Cash customers get a discount applied at checkout.</text>
+  <text x="248" y="136" font-size="12" fill="#D1D5DB">A surcharge (adding a fee to cash-price base) is illegal in CT, MA and must not be used. This implementation complies with card network rules.</text>
+  <text x="248" y="154" font-size="11" fill="#F59E0B">Dual pricing signage is required at entrance &amp; register — see Print Compliance Sign button below.</text>
+
+  <!-- State restriction notice -->
+  <rect x="1210" y="72" width="210" height="88" rx="8" fill="#7F1D1D" stroke="#991B1B" stroke-width="1"/>
+  <text x="1228" y="96" font-size="12" font-weight="700" fill="#FCA5A5">⛔ State Restrictions</text>
+  <text x="1228" y="114" font-size="11" fill="#FCA5A5">CT — surcharge ban</text>
+  <text x="1228" y="130" font-size="11" fill="#FCA5A5">MA — surcharge ban</text>
+  <text x="1228" y="146" font-size="11" fill="#FCA5A5">NY — disclosure req.</text>
+  <text x="1228" y="162" font-size="10" fill="#9CA3AF">System blocks enable in CT/MA</text>
+
+  <!-- ===== Main settings card ===== -->
+  <rect x="220" y="176" width="600" height="460" rx="8" fill="#1A1D2E"/>
+  <text x="244" y="206" font-size="14" font-weight="600" fill="#FFFFFF">Program Configuration</text>
+
+  <!-- Enable toggle -->
+  <rect x="244" y="216" width="556" height="56" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="264" y="240" font-size="13" font-weight="600" fill="#FFFFFF">Enable Advantage Program</text>
+  <text x="264" y="258" font-size="11" fill="#8B92A5">pos_config.advantage_enabled — requires compliance acknowledgment below</text>
+  <!-- Toggle ON -->
+  <rect x="748" y="228" width="44" height="24" rx="12" fill="#10B981"/>
+  <circle cx="780" cy="240" r="10" fill="#FFFFFF"/>
+
+  <!-- Cash discount rate -->
+  <text x="244" y="300" font-size="11" font-weight="600" fill="#8B92A5">CASH DISCOUNT RATE (pos_config.advantage_rate)</text>
+  <text x="244" y="318" font-size="10" fill="#6B7280">Applied as a percentage discount to cash-paying customers. Typical range: 3.5% – 4.0%</text>
+  <rect x="244" y="326" width="120" height="40" rx="6" fill="#0F1117" stroke="#F59E0B" stroke-width="1"/>
+  <text x="264" y="352" font-size="22" font-weight="700" fill="#F59E0B">3.99%</text>
+  <!-- Slider -->
+  <rect x="376" y="340" width="400" height="4" rx="2" fill="#374151"/>
+  <rect x="376" y="340" width="296" height="4" rx="2" fill="#F59E0B"/>
+  <circle cx="672" cy="342" r="10" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="376" y="360" font-size="9" fill="#6B7280">0%</text>
+  <text x="750" y="360" font-size="9" fill="#6B7280">5%</text>
+  <text x="762" y="360" font-size="9" fill="#4B5563">max</text>
+
+  <!-- Label config -->
+  <text x="244" y="394" font-size="11" font-weight="600" fill="#8B92A5">CUSTOMER-FACING LABEL (pos_config.advantage_label)</text>
+  <text x="244" y="410" font-size="10" fill="#6B7280">Shown on receipt, register display, and online checkout. Must say "Cash Discount" or equivalent.</text>
+  <rect x="244" y="416" width="540" height="34" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="258" y="438" font-size="13" fill="#FFFFFF">Cash Discount</text>
+  <text x="750" y="438" font-size="10" fill="#6B7280">▾</text>
+  <!-- Label options hint -->
+  <text x="244" y="464" font-size="10" fill="#6B7280">Common: "Cash Discount" · "Cash Price" · "Card Price Adjustment" · Custom (free entry)</text>
+
+  <!-- Receipt line preview -->
+  <text x="244" y="492" font-size="11" font-weight="600" fill="#8B92A5">RECEIPT LINE PREVIEW</text>
+  <rect x="244" y="498" width="540" height="80" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <text x="264" y="520" font-size="11" fill="#D1D5DB">Subtotal (card price)       $45.00</text>
+  <text x="264" y="538" font-size="11" fill="#10B981">Cash Discount (3.99%)      −$1.80</text>
+  <rect x="264" y="544" width="500" height="1" fill="#374151"/>
+  <text x="264" y="562" font-size="13" font-weight="700" fill="#FFFFFF">Cash Total                 $43.20</text>
+  <text x="264" y="578" font-size="9" fill="#6B7280">You saved $1.80 by paying cash!</text>
+
+  <!-- Apply to tender types -->
+  <text x="244" y="608" font-size="11" font-weight="600" fill="#8B92A5">APPLY DISCOUNT TO TENDER TYPES</text>
+  <rect x="244" y="614" width="556" height="34" rx="6" fill="#0F1117"/>
+  <rect x="252" y="620" width="60" height="22" rx="4" fill="#065F46"/>
+  <text x="264" y="636" font-size="11" fill="#6EE7B7">Cash ✓</text>
+  <rect x="320" y="620" width="80" height="22" rx="4" fill="#1F2937"/>
+  <text x="332" y="636" font-size="11" fill="#6B7280">Gift Card</text>
+  <rect x="408" y="620" width="86" height="22" rx="4" fill="#1F2937"/>
+  <text x="420" y="636" font-size="11" fill="#6B7280">House Acct</text>
+  <text x="512" y="636" font-size="10" fill="#6B7280">← card tenders always pay card price</text>
+
+  <!-- ===== Right panel: Compliance + Display ===== -->
+  <rect x="840" y="176" width="580" height="460" rx="8" fill="#1A1D2E"/>
+  <text x="864" y="206" font-size="14" font-weight="600" fill="#FFFFFF">Signage &amp; Compliance</text>
+
+  <!-- Compliance checklist -->
+  <text x="864" y="236" font-size="11" font-weight="600" fill="#8B92A5">REQUIRED COMPLIANCE CHECKLIST</text>
+  <rect x="864" y="242" width="536" height="200" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <!-- Items -->
+  <rect x="878" y="258" width="16" height="16" rx="3" fill="#10B981"/>
+  <text x="880" y="270" font-size="10" fill="#FFFFFF">✓</text>
+  <text x="904" y="270" font-size="12" fill="#D1D5DB">Entrance sign posted (dual pricing notice)</text>
+  <rect x="878" y="282" width="16" height="16" rx="3" fill="#10B981"/>
+  <text x="880" y="294" font-size="10" fill="#FFFFFF">✓</text>
+  <text x="904" y="294" font-size="12" fill="#D1D5DB">Register display shows both prices</text>
+  <rect x="878" y="306" width="16" height="16" rx="3" fill="#10B981"/>
+  <text x="880" y="318" font-size="10" fill="#FFFFFF">✓</text>
+  <text x="904" y="318" font-size="12" fill="#D1D5DB">Receipt shows cash discount line item</text>
+  <rect x="878" y="330" width="16" height="16" rx="3" fill="#10B981"/>
+  <text x="880" y="342" font-size="10" fill="#FFFFFF">✓</text>
+  <text x="904" y="342" font-size="12" fill="#D1D5DB">Online menu shows card &amp; cash prices</text>
+  <rect x="878" y="354" width="16" height="16" rx="3" fill="#F59E0B"/>
+  <text x="880" y="366" font-size="10" fill="#000">!</text>
+  <text x="904" y="366" font-size="12" fill="#F59E0B">State compliance acknowledged (required)</text>
+  <rect x="878" y="378" width="16" height="16" rx="3" fill="#374151"/>
+  <text x="904" y="390" font-size="12" fill="#6B7280">Table tent cards (optional)</text>
+  <rect x="878" y="402" width="16" height="16" rx="3" fill="#374151"/>
+  <text x="904" y="414" font-size="12" fill="#6B7280">KDS / back-of-house note (optional)</text>
+  <text x="878" y="434" font-size="10" fill="#6B7280">All compliance flags stored in pos_config.advantage_compliance jsonb</text>
+
+  <!-- Print signs / Acknowledge buttons -->
+  <rect x="864" y="454" width="254" height="36" rx="6" fill="#F59E0B"/>
+  <text x="908" y="477" font-size="12" font-weight="600" fill="#000000">Print Compliance Sign</text>
+  <rect x="1128" y="454" width="272" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="1172" y="477" font-size="12" fill="#D1D5DB">Print Table Tent Card</text>
+
+  <!-- Compliance acknowledge -->
+  <rect x="864" y="502" width="536" height="80" rx="6" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
+  <text x="884" y="526" font-size="12" font-weight="600" fill="#93C5FD">Compliance Acknowledgment (required to enable)</text>
+  <text x="884" y="544" font-size="11" fill="#D1D5DB">I confirm this business is not located in CT or MA, and that</text>
+  <text x="884" y="558" font-size="11" fill="#D1D5DB">required dual-pricing signage will be displayed at the entrance</text>
+  <text x="884" y="572" font-size="11" fill="#D1D5DB">and register before activation.</text>
+  <rect x="884" y="578" width="14" height="14" rx="3" fill="#3B82F6"/>
+  <text x="886" y="589" font-size="10" fill="#FFF">✓</text>
+  <text x="906" y="589" font-size="11" fill="#93C5FD">Acknowledged by Maria Santos — 2026-05-27</text>
+
+  <!-- ===== Register Display Preview ===== -->
+  <rect x="220" y="652" width="580" height="228" rx="8" fill="#1A1D2E"/>
+  <text x="244" y="680" font-size="13" font-weight="600" fill="#FFFFFF">Register Display — Dual Price View</text>
+  <text x="244" y="696" font-size="10" fill="#8B92A5">What the cashier sees when Advantage Program is active</text>
+
+  <!-- Mini register row mockup -->
+  <rect x="244" y="704" width="540" height="32" fill="#13162A"/>
+  <text x="260" y="724" font-size="11" fill="#6B7280">ITEM</text>
+  <text x="560" y="724" font-size="11" fill="#6B7280">CARD PRICE</text>
+  <text x="680" y="724" font-size="11" fill="#6EE7B7">CASH PRICE</text>
+
+  <rect x="244" y="736" width="540" height="28" fill="#1A1D2E"/>
+  <text x="260" y="755" font-size="11" fill="#D1D5DB">Mozzarella Sticks</text>
+  <text x="570" y="755" font-size="11" fill="#FFFFFF">$9.99</text>
+  <text x="686" y="755" font-size="11" fill="#10B981">$9.59</text>
+
+  <rect x="244" y="764" width="540" height="28" fill="#13162A"/>
+  <text x="260" y="783" font-size="11" fill="#D1D5DB">Burger Deluxe</text>
+  <text x="570" y="783" font-size="11" fill="#FFFFFF">$16.99</text>
+  <text x="686" y="783" font-size="11" fill="#10B981">$16.31</text>
+
+  <rect x="244" y="792" width="540" height="28" fill="#1A1D2E"/>
+  <text x="260" y="811" font-size="11" fill="#D1D5DB">Draft Beer</text>
+  <text x="570" y="811" font-size="11" fill="#FFFFFF">$7.50</text>
+  <text x="686" y="811" font-size="11" fill="#10B981">$7.20</text>
+
+  <!-- Totals -->
+  <rect x="244" y="820" width="540" height="44" fill="#1E2240"/>
+  <text x="260" y="840" font-size="12" font-weight="600" fill="#FFFFFF">TOTAL</text>
+  <text x="556" y="840" font-size="13" font-weight="700" fill="#FFFFFF">$34.48</text>
+  <text x="680" y="840" font-size="13" font-weight="700" fill="#10B981">$33.10</text>
+  <text x="680" y="858" font-size="10" fill="#10B981">Save $1.38 cash!</text>
+
+  <!-- ===== Online Menu Preview ===== -->
+  <rect x="820" y="652" width="600" height="228" rx="8" fill="#1A1D2E"/>
+  <text x="844" y="680" font-size="13" font-weight="600" fill="#FFFFFF">Online Menu — Dual Price Display</text>
+  <text x="844" y="696" font-size="10" fill="#8B92A5">pos_config.advantage_show_online — toggle to display both prices on customer menu</text>
+
+  <!-- Enable online toggle -->
+  <rect x="844" y="704" width="560" height="44" rx="6" fill="#0F1117"/>
+  <text x="864" y="724" font-size="12" fill="#FFFFFF">Show dual pricing on online menu</text>
+  <text x="864" y="740" font-size="10" fill="#6B7280">Displays "Card: $X.XX · Cash: $Y.YY" on each menu item</text>
+  <rect x="1348" y="714" width="44" height="24" rx="12" fill="#10B981"/>
+  <circle cx="1380" cy="726" r="10" fill="#FFFFFF"/>
+
+  <!-- Online item preview -->
+  <rect x="844" y="756" width="268" height="108" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <rect x="844" y="756" width="268" height="50" rx="8" fill="#2D2F44"/>
+  <text x="864" y="790" font-size="22">🧀</text>
+  <text x="860" y="820" font-size="12" font-weight="600" fill="#FFFFFF">Mozzarella Sticks</text>
+  <text x="860" y="836" font-size="10" fill="#6B7280">Golden-fried with marinara</text>
+  <text x="860" y="852" font-size="11" fill="#6B7280">Card: $9.99</text>
+  <text x="940" y="852" font-size="11" fill="#10B981">· Cash: $9.59</text>
+
+  <rect x="1124" y="756" width="268" height="108" rx="8" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <rect x="1124" y="756" width="268" height="50" rx="8" fill="#2D2F44"/>
+  <text x="1144" y="790" font-size="22">🍔</text>
+  <text x="1140" y="820" font-size="12" font-weight="600" fill="#FFFFFF">Burger Deluxe</text>
+  <text x="1140" y="836" font-size="10" fill="#6B7280">Half-lb smash with fries</text>
+  <text x="1140" y="852" font-size="11" fill="#6B7280">Card: $16.99</text>
+  <text x="1222" y="852" font-size="11" fill="#10B981">· Cash: $16.31</text>
+
+  <!-- Save actions -->
+  <rect x="220" y="884" width="180" height="0" rx="6" fill="#F59E0B"/>
+
+  <text x="720" y="895" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Advantage Program · pos_config.advantage_* — no hardcodes, all DB-driven</text>
+</svg>

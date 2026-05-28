@@ -1,0 +1,541 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ============================================================ -->
+  <!-- HEADER BAR                                                    -->
+  <!-- ============================================================ -->
+  <rect x="0" y="0" width="1366" height="52" fill="#1A1D2E"/>
+  <text x="20" y="32" font-size="17" font-weight="700" fill="#FFFFFF">Customer Feedback &amp; Reputation Management</text>
+  <text x="20" y="48" font-size="10" fill="#64748B">Post-visit surveys, review management, referral tracking — pos_feedback + pos_reviews + pos_referrals</text>
+  <rect x="1220" y="10" width="130" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1242" y="31" font-size="12" font-weight="600" fill="#000">Export Report</text>
+
+  <!-- ============================================================ -->
+  <!-- LEFT PANEL: Post-Visit Survey Dashboard (x=0, w=420)         -->
+  <!-- ============================================================ -->
+  <rect x="0" y="52" width="420" height="972" fill="#13162A"/>
+
+  <!-- Section Header -->
+  <rect x="10" y="62" width="400" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="20" y="85" font-size="14" font-weight="700" fill="#F1F5F9">Customer Feedback</text>
+  <rect x="296" y="68" width="104" height="24" rx="12" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="312" y="84" font-size="10" fill="#94A3B8">This Week</text>
+  <text x="380" y="84" font-size="10" fill="#64748B">v</text>
+
+  <!-- KPI Row -->
+  <!-- NPS Score -->
+  <rect x="10" y="106" width="94" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="124" font-size="9" fill="#64748B">NPS Score</text>
+  <text x="20" y="156" font-size="28" font-weight="800" fill="#10B981">72</text>
+  <text x="68" y="156" font-size="10" fill="#10B981">+5</text>
+
+  <!-- Avg Rating -->
+  <rect x="112" y="106" width="94" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="122" y="124" font-size="9" fill="#64748B">Avg Rating</text>
+  <text x="122" y="150" font-size="22" font-weight="700" fill="#F59E0B">4.3</text>
+  <text x="160" y="150" font-size="11" fill="#64748B">/5.0</text>
+  <text x="122" y="168" font-size="10" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9734;</text>
+
+  <!-- Responses -->
+  <rect x="214" y="106" width="94" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="224" y="124" font-size="9" fill="#64748B">Responses</text>
+  <text x="224" y="156" font-size="24" font-weight="700" fill="#F1F5F9">89</text>
+  <text x="260" y="156" font-size="9" fill="#64748B">this wk</text>
+
+  <!-- Response Rate -->
+  <rect x="316" y="106" width="94" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="326" y="124" font-size="9" fill="#64748B">Response Rate</text>
+  <text x="326" y="156" font-size="24" font-weight="700" fill="#8B5CF6">34%</text>
+
+  <!-- Survey Results Breakdown Header -->
+  <text x="20" y="204" font-size="12" font-weight="700" fill="#F1F5F9">Survey Results Breakdown</text>
+
+  <!-- Food Quality: 4.5 -->
+  <rect x="10" y="214" width="400" height="40" rx="4" fill="#1A1D2E"/>
+  <text x="20" y="233" font-size="11" fill="#F1F5F9">Food Quality</text>
+  <text x="20" y="247" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9734;</text>
+  <text x="80" y="247" font-size="9" fill="#94A3B8">4.5</text>
+  <rect x="140" y="236" width="220" height="8" rx="4" fill="#0F1117"/>
+  <rect x="140" y="236" width="198" height="8" rx="4" fill="#10B981"/>
+  <text x="370" y="244" font-size="10" font-weight="600" fill="#10B981">90%</text>
+
+  <!-- Service Speed: 4.1 -->
+  <rect x="10" y="258" width="400" height="40" rx="4" fill="#1A1D2E"/>
+  <text x="20" y="277" font-size="11" fill="#F1F5F9">Service Speed</text>
+  <text x="20" y="291" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9734;</text>
+  <text x="80" y="291" font-size="9" fill="#94A3B8">4.1</text>
+  <rect x="140" y="280" width="220" height="8" rx="4" fill="#0F1117"/>
+  <rect x="140" y="280" width="181" height="8" rx="4" fill="#F59E0B"/>
+  <text x="370" y="288" font-size="10" font-weight="600" fill="#F59E0B">82%</text>
+
+  <!-- Staff Friendliness: 4.7 -->
+  <rect x="10" y="302" width="400" height="40" rx="4" fill="#1A1D2E"/>
+  <text x="20" y="321" font-size="11" fill="#F1F5F9">Staff Friendliness</text>
+  <text x="20" y="335" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <text x="80" y="335" font-size="9" fill="#94A3B8">4.7</text>
+  <rect x="140" y="324" width="220" height="8" rx="4" fill="#0F1117"/>
+  <rect x="140" y="324" width="207" height="8" rx="4" fill="#10B981"/>
+  <text x="370" y="332" font-size="10" font-weight="600" fill="#10B981">94%</text>
+
+  <!-- Cleanliness: 4.4 -->
+  <rect x="10" y="346" width="400" height="40" rx="4" fill="#1A1D2E"/>
+  <text x="20" y="365" font-size="11" fill="#F1F5F9">Cleanliness</text>
+  <text x="20" y="379" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9734;</text>
+  <text x="80" y="379" font-size="9" fill="#94A3B8">4.4</text>
+  <rect x="140" y="368" width="220" height="8" rx="4" fill="#0F1117"/>
+  <rect x="140" y="368" width="194" height="8" rx="4" fill="#10B981"/>
+  <text x="370" y="376" font-size="10" font-weight="600" fill="#10B981">88%</text>
+
+  <!-- Value for Money: 3.8 -->
+  <rect x="10" y="390" width="400" height="40" rx="4" fill="#1A1D2E"/>
+  <text x="20" y="409" font-size="11" fill="#F1F5F9">Value for Money</text>
+  <text x="20" y="423" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9734;&#9734;</text>
+  <text x="80" y="423" font-size="9" fill="#94A3B8">3.8</text>
+  <rect x="140" y="412" width="220" height="8" rx="4" fill="#0F1117"/>
+  <rect x="140" y="412" width="167" height="8" rx="4" fill="#F59E0B"/>
+  <text x="370" y="420" font-size="10" font-weight="600" fill="#F59E0B">76%</text>
+
+  <!-- Recent Comments Header -->
+  <text x="20" y="460" font-size="12" font-weight="700" fill="#F1F5F9">Recent Comments</text>
+
+  <!-- Comment 1 -->
+  <rect x="10" y="470" width="400" height="56" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="490" font-size="11" fill="#F1F5F9">"Great burger, fast service!"</text>
+  <text x="20" y="506" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <text x="80" y="506" font-size="9" fill="#64748B">May 26</text>
+  <rect x="338" y="492" width="60" height="18" rx="9" fill="#10B981" opacity="0.15"/>
+  <text x="348" y="505" font-size="9" fill="#10B981">Positive</text>
+
+  <!-- Comment 2 -->
+  <rect x="10" y="532" width="400" height="56" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="552" font-size="11" fill="#F1F5F9">"Long wait for drinks at bar"</text>
+  <text x="20" y="568" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9734;&#9734;</text>
+  <text x="80" y="568" font-size="9" fill="#64748B">May 25</text>
+  <rect x="338" y="554" width="60" height="18" rx="9" fill="#F97316" opacity="0.15"/>
+  <text x="350" y="567" font-size="9" fill="#F97316">Mixed</text>
+
+  <!-- Comment 3 -->
+  <rect x="10" y="594" width="400" height="56" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="614" font-size="11" fill="#F1F5F9">"Server Maria was amazing"</text>
+  <text x="20" y="630" font-size="9" fill="#F59E0B">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <text x="80" y="630" font-size="9" fill="#64748B">May 25</text>
+  <rect x="338" y="616" width="60" height="18" rx="9" fill="#10B981" opacity="0.15"/>
+  <text x="348" y="629" font-size="9" fill="#10B981">Positive</text>
+
+  <!-- Survey Trigger Config -->
+  <text x="20" y="680" font-size="12" font-weight="700" fill="#F1F5F9">Survey Trigger Config</text>
+
+  <rect x="10" y="690" width="400" height="80" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="712" font-size="11" fill="#94A3B8">Send via:</text>
+  <!-- Email checkbox checked -->
+  <rect x="80" y="700" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="83" y="712" font-size="10" font-weight="700" fill="#000">&#10003;</text>
+  <text x="100" y="712" font-size="11" fill="#F1F5F9">Email</text>
+  <!-- SMS checkbox checked -->
+  <rect x="146" y="700" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="149" y="712" font-size="10" font-weight="700" fill="#000">&#10003;</text>
+  <text x="166" y="712" font-size="11" fill="#F1F5F9">SMS</text>
+  <!-- QR Receipt checkbox unchecked -->
+  <rect x="200" y="700" width="14" height="14" rx="3" fill="none" stroke="#64748B" stroke-width="1"/>
+  <text x="220" y="712" font-size="11" fill="#F1F5F9">QR Receipt</text>
+
+  <text x="20" y="740" font-size="11" fill="#94A3B8">Timing:</text>
+  <rect x="80" y="726" width="160" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="90" y="742" font-size="11" fill="#F1F5F9">30 min after payment</text>
+  <rect x="248" y="726" width="48" height="24" rx="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="260" y="742" font-size="10" fill="#F59E0B">Edit</text>
+
+  <!-- NPS Trend mini-chart -->
+  <text x="20" y="800" font-size="12" font-weight="700" fill="#F1F5F9">NPS Trend (12 Weeks)</text>
+  <rect x="10" y="810" width="400" height="100" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Y axis labels -->
+  <text x="18" y="830" font-size="8" fill="#64748B">80</text>
+  <text x="18" y="858" font-size="8" fill="#64748B">60</text>
+  <text x="18" y="886" font-size="8" fill="#64748B">40</text>
+  <!-- Grid lines -->
+  <line x1="40" y1="826" x2="398" y2="826" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="40" y1="854" x2="398" y2="854" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="40" y1="882" x2="398" y2="882" stroke="#2D3148" stroke-width="0.5"/>
+  <!-- NPS line chart -->
+  <polyline points="50,876 80,870 110,862 140,858 170,854 200,848 230,844 260,840 290,836 320,834 350,830 380,826" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Data points -->
+  <circle cx="50" cy="876" r="3" fill="#10B981"/>
+  <circle cx="140" cy="858" r="3" fill="#10B981"/>
+  <circle cx="260" cy="840" r="3" fill="#10B981"/>
+  <circle cx="380" cy="826" r="3" fill="#10B981"/>
+  <text x="375" y="822" font-size="9" font-weight="600" fill="#10B981">72</text>
+  <!-- X axis labels -->
+  <text x="48" y="900" font-size="8" fill="#64748B">W1</text>
+  <text x="138" y="900" font-size="8" fill="#64748B">W4</text>
+  <text x="258" y="900" font-size="8" fill="#64748B">W8</text>
+  <text x="372" y="900" font-size="8" fill="#64748B">W12</text>
+
+  <!-- ============================================================ -->
+  <!-- DIVIDER between left and center                               -->
+  <!-- ============================================================ -->
+  <line x1="420" y1="52" x2="420" y2="1024" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ============================================================ -->
+  <!-- CENTER PANEL: Reputation Management (x=420, w=526)            -->
+  <!-- ============================================================ -->
+
+  <!-- Section Header -->
+  <rect x="430" y="62" width="506" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="440" y="85" font-size="14" font-weight="700" fill="#F1F5F9">Reputation Management</text>
+  <rect x="822" y="68" width="104" height="24" rx="12" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="840" y="84" font-size="10" fill="#94A3B8">All Time</text>
+  <text x="906" y="84" font-size="10" fill="#64748B">v</text>
+
+  <!-- Platform Scores Row -->
+  <!-- Google -->
+  <rect x="430" y="106" width="164" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="440" y="126" font-size="10" font-weight="600" fill="#F1F5F9">Google</text>
+  <text x="440" y="150" font-size="24" font-weight="700" fill="#F59E0B">4.4</text>
+  <text x="476" y="150" font-size="14" fill="#F59E0B">&#9733;</text>
+  <text x="440" y="168" font-size="9" fill="#64748B">238 reviews</text>
+  <text x="504" y="168" font-size="9" fill="#10B981">&#9650; 0.2</text>
+
+  <!-- Yelp -->
+  <rect x="602" y="106" width="164" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="612" y="126" font-size="10" font-weight="600" fill="#F1F5F9">Yelp</text>
+  <text x="612" y="150" font-size="24" font-weight="700" fill="#F59E0B">4.0</text>
+  <text x="648" y="150" font-size="14" fill="#F59E0B">&#9733;</text>
+  <text x="612" y="168" font-size="9" fill="#64748B">156 reviews</text>
+  <text x="676" y="168" font-size="9" fill="#F59E0B">&#8212; 0.0</text>
+
+  <!-- TripAdvisor -->
+  <rect x="774" y="106" width="164" height="72" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="784" y="126" font-size="10" font-weight="600" fill="#F1F5F9">TripAdvisor</text>
+  <text x="784" y="150" font-size="24" font-weight="700" fill="#F59E0B">4.3</text>
+  <text x="820" y="150" font-size="14" fill="#F59E0B">&#9733;</text>
+  <text x="784" y="168" font-size="9" fill="#64748B">67 reviews</text>
+  <text x="844" y="168" font-size="9" fill="#10B981">&#9650; 0.1</text>
+
+  <!-- Review Prompt Automation -->
+  <text x="440" y="206" font-size="12" font-weight="700" fill="#F1F5F9">Review Prompt Automation</text>
+
+  <rect x="430" y="216" width="506" height="108" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="444" y="238" font-size="11" fill="#94A3B8">Auto-prompt threshold:</text>
+  <text x="590" y="238" font-size="11" font-weight="600" fill="#F59E0B">Rating &#8805; 4 stars</text>
+
+  <text x="444" y="260" font-size="11" fill="#94A3B8">Prompt message:</text>
+  <rect x="444" y="266" width="480" height="30" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="454" y="284" font-size="10" fill="#F1F5F9">"Glad you enjoyed your visit! Would you mind sharing your</text>
+  <text x="454" y="294" font-size="10" fill="#F1F5F9">experience on Google?"</text>
+
+  <text x="444" y="316" font-size="11" fill="#94A3B8">Sent this week:</text>
+  <text x="540" y="316" font-size="11" font-weight="600" fill="#F1F5F9">42 prompts</text>
+  <text x="620" y="316" font-size="11" fill="#64748B">&#8594;</text>
+  <text x="638" y="316" font-size="11" font-weight="600" fill="#10B981">8 new Google reviews</text>
+  <text x="790" y="316" font-size="11" fill="#8B5CF6">(19% conversion)</text>
+
+  <!-- Negative Review Alert -->
+  <rect x="430" y="336" width="506" height="28" rx="6" fill="#EF4444" opacity="0.12"/>
+  <rect x="430" y="336" width="506" height="28" rx="6" fill="none" stroke="#EF4444" stroke-width="1"/>
+  <text x="444" y="355" font-size="11" font-weight="700" fill="#EF4444">&#9888; 2 new reviews below 3 stars</text>
+  <rect x="860" y="340" width="24" height="18" rx="9" fill="#EF4444"/>
+  <text x="868" y="354" font-size="10" font-weight="700" fill="#FFF">2</text>
+
+  <!-- Negative Review Card -->
+  <rect x="430" y="372" width="506" height="84" rx="6" fill="#1A1D2E" stroke="#EF4444" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="444" y="392" font-size="11" fill="#F1F5F9">"Food was cold, waited 45 min"</text>
+  <text x="444" y="408" font-size="10" fill="#EF4444">&#9733;&#9733;&#9734;&#9734;&#9734;</text>
+  <text x="504" y="408" font-size="9" fill="#64748B">Google</text>
+  <text x="548" y="408" font-size="9" fill="#64748B">May 26</text>
+  <text x="604" y="408" font-size="9" fill="#64748B">by Sarah M.</text>
+
+  <!-- Action buttons -->
+  <rect x="444" y="418" width="72" height="26" rx="4" fill="#F59E0B"/>
+  <text x="458" y="436" font-size="10" font-weight="600" fill="#000">Respond</text>
+  <rect x="524" y="418" width="52" height="26" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="536" y="436" font-size="10" fill="#94A3B8">Flag</text>
+  <rect x="584" y="418" width="120" height="26" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="596" y="436" font-size="10" fill="#94A3B8">Assign to Manager</text>
+
+  <!-- Response Template -->
+  <text x="440" y="480" font-size="12" font-weight="700" fill="#F1F5F9">Response Template</text>
+
+  <rect x="430" y="490" width="506" height="56" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="444" y="510" font-size="10" fill="#94A3B8">Hi [Name], we're sorry about your experience. We'd love to</text>
+  <text x="444" y="524" font-size="10" fill="#94A3B8">make it right -- please reach out to us at...</text>
+  <rect x="852" y="496" width="72" height="22" rx="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="865" y="511" font-size="9" fill="#F59E0B">Use</text>
+  <text x="880" y="511" font-size="9" fill="#F59E0B">&#8594;</text>
+
+  <!-- Monthly Avg Rating Trend Chart -->
+  <text x="440" y="574" font-size="12" font-weight="700" fill="#F1F5F9">Monthly Avg Rating (Jan - May 2026)</text>
+
+  <rect x="430" y="584" width="506" height="180" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Y axis -->
+  <text x="440" y="606" font-size="8" fill="#64748B">5.0</text>
+  <text x="440" y="636" font-size="8" fill="#64748B">4.5</text>
+  <text x="440" y="666" font-size="8" fill="#64748B">4.0</text>
+  <text x="440" y="696" font-size="8" fill="#64748B">3.5</text>
+  <text x="440" y="726" font-size="8" fill="#64748B">3.0</text>
+  <text x="440" y="752" font-size="8" fill="#64748B">2.5</text>
+
+  <!-- Grid lines -->
+  <line x1="465" y1="602" x2="920" y2="602" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="465" y1="632" x2="920" y2="632" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="465" y1="662" x2="920" y2="662" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="465" y1="692" x2="920" y2="692" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="465" y1="722" x2="920" y2="722" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="465" y1="748" x2="920" y2="748" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Area fill under the line -->
+  <polygon points="510,680 600,668 692,656 784,644 876,638 876,748 510,748" fill="#F59E0B" opacity="0.08"/>
+
+  <!-- Line: Jan=3.7, Feb=3.9, Mar=4.0, Apr=4.2, May=4.4 -->
+  <!-- Scale: 5.0=602, 4.5=632, 4.0=662, 3.5=692, 3.0=722 -->
+  <!-- 3.7 = 692 - (0.2/0.5)*30 = 692 - 12 = 680 -->
+  <!-- 3.9 = 692 - (0.4/0.5)*30 = 692 - 24 = 668 -->
+  <!-- 4.0 = 662 -->
+  <!-- 4.2 = 662 - (0.2/0.5)*30 = 662 - 12 = 650 ... actually let me recalc with 4.2=650, 4.4=638 -->
+  <polyline points="510,680 600,668 692,656 784,644 876,638" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Data points -->
+  <circle cx="510" cy="680" r="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="600" cy="668" r="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="692" cy="656" r="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="784" cy="644" r="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="876" cy="638" r="5" fill="#F59E0B"/>
+
+  <!-- Data point labels -->
+  <text x="500" y="676" font-size="9" font-weight="600" fill="#94A3B8">3.7</text>
+  <text x="590" y="664" font-size="9" font-weight="600" fill="#94A3B8">3.9</text>
+  <text x="682" y="652" font-size="9" font-weight="600" fill="#94A3B8">4.0</text>
+  <text x="774" y="640" font-size="9" font-weight="600" fill="#94A3B8">4.2</text>
+  <text x="866" y="632" font-size="9" font-weight="600" fill="#F59E0B">4.4</text>
+
+  <!-- X axis labels -->
+  <text x="504" y="760" font-size="9" fill="#64748B">Jan</text>
+  <text x="594" y="760" font-size="9" fill="#64748B">Feb</text>
+  <text x="684" y="760" font-size="9" fill="#64748B">Mar</text>
+  <text x="778" y="760" font-size="9" fill="#64748B">Apr</text>
+  <text x="870" y="760" font-size="9" fill="#64748B">May</text>
+
+  <!-- Review volume bars (subtle behind the line) -->
+  <rect x="498" y="730" width="24" height="18" rx="2" fill="#8B5CF6" opacity="0.3"/>
+  <text x="504" y="742" font-size="7" fill="#8B5CF6">38</text>
+  <rect x="588" y="724" width="24" height="24" rx="2" fill="#8B5CF6" opacity="0.3"/>
+  <text x="594" y="740" font-size="7" fill="#8B5CF6">42</text>
+  <rect x="680" y="720" width="24" height="28" rx="2" fill="#8B5CF6" opacity="0.3"/>
+  <text x="686" y="738" font-size="7" fill="#8B5CF6">51</text>
+  <rect x="772" y="716" width="24" height="32" rx="2" fill="#8B5CF6" opacity="0.3"/>
+  <text x="778" y="736" font-size="7" fill="#8B5CF6">58</text>
+  <rect x="864" y="710" width="24" height="38" rx="2" fill="#8B5CF6" opacity="0.3"/>
+  <text x="870" y="732" font-size="7" fill="#8B5CF6">72</text>
+
+  <!-- Legend -->
+  <line x1="650" y1="770" x2="666" y2="770" stroke="#F59E0B" stroke-width="2"/>
+  <text x="670" y="773" font-size="8" fill="#64748B">Avg Rating</text>
+  <rect x="730" y="766" width="10" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
+  <text x="744" y="773" font-size="8" fill="#64748B">Review Volume</text>
+
+  <!-- Competitor comparison -->
+  <text x="440" y="800" font-size="12" font-weight="700" fill="#F1F5F9">Competitor Benchmark</text>
+  <rect x="430" y="810" width="506" height="40" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="444" y="830" font-size="10" fill="#94A3B8">Area avg:</text>
+  <text x="498" y="830" font-size="10" font-weight="600" fill="#F1F5F9">4.1</text>
+  <text x="520" y="830" font-size="10" fill="#64748B">&#9733;</text>
+  <text x="548" y="830" font-size="10" fill="#64748B">|</text>
+  <text x="564" y="830" font-size="10" fill="#94A3B8">You:</text>
+  <text x="592" y="830" font-size="10" font-weight="600" fill="#10B981">4.4</text>
+  <text x="614" y="830" font-size="10" fill="#10B981">&#9733;</text>
+  <text x="636" y="830" font-size="10" fill="#10B981">+0.3 above avg</text>
+  <rect x="770" y="818" width="76" height="22" rx="11" fill="#10B981" opacity="0.15"/>
+  <text x="784" y="833" font-size="9" font-weight="600" fill="#10B981">Top 15%</text>
+
+  <!-- Auto-Response Settings -->
+  <text x="440" y="876" font-size="12" font-weight="700" fill="#F1F5F9">Auto-Response Settings</text>
+  <rect x="430" y="886" width="506" height="60" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="444" y="906" font-size="10" fill="#94A3B8">Positive reviews (4-5&#9733;):</text>
+  <text x="610" y="906" font-size="10" fill="#10B981">Auto-thank enabled</text>
+  <rect x="720" y="896" width="36" height="18" rx="9" fill="#10B981"/>
+  <circle cx="744" cy="905" r="7" fill="#FFF"/>
+
+  <text x="444" y="930" font-size="10" fill="#94A3B8">Negative reviews (1-2&#9733;):</text>
+  <text x="610" y="930" font-size="10" fill="#F97316">Manager notification</text>
+  <rect x="720" y="920" width="36" height="18" rx="9" fill="#F97316"/>
+  <circle cx="744" cy="929" r="7" fill="#FFF"/>
+
+  <!-- ============================================================ -->
+  <!-- DIVIDER between center and right                              -->
+  <!-- ============================================================ -->
+  <line x1="946" y1="52" x2="946" y2="1024" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT PANEL: Referral Program (x=946, w=420)                  -->
+  <!-- ============================================================ -->
+
+  <!-- Section Header -->
+  <rect x="956" y="62" width="400" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="966" y="85" font-size="14" font-weight="700" fill="#F1F5F9">Referral Program</text>
+  <!-- Active toggle -->
+  <rect x="1266" y="70" width="80" height="22" rx="11" fill="#10B981" opacity="0.15"/>
+  <circle cx="1278" cy="81" r="6" fill="#10B981"/>
+  <text x="1288" y="85" font-size="9" font-weight="600" fill="#10B981">Active</text>
+
+  <!-- Program Config Card -->
+  <text x="966" y="120" font-size="12" font-weight="700" fill="#F1F5F9">Program Configuration</text>
+
+  <rect x="956" y="130" width="400" height="110" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="970" y="152" font-size="10" fill="#94A3B8">Referrer reward:</text>
+  <text x="1070" y="152" font-size="10" font-weight="600" fill="#F59E0B">500 points ($5 value)</text>
+
+  <text x="970" y="174" font-size="10" fill="#94A3B8">Referee reward:</text>
+  <text x="1070" y="174" font-size="10" font-weight="600" fill="#F59E0B">200 points ($2 value)</text>
+  <text x="1070" y="188" font-size="9" fill="#64748B">on first visit</text>
+
+  <text x="970" y="210" font-size="10" fill="#94A3B8">Min spend for referee:</text>
+  <text x="1110" y="210" font-size="10" font-weight="600" fill="#F1F5F9">$15</text>
+
+  <rect x="1280" y="218" width="64" height="20" rx="4" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1296" y="232" font-size="9" fill="#F59E0B">Edit</text>
+
+  <!-- Stats Card -->
+  <text x="966" y="268" font-size="12" font-weight="700" fill="#F1F5F9">Referral Stats</text>
+
+  <rect x="956" y="278" width="400" height="168" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Stat row: Active referral codes -->
+  <rect x="970" y="290" width="372" height="26" rx="4" fill="#0F1117"/>
+  <text x="982" y="308" font-size="10" fill="#94A3B8">Active referral codes</text>
+  <text x="1296" y="308" font-size="12" font-weight="700" fill="#F1F5F9" text-anchor="end">342</text>
+
+  <!-- Stat row: Referrals this month -->
+  <rect x="970" y="322" width="372" height="26" rx="4" fill="#0F1117"/>
+  <text x="982" y="340" font-size="10" fill="#94A3B8">Referrals this month</text>
+  <text x="1296" y="340" font-size="12" font-weight="700" fill="#8B5CF6" text-anchor="end">28</text>
+
+  <!-- Stat row: New customers -->
+  <rect x="970" y="354" width="372" height="26" rx="4" fill="#0F1117"/>
+  <text x="982" y="372" font-size="10" fill="#94A3B8">New customers from referrals</text>
+  <text x="1296" y="372" font-size="12" font-weight="700" fill="#10B981" text-anchor="end">23</text>
+
+  <!-- Stat row: Revenue -->
+  <rect x="970" y="386" width="372" height="26" rx="4" fill="#0F1117"/>
+  <text x="982" y="404" font-size="10" fill="#94A3B8">Revenue from referred customers</text>
+  <text x="1296" y="404" font-size="12" font-weight="700" fill="#10B981" text-anchor="end">$1,840</text>
+
+  <!-- Stat row: LTV comparison -->
+  <rect x="970" y="418" width="372" height="26" rx="4" fill="#0F1117"/>
+  <text x="982" y="436" font-size="10" fill="#94A3B8">Avg LTV of referred customer</text>
+  <text x="1296" y="436" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="end">$312</text>
+  <text x="1220" y="436" font-size="9" fill="#64748B" text-anchor="end">vs $198 organic</text>
+
+  <!-- LTV comparison visual -->
+  <rect x="956" y="454" width="400" height="44" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="970" y="472" font-size="9" fill="#64748B">LTV Comparison</text>
+  <text x="970" y="490" font-size="9" fill="#94A3B8">Referred</text>
+  <rect x="1040" y="481" width="250" height="8" rx="4" fill="#0F1117"/>
+  <rect x="1040" y="481" width="250" height="8" rx="4" fill="#F59E0B"/>
+  <text x="1296" y="490" font-size="9" fill="#F59E0B">$312</text>
+  <text x="970" y="478" font-size="9" fill="#94A3B8">Organic</text>
+  <rect x="1040" y="469" width="250" height="8" rx="4" fill="#0F1117"/>
+  <rect x="1040" y="469" width="159" height="8" rx="4" fill="#64748B"/>
+  <text x="1206" y="478" font-size="9" fill="#64748B">$198</text>
+
+  <!-- Top Referrers -->
+  <text x="966" y="524" font-size="12" font-weight="700" fill="#F1F5F9">Top Referrers</text>
+
+  <!-- #1 Maria G. -->
+  <rect x="956" y="534" width="400" height="48" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="966" y="544" width="28" height="28" rx="14" fill="#F59E0B" opacity="0.2"/>
+  <text x="975" y="563" font-size="11" font-weight="700" fill="#F59E0B">1</text>
+  <text x="1002" y="556" font-size="11" font-weight="600" fill="#F1F5F9">Maria G.</text>
+  <text x="1002" y="572" font-size="9" fill="#64748B">6 referrals</text>
+  <rect x="1070" y="562" width="42" height="16" rx="8" fill="#B45309"/>
+  <text x="1078" y="574" font-size="9" fill="#FDE68A">GOLD</text>
+  <text x="1296" y="564" font-size="10" fill="#10B981" text-anchor="end">$480 earned</text>
+
+  <!-- #2 James L. -->
+  <rect x="956" y="588" width="400" height="48" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="966" y="598" width="28" height="28" rx="14" fill="#94A3B8" opacity="0.2"/>
+  <text x="975" y="617" font-size="11" font-weight="700" fill="#94A3B8">2</text>
+  <text x="1002" y="610" font-size="11" font-weight="600" fill="#F1F5F9">James L.</text>
+  <text x="1002" y="626" font-size="9" fill="#64748B">4 referrals</text>
+  <rect x="1064" y="616" width="50" height="16" rx="8" fill="#374151"/>
+  <text x="1072" y="628" font-size="9" fill="#9CA3AF">SILVER</text>
+  <text x="1296" y="618" font-size="10" fill="#10B981" text-anchor="end">$320 earned</text>
+
+  <!-- #3 Chen W. -->
+  <rect x="956" y="642" width="400" height="48" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="966" y="652" width="28" height="28" rx="14" fill="#94A3B8" opacity="0.2"/>
+  <text x="975" y="671" font-size="11" font-weight="700" fill="#94A3B8">3</text>
+  <text x="1002" y="664" font-size="11" font-weight="600" fill="#F1F5F9">Chen W.</text>
+  <text x="1002" y="680" font-size="9" fill="#64748B">3 referrals</text>
+  <rect x="1058" y="670" width="50" height="16" rx="8" fill="#374151"/>
+  <text x="1066" y="682" font-size="9" fill="#9CA3AF">SILVER</text>
+  <text x="1296" y="672" font-size="10" fill="#10B981" text-anchor="end">$240 earned</text>
+
+  <!-- Share Methods -->
+  <text x="966" y="716" font-size="12" font-weight="700" fill="#F1F5F9">Share Methods</text>
+
+  <rect x="956" y="726" width="400" height="52" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- SMS link - checked -->
+  <rect x="970" y="736" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="973" y="748" font-size="10" font-weight="700" fill="#000">&#10003;</text>
+  <text x="990" y="748" font-size="10" fill="#F1F5F9">SMS link</text>
+
+  <!-- Email - checked -->
+  <rect x="1060" y="736" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="1063" y="748" font-size="10" font-weight="700" fill="#000">&#10003;</text>
+  <text x="1080" y="748" font-size="10" fill="#F1F5F9">Email</text>
+
+  <!-- QR code - checked -->
+  <rect x="1140" y="736" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="1143" y="748" font-size="10" font-weight="700" fill="#000">&#10003;</text>
+  <text x="1160" y="748" font-size="10" fill="#F1F5F9">QR code</text>
+
+  <!-- Apple Wallet - checked -->
+  <rect x="1230" y="736" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="1233" y="748" font-size="10" font-weight="700" fill="#000">&#10003;</text>
+  <text x="1250" y="748" font-size="10" fill="#F1F5F9">Apple Wallet</text>
+
+  <text x="970" y="770" font-size="9" fill="#64748B">Customize share message and branding per channel</text>
+
+  <!-- Referral Link Footer -->
+  <rect x="956" y="786" width="400" height="36" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="970" y="808" font-size="10" fill="#94A3B8">Referral links:</text>
+  <text x="1058" y="808" font-size="10" font-weight="500" fill="#8B5CF6">synalux.ai/r/{code}</text>
+  <rect x="1264" y="794" width="80" height="22" rx="4" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="1278" y="809" font-size="9" fill="#8B5CF6">Copy Link</text>
+
+  <!-- Referral Funnel Chart -->
+  <text x="966" y="848" font-size="12" font-weight="700" fill="#F1F5F9">Referral Funnel (This Month)</text>
+  <rect x="956" y="858" width="400" height="100" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Funnel: Codes shared > Links clicked > First visit > Repeat -->
+  <rect x="980" y="874" width="340" height="16" rx="3" fill="#8B5CF6" opacity="0.3"/>
+  <rect x="980" y="874" width="340" height="16" rx="3" fill="#8B5CF6" opacity="0.6"/>
+  <text x="988" y="886" font-size="9" font-weight="600" fill="#FFF">Codes Shared: 342</text>
+
+  <rect x="1000" y="896" width="260" height="16" rx="3" fill="#8B5CF6" opacity="0.4"/>
+  <text x="1008" y="908" font-size="9" font-weight="600" fill="#FFF">Links Clicked: 124 (36%)</text>
+
+  <rect x="1020" y="918" width="160" height="16" rx="3" fill="#10B981" opacity="0.5"/>
+  <text x="1028" y="930" font-size="9" font-weight="600" fill="#FFF">First Visit: 28 (8.2%)</text>
+
+  <rect x="1040" y="940" width="130" height="16" rx="3" fill="#10B981" opacity="0.7"/>
+  <text x="1048" y="952" font-size="9" font-weight="600" fill="#FFF">Repeat: 23 (82%)</text>
+
+  <!-- Monthly Trend Mini -->
+  <text x="966" y="984" font-size="11" font-weight="600" fill="#94A3B8">Referral Growth</text>
+  <text x="1100" y="984" font-size="9" fill="#10B981">+40% MoM</text>
+  <rect x="956" y="992" width="400" height="24" rx="4" fill="#1A1D2E"/>
+  <!-- Mini bar chart for referrals per month -->
+  <rect x="976" y="998" width="50" height="12" rx="2" fill="#8B5CF6" opacity="0.3"/>
+  <text x="982" y="1008" font-size="7" fill="#94A3B8">Jan 8</text>
+  <rect x="1036" y="998" width="60" height="12" rx="2" fill="#8B5CF6" opacity="0.4"/>
+  <text x="1042" y="1008" font-size="7" fill="#94A3B8">Feb 12</text>
+  <rect x="1106" y="998" width="70" height="12" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <text x="1112" y="1008" font-size="7" fill="#94A3B8">Mar 16</text>
+  <rect x="1186" y="998" width="80" height="12" rx="2" fill="#8B5CF6" opacity="0.65"/>
+  <text x="1192" y="1008" font-size="7" fill="#94A3B8">Apr 20</text>
+  <rect x="1276" y="998" width="70" height="12" rx="2" fill="#10B981" opacity="0.6"/>
+  <text x="1282" y="1008" font-size="7" fill="#10B981">May 28</text>
+
+</svg>
