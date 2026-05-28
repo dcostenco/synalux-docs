@@ -22,11 +22,11 @@ Votre POS actuel coûte trop cher. Toast facture 400–600$/mois. Square 250–3
 - **Rapports — 8 onglets : ventes, PMIX, ingénierie menu, vitesse, serveur, paiements, annulations, travail**
 - **Personnel — PIN, 7 niveaux RBAC, pointage, pauses, planning, pourboires, paie**
 
-![Register](../images/pos/ipad_01_register.svg)
+![Register](../../images/pos/ipad_01_register.svg)
 
-![KDS](../images/pos/ipad_03_kds.svg)
+![KDS](../../images/pos/ipad_03_kds.svg)
 
-![Payment](../images/pos/ipad_05_payment.svg)
+![Payment](../../images/pos/ipad_05_payment.svg)
 
 ---
 

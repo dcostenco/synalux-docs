@@ -22,11 +22,11 @@ Tu POS actual cuesta demasiado. Toast cobra $400–600/mes. Square cobra $250–
 - **Reportes — 8 pestañas: ventas, PMIX, ingeniería de menú, velocidad de servicio, servidor, pagos, anulaciones, laboral**
 - **Personal — autenticación PIN, 7 niveles RBAC, reloj, descansos, horarios, propinas, nómina**
 
-![Register](../images/pos/ipad_01_register.svg)
+![Register](../../images/pos/ipad_01_register.svg)
 
-![KDS](../images/pos/ipad_03_kds.svg)
+![KDS](../../images/pos/ipad_03_kds.svg)
 
-![Payment](../images/pos/ipad_05_payment.svg)
+![Payment](../../images/pos/ipad_05_payment.svg)
 
 ---
 

@@ -22,11 +22,11 @@ Ihr aktuelles POS kostet zu viel.
 - **Berichte — 8 Tabs**
 - **Personal — PIN, RBAC, Zeiterfassung**
 
-![Register](../images/pos/ipad_01_register.svg)
+![Register](../../images/pos/ipad_01_register.svg)
 
-![KDS](../images/pos/ipad_03_kds.svg)
+![KDS](../../images/pos/ipad_03_kds.svg)
 
-![Payment](../images/pos/ipad_05_payment.svg)
+![Payment](../../images/pos/ipad_05_payment.svg)
 
 ---
 
