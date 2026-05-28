@@ -6,10 +6,12 @@ Every feature included. No add-on fees. No hardware lock-in. No multi-year contr
 Use your own iPad — or any device with a browser.
 
 <p align="center">
-  <a href="https://synalux.ai/pos"><img src="https://img.shields.io/badge/Try_It-Free_Forever-43e97b?style=for-the-badge" alt="Try Free"></a>
-  <a href="https://synalux.ai/pos/pricing"><img src="https://img.shields.io/badge/Pro-$49/mo_(14_day_trial)-764ba2?style=for-the-badge" alt="Pricing"></a>
-  <a href="https://synalux.ai/pos/demo"><img src="https://img.shields.io/badge/Live_Demo-blue?style=for-the-badge" alt="Demo"></a>
+  <img src="https://img.shields.io/badge/Free_Forever-1_terminal-43e97b?style=for-the-badge" alt="Free Forever">
+  <img src="https://img.shields.io/badge/Pro-$49/mo_(14_day_trial)-764ba2?style=for-the-badge" alt="Pro $49/mo">
+  <img src="https://img.shields.io/badge/25_Languages-RTL_Supported-blue?style=for-the-badge" alt="25 Languages">
 </p>
+
+🌐 **Translations:** [Español](../docs/i18n/pos_es.md) · [Français](../docs/i18n/pos_fr.md) · [Português](../docs/i18n/pos_pt.md) · [Română](../docs/i18n/pos_ro.md) · [Українська](../docs/i18n/pos_uk.md) · [Русский](../docs/i18n/pos_ru.md) · [Deutsch](../docs/i18n/pos_de.md) · [日本語](../docs/i18n/pos_ja.md) · [한국어](../docs/i18n/pos_ko.md) · [中文](../docs/i18n/pos_zh.md) · [العربية](../docs/i18n/pos_ar.md)
 
 ---
 
