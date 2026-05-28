@@ -1,8 +1,10 @@
 # ✦ Synalux
 
-**Run your entire practice from one screen.**
+**Stop spending half your day on paperwork.**
 
-Patient charts, scheduling, billing, team chat, telehealth, clinical documentation — for ABA, pediatrics, mental health, dentistry, PT, dermatology, veterinary, nutrition, and family medicine. HIPAA-compliant. 12 languages. Works offline.
+Synalux listens to your sessions, writes the notes, files the claims, schedules the follow-ups, and chases the prior auths — so you can focus on patients.
+
+For ABA practices, pediatrics, mental health, dentistry, physical therapy, dermatology, veterinary, and family medicine. HIPAA-compliant. 12 languages. Works offline.
 
 <p align="center">
   <a href="https://synalux.ai/app"><img src="https://img.shields.io/badge/Try_It-Free-43e97b?style=for-the-badge" alt="Try Free"></a>
@@ -52,6 +54,21 @@ Every PHI access is immutably logged with a tamper-evident hash chain. Local AI 
 
 ---
 
+## Who it's for
+
+| Specialty | What Synalux solves for you |
+|---|---|
+| **🧩 ABA / BCBA** | Data collection, BIP drafts, EVV, insurance auth — all automated. RBTs get a tablet-optimized field UI. |
+| **🧠 Mental Health** | PHQ-9/GAD-7/Columbia SSRS built in. Safety planning, medication tracking, and HIPAA telehealth without add-ons. |
+| **👶 Pediatrics** | WHO/CDC growth curves, CDC immunization alerts, Vanderbilt scoring, and parent portal — standard on every chart. |
+| **🦷 Dental & Ortho** | Full-mouth tooth chart, periodontal pocket entry, DICOM viewer, implant sequencing, and Stripe payment plans. |
+| **🏃 Physical Therapy** | ROM graphs, functional test scoring, HEP builder, and prior auth justification notes — automated. |
+| **🔬 Dermatology** | Body map, photo series, biopsy tracking, iPLEDGE compliance, and biologics management. |
+| **🐾 Veterinary** | Species-specific records, breed-aware vitals, DICOM, DEA drug log, and owner portal. |
+| **🏥 Multi-specialty / Group** | One platform, separate branch workspaces, HQ-level reporting, and white-label per location. |
+
+---
+
 ## Modules
 
 Click any module name to expand the full description and setup guide.
@@ -61,7 +78,7 @@ Click any module name to expand the full description and setup guide.
 ### 🩺 Core Clinical Workflow
 
 <details>
-<summary><strong>🧩 Applied Behavior Analysis (ABA)</strong> — Full-lifecycle clinical ecosystem for BCBAs and RBTs</summary>
+<summary><strong>🧩 Applied Behavior Analysis (ABA)</strong> — Eliminate ABA paperwork; data collection, BIPs, and insurance run themselves</summary>
 
 <br>
 
@@ -90,7 +107,7 @@ The Synalux ABA module automates the paperwork nightmare of ABA therapy through 
 ---
 
 <details>
-<summary><strong>📝 Clinical Notes & Documentation</strong> — Ambient SOAP notes, voice dictation, specialty templates</summary>
+<summary><strong>📝 Clinical Notes & Documentation</strong> — Speak the session; Synalux writes the note — no typing, no cloud PHI</summary>
 
 <br>
 
@@ -118,7 +135,7 @@ Synalux transforms the clinical note from a chore into an automated byproduct of
 ---
 
 <details>
-<summary><strong>📅 Scheduling & Appointments</strong> — Smart calendar with conflict checking and multi-provider support</summary>
+<summary><strong>📅 Scheduling & Appointments</strong> — Fill your schedule and cut no-shows — patients book and confirm themselves</summary>
 
 <br>
 
@@ -146,7 +163,7 @@ The Scheduling module supports the full appointment lifecycle from patient reque
 ---
 
 <details>
-<summary><strong>🎥 Telehealth</strong> — 1080p video on weak Wi-Fi, no patient downloads required</summary>
+<summary><strong>🎥 Telehealth</strong> — See patients anywhere — they click a link, no downloads, no accounts</summary>
 
 <br>
 
@@ -174,7 +191,7 @@ Built on LiveKit open-source SFU — bandwidth-adaptive video keeps calls connec
 ---
 
 <details>
-<summary><strong>📴 Offline-First Clinical Workflow</strong> — Zero data loss, works without internet</summary>
+<summary><strong>📴 Offline-First Clinical Workflow</strong> — Keep working when Wi-Fi dies — notes save locally and sync when you're back</summary>
 
 <br>
 
@@ -201,7 +218,7 @@ Offline mode is enabled by default. No configuration required. The sync icon in 
 ### 🏥 Specialty Modules
 
 <details>
-<summary><strong>🧠 Mental Health & Psychiatry</strong> — Trauma-informed environment with safety-first clinical tools</summary>
+<summary><strong>🧠 Mental Health & Psychiatry</strong> — Spend the session listening — PHQ-9, safety plans, and notes handled automatically</summary>
 
 <br>
 
@@ -229,7 +246,7 @@ A trauma-informed, high-security environment — PHQ-9, GAD-7, Columbia Suicide 
 ---
 
 <details>
-<summary><strong>👶 Pediatrics</strong> — Growth charts, immunization tracking, ADHD Vanderbilt scoring</summary>
+<summary><strong>👶 Pediatrics</strong> — Never miss a milestone or a due vaccine — growth charts and immunization alerts are automatic</summary>
 
 <br>
 
@@ -257,7 +274,7 @@ Automated WHO/CDC growth percentiles, proactive immunization alerts, ADHD Vander
 ---
 
 <details>
-<summary><strong>🦷 Dental & Orthodontics</strong> — Periodontal charting, implant sequencing, automated payment plans</summary>
+<summary><strong>🦷 Dental & Orthodontics</strong> — Chart a full mouth in minutes — implant sequences and payment plans write themselves</summary>
 
 <br>
 
@@ -285,7 +302,7 @@ AI-assisted periodontal charting, multi-phase implant sequencing, full-mouth too
 ---
 
 <details>
-<summary><strong>🏃 Physical Therapy & Sports Medicine</strong> — ROM tracking, rehab protocols, home exercise programs</summary>
+<summary><strong>🏃 Physical Therapy & Sports Medicine</strong> — Prove progress to insurers — ROM graphs and functional scores generated automatically</summary>
 
 <br>
 
@@ -313,7 +330,7 @@ ROM tracking with trend graphs, evidence-based rehab protocols, and Home Exercis
 ---
 
 <details>
-<summary><strong>🔬 Dermatology</strong> — Full-body lesion mapping, photo documentation, biologics and iPLEDGE tracking</summary>
+<summary><strong>🔬 Dermatology</strong> — Track every lesion precisely — photo comparisons and iPLEDGE compliance handled automatically</summary>
 
 <br>
 
@@ -341,7 +358,7 @@ High-resolution photo documentation, full-body lesion mapping, automated iPLEDGE
 ---
 
 <details>
-<summary><strong>🐾 Veterinary Medicine</strong> — Species-specific records, DICOM imaging, DEA-compliant drug log</summary>
+<summary><strong>🐾 Veterinary Medicine</strong> — Species-specific care without specialty software — DICOM, drug logs, and wellness plans built in</summary>
 
 <br>
 
@@ -370,7 +387,7 @@ Species-specific body maps, breed-aware vital flags, DICOM imaging, DEA-complian
 ### 💳 Billing & Revenue Cycle
 
 <details>
-<summary><strong>💳 Billing & Payments</strong> — EDI 837P claims, ERA processing, Stripe Connect, Medicare-correct CPT</summary>
+<summary><strong>💳 Billing & Payments</strong> — Get paid faster with fewer denials — claims, eligibility, and ERA auto-posting in one place</summary>
 
 <br>
 
@@ -398,7 +415,7 @@ EDI 837P claim submission, real-time insurance eligibility, ERA auto-posting, St
 ---
 
 <details>
-<summary><strong>📋 Superbills</strong> — Auto-generated from encounters with specialty CPT templates and batch submission</summary>
+<summary><strong>📋 Superbills</strong> — Stop manually coding visits — superbills write themselves from your encounter note</summary>
 
 <br>
 
@@ -426,7 +443,7 @@ Auto-populate ICD-10, CPT, and modifiers from the encounter note — then batch-
 ---
 
 <details>
-<summary><strong>🏦 Patient Insurance</strong> — Real-time eligibility, prior auth, multi-policy management</summary>
+<summary><strong>🏦 Patient Insurance</strong> — Know coverage before the visit, not after — real-time eligibility and prior auth built in</summary>
 
 <br>
 
@@ -456,7 +473,7 @@ Real-time eligibility, multi-policy management (primary/secondary/tertiary), aut
 ### 👤 Patient Management
 
 <details>
-<summary><strong>🏥 Patient Portal</strong> — Secure self-service for patients and families, no app download required</summary>
+<summary><strong>🏥 Patient Portal</strong> — Patients complete intake, sign forms, and pay bills before they arrive — no phone tag</summary>
 
 <br>
 
@@ -484,7 +501,7 @@ Mobile-optimized secure portal — intake forms, document signing, bill pay, pro
 ---
 
 <details>
-<summary><strong>⚠️ Allergies & Safety Alerts</strong> — Drug interaction checking cross-referenced with every order</summary>
+<summary><strong>⚠️ Allergies & Safety Alerts</strong> — Stop adverse drug events before they start — every order checked against every allergy automatically</summary>
 
 <br>
 
@@ -510,7 +527,7 @@ Allergies is enabled by default. Add allergies in any patient chart → **Allerg
 ---
 
 <details>
-<summary><strong>💉 Immunizations</strong> — CVX-coded vaccine tracking, CDC schedule compliance, state IIS integration</summary>
+<summary><strong>💉 Immunizations</strong> — Never miss a due vaccine — CDC schedule alerts and state registry reporting automated</summary>
 
 <br>
 
@@ -538,7 +555,7 @@ CVX-coded vaccine tracking with CDC schedule alerts, VIS delivery to patient por
 ---
 
 <details>
-<summary><strong>📚 Patient Education</strong> — Prescribable content library in 16 languages with read-tracking</summary>
+<summary><strong>📚 Patient Education</strong> — Prescribe education that patients actually read — track who opened what, in their language</summary>
 
 <br>
 
@@ -567,7 +584,7 @@ Providers prescribe education materials during encounters — patients see them 
 ### 🩺 Clinical Management
 
 <details>
-<summary><strong>💊 Medications & Prescriptions</strong> — Drug catalog, controlled substance tracking, SureScripts EPCS</summary>
+<summary><strong>💊 Medications & Prescriptions</strong> — Prescribe in seconds, stay DEA-compliant — 12,000 drugs, EPCS, and refill requests built in</summary>
 
 <br>
 
@@ -595,7 +612,7 @@ Providers prescribe education materials during encounters — patients see them 
 ---
 
 <details>
-<summary><strong>📊 Vitals & Measurements</strong> — BP, HR, SpO2, BMI, pain scale, trend graphs, abnormal alerts</summary>
+<summary><strong>📊 Vitals & Measurements</strong> — Catch deteriorating patients early — vitals trend automatically, abnormals alert instantly</summary>
 
 <br>
 
@@ -623,7 +640,7 @@ Capture all standard vitals with automatic trend analysis and out-of-range alert
 ---
 
 <details>
-<summary><strong>🧪 Lab Orders & Results</strong> — Quest/LabCorp integration, critical value alerts, HL7 interface</summary>
+<summary><strong>🧪 Lab Orders & Results</strong> — Order labs and get results back — Quest, LabCorp, and in-house with critical value paging</summary>
 
 <br>
 
@@ -651,7 +668,7 @@ Order entry with vendor tracking through result receipt with automatic abnormal 
 ---
 
 <details>
-<summary><strong>✅ Clinical Tasks</strong> — Assign and track clinical action items with event-triggered automation</summary>
+<summary><strong>✅ Clinical Tasks</strong> — Nothing falls through the cracks — abnormal results and expiring auths auto-create tasks</summary>
 
 <br>
 
@@ -677,7 +694,7 @@ Tasks is enabled by default. Access via **Tasks** in the left sidebar. Configure
 ---
 
 <details>
-<summary><strong>📬 Recalls & Reminders</strong> — Automated recall campaigns for follow-ups and preventive care</summary>
+<summary><strong>📬 Recalls & Reminders</strong> — Bring patients back before they forget — recall campaigns run themselves on your schedule</summary>
 
 <br>
 
@@ -705,7 +722,7 @@ Configure recall intervals per visit type — the system generates recall lists 
 ---
 
 <details>
-<summary><strong>🔗 Referrals & Cross-Practice Chat</strong> — Secure inter-practice referral tracking and collaboration</summary>
+<summary><strong>🔗 Referrals & Cross-Practice Chat</strong> — Know where every referral stands — from sent to scheduled, with automatic status updates</summary>
 
 <br>
 
@@ -735,7 +752,7 @@ Full referral lifecycle tracking with secure inter-practice messaging and fax in
 ### ⚙️ Operations & Administration
 
 <details>
-<summary><strong>👥 HR & Staff Management</strong> — Staff profiles, credential tracking, performance reviews, onboarding</summary>
+<summary><strong>👥 HR & Staff Management</strong> — Stop chasing license renewals — credential expiration alerts fire automatically</summary>
 
 <br>
 
@@ -763,7 +780,7 @@ Full HR administration — credential expiration alerts, time-off management, KP
 ---
 
 <details>
-<summary><strong>⏱️ Timesheets & Payroll</strong> — Auto-generated from signed session notes, EVV-compliant</summary>
+<summary><strong>⏱️ Timesheets & Payroll</strong> — Payroll runs itself — timesheets generate from signed session notes, no manual entry</summary>
 
 <br>
 
@@ -791,7 +808,7 @@ Timesheets build themselves as session notes are signed — eliminating manual e
 ---
 
 <details>
-<summary><strong>📦 Inventory Management</strong> — SKU tracking, auto reorder, vaccine cold chain, asset depreciation</summary>
+<summary><strong>📦 Inventory Management</strong> — Never run out of supplies — auto reorder kicks in before stock hits zero</summary>
 
 <br>
 
@@ -819,7 +836,7 @@ Enterprise-grade inventory to prevent stock-outs and track high-value assets acr
 ---
 
 <details>
-<summary><strong>📊 Quality Measures (HEDIS/MIPS)</strong> — Automated tracking, point-of-care alerts, CMS-ready attestation</summary>
+<summary><strong>📊 Quality Measures (HEDIS/MIPS)</strong> — Hit your HEDIS and MIPS targets — care gaps caught at the point of encounter</summary>
 
 <br>
 
@@ -847,7 +864,7 @@ Automated HEDIS and MIPS quality measure tracking with real-time dashboards, poi
 ---
 
 <details>
-<summary><strong>⚙️ Platform Administration & White Label</strong> — Multi-branch management, branding, global config push</summary>
+<summary><strong>⚙️ Platform Administration & White Label</strong> — Run 10 locations like one — push config to every branch in a single click</summary>
 
 <br>
 
@@ -877,7 +894,7 @@ Command and control for practice owners and enterprise administrators — manage
 ### 🔒 Security & Compliance
 
 <details>
-<summary><strong>🛡️ Security, Privacy & HIPAA Compliance</strong> — Immutable audit logs, AES-256 encryption, local AI zero-PHI architecture</summary>
+<summary><strong>🛡️ Security, Privacy & HIPAA Compliance</strong> — HIPAA-ready out of the box — local AI means patient data never reaches a cloud vendor</summary>
 
 <br>
 
@@ -913,7 +930,7 @@ Security-first architecture — every PHI access immutably logged with a tamper-
 ### 💬 Communication
 
 <details>
-<summary><strong>💬 Team Chat & Clinical Communication</strong> — HIPAA-compliant messaging, HD video scrums, unified external inbox</summary>
+<summary><strong>💬 Team Chat & Clinical Communication</strong> — Coordinate care without leaving the EHR — HIPAA chat, video huddles, and Slack all in one place</summary>
 
 <br>
 
