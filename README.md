@@ -113,7 +113,7 @@ The Synalux ABA module automates the paperwork nightmare of ABA therapy through 
 2. Add BCBAs under **Team → Roles** (BCBA credential) and RBTs under the RBT role
 3. Open any patient chart → **ABA** tab → start a session
 
-▶️ [Watch setup video](https://youtu.be/tvA6XnglbDk) · [📖 Full documentation](https://synalux.ai/docs/applied_behavior_analysis_aba)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/applied_behavior_analysis_aba.mp4) · [📖 Full documentation](https://synalux.ai/docs/applied_behavior_analysis_aba)
 
 </details>
 
@@ -141,7 +141,7 @@ Synalux transforms the clinical note from a chore into an automated byproduct of
 2. Select your specialty template under **Settings → Note Templates**
 3. Open a patient encounter → **New Note** → speak or type
 
-▶️ [Watch setup video](https://youtu.be/f0FhfbsS1mM) · [📖 Full documentation](https://synalux.ai/docs/clinical_notes_documentation)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/treatment_plans.mp4) · [📖 Full documentation](https://synalux.ai/docs/clinical_notes_documentation)
 
 </details>
 
@@ -169,7 +169,7 @@ The Scheduling module supports the full appointment lifecycle from patient reque
 2. Connect calendars under **Settings → Calendar Integrations**
 3. Go to **Schedule** tab → **New Appointment** → select provider, patient, and time
 
-▶️ [Watch setup video](https://youtu.be/YTY10Luaq8k) · [📖 Full documentation](https://synalux.ai/docs/scheduling_appointments)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/scheduling_appointments.mp4) · [📖 Full documentation](https://synalux.ai/docs/scheduling_appointments)
 
 </details>
 
@@ -197,7 +197,7 @@ Built on LiveKit open-source SFU — bandwidth-adaptive video keeps calls connec
 2. Configure LiveKit credentials under **Settings → Telehealth**
 3. From any appointment → **Start Telehealth** → send the patient link via SMS or email
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/telehealth_livekit)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/telehealth.mp4) · [📖 Full documentation](https://synalux.ai/docs/telehealth_livekit)
 
 </details>
 
@@ -252,7 +252,7 @@ A trauma-informed, high-security environment — PHQ-9, GAD-7, Columbia Suicide 
 2. Assign providers the Mental Health role under **Team → Roles**
 3. Open a patient chart → **Mental Health** tab
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/mental_health_psychiatry)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/mental_health_therapy.mp4) · [📖 Full documentation](https://synalux.ai/docs/mental_health_psychiatry)
 
 </details>
 
@@ -308,7 +308,7 @@ AI-assisted periodontal charting, multi-phase implant sequencing, full-mouth too
 2. Configure fee schedule under **Settings → Billing → Dental CDT Codes**
 3. Open a patient chart → **Dental** tab → start a new exam
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/dental_orthodontics)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/dental_oral_health.mp4) · [📖 Full documentation](https://synalux.ai/docs/dental_orthodontics)
 
 </details>
 
@@ -336,7 +336,7 @@ ROM tracking with trend graphs, evidence-based rehab protocols, and Home Exercis
 2. Add PT/PTA staff and assign PT roles under **Team → Roles**
 3. Open a patient chart → **PT** tab → create an initial evaluation
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/physical_therapy_sports_medicine)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/physical_therapy_rehab.mp4) · [📖 Full documentation](https://synalux.ai/docs/physical_therapy_sports_medicine)
 
 </details>
 
@@ -421,7 +421,7 @@ EDI 837P claim submission, real-time insurance eligibility, ERA auto-posting, St
 2. Connect Stripe account under **Settings → Billing → Stripe Connect**
 3. Add payers under **Settings → Insurance Payers** with EDI credentials
 
-▶️ [Watch setup video](https://youtu.be/5mKnq7UxDAw) · [📖 Full documentation](https://synalux.ai/docs/billing_payments_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/billing_superbills.mp4) · [📖 Full documentation](https://synalux.ai/docs/billing_payments_module)
 
 </details>
 
@@ -449,7 +449,7 @@ Auto-populate ICD-10, CPT, and modifiers from the encounter note — then batch-
 2. Configure fee schedule under **Settings → Billing → CPT Fee Schedule**
 3. Complete an encounter → **Generate Superbill** appears automatically
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/superbills_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/billing_superbills.mp4) · [📖 Full documentation](https://synalux.ai/docs/superbills_module)
 
 </details>
 
@@ -477,7 +477,7 @@ Real-time eligibility, multi-policy management (primary/secondary/tertiary), aut
 2. Add payer contracts under **Settings → Insurance → Payer Configuration**
 3. Open patient chart → **Insurance** tab → add policy → run eligibility check
 
-▶️ [Watch setup video](https://youtu.be/aq3WJEIvO1c) · [📖 Full documentation](https://synalux.ai/docs/patient_insurance_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/insurance_authorizations.mp4) · [📖 Full documentation](https://synalux.ai/docs/patient_insurance_module)
 
 </details>
 
@@ -589,7 +589,7 @@ Providers prescribe education materials during encounters — patients see them 
 2. Browse the library at **Settings → Education → Content Library**
 3. During any encounter → **Assign Education** → select materials → patient sees them in portal
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/patient_education_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/education_resources.mp4) · [📖 Full documentation](https://synalux.ai/docs/patient_education_module)
 
 </details>
 
@@ -618,7 +618,7 @@ Providers prescribe education materials during encounters — patients see them 
 2. Connect pharmacy network under **Settings → Medications → SureScripts**
 3. Open patient chart → **Medications** tab → **New Prescription**
 
-▶️ [Watch setup video](https://youtu.be/rEHa6zj5kwA) · [📖 Full documentation](https://synalux.ai/docs/medications_prescriptions_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/medication_management.mp4) · [📖 Full documentation](https://synalux.ai/docs/medications_prescriptions_module)
 
 </details>
 
@@ -646,7 +646,7 @@ Capture all standard vitals with automatic trend analysis and out-of-range alert
 2. Configure reference ranges per specialty under **Settings → Vitals → Reference Ranges**
 3. Open any patient encounter → **Vitals** section → enter measurements
 
-▶️ [Watch setup video](https://youtu.be/mHFCvre3v5I) · [📖 Full documentation](https://synalux.ai/docs/vitals_measurements_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/vitals_monitoring.mp4) · [📖 Full documentation](https://synalux.ai/docs/vitals_measurements_module)
 
 </details>
 
@@ -700,7 +700,7 @@ Priority-based task management with automatic task creation from clinical events
 **Quick setup:**
 Tasks is enabled by default. Access via **Tasks** in the left sidebar. Configure auto-triggers under **Settings → Tasks → Automation Rules**.
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/clinical_tasks_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/tasks_reminders.mp4) · [📖 Full documentation](https://synalux.ai/docs/clinical_tasks_module)
 
 </details>
 
@@ -728,7 +728,7 @@ Configure recall intervals per visit type — the system generates recall lists 
 2. Configure intervals under **Settings → Recalls → Visit Type Rules**
 3. Go to **Recalls** dashboard → review due list → send batch campaign
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/recalls_reminders_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/tasks_reminders.mp4) · [📖 Full documentation](https://synalux.ai/docs/recalls_reminders_module)
 
 </details>
 
@@ -756,7 +756,7 @@ Full referral lifecycle tracking with secure inter-practice messaging and fax in
 2. Add network contacts under **Settings → Referral Network**
 3. Open patient chart → **Referrals** tab → **New Referral**
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/referrals_cross_practice_chat_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/referrals.mp4) · [📖 Full documentation](https://synalux.ai/docs/referrals_cross_practice_chat_module)
 
 </details>
 
@@ -786,7 +786,7 @@ Full HR administration — credential expiration alerts, time-off management, KP
 2. Add staff under **Team → Staff** with roles and department
 3. Upload licenses under each staff profile → **Credentials** tab
 
-▶️ [Watch setup video](https://youtu.be/GMcj1rZGAtY) · [📖 Full documentation](https://synalux.ai/docs/hr_staff_management_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/team_management.mp4) · [📖 Full documentation](https://synalux.ai/docs/hr_staff_management_module)
 
 </details>
 
@@ -842,7 +842,7 @@ Enterprise-grade inventory to prevent stock-outs and track high-value assets acr
 2. Add suppliers under **Inventory → Suppliers**
 3. Add items under **Inventory → Items** with SKU, location, and reorder point
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/inventory_management_module)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/inventory_management.mp4) · [📖 Full documentation](https://synalux.ai/docs/inventory_management_module)
 
 </details>
 
@@ -870,7 +870,7 @@ Automated HEDIS and MIPS quality measure tracking with real-time dashboards, poi
 2. Configure measure set under **Settings → Quality → Measure Set**
 3. Dashboard auto-populates from existing clinical data; review gaps at **Quality → Dashboard**
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/quality_measures_module_hedismips)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/quality_measures.mp4) · [📖 Full documentation](https://synalux.ai/docs/quality_measures_module_hedismips)
 
 </details>
 
@@ -898,7 +898,7 @@ Command and control for practice owners and enterprise administrators — manage
 2. Create branches under **Admin → Branches → New Branch**
 3. Configure branding per branch under **Admin → Branches → [Branch] → White Label**
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/platform_administration_white_label)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/platform_administration_white_label.mp4) · [📖 Full documentation](https://synalux.ai/docs/platform_administration_white_label)
 
 </details>
 
@@ -934,7 +934,7 @@ Security-first architecture — every PHI access immutably logged with a tamper-
 2. Review the audit log under **Admin → Security → Audit Trail**
 3. Download the HIPAA compliance report under **Admin → Security → Compliance → HIPAA Report**
 
-▶️ [Watch setup video](https://youtu.be/VToBmciKlwU) · [📖 Full documentation](https://synalux.ai/docs/security_compliance)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/hipaa_compliance.mp4) · [📖 Full documentation](https://synalux.ai/docs/security_compliance)
 
 </details>
 
@@ -964,7 +964,7 @@ A high-security collaboration hub — coordinate care in real-time, run HD video
 2. Create channels under **Chat → New Channel** — organize by team, specialty, or patient case
 3. Invite staff; they receive a notification to join
 
-📹 Setup video — coming soon · [📖 Full documentation](https://synalux.ai/docs/team_chat_communication)
+▶️ [Watch setup video](https://github.com/dcostenco/synalux-docs/releases/download/v1.0-module-videos/chat_communication.mp4) · [📖 Full documentation](https://synalux.ai/docs/team_chat_communication)
 
 </details>
 
