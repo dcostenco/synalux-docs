@@ -15,13 +15,29 @@ Use your own iPad — or any device with a browser.
 
 ## At a glance
 
-| Register | Tables | KDS | Payment |
-|:--------:|:------:|:---:|:-------:|
-| ![Register](../images/pos/ipad_01_register.svg) | ![Tables](../images/pos/ipad_02_tables.svg) | ![KDS](../images/pos/ipad_03_kds.svg) | ![Payment](../images/pos/ipad_05_payment.svg) |
+**Register** — 3-panel layout with categories, product grid, order ticket
 
-| Reports | Online Ordering | Customer Display | Manager Mobile |
-|:-------:|:---------------:|:----------------:|:--------------:|
-| ![Reports](../images/pos/ipad_reports.svg) | ![Online](../images/pos/online_01_menu.svg) | ![Display](../images/pos/ipad_customer_display.svg) | ![Mobile](../images/pos/iphone_01_dashboard.svg) |
+![Register](../images/pos/ipad_01_register.svg)
+
+**Tables** — interactive floor plan with live status
+
+![Tables](../images/pos/ipad_02_tables.svg)
+
+**KDS** — kitchen ticket board with timing and all-day count
+
+![KDS](../images/pos/ipad_03_kds.svg)
+
+**Payment** — 6 methods, tips, split check, cash discount
+
+![Payment](../images/pos/ipad_05_payment.svg)
+
+**Customer Display** — second screen with live order and idle promos
+
+![Customer Display](../images/pos/ipad_customer_display.svg)
+
+**Manager Mobile** — iPhone dashboard
+
+![Manager Mobile](../images/pos/iphone_01_dashboard.svg)
 
 ---
 
