@@ -192,7 +192,7 @@ AI coaching spoken aloud in your language.
 
 *   **Local-first** — all biometric data stays on-device. No analytics SDK. No third-party crash reporting.
 *   **HealthKit** — read-only access except workout session writes. Described in App Store privacy label.
-*   **AI prompts** — Pro tier never sends data to any server. Elite tier sends anonymised training context to Prism inference server (no PII, no HealthKit data).
+*   **AI prompts** — Coach tier never sends data to any server. Athlete tier sends anonymised training context to Prism inference server (no PII, no HealthKit data).
 *   **Subscription check** — email posted via HTTPS to `api.prismcoach.app/subscription/check`. Email stored in Keychain with 24-hour TTL and 48-hour grace window.
 *   **Cycle data** — Femme Engine data is CoreData-only, never synced.
 
@@ -200,7 +200,7 @@ AI coaching spoken aloud in your language.
 
 ## 💳 Plans
 
-| Feature | Free | Pro | Elite |
+| Feature | Free | Coach | Athlete |
 |---|---|---|---|
 | Body Battery + HRV dashboard | ✅ | ✅ | ✅ |
 | Muscle recovery map | ✅ | ✅ | ✅ |

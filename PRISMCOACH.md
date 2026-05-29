@@ -100,8 +100,8 @@ Conversational coaching that knows your recovery state, last session, and progra
 | Subscription | AI Source | Latency | Privacy |
 |---|---|---|---|
 | Free | No AI — static templates only | — | — |
-| Pro | On-device cascade (see below) | ~300–800 ms | 100% local — no network |
-| Elite | On-device → Prism 8B → Claude Sonnet | ~300 ms – 3 s | Anon context for cloud tiers; local tiers are air-gapped |
+| Coach | On-device cascade (see below) | ~300–800 ms | 100% local — no network |
+| Athlete | On-device → Prism 8B → Claude Sonnet | ~300 ms – 3 s | Anon context for cloud tiers; local tiers are air-gapped |
 
 ### Memory-Aware On-Device Tiers
 
@@ -534,7 +534,7 @@ Coaching and UI available in English, Spanish, French, Portuguese, German, Itali
 
 ## 💳 Plans
 
-| Feature | Free | Pro | Elite |
+| Feature | Free | Coach | Athlete |
 |---|---|---|---|
 | Body Battery + HRV dashboard | ✅ | ✅ | ✅ |
 | Muscle recovery map | ✅ | ✅ | ✅ |
