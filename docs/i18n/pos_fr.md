@@ -6,6 +6,20 @@ Toutes les fonctions incluses. Pas de frais supplémentaires. Pas de matériel p
 
 ---
 
+## Screenshots
+
+![Register](../../images/pos/ipad_01_register.svg)
+
+![Tables](../../images/pos/ipad_02_tables.svg)
+
+![KDS](../../images/pos/ipad_03_kds.svg)
+
+![Payment](../../images/pos/ipad_05_payment.svg)
+
+![Reports](../../images/pos/ipad_06_reports.svg)
+
+---
+
 ## Pourquoi changer ?
 
 Votre POS actuel coûte trop cher. Toast facture 400–600$/mois. Square 250–350$/mois.

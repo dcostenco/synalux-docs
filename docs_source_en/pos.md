@@ -381,7 +381,11 @@ Isolated simulation. Orders excluded from reports.
 
 ![Offline](../images/pos/ipad_offline_mode.svg)
 
-Service Worker caches core pages for offline viewing. PWA installable on iPad/iPhone. Full offline order creation and auto-sync coming soon.
+PWA with Service Worker. Core pages (register, KDS, tables, EOD) precached for offline viewing. Offline indicator shows connection status.
+
+**What works offline:** Viewing cached pages, order creation (falls back to localStorage queue when API unreachable), auto-sync on reconnect, connection status indicator.
+
+**What needs network:** Card payments (Stripe API), Supabase queries for live data, receipt email/SMS.
 
 </details>
 

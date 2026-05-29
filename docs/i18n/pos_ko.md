@@ -6,6 +6,20 @@
 
 ---
 
+## Screenshots
+
+![Register](../../images/pos/ipad_01_register.svg)
+
+![Tables](../../images/pos/ipad_02_tables.svg)
+
+![KDS](../../images/pos/ipad_03_kds.svg)
+
+![Payment](../../images/pos/ipad_05_payment.svg)
+
+![Reports](../../images/pos/ipad_06_reports.svg)
+
+---
+
 ## 왜 바꿔야 할까요?
 
 현재 POS는 너무 비쌉니다.

@@ -6,6 +6,20 @@ Todas las funciones incluidas. Sin cargos adicionales. Sin hardware propietario.
 
 ---
 
+## Screenshots
+
+![Register](../../images/pos/ipad_01_register.svg)
+
+![Tables](../../images/pos/ipad_02_tables.svg)
+
+![KDS](../../images/pos/ipad_03_kds.svg)
+
+![Payment](../../images/pos/ipad_05_payment.svg)
+
+![Reports](../../images/pos/ipad_06_reports.svg)
+
+---
+
 ## ¿Por qué cambiar?
 
 Tu POS actual cuesta demasiado. Toast cobra $400–600/mes. Square cobra $250–350/mes. Clover te ata a contratos de 3 años con hardware de $2,000+.

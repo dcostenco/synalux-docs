@@ -6,6 +6,20 @@ Todas as funcionalidades incluídas. Sem taxas adicionais. Sem hardware propriet
 
 ---
 
+## Screenshots
+
+![Register](../../images/pos/ipad_01_register.svg)
+
+![Tables](../../images/pos/ipad_02_tables.svg)
+
+![KDS](../../images/pos/ipad_03_kds.svg)
+
+![Payment](../../images/pos/ipad_05_payment.svg)
+
+![Reports](../../images/pos/ipad_06_reports.svg)
+
+---
+
 ## Por que mudar?
 
 Seu POS atual custa demais.
