@@ -377,11 +377,11 @@ Isolated simulation. Orders excluded from reports.
 </details>
 
 <details>
-<summary><strong>Offline Mode</strong></summary>
+<summary><strong>Offline Mode (PWA)</strong></summary>
 
 ![Offline](../images/pos/ipad_offline_mode.svg)
 
-Register, cash, KDS, receipts work offline. Auto-sync on reconnect.
+Service Worker caches core pages for offline viewing. PWA installable on iPad/iPhone. Full offline order creation and auto-sync coming soon.
 
 </details>
 
@@ -457,6 +457,137 @@ Cash Count Sheet, Void Authorization, Tax-Exempt Certificate, Catering BEO, Serv
 | vs Clover | $4,200–6,000/yr + $2,000 HW | $588/yr + $59 HW | **$5,600–7,700** |
 | vs TouchBistro | $6,000–9,600/yr + HW | $588/yr + $59 HW | **$6,400–10,000** |
 | vs Lightspeed | $5,400–7,200/yr + $800 HW | $588/yr + $59 HW | **$5,600–7,700** |
+
+---
+
+## Integration Setup Guide
+
+Every integration activates by adding the provider's credentials to your Synalux POS environment. No code changes needed.
+
+### Card Payments (Stripe)
+
+| | Details |
+|---|---|
+| **Who signs up** | You (restaurant owner) at [stripe.com](https://stripe.com) |
+| **What you get** | Secret key (`sk_live_...`) + publishable key (`pk_live_...`) |
+| **Where to add** | Settings → Integrations → Stripe → paste keys |
+| **Env var** | `STRIPE_SECRET_KEY` |
+| **Hardware** | Stripe Reader M2 ($59) — pair in Stripe Dashboard |
+| **What activates** | Card payments (tap/chip/swipe), Tap-to-Pay on iPhone, online payments |
+
+### Email Receipts (SendGrid)
+
+| | Details |
+|---|---|
+| **Who signs up** | You at [sendgrid.com](https://sendgrid.com) (free tier: 100 emails/day) |
+| **What you get** | API key |
+| **Env var** | `SENDGRID_API_KEY` |
+| **Optional** | `RECEIPT_FROM_EMAIL` — sender address (default: receipts@synalux.ai) |
+| **What activates** | Email receipt button after payment, HTML-formatted receipt with items + totals |
+
+### SMS Receipts & Phone Ordering (Twilio)
+
+| | Details |
+|---|---|
+| **Who signs up** | You at [twilio.com](https://www.twilio.com) |
+| **What you get** | Account SID, Auth Token, Phone Number |
+| **Env vars** | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` |
+| **What activates** | SMS receipt button, phone ordering webhook (`/api/v1/pos/webhooks/phone`) |
+
+### Delivery Orders (DoorDash / Uber Eats / Grubhub)
+
+| | Details |
+|---|---|
+| **Who signs up** | You with each delivery platform's merchant portal |
+| **How it works** | Point the platform's webhook URL to your POS: `https://your-pos.vercel.app/api/v1/pos/webhooks/delivery` |
+| **Payload format** | JSON with `provider`, `venue_id`, `customer_name`, `items[]`, `delivery_address` |
+| **What activates** | Delivery orders appear on KDS with purple badge, tracked in reports |
+
+### Reservations (Google Reserve / OpenTable / Yelp)
+
+| | Details |
+|---|---|
+| **Who signs up** | You with each reservation platform |
+| **How it works** | Point webhook to: `https://your-pos.vercel.app/api/v1/pos/webhooks/reservations` |
+| **Payload** | JSON with `provider`, `venue_id`, `guest_name`, `party_size`, `reservation_time` |
+| **What activates** | Reservations auto-created in your reservation list |
+
+### Accounting Sync (QuickBooks / Xero)
+
+| | Details |
+|---|---|
+| **Who signs up** | You at [quickbooks.intuit.com](https://quickbooks.intuit.com) or [xero.com](https://www.xero.com) |
+| **Env vars** | `QUICKBOOKS_ACCESS_TOKEN` or `XERO_ACCESS_TOKEN` |
+| **What activates** | EOD "Export GL Journal" generates double-entry journal entries. With token set, auto-syncs to your accounting software. |
+| **Manual fallback** | CSV export always available — import into any accounting system |
+
+### EBT / SNAP Payments (Forage)
+
+| | Details |
+|---|---|
+| **Who signs up** | You at [joinforage.com](https://www.joinforage.com) — they onboard restaurants for SNAP acceptance |
+| **What you get** | Forage API key after merchant verification |
+| **Env var** | `FORAGE_API_KEY` |
+| **What activates** | EBT payment option, eligible item flagging (food only, excludes alcohol), dual-tender split |
+
+### Payroll Direct Deposit (Dwolla / Stripe Treasury)
+
+| | Details |
+|---|---|
+| **Option A** | [dwolla.com](https://www.dwolla.com) → sign up for API access → `DWOLLA_API_KEY` |
+| **Option B** | Enable Treasury in your Stripe Dashboard → `STRIPE_TREASURY_KEY` |
+| **What activates** | ACH direct deposit from payroll page, tax withholding calculation |
+| **Manual fallback** | CSV payroll export always available for Gusto/ADP import |
+
+### AI Ordering (Prism Coder)
+
+| | Details |
+|---|---|
+| **How it works** | Runs locally via Ollama — no cloud API needed |
+| **Setup** | Install [Ollama](https://ollama.com), then: `ollama pull dcostenco/prism-coder:1b7` |
+| **Env var** | `NEXT_PUBLIC_LOCAL_LLM_URL=http://localhost:11434` |
+| **What activates** | Natural language order parsing from phone/SMS orders, fuzzy menu item matching |
+
+### Label Printer (Zebra / Brother)
+
+| | Details |
+|---|---|
+| **Hardware** | Any ZPL-compatible printer (Zebra ZD420, ZD620, Brother QL-820NWB) |
+| **Setup** | Connect printer to same network → add in Settings → Printers → station: "label" → enter IP |
+| **What activates** | "Label" button on every inventory item and menu item, prints ZPL price/SKU/prep labels |
+| **No printer?** | Falls back to browser print dialog with ZPL preview |
+
+### Apple Wallet / Google Wallet (Loyalty Passes)
+
+| | Details |
+|---|---|
+| **Apple** | Apple Developer account ($99/yr) → create Pass Type ID → signing certificate |
+| **Google** | Google Cloud Console → Wallet API → Issuer ID + service account key |
+| **Env vars** | `APPLE_PASS_TYPE_ID`, `APPLE_TEAM_ID`, `APPLE_PASS_SIGNING_CERT`, `GOOGLE_WALLET_ISSUER_ID`, `GOOGLE_WALLET_SERVICE_KEY` |
+| **What activates** | Loyalty members get "Add to Wallet" with membership barcode |
+
+---
+
+## Environment Variables Reference
+
+| Variable | Required | Purpose |
+|----------|:--------:|---------|
+| `NEXT_PUBLIC_POS_SUPABASE_URL` | Yes | Supabase project URL |
+| `NEXT_PUBLIC_POS_SUPABASE_ANON_KEY` | Yes | Supabase anon key |
+| `POS_SUPABASE_SERVICE_ROLE_KEY` | Yes | Supabase service role key |
+| `STRIPE_SECRET_KEY` | Recommended | Card payments |
+| `SENDGRID_API_KEY` | Optional | Email receipts |
+| `TWILIO_ACCOUNT_SID` | Optional | SMS receipts + phone orders |
+| `TWILIO_AUTH_TOKEN` | Optional | SMS receipts + phone orders |
+| `TWILIO_PHONE_NUMBER` | Optional | SMS sender number |
+| `FORAGE_API_KEY` | Optional | EBT/SNAP payments |
+| `DWOLLA_API_KEY` | Optional | Payroll ACH (option A) |
+| `STRIPE_TREASURY_KEY` | Optional | Payroll ACH (option B) |
+| `QUICKBOOKS_ACCESS_TOKEN` | Optional | QuickBooks GL sync |
+| `XERO_ACCESS_TOKEN` | Optional | Xero GL sync |
+| `NEXT_PUBLIC_LOCAL_LLM_URL` | Optional | Local AI (Ollama) |
+| `APPLE_PASS_TYPE_ID` | Optional | Apple Wallet passes |
+| `GOOGLE_WALLET_ISSUER_ID` | Optional | Google Wallet passes |
 
 ---
 
