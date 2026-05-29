@@ -1,0 +1,426 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT NAV ===== -->
+  <rect x="0" y="0" width="200" height="1024" fill="#13162A"/>
+  <rect x="200" y="0" width="1" height="1024" fill="#2D3148"/>
+
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Auto-Gratuity</text>
+
+  <!-- Active nav item: Tip Pooling -->
+  <rect x="0" y="404" width="200" height="36" fill="#1E2240"/>
+  <rect x="0" y="404" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="427" font-size="12" font-weight="700" fill="#F59E0B">Tip Pooling</text>
+
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Cash Management</text>
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="535" font-size="12" fill="#8B92A5">Menu Scheduling</text>
+  <text x="16" y="571" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="607" font-size="12" fill="#8B92A5">Advantage Prog.</text>
+  <text x="16" y="643" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="679" font-size="12" fill="#8B92A5">Tax Exempt</text>
+  <text x="16" y="715" font-size="12" fill="#8B92A5">Label Printer</text>
+  <text x="16" y="751" font-size="12" fill="#8B92A5">Training Mode</text>
+
+  <!-- ===== MAIN CONTENT AREA ===== -->
+
+  <!-- Page header bar -->
+  <rect x="200" y="0" width="1166" height="58" fill="#1A1D2E"/>
+  <rect x="200" y="58" width="1166" height="1" fill="#2D3148"/>
+  <text x="220" y="32" font-size="20" font-weight="700" fill="#F1F5F9">Tip Pooling &amp; Tip Share</text>
+  <text x="220" y="50" font-size="11" fill="#64748B">Configure how tips are distributed among staff roles. All calculations exported to payroll automatically.</text>
+  <!-- Save button -->
+  <rect x="1230" y="11" width="120" height="36" rx="7" fill="#F59E0B"/>
+  <text x="1290" y="34" font-size="13" font-weight="700" fill="#0F1117" text-anchor="middle">Save Settings</text>
+
+  <!-- ===== LEGAL BANNER ===== -->
+  <rect x="208" y="67" width="1150" height="56" rx="6" fill="#1A1208" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="224" y="87" font-size="12" font-weight="700" fill="#F59E0B">⚖ Tip Pool Rules (FLSA):</text>
+  <text x="224" y="103" font-size="11" fill="#FDE68A">Only tipped employees (servers, bartenders, bussers) may be included in a tip pool. Non-tipped employees (cooks, managers) CANNOT receive tip pool funds.</text>
+  <text x="224" y="116" font-size="11" fill="#FCD34D">Tip credits cannot be taken if tips are pooled with non-tipped employees. Confirm with your labor attorney.</text>
+
+  <!-- ===== TWO-PANEL LAYOUT ===== -->
+  <!-- Divider between panels -->
+  <rect x="672" y="131" width="1" height="855" fill="#2D3148"/>
+
+  <!-- ============================================================ -->
+  <!-- LEFT PANEL: CONFIGURATION (x=200, w=472)                     -->
+  <!-- ============================================================ -->
+
+  <!-- == Section: Tip Distribution Model == -->
+  <text x="216" y="152" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">TIP DISTRIBUTION MODEL</text>
+  <rect x="208" y="157" width="456" height="1" fill="#2D3148"/>
+
+  <!-- Radio: Tip Share (selected) -->
+  <rect x="208" y="163" width="456" height="38" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="226" cy="182" r="7" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="226" cy="182" r="3.5" fill="#F59E0B"/>
+  <text x="240" y="179" font-size="12" font-weight="700" fill="#F1F5F9">Tip Share</text>
+  <text x="240" y="194" font-size="10" fill="#94A3B8">Server keeps % of own tips, shares remainder with support staff</text>
+
+  <!-- Radio: Full Tip Pool -->
+  <rect x="208" y="207" width="456" height="36" rx="6" fill="#1A1D2E"/>
+  <circle cx="226" cy="225" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="240" y="221" font-size="12" fill="#94A3B8">Full Tip Pool</text>
+  <text x="240" y="235" font-size="10" fill="#64748B">All tips pooled and distributed by hours worked</text>
+
+  <!-- Radio: Individual -->
+  <rect x="208" y="249" width="456" height="36" rx="6" fill="#1A1D2E"/>
+  <circle cx="226" cy="267" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="240" y="263" font-size="12" fill="#94A3B8">Individual</text>
+  <text x="240" y="277" font-size="10" fill="#64748B">No sharing — each server keeps their own tips</text>
+
+  <!-- == Section: Tip Share Rules == -->
+  <text x="216" y="306" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">TIP SHARE RULES</text>
+  <rect x="208" y="311" width="456" height="1" fill="#2D3148"/>
+
+  <!-- Table header -->
+  <rect x="208" y="313" width="456" height="22" fill="#1E2240"/>
+  <text x="214" y="328" font-size="10" font-weight="700" fill="#64748B">ROLE</text>
+  <text x="295" y="328" font-size="10" font-weight="700" fill="#64748B">% OF SERVER TIPS</text>
+  <text x="390" y="328" font-size="10" font-weight="700" fill="#64748B">CONDITIONS</text>
+  <text x="550" y="328" font-size="10" font-weight="700" fill="#64748B" text-anchor="end">BASIS</text>
+
+  <!-- Server row -->
+  <rect x="208" y="335" width="456" height="32" fill="#1A1D2E"/>
+  <rect x="208" y="367" width="456" height="1" fill="#2D3148"/>
+  <text x="214" y="355" font-size="11" font-weight="600" fill="#F1F5F9">Server</text>
+  <text x="214" y="364" font-size="9" fill="#64748B">keeps</text>
+  <rect x="291" y="342" width="50" height="18" rx="9" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+  <text x="316" y="355" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle">80%</text>
+  <text x="390" y="354" font-size="10" fill="#94A3B8">Their own tips</text>
+  <text x="550" y="354" font-size="10" fill="#64748B" text-anchor="end">—</text>
+
+  <!-- Busser row -->
+  <rect x="208" y="368" width="456" height="32" fill="#13162A"/>
+  <rect x="208" y="400" width="456" height="1" fill="#2D3148"/>
+  <text x="214" y="388" font-size="11" fill="#F1F5F9">Busser</text>
+  <rect x="291" y="375" width="50" height="18" rx="9" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1"/>
+  <text x="316" y="388" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="middle">8%</text>
+  <text x="390" y="385" font-size="10" fill="#94A3B8">Of server's tips</text>
+  <text x="390" y="396" font-size="9" fill="#64748B">Per table served with server</text>
+  <text x="550" y="388" font-size="10" fill="#94A3B8" text-anchor="end">Per table</text>
+
+  <!-- Bartender row -->
+  <rect x="208" y="401" width="456" height="32" fill="#1A1D2E"/>
+  <rect x="208" y="433" width="456" height="1" fill="#2D3148"/>
+  <text x="214" y="421" font-size="11" fill="#F1F5F9">Bartender</text>
+  <rect x="291" y="408" width="50" height="18" rx="9" fill="#8B5CF6" fill-opacity="0.15" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="316" y="421" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="middle">7%</text>
+  <text x="390" y="418" font-size="10" fill="#94A3B8">Of server's bar sales</text>
+  <text x="390" y="429" font-size="9" fill="#64748B">Only if server ordered bar items</text>
+  <text x="550" y="421" font-size="10" fill="#94A3B8" text-anchor="end">Bar sales</text>
+
+  <!-- Host row -->
+  <rect x="208" y="434" width="456" height="32" fill="#13162A"/>
+  <rect x="208" y="466" width="456" height="1" fill="#2D3148"/>
+  <text x="214" y="454" font-size="11" fill="#F1F5F9">Host</text>
+  <rect x="291" y="441" width="50" height="18" rx="9" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="1"/>
+  <text x="316" y="454" font-size="11" font-weight="700" fill="#F97316" text-anchor="middle">5%</text>
+  <text x="390" y="451" font-size="10" fill="#94A3B8">Of server's tips</text>
+  <text x="390" y="462" font-size="9" fill="#64748B">Only if host seated ≥ N tables</text>
+  <text x="550" y="454" font-size="10" fill="#94A3B8" text-anchor="end">Tables seated</text>
+
+  <!-- Add Role button -->
+  <rect x="208" y="472" width="110" height="26" rx="5" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="263" y="489" font-size="11" fill="#94A3B8" text-anchor="middle">+ Add Role</text>
+
+  <!-- == Section: Calculation Basis == -->
+  <text x="216" y="520" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">CALCULATION BASIS</text>
+  <rect x="208" y="525" width="456" height="1" fill="#2D3148"/>
+
+  <text x="216" y="545" font-size="12" fill="#F1F5F9">Based on:</text>
+  <!-- Radio: Server's total tip amount (selected) -->
+  <circle cx="292" cy="541" r="6" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="292" cy="541" r="3" fill="#F59E0B"/>
+  <text x="303" y="545" font-size="11" font-weight="600" fill="#F1F5F9">Server's total tip amount</text>
+  <!-- Radio: Server's total sales -->
+  <circle cx="430" cy="541" r="6" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="441" y="545" font-size="11" fill="#94A3B8">Total sales</text>
+  <!-- Radio: Hours worked -->
+  <circle cx="519" cy="541" r="6" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="530" y="545" font-size="11" fill="#94A3B8">Hours worked</text>
+
+  <!-- Auto-grat included in pool toggle -->
+  <rect x="208" y="555" width="456" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="222" y="570" font-size="12" fill="#F1F5F9">Auto-grat included in pool</text>
+  <text x="222" y="582" font-size="10" fill="#64748B">Auto-grat is revenue paid as wages — poolable</text>
+  <rect x="606" y="563" width="44" height="20" rx="10" fill="#10B981"/>
+  <circle cx="639" cy="573" r="8" fill="#FFFFFF"/>
+  <text x="596" y="574" font-size="10" fill="#10B981" text-anchor="end">ON</text>
+
+  <!-- Cash tips declared toggle -->
+  <rect x="208" y="596" width="456" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="222" y="611" font-size="12" fill="#F1F5F9">Cash tips declared</text>
+  <text x="222" y="623" font-size="10" fill="#64748B">Servers declare cash tips; included in pool calc</text>
+  <rect x="606" y="604" width="44" height="20" rx="10" fill="#10B981"/>
+  <circle cx="639" cy="614" r="8" fill="#FFFFFF"/>
+  <text x="596" y="615" font-size="10" fill="#10B981" text-anchor="end">ON</text>
+
+  <!-- == Section: Shift Calculation == -->
+  <text x="216" y="650" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">SHIFT CALCULATION</text>
+  <rect x="208" y="655" width="456" height="1" fill="#2D3148"/>
+
+  <text x="216" y="675" font-size="12" fill="#F1F5F9">Calculate per:</text>
+  <circle cx="304" cy="671" r="6" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="304" cy="671" r="3" fill="#F59E0B"/>
+  <text x="315" y="675" font-size="11" font-weight="600" fill="#F1F5F9">Shift</text>
+  <circle cx="373" cy="671" r="6" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="384" y="675" font-size="11" fill="#94A3B8">Day</text>
+  <circle cx="424" cy="671" r="6" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="435" y="675" font-size="11" fill="#94A3B8">Week</text>
+
+  <rect x="208" y="684" width="456" height="28" rx="5" fill="#1A1D2E"/>
+  <text x="222" y="703" font-size="12" fill="#94A3B8">Rounding:</text>
+  <text x="300" y="703" font-size="12" fill="#F1F5F9">Nearest cent</text>
+  <text x="450" y="703" font-size="12" fill="#94A3B8">Min payout:</text>
+  <text x="530" y="703" font-size="12" fill="#F1F5F9">$0.50</text>
+
+  <!-- == Section: Payroll Integration == -->
+  <text x="216" y="730" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">PAYROLL INTEGRATION</text>
+  <rect x="208" y="735" width="456" height="1" fill="#2D3148"/>
+
+  <!-- Export to Gusto toggle -->
+  <rect x="208" y="742" width="456" height="32" rx="6" fill="#1A1D2E"/>
+  <text x="222" y="762" font-size="12" fill="#F1F5F9">Export to Gusto</text>
+  <rect x="606" y="750" width="44" height="20" rx="10" fill="#10B981"/>
+  <circle cx="639" cy="760" r="8" fill="#FFFFFF"/>
+  <text x="596" y="761" font-size="10" fill="#10B981" text-anchor="end">ON</text>
+
+  <!-- Payroll mapping -->
+  <rect x="208" y="779" width="456" height="86" rx="6" fill="#1A1D2E"/>
+  <text x="222" y="797" font-size="10" font-weight="700" fill="#64748B">EARNINGS CODE MAPPING</text>
+  <line x1="208" y1="802" x2="664" y2="802" stroke="#2D3148" stroke-width="1"/>
+  <text x="222" y="818" font-size="11" fill="#94A3B8">Server tip-out:</text>
+  <text x="340" y="818" font-size="11" fill="#F1F5F9">"Tip Income"</text>
+  <text x="222" y="834" font-size="11" fill="#94A3B8">Busser tip share:</text>
+  <text x="340" y="834" font-size="11" fill="#F1F5F9">"Tip Share Income"</text>
+  <text x="222" y="850" font-size="11" fill="#94A3B8">Auto-grat:</text>
+  <text x="340" y="850" font-size="11" fill="#F1F5F9">"Service Charge — Wages"</text>
+
+  <!-- Export format dropdown -->
+  <rect x="208" y="870" width="200" height="30" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="220" y="889" font-size="11" fill="#F1F5F9">Export format: Gusto CSV</text>
+  <text x="398" y="889" font-size="11" fill="#64748B">▾</text>
+
+  <!-- Save button bottom -->
+  <rect x="208" y="910" width="130" height="36" rx="7" fill="#F59E0B"/>
+  <text x="273" y="933" font-size="13" font-weight="700" fill="#0F1117" text-anchor="middle">Save Settings</text>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT PANEL: TODAY'S TIP POOL CALCULATION (x=673, w=693)    -->
+  <!-- ============================================================ -->
+
+  <!-- Shift Summary Header -->
+  <rect x="680" y="131" width="678" height="52" rx="6" fill="#1A1D2E"/>
+  <text x="694" y="150" font-size="13" font-weight="700" fill="#F1F5F9">Today's Tip Pool Calculation</text>
+  <text x="694" y="165" font-size="11" fill="#94A3B8">Shift: Wednesday May 27 · Dinner · 4:00 PM – close</text>
+  <!-- Live badge -->
+  <rect x="1290" y="135" width="60" height="20" rx="10" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+  <circle cx="1300" cy="145" r="4" fill="#10B981"/>
+  <text x="1325" y="149" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">LIVE</text>
+
+  <!-- Totals bar -->
+  <rect x="680" y="188" width="678" height="44" rx="6" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="694" y="206" font-size="11" fill="#64748B">Total tips collected:</text>
+  <text x="820" y="206" font-size="11" font-weight="700" fill="#10B981">$618.90 card</text>
+  <text x="892" y="206" font-size="11" fill="#64748B">+</text>
+  <text x="904" y="206" font-size="11" font-weight="700" fill="#10B981">$42.00 cash declared</text>
+  <text x="1033" y="206" font-size="11" fill="#64748B">=</text>
+  <text x="1043" y="206" font-size="12" font-weight="700" fill="#F1F5F9">$660.90</text>
+  <text x="694" y="222" font-size="11" fill="#64748B">Auto-grat collected:</text>
+  <text x="820" y="222" font-size="11" font-weight="700" fill="#8B5CF6">$186.40</text>
+  <text x="877" y="222" font-size="10" fill="#64748B">(separate pool)</text>
+
+  <!-- == SERVER BREAKDOWN TABLE == -->
+  <text x="686" y="250" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">SERVER BREAKDOWN</text>
+  <rect x="680" y="254" width="678" height="1" fill="#2D3148"/>
+
+  <!-- Table header -->
+  <rect x="680" y="255" width="678" height="22" fill="#1E2240"/>
+  <text x="686" y="270" font-size="9" font-weight="700" fill="#64748B">SERVER</text>
+  <text x="740" y="270" font-size="9" font-weight="700" fill="#64748B">SALES</text>
+  <text x="786" y="270" font-size="9" font-weight="700" fill="#64748B">CARD TIPS</text>
+  <text x="843" y="270" font-size="9" font-weight="700" fill="#64748B">CASH</text>
+  <text x="885" y="270" font-size="9" font-weight="700" fill="#64748B">TOTAL</text>
+  <text x="930" y="270" font-size="9" font-weight="700" fill="#64748B">KEEPS 80%</text>
+  <text x="986" y="270" font-size="9" font-weight="700" fill="#64748B">BUSSER 8%</text>
+  <text x="1043" y="270" font-size="9" font-weight="700" fill="#64748B">BAR 7%</text>
+  <text x="1093" y="270" font-size="9" font-weight="700" fill="#64748B">HOST 5%</text>
+  <text x="1348" y="270" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">NET TO SVR</text>
+
+  <!-- Marcus row -->
+  <rect x="680" y="277" width="678" height="26" fill="#1A1D2E"/>
+  <rect x="680" y="303" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="294" font-size="11" fill="#F1F5F9">Marcus</text>
+  <text x="740" y="294" font-size="11" fill="#94A3B8">$892</text>
+  <text x="786" y="294" font-size="11" fill="#94A3B8">$178.40</text>
+  <text x="843" y="294" font-size="11" fill="#94A3B8">$10.00</text>
+  <text x="885" y="294" font-size="11" fill="#F1F5F9">$188.40</text>
+  <text x="980" y="294" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$150.72</text>
+  <text x="1038" y="294" font-size="11" fill="#F59E0B" text-anchor="end">$15.07</text>
+  <text x="1086" y="294" font-size="11" fill="#8B5CF6" text-anchor="end">$12.69</text>
+  <text x="1134" y="294" font-size="11" fill="#F97316" text-anchor="end">$9.42</text>
+  <text x="1348" y="294" font-size="11" font-weight="700" fill="#10B981" text-anchor="end">$150.72</text>
+
+  <!-- Sarah row -->
+  <rect x="680" y="304" width="678" height="26" fill="#13162A"/>
+  <rect x="680" y="330" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="321" font-size="11" fill="#F1F5F9">Sarah</text>
+  <text x="740" y="321" font-size="11" fill="#94A3B8">$720</text>
+  <text x="786" y="321" font-size="11" fill="#94A3B8">$144.00</text>
+  <text x="843" y="321" font-size="11" fill="#94A3B8">$12.00</text>
+  <text x="885" y="321" font-size="11" fill="#F1F5F9">$156.00</text>
+  <text x="980" y="321" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$124.80</text>
+  <text x="1038" y="321" font-size="11" fill="#F59E0B" text-anchor="end">$12.48</text>
+  <text x="1086" y="321" font-size="11" fill="#8B5CF6" text-anchor="end">$10.92</text>
+  <text x="1134" y="321" font-size="11" fill="#F97316" text-anchor="end">$7.80</text>
+  <text x="1348" y="321" font-size="11" font-weight="700" fill="#10B981" text-anchor="end">$124.80</text>
+
+  <!-- Tyler row -->
+  <rect x="680" y="331" width="678" height="26" fill="#1A1D2E"/>
+  <rect x="680" y="357" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="348" font-size="11" fill="#F1F5F9">Tyler</text>
+  <text x="740" y="348" font-size="11" fill="#94A3B8">$640</text>
+  <text x="786" y="348" font-size="11" fill="#94A3B8">$128.00</text>
+  <text x="843" y="348" font-size="11" fill="#94A3B8">$8.00</text>
+  <text x="885" y="348" font-size="11" fill="#F1F5F9">$136.00</text>
+  <text x="980" y="348" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$108.80</text>
+  <text x="1038" y="348" font-size="11" fill="#F59E0B" text-anchor="end">$10.88</text>
+  <text x="1086" y="348" font-size="11" fill="#8B5CF6" text-anchor="end">$9.52</text>
+  <text x="1134" y="348" font-size="11" fill="#F97316" text-anchor="end">$6.80</text>
+  <text x="1348" y="348" font-size="11" font-weight="700" fill="#10B981" text-anchor="end">$108.80</text>
+
+  <!-- Jennifer row -->
+  <rect x="680" y="358" width="678" height="26" fill="#13162A"/>
+  <rect x="680" y="384" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="375" font-size="11" fill="#F1F5F9">Jennifer</text>
+  <text x="740" y="375" font-size="11" fill="#94A3B8">$580</text>
+  <text x="786" y="375" font-size="11" fill="#94A3B8">$115.20</text>
+  <text x="843" y="375" font-size="11" fill="#94A3B8">$12.00</text>
+  <text x="885" y="375" font-size="11" fill="#F1F5F9">$127.20</text>
+  <text x="980" y="375" font-size="11" font-weight="600" fill="#10B981" text-anchor="end">$101.76</text>
+  <text x="1038" y="375" font-size="11" fill="#F59E0B" text-anchor="end">$10.18</text>
+  <text x="1086" y="375" font-size="11" fill="#8B5CF6" text-anchor="end">$8.90</text>
+  <text x="1134" y="375" font-size="11" fill="#F97316" text-anchor="end">$6.36</text>
+  <text x="1348" y="375" font-size="11" font-weight="700" fill="#10B981" text-anchor="end">$101.76</text>
+
+  <!-- TOTAL row -->
+  <rect x="680" y="385" width="678" height="28" fill="#1E2240"/>
+  <rect x="680" y="413" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="403" font-size="11" font-weight="700" fill="#F1F5F9">TOTAL</text>
+  <text x="740" y="403" font-size="11" font-weight="700" fill="#F1F5F9">$2,832</text>
+  <text x="786" y="403" font-size="11" font-weight="700" fill="#F1F5F9">$565.60</text>
+  <text x="843" y="403" font-size="11" font-weight="700" fill="#F1F5F9">$42.00</text>
+  <text x="885" y="403" font-size="11" font-weight="700" fill="#F1F5F9">$607.60</text>
+  <text x="980" y="403" font-size="11" font-weight="700" fill="#10B981" text-anchor="end">$486.08</text>
+  <text x="1038" y="403" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="end">$48.61</text>
+  <text x="1086" y="403" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="end">$42.03</text>
+  <text x="1134" y="403" font-size="11" font-weight="700" fill="#F97316" text-anchor="end">$30.38</text>
+  <text x="1348" y="403" font-size="11" font-weight="700" fill="#10B981" text-anchor="end">$486.08</text>
+
+  <!-- == SUPPORT STAFF DISTRIBUTION == -->
+  <text x="686" y="434" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">SUPPORT STAFF DISTRIBUTION</text>
+  <rect x="680" y="438" width="678" height="1" fill="#2D3148"/>
+
+  <!-- Table header -->
+  <rect x="680" y="439" width="678" height="20" fill="#1E2240"/>
+  <text x="686" y="453" font-size="9" font-weight="700" fill="#64748B">STAFF MEMBER</text>
+  <text x="820" y="453" font-size="9" font-weight="700" fill="#64748B">ROLE</text>
+  <text x="920" y="453" font-size="9" font-weight="700" fill="#64748B">ASSIGNMENT</text>
+  <text x="1348" y="453" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">TOTAL RECEIVED</text>
+
+  <!-- Alex row -->
+  <rect x="680" y="459" width="678" height="24" fill="#1A1D2E"/>
+  <rect x="680" y="483" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="476" font-size="11" fill="#F1F5F9">Alex</text>
+  <rect x="815" y="462" width="48" height="16" rx="8" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1"/>
+  <text x="839" y="474" font-size="10" fill="#F59E0B" text-anchor="middle">Busser</text>
+  <text x="920" y="476" font-size="11" fill="#94A3B8">Worked with Marcus + Sarah</text>
+  <text x="1348" y="476" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="end">$27.55</text>
+
+  <!-- Jordan row -->
+  <rect x="680" y="484" width="678" height="24" fill="#13162A"/>
+  <rect x="680" y="508" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="501" font-size="11" fill="#F1F5F9">Jordan</text>
+  <rect x="815" y="487" width="48" height="16" rx="8" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1"/>
+  <text x="839" y="499" font-size="10" fill="#F59E0B" text-anchor="middle">Busser</text>
+  <text x="920" y="501" font-size="11" fill="#94A3B8">Worked with Tyler + Jennifer</text>
+  <text x="1348" y="501" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="end">$21.06</text>
+
+  <!-- Sam row -->
+  <rect x="680" y="509" width="678" height="24" fill="#1A1D2E"/>
+  <rect x="680" y="533" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="526" font-size="11" fill="#F1F5F9">Sam</text>
+  <rect x="815" y="512" width="62" height="16" rx="8" fill="#8B5CF6" fill-opacity="0.15" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="846" y="524" font-size="10" fill="#8B5CF6" text-anchor="middle">Bartender</text>
+  <text x="920" y="526" font-size="11" fill="#94A3B8">Bar sales to all servers</text>
+  <text x="1348" y="526" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="end">$42.03</text>
+
+  <!-- Kim row -->
+  <rect x="680" y="534" width="678" height="24" fill="#13162A"/>
+  <rect x="680" y="558" width="678" height="1" fill="#2D3148"/>
+  <text x="686" y="551" font-size="11" fill="#F1F5F9">Kim</text>
+  <rect x="815" y="537" width="38" height="16" rx="8" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="1"/>
+  <text x="834" y="549" font-size="10" fill="#F97316" text-anchor="middle">Host</text>
+  <text x="920" y="551" font-size="11" fill="#94A3B8">Seated all tables this shift</text>
+  <text x="1348" y="551" font-size="11" font-weight="700" fill="#F97316" text-anchor="end">$30.38</text>
+
+  <!-- == AUTO-GRAT POOL == -->
+  <rect x="680" y="566" width="678" height="108" rx="6" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="694" y="584" font-size="11" font-weight="700" fill="#8B5CF6">AUTO-GRAT POOL (Separate)</text>
+  <rect x="680" y="588" width="678" height="1" fill="#2D3148"/>
+  <text x="694" y="603" font-size="11" fill="#94A3B8">Total auto-grat collected:</text>
+  <text x="900" y="603" font-size="11" font-weight="700" fill="#F1F5F9">$186.40</text>
+  <text x="694" y="618" font-size="11" fill="#94A3B8">Distribution:</text>
+  <text x="900" y="618" font-size="11" fill="#F1F5F9">70% servers / 15% bussers / 15% hosts</text>
+  <text x="694" y="633" font-size="11" fill="#64748B">Server share:</text>
+  <text x="900" y="633" font-size="11" font-weight="600" fill="#10B981">$130.48</text>
+  <text x="1000" y="633" font-size="10" fill="#64748B">(split by covers served)</text>
+  <text x="694" y="648" font-size="11" fill="#64748B">Busser share:</text>
+  <text x="900" y="648" font-size="11" font-weight="600" fill="#F59E0B">$27.96</text>
+  <text x="694" y="663" font-size="11" fill="#64748B">Host share:</text>
+  <text x="900" y="663" font-size="11" font-weight="600" fill="#F97316">$27.96</text>
+
+  <!-- IRS note -->
+  <rect x="680" y="680" width="678" height="24" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="694" y="696" font-size="10" fill="#64748B">📋 IRS 8027: Total tips reported available for Form 8027 (large restaurant reporting).</text>
+
+  <!-- == EXPORT BUTTONS == -->
+  <text x="686" y="724" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">EXPORT &amp; PAYROLL</text>
+  <rect x="680" y="728" width="678" height="1" fill="#2D3148"/>
+
+  <!-- Export Tip Report button -->
+  <rect x="680" y="735" width="160" height="36" rx="7" fill="#F59E0B"/>
+  <text x="760" y="758" font-size="12" font-weight="700" fill="#0F1117" text-anchor="middle">Export Tip Report</text>
+
+  <!-- Send to Gusto button -->
+  <rect x="848" y="735" width="140" height="36" rx="7" fill="#10B981"/>
+  <text x="918" y="758" font-size="12" font-weight="700" fill="#0F1117" text-anchor="middle">Send to Gusto</text>
+
+  <!-- Print Declarations button -->
+  <rect x="996" y="735" width="160" height="36" rx="7" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="1076" y="758" font-size="12" fill="#94A3B8" text-anchor="middle">Print Declarations</text>
+
+  <text x="680" y="784" font-size="10" fill="#64748B">CSV format • Gusto earnings template • Individual tip declaration forms per server</text>
+
+  <!-- ===== WORKFLOW INTEGRATION BANNER (full width bottom) ===== -->
+  <rect x="208" y="956" width="1150" height="60" rx="6" fill="#0D0F1A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="224" y="972" font-size="10" font-weight="700" fill="#F59E0B">WORKFLOW INTEGRATION</text>
+  <text x="224" y="986" font-size="9" fill="#64748B">pos_tip_pool_config: venue_id, model (tip_share|pool|individual), rules jsonb (role→pct)  ·  pos_tip_distributions: shift_id, from_staff_id, to_staff_id, to_role, tip_source (card|cash|auto_grat), amount_cents</text>
+  <text x="224" y="999" font-size="9" fill="#64748B">calculate_tip_pool(shift_id) Edge Function → runs at shift close or manager trigger  ·  Gusto export: /api/pos/payroll/tip-export?shift_id=X  ·  Cash tip: pos_cash_tip_declarations  ·  IRS 8027: report_8027(year)</text>
+
+</svg>

@@ -1,0 +1,498 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BACKGROUND
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TOP NAV BAR  (h=56)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
+  <rect x="0" y="56" width="1366" height="1" fill="#2D3148"/>
+
+  <!-- Logo -->
+  <text x="18" y="35" fill="#F59E0B" font-size="18" font-weight="700">Synalux POS</text>
+
+  <!-- Nav tabs -->
+  <!-- Register (active) -->
+  <rect x="170" y="10" width="96" height="36" rx="6" fill="#F59E0B"/>
+  <text x="218" y="33" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">Register</text>
+  <!-- Tables -->
+  <rect x="272" y="10" width="80" height="36" rx="6" fill="none"/>
+  <text x="312" y="33" fill="#94A3B8" font-size="13" text-anchor="middle">Tables</text>
+  <!-- KDS -->
+  <rect x="358" y="10" width="64" height="36" rx="6" fill="none"/>
+  <text x="390" y="33" fill="#94A3B8" font-size="13" text-anchor="middle">KDS</text>
+  <!-- Reports -->
+  <rect x="428" y="10" width="76" height="36" rx="6" fill="none"/>
+  <text x="466" y="33" fill="#94A3B8" font-size="13" text-anchor="middle">Reports</text>
+
+  <!-- Right side: OFFLINE MODE pill -->
+  <rect x="820" y="13" width="148" height="30" rx="15" fill="#F59E0B"/>
+  <text x="894" y="33" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">● OFFLINE MODE</text>
+
+  <!-- Since time -->
+  <text x="978" y="33" fill="#94A3B8" font-size="12">Since 6:41 PM</text>
+
+  <!-- Wifi-slash icon (red) -->
+  <g transform="translate(1088,14)">
+    <!-- wifi arcs struck through -->
+    <path d="M14 6 Q14 0 28 0 Q42 0 42 6" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <path d="M8 12 Q14 4 28 4 Q42 4 48 12" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <path d="M2 18 Q14 8 28 8 Q42 8 54 18" fill="none" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="28" cy="26" r="3" fill="#EF4444"/>
+    <!-- Slash line -->
+    <line x1="4" y1="2" x2="52" y2="30" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Clock -->
+  <text x="1160" y="22" fill="#94A3B8" font-size="11">Wednesday</text>
+  <text x="1160" y="38" fill="#F1F5F9" font-size="14" font-weight="600">6:41 PM</text>
+
+  <!-- Settings + bell -->
+  <text x="1316" y="37" fill="#94A3B8" font-size="20">⚙</text>
+  <text x="1342" y="37" fill="#94A3B8" font-size="20">🔔</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       OFFLINE ALERT BANNER  (y=57, h=48)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="57" width="1366" height="48" fill="#F59E0B"/>
+  <text x="683" y="86" fill="#0F1117" font-size="14" font-weight="700" text-anchor="middle">⚠  Internet connection lost at 6:41 PM — Operating in offline mode. Your data is safe and being saved locally.</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       LEFT COLUMN — Categories  (x=0, w=240, content starts y=105)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="105" width="240" height="919" fill="#13162A"/>
+  <rect x="240" y="105" width="1" height="919" fill="#2D3148"/>
+
+  <!-- Header row -->
+  <text x="14" y="128" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">MENU CATEGORIES</text>
+  <!-- Amber "Cached" badge -->
+  <rect x="124" y="114" width="52" height="18" rx="9" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="150" y="127" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">Cached</text>
+  <!-- Last sync note -->
+  <text x="14" y="147" fill="#64748B" font-size="10">Last menu sync: 6:39 PM</text>
+
+  <!-- Category: Burgers (active) -->
+  <rect x="8" y="154" width="224" height="44" rx="8" fill="#F59E0B"/>
+  <text x="26" y="172" font-size="16">🍔</text>
+  <text x="52" y="181" fill="#0F1117" font-size="14" font-weight="700">Burgers</text>
+
+  <!-- Apps -->
+  <rect x="8" y="204" width="224" height="44" rx="8" fill="#1E2235"/>
+  <text x="26" y="222" font-size="16">🍟</text>
+  <text x="52" y="231" fill="#CBD5E1" font-size="14">Apps</text>
+
+  <!-- Drinks -->
+  <rect x="8" y="254" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="272" font-size="16">🥤</text>
+  <text x="52" y="281" fill="#CBD5E1" font-size="14">Drinks</text>
+
+  <!-- Salads -->
+  <rect x="8" y="304" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="322" font-size="16">🥗</text>
+  <text x="52" y="331" fill="#CBD5E1" font-size="14">Salads</text>
+
+  <!-- Desserts -->
+  <rect x="8" y="354" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="372" font-size="16">🍰</text>
+  <text x="52" y="381" fill="#CBD5E1" font-size="14">Desserts</text>
+
+  <!-- Specials -->
+  <rect x="8" y="404" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="422" font-size="16">⭐</text>
+  <text x="52" y="431" fill="#CBD5E1" font-size="14">Specials</text>
+
+  <!-- Combos -->
+  <rect x="8" y="454" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="472" font-size="16">🎁</text>
+  <text x="52" y="481" fill="#CBD5E1" font-size="14">Combos</text>
+
+  <!-- Alcohol (grayed — age check required) -->
+  <rect x="8" y="504" width="224" height="44" rx="8" fill="none" opacity="0.45"/>
+  <text x="26" y="522" font-size="16" opacity="0.45">🍺</text>
+  <text x="52" y="531" fill="#64748B" font-size="14">Alcohol</text>
+  <text x="52" y="545" fill="#EF4444" font-size="9">Age check — online req.</text>
+
+  <!-- Kids -->
+  <rect x="8" y="554" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="572" font-size="16">🧒</text>
+  <text x="52" y="581" fill="#CBD5E1" font-size="14">Kids</text>
+
+  <!-- Soups -->
+  <rect x="8" y="604" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="622" font-size="16">🍲</text>
+  <text x="52" y="631" fill="#CBD5E1" font-size="14">Soups</text>
+
+  <!-- Sandwiches -->
+  <rect x="8" y="654" width="224" height="44" rx="8" fill="none"/>
+  <text x="26" y="672" font-size="16">🥪</text>
+  <text x="52" y="681" fill="#CBD5E1" font-size="14">Sandwiches</text>
+
+  <!-- Offline indicator footer note -->
+  <rect x="8" y="710" width="224" height="34" rx="6" fill="#F59E0B" fill-opacity="0.1" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="120" y="731" fill="#F59E0B" font-size="10" text-anchor="middle">All categories cached ✓</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CENTER COLUMN — Product Grid  (x=241, w=558)
+  ═══════════════════════════════════════════════════════════════ -->
+  <!-- Search bar -->
+  <rect x="253" y="113" width="330" height="36" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="270" y="136" fill="#64748B" font-size="14">🔍  Search burgers...</text>
+
+  <!-- Sort/filter -->
+  <rect x="591" y="113" width="90" height="36" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="636" y="136" fill="#94A3B8" font-size="13" text-anchor="middle">Filter ▾</text>
+  <rect x="689" y="113" width="90" height="36" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="734" y="136" fill="#94A3B8" font-size="13" text-anchor="middle">Sort ▾</text>
+
+  <!-- Offline-ready indicator legend -->
+  <rect x="253" y="157" width="574" height="26" rx="5" fill="#F59E0B" fill-opacity="0.08" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="540" y="174" fill="#F59E0B" font-size="11" text-anchor="middle">● Offline-ready items — all cached and available for ordering</text>
+
+  <!-- Product grid: 3 columns × 3 rows  (item w=178, h=118, gap=4) -->
+  <!-- Row 1 -->
+
+  <!-- Classic Burger -->
+  <rect x="253" y="191" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="253" y="191" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="253" y="237" width="178" height="22" fill="#252840"/>
+  <text x="342" y="232" fill="#94A3B8" font-size="22" text-anchor="middle">🍔</text>
+  <text x="263" y="278" fill="#F1F5F9" font-size="13" font-weight="600">Classic Burger</text>
+  <text x="263" y="295" fill="#F59E0B" font-size="13" font-weight="700">$14.99</text>
+  <circle cx="417" cy="200" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="417" y="204" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- BBQ Bacon Burger -->
+  <rect x="439" y="191" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="439" y="191" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="439" y="237" width="178" height="22" fill="#252840"/>
+  <text x="528" y="232" fill="#94A3B8" font-size="22" text-anchor="middle">🥓</text>
+  <text x="449" y="278" fill="#F1F5F9" font-size="13" font-weight="600">BBQ Bacon Burger</text>
+  <text x="449" y="295" fill="#F59E0B" font-size="13" font-weight="700">$17.99</text>
+  <circle cx="603" cy="200" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="603" y="204" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Mushroom Swiss -->
+  <rect x="625" y="191" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="625" y="191" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="625" y="237" width="178" height="22" fill="#252840"/>
+  <text x="714" y="232" fill="#94A3B8" font-size="22" text-anchor="middle">🍄</text>
+  <text x="635" y="278" fill="#F1F5F9" font-size="13" font-weight="600">Mushroom Swiss</text>
+  <text x="635" y="295" fill="#F59E0B" font-size="13" font-weight="700">$16.49</text>
+  <circle cx="789" cy="200" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="789" y="204" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Row 2 -->
+  <!-- Double Smash -->
+  <rect x="253" y="317" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="253" y="317" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="253" y="363" width="178" height="22" fill="#252840"/>
+  <text x="342" y="358" fill="#94A3B8" font-size="22" text-anchor="middle">🫓</text>
+  <text x="263" y="404" fill="#F1F5F9" font-size="13" font-weight="600">Double Smash</text>
+  <text x="263" y="421" fill="#F59E0B" font-size="13" font-weight="700">$19.99</text>
+  <circle cx="417" cy="326" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="417" y="330" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Veggie Burger -->
+  <rect x="439" y="317" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="439" y="317" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="439" y="363" width="178" height="22" fill="#252840"/>
+  <text x="528" y="358" fill="#94A3B8" font-size="22" text-anchor="middle">🥬</text>
+  <text x="449" y="404" fill="#F1F5F9" font-size="13" font-weight="600">Veggie Burger</text>
+  <text x="449" y="421" fill="#10B981" font-size="13" font-weight="700">$13.49</text>
+  <circle cx="603" cy="326" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="603" y="330" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Craft Beer — GRAYED OUT (requires online age check) -->
+  <rect x="625" y="317" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#EF4444" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <rect x="625" y="317" width="178" height="68" rx="8" fill="#1E1A2E" opacity="0.6"/>
+  <rect x="625" y="363" width="178" height="22" fill="#1E1A2E" opacity="0.6"/>
+  <text x="714" y="358" fill="#64748B" font-size="22" text-anchor="middle" opacity="0.5">🍺</text>
+  <text x="635" y="401" fill="#64748B" font-size="13" font-weight="600">Craft IPA 16oz</text>
+  <text x="635" y="417" fill="#64748B" font-size="12">Age verification</text>
+  <text x="635" y="430" fill="#EF4444" font-size="10">Requires connection</text>
+
+  <!-- Row 3 -->
+  <!-- Slider Trio -->
+  <rect x="253" y="443" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="253" y="443" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="253" y="489" width="178" height="22" fill="#252840"/>
+  <text x="342" y="484" fill="#94A3B8" font-size="22" text-anchor="middle">🫙</text>
+  <text x="263" y="530" fill="#F1F5F9" font-size="13" font-weight="600">Slider Trio</text>
+  <text x="263" y="547" fill="#F59E0B" font-size="13" font-weight="700">$15.99</text>
+  <circle cx="417" cy="452" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="417" y="456" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Spicy Habanero -->
+  <rect x="439" y="443" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="439" y="443" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="439" y="489" width="178" height="22" fill="#252840"/>
+  <text x="528" y="484" fill="#94A3B8" font-size="22" text-anchor="middle">🌶</text>
+  <text x="449" y="530" fill="#F1F5F9" font-size="13" font-weight="600">Spicy Habanero</text>
+  <text x="449" y="547" fill="#F59E0B" font-size="13" font-weight="700">$16.99</text>
+  <circle cx="603" cy="452" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="603" y="456" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Truffle Burger -->
+  <rect x="625" y="443" width="178" height="118" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="625" y="443" width="178" height="68" rx="8" fill="#252840"/>
+  <rect x="625" y="489" width="178" height="22" fill="#252840"/>
+  <text x="714" y="484" fill="#94A3B8" font-size="22" text-anchor="middle">🍄</text>
+  <text x="635" y="530" fill="#F1F5F9" font-size="13" font-weight="600">Truffle Burger</text>
+  <text x="635" y="547" fill="#F59E0B" font-size="13" font-weight="700">$22.99</text>
+  <circle cx="789" cy="452" r="7" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1"/>
+  <text x="789" y="456" fill="#F59E0B" font-size="8" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Tooltip for grayed item -->
+  <rect x="570" y="378" width="232" height="52" rx="6" fill="#1A1D2E" stroke="#EF4444" stroke-width="1.5"/>
+  <polygon points="650,430 660,442 670,430" fill="#1A1D2E" stroke="#EF4444" stroke-width="1"/>
+  <rect x="570" y="379" width="232" height="51" rx="6" fill="#1A1D2E"/>
+  <text x="686" y="398" fill="#EF4444" font-size="11" font-weight="700" text-anchor="middle">Requires online verification</text>
+  <text x="686" y="413" fill="#94A3B8" font-size="10" text-anchor="middle">Alcohol age check — reconnect</text>
+  <text x="686" y="426" fill="#94A3B8" font-size="10" text-anchor="middle">to sell this item</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       RIGHT COLUMN — Order + Offline Panel  (x=801, w=565)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="801" y="105" width="565" height="919" fill="#0F1117"/>
+  <rect x="801" y="105" width="1" height="919" fill="#2D3148"/>
+
+  <!-- ORDER TICKET (top 58%) y=105..640 -->
+  <rect x="809" y="112" width="549" height="520" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Order header -->
+  <rect x="809" y="112" width="549" height="44" rx="10" fill="#252840"/>
+  <rect x="809" y="134" width="549" height="22" fill="#252840"/>
+  <text x="826" y="139" fill="#F1F5F9" font-size="14" font-weight="700">Active Order</text>
+  <text x="826" y="152" fill="#64748B" font-size="11">Table 7 · Dine-In · John S.</text>
+  <text x="1214" y="139" fill="#F59E0B" font-size="11" font-weight="600">3 items</text>
+  <text x="1214" y="152" fill="#64748B" font-size="11">Guest check</text>
+
+  <!-- Divider -->
+  <rect x="809" y="156" width="549" height="1" fill="#2D3148"/>
+
+  <!-- Order items -->
+  <!-- Item 1: Classic Burger -->
+  <rect x="820" y="165" width="528" height="48" rx="6" fill="#1E2235"/>
+  <rect x="820" y="165" width="4" height="48" rx="2" fill="#F59E0B"/>
+  <text x="834" y="183" fill="#F1F5F9" font-size="13" font-weight="600">Classic Burger</text>
+  <text x="834" y="199" fill="#64748B" font-size="11">Qty: 1  ·  No onions, extra pickles</text>
+  <text x="1300" y="192" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="end">$14.99</text>
+  <text x="834" y="209" fill="#10B981" font-size="10">● Cached</text>
+
+  <!-- Item 2: Craft Beer -->
+  <rect x="820" y="219" width="528" height="48" rx="6" fill="#1E2235"/>
+  <rect x="820" y="219" width="4" height="48" rx="2" fill="#F59E0B"/>
+  <text x="834" y="237" fill="#F1F5F9" font-size="13" font-weight="600">Craft Beer — Pale Ale 16oz</text>
+  <text x="834" y="253" fill="#64748B" font-size="11">Qty: 1  ·  Age verified pre-outage</text>
+  <text x="1300" y="246" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="end">$9.00</text>
+  <text x="834" y="263" fill="#F59E0B" font-size="10">⚠ Age-verified in session</text>
+
+  <!-- Item 3: Caesar Salad -->
+  <rect x="820" y="273" width="528" height="48" rx="6" fill="#1E2235"/>
+  <rect x="820" y="273" width="4" height="48" rx="2" fill="#F59E0B"/>
+  <text x="834" y="291" fill="#F1F5F9" font-size="13" font-weight="600">Caesar Salad</text>
+  <text x="834" y="307" fill="#64748B" font-size="11">Qty: 1  ·  Dressing on side</text>
+  <text x="1300" y="300" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="end">$17.01</text>
+  <text x="834" y="317" fill="#10B981" font-size="10">● Cached</text>
+
+  <!-- Totals -->
+  <rect x="809" y="329" width="549" height="1" fill="#2D3148"/>
+  <text x="1080" y="352" fill="#94A3B8" font-size="13" text-anchor="end">Subtotal</text>
+  <text x="1300" y="352" fill="#F1F5F9" font-size="13" text-anchor="end">$41.00</text>
+  <text x="1080" y="372" fill="#94A3B8" font-size="13" text-anchor="end">Tax (8.875%)</text>
+  <text x="1300" y="372" fill="#F1F5F9" font-size="13" text-anchor="end">$3.64</text>
+  <rect x="820" y="380" width="528" height="1" fill="#2D3148"/>
+  <text x="1080" y="402" fill="#F1F5F9" font-size="15" font-weight="700" text-anchor="end">Total</text>
+  <text x="1300" y="402" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="end">$44.64</text>
+
+  <!-- Divider before payment buttons -->
+  <rect x="809" y="415" width="549" height="1" fill="#2D3148"/>
+
+  <!-- Payment buttons - Row 1: Cash / Card(Offline) / Gift Card -->
+  <!-- Cash — fully functional green -->
+  <rect x="820" y="424" width="166" height="48" rx="8" fill="#10B981"/>
+  <text x="903" y="444" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">💵 Cash</text>
+  <text x="903" y="460" fill="#fff" font-size="10" text-anchor="middle">Full functionality</text>
+
+  <!-- Card (Offline) — amber with indicator -->
+  <rect x="993" y="424" width="166" height="48" rx="8" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1076" y="444" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="middle">💳 Card (Offline)</text>
+  <text x="1076" y="460" fill="#F59E0B" font-size="10" text-anchor="middle">Batch mode · Up to $200</text>
+
+  <!-- Gift Card — amber with caveat -->
+  <rect x="1166" y="424" width="183" height="48" rx="8" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1257" y="444" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="middle">🎁 Gift Card</text>
+  <text x="1257" y="460" fill="#F59E0B" font-size="10" text-anchor="middle">Physical only offline</text>
+
+  <!-- Payment buttons - Row 2: Split / QR Order / Phone Order -->
+  <!-- Split — functional -->
+  <rect x="820" y="480" width="166" height="44" rx="8" fill="#8B5CF6" fill-opacity="0.2" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="903" y="507" fill="#8B5CF6" font-size="13" font-weight="600" text-anchor="middle">⚡ Split</text>
+
+  <!-- QR Order — grayed out -->
+  <rect x="993" y="480" width="166" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1" opacity="0.5"/>
+  <text x="1076" y="499" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">📱 QR Order</text>
+  <text x="1076" y="515" fill="#EF4444" font-size="10" text-anchor="middle">Requires connection</text>
+
+  <!-- Phone Order — grayed out -->
+  <rect x="1166" y="480" width="183" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1" opacity="0.5"/>
+  <text x="1257" y="499" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">📞 Phone Order</text>
+  <text x="1257" y="515" fill="#EF4444" font-size="10" text-anchor="middle">Requires connection</text>
+
+  <!-- Card offline tooltip -->
+  <rect x="957" y="473" width="242" height="44" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="1060" y="469" width="12" height="6" fill="#1A1D2E"/>
+  <line x1="1066" y1="469" x2="1060" y2="473" stroke="#F59E0B" stroke-width="1"/>
+  <line x1="1066" y1="469" x2="1072" y2="473" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1078" y="488" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">Stripe offline mode active</text>
+  <text x="1078" y="501" fill="#94A3B8" font-size="10" text-anchor="middle">Transactions batch on reconnect</text>
+  <text x="1078" y="513" fill="#94A3B8" font-size="10" text-anchor="middle">Limit: $200 per transaction</text>
+
+  <!-- Charge + Void buttons -->
+  <rect x="820" y="534" width="340" height="52" rx="8" fill="#F59E0B"/>
+  <text x="990" y="556" fill="#0F1117" font-size="15" font-weight="800" text-anchor="middle">Charge $44.64</text>
+  <text x="990" y="572" fill="#0F1117" font-size="10" text-anchor="middle">Select payment method above</text>
+
+  <rect x="1168" y="534" width="181" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1258" y="565" fill="#94A3B8" font-size="14" font-weight="600" text-anchor="middle">🗑 Void Order</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       OFFLINE STATUS PANEL (bottom 38% of right col)  y=648..940
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="809" y="645" width="549" height="286" rx="10" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+
+  <!-- Panel header -->
+  <rect x="809" y="645" width="549" height="38" rx="10" fill="#F59E0B" fill-opacity="0.1"/>
+  <rect x="809" y="665" width="549" height="18" fill="#F59E0B" fill-opacity="0.1"/>
+  <text x="826" y="668" fill="#F59E0B" font-size="13" font-weight="700">Offline Mode — What Still Works</text>
+  <rect x="809" y="683" width="549" height="1" fill="#F59E0B" fill-opacity="0.3"/>
+
+  <!-- Two-column lists -->
+  <!-- LEFT: Available Offline -->
+  <text x="826" y="703" fill="#10B981" font-size="11" font-weight="700">✓ Available Offline</text>
+  <text x="826" y="720" fill="#10B981" font-size="11">✓</text><text x="840" y="720" fill="#F1F5F9" font-size="11"> Register &amp; order entry</text>
+  <text x="826" y="736" fill="#10B981" font-size="11">✓</text><text x="840" y="736" fill="#F1F5F9" font-size="11"> Cash payments</text>
+  <text x="826" y="752" fill="#10B981" font-size="11">✓</text><text x="840" y="752" fill="#F1F5F9" font-size="11"> Card payments (batch, ≤$200)</text>
+  <text x="826" y="768" fill="#10B981" font-size="11">✓</text><text x="840" y="768" fill="#F1F5F9" font-size="11"> Kitchen display (KDS — local LAN)</text>
+  <text x="826" y="784" fill="#10B981" font-size="11">✓</text><text x="840" y="784" fill="#F1F5F9" font-size="11"> Receipt printing (USB/LAN)</text>
+  <text x="826" y="800" fill="#10B981" font-size="11">✓</text><text x="840" y="800" fill="#F1F5F9" font-size="11"> Tax calculations</text>
+  <text x="826" y="816" fill="#10B981" font-size="11">✓</text><text x="840" y="816" fill="#F1F5F9" font-size="11"> Menu &amp; prices (cached)</text>
+  <text x="826" y="832" fill="#10B981" font-size="11">✓</text><text x="840" y="832" fill="#F1F5F9" font-size="11"> Table management</text>
+  <text x="826" y="848" fill="#10B981" font-size="11">✓</text><text x="840" y="848" fill="#F1F5F9" font-size="11"> Splits &amp; modifiers</text>
+
+  <!-- Divider between cols -->
+  <rect x="1075" y="693" width="1" height="162" fill="#2D3148"/>
+
+  <!-- RIGHT: Requires Connection -->
+  <text x="1090" y="703" fill="#EF4444" font-size="11" font-weight="700">✗ Requires Connection</text>
+  <text x="1090" y="720" fill="#EF4444" font-size="11">✗</text><text x="1104" y="720" fill="#94A3B8" font-size="11"> Cloud sync &amp; reports</text>
+  <text x="1090" y="736" fill="#EF4444" font-size="11">✗</text><text x="1104" y="736" fill="#94A3B8" font-size="11"> QR table ordering</text>
+  <text x="1090" y="752" fill="#EF4444" font-size="11">✗</text><text x="1104" y="752" fill="#94A3B8" font-size="11"> Phone/AI ordering</text>
+  <text x="1090" y="768" fill="#EF4444" font-size="11">✗</text><text x="1104" y="768" fill="#94A3B8" font-size="11"> Loyalty point sync</text>
+  <text x="1090" y="784" fill="#EF4444" font-size="11">✗</text><text x="1104" y="784" fill="#94A3B8" font-size="11"> Digital gift cards</text>
+  <text x="1090" y="800" fill="#EF4444" font-size="11">✗</text><text x="1104" y="800" fill="#94A3B8" font-size="11"> Online orders</text>
+  <text x="1090" y="816" fill="#EF4444" font-size="11">✗</text><text x="1104" y="816" fill="#94A3B8" font-size="11"> Staff auth (new logins)</text>
+  <text x="1090" y="832" fill="#EF4444" font-size="11">✗</text><text x="1104" y="832" fill="#94A3B8" font-size="11"> Menu schedule auto-switch</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       QUEUED TRANSACTIONS STRIP (full width, y=940, h=36)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="940" width="1366" height="36" fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="683" y="958" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">●</text>
+  <text x="700" y="958" fill="#F1F5F9" font-size="12" font-weight="700"> 3 transactions queued for sync —</text>
+  <text x="930" y="958" fill="#F59E0B" font-size="12" font-weight="700"> $127.50 pending upload</text>
+  <text x="1060" y="958" fill="#94A3B8" font-size="12"> — Will auto-sync when connection restores</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CENTER + LEFT BOTTOM AREA: Reconnection zone  (y=578..940)
+       Under center product grid column
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="241" y="578" width="558" height="362" fill="#0F1117"/>
+
+  <!-- Reconnection animation box -->
+  <rect x="253" y="588" width="534" height="198" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="520" y="613" fill="#94A3B8" font-size="12" font-weight="700" text-anchor="middle">Reconnection Monitor</text>
+  <rect x="253" y="620" width="534" height="1" fill="#2D3148"/>
+
+  <!-- WiFi stages: 0-bar, 1-bar, 2-bar, full -->
+  <!-- Stage 1: 0 bars (red) -->
+  <g transform="translate(290,640)">
+    <rect x="0" y="14" width="8" height="6" rx="1" fill="#EF4444" opacity="0.3"/>
+    <rect x="11" y="9" width="8" height="11" rx="1" fill="#EF4444" opacity="0.3"/>
+    <rect x="22" y="4" width="8" height="16" rx="1" fill="#EF4444" opacity="0.3"/>
+    <rect x="33" y="0" width="8" height="20" rx="1" fill="#EF4444" opacity="0.3"/>
+    <text x="20" y="32" fill="#EF4444" font-size="9" text-anchor="middle">No signal</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <text x="365" y="658" fill="#64748B" font-size="16">→</text>
+
+  <!-- Stage 2: 1 bar (orange) -->
+  <g transform="translate(390,640)">
+    <rect x="0" y="14" width="8" height="6" rx="1" fill="#F97316"/>
+    <rect x="11" y="9" width="8" height="11" rx="1" fill="#F97316" opacity="0.3"/>
+    <rect x="22" y="4" width="8" height="16" rx="1" fill="#F97316" opacity="0.3"/>
+    <rect x="33" y="0" width="8" height="20" rx="1" fill="#F97316" opacity="0.3"/>
+    <text x="20" y="32" fill="#F97316" font-size="9" text-anchor="middle">Detecting...</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <text x="465" y="658" fill="#64748B" font-size="16">→</text>
+
+  <!-- Stage 3: 2 bars (yellow) -->
+  <g transform="translate(490,640)">
+    <rect x="0" y="14" width="8" height="6" rx="1" fill="#F59E0B"/>
+    <rect x="11" y="9" width="8" height="11" rx="1" fill="#F59E0B"/>
+    <rect x="22" y="4" width="8" height="16" rx="1" fill="#F59E0B" opacity="0.3"/>
+    <rect x="33" y="0" width="8" height="20" rx="1" fill="#F59E0B" opacity="0.3"/>
+    <text x="20" y="32" fill="#F59E0B" font-size="9" text-anchor="middle">Connecting</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <text x="565" y="658" fill="#64748B" font-size="16">→</text>
+
+  <!-- Stage 4: Full (green) — current state -->
+  <g transform="translate(590,640)">
+    <rect x="0" y="14" width="8" height="6" rx="1" fill="#10B981"/>
+    <rect x="11" y="9" width="8" height="11" rx="1" fill="#10B981"/>
+    <rect x="22" y="4" width="8" height="16" rx="1" fill="#10B981"/>
+    <rect x="33" y="0" width="8" height="20" rx="1" fill="#10B981"/>
+    <circle cx="20" cy="42" r="8" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="1"/>
+    <text x="20" y="46" fill="#10B981" font-size="8" text-anchor="middle">✓</text>
+    <text x="20" y="57" fill="#10B981" font-size="9" text-anchor="middle">Connected!</text>
+  </g>
+
+  <!-- Sync progress bar -->
+  <text x="520" y="718" fill="#94A3B8" font-size="11" text-anchor="middle">Syncing 3 pending transactions...</text>
+  <rect x="280" y="726" width="480" height="10" rx="5" fill="#252840"/>
+  <rect x="280" y="726" width="288" height="10" rx="5" fill="#10B981"/>
+  <text x="576" y="736" fill="#10B981" font-size="10" text-anchor="end">60%</text>
+  <text x="580" y="736" fill="#64748B" font-size="10">of 3</text>
+
+  <!-- Success message -->
+  <rect x="280" y="748" width="480" height="32" rx="6" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-width="1"/>
+  <text x="520" y="768" fill="#10B981" font-size="11" font-weight="600" text-anchor="middle">✓  All data preserved — no action needed · Auto-sync on reconnect</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TECHNICAL DETAILS STRIP (full width, y=796..836)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="796" width="1366" height="40" fill="#0D0F1A"/>
+  <rect x="0" y="796" width="1366" height="1" fill="#2D3148"/>
+  <text x="12" y="810" fill="#64748B" font-size="9" font-weight="700">TECHNICAL</text>
+  <text x="12" y="824" fill="#64748B" font-size="9">Offline data: IndexedDB (service worker cache) · Stripe offline mode: card data encrypted locally, batch submitted on reconnect · KDS on LAN — uninterrupted WebSocket · pos_offline_queue table synced on reconnect · Menu cache: 24h expiry</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       WORKFLOW INTEGRATION BOX (left+center bottom area y=838..936)
+  ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="838" width="798" height="100" fill="#0F1117"/>
+  <rect x="6" y="844" width="786" height="88" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="20" y="862" fill="#F59E0B" font-size="10" font-weight="700">Service Worker / Integration Details</text>
+  <text x="20" y="878" fill="#64748B" font-size="9">SW caches: menu, prices, active orders, employee PINs (hashed). Stripe SDK offline: 200 txn limit, 30-day expiry.</text>
+  <text x="20" y="892" fill="#64748B" font-size="9">Reconnect flow: pos_offline_queue batch → Supabase → real-time recalc. Card declined on reconnect: manager alert + void flow.</text>
+  <text x="20" y="906" fill="#64748B" font-size="9">KDS: direct WebSocket on local IP (no cloud needed). Receipt printer: direct USB/LAN — independent of internet. Employee PINs: hashed locally.</text>
+  <text x="20" y="920" fill="#64748B" font-size="9">Menu schedule: manual override only in offline mode. Loyalty: queued locally, merged on reconnect. Digital gift card balance: read-only offline.</text>
+
+</svg>

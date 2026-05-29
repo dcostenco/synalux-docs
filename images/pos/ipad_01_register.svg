@@ -1,0 +1,416 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- Top nav bar -->
+  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
+  <rect x="0" y="56" width="1366" height="1" fill="#2D3050"/>
+  <!-- Status indicator -->
+  <circle cx="16" cy="28" r="7" fill="#22C55E"/>
+  <text x="30" y="33" fill="#22C55E" font-size="12" font-weight="600">LIVE</text>
+  <!-- Brand -->
+  <text x="60" y="35" fill="#F59E0B" font-size="18" font-weight="700">Synalux POS</text>
+  <!-- Center info -->
+  <text x="500" y="22" fill="#94A3B8" font-size="11">Register 1</text>
+  <text x="500" y="38" fill="#E2E8F0" font-size="13" font-weight="600">John S.  ·  Table 4 — Dine-In</text>
+  <!-- Time -->
+  <text x="1260" y="22" fill="#94A3B8" font-size="11">Wednesday</text>
+  <text x="1260" y="38" fill="#E2E8F0" font-size="14" font-weight="600">2:22 PM</text>
+  <!-- Icons -->
+  <text x="1320" y="37" fill="#94A3B8" font-size="20">⚙</text>
+  <text x="1345" y="37" fill="#94A3B8" font-size="20">🔔</text>
+
+  <!-- LEFT PANEL: Categories (200px wide) -->
+  <rect x="0" y="57" width="200" height="967" fill="#13162A"/>
+  <rect x="200" y="57" width="1" height="967" fill="#2D3050"/>
+
+  <!-- Category label -->
+  <text x="100" y="90" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">MENU</text>
+
+  <!-- Category items -->
+  <!-- Active category -->
+  <rect x="8" y="100" width="184" height="44" rx="8" fill="#F59E0B"/>
+  <text x="26" y="118" font-size="14">🍔</text>
+  <text x="50" y="127" fill="#0F1117" font-size="14" font-weight="700">Burgers</text>
+
+  <rect x="8" y="150" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="168" font-size="14">🍟</text>
+  <text x="50" y="177" fill="#CBD5E1" font-size="14">Sides</text>
+
+  <rect x="8" y="200" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="218" font-size="14">🥤</text>
+  <text x="50" y="227" fill="#CBD5E1" font-size="14">Drinks</text>
+
+  <rect x="8" y="250" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="268" font-size="14">🍰</text>
+  <text x="50" y="277" fill="#CBD5E1" font-size="14">Desserts</text>
+
+  <rect x="8" y="300" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="318" font-size="14">⭐</text>
+  <text x="50" y="327" fill="#CBD5E1" font-size="14">Specials</text>
+
+  <rect x="8" y="350" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="368" font-size="14">🎁</text>
+  <text x="50" y="377" fill="#CBD5E1" font-size="14">Combos</text>
+
+  <rect x="8" y="400" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="418" font-size="14">🍺</text>
+  <text x="50" y="427" fill="#CBD5E1" font-size="14">Alcohol</text>
+
+  <rect x="8" y="450" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="468" font-size="14">🧒</text>
+  <text x="50" y="477" fill="#CBD5E1" font-size="14">Kids</text>
+
+  <rect x="8" y="500" width="184" height="44" rx="8" fill="none"/>
+  <text x="26" y="518" font-size="14">🌮</text>
+  <text x="50" y="527" fill="#CBD5E1" font-size="14">Mexican</text>
+
+  <!-- Divider -->
+  <rect x="20" y="555" width="160" height="1" fill="#2D3050"/>
+
+  <!-- Search -->
+  <rect x="8" y="565" width="184" height="40" rx="8" fill="#1E2235"/>
+  <text x="24" y="590" fill="#64748B" font-size="14">🔍 Search...</text>
+
+  <!-- Divider -->
+  <rect x="20" y="616" width="160" height="1" fill="#2D3050"/>
+
+  <!-- Open Tabs button -->
+  <text x="100" y="648" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">OPEN TABS</text>
+  <rect x="8" y="655" width="184" height="44" rx="8" fill="#1E2235"/>
+  <text x="26" y="678" font-size="14">📋</text>
+  <text x="50" y="683" fill="#CBD5E1" font-size="13">Tab: Maria R.</text>
+  <text x="172" y="683" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$34</text>
+
+  <rect x="8" y="705" width="184" height="44" rx="8" fill="#1E2235"/>
+  <text x="26" y="728" font-size="14">📋</text>
+  <text x="50" y="733" fill="#CBD5E1" font-size="13">Bar #7</text>
+  <text x="172" y="733" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$18</text>
+
+  <rect x="8" y="755" width="184" height="44" rx="8" fill="#1E2235"/>
+  <text x="26" y="778" font-size="14">📋</text>
+  <text x="50" y="783" fill="#CBD5E1" font-size="13">Takeout #12</text>
+  <text x="172" y="783" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$52</text>
+
+  <!-- New Tab button -->
+  <rect x="8" y="830" width="184" height="48" rx="10" fill="#1E3A5F"/>
+  <text x="100" y="859" fill="#60A5FA" font-size="14" font-weight="700" text-anchor="middle">+ New Tab</text>
+
+  <!-- MIDDLE PANEL: Product Grid (700px wide) -->
+  <rect x="201" y="57" width="700" height="967" fill="#0F1117"/>
+  <rect x="900" y="57" width="1" height="967" fill="#2D3050"/>
+
+  <!-- Sort/Filter bar -->
+  <rect x="210" y="68" width="680" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="230" y="91" fill="#F59E0B" font-size="12" font-weight="700">All Items</text>
+  <text x="310" y="91" fill="#64748B" font-size="12">Popular</text>
+  <text x="380" y="91" fill="#64748B" font-size="12">Available</text>
+  <text x="470" y="91" fill="#64748B" font-size="12">86'd</text>
+  <!-- View toggle -->
+  <text x="820" y="91" fill="#F59E0B" font-size="16">⊞</text>
+  <text x="848" y="91" fill="#64748B" font-size="16">☰</text>
+
+  <!-- Product grid - Row 1 -->
+  <!-- Card 1 -->
+  <rect x="210" y="114" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="210" y="114" width="156" height="160" rx="12" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="210" y="114" width="156" height="100" rx="12" fill="#2D2010"/>
+  <text x="288" y="180" font-size="44" text-anchor="middle">🍔</text>
+  <text x="288" y="234" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Classic Burger</text>
+  <text x="288" y="252" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$12.00</text>
+  <rect x="226" y="262" width="124" height="5" rx="2" fill="#22C55E"/>
+
+  <!-- Card 2 -->
+  <rect x="378" y="114" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="378" y="114" width="156" height="100" rx="12" fill="#1A2D10"/>
+  <text x="456" y="180" font-size="44" text-anchor="middle">🍟</text>
+  <text x="456" y="234" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Large Fries</text>
+  <text x="456" y="252" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$4.50</text>
+
+  <!-- Card 3 -->
+  <rect x="546" y="114" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="546" y="114" width="156" height="100" rx="12" fill="#2D1A10"/>
+  <text x="624" y="180" font-size="44" text-anchor="middle">🌮</text>
+  <text x="624" y="234" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Taco</text>
+  <text x="624" y="252" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$9.00</text>
+
+  <!-- Card 4 -->
+  <rect x="714" y="114" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="714" y="114" width="156" height="100" rx="12" fill="#1A102D"/>
+  <text x="792" y="180" font-size="44" text-anchor="middle">🥗</text>
+  <text x="792" y="234" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Caesar Salad</text>
+  <text x="792" y="252" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$8.00</text>
+
+  <!-- Product grid - Row 2 -->
+  <rect x="210" y="286" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="210" y="286" width="156" height="100" rx="12" fill="#10202D"/>
+  <text x="288" y="352" font-size="44" text-anchor="middle">🥤</text>
+  <text x="288" y="406" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Soft Drink</text>
+  <text x="288" y="424" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$3.00</text>
+
+  <rect x="378" y="286" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="378" y="286" width="156" height="100" rx="12" fill="#2D2010"/>
+  <text x="456" y="352" font-size="44" text-anchor="middle">🍺</text>
+  <text x="456" y="406" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Draft Beer</text>
+  <text x="456" y="424" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$6.00</text>
+
+  <rect x="546" y="286" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="546" y="286" width="156" height="100" rx="12" fill="#1A2010"/>
+  <text x="624" y="352" font-size="44" text-anchor="middle">☕</text>
+  <text x="624" y="406" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Coffee</text>
+  <text x="624" y="424" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$3.50</text>
+
+  <!-- 86'd item (grayed out) -->
+  <rect x="714" y="286" width="156" height="160" rx="12" fill="#13151F" opacity="0.6"/>
+  <text x="792" y="352" font-size="44" text-anchor="middle" opacity="0.4">🍰</text>
+  <text x="792" y="406" fill="#4B5563" font-size="13" font-weight="600" text-anchor="middle">Cheesecake</text>
+  <text x="792" y="418" fill="#EF4444" font-size="11" font-weight="700" text-anchor="middle">86'd</text>
+  <text x="792" y="432" fill="#6B7280" font-size="12" text-anchor="middle">$7.00</text>
+
+  <!-- Row 3 -->
+  <rect x="210" y="458" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="210" y="458" width="156" height="100" rx="12" fill="#2D1A10"/>
+  <text x="288" y="524" font-size="44" text-anchor="middle">🥩</text>
+  <text x="288" y="578" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">BBQ Ribs</text>
+  <text x="288" y="596" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$24.00</text>
+
+  <rect x="378" y="458" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="378" y="458" width="156" height="100" rx="12" fill="#10202D"/>
+  <text x="456" y="524" font-size="44" text-anchor="middle">🐟</text>
+  <text x="456" y="578" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Fish &amp; Chips</text>
+  <text x="456" y="596" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$16.00</text>
+
+  <rect x="546" y="458" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="546" y="458" width="156" height="100" rx="12" fill="#1A2D10"/>
+  <text x="624" y="524" font-size="44" text-anchor="middle">🥑</text>
+  <text x="624" y="578" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Avo Toast</text>
+  <text x="624" y="596" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$11.00</text>
+
+  <rect x="714" y="458" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="714" y="458" width="156" height="100" rx="12" fill="#2D102D"/>
+  <text x="792" y="524" font-size="44" text-anchor="middle">🫐</text>
+  <text x="792" y="578" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Berry Smoothie</text>
+  <text x="792" y="596" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$6.50</text>
+
+  <!-- Row 4 -->
+  <rect x="210" y="630" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="210" y="630" width="156" height="100" rx="12" fill="#2D2010"/>
+  <text x="288" y="696" font-size="44" text-anchor="middle">🧀</text>
+  <text x="288" y="750" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Cheese Sticks</text>
+  <text x="288" y="768" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$8.50</text>
+
+  <rect x="378" y="630" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="378" y="630" width="156" height="100" rx="12" fill="#10102D"/>
+  <text x="456" y="696" font-size="44" text-anchor="middle">🌮</text>
+  <text x="456" y="750" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Quesadilla</text>
+  <text x="456" y="768" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$10.00</text>
+
+  <rect x="546" y="630" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="546" y="630" width="156" height="100" rx="12" fill="#2D1A10"/>
+  <text x="624" y="696" font-size="44" text-anchor="middle">🍜</text>
+  <text x="624" y="750" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Ramen</text>
+  <text x="624" y="768" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$14.00</text>
+
+  <rect x="714" y="630" width="156" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="714" y="630" width="156" height="100" rx="12" fill="#102D10"/>
+  <text x="792" y="696" font-size="44" text-anchor="middle">🥦</text>
+  <text x="792" y="750" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Veggie Plate</text>
+  <text x="792" y="768" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$9.50</text>
+
+  <!-- Quick-add numpad at bottom of middle panel -->
+  <rect x="210" y="808" width="680" height="200" rx="0" fill="#13162A"/>
+  <rect x="210" y="808" width="680" height="1" fill="#2D3050"/>
+  <!-- Qty label -->
+  <text x="230" y="828" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">QTY</text>
+  <rect x="280" y="812" width="80" height="32" rx="6" fill="#1E2235"/>
+  <text x="320" y="833" fill="#E2E8F0" font-size="16" font-weight="700" text-anchor="middle">1</text>
+  <text x="370" y="833" fill="#64748B" font-size="20">‹</text>
+  <text x="390" y="833" fill="#64748B" font-size="20">›</text>
+
+  <!-- Numpad -->
+  <rect x="210" y="852" width="168" height="52" rx="8" fill="#1E2235"/>
+  <text x="294" y="884" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">1</text>
+  <rect x="384" y="852" width="168" height="52" rx="8" fill="#1E2235"/>
+  <text x="468" y="884" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">2</text>
+  <rect x="558" y="852" width="168" height="52" rx="8" fill="#1E2235"/>
+  <text x="642" y="884" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">3</text>
+  <rect x="732" y="852" width="158" height="52" rx="8" fill="#EF4444"/>
+  <text x="811" y="884" fill="white" font-size="22" font-weight="700" text-anchor="middle">⌫</text>
+
+  <rect x="210" y="912" width="168" height="52" rx="8" fill="#1E2235"/>
+  <text x="294" y="944" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">4</text>
+  <rect x="384" y="912" width="168" height="52" rx="8" fill="#1E2235"/>
+  <text x="468" y="944" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">5</text>
+  <rect x="558" y="912" width="168" height="52" rx="8" fill="#1E2235"/>
+  <text x="642" y="944" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">6</text>
+  <rect x="732" y="912" width="158" height="52" rx="8" fill="#1E2235"/>
+  <text x="811" y="944" fill="#64748B" font-size="14" font-weight="500" text-anchor="middle">Price override</text>
+
+  <rect x="210" y="970" width="336" height="46" rx="8" fill="#1E2235"/>
+  <text x="378" y="998" fill="#E2E8F0" font-size="22" font-weight="500" text-anchor="middle">0  ·  .</text>
+  <rect x="558" y="970" width="332" height="46" rx="8" fill="#F59E0B"/>
+  <text x="724" y="998" fill="#0F1117" font-size="16" font-weight="700" text-anchor="middle">Add to Order</text>
+
+  <!-- RIGHT PANEL: Order Summary (465px) -->
+  <rect x="901" y="57" width="465" height="967" fill="#13162A"/>
+
+  <!-- Table badge -->
+  <rect x="916" y="70" width="180" height="30" rx="6" fill="#1E3A5F"/>
+  <text x="926" y="90" fill="#60A5FA" font-size="13" font-weight="600">Table 4  ·  Dine-In  ·  2 guests</text>
+
+  <!-- Order type badges -->
+  <rect x="1106" y="70" width="70" height="30" rx="6" fill="#1A2D10"/>
+  <text x="1141" y="90" fill="#22C55E" font-size="12" font-weight="600" text-anchor="middle">Seat 1</text>
+  <rect x="1182" y="70" width="70" height="30" rx="6" fill="#2D1A10"/>
+  <text x="1217" y="90" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">Seat 2</text>
+  <rect x="1258" y="70" width="96" height="30" rx="6" fill="#1E2235"/>
+  <text x="1306" y="90" fill="#94A3B8" font-size="12" font-weight="600" text-anchor="middle">+ Add Seat</text>
+
+  <!-- Divider -->
+  <rect x="916" y="108" width="432" height="1" fill="#2D3050"/>
+
+  <!-- Order items -->
+  <!-- Item 1 -->
+  <rect x="916" y="116" width="432" height="72" rx="8" fill="#1A1D2E"/>
+  <text x="930" y="138" fill="#94A3B8" font-size="12">1×</text>
+  <text x="952" y="138" fill="#E2E8F0" font-size="14" font-weight="600">Classic Burger</text>
+  <text x="1334" y="138" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$12.00</text>
+  <text x="952" y="156" fill="#64748B" font-size="12">+ No onions   · Gluten-free bun</text>
+  <text x="952" y="174" fill="#22C55E" font-size="11">→ Kitchen: Grill</text>
+  <!-- item actions -->
+  <text x="1290" y="174" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1334" y="174" fill="#EF4444" font-size="12" text-anchor="end">Remove</text>
+
+  <!-- Item 2 -->
+  <rect x="916" y="196" width="432" height="60" rx="8" fill="#1A1D2E"/>
+  <text x="930" y="218" fill="#94A3B8" font-size="12">1×</text>
+  <text x="952" y="218" fill="#E2E8F0" font-size="14" font-weight="600">Large Fries</text>
+  <text x="1334" y="218" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$4.50</text>
+  <text x="1290" y="242" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1334" y="242" fill="#EF4444" font-size="12" text-anchor="end">Remove</text>
+
+  <!-- Item 3 -->
+  <rect x="916" y="264" width="432" height="60" rx="8" fill="#1A1D2E"/>
+  <text x="930" y="286" fill="#94A3B8" font-size="12">1×</text>
+  <text x="952" y="286" fill="#E2E8F0" font-size="14" font-weight="600">Soft Drink — Pepsi</text>
+  <text x="1334" y="286" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$3.00</text>
+  <text x="1290" y="310" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1334" y="310" fill="#EF4444" font-size="12" text-anchor="end">Remove</text>
+
+  <!-- Seat 2 separator -->
+  <rect x="916" y="332" width="432" height="24" rx="4" fill="#1E2235"/>
+  <text x="1000" y="348" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">— Seat 2 —</text>
+
+  <!-- Item 4 -->
+  <rect x="916" y="364" width="432" height="60" rx="8" fill="#1A1D2E"/>
+  <text x="930" y="386" fill="#94A3B8" font-size="12">1×</text>
+  <text x="952" y="386" fill="#E2E8F0" font-size="14" font-weight="600">Caesar Salad</text>
+  <text x="1334" y="386" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$8.00</text>
+  <text x="1290" y="410" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1334" y="410" fill="#EF4444" font-size="12" text-anchor="end">Remove</text>
+
+  <!-- Item 5 -->
+  <rect x="916" y="432" width="432" height="60" rx="8" fill="#1A1D2E"/>
+  <text x="930" y="454" fill="#94A3B8" font-size="12">1×</text>
+  <text x="952" y="454" fill="#E2E8F0" font-size="14" font-weight="600">Draft Beer</text>
+  <text x="1334" y="454" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$6.00</text>
+  <text x="1290" y="478" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1334" y="478" fill="#EF4444" font-size="12" text-anchor="end">Remove</text>
+
+  <!-- Add note field -->
+  <rect x="916" y="500" width="432" height="36" rx="8" fill="#1E2235"/>
+  <text x="932" y="522" fill="#64748B" font-size="13">📝  Order note...</text>
+
+  <!-- Divider -->
+  <rect x="916" y="546" width="432" height="1" fill="#2D3050"/>
+
+  <!-- Totals -->
+  <text x="916" y="572" fill="#94A3B8" font-size="13">Subtotal</text>
+  <text x="1348" y="572" fill="#E2E8F0" font-size="13" text-anchor="end">$33.50</text>
+
+  <text x="916" y="596" fill="#22C55E" font-size="13">Staff Discount (10%)</text>
+  <text x="1348" y="596" fill="#22C55E" font-size="13" text-anchor="end">-$3.35</text>
+
+  <text x="916" y="620" fill="#94A3B8" font-size="13">Tax (8.5%)</text>
+  <text x="1348" y="620" fill="#E2E8F0" font-size="13" text-anchor="end">$2.56</text>
+
+  <rect x="916" y="630" width="432" height="1" fill="#2D3050"/>
+
+  <text x="916" y="658" fill="#E2E8F0" font-size="18" font-weight="700">Total</text>
+  <text x="1348" y="658" fill="#F59E0B" font-size="22" font-weight="700" text-anchor="end">$32.71</text>
+
+  <!-- Action buttons row 1 -->
+  <rect x="916" y="670" width="136" height="44" rx="8" fill="#1E2235"/>
+  <text x="984" y="697" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Split</text>
+
+  <rect x="1058" y="670" width="136" height="44" rx="8" fill="#1E2235"/>
+  <text x="1126" y="697" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Transfer</text>
+
+  <rect x="1200" y="670" width="148" height="44" rx="8" fill="#1E2235"/>
+  <text x="1274" y="697" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Discount</text>
+
+  <!-- Action buttons row 2 -->
+  <rect x="916" y="722" width="210" height="44" rx="8" fill="#1E2235"/>
+  <text x="1021" y="749" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Hold Order</text>
+
+  <rect x="1134" y="722" width="214" height="44" rx="8" fill="#1E2235"/>
+  <text x="1241" y="749" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Send to Kitchen</text>
+
+  <!-- Fire to Kitchen button -->
+  <rect x="916" y="774" width="432" height="56" rx="10" fill="#22C55E"/>
+  <text x="1132" y="811" fill="white" font-size="18" font-weight="700" text-anchor="middle">🔥 Fire &amp; Charge — $32.71</text>
+
+  <!-- Divider -->
+  <rect x="916" y="838" width="432" height="1" fill="#2D3050"/>
+
+  <!-- Quick payment section -->
+  <text x="916" y="862" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">QUICK CHARGE</text>
+
+  <rect x="916" y="870" width="136" height="52" rx="10" fill="#1E2235"/>
+  <text x="984" y="891" fill="#F59E0B" font-size="18" text-anchor="middle">💳</text>
+  <text x="984" y="912" fill="#CBD5E1" font-size="12" text-anchor="middle">Card</text>
+
+  <rect x="1058" y="870" width="136" height="52" rx="10" fill="#1E2235"/>
+  <text x="1126" y="891" fill="#F59E0B" font-size="18" text-anchor="middle">💵</text>
+  <text x="1126" y="912" fill="#CBD5E1" font-size="12" text-anchor="middle">Cash</text>
+
+  <rect x="1200" y="870" width="148" height="52" rx="10" fill="#1E2235"/>
+  <text x="1274" y="891" fill="#F59E0B" font-size="18" text-anchor="middle">📱</text>
+  <text x="1274" y="912" fill="#CBD5E1" font-size="12" text-anchor="middle">Mobile Pay</text>
+
+  <!-- Open orders bar at bottom -->
+  <rect x="916" y="930" width="432" height="94" rx="0" fill="#0F1117"/>
+  <rect x="916" y="930" width="432" height="1" fill="#2D3050"/>
+  <text x="916" y="952" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">ACTIVE ORDERS</text>
+
+  <!-- mini order tiles -->
+  <rect x="916" y="958" width="100" height="60" rx="8" fill="#1A2D10"/>
+  <text x="966" y="978" fill="#22C55E" font-size="11" font-weight="700" text-anchor="middle">T4</text>
+  <text x="966" y="994" fill="#E2E8F0" font-size="11" text-anchor="middle">12:14</text>
+  <text x="966" y="1010" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">$32.71</text>
+
+  <rect x="1022" y="958" width="100" height="60" rx="8" fill="#2D1A10"/>
+  <text x="1072" y="978" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">T7</text>
+  <text x="1072" y="994" fill="#E2E8F0" font-size="11" text-anchor="middle">12:02</text>
+  <text x="1072" y="1010" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">$54.00</text>
+
+  <rect x="1128" y="958" width="100" height="60" rx="8" fill="#1E2235"/>
+  <text x="1178" y="978" fill="#94A3B8" font-size="11" font-weight="700" text-anchor="middle">Bar</text>
+  <text x="1178" y="994" fill="#E2E8F0" font-size="11" text-anchor="middle">11:50</text>
+  <text x="1178" y="1010" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">$18.50</text>
+
+  <rect x="1234" y="958" width="100" height="60" rx="8" fill="#102D10"/>
+  <text x="1284" y="978" fill="#4ADE80" font-size="11" font-weight="700" text-anchor="middle">TO#12</text>
+  <text x="1284" y="994" fill="#E2E8F0" font-size="11" text-anchor="middle">11:44</text>
+  <text x="1284" y="1010" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">$52.00</text>
+
+  <rect x="1340" y="958" width="8" height="60" rx="4" fill="#1E2235"/>
+  <text x="1356" y="992" fill="#64748B" font-size="18" text-anchor="middle">›</text>
+
+  <!-- Offline indicator (shown when needed) - commented out for normal state -->
+  <!-- <rect x="550" y="6" width="120" height="28" rx="6" fill="#7C3AED"/>
+  <text x="610" y="24" fill="white" font-size="12" font-weight="700" text-anchor="middle">⚡ Offline Mode</text> -->
+
+  <!-- Screen label -->
+  <text x="683" y="1015" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS — Register Screen (F03 3-Screen Core Flow · iPad Landscape 1366×1024)</text>
+</svg>

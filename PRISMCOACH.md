@@ -63,7 +63,7 @@ Six science-backed periodization templates covering every major training goal, p
 | Full Body | 3-day compound emphasis | General fitness |
 | Deload / Maintenance | 1-day active recovery | Regeneration |
 
-- **AI-generated programs** (Elite) — describe your goal and constraints; PrismCoach generates a custom multi-week block using Prism 8B or Claude Sonnet
+- **AI-generated programs** (Elite) — describe your goal and constraints; PrismCoach generates a custom multi-week block using Prism 4B or Claude Sonnet
 - **JSON Program Generator** — programs are typed Swift models; the engine generates a full 8-week program in < 500 ms on-device
 - **Watch sync** — active program is cached on Apple Watch for offline training (< 100 KB payload)
 
@@ -101,7 +101,7 @@ Conversational coaching that knows your recovery state, last session, and progra
 |---|---|---|---|
 | Free | No AI — static templates only | — | — |
 | Coach | On-device cascade (see below) | ~300–800 ms | 100% local — no network |
-| Athlete | On-device → Prism 8B → Claude Sonnet | ~300 ms – 3 s | Anon context for cloud tiers; local tiers are air-gapped |
+| Athlete | On-device → Prism 4B → Claude Sonnet | ~300 ms – 3 s | Anon context for cloud tiers; local tiers are air-gapped |
 
 ### Memory-Aware On-Device Tiers
 
@@ -558,7 +558,7 @@ Coaching and UI available in English, Spanish, French, Portuguese, German, Itali
 | AI Coach — SmolLM2-360M on-device (low-RAM fallback) | — | ✅ | ✅ |
 | Watch AI Coach relay | — | ✅ | ✅ |
 | Autonomous voice coach (full workout) | — | — | ✅ |
-| AI Coach — Prism 8B server | — | — | ✅ |
+| AI Coach — Prism 4B server | — | — | ✅ |
 | AI Coach — Claude Sonnet cascade | — | — | ✅ |
 | AI-generated custom programs | — | — | ✅ |
 | Volume Landmarks — MEV / MAV / MRV | — | — | ✅ |

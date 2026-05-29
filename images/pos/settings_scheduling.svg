@@ -1,0 +1,575 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════
+       LEFT NAV SIDEBAR (210px)
+  ═══════════════════════════════════════════ -->
+  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+  <text x="16" y="32" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+
+  <text x="16" y="68" font-size="12" fill="#64748B">Restaurant Info</text>
+  <text x="16" y="100" font-size="12" fill="#64748B">Menu Builder</text>
+  <text x="16" y="132" font-size="12" fill="#64748B">Taxes</text>
+  <text x="16" y="164" font-size="12" fill="#64748B">Employees</text>
+  <text x="16" y="196" font-size="12" fill="#64748B">Equipment</text>
+  <text x="16" y="228" font-size="12" fill="#64748B">Floor Plans</text>
+  <text x="16" y="260" font-size="12" fill="#64748B">Payments</text>
+  <text x="16" y="292" font-size="12" fill="#64748B">Timeclock</text>
+
+  <!-- Scheduling — highlighted -->
+  <rect x="0" y="305" width="210" height="36" fill="#1E2240" rx="0"/>
+  <rect x="0" y="305" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="329" font-size="12" font-weight="700" fill="#F59E0B">Scheduling</text>
+
+  <text x="16" y="372" font-size="12" fill="#64748B">Reports</text>
+  <text x="16" y="404" font-size="12" fill="#64748B">Revenue Centers</text>
+  <text x="16" y="436" font-size="12" fill="#64748B">Integrations</text>
+  <text x="16" y="468" font-size="12" fill="#64748B">Gift Cards</text>
+  <text x="16" y="500" font-size="12" fill="#64748B">Loyalty</text>
+  <text x="16" y="532" font-size="12" fill="#64748B">Tip Pooling</text>
+  <text x="16" y="564" font-size="12" fill="#64748B">Discounts</text>
+  <text x="16" y="596" font-size="12" fill="#64748B">Price Levels</text>
+  <text x="16" y="628" font-size="12" fill="#64748B">Vendors</text>
+  <text x="16" y="660" font-size="12" fill="#64748B">Inventory</text>
+  <text x="16" y="692" font-size="12" fill="#64748B">Recipes</text>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT AREA  (starts x=210)
+       Total width = 1366-210 = 1156px
+       Grid area: x=210 to x=990  (780px)
+       Right panel: x=990 to x=1366 (376px)
+  ═══════════════════════════════════════════ -->
+
+  <!-- Header bar -->
+  <rect x="210" y="0" width="1156" height="58" fill="#1A1D2E"/>
+  <text x="228" y="26" font-size="17" font-weight="700" fill="#F1F5F9">Schedule — Week of May 26–Jun 1, 2026</text>
+  <text x="228" y="46" font-size="11" fill="#64748B">Predictive scheduling · Conflict detection · Labor cost tracking</text>
+
+  <!-- Header buttons -->
+  <rect x="762" y="12" width="134" height="32" rx="6" fill="#F59E0B"/>
+  <text x="783" y="33" font-size="12" font-weight="700" fill="#000000">Publish Schedule</text>
+
+  <rect x="904" y="12" width="86" height="32" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="924" y="33" font-size="12" fill="#F1F5F9">+ Add Shift</text>
+
+  <rect x="998" y="12" width="114" height="32" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1014" y="33" font-size="12" fill="#94A3B8">Copy Last Week</text>
+
+  <!-- ═══ WARNING BANNER ═══ -->
+  <rect x="210" y="58" width="780" height="38" fill="#2D1F0A" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="210" y="58" width="4" height="38" fill="#F59E0B"/>
+  <text x="222" y="73" font-size="11" font-weight="700" fill="#F59E0B">⚠  Predictive Scheduling: Chicago Fair Workweek</text>
+  <text x="222" y="89" font-size="11" fill="#FCD34D">7 days advance notice required. 3 staff not yet notified. Publish now to avoid compliance penalty.</text>
+
+  <!-- ═══════════════════════════════════════════
+       WEEKLY SCHEDULE GRID
+       Starts y=96, grid cols: Name(130px) + 7 day cols(86px each = 602px) + Total(48px)
+       x=210 .. x=990
+  ═══════════════════════════════════════════ -->
+
+  <!-- Grid background -->
+  <rect x="210" y="96" width="780" height="848" fill="#13162A"/>
+
+  <!-- Column header background -->
+  <rect x="210" y="96" width="780" height="36" fill="#1A1D2E"/>
+
+  <!-- Column header texts -->
+  <!-- Name col x=210, w=130 -->
+  <text x="220" y="119" font-size="11" font-weight="700" fill="#64748B">STAFF</text>
+  <!-- Day cols: Mon=340, Tue=426, Wed=512, Thu=598, Fri=684, Sat=770, Sun=856 -->
+  <!-- Each day col width=86, center offsets: +43 -->
+  <text x="360" y="119" font-size="11" font-weight="700" fill="#94A3B8">MON 5/26</text>
+  <text x="446" y="119" font-size="11" font-weight="700" fill="#94A3B8">TUE 5/27</text>
+  <text x="532" y="119" font-size="11" font-weight="700" fill="#94A3B8">WED 5/28</text>
+  <text x="618" y="119" font-size="11" font-weight="700" fill="#94A3B8">THU 5/29</text>
+  <text x="704" y="119" font-size="11" font-weight="700" fill="#94A3B8">FRI 5/30</text>
+  <text x="790" y="119" font-size="11" font-weight="700" fill="#94A3B8">SAT 5/31</text>
+  <text x="876" y="119" font-size="11" font-weight="700" fill="#94A3B8">SUN 6/1</text>
+  <text x="944" y="119" font-size="11" font-weight="700" fill="#64748B">HRS</text>
+
+  <!-- Vertical column separators -->
+  <line x1="340" y1="96" x2="340" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="426" y1="96" x2="426" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="512" y1="96" x2="512" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="598" y1="96" x2="598" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="684" y1="96" x2="684" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="770" y1="96" x2="770" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="856" y1="96" x2="856" y2="910" stroke="#2D3148" stroke-width="1"/>
+  <line x1="942" y1="96" x2="942" y2="910" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ────────────────────────────────────────
+       ROW HELPER:  row height=72px each
+       Row 1 y=132  (10 rows × 72 = 720, ends y=852)
+       Separator lines at row boundaries
+  ──────────────────────────────────────── -->
+
+  <!-- ROW 1: Sarah M. — Server (blue) -->
+  <rect x="210" y="132" width="780" height="72" fill="#13162A"/>
+  <line x1="210" y1="132" x2="990" y2="132" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="162" r="10" fill="#1D4ED8"/>
+  <text x="222" y="166" font-size="9" font-weight="700" fill="#FFFFFF">SM</text>
+  <text x="244" y="158" font-size="12" font-weight="600" fill="#F1F5F9">Sarah M.</text>
+  <text x="244" y="173" font-size="10" fill="#64748B">Server</text>
+  <!-- Mon -->
+  <rect x="343" y="137" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="348" y="150" font-size="9" font-weight="600" fill="#BFDBFE">10a–4p</text>
+  <text x="348" y="162" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Tue -->
+  <rect x="429" y="137" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="434" y="150" font-size="9" font-weight="600" fill="#BFDBFE">10a–4p</text>
+  <text x="434" y="162" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Wed: off -->
+  <text x="440" y="171" font-size="10" fill="#2D3148">—</text>
+  <!-- Thu -->
+  <rect x="601" y="137" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="606" y="150" font-size="9" font-weight="600" fill="#BFDBFE">5p–11p</text>
+  <text x="606" y="162" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Fri -->
+  <rect x="687" y="137" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="692" y="150" font-size="9" font-weight="600" fill="#BFDBFE">5p–11p</text>
+  <text x="692" y="162" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Sat -->
+  <rect x="773" y="137" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="778" y="150" font-size="9" font-weight="600" fill="#BFDBFE">5p–11p</text>
+  <text x="778" y="162" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Sun: off -->
+  <text x="882" y="171" font-size="10" fill="#2D3148">—</text>
+  <!-- Total -->
+  <text x="946" y="165" font-size="12" font-weight="700" fill="#F1F5F9">30h</text>
+
+  <!-- ROW 2: John D. — Server (blue) -->
+  <rect x="210" y="204" width="780" height="72" fill="#161925"/>
+  <line x1="210" y1="204" x2="990" y2="204" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="234" r="10" fill="#1D4ED8"/>
+  <text x="222" y="238" font-size="9" font-weight="700" fill="#FFFFFF">JD</text>
+  <text x="244" y="230" font-size="12" font-weight="600" fill="#F1F5F9">John D.</text>
+  <text x="244" y="245" font-size="10" fill="#64748B">Server</text>
+  <!-- Mon -->
+  <rect x="343" y="209" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="348" y="222" font-size="9" font-weight="600" fill="#BFDBFE">5p–11p</text>
+  <text x="348" y="234" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Tue: off -->
+  <text x="440" y="243" font-size="10" fill="#2D3148">—</text>
+  <!-- Wed -->
+  <rect x="515" y="209" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="520" y="222" font-size="9" font-weight="600" fill="#BFDBFE">5p–11p</text>
+  <text x="520" y="234" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Thu -->
+  <rect x="601" y="209" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="606" y="222" font-size="9" font-weight="600" fill="#BFDBFE">5p–11p</text>
+  <text x="606" y="234" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Sat: vacation (amber) -->
+  <rect x="773" y="209" width="80" height="30" rx="4" fill="#78350F" stroke="#F59E0B" stroke-width="1"/>
+  <text x="784" y="222" font-size="9" font-weight="600" fill="#FCD34D">Vacation</text>
+  <text x="786" y="234" font-size="8" fill="#F59E0B">OFF</text>
+  <!-- Sun -->
+  <rect x="859" y="209" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="864" y="222" font-size="9" font-weight="600" fill="#BFDBFE">10a–4p</text>
+  <text x="864" y="234" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Fri: off -->
+  <text x="698" y="243" font-size="10" fill="#2D3148">—</text>
+  <!-- Total -->
+  <text x="946" y="237" font-size="12" font-weight="700" fill="#F1F5F9">24h</text>
+
+  <!-- ROW 3: Mike T. — Bartender (purple) -->
+  <rect x="210" y="276" width="780" height="72" fill="#13162A"/>
+  <line x1="210" y1="276" x2="990" y2="276" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="306" r="10" fill="#7C3AED"/>
+  <text x="222" y="310" font-size="9" font-weight="700" fill="#FFFFFF">MT</text>
+  <text x="244" y="302" font-size="12" font-weight="600" fill="#F1F5F9">Mike T.</text>
+  <text x="244" y="317" font-size="10" fill="#64748B">Bartender</text>
+  <!-- Mon: off -->
+  <text x="356" y="315" font-size="10" fill="#2D3148">—</text>
+  <!-- Tue: off -->
+  <text x="440" y="315" font-size="10" fill="#2D3148">—</text>
+  <!-- Wed -->
+  <rect x="515" y="281" width="80" height="30" rx="4" fill="#6D28D9" opacity="0.85"/>
+  <text x="520" y="294" font-size="9" font-weight="600" fill="#DDD6FE">5p–11p</text>
+  <text x="520" y="306" font-size="8" fill="#C4B5FD">6h</text>
+  <!-- Thu -->
+  <rect x="601" y="281" width="80" height="30" rx="4" fill="#6D28D9" opacity="0.85"/>
+  <text x="606" y="294" font-size="9" font-weight="600" fill="#DDD6FE">5p–11p</text>
+  <text x="606" y="306" font-size="8" fill="#C4B5FD">6h</text>
+  <!-- Fri -->
+  <rect x="687" y="281" width="80" height="30" rx="4" fill="#6D28D9" opacity="0.85"/>
+  <text x="692" y="294" font-size="9" font-weight="600" fill="#DDD6FE">5p–11p</text>
+  <text x="692" y="306" font-size="8" fill="#C4B5FD">6h</text>
+  <!-- Sat -->
+  <rect x="773" y="281" width="80" height="30" rx="4" fill="#6D28D9" opacity="0.85"/>
+  <text x="778" y="294" font-size="9" font-weight="600" fill="#DDD6FE">5p–11p</text>
+  <text x="778" y="306" font-size="8" fill="#C4B5FD">6h</text>
+  <!-- Sun: off -->
+  <text x="882" y="315" font-size="10" fill="#2D3148">—</text>
+  <!-- Total -->
+  <text x="946" y="309" font-size="12" font-weight="700" fill="#F1F5F9">24h</text>
+
+  <!-- ROW 4: Ana L. — Cashier (green) -->
+  <rect x="210" y="348" width="780" height="72" fill="#161925"/>
+  <line x1="210" y1="348" x2="990" y2="348" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="378" r="10" fill="#065F46"/>
+  <text x="222" y="382" font-size="9" font-weight="700" fill="#FFFFFF">AL</text>
+  <text x="244" y="374" font-size="12" font-weight="600" fill="#F1F5F9">Ana L.</text>
+  <text x="244" y="389" font-size="10" fill="#64748B">Cashier</text>
+  <!-- Mon-Fri -->
+  <rect x="343" y="353" width="80" height="30" rx="4" fill="#065F46" opacity="0.9"/>
+  <text x="348" y="366" font-size="9" font-weight="600" fill="#A7F3D0">9a–2p</text>
+  <text x="348" y="378" font-size="8" fill="#6EE7B7">5h</text>
+  <rect x="429" y="353" width="80" height="30" rx="4" fill="#065F46" opacity="0.9"/>
+  <text x="434" y="366" font-size="9" font-weight="600" fill="#A7F3D0">9a–2p</text>
+  <text x="434" y="378" font-size="8" fill="#6EE7B7">5h</text>
+  <rect x="515" y="353" width="80" height="30" rx="4" fill="#065F46" opacity="0.9"/>
+  <text x="520" y="366" font-size="9" font-weight="600" fill="#A7F3D0">9a–2p</text>
+  <text x="520" y="378" font-size="8" fill="#6EE7B7">5h</text>
+  <rect x="601" y="353" width="80" height="30" rx="4" fill="#065F46" opacity="0.9"/>
+  <text x="606" y="366" font-size="9" font-weight="600" fill="#A7F3D0">9a–2p</text>
+  <text x="606" y="378" font-size="8" fill="#6EE7B7">5h</text>
+  <rect x="687" y="353" width="80" height="30" rx="4" fill="#065F46" opacity="0.9"/>
+  <text x="692" y="366" font-size="9" font-weight="600" fill="#A7F3D0">9a–2p</text>
+  <text x="692" y="378" font-size="8" fill="#6EE7B7">5h</text>
+  <!-- Sat: off -->
+  <text x="784" y="387" font-size="10" fill="#2D3148">—</text>
+  <!-- Sun: off -->
+  <text x="882" y="387" font-size="10" fill="#2D3148">—</text>
+  <!-- Total -->
+  <text x="946" y="381" font-size="12" font-weight="700" fill="#F1F5F9">25h</text>
+
+  <!-- ROW 5: Carlos R. — Cook (amber) — OT -->
+  <rect x="210" y="420" width="780" height="72" fill="#13162A"/>
+  <line x1="210" y1="420" x2="990" y2="420" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="450" r="10" fill="#B45309"/>
+  <text x="222" y="454" font-size="9" font-weight="700" fill="#FFFFFF">CR</text>
+  <text x="244" y="446" font-size="12" font-weight="600" fill="#F1F5F9">Carlos R.</text>
+  <text x="244" y="461" font-size="10" fill="#64748B">Cook</text>
+  <!-- Mon-Sat -->
+  <rect x="343" y="425" width="80" height="30" rx="4" fill="#B45309" opacity="0.85"/>
+  <text x="348" y="438" font-size="9" font-weight="600" fill="#FDE68A">8a–4p</text>
+  <text x="348" y="450" font-size="8" fill="#FCD34D">8h</text>
+  <rect x="429" y="425" width="80" height="30" rx="4" fill="#B45309" opacity="0.85"/>
+  <text x="434" y="438" font-size="9" font-weight="600" fill="#FDE68A">8a–4p</text>
+  <text x="434" y="450" font-size="8" fill="#FCD34D">8h</text>
+  <rect x="515" y="425" width="80" height="30" rx="4" fill="#B45309" opacity="0.85"/>
+  <text x="520" y="438" font-size="9" font-weight="600" fill="#FDE68A">8a–4p</text>
+  <text x="520" y="450" font-size="8" fill="#FCD34D">8h</text>
+  <rect x="601" y="425" width="80" height="30" rx="4" fill="#B45309" opacity="0.85"/>
+  <text x="606" y="438" font-size="9" font-weight="600" fill="#FDE68A">8a–4p</text>
+  <text x="606" y="450" font-size="8" fill="#FCD34D">8h</text>
+  <rect x="687" y="425" width="80" height="30" rx="4" fill="#B45309" opacity="0.85"/>
+  <text x="692" y="438" font-size="9" font-weight="600" fill="#FDE68A">8a–4p</text>
+  <text x="692" y="450" font-size="8" fill="#FCD34D">8h</text>
+  <rect x="773" y="425" width="80" height="30" rx="4" fill="#B45309" opacity="0.85"/>
+  <text x="778" y="438" font-size="9" font-weight="600" fill="#FDE68A">8a–4p</text>
+  <text x="778" y="450" font-size="8" fill="#FCD34D">8h</text>
+  <!-- Sun: off -->
+  <text x="882" y="459" font-size="10" fill="#2D3148">—</text>
+  <!-- Total + OT badge -->
+  <text x="946" y="447" font-size="12" font-weight="700" fill="#EF4444">48h</text>
+  <rect x="942" y="450" width="34" height="16" rx="4" fill="#7F1D1D"/>
+  <text x="947" y="462" font-size="9" font-weight="700" fill="#FCA5A5">⚠ OT</text>
+
+  <!-- ROW 6: Lisa K. — Host (teal) -->
+  <rect x="210" y="492" width="780" height="72" fill="#161925"/>
+  <line x1="210" y1="492" x2="990" y2="492" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="522" r="10" fill="#0F766E"/>
+  <text x="222" y="526" font-size="9" font-weight="700" fill="#FFFFFF">LK</text>
+  <text x="244" y="518" font-size="12" font-weight="600" fill="#F1F5F9">Lisa K.</text>
+  <text x="244" y="533" font-size="10" fill="#64748B">Host</text>
+  <!-- Mon-Thu: off -->
+  <text x="356" y="531" font-size="10" fill="#2D3148">—</text>
+  <text x="440" y="531" font-size="10" fill="#2D3148">—</text>
+  <text x="526" y="531" font-size="10" fill="#2D3148">—</text>
+  <text x="612" y="531" font-size="10" fill="#2D3148">—</text>
+  <!-- Fri -->
+  <rect x="687" y="497" width="80" height="30" rx="4" fill="#0F766E" opacity="0.85"/>
+  <text x="692" y="510" font-size="9" font-weight="600" fill="#99F6E4">5p–10p</text>
+  <text x="692" y="522" font-size="8" fill="#5EEAD4">5h</text>
+  <!-- Sat -->
+  <rect x="773" y="497" width="80" height="30" rx="4" fill="#0F766E" opacity="0.85"/>
+  <text x="778" y="510" font-size="9" font-weight="600" fill="#99F6E4">12p–8p</text>
+  <text x="778" y="522" font-size="8" fill="#5EEAD4">8h</text>
+  <!-- Sun -->
+  <rect x="859" y="497" width="80" height="30" rx="4" fill="#0F766E" opacity="0.85"/>
+  <text x="864" y="510" font-size="9" font-weight="600" fill="#99F6E4">12p–6p</text>
+  <text x="864" y="522" font-size="8" fill="#5EEAD4">6h</text>
+  <!-- Total -->
+  <text x="946" y="525" font-size="12" font-weight="700" fill="#F1F5F9">19h</text>
+
+  <!-- ROW 7: Tom W. — Server (blue) -->
+  <rect x="210" y="564" width="780" height="72" fill="#13162A"/>
+  <line x1="210" y1="564" x2="990" y2="564" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="594" r="10" fill="#1D4ED8"/>
+  <text x="222" y="598" font-size="9" font-weight="700" fill="#FFFFFF">TW</text>
+  <text x="244" y="590" font-size="12" font-weight="600" fill="#F1F5F9">Tom W.</text>
+  <text x="244" y="605" font-size="10" fill="#64748B">Server</text>
+  <!-- Mon: off -->
+  <text x="356" y="603" font-size="10" fill="#2D3148">—</text>
+  <!-- Tue -->
+  <rect x="429" y="569" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="434" y="582" font-size="9" font-weight="600" fill="#BFDBFE">11a–5p</text>
+  <text x="434" y="594" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Wed -->
+  <rect x="515" y="569" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="520" y="582" font-size="9" font-weight="600" fill="#BFDBFE">11a–5p</text>
+  <text x="520" y="594" font-size="8" fill="#93C5FD">6h</text>
+  <!-- Thu-Sat: off -->
+  <text x="612" y="603" font-size="10" fill="#2D3148">—</text>
+  <text x="698" y="603" font-size="10" fill="#2D3148">—</text>
+  <text x="784" y="603" font-size="10" fill="#2D3148">—</text>
+  <!-- Sun -->
+  <rect x="859" y="569" width="80" height="30" rx="4" fill="#1D4ED8" opacity="0.85"/>
+  <text x="864" y="582" font-size="9" font-weight="600" fill="#BFDBFE">5p–10p</text>
+  <text x="864" y="594" font-size="8" fill="#93C5FD">5h (+1)</text>
+  <!-- Total -->
+  <text x="946" y="597" font-size="12" font-weight="700" fill="#F1F5F9">17h</text>
+
+  <!-- ROW 8: Amy S. — Busser (teal-ish, use a different shade) -->
+  <rect x="210" y="636" width="780" height="72" fill="#161925"/>
+  <line x1="210" y1="636" x2="990" y2="636" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="666" r="10" fill="#0369A1"/>
+  <text x="222" y="670" font-size="9" font-weight="700" fill="#FFFFFF">AS</text>
+  <text x="244" y="662" font-size="12" font-weight="600" fill="#F1F5F9">Amy S.</text>
+  <text x="244" y="677" font-size="10" fill="#64748B">Busser</text>
+  <!-- Mon-Thu: off -->
+  <text x="356" y="675" font-size="10" fill="#2D3148">—</text>
+  <text x="440" y="675" font-size="10" fill="#2D3148">—</text>
+  <text x="526" y="675" font-size="10" fill="#2D3148">—</text>
+  <text x="612" y="675" font-size="10" fill="#2D3148">—</text>
+  <!-- Fri -->
+  <rect x="687" y="641" width="80" height="30" rx="4" fill="#0369A1" opacity="0.85"/>
+  <text x="692" y="654" font-size="9" font-weight="600" fill="#BAE6FD">5p–11p</text>
+  <text x="692" y="666" font-size="8" fill="#7DD3FC">6h</text>
+  <!-- Sat -->
+  <rect x="773" y="641" width="80" height="30" rx="4" fill="#0369A1" opacity="0.85"/>
+  <text x="778" y="654" font-size="9" font-weight="600" fill="#BAE6FD">5p–11p</text>
+  <text x="778" y="666" font-size="8" fill="#7DD3FC">6h</text>
+  <!-- Sun -->
+  <rect x="859" y="641" width="80" height="30" rx="4" fill="#0369A1" opacity="0.85"/>
+  <text x="864" y="654" font-size="9" font-weight="600" fill="#BAE6FD">12p–5p</text>
+  <text x="864" y="666" font-size="8" fill="#7DD3FC">5h</text>
+  <!-- Total -->
+  <text x="946" y="669" font-size="12" font-weight="700" fill="#F1F5F9">17h</text>
+
+  <!-- ROW 9: Dan O. — Manager (red) -->
+  <rect x="210" y="708" width="780" height="72" fill="#13162A"/>
+  <line x1="210" y1="708" x2="990" y2="708" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="738" r="10" fill="#991B1B"/>
+  <text x="222" y="742" font-size="9" font-weight="700" fill="#FFFFFF">DO</text>
+  <text x="244" y="734" font-size="12" font-weight="600" fill="#F1F5F9">Dan O.</text>
+  <text x="244" y="749" font-size="10" fill="#64748B">Manager</text>
+  <!-- Mon-Fri -->
+  <rect x="343" y="713" width="80" height="30" rx="4" fill="#991B1B" opacity="0.85"/>
+  <text x="348" y="726" font-size="9" font-weight="600" fill="#FECACA">9a–5p</text>
+  <text x="348" y="738" font-size="8" fill="#FCA5A5">8h</text>
+  <rect x="429" y="713" width="80" height="30" rx="4" fill="#991B1B" opacity="0.85"/>
+  <text x="434" y="726" font-size="9" font-weight="600" fill="#FECACA">9a–5p</text>
+  <text x="434" y="738" font-size="8" fill="#FCA5A5">8h</text>
+  <rect x="515" y="713" width="80" height="30" rx="4" fill="#991B1B" opacity="0.85"/>
+  <text x="520" y="726" font-size="9" font-weight="600" fill="#FECACA">9a–5p</text>
+  <text x="520" y="738" font-size="8" fill="#FCA5A5">8h</text>
+  <rect x="601" y="713" width="80" height="30" rx="4" fill="#991B1B" opacity="0.85"/>
+  <text x="606" y="726" font-size="9" font-weight="600" fill="#FECACA">9a–5p</text>
+  <text x="606" y="738" font-size="8" fill="#FCA5A5">8h</text>
+  <rect x="687" y="713" width="80" height="30" rx="4" fill="#991B1B" opacity="0.85"/>
+  <text x="692" y="726" font-size="9" font-weight="600" fill="#FECACA">9a–5p</text>
+  <text x="692" y="738" font-size="8" fill="#FCA5A5">8h</text>
+  <!-- Sat: off -->
+  <text x="784" y="747" font-size="10" fill="#2D3148">—</text>
+  <!-- Sun: off -->
+  <text x="882" y="747" font-size="10" fill="#2D3148">—</text>
+  <!-- Total -->
+  <text x="946" y="741" font-size="12" font-weight="700" fill="#F1F5F9">40h</text>
+
+  <!-- ROW 10: Maya R. — Host (teal) -->
+  <rect x="210" y="780" width="780" height="72" fill="#161925"/>
+  <line x1="210" y1="780" x2="990" y2="780" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="228" cy="810" r="10" fill="#0F766E"/>
+  <text x="222" y="814" font-size="9" font-weight="700" fill="#FFFFFF">MR</text>
+  <text x="244" y="806" font-size="12" font-weight="600" fill="#F1F5F9">Maya R.</text>
+  <text x="244" y="821" font-size="10" fill="#64748B">Host</text>
+  <!-- Mon -->
+  <rect x="343" y="785" width="80" height="30" rx="4" fill="#0F766E" opacity="0.85"/>
+  <text x="348" y="798" font-size="9" font-weight="600" fill="#99F6E4">11a–5p</text>
+  <text x="348" y="810" font-size="8" fill="#5EEAD4">6h</text>
+  <!-- Tue -->
+  <rect x="429" y="785" width="80" height="30" rx="4" fill="#0F766E" opacity="0.85"/>
+  <text x="434" y="798" font-size="9" font-weight="600" fill="#99F6E4">11a–5p</text>
+  <text x="434" y="810" font-size="8" fill="#5EEAD4">6h</text>
+  <!-- Wed -->
+  <rect x="515" y="785" width="80" height="30" rx="4" fill="#0F766E" opacity="0.85"/>
+  <text x="520" y="798" font-size="9" font-weight="600" fill="#99F6E4">11a–5p</text>
+  <text x="520" y="810" font-size="8" fill="#5EEAD4">6h</text>
+  <!-- Thu-Sun: off -->
+  <text x="612" y="819" font-size="10" fill="#2D3148">—</text>
+  <text x="698" y="819" font-size="10" fill="#2D3148">—</text>
+  <text x="784" y="819" font-size="10" fill="#2D3148">—</text>
+  <text x="882" y="819" font-size="10" fill="#2D3148">—</text>
+  <!-- Total -->
+  <text x="946" y="813" font-size="12" font-weight="700" fill="#F1F5F9">18h</text>
+
+  <!-- Bottom border of grid -->
+  <line x1="210" y1="852" x2="990" y2="852" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ═══ TOTALS ROW ═══ -->
+  <rect x="210" y="852" width="780" height="42" fill="#1A1D2E"/>
+  <text x="220" y="878" font-size="11" font-weight="700" fill="#94A3B8">Total labor hours:</text>
+  <text x="330" y="878" font-size="12" font-weight="700" fill="#F1F5F9">264h</text>
+  <text x="400" y="878" font-size="11" fill="#64748B">|</text>
+  <text x="414" y="878" font-size="11" font-weight="700" fill="#94A3B8">Est. labor cost:</text>
+  <text x="522" y="878" font-size="12" font-weight="700" fill="#10B981">$3,960</text>
+  <text x="588" y="878" font-size="11" fill="#64748B">|</text>
+  <text x="600" y="878" font-size="11" font-weight="700" fill="#94A3B8">Labor % today:</text>
+  <text x="706" y="878" font-size="12" font-weight="700" fill="#F59E0B">28.4%</text>
+
+  <!-- ═══ INTEGRATIONS ROW ═══ -->
+  <rect x="210" y="900" width="780" height="52" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="226" y="922" font-size="11" font-weight="600" fill="#64748B">Sync to:</text>
+
+  <rect x="288" y="910" width="72" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="300" y="929" font-size="11" font-weight="600" fill="#F59E0B">7shifts</text>
+
+  <rect x="368" y="910" width="76" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="374" y="929" font-size="11" font-weight="600" fill="#10B981">Homebase</text>
+
+  <rect x="452" y="910" width="52" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="462" y="929" font-size="11" font-weight="600" fill="#94A3B8">ADP</text>
+
+  <rect x="512" y="910" width="56" height="28" rx="5" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="518" y="929" font-size="11" font-weight="600" fill="#94A3B8">Gusto</text>
+
+  <!-- ═══════════════════════════════════════════
+       RIGHT PANEL — Add/Edit Shift (x=990)
+       Width = 376px
+  ═══════════════════════════════════════════ -->
+  <rect x="990" y="0" width="376" height="1024" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Panel header -->
+  <rect x="990" y="0" width="376" height="58" fill="#13162A"/>
+  <text x="1006" y="26" font-size="15" font-weight="700" fill="#F1F5F9">Add / Edit Shift</text>
+  <text x="1006" y="46" font-size="11" fill="#64748B">Editing: Sarah M. — Thu May 29</text>
+
+  <!-- Panel divider -->
+  <line x1="990" y1="58" x2="1366" y2="58" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ── FIELD: Staff ── -->
+  <text x="1006" y="90" font-size="11" font-weight="600" fill="#94A3B8">STAFF</text>
+  <rect x="1006" y="97" width="340" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1022" y="119" font-size="12" fill="#F1F5F9">Sarah M.</text>
+  <text x="1316" y="119" font-size="12" fill="#64748B">▾</text>
+
+  <!-- ── FIELD: Role (auto-filled) ── -->
+  <text x="1006" y="150" font-size="11" font-weight="600" fill="#94A3B8">ROLE</text>
+  <rect x="1006" y="157" width="340" height="34" rx="6" fill="#162035" stroke="#1D4ED8" stroke-width="1"/>
+  <text x="1022" y="179" font-size="12" fill="#93C5FD">Server</text>
+  <text x="1280" y="174" font-size="9" fill="#64748B">auto-filled</text>
+
+  <!-- ── FIELD: Date ── -->
+  <text x="1006" y="211" font-size="11" font-weight="600" fill="#94A3B8">DATE</text>
+  <rect x="1006" y="218" width="340" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1022" y="240" font-size="12" fill="#F1F5F9">Thursday, May 29, 2026</text>
+  <text x="1316" y="240" font-size="12" fill="#64748B">📅</text>
+
+  <!-- ── FIELD: Start / End Time ── -->
+  <text x="1006" y="273" font-size="11" font-weight="600" fill="#94A3B8">START TIME</text>
+  <text x="1190" y="273" font-size="11" font-weight="600" fill="#94A3B8">END TIME</text>
+  <rect x="1006" y="280" width="160" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1022" y="302" font-size="12" fill="#F1F5F9">5:00 PM</text>
+  <text x="1148" y="302" font-size="12" fill="#64748B">▾</text>
+  <rect x="1186" y="280" width="160" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1202" y="302" font-size="12" fill="#F1F5F9">11:00 PM</text>
+  <text x="1328" y="302" font-size="12" fill="#64748B">▾</text>
+
+  <!-- ── FIELD: Break ── -->
+  <text x="1006" y="335" font-size="11" font-weight="600" fill="#94A3B8">BREAK</text>
+  <rect x="1006" y="342" width="160" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1022" y="364" font-size="12" fill="#F1F5F9">30 min</text>
+  <text x="1148" y="364" font-size="12" fill="#64748B">▾</text>
+
+  <!-- ── FIELD: Station ── -->
+  <text x="1190" y="335" font-size="11" font-weight="600" fill="#94A3B8">STATION</text>
+  <rect x="1186" y="342" width="160" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1202" y="364" font-size="12" fill="#F1F5F9">Dining Room</text>
+  <text x="1328" y="364" font-size="12" fill="#64748B">▾</text>
+
+  <!-- ── FIELD: Notes ── -->
+  <text x="1006" y="397" font-size="11" font-weight="600" fill="#94A3B8">NOTES</text>
+  <rect x="1006" y="404" width="340" height="52" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1022" y="424" font-size="11" fill="#94A3B8">Double - needs help with new menu</text>
+  <text x="1022" y="442" font-size="11" fill="#2D3148">|</text>
+
+  <!-- ── FIELD: Repeat ── -->
+  <text x="1006" y="476" font-size="11" font-weight="600" fill="#94A3B8">REPEAT</text>
+  <rect x="1006" y="483" width="340" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <!-- Radio buttons -->
+  <circle cx="1026" cy="500" r="7" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="1026" cy="500" r="3" fill="#F59E0B"/>
+  <text x="1038" y="504" font-size="11" fill="#F1F5F9">None</text>
+  <circle cx="1104" cy="500" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="1116" y="504" font-size="11" fill="#64748B">Weekly</text>
+  <circle cx="1194" cy="500" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
+  <text x="1206" y="504" font-size="11" fill="#64748B">Biweekly</text>
+
+  <!-- ── AVAILABILITY CONFLICT WARNING ── -->
+  <rect x="1006" y="530" width="340" height="52" rx="6" fill="#2D1F0A" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="1006" y="530" width="4" height="52" rx="2" fill="#F59E0B"/>
+  <text x="1018" y="548" font-size="11" font-weight="700" fill="#F59E0B">⚠  Availability Conflict</text>
+  <text x="1018" y="565" font-size="11" fill="#FCD34D">Sarah requested this day off.</text>
+  <text x="1018" y="578" font-size="10" fill="#D97706">Review before scheduling.</text>
+
+  <!-- ── OVERRIDE TOGGLE ── -->
+  <text x="1006" y="604" font-size="11" font-weight="600" fill="#94A3B8">OVERRIDE REQUEST</text>
+  <!-- Toggle OFF background -->
+  <rect x="1250" y="592" width="40" height="20" rx="10" fill="#EF4444"/>
+  <circle cx="1280" cy="602" r="8" fill="#FFFFFF"/>
+  <text x="1006" y="620" font-size="10" fill="#64748B">Toggle on to override availability conflict</text>
+
+  <!-- ── OVERRIDE REASON (shown greyed when off) ── -->
+  <text x="1006" y="645" font-size="11" font-weight="600" fill="#64748B">OVERRIDE REASON</text>
+  <rect x="1006" y="652" width="340" height="34" rx="6" fill="#0D0F1A" stroke="#1E2240" stroke-width="1"/>
+  <text x="1022" y="674" font-size="11" fill="#2D3148">Enter manager reason…</text>
+
+  <!-- ── SAVE/DELETE BUTTONS ── -->
+  <rect x="1006" y="702" width="340" height="40" rx="8" fill="#F59E0B"/>
+  <text x="1150" y="727" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">Save Shift</text>
+
+  <text x="1176" y="763" font-size="12" fill="#EF4444" text-anchor="middle" text-decoration="underline">Delete Shift</text>
+
+  <!-- ── ROLE LEGEND ── -->
+  <rect x="1006" y="780" width="340" height="120" rx="6" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="1022" y="800" font-size="11" font-weight="700" fill="#94A3B8">ROLE COLOR KEY</text>
+
+  <rect x="1022" y="810" width="12" height="12" rx="2" fill="#1D4ED8"/>
+  <text x="1040" y="821" font-size="10" fill="#94A3B8">Server</text>
+
+  <rect x="1110" y="810" width="12" height="12" rx="2" fill="#6D28D9"/>
+  <text x="1128" y="821" font-size="10" fill="#94A3B8">Bartender</text>
+
+  <rect x="1218" y="810" width="12" height="12" rx="2" fill="#065F46"/>
+  <text x="1236" y="821" font-size="10" fill="#94A3B8">Cashier</text>
+
+  <rect x="1022" y="832" width="12" height="12" rx="2" fill="#B45309"/>
+  <text x="1040" y="843" font-size="10" fill="#94A3B8">Cook</text>
+
+  <rect x="1110" y="832" width="12" height="12" rx="2" fill="#0F766E"/>
+  <text x="1128" y="843" font-size="10" fill="#94A3B8">Host</text>
+
+  <rect x="1218" y="832" width="12" height="12" rx="2" fill="#991B1B"/>
+  <text x="1236" y="843" font-size="10" fill="#94A3B8">Manager</text>
+
+  <rect x="1022" y="854" width="12" height="12" rx="2" fill="#0369A1"/>
+  <text x="1040" y="865" font-size="10" fill="#94A3B8">Busser</text>
+
+  <rect x="1110" y="854" width="12" height="12" rx="2" fill="#78350F" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1128" y="865" font-size="10" fill="#FCD34D">Vacation</text>
+
+  <rect x="1022" y="876" width="12" height="12" rx="2" fill="#7F1D1D"/>
+  <text x="1040" y="887" font-size="10" fill="#FCA5A5">⚠ OT = &gt;40h</text>
+
+  <!-- ── COMPLIANCE STATUS BOX ── -->
+  <rect x="1006" y="915" width="340" height="86" rx="6" fill="#0A1F12" stroke="#10B981" stroke-width="1"/>
+  <text x="1022" y="934" font-size="11" font-weight="700" fill="#10B981">Compliance Status</text>
+  <text x="1022" y="952" font-size="10" fill="#6EE7B7">✓ 7-day notice: 7 of 10 staff notified</text>
+  <text x="1022" y="967" font-size="10" fill="#F59E0B">⚠ 3 staff pending notification</text>
+  <text x="1022" y="982" font-size="10" fill="#6EE7B7">✓ Predictive premium tracked</text>
+  <text x="1022" y="997" font-size="10" fill="#EF4444">✗ Carlos R. over 40h OT threshold</text>
+
+</svg>

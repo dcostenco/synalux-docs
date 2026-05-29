@@ -1,0 +1,649 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- ================================================= -->
+  <!--  BACKGROUND                                       -->
+  <!-- ================================================= -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ================================================= -->
+  <!--  TOP NAV BAR                                      -->
+  <!-- ================================================= -->
+  <rect x="0" y="0" width="1366" height="52" fill="#1A1D2E"/>
+  <!-- Logo -->
+  <rect x="16" y="12" width="28" height="28" rx="6" fill="#F59E0B"/>
+  <text x="22" y="31" font-size="14" font-weight="800" fill="#0F1117">S</text>
+  <text x="52" y="32" font-size="15" font-weight="700" fill="#F1F5F9">Synalux POS</text>
+
+  <!-- Nav Tabs -->
+  <text x="200" y="32" font-size="13" fill="#64748B">Register</text>
+  <text x="280" y="32" font-size="13" fill="#64748B">Tables</text>
+  <text x="345" y="32" font-size="13" fill="#64748B">Orders</text>
+  <text x="415" y="32" font-size="13" fill="#64748B">Menu</text>
+  <text x="475" y="32" font-size="13" fill="#F59E0B" font-weight="600">Reports</text>
+  <rect x="475" y="48" width="56" height="3" rx="1.5" fill="#F59E0B"/>
+  <text x="548" y="32" font-size="13" fill="#64748B">Settings</text>
+
+  <!-- User avatar -->
+  <circle cx="1240" cy="26" r="14" fill="#2D3148"/>
+  <text x="1233" y="31" font-size="12" font-weight="700" fill="#F59E0B">D</text>
+  <text x="1260" y="22" font-size="11" font-weight="600" fill="#F1F5F9">Dmitri (Owner)</text>
+  <text x="1260" y="36" font-size="10" fill="#64748B">7:15 PM - May 27, 2026</text>
+
+  <!-- Thin separator -->
+  <line x1="0" y1="52" x2="1366" y2="52" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ================================================= -->
+  <!--  LEFT PANEL — Product Mix (PMIX) Report           -->
+  <!--  x=0, w=420                                       -->
+  <!-- ================================================= -->
+  <rect x="0" y="52" width="420" height="972" fill="#0F1117"/>
+
+  <!-- Panel Header -->
+  <rect x="12" y="62" width="396" height="44" rx="8" fill="#1A1D2E"/>
+  <text x="24" y="89" font-size="14" font-weight="700" fill="#F1F5F9">Product Mix Report</text>
+  <text x="200" y="89" font-size="10" fill="#64748B">May 19-25, 2026</text>
+
+  <!-- Daypart filter pills -->
+  <rect x="12" y="114" width="396" height="32" rx="6" fill="#1A1D2E"/>
+  <rect x="18" y="118" width="58" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="28" y="134" font-size="10" fill="#94A3B8">All Day</text>
+  <rect x="82" y="118" width="68" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="90" y="134" font-size="10" fill="#94A3B8">Breakfast</text>
+  <rect x="156" y="118" width="56" height="24" rx="4" fill="#F59E0B"/>
+  <text x="168" y="134" font-size="10" font-weight="600" fill="#0F1117">Lunch</text>
+  <circle cx="198" cy="130" r="3" fill="#0F1117"/>
+  <rect x="218" y="118" width="56" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="229" y="134" font-size="10" fill="#94A3B8">Dinner</text>
+
+  <!-- PMIX Table Card -->
+  <rect x="12" y="154" width="396" height="36" rx="8" fill="#1A1D2E"/>
+  <!-- Column headers -->
+  <text x="24" y="177" font-size="10" font-weight="600" fill="#64748B">Item</text>
+  <text x="164" y="177" font-size="10" font-weight="600" fill="#64748B" text-anchor="end">Qty</text>
+  <text x="228" y="177" font-size="10" font-weight="600" fill="#64748B" text-anchor="end">Gross $</text>
+  <text x="296" y="177" font-size="10" font-weight="600" fill="#64748B" text-anchor="end">% Sales</text>
+  <text x="380" y="177" font-size="10" font-weight="600" fill="#64748B" text-anchor="end">Margin %</text>
+
+  <!-- Table body background -->
+  <rect x="12" y="190" width="396" height="296" fill="#1A1D2E" rx="0 0 8 8"/>
+
+  <!-- Row 1: Classic Burger — 68% margin = green -->
+  <rect x="12" y="190" width="396" height="36" fill="#1A1D2E"/>
+  <line x1="24" y1="226" x2="396" y2="226" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="213" font-size="11" fill="#F1F5F9">Classic Burger</text>
+  <text x="164" y="213" font-size="11" fill="#F1F5F9" text-anchor="end">342</text>
+  <text x="228" y="213" font-size="11" fill="#F1F5F9" text-anchor="end">$4,104</text>
+  <text x="296" y="213" font-size="11" fill="#94A3B8" text-anchor="end">18.2%</text>
+  <!-- Margin bar: 68% = amber (50-70%) -->
+  <rect x="310" y="204" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="204" width="46" height="12" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="380" y="213" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="end">68%</text>
+
+  <!-- Row 2: Fries (Large) — 82% margin = green -->
+  <rect x="12" y="226" width="396" height="36" fill="#161929"/>
+  <line x1="24" y1="262" x2="396" y2="262" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="249" font-size="11" fill="#F1F5F9">Fries (Large)</text>
+  <text x="164" y="249" font-size="11" fill="#F1F5F9" text-anchor="end">298</text>
+  <text x="228" y="249" font-size="11" fill="#F1F5F9" text-anchor="end">$1,490</text>
+  <text x="296" y="249" font-size="11" fill="#94A3B8" text-anchor="end">6.6%</text>
+  <rect x="310" y="240" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="240" width="56" height="12" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="380" y="249" font-size="10" font-weight="600" fill="#10B981" text-anchor="end">82%</text>
+
+  <!-- Row 3: Draft Beer — 78% margin = green -->
+  <rect x="12" y="262" width="396" height="36" fill="#1A1D2E"/>
+  <line x1="24" y1="298" x2="396" y2="298" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="285" font-size="11" fill="#F1F5F9">Draft Beer</text>
+  <text x="164" y="285" font-size="11" fill="#F1F5F9" text-anchor="end">276</text>
+  <text x="228" y="285" font-size="11" fill="#F1F5F9" text-anchor="end">$1,656</text>
+  <text x="296" y="285" font-size="11" fill="#94A3B8" text-anchor="end">7.3%</text>
+  <rect x="310" y="276" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="276" width="53" height="12" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="380" y="285" font-size="10" font-weight="600" fill="#10B981" text-anchor="end">78%</text>
+
+  <!-- Row 4: Caesar Salad — 72% margin = green -->
+  <rect x="12" y="298" width="396" height="36" fill="#161929"/>
+  <line x1="24" y1="334" x2="396" y2="334" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="321" font-size="11" fill="#F1F5F9">Caesar Salad</text>
+  <text x="164" y="321" font-size="11" fill="#F1F5F9" text-anchor="end">187</text>
+  <text x="228" y="321" font-size="11" fill="#F1F5F9" text-anchor="end">$2,244</text>
+  <text x="296" y="321" font-size="11" fill="#94A3B8" text-anchor="end">9.9%</text>
+  <rect x="310" y="312" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="312" width="49" height="12" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="380" y="321" font-size="10" font-weight="600" fill="#10B981" text-anchor="end">72%</text>
+
+  <!-- Row 5: Margherita Pizza — 65% margin = amber -->
+  <rect x="12" y="334" width="396" height="36" fill="#1A1D2E"/>
+  <line x1="24" y1="370" x2="396" y2="370" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="357" font-size="11" fill="#F1F5F9">Margherita Pizza</text>
+  <text x="164" y="357" font-size="11" fill="#F1F5F9" text-anchor="end">156</text>
+  <text x="228" y="357" font-size="11" fill="#F1F5F9" text-anchor="end">$2,340</text>
+  <text x="296" y="357" font-size="11" fill="#94A3B8" text-anchor="end">10.4%</text>
+  <rect x="310" y="348" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="348" width="44" height="12" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="380" y="357" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="end">65%</text>
+
+  <!-- Row 6: Fish & Chips — 58% margin = amber -->
+  <rect x="12" y="370" width="396" height="36" fill="#161929"/>
+  <line x1="24" y1="406" x2="396" y2="406" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="393" font-size="11" fill="#F1F5F9">Fish &amp; Chips</text>
+  <text x="164" y="393" font-size="11" fill="#F1F5F9" text-anchor="end">134</text>
+  <text x="228" y="393" font-size="11" fill="#F1F5F9" text-anchor="end">$2,278</text>
+  <text x="296" y="393" font-size="11" fill="#94A3B8" text-anchor="end">10.1%</text>
+  <rect x="310" y="384" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="384" width="39" height="12" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="380" y="393" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="end">58%</text>
+
+  <!-- Row 7: Steak Frites — 52% margin = amber -->
+  <rect x="12" y="406" width="396" height="36" fill="#1A1D2E"/>
+  <line x1="24" y1="442" x2="396" y2="442" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="24" y="429" font-size="11" fill="#F1F5F9">Steak Frites</text>
+  <text x="164" y="429" font-size="11" fill="#F1F5F9" text-anchor="end">89</text>
+  <text x="228" y="429" font-size="11" fill="#F1F5F9" text-anchor="end">$2,670</text>
+  <text x="296" y="429" font-size="11" fill="#94A3B8" text-anchor="end">11.8%</text>
+  <rect x="310" y="420" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="420" width="35" height="12" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="380" y="429" font-size="10" font-weight="600" fill="#F59E0B" text-anchor="end">52%</text>
+
+  <!-- Row 8: Kids Meal — 71% margin = green -->
+  <rect x="12" y="442" width="396" height="36" fill="#161929"/>
+  <text x="24" y="465" font-size="11" fill="#F1F5F9">Kids Meal</text>
+  <text x="164" y="465" font-size="11" fill="#F1F5F9" text-anchor="end">67</text>
+  <text x="228" y="465" font-size="11" fill="#F1F5F9" text-anchor="end">$536</text>
+  <text x="296" y="465" font-size="11" fill="#94A3B8" text-anchor="end">2.4%</text>
+  <rect x="310" y="456" width="68" height="12" rx="3" fill="#2D3148"/>
+  <rect x="310" y="456" width="48" height="12" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="380" y="465" font-size="10" font-weight="600" fill="#10B981" text-anchor="end">71%</text>
+
+  <!-- Margin legend -->
+  <rect x="12" y="490" width="396" height="28" rx="6" fill="#1A1D2E"/>
+  <circle cx="28" cy="504" r="4" fill="#10B981"/>
+  <text x="36" y="508" font-size="9" fill="#64748B">&gt;70%</text>
+  <circle cx="80" cy="504" r="4" fill="#F59E0B"/>
+  <text x="88" y="508" font-size="9" fill="#64748B">50-70%</text>
+  <circle cx="140" cy="504" r="4" fill="#EF4444"/>
+  <text x="148" y="508" font-size="9" fill="#64748B">&lt;50%</text>
+
+  <!-- Footer totals -->
+  <rect x="12" y="526" width="396" height="42" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="24" y="548" font-size="11" fill="#64748B">Total Items Sold:</text>
+  <text x="130" y="548" font-size="12" font-weight="700" fill="#F1F5F9">1,842</text>
+  <text x="200" y="548" font-size="11" fill="#64748B">Revenue:</text>
+  <text x="256" y="548" font-size="12" font-weight="700" fill="#10B981">$22,540</text>
+  <text x="330" y="548" font-size="11" fill="#64748B">Avg Margin:</text>
+  <text x="396" y="548" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="end">68%</text>
+
+  <!-- ================================================= -->
+  <!--  Sparkline mini-chart: Top 5 by Revenue           -->
+  <!-- ================================================= -->
+  <rect x="12" y="578" width="396" height="150" rx="8" fill="#1A1D2E"/>
+  <text x="24" y="600" font-size="11" font-weight="600" fill="#F1F5F9">Revenue by Item (Top 5)</text>
+
+  <!-- Horizontal bar chart -->
+  <!-- Classic Burger $4,104 -->
+  <text x="24" y="622" font-size="9" fill="#94A3B8">Classic Burger</text>
+  <rect x="120" y="614" width="262" height="14" rx="3" fill="#2D3148"/>
+  <rect x="120" y="614" width="262" height="14" rx="3" fill="#F59E0B" opacity="0.6"/>
+  <text x="386" y="624" font-size="9" fill="#F1F5F9" text-anchor="end">$4,104</text>
+
+  <!-- Steak Frites $2,670 -->
+  <text x="24" y="644" font-size="9" fill="#94A3B8">Steak Frites</text>
+  <rect x="120" y="636" width="262" height="14" rx="3" fill="#2D3148"/>
+  <rect x="120" y="636" width="170" height="14" rx="3" fill="#8B5CF6" opacity="0.6"/>
+  <text x="386" y="646" font-size="9" fill="#F1F5F9" text-anchor="end">$2,670</text>
+
+  <!-- Margherita Pizza $2,340 -->
+  <text x="24" y="666" font-size="9" fill="#94A3B8">Marg. Pizza</text>
+  <rect x="120" y="658" width="262" height="14" rx="3" fill="#2D3148"/>
+  <rect x="120" y="658" width="149" height="14" rx="3" fill="#8B5CF6" opacity="0.6"/>
+  <text x="386" y="668" font-size="9" fill="#F1F5F9" text-anchor="end">$2,340</text>
+
+  <!-- Fish & Chips $2,278 -->
+  <text x="24" y="688" font-size="9" fill="#94A3B8">Fish &amp; Chips</text>
+  <rect x="120" y="680" width="262" height="14" rx="3" fill="#2D3148"/>
+  <rect x="120" y="680" width="145" height="14" rx="3" fill="#8B5CF6" opacity="0.6"/>
+  <text x="386" y="690" font-size="9" fill="#F1F5F9" text-anchor="end">$2,278</text>
+
+  <!-- Caesar Salad $2,244 -->
+  <text x="24" y="710" font-size="9" fill="#94A3B8">Caesar Salad</text>
+  <rect x="120" y="702" width="262" height="14" rx="3" fill="#2D3148"/>
+  <rect x="120" y="702" width="143" height="14" rx="3" fill="#8B5CF6" opacity="0.6"/>
+  <text x="386" y="712" font-size="9" fill="#F1F5F9" text-anchor="end">$2,244</text>
+
+  <!-- ================================================= -->
+  <!--  Panel dividers                                   -->
+  <!-- ================================================= -->
+  <line x1="420" y1="52" x2="420" y2="1024" stroke="#2D3148" stroke-width="1"/>
+  <line x1="946" y1="52" x2="946" y2="1024" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ================================================= -->
+  <!--  CENTER PANEL — Speed of Service + Leaderboard    -->
+  <!--  x=420, w=526                                     -->
+  <!-- ================================================= -->
+
+  <!-- ===== TOP HALF: Speed of Service ===== -->
+  <rect x="432" y="62" width="502" height="44" rx="8" fill="#1A1D2E"/>
+  <text x="444" y="89" font-size="14" font-weight="700" fill="#F1F5F9">Speed of Service</text>
+
+  <!-- Service type toggle -->
+  <rect x="640" y="72" width="280" height="26" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="646" y="75" width="72" height="20" rx="4" fill="none"/>
+  <text x="664" y="89" font-size="10" fill="#64748B">Dine-In</text>
+  <rect x="718" y="75" width="86" height="20" rx="4" fill="#F59E0B"/>
+  <text x="733" y="89" font-size="10" font-weight="600" fill="#0F1117">Drive-Thru</text>
+  <circle cx="793" cy="85" r="3" fill="#0F1117"/>
+  <rect x="808" y="75" width="66" height="20" rx="4" fill="none"/>
+  <text x="822" y="89" font-size="10" fill="#64748B">Takeout</text>
+
+  <!-- KPI Cards Row -->
+  <!-- Avg Window Time: 3:42 — green (under 4:00 target) -->
+  <rect x="432" y="114" width="160" height="66" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
+  <text x="444" y="134" font-size="9" fill="#64748B">Avg Window Time</text>
+  <text x="444" y="160" font-size="22" font-weight="700" fill="#10B981">3:42</text>
+  <text x="498" y="160" font-size="9" fill="#64748B">/ 4:00 target</text>
+  <text x="444" y="174" font-size="9" fill="#10B981">-18s vs last week</text>
+
+  <!-- Avg Kitchen Time: 6:15 — amber (close to 6:00 target) -->
+  <rect x="602" y="114" width="160" height="66" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="614" y="134" font-size="9" fill="#64748B">Avg Kitchen Time</text>
+  <text x="614" y="160" font-size="22" font-weight="700" fill="#F59E0B">6:15</text>
+  <text x="668" y="160" font-size="9" fill="#64748B">/ 6:00 target</text>
+  <text x="614" y="174" font-size="9" fill="#F97316">+15s over target</text>
+
+  <!-- Avg Total Time: 9:57 — green -->
+  <rect x="772" y="114" width="162" height="66" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
+  <text x="784" y="134" font-size="9" fill="#64748B">Avg Total Time</text>
+  <text x="784" y="160" font-size="22" font-weight="700" fill="#10B981">9:57</text>
+  <text x="842" y="160" font-size="9" fill="#64748B">/ 10:00 target</text>
+  <text x="784" y="174" font-size="9" fill="#10B981">Under target</text>
+
+  <!-- Hourly Bar Chart -->
+  <rect x="432" y="190" width="502" height="190" rx="8" fill="#1A1D2E"/>
+  <text x="444" y="212" font-size="11" font-weight="600" fill="#F1F5F9">Avg Service Time by Hour (Drive-Thru)</text>
+  <text x="870" y="212" font-size="9" fill="#64748B" text-anchor="end">Target: 10:00</text>
+
+  <!-- Y-axis labels -->
+  <text x="454" y="238" font-size="8" fill="#64748B">12m</text>
+  <text x="454" y="268" font-size="8" fill="#64748B">10m</text>
+  <text x="454" y="298" font-size="8" fill="#64748B">8m</text>
+  <text x="454" y="328" font-size="8" fill="#64748B">6m</text>
+  <text x="454" y="358" font-size="8" fill="#64748B">4m</text>
+
+  <!-- Target line (dashed) at 10:00 = y268 -->
+  <line x1="476" y1="268" x2="920" y2="268" stroke="#F97316" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- Grid lines -->
+  <line x1="476" y1="238" x2="920" y2="238" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="476" y1="298" x2="920" y2="298" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="476" y1="328" x2="920" y2="328" stroke="#2D3148" stroke-width="0.5"/>
+  <line x1="476" y1="358" x2="920" y2="358" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Bars: 11AM-9PM (11 hours, each bar ~36px wide with 4px gap) -->
+  <!-- 11AM: 8:30 = green -->
+  <rect x="484" y="283" width="34" height="82" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="501" y="374" font-size="7" fill="#64748B" text-anchor="middle">11a</text>
+
+  <!-- 12PM: 11:20 = red (peak) -->
+  <rect x="524" y="244" width="34" height="121" rx="3" fill="#EF4444" opacity="0.8"/>
+  <text x="541" y="374" font-size="7" fill="#64748B" text-anchor="middle">12p</text>
+
+  <!-- 1PM: 10:45 = red -->
+  <rect x="564" y="256" width="34" height="109" rx="3" fill="#EF4444" opacity="0.8"/>
+  <text x="581" y="374" font-size="7" fill="#64748B" text-anchor="middle">1p</text>
+
+  <!-- 2PM: 8:00 = green -->
+  <rect x="604" y="288" width="34" height="77" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="621" y="374" font-size="7" fill="#64748B" text-anchor="middle">2p</text>
+
+  <!-- 3PM: 7:15 = green -->
+  <rect x="644" y="296" width="34" height="69" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="661" y="374" font-size="7" fill="#64748B" text-anchor="middle">3p</text>
+
+  <!-- 4PM: 7:45 = green -->
+  <rect x="684" y="291" width="34" height="74" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="701" y="374" font-size="7" fill="#64748B" text-anchor="middle">4p</text>
+
+  <!-- 5PM: 9:50 = amber (at target) -->
+  <rect x="724" y="270" width="34" height="95" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="741" y="374" font-size="7" fill="#64748B" text-anchor="middle">5p</text>
+
+  <!-- 6PM: 10:30 = red -->
+  <rect x="764" y="259" width="34" height="106" rx="3" fill="#EF4444" opacity="0.8"/>
+  <text x="781" y="374" font-size="7" fill="#64748B" text-anchor="middle">6p</text>
+
+  <!-- 7PM: 9:30 = amber -->
+  <rect x="804" y="275" width="34" height="90" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="821" y="374" font-size="7" fill="#64748B" text-anchor="middle">7p</text>
+
+  <!-- 8PM: 8:15 = green -->
+  <rect x="844" y="286" width="34" height="79" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="861" y="374" font-size="7" fill="#64748B" text-anchor="middle">8p</text>
+
+  <!-- 9PM: 7:00 = green -->
+  <rect x="884" y="298" width="34" height="67" rx="3" fill="#10B981" opacity="0.8"/>
+  <text x="901" y="374" font-size="7" fill="#64748B" text-anchor="middle">9p</text>
+
+  <!-- Peak bottleneck callout -->
+  <rect x="432" y="386" width="502" height="32" rx="6" fill="#1A1D2E" stroke="#EF4444" stroke-width="1"/>
+  <text x="444" y="406" font-size="10" fill="#EF4444" font-weight="600">Peak Bottleneck:</text>
+  <text x="548" y="406" font-size="10" fill="#F1F5F9">12:30-1:00 PM -- Grill Station (avg 8:12)</text>
+
+  <!-- ===== BOTTOM HALF: Server Performance Leaderboard ===== -->
+  <rect x="432" y="428" width="502" height="44" rx="8" fill="#1A1D2E"/>
+  <text x="456" y="455" font-size="14" font-weight="700" fill="#F1F5F9">Server Leaderboard -- This Week</text>
+  <!-- Trophy icon approximation -->
+  <rect x="438" y="440" width="12" height="10" rx="2" fill="#F59E0B"/>
+  <rect x="441" y="450" width="6" height="4" fill="#F59E0B"/>
+  <rect x="439" y="454" width="10" height="2" rx="1" fill="#F59E0B"/>
+
+  <!-- Metric selector pills -->
+  <rect x="432" y="480" width="502" height="28" rx="6" fill="#1A1D2E"/>
+  <rect x="438" y="484" width="54" height="20" rx="4" fill="#F59E0B"/>
+  <text x="451" y="498" font-size="9" font-weight="600" fill="#0F1117">Sales</text>
+  <circle cx="483" cy="494" r="3" fill="#0F1117"/>
+  <rect x="498" y="484" width="66" height="20" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="510" y="498" font-size="9" fill="#64748B">Avg Ticket</text>
+  <rect x="570" y="484" width="52" height="20" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="582" y="498" font-size="9" fill="#64748B">Tips %</text>
+  <rect x="628" y="484" width="72" height="20" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="640" y="498" font-size="9" fill="#64748B">Upsells/hr</text>
+
+  <!-- Server 1: Sarah M. (Gold) -->
+  <rect x="432" y="516" width="502" height="56" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <!-- Medal background -->
+  <rect x="440" y="524" width="36" height="40" rx="6" fill="#F59E0B" opacity="0.15"/>
+  <text x="458" y="550" font-size="18" text-anchor="middle" fill="#F59E0B">1</text>
+  <text x="484" y="540" font-size="12" font-weight="700" fill="#F1F5F9">Sarah M.</text>
+  <text x="484" y="558" font-size="9" fill="#94A3B8">$8,420 sales</text>
+  <text x="560" y="558" font-size="9" fill="#64748B">|</text>
+  <text x="570" y="558" font-size="9" fill="#94A3B8">$42.10 avg ticket</text>
+  <text x="670" y="558" font-size="9" fill="#64748B">|</text>
+  <text x="680" y="558" font-size="9" fill="#94A3B8">12.3% tip</text>
+  <text x="740" y="558" font-size="9" fill="#64748B">|</text>
+  <text x="750" y="558" font-size="9" fill="#94A3B8">3.0 upsells/hr</text>
+  <!-- Sales bar -->
+  <rect x="484" y="530" width="430" height="6" rx="3" fill="#2D3148"/>
+  <rect x="484" y="530" width="430" height="6" rx="3" fill="#F59E0B" opacity="0.7"/>
+
+  <!-- Server 2: John K. (Silver) -->
+  <rect x="432" y="578" width="502" height="56" rx="8" fill="#1A1D2E" stroke="#94A3B8" stroke-width="0.5"/>
+  <rect x="440" y="586" width="36" height="40" rx="6" fill="#94A3B8" opacity="0.15"/>
+  <text x="458" y="612" font-size="18" text-anchor="middle" fill="#94A3B8">2</text>
+  <text x="484" y="602" font-size="12" font-weight="700" fill="#F1F5F9">John K.</text>
+  <text x="484" y="620" font-size="9" fill="#94A3B8">$7,890 sales</text>
+  <text x="560" y="620" font-size="9" fill="#64748B">|</text>
+  <text x="570" y="620" font-size="9" fill="#94A3B8">$39.45 avg ticket</text>
+  <text x="670" y="620" font-size="9" fill="#64748B">|</text>
+  <text x="680" y="620" font-size="9" fill="#94A3B8">11.8% tip</text>
+  <text x="740" y="620" font-size="9" fill="#64748B">|</text>
+  <text x="750" y="620" font-size="9" fill="#94A3B8">2.8 upsells/hr</text>
+  <rect x="484" y="592" width="430" height="6" rx="3" fill="#2D3148"/>
+  <rect x="484" y="592" width="403" height="6" rx="3" fill="#94A3B8" opacity="0.5"/>
+
+  <!-- Server 3: Maria G. (Bronze) -->
+  <rect x="432" y="640" width="502" height="56" rx="8" fill="#1A1D2E" stroke="#CD7F32" stroke-width="0.5"/>
+  <rect x="440" y="648" width="36" height="40" rx="6" fill="#CD7F32" opacity="0.15"/>
+  <text x="458" y="674" font-size="18" text-anchor="middle" fill="#CD7F32">3</text>
+  <text x="484" y="664" font-size="12" font-weight="700" fill="#F1F5F9">Maria G.</text>
+  <text x="484" y="682" font-size="9" fill="#94A3B8">$6,230 sales</text>
+  <text x="560" y="682" font-size="9" fill="#64748B">|</text>
+  <text x="570" y="682" font-size="9" fill="#94A3B8">$35.60 avg ticket</text>
+  <text x="670" y="682" font-size="9" fill="#64748B">|</text>
+  <text x="680" y="682" font-size="9" fill="#94A3B8">13.1% tip</text>
+  <text x="740" y="682" font-size="9" fill="#64748B">|</text>
+  <text x="750" y="682" font-size="9" fill="#94A3B8">2.1 upsells/hr</text>
+  <rect x="484" y="654" width="430" height="6" rx="3" fill="#2D3148"/>
+  <rect x="484" y="654" width="318" height="6" rx="3" fill="#CD7F32" opacity="0.5"/>
+
+  <!-- Server 4: Lisa T. -->
+  <rect x="432" y="702" width="502" height="56" rx="8" fill="#1A1D2E"/>
+  <rect x="440" y="710" width="36" height="40" rx="6" fill="#2D3148" opacity="0.3"/>
+  <text x="458" y="736" font-size="18" text-anchor="middle" fill="#64748B">4</text>
+  <text x="484" y="726" font-size="12" font-weight="600" fill="#F1F5F9">Lisa T.</text>
+  <text x="484" y="744" font-size="9" fill="#94A3B8">$5,410 sales</text>
+  <text x="560" y="744" font-size="9" fill="#64748B">|</text>
+  <text x="570" y="744" font-size="9" fill="#94A3B8">$33.80 avg ticket</text>
+  <text x="670" y="744" font-size="9" fill="#64748B">|</text>
+  <text x="680" y="744" font-size="9" fill="#94A3B8">10.9% tip</text>
+  <text x="740" y="744" font-size="9" fill="#64748B">|</text>
+  <text x="750" y="744" font-size="9" fill="#94A3B8">1.7 upsells/hr</text>
+  <rect x="484" y="716" width="430" height="6" rx="3" fill="#2D3148"/>
+  <rect x="484" y="716" width="276" height="6" rx="3" fill="#8B5CF6" opacity="0.5"/>
+
+  <!-- Contest banner -->
+  <rect x="432" y="766" width="502" height="44" rx="8" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <rect x="432" y="766" width="4" height="44" rx="2" fill="#8B5CF6"/>
+  <text x="450" y="784" font-size="10" font-weight="600" fill="#8B5CF6">May Upsell Challenge</text>
+  <text x="450" y="800" font-size="9" fill="#94A3B8">Prize: $100 bonus  --  Ends May 31  --  Leader: Sarah M. (3.0/hr)</text>
+
+  <!-- ================================================= -->
+  <!--  RIGHT PANEL — Online Order Throttling Config     -->
+  <!--  x=946, w=420                                     -->
+  <!-- ================================================= -->
+
+  <!-- Panel Header -->
+  <rect x="958" y="62" width="396" height="44" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="89" font-size="14" font-weight="700" fill="#F1F5F9">Online Order Throttling</text>
+
+  <!-- Active toggle -->
+  <rect x="1220" y="72" width="120" height="26" rx="13" fill="#10B981" opacity="0.2" stroke="#10B981" stroke-width="1"/>
+  <circle cx="1326" cy="85" r="10" fill="#10B981"/>
+  <text x="1232" y="89" font-size="10" font-weight="600" fill="#10B981">Active</text>
+
+  <!-- Max orders config card -->
+  <rect x="958" y="114" width="396" height="120" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="138" font-size="11" font-weight="600" fill="#F1F5F9">Max orders per 15-min window:</text>
+
+  <!-- Stepper control -->
+  <rect x="970" y="148" width="120" height="36" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="970" y="148" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="988" y="172" font-size="16" font-weight="700" fill="#F1F5F9" text-anchor="middle">-</text>
+  <text x="1030" y="172" font-size="16" font-weight="700" fill="#F59E0B" text-anchor="middle">12</text>
+  <rect x="1054" y="148" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="1072" y="172" font-size="16" font-weight="700" fill="#F1F5F9" text-anchor="middle">+</text>
+
+  <!-- Current window progress -->
+  <text x="970" y="202" font-size="10" fill="#64748B">Current window:</text>
+  <text x="1060" y="202" font-size="11" font-weight="600" fill="#F59E0B">8 / 12 orders</text>
+  <rect x="970" y="210" width="370" height="8" rx="4" fill="#2D3148"/>
+  <rect x="970" y="210" width="247" height="8" rx="4" fill="#F59E0B" opacity="0.8"/>
+  <text x="1340" y="228" font-size="9" fill="#F59E0B" text-anchor="end">67%</text>
+
+  <!-- Kitchen capacity -->
+  <text x="970" y="228" font-size="10" fill="#64748B">Kitchen capacity estimate:</text>
+  <text x="1108" y="228" font-size="11" font-weight="600" fill="#F97316">85%</text>
+
+  <!-- Schedule card -->
+  <rect x="958" y="242" width="396" height="66" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="264" font-size="11" font-weight="600" fill="#F1F5F9">Auto-Enable Schedule</text>
+  <text x="970" y="282" font-size="10" fill="#94A3B8">Lunch peak:</text>
+  <text x="1042" y="282" font-size="10" fill="#F1F5F9">11:30 AM -- 1:30 PM</text>
+  <text x="970" y="298" font-size="10" fill="#94A3B8">Dinner peak:</text>
+  <text x="1048" y="298" font-size="10" fill="#F1F5F9">5:00 -- 8:00 PM</text>
+  <!-- Green dots for schedule active -->
+  <circle cx="1186" cy="278" r="3" fill="#10B981"/>
+  <circle cx="1150" cy="294" r="3" fill="#10B981"/>
+
+  <!-- Channel breakdown card -->
+  <rect x="958" y="316" width="396" height="140" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="340" font-size="11" font-weight="600" fill="#F1F5F9">Channel Breakdown</text>
+
+  <!-- DoorDash -->
+  <rect x="970" y="352" width="370" height="30" rx="6" fill="#0F1117"/>
+  <text x="982" y="372" font-size="10" fill="#F1F5F9">DoorDash</text>
+  <rect x="1070" y="360" width="180" height="10" rx="5" fill="#2D3148"/>
+  <rect x="1070" y="360" width="144" height="10" rx="5" fill="#EF4444" opacity="0.7"/>
+  <text x="1260" y="372" font-size="10" font-weight="600" fill="#EF4444">4 / 5 max</text>
+
+  <!-- Uber Eats -->
+  <rect x="970" y="386" width="370" height="30" rx="6" fill="#0F1117"/>
+  <text x="982" y="406" font-size="10" fill="#F1F5F9">Uber Eats</text>
+  <rect x="1070" y="394" width="180" height="10" rx="5" fill="#2D3148"/>
+  <rect x="1070" y="394" width="120" height="10" rx="5" fill="#F59E0B" opacity="0.7"/>
+  <text x="1260" y="406" font-size="10" font-weight="600" fill="#F59E0B">2 / 3 max</text>
+
+  <!-- Website -->
+  <rect x="970" y="420" width="370" height="30" rx="6" fill="#0F1117"/>
+  <text x="982" y="440" font-size="10" fill="#F1F5F9">Website</text>
+  <rect x="1070" y="428" width="180" height="10" rx="5" fill="#2D3148"/>
+  <rect x="1070" y="428" width="90" height="10" rx="5" fill="#10B981" opacity="0.7"/>
+  <text x="1260" y="440" font-size="10" font-weight="600" fill="#10B981">2 / 4 max</text>
+
+  <!-- Warning alert -->
+  <rect x="958" y="464" width="396" height="48" rx="8" fill="#F97316" opacity="0.1" stroke="#F97316" stroke-width="1"/>
+  <text x="970" y="486" font-size="10" font-weight="600" fill="#F97316">!! Kitchen at 85% -- throttle engaged</text>
+  <text x="970" y="502" font-size="10" fill="#F1F5F9">2 orders queued -- est. 4 min delay</text>
+
+  <!-- Customer-facing message preview -->
+  <rect x="958" y="520" width="396" height="100" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="544" font-size="11" font-weight="600" fill="#F1F5F9">Customer-Facing Message</text>
+  <text x="1320" y="544" font-size="9" fill="#64748B" text-anchor="end">Preview</text>
+
+  <!-- Phone mockup frame -->
+  <rect x="990" y="556" width="200" height="54" rx="10" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1090" y="576" font-size="10" text-anchor="middle" fill="#F1F5F9">Your order will be</text>
+  <text x="1090" y="592" font-size="12" font-weight="700" text-anchor="middle" fill="#F59E0B">ready in ~25 min</text>
+  <text x="1090" y="606" font-size="8" text-anchor="middle" fill="#64748B">Thank you for your patience!</text>
+
+  <!-- Edit message button -->
+  <rect x="1210" y="572" width="120" height="26" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1232" y="590" font-size="10" fill="#94A3B8">Edit Message</text>
+
+  <!-- ================================================= -->
+  <!--  RIGHT PANEL — Additional: Recent Throttle Events -->
+  <!-- ================================================= -->
+  <rect x="958" y="630" width="396" height="150" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="654" font-size="11" font-weight="600" fill="#F1F5F9">Recent Throttle Events</text>
+  <text x="1320" y="654" font-size="9" fill="#64748B" text-anchor="end">Last 24h</text>
+
+  <!-- Event list -->
+  <text x="970" y="676" font-size="9" fill="#64748B">Today 12:35 PM</text>
+  <text x="1066" y="676" font-size="9" fill="#F97316">Throttled</text>
+  <text x="1120" y="676" font-size="9" fill="#94A3B8">14/12 orders -- 3 queued -- 6 min delay</text>
+
+  <text x="970" y="696" font-size="9" fill="#64748B">Today 12:15 PM</text>
+  <text x="1066" y="696" font-size="9" fill="#F59E0B">Warning</text>
+  <text x="1116" y="696" font-size="9" fill="#94A3B8">10/12 orders -- kitchen at 80%</text>
+
+  <text x="970" y="716" font-size="9" fill="#64748B">Today 6:20 PM</text>
+  <text x="1066" y="716" font-size="9" fill="#F97316">Throttled</text>
+  <text x="1120" y="716" font-size="9" fill="#94A3B8">12/12 orders -- 2 queued -- 5 min delay</text>
+
+  <text x="970" y="736" font-size="9" fill="#64748B">Yest. 12:40 PM</text>
+  <text x="1066" y="736" font-size="9" fill="#F97316">Throttled</text>
+  <text x="1120" y="736" font-size="9" fill="#94A3B8">15/12 orders -- 5 queued -- 8 min delay</text>
+
+  <text x="970" y="756" font-size="9" fill="#64748B">Yest. 6:45 PM</text>
+  <text x="1066" y="756" font-size="9" fill="#F59E0B">Warning</text>
+  <text x="1116" y="756" font-size="9" fill="#94A3B8">11/12 orders -- kitchen at 78%</text>
+
+  <text x="970" y="772" font-size="9" fill="#8B5CF6" text-decoration="underline">View all events</text>
+
+  <!-- ================================================= -->
+  <!--  RIGHT PANEL — 3rd-Party Pause Controls           -->
+  <!-- ================================================= -->
+  <rect x="958" y="790" width="396" height="76" rx="8" fill="#1A1D2E"/>
+  <text x="970" y="814" font-size="11" font-weight="600" fill="#F1F5F9">Quick Pause Controls</text>
+
+  <!-- DoorDash pause -->
+  <rect x="970" y="822" width="112" height="32" rx="6" fill="#0F1117" stroke="#EF4444" stroke-width="1"/>
+  <text x="988" y="842" font-size="9" font-weight="600" fill="#EF4444">Pause DoorDash</text>
+
+  <!-- Uber Eats pause -->
+  <rect x="1090" y="822" width="112" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1108" y="842" font-size="9" fill="#94A3B8">Pause Uber Eats</text>
+
+  <!-- Website pause -->
+  <rect x="1210" y="822" width="112" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1234" y="842" font-size="9" fill="#94A3B8">Pause Website</text>
+
+  <!-- ================================================= -->
+  <!--  LEFT PANEL — Bottom: Waste & Low-Stock Alerts    -->
+  <!-- ================================================= -->
+  <rect x="12" y="738" width="396" height="130" rx="8" fill="#1A1D2E"/>
+  <text x="24" y="762" font-size="11" font-weight="600" fill="#F1F5F9">Low Stock Alerts</text>
+  <text x="380" y="762" font-size="9" fill="#EF4444" text-anchor="end">3 items</text>
+
+  <rect x="24" y="772" width="372" height="26" rx="4" fill="#EF4444" opacity="0.08" stroke="#EF4444" stroke-width="0.5"/>
+  <text x="36" y="790" font-size="9" fill="#EF4444">Draft Beer (kegs)</text>
+  <text x="240" y="790" font-size="9" fill="#F1F5F9">1.5 kegs left</text>
+  <text x="340" y="790" font-size="9" fill="#EF4444" text-anchor="end">~18 servings</text>
+
+  <rect x="24" y="802" width="372" height="26" rx="4" fill="#F97316" opacity="0.08" stroke="#F97316" stroke-width="0.5"/>
+  <text x="36" y="820" font-size="9" fill="#F97316">Burger Patties</text>
+  <text x="240" y="820" font-size="9" fill="#F1F5F9">24 remaining</text>
+  <text x="340" y="820" font-size="9" fill="#F97316" text-anchor="end">~7 hrs at rate</text>
+
+  <rect x="24" y="832" width="372" height="26" rx="4" fill="#F97316" opacity="0.08" stroke="#F97316" stroke-width="0.5"/>
+  <text x="36" y="850" font-size="9" fill="#F97316">Caesar Dressing</text>
+  <text x="240" y="850" font-size="9" fill="#F1F5F9">0.8 gal left</text>
+  <text x="340" y="850" font-size="9" fill="#F97316" text-anchor="end">~40 servings</text>
+
+  <!-- ================================================= -->
+  <!--  CENTER PANEL — Bottom: Insights/AI Suggestions   -->
+  <!-- ================================================= -->
+  <rect x="432" y="820" width="502" height="72" rx="8" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <rect x="432" y="820" width="4" height="72" rx="2" fill="#8B5CF6"/>
+  <text x="450" y="842" font-size="11" font-weight="600" fill="#8B5CF6">AI Insights</text>
+  <text x="450" y="860" font-size="9" fill="#F1F5F9">Steak Frites has highest revenue but lowest margin (52%). Consider raising price $2 or sourcing alternate cut.</text>
+  <text x="450" y="878" font-size="9" fill="#F1F5F9">Sarah M. upsell rate is 43% above team avg. Schedule her on high-traffic shifts for max revenue impact.</text>
+
+  <!-- ================================================= -->
+  <!--  BOTTOM STATUS BAR                                -->
+  <!-- ================================================= -->
+  <rect x="0" y="900" width="1366" height="124" fill="#13162A"/>
+  <line x1="0" y1="900" x2="1366" y2="900" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Quick stats row -->
+  <text x="24" y="924" font-size="10" font-weight="600" fill="#64748B">TODAY'S SNAPSHOT</text>
+
+  <!-- Stat cards in bottom bar -->
+  <rect x="24" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="36" y="954" font-size="9" fill="#64748B">Revenue Today</text>
+  <text x="36" y="974" font-size="16" font-weight="700" fill="#10B981">$4,832</text>
+  <text x="110" y="974" font-size="9" fill="#10B981">+12% vs avg</text>
+
+  <rect x="204" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="216" y="954" font-size="9" fill="#64748B">Orders Today</text>
+  <text x="216" y="974" font-size="16" font-weight="700" fill="#F1F5F9">187</text>
+  <text x="260" y="974" font-size="9" fill="#10B981">+8% vs avg</text>
+
+  <rect x="384" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="396" y="954" font-size="9" fill="#64748B">Avg Ticket</text>
+  <text x="396" y="974" font-size="16" font-weight="700" fill="#F1F5F9">$25.84</text>
+  <text x="470" y="974" font-size="9" fill="#F59E0B">-2% vs avg</text>
+
+  <rect x="564" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="576" y="954" font-size="9" fill="#64748B">Labor Cost %</text>
+  <text x="576" y="974" font-size="16" font-weight="700" fill="#F59E0B">28.4%</text>
+  <text x="640" y="974" font-size="9" fill="#64748B">target 27%</text>
+
+  <rect x="744" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="756" y="954" font-size="9" fill="#64748B">Online Orders</text>
+  <text x="756" y="974" font-size="16" font-weight="700" fill="#8B5CF6">42</text>
+  <text x="786" y="974" font-size="9" fill="#94A3B8">(22% of total)</text>
+
+  <rect x="924" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="936" y="954" font-size="9" fill="#64748B">Throttle Events</text>
+  <text x="936" y="974" font-size="16" font-weight="700" fill="#F97316">3</text>
+  <text x="960" y="974" font-size="9" fill="#94A3B8">avg delay 5.2 min</text>
+
+  <rect x="1104" y="936" width="170" height="50" rx="6" fill="#1A1D2E"/>
+  <text x="1116" y="954" font-size="9" fill="#64748B">Customer Ratings</text>
+  <text x="1116" y="974" font-size="16" font-weight="700" fill="#10B981">4.7</text>
+  <text x="1150" y="974" font-size="9" fill="#F1F5F9">/ 5.0 (89 reviews)</text>
+
+  <!-- Print / Export buttons -->
+  <rect x="24" y="996" width="80" height="24" rx="4" fill="#F59E0B"/>
+  <text x="40" y="1012" font-size="10" font-weight="600" fill="#0F1117">Export PDF</text>
+  <rect x="112" y="996" width="80" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="126" y="1012" font-size="10" fill="#94A3B8">Export CSV</text>
+  <rect x="200" y="996" width="80" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="224" y="1012" font-size="10" fill="#94A3B8">Email</text>
+  <rect x="288" y="996" width="100" height="24" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="302" y="1012" font-size="10" fill="#94A3B8">Schedule Report</text>
+
+  <!-- Timestamp -->
+  <text x="1340" y="1012" font-size="9" fill="#64748B" text-anchor="end">Last updated: May 27, 2026 7:15 PM  --  Auto-refresh: 30s</text>
+
+</svg>

@@ -1,0 +1,396 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT SIDEBAR NAV (220px) ===== -->
+  <rect x="0" y="0" width="220" height="1024" fill="#13162A"/>
+
+  <!-- Logo / Title -->
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <line x1="8" y1="40" x2="212" y2="40" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Nav section: Menu Items group label -->
+  <text x="16" y="60" font-size="9.5" font-weight="700" fill="#64748B" letter-spacing="0.8">MENU</text>
+
+  <!-- Nav items -->
+  <text x="16" y="82" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="108" font-size="12" fill="#8B92A5">Categories</text>
+
+  <!-- "Menu Items" — selected parent -->
+  <rect x="0" y="116" width="220" height="30" fill="#1A1D2E"/>
+  <text x="16" y="135" font-size="12" font-weight="600" fill="#F1F5F9">Menu Items</text>
+  <!-- expand arrow -->
+  <text x="200" y="135" font-size="10" fill="#94A3B8">▾</text>
+
+  <!-- Sub-items under Menu Items -->
+  <text x="32" y="158" font-size="11" fill="#94A3B8">All Items</text>
+  <text x="32" y="178" font-size="11" fill="#94A3B8">Modifiers</text>
+  <text x="32" y="198" font-size="11" fill="#94A3B8">Combos</text>
+  <text x="32" y="218" font-size="11" fill="#94A3B8">Price Levels</text>
+
+  <!-- "Open Price Items" highlighted sub-item -->
+  <rect x="0" y="224" width="220" height="28" fill="#1E2240"/>
+  <rect x="0" y="224" width="3" height="28" fill="#F59E0B"/>
+  <text x="32" y="242" font-size="11" font-weight="700" fill="#F59E0B">Open Price Items</text>
+
+  <text x="32" y="264" font-size="11" fill="#94A3B8">Menu Scheduling</text>
+
+  <!-- Nav section: Pricing -->
+  <line x1="8" y1="278" x2="212" y2="278" stroke="#2D3148" stroke-width="1"/>
+  <text x="16" y="294" font-size="9.5" font-weight="700" fill="#64748B" letter-spacing="0.8">PRICING</text>
+  <text x="16" y="316" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="340" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
+  <text x="16" y="364" font-size="12" fill="#8B92A5">Auto-Gratuity</text>
+  <text x="16" y="388" font-size="12" fill="#8B92A5">Tax Exempt</text>
+  <text x="16" y="412" font-size="12" fill="#8B92A5">Rounding</text>
+
+  <!-- Nav section: Operations -->
+  <line x1="8" y1="426" x2="212" y2="426" stroke="#2D3148" stroke-width="1"/>
+  <text x="16" y="442" font-size="9.5" font-weight="700" fill="#64748B" letter-spacing="0.8">OPERATIONS</text>
+  <text x="16" y="464" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="488" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="512" font-size="12" fill="#8B92A5">Printer Routing</text>
+  <text x="16" y="536" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="560" font-size="12" fill="#8B92A5">Receipts</text>
+
+  <!-- Nav section: Engagement -->
+  <line x1="8" y1="574" x2="212" y2="574" stroke="#2D3148" stroke-width="1"/>
+  <text x="16" y="590" font-size="9.5" font-weight="700" fill="#64748B" letter-spacing="0.8">ENGAGEMENT</text>
+  <text x="16" y="612" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <text x="16" y="636" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="660" font-size="12" fill="#8B92A5">House Accounts</text>
+  <text x="16" y="684" font-size="12" fill="#8B92A5">Integrations</text>
+
+  <!-- ===== HEADER STRIP (220..1366, h=56) ===== -->
+  <rect x="220" y="0" width="1146" height="56" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="240" y="22" font-size="18" font-weight="700" fill="#F1F5F9">Open-Price Items</text>
+  <text x="240" y="42" font-size="10.5" fill="#94A3B8">Items where price is entered at time of sale — market price, chef specials, variable-price packages</text>
+
+  <!-- Info banner -->
+  <rect x="220" y="56" width="1146" height="44" fill="#1C1E35" stroke="#2D3148" stroke-width="1"/>
+  <rect x="220" y="56" width="4" height="44" fill="#8B5CF6"/>
+  <text x="236" y="73" font-size="10.5" font-weight="700" fill="#A78BFA">Open-price items:</text>
+  <text x="330" y="73" font-size="10.5" fill="#C4B5FD">price_cents is NULL in pos_menu_items — staff enter actual price at the register. Floor/ceiling enforced in POS firmware.</text>
+  <text x="236" y="90" font-size="10.5" fill="#94A3B8">Every entered price is audit-logged with staff_id. Manager PIN gates apply above the configured threshold per item.</text>
+
+  <!-- ===== TWO-COLUMN LAYOUT starts at y=100 ===== -->
+  <!-- LEFT col: table (220..820, 600px wide) -->
+  <!-- RIGHT col: form + preview (820..1366, 546px wide) -->
+
+  <!-- LEFT PANEL background -->
+  <rect x="220" y="100" width="600" height="924" fill="#0F1117"/>
+
+  <!-- Table header bar -->
+  <rect x="220" y="100" width="600" height="36" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="236" y="122" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">ITEM NAME</text>
+  <text x="370" y="122" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">CATEGORY</text>
+  <text x="448" y="122" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">FLOOR</text>
+  <text x="510" y="122" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">CEILING</text>
+  <text x="566" y="122" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">MGR PIN</text>
+  <text x="634" y="122" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">LABEL</text>
+  <!-- (Edit / Active columns implied by row controls) -->
+
+  <!-- === ROW 1: Market Fish (selected / editing) === -->
+  <rect x="220" y="136" width="600" height="58" fill="#1E2240" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- amber left accent -->
+  <rect x="220" y="136" width="3" height="58" fill="#F59E0B"/>
+  <!-- Active toggle ON -->
+  <rect x="225" y="152" width="28" height="16" rx="8" fill="#10B981"/>
+  <circle cx="244" cy="160" r="6" fill="#fff"/>
+  <text x="258" y="162" font-size="11" font-weight="700" fill="#F1F5F9">Market Fish</text>
+  <!-- category badge -->
+  <rect x="362" y="148" width="56" height="18" rx="9" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="373" y="161" font-size="9.5" fill="#94A3B8">Entrées</text>
+  <!-- floor -->
+  <text x="448" y="162" font-size="11" fill="#10B981">$18.00</text>
+  <!-- ceiling -->
+  <text x="510" y="162" font-size="11" fill="#EF4444">$65.00</text>
+  <!-- mgr -->
+  <text x="566" y="162" font-size="10.5" fill="#94A3B8">No</text>
+  <!-- label -->
+  <text x="634" y="155" font-size="9.5" fill="#94A3B8">"Market</text>
+  <text x="634" y="168" font-size="9.5" fill="#94A3B8">Price"</text>
+  <!-- Edit button (active) -->
+  <rect x="762" y="147" width="44" height="22" rx="4" fill="#F59E0B"/>
+  <text x="776" y="162" font-size="10" font-weight="600" fill="#0F1117">Edit</text>
+
+  <!-- === ROW 2: Chef's Special === -->
+  <rect x="220" y="194" width="600" height="54" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="220" y="194" width="3" height="54" fill="#10B981"/>
+  <rect x="225" y="208" width="28" height="16" rx="8" fill="#10B981"/>
+  <circle cx="244" cy="216" r="6" fill="#fff"/>
+  <text x="258" y="218" font-size="11" fill="#F1F5F9">Chef's Special</text>
+  <rect x="362" y="204" width="56" height="18" rx="9" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="373" y="217" font-size="9.5" fill="#94A3B8">Entrées</text>
+  <text x="448" y="218" font-size="11" fill="#10B981">$22.00</text>
+  <!-- no ceiling -->
+  <text x="510" y="218" font-size="11" fill="#64748B">— no max</text>
+  <text x="566" y="218" font-size="10.5" fill="#94A3B8">No</text>
+  <text x="634" y="211" font-size="9.5" fill="#94A3B8">"Daily</text>
+  <text x="634" y="224" font-size="9.5" fill="#94A3B8">Special"</text>
+  <rect x="762" y="205" width="44" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="776" y="220" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- === ROW 3: Wine by Bottle === -->
+  <rect x="220" y="248" width="600" height="58" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="220" y="248" width="3" height="58" fill="#8B5CF6"/>
+  <rect x="225" y="263" width="28" height="16" rx="8" fill="#10B981"/>
+  <circle cx="244" cy="271" r="6" fill="#fff"/>
+  <text x="258" y="273" font-size="11" fill="#F1F5F9">Wine by Bottle</text>
+  <rect x="362" y="259" width="66" height="18" rx="9" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="370" y="272" font-size="9.5" fill="#94A3B8">Beverages</text>
+  <text x="448" y="273" font-size="11" fill="#10B981">$25.00</text>
+  <text x="510" y="273" font-size="11" fill="#EF4444">$500.00</text>
+  <!-- mgr badge -->
+  <rect x="558" y="260" width="62" height="17" rx="8" fill="#451A03"/>
+  <text x="563" y="272" font-size="9" fill="#F97316">Yes &gt;$100</text>
+  <text x="634" y="265" font-size="9.5" fill="#94A3B8">Item</text>
+  <text x="634" y="278" font-size="9.5" fill="#94A3B8">name</text>
+  <rect x="762" y="261" width="44" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="776" y="276" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- === ROW 4: Catering Package === -->
+  <rect x="220" y="306" width="600" height="58" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="220" y="306" width="3" height="58" fill="#F97316"/>
+  <rect x="225" y="321" width="28" height="16" rx="8" fill="#10B981"/>
+  <circle cx="244" cy="329" r="6" fill="#fff"/>
+  <text x="258" y="331" font-size="11" fill="#F1F5F9">Catering Package</text>
+  <rect x="362" y="317" width="46" height="18" rx="9" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="371" y="330" font-size="9.5" fill="#94A3B8">Events</text>
+  <!-- no min -->
+  <text x="448" y="331" font-size="11" fill="#64748B">— no min</text>
+  <!-- no ceiling -->
+  <text x="510" y="331" font-size="11" fill="#64748B">— no max</text>
+  <!-- mgr badge -->
+  <rect x="558" y="318" width="40" height="17" rx="8" fill="#451A03"/>
+  <text x="567" y="330" font-size="9" fill="#F97316">Yes</text>
+  <text x="634" y="323" font-size="9.5" fill="#94A3B8">"Custom</text>
+  <text x="634" y="336" font-size="9.5" fill="#94A3B8">Package"</text>
+  <rect x="762" y="317" width="44" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="776" y="332" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- === ROW 5: Custom Cake === -->
+  <rect x="220" y="364" width="600" height="54" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="220" y="364" width="3" height="54" fill="#10B981"/>
+  <rect x="225" y="378" width="28" height="16" rx="8" fill="#10B981"/>
+  <circle cx="244" cy="386" r="6" fill="#fff"/>
+  <text x="258" y="388" font-size="11" fill="#F1F5F9">Custom Cake</text>
+  <rect x="362" y="374" width="57" height="18" rx="9" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="370" y="387" font-size="9.5" fill="#94A3B8">Desserts</text>
+  <text x="448" y="388" font-size="11" fill="#10B981">$40.00</text>
+  <text x="510" y="388" font-size="11" fill="#EF4444">$300.00</text>
+  <text x="566" y="388" font-size="10.5" fill="#94A3B8">No</text>
+  <text x="634" y="381" font-size="9.5" fill="#94A3B8">"Special</text>
+  <text x="634" y="394" font-size="9.5" fill="#94A3B8">Order"</text>
+  <rect x="762" y="375" width="44" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <text x="776" y="390" font-size="10" fill="#D1D5DB">Edit</text>
+
+  <!-- + Add Item button -->
+  <rect x="220" y="424" width="600" height="44" fill="#0F1117"/>
+  <rect x="236" y="432" width="126" height="28" rx="5" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="251" y="450" font-size="11" font-weight="600" fill="#F59E0B">+ Add Open-Price Item</text>
+
+  <!-- ===== DB SCHEMA BLOCK (left panel, y=476) ===== -->
+  <rect x="220" y="476" width="600" height="548" fill="#0C0E1A"/>
+  <rect x="228" y="484" width="584" height="532" rx="6" fill="#111827" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Schema header -->
+  <rect x="228" y="484" width="584" height="30" rx="6" fill="#1A1D2E"/>
+  <rect x="228" y="504" width="584" height="10" fill="#1A1D2E"/>
+  <text x="242" y="502" font-size="10" font-weight="700" fill="#8B5CF6">&#x2325; DB SCHEMA — open price extensions</text>
+
+  <!-- Code block -->
+  <text x="242" y="530" font-size="9.5" font-family="monospace" fill="#64748B">-- pos_menu_items extensions for open price</text>
+  <text x="242" y="546" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_menu_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">price_cents</tspan><tspan fill="#64748B">           int NULLABLE  </tspan><tspan fill="#4ADE80">-- NULL = open price item</tspan></text>
+  <text x="242" y="562" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_menu_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">open_price_floor_cents</tspan><tspan fill="#64748B">    int</tspan></text>
+  <text x="242" y="578" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_menu_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">open_price_ceiling_cents</tspan><tspan fill="#64748B">  int</tspan></text>
+  <text x="242" y="594" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_menu_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">manager_required_above_cents</tspan><tspan fill="#64748B">  int</tspan></text>
+  <text x="242" y="610" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_menu_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">receipt_label_override</tspan><tspan fill="#64748B">    varchar</tspan></text>
+  <text x="242" y="626" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_menu_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">open_price_online_display</tspan><tspan fill="#64748B"> varchar  </tspan><tspan fill="#4ADE80">-- 'hidden'|'market_price'|'range'</tspan></text>
+
+  <line x1="242" y1="638" x2="800" y2="638" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <text x="242" y="654" font-size="9.5" font-family="monospace" fill="#64748B">-- Audit trail: open price entries logged</text>
+  <text x="242" y="670" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_order_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">entered_price_cents</tspan><tspan fill="#64748B">        int     </tspan><tspan fill="#4ADE80">-- what staff typed</tspan></text>
+  <text x="242" y="686" font-size="9.5" font-family="monospace" fill="#94A3B8">pos_order_items<tspan fill="#64748B">.</tspan><tspan fill="#A78BFA">price_entered_by_staff_id</tspan><tspan fill="#64748B">  uuid</tspan></text>
+  <text x="242" y="702" font-size="9.5" font-family="monospace" fill="#64748B">-- price_entered_by is non-null when item is open-price</text>
+
+  <line x1="242" y1="714" x2="800" y2="714" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="242" y="730" font-size="9.5" font-family="monospace" fill="#64748B">-- POS firmware enforcement (pseudo)</text>
+  <text x="242" y="746" font-size="9.5" font-family="monospace" fill="#94A3B8"><tspan fill="#60A5FA">if</tspan> entered &lt; floor_cents   <tspan fill="#60A5FA">then</tspan> reject<tspan fill="#64748B">('Below floor price')</tspan></text>
+  <text x="242" y="762" font-size="9.5" font-family="monospace" fill="#94A3B8"><tspan fill="#60A5FA">if</tspan> entered &gt; ceiling_cents <tspan fill="#60A5FA">then</tspan> reject<tspan fill="#64748B">('Exceeds ceiling price')</tspan></text>
+  <text x="242" y="778" font-size="9.5" font-family="monospace" fill="#94A3B8"><tspan fill="#60A5FA">if</tspan> entered &gt; manager_threshold <tspan fill="#60A5FA">then</tspan> require_pin<tspan fill="#64748B">(manager)</tspan></text>
+
+  <!-- ===== RIGHT PANEL: Form + Preview ===== -->
+  <rect x="820" y="100" width="546" height="924" fill="#0F1117"/>
+
+  <!-- Form card -->
+  <rect x="830" y="108" width="526" height="596" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Form header -->
+  <rect x="830" y="108" width="526" height="38" rx="8" fill="#1E2240"/>
+  <rect x="830" y="130" width="526" height="16" fill="#1E2240"/>
+  <text x="848" y="131" font-size="13" font-weight="700" fill="#F1F5F9">Add / Edit Open-Price Item</text>
+  <!-- editing badge -->
+  <rect x="980" y="117" width="84" height="18" rx="9" fill="#78350F"/>
+  <text x="988" y="129" font-size="9" fill="#FCD34D">● Editing: Market Fish</text>
+
+  <!-- Form body starts y=154 -->
+
+  <!-- Item Name -->
+  <text x="848" y="163" font-size="10" font-weight="600" fill="#94A3B8">ITEM NAME</text>
+  <rect x="848" y="169" width="240" height="30" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="860" y="188" font-size="12" fill="#F1F5F9">Market Fish</text>
+  <!-- cursor blink -->
+  <rect x="940" y="176" width="1.5" height="14" fill="#F59E0B" opacity="0.9"/>
+
+  <!-- Category -->
+  <text x="848" y="220" font-size="10" font-weight="600" fill="#94A3B8">CATEGORY</text>
+  <rect x="848" y="226" width="180" height="30" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="860" y="245" font-size="12" fill="#F1F5F9">Entrées</text>
+  <text x="1010" y="245" font-size="10" fill="#64748B">▾</text>
+
+  <!-- Price Entry Mode -->
+  <text x="848" y="276" font-size="10" font-weight="600" fill="#94A3B8">PRICE ENTRY MODE</text>
+  <!-- Radio 1 selected -->
+  <circle cx="857" cy="291" r="7" fill="#0F1117" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="857" cy="291" r="3.5" fill="#F59E0B"/>
+  <text x="870" y="295" font-size="11" fill="#F1F5F9">Staff enters price at register</text>
+  <!-- Radio 2 -->
+  <circle cx="857" cy="311" r="7" fill="#0F1117" stroke="#2D3148" stroke-width="2"/>
+  <text x="870" y="315" font-size="11" fill="#94A3B8">Customer-facing display (kiosk/QR)</text>
+
+  <!-- Divider -->
+  <line x1="848" y1="328" x2="1340" y2="328" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Floor + Ceiling side by side -->
+  <text x="848" y="345" font-size="10" font-weight="600" fill="#94A3B8">FLOOR PRICE (minimum)</text>
+  <text x="1060" y="345" font-size="10" font-weight="600" fill="#94A3B8">CEILING PRICE (maximum)</text>
+
+  <!-- Floor input -->
+  <rect x="848" y="351" width="130" height="30" rx="5" fill="#0F1117" stroke="#10B981" stroke-width="1.5"/>
+  <text x="860" y="370" font-size="12" fill="#10B981">$18.00</text>
+  <!-- No minimum checkbox -->
+  <rect x="990" y="356" width="12" height="12" rx="2" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1006" y="367" font-size="10" fill="#64748B">No minimum</text>
+
+  <!-- Ceiling input -->
+  <rect x="1060" y="351" width="130" height="30" rx="5" fill="#0F1117" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="1072" y="370" font-size="12" fill="#EF4444">$65.00</text>
+  <!-- No maximum checkbox -->
+  <rect x="1202" y="356" width="12" height="12" rx="2" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1218" y="367" font-size="10" fill="#64748B">No maximum</text>
+
+  <!-- Manager PIN threshold -->
+  <text x="848" y="402" font-size="10" font-weight="600" fill="#94A3B8">MANAGER PIN REQUIRED ABOVE</text>
+  <rect x="848" y="408" width="130" height="30" rx="5" fill="#0F1117" stroke="#F97316" stroke-width="1.5"/>
+  <text x="860" y="427" font-size="12" fill="#F97316">$100.00</text>
+  <!-- PIN icon -->
+  <text x="968" y="427" font-size="11" fill="#F97316">&#x1F511;</text>
+  <!-- Never require checkbox -->
+  <rect x="990" y="414" width="12" height="12" rx="2" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1006" y="425" font-size="10" fill="#64748B">Never require</text>
+
+  <!-- Divider -->
+  <line x1="848" y1="450" x2="1340" y2="450" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Receipt Label -->
+  <text x="848" y="467" font-size="10" font-weight="600" fill="#94A3B8">RECEIPT LABEL</text>
+  <rect x="848" y="473" width="200" height="30" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="860" y="492" font-size="11" fill="#F1F5F9">"Market Price"</text>
+  <text x="1030" y="492" font-size="10" fill="#64748B">▾</text>
+  <!-- dropdown hint -->
+  <text x="1060" y="482" font-size="9.5" fill="#64748B">Item name / "Market Price"</text>
+  <text x="1060" y="494" font-size="9.5" fill="#64748B">"Daily Special" / Custom…</text>
+
+  <!-- Visible on QR / Online menu -->
+  <text x="848" y="522" font-size="10" font-weight="600" fill="#94A3B8">VISIBLE ON QR / ONLINE MENU</text>
+  <rect x="848" y="528" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="880" cy="539" r="9" fill="#fff"/>
+  <text x="900" y="541" font-size="11" fill="#10B981">ON</text>
+
+  <!-- Sub-toggle: Show 'Market Price' text -->
+  <rect x="864" y="557" width="22" height="14" rx="7" fill="#10B981"/>
+  <circle cx="877" cy="564" r="5.5" fill="#fff"/>
+  <text x="892" y="568" font-size="10" fill="#94A3B8">Show "Market Price" text on menu</text>
+
+  <!-- Divider -->
+  <line x1="848" y1="582" x2="1340" y2="582" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Save / Cancel buttons -->
+  <rect x="848" y="590" width="130" height="34" rx="6" fill="#F59E0B"/>
+  <text x="882" y="611" font-size="12" font-weight="700" fill="#0F1117">Save Item</text>
+
+  <text x="996" y="611" font-size="11" fill="#94A3B8" text-decoration="underline">Cancel</text>
+
+  <!-- Validation hint -->
+  <text x="848" y="643" font-size="9.5" fill="#64748B">* Floor must be ≤ ceiling. Manager threshold is optional but must be within floor–ceiling range if set.</text>
+
+  <!-- ===== REGISTER PREVIEW (bottom right panel) ===== -->
+  <rect x="830" y="716" width="526" height="300" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Preview header -->
+  <rect x="830" y="716" width="526" height="32" rx="8" fill="#13162A"/>
+  <rect x="830" y="736" width="526" height="12" fill="#13162A"/>
+  <text x="848" y="736" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">REGISTER PREVIEW</text>
+  <text x="848" y="752" font-size="10" fill="#94A3B8">When rung up, staff sees price-entry keypad:</text>
+
+  <!-- Keypad mockup card -->
+  <rect x="880" y="760" width="420" height="240" rx="10" fill="#0F1117" stroke="#2D3148" stroke-width="1.5"/>
+
+  <!-- Item label bar -->
+  <rect x="880" y="760" width="420" height="38" rx="10" fill="#1E2240"/>
+  <rect x="880" y="780" width="420" height="18" fill="#1E2240"/>
+  <text x="1000" y="783" font-size="13" font-weight="700" fill="#F1F5F9">Market Fish</text>
+
+  <!-- Price entry field -->
+  <text x="920" y="820" font-size="11" fill="#94A3B8">Enter Price:</text>
+  <rect x="1010" y="805" width="160" height="36" rx="6" fill="#0A0C16" stroke="#F59E0B" stroke-width="2"/>
+  <text x="1024" y="828" font-size="18" font-weight="700" fill="#F59E0B">$___</text>
+  <rect x="1156" y="812" width="2" height="22" fill="#F59E0B"/>
+
+  <!-- Floor/ceiling hint -->
+  <text x="920" y="856" font-size="9.5" fill="#10B981">Min: $18.00</text>
+  <text x="1050" y="856" font-size="9.5" fill="#EF4444">Max: $65.00</text>
+  <text x="1160" y="856" font-size="9.5" fill="#F97316">PIN &gt;$100</text>
+
+  <!-- Keypad digits -->
+  <!-- Row 1: 1 2 3 -->
+  <rect x="900" y="866" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="921" y="890" font-size="16" font-weight="600" fill="#F1F5F9">1</text>
+  <rect x="962" y="866" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="983" y="890" font-size="16" font-weight="600" fill="#F1F5F9">2</text>
+  <rect x="1024" y="866" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1045" y="890" font-size="16" font-weight="600" fill="#F1F5F9">3</text>
+
+  <!-- Row 2: 4 5 6 -->
+  <rect x="900" y="910" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="921" y="934" font-size="16" font-weight="600" fill="#F1F5F9">4</text>
+  <rect x="962" y="910" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="983" y="934" font-size="16" font-weight="600" fill="#F1F5F9">5</text>
+  <rect x="1024" y="910" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1045" y="934" font-size="16" font-weight="600" fill="#F1F5F9">6</text>
+
+  <!-- Row 3: 7 8 9 -->
+  <rect x="900" y="954" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="921" y="978" font-size="16" font-weight="600" fill="#F1F5F9">7</text>
+  <rect x="962" y="954" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="983" y="978" font-size="16" font-weight="600" fill="#F1F5F9">8</text>
+  <rect x="1024" y="954" width="54" height="38" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1045" y="978" font-size="16" font-weight="600" fill="#F1F5F9">9</text>
+
+  <!-- Row 4: . 0 ⌫ -->
+  <rect x="900" y="998" width="54" height="20" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="923" y="1013" font-size="14" font-weight="600" fill="#94A3B8">.</text>
+  <rect x="962" y="998" width="54" height="20" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="983" y="1013" font-size="14" font-weight="600" fill="#F1F5F9">0</text>
+  <rect x="1024" y="998" width="54" height="20" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+  <text x="1040" y="1013" font-size="12" fill="#94A3B8">⌫</text>
+
+  <!-- Confirm button on keypad -->
+  <rect x="1090" y="866" width="180" height="152" rx="6" fill="#F59E0B"/>
+  <text x="1148" y="955" font-size="14" font-weight="700" fill="#0F1117">Enter</text>
+  <text x="1134" y="973" font-size="10" fill="#78350F">Confirm Price</text>
+
+</svg>

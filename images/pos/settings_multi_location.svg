@@ -1,0 +1,461 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TOP NAV BAR
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1366" height="54" fill="#1A1D2E"/>
+  <rect x="0" y="54" width="1366" height="1" fill="#2D3148"/>
+  <text x="24" y="34" fill="#F59E0B" font-size="16" font-weight="700">Synalux POS</text>
+  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">&#x2699; Back Office — Multi-Location Management</text>
+  <text x="1342" y="34" fill="#94A3B8" font-size="13" text-anchor="end">Admin · Dmitri C.</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER SECTION (y=55 to y=130)
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="55" width="1366" height="76" fill="#13162A"/>
+  <rect x="0" y="131" width="1366" height="1" fill="#2D3148"/>
+
+  <text x="24" y="87" fill="#F1F5F9" font-size="22" font-weight="700">Multi-Location Management</text>
+  <text x="24" y="110" fill="#94A3B8" font-size="13">Manage all your locations from one dashboard. Each location is fully independent.</text>
+
+  <!-- Add Location button (amber) -->
+  <rect x="1050" y="66" width="150" height="36" rx="8" fill="#F59E0B"/>
+  <text x="1125" y="89" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">+ Add Location</text>
+
+  <!-- Request Demo button (purple) -->
+  <rect x="1210" y="66" width="140" height="36" rx="8" fill="#8B5CF6"/>
+  <text x="1280" y="89" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">&#x25B6; Request Demo</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STATS BAR (y=132, h=72)
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="132" width="1366" height="72" fill="#1A1D2E"/>
+  <rect x="0" y="204" width="1366" height="1" fill="#2D3148"/>
+
+  <!-- Stat 1: Total Locations -->
+  <rect x="20" y="148" width="300" height="40" rx="6" fill="#13162A"/>
+  <circle cx="44" cy="168" r="6" fill="#10B981"/>
+  <text x="58" y="162" fill="#64748B" font-size="11" font-weight="600">TOTAL LOCATIONS</text>
+  <text x="58" y="179" fill="#F1F5F9" font-size="15" font-weight="700">4</text>
+  <text x="100" y="179" fill="#94A3B8" font-size="12">(2 owned, 2 franchise)</text>
+
+  <!-- Stat 2: Combined Revenue -->
+  <rect x="340" y="148" width="300" height="40" rx="6" fill="#13162A"/>
+  <circle cx="364" cy="168" r="6" fill="#F59E0B"/>
+  <text x="378" y="162" fill="#64748B" font-size="11" font-weight="600">COMBINED REVENUE TODAY</text>
+  <text x="378" y="179" fill="#F59E0B" font-size="15" font-weight="700">$18,420</text>
+
+  <!-- Stat 3: Combined Orders -->
+  <rect x="660" y="148" width="280" height="40" rx="6" fill="#13162A"/>
+  <circle cx="684" cy="168" r="6" fill="#3B82F6"/>
+  <text x="698" y="162" fill="#64748B" font-size="11" font-weight="600">COMBINED ORDERS TODAY</text>
+  <text x="698" y="179" fill="#F1F5F9" font-size="15" font-weight="700">487</text>
+
+  <!-- Stat 4: Locations Online -->
+  <rect x="960" y="148" width="386" height="40" rx="6" fill="#13162A"/>
+  <circle cx="984" cy="163" r="5" fill="#10B981"/>
+  <circle cx="1000" cy="163" r="5" fill="#10B981"/>
+  <circle cx="1016" cy="163" r="5" fill="#10B981"/>
+  <circle cx="1032" cy="163" r="5" fill="#10B981"/>
+  <text x="1048" y="162" fill="#64748B" font-size="11" font-weight="600">LOCATIONS ONLINE</text>
+  <text x="984" y="181" fill="#10B981" font-size="15" font-weight="700">4/4 — All Online</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TWO-PANEL LAYOUT
+       Left panel: x=0, w=400, y=205 to 1024
+       Right panel: x=400, w=966, y=205 to 1024
+  ════════════════════════════════════════════════════════════ -->
+
+  <!-- Left panel background -->
+  <rect x="0" y="205" width="400" height="819" fill="#13162A"/>
+  <rect x="400" y="205" width="1" height="819" fill="#2D3148"/>
+
+  <!-- Left panel header -->
+  <text x="20" y="232" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">LOCATIONS</text>
+
+  <!-- ─── Location Card 1: Downtown (selected) ─── -->
+  <rect x="8" y="242" width="384" height="82" rx="8" fill="#1E2443" stroke="#F59E0B" stroke-width="2"/>
+  <!-- Green online dot -->
+  <circle cx="28" cy="260" r="5" fill="#10B981"/>
+  <!-- Primary badge -->
+  <rect x="300" y="248" width="56" height="18" rx="4" fill="#F59E0B"/>
+  <text x="328" y="260" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">PRIMARY</text>
+  <!-- Location name -->
+  <text x="44" y="263" fill="#F1F5F9" font-size="14" font-weight="700">Synalux Bistro — Downtown</text>
+  <text x="28" y="281" fill="#94A3B8" font-size="12">123 Main St</text>
+  <text x="28" y="297" fill="#10B981" font-size="11" font-weight="600">Online</text>
+  <text x="200" y="297" fill="#F59E0B" font-size="13" font-weight="700">$6,840 today</text>
+  <!-- Selected indicator line -->
+  <rect x="8" y="242" width="4" height="82" rx="2" fill="#F59E0B"/>
+
+  <!-- ─── Location Card 2: Midtown ─── -->
+  <rect x="8" y="332" width="384" height="78" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="28" cy="350" r="5" fill="#10B981"/>
+  <text x="44" y="353" fill="#F1F5F9" font-size="14" font-weight="700">Synalux Bistro — Midtown</text>
+  <text x="28" y="371" fill="#94A3B8" font-size="12">456 Park Ave</text>
+  <text x="28" y="387" fill="#10B981" font-size="11" font-weight="600">Online</text>
+  <text x="200" y="387" fill="#F1F5F9" font-size="13" font-weight="700">$4,290 today</text>
+
+  <!-- ─── Location Card 3: Airport (Franchise) ─── -->
+  <rect x="8" y="418" width="384" height="78" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="28" cy="436" r="5" fill="#10B981"/>
+  <rect x="290" y="424" width="66" height="18" rx="4" fill="#8B5CF6"/>
+  <text x="323" y="436" fill="#FFFFFF" font-size="10" font-weight="700" text-anchor="middle">FRANCHISE</text>
+  <text x="44" y="439" fill="#F1F5F9" font-size="14" font-weight="700">Synalux Bistro — Airport</text>
+  <text x="28" y="457" fill="#94A3B8" font-size="12">Terminal B, JFK</text>
+  <text x="28" y="473" fill="#10B981" font-size="11" font-weight="600">Online</text>
+  <text x="200" y="473" fill="#F1F5F9" font-size="13" font-weight="700">$4,180 today</text>
+
+  <!-- ─── Location Card 4: West Side (Franchise) ─── -->
+  <rect x="8" y="504" width="384" height="78" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="28" cy="522" r="5" fill="#10B981"/>
+  <rect x="290" y="510" width="66" height="18" rx="4" fill="#8B5CF6"/>
+  <text x="323" y="522" fill="#FFFFFF" font-size="10" font-weight="700" text-anchor="middle">FRANCHISE</text>
+  <text x="44" y="525" fill="#F1F5F9" font-size="14" font-weight="700">Synalux Bistro — West Side</text>
+  <text x="28" y="543" fill="#94A3B8" font-size="12">789 West Blvd</text>
+  <text x="28" y="559" fill="#10B981" font-size="11" font-weight="600">Online</text>
+  <text x="200" y="559" fill="#F1F5F9" font-size="13" font-weight="700">$3,110 today</text>
+
+  <!-- ─── Left panel bottom actions ─── -->
+  <rect x="20" y="600" width="360" height="36" rx="8" fill="none" stroke="#2D3148" stroke-width="1.5"/>
+  <text x="200" y="622" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">+ Invite Franchise Location</text>
+
+  <text x="200" y="660" fill="#3B82F6" font-size="12" text-anchor="middle" text-decoration="underline">Import Locations (.csv)</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       RIGHT PANEL: Location Detail — Downtown
+  ════════════════════════════════════════════════════════════ -->
+
+  <!-- Right panel header -->
+  <text x="424" y="228" fill="#F1F5F9" font-size="16" font-weight="700">Synalux Bistro — Downtown</text>
+  <text x="424" y="245" fill="#94A3B8" font-size="12">123 Main St, New York, NY · Location ID: loc_01</text>
+  <circle cx="650" cy="240" r="4" fill="#10B981"/>
+  <text x="660" y="244" fill="#10B981" font-size="12" font-weight="600">Online</text>
+
+  <!-- ─── TABS ─── -->
+  <rect x="408" y="252" width="950" height="36" rx="0" fill="#13162A"/>
+  <rect x="408" y="288" width="950" height="1" fill="#2D3148"/>
+
+  <!-- Overview tab (active) -->
+  <rect x="412" y="254" width="100" height="32" rx="6" fill="#1A1D2E"/>
+  <rect x="412" y="282" width="100" height="4" fill="#F59E0B" rx="2"/>
+  <text x="462" y="274" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="middle">Overview</text>
+
+  <!-- Other tabs -->
+  <text x="545" y="274" fill="#64748B" font-size="13" text-anchor="middle">Menu &amp; Pricing</text>
+  <text x="665" y="274" fill="#64748B" font-size="13" text-anchor="middle">Tax &amp; Compliance</text>
+  <text x="765" y="274" fill="#64748B" font-size="13" text-anchor="middle">Staff</text>
+  <text x="840" y="274" fill="#64748B" font-size="13" text-anchor="middle">Equipment</text>
+  <text x="920" y="274" fill="#64748B" font-size="13" text-anchor="middle">Reports</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       OVERVIEW TAB CONTENT
+  ════════════════════════════════════════════════════════════ -->
+
+  <!-- ─── 4 KPI Cards row ─── -->
+
+  <!-- KPI 1: Today's Sales -->
+  <rect x="412" y="300" width="222" height="72" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="428" y="320" fill="#64748B" font-size="11" font-weight="600">TODAY'S SALES</text>
+  <text x="428" y="345" fill="#F59E0B" font-size="22" font-weight="700">$6,840</text>
+  <text x="428" y="363" fill="#10B981" font-size="11">&#x2191; 8% vs yesterday</text>
+
+  <!-- KPI 2: Orders -->
+  <rect x="644" y="300" width="222" height="72" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="660" y="320" fill="#64748B" font-size="11" font-weight="600">ORDERS</text>
+  <text x="660" y="345" fill="#F1F5F9" font-size="22" font-weight="700">182</text>
+  <text x="660" y="363" fill="#94A3B8" font-size="11">avg check $37.58</text>
+
+  <!-- KPI 3: Active Tables -->
+  <rect x="876" y="300" width="222" height="72" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="892" y="320" fill="#64748B" font-size="11" font-weight="600">ACTIVE TABLES</text>
+  <text x="892" y="345" fill="#F1F5F9" font-size="22" font-weight="700">8<tspan fill="#64748B" font-size="16">/24</tspan></text>
+  <text x="892" y="363" fill="#94A3B8" font-size="11">33% capacity</text>
+
+  <!-- KPI 4: Staff On-Clock -->
+  <rect x="1108" y="300" width="246" height="72" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1124" y="320" fill="#64748B" font-size="11" font-weight="600">STAFF ON-CLOCK</text>
+  <text x="1124" y="345" fill="#F1F5F9" font-size="22" font-weight="700">6</text>
+  <text x="1124" y="363" fill="#94A3B8" font-size="11">of 14 scheduled</text>
+
+  <!-- ─── REVENUE CHART: Hourly Sales — All 4 Locations ─── -->
+  <rect x="412" y="384" width="942" height="168" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="428" y="404" fill="#F1F5F9" font-size="13" font-weight="700">Hourly Sales — All 4 Locations</text>
+  <text x="428" y="420" fill="#64748B" font-size="11">Stacked by location · 11am–10pm today</text>
+
+  <!-- Legend -->
+  <rect x="900" y="396" width="12" height="10" rx="2" fill="#F59E0B"/>
+  <text x="916" y="406" fill="#94A3B8" font-size="10">Downtown</text>
+  <rect x="980" y="396" width="12" height="10" rx="2" fill="#3B82F6"/>
+  <text x="996" y="406" fill="#94A3B8" font-size="10">Midtown</text>
+  <rect x="1055" y="396" width="12" height="10" rx="2" fill="#10B981"/>
+  <text x="1071" y="406" fill="#94A3B8" font-size="10">Airport</text>
+  <rect x="1120" y="396" width="12" height="10" rx="2" fill="#8B5CF6"/>
+  <text x="1136" y="406" fill="#94A3B8" font-size="10">Westside</text>
+
+  <!-- Chart area -->
+  <!-- Y-axis labels -->
+  <text x="418" y="437" fill="#64748B" font-size="9" text-anchor="middle">$2k</text>
+  <text x="418" y="464" fill="#64748B" font-size="9" text-anchor="middle">$1.5k</text>
+  <text x="418" y="491" fill="#64748B" font-size="9" text-anchor="middle">$1k</text>
+  <text x="418" y="518" fill="#64748B" font-size="9" text-anchor="middle">$0.5k</text>
+  <text x="418" y="537" fill="#64748B" font-size="9" text-anchor="middle">$0</text>
+
+  <!-- Grid lines -->
+  <line x1="432" y1="432" x2="1346" y2="432" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="432" y1="459" x2="1346" y2="459" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="432" y1="486" x2="1346" y2="486" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="432" y1="513" x2="1346" y2="513" stroke="#2D3148" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="432" y1="534" x2="1346" y2="534" stroke="#2D3148" stroke-width="0.5"/>
+
+  <!-- Stacked bars — 10 hours (11am-10pm), bar width=83px, gap=9px -->
+  <!-- Hour slot positions: 11am=437, 12pm=529, 1pm=621, 2pm=713, 3pm=805, 4pm=897, 5pm=989, 6pm=1081, 7pm=1173, 8pm=1265 (partial), 9pm=... -->
+  <!-- Scale: max ~$2000 total = 102px tall -->
+
+  <!-- 11am: DT=30, MT=20, AP=18, WS=12 (small morning) -->
+  <rect x="437" y="504" width="73" height="30" rx="2" fill="#F59E0B"/>
+  <rect x="437" y="484" width="73" height="20" rx="2" fill="#3B82F6"/>
+  <rect x="437" y="466" width="73" height="18" rx="2" fill="#10B981"/>
+  <rect x="437" y="454" width="73" height="12" rx="2" fill="#8B5CF6"/>
+  <text x="473" y="546" fill="#64748B" font-size="9" text-anchor="middle">11am</text>
+
+  <!-- 12pm: DT=55, MT=45, AP=50, WS=30 (lunch rush) -->
+  <rect x="519" y="479" width="73" height="55" rx="2" fill="#F59E0B"/>
+  <rect x="519" y="434" width="73" height="45" rx="2" fill="#3B82F6"/>
+  <rect x="519" y="384" width="73" height="50" rx="2" fill="#10B981"/>
+  <rect x="519" y="354" width="73" height="30" rx="2" fill="#8B5CF6"/>
+  <!-- cap at chart bottom -->
+  <rect x="519" y="434" width="73" height="100" rx="2" fill="#F59E0B"/>
+  <rect x="519" y="459" width="73" height="75" rx="2" fill="#F59E0B"/>
+  <!-- Let me simplify with direct coordinates to chart bottom=534 -->
+
+  <!-- Re-draw bars cleanly — bottom=534, scale 1px=$10 (max 180px) -->
+  <!-- 11am small: DT=28, MT=19, AP=17, WS=11 total=75 -->
+  <rect x="437" y="506" width="73" height="28" fill="#F59E0B" rx="2"/>
+  <rect x="437" y="487" width="73" height="19" fill="#3B82F6" rx="2"/>
+  <rect x="437" y="470" width="73" height="17" fill="#10B981" rx="2"/>
+  <rect x="437" y="459" width="73" height="11" fill="#8B5CF6" rx="2"/>
+
+  <!-- 12pm lunch peak: DT=52, MT=42, AP=48, WS=28 total=170 -->
+  <rect x="519" y="482" width="73" height="52" fill="#F59E0B" rx="2"/>
+  <rect x="519" y="440" width="73" height="42" fill="#3B82F6" rx="2"/>
+  <rect x="519" y="392" width="73" height="48" fill="#10B981" rx="2"/>
+  <rect x="519" y="364" width="73" height="28" fill="#8B5CF6" rx="2"/>
+  <!-- Clipped to chart area y=432 min -->
+
+  <!-- 1pm: DT=38, MT=30, AP=36, WS=22 total=126 -->
+  <rect x="601" y="496" width="73" height="38" fill="#F59E0B" rx="2"/>
+  <rect x="601" y="466" width="73" height="30" fill="#3B82F6" rx="2"/>
+  <rect x="601" y="430" width="73" height="36" fill="#10B981" rx="2"/>
+  <rect x="601" y="408" width="73" height="22" fill="#8B5CF6" rx="2"/>
+
+  <!-- 2pm: DT=32, MT=25, AP=30, WS=18 total=105 -->
+  <rect x="683" y="502" width="73" height="32" fill="#F59E0B" rx="2"/>
+  <rect x="683" y="477" width="73" height="25" fill="#3B82F6" rx="2"/>
+  <rect x="683" y="447" width="73" height="30" fill="#10B981" rx="2"/>
+  <rect x="683" y="429" width="73" height="18" fill="#8B5CF6" rx="2"/>
+
+  <!-- 3pm slow: DT=22, MT=16, AP=20, WS=12 total=70 -->
+  <rect x="765" y="512" width="73" height="22" fill="#F59E0B" rx="2"/>
+  <rect x="765" y="496" width="73" height="16" fill="#3B82F6" rx="2"/>
+  <rect x="765" y="476" width="73" height="20" fill="#10B981" rx="2"/>
+  <rect x="765" y="464" width="73" height="12" fill="#8B5CF6" rx="2"/>
+
+  <!-- 4pm: DT=28, MT=20, AP=24, WS=14 total=86 -->
+  <rect x="847" y="506" width="73" height="28" fill="#F59E0B" rx="2"/>
+  <rect x="847" y="486" width="73" height="20" fill="#3B82F6" rx="2"/>
+  <rect x="847" y="462" width="73" height="24" fill="#10B981" rx="2"/>
+  <rect x="847" y="448" width="73" height="14" fill="#8B5CF6" rx="2"/>
+
+  <!-- 5pm: DT=42, MT=34, AP=38, WS=24 total=138 -->
+  <rect x="929" y="492" width="73" height="42" fill="#F59E0B" rx="2"/>
+  <rect x="929" y="458" width="73" height="34" fill="#3B82F6" rx="2"/>
+  <rect x="929" y="420" width="73" height="38" fill="#10B981" rx="2"/>
+  <rect x="929" y="396" width="73" height="24" fill="#8B5CF6" rx="2"/>
+
+  <!-- 6pm dinner peak: DT=60, MT=50, AP=55, WS=35 total=200 (cap at 180) -->
+  <rect x="1011" y="474" width="73" height="60" fill="#F59E0B" rx="2"/>
+  <rect x="1011" y="424" width="73" height="50" fill="#3B82F6" rx="2"/>
+  <rect x="1011" y="369" width="73" height="55" fill="#10B981" rx="2"/>
+  <rect x="1011" y="334" width="73" height="35" fill="#8B5CF6" rx="2"/>
+  <!-- clip to 432 min y -->
+
+  <!-- 7pm: DT=55, MT=45, AP=48, WS=30 total=178 -->
+  <rect x="1093" y="479" width="73" height="55" fill="#F59E0B" rx="2"/>
+  <rect x="1093" y="434" width="73" height="45" fill="#3B82F6" rx="2"/>
+  <rect x="1093" y="386" width="73" height="48" fill="#10B981" rx="2"/>
+  <rect x="1093" y="356" width="73" height="30" fill="#8B5CF6" rx="2"/>
+
+  <!-- 8pm: DT=40, MT=32, AP=35, WS=20 total=127 -->
+  <rect x="1175" y="494" width="73" height="40" fill="#F59E0B" rx="2"/>
+  <rect x="1175" y="462" width="73" height="32" fill="#3B82F6" rx="2"/>
+  <rect x="1175" y="427" width="73" height="35" fill="#10B981" rx="2"/>
+  <rect x="1175" y="407" width="73" height="20" fill="#8B5CF6" rx="2"/>
+
+  <!-- 9pm: DT=26, MT=18, AP=22, WS=12 total=78 (partial) -->
+  <rect x="1257" y="508" width="73" height="26" fill="#F59E0B" rx="2"/>
+  <rect x="1257" y="490" width="73" height="18" fill="#3B82F6" rx="2"/>
+  <rect x="1257" y="468" width="73" height="22" fill="#10B981" rx="2"/>
+  <rect x="1257" y="456" width="73" height="12" fill="#8B5CF6" rx="2"/>
+
+  <!-- X-axis hour labels -->
+  <text x="601" y="546" fill="#64748B" font-size="9" text-anchor="middle">12pm</text>
+  <text x="683" y="546" fill="#64748B" font-size="9" text-anchor="middle">1pm</text>
+  <text x="765" y="546" fill="#64748B" font-size="9" text-anchor="middle">2pm</text>
+  <text x="847" y="546" fill="#64748B" font-size="9" text-anchor="middle">3pm</text>
+  <text x="929" y="546" fill="#64748B" font-size="9" text-anchor="middle">4pm</text>
+  <text x="1011" y="546" fill="#64748B" font-size="9" text-anchor="middle">5pm</text>
+  <text x="1093" y="546" fill="#64748B" font-size="9" text-anchor="middle">6pm</text>
+  <text x="1175" y="546" fill="#64748B" font-size="9" text-anchor="middle">7pm</text>
+  <text x="1257" y="546" fill="#64748B" font-size="9" text-anchor="middle">8pm</text>
+  <text x="1339" y="546" fill="#64748B" font-size="9" text-anchor="middle">9pm</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MENU & PRICING SECTION
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="412" y="560" width="455" height="150" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="428" y="580" fill="#F1F5F9" font-size="13" font-weight="700">Menu &amp; Pricing</text>
+
+  <!-- Shared Base Menu toggle: ON -->
+  <text x="428" y="602" fill="#94A3B8" font-size="12">Shared Base Menu</text>
+  <rect x="760" y="590" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="793" cy="601" r="9" fill="#FFFFFF"/>
+  <text x="428" y="618" fill="#64748B" font-size="11">All locations share same menu (edits apply everywhere)</text>
+
+  <!-- Location Overrides -->
+  <text x="428" y="638" fill="#94A3B8" font-size="12" font-weight="600">Location Overrides</text>
+
+  <!-- Airport +15% markup checkbox -->
+  <rect x="428" y="645" width="12" height="12" rx="2" fill="#10B981"/>
+  <text x="444" y="656" fill="#64748B" font-size="11">Airport location has +15% price markup applied</text>
+
+  <!-- Allow per-location item availability toggle: ON -->
+  <text x="428" y="674" fill="#94A3B8" font-size="12">Allow per-location item availability (86'd per location)</text>
+  <rect x="760" y="663" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="793" cy="674" r="9" fill="#FFFFFF"/>
+
+  <!-- Allow per-location happy hour toggle: ON -->
+  <text x="428" y="696" fill="#94A3B8" font-size="12">Allow per-location happy hour times</text>
+  <rect x="760" y="685" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="793" cy="696" r="9" fill="#FFFFFF"/>
+
+  <text x="428" y="704" fill="#64748B" font-size="10">Menu last synced: Today 6:00 PM</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TAX SECTION
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="877" y="560" width="477" height="150" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="893" y="580" fill="#F1F5F9" font-size="13" font-weight="700">Tax Zone Assignments</text>
+
+  <!-- Table header -->
+  <rect x="877" y="585" width="477" height="22" rx="4" fill="#13162A"/>
+  <text x="893" y="600" fill="#64748B" font-size="10" font-weight="700">LOCATION</text>
+  <text x="1010" y="600" fill="#64748B" font-size="10" font-weight="700">TAX ZONE</text>
+  <text x="1150" y="600" fill="#64748B" font-size="10" font-weight="700">RATE</text>
+  <text x="1210" y="600" fill="#64748B" font-size="10" font-weight="700">NOTES</text>
+
+  <!-- Row 1 Downtown -->
+  <rect x="877" y="607" width="477" height="22" rx="0" fill="#1E2235"/>
+  <text x="893" y="622" fill="#F1F5F9" font-size="11">Downtown</text>
+  <text x="1010" y="622" fill="#94A3B8" font-size="11">New York City</text>
+  <text x="1150" y="622" fill="#F59E0B" font-size="11" font-weight="600">8.875%</text>
+  <text x="1210" y="622" fill="#64748B" font-size="10">—</text>
+
+  <!-- Row 2 Midtown -->
+  <rect x="877" y="629" width="477" height="22" rx="0" fill="#1A1D2E"/>
+  <text x="893" y="644" fill="#F1F5F9" font-size="11">Midtown</text>
+  <text x="1010" y="644" fill="#94A3B8" font-size="11">New York City</text>
+  <text x="1150" y="644" fill="#F59E0B" font-size="11" font-weight="600">8.875%</text>
+  <text x="1210" y="644" fill="#64748B" font-size="10">—</text>
+
+  <!-- Row 3 Airport -->
+  <rect x="877" y="651" width="477" height="22" rx="0" fill="#1E2235"/>
+  <text x="893" y="666" fill="#F1F5F9" font-size="11">Airport</text>
+  <text x="1010" y="666" fill="#94A3B8" font-size="11">JFK (Federal Zone)</text>
+  <text x="1150" y="666" fill="#F59E0B" font-size="11" font-weight="600">8.875%</text>
+  <text x="1210" y="666" fill="#F97316" font-size="10">Duty-free pending</text>
+
+  <!-- Row 4 West Side -->
+  <rect x="877" y="673" width="477" height="22" rx="0" fill="#1A1D2E"/>
+  <text x="893" y="688" fill="#F1F5F9" font-size="11">West Side</text>
+  <text x="1010" y="688" fill="#94A3B8" font-size="11">New Jersey</text>
+  <text x="1150" y="688" fill="#F59E0B" font-size="11" font-weight="600">6.625%</text>
+  <text x="1210" y="688" fill="#94A3B8" font-size="10">NJ tax rules apply</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONSOLIDATED REPORTS + FRANCHISE ROYALTY
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="412" y="720" width="455" height="148" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="428" y="740" fill="#F1F5F9" font-size="13" font-weight="700">Consolidated Reports</text>
+
+  <!-- Report buttons -->
+  <rect x="428" y="748" width="210" height="30" rx="6" fill="#F59E0B"/>
+  <text x="533" y="768" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">All Locations Summary PDF</text>
+
+  <rect x="648" y="748" width="200" height="30" rx="6" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="748" y="768" fill="#94A3B8" font-size="12" text-anchor="middle">Per-Location Comparison</text>
+
+  <rect x="428" y="786" width="200" height="30" rx="6" fill="#8B5CF6"/>
+  <text x="528" y="806" fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle">Franchise Royalty Report</text>
+
+  <!-- Royalty info -->
+  <text x="428" y="832" fill="#64748B" font-size="11">Franchise royalty rate:</text>
+  <text x="545" y="832" fill="#F59E0B" font-size="11" font-weight="700">6%</text>
+  <text x="570" y="832" fill="#64748B" font-size="11">per franchise agreement</text>
+
+  <text x="428" y="850" fill="#64748B" font-size="11">Royalty due this month:</text>
+  <text x="540" y="850" fill="#10B981" font-size="11" font-weight="700">$1,847</text>
+  <text x="590" y="850" fill="#64748B" font-size="11">Airport +</text>
+  <text x="640" y="850" fill="#10B981" font-size="11" font-weight="700">$1,321</text>
+  <text x="685" y="850" fill="#64748B" font-size="11">West Side</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PERMISSIONS SECTION
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="877" y="720" width="477" height="148" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="893" y="740" fill="#F1F5F9" font-size="13" font-weight="700">Permissions &amp; Access Control</text>
+
+  <!-- Toggle 1: Corporate can view all -->
+  <text x="893" y="762" fill="#94A3B8" font-size="12">Corporate can view all location data</text>
+  <rect x="1286" y="751" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1319" cy="762" r="9" fill="#FFFFFF"/>
+
+  <!-- Toggle 2: Franchise cannot see each other -->
+  <text x="893" y="786" fill="#94A3B8" font-size="12">Franchise locations cannot see each other's data</text>
+  <rect x="1286" y="775" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1319" cy="786" r="9" fill="#FFFFFF"/>
+  <text x="893" y="798" fill="#64748B" font-size="10">RLS enforced at DB level</text>
+
+  <!-- Toggle 3: Corporate push menu -->
+  <text x="893" y="816" fill="#94A3B8" font-size="12">Corporate can push menu updates to franchises</text>
+  <rect x="1286" y="805" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1319" cy="816" r="9" fill="#FFFFFF"/>
+
+  <!-- Toggle 4: Franchise adjust pricing -->
+  <text x="893" y="840" fill="#94A3B8" font-size="12">Franchise can adjust local pricing</text>
+  <rect x="1286" y="829" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1319" cy="840" r="9" fill="#FFFFFF"/>
+  <text x="893" y="856" fill="#64748B" font-size="10">Within ±20% band of base price</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       WORKFLOW INTEGRATION BOX (amber border)
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="412" y="878" width="942" height="132" rx="8" fill="#1A1500" stroke="#F59E0B" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="412" y="878" width="942" height="24" rx="8" fill="#2A1F00"/>
+  <rect x="412" y="890" width="942" height="12" fill="#2A1F00"/>
+  <text x="428" y="895" fill="#F59E0B" font-size="12" font-weight="700">&#9888; Workflow Integration — Architecture Notes</text>
+
+  <!-- Content -->
+  <text x="428" y="916" fill="#94A3B8" font-size="11">Each location = separate <tspan fill="#F59E0B" font-weight="600">pos_location</tspan> row. RLS policies scope all pos_* tables by <tspan fill="#F59E0B" font-weight="600">location_id</tspan>.</text>
+  <text x="428" y="932" fill="#94A3B8" font-size="11">Menu sync: <tspan fill="#F59E0B" font-weight="600">pos_menu_items.location_id = NULL</tspan> for shared items; <tspan fill="#F59E0B" font-weight="600">location_id = X</tspan> for per-location overrides.</text>
+  <text x="428" y="948" fill="#94A3B8" font-size="11">Franchise royalty: <tspan fill="#F59E0B" font-weight="600">pos_royalty_configs</tspan> + daily cron calculates on <tspan fill="#F59E0B" font-weight="600">pos_payments</tspan>.</text>
+  <text x="428" y="964" fill="#94A3B8" font-size="11">Corporate dashboard: cross-location aggregation via <tspan fill="#F59E0B" font-weight="600">Supabase RPC</tspan> (admin role bypasses RLS).</text>
+  <text x="428" y="980" fill="#94A3B8" font-size="11">Franchise invite: email &#x2192; new Supabase user &#x2192; scoped to <tspan fill="#F59E0B" font-weight="600">location_id</tspan> via RLS policy.</text>
+  <text x="428" y="998" fill="#64748B" font-size="10">Schema: pos_locations · pos_menu_items · pos_royalty_configs · pos_payments · pos_location_users</text>
+
+</svg>

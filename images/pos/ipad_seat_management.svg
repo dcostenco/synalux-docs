@@ -1,0 +1,355 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- Top nav bar -->
+  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
+  <rect x="0" y="56" width="1366" height="1" fill="#2D3050"/>
+  <circle cx="16" cy="28" r="7" fill="#22C55E"/>
+  <text x="30" y="33" fill="#22C55E" font-size="12" font-weight="600">LIVE</text>
+  <text x="60" y="35" fill="#F59E0B" font-size="18" font-weight="700">Synalux POS</text>
+  <text x="550" y="24" fill="#94A3B8" font-size="12">Seat &amp; Table Management</text>
+  <text x="550" y="42" fill="#E2E8F0" font-size="14" font-weight="700">Table 6 — 8-top · Adding Seat Orders</text>
+  <text x="1260" y="22" fill="#94A3B8" font-size="11">Wed 2:22 PM</text>
+  <text x="1260" y="38" fill="#E2E8F0" font-size="14" font-weight="600">John S.</text>
+
+  <!-- LEFT: Seat selector panel -->
+  <rect x="0" y="57" width="260" height="967" fill="#13162A"/>
+  <rect x="260" y="57" width="1" height="967" fill="#2D3050"/>
+
+  <text x="130" y="90" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">TABLE 6 — SEATS</text>
+
+  <!-- Table overview card -->
+  <rect x="10" y="100" width="240" height="90" rx="10" fill="#1A1D2E"/>
+  <text x="130" y="124" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">Table 6</text>
+  <text x="130" y="144" fill="#94A3B8" font-size="13" text-anchor="middle">8-top · Main Dining</text>
+  <text x="130" y="164" fill="#F59E0B" font-size="13" font-weight="600" text-anchor="middle">$0.00 open · 0 items</text>
+  <text x="130" y="180" fill="#22C55E" font-size="12" text-anchor="middle">Seated: 6 guests · 4 min ago</text>
+
+  <!-- Seat buttons -->
+  <text x="20" y="216" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">SELECT SEAT</text>
+
+  <!-- Seat 1 - active -->
+  <rect x="10" y="224" width="240" height="52" rx="10" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="36" cy="250" r="18" fill="#F59E0B"/>
+  <text x="36" y="255" fill="#0F1117" font-size="14" font-weight="700" text-anchor="middle">1</text>
+  <text x="62" y="245" fill="#E2E8F0" font-size="14" font-weight="600">Seat 1</text>
+  <text x="62" y="263" fill="#64748B" font-size="12">2 items · $18.50</text>
+  <text x="240" y="254" fill="#F59E0B" font-size="12" text-anchor="end">Active ›</text>
+
+  <!-- Seat 2 -->
+  <rect x="10" y="284" width="240" height="52" rx="10" fill="#1E2235"/>
+  <circle cx="36" cy="310" r="18" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="36" y="315" fill="#64748B" font-size="14" font-weight="700" text-anchor="middle">2</text>
+  <text x="62" y="305" fill="#CBD5E1" font-size="14" font-weight="600">Seat 2</text>
+  <text x="62" y="323" fill="#64748B" font-size="12">1 item · $8.00</text>
+  <text x="240" y="314" fill="#64748B" font-size="12" text-anchor="end">›</text>
+
+  <!-- Seat 3 -->
+  <rect x="10" y="344" width="240" height="52" rx="10" fill="#1E2235"/>
+  <circle cx="36" cy="370" r="18" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="36" y="375" fill="#64748B" font-size="14" font-weight="700" text-anchor="middle">3</text>
+  <text x="62" y="365" fill="#CBD5E1" font-size="14" font-weight="600">Seat 3</text>
+  <text x="62" y="383" fill="#22C55E" font-size="12">0 items · Open</text>
+  <text x="240" y="374" fill="#64748B" font-size="12" text-anchor="end">›</text>
+
+  <!-- Seat 4 -->
+  <rect x="10" y="404" width="240" height="52" rx="10" fill="#1E2235"/>
+  <circle cx="36" cy="430" r="18" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="36" y="435" fill="#64748B" font-size="14" font-weight="700" text-anchor="middle">4</text>
+  <text x="62" y="425" fill="#CBD5E1" font-size="14" font-weight="600">Seat 4</text>
+  <text x="62" y="443" fill="#22C55E" font-size="12">0 items · Open</text>
+  <text x="240" y="434" fill="#64748B" font-size="12" text-anchor="end">›</text>
+
+  <!-- Seat 5 -->
+  <rect x="10" y="464" width="240" height="52" rx="10" fill="#1E2235"/>
+  <circle cx="36" cy="490" r="18" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="36" y="495" fill="#64748B" font-size="14" font-weight="700" text-anchor="middle">5</text>
+  <text x="62" y="485" fill="#CBD5E1" font-size="14" font-weight="600">Seat 5</text>
+  <text x="62" y="503" fill="#22C55E" font-size="12">0 items · Open</text>
+
+  <!-- Seat 6 -->
+  <rect x="10" y="524" width="240" height="52" rx="10" fill="#1E2235"/>
+  <circle cx="36" cy="550" r="18" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="36" y="555" fill="#64748B" font-size="14" font-weight="700" text-anchor="middle">6</text>
+  <text x="62" y="545" fill="#CBD5E1" font-size="14" font-weight="600">Seat 6</text>
+  <text x="62" y="563" fill="#22C55E" font-size="12">0 items · Open</text>
+
+  <!-- Add seat button -->
+  <rect x="10" y="586" width="240" height="44" rx="10" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="130" y="613" fill="#60A5FA" font-size="13" font-weight="600" text-anchor="middle">+ Add Seat (7 or 8)</text>
+
+  <!-- Divider -->
+  <rect x="20" y="642" width="220" height="1" fill="#2D3050"/>
+
+  <!-- Order mode selector -->
+  <text x="20" y="668" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">ORDER MODE</text>
+
+  <rect x="10" y="676" width="240" height="40" rx="8" fill="#1E2235"/>
+  <!-- Toggle tabs -->
+  <rect x="12" y="678" width="116" height="36" rx="6" fill="#F59E0B"/>
+  <text x="70" y="701" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">By Seat</text>
+  <text x="190" y="701" fill="#64748B" font-size="13" text-anchor="middle">Shared</text>
+
+  <!-- Course management -->
+  <text x="20" y="738" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">COURSES</text>
+
+  <rect x="10" y="746" width="116" height="36" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="68" y="769" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">Course 1</text>
+
+  <rect x="132" y="746" width="118" height="36" rx="8" fill="#1E2235"/>
+  <text x="191" y="769" fill="#64748B" font-size="12" text-anchor="middle">Course 2</text>
+
+  <rect x="10" y="790" width="240" height="36" rx="8" fill="#1E2235" stroke="#22C55E" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="130" y="813" fill="#22C55E" font-size="12" text-anchor="middle">+ Add Course</text>
+
+  <!-- Fire by course -->
+  <rect x="10" y="838" width="240" height="44" rx="10" fill="#22C55E"/>
+  <text x="130" y="865" fill="white" font-size="13" font-weight="700" text-anchor="middle">🔥 Fire Course 1</text>
+
+  <!-- MIDDLE: Menu / product grid (same as register) -->
+  <rect x="261" y="57" width="640" height="967" fill="#0F1117"/>
+  <rect x="900" y="57" width="1" height="967" fill="#2D3050"/>
+
+  <!-- Category tabs -->
+  <rect x="270" y="68" width="620" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="300" y="91" fill="#F59E0B" font-size="13" font-weight="700">Burgers</text>
+  <text x="370" y="91" fill="#64748B" font-size="13">Sides</text>
+  <text x="420" y="91" fill="#64748B" font-size="13">Drinks</text>
+  <text x="480" y="91" fill="#64748B" font-size="13">Desserts</text>
+  <text x="550" y="91" fill="#64748B" font-size="13">Specials</text>
+  <text x="820" y="91" fill="#F59E0B" font-size="16">⊞</text>
+
+  <!-- Seat indicator banner -->
+  <rect x="270" y="112" width="620" height="36" rx="6" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="294" cy="130" r="14" fill="#F59E0B"/>
+  <text x="294" y="135" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">1</text>
+  <text x="320" y="134" fill="#F59E0B" font-size="14" font-weight="700">Ordering for Seat 1  ·  Course 1</text>
+  <text x="878" y="134" fill="#F59E0B" font-size="12" text-anchor="end">Tap a seat to switch →</text>
+
+  <!-- Product grid -->
+  <!-- Row 1 -->
+  <rect x="270" y="158" width="150" height="160" rx="12" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="270" y="158" width="150" height="100" rx="12" fill="#2D2010"/>
+  <text x="345" y="222" font-size="44" text-anchor="middle">🍔</text>
+  <text x="345" y="276" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Classic Burger</text>
+  <text x="345" y="294" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$12.00</text>
+  <!-- Already ordered indicator -->
+  <rect x="276" y="164" width="70" height="20" rx="4" fill="#F59E0B"/>
+  <text x="311" y="177" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">In order ×1</text>
+
+  <rect x="432" y="158" width="150" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="432" y="158" width="150" height="100" rx="12" fill="#1A2D10"/>
+  <text x="507" y="222" font-size="44" text-anchor="middle">🍟</text>
+  <text x="507" y="276" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Large Fries</text>
+  <text x="507" y="294" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$4.50</text>
+
+  <rect x="594" y="158" width="150" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="594" y="158" width="150" height="100" rx="12" fill="#2D1A10"/>
+  <text x="669" y="222" font-size="44" text-anchor="middle">🌮</text>
+  <text x="669" y="276" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Taco</text>
+  <text x="669" y="294" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$9.00</text>
+
+  <rect x="756" y="158" width="152" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="756" y="158" width="152" height="100" rx="12" fill="#10202D"/>
+  <text x="832" y="222" font-size="44" text-anchor="middle">🥗</text>
+  <text x="832" y="276" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Caesar Salad</text>
+  <text x="832" y="294" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$8.00</text>
+
+  <rect x="270" y="330" width="150" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="270" y="330" width="150" height="100" rx="12" fill="#10202D"/>
+  <text x="345" y="394" font-size="44" text-anchor="middle">🥤</text>
+  <text x="345" y="448" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Soft Drink</text>
+  <text x="345" y="466" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$3.00</text>
+
+  <rect x="432" y="330" width="150" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="432" y="330" width="150" height="100" rx="12" fill="#2D2010"/>
+  <text x="507" y="394" font-size="44" text-anchor="middle">🍺</text>
+  <text x="507" y="448" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Draft Beer</text>
+  <text x="507" y="466" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$6.00</text>
+
+  <rect x="594" y="330" width="150" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="594" y="330" width="150" height="100" rx="12" fill="#1A2010"/>
+  <text x="669" y="394" font-size="44" text-anchor="middle">☕</text>
+  <text x="669" y="448" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Coffee</text>
+  <text x="669" y="466" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$3.50</text>
+
+  <rect x="756" y="330" width="152" height="160" rx="12" fill="#1A1D2E"/>
+  <rect x="756" y="330" width="152" height="100" rx="12" fill="#2D102D"/>
+  <text x="832" y="394" font-size="44" text-anchor="middle">🥩</text>
+  <text x="832" y="448" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">BBQ Ribs</text>
+  <text x="832" y="466" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$24.00</text>
+
+  <!-- Seat quick-switch strip at bottom of middle panel -->
+  <rect x="261" y="810" width="640" height="100" rx="0" fill="#13162A"/>
+  <rect x="261" y="810" width="640" height="1" fill="#2D3050"/>
+  <text x="280" y="834" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">QUICK SEAT SWITCH</text>
+
+  <circle cx="310" cy="878" r="28" fill="#F59E0B"/>
+  <text x="310" y="872" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">S1</text>
+  <text x="310" y="888" fill="#0F1117" font-size="10" text-anchor="middle">$18.50</text>
+
+  <circle cx="380" cy="878" r="28" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="380" y="872" fill="#94A3B8" font-size="12" font-weight="700" text-anchor="middle">S2</text>
+  <text x="380" y="888" fill="#64748B" font-size="10" text-anchor="middle">$8.00</text>
+
+  <circle cx="450" cy="878" r="28" fill="#1E2235" stroke="#22C55E" stroke-width="1"/>
+  <text x="450" y="872" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">S3</text>
+  <text x="450" y="888" fill="#22C55E" font-size="10" text-anchor="middle">Empty</text>
+
+  <circle cx="520" cy="878" r="28" fill="#1E2235" stroke="#22C55E" stroke-width="1"/>
+  <text x="520" y="872" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">S4</text>
+  <text x="520" y="888" fill="#22C55E" font-size="10" text-anchor="middle">Empty</text>
+
+  <circle cx="590" cy="878" r="28" fill="#1E2235" stroke="#22C55E" stroke-width="1"/>
+  <text x="590" y="872" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">S5</text>
+  <text x="590" y="888" fill="#22C55E" font-size="10" text-anchor="middle">Empty</text>
+
+  <circle cx="660" cy="878" r="28" fill="#1E2235" stroke="#22C55E" stroke-width="1"/>
+  <text x="660" y="872" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">S6</text>
+  <text x="660" y="888" fill="#22C55E" font-size="10" text-anchor="middle">Empty</text>
+
+  <rect x="702" y="850" width="86" height="56" rx="8" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="745" y="872" fill="#60A5FA" font-size="12" text-anchor="middle">+ Add</text>
+  <text x="745" y="890" fill="#60A5FA" font-size="12" text-anchor="middle">Seat</text>
+
+  <rect x="796" y="852" width="96" height="52" rx="8" fill="#22C55E"/>
+  <text x="844" y="872" fill="white" font-size="13" font-weight="700" text-anchor="middle">All Seats</text>
+  <text x="844" y="890" fill="#D1FAE5" font-size="11" text-anchor="middle">Shared Order</text>
+
+  <!-- RIGHT: Seat order summary -->
+  <rect x="901" y="57" width="465" height="967" fill="#13162A"/>
+
+  <!-- Seat tabs at top -->
+  <rect x="910" y="68" width="446" height="36" rx="8" fill="#1E2235"/>
+
+  <!-- Seat tab buttons -->
+  <rect x="912" y="70" width="70" height="32" rx="6" fill="#F59E0B"/>
+  <text x="947" y="91" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">S1</text>
+
+  <rect x="988" y="70" width="70" height="32" rx="6" fill="#1E2235"/>
+  <text x="1023" y="91" fill="#64748B" font-size="12" text-anchor="middle">S2</text>
+
+  <rect x="1064" y="70" width="70" height="32" rx="6" fill="#1E2235"/>
+  <text x="1099" y="91" fill="#22C55E" font-size="12" text-anchor="middle">S3 ○</text>
+
+  <rect x="1140" y="70" width="70" height="32" rx="6" fill="#1E2235"/>
+  <text x="1175" y="91" fill="#22C55E" font-size="12" text-anchor="middle">S4 ○</text>
+
+  <rect x="1216" y="70" width="70" height="32" rx="6" fill="#1E2235"/>
+  <text x="1251" y="91" fill="#22C55E" font-size="12" text-anchor="middle">S5 ○</text>
+
+  <rect x="1292" y="70" width="70" height="32" rx="6" fill="#1E2235"/>
+  <text x="1327" y="91" fill="#22C55E" font-size="12" text-anchor="middle">S6 ○</text>
+
+  <!-- Seat 1 order -->
+  <text x="916" y="128" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">SEAT 1 ORDER — COURSE 1</text>
+
+  <rect x="910" y="136" width="446" height="70" rx="8" fill="#1A1D2E"/>
+  <text x="926" y="158" fill="#94A3B8" font-size="12">1×</text>
+  <text x="948" y="158" fill="#E2E8F0" font-size="14" font-weight="600">Classic Burger</text>
+  <text x="1348" y="158" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$12.00</text>
+  <text x="948" y="178" fill="#64748B" font-size="12">No onions · Gluten-free bun</text>
+  <text x="948" y="196" fill="#22C55E" font-size="11">→ Grill station</text>
+  <text x="1316" y="186" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1348" y="186" fill="#EF4444" font-size="12" text-anchor="end">×</text>
+
+  <rect x="910" y="214" width="446" height="60" rx="8" fill="#1A1D2E"/>
+  <text x="926" y="236" fill="#94A3B8" font-size="12">1×</text>
+  <text x="948" y="236" fill="#E2E8F0" font-size="14" font-weight="600">Large Fries</text>
+  <text x="1348" y="236" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$4.50</text>
+  <text x="948" y="256" fill="#64748B" font-size="12">Extra crispy</text>
+  <text x="1316" y="256" fill="#60A5FA" font-size="12">Edit</text>
+  <text x="1348" y="256" fill="#EF4444" font-size="12" text-anchor="end">×</text>
+
+  <!-- Add note -->
+  <rect x="910" y="282" width="446" height="36" rx="8" fill="#1E2235"/>
+  <text x="926" y="304" fill="#64748B" font-size="13">📝 Note for Seat 1...</text>
+
+  <!-- Seat 1 subtotal -->
+  <text x="916" y="340" fill="#94A3B8" font-size="13">Seat 1 subtotal</text>
+  <text x="1348" y="340" fill="#E2E8F0" font-size="13" text-anchor="end">$16.50</text>
+
+  <!-- Divider -->
+  <rect x="910" y="352" width="446" height="1" fill="#2D3050"/>
+
+  <!-- Other seats summary -->
+  <text x="916" y="376" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">OTHER SEATS</text>
+
+  <rect x="910" y="384" width="446" height="60" rx="8" fill="#1A1D2E"/>
+  <circle cx="936" cy="414" r="16" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
+  <text x="936" y="419" fill="#94A3B8" font-size="12" text-anchor="middle">S2</text>
+  <text x="962" y="408" fill="#CBD5E1" font-size="14" font-weight="500">1× Caesar Salad</text>
+  <text x="1348" y="408" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$8.00</text>
+  <text x="962" y="430" fill="#64748B" font-size="12">No croutons · Vegan dressing</text>
+
+  <!-- Empty seats -->
+  <rect x="910" y="452" width="446" height="36" rx="8" fill="#13162A" stroke="#1E2235" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="936" cy="470" r="12" fill="#1E2235"/>
+  <text x="936" y="475" fill="#22C55E" font-size="10" text-anchor="middle">S3</text>
+  <text x="956" y="474" fill="#64748B" font-size="13">Seat 3 — Nothing ordered yet</text>
+  <text x="1348" y="474" fill="#60A5FA" font-size="13" text-anchor="end">Order →</text>
+
+  <rect x="910" y="496" width="446" height="36" rx="8" fill="#13162A" stroke="#1E2235" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="936" cy="514" r="12" fill="#1E2235"/>
+  <text x="936" y="519" fill="#22C55E" font-size="10" text-anchor="middle">S4</text>
+  <text x="956" y="518" fill="#64748B" font-size="13">Seat 4 — Nothing ordered yet</text>
+  <text x="1348" y="518" fill="#60A5FA" font-size="13" text-anchor="end">Order →</text>
+
+  <!-- Grand totals -->
+  <rect x="910" y="545" width="446" height="1" fill="#2D3050"/>
+
+  <text x="916" y="572" fill="#94A3B8" font-size="13">Subtotal (ordered so far)</text>
+  <text x="1348" y="572" fill="#E2E8F0" font-size="13" text-anchor="end">$24.50</text>
+  <text x="916" y="596" fill="#94A3B8" font-size="13">Tax (8.5%)</text>
+  <text x="1348" y="596" fill="#E2E8F0" font-size="13" text-anchor="end">$2.08</text>
+  <rect x="916" y="606" width="432" height="1" fill="#2D3050"/>
+  <text x="916" y="634" fill="#E2E8F0" font-size="16" font-weight="700">Running Total</text>
+  <text x="1348" y="634" fill="#F59E0B" font-size="20" font-weight="700" text-anchor="end">$26.58</text>
+  <text x="916" y="652" fill="#64748B" font-size="12">Seats 3–6 still ordering — final total TBD</text>
+
+  <!-- Transfer item between seats -->
+  <rect x="910" y="665" width="446" height="1" fill="#2D3050"/>
+  <text x="916" y="690" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">ITEM TRANSFERS</text>
+  <rect x="910" y="698" width="220" height="40" rx="8" fill="#1E2235"/>
+  <text x="1020" y="723" fill="#94A3B8" font-size="13" text-anchor="middle">Move item to seat</text>
+  <rect x="1136" y="698" width="220" height="40" rx="8" fill="#1E2235"/>
+  <text x="1246" y="723" fill="#94A3B8" font-size="13" text-anchor="middle">Merge seats</text>
+
+  <!-- Action buttons -->
+  <rect x="910" y="750" width="218" height="48" rx="10" fill="#1E2235"/>
+  <text x="1019" y="779" fill="#94A3B8" font-size="14" font-weight="600" text-anchor="middle">Hold Order</text>
+
+  <rect x="1134" y="750" width="222" height="48" rx="10" fill="#1E2235"/>
+  <text x="1245" y="779" fill="#94A3B8" font-size="14" font-weight="600" text-anchor="middle">Send Course 1</text>
+
+  <!-- Fire button -->
+  <rect x="910" y="808" width="446" height="60" rx="12" fill="#22C55E"/>
+  <text x="1133" y="836" fill="white" font-size="18" font-weight="700" text-anchor="middle">🔥 Fire All Ordered Items</text>
+  <text x="1133" y="857" fill="#D1FAE5" font-size="13" text-anchor="middle">Sends all 3 seated orders to Kitchen · $26.58</text>
+
+  <!-- Pay by seat footer -->
+  <rect x="910" y="878" width="446" height="100" rx="0" fill="#0F1117"/>
+  <rect x="910" y="878" width="446" height="1" fill="#2D3050"/>
+  <text x="916" y="904" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">PAY BY SEAT PREVIEW</text>
+
+  <rect x="910" y="912" width="128" height="54" rx="8" fill="#1A1D2E"/>
+  <text x="974" y="930" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle">Seat 1</text>
+  <text x="974" y="948" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$16.50</text>
+  <text x="974" y="962" fill="#64748B" font-size="10" text-anchor="middle">2 items</text>
+
+  <rect x="1044" y="912" width="128" height="54" rx="8" fill="#1A1D2E"/>
+  <text x="1108" y="930" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle">Seat 2</text>
+  <text x="1108" y="948" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">$8.00</text>
+  <text x="1108" y="962" fill="#64748B" font-size="10" text-anchor="middle">1 item</text>
+
+  <rect x="1178" y="912" width="128" height="54" rx="8" fill="#13162A" stroke="#22C55E" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="1242" y="930" fill="#22C55E" font-size="11" font-weight="700" text-anchor="middle">Seats 3–6</text>
+  <text x="1242" y="950" fill="#22C55E" font-size="12" text-anchor="middle">Pending...</text>
+
+  <rect x="1312" y="912" width="44" height="54" rx="8" fill="#F59E0B"/>
+  <text x="1334" y="943" fill="#0F1117" font-size="20" font-weight="700" text-anchor="middle">$</text>
+
+  <!-- Screen label -->
+  <text x="683" y="1016" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS — Seat Management (F04 Table/Tab/Takeout Basics · F08 Order Ops · iPad Landscape 1366×1024)</text>
+</svg>

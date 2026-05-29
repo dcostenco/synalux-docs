@@ -1,0 +1,519 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" width="1366" height="1024">
+  <defs>
+    <style>
+      .font-mono { font-family: 'Courier New', Courier, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    </style>
+    <!-- Amber glow filter -->
+    <filter id="amber-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Screen glow -->
+    <filter id="screen-glow" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Subtle drop shadow -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <!-- Monitor shadow -->
+    <filter id="monitor-shadow" x="-5%" y="-5%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <!-- Gradient: iPad screen -->
+    <linearGradient id="ipad-screen-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1117"/>
+      <stop offset="100%" stop-color="#131620"/>
+    </linearGradient>
+    <!-- Gradient: customer display bg -->
+    <linearGradient id="customer-display-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <!-- Gradient: amber button -->
+    <linearGradient id="amber-btn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <!-- Gradient: green loyalty card -->
+    <linearGradient id="loyalty-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </linearGradient>
+    <!-- Gradient: monitor frame -->
+    <linearGradient id="monitor-frame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D3748"/>
+      <stop offset="100%" stop-color="#1A202C"/>
+    </linearGradient>
+    <!-- iPad frame gradient -->
+    <linearGradient id="ipad-frame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1F2937"/>
+    </linearGradient>
+    <!-- Specials card gradient -->
+    <linearGradient id="special-card-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <!-- Idle overlay gradient -->
+    <linearGradient id="idle-overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <!-- Tip button gradient -->
+    <linearGradient id="tip-btn-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+    <!-- Sig pad gradient -->
+    <linearGradient id="sig-pad-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#F0F0F0"/>
+    </linearGradient>
+    <!-- Workflow box gradient -->
+    <linearGradient id="workflow-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#1E2235"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- GLOBAL BACKGROUND -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- Subtle grid texture -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1A1D2E" stroke-width="0.5"/>
+  </pattern>
+  <rect width="1366" height="1024" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- Section divider line -->
+  <line x1="480" y1="20" x2="480" y2="1004" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LEFT SECTION — SERVER iPAD  (x=0, w=480) -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Section label -->
+  <text x="240" y="34" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#64748B">SERVER · iPAD REGISTER</text>
+
+  <!-- ─── iPad Device Frame ─── -->
+  <!-- Outer bezel -->
+  <rect x="30" y="50" width="420" height="630" rx="28" ry="28" fill="url(#ipad-frame)" stroke="#4B5563" stroke-width="2" filter="url(#drop-shadow)"/>
+  <!-- Home bar (bottom) -->
+  <rect x="185" y="656" width="110" height="5" rx="3" fill="#4B5563"/>
+  <!-- Camera dot -->
+  <circle cx="240" cy="68" r="4" fill="#374151"/>
+  <circle cx="240" cy="68" r="2" fill="#1F2937"/>
+  <!-- Side button -->
+  <rect x="26" y="200" width="4" height="40" rx="2" fill="#4B5563"/>
+  <!-- Volume buttons -->
+  <rect x="446" y="170" width="4" height="30" rx="2" fill="#4B5563"/>
+  <rect x="446" y="210" width="4" height="30" rx="2" fill="#4B5563"/>
+
+  <!-- Screen area (inside bezel) -->
+  <rect x="50" y="80" width="380" height="560" rx="6" fill="url(#ipad-screen-bg)"/>
+
+  <!-- ─── iPad Screen Content ─── -->
+  <!-- Top status bar -->
+  <rect x="50" y="80" width="380" height="32" rx="0" fill="#131620"/>
+  <rect x="50" y="80" width="380" height="32" rx="6" fill="#131620"/>
+  <text x="70" y="100" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#94A3B8">9:41 AM</text>
+  <text x="380" y="100" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">▪▪▪ WiFi ■■■</text>
+
+  <!-- Order header bar -->
+  <rect x="50" y="112" width="380" height="42" fill="#1A1D2E"/>
+  <text x="240" y="138" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="700" fill="#F1F5F9">Table 4 — Dine In</text>
+  <!-- Status badge -->
+  <rect x="376" y="120" width="44" height="18" rx="9" fill="#10B981" opacity="0.15"/>
+  <text x="398" y="132" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="600" fill="#10B981">OPEN</text>
+
+  <!-- Server name -->
+  <rect x="50" y="154" width="380" height="20" fill="#131620"/>
+  <text x="70" y="167" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#64748B">Server: Alex M.  ·  Cover: 2  ·  Opened: 9:28 AM</text>
+
+  <!-- Order ticket items area -->
+  <rect x="50" y="174" width="380" height="240" fill="#0F1117"/>
+
+  <!-- Item rows -->
+  <!-- Item 1 -->
+  <rect x="55" y="180" width="370" height="44" rx="4" fill="#1A1D2E"/>
+  <text x="70" y="197" font-family="-apple-system,BlinkMacSystemFont,'Courier New',monospace" font-size="12" font-weight="600" fill="#F1F5F9">Classic Burger</text>
+  <text x="408" y="197" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#F59E0B">$18.00</text>
+  <text x="80" y="212" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#8B5CF6">+ No Onions · Add Bacon</text>
+  <text x="55" y="226" font-size="1" fill="none"/>
+
+  <!-- Item 2 -->
+  <rect x="55" y="228" width="370" height="32" rx="4" fill="#1A1D2E"/>
+  <text x="70" y="248" font-family="-apple-system,BlinkMacSystemFont,monospace" font-size="12" font-weight="600" fill="#F1F5F9">Craft Beer (Stella Artois)</text>
+  <text x="408" y="248" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#F59E0B">$9.00</text>
+
+  <!-- Item 3 -->
+  <rect x="55" y="264" width="370" height="32" rx="4" fill="#1A1D2E"/>
+  <text x="70" y="284" font-family="-apple-system,BlinkMacSystemFont,monospace" font-size="12" font-weight="600" fill="#F1F5F9">Caesar Salad</text>
+  <text x="408" y="284" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#F59E0B">$14.00</text>
+
+  <!-- Add item row -->
+  <rect x="55" y="300" width="370" height="28" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="240" y="318" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#64748B">+ Add Item</text>
+
+  <!-- Ticket items scroll area spacer -->
+  <rect x="55" y="332" width="370" height="76" fill="#0F1117"/>
+  <text x="240" y="380" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#2D3148">· · ·</text>
+
+  <!-- Totals section -->
+  <rect x="50" y="414" width="380" height="110" fill="#131620"/>
+  <line x1="60" y1="420" x2="420" y2="420" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Subtotal row -->
+  <text x="70" y="436" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#94A3B8">Subtotal</text>
+  <text x="408" y="436" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#F1F5F9">$41.00</text>
+
+  <!-- Tax row -->
+  <text x="70" y="453" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#94A3B8">Tax (8.875%)</text>
+  <text x="408" y="453" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#F1F5F9">$3.64</text>
+
+  <!-- Tip row -->
+  <text x="70" y="470" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#94A3B8">Tip</text>
+  <text x="408" y="470" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#64748B">—</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="477" x2="420" y2="477" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Total -->
+  <text x="70" y="494" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="700" fill="#F1F5F9">TOTAL</text>
+  <text x="408" y="494" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="16" font-weight="700" fill="#F59E0B">$44.64</text>
+
+  <!-- Bottom note -->
+  <text x="240" y="518" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#64748B">Loyalty: Sarah J. — Gold  ·  44 pts earned</text>
+
+  <!-- Payment buttons -->
+  <rect x="50" y="524" width="380" height="116" fill="#0F1117"/>
+
+  <!-- Cash button -->
+  <rect x="60" y="532" width="112" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="116" y="558" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="600" fill="#94A3B8">Cash</text>
+
+  <!-- Card button -->
+  <rect x="182" y="532" width="112" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="238" y="558" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="600" fill="#94A3B8">Card</text>
+
+  <!-- Charge button -->
+  <rect x="304" y="532" width="116" height="44" rx="8" fill="url(#amber-btn)"/>
+  <text x="362" y="558" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#1F2937">Charge $44.64</text>
+
+  <!-- Split / Discount buttons -->
+  <rect x="60" y="584" width="80" height="32" rx="6" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="100" y="603" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#64748B">Split</text>
+  <rect x="148" y="584" width="80" height="32" rx="6" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="188" y="603" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#64748B">Discount</text>
+  <rect x="236" y="584" width="80" height="32" rx="6" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="276" y="603" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#64748B">Void</text>
+  <rect x="324" y="584" width="96" height="32" rx="6" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="372" y="603" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#64748B">Print Ticket</text>
+
+  <!-- ─── Arrow → CustomerDisplayBridge ─── -->
+  <!-- Arrow line -->
+  <line x1="460" y1="355" x2="488" y2="355" stroke="#F59E0B" stroke-width="2"/>
+  <polygon points="488,349 498,355 488,361" fill="#F59E0B"/>
+  <!-- Label -->
+  <rect x="330" y="328" width="150" height="38" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1" opacity="0.9"/>
+  <text x="405" y="343" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,monospace" font-size="8" font-weight="600" fill="#F59E0B">CustomerDisplayBridge.swift</text>
+  <text x="405" y="356" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,monospace" font-size="8" fill="#94A3B8">(WKWebView bridge)</text>
+
+  <!-- ─── Setup Info Card ─── -->
+  <rect x="20" y="702" width="440" height="148" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Card header -->
+  <rect x="20" y="702" width="440" height="28" rx="10" fill="#2D3148"/>
+  <rect x="20" y="716" width="440" height="14" fill="#2D3148"/>
+  <text x="240" y="720" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#F1F5F9">SETUP &amp; COMPATIBILITY</text>
+
+  <!-- Displays row -->
+  <text x="36" y="750" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="600" fill="#64748B">SUPPORTED DISPLAYS</text>
+  <text x="36" y="765" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">F07 7" Customer Display  ·  Elo I-Series  ·  iPad (2nd screen)</text>
+  <text x="36" y="779" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">Browser / TV Mode</text>
+
+  <!-- Connection row -->
+  <text x="36" y="798" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="600" fill="#64748B">CONNECTION</text>
+  <text x="36" y="813" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">USB (direct)  ·  LAN / WiFi  ·  HDMI (iPad to monitor)</text>
+
+  <!-- Config row -->
+  <text x="36" y="831" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="600" fill="#64748B">CONFIG KEY</text>
+  <rect x="36" y="835" width="280" height="16" rx="3" fill="#131620"/>
+  <text x="42" y="847" font-family="'Courier New',Courier,monospace" font-size="9" fill="#10B981">pos_config.customer_display_enabled = true</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- RIGHT SECTION — CUSTOMER DISPLAY  (x=480, w=886) -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Section label -->
+  <text x="926" y="34" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#64748B">CUSTOMER-FACING DISPLAY · SECOND SCREEN</text>
+
+  <!-- ─── Monitor outer frame ─── -->
+  <!-- Monitor body -->
+  <rect x="496" y="46" width="854" height="850" rx="18" fill="url(#monitor-frame)" stroke="#4B5563" stroke-width="3" filter="url(#monitor-shadow)"/>
+  <!-- Monitor inner bezel -->
+  <rect x="506" y="56" width="834" height="830" rx="14" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <!-- Screen surface -->
+  <rect x="514" y="64" width="818" height="814" rx="10" fill="#F8FAFC"/>
+
+  <!-- Monitor stand neck -->
+  <rect x="889" y="896" width="36" height="60" rx="4" fill="#374151"/>
+  <!-- Monitor stand base -->
+  <rect x="819" y="950" width="176" height="20" rx="8" fill="#2D3748"/>
+
+  <!-- ─── INSIDE DISPLAY CONTENT ─── -->
+
+  <!-- ════ IDLE STATE — TOP HALF (y=64, h=290) ════ -->
+  <rect x="514" y="64" width="818" height="290" rx="10" fill="url(#idle-overlay)"/>
+  <!-- Bottom fade of idle into active -->
+  <defs>
+    <linearGradient id="idle-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="70%" stop-color="#0F172A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Logo text -->
+  <text x="923" y="102" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#F59E0B">✦ SYNALUX BISTRO ✦</text>
+  <!-- Welcome text -->
+  <text x="923" y="134" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="28" font-weight="700" fill="#F1F5F9">Welcome to Synalux Bistro!</text>
+  <!-- Date/time -->
+  <text x="923" y="158" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#94A3B8">Wednesday, May 27, 2026  ·  9:41 AM</text>
+  <!-- Animation indicator -->
+  <rect x="900" y="164" width="46" height="14" rx="7" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="923" y="174" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="8" fill="#64748B">● LIVE SLIDES</text>
+
+  <!-- Specials label -->
+  <text x="568" y="198" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#F59E0B">SPECIALS TODAY:</text>
+
+  <!-- Special cards -->
+  <!-- Card 1 -->
+  <rect x="556" y="206" width="234" height="106" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <!-- Image placeholder -->
+  <rect x="566" y="214" width="60" height="60" rx="6" fill="#2D3148"/>
+  <text x="596" y="246" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" fill="#475569">🍝</text>
+  <!-- Item info -->
+  <text x="638" y="229" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#F1F5F9">Lobster Bisque</text>
+  <text x="638" y="245" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">Creamy, house-made</text>
+  <text x="638" y="261" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="700" fill="#F59E0B">$16.00</text>
+  <rect x="566" y="286" width="214" height="16" rx="4" fill="#334155"/>
+  <text x="673" y="297" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#64748B">Limited availability today</text>
+
+  <!-- Card 2 -->
+  <rect x="800" y="206" width="234" height="106" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <rect x="810" y="214" width="60" height="60" rx="6" fill="#2D3148"/>
+  <text x="840" y="246" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" fill="#475569">🥩</text>
+  <text x="882" y="229" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#F1F5F9">Ribeye Steak</text>
+  <text x="882" y="245" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">12 oz, chimichurri</text>
+  <text x="882" y="261" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="700" fill="#F59E0B">$48.00</text>
+  <rect x="810" y="286" width="214" height="16" rx="4" fill="#334155"/>
+  <text x="917" y="297" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#64748B">Chef's recommendation</text>
+
+  <!-- Card 3 -->
+  <rect x="1044" y="206" width="234" height="106" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <rect x="1054" y="214" width="60" height="60" rx="6" fill="#2D3148"/>
+  <text x="1084" y="246" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" fill="#475569">🍮</text>
+  <text x="1126" y="229" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#F1F5F9">Crème Brûlée</text>
+  <text x="1126" y="245" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#94A3B8">Classic vanilla</text>
+  <text x="1126" y="261" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="700" fill="#F59E0B">$12.00</text>
+  <rect x="1054" y="286" width="214" height="16" rx="4" fill="#334155"/>
+  <text x="1161" y="297" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#64748B">Dessert special</text>
+
+  <!-- Social / Loyalty row -->
+  <text x="923" y="335" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#64748B">@SynaluxBistro  ·  Earn points on every visit! Ask your server.</text>
+
+  <!-- ════ ACTIVE ORDER STATE — BOTTOM HALF (y=354, h=370) ════ -->
+  <rect x="514" y="354" width="818" height="370" fill="#FFFFFF"/>
+
+  <!-- Active order header -->
+  <rect x="514" y="354" width="818" height="44" fill="#F59E0B"/>
+  <text x="923" y="382" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1F2937">Your Order — Table 4</text>
+  <!-- WebSocket live badge -->
+  <rect x="1270" y="362" width="52" height="18" rx="9" fill="#1F2937" opacity="0.3"/>
+  <circle cx="1280" cy="371" r="3" fill="#10B981"/>
+  <text x="1306" y="375" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="8" font-weight="600" fill="#1F2937">LIVE</text>
+
+  <!-- Order items area -->
+  <!-- Item 1: Classic Burger -->
+  <rect x="524" y="406" width="798" height="52" rx="6" fill="#F8FAFC"/>
+  <text x="544" y="427" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="700" fill="#1E293B">Classic Burger</text>
+  <text x="544" y="446" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#8B5CF6">No Onions  ·  Add Bacon</text>
+  <text x="1310" y="432" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="16" font-weight="700" fill="#1E293B">$18.00</text>
+
+  <!-- Item 2: Craft Beer -->
+  <rect x="524" y="462" width="798" height="38" rx="6" fill="#FFFFFF"/>
+  <text x="544" y="485" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="600" fill="#1E293B">Craft Beer — Stella Artois</text>
+  <text x="1310" y="485" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="16" font-weight="700" fill="#1E293B">$9.00</text>
+
+  <!-- Item 3: Caesar Salad -->
+  <rect x="524" y="504" width="798" height="38" rx="6" fill="#F8FAFC"/>
+  <text x="544" y="527" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="600" fill="#1E293B">Caesar Salad</text>
+  <text x="1310" y="527" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="16" font-weight="700" fill="#1E293B">$14.00</text>
+
+  <!-- Divider -->
+  <line x1="534" y1="548" x2="1320" y2="548" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Subtotal / Tax / Total -->
+  <text x="544" y="566" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748B">Subtotal</text>
+  <text x="1310" y="566" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#334155">$41.00</text>
+
+  <text x="544" y="584" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748B">Tax (8.875%)</text>
+  <text x="1310" y="584" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#334155">$3.64</text>
+
+  <!-- Total row -->
+  <line x1="534" y1="592" x2="1320" y2="592" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="544" y="615" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="20" font-weight="800" fill="#1E293B">TOTAL</text>
+  <text x="1310" y="617" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="24" font-weight="800" fill="#F59E0B">$44.64</text>
+
+  <!-- Divider -->
+  <line x1="534" y1="626" x2="1320" y2="626" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Loyalty card -->
+  <rect x="524" y="634" width="798" height="72" rx="8" fill="url(#loyalty-bg)" stroke="#059669" stroke-width="1"/>
+  <!-- Gold tier badge -->
+  <rect x="536" y="644" width="52" height="52" rx="8" fill="#1F2937"/>
+  <text x="562" y="673" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="22" fill="#F59E0B">★</text>
+  <text x="562" y="687" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="7" font-weight="700" letter-spacing="1" fill="#F59E0B">GOLD</text>
+  <!-- Loyalty info -->
+  <text x="600" y="653" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" font-weight="700" fill="#D1FAE5">Loyalty Member: Sarah J. — Gold</text>
+  <text x="600" y="669" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#6EE7B7">You'll earn 44 points this visit</text>
+  <text x="600" y="685" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#6EE7B7">Current balance: 2,840 pts  →  $28.40 value</text>
+  <!-- "Processing" pill -->
+  <rect x="1170" y="647" width="142" height="22" rx="11" fill="#065F46" stroke="#059669" stroke-width="1"/>
+  <circle cx="1183" cy="658" r="4" fill="#F59E0B"/>
+  <text x="1250" y="662" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="600" fill="#A7F3D0">Processing payment…</text>
+  <!-- Thank you message -->
+  <rect x="1170" y="676" width="142" height="18" rx="9" fill="#052e16" stroke="#059669" stroke-width="1" opacity="0.8"/>
+  <text x="1241" y="688" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="8" fill="#6EE7B7">Receipt → sarah.j@email.com</text>
+
+  <!-- ════ SIGNATURE CAPTURE STATE ════ -->
+  <rect x="514" y="724" width="818" height="154" fill="#F1F5F9"/>
+  <line x1="514" y1="724" x2="1332" y2="724" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Section label -->
+  <text x="923" y="743" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#64748B">SIGNATURE &amp; TIP CAPTURE</text>
+
+  <!-- Tip label -->
+  <text x="534" y="762" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="600" fill="#334155">Select Tip:</text>
+
+  <!-- Tip buttons -->
+  <!-- 15% -->
+  <rect x="622" y="748" width="110" height="34" rx="8" fill="url(#tip-btn-bg)" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="677" y="770" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#92400E">15%  $6.60</text>
+  <!-- 18% -->
+  <rect x="740" y="748" width="110" height="34" rx="8" fill="url(#tip-btn-bg)" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="795" y="770" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#92400E">18%  $7.92</text>
+  <!-- 20% — selected -->
+  <rect x="858" y="745" width="118" height="40" rx="8" fill="#F59E0B" stroke="#D97706" stroke-width="2"/>
+  <text x="917" y="769" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" font-weight="800" fill="#1F2937">20%  $8.80</text>
+  <text x="917" y="781" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="8" fill="#1F2937">SELECTED</text>
+  <!-- Custom -->
+  <rect x="986" y="748" width="90" height="34" rx="8" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="1031" y="769" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" fill="#475569">Custom</text>
+  <!-- No tip link -->
+  <text x="1094" y="769" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#94A3B8" text-decoration="underline">No Tip</text>
+
+  <!-- Signature pad -->
+  <rect x="534" y="790" width="560" height="60" rx="6" fill="url(#sig-pad-bg)" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="814" y="812" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#94A3B8">Please sign below</text>
+  <line x1="554" y1="838" x2="1074" y2="838" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="814" y="850" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#CBD5E1">✕ SIGN ABOVE</text>
+
+  <!-- Clear / Accept buttons -->
+  <rect x="1104" y="790" width="90" height="28" rx="6" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="1149" y="808" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" fill="#475569">Clear</text>
+  <rect x="1104" y="824" width="90" height="28" rx="6" fill="#10B981"/>
+  <text x="1149" y="842" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Accept</text>
+
+  <!-- Email receipt line -->
+  <text x="923" y="870" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#64748B">Your receipt will be emailed to  sarah.j@email.com</text>
+
+  <!-- Monitor bottom clip (stand overlap) -->
+  <rect x="514" y="874" width="818" height="4" fill="#F1F5F9"/>
+  <!-- Monitor bezel bottom -->
+  <rect x="506" y="878" width="834" height="8" rx="4" fill="#111827"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- WORKFLOW INTEGRATION BOX — FULL WIDTH BOTTOM -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="12" y="862" width="1342" height="152" rx="10" fill="url(#workflow-bg)" stroke="#F59E0B" stroke-width="1.5"/>
+
+  <!-- Header bar -->
+  <rect x="12" y="862" width="1342" height="26" rx="10" fill="#F59E0B" opacity="0.12"/>
+  <rect x="12" y="876" width="1342" height="12" fill="#F59E0B" opacity="0.12"/>
+  <text x="30" y="879" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="#F59E0B">WORKFLOW INTEGRATION</text>
+  <rect x="1280" y="867" width="64" height="16" rx="8" fill="#F59E0B" opacity="0.15"/>
+  <text x="1312" y="878" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="600" fill="#F59E0B">REAL-TIME</text>
+
+  <!-- Workflow text -->
+  <text x="30" y="900" font-family="'Courier New',Courier,monospace" font-size="9.5" fill="#94A3B8">
+    Customer display updates in real-time via WebSocket:
+  </text>
+  <text x="30" y="916" font-family="'Courier New',Courier,monospace" font-size="9" fill="#64748B">pos_orders</text>
+  <text x="105" y="916" font-family="'Courier New',Courier,monospace" font-size="9" fill="#94A3B8">row change  →  broadcast to</text>
+  <text x="292" y="916" font-family="'Courier New',Courier,monospace" font-size="9" fill="#64748B">CustomerDisplayBridge.swift</text>
+  <text x="488" y="916" font-family="'Courier New',Courier,monospace" font-size="9" fill="#94A3B8">→  renders at</text>
+  <text x="555" y="916" font-family="'Courier New',Courier,monospace" font-size="9" fill="#10B981">synalux.ai/pos/display/{terminal_id}</text>
+
+  <text x="30" y="933" font-family="'Courier New',Courier,monospace" font-size="9" fill="#94A3B8">Loyalty lookup:</text>
+  <text x="131" y="933" font-family="'Courier New',Courier,monospace" font-size="9" fill="#64748B">pos_customers</text>
+  <text x="231" y="933" font-family="'Courier New',Courier,monospace" font-size="9" fill="#94A3B8">match by last 4 digits or Stripe card fingerprint.</text>
+
+  <text x="30" y="950" font-family="'Courier New',Courier,monospace" font-size="9" fill="#94A3B8">Tip selection on customer display captured in</text>
+  <text x="326" y="950" font-family="'Courier New',Courier,monospace" font-size="9" fill="#64748B">pos_payments.tip_cents</text>
+  <text x="470" y="950" font-family="'Courier New',Courier,monospace" font-size="9" fill="#94A3B8">·  Signature stored as base64 in</text>
+  <text x="668" y="950" font-family="'Courier New',Courier,monospace" font-size="9" fill="#64748B">pos_payments.signature_data</text>
+
+  <!-- Data flow pipeline diagram -->
+  <!-- Boxes -->
+  <rect x="30" y="958" width="130" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="95" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#8B5CF6">pos_orders (PG)</text>
+
+  <text x="168" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="180" y="958" width="130" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="245" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#F59E0B">WebSocket Broadcast</text>
+
+  <text x="318" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="330" y="958" width="140" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="400" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#10B981">CustomerDisplayBridge</text>
+
+  <text x="478" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="490" y="958" width="140" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="560" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#10B981">WKWebView Render</text>
+
+  <text x="638" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="650" y="958" width="130" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="715" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#94A3B8">Tip / Sig Capture</text>
+
+  <text x="788" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="800" y="958" width="130" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="865" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#64748B">pos_payments (PG)</text>
+
+  <text x="938" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="950" y="958" width="130" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="1015" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#10B981">Loyalty Lookup</text>
+
+  <text x="1088" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="1100" y="958" width="130" height="22" rx="4" fill="#131620" stroke="#2D3148" stroke-width="1"/>
+  <text x="1165" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#8B5CF6">pos_customers (PG)</text>
+
+  <text x="1238" y="972" font-family="'Courier New',Courier,monospace" font-size="10" fill="#F59E0B">→</text>
+
+  <rect x="1250" y="958" width="94" height="22" rx="4" fill="#131620" stroke="#10B981" stroke-width="1"/>
+  <text x="1297" y="972" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="8" fill="#10B981">Points Awarded</text>
+
+  <!-- Version tag -->
+  <text x="1340" y="1008" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#2D3148">synalux-pos · customer_display · v1.0</text>
+</svg>

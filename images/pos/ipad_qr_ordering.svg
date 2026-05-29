@@ -1,0 +1,713 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BACKGROUND                                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEFT HALF: iPad Management Panel (x=0, w=680)      -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Left panel background -->
+  <rect x="0" y="0" width="680" height="1024" fill="#0F1117"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="680" height="64" fill="#13162A"/>
+  <rect x="0" y="64" width="680" height="1" fill="#2D3148"/>
+  <text x="20" y="24" fill="#F59E0B" font-size="11" font-weight="700">Synalux POS</text>
+  <text x="20" y="44" fill="#F1F5F9" font-size="16" font-weight="700">QR Table Ordering</text>
+  <text x="20" y="59" fill="#94A3B8" font-size="11">Guests scan, order, and pay from their phone — no app needed</text>
+
+  <!-- Status Bar -->
+  <rect x="8" y="72" width="664" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Green dot + Active -->
+  <circle cx="26" cy="94" r="5" fill="#10B981"/>
+  <text x="36" y="98" fill="#10B981" font-size="12" font-weight="700">QR Ordering: Active</text>
+  <!-- Stats -->
+  <rect x="185" y="78" width="1" height="28" fill="#2D3148"/>
+  <text x="200" y="89" fill="#94A3B8" font-size="10">Today</text>
+  <text x="200" y="104" fill="#F1F5F9" font-size="12" font-weight="700">127 scans</text>
+  <rect x="285" y="78" width="1" height="28" fill="#2D3148"/>
+  <text x="298" y="89" fill="#94A3B8" font-size="10">Orders</text>
+  <text x="298" y="104" fill="#F1F5F9" font-size="12" font-weight="700">34 placed</text>
+  <rect x="383" y="78" width="1" height="28" fill="#2D3148"/>
+  <text x="396" y="89" fill="#94A3B8" font-size="10">Revenue</text>
+  <text x="396" y="104" fill="#10B981" font-size="12" font-weight="700">$1,240.00</text>
+
+  <!-- Tabs -->
+  <rect x="0" y="116" width="680" height="36" fill="#13162A"/>
+  <rect x="0" y="152" width="680" height="1" fill="#2D3148"/>
+  <!-- QR Codes tab active -->
+  <rect x="8" y="120" width="96" height="28" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="56" y="138" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">QR Codes</text>
+  <!-- Active Orders tab -->
+  <rect x="112" y="120" width="108" height="28" rx="6" fill="none"/>
+  <text x="166" y="138" fill="#94A3B8" font-size="12" text-anchor="middle">Active Orders</text>
+  <!-- Settings tab -->
+  <rect x="228" y="120" width="76" height="28" rx="6" fill="none"/>
+  <text x="266" y="138" fill="#94A3B8" font-size="12" text-anchor="middle">Settings</text>
+
+  <!-- ─── QR CODES GRID ─── -->
+  <!-- Row 1: Tables 1–3 -->
+
+  <!-- TABLE 1 -->
+  <rect x="8" y="160" width="206" height="158" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="177" fill="#F1F5F9" font-size="12" font-weight="700">Table 1</text>
+  <rect x="160" y="162" width="46" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="183" y="174" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">Active</text>
+  <!-- QR code graphic table 1 -->
+  <rect x="58" y="183" width="90" height="90" rx="4" fill="#FFFFFF"/>
+  <!-- Finder pattern TL -->
+  <rect x="62" y="187" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="65" y="190" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="68" y="193" width="10" height="10" rx="0" fill="#0F1117"/>
+  <!-- Finder pattern TR -->
+  <rect x="122" y="187" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="125" y="190" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="128" y="193" width="10" height="10" rx="0" fill="#0F1117"/>
+  <!-- Finder pattern BL -->
+  <rect x="62" y="247" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="65" y="250" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="68" y="253" width="10" height="10" rx="0" fill="#0F1117"/>
+  <!-- Data dots pattern -->
+  <rect x="90" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="114" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="114" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="114" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="114" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="90" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="254" width="4" height="4" fill="#0F1117"/>
+  <rect x="114" y="254" width="4" height="4" fill="#0F1117"/>
+  <rect x="98" y="262" width="4" height="4" fill="#0F1117"/>
+  <rect x="106" y="262" width="4" height="4" fill="#0F1117"/>
+  <rect x="114" y="262" width="4" height="4" fill="#0F1117"/>
+  <text x="103" y="281" fill="#64748B" font-size="9" text-anchor="middle">12 scans today</text>
+  <!-- Print / Download buttons -->
+  <rect x="16" y="289" width="86" height="22" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="59" y="303" fill="#94A3B8" font-size="10" text-anchor="middle">Print</text>
+  <rect x="110" y="289" width="96" height="22" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="158" y="303" fill="#94A3B8" font-size="10" text-anchor="middle">Download</text>
+
+  <!-- TABLE 2 -->
+  <rect x="222" y="160" width="206" height="158" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="177" fill="#F1F5F9" font-size="12" font-weight="700">Table 2</text>
+  <rect x="374" y="162" width="46" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="397" y="174" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">Active</text>
+  <!-- QR code table 2 -->
+  <rect x="272" y="183" width="90" height="90" rx="4" fill="#FFFFFF"/>
+  <rect x="276" y="187" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="279" y="190" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="282" y="193" width="10" height="10" fill="#0F1117"/>
+  <rect x="336" y="187" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="339" y="190" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="342" y="193" width="10" height="10" fill="#0F1117"/>
+  <rect x="276" y="247" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="279" y="250" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="282" y="253" width="10" height="10" fill="#0F1117"/>
+  <rect x="304" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="312" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="320" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="328" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="312" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="320" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="320" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="312" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="328" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="320" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="312" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="328" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="320" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="254" width="4" height="4" fill="#0F1117"/>
+  <rect x="312" y="254" width="4" height="4" fill="#0F1117"/>
+  <rect x="304" y="262" width="4" height="4" fill="#0F1117"/>
+  <rect x="328" y="262" width="4" height="4" fill="#0F1117"/>
+  <text x="317" y="281" fill="#64748B" font-size="9" text-anchor="middle">9 scans today</text>
+  <rect x="230" y="289" width="86" height="22" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="273" y="303" fill="#94A3B8" font-size="10" text-anchor="middle">Print</text>
+  <rect x="324" y="289" width="96" height="22" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="372" y="303" fill="#94A3B8" font-size="10" text-anchor="middle">Download</text>
+
+  <!-- TABLE 3 -->
+  <rect x="436" y="160" width="236" height="158" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="448" y="177" fill="#F1F5F9" font-size="12" font-weight="700">Table 3</text>
+  <rect x="620" y="162" width="44" height="18" rx="4" fill="#64748B" fill-opacity="0.2"/>
+  <text x="642" y="174" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">Paused</text>
+  <!-- QR code table 3 -->
+  <rect x="489" y="183" width="90" height="90" rx="4" fill="#FFFFFF"/>
+  <rect x="493" y="187" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="496" y="190" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="499" y="193" width="10" height="10" fill="#0F1117"/>
+  <rect x="553" y="187" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="556" y="190" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="559" y="193" width="10" height="10" fill="#0F1117"/>
+  <rect x="493" y="247" width="22" height="22" rx="1" fill="#0F1117"/>
+  <rect x="496" y="250" width="16" height="16" rx="1" fill="#FFFFFF"/>
+  <rect x="499" y="253" width="10" height="10" fill="#0F1117"/>
+  <rect x="521" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="529" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="545" y="190" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="537" y="198" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="529" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="537" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="545" y="206" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="537" y="214" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="529" y="222" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="545" y="230" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="529" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="537" y="238" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="537" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="545" y="246" width="4" height="4" fill="#0F1117"/>
+  <rect x="521" y="254" width="4" height="4" fill="#0F1117"/>
+  <rect x="529" y="262" width="4" height="4" fill="#0F1117"/>
+  <rect x="537" y="262" width="4" height="4" fill="#0F1117"/>
+  <text x="534" y="281" fill="#64748B" font-size="9" text-anchor="middle">3 scans today</text>
+  <rect x="444" y="289" width="86" height="22" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="487" y="303" fill="#94A3B8" font-size="10" text-anchor="middle">Print</text>
+  <rect x="538" y="289" width="96" height="22" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="586" y="303" fill="#94A3B8" font-size="10" text-anchor="middle">Download</text>
+
+  <!-- Row 2: Tables 4–6 -->
+  <!-- TABLE 4 -->
+  <rect x="8" y="326" width="206" height="150" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="343" fill="#F1F5F9" font-size="12" font-weight="700">Table 4</text>
+  <rect x="160" y="328" width="46" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="183" y="340" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">Active</text>
+  <rect x="58" y="349" width="90" height="84" rx="4" fill="#FFFFFF"/>
+  <rect x="62" y="353" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="65" y="356" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="68" y="359" width="8" height="8" fill="#0F1117"/>
+  <rect x="120" y="353" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="123" y="356" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="126" y="359" width="8" height="8" fill="#0F1117"/>
+  <rect x="62" y="409" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="65" y="412" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="68" y="415" width="8" height="8" fill="#0F1117"/>
+  <rect x="88" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="96" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="104" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="112" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="88" y="361" width="4" height="4" fill="#0F1117"/>
+  <rect x="104" y="361" width="4" height="4" fill="#0F1117"/>
+  <rect x="88" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="96" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="112" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="88" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="104" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="88" y="385" width="4" height="4" fill="#0F1117"/>
+  <rect x="96" y="385" width="4" height="4" fill="#0F1117"/>
+  <rect x="104" y="393" width="4" height="4" fill="#0F1117"/>
+  <rect x="112" y="393" width="4" height="4" fill="#0F1117"/>
+  <rect x="88" y="401" width="4" height="4" fill="#0F1117"/>
+  <rect x="96" y="409" width="4" height="4" fill="#0F1117"/>
+  <rect x="104" y="409" width="4" height="4" fill="#0F1117"/>
+  <rect x="88" y="417" width="4" height="4" fill="#0F1117"/>
+  <rect x="112" y="417" width="4" height="4" fill="#0F1117"/>
+  <text x="103" y="441" fill="#64748B" font-size="9" text-anchor="middle">18 scans today</text>
+  <rect x="16" y="452" width="86" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="59" y="465" fill="#94A3B8" font-size="10" text-anchor="middle">Print</text>
+  <rect x="110" y="452" width="96" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="158" y="465" fill="#94A3B8" font-size="10" text-anchor="middle">Download</text>
+
+  <!-- TABLE 5 -->
+  <rect x="222" y="326" width="206" height="150" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="343" fill="#F1F5F9" font-size="12" font-weight="700">Table 5</text>
+  <rect x="374" y="328" width="46" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="397" y="340" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">Active</text>
+  <rect x="272" y="349" width="90" height="84" rx="4" fill="#FFFFFF"/>
+  <rect x="276" y="353" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="279" y="356" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="282" y="359" width="8" height="8" fill="#0F1117"/>
+  <rect x="334" y="353" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="337" y="356" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="340" y="359" width="8" height="8" fill="#0F1117"/>
+  <rect x="276" y="409" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="279" y="412" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="282" y="415" width="8" height="8" fill="#0F1117"/>
+  <rect x="302" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="318" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="326" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="361" width="4" height="4" fill="#0F1117"/>
+  <rect x="310" y="361" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="318" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="326" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="310" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="385" width="4" height="4" fill="#0F1117"/>
+  <rect x="326" y="385" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="393" width="4" height="4" fill="#0F1117"/>
+  <rect x="310" y="401" width="4" height="4" fill="#0F1117"/>
+  <rect x="318" y="401" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="409" width="4" height="4" fill="#0F1117"/>
+  <rect x="318" y="409" width="4" height="4" fill="#0F1117"/>
+  <rect x="302" y="417" width="4" height="4" fill="#0F1117"/>
+  <rect x="310" y="417" width="4" height="4" fill="#0F1117"/>
+  <rect x="326" y="417" width="4" height="4" fill="#0F1117"/>
+  <text x="317" y="441" fill="#64748B" font-size="9" text-anchor="middle">15 scans today</text>
+  <rect x="230" y="452" width="86" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="273" y="465" fill="#94A3B8" font-size="10" text-anchor="middle">Print</text>
+  <rect x="324" y="452" width="96" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="372" y="465" fill="#94A3B8" font-size="10" text-anchor="middle">Download</text>
+
+  <!-- TABLE 6 -->
+  <rect x="436" y="326" width="236" height="150" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="448" y="343" fill="#F1F5F9" font-size="12" font-weight="700">Table 6</text>
+  <rect x="620" y="328" width="44" height="18" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="642" y="340" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">Active</text>
+  <rect x="489" y="349" width="90" height="84" rx="4" fill="#FFFFFF"/>
+  <rect x="493" y="353" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="496" y="356" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="499" y="359" width="8" height="8" fill="#0F1117"/>
+  <rect x="551" y="353" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="554" y="356" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="557" y="359" width="8" height="8" fill="#0F1117"/>
+  <rect x="493" y="409" width="20" height="20" rx="1" fill="#0F1117"/>
+  <rect x="496" y="412" width="14" height="14" rx="1" fill="#FFFFFF"/>
+  <rect x="499" y="415" width="8" height="8" fill="#0F1117"/>
+  <rect x="519" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="527" y="361" width="4" height="4" fill="#0F1117"/>
+  <rect x="535" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="543" y="353" width="4" height="4" fill="#0F1117"/>
+  <rect x="519" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="535" y="369" width="4" height="4" fill="#0F1117"/>
+  <rect x="519" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="527" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="543" y="377" width="4" height="4" fill="#0F1117"/>
+  <rect x="519" y="385" width="4" height="4" fill="#0F1117"/>
+  <rect x="535" y="393" width="4" height="4" fill="#0F1117"/>
+  <rect x="527" y="393" width="4" height="4" fill="#0F1117"/>
+  <rect x="519" y="401" width="4" height="4" fill="#0F1117"/>
+  <rect x="543" y="401" width="4" height="4" fill="#0F1117"/>
+  <rect x="519" y="409" width="4" height="4" fill="#0F1117"/>
+  <rect x="527" y="409" width="4" height="4" fill="#0F1117"/>
+  <rect x="535" y="417" width="4" height="4" fill="#0F1117"/>
+  <rect x="543" y="417" width="4" height="4" fill="#0F1117"/>
+  <text x="534" y="441" fill="#64748B" font-size="9" text-anchor="middle">21 scans today</text>
+  <rect x="444" y="452" width="86" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="487" y="465" fill="#94A3B8" font-size="10" text-anchor="middle">Print</text>
+  <rect x="538" y="452" width="96" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="586" y="465" fill="#94A3B8" font-size="10" text-anchor="middle">Download</text>
+
+  <!-- Row 3: Tables 7-9 (compact) -->
+  <rect x="8" y="484" width="196" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="500" fill="#F1F5F9" font-size="12" font-weight="700">Table 7</text>
+  <rect x="149" y="485" width="46" height="16" rx="4" fill="#10B981" fill-opacity="0.15"/>
+  <text x="172" y="496" fill="#10B981" font-size="9" font-weight="700" text-anchor="middle">Active</text>
+  <rect x="58" y="505" width="60" height="60" rx="3" fill="#FFFFFF"/>
+  <rect x="61" y="508" width="14" height="14" rx="1" fill="#0F1117"/>
+  <rect x="63" y="510" width="10" height="10" rx="0" fill="#FFFFFF"/>
+  <rect x="65" y="512" width="6" height="6" fill="#0F1117"/>
+  <rect x="101" y="508" width="14" height="14" rx="1" fill="#0F1117"/>
+  <rect x="103" y="510" width="10" height="10" rx="0" fill="#FFFFFF"/>
+  <rect x="105" y="512" width="6" height="6" fill="#0F1117"/>
+  <rect x="61" y="548" width="14" height="14" rx="1" fill="#0F1117"/>
+  <rect x="63" y="550" width="10" height="10" rx="0" fill="#FFFFFF"/>
+  <rect x="65" y="552" width="6" height="6" fill="#0F1117"/>
+  <rect x="81" y="508" width="4" height="4" fill="#0F1117"/>
+  <rect x="89" y="508" width="4" height="4" fill="#0F1117"/>
+  <rect x="97" y="508" width="4" height="4" fill="#0F1117"/>
+  <rect x="81" y="516" width="4" height="4" fill="#0F1117"/>
+  <rect x="97" y="524" width="4" height="4" fill="#0F1117"/>
+  <rect x="81" y="524" width="4" height="4" fill="#0F1117"/>
+  <rect x="89" y="532" width="4" height="4" fill="#0F1117"/>
+  <rect x="97" y="540" width="4" height="4" fill="#0F1117"/>
+  <rect x="81" y="540" width="4" height="4" fill="#0F1117"/>
+  <rect x="89" y="548" width="4" height="4" fill="#0F1117"/>
+  <rect x="97" y="556" width="4" height="4" fill="#0F1117"/>
+  <text x="146" y="510" fill="#94A3B8" font-size="10">7 scans</text>
+  <rect x="130" y="518" width="56" height="18" rx="4" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="158" y="530" fill="#94A3B8" font-size="9" text-anchor="middle">Print</text>
+  <rect x="130" y="540" width="56" height="18" rx="4" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="158" y="552" fill="#94A3B8" font-size="9" text-anchor="middle">Download</text>
+
+  <rect x="212" y="484" width="196" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="224" y="500" fill="#F1F5F9" font-size="12" font-weight="700">Table 8</text>
+  <rect x="361" y="485" width="44" height="16" rx="4" fill="#64748B" fill-opacity="0.2"/>
+  <text x="383" y="496" fill="#64748B" font-size="9" font-weight="700" text-anchor="middle">Paused</text>
+  <rect x="272" y="505" width="60" height="60" rx="3" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="275" y="508" width="14" height="14" rx="1" fill="#0F1117"/>
+  <rect x="277" y="510" width="10" height="10" rx="0" fill="#FFFFFF"/>
+  <rect x="279" y="512" width="6" height="6" fill="#0F1117"/>
+  <rect x="315" y="508" width="14" height="14" rx="1" fill="#0F1117"/>
+  <rect x="317" y="510" width="10" height="10" rx="0" fill="#FFFFFF"/>
+  <rect x="319" y="512" width="6" height="6" fill="#0F1117"/>
+  <rect x="275" y="548" width="14" height="14" rx="1" fill="#0F1117"/>
+  <rect x="277" y="550" width="10" height="10" rx="0" fill="#FFFFFF"/>
+  <rect x="279" y="552" width="6" height="6" fill="#0F1117"/>
+  <rect x="295" y="508" width="4" height="4" fill="#0F1117"/>
+  <rect x="303" y="516" width="4" height="4" fill="#0F1117"/>
+  <rect x="295" y="524" width="4" height="4" fill="#0F1117"/>
+  <rect x="311" y="524" width="4" height="4" fill="#0F1117"/>
+  <rect x="295" y="540" width="4" height="4" fill="#0F1117"/>
+  <rect x="303" y="548" width="4" height="4" fill="#0F1117"/>
+  <text x="356" y="510" fill="#94A3B8" font-size="10">2 scans</text>
+  <rect x="340" y="518" width="56" height="18" rx="4" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="368" y="530" fill="#94A3B8" font-size="9" text-anchor="middle">Print</text>
+  <rect x="340" y="540" width="56" height="18" rx="4" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="368" y="552" fill="#94A3B8" font-size="9" text-anchor="middle">Download</text>
+
+  <!-- +6 more overflow chip -->
+  <rect x="416" y="484" width="256" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="544" y="526" fill="#64748B" font-size="22" font-weight="700" text-anchor="middle">+6 more</text>
+  <text x="544" y="547" fill="#64748B" font-size="11" text-anchor="middle">tables configured</text>
+  <rect x="494" y="557" width="100" height="20" rx="5" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <text x="544" y="570" fill="#94A3B8" font-size="10" text-anchor="middle">View All Tables</text>
+
+  <!-- ─── ACTION BUTTONS ─── -->
+  <rect x="8" y="594" width="200" height="32" rx="7" fill="#F59E0B"/>
+  <text x="108" y="614" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">Generate All QR Codes</text>
+
+  <rect x="216" y="594" width="216" height="32" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="324" y="614" fill="#F1F5F9" font-size="12" text-anchor="middle">Print All (One per Page)</text>
+
+  <rect x="440" y="594" width="232" height="32" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="556" y="614" fill="#F1F5F9" font-size="12" text-anchor="middle">Bulk Print QR Tents</text>
+
+  <!-- ─── SETTINGS SECTION ─── -->
+  <rect x="8" y="636" width="664" height="178" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="20" y="655" fill="#F1F5F9" font-size="13" font-weight="700">QR Ordering Settings</text>
+
+  <!-- Menu -->
+  <text x="20" y="676" fill="#94A3B8" font-size="11">Menu shown</text>
+  <rect x="130" y="663" width="200" height="22" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="145" y="678" fill="#F1F5F9" font-size="11">Current Active Menu (auto)</text>
+  <text x="322" y="678" fill="#64748B" font-size="11">▾</text>
+
+  <!-- Payment -->
+  <text x="20" y="700" fill="#94A3B8" font-size="11">Payment</text>
+  <rect x="130" y="687" width="80" height="20" rx="5" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+  <text x="170" y="700" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">Pay via QR</text>
+  <rect x="218" y="687" width="120" height="20" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="278" y="700" fill="#94A3B8" font-size="11" text-anchor="middle">Send to server</text>
+
+  <!-- Tips -->
+  <text x="20" y="724" fill="#94A3B8" font-size="11">Tip presets</text>
+  <rect x="130" y="711" width="200" height="20" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="145" y="724" fill="#F1F5F9" font-size="11">Suggest 18% | 20% | 25%</text>
+
+  <!-- Table ID -->
+  <text x="20" y="748" fill="#94A3B8" font-size="11">Table ID</text>
+  <rect x="130" y="735" width="210" height="20" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="145" y="748" fill="#F1F5F9" font-size="11">Auto-detect by QR (no entry)</text>
+
+  <!-- Order flow -->
+  <text x="20" y="772" fill="#94A3B8" font-size="11">Order flow</text>
+  <rect x="130" y="759" width="250" height="20" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="145" y="772" fill="#F1F5F9" font-size="11">Guest orders → Server confirms → KDS fires</text>
+  <text x="372" y="772" fill="#64748B" font-size="11">▾</text>
+
+  <!-- Call server toggle -->
+  <text x="20" y="796" fill="#94A3B8" font-size="11">"Call server" button on guest UI</text>
+  <!-- Toggle ON -->
+  <rect x="230" y="783" width="40" height="20" rx="10" fill="#10B981"/>
+  <circle cx="260" cy="793" r="8" fill="#FFFFFF"/>
+  <text x="278" y="797" fill="#10B981" font-size="11" font-weight="700">ON</text>
+
+  <!-- Right column settings -->
+  <text x="380" y="676" fill="#94A3B8" font-size="11">Order notifications</text>
+  <rect x="500" y="663" width="100" height="22" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="515" y="677" fill="#F1F5F9" font-size="11">Push + Sound</text>
+  <text x="607" y="677" fill="#64748B" font-size="11">▾</text>
+
+  <text x="380" y="700" fill="#94A3B8" font-size="11">Min order amount</text>
+  <rect x="500" y="687" width="100" height="22" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="548" y="701" fill="#F1F5F9" font-size="11" text-anchor="middle">$0.00 (none)</text>
+
+  <text x="380" y="724" fill="#94A3B8" font-size="11">Session timeout</text>
+  <rect x="500" y="711" width="100" height="22" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="548" y="724" fill="#F1F5F9" font-size="11" text-anchor="middle">45 minutes</text>
+
+  <text x="380" y="748" fill="#94A3B8" font-size="11">Logo on guest menu</text>
+  <rect x="500" y="735" width="40" height="20" rx="10" fill="#10B981"/>
+  <circle cx="530" cy="745" r="8" fill="#FFFFFF"/>
+  <text x="548" y="749" fill="#10B981" font-size="11" font-weight="700">ON</text>
+
+  <text x="380" y="772" fill="#94A3B8" font-size="11">Allow item notes</text>
+  <rect x="500" y="759" width="40" height="20" rx="10" fill="#10B981"/>
+  <circle cx="530" cy="769" r="8" fill="#FFFFFF"/>
+  <text x="548" y="773" fill="#10B981" font-size="11" font-weight="700">ON</text>
+
+  <!-- Save settings button -->
+  <rect x="530" y="788" width="134" height="26" rx="6" fill="#F59E0B"/>
+  <text x="597" y="804" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">Save Settings</text>
+
+  <!-- Divider between halves -->
+  <rect x="679" y="0" width="2" height="920" fill="#2D3148"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- RIGHT HALF: Customer Flow Mockup (x=682, w=684)    -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Right panel bg -->
+  <rect x="681" y="0" width="685" height="920" fill="#0F1117"/>
+
+  <!-- Right header -->
+  <rect x="681" y="0" width="685" height="54" fill="#13162A"/>
+  <rect x="681" y="54" width="685" height="1" fill="#2D3148"/>
+  <text x="701" y="23" fill="#F1F5F9" font-size="15" font-weight="700">Guest Experience</text>
+  <text x="701" y="41" fill="#94A3B8" font-size="11">Real-time preview of customer ordering flow</text>
+  <rect x="1267" y="10" width="90" height="22" rx="6" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1312" y="24" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">Live Preview</text>
+
+  <!-- Step labels -->
+  <text x="771" y="72" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">STEP 1</text>
+  <text x="771" y="86" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="middle">Scan &amp; Browse</text>
+  <text x="983" y="72" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">STEP 2</text>
+  <text x="983" y="86" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="middle">Review &amp; Customize</text>
+  <text x="1196" y="72" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">STEP 3</text>
+  <text x="1196" y="86" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="middle">Track &amp; Pay</text>
+
+  <!-- ─── PHONE 1: Scan & Menu ─── -->
+  <!-- Phone frame -->
+  <rect x="676" y="96" width="194" height="422" rx="24" fill="#2D3148"/>
+  <rect x="679" y="99" width="188" height="416" rx="21" fill="#1A1D2E"/>
+  <rect x="681" y="101" width="184" height="412" rx="20" fill="#FFFFFF"/>
+  <!-- Notch -->
+  <rect x="739" y="101" width="68" height="18" rx="9" fill="#2D3148"/>
+
+  <!-- Phone 1 content (light theme) -->
+  <!-- Top bar -->
+  <rect x="681" y="119" width="184" height="40" fill="#F8FAFC"/>
+  <rect x="681" y="159" width="184" height="1" fill="#E2E8F0"/>
+  <!-- Logo area -->
+  <rect x="697" y="124" width="26" height="26" rx="6" fill="#F59E0B"/>
+  <text x="710" y="141" fill="#FFFFFF" font-size="13" font-weight="900" text-anchor="middle">S</text>
+  <text x="730" y="133" fill="#1E293B" font-size="11" font-weight="700">Synalux Bistro</text>
+  <text x="730" y="146" fill="#64748B" font-size="9">Table 4</text>
+  <!-- QR icon top right -->
+  <rect x="843" y="125" width="18" height="18" rx="4" fill="#F1F5F9"/>
+  <rect x="846" y="128" width="5" height="5" rx="1" fill="#1E293B"/>
+  <rect x="853" y="128" width="5" height="5" rx="1" fill="#1E293B"/>
+  <rect x="846" y="135" width="5" height="5" rx="1" fill="#1E293B"/>
+  <rect x="853" y="135" width="3" height="3" fill="#1E293B"/>
+
+  <!-- Welcome text -->
+  <text x="773" y="178" fill="#1E293B" font-size="12" font-weight="700" text-anchor="middle">Welcome! Browse our menu</text>
+
+  <!-- Category tabs -->
+  <rect x="686" y="183" width="174" height="24" rx="6" fill="#F1F5F9"/>
+  <rect x="689" y="185" width="38" height="20" rx="5" fill="#F59E0B"/>
+  <text x="708" y="198" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">Burgers</text>
+  <text x="743" y="198" fill="#64748B" font-size="9" text-anchor="middle">Apps</text>
+  <text x="779" y="198" fill="#64748B" font-size="9" text-anchor="middle">Drinks</text>
+  <text x="817" y="198" fill="#64748B" font-size="9" text-anchor="middle">Desserts</text>
+
+  <!-- Menu item 1 -->
+  <rect x="686" y="212" width="174" height="76" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Photo placeholder -->
+  <rect x="690" y="216" width="56" height="50" rx="6" fill="#FEF3C7"/>
+  <text x="718" y="246" fill="#F59E0B" font-size="20" text-anchor="middle">🍔</text>
+  <text x="756" y="226" fill="#1E293B" font-size="11" font-weight="700">Classic Burger</text>
+  <text x="756" y="238" fill="#64748B" font-size="9">Beef patty, lettuce, tomato</text>
+  <text x="756" y="250" fill="#64748B" font-size="9">cheese, special sauce</text>
+  <text x="756" y="264" fill="#F59E0B" font-size="12" font-weight="700">$18.00</text>
+  <rect x="808" y="258" width="48" height="19" rx="5" fill="#F59E0B"/>
+  <text x="832" y="270" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">Add +</text>
+
+  <!-- Menu item 2 -->
+  <rect x="686" y="294" width="174" height="76" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="690" y="298" width="56" height="50" rx="6" fill="#DBEAFE"/>
+  <text x="718" y="328" fill="#3B82F6" font-size="20" text-anchor="middle">🍺</text>
+  <text x="756" y="308" fill="#1E293B" font-size="11" font-weight="700">Craft Beer</text>
+  <text x="756" y="320" fill="#64748B" font-size="9">Local IPA, cold draft</text>
+  <text x="756" y="332" fill="#64748B" font-size="9">16 oz pint</text>
+  <text x="756" y="346" fill="#F59E0B" font-size="12" font-weight="700">$9.00</text>
+  <rect x="808" y="340" width="48" height="19" rx="5" fill="#F59E0B"/>
+  <text x="832" y="352" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">Add +</text>
+
+  <!-- Cart bar -->
+  <rect x="681" y="376" width="184" height="1" fill="#E2E8F0"/>
+  <rect x="686" y="381" width="174" height="32" rx="8" fill="#F59E0B"/>
+  <text x="738" y="401" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle">View Cart (2)</text>
+  <rect x="836" y="384" width="20" height="20" rx="10" fill="#0F1117" fill-opacity="0.2"/>
+  <text x="846" y="398" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">$27</text>
+
+  <!-- Scroll hint -->
+  <text x="773" y="426" fill="#CBD5E1" font-size="8" text-anchor="middle">Scroll for more items ↓</text>
+
+  <!-- ─── ARROW 1 → 2 ─── -->
+  <line x1="876" y1="304" x2="892" y2="304" stroke="#F59E0B" stroke-width="2"/>
+  <polygon points="892,299 902,304 892,309" fill="#F59E0B"/>
+  <text x="889" y="318" fill="#64748B" font-size="8" text-anchor="middle">tap</text>
+
+  <!-- ─── PHONE 2: Review & Customize ─── -->
+  <rect x="888" y="96" width="194" height="422" rx="24" fill="#2D3148"/>
+  <rect x="891" y="99" width="188" height="416" rx="21" fill="#1A1D2E"/>
+  <rect x="893" y="101" width="184" height="412" rx="20" fill="#FFFFFF"/>
+  <rect x="951" y="101" width="68" height="18" rx="9" fill="#2D3148"/>
+
+  <!-- Phone 2 content (light theme order review) -->
+  <rect x="893" y="119" width="184" height="40" fill="#F8FAFC"/>
+  <rect x="893" y="159" width="184" height="1" fill="#E2E8F0"/>
+  <text x="985" y="134" fill="#1E293B" font-size="12" font-weight="700" text-anchor="middle">Your Order</text>
+  <text x="985" y="150" fill="#64748B" font-size="10" text-anchor="middle">Table 4 · Synalux Bistro</text>
+  <!-- Back arrow -->
+  <text x="900" y="140" fill="#64748B" font-size="13">←</text>
+
+  <!-- Order items -->
+  <rect x="898" y="165" width="174" height="68" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="906" y="180" fill="#1E293B" font-size="11" font-weight="700">Classic Burger</text>
+  <rect x="1034" y="170" width="32" height="20" rx="5" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1042" y="183" fill="#1E293B" font-size="9">− 1 +</text>
+  <text x="906" y="194" fill="#64748B" font-size="9">No onions, add bacon</text>
+  <text x="1054" y="208" fill="#1E293B" font-size="11" font-weight="700" text-anchor="end">$18.00</text>
+  <text x="906" y="208" fill="#F59E0B" font-size="9">Qty: 1</text>
+  <text x="906" y="220" fill="#CBD5E1" font-size="8">customize ›</text>
+
+  <rect x="898" y="238" width="174" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="906" y="253" fill="#1E293B" font-size="11" font-weight="700">Craft Beer</text>
+  <rect x="1034" y="243" width="32" height="20" rx="5" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1042" y="256" fill="#1E293B" font-size="9">− 1 +</text>
+  <text x="906" y="267" fill="#64748B" font-size="9">Local IPA · 16oz</text>
+  <text x="1054" y="280" fill="#1E293B" font-size="11" font-weight="700" text-anchor="end">$9.00</text>
+  <text x="906" y="280" fill="#F59E0B" font-size="9">Qty: 1</text>
+
+  <!-- Subtotal -->
+  <rect x="898" y="303" width="174" height="1" fill="#E2E8F0"/>
+  <text x="906" y="318" fill="#64748B" font-size="10">Subtotal</text>
+  <text x="1066" y="318" fill="#1E293B" font-size="10" font-weight="700" text-anchor="end">$27.00</text>
+
+  <!-- Special request -->
+  <rect x="898" y="325" width="174" height="28" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="908" y="342" fill="#CBD5E1" font-size="9">+ Add special request...</text>
+
+  <!-- Place Order button -->
+  <rect x="898" y="360" width="174" height="32" rx="8" fill="#10B981"/>
+  <text x="985" y="380" fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle">Place Order →</text>
+
+  <!-- Call server button -->
+  <rect x="898" y="398" width="174" height="28" rx="8" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="985" y="415" fill="#0D9488" font-size="11" font-weight="600" text-anchor="middle">Call Your Server</text>
+
+  <!-- ─── ARROW 2 → 3 ─── -->
+  <line x1="1088" y1="304" x2="1104" y2="304" stroke="#F59E0B" stroke-width="2"/>
+  <polygon points="1104,299 1114,304 1104,309" fill="#F59E0B"/>
+  <text x="1101" y="318" fill="#64748B" font-size="8" text-anchor="middle">place</text>
+
+  <!-- ─── PHONE 3: Payment ─── -->
+  <rect x="1100" y="96" width="194" height="422" rx="24" fill="#2D3148"/>
+  <rect x="1103" y="99" width="188" height="416" rx="21" fill="#1A1D2E"/>
+  <rect x="1105" y="101" width="184" height="412" rx="20" fill="#FFFFFF"/>
+  <rect x="1163" y="101" width="68" height="18" rx="9" fill="#2D3148"/>
+
+  <!-- Phone 3 content -->
+  <rect x="1105" y="119" width="184" height="48" fill="#F0FDF4"/>
+  <rect x="1105" y="167" width="184" height="1" fill="#D1FAE5"/>
+  <text x="1197" y="136" fill="#065F46" font-size="18" text-anchor="middle">🎉</text>
+  <text x="1197" y="152" fill="#065F46" font-size="12" font-weight="700" text-anchor="middle">Order Received!</text>
+
+  <!-- Kitchen status -->
+  <rect x="1110" y="172" width="174" height="52" rx="8" fill="#F8FAFC"/>
+  <text x="1197" y="186" fill="#64748B" font-size="9" text-anchor="middle">Kitchen is preparing your food</text>
+  <!-- Progress dots -->
+  <circle cx="1145" cy="205" r="8" fill="#10B981"/>
+  <text x="1145" y="209" fill="#FFFFFF" font-size="8" text-anchor="middle">✓</text>
+  <line x1="1153" y1="205" x2="1166" y2="205" stroke="#10B981" stroke-width="1.5"/>
+  <circle cx="1174" cy="205" r="8" fill="#F59E0B"/>
+  <line x1="1182" y1="205" x2="1199" y2="205" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="1207" cy="205" r="8" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="1145" y="220" fill="#10B981" font-size="7" text-anchor="middle">Received</text>
+  <text x="1174" y="220" fill="#F59E0B" font-size="7" text-anchor="middle">Kitchen</text>
+  <text x="1207" y="220" fill="#CBD5E1" font-size="7" text-anchor="middle">Ready</text>
+
+  <!-- Divider -->
+  <rect x="1110" y="229" width="174" height="1" fill="#E2E8F0"/>
+  <text x="1197" y="243" fill="#1E293B" font-size="11" font-weight="700" text-anchor="middle">Pay Now</text>
+
+  <!-- Order breakdown -->
+  <text x="1115" y="258" fill="#64748B" font-size="10">Subtotal</text>
+  <text x="1279" y="258" fill="#1E293B" font-size="10" text-anchor="end">$27.00</text>
+  <text x="1115" y="272" fill="#64748B" font-size="10">Tax (8.875%)</text>
+  <text x="1279" y="272" fill="#1E293B" font-size="10" text-anchor="end">$2.39</text>
+
+  <!-- Tip chips -->
+  <text x="1115" y="288" fill="#64748B" font-size="10">Tip</text>
+  <rect x="1140" y="278" width="28" height="18" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1154" y="290" fill="#64748B" font-size="9" text-anchor="middle">15%</text>
+  <rect x="1172" y="278" width="28" height="18" rx="4" fill="#F59E0B"/>
+  <text x="1186" y="290" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">18%</text>
+  <rect x="1204" y="278" width="28" height="18" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1218" y="290" fill="#64748B" font-size="9" text-anchor="middle">20%</text>
+  <rect x="1236" y="278" width="40" height="18" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1256" y="290" fill="#64748B" font-size="9" text-anchor="middle">Custom</text>
+
+  <text x="1115" y="306" fill="#64748B" font-size="10">Tip amount</text>
+  <text x="1279" y="306" fill="#1E293B" font-size="10" text-anchor="end">$5.40</text>
+  <rect x="1110" y="312" width="174" height="1" fill="#E2E8F0"/>
+  <text x="1115" y="326" fill="#1E293B" font-size="11" font-weight="700">Total</text>
+  <text x="1279" y="326" fill="#1E293B" font-size="13" font-weight="700" text-anchor="end">$34.79</text>
+
+  <!-- Apple Pay button -->
+  <rect x="1110" y="332" width="174" height="34" rx="8" fill="#000000"/>
+  <text x="1180" y="352" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle"> Pay</text>
+  <text x="1158" y="354" fill="#FFFFFF" font-size="14" text-anchor="middle"></text>
+
+  <!-- Pay with Card button -->
+  <rect x="1110" y="371" width="174" height="30" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="1197" y="389" fill="#1E293B" font-size="11" font-weight="600" text-anchor="middle">Pay with Card</text>
+
+  <!-- Add to Bill link -->
+  <text x="1197" y="415" fill="#0D9488" font-size="10" text-anchor="middle" text-decoration="underline">Add to Bill (Pay at Table)</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BOTTOM WORKFLOW STRIP (full width)                  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="920" width="1366" height="104" fill="#0F1117"/>
+  <rect x="8" y="924" width="1350" height="92" rx="10" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+
+  <!-- Flow label -->
+  <text x="24" y="944" fill="#F59E0B" font-size="10" font-weight="700">INTEGRATION FLOW</text>
+  <rect x="24" y="950" width="1318" height="1" fill="#2D3148"/>
+
+  <!-- Flow text line 1 -->
+  <text x="683" y="966" fill="#94A3B8" font-size="10.5" text-anchor="middle">
+    Guest scans QR  →  loads synalux.ai/qr/{location_id}/{table_id} (no app install)  →  selects items  →  order inserted in pos_orders with source='qr_table'
+  </text>
+  <!-- Flow text line 2 -->
+  <text x="683" y="984" fill="#94A3B8" font-size="10.5" text-anchor="middle">
+    →  server notified via KDS badge + tablet alert  →  guest pays via Stripe or adds to table bill  →  pos_payments linked to pos_orders
+  </text>
+  <!-- Flow text line 3 -->
+  <text x="683" y="1002" fill="#64748B" font-size="10" text-anchor="middle">
+    Revenue tracked per-table in pos_revenue_centers  ·  All QR sessions expire after 45 min  ·  Real-time order updates via WebSocket
+  </text>
+
+  <!-- Flow icons -->
+  <circle cx="24" cy="984" r="5" fill="#F59E0B"/>
+  <text x="35" y="988" fill="#F59E0B" font-size="9" font-weight="700">QR</text>
+  <circle cx="1330" cy="984" r="5" fill="#10B981"/>
+  <text x="1320" y="988" fill="#10B981" font-size="9" font-weight="700" text-anchor="end">LIVE</text>
+
+</svg>

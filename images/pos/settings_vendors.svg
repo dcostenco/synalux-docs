@@ -1,0 +1,470 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════
+       LEFT SIDEBAR
+  ═══════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+
+  <!-- Logo / section label -->
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+
+  <!-- Nav items -->
+  <text x="16" y="66"  font-size="12" fill="#64748B">Restaurant Info</text>
+  <text x="16" y="100" font-size="12" fill="#64748B">Menu Builder</text>
+  <text x="16" y="134" font-size="12" fill="#64748B">Taxes &amp; Fees</text>
+  <text x="16" y="168" font-size="12" fill="#64748B">Employees</text>
+  <text x="16" y="202" font-size="12" fill="#64748B">Inventory</text>
+  <text x="16" y="236" font-size="12" fill="#64748B">Recipes</text>
+
+  <!-- Active: Vendor Management -->
+  <rect x="0" y="248" width="210" height="36" fill="#1A1D2E" rx="4"/>
+  <rect x="0" y="248" width="3"   height="36" fill="#F59E0B"/>
+  <text x="16" y="271" font-size="12" font-weight="600" fill="#F59E0B">Vendor Management</text>
+
+  <text x="16" y="308" font-size="12" fill="#64748B">Purchase Orders</text>
+  <text x="16" y="342" font-size="12" fill="#64748B">Cash Management</text>
+  <text x="16" y="376" font-size="12" fill="#64748B">Discounts</text>
+  <text x="16" y="410" font-size="12" fill="#64748B">Gift Cards</text>
+  <text x="16" y="444" font-size="12" fill="#64748B">Loyalty Program</text>
+  <text x="16" y="478" font-size="12" fill="#64748B">Price Levels</text>
+  <text x="16" y="512" font-size="12" fill="#64748B">Revenue Centers</text>
+  <text x="16" y="546" font-size="12" fill="#64748B">Printer Routing</text>
+  <text x="16" y="580" font-size="12" fill="#64748B">Integrations</text>
+  <text x="16" y="614" font-size="12" fill="#64748B">Reports</text>
+  <text x="16" y="648" font-size="12" fill="#64748B">Training Mode</text>
+  <text x="16" y="682" font-size="12" fill="#64748B">Equipment</text>
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER BAR
+  ═══════════════════════════════════════════════ -->
+  <rect x="210" y="0" width="1156" height="56" fill="#1A1D2E"/>
+  <text x="228" y="33" font-size="18" font-weight="700" fill="#F1F5F9">Vendor Management</text>
+  <text x="228" y="49" font-size="11" fill="#64748B">Suppliers · Lead times · Min orders · Purchase order history — pos_vendors / pos_purchase_orders</text>
+
+  <!-- + Add Vendor button -->
+  <rect x="1224" y="12" width="124" height="32" rx="6" fill="#F59E0B"/>
+  <text x="1244" y="32" font-size="12" font-weight="600" fill="#000000">+ Add Vendor</text>
+
+  <!-- ═══════════════════════════════════════════════
+       VENDOR TABLE (left portion, x=210 to x=870)
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Table header row -->
+  <rect x="210" y="56" width="660" height="34" fill="#1E2240"/>
+  <text x="228" y="78" font-size="10" font-weight="600" fill="#64748B">VENDOR</text>
+  <text x="380" y="78" font-size="10" font-weight="600" fill="#64748B">CATEGORIES</text>
+  <text x="530" y="78" font-size="10" font-weight="600" fill="#64748B">LEAD</text>
+  <text x="580" y="78" font-size="10" font-weight="600" fill="#64748B">MIN ORDER</text>
+  <text x="660" y="78" font-size="10" font-weight="600" fill="#64748B">REP</text>
+  <text x="745" y="78" font-size="10" font-weight="600" fill="#64748B">STATUS</text>
+  <text x="820" y="78" font-size="10" font-weight="600" fill="#64748B">ACTIONS</text>
+
+  <!-- ── Row 1: Sysco Foods (selected / highlighted) ── -->
+  <rect x="210" y="90" width="660" height="52" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="210" y="90" width="3"   height="52" fill="#F59E0B"/>
+  <!-- Sysco circle avatar -->
+  <circle cx="240" cy="116" r="14" fill="#1D4ED8"/>
+  <text x="232" y="121" font-size="11" font-weight="700" fill="#FFFFFF">SC</text>
+  <text x="260" y="111" font-size="12" font-weight="600" fill="#F59E0B">Sysco Foods</text>
+  <text x="260" y="127" font-size="10" fill="#64748B">sysco.com · Acct #44-882910</text>
+  <text x="380" y="111" font-size="10" fill="#94A3B8">Produce, Dairy,</text>
+  <text x="380" y="125" font-size="10" fill="#94A3B8">Protein</text>
+  <text x="530" y="116" font-size="11" fill="#94A3B8">2 days</text>
+  <text x="580" y="116" font-size="11" fill="#94A3B8">$500</text>
+  <text x="660" y="116" font-size="11" fill="#94A3B8">Mike T.</text>
+  <rect x="737" y="102" width="54" height="20" rx="10" fill="#064E3B"/>
+  <text x="747" y="116" font-size="9" fill="#10B981">● Active</text>
+  <!-- View button -->
+  <rect x="808" y="101" width="36" height="20" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="816" y="115" font-size="9" fill="#94A3B8">View</text>
+  <!-- New PO button -->
+  <rect x="848" y="101" width="46" height="20" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <text x="854" y="115" font-size="9" fill="#F59E0B">New PO</text>
+
+  <!-- ── Row 2: US Foods ── -->
+  <rect x="210" y="142" width="660" height="52" fill="#13162A"/>
+  <circle cx="240" cy="168" r="14" fill="#7C3AED"/>
+  <text x="233" y="173" font-size="11" font-weight="700" fill="#FFFFFF">UF</text>
+  <text x="260" y="163" font-size="12" fill="#F1F5F9">US Foods</text>
+  <text x="260" y="179" font-size="10" fill="#64748B">usfoods.com · Acct #77-334521</text>
+  <text x="380" y="163" font-size="10" fill="#94A3B8">Protein,</text>
+  <text x="380" y="177" font-size="10" fill="#94A3B8">Dry Goods</text>
+  <text x="530" y="168" font-size="11" fill="#94A3B8">3 days</text>
+  <text x="580" y="168" font-size="11" fill="#94A3B8">$300</text>
+  <text x="660" y="168" font-size="11" fill="#94A3B8">Sarah L.</text>
+  <rect x="737" y="154" width="54" height="20" rx="10" fill="#064E3B"/>
+  <text x="747" y="168" font-size="9" fill="#10B981">● Active</text>
+  <rect x="808" y="153" width="36" height="20" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="816" y="167" font-size="9" fill="#94A3B8">View</text>
+  <rect x="848" y="153" width="46" height="20" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <text x="854" y="167" font-size="9" fill="#F59E0B">New PO</text>
+
+  <!-- ── Row 3: Local Farm Co ── -->
+  <rect x="210" y="194" width="660" height="52" fill="#1A1D2E"/>
+  <circle cx="240" cy="220" r="14" fill="#065F46"/>
+  <text x="233" y="225" font-size="11" font-weight="700" fill="#FFFFFF">LF</text>
+  <text x="260" y="215" font-size="12" fill="#F1F5F9">Local Farm Co</text>
+  <text x="260" y="231" font-size="10" fill="#64748B">localfarmco.com · Acct #LF-0091</text>
+  <text x="380" y="220" font-size="10" fill="#94A3B8">Produce</text>
+  <text x="530" y="220" font-size="11" fill="#94A3B8">1 day</text>
+  <text x="580" y="220" font-size="11" fill="#94A3B8">$150</text>
+  <text x="660" y="220" font-size="11" fill="#94A3B8">Dan R.</text>
+  <rect x="737" y="206" width="54" height="20" rx="10" fill="#064E3B"/>
+  <text x="747" y="220" font-size="9" fill="#10B981">● Active</text>
+  <rect x="808" y="205" width="36" height="20" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="816" y="219" font-size="9" fill="#94A3B8">View</text>
+  <rect x="848" y="205" width="46" height="20" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <text x="854" y="219" font-size="9" fill="#F59E0B">New PO</text>
+
+  <!-- ── Row 4: Gordon Food Service (Inactive) ── -->
+  <rect x="210" y="246" width="660" height="52" fill="#13162A"/>
+  <circle cx="240" cy="272" r="14" fill="#374151"/>
+  <text x="233" y="277" font-size="11" font-weight="700" fill="#9CA3AF">GF</text>
+  <text x="260" y="267" font-size="12" fill="#94A3B8">Gordon Food Service</text>
+  <text x="260" y="283" font-size="10" fill="#64748B">gfs.com · Acct #GF-55213</text>
+  <text x="380" y="267" font-size="10" fill="#64748B">Beverages,</text>
+  <text x="380" y="281" font-size="10" fill="#64748B">Dairy</text>
+  <text x="530" y="272" font-size="11" fill="#64748B">4 days</text>
+  <text x="580" y="272" font-size="11" fill="#64748B">$250</text>
+  <text x="660" y="272" font-size="11" fill="#64748B">Amy K.</text>
+  <rect x="737" y="258" width="60" height="20" rx="10" fill="#1F2937"/>
+  <text x="746" y="272" font-size="9" fill="#64748B">● Inactive</text>
+  <rect x="808" y="257" width="36" height="20" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="816" y="271" font-size="9" fill="#64748B">View</text>
+  <rect x="848" y="257" width="46" height="20" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="854" y="271" font-size="9" fill="#64748B">New PO</text>
+
+  <!-- ── Row 5: Pacific Seafood ── -->
+  <rect x="210" y="298" width="660" height="52" fill="#1A1D2E"/>
+  <circle cx="240" cy="324" r="14" fill="#0369A1"/>
+  <text x="233" y="329" font-size="11" font-weight="700" fill="#FFFFFF">PS</text>
+  <text x="260" y="319" font-size="12" fill="#F1F5F9">Pacific Seafood</text>
+  <text x="260" y="335" font-size="10" fill="#64748B">pacseafood.com · Acct #PS-1042</text>
+  <text x="380" y="324" font-size="10" fill="#94A3B8">Protein</text>
+  <text x="530" y="324" font-size="11" fill="#94A3B8">1 day</text>
+  <text x="580" y="324" font-size="11" fill="#94A3B8">$200</text>
+  <text x="660" y="324" font-size="11" fill="#94A3B8">Tom W.</text>
+  <rect x="737" y="310" width="54" height="20" rx="10" fill="#064E3B"/>
+  <text x="747" y="324" font-size="9" fill="#10B981">● Active</text>
+  <rect x="808" y="309" width="36" height="20" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="816" y="323" font-size="9" fill="#94A3B8">View</text>
+  <rect x="848" y="309" width="46" height="20" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <text x="854" y="323" font-size="9" fill="#F59E0B">New PO</text>
+
+  <!-- Divider under table -->
+  <line x1="210" y1="350" x2="870" y2="350" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════
+       DB SCHEMA BLOCK (bottom left)
+  ═══════════════════════════════════════════════ -->
+  <rect x="210" y="358" width="660" height="252" rx="8" fill="#0A0C14" stroke="#2D3148" stroke-width="1"/>
+  <text x="228" y="380" font-size="10" font-weight="700" fill="#64748B">DATABASE SCHEMA</text>
+
+  <!-- Schema lines -->
+  <text x="228" y="400" font-size="10" fill="#8B5CF6" font-family="'SF Mono',Menlo,monospace">pos_vendors</text>
+  <text x="310" y="400" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">(id, venue_id, name, category_tags text[], rep_name,</text>
+  <text x="228" y="414" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">             rep_phone, rep_email, min_order_cents, lead_time_days,</text>
+  <text x="228" y="428" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">             account_number, notes, active bool)</text>
+
+  <text x="228" y="450" font-size="10" fill="#8B5CF6" font-family="'SF Mono',Menlo,monospace">pos_purchase_orders</text>
+  <text x="358" y="450" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">(id, vendor_id, venue_id, created_by_staff_id,</text>
+  <text x="228" y="464" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">                     status varchar,</text>
+  <text x="374" y="464" font-size="10" fill="#94A3B8" font-style="italic" font-family="'SF Mono',Menlo,monospace">-- draft|sent|partial|received|cancelled</text>
+  <text x="228" y="478" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">                     ordered_at, expected_at, received_at)</text>
+
+  <text x="228" y="500" font-size="10" fill="#8B5CF6" font-family="'SF Mono',Menlo,monospace">pos_po_line_items</text>
+  <text x="350" y="500" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">(id, po_id, inventory_item_id, qty_ordered decimal,</text>
+  <text x="228" y="514" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">                   qty_received decimal, unit_cost_cents, unit varchar)</text>
+
+  <text x="228" y="536" font-size="10" fill="#8B5CF6" font-family="'SF Mono',Menlo,monospace">pos_vendor_delivery_log</text>
+  <text x="385" y="536" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">(id, po_id, received_at, received_by_staff_id,</text>
+  <text x="228" y="550" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">                         discrepancy_notes text)</text>
+
+  <!-- fk hint -->
+  <text x="228" y="578" font-size="10" fill="#374151" font-family="'SF Mono',Menlo,monospace">-- pos_vendors.id → pos_purchase_orders.vendor_id</text>
+  <text x="228" y="592" font-size="10" fill="#374151" font-family="'SF Mono',Menlo,monospace">-- pos_purchase_orders.id → pos_po_line_items.po_id, pos_vendor_delivery_log.po_id</text>
+  <text x="228" y="606" font-size="10" fill="#374151" font-family="'SF Mono',Menlo,monospace">-- category_tags uses GIN index for multi-category filter queries</text>
+
+  <!-- ═══════════════════════════════════════════════
+       RIGHT PANEL — Sysco Foods Detail
+  ═══════════════════════════════════════════════ -->
+  <rect x="874" y="56" width="492" height="968" fill="#1A1D2E"/>
+  <line x1="874" y1="56" x2="874" y2="1024" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Panel header -->
+  <rect x="874" y="56" width="492" height="52" fill="#1E2240"/>
+  <circle cx="910" cy="82" r="18" fill="#1D4ED8"/>
+  <text x="901" y="87" font-size="13" font-weight="700" fill="#FFFFFF">SC</text>
+  <text x="936" y="77" font-size="15" font-weight="700" fill="#F1F5F9">Sysco Foods</text>
+  <text x="936" y="96" font-size="11" fill="#64748B">Acct #44-882910 · Net 30 · EDI enabled</text>
+  <rect x="1300" y="64" width="54" height="20" rx="10" fill="#064E3B"/>
+  <text x="1310" y="78" font-size="9" fill="#10B981">● Active</text>
+
+  <!-- Contact section -->
+  <text x="892" y="132" font-size="11" font-weight="600" fill="#94A3B8">CONTACT INFORMATION</text>
+  <line x1="892" y1="137" x2="1350" y2="137" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Rep card -->
+  <rect x="892" y="145" width="456" height="68" rx="6" fill="#13162A"/>
+  <circle cx="918" cy="179" r="18" fill="#B45309"/>
+  <text x="911" y="184" font-size="12" font-weight="700" fill="#FFFFFF">MT</text>
+  <text x="944" y="169" font-size="13" font-weight="600" fill="#F1F5F9">Mike Thornton</text>
+  <text x="944" y="185" font-size="11" fill="#94A3B8">Account Representative</text>
+  <text x="944" y="201" font-size="11" fill="#64748B">(503) 555-0182  ·  m.thornton@sysco.com</text>
+
+  <!-- Stats row -->
+  <rect x="892" y="222" width="136" height="52" rx="6" fill="#13162A"/>
+  <text x="908" y="243" font-size="10" fill="#64748B">Lead Time</text>
+  <text x="908" y="263" font-size="16" font-weight="700" fill="#F1F5F9">2</text>
+  <text x="928" y="263" font-size="11" fill="#94A3B8">days avg</text>
+
+  <rect x="1036" y="222" width="136" height="52" rx="6" fill="#13162A"/>
+  <text x="1052" y="243" font-size="10" fill="#64748B">Min Order</text>
+  <text x="1052" y="263" font-size="16" font-weight="700" fill="#F1F5F9">$500</text>
+
+  <rect x="1180" y="222" width="168" height="52" rx="6" fill="#13162A"/>
+  <text x="1196" y="243" font-size="10" fill="#64748B">YTD Spend</text>
+  <text x="1196" y="263" font-size="16" font-weight="700" fill="#10B981">$47,200</text>
+
+  <!-- Avg delivery -->
+  <rect x="892" y="282" width="200" height="32" rx="6" fill="#13162A"/>
+  <text x="908" y="302" font-size="11" fill="#94A3B8">Avg Delivery Time:</text>
+  <text x="1038" y="302" font-size="11" font-weight="600" fill="#F1F5F9">1.8 days</text>
+
+  <!-- Categories tags -->
+  <rect x="1100" y="282" width="66" height="24" rx="12" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1112" y="298" font-size="10" fill="#94A3B8">Produce</text>
+  <rect x="1172" y="282" width="48" height="24" rx="12" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1182" y="298" font-size="10" fill="#94A3B8">Dairy</text>
+  <rect x="1226" y="282" width="56" height="24" rx="12" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1236" y="298" font-size="10" fill="#94A3B8">Protein</text>
+
+  <!-- Purchase Orders section -->
+  <text x="892" y="336" font-size="11" font-weight="600" fill="#94A3B8">RECENT PURCHASE ORDERS</text>
+  <line x1="892" y1="341" x2="1350" y2="341" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- PO Table header -->
+  <rect x="892" y="348" width="456" height="28" fill="#1E2240" rx="4"/>
+  <text x="904" y="366" font-size="10" font-weight="600" fill="#64748B">PO #</text>
+  <text x="972" y="366" font-size="10" font-weight="600" fill="#64748B">DATE</text>
+  <text x="1056" y="366" font-size="10" font-weight="600" fill="#64748B">ITEMS</text>
+  <text x="1136" y="366" font-size="10" font-weight="600" fill="#64748B">TOTAL</text>
+  <text x="1226" y="366" font-size="10" font-weight="600" fill="#64748B">STATUS</text>
+
+  <!-- PO Row 1: PO-2847 Received -->
+  <rect x="892" y="376" width="456" height="40" fill="#13162A"/>
+  <text x="904" y="400" font-size="12" font-weight="600" fill="#F1F5F9">PO-2847</text>
+  <text x="972" y="400" font-size="11" fill="#94A3B8">May 25, 2026</text>
+  <text x="1056" y="400" font-size="11" fill="#94A3B8">12 items</text>
+  <text x="1136" y="400" font-size="11" fill="#F1F5F9">$2,340.00</text>
+  <rect x="1218" y="386" width="80" height="20" rx="10" fill="#064E3B"/>
+  <text x="1228" y="400" font-size="9" fill="#10B981">● Received</text>
+  <!-- view link -->
+  <text x="1316" y="400" font-size="11" fill="#F59E0B" text-decoration="underline">View</text>
+
+  <!-- divider -->
+  <line x1="892" y1="416" x2="1348" y2="416" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- PO Row 2: PO-2831 Received -->
+  <rect x="892" y="416" width="456" height="40" fill="#1A1D2E"/>
+  <text x="904" y="440" font-size="12" font-weight="600" fill="#F1F5F9">PO-2831</text>
+  <text x="972" y="440" font-size="11" fill="#94A3B8">May 20, 2026</text>
+  <text x="1056" y="440" font-size="11" fill="#94A3B8">8 items</text>
+  <text x="1136" y="440" font-size="11" fill="#F1F5F9">$1,890.00</text>
+  <rect x="1218" y="426" width="80" height="20" rx="10" fill="#064E3B"/>
+  <text x="1228" y="440" font-size="9" fill="#10B981">● Received</text>
+  <text x="1316" y="440" font-size="11" fill="#F59E0B" text-decoration="underline">View</text>
+
+  <!-- divider -->
+  <line x1="892" y1="456" x2="1348" y2="456" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- PO Row 3: PO-2812 Partially Received -->
+  <rect x="892" y="456" width="456" height="40" fill="#13162A"/>
+  <text x="904" y="480" font-size="12" font-weight="600" fill="#F1F5F9">PO-2812</text>
+  <text x="972" y="480" font-size="11" fill="#94A3B8">May 14, 2026</text>
+  <text x="1056" y="480" font-size="11" fill="#94A3B8">15 items</text>
+  <text x="1136" y="480" font-size="11" fill="#F1F5F9">$3,120.00</text>
+  <rect x="1204" y="466" width="116" height="20" rx="10" fill="#78350F"/>
+  <text x="1214" y="480" font-size="9" fill="#F59E0B">● Partial Rcvd</text>
+  <text x="1330" y="480" font-size="11" fill="#F59E0B" text-decoration="underline">View</text>
+
+  <!-- divider -->
+  <line x1="892" y1="496" x2="1348" y2="496" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- PO Row 4: PO-2798 Sent -->
+  <rect x="892" y="496" width="456" height="40" fill="#1A1D2E"/>
+  <text x="904" y="520" font-size="12" font-weight="600" fill="#94A3B8">PO-2798</text>
+  <text x="972" y="520" font-size="11" fill="#64748B">May 7, 2026</text>
+  <text x="1056" y="520" font-size="11" fill="#64748B">9 items</text>
+  <text x="1136" y="520" font-size="11" fill="#94A3B8">$2,015.00</text>
+  <rect x="1218" y="506" width="56" height="20" rx="10" fill="#1E3A5F"/>
+  <text x="1228" y="520" font-size="9" fill="#93C5FD">● Sent</text>
+  <text x="1316" y="520" font-size="11" fill="#F59E0B" text-decoration="underline">View</text>
+
+  <!-- divider -->
+  <line x1="892" y1="536" x2="1348" y2="536" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- PO Row 5: PO-2771 Received -->
+  <rect x="892" y="536" width="456" height="40" fill="#13162A"/>
+  <text x="904" y="560" font-size="12" font-weight="600" fill="#94A3B8">PO-2771</text>
+  <text x="972" y="560" font-size="11" fill="#64748B">Apr 29, 2026</text>
+  <text x="1056" y="560" font-size="11" fill="#64748B">11 items</text>
+  <text x="1136" y="560" font-size="11" fill="#94A3B8">$2,880.00</text>
+  <rect x="1218" y="546" width="80" height="20" rx="10" fill="#064E3B"/>
+  <text x="1228" y="560" font-size="9" fill="#10B981">● Received</text>
+  <text x="1316" y="560" font-size="11" fill="#F59E0B" text-decoration="underline">View</text>
+
+  <!-- "View All POs" link -->
+  <line x1="892" y1="576" x2="1348" y2="576" stroke="#2D3148" stroke-width="1"/>
+  <text x="1220" y="596" font-size="11" fill="#F59E0B" text-decoration="underline">View all purchase orders →</text>
+
+  <!-- Spend trend section -->
+  <text x="892" y="630" font-size="11" font-weight="600" fill="#94A3B8">MONTHLY SPEND (2026)</text>
+  <line x1="892" y1="635" x2="1350" y2="635" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Mini bar chart background -->
+  <rect x="892" y="644" width="456" height="100" rx="4" fill="#13162A"/>
+
+  <!-- Bars for Jan–May -->
+  <!-- Jan $6,200 -->
+  <rect x="920"  y="710" width="36" height="28" rx="2" fill="#1D4ED8" opacity="0.7"/>
+  <text x="924"  y="752" font-size="9" fill="#64748B">Jan</text>
+  <text x="916"  y="708" font-size="8" fill="#64748B">$6.2k</text>
+
+  <!-- Feb $7,800 -->
+  <rect x="992"  y="700" width="36" height="38" rx="2" fill="#1D4ED8" opacity="0.7"/>
+  <text x="996"  y="752" font-size="9" fill="#64748B">Feb</text>
+  <text x="988"  y="698" font-size="8" fill="#64748B">$7.8k</text>
+
+  <!-- Mar $9,100 -->
+  <rect x="1064" y="692" width="36" height="46" rx="2" fill="#1D4ED8" opacity="0.7"/>
+  <text x="1068" y="752" font-size="9" fill="#64748B">Mar</text>
+  <text x="1060" y="690" font-size="8" fill="#64748B">$9.1k</text>
+
+  <!-- Apr $8,400 -->
+  <rect x="1136" y="696" width="36" height="42" rx="2" fill="#1D4ED8" opacity="0.7"/>
+  <text x="1140" y="752" font-size="9" fill="#64748B">Apr</text>
+  <text x="1132" y="694" font-size="8" fill="#64748B">$8.4k</text>
+
+  <!-- May $15,700 YTD partial -->
+  <rect x="1208" y="672" width="36" height="66" rx="2" fill="#F59E0B" opacity="0.8"/>
+  <text x="1212" y="752" font-size="9" fill="#64748B">May</text>
+  <text x="1200" y="670" font-size="8" fill="#F59E0B">$15.7k</text>
+
+  <!-- YTD total callout -->
+  <rect x="1256" y="656" width="84" height="44" rx="6" fill="#1E2240"/>
+  <text x="1272" y="674" font-size="9" fill="#64748B">YTD Total</text>
+  <text x="1264" y="692" font-size="14" font-weight="700" fill="#10B981">$47.2k</text>
+
+  <!-- Delivery performance section -->
+  <text x="892" y="780" font-size="11" font-weight="600" fill="#94A3B8">DELIVERY PERFORMANCE</text>
+  <line x1="892" y1="785" x2="1350" y2="785" stroke="#2D3148" stroke-width="1"/>
+
+  <rect x="892" y="793" width="456" height="72" rx="6" fill="#13162A"/>
+
+  <!-- On Time -->
+  <text x="912" y="816" font-size="10" fill="#64748B">On-Time Rate</text>
+  <text x="912" y="836" font-size="20" font-weight="700" fill="#10B981">94%</text>
+  <text x="912" y="853" font-size="9" fill="#64748B">last 90 days</text>
+
+  <!-- Avg delivery -->
+  <line x1="1020" y1="798" x2="1020" y2="860" stroke="#2D3148" stroke-width="1"/>
+  <text x="1036" y="816" font-size="10" fill="#64748B">Avg Delivery</text>
+  <text x="1036" y="836" font-size="20" font-weight="700" fill="#F1F5F9">1.8</text>
+  <text x="1036" y="853" font-size="9" fill="#64748B">days (vs 2 day SLA)</text>
+
+  <!-- Fill Rate -->
+  <line x1="1168" y1="798" x2="1168" y2="860" stroke="#2D3148" stroke-width="1"/>
+  <text x="1184" y="816" font-size="10" fill="#64748B">Fill Rate</text>
+  <text x="1184" y="836" font-size="20" font-weight="700" fill="#10B981">98.3%</text>
+  <text x="1184" y="853" font-size="9" fill="#64748B">items fully received</text>
+
+  <!-- Discrepancies -->
+  <line x1="1300" y1="798" x2="1300" y2="860" stroke="#2D3148" stroke-width="1"/>
+  <text x="1312" y="816" font-size="10" fill="#64748B">Discrepancies</text>
+  <text x="1312" y="836" font-size="20" font-weight="700" fill="#F97316">2</text>
+  <text x="1312" y="853" font-size="9" fill="#64748B">last 90 days</text>
+
+  <!-- Notes section -->
+  <text x="892" y="894" font-size="11" font-weight="600" fill="#94A3B8">NOTES</text>
+  <line x1="892" y1="899" x2="1350" y2="899" stroke="#2D3148" stroke-width="1"/>
+  <rect x="892" y="907" width="456" height="52" rx="6" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="908" y="926" font-size="11" fill="#94A3B8">Preferred vendor for produce and protein. Net-30 terms. EDI order submission</text>
+  <text x="908" y="943" font-size="11" fill="#94A3B8">via sysco.com portal. Contact Mike 48h before emergency orders.</text>
+
+  <!-- Create Purchase Order button -->
+  <rect x="892" y="966" width="456" height="40" rx="8" fill="#F59E0B"/>
+  <text x="1064" y="991" font-size="14" font-weight="700" fill="#000000">Create Purchase Order</text>
+
+  <!-- ═══════════════════════════════════════════════
+       BOTTOM EMPTY TABLE AREA (extra rows placeholder)
+  ═══════════════════════════════════════════════ -->
+  <!-- Empty state hint below vendor table -->
+  <rect x="210" y="618" width="660" height="390" fill="#0F1117"/>
+  <text x="228" y="644" font-size="11" font-weight="600" fill="#94A3B8">VENDOR PERFORMANCE SUMMARY</text>
+  <line x1="228" y1="649" x2="856" y2="649" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Mini summary cards -->
+  <rect x="228" y="657" width="148" height="68" rx="6" fill="#1A1D2E"/>
+  <text x="244" y="677" font-size="10" fill="#64748B">Active Vendors</text>
+  <text x="244" y="701" font-size="22" font-weight="700" fill="#F1F5F9">4</text>
+  <text x="274" y="701" font-size="11" fill="#10B981">of 5</text>
+
+  <rect x="384" y="657" width="148" height="68" rx="6" fill="#1A1D2E"/>
+  <text x="400" y="677" font-size="10" fill="#64748B">Open POs</text>
+  <text x="400" y="701" font-size="22" font-weight="700" fill="#F59E0B">3</text>
+  <text x="430" y="701" font-size="11" fill="#64748B">$6,245 pending</text>
+
+  <rect x="540" y="657" width="148" height="68" rx="6" fill="#1A1D2E"/>
+  <text x="556" y="677" font-size="10" fill="#64748B">MTD Spend</text>
+  <text x="556" y="701" font-size="22" font-weight="700" fill="#10B981">$21.4k</text>
+  <text x="636" y="677" font-size="9" fill="#10B981">▲ 8%</text>
+
+  <rect x="696" y="657" width="148" height="68" rx="6" fill="#1A1D2E"/>
+  <text x="712" y="677" font-size="10" fill="#64748B">Avg Lead Time</text>
+  <text x="712" y="701" font-size="22" font-weight="700" fill="#F1F5F9">2.2</text>
+  <text x="748" y="701" font-size="11" fill="#64748B">days</text>
+
+  <!-- Pending delivery alert -->
+  <rect x="228" y="736" width="616" height="44" rx="8" fill="#451A03" stroke="#B45309" stroke-width="1"/>
+  <text x="248" y="756" font-size="11" font-weight="700" fill="#FDE68A">PO-2812 (Sysco Foods) partially received — 3 line items pending reconciliation</text>
+  <text x="248" y="772" font-size="10" fill="#FDE68A">Expected: May 14 · Items missing: Roma Tomatoes (10 cs), Heavy Cream (6 cs), Strip Loin (4 lbs)</text>
+
+  <!-- Upcoming expected deliveries -->
+  <text x="228" y="804" font-size="11" font-weight="600" fill="#94A3B8">UPCOMING DELIVERIES</text>
+  <line x1="228" y1="809" x2="856" y2="809" stroke="#2D3148" stroke-width="1"/>
+
+  <rect x="228" y="817" width="616" height="32" rx="4" fill="#1A1D2E"/>
+  <text x="244" y="837" font-size="11" font-weight="600" fill="#F1F5F9">Local Farm Co</text>
+  <text x="360" y="837" font-size="11" fill="#64748B">PO-2849</text>
+  <text x="444" y="837" font-size="11" fill="#94A3B8">Expected May 28</text>
+  <text x="588" y="837" font-size="11" fill="#94A3B8">$487.50</text>
+  <rect x="676" y="824" width="66" height="20" rx="10" fill="#1E3A5F"/>
+  <text x="686" y="838" font-size="9" fill="#93C5FD">● In Transit</text>
+
+  <rect x="228" y="853" width="616" height="32" rx="4" fill="#13162A"/>
+  <text x="244" y="873" font-size="11" font-weight="600" fill="#F1F5F9">US Foods</text>
+  <text x="360" y="873" font-size="11" fill="#64748B">PO-2846</text>
+  <text x="444" y="873" font-size="11" fill="#94A3B8">Expected May 29</text>
+  <text x="588" y="873" font-size="11" fill="#94A3B8">$1,230.00</text>
+  <rect x="676" y="860" width="56" height="20" rx="10" fill="#1F2937"/>
+  <text x="686" y="874" font-size="9" fill="#9CA3AF">● Sent</text>
+
+  <rect x="228" y="889" width="616" height="32" rx="4" fill="#1A1D2E"/>
+  <text x="244" y="909" font-size="11" font-weight="600" fill="#F1F5F9">Pacific Seafood</text>
+  <text x="360" y="909" font-size="11" fill="#64748B">PO-2850</text>
+  <text x="444" y="909" font-size="11" fill="#94A3B8">Expected May 28</text>
+  <text x="588" y="909" font-size="11" fill="#94A3B8">$640.00</text>
+  <rect x="676" y="896" width="56" height="20" rx="10" fill="#1F2937"/>
+  <text x="686" y="910" font-size="9" fill="#9CA3AF">● Sent</text>
+
+  <!-- Bottom bar -->
+  <rect x="210" y="990" width="660" height="34" fill="#1E2240"/>
+  <text x="228" y="1010" font-size="10" fill="#64748B">5 vendors · 3 active POs · $6,245 pending receipt · Last sync: 2 min ago</text>
+  <rect x="756" y="998" width="100" height="20" rx="4" fill="#F59E0B"/>
+  <text x="775" y="1012" font-size="10" font-weight="600" fill="#000000">Sync Catalog</text>
+
+</svg>

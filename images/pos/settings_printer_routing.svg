@@ -1,0 +1,566 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEFT NAV SIDEBAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="200" height="1024" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <!-- Active item: Printer Routing -->
+  <rect x="0" y="224" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="224" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="247" font-size="12" font-weight="600" fill="#F59E0B">Printer Routing</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Revenue Centers</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="463" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Gift Cards</text>
+  <text x="16" y="535" font-size="12" fill="#8B92A5">Discounts</text>
+  <text x="16" y="571" font-size="12" fill="#8B92A5">Inventory</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TOP BAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="200" y="0" width="1166" height="56" fill="#1A1D2E"/>
+  <text x="220" y="34" font-size="18" font-weight="700" fill="#F1F5F9">Printer &amp; KDS Routing</text>
+  <text x="220" y="50" font-size="11" fill="#8B92A5">Define which menu categories print to which devices · Stored in pos_printer_routes</text>
+
+  <!-- "How it works" info button -->
+  <rect x="972" y="13" width="118" height="30" rx="6" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="988" y="32" font-size="11" fill="#94A3B8">ℹ How it works</text>
+
+  <!-- "Add Rule" amber button -->
+  <rect x="1100" y="13" width="100" height="30" rx="6" fill="#F59E0B"/>
+  <text x="1120" y="32" font-size="12" font-weight="600" fill="#000000">+ Add Rule</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEGEND BAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="200" y="56" width="1166" height="40" fill="#13162A" stroke="#2D3148" stroke-width="1" stroke-dasharray="0"/>
+  <text x="220" y="75" font-size="11" fill="#64748B">Devices:</text>
+
+  <!-- Amber chip: Receipt Printer -->
+  <rect x="280" y="64" width="196" height="22" rx="11" fill="#92400E" opacity="0.6"/>
+  <rect x="280" y="64" width="196" height="22" rx="11" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="296" cy="75" r="5" fill="#F59E0B"/>
+  <text x="306" y="79" font-size="10" fill="#FCD34D">Receipt Printer (Star TSP143IV)</text>
+
+  <!-- Green chip: KDS Grill -->
+  <rect x="488" y="64" width="136" height="22" rx="11" fill="#064E3B" opacity="0.7"/>
+  <rect x="488" y="64" width="136" height="22" rx="11" fill="none" stroke="#10B981" stroke-width="1"/>
+  <circle cx="504" cy="75" r="5" fill="#10B981"/>
+  <text x="514" y="79" font-size="10" fill="#6EE7B7">KDS — Grill Station</text>
+
+  <!-- Blue chip: KDS Fryer -->
+  <rect x="636" y="64" width="132" height="22" rx="11" fill="#1E3A5F" opacity="0.7"/>
+  <rect x="636" y="64" width="132" height="22" rx="11" fill="none" stroke="#3B82F6" stroke-width="1"/>
+  <circle cx="652" cy="75" r="5" fill="#3B82F6"/>
+  <text x="662" y="79" font-size="10" fill="#93C5FD">KDS — Fryer Station</text>
+
+  <!-- Blue chip: KDS Bar -->
+  <rect x="780" y="64" width="120" height="22" rx="11" fill="#1E3A5F" opacity="0.7"/>
+  <rect x="780" y="64" width="120" height="22" rx="11" fill="none" stroke="#60A5FA" stroke-width="1"/>
+  <circle cx="796" cy="75" r="5" fill="#60A5FA"/>
+  <text x="806" y="79" font-size="10" fill="#BFDBFE">KDS — Bar Station</text>
+
+  <!-- Purple chip: KDS Expo -->
+  <rect x="912" y="64" width="130" height="22" rx="11" fill="#3B0764" opacity="0.5"/>
+  <rect x="912" y="64" width="130" height="22" rx="11" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+  <circle cx="928" cy="75" r="5" fill="#8B5CF6"/>
+  <text x="938" y="79" font-size="10" fill="#C4B5FD">KDS — Expo Station</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- MAIN TABLE AREA  (x=200, y=96, w=866, scrollable) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Table background -->
+  <rect x="200" y="96" width="866" height="776" fill="#0F1117"/>
+
+  <!-- Column header row -->
+  <rect x="200" y="96" width="866" height="36" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Column header text -->
+  <!-- Category col: x=200, w=170 -->
+  <text x="210" y="118" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">CATEGORY</text>
+  <!-- Receipt Printer: x=370, w=96 -->
+  <text x="374" y="110" font-size="9" font-weight="700" fill="#F59E0B" letter-spacing="0.3">RECEIPT</text>
+  <text x="372" y="122" font-size="9" font-weight="700" fill="#F59E0B" letter-spacing="0.3">PRINTER</text>
+  <!-- KDS Grill: x=466, w=80 -->
+  <text x="470" y="110" font-size="9" font-weight="700" fill="#10B981" letter-spacing="0.3">KDS:</text>
+  <text x="468" y="122" font-size="9" font-weight="700" fill="#10B981" letter-spacing="0.3">GRILL</text>
+  <!-- KDS Fryer: x=546, w=80 -->
+  <text x="550" y="110" font-size="9" font-weight="700" fill="#3B82F6" letter-spacing="0.3">KDS:</text>
+  <text x="548" y="122" font-size="9" font-weight="700" fill="#3B82F6" letter-spacing="0.3">FRYER</text>
+  <!-- KDS Bar: x=626, w=80 -->
+  <text x="630" y="110" font-size="9" font-weight="700" fill="#60A5FA" letter-spacing="0.3">KDS:</text>
+  <text x="634" y="122" font-size="9" font-weight="700" fill="#60A5FA" letter-spacing="0.3">BAR</text>
+  <!-- KDS Expo: x=706, w=80 -->
+  <text x="710" y="110" font-size="9" font-weight="700" fill="#8B5CF6" letter-spacing="0.3">KDS:</text>
+  <text x="710" y="122" font-size="9" font-weight="700" fill="#8B5CF6" letter-spacing="0.3">EXPO</text>
+  <!-- Copies: x=786, w=58 -->
+  <text x="790" y="110" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0.3">TICKET</text>
+  <text x="790" y="122" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0.3">COPIES</text>
+  <!-- Fire Delay: x=844, w=58 -->
+  <text x="848" y="110" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0.3">FIRE</text>
+  <text x="848" y="122" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0.3">DELAY</text>
+  <!-- Notes: x=902, w=164 -->
+  <text x="910" y="118" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0.3">NOTES</text>
+
+  <!-- Vertical dividers in header -->
+  <line x1="368" y1="96" x2="368" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="460" y1="96" x2="460" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="540" y1="96" x2="540" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="620" y1="96" x2="620" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="700" y1="96" x2="700" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="780" y1="96" x2="780" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="838" y1="96" x2="838" y2="872" stroke="#2D3148" stroke-width="1"/>
+  <line x1="900" y1="96" x2="900" y2="872" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ─── HELPER DEFS for check marks ─── -->
+  <defs>
+    <!-- Amber check -->
+    <g id="ck_amber">
+      <circle r="11" fill="#92400E" opacity="0.5"/>
+      <circle r="11" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="-5" y="5" font-size="13" fill="#F59E0B">✓</text>
+    </g>
+    <!-- Green check -->
+    <g id="ck_green">
+      <circle r="11" fill="#064E3B" opacity="0.6"/>
+      <circle r="11" fill="none" stroke="#10B981" stroke-width="1.5"/>
+      <text x="-5" y="5" font-size="13" fill="#10B981">✓</text>
+    </g>
+    <!-- Blue check (fryer) -->
+    <g id="ck_blue">
+      <circle r="11" fill="#1E3A5F" opacity="0.6"/>
+      <circle r="11" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+      <text x="-5" y="5" font-size="13" fill="#3B82F6">✓</text>
+    </g>
+    <!-- Bar blue check -->
+    <g id="ck_barblue">
+      <circle r="11" fill="#1E3A5F" opacity="0.6"/>
+      <circle r="11" fill="none" stroke="#60A5FA" stroke-width="1.5"/>
+      <text x="-5" y="5" font-size="13" fill="#60A5FA">✓</text>
+    </g>
+    <!-- Purple check -->
+    <g id="ck_purple">
+      <circle r="11" fill="#3B0764" opacity="0.6"/>
+      <circle r="11" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+      <text x="-5" y="5" font-size="13" fill="#8B5CF6">✓</text>
+    </g>
+    <!-- Bump badge (mods) -->
+    <g id="bump_green">
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="#064E3B" opacity="0.7"/>
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="none" stroke="#10B981" stroke-width="1"/>
+      <text x="-12" y="5" font-size="9" fill="#6EE7B7">bump</text>
+    </g>
+    <g id="bump_blue">
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="#1E3A5F" opacity="0.7"/>
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="none" stroke="#3B82F6" stroke-width="1"/>
+      <text x="-12" y="5" font-size="9" fill="#93C5FD">bump</text>
+    </g>
+    <g id="bump_barblue">
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="#1E3A5F" opacity="0.7"/>
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="none" stroke="#60A5FA" stroke-width="1"/>
+      <text x="-12" y="5" font-size="9" fill="#BFDBFE">bump</text>
+    </g>
+    <g id="bump_purple">
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="#3B0764" opacity="0.6"/>
+      <rect x="-18" y="-9" width="36" height="18" rx="4" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+      <text x="-12" y="5" font-size="9" fill="#C4B5FD">bump</text>
+    </g>
+  </defs>
+
+  <!-- ═══ ROW MACRO: y positions ═══ -->
+  <!-- Row height = 52px, starting at y=132 -->
+  <!-- Row 1 y=132, Row 2 y=184, ... Row 14 y=840 -->
+
+  <!-- ─── ROW 1: Burgers & Sandwiches (SELECTED — highlighted) ─── -->
+  <rect x="200" y="132" width="866" height="52" fill="#1E2240" stroke="#F59E0B" stroke-width="1" opacity="0.9"/>
+  <rect x="200" y="132" width="3" height="52" fill="#F59E0B"/>
+  <text x="210" y="152" font-size="12" font-weight="600" fill="#F1F5F9">Burgers &amp; Sandwiches</text>
+  <text x="210" y="168" font-size="10" fill="#64748B">category_id: 101</text>
+  <!-- Amber check -->
+  <use href="#ck_amber" transform="translate(414,158)"/>
+  <!-- Green check -->
+  <use href="#ck_green" transform="translate(500,158)"/>
+  <!-- Fryer: dash -->
+  <text x="574" y="163" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <!-- Bar: dash -->
+  <text x="656" y="163" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <!-- Purple check -->
+  <use href="#ck_purple" transform="translate(740,158)"/>
+  <!-- Copies -->
+  <text x="809" y="163" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <!-- Fire delay -->
+  <text x="869" y="163" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <!-- Notes: dash -->
+  <text x="950" y="163" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 2: Appetizers ─── -->
+  <rect x="200" y="184" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="235" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="204" font-size="12" fill="#F1F5F9">Appetizers</text>
+  <text x="210" y="220" font-size="10" fill="#64748B">category_id: 102</text>
+  <use href="#ck_amber" transform="translate(414,210)"/>
+  <use href="#ck_green" transform="translate(500,210)"/>
+  <text x="574" y="215" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="215" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="215" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="215" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <!-- Fire delay 30s: warning color -->
+  <rect x="845" y="202" width="40" height="18" rx="4" fill="#7C2D12" opacity="0.6"/>
+  <text x="865" y="215" font-size="12" fill="#F97316" text-anchor="middle">30s</text>
+  <!-- Notes chip -->
+  <rect x="908" y="202" width="110" height="18" rx="4" fill="#1E2240"/>
+  <text x="915" y="215" font-size="10" fill="#94A3B8">Fire with mains</text>
+
+  <!-- ─── ROW 3: Fried Items ─── -->
+  <rect x="200" y="236" width="866" height="52" fill="#13162A"/>
+  <rect x="200" y="287" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="256" font-size="12" fill="#F1F5F9">Fried Items</text>
+  <text x="210" y="272" font-size="10" fill="#64748B">category_id: 103</text>
+  <use href="#ck_amber" transform="translate(414,262)"/>
+  <text x="500" y="267" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <use href="#ck_blue" transform="translate(580,262)"/>
+  <text x="656" y="267" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="267" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="267" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="267" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <text x="950" y="267" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 4: Salads ─── -->
+  <rect x="200" y="288" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="339" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="308" font-size="12" fill="#F1F5F9">Salads</text>
+  <text x="210" y="324" font-size="10" fill="#64748B">category_id: 104</text>
+  <use href="#ck_amber" transform="translate(414,314)"/>
+  <use href="#ck_green" transform="translate(500,314)"/>
+  <text x="574" y="319" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="319" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="319" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="319" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="319" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <text x="950" y="319" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 5: Soups ─── -->
+  <rect x="200" y="340" width="866" height="52" fill="#13162A"/>
+  <rect x="200" y="391" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="360" font-size="12" fill="#F1F5F9">Soups</text>
+  <text x="210" y="376" font-size="10" fill="#64748B">category_id: 105</text>
+  <use href="#ck_amber" transform="translate(414,366)"/>
+  <use href="#ck_green" transform="translate(500,366)"/>
+  <text x="574" y="371" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="371" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="371" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="371" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="371" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <text x="950" y="371" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 6: Beverages – Non-Alc ─── -->
+  <rect x="200" y="392" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="443" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="412" font-size="12" fill="#F1F5F9">Beverages — Non-Alc</text>
+  <text x="210" y="428" font-size="10" fill="#64748B">category_id: 106</text>
+  <use href="#ck_amber" transform="translate(414,418)"/>
+  <text x="500" y="423" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="574" y="423" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="423" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="423" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="423" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="423" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <rect x="908" y="410" width="72" height="18" rx="4" fill="#1E2240"/>
+  <text x="915" y="423" font-size="10" fill="#94A3B8">Auto-fire</text>
+
+  <!-- ─── ROW 7: Beverages – Alcohol ─── -->
+  <rect x="200" y="444" width="866" height="52" fill="#13162A"/>
+  <rect x="200" y="495" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="464" font-size="12" fill="#F1F5F9">Beverages — Alcohol</text>
+  <text x="210" y="480" font-size="10" fill="#64748B">category_id: 107</text>
+  <use href="#ck_amber" transform="translate(414,470)"/>
+  <text x="500" y="475" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="574" y="475" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <use href="#ck_barblue" transform="translate(660,470)"/>
+  <text x="740" y="475" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="475" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="475" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <rect x="908" y="462" width="68" height="18" rx="4" fill="#1E2240"/>
+  <text x="915" y="475" font-size="10" fill="#94A3B8">Bar only</text>
+
+  <!-- ─── ROW 8: Cocktails ─── -->
+  <rect x="200" y="496" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="547" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="516" font-size="12" fill="#F1F5F9">Cocktails</text>
+  <text x="210" y="532" font-size="10" fill="#64748B">category_id: 108</text>
+  <use href="#ck_amber" transform="translate(414,522)"/>
+  <text x="500" y="527" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="574" y="527" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <use href="#ck_barblue" transform="translate(660,522)"/>
+  <text x="740" y="527" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="527" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="527" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <text x="950" y="527" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 9: Beer & Wine ─── -->
+  <rect x="200" y="548" width="866" height="52" fill="#13162A"/>
+  <rect x="200" y="599" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="568" font-size="12" fill="#F1F5F9">Beer &amp; Wine</text>
+  <text x="210" y="584" font-size="10" fill="#64748B">category_id: 109</text>
+  <use href="#ck_amber" transform="translate(414,574)"/>
+  <text x="500" y="579" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="574" y="579" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <use href="#ck_barblue" transform="translate(660,574)"/>
+  <text x="740" y="579" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="579" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="579" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <text x="950" y="579" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 10: Desserts ─── -->
+  <rect x="200" y="600" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="651" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="620" font-size="12" fill="#F1F5F9">Desserts</text>
+  <text x="210" y="636" font-size="10" fill="#64748B">category_id: 110</text>
+  <use href="#ck_amber" transform="translate(414,626)"/>
+  <text x="500" y="631" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="574" y="631" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="631" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <use href="#ck_purple" transform="translate(740,626)"/>
+  <text x="809" y="631" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="631" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <rect x="908" y="618" width="90" height="18" rx="4" fill="#1E2240"/>
+  <text x="915" y="631" font-size="10" fill="#94A3B8">Expo plates</text>
+
+  <!-- ─── ROW 11: Kids Menu ─── -->
+  <rect x="200" y="652" width="866" height="52" fill="#13162A"/>
+  <rect x="200" y="703" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="672" font-size="12" fill="#F1F5F9">Kids Menu</text>
+  <text x="210" y="688" font-size="10" fill="#64748B">category_id: 111</text>
+  <use href="#ck_amber" transform="translate(414,678)"/>
+  <use href="#ck_green" transform="translate(500,678)"/>
+  <text x="574" y="683" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="683" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="683" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="809" y="683" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <text x="869" y="683" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <text x="950" y="683" font-size="11" fill="#64748B">—</text>
+
+  <!-- ─── ROW 12: Daily Specials ─── -->
+  <rect x="200" y="704" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="755" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="724" font-size="12" fill="#F1F5F9">Daily Specials</text>
+  <text x="210" y="740" font-size="10" fill="#64748B">category_id: 112</text>
+  <use href="#ck_amber" transform="translate(414,730)"/>
+  <use href="#ck_green" transform="translate(500,730)"/>
+  <text x="574" y="735" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="735" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <use href="#ck_purple" transform="translate(740,730)"/>
+  <!-- Copies = 2 (highlighted) -->
+  <rect x="796" y="720" width="26" height="20" rx="4" fill="#7C2D12" opacity="0.5"/>
+  <text x="809" y="735" font-size="13" font-weight="700" fill="#F97316" text-anchor="middle">2</text>
+  <text x="869" y="735" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <rect x="908" y="722" width="68" height="18" rx="4" fill="#1E2240"/>
+  <text x="915" y="735" font-size="10" fill="#94A3B8">2 copies</text>
+
+  <!-- ─── ROW 13: Catering Items ─── -->
+  <rect x="200" y="756" width="866" height="52" fill="#13162A"/>
+  <rect x="200" y="807" width="866" height="1" fill="#2D3148"/>
+  <text x="210" y="776" font-size="12" fill="#F1F5F9">Catering Items</text>
+  <text x="210" y="792" font-size="10" fill="#64748B">category_id: 113</text>
+  <use href="#ck_amber" transform="translate(414,782)"/>
+  <text x="500" y="787" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="574" y="787" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="656" y="787" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="740" y="787" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <!-- Copies = 2 -->
+  <rect x="796" y="774" width="26" height="20" rx="4" fill="#7C2D12" opacity="0.5"/>
+  <text x="809" y="789" font-size="13" font-weight="700" fill="#F97316" text-anchor="middle">2</text>
+  <text x="869" y="789" font-size="12" fill="#94A3B8" text-anchor="middle">0s</text>
+  <rect x="908" y="776" width="96" height="18" rx="4" fill="#1E2240"/>
+  <text x="915" y="789" font-size="10" fill="#94A3B8">Manager copy</text>
+
+  <!-- ─── ROW 14: Modifications ─── -->
+  <rect x="200" y="808" width="866" height="52" fill="#0F1117"/>
+  <rect x="200" y="859" width="866" height="1" fill="#2D3148"/>
+  <!-- Dashed left border to indicate special row -->
+  <rect x="200" y="808" width="3" height="52" fill="#8B5CF6"/>
+  <text x="210" y="828" font-size="12" font-style="italic" fill="#C4B5FD">Modifications</text>
+  <text x="210" y="844" font-size="10" fill="#64748B">category_id: * (override)</text>
+  <!-- No receipt printer: dash -->
+  <text x="414" y="835" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <!-- Bump badges -->
+  <use href="#bump_green" transform="translate(500,834)"/>
+  <use href="#bump_blue" transform="translate(580,834)"/>
+  <use href="#bump_barblue" transform="translate(660,834)"/>
+  <use href="#bump_purple" transform="translate(740,834)"/>
+  <!-- No copies/delay -->
+  <text x="809" y="835" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <text x="869" y="835" font-size="16" fill="#2D3148" text-anchor="middle">—</text>
+  <rect x="908" y="822" width="92" height="18" rx="4" fill="#3B0764" opacity="0.5"/>
+  <text x="915" y="835" font-size="10" fill="#C4B5FD">Mods to all</text>
+
+  <!-- ─── ADD CATEGORY ROW ─── -->
+  <rect x="200" y="860" width="866" height="38" fill="#13162A" stroke="#2D3148" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="220" y="869" width="26" height="20" rx="4" fill="#F59E0B"/>
+  <text x="233" y="884" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">+</text>
+  <text x="258" y="884" font-size="12" fill="#F59E0B">Add Category Rule</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SIDE PANEL — Routing Rule Editor (w=300, right side) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="1066" y="96" width="300" height="776" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Panel header -->
+  <rect x="1066" y="96" width="300" height="48" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1082" y="116" font-size="13" font-weight="700" fill="#F1F5F9">Edit Rule</text>
+  <text x="1082" y="132" font-size="11" fill="#F59E0B">Burgers &amp; Sandwiches</text>
+  <!-- Close X -->
+  <text x="1346" y="124" font-size="14" fill="#64748B" text-anchor="middle">✕</text>
+
+  <!-- Category selector -->
+  <text x="1082" y="164" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">CATEGORY</text>
+  <rect x="1082" y="170" width="264" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1096" y="190" font-size="12" fill="#F1F5F9">Burgers &amp; Sandwiches</text>
+  <text x="1330" y="190" font-size="12" fill="#64748B" text-anchor="middle">▾</text>
+
+  <!-- Printer / KDS Checkboxes -->
+  <text x="1082" y="222" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">ROUTE TO DEVICES</text>
+
+  <!-- Receipt Printer row -->
+  <rect x="1082" y="228" width="14" height="14" rx="3" fill="#92400E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1085" y="240" font-size="10" fill="#F59E0B">✓</text>
+  <circle cx="1106" cy="235" r="5" fill="#F59E0B" opacity="0.7"/>
+  <text x="1114" y="240" font-size="11" fill="#F1F5F9">Receipt Printer (Star TSP143IV)</text>
+
+  <!-- KDS Grill row -->
+  <rect x="1082" y="252" width="14" height="14" rx="3" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1085" y="264" font-size="10" fill="#10B981">✓</text>
+  <circle cx="1106" cy="259" r="5" fill="#10B981" opacity="0.7"/>
+  <text x="1114" y="264" font-size="11" fill="#F1F5F9">KDS — Grill Station</text>
+
+  <!-- KDS Fryer row (unchecked) -->
+  <rect x="1082" y="276" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1.5"/>
+  <circle cx="1106" cy="283" r="5" fill="#3B82F6" opacity="0.3"/>
+  <text x="1114" y="288" font-size="11" fill="#64748B">KDS — Fryer Station</text>
+
+  <!-- KDS Bar row (unchecked) -->
+  <rect x="1082" y="300" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1.5"/>
+  <circle cx="1106" cy="307" r="5" fill="#60A5FA" opacity="0.3"/>
+  <text x="1114" y="312" font-size="11" fill="#64748B">KDS — Bar Station</text>
+
+  <!-- KDS Expo row (checked) -->
+  <rect x="1082" y="324" width="14" height="14" rx="3" fill="#3B0764" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="1085" y="336" font-size="10" fill="#8B5CF6">✓</text>
+  <circle cx="1106" cy="331" r="5" fill="#8B5CF6" opacity="0.7"/>
+  <text x="1114" y="336" font-size="11" fill="#F1F5F9">KDS — Expo Station</text>
+
+  <!-- Divider -->
+  <line x1="1082" y1="352" x2="1346" y2="352" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Ticket Copies stepper -->
+  <text x="1082" y="374" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">TICKET COPIES</text>
+  <rect x="1082" y="380" width="100" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1082" y="380" width="30" height="30" rx="6" fill="#1E2240"/>
+  <text x="1097" y="400" font-size="16" fill="#94A3B8" text-anchor="middle">−</text>
+  <text x="1132" y="400" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">1</text>
+  <rect x="1152" y="380" width="30" height="30" rx="6" fill="#1E2240"/>
+  <text x="1167" y="400" font-size="16" fill="#F59E0B" text-anchor="middle">+</text>
+
+  <!-- Divider -->
+  <line x1="1082" y1="424" x2="1346" y2="424" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Fire Delay slider -->
+  <text x="1082" y="446" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">FIRE DELAY</text>
+  <text x="1340" y="446" font-size="11" font-weight="600" fill="#F1F5F9" text-anchor="end">0s</text>
+  <!-- Slider track -->
+  <rect x="1082" y="454" width="264" height="6" rx="3" fill="#2D3148"/>
+  <!-- Slider fill (at 0 so just the nub) -->
+  <circle cx="1082" cy="457" r="8" fill="#F59E0B" stroke="#0F1117" stroke-width="2"/>
+  <text x="1082" y="476" font-size="9" fill="#64748B">0s</text>
+  <text x="1346" y="476" font-size="9" fill="#64748B" text-anchor="end">120s</text>
+
+  <!-- Divider -->
+  <line x1="1082" y1="490" x2="1346" y2="490" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Priority / KDS Order -->
+  <text x="1082" y="512" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">KDS FIRE ORDER</text>
+  <text x="1082" y="526" font-size="10" fill="#64748B">Drag to reorder stations</text>
+
+  <!-- Drag row: Grill -->
+  <rect x="1082" y="532" width="264" height="28" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1092" y="550" font-size="11" fill="#64748B">⠿</text>
+  <circle cx="1116" cy="546" r="5" fill="#10B981"/>
+  <text x="1126" y="550" font-size="11" fill="#F1F5F9">Grill</text>
+  <text x="1336" y="550" font-size="10" fill="#64748B" text-anchor="end">1st</text>
+
+  <!-- Drag row: Expo -->
+  <rect x="1082" y="566" width="264" height="28" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1092" y="584" font-size="11" fill="#64748B">⠿</text>
+  <circle cx="1116" cy="580" r="5" fill="#8B5CF6"/>
+  <text x="1126" y="584" font-size="11" fill="#F1F5F9">Expo</text>
+  <text x="1336" y="584" font-size="10" fill="#64748B" text-anchor="end">2nd</text>
+
+  <!-- Divider -->
+  <line x1="1082" y1="606" x2="1346" y2="606" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Modifier behavior -->
+  <text x="1082" y="626" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">MODIFIER BEHAVIOR</text>
+  <rect x="1082" y="632" width="264" height="44" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1092" y="648" font-size="10" fill="#94A3B8">Send mods to all stations that</text>
+  <text x="1092" y="662" font-size="10" fill="#94A3B8">received the base item</text>
+  <!-- Toggle on -->
+  <rect x="1292" y="636" width="40" height="20" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <circle cx="1322" cy="646" r="8" fill="#10B981"/>
+
+  <!-- Void behavior -->
+  <text x="1082" y="698" font-size="10" font-weight="600" fill="#94A3B8" letter-spacing="0.5">VOID BEHAVIOR</text>
+  <rect x="1082" y="704" width="264" height="32" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1092" y="720" font-size="10" fill="#94A3B8">Send void bump to same</text>
+  <text x="1092" y="732" font-size="10" fill="#94A3B8">stations as original item</text>
+
+  <!-- Divider -->
+  <line x1="1082" y1="750" x2="1346" y2="750" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Save Rule button -->
+  <rect x="1082" y="758" width="264" height="34" rx="6" fill="#F59E0B"/>
+  <text x="1214" y="780" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">Save Rule</text>
+
+  <!-- Delete Rule link -->
+  <text x="1214" y="810" font-size="11" fill="#EF4444" text-anchor="middle" text-decoration="underline">Delete Rule</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BOTTOM INFO BOX — Workflow Integration -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="200" y="898" width="866" height="118" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1" opacity="0.9"/>
+  <rect x="200" y="898" width="4" height="118" rx="2" fill="#F59E0B"/>
+
+  <text x="216" y="918" font-size="11" font-weight="700" fill="#F59E0B">Workflow Integration</text>
+
+  <text x="216" y="938" font-size="10" fill="#94A3B8">▸ Routing evaluated at: order submit + course fire + void</text>
+  <text x="216" y="954" font-size="10" fill="#94A3B8">▸ pos_printer_routes table: category_id → [printer_id], [kds_id], copies, fire_delay_sec</text>
+  <text x="216" y="970" font-size="10" fill="#94A3B8">▸ Modifications inherit parent item's route unless overridden here</text>
+  <text x="216" y="986" font-size="10" fill="#94A3B8">▸ Course fire (seat mode) respects fire_delay for each category independently</text>
+  <text x="216" y="1002" font-size="10" fill="#94A3B8">▸ KDS bump propagates void to all stations on the route</text>
+
+  <!-- Bottom info box also on panel side -->
+  <rect x="1066" y="898" width="300" height="118" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1082" y="918" font-size="11" font-weight="700" fill="#94A3B8">DB Schema Reference</text>
+  <text x="1082" y="936" font-size="9" fill="#64748B">pos_printer_routes</text>
+  <text x="1082" y="950" font-size="9" fill="#64748B">  category_id  INTEGER FK → pos_menu_categories</text>
+  <text x="1082" y="964" font-size="9" fill="#64748B">  printer_ids  INTEGER[] FK → pos_devices</text>
+  <text x="1082" y="978" font-size="9" fill="#64748B">  kds_ids      INTEGER[] FK → pos_devices</text>
+  <text x="1082" y="992" font-size="9" fill="#64748B">  copies       SMALLINT DEFAULT 1</text>
+  <text x="1082" y="1006" font-size="9" fill="#64748B">  fire_delay_sec SMALLINT DEFAULT 0</text>
+
+  <!-- Outer border/frame -->
+  <rect x="0" y="0" width="1366" height="1024" fill="none" stroke="#2D3148" stroke-width="1"/>
+
+</svg>

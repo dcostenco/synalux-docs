@@ -11,7 +11,7 @@
 | Model | Size | Accuracy | Target Device |
 |---|---|---|---|
 | `prism-coder:14b` | 8.4 GB | 98% | Mac / iPad Pro 16 GB+ |
-| `prism-coder:8b` | 4.7 GB | 96% | iPhone / iPad 8 GB |
+| `prism-coder:4b` | 2.5 GB | 100% | iPhone / iPad 8 GB |
 | `prism-coder:32b` | 18 GB | 97.3% | Mac M2 Ultra+ 64 GB |
 | `prism-coder:1b7` | 1.1 GB | 88% | Any Apple device |
 

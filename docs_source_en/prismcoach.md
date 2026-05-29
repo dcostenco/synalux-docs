@@ -56,7 +56,7 @@ Six science-based periodisation templates covering all major training goals.
 | Full Body | 3-day compound-focused | General fitness |
 | Deload / Maintenance | 1-day active recovery | Regeneration |
 
-*   **AI-generated programs** (Elite) — describe your goal and constraints; PrismCoach generates a fully custom multi-week block using Prism 8B or Claude Sonnet.
+*   **AI-generated programs** (Elite) — describe your goal and constraints; PrismCoach generates a fully custom multi-week block using Prism 4B or Claude Sonnet.
 *   **JSON Program Generator** — programs are represented as typed Swift models; the engine can generate a full 8-week program in < 500 ms on-device.
 *   **Watch sync** — active program caches to Apple Watch for offline coaching (< 100 KB payload).
 
@@ -96,7 +96,7 @@ Conversational coaching that knows your recovery state, last session, and progra
 
 *   **Free tier** — no AI (static program templates only).
 *   **Pro — Prism 1.7B on-device** — runs via llama.cpp with Metal acceleration. Zero network, fully private. Answers questions about your training, suggests form corrections, adjusts today's volume based on readiness.
-*   **Elite — Prism 1.7B → 8B → Claude Sonnet cascade** — on-device first; escalates to Prism inference server (8B) for complex questions; falls back to Claude Sonnet for nuanced coaching.
+*   **Elite — Prism 1.7B → 4B → Claude Sonnet cascade** — on-device first; escalates to Prism inference server (4B) for complex questions; falls back to Claude Sonnet for nuanced coaching.
 *   **Context window** — ForgeMemoryStore injects last 3 sessions, active program week, current muscle charges, and body battery score into every prompt.
 *   **Voice output** — AI replies are spoken via ForgeTTSEngine: Synalux cloud TTS (MP3, 24 kHz) with AVSpeechSynthesizer offline fallback. Six coaching tones: Friendly, Calm, Excited, Precise, Empathetic, Hopeful.
 *   **Proactive coaching** — ProactiveCoachEngine surfaces unprompted insights (e.g. "Your HRV dropped 15% — consider reducing intensity today") based on 7 trigger types.
@@ -212,7 +212,7 @@ AI coaching spoken aloud in your language.
 | Apple Watch companion app | — | ✅ | ✅ |
 | Femme Engine (cycle tracking) | — | ✅ | ✅ |
 | AI Coach — Prism 1.7B on-device | — | ✅ | ✅ |
-| AI Coach — Prism 8B server | — | — | ✅ |
+| AI Coach — Prism 4B server | — | — | ✅ |
 | AI Coach — Claude Sonnet cascade | — | — | ✅ |
 | AI-generated custom programs | — | — | ✅ |
 | **Monthly** | Free | $8.99/mo | $17.99/mo |

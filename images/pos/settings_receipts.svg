@@ -1,0 +1,448 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== TOP HEADER BAR ===== -->
+  <rect x="0" y="0" width="1366" height="52" fill="#1A1D2E"/>
+  <rect x="0" y="52" width="1366" height="1" fill="#2D3148"/>
+  <text x="20" y="32" fill="#F59E0B" font-size="15" font-weight="700">Synalux POS</text>
+  <rect x="120" y="16" width="1" height="20" fill="#2D3148"/>
+  <text x="136" y="32" fill="#F1F5F9" font-size="14" font-weight="600">Back Office — Receipt Settings</text>
+  <text x="1346" y="32" fill="#94A3B8" font-size="12" text-anchor="end">Admin · Dmitri C.</text>
+
+  <!-- ===== LEFT SIDEBAR NAV ===== -->
+  <!-- Note: sidebar is part of the left panel area but we skip it to keep 3-panel layout clean per spec -->
+
+  <!-- ============================= -->
+  <!-- LEFT PANEL: Receipt Customization (x=0, w=420) -->
+  <!-- ============================= -->
+  <rect x="0" y="53" width="420" height="971" fill="#13162A"/>
+  <rect x="420" y="53" width="1" height="971" fill="#2D3148"/>
+
+  <!-- Left panel header -->
+  <rect x="0" y="53" width="420" height="58" fill="#1A1D2E"/>
+  <rect x="0" y="111" width="420" height="1" fill="#2D3148"/>
+  <text x="20" y="79" fill="#F1F5F9" font-size="16" font-weight="700">Receipt Settings</text>
+  <text x="20" y="98" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.5">pos_config.receipt_*</text>
+
+  <!-- ── Logo Section ── -->
+  <text x="20" y="135" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">LOGO</text>
+
+  <!-- Upload box -->
+  <rect x="20" y="145" width="380" height="90" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- Logo placeholder icon area -->
+  <rect x="160" y="155" width="100" height="60" rx="6" fill="#1A1D2E"/>
+  <text x="210" y="175" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="middle">SB</text>
+  <text x="210" y="193" fill="#94A3B8" font-size="9" text-anchor="middle">Synalux Bistro</text>
+  <text x="210" y="207" fill="#94A3B8" font-size="9" text-anchor="middle">LOGO</text>
+
+  <text x="20" y="252" fill="#64748B" font-size="11">Upload Logo (PNG/SVG, max 500KB)</text>
+  <text x="395" y="252" fill="#EF4444" font-size="11" text-anchor="end">Remove</text>
+
+  <!-- ── Business Info Fields ── -->
+  <text x="20" y="280" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">BUSINESS INFO</text>
+  <text x="400" y="280" fill="#64748B" font-size="9" text-anchor="end">← DB: pos_config</text>
+
+  <!-- Business Name -->
+  <text x="20" y="302" fill="#64748B" font-size="11">Business Name</text>
+  <rect x="20" y="308" width="380" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="327" fill="#F1F5F9" font-size="12">Synalux Bistro</text>
+
+  <!-- Address line 1 -->
+  <text x="20" y="350" fill="#64748B" font-size="11">Address Line 1</text>
+  <rect x="20" y="356" width="380" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="375" fill="#F1F5F9" font-size="12">123 Main Street</text>
+
+  <!-- Address line 2 -->
+  <text x="20" y="398" fill="#64748B" font-size="11">Address Line 2</text>
+  <rect x="20" y="404" width="380" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="423" fill="#94A3B8" font-size="12">Suite / Floor (optional)</text>
+
+  <!-- Phone + Website row -->
+  <text x="20" y="448" fill="#64748B" font-size="11">Phone</text>
+  <text x="218" y="448" fill="#64748B" font-size="11">Website URL</text>
+  <rect x="20" y="454" width="185" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="473" fill="#F1F5F9" font-size="12">(212) 555-0142</text>
+  <rect x="215" y="454" width="185" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="227" y="473" fill="#F1F5F9" font-size="12">synaluxbistro.com</text>
+
+  <!-- Divider -->
+  <rect x="20" y="496" width="380" height="1" fill="#2D3148"/>
+
+  <!-- ── Header & Footer Text ── -->
+  <text x="20" y="518" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">RECEIPT TEXT</text>
+
+  <text x="20" y="538" fill="#64748B" font-size="11">Header text <tspan fill="#64748B" font-size="10">(2 lines max)</tspan></text>
+  <rect x="20" y="544" width="380" height="42" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="561" fill="#F1F5F9" font-size="12">Thank you for dining with us!</text>
+  <text x="395" y="584" fill="#64748B" font-size="10" text-anchor="end">1/2</text>
+
+  <text x="20" y="602" fill="#64748B" font-size="11">Footer text <tspan fill="#64748B" font-size="10">(4 lines max)</tspan></text>
+  <rect x="20" y="608" width="380" height="60" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="625" fill="#F1F5F9" font-size="11">Follow us @SynaluxBistro</text>
+  <text x="32" y="641" fill="#F1F5F9" font-size="11">WiFi: Guest2024 | Yelp: bit.ly/synalux</text>
+  <text x="395" y="666" fill="#64748B" font-size="10" text-anchor="end">2/4</text>
+
+  <!-- ── Social Links ── -->
+  <text x="20" y="686" fill="#64748B" font-size="11">Social links on receipt</text>
+
+  <!-- Instagram icon + toggle -->
+  <rect x="20" y="694" width="86" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <!-- Instagram gradient sim -->
+  <circle cx="38" cy="710" r="8" fill="none" stroke="#E1306C" stroke-width="1.5"/>
+  <circle cx="38" cy="710" r="3" fill="#E1306C"/>
+  <circle cx="44" cy="704" r="1.5" fill="#E1306C"/>
+  <text x="52" y="714" fill="#94A3B8" font-size="10">Insta</text>
+  <!-- toggle on -->
+  <rect x="74" y="703" width="26" height="14" rx="7" fill="#10B981"/>
+  <circle cx="93" cy="710" r="5" fill="white"/>
+
+  <!-- Facebook icon + toggle -->
+  <rect x="114" y="694" width="86" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="130" y="702" width="12" height="16" rx="3" fill="#1877F2"/>
+  <text x="132" y="713" fill="white" font-size="9" font-weight="700">f</text>
+  <text x="148" y="714" fill="#94A3B8" font-size="10">Facebook</text>
+  <!-- toggle on -->
+  <rect x="168" y="703" width="26" height="14" rx="7" fill="#10B981"/>
+  <circle cx="187" cy="710" r="5" fill="white"/>
+
+  <!-- TikTok icon + toggle -->
+  <rect x="208" y="694" width="86" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="224" y="714" fill="#F1F5F9" font-size="12" font-weight="700">tt</text>
+  <text x="242" y="714" fill="#94A3B8" font-size="10">TikTok</text>
+  <!-- toggle off -->
+  <rect x="262" y="703" width="26" height="14" rx="7" fill="#2D3148"/>
+  <circle cx="269" cy="710" r="5" fill="#64748B"/>
+
+  <!-- Google icon + toggle -->
+  <rect x="302" y="694" width="98" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="320" cy="710" r="7" fill="none" stroke="#4285F4" stroke-width="1.5"/>
+  <text x="316" y="714" fill="#4285F4" font-size="10">G</text>
+  <text x="332" y="714" fill="#94A3B8" font-size="9">G.Reviews</text>
+  <!-- toggle on -->
+  <rect x="366" y="703" width="26" height="14" rx="7" fill="#10B981"/>
+  <circle cx="385" cy="710" r="5" fill="white"/>
+
+  <!-- Divider -->
+  <rect x="20" y="738" width="380" height="1" fill="#2D3148"/>
+
+  <!-- ── Receipt Options ── -->
+  <text x="20" y="759" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">RECEIPT OPTIONS</text>
+
+  <!-- Receipt Number Format -->
+  <text x="20" y="779" fill="#64748B" font-size="11">Receipt Number Format</text>
+  <rect x="20" y="785" width="380" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="32" y="804" fill="#F1F5F9" font-size="12">YYYY-MMDD-####</text>
+  <text x="390" y="804" fill="#94A3B8" font-size="12" text-anchor="end">▾</text>
+
+  <!-- Show Tax Breakdown: ON -->
+  <text x="20" y="830" fill="#F1F5F9" font-size="12">Show Tax Breakdown</text>
+  <rect x="355" y="819" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="389" cy="830" r="9" fill="white"/>
+  <text x="20" y="846" fill="#64748B" font-size="10">Shows individual tax lines on receipt</text>
+
+  <!-- Show Item Cost: OFF (manager only) -->
+  <text x="20" y="868" fill="#94A3B8" font-size="12">Show Item Cost</text>
+  <rect x="355" y="857" width="44" height="22" rx="11" fill="#2D3148"/>
+  <circle cx="366" cy="868" r="9" fill="#64748B"/>
+  <rect x="20" y="874" width="6" height="6" rx="1" fill="#8B5CF6"/>
+  <text x="30" y="882" fill="#8B5CF6" font-size="10">Manager-only permission required</text>
+
+  <!-- Include Tip Line: ON -->
+  <text x="20" y="904" fill="#F1F5F9" font-size="12">Include Tip Line</text>
+  <rect x="355" y="893" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="389" cy="904" r="9" fill="white"/>
+  <text x="20" y="920" fill="#64748B" font-size="10">Prints blank tip line for cash payments</text>
+
+  <!-- No-Paper Mode: OFF + warning -->
+  <text x="20" y="942" fill="#F1F5F9" font-size="12">No-Paper Mode</text>
+  <rect x="355" y="931" width="44" height="22" rx="11" fill="#2D3148"/>
+  <circle cx="366" cy="942" r="9" fill="#64748B"/>
+  <!-- amber warning -->
+  <rect x="20" y="950" width="380" height="22" rx="4" fill="#1C1507"/>
+  <rect x="20" y="950" width="3" height="22" rx="2" fill="#F59E0B"/>
+  <text x="30" y="965" fill="#F59E0B" font-size="10">Requires customer email/phone on file to enable</text>
+
+  <!-- ============================= -->
+  <!-- CENTER PANEL: Live Receipt Preview (x=420, w=480) -->
+  <!-- ============================= -->
+  <rect x="421" y="53" width="479" height="971" fill="#0F1117"/>
+  <rect x="900" y="53" width="1" height="971" fill="#2D3148"/>
+
+  <!-- Center panel header -->
+  <rect x="421" y="53" width="479" height="52" fill="#1A1D2E"/>
+  <rect x="421" y="105" width="479" height="1" fill="#2D3148"/>
+  <text x="441" y="79" fill="#F1F5F9" font-size="16" font-weight="700">Preview</text>
+  <text x="441" y="96" fill="#64748B" font-size="11">Live receipt mockup</text>
+  <!-- Print Test button -->
+  <rect x="800" y="62" width="90" height="30" rx="6" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="845" y="81" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">Print Test</text>
+
+  <!-- ── Receipt Paper Mockup ── -->
+  <!-- Shadow effect -->
+  <rect x="504" y="125" width="312" height="850" rx="2" fill="#000000" opacity="0.4"/>
+  <!-- White receipt paper -->
+  <rect x="500" y="120" width="312" height="848" rx="4" fill="white"/>
+
+  <!-- Rounded top of receipt -->
+  <rect x="500" y="120" width="312" height="12" rx="4" fill="#F8F8F8"/>
+
+  <!-- Logo area -->
+  <rect x="540" y="138" width="232" height="50" rx="4" fill="#F0F0F0"/>
+  <text x="656" y="158" fill="#1A1D2E" font-size="13" font-weight="800" text-anchor="middle">SB</text>
+  <text x="656" y="172" fill="#64748B" font-size="9" text-anchor="middle">SYNALUX BISTRO</text>
+  <text x="656" y="182" fill="#94A3B8" font-size="8" text-anchor="middle">[logo]</text>
+
+  <!-- Business name -->
+  <text x="656" y="205" fill="#1A1D2E" font-size="14" font-weight="800" text-anchor="middle">SYNALUX BISTRO</text>
+  <text x="656" y="218" fill="#555" font-size="9" text-anchor="middle">123 Main Street, New York, NY 10001</text>
+  <text x="656" y="229" fill="#555" font-size="9" text-anchor="middle">(212) 555-0142 | synaluxbistro.com</text>
+
+  <!-- Separator 1 -->
+  <text x="656" y="244" fill="#999" font-size="9" text-anchor="middle" font-family="monospace">- - - - - - - - - - - - - - - - - - - - -</text>
+
+  <!-- Table info -->
+  <text x="516" y="258" fill="#333" font-size="10">Table 4 — Server: Marcus</text>
+  <text x="516" y="271" fill="#333" font-size="10">Order #2406-0047</text>
+  <text x="796" y="271" fill="#666" font-size="9" text-anchor="end">05/27/26  7:42 PM</text>
+
+  <!-- Separator 2 -->
+  <text x="656" y="284" fill="#999" font-size="9" text-anchor="middle" font-family="monospace">- - - - - - - - - - - - - - - - - - - - -</text>
+
+  <!-- Items -->
+  <text x="516" y="298" fill="#1A1D2E" font-size="11" font-weight="600">Burger</text>
+  <text x="516" y="311" fill="#888" font-size="9">  + No Onions</text>
+  <text x="796" y="298" fill="#1A1D2E" font-size="11" text-anchor="end">$18.00</text>
+
+  <text x="516" y="325" fill="#1A1D2E" font-size="11" font-weight="600">Craft Beer</text>
+  <text x="796" y="325" fill="#1A1D2E" font-size="11" text-anchor="end">$9.00</text>
+
+  <text x="516" y="339" fill="#1A1D2E" font-size="11" font-weight="600">Caesar Salad</text>
+  <text x="796" y="339" fill="#1A1D2E" font-size="11" text-anchor="end">$14.00</text>
+
+  <!-- Separator 3 -->
+  <text x="656" y="352" fill="#999" font-size="9" text-anchor="middle" font-family="monospace">- - - - - - - - - - - - - - - - - - - - -</text>
+
+  <!-- Totals -->
+  <text x="516" y="366" fill="#444" font-size="11">Subtotal</text>
+  <text x="796" y="366" fill="#444" font-size="11" text-anchor="end">$41.00</text>
+
+  <text x="516" y="380" fill="#444" font-size="11">Tax (8.875%)</text>
+  <text x="796" y="380" fill="#444" font-size="11" text-anchor="end">$3.64</text>
+
+  <text x="516" y="394" fill="#444" font-size="11">Tip</text>
+  <text x="796" y="394" fill="#444" font-size="11" text-anchor="end">$8.00</text>
+
+  <!-- Total line -->
+  <rect x="506" y="400" width="300" height="1" fill="#CCC"/>
+  <text x="516" y="418" fill="#1A1D2E" font-size="13" font-weight="800">TOTAL</text>
+  <text x="796" y="418" fill="#1A1D2E" font-size="13" font-weight="800" text-anchor="end">$52.64</text>
+
+  <!-- Separator 4 -->
+  <text x="656" y="432" fill="#999" font-size="9" text-anchor="middle" font-family="monospace">- - - - - - - - - - - - - - - - - - - - -</text>
+
+  <!-- Payment info -->
+  <text x="516" y="446" fill="#444" font-size="10">Visa •••• 4242</text>
+  <text x="796" y="446" fill="#666" font-size="9" text-anchor="end">Auth: 847291</text>
+  <text x="516" y="459" fill="#888" font-size="9">Chip &amp; PIN — Approved</text>
+
+  <!-- Separator 5 -->
+  <text x="656" y="472" fill="#999" font-size="9" text-anchor="middle" font-family="monospace">- - - - - - - - - - - - - - - - - - - - -</text>
+
+  <!-- Footer text (italic sim) -->
+  <text x="656" y="488" fill="#666" font-size="10" text-anchor="middle" font-style="italic">Thank you for dining with us!</text>
+  <text x="656" y="501" fill="#888" font-size="8" text-anchor="middle">Follow us @SynaluxBistro</text>
+  <text x="656" y="512" fill="#888" font-size="8" text-anchor="middle">WiFi: Guest2024 | Yelp: bit.ly/synalux</text>
+
+  <!-- Social icons row on receipt -->
+  <circle cx="608" cy="530" r="8" fill="none" stroke="#E1306C" stroke-width="1.5"/>
+  <circle cx="608" cy="530" r="3" fill="#E1306C"/>
+  <circle cx="633" cy="530" r="8" fill="#1877F2"/>
+  <text x="629" y="534" fill="white" font-size="9" font-weight="700">f</text>
+  <!-- Google G -->
+  <circle cx="658" cy="530" r="8" fill="none" stroke="#4285F4" stroke-width="1.5"/>
+  <text x="654" y="534" fill="#4285F4" font-size="9">G</text>
+  <text x="681" y="534" fill="#888" font-size="8">Reviews</text>
+
+  <!-- Separator 6 -->
+  <text x="656" y="548" fill="#999" font-size="9" text-anchor="middle" font-family="monospace">- - - - - - - - - - - - - - - - - - - - -</text>
+
+  <!-- QR code placeholder -->
+  <rect x="596" y="556" width="120" height="80" rx="4" fill="#F0F0F0" stroke="#CCC" stroke-width="1"/>
+  <!-- QR pattern sim -->
+  <rect x="606" y="566" width="20" height="20" rx="1" fill="#333"/>
+  <rect x="608" y="568" width="16" height="16" rx="1" fill="#F0F0F0"/>
+  <rect x="611" y="571" width="10" height="10" rx="1" fill="#333"/>
+  <rect x="686" y="566" width="20" height="20" rx="1" fill="#333"/>
+  <rect x="688" y="568" width="16" height="16" rx="1" fill="#F0F0F0"/>
+  <rect x="691" y="571" width="10" height="10" rx="1" fill="#333"/>
+  <rect x="606" y="616" width="20" height="20" rx="1" fill="#333"/>
+  <rect x="608" y="618" width="16" height="16" rx="1" fill="#F0F0F0"/>
+  <rect x="611" y="621" width="10" height="10" rx="1" fill="#333"/>
+  <!-- dots -->
+  <rect x="632" y="566" width="4" height="4" fill="#333"/>
+  <rect x="640" y="566" width="4" height="4" fill="#333"/>
+  <rect x="648" y="566" width="4" height="4" fill="#333"/>
+  <rect x="656" y="570" width="4" height="4" fill="#333"/>
+  <rect x="632" y="576" width="4" height="4" fill="#333"/>
+  <rect x="644" y="576" width="4" height="4" fill="#333"/>
+  <rect x="652" y="580" width="4" height="4" fill="#333"/>
+  <rect x="636" y="584" width="4" height="4" fill="#333"/>
+  <rect x="648" y="588" width="4" height="4" fill="#333"/>
+  <rect x="632" y="596" width="4" height="4" fill="#333"/>
+  <rect x="640" y="600" width="4" height="4" fill="#333"/>
+  <rect x="656" y="604" width="4" height="4" fill="#333"/>
+  <rect x="668" y="596" width="4" height="4" fill="#333"/>
+  <rect x="660" y="608" width="4" height="4" fill="#333"/>
+  <rect x="636" y="616" width="4" height="4" fill="#333"/>
+  <rect x="648" y="620" width="4" height="4" fill="#333"/>
+  <rect x="660" y="616" width="4" height="4" fill="#333"/>
+  <rect x="672" y="622" width="4" height="4" fill="#333"/>
+
+  <text x="656" y="650" fill="#666" font-size="9" text-anchor="middle">Scan for digital receipt</text>
+
+  <!-- Receipt tear edge (zigzag at bottom) -->
+  <path d="M500,968 L506,978 L512,968 L518,978 L524,968 L530,978 L536,968 L542,978 L548,968 L554,978 L560,968 L566,978 L572,968 L578,978 L584,968 L590,978 L596,968 L602,978 L608,968 L614,978 L620,968 L626,978 L632,968 L638,978 L644,968 L650,978 L656,968 L662,978 L668,968 L674,978 L680,968 L686,978 L692,968 L698,978 L704,968 L710,978 L716,968 L722,978 L728,968 L734,978 L740,968 L746,978 L752,968 L758,978 L764,968 L770,978 L776,968 L782,978 L788,968 L794,978 L800,968 L806,978 L812,968" stroke="#CCC" stroke-width="1" fill="white"/>
+  <!-- Cover above tear to look like paper -->
+  <rect x="500" y="660" width="312" height="308" fill="white"/>
+  <!-- Tip line visible -->
+  <text x="516" y="680" fill="#444" font-size="10">Tip: _____________________</text>
+  <text x="516" y="694" fill="#444" font-size="10">Total: ___________________</text>
+  <text x="516" y="708" fill="#444" font-size="10">Signature: _______________</text>
+
+  <!-- Re-draw tear edge on top -->
+  <rect x="498" y="958" width="316" height="10" fill="#0F1117"/>
+  <path d="M500,958 L506,968 L512,958 L518,968 L524,958 L530,968 L536,958 L542,968 L548,958 L554,968 L560,958 L566,968 L572,958 L578,968 L584,958 L590,968 L596,958 L602,968 L608,958 L614,968 L620,958 L626,968 L632,958 L638,968 L644,958 L650,968 L656,958 L662,968 L668,958 L674,968 L680,958 L686,968 L692,958 L698,968 L704,958 L710,968 L716,958 L722,968 L728,958 L734,968 L740,958 L746,968 L752,958 L758,968 L764,958 L770,968 L776,958 L782,968 L788,958 L794,968 L800,958 L806,968 L812,958" fill="white" stroke="#D1D5DB" stroke-width="1"/>
+
+
+  <!-- ============================= -->
+  <!-- RIGHT PANEL: Digital Delivery (x=900, w=466) -->
+  <!-- ============================= -->
+  <rect x="901" y="53" width="465" height="971" fill="#0F1117"/>
+
+  <!-- Right panel header -->
+  <rect x="901" y="53" width="465" height="52" fill="#1A1D2E"/>
+  <rect x="901" y="105" width="465" height="1" fill="#2D3148"/>
+  <text x="921" y="79" fill="#F1F5F9" font-size="16" font-weight="700">Digital Delivery</text>
+  <text x="921" y="96" fill="#64748B" font-size="11">Auto-send settings &amp; integrations</text>
+
+  <!-- ── Section: Auto-Send Triggers ── -->
+  <text x="921" y="130" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">AUTO-SEND TRIGGERS</text>
+
+  <!-- Toggle rows -->
+  <!-- Row 1: email after card -->
+  <rect x="921" y="138" width="425" height="38" rx="6" fill="#1A1D2E"/>
+  <text x="937" y="153" fill="#F1F5F9" font-size="12">Send email receipt after card payment</text>
+  <text x="937" y="168" fill="#64748B" font-size="10">Triggers on pos_payments INSERT where method=card</text>
+  <rect x="1264" y="147" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1298" cy="158" r="9" fill="white"/>
+
+  <!-- Row 2: SMS after card -->
+  <rect x="921" y="182" width="425" height="38" rx="6" fill="#13162A"/>
+  <text x="937" y="197" fill="#F1F5F9" font-size="12">Send SMS receipt after card payment</text>
+  <text x="937" y="212" fill="#64748B" font-size="10">Requires Twilio integration active</text>
+  <rect x="1264" y="191" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1298" cy="202" r="9" fill="white"/>
+
+  <!-- Row 3: email for cash (OFF) -->
+  <rect x="921" y="226" width="425" height="38" rx="6" fill="#1A1D2E"/>
+  <text x="937" y="241" fill="#F1F5F9" font-size="12">Send email for cash payments (if on file)</text>
+  <text x="937" y="256" fill="#64748B" font-size="10">Only if customer email exists in pos_customers</text>
+  <rect x="1264" y="235" width="44" height="22" rx="11" fill="#2D3148"/>
+  <circle cx="1275" cy="246" r="9" fill="#64748B"/>
+
+  <!-- Row 4: Attach PDF -->
+  <rect x="921" y="270" width="425" height="38" rx="6" fill="#13162A"/>
+  <text x="937" y="285" fill="#F1F5F9" font-size="12">Attach PDF receipt</text>
+  <text x="937" y="300" fill="#64748B" font-size="10">PDF generated at /api/pos/receipt/[payment_id].pdf</text>
+  <rect x="1264" y="279" width="44" height="22" rx="11" fill="#10B981"/>
+  <circle cx="1298" cy="290" r="9" fill="white"/>
+
+  <!-- Send after dropdown -->
+  <text x="921" y="324" fill="#64748B" font-size="11">Send after</text>
+  <rect x="921" y="330" width="200" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="933" y="349" fill="#F1F5F9" font-size="12">Payment confirmed</text>
+  <text x="1114" y="349" fill="#94A3B8" font-size="12" text-anchor="end">▾</text>
+
+  <!-- ── Section: Email Settings ── -->
+  <rect x="921" y="372" width="425" height="1" fill="#2D3148"/>
+  <text x="921" y="393" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">EMAIL SETTINGS</text>
+
+  <!-- From name + reply-to row -->
+  <text x="921" y="413" fill="#64748B" font-size="11">From name</text>
+  <text x="1130" y="413" fill="#64748B" font-size="11">Reply-to</text>
+  <rect x="921" y="419" width="195" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="933" y="438" fill="#F1F5F9" font-size="12">Synalux Bistro</text>
+  <rect x="1128" y="419" width="218" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="1140" y="438" fill="#F1F5F9" font-size="11">info@synaluxbistro.com</text>
+
+  <!-- Subject line -->
+  <text x="921" y="462" fill="#64748B" font-size="11">Subject line</text>
+  <rect x="921" y="468" width="425" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="933" y="487" fill="#F1F5F9" font-size="12">Your receipt from {business_name}</text>
+  <text x="1340" y="487" fill="#8B5CF6" font-size="10" text-anchor="end">{token}</text>
+
+  <!-- Email template -->
+  <text x="921" y="511" fill="#64748B" font-size="11">Email template</text>
+  <rect x="921" y="517" width="320" height="28" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="933" y="536" fill="#F1F5F9" font-size="12">Branded HTML (recommended)</text>
+  <text x="1234" y="536" fill="#94A3B8" font-size="12" text-anchor="end">▾</text>
+  <!-- Preview Email button -->
+  <rect x="1255" y="517" width="91" height="28" rx="5" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="1300" y="536" fill="#8B5CF6" font-size="11" font-weight="600" text-anchor="middle">Preview Email</text>
+
+  <!-- ── Section: SMS Settings ── -->
+  <rect x="921" y="560" width="425" height="1" fill="#2D3148"/>
+  <text x="921" y="581" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">SMS SETTINGS</text>
+
+  <!-- Twilio status -->
+  <rect x="921" y="589" width="425" height="32" rx="6" fill="#1A1D2E"/>
+  <circle cx="937" cy="605" r="5" fill="#10B981"/>
+  <text x="948" y="609" fill="#F1F5F9" font-size="12">Twilio</text>
+  <text x="988" y="609" fill="#10B981" font-size="12" font-weight="600">Connected</text>
+  <text x="1060" y="609" fill="#64748B" font-size="11">· +1 (212) 555-0199</text>
+  <text x="1334" y="609" fill="#60A5FA" font-size="11" text-anchor="end">Manage →</text>
+
+  <!-- SMS template -->
+  <text x="921" y="638" fill="#64748B" font-size="11">SMS template</text>
+  <rect x="921" y="644" width="425" height="42" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="933" y="661" fill="#F1F5F9" font-size="11">Receipt for ${total} at {business}.</text>
+  <text x="933" y="676" fill="#F1F5F9" font-size="11">View: {link}</text>
+  <!-- char count -->
+  <text x="1340" y="686" fill="#64748B" font-size="10" text-anchor="end">67/160</text>
+
+  <!-- ── Section: No-Paper Policy ── -->
+  <rect x="921" y="700" width="425" height="1" fill="#2D3148"/>
+  <text x="921" y="721" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="0.8">NO-PAPER POLICY</text>
+
+  <!-- Toggle OFF state -->
+  <rect x="921" y="729" width="425" height="48" rx="6" fill="#1A1D2E"/>
+  <text x="937" y="748" fill="#F1F5F9" font-size="12">No-Paper Mode</text>
+  <rect x="1264" y="735" width="44" height="22" rx="11" fill="#2D3148"/>
+  <circle cx="1275" cy="746" r="9" fill="#64748B"/>
+  <text x="937" y="764" fill="#64748B" font-size="10">OFF — customers always offered paper receipt</text>
+
+  <!-- Toggle ON state shown below for reference -->
+  <rect x="921" y="783" width="425" height="38" rx="6" fill="#13162A"/>
+  <text x="937" y="798" fill="#94A3B8" font-size="11">When ON — paper only if customer requests</text>
+  <text x="937" y="812" fill="#64748B" font-size="10">Reduce paper waste. Customer can request paper at any time.</text>
+
+  <!-- ── Workflow Integration Box ── -->
+  <rect x="921" y="838" width="425" height="178" rx="8" fill="#1C1507" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- amber corner tag -->
+  <rect x="921" y="838" width="120" height="22" rx="4" fill="#F59E0B"/>
+  <text x="928" y="853" fill="#0F1117" font-size="10" font-weight="700">Workflow Integration</text>
+
+  <text x="933" y="878" fill="#F59E0B" font-size="10" font-weight="600">Auto-triggered:</text>
+  <text x="933" y="892" fill="#94A3B8" font-size="10">after pos_payments row inserted</text>
+  <text x="933" y="910" fill="#64748B" font-size="10">Email via SendGrid / SMS via Twilio Programmable SMS</text>
+  <text x="933" y="926" fill="#64748B" font-size="10">PDF generated server-side:</text>
+  <text x="933" y="940" fill="#8B5CF6" font-size="10">/api/pos/receipt/[payment_id].pdf</text>
+  <text x="933" y="956" fill="#64748B" font-size="10">QR code on receipt → same URL (no app needed)</text>
+  <text x="933" y="972" fill="#64748B" font-size="10">Stored in pos_receipts, linked to pos_payments</text>
+  <text x="933" y="988" fill="#94A3B8" font-size="10">Schema: pos_receipts(id, payment_id, method, sent_at, pdf_url)</text>
+
+  <!-- ── Subtle "no hardcodes" note ── -->
+  <text x="1340" y="1014" fill="#2D3148" font-size="9" text-anchor="end" font-style="italic">All fields sourced from pos_config table — no hardcodes</text>
+
+</svg>

@@ -1,0 +1,384 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TOP NAV BAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1366" height="52" fill="#1A1D2E"/>
+  <!-- Logo -->
+  <text x="16" y="32" font-size="14" font-weight="700" fill="#F59E0B">⬡ SYNALUX</text>
+  <text x="100" y="32" font-size="11" fill="#64748B">POS</text>
+
+  <!-- Nav tabs -->
+  <!-- Register — ACTIVE -->
+  <rect x="176" y="0" width="110" height="52" fill="#1E2240"/>
+  <rect x="176" y="48" width="110" height="4" fill="#F59E0B"/>
+  <text x="221" y="30" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">📋 Register</text>
+
+  <text x="310" y="30" font-size="12" fill="#64748B">🗂 Tables</text>
+  <text x="400" y="30" font-size="12" fill="#64748B">🍳 KDS</text>
+  <text x="465" y="30" font-size="12" fill="#64748B">📦 Inventory</text>
+  <text x="565" y="30" font-size="12" fill="#64748B">📊 Reports</text>
+
+  <!-- Right side nav items -->
+  <text x="1160" y="30" font-size="11" fill="#64748B">12:47 PM</text>
+  <!-- Connection status -->
+  <circle cx="1230" cy="26" r="4" fill="#10B981"/>
+  <text x="1238" y="30" font-size="10" fill="#10B981">Online</text>
+  <!-- Staff indicator -->
+  <rect x="1270" y="10" width="80" height="30" rx="6" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1282" y="29" font-size="10" fill="#94A3B8">J. Smith ▾</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- THREE-COLUMN REGISTER LAYOUT -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEFT: categories (w=200) x=0 -->
+  <!-- CENTER: scan UI (w=640) x=200 -->
+  <!-- RIGHT: order ticket (w=526) x=840 -->
+  <line x1="200" y1="52" x2="200" y2="800" stroke="#2D3148" stroke-width="1"/>
+  <line x1="840" y1="52" x2="840" y2="800" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEFT COLUMN — CATEGORIES (dimmed) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="52" width="200" height="748" fill="#13162A" opacity="0.75"/>
+  <text x="12" y="80" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">CATEGORIES</text>
+  <rect x="8" y="88" width="184" height="36" rx="6" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="94" y="111" font-size="11" font-weight="600" fill="#F59E0B" text-anchor="middle">🍔 Burgers</text>
+  <rect x="8" y="130" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="153" font-size="11" fill="#64748B" text-anchor="middle">🍕 Pizza</text>
+  <rect x="8" y="172" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="195" font-size="11" fill="#64748B" text-anchor="middle">🥗 Salads</text>
+  <rect x="8" y="214" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="237" font-size="11" fill="#64748B" text-anchor="middle">🍺 Drinks</text>
+  <rect x="8" y="256" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="279" font-size="11" fill="#64748B" text-anchor="middle">🍰 Desserts</text>
+  <rect x="8" y="298" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="321" font-size="11" fill="#64748B" text-anchor="middle">☕ Coffee</text>
+  <rect x="8" y="340" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="363" font-size="11" fill="#64748B" text-anchor="middle">🥨 Snacks</text>
+  <rect x="8" y="382" width="184" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="94" y="405" font-size="11" fill="#64748B" text-anchor="middle">🍱 Catering</text>
+  <!-- Scan mode indicator on left -->
+  <rect x="8" y="448" width="184" height="44" rx="8" fill="#451A03" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="100" y="468" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="middle">📷 SCAN MODE</text>
+  <text x="100" y="484" font-size="9" fill="#F97316" text-anchor="middle">Active</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CENTER COLUMN — BARCODE SCAN UI -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Center header -->
+  <rect x="200" y="52" width="640" height="50" fill="#1A1D2E"/>
+  <!-- Barcode icon (stylized) -->
+  <rect x="212" y="64" width="2" height="26" fill="#F59E0B"/>
+  <rect x="216" y="64" width="4" height="26" fill="#F59E0B"/>
+  <rect x="222" y="64" width="2" height="26" fill="#F59E0B"/>
+  <rect x="226" y="64" width="6" height="26" fill="#F59E0B"/>
+  <rect x="234" y="64" width="2" height="26" fill="#F59E0B"/>
+  <rect x="238" y="64" width="3" height="26" fill="#F59E0B"/>
+  <rect x="243" y="64" width="2" height="26" fill="#F59E0B"/>
+  <text x="258" y="82" font-size="16" font-weight="700" fill="#F1F5F9">Scan to Add</text>
+  <text x="258" y="96" font-size="10" fill="#64748B">Point barcode scanner or camera at product</text>
+  <!-- Manual entry link -->
+  <text x="730" y="82" font-size="11" fill="#F59E0B" text-decoration="underline" text-anchor="end">Manual Entry</text>
+
+  <!-- LARGE SCANNING ZONE -->
+  <rect x="210" y="110" width="620" height="320" rx="12" fill="#0A0C14" stroke="#F59E0B" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- Camera viewfinder corners — amber brackets -->
+  <!-- Top-left -->
+  <rect x="270" y="140" width="40" height="4" fill="#F59E0B"/>
+  <rect x="270" y="140" width="4" height="40" fill="#F59E0B"/>
+  <!-- Top-right -->
+  <rect x="760" y="140" width="40" height="4" fill="#F59E0B"/>
+  <rect x="796" y="140" width="4" height="40" fill="#F59E0B"/>
+  <!-- Bottom-left -->
+  <rect x="270" y="356" width="40" height="4" fill="#F59E0B"/>
+  <rect x="270" y="320" width="4" height="40" fill="#F59E0B"/>
+  <!-- Bottom-right -->
+  <rect x="760" y="356" width="40" height="4" fill="#F59E0B"/>
+  <rect x="796" y="320" width="4" height="40" fill="#F59E0B"/>
+
+  <!-- Scanning beam — horizontal amber line with glow -->
+  <defs>
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#F59E0B" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FCD34D" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Beam glow layer -->
+  <rect x="220" y="244" width="620" height="8" fill="url(#beamGrad)" opacity="0.4" rx="2"/>
+  <!-- Main beam -->
+  <rect x="220" y="246" width="620" height="2" fill="url(#beamGrad)" filter="url(#glow)"/>
+
+  <!-- Scan zone text -->
+  <text x="520" y="302" font-size="15" font-weight="600" fill="#94A3B8" text-anchor="middle">Point scanner at product barcode</text>
+  <text x="520" y="322" font-size="11" fill="#64748B" text-anchor="middle">Supports: Code 128, EAN-13, QR Code, PDF417</text>
+
+  <!-- Manual SKU input field -->
+  <text x="220" y="352" font-size="10" fill="#64748B">Or type SKU / barcode:</text>
+  <rect x="370" y="340" width="440" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="382" y="358" font-size="11" fill="#64748B">Enter SKU or barcode number...</text>
+  <rect x="790" y="342" width="60" height="24" rx="4" fill="#F59E0B"/>
+  <text x="809" y="358" font-size="10" font-weight="700" fill="#000">Search</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SCAN RESULTS PANEL -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <text x="214" y="454" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1">RECENTLY SCANNED</text>
+
+  <!-- Row 1 — Classic Burger found -->
+  <rect x="210" y="462" width="618" height="46" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- barcode indicator -->
+  <rect x="218" y="472" width="3" height="26" fill="#10B981"/>
+  <text x="228" y="481" font-size="9" fill="#64748B">012345678901</text>
+  <text x="228" y="497" font-size="11" font-weight="600" fill="#F1F5F9">Classic Burger</text>
+  <text x="380" y="481" font-size="11" font-weight="700" fill="#F1F5F9">$18.00</text>
+  <text x="440" y="481" font-size="10" fill="#10B981">Added to order ✓</text>
+  <!-- Qty controls -->
+  <rect x="590" y="468" width="24" height="24" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="600" y="484" font-size="14" fill="#94A3B8" text-anchor="middle">−</text>
+  <text x="624" y="484" font-size="12" font-weight="700" fill="#F1F5F9" text-anchor="middle">1</text>
+  <rect x="640" y="468" width="24" height="24" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="651" y="484" font-size="14" fill="#94A3B8" text-anchor="middle">+</text>
+  <rect x="672" y="468" width="52" height="24" rx="4" fill="#F59E0B"/>
+  <text x="698" y="484" font-size="9" font-weight="700" fill="#000" text-anchor="middle">Qty: 1</text>
+
+  <!-- Row 2 — Craft Beer found -->
+  <rect x="210" y="512" width="618" height="46" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="218" y="522" width="3" height="26" fill="#10B981"/>
+  <text x="228" y="531" font-size="9" fill="#64748B">987654321098</text>
+  <text x="228" y="547" font-size="11" font-weight="600" fill="#F1F5F9">Craft Beer — Stella Artois</text>
+  <text x="420" y="531" font-size="11" font-weight="700" fill="#F1F5F9">$9.00</text>
+  <text x="476" y="531" font-size="10" fill="#10B981">Added ✓</text>
+  <rect x="590" y="518" width="24" height="24" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="600" y="534" font-size="14" fill="#94A3B8" text-anchor="middle">−</text>
+  <text x="624" y="534" font-size="12" font-weight="700" fill="#F1F5F9" text-anchor="middle">1</text>
+  <rect x="640" y="518" width="24" height="24" rx="4" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="651" y="534" font-size="14" fill="#94A3B8" text-anchor="middle">+</text>
+  <rect x="672" y="518" width="52" height="24" rx="4" fill="#F59E0B"/>
+  <text x="698" y="534" font-size="9" font-weight="700" fill="#000" text-anchor="middle">Qty: 1</text>
+
+  <!-- Row 3 — NOT FOUND error row -->
+  <rect x="210" y="562" width="618" height="50" rx="6" fill="#1F0A0A" stroke="#EF4444" stroke-width="1"/>
+  <rect x="218" y="574" width="3" height="26" fill="#EF4444"/>
+  <text x="228" y="583" font-size="9" fill="#64748B">111222333444</text>
+  <text x="228" y="601" font-size="11" font-weight="600" fill="#EF4444">NOT FOUND — Unknown barcode</text>
+  <!-- Create Item button -->
+  <rect x="460" y="568" width="90" height="24" rx="5" fill="#F59E0B"/>
+  <text x="486" y="584" font-size="10" font-weight="700" fill="#000" text-anchor="middle">Create Item</text>
+  <!-- Search Catalog button -->
+  <rect x="558" y="568" width="100" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="608" y="584" font-size="10" fill="#94A3B8" text-anchor="middle">Search Catalog</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LOOKUP RESULT CARD (expanded — Classic Burger) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="210" y="624" width="618" height="164" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Header -->
+  <rect x="210" y="624" width="618" height="36" rx="8" fill="#22243A"/>
+  <text x="222" y="641" font-size="10" font-weight="700" fill="#F59E0B">LOOKUP RESULT</text>
+  <text x="222" y="655" font-size="9" fill="#64748B">Barcode: 012345678901</text>
+  <!-- Two-column item details -->
+  <!-- Left col -->
+  <text x="222" y="678" font-size="13" font-weight="700" fill="#F1F5F9">Classic Burger</text>
+  <text x="222" y="694" font-size="9" fill="#64748B">SKU: SKU-1042</text>
+  <text x="222" y="708" font-size="9" fill="#64748B">Category: Burgers &amp; Sandwiches</text>
+  <text x="222" y="724" font-size="11" font-weight="700" fill="#F59E0B">$18.00</text>
+  <text x="265" y="724" font-size="9" fill="#64748B">Cost: $6.20</text>
+  <text x="310" y="724" font-size="9" fill="#10B981">Margin: 65.6%</text>
+  <!-- Right col -->
+  <text x="560" y="678" font-size="9" fill="#64748B" text-anchor="end">In Stock:</text>
+  <text x="562" y="678" font-size="9" font-weight="700" fill="#10B981">24 units ✓</text>
+  <text x="560" y="694" font-size="9" fill="#64748B" text-anchor="end">Modifiers:</text>
+  <text x="562" y="694" font-size="9" fill="#94A3B8">Burger Options (req.)</text>
+  <!-- Allergen chips -->
+  <text x="222" y="742" font-size="9" fill="#64748B">Allergens:</text>
+  <rect x="280" y="732" width="44" height="16" rx="8" fill="#451A03" stroke="#F97316" stroke-width="1"/>
+  <text x="302" y="743" font-size="8" fill="#F97316" text-anchor="middle">Wheat</text>
+  <rect x="330" y="732" width="40" height="16" rx="8" fill="#1E3A5F" stroke="#60A5FA" stroke-width="1"/>
+  <text x="350" y="743" font-size="8" fill="#60A5FA" text-anchor="middle">Dairy</text>
+  <rect x="376" y="732" width="34" height="16" rx="8" fill="#422006" stroke="#FBBF24" stroke-width="1"/>
+  <text x="393" y="743" font-size="8" fill="#FBBF24" text-anchor="middle">Egg</text>
+  <!-- Action buttons -->
+  <rect x="530" y="732" width="130" height="30" rx="6" fill="#F59E0B"/>
+  <text x="595" y="751" font-size="11" font-weight="700" fill="#000" text-anchor="middle">Add to Order</text>
+  <text x="595" y="774" font-size="9" fill="#F59E0B" text-anchor="middle">View Item Details ›</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- RIGHT COLUMN — LIVE ORDER TICKET -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="840" y="52" width="526" height="748" fill="#0F1117"/>
+
+  <!-- Order header -->
+  <rect x="840" y="52" width="526" height="48" fill="#1A1D2E"/>
+  <text x="854" y="72" font-size="13" font-weight="700" fill="#F1F5F9">Order #1047</text>
+  <text x="854" y="88" font-size="10" fill="#64748B">Dine-In · Table 4 · 2 guests</text>
+  <text x="1340" y="72" font-size="10" fill="#64748B" text-anchor="end">12:47 PM</text>
+
+  <!-- Order items -->
+  <rect x="848" y="108" width="510" height="56" rx="6" fill="#1A1D2E"/>
+  <!-- Item icon indicator: scan badge -->
+  <rect x="856" y="116" width="38" height="16" rx="8" fill="#065F46"/>
+  <text x="875" y="127" font-size="7" font-weight="700" fill="#10B981" text-anchor="middle">SCAN</text>
+  <text x="856" y="146" font-size="13" font-weight="600" fill="#F1F5F9">Classic Burger</text>
+  <text x="856" y="158" font-size="9" fill="#64748B">× 1 · No mods</text>
+  <text x="1350" y="146" font-size="13" font-weight="700" fill="#F1F5F9" text-anchor="end">$18.00</text>
+
+  <rect x="848" y="170" width="510" height="56" rx="6" fill="#1A1D2E"/>
+  <rect x="856" y="178" width="38" height="16" rx="8" fill="#065F46"/>
+  <text x="875" y="189" font-size="7" font-weight="700" fill="#10B981" text-anchor="middle">SCAN</text>
+  <text x="856" y="208" font-size="13" font-weight="600" fill="#F1F5F9">Craft Beer — Stella Artois</text>
+  <text x="856" y="220" font-size="9" fill="#64748B">× 1</text>
+  <text x="1350" y="208" font-size="13" font-weight="700" fill="#F1F5F9" text-anchor="end">$9.00</text>
+
+  <!-- Divider -->
+  <line x1="848" y1="236" x2="1358" y2="236" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Subtotals -->
+  <text x="856" y="258" font-size="11" fill="#94A3B8">Subtotal</text>
+  <text x="1350" y="258" font-size="11" fill="#F1F5F9" text-anchor="end">$27.00</text>
+  <text x="856" y="276" font-size="11" fill="#94A3B8">Tax (8.5%)</text>
+  <text x="1350" y="276" font-size="11" fill="#F1F5F9" text-anchor="end">$2.30</text>
+  <line x1="848" y1="286" x2="1358" y2="286" stroke="#2D3148" stroke-width="1"/>
+  <text x="856" y="306" font-size="14" font-weight="700" fill="#F1F5F9">Total</text>
+  <text x="1350" y="306" font-size="16" font-weight="700" fill="#F59E0B" text-anchor="end">$29.30</text>
+
+  <!-- Add more items prompt -->
+  <rect x="848" y="318" width="510" height="34" rx="6" fill="#13162A" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="1103" y="339" font-size="11" fill="#64748B" text-anchor="middle">+ Scan or tap item to add</text>
+
+  <!-- Discount / Notes row -->
+  <rect x="848" y="360" width="248" height="30" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="972" y="379" font-size="10" fill="#94A3B8" text-anchor="middle">Add Discount</text>
+  <rect x="1102" y="360" width="256" height="30" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1230" y="379" font-size="10" fill="#94A3B8" text-anchor="middle">Add Note</text>
+
+  <!-- Payment button — large amber -->
+  <rect x="848" y="400" width="510" height="56" rx="10" fill="#F59E0B"/>
+  <text x="1103" y="436" font-size="18" font-weight="700" fill="#000" text-anchor="middle">💳 Payment</text>
+
+  <!-- Split check / void row -->
+  <rect x="848" y="466" width="248" height="30" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="972" y="485" font-size="10" fill="#94A3B8" text-anchor="middle">Split Check</text>
+  <rect x="1102" y="466" width="256" height="30" rx="5" fill="#1E2240" stroke="#EF4444" stroke-width="1"/>
+  <text x="1230" y="485" font-size="10" fill="#EF4444" text-anchor="middle">Void Order</text>
+
+  <!-- Order metadata -->
+  <text x="854" y="516" font-size="9" fill="#64748B">Order opened: 12:44 PM · Server: J. Smith</text>
+  <text x="854" y="530" font-size="9" fill="#64748B">Source: POS Register (iPad) · Scan mode active</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- INVENTORY RESTOCK MODE (below main columns) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="800" width="840" height="224" fill="#0F1117"/>
+  <rect x="8" y="808" width="820" height="208" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Restock mode header -->
+  <rect x="8" y="808" width="820" height="36" rx="8" fill="#13162A"/>
+  <text x="20" y="828" font-size="11" font-weight="700" fill="#F1F5F9">Restock Mode</text>
+  <text x="20" y="842" font-size="9" fill="#64748B">Scan item → enter quantity received → update pos_inventory</text>
+  <!-- Toggle OFF -->
+  <rect x="730" y="816" width="46" height="22" rx="11" fill="#334155"/>
+  <circle cx="742" cy="827" r="9" fill="#64748B"/>
+  <text x="782" y="831" font-size="9" fill="#64748B">OFF</text>
+
+  <!-- Restock workflow preview (grayed — toggle off) -->
+  <g opacity="0.45">
+    <text x="20" y="868" font-size="10" font-weight="600" fill="#94A3B8">Receiving Workflow:</text>
+    <!-- Step 1 -->
+    <rect x="20" y="876" width="120" height="32" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+    <text x="80" y="896" font-size="9" fill="#64748B" text-anchor="middle">Scan barcode</text>
+    <!-- Arrow -->
+    <text x="148" y="896" font-size="14" fill="#2D3148">→</text>
+    <!-- Step 2 -->
+    <rect x="162" y="876" width="120" height="32" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+    <text x="222" y="892" font-size="9" fill="#64748B" text-anchor="middle">Item found</text>
+    <text x="222" y="904" font-size="8" fill="#64748B" text-anchor="middle">SKU-1042</text>
+    <!-- Arrow -->
+    <text x="290" y="896" font-size="14" fill="#2D3148">→</text>
+    <!-- Step 3 -->
+    <rect x="304" y="876" width="140" height="32" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+    <text x="374" y="892" font-size="9" fill="#64748B" text-anchor="middle">Qty popup</text>
+    <text x="374" y="904" font-size="8" fill="#64748B" text-anchor="middle">Enter received qty</text>
+    <!-- Arrow -->
+    <text x="452" y="896" font-size="14" fill="#2D3148">→</text>
+    <!-- Step 4 -->
+    <rect x="466" y="876" width="150" height="32" rx="5" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+    <text x="541" y="892" font-size="9" fill="#10B981" text-anchor="middle">Received: +12 units</text>
+    <text x="541" y="904" font-size="8" fill="#6EE7B7" text-anchor="middle">Stock updated ✓</text>
+    <!-- Arrow -->
+    <text x="624" y="896" font-size="14" fill="#2D3148">→</text>
+    <!-- Step 5 -->
+    <rect x="638" y="876" width="160" height="32" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+    <text x="718" y="892" font-size="9" fill="#64748B" text-anchor="middle">Auto-print receive</text>
+    <text x="718" y="904" font-size="8" fill="#64748B" text-anchor="middle">label if trigger ON</text>
+  </g>
+
+  <!-- DB note for restock -->
+  <text x="20" y="935" font-size="9" fill="#64748B">Event log: </text>
+  <text x="75" y="935" font-size="9" fill="#8B5CF6">pos_inventory_events</text>
+  <text x="195" y="935" font-size="9" fill="#64748B">(type = 'receive'). Webhook triggers label print job if trigger enabled.</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- RIGHT BOTTOM — WORKFLOW INTEGRATION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="840" y="600" width="526" height="424" fill="#0F1117"/>
+  <rect x="848" y="558" width="510" height="450" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="860" y="578" font-size="10" font-weight="700" fill="#F59E0B">WORKFLOW INTEGRATION</text>
+  <text x="860" y="596" font-size="9" fill="#94A3B8">BarcodeBridge.swift: HID scanner input captured natively</text>
+  <text x="860" y="612" font-size="9" fill="#94A3B8">(USB/Bluetooth Zebra DS2208).</text>
+  <line x1="860" y1="622" x2="1348" y2="622" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="860" y="638" font-size="9" fill="#94A3B8">Scan → lookup:</text>
+  <text x="860" y="652" font-size="9" fill="#8B5CF6">  pos_menu_items.barcode + pos_inventory.sku</text>
+  <text x="860" y="668" font-size="9" fill="#94A3B8">No match → prompt create or search.</text>
+  <line x1="860" y1="678" x2="1348" y2="678" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="860" y="694" font-size="9" fill="#94A3B8">Restock mode → </text>
+  <text x="957" y="694" font-size="9" fill="#8B5CF6">pos_inventory_events (type='receive')</text>
+  <text x="860" y="710" font-size="9" fill="#94A3B8">Auto-print label on receive if trigger enabled.</text>
+  <line x1="860" y1="720" x2="1348" y2="720" stroke="#2D3148" stroke-width="0.5"/>
+  <text x="860" y="736" font-size="9" fill="#94A3B8">Camera fallback: AVFoundation barcode reader</text>
+  <text x="860" y="752" font-size="9" fill="#94A3B8">(built-in iPad camera) for 1D+2D codes.</text>
+  <line x1="860" y1="762" x2="1348" y2="762" stroke="#2D3148" stroke-width="0.5"/>
+  <!-- Hardware supported -->
+  <text x="860" y="778" font-size="9" fill="#64748B">Hardware:</text>
+  <rect x="914" y="768" width="110" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="969" y="780" font-size="8" fill="#FCD34D" text-anchor="middle">Zebra DS2208 (USB)</text>
+  <rect x="1032" y="768" width="130" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1097" y="780" font-size="8" fill="#FCD34D" text-anchor="middle">Zebra DS8178 (BT)</text>
+  <rect x="914" y="792" width="110" height="18" rx="9" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <text x="969" y="804" font-size="8" fill="#FCD34D" text-anchor="middle">iPad Camera (AVF)</text>
+  <line x1="860" y1="818" x2="1348" y2="818" stroke="#2D3148" stroke-width="0.5"/>
+  <!-- Barcode format chips -->
+  <text x="860" y="834" font-size="9" fill="#64748B">Formats:</text>
+  <rect x="906" y="824" width="60" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="936" y="836" font-size="8" fill="#6EE7B7" text-anchor="middle">Code 128</text>
+  <rect x="974" y="824" width="50" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="999" y="836" font-size="8" fill="#6EE7B7" text-anchor="middle">EAN-13</text>
+  <rect x="1032" y="824" width="50" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="1057" y="836" font-size="8" fill="#6EE7B7" text-anchor="middle">QR Code</text>
+  <rect x="1090" y="824" width="44" height="18" rx="9" fill="#1E2240" stroke="#10B981" stroke-width="1"/>
+  <text x="1112" y="836" font-size="8" fill="#6EE7B7" text-anchor="middle">PDF417</text>
+  <text x="860" y="872" font-size="9" fill="#64748B">Bridge call: window.scanResult(itemJSON) → POS adds to live order in-place.</text>
+  <text x="860" y="890" font-size="9" fill="#64748B">Unknown → window.unknownBarcode(code) → show Create/Search prompt.</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BOTTOM BAR -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="0" y="990" width="1366" height="34" fill="#1A1D2E"/>
+  <circle cx="16" cy="1007" r="4" fill="#10B981"/>
+  <text x="26" y="1011" font-size="9" fill="#10B981">Scanner ready</text>
+  <text x="110" y="1011" font-size="9" fill="#64748B">Zebra ZD420 connected</text>
+  <text x="1280" y="1011" font-size="9" fill="#64748B" text-anchor="end">Synalux POS v2.4.1</text>
+
+</svg>

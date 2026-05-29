@@ -1,0 +1,326 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- Top nav bar -->
+  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
+  <rect x="0" y="56" width="1366" height="1" fill="#2D3050"/>
+  <circle cx="16" cy="28" r="7" fill="#22C55E"/>
+  <text x="30" y="33" fill="#22C55E" font-size="12" font-weight="600">LIVE</text>
+  <text x="60" y="35" fill="#F59E0B" font-size="18" font-weight="700">Synalux POS</text>
+  <text x="580" y="22" fill="#94A3B8" font-size="11">Table Management</text>
+  <text x="580" y="38" fill="#E2E8F0" font-size="13" font-weight="600">Main Dining Room  ·  Patio</text>
+  <text x="1260" y="22" fill="#94A3B8" font-size="11">Wednesday</text>
+  <text x="1260" y="38" fill="#E2E8F0" font-size="14" font-weight="600">2:22 PM</text>
+  <text x="1320" y="37" fill="#94A3B8" font-size="20">⚙</text>
+  <text x="1345" y="37" fill="#94A3B8" font-size="20">🔔</text>
+
+  <!-- Side nav tabs -->
+  <rect x="0" y="57" width="80" height="967" fill="#13162A"/>
+  <rect x="80" y="57" width="1" height="967" fill="#2D3050"/>
+
+  <!-- Nav icons -->
+  <!-- Tables (active) -->
+  <rect x="8" y="70" width="64" height="64" rx="10" fill="#F59E0B"/>
+  <text x="40" y="96" font-size="24" text-anchor="middle">🗺️</text>
+  <text x="40" y="124" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">Tables</text>
+
+  <!-- Register -->
+  <rect x="8" y="142" width="64" height="64" rx="10" fill="none"/>
+  <text x="40" y="168" font-size="24" text-anchor="middle">🖥️</text>
+  <text x="40" y="196" fill="#64748B" font-size="10" text-anchor="middle">Register</text>
+
+  <!-- KDS -->
+  <rect x="8" y="214" width="64" height="64" rx="10" fill="none"/>
+  <text x="40" y="240" font-size="24" text-anchor="middle">👨‍🍳</text>
+  <text x="40" y="268" fill="#64748B" font-size="10" text-anchor="middle">Kitchen</text>
+
+  <!-- Reports -->
+  <rect x="8" y="286" width="64" height="64" rx="10" fill="none"/>
+  <text x="40" y="312" font-size="24" text-anchor="middle">📊</text>
+  <text x="40" y="340" fill="#64748B" font-size="10" text-anchor="middle">Reports</text>
+
+  <!-- Staff -->
+  <rect x="8" y="358" width="64" height="64" rx="10" fill="none"/>
+  <text x="40" y="384" font-size="24" text-anchor="middle">👥</text>
+  <text x="40" y="412" fill="#64748B" font-size="10" text-anchor="middle">Staff</text>
+
+  <!-- Settings -->
+  <rect x="8" y="430" width="64" height="64" rx="10" fill="none"/>
+  <text x="40" y="456" font-size="24" text-anchor="middle">⚙️</text>
+  <text x="40" y="484" fill="#64748B" font-size="10" text-anchor="middle">Settings</text>
+
+  <!-- Floor selector tabs -->
+  <rect x="81" y="57" width="1285" height="48" fill="#13162A"/>
+  <rect x="81" y="105" width="1285" height="1" fill="#2D3050"/>
+
+  <rect x="90" y="65" width="140" height="32" rx="6" fill="#F59E0B"/>
+  <text x="160" y="86" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">Main Dining (18)</text>
+
+  <rect x="238" y="65" width="120" height="32" rx="6" fill="#1E2235"/>
+  <text x="298" y="86" fill="#94A3B8" font-size="13" text-anchor="middle">Patio (8)</text>
+
+  <rect x="366" y="65" width="100" height="32" rx="6" fill="#1E2235"/>
+  <text x="416" y="86" fill="#94A3B8" font-size="13" text-anchor="middle">Bar (6)</text>
+
+  <rect x="474" y="65" width="130" height="32" rx="6" fill="#1E2235"/>
+  <text x="539" y="86" fill="#94A3B8" font-size="13" text-anchor="middle">Private Room (4)</text>
+
+  <!-- Legend -->
+  <circle cx="760" cy="82" r="8" fill="#22C55E"/>
+  <text x="776" y="86" fill="#94A3B8" font-size="12">Available</text>
+  <circle cx="860" cy="82" r="8" fill="#F59E0B"/>
+  <text x="876" y="86" fill="#94A3B8" font-size="12">Occupied</text>
+  <circle cx="960" cy="82" r="8" fill="#EF4444"/>
+  <text x="976" y="86" fill="#94A3B8" font-size="12">Alert</text>
+  <circle cx="1040" cy="82" r="8" fill="#7C3AED"/>
+  <text x="1056" y="86" fill="#94A3B8" font-size="12">Reserved</text>
+  <circle cx="1150" cy="82" r="8" fill="#3B82F6"/>
+  <text x="1166" y="86" fill="#94A3B8" font-size="12">Dirty</text>
+
+  <!-- Floor plan area -->
+  <rect x="81" y="106" width="980" height="870" fill="#0D1018"/>
+  <!-- Floor grid (subtle) -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1A1D2E" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect x="81" y="106" width="980" height="870" fill="url(#grid)"/>
+
+  <!-- Wall outlines -->
+  <rect x="100" y="124" width="940" height="834" fill="none" stroke="#2D3050" stroke-width="2" rx="4"/>
+
+  <!-- Door indicators -->
+  <text x="540" y="148" fill="#64748B" font-size="11" text-anchor="middle">▼ ENTRANCE</text>
+  <text x="540" y="940" fill="#64748B" font-size="11" text-anchor="middle">▲ KITCHEN EXIT</text>
+
+  <!-- ===== TABLES ===== -->
+
+  <!-- T1 - Available - round 2-top -->
+  <circle cx="200" cy="230" r="44" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
+  <text x="200" y="220" fill="#22C55E" font-size="16" font-weight="700" text-anchor="middle">T1</text>
+  <text x="200" y="238" fill="#64748B" font-size="11" text-anchor="middle">2-top</text>
+  <text x="200" y="254" fill="#22C55E" font-size="11" text-anchor="middle">Open</text>
+  <!-- Chair indicators -->
+  <rect x="175" y="184" width="50" height="10" rx="4" fill="#1A3320"/>
+  <rect x="175" y="276" width="50" height="10" rx="4" fill="#1A3320"/>
+
+  <!-- T2 - Occupied - round 4-top -->
+  <circle cx="380" cy="230" r="50" fill="#2D1A00" stroke="#F59E0B" stroke-width="2"/>
+  <text x="380" y="218" fill="#F59E0B" font-size="16" font-weight="700" text-anchor="middle">T2</text>
+  <text x="380" y="236" fill="#94A3B8" font-size="11" text-anchor="middle">4-top · 3 guests</text>
+  <text x="380" y="253" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">$47.50</text>
+  <text x="380" y="268" fill="#64748B" font-size="11" text-anchor="middle">42 min</text>
+  <!-- Chairs -->
+  <rect x="356" y="178" width="48" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="356" y="292" width="48" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="327" y="206" width="10" height="48" rx="4" fill="#3D2A00"/>
+  <rect x="443" y="206" width="10" height="48" rx="4" fill="#3D2A00"/>
+
+  <!-- T3 - Alert (overdue) - rect 6-top -->
+  <rect x="540" y="178" width="130" height="100" rx="10" fill="#2D0808" stroke="#EF4444" stroke-width="2"/>
+  <rect x="548" y="144" width="40" height="10" rx="4" fill="#3D1010"/>
+  <rect x="622" y="144" width="40" height="10" rx="4" fill="#3D1010"/>
+  <rect x="548" y="288" width="40" height="10" rx="4" fill="#3D1010"/>
+  <rect x="622" y="288" width="40" height="10" rx="4" fill="#3D1010"/>
+  <rect x="527" y="208" width="10" height="32" rx="4" fill="#3D1010"/>
+  <rect x="673" y="208" width="10" height="32" rx="4" fill="#3D1010"/>
+  <text x="605" y="213" fill="#EF4444" font-size="15" font-weight="700" text-anchor="middle">T3</text>
+  <text x="605" y="229" fill="#94A3B8" font-size="10" text-anchor="middle">6-top · 5 guests</text>
+  <text x="605" y="244" fill="#EF4444" font-size="12" font-weight="700" text-anchor="middle">⚠ 78 min · $124</text>
+  <text x="605" y="258" fill="#EF4444" font-size="10" text-anchor="middle">Check requested</text>
+
+  <!-- T4 - Current (selected) - 4-top rect -->
+  <rect x="760" y="178" width="110" height="100" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="3"/>
+  <rect x="780" y="144" width="35" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="825" y="144" width="35" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="780" y="288" width="35" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="825" y="288" width="35" height="10" rx="4" fill="#3D2A00"/>
+  <!-- Selected highlight ring -->
+  <rect x="756" y="174" width="118" height="108" rx="13" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+  <text x="815" y="213" fill="#F59E0B" font-size="15" font-weight="700" text-anchor="middle">T4</text>
+  <text x="815" y="229" fill="#94A3B8" font-size="10" text-anchor="middle">4-top · 2 guests</text>
+  <text x="815" y="244" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">$32.71</text>
+  <text x="815" y="258" fill="#94A3B8" font-size="10" text-anchor="middle">12 min</text>
+  <!-- ACTIVE badge -->
+  <rect x="776" y="163" width="78" height="16" rx="6" fill="#F59E0B"/>
+  <text x="815" y="174" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">ACTIVE</text>
+
+  <!-- T5 - Reserved -->
+  <circle cx="200" cy="450" r="44" fill="#1A102D" stroke="#7C3AED" stroke-width="2"/>
+  <text x="200" y="440" fill="#7C3AED" font-size="16" font-weight="700" text-anchor="middle">T5</text>
+  <text x="200" y="458" fill="#64748B" font-size="11" text-anchor="middle">2-top</text>
+  <text x="200" y="474" fill="#7C3AED" font-size="11" text-anchor="middle">7:00 PM</text>
+  <rect x="156" y="404" width="88" height="12" rx="4" fill="#2D1A4D"/>
+  <text x="200" y="414" fill="#7C3AED" font-size="10" font-weight="700" text-anchor="middle">RESERVED</text>
+
+  <!-- T6 - Available large -->
+  <rect x="300" y="370" width="150" height="120" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
+  <text x="375" y="424" fill="#22C55E" font-size="16" font-weight="700" text-anchor="middle">T6</text>
+  <text x="375" y="442" fill="#64748B" font-size="11" text-anchor="middle">8-top</text>
+  <text x="375" y="460" fill="#22C55E" font-size="11" text-anchor="middle">Open</text>
+  <!-- Many chairs -->
+  <rect x="320" y="357" width="30" height="10" rx="4" fill="#1A3320"/>
+  <rect x="365" y="357" width="30" height="10" rx="4" fill="#1A3320"/>
+  <rect x="410" y="357" width="30" height="10" rx="4" fill="#1A3320"/>
+  <rect x="320" y="493" width="30" height="10" rx="4" fill="#1A3320"/>
+  <rect x="365" y="493" width="30" height="10" rx="4" fill="#1A3320"/>
+  <rect x="410" y="493" width="30" height="10" rx="4" fill="#1A3320"/>
+  <rect x="288" y="400" width="10" height="30" rx="4" fill="#1A3320"/>
+  <rect x="452" y="400" width="10" height="30" rx="4" fill="#1A3320"/>
+
+  <!-- T7 - Occupied -->
+  <circle cx="600" cy="440" r="50" fill="#2D1A00" stroke="#F59E0B" stroke-width="2"/>
+  <text x="600" y="428" fill="#F59E0B" font-size="16" font-weight="700" text-anchor="middle">T7</text>
+  <text x="600" y="446" fill="#94A3B8" font-size="11" text-anchor="middle">4-top · 4 guests</text>
+  <text x="600" y="463" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">$54.00</text>
+  <text x="600" y="478" fill="#64748B" font-size="11" text-anchor="middle">28 min</text>
+  <rect x="576" y="388" width="48" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="576" y="502" width="48" height="10" rx="4" fill="#3D2A00"/>
+  <rect x="547" y="416" width="10" height="48" rx="4" fill="#3D2A00"/>
+  <rect x="663" y="416" width="10" height="48" rx="4" fill="#3D2A00"/>
+
+  <!-- T8 - Dirty/Cleaning -->
+  <rect x="750" y="380" width="120" height="90" rx="10" fill="#0A1020" stroke="#3B82F6" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="810" y="418" fill="#3B82F6" font-size="15" font-weight="700" text-anchor="middle">T8</text>
+  <text x="810" y="436" fill="#64748B" font-size="11" text-anchor="middle">4-top</text>
+  <text x="810" y="451" fill="#3B82F6" font-size="11" text-anchor="middle">🧹 Cleaning</text>
+
+  <!-- T9 - T12 bottom row -->
+  <circle cx="200" cy="680" r="40" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
+  <text x="200" y="670" fill="#22C55E" font-size="15" font-weight="700" text-anchor="middle">T9</text>
+  <text x="200" y="688" fill="#64748B" font-size="11" text-anchor="middle">2-top</text>
+  <text x="200" y="703" fill="#22C55E" font-size="11" text-anchor="middle">Open</text>
+
+  <circle cx="360" cy="680" r="48" fill="#2D1A00" stroke="#F59E0B" stroke-width="2"/>
+  <text x="360" y="668" fill="#F59E0B" font-size="15" font-weight="700" text-anchor="middle">T10</text>
+  <text x="360" y="686" fill="#94A3B8" font-size="11" text-anchor="middle">4-top · 2 guests</text>
+  <text x="360" y="703" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">$21.00 · 8min</text>
+
+  <rect x="470" y="635" width="120" height="90" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
+  <text x="530" y="673" fill="#22C55E" font-size="15" font-weight="700" text-anchor="middle">T11</text>
+  <text x="530" y="691" fill="#64748B" font-size="11" text-anchor="middle">6-top</text>
+  <text x="530" y="707" fill="#22C55E" font-size="11" text-anchor="middle">Open</text>
+
+  <circle cx="700" cy="680" r="44" fill="#2D1A00" stroke="#F59E0B" stroke-width="2"/>
+  <text x="700" y="668" fill="#F59E0B" font-size="15" font-weight="700" text-anchor="middle">T12</text>
+  <text x="700" y="686" fill="#94A3B8" font-size="11" text-anchor="middle">4-top · 4</text>
+  <text x="700" y="703" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">$67.20 · 55min</text>
+
+  <circle cx="860" cy="680" r="40" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
+  <text x="860" y="670" fill="#22C55E" font-size="15" font-weight="700" text-anchor="middle">T13</text>
+  <text x="860" y="688" fill="#64748B" font-size="11" text-anchor="middle">2-top</text>
+  <text x="860" y="703" fill="#22C55E" font-size="11" text-anchor="middle">Open</text>
+
+  <!-- T14-T18 bottom rows -->
+  <circle cx="200" cy="860" r="40" fill="#1A102D" stroke="#7C3AED" stroke-width="2"/>
+  <text x="200" y="850" fill="#7C3AED" font-size="15" font-weight="700" text-anchor="middle">T14</text>
+  <text x="200" y="868" fill="#64748B" font-size="11" text-anchor="middle">2-top</text>
+  <text x="200" y="883" fill="#7C3AED" font-size="11" text-anchor="middle">6:30 PM</text>
+
+  <rect x="280" y="818" width="120" height="90" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="2"/>
+  <text x="340" y="856" fill="#F59E0B" font-size="15" font-weight="700" text-anchor="middle">T15</text>
+  <text x="340" y="874" fill="#94A3B8" font-size="11" text-anchor="middle">6-top · 6 guests</text>
+  <text x="340" y="890" fill="#EF4444" font-size="12" font-weight="600" text-anchor="middle">⚠ $203 · 71min</text>
+
+  <circle cx="530" cy="860" r="44" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
+  <text x="530" y="850" fill="#22C55E" font-size="15" font-weight="700" text-anchor="middle">T16</text>
+  <text x="530" y="868" fill="#64748B" font-size="11" text-anchor="middle">4-top</text>
+  <text x="530" y="883" fill="#22C55E" font-size="11" text-anchor="middle">Open</text>
+
+  <circle cx="700" cy="860" r="40" fill="#0A1020" stroke="#3B82F6" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="700" y="850" fill="#3B82F6" font-size="15" font-weight="700" text-anchor="middle">T17</text>
+  <text x="700" y="868" fill="#3B82F6" font-size="11" text-anchor="middle">🧹 Cleaning</text>
+
+  <circle cx="860" cy="860" r="44" fill="#2D1A00" stroke="#F59E0B" stroke-width="2"/>
+  <text x="860" y="848" fill="#F59E0B" font-size="15" font-weight="700" text-anchor="middle">T18</text>
+  <text x="860" y="866" fill="#94A3B8" font-size="11" text-anchor="middle">4-top · 3 guests</text>
+  <text x="860" y="883" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">$38.50 · 19min</text>
+
+  <!-- RIGHT PANEL: Table Detail / Quick Actions -->
+  <rect x="1061" y="106" width="305" height="870" fill="#13162A"/>
+  <rect x="1061" y="106" width="1" height="870" fill="#2D3050"/>
+
+  <text x="1082" y="138" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">SELECTED TABLE</text>
+
+  <!-- Table detail card -->
+  <rect x="1074" y="148" width="278" height="150" rx="10" fill="#1A1D2E"/>
+  <!-- Status bar -->
+  <rect x="1074" y="148" width="278" height="8" rx="10" fill="#F59E0B"/>
+  <text x="1213" y="180" fill="#E2E8F0" font-size="22" font-weight="700" text-anchor="middle">Table 4</text>
+  <text x="1213" y="200" fill="#F59E0B" font-size="14" text-anchor="middle">Occupied · Dine-In</text>
+  <text x="1213" y="220" fill="#94A3B8" font-size="13" text-anchor="middle">2 guests · 12 min seated</text>
+  <text x="1213" y="242" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">$32.71 open</text>
+  <text x="1213" y="260" fill="#64748B" font-size="12" text-anchor="middle">Served by: John S.</text>
+  <text x="1213" y="276" fill="#22C55E" font-size="12" text-anchor="middle">✓ Food sent to kitchen</text>
+  <text x="1213" y="292" fill="#64748B" font-size="12" text-anchor="middle">Est. ready: 8 min</text>
+
+  <!-- Action buttons -->
+  <rect x="1074" y="308" width="134" height="48" rx="8" fill="#1E3A5F"/>
+  <text x="1141" y="337" fill="#60A5FA" font-size="13" font-weight="600" text-anchor="middle">View Order</text>
+
+  <rect x="1214" y="308" width="138" height="48" rx="8" fill="#1A3320"/>
+  <text x="1283" y="337" fill="#22C55E" font-size="13" font-weight="600" text-anchor="middle">Charge Table</text>
+
+  <rect x="1074" y="364" width="134" height="48" rx="8" fill="#1E2235"/>
+  <text x="1141" y="393" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Transfer</text>
+
+  <rect x="1214" y="364" width="138" height="48" rx="8" fill="#1E2235"/>
+  <text x="1283" y="393" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Print Check</text>
+
+  <rect x="1074" y="420" width="278" height="48" rx="8" fill="#2D0808"/>
+  <text x="1213" y="449" fill="#EF4444" font-size="13" font-weight="600" text-anchor="middle">⚡ Mark as Ready to Pay</text>
+
+  <!-- Divider -->
+  <rect x="1074" y="476" width="278" height="1" fill="#2D3050"/>
+
+  <!-- Floor summary stats -->
+  <text x="1082" y="502" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">FLOOR SUMMARY</text>
+
+  <rect x="1074" y="512" width="132" height="68" rx="8" fill="#1A1D2E"/>
+  <text x="1140" y="540" fill="#F59E0B" font-size="22" font-weight="700" text-anchor="middle">11</text>
+  <text x="1140" y="558" fill="#94A3B8" font-size="12" text-anchor="middle">Occupied</text>
+  <text x="1140" y="572" fill="#64748B" font-size="11" text-anchor="middle">of 18 tables</text>
+
+  <rect x="1212" y="512" width="140" height="68" rx="8" fill="#1A1D2E"/>
+  <text x="1282" y="540" fill="#22C55E" font-size="22" font-weight="700" text-anchor="middle">$634</text>
+  <text x="1282" y="558" fill="#94A3B8" font-size="12" text-anchor="middle">Open Checks</text>
+  <text x="1282" y="572" fill="#64748B" font-size="11" text-anchor="middle">this session</text>
+
+  <rect x="1074" y="588" width="132" height="68" rx="8" fill="#1A1D2E"/>
+  <text x="1140" y="616" fill="#EF4444" font-size="22" font-weight="700" text-anchor="middle">2</text>
+  <text x="1140" y="634" fill="#94A3B8" font-size="12" text-anchor="middle">Alerts</text>
+  <text x="1140" y="648" fill="#64748B" font-size="11" text-anchor="middle">T3, T15</text>
+
+  <rect x="1212" y="588" width="140" height="68" rx="8" fill="#1A1D2E"/>
+  <text x="1282" y="616" fill="#3B82F6" font-size="22" font-weight="700" text-anchor="middle">2</text>
+  <text x="1282" y="634" fill="#94A3B8" font-size="12" text-anchor="middle">Cleaning</text>
+  <text x="1282" y="648" fill="#64748B" font-size="11" text-anchor="middle">T8, T17</text>
+
+  <!-- Divider -->
+  <rect x="1074" y="665" width="278" height="1" fill="#2D3050"/>
+
+  <!-- Waitlist -->
+  <text x="1082" y="689" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">WAITLIST</text>
+
+  <rect x="1074" y="698" width="278" height="50" rx="8" fill="#1A1D2E"/>
+  <text x="1088" y="718" fill="#E2E8F0" font-size="13" font-weight="600">Garcia party</text>
+  <text x="1340" y="718" fill="#F59E0B" font-size="13" text-anchor="end">4 guests</text>
+  <text x="1088" y="736" fill="#64748B" font-size="12">Waiting 8 min · Called 2×</text>
+  <rect x="1240" y="726" width="100" height="28" rx="6" fill="#1A2D10"/>
+  <text x="1290" y="744" fill="#22C55E" font-size="12" font-weight="600" text-anchor="middle">Seat Now</text>
+
+  <rect x="1074" y="756" width="278" height="50" rx="8" fill="#1A1D2E"/>
+  <text x="1088" y="776" fill="#E2E8F0" font-size="13" font-weight="600">Thompson party</text>
+  <text x="1340" y="776" fill="#F59E0B" font-size="13" text-anchor="end">6 guests</text>
+  <text x="1088" y="794" fill="#64748B" font-size="12">Waiting 3 min</text>
+  <rect x="1240" y="784" width="100" height="28" rx="6" fill="#1A2D10"/>
+  <text x="1290" y="802" fill="#22C55E" font-size="12" font-weight="600" text-anchor="middle">Seat Now</text>
+
+  <rect x="1074" y="814" width="278" height="44" rx="8" fill="#1E3A5F"/>
+  <text x="1213" y="841" fill="#60A5FA" font-size="13" font-weight="600" text-anchor="middle">+ Add to Waitlist</text>
+
+  <!-- Screen label -->
+  <text x="683" y="1015" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS — Table Management (F04 Revenue Centers · iPad Landscape 1366×1024)</text>
+</svg>

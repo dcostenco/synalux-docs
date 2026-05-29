@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 900" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background - Kitchen dark -->
+  <rect width="1366" height="900" fill="#080A0F"/>
+
+  <!-- Header bar -->
+  <rect x="0" y="0" width="1366" height="52" fill="#111318"/>
+  <rect x="0" y="52" width="1366" height="1" fill="#1E2235"/>
+
+  <!-- Brand + mode -->
+  <text x="16" y="18" fill="#F59E0B" font-size="14" font-weight="700">Synalux POS</text>
+  <rect x="16" y="24" width="90" height="22" rx="5" fill="#1A3320"/>
+  <text x="61" y="39" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">🍳 KITCHEN</text>
+
+  <!-- Center title -->
+  <text x="683" y="22" fill="#94A3B8" font-size="13" text-anchor="middle">Kitchen Display System</text>
+  <text x="683" y="40" fill="#E2E8F0" font-size="14" font-weight="700" text-anchor="middle">Grill · Prep · Expo</text>
+
+  <!-- Status + time -->
+  <text x="1250" y="22" fill="#94A3B8" font-size="12" text-anchor="middle">Wed 2:22 PM</text>
+  <text x="1250" y="40" fill="#22C55E" font-size="12" text-anchor="middle">⬤ 4 stations active</text>
+
+  <!-- Station selector -->
+  <rect x="1300" y="8" width="56" height="36" rx="6" fill="#1A1D2E"/>
+  <text x="1328" y="30" fill="#94A3B8" font-size="11" text-anchor="middle">⚙ Config</text>
+
+  <!-- Subheader: Station tabs + view options -->
+  <rect x="0" y="53" width="1366" height="44" fill="#0D1018"/>
+  <rect x="0" y="97" width="1366" height="1" fill="#1E2235"/>
+
+  <rect x="10" y="60" width="110" height="30" rx="6" fill="#F59E0B"/>
+  <text x="65" y="79" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">All Stations</text>
+
+  <rect x="128" y="60" width="90" height="30" rx="6" fill="#1E2235"/>
+  <text x="173" y="79" fill="#94A3B8" font-size="13" text-anchor="middle">Grill</text>
+
+  <rect x="226" y="60" width="90" height="30" rx="6" fill="#1E2235"/>
+  <text x="271" y="79" fill="#94A3B8" font-size="13" text-anchor="middle">Fryer</text>
+
+  <rect x="324" y="60" width="90" height="30" rx="6" fill="#1E2235"/>
+  <text x="369" y="79" fill="#94A3B8" font-size="13" text-anchor="middle">Salads</text>
+
+  <rect x="422" y="60" width="90" height="30" rx="6" fill="#1E2235"/>
+  <text x="467" y="79" fill="#94A3B8" font-size="13" text-anchor="middle">Expo</text>
+
+  <!-- Avg time indicator -->
+  <text x="700" y="79" fill="#64748B" font-size="12" text-anchor="middle">Avg ticket: 14 min  ·  12 open  ·  47 fired today</text>
+
+  <!-- View controls -->
+  <rect x="1160" y="61" width="80" height="28" rx="6" fill="#1E2235"/>
+  <text x="1200" y="79" fill="#64748B" font-size="12" text-anchor="middle">3-col</text>
+
+  <rect x="1248" y="61" width="104" height="28" rx="6" fill="#1E2235"/>
+  <text x="1300" y="79" fill="#64748B" font-size="12" text-anchor="middle">Sort: Oldest</text>
+
+  <!-- KDS TICKET GRID — 4 columns with different timing states -->
+  <!-- Time color key: <8min = neutral, 8-15min = yellow warning, 15-22min = orange critical, >22min = red alert -->
+
+  <!-- ===== COLUMN 1: TICKET 1 - New (1 min) ===== -->
+  <rect x="10" y="107" width="320" height="340" rx="10" fill="#111318" stroke="#2D3050" stroke-width="1"/>
+  <!-- Timer header - new/green -->
+  <rect x="10" y="107" width="320" height="48" rx="10" fill="#1A3320"/>
+  <rect x="10" y="130" width="320" height="25" fill="#1A3320"/>
+  <text x="26" y="128" fill="#22C55E" font-size="20" font-weight="700">T2</text>
+  <text x="94" y="122" fill="#22C55E" font-size="13" font-weight="600">Dine-In · 4 guests</text>
+  <text x="94" y="138" fill="#4ADE80" font-size="12">John S. · Seat 1-4</text>
+  <!-- Timer chip -->
+  <rect x="228" y="113" width="92" height="30" rx="8" fill="#0D2B12"/>
+  <text x="274" y="133" fill="#22C55E" font-size="18" font-weight="700" text-anchor="middle">1:02</text>
+  <!-- Order number -->
+  <rect x="26" y="163" width="60" height="20" rx="4" fill="#1E2235"/>
+  <text x="56" y="177" fill="#94A3B8" font-size="11" text-anchor="middle">#0847</text>
+  <!-- Items -->
+  <text x="26" y="206" fill="#E2E8F0" font-size="14" font-weight="600">2× Classic Burger</text>
+  <text x="44" y="222" fill="#64748B" font-size="12">  · No onions</text>
+  <text x="44" y="238" fill="#64748B" font-size="12">  · Seat 1: Well done</text>
+  <text x="44" y="254" fill="#64748B" font-size="12">  · Seat 2: Medium</text>
+
+  <text x="26" y="278" fill="#E2E8F0" font-size="14" font-weight="600">1× BBQ Ribs</text>
+  <text x="44" y="294" fill="#64748B" font-size="12">  · Extra sauce</text>
+  <text x="44" y="310" fill="#64748B" font-size="12">  · Seat 3</text>
+
+  <text x="26" y="334" fill="#E2E8F0" font-size="14" font-weight="600">1× Caesar Salad</text>
+  <text x="44" y="350" fill="#64748B" font-size="12">  · No croutons · Seat 4</text>
+  <text x="44" y="366" fill="#22C55E" font-size="12">  ⚠ Nut Allergy</text>
+
+  <!-- Station routing tags -->
+  <rect x="26" y="390" width="50" height="20" rx="4" fill="#2D1A00"/>
+  <text x="51" y="404" fill="#F59E0B" font-size="11" text-anchor="middle">GRILL</text>
+  <rect x="82" y="390" width="50" height="20" rx="4" fill="#10202D"/>
+  <text x="107" y="404" fill="#3B82F6" font-size="11" text-anchor="middle">SALAD</text>
+  <!-- Bump button -->
+  <rect x="160" y="384" width="166" height="36" rx="6" fill="#1A3320"/>
+  <text x="243" y="406" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">✓ BUMP (Done)</text>
+
+  <!-- ===== TICKET 2 - Warning (9 min) ===== -->
+  <rect x="340" y="107" width="320" height="360" rx="10" fill="#111318" stroke="#F59E0B" stroke-width="2"/>
+  <!-- Timer header - yellow warning -->
+  <rect x="340" y="107" width="320" height="48" rx="10" fill="#2D1E00"/>
+  <rect x="340" y="130" width="320" height="25" fill="#2D1E00"/>
+  <text x="356" y="128" fill="#F59E0B" font-size="20" font-weight="700">T7</text>
+  <text x="424" y="122" fill="#F59E0B" font-size="13" font-weight="600">Dine-In · 4 guests</text>
+  <text x="424" y="138" fill="#FBBF24" font-size="12">Sara M. · Full table</text>
+  <rect x="558" y="113" width="92" height="30" rx="8" fill="#3D2A00"/>
+  <text x="604" y="133" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="middle">9:14</text>
+
+  <rect x="356" y="163" width="60" height="20" rx="4" fill="#1E2235"/>
+  <text x="386" y="177" fill="#94A3B8" font-size="11" text-anchor="middle">#0839</text>
+
+  <text x="356" y="206" fill="#E2E8F0" font-size="14" font-weight="600">1× Fish &amp; Chips</text>
+  <text x="374" y="222" fill="#64748B" font-size="12">  · Tartar sauce on side</text>
+
+  <text x="356" y="246" fill="#E2E8F0" font-size="14" font-weight="600">2× Draft Beer</text>
+  <text x="374" y="262" fill="#94A3B8" font-size="12">  → Bar station</text>
+
+  <text x="356" y="286" fill="#F59E0B" font-size="14" font-weight="600">2× Combo Meal</text>
+  <text x="374" y="302" fill="#64748B" font-size="12">  · Burger + Fries + Drink</text>
+  <text x="374" y="318" fill="#64748B" font-size="12">  · Seat 3: No lettuce</text>
+  <text x="374" y="334" fill="#64748B" font-size="12">  · Seat 4: Extra pickles</text>
+
+  <!-- In progress items -->
+  <text x="356" y="364" fill="#94A3B8" font-size="12">Progress:</text>
+  <rect x="430" y="352" width="16" height="16" rx="3" fill="#22C55E"/>
+  <text x="452" y="364" fill="#22C55E" font-size="12">Fryer (done)</text>
+  <rect x="540" y="352" width="16" height="16" rx="3" fill="#F59E0B"/>
+  <text x="562" y="364" fill="#F59E0B" font-size="12">Grill (6 min)</text>
+
+  <rect x="356" y="380" width="160" height="36" rx="6" fill="#2D1E00" stroke="#F59E0B" stroke-width="1"/>
+  <text x="436" y="402" fill="#F59E0B" font-size="13" font-weight="600" text-anchor="middle">⏰ Running Late</text>
+  <rect x="522" y="380" width="130" height="36" rx="6" fill="#1A3320"/>
+  <text x="587" y="402" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">✓ BUMP</text>
+
+  <!-- ===== TICKET 3 - Critical (17 min) ===== -->
+  <rect x="670" y="107" width="320" height="400" rx="10" fill="#111318" stroke="#F97316" stroke-width="2"/>
+  <!-- Timer header - orange critical -->
+  <rect x="670" y="107" width="320" height="48" rx="10" fill="#2D1400"/>
+  <rect x="670" y="130" width="320" height="25" fill="#2D1400"/>
+  <text x="686" y="128" fill="#F97316" font-size="20" font-weight="700">T3</text>
+  <text x="754" y="122" fill="#F97316" font-size="13" font-weight="600">Dine-In · 5 guests</text>
+  <text x="754" y="138" fill="#FB923C" font-size="12">Mike R. · Full table</text>
+  <rect x="888" y="113" width="92" height="30" rx="8" fill="#3D1800"/>
+  <text x="934" y="133" fill="#F97316" font-size="18" font-weight="700" text-anchor="middle">17:33</text>
+  <!-- Pulsing alert indicator -->
+  <rect x="670" y="107" width="320" height="6" rx="3" fill="#F97316"/>
+
+  <rect x="686" y="163" width="60" height="20" rx="4" fill="#1E2235"/>
+  <text x="716" y="177" fill="#94A3B8" font-size="11" text-anchor="middle">#0831</text>
+
+  <text x="686" y="206" fill="#E2E8F0" font-size="14" font-weight="600">3× Classic Burger</text>
+  <text x="704" y="222" fill="#64748B" font-size="12">  · Seat 1: Gluten-free bun</text>
+  <text x="704" y="238" fill="#EF4444" font-size="12" font-weight="600">  ⚠ CELIAC — verify GF!</text>
+  <text x="704" y="254" fill="#64748B" font-size="12">  · Seat 2: Vegan patty</text>
+  <text x="704" y="270" fill="#64748B" font-size="12">  · Seat 3: Well done</text>
+
+  <text x="686" y="294" fill="#E2E8F0" font-size="14" font-weight="600">2× BBQ Ribs</text>
+  <text x="704" y="310" fill="#64748B" font-size="12">  · Full rack each</text>
+  <text x="704" y="326" fill="#64748B" font-size="12">  · Seats 4 &amp; 5</text>
+
+  <text x="686" y="350" fill="#E2E8F0" font-size="14" font-weight="600">5× Sides (mixed)</text>
+  <text x="704" y="366" fill="#64748B" font-size="12">  · 2× Fries · 2× Onion rings</text>
+  <text x="704" y="382" fill="#64748B" font-size="12">  · 1× Side salad (no cheese)</text>
+
+  <!-- Urgent action -->
+  <rect x="686" y="398" width="292" height="36" rx="6" fill="#3D0000" stroke="#EF4444" stroke-width="1"/>
+  <text x="832" y="420" fill="#EF4444" font-size="13" font-weight="700" text-anchor="middle">🚨 RUSH — Guest waiting 17+ min</text>
+  <rect x="686" y="440" width="140" height="36" rx="6" fill="#2D1400"/>
+  <text x="756" y="462" fill="#F97316" font-size="13" font-weight="600" text-anchor="middle">⏰ Alert Manager</text>
+  <rect x="832" y="440" width="146" height="36" rx="6" fill="#1A3320"/>
+  <text x="905" y="462" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">✓ BUMP (Done)</text>
+
+  <!-- ===== TICKET 4 - Alert/Red (23 min) ===== -->
+  <rect x="1000" y="107" width="356" height="340" rx="10" fill="#111318" stroke="#EF4444" stroke-width="2"/>
+  <!-- Red alert header -->
+  <rect x="1000" y="107" width="356" height="48" rx="10" fill="#2D0000"/>
+  <rect x="1000" y="130" width="356" height="25" fill="#2D0000"/>
+  <!-- Flashing red bar at top -->
+  <rect x="1000" y="107" width="356" height="6" rx="3" fill="#EF4444"/>
+  <text x="1016" y="128" fill="#EF4444" font-size="20" font-weight="700">BAR #7</text>
+  <text x="1120" y="122" fill="#EF4444" font-size="13" font-weight="600">Bar Tab · 2 guests</text>
+  <text x="1120" y="138" fill="#F87171" font-size="12">Lisa W. · Bar area</text>
+  <rect x="1264" y="113" width="82" height="30" rx="8" fill="#450000"/>
+  <text x="1305" y="133" fill="#EF4444" font-size="18" font-weight="700" text-anchor="middle">23:07</text>
+
+  <rect x="1016" y="163" width="60" height="20" rx="4" fill="#1E2235"/>
+  <text x="1046" y="177" fill="#94A3B8" font-size="11" text-anchor="middle">#0824</text>
+
+  <!-- Check mark for done items -->
+  <text x="1016" y="206" fill="#22C55E" font-size="14">✓</text>
+  <text x="1036" y="206" fill="#22C55E" font-size="14" font-weight="600" text-decoration="line-through">2× Nachos</text>
+  <text x="1054" y="222" fill="#22C55E" font-size="12">  ✓ Ready — Expo pickup</text>
+
+  <text x="1016" y="246" fill="#22C55E" font-size="14">✓</text>
+  <text x="1036" y="246" fill="#22C55E" font-size="14" font-weight="600" text-decoration="line-through">1× Cheese Sticks</text>
+  <text x="1054" y="262" fill="#22C55E" font-size="12">  ✓ Ready — Expo pickup</text>
+
+  <text x="1016" y="286" fill="#EF4444" font-size="18" font-weight="700">◉</text>
+  <text x="1040" y="286" fill="#EF4444" font-size="14" font-weight="700">1× Avo Toast</text>
+  <text x="1058" y="302" fill="#EF4444" font-size="12">  → In progress · 8 min wait</text>
+  <text x="1058" y="318" fill="#64748B" font-size="12">  · Poached egg · No avocado seeds</text>
+
+  <!-- Bump + escalate -->
+  <rect x="1016" y="368" width="326" height="36" rx="6" fill="#450000" stroke="#EF4444" stroke-width="1"/>
+  <text x="1179" y="390" fill="#EF4444" font-size="13" font-weight="700" text-anchor="middle">🚨 23 MIN — Manager Paged!</text>
+
+  <rect x="1016" y="412" width="156" height="24" rx="5" fill="#2D0000"/>
+  <text x="1094" y="428" fill="#F87171" font-size="12" text-anchor="middle">Void + Comp Table</text>
+  <rect x="1178" y="412" width="164" height="24" rx="5" fill="#1A3320"/>
+  <text x="1260" y="428" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">✓ ALL DONE — BUMP</text>
+
+  <!-- ===== SECOND ROW — Completed/Ready tickets ===== -->
+  <text x="16" y="490" fill="#64748B" font-size="11" font-weight="700" letter-spacing="2">READY FOR PICKUP (EXPO)</text>
+  <rect x="10" y="500" width="1" height="370" fill="#2D3050"/>
+
+  <!-- Completed tickets - green -->
+  <rect x="20" y="500" width="300" height="200" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="1" opacity="0.8"/>
+  <rect x="20" y="500" width="300" height="40" rx="10" fill="#1A3320"/>
+  <rect x="20" y="530" width="300" height="10" fill="#1A3320"/>
+  <text x="36" y="520" fill="#22C55E" font-size="16" font-weight="700">✓ T5 READY</text>
+  <text x="240" y="514" fill="#22C55E" font-size="13" text-anchor="middle">12:34</text>
+  <rect x="265" y="507" width="46" height="22" rx="6" fill="#0D2B12"/>
+  <text x="288" y="522" fill="#4ADE80" font-size="12" text-anchor="middle">8:21</text>
+  <text x="36" y="562" fill="#E2E8F0" font-size="13">1× Fish &amp; Chips</text>
+  <text x="36" y="582" fill="#E2E8F0" font-size="13">2× Draft Beer</text>
+  <text x="36" y="602" fill="#E2E8F0" font-size="13">1× Caesar Salad</text>
+  <text x="36" y="630" fill="#64748B" font-size="12">Expo: Mike</text>
+  <rect x="36" y="646" width="278" height="40" rx="8" fill="#22C55E"/>
+  <text x="175" y="670" fill="#0F1117" font-size="14" font-weight="700" text-anchor="middle">📣 Announce + Clear</text>
+
+  <rect x="336" y="500" width="300" height="200" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="1" opacity="0.8"/>
+  <rect x="336" y="500" width="300" height="40" rx="10" fill="#1A3320"/>
+  <rect x="336" y="530" width="300" height="10" fill="#1A3320"/>
+  <text x="352" y="520" fill="#22C55E" font-size="16" font-weight="700">✓ TAKEOUT #12</text>
+  <text x="556" y="514" fill="#22C55E" font-size="13" text-anchor="middle">12:28</text>
+  <rect x="580" y="507" width="46" height="22" rx="6" fill="#0D2B12"/>
+  <text x="603" y="522" fill="#4ADE80" font-size="12" text-anchor="middle">11:05</text>
+  <text x="352" y="562" fill="#E2E8F0" font-size="13">1× Classic Burger</text>
+  <text x="352" y="582" fill="#E2E8F0" font-size="13">1× Large Fries</text>
+  <text x="352" y="602" fill="#E2E8F0" font-size="13">1× Pepsi (no ice)</text>
+  <text x="352" y="626" fill="#64748B" font-size="12">Bag #12 · Customer: Chen</text>
+  <rect x="352" y="646" width="278" height="40" rx="8" fill="#22C55E"/>
+  <text x="491" y="670" fill="#0F1117" font-size="14" font-weight="700" text-anchor="middle">📦 Bag + Ready</text>
+
+  <!-- Stats footer -->
+  <rect x="0" y="860" width="1366" height="40" fill="#0D1018"/>
+  <rect x="0" y="860" width="1366" height="1" fill="#1E2235"/>
+
+  <text x="50" y="885" fill="#64748B" font-size="12" text-anchor="middle">Open: 12</text>
+  <text x="160" y="885" fill="#22C55E" font-size="12" text-anchor="middle">Avg: 14:22 min</text>
+  <text x="280" y="885" fill="#F59E0B" font-size="12" text-anchor="middle">Warning: 3</text>
+  <text x="390" y="885" fill="#EF4444" font-size="12" text-anchor="middle">Critical: 2</text>
+  <text x="540" y="885" fill="#64748B" font-size="12" text-anchor="middle">Bumped today: 47</text>
+  <text x="683" y="885" fill="#94A3B8" font-size="12" text-anchor="middle">All stations nominal · Offline capable</text>
+  <text x="1100" y="885" fill="#64748B" font-size="12" text-anchor="middle">Target: ≤12 min  ·  Goal: ≤20 min max</text>
+
+  <!-- Screen label -->
+  <text x="683" y="898" fill="#080A0F" font-size="10" text-anchor="middle">Synalux POS — Kitchen Display System (F05 KDS Microtouch · 1366×900)</text>
+</svg>

@@ -1,0 +1,439 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ===== LEFT NAV SIDEBAR ===== -->
+  <rect x="0" y="0" width="200" height="1024" fill="#13162A"/>
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#8B92A5">Payments</text>
+  <text x="16" y="283" font-size="12" fill="#8B92A5">Loyalty</text>
+  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
+  <text x="16" y="355" font-size="12" fill="#8B92A5">Integrations</text>
+  <text x="16" y="391" font-size="12" fill="#8B92A5">Inventory</text>
+  <text x="16" y="427" font-size="12" fill="#8B92A5">Floor Plans</text>
+  <!-- Active nav item -->
+  <rect x="0" y="440" width="200" height="36" fill="#1E2240" rx="4"/>
+  <rect x="0" y="440" width="3" height="36" fill="#8B5CF6"/>
+  <text x="16" y="463" font-size="12" font-weight="600" fill="#8B5CF6">Training Mode</text>
+  <text x="16" y="499" font-size="12" fill="#8B92A5">Forms</text>
+
+  <!-- ===== LEFT SETTINGS PANEL ===== -->
+  <!-- Panel area: x=200, w=480 -->
+
+  <!-- HEADER -->
+  <rect x="200" y="0" width="480" height="70" fill="#1A1D2E"/>
+  <text x="220" y="32" font-size="18" font-weight="700" fill="#F1F5F9">Training Mode</text>
+  <!-- BETA badge -->
+  <rect x="360" y="18" width="40" height="18" rx="9" fill="#8B5CF6"/>
+  <text x="368" y="31" font-size="9" font-weight="700" fill="#FFFFFF">BETA</text>
+  <text x="220" y="54" font-size="10" fill="#94A3B8">Let staff practice without creating real transactions, inventory changes, or payment charges</text>
+  <!-- Divider -->
+  <line x1="200" y1="70" x2="680" y2="70" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Scrollable settings body: starts at y=78 -->
+
+  <!-- ===== STATUS CARD ===== -->
+  <rect x="212" y="82" width="456" height="100" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <!-- Toggle label -->
+  <text x="232" y="110" font-size="13" font-weight="700" fill="#F1F5F9">Training Mode</text>
+  <!-- Toggle OFF -->
+  <rect x="580" y="96" width="52" height="28" rx="14" fill="#374151"/>
+  <circle cx="594" cy="110" r="11" fill="#9CA3AF"/>
+  <text x="232" y="128" font-size="10" fill="#94A3B8">When ON: purple banner will appear on all register screens</text>
+  <text x="232" y="145" font-size="10" fill="#94A3B8">Training sessions are completely isolated from production data</text>
+  <!-- Status pill -->
+  <rect x="232" y="155" width="76" height="18" rx="9" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <circle cx="246" cy="164" r="4" fill="#6B7280"/>
+  <text x="253" y="168" font-size="9" fill="#94A3B8">INACTIVE</text>
+
+  <!-- ===== CONFIG SECTION ===== -->
+  <text x="212" y="206" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">TRAINING MODE SETTINGS</text>
+
+  <rect x="212" y="214" width="456" height="280" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Enable for: radio group -->
+  <text x="228" y="236" font-size="11" font-weight="600" fill="#F1F5F9">Enable Training Mode for:</text>
+  <!-- Radio: This terminal only (selected) -->
+  <circle cx="240" cy="255" r="7" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+  <circle cx="240" cy="255" r="3.5" fill="#8B5CF6"/>
+  <text x="252" y="259" font-size="10" fill="#F1F5F9">This terminal only</text>
+  <!-- Radio: All terminals -->
+  <circle cx="240" cy="274" r="7" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+  <text x="252" y="278" font-size="10" fill="#94A3B8">All terminals</text>
+  <!-- Radio: Specific terminals -->
+  <circle cx="240" cy="293" r="7" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+  <text x="252" y="297" font-size="10" fill="#94A3B8">Specific terminals (select)</text>
+
+  <line x1="228" y1="308" x2="656" y2="308" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Auto-disable after -->
+  <text x="228" y="326" font-size="11" font-weight="600" fill="#F1F5F9">Auto-disable after:</text>
+  <rect x="430" y="312" width="214" height="26" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="442" y="330" font-size="10" fill="#F1F5F9">4 hours</text>
+  <text x="628" y="330" font-size="10" fill="#64748B">&#9660;</text>
+
+  <line x1="228" y1="346" x2="656" y2="346" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Allow trainer override toggle -->
+  <text x="228" y="364" font-size="11" font-weight="600" fill="#F1F5F9">Allow trainer override</text>
+  <text x="228" y="378" font-size="9" fill="#64748B">Manager can toggle training mode without full settings access</text>
+  <!-- Toggle ON (green) -->
+  <rect x="600" y="354" width="52" height="28" rx="14" fill="#059669"/>
+  <circle cx="638" cy="368" r="11" fill="#FFFFFF"/>
+
+  <line x1="228" y1="390" x2="656" y2="390" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Trainer PIN -->
+  <text x="228" y="408" font-size="11" font-weight="600" fill="#F1F5F9">Trainer PIN:</text>
+  <rect x="430" y="394" width="100" height="26" rx="5" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <text x="450" y="412" font-size="14" fill="#F1F5F9" letter-spacing="4">&#9679;&#9679;&#9679;&#9679;</text>
+  <text x="228" y="424" font-size="9" fill="#64748B">Separate from manager PIN — share with trainers only</text>
+
+  <line x1="228" y1="436" x2="656" y2="436" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Reset training data automatically -->
+  <text x="228" y="454" font-size="11" font-weight="600" fill="#F1F5F9">Reset training data automatically</text>
+  <text x="228" y="468" font-size="9" fill="#64748B">Clears all training orders when training mode ends</text>
+  <!-- Toggle ON (green) -->
+  <rect x="600" y="444" width="52" height="28" rx="14" fill="#059669"/>
+  <circle cx="638" cy="458" r="11" fill="#FFFFFF"/>
+  <!-- Training data warning note -->
+  <text x="228" y="484" font-size="9" fill="#64748B">Last reset: May 26, 2026 at end of session</text>
+
+  <!-- ===== PERMISSIONS SECTION ===== -->
+  <text x="212" y="516" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">PERMISSIONS</text>
+  <rect x="212" y="524" width="456" height="120" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="228" y="544" font-size="11" font-weight="600" fill="#F1F5F9">Who can activate training mode:</text>
+  <!-- Checkboxes -->
+  <rect x="228" y="552" width="14" height="14" rx="3" fill="#8B5CF6"/>
+  <text x="229" y="563" font-size="9" font-weight="700" fill="#FFF">&#10003;</text>
+  <text x="247" y="563" font-size="10" fill="#F1F5F9">Owner / Admin</text>
+
+  <rect x="228" y="570" width="14" height="14" rx="3" fill="#8B5CF6"/>
+  <text x="229" y="581" font-size="9" font-weight="700" fill="#FFF">&#10003;</text>
+  <text x="247" y="581" font-size="10" fill="#F1F5F9">Manager</text>
+
+  <rect x="228" y="588" width="14" height="14" rx="3" fill="#8B5CF6"/>
+  <text x="229" y="599" font-size="9" font-weight="700" fill="#FFF">&#10003;</text>
+  <text x="247" y="599" font-size="10" fill="#F1F5F9">Supervisor</text>
+
+  <rect x="228" y="606" width="14" height="14" rx="3" fill="none" stroke="#4B5563" stroke-width="1.5"/>
+  <text x="247" y="617" font-size="10" fill="#64748B">Server (unchecked)</text>
+
+  <line x1="228" y1="626" x2="656" y2="626" stroke="#2D3148" stroke-width="1"/>
+  <text x="228" y="638" font-size="10" fill="#94A3B8">Training mode users (limited access):</text>
+  <text x="228" y="650" font-size="9" fill="#64748B">Trainees use their normal PIN — same RBAC applies</text>
+
+  <!-- ===== WHAT'S SIMULATED SECTION ===== -->
+  <text x="212" y="674" font-size="10" font-weight="700" fill="#64748B" letter-spacing="1">WHAT'S SIMULATED</text>
+  <rect x="212" y="682" width="456" height="186" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Left column: Fully Simulated -->
+  <text x="228" y="700" font-size="10" font-weight="700" fill="#10B981">&#10003; Fully Simulated (no real effect):</text>
+  <text x="228" y="716" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="716" font-size="9" fill="#94A3B8"> Order creation &amp; modification</text>
+  <text x="228" y="730" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="730" font-size="9" fill="#94A3B8"> Payment processing (Stripe test)</text>
+  <text x="228" y="744" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="744" font-size="9" fill="#94A3B8"> Receipt printing (marked TRAINING)</text>
+  <text x="228" y="758" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="758" font-size="9" fill="#94A3B8"> KDS ticket display (marked TRAINING)</text>
+  <text x="228" y="772" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="772" font-size="9" fill="#94A3B8"> Cash drawer open (real hw, no log)</text>
+  <text x="228" y="786" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="786" font-size="9" fill="#94A3B8"> Discount &amp; promo application</text>
+  <text x="228" y="800" font-size="9" fill="#10B981">&#10003;</text><text x="240" y="800" font-size="9" fill="#94A3B8"> Reports (training-only dashboard)</text>
+
+  <!-- Right column: NOT affected -->
+  <line x1="432" y1="688" x2="432" y2="860" stroke="#2D3148" stroke-width="1"/>
+  <text x="442" y="700" font-size="10" font-weight="700" fill="#EF4444">&#10007; NOT affected by training:</text>
+  <text x="442" y="716" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="716" font-size="9" fill="#94A3B8"> Production inventory (not depleted)</text>
+  <text x="442" y="730" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="730" font-size="9" fill="#94A3B8"> Production reports (excluded)</text>
+  <text x="442" y="744" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="744" font-size="9" fill="#94A3B8"> Real card charges (test mode used)</text>
+  <text x="442" y="758" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="758" font-size="9" fill="#94A3B8"> Loyalty points (not awarded)</text>
+  <text x="442" y="772" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="772" font-size="9" fill="#94A3B8"> Real receipts to customers</text>
+  <text x="442" y="786" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="786" font-size="9" fill="#94A3B8"> Z-report / EOD</text>
+  <text x="442" y="800" font-size="9" fill="#EF4444">&#10007;</text><text x="454" y="800" font-size="9" fill="#94A3B8"> Real customer notifications</text>
+
+  <!-- Divider row in card -->
+  <line x1="228" y1="812" x2="656" y2="812" stroke="#2D3148" stroke-width="1"/>
+  <text x="228" y="826" font-size="9" fill="#8B5CF6">&#9432; Cash drawer physically opens during training — same hardware signal</text>
+  <text x="228" y="840" font-size="9" fill="#64748B">    but no entry is written to pos_cash_movements for training sessions</text>
+  <text x="228" y="856" font-size="9" fill="#64748B">    (training_session_id IS NOT NULL filters drawer events from EOD)</text>
+
+  <!-- ===== STRIPE TEST CARDS SECTION ===== -->
+  <rect x="212" y="876" width="456" height="100" rx="10" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="228" y="895" font-size="11" font-weight="700" fill="#8B5CF6">Stripe Test Cards for Training:</text>
+  <rect x="228" y="900" width="420" height="16" rx="3" fill="#0F1117"/>
+  <text x="234" y="912" font-size="9" fill="#10B981" font-family="monospace,monospace">4242 4242 4242 4242</text>
+  <text x="370" y="912" font-size="9" fill="#94A3B8">— Success (any CVV, any future date)</text>
+  <rect x="228" y="918" width="420" height="16" rx="3" fill="#0F1117"/>
+  <text x="234" y="930" font-size="9" fill="#EF4444" font-family="monospace,monospace">4000 0000 0000 0002</text>
+  <text x="370" y="930" font-size="9" fill="#94A3B8">— Card declined</text>
+  <rect x="228" y="936" width="420" height="16" rx="3" fill="#0F1117"/>
+  <text x="234" y="948" font-size="9" fill="#F59E0B" font-family="monospace,monospace">4000 0025 0000 3155</text>
+  <text x="370" y="948" font-size="9" fill="#94A3B8">— 3DS authentication required</text>
+  <text x="228" y="966" font-size="9" fill="#64748B">All training payments go to Stripe test environment — $0 real charges</text>
+
+  <!-- ===== TRAINING HISTORY ===== -->
+  <text x="212" y="990" font-size="10" font-weight="600" fill="#94A3B8">Last session: May 26, 2026 — 2h 14min — Marcus, Jennifer, New Hire #3</text>
+  <text x="212" y="1005" font-size="9" fill="#64748B">47 training orders &#8226; 23 payments processed &#8226;</text>
+  <text x="390" y="1005" font-size="9" fill="#8B5CF6" text-decoration="underline">View Training Log &#8250;</text>
+
+  <!-- ===== ACTION BUTTONS ===== -->
+  <!-- Save Settings (amber) -->
+  <rect x="212" y="1014" width="220" height="6" rx="3" fill="#F59E0B" opacity="0.8"/>
+  <!-- Reset Training Data (red outline) -->
+  <rect x="445" y="1014" width="223" height="6" rx="3" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- ===== VERTICAL DIVIDER ===== -->
+  <line x1="680" y1="0" x2="680" y2="1024" stroke="#2D3148" stroke-width="2"/>
+
+  <!-- ===== RIGHT PANEL: LIVE TRAINING MODE PREVIEW ===== -->
+  <!-- Panel area: x=680, w=686, h=1024 -->
+  <rect x="680" y="0" width="686" height="1024" fill="#0F1117"/>
+
+  <!-- Preview label -->
+  <rect x="680" y="0" width="686" height="44" fill="#1A1D2E"/>
+  <text x="700" y="20" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="1">LIVE PREVIEW — REGISTER WITH TRAINING MODE ACTIVE</text>
+  <text x="700" y="36" font-size="9" fill="#64748B">This is what staff see on the register terminal when training mode is ON</text>
+
+  <!-- ===== REGISTER MOCKUP ===== -->
+  <!-- Outer register frame -->
+  <rect x="690" y="50" width="666" height="964" rx="12" fill="#13162A" stroke="#8B5CF6" stroke-width="2"/>
+
+  <!-- TRAINING MODE BANNER (purple, full width) -->
+  <rect x="690" y="50" width="666" height="40" rx="0" fill="#8B5CF6"/>
+  <!-- Round top corners of banner only -->
+  <rect x="690" y="50" width="666" height="20" fill="#8B5CF6"/>
+  <rect x="690" y="50" width="12" height="40" fill="#8B5CF6"/>
+  <rect x="1344" y="50" width="12" height="40" fill="#8B5CF6"/>
+  <!-- Banner text -->
+  <text x="1023" y="75" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">&#9889; TRAINING MODE ACTIVE — No real transactions. Stripe test mode. Data excluded from reports.</text>
+
+  <!-- Register top nav bar -->
+  <rect x="690" y="90" width="666" height="48" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Logo / Brand area -->
+  <text x="710" y="119" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Synalux POS</text>
+  <!-- Training badge replacing location name -->
+  <rect x="810" y="104" width="70" height="22" rx="11" fill="#8B5CF6"/>
+  <circle cx="824" cy="115" r="4" fill="#C4B5FD"/>
+  <text x="831" y="119" font-size="9" font-weight="700" fill="#FFF">TRAINING</text>
+  <!-- Nav right side -->
+  <text x="1000" y="115" font-size="10" fill="#94A3B8">Tables</text>
+  <text x="1050" y="115" font-size="10" fill="#94A3B8">KDS</text>
+  <text x="1090" y="115" font-size="10" fill="#94A3B8">Reports</text>
+  <circle cx="1240" cy="115" r="14" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1233" y="119" font-size="10" fill="#F1F5F9">MK</text>
+  <text x="1260" y="112" font-size="9" fill="#94A3B8">Marcus K.</text>
+  <text x="1260" y="124" font-size="8" fill="#8B5CF6">Training Mode</text>
+  <!-- Clock -->
+  <text x="1330" y="115" font-size="10" fill="#64748B">7:42 PM</text>
+
+  <!-- ===== REGISTER MAIN BODY ===== -->
+  <!-- 3-column layout: categories | products | order ticket -->
+
+  <!-- Left: Category panel (w=120) -->
+  <rect x="690" y="138" width="120" height="876" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="700" y="160" font-size="10" font-weight="600" fill="#F59E0B">All Items</text>
+  <!-- Active category -->
+  <rect x="690" y="168" width="120" height="34" fill="#1E2240"/>
+  <rect x="690" y="168" width="3" height="34" fill="#8B5CF6"/>
+  <text x="703" y="190" font-size="10" font-weight="600" fill="#8B5CF6">&#127828; Burgers</text>
+  <!-- Other categories -->
+  <text x="703" y="224" font-size="10" fill="#94A3B8">&#127830; Drinks</text>
+  <text x="703" y="258" font-size="10" fill="#94A3B8">&#127839; Sides</text>
+  <text x="703" y="292" font-size="10" fill="#94A3B8">&#127829; Pizza</text>
+  <text x="703" y="326" font-size="10" fill="#94A3B8">&#127849; Desserts</text>
+  <text x="703" y="360" font-size="10" fill="#94A3B8">&#127866; Beer</text>
+  <text x="703" y="394" font-size="10" fill="#94A3B8">&#127863; Wine</text>
+  <text x="703" y="428" font-size="10" fill="#94A3B8">&#127855; Cocktails</text>
+  <text x="703" y="462" font-size="10" fill="#94A3B8">Specials</text>
+
+  <!-- Center: Product grid (w=340) -->
+  <rect x="810" y="138" width="372" height="876" fill="#0F1117"/>
+
+  <!-- Search bar -->
+  <rect x="820" y="146" width="352" height="30" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="836" y="166" font-size="10" fill="#64748B">&#128269; Search menu items...</text>
+
+  <!-- Category label -->
+  <text x="820" y="196" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1">BURGERS</text>
+
+  <!-- Product tiles row 1 -->
+  <!-- Tile 1: Classic Burger -->
+  <rect x="820" y="204" width="110" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Purple T badge -->
+  <rect x="908" y="208" width="16" height="16" rx="4" fill="#8B5CF6"/>
+  <text x="912" y="220" font-size="9" font-weight="700" fill="#FFF">T</text>
+  <rect x="833" y="218" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="840" y="241" font-size="18">&#127828;</text>
+  <text x="833" y="265" font-size="9" font-weight="600" fill="#F1F5F9">Classic</text>
+  <text x="833" y="276" font-size="9" font-weight="600" fill="#F1F5F9">Burger</text>
+  <text x="833" y="290" font-size="10" font-weight="700" fill="#F59E0B">$18.00</text>
+
+  <!-- Tile 2: BBQ Bacon -->
+  <rect x="938" y="204" width="110" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1026" y="208" width="16" height="16" rx="4" fill="#8B5CF6"/>
+  <text x="1030" y="220" font-size="9" font-weight="700" fill="#FFF">T</text>
+  <rect x="951" y="218" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="958" y="241" font-size="18">&#127829;</text>
+  <text x="951" y="265" font-size="9" font-weight="600" fill="#F1F5F9">BBQ Bacon</text>
+  <text x="951" y="276" font-size="9" font-weight="600" fill="#F1F5F9">Burger</text>
+  <text x="951" y="290" font-size="10" font-weight="700" fill="#F59E0B">$22.00</text>
+
+  <!-- Tile 3: Veggie -->
+  <rect x="1056" y="204" width="110" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1144" y="208" width="16" height="16" rx="4" fill="#8B5CF6"/>
+  <text x="1148" y="220" font-size="9" font-weight="700" fill="#FFF">T</text>
+  <rect x="1069" y="218" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="1076" y="241" font-size="18">&#127807;</text>
+  <text x="1069" y="265" font-size="9" font-weight="600" fill="#F1F5F9">Veggie</text>
+  <text x="1069" y="276" font-size="9" font-weight="600" fill="#F1F5F9">Burger</text>
+  <text x="1069" y="290" font-size="10" font-weight="700" fill="#F59E0B">$17.00</text>
+
+  <!-- Product tiles row 2 -->
+  <!-- Tile 4: Craft Beer -->
+  <rect x="820" y="312" width="110" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="908" y="316" width="16" height="16" rx="4" fill="#8B5CF6"/>
+  <text x="912" y="328" font-size="9" font-weight="700" fill="#FFF">T</text>
+  <rect x="833" y="326" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="840" y="349" font-size="18">&#127866;</text>
+  <text x="833" y="373" font-size="9" font-weight="600" fill="#F1F5F9">Craft</text>
+  <text x="833" y="384" font-size="9" font-weight="600" fill="#F1F5F9">Beer</text>
+  <text x="833" y="398" font-size="10" font-weight="700" fill="#F59E0B">$9.00</text>
+
+  <!-- Tile 5: House Fries -->
+  <rect x="938" y="312" width="110" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1026" y="316" width="16" height="16" rx="4" fill="#8B5CF6"/>
+  <text x="1030" y="328" font-size="9" font-weight="700" fill="#FFF">T</text>
+  <rect x="951" y="326" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="958" y="349" font-size="18">&#127839;</text>
+  <text x="951" y="373" font-size="9" font-weight="600" fill="#F1F5F9">House</text>
+  <text x="951" y="384" font-size="9" font-weight="600" fill="#F1F5F9">Fries</text>
+  <text x="951" y="398" font-size="10" font-weight="700" fill="#F59E0B">$7.00</text>
+
+  <!-- Tile 6: Soft Drink -->
+  <rect x="1056" y="312" width="110" height="100" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1144" y="316" width="16" height="16" rx="4" fill="#8B5CF6"/>
+  <text x="1148" y="328" font-size="9" font-weight="700" fill="#FFF">T</text>
+  <rect x="1069" y="326" width="36" height="36" rx="6" fill="#2D3148"/>
+  <text x="1076" y="349" font-size="18">&#127848;</text>
+  <text x="1069" y="373" font-size="9" font-weight="600" fill="#F1F5F9">Soft</text>
+  <text x="1069" y="384" font-size="9" font-weight="600" fill="#F1F5F9">Drink</text>
+  <text x="1069" y="398" font-size="10" font-weight="700" fill="#F59E0B">$4.00</text>
+
+  <!-- Training notice under grid -->
+  <rect x="820" y="420" width="352" height="22" rx="5" fill="#2D1F6E"/>
+  <text x="996" y="435" font-size="9" fill="#C4B5FD" text-anchor="middle">&#9889; All items tagged with purple T — training session active. No inventory depleted.</text>
+
+  <!-- Right: Order Ticket (w=222) -->
+  <rect x="1182" y="138" width="174" height="876" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Table header -->
+  <rect x="1182" y="138" width="174" height="36" fill="#2D1F6E"/>
+  <text x="1269" y="152" font-size="9" font-weight="700" fill="#C4B5FD" text-anchor="middle">TABLE 4</text>
+  <text x="1269" y="166" font-size="8" fill="#A78BFA" text-anchor="middle">TRAINING SESSION</text>
+
+  <!-- Order items -->
+  <text x="1192" y="196" font-size="9" font-weight="600" fill="#F1F5F9">Classic Burger</text>
+  <text x="1192" y="208" font-size="8" fill="#64748B">× 1</text>
+  <text x="1330" y="196" font-size="9" fill="#F1F5F9" text-anchor="end">$18.00</text>
+
+  <text x="1192" y="228" font-size="9" font-weight="600" fill="#F1F5F9">Craft Beer</text>
+  <text x="1192" y="240" font-size="8" fill="#64748B">× 1</text>
+  <text x="1330" y="228" font-size="9" fill="#F1F5F9" text-anchor="end">$9.00</text>
+
+  <line x1="1192" y1="254" x2="1346" y2="254" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Totals -->
+  <text x="1192" y="270" font-size="9" fill="#94A3B8">Subtotal</text>
+  <text x="1346" y="270" font-size="9" fill="#F1F5F9" text-anchor="end">$27.00</text>
+  <text x="1192" y="286" font-size="9" fill="#94A3B8">Tax (SIMULATED)</text>
+  <text x="1346" y="286" font-size="9" fill="#94A3B8" text-anchor="end">$2.39</text>
+
+  <line x1="1192" y1="296" x2="1346" y2="296" stroke="#2D3148" stroke-width="1"/>
+
+  <text x="1192" y="314" font-size="11" font-weight="700" fill="#F1F5F9">Total</text>
+  <text x="1346" y="314" font-size="11" font-weight="700" fill="#F1F5F9" text-anchor="end">$29.39</text>
+
+  <!-- Charge button: PURPLE (not amber) to indicate training -->
+  <rect x="1192" y="324" width="154" height="40" rx="8" fill="#7C3AED"/>
+  <text x="1269" y="349" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">CHARGE $29.39</text>
+
+  <!-- Test card note -->
+  <rect x="1192" y="370" width="154" height="24" rx="5" fill="#1E1B4B"/>
+  <text x="1269" y="386" font-size="8" fill="#A78BFA" text-anchor="middle">Test: 4242 4242 4242 4242</text>
+
+  <!-- Discount / note buttons -->
+  <rect x="1192" y="400" width="74" height="26" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1229" y="417" font-size="8" fill="#94A3B8" text-anchor="middle">Discount</text>
+  <rect x="1272" y="400" width="74" height="26" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1309" y="417" font-size="8" fill="#94A3B8" text-anchor="middle">Add Note</text>
+
+  <rect x="1192" y="432" width="154" height="26" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <text x="1269" y="449" font-size="8" fill="#64748B" text-anchor="middle">Hold Order</text>
+
+  <rect x="1192" y="464" width="154" height="26" rx="5" fill="none" stroke="#EF4444" stroke-width="1"/>
+  <text x="1269" y="481" font-size="8" fill="#EF4444" text-anchor="middle">&#128465; Void (Training)</text>
+
+  <!-- Training session tracker -->
+  <rect x="1192" y="498" width="154" height="60" rx="6" fill="#0F1117" stroke="#2D1F6E" stroke-width="1"/>
+  <text x="1269" y="514" font-size="8" font-weight="700" fill="#A78BFA" text-anchor="middle">TRAINING SESSION</text>
+  <text x="1269" y="528" font-size="9" font-weight="700" fill="#C4B5FD" text-anchor="middle">Session #7</text>
+  <text x="1269" y="540" font-size="8" fill="#64748B" text-anchor="middle">Trainee: Marcus K.</text>
+  <text x="1269" y="552" font-size="8" fill="#64748B" text-anchor="middle">Duration: 0:23:14</text>
+
+  <!-- ===== PAYMENT SCREEN PREVIEW (inset card) ===== -->
+  <rect x="820" y="450" width="352" height="210" rx="10" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="840" y="468" font-size="9" font-weight="700" fill="#A78BFA">PAYMENT SCREEN PREVIEW</text>
+
+  <!-- Mini payment screen -->
+  <rect x="836" y="474" width="320" height="178" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+
+  <!-- Payment header -->
+  <rect x="836" y="474" width="320" height="28" rx="6" fill="#2D1F6E"/>
+  <text x="996" y="492" font-size="9" font-weight="700" fill="#C4B5FD" text-anchor="middle">TRAINING MODE — TEST PAYMENT</text>
+
+  <!-- TRAINING watermark diagonal -->
+  <text x="996" y="564" font-size="36" font-weight="900" fill="#8B5CF6" opacity="0.12" text-anchor="middle" transform="rotate(-30 996 564)">TRAINING</text>
+
+  <!-- Amount -->
+  <text x="996" y="520" font-size="16" font-weight="700" fill="#F1F5F9" text-anchor="middle">$29.39</text>
+  <text x="996" y="534" font-size="8" fill="#A78BFA" text-anchor="middle">(SIMULATED — no real charge)</text>
+
+  <!-- Card input -->
+  <rect x="856" y="540" width="280" height="22" rx="4" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="866" y="555" font-size="8" fill="#A78BFA" font-family="monospace,monospace">4242 4242 4242 4242  12/27  123</text>
+
+  <!-- Charge button -->
+  <rect x="856" y="568" width="280" height="30" rx="6" fill="#7C3AED"/>
+  <text x="996" y="588" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">Charge $29.39 (SIMULATED)</text>
+
+  <!-- Receipt preview -->
+  <rect x="856" y="604" width="280" height="40" rx="4" fill="#FFF5F5" stroke="#EF4444" stroke-width="1"/>
+  <text x="996" y="618" font-size="8" font-weight="900" fill="#EF4444" text-anchor="middle">TRAINING RECEIPT — NOT A REAL TRANSACTION</text>
+  <text x="996" y="630" font-size="7" fill="#B91C1C" text-anchor="middle">Table 4 &#8226; $29.39 &#8226; Stripe Test Mode &#8226; Session #7</text>
+  <text x="996" y="642" font-size="7" fill="#B91C1C" text-anchor="middle">Do not present to customer — for training only</text>
+
+  <!-- ===== WORKFLOW INTEGRATION NOTE (bottom of preview, amber border) ===== -->
+  <rect x="690" y="672" width="486" height="130" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="710" y="688" font-size="9" font-weight="700" fill="#F59E0B">WORKFLOW INTEGRATION</text>
+  <text x="710" y="703" font-size="8" fill="#94A3B8" font-family="monospace,monospace">pos_config.training_mode_active boolean</text>
+  <text x="710" y="715" font-size="8" fill="#94A3B8" font-family="monospace,monospace">pos_orders.training_session_id UUID (non-null = training)</text>
+  <text x="710" y="727" font-size="8" fill="#94A3B8" font-family="monospace,monospace">All reports: WHERE training_session_id IS NOT NULL excluded</text>
+  <text x="710" y="739" font-size="8" fill="#94A3B8" font-family="monospace,monospace">Stripe: STRIPE_TEST_KEY used when training active</text>
+  <text x="710" y="751" font-size="8" fill="#94A3B8" font-family="monospace,monospace">KDS: pos_kds_tickets with training flag &#8594; purple display</text>
+  <text x="710" y="763" font-size="8" fill="#94A3B8" font-family="monospace,monospace">Inventory: Edge Function skips depletion for training orders</text>
+  <text x="710" y="775" font-size="8" fill="#94A3B8" font-family="monospace,monospace">EOD: training orders excluded from Z-report calculations</text>
+  <text x="710" y="787" font-size="8" fill="#94A3B8" font-family="monospace,monospace">Purge: DELETE WHERE training_session_id = X on session end</text>
+
+  <!-- ===== ACTION BUTTONS FULL WIDTH (at bottom of left panel) ===== -->
+  <!-- Rendered more visible as actual buttons -->
+  <rect x="212" y="996" width="220" height="20" rx="5" fill="#F59E0B"/>
+  <text x="322" y="1011" font-size="10" font-weight="700" fill="#000" text-anchor="middle">Save Settings</text>
+  <rect x="444" y="996" width="224" height="20" rx="5" fill="none" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="556" y="1011" font-size="10" font-weight="600" fill="#EF4444" text-anchor="middle">Reset Training Data</text>
+
+</svg>

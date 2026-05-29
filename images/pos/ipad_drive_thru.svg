@@ -1,0 +1,418 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="#0F1117"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOP HEADER BAR -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1366" height="52" fill="#1A1D2E"/>
+  <rect x="0" y="52" width="1366" height="1" fill="#2D3148"/>
+
+  <!-- Brand -->
+  <text x="16" y="19" fill="#F59E0B" font-size="14" font-weight="700">Synalux POS</text>
+  <rect x="16" y="26" width="110" height="20" rx="5" fill="#1C2438"/>
+  <text x="71" y="40" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">🚗 DRIVE-THRU</text>
+
+  <!-- Center title -->
+  <text x="683" y="21" fill="#94A3B8" font-size="12" text-anchor="middle">Drive-Through POS</text>
+  <text x="683" y="39" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="middle">Lane 1 — Active Session</text>
+
+  <!-- Right status -->
+  <circle cx="1180" cy="26" r="5" fill="#10B981"/>
+  <text x="1192" y="30" fill="#10B981" font-size="12">HDMI Connected</text>
+  <text x="1340" y="21" fill="#94A3B8" font-size="12" text-anchor="middle">Wed 12:34 PM</text>
+  <text x="1340" y="39" fill="#F1F5F9" font-size="12" font-weight="600" text-anchor="middle">Shift: 3h 22m</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- MAIN CONTENT AREA (y=53 to y=960) -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- ─────────────────────────────────────────────────────── -->
+  <!-- LEFT COLUMN: Lane Queue (x=8, w=380) -->
+  <!-- ─────────────────────────────────────────────────────── -->
+
+  <!-- Lane Queue header card -->
+  <rect x="8" y="60" width="380" height="48" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Lane 1 tab (active) -->
+  <rect x="16" y="68" width="120" height="32" rx="6" fill="#F59E0B"/>
+  <text x="76" y="88" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">🚗 Lane 1</text>
+  <!-- Lane 2 tab -->
+  <rect x="144" y="68" width="100" height="32" rx="6" fill="#2D3148"/>
+  <text x="194" y="88" fill="#94A3B8" font-size="12" text-anchor="middle">Lane 2</text>
+  <!-- Avg time -->
+  <text x="355" y="81" fill="#94A3B8" font-size="10" text-anchor="middle">Avg</text>
+  <text x="355" y="95" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="middle">4:12</text>
+
+  <!-- ── CAR #1 — AT ORDER (green) ── -->
+  <rect x="8" y="114" width="380" height="112" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="2"/>
+  <!-- Left accent bar -->
+  <rect x="8" y="114" width="4" height="112" rx="2" fill="#10B981"/>
+  <!-- Car header row -->
+  <text x="24" y="132" fill="#F1F5F9" font-size="13" font-weight="700">Car #1</text>
+  <text x="24" y="148" fill="#64748B" font-size="11">ORDER TAKING</text>
+  <!-- Timer -->
+  <text x="250" y="132" fill="#10B981" font-size="22" font-weight="700" text-anchor="middle">0:23</text>
+  <!-- AT ORDER badge -->
+  <rect x="288" y="120" width="90" height="20" rx="10" fill="#0D2E1C"/>
+  <text x="333" y="133" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">AT ORDER</text>
+  <!-- Order items -->
+  <text x="24" y="166" fill="#94A3B8" font-size="11">Classic Burger · Large Fries · Pepsi</text>
+  <!-- Total -->
+  <text x="24" y="184" fill="#64748B" font-size="11">Subtotal</text>
+  <text x="230" y="184" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="end">$19.53</text>
+  <!-- TAKE ORDER button -->
+  <rect x="240" y="172" width="138" height="44" rx="8" fill="#F59E0B"/>
+  <text x="309" y="199" fill="#0F1117" font-size="13" font-weight="800" text-anchor="middle">TAKE ORDER</text>
+
+  <!-- ── CAR #2 — PAYING (blue) ── -->
+  <rect x="8" y="232" width="380" height="88" rx="8" fill="#1A1D2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="8" y="232" width="4" height="88" rx="2" fill="#3B82F6"/>
+  <text x="24" y="250" fill="#F1F5F9" font-size="13" font-weight="700">Car #2</text>
+  <text x="24" y="266" fill="#64748B" font-size="11">PAYMENT</text>
+  <text x="250" y="250" fill="#3B82F6" font-size="22" font-weight="700" text-anchor="middle">1:45</text>
+  <rect x="288" y="238" width="80" height="20" rx="10" fill="#1A2A4A"/>
+  <text x="328" y="251" fill="#60A5FA" font-size="10" font-weight="700" text-anchor="middle">PAYING</text>
+  <!-- Tip info -->
+  <text x="24" y="286" fill="#94A3B8" font-size="11">$24.80 · Tip 18% suggested</text>
+  <!-- Charge button -->
+  <rect x="240" y="272" width="138" height="36" rx="7" fill="#10B981"/>
+  <text x="309" y="295" fill="#0F1117" font-size="12" font-weight="800" text-anchor="middle">Charge $24.80</text>
+
+  <!-- ── CAR #3 — PREPARING (orange) ── -->
+  <rect x="8" y="326" width="380" height="80" rx="8" fill="#1A1D2E" stroke="#F97316" stroke-width="1.5"/>
+  <rect x="8" y="326" width="4" height="80" rx="2" fill="#F97316"/>
+  <text x="24" y="344" fill="#F1F5F9" font-size="13" font-weight="700">Car #3</text>
+  <text x="24" y="360" fill="#64748B" font-size="11">KITCHEN</text>
+  <text x="250" y="344" fill="#F97316" font-size="22" font-weight="700" text-anchor="middle">2:30</text>
+  <rect x="288" y="332" width="90" height="20" rx="10" fill="#2E1F0A"/>
+  <text x="333" y="345" fill="#F97316" font-size="10" font-weight="700" text-anchor="middle">PREPARING</text>
+  <text x="24" y="380" fill="#94A3B8" font-size="11">KDS: 2 items in queue — Grill Station</text>
+  <!-- KDS mini badge -->
+  <rect x="240" y="370" width="138" height="28" rx="6" fill="#2E1F0A"/>
+  <text x="309" y="388" fill="#F97316" font-size="11" font-weight="600" text-anchor="middle">🔥 Grill · 2 items</text>
+
+  <!-- ── CAR #4 — WAITING (yellow) ── -->
+  <rect x="8" y="412" width="380" height="64" rx="8" fill="#1A1D2E" stroke="#EAB308" stroke-width="1"/>
+  <rect x="8" y="412" width="4" height="64" rx="2" fill="#EAB308"/>
+  <text x="24" y="430" fill="#F1F5F9" font-size="13" font-weight="700">Car #4</text>
+  <text x="24" y="446" fill="#64748B" font-size="11">WAITING FOR FOOD</text>
+  <text x="250" y="430" fill="#EAB308" font-size="22" font-weight="700" text-anchor="middle">3:15</text>
+  <rect x="288" y="418" width="80" height="20" rx="10" fill="#2A1E00"/>
+  <text x="328" y="431" fill="#EAB308" font-size="10" font-weight="700" text-anchor="middle">WAITING</text>
+  <text x="24" y="466" fill="#64748B" font-size="11">2 items · Order complete soon</text>
+
+  <!-- ── CAR #5 — AT WINDOW OVERDUE (red) ── -->
+  <rect x="8" y="482" width="380" height="80" rx="8" fill="#1A1D2E" stroke="#EF4444" stroke-width="2"/>
+  <rect x="8" y="482" width="4" height="80" rx="2" fill="#EF4444"/>
+  <text x="24" y="500" fill="#F1F5F9" font-size="13" font-weight="700">Car #5</text>
+  <text x="24" y="516" fill="#64748B" font-size="11">AT WINDOW</text>
+  <text x="230" y="500" fill="#EF4444" font-size="22" font-weight="700" text-anchor="middle">4:02</text>
+  <!-- OVERDUE badge -->
+  <rect x="268" y="488" width="110" height="20" rx="10" fill="#3A0A0A"/>
+  <text x="323" y="501" fill="#EF4444" font-size="10" font-weight="800" text-anchor="middle">⚠ OVERDUE</text>
+  <!-- Bump button -->
+  <rect x="24" y="526" width="150" height="28" rx="6" fill="#2D3148"/>
+  <text x="99" y="544" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">Bump to Pickup</text>
+  <rect x="182" y="526" width="196" height="28" rx="6" fill="#EF4444"/>
+  <text x="280" y="544" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle">Mark Delivered</text>
+
+  <!-- ── CAR #6 — NOT YET AT SPEAKER (gray) ── -->
+  <rect x="8" y="568" width="380" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="8" y="568" width="4" height="52" rx="2" fill="#2D3148"/>
+  <text x="24" y="586" fill="#64748B" font-size="13" font-weight="700">Car #6</text>
+  <text x="24" y="604" fill="#4B5563" font-size="11">Not yet at speaker</text>
+  <rect x="288" y="574" width="90" height="20" rx="10" fill="#1C2030"/>
+  <text x="333" y="587" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">INCOMING</text>
+
+  <!-- Timer summary bar -->
+  <rect x="8" y="626" width="380" height="36" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <circle cx="25" cy="644" r="5" fill="#F97316"/>
+  <text x="38" y="648" fill="#94A3B8" font-size="10">Avg: <tspan fill="#F1F5F9" font-weight="700">4:12</tspan>  Target: <tspan fill="#10B981" font-weight="700">3:30</tspan></text>
+  <text x="280" y="648" fill="#F97316" font-size="10" font-weight="700" text-anchor="middle">⚠ Above target</text>
+
+  <!-- ─────────────────────────────────────────────────────── -->
+  <!-- CENTER COLUMN: Active Order (x=396, w=600) -->
+  <!-- ─────────────────────────────────────────────────────── -->
+
+  <!-- Order header -->
+  <rect x="396" y="60" width="600" height="48" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="408" y="68" width="8" height="32" rx="2" fill="#10B981"/>
+  <text x="426" y="81" fill="#10B981" font-size="11" font-weight="700">NEW ORDER</text>
+  <text x="426" y="97" fill="#F1F5F9" font-size="14" font-weight="800">Lane 1 — Car #1</text>
+  <rect x="840" y="70" width="140" height="28" rx="6" fill="#0D2E1C"/>
+  <text x="910" y="88" fill="#10B981" font-size="12" font-weight="600" text-anchor="middle">🟢 Order Open</text>
+
+  <!-- Category grid -->
+  <rect x="396" y="116" width="600" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Burgers tab (active) -->
+  <rect x="404" y="122" width="128" height="32" rx="6" fill="#F59E0B"/>
+  <text x="468" y="142" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">🍔 Burgers</text>
+  <!-- Sides -->
+  <rect x="540" y="122" width="108" height="32" rx="6" fill="#2D3148"/>
+  <text x="594" y="142" fill="#94A3B8" font-size="13" text-anchor="middle">🍟 Sides</text>
+  <!-- Drinks -->
+  <rect x="656" y="122" width="108" height="32" rx="6" fill="#2D3148"/>
+  <text x="710" y="142" fill="#94A3B8" font-size="13" text-anchor="middle">🥤 Drinks</text>
+  <!-- Combos -->
+  <rect x="772" y="122" width="108" height="32" rx="6" fill="#2D3148"/>
+  <text x="826" y="142" fill="#94A3B8" font-size="13" text-anchor="middle">📦 Combos</text>
+  <!-- More -->
+  <rect x="888" y="122" width="100" height="32" rx="6" fill="#2D3148"/>
+  <text x="938" y="142" fill="#94A3B8" font-size="13" text-anchor="middle">More ▾</text>
+
+  <!-- Menu items grid (burgers) -->
+  <rect x="396" y="168" width="600" height="200" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="416" y="188" fill="#64748B" font-size="11" font-weight="600">SELECT ITEM</text>
+
+  <!-- Row 1 items -->
+  <rect x="408" y="196" width="175" height="64" rx="7" fill="#2D3148"/>
+  <text x="495" y="220" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">Classic Burger</text>
+  <text x="495" y="238" fill="#94A3B8" font-size="12" text-anchor="middle">$12.00</text>
+  <text x="495" y="253" fill="#64748B" font-size="10" text-anchor="middle">Quarter lb beef</text>
+
+  <rect x="591" y="196" width="175" height="64" rx="7" fill="#2D3148"/>
+  <text x="678" y="220" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">BBQ Bacon Burger</text>
+  <text x="678" y="238" fill="#94A3B8" font-size="12" text-anchor="middle">$14.50</text>
+  <text x="678" y="253" fill="#64748B" font-size="10" text-anchor="middle">Smoked bacon + BBQ</text>
+
+  <rect x="774" y="196" width="175" height="64" rx="7" fill="#2D3148"/>
+  <text x="861" y="220" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">Double Stack</text>
+  <text x="861" y="238" fill="#94A3B8" font-size="12" text-anchor="middle">$15.00</text>
+  <text x="861" y="253" fill="#64748B" font-size="10" text-anchor="middle">2× beef patties</text>
+
+  <!-- Row 2 items -->
+  <rect x="408" y="268" width="175" height="64" rx="7" fill="#2D3148"/>
+  <text x="495" y="292" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">Mushroom Swiss</text>
+  <text x="495" y="310" fill="#94A3B8" font-size="12" text-anchor="middle">$13.50</text>
+  <text x="495" y="325" fill="#64748B" font-size="10" text-anchor="middle">Sautéed mushrooms</text>
+
+  <rect x="591" y="268" width="175" height="64" rx="7" fill="#2D3148"/>
+  <text x="678" y="292" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">Veggie Burger</text>
+  <text x="678" y="310" fill="#94A3B8" font-size="12" text-anchor="middle">$11.00</text>
+  <text x="678" y="325" fill="#64748B" font-size="10" text-anchor="middle">Plant-based patty</text>
+
+  <rect x="774" y="268" width="175" height="64" rx="7" fill="#2D3148"/>
+  <text x="861" y="292" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">Crispy Chicken</text>
+  <text x="861" y="310" fill="#94A3B8" font-size="12" text-anchor="middle">$13.00</text>
+  <text x="861" y="325" fill="#64748B" font-size="10" text-anchor="middle">Buttermilk battered</text>
+
+  <!-- Current Order / Ticket -->
+  <rect x="396" y="376" width="600" height="220" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="416" y="396" fill="#64748B" font-size="11" font-weight="600">CURRENT ORDER</text>
+
+  <!-- Order line items -->
+  <!-- Header -->
+  <rect x="408" y="402" width="576" height="1" fill="#2D3148"/>
+
+  <!-- Item 1 -->
+  <rect x="408" y="410" width="576" height="40" rx="6" fill="#0D2E1C"/>
+  <text x="424" y="434" fill="#10B981" font-size="14" font-weight="700">1×</text>
+  <text x="460" y="434" fill="#F1F5F9" font-size="14" font-weight="600">Classic Burger</text>
+  <text x="976" y="434" fill="#F1F5F9" font-size="14" font-weight="600" text-anchor="end">$12.00</text>
+  <!-- Remove button -->
+  <rect x="940" y="416" width="28" height="28" rx="14" fill="#2D3148"/>
+  <text x="954" y="434" fill="#EF4444" font-size="16" font-weight="700" text-anchor="middle">×</text>
+
+  <!-- Item 2 -->
+  <rect x="408" y="456" width="576" height="40" rx="6" fill="#1A1D2E"/>
+  <text x="424" y="480" fill="#F59E0B" font-size="14" font-weight="700">1×</text>
+  <text x="460" y="480" fill="#F1F5F9" font-size="14" font-weight="600">Large Fries</text>
+  <text x="976" y="480" fill="#F1F5F9" font-size="14" font-weight="600" text-anchor="end">$4.50</text>
+  <rect x="940" y="462" width="28" height="28" rx="14" fill="#2D3148"/>
+  <text x="954" y="480" fill="#EF4444" font-size="16" font-weight="700" text-anchor="middle">×</text>
+
+  <!-- Item 3 -->
+  <rect x="408" y="502" width="576" height="40" rx="6" fill="#1A1D2E"/>
+  <text x="424" y="526" fill="#F59E0B" font-size="14" font-weight="700">1×</text>
+  <text x="460" y="526" fill="#F1F5F9" font-size="14" font-weight="600">Pepsi</text>
+  <text x="976" y="526" fill="#F1F5F9" font-size="14" font-weight="600" text-anchor="end">$3.00</text>
+  <rect x="940" y="508" width="28" height="28" rx="14" fill="#2D3148"/>
+  <text x="954" y="526" fill="#EF4444" font-size="16" font-weight="700" text-anchor="middle">×</text>
+
+  <!-- Divider -->
+  <rect x="408" y="548" width="576" height="1" fill="#2D3148"/>
+
+  <!-- Totals -->
+  <text x="424" y="568" fill="#94A3B8" font-size="12">Subtotal</text>
+  <text x="976" y="568" fill="#94A3B8" font-size="12" text-anchor="end">$19.50</text>
+  <text x="424" y="584" fill="#94A3B8" font-size="12">Tax (8%)</text>
+  <text x="976" y="584" fill="#94A3B8" font-size="12" text-anchor="end">$1.56</text>
+  <text x="424" y="586" fill="#2D3148" font-size="1">.</text>
+  <rect x="408" y="587" width="576" height="1" fill="#2D3148"/>
+  <text x="424" y="603" fill="#F1F5F9" font-size="15" font-weight="800">TOTAL</text>
+  <text x="976" y="603" fill="#F59E0B" font-size="18" font-weight="800" text-anchor="middle">$21.06</text>
+
+  <!-- Action buttons -->
+  <!-- SEND TO KITCHEN - large amber -->
+  <rect x="396" y="604" width="440" height="54" rx="10" fill="#F59E0B"/>
+  <text x="616" y="637" fill="#0F1117" font-size="18" font-weight="800" text-anchor="middle">📤  SEND TO KITCHEN</text>
+
+  <!-- Clear / Cancel -->
+  <rect x="844" y="604" width="152" height="54" rx="10" fill="#3A0A0A" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="920" y="637" fill="#EF4444" font-size="14" font-weight="700" text-anchor="middle">Clear / Cancel</text>
+
+  <!-- Add item / modifier buttons row -->
+  <rect x="396" y="666" width="280" height="36" rx="7" fill="#2D3148"/>
+  <text x="536" y="688" fill="#94A3B8" font-size="12" font-weight="600" text-anchor="middle">+ Add Modifier</text>
+  <rect x="684" y="666" width="156" height="36" rx="7" fill="#2D3148"/>
+  <text x="762" y="688" fill="#94A3B8" font-size="12" font-weight="600" text-anchor="middle">Discount ▾</text>
+  <rect x="848" y="666" width="148" height="36" rx="7" fill="#2D3148"/>
+  <text x="922" y="688" fill="#94A3B8" font-size="12" font-weight="600" text-anchor="middle">Hold Order</text>
+
+  <!-- ─────────────────────────────────────────────────────── -->
+  <!-- RIGHT COLUMN: Confirmation Display Preview (x=1004, w=354) -->
+  <!-- ─────────────────────────────────────────────────────── -->
+
+  <!-- Right column header -->
+  <rect x="1004" y="60" width="354" height="48" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1020" y="79" fill="#8B5CF6" font-size="11" font-weight="700">CUSTOMER DISPLAY</text>
+  <text x="1020" y="97" fill="#F1F5F9" font-size="13" font-weight="700">Confirmation Board Preview</text>
+  <circle cx="1336" cy="84" r="6" fill="#10B981"/>
+
+  <!-- Confirmation display "screen" — simulate customer display board -->
+  <rect x="1004" y="116" width="354" height="380" rx="10" fill="#0A0C10" stroke="#3B3B5C" stroke-width="2"/>
+  <!-- Screen scanline effect (subtle) -->
+  <rect x="1006" y="118" width="350" height="376" rx="9" fill="url(#scanlines)" opacity="0.05"/>
+
+  <!-- Display header -->
+  <rect x="1004" y="116" width="354" height="44" rx="10" fill="#1C1040"/>
+  <rect x="1004" y="140" width="354" height="20" fill="#1C1040"/>
+  <text x="1181" y="144" fill="#8B5CF6" font-size="16" font-weight="800" text-anchor="middle">SYNALUX</text>
+
+  <!-- "YOUR ORDER:" label -->
+  <text x="1024" y="180" fill="#F59E0B" font-size="14" font-weight="800">YOUR ORDER:</text>
+  <rect x="1024" y="185" width="314" height="1" fill="#2D3148"/>
+
+  <!-- Order lines on display (monospace style) -->
+  <text x="1024" y="208" fill="#F1F5F9" font-size="13" font-family="'Courier New',Courier,monospace">Classic Burger</text>
+  <text x="1028" y="208" fill="#64748B" font-size="13" font-family="'Courier New',Courier,monospace" text-anchor="start">                   .........</text>
+  <text x="1338" y="208" fill="#F1F5F9" font-size="13" font-family="'Courier New',Courier,monospace" text-anchor="end">$12.00</text>
+
+  <text x="1024" y="230" fill="#F1F5F9" font-size="13" font-family="'Courier New',Courier,monospace">Large Fries</text>
+  <text x="1338" y="230" fill="#F1F5F9" font-size="13" font-family="'Courier New',Courier,monospace" text-anchor="end">$4.50</text>
+
+  <text x="1024" y="252" fill="#F1F5F9" font-size="13" font-family="'Courier New',Courier,monospace">Pepsi</text>
+  <text x="1338" y="252" fill="#F1F5F9" font-size="13" font-family="'Courier New',Courier,monospace" text-anchor="end">$3.00</text>
+
+  <!-- Dotted separator -->
+  <rect x="1024" y="260" width="314" height="1" fill="#2D3148"/>
+
+  <text x="1024" y="278" fill="#94A3B8" font-size="12" font-family="'Courier New',Courier,monospace">Tax</text>
+  <text x="1338" y="278" fill="#94A3B8" font-size="12" font-family="'Courier New',Courier,monospace" text-anchor="end">$1.56</text>
+
+  <!-- Total line -->
+  <rect x="1024" y="284" width="314" height="1" fill="#2D3148"/>
+  <text x="1024" y="308" fill="#F59E0B" font-size="18" font-weight="800">TOTAL:</text>
+  <text x="1338" y="308" fill="#F59E0B" font-size="20" font-weight="800" text-anchor="end">$21.06</text>
+
+  <!-- Thank you / ETA -->
+  <rect x="1024" y="318" width="314" height="1" fill="#2D3148"/>
+  <rect x="1024" y="326" width="314" height="56" rx="8" fill="#0D2E1C"/>
+  <text x="1181" y="348" fill="#10B981" font-size="13" font-weight="700" text-anchor="middle">Thank you! Please pull forward.</text>
+  <text x="1181" y="368" fill="#10B981" font-size="15" font-weight="800" text-anchor="middle">Est. Wait: 3 min</text>
+
+  <!-- HDMI status bar -->
+  <rect x="1024" y="392" width="314" height="36" rx="6" fill="#111827"/>
+  <circle cx="1040" cy="410" r="5" fill="#10B981"/>
+  <text x="1054" y="414" fill="#10B981" font-size="11" font-weight="600">HDMI Connected</text>
+  <text x="1330" y="414" fill="#64748B" font-size="10" text-anchor="end">Board Online ✓</text>
+
+  <!-- Loyalty / Promo placeholder -->
+  <rect x="1024" y="436" width="314" height="44" rx="8" fill="#1A1040"/>
+  <text x="1181" y="454" fill="#8B5CF6" font-size="11" font-weight="700" text-anchor="middle">LOYALTY POINTS</text>
+  <text x="1181" y="472" fill="#C4B5FD" font-size="12" text-anchor="middle">Earn 21 pts on this order!</text>
+
+  <!-- Right panel: Status + controls -->
+  <rect x="1004" y="504" width="354" height="116" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1020" y="522" fill="#64748B" font-size="11" font-weight="600">DISPLAY STATUS</text>
+
+  <rect x="1020" y="530" width="322" height="28" rx="6" fill="#0D1018"/>
+  <circle cx="1036" cy="544" r="5" fill="#10B981"/>
+  <text x="1050" y="548" fill="#10B981" font-size="12" font-weight="600">Confirmation Board Online</text>
+  <text x="1334" y="548" fill="#64748B" font-size="10" text-anchor="end">1920×1080</text>
+
+  <rect x="1020" y="564" width="322" height="28" rx="6" fill="#0D1018"/>
+  <circle cx="1036" cy="578" r="5" fill="#10B981"/>
+  <text x="1050" y="582" fill="#F1F5F9" font-size="12">Auto-sync: ON</text>
+  <text x="1334" y="582" fill="#64748B" font-size="10" text-anchor="end">Latency: 12ms</text>
+
+  <!-- Switch lane button -->
+  <rect x="1004" y="626" width="354" height="44" rx="8" fill="#2D3148"/>
+  <text x="1181" y="653" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="middle">Switch to Lane 2 ↔</text>
+
+  <!-- Quick actions -->
+  <rect x="1004" y="678" width="170" height="36" rx="7" fill="#1A1040"/>
+  <text x="1089" y="700" fill="#8B5CF6" font-size="11" font-weight="600" text-anchor="middle">Test Display</text>
+  <rect x="1182" y="678" width="176" height="36" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1270" y="700" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">Extend Screen</text>
+
+  <!-- Today's queue mini stats -->
+  <rect x="1004" y="722" width="354" height="80" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="1020" y="740" fill="#64748B" font-size="11" font-weight="600">TODAY'S QUEUE STATS</text>
+  <text x="1020" y="762" fill="#94A3B8" font-size="11">Lane 1 cars served</text>
+  <text x="1348" y="762" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="end">72</text>
+  <text x="1020" y="780" fill="#94A3B8" font-size="11">Lane 2 cars served</text>
+  <text x="1348" y="780" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="end">55</text>
+  <text x="1020" y="798" fill="#94A3B8" font-size="11">Lane 1 avg time</text>
+  <text x="1348" y="798" fill="#F97316" font-size="13" font-weight="700" text-anchor="end">4:12 ⚠</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- BOTTOM THROUGHPUT STATS BAR (full width) -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="0" y="960" width="1366" height="1" fill="#2D3148"/>
+  <rect x="0" y="961" width="1366" height="63" fill="#1A1D2E"/>
+
+  <!-- Stat blocks -->
+  <!-- Cars served -->
+  <rect x="16" y="970" width="190" height="44" rx="7" fill="#0D1018"/>
+  <text x="111" y="986" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">CARS SERVED TODAY</text>
+  <text x="111" y="1006" fill="#F1F5F9" font-size="18" font-weight="800" text-anchor="middle">127</text>
+
+  <!-- Revenue -->
+  <rect x="216" y="970" width="210" height="44" rx="7" fill="#0D1018"/>
+  <text x="321" y="986" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">REVENUE</text>
+  <text x="321" y="1006" fill="#10B981" font-size="18" font-weight="800" text-anchor="middle">$3,840</text>
+
+  <!-- Avg ticket -->
+  <rect x="436" y="970" width="200" height="44" rx="7" fill="#0D1018"/>
+  <text x="536" y="986" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">AVG TICKET</text>
+  <text x="536" y="1006" fill="#F1F5F9" font-size="18" font-weight="800" text-anchor="middle">$30.24</text>
+
+  <!-- Best hour -->
+  <rect x="646" y="970" width="240" height="44" rx="7" fill="#0D1018"/>
+  <text x="766" y="986" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">BEST HOUR</text>
+  <text x="766" y="1006" fill="#F59E0B" font-size="18" font-weight="800" text-anchor="middle">12 PM (34 cars)</text>
+
+  <!-- On-target -->
+  <rect x="896" y="970" width="180" height="44" rx="7" fill="#0D1018"/>
+  <text x="986" y="986" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">ON-TARGET</text>
+  <text x="986" y="1006" fill="#10B981" font-size="18" font-weight="800" text-anchor="middle">78%</text>
+
+  <!-- Mini bar chart -->
+  <rect x="1086" y="970" width="272" height="44" rx="7" fill="#0D1018"/>
+  <text x="1222" y="984" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle">HOURLY THROUGHPUT</text>
+  <!-- Bar chart (hours 8–5pm) -->
+  <rect x="1098" y="1006" width="18" height="12" rx="2" fill="#2D3148"/>
+  <rect x="1120" y="1002" width="18" height="16" rx="2" fill="#2D3148"/>
+  <rect x="1142" y="998" width="18" height="20" rx="2" fill="#3B82F6"/>
+  <rect x="1164" y="990" width="18" height="28" rx="2" fill="#F59E0B"/><!-- 12pm peak -->
+  <rect x="1186" y="996" width="18" height="22" rx="2" fill="#3B82F6"/>
+  <rect x="1208" y="1000" width="18" height="18" rx="2" fill="#3B82F6"/>
+  <rect x="1230" y="1004" width="18" height="14" rx="2" fill="#2D3148"/>
+  <rect x="1252" y="1008" width="18" height="10" rx="2" fill="#2D3148"/>
+  <rect x="1274" y="1006" width="18" height="12" rx="2" fill="#10B981"/><!-- current -->
+  <text x="1172" y="988" fill="#F59E0B" font-size="9" text-anchor="middle">34</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- COLUMN DIVIDERS -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="392" y="60" width="1" height="900" fill="#2D3148" opacity="0.6"/>
+  <rect x="1000" y="60" width="1" height="900" fill="#2D3148" opacity="0.6"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- COLUMN LABELS (very subtle) -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- These are inline in the section headers above -->
+
+</svg>
