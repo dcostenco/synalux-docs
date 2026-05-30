@@ -95,6 +95,18 @@ Your current POS costs too much. Toast charges $400–600/mo for a full setup. S
 - Auto-gratuity for large parties (configurable threshold + rate)
 - Tax-exempt toggle per order
 
+![Menu Builder](../images/pos/settings_menu_builder.svg)
+![Barcode Scan](../images/pos/ipad_barcode_scan.svg)
+![Allergen Filter](../images/pos/ipad_allergen_filter.svg)
+![Discounts](../images/pos/settings_discounts.svg)
+![Auto Gratuity](../images/pos/settings_auto_gratuity.svg)
+![Open Price](../images/pos/settings_open_price.svg)
+![Weight Scale](../images/pos/settings_scale.svg)
+![Combos](../images/pos/settings_combos.svg)
+![Price Levels](../images/pos/settings_price_levels.svg)
+![Nutritional Info](../images/pos/settings_nutritional.svg)
+![Menu Scheduling](../images/pos/settings_menu_scheduling.svg)
+
 </details>
 
 ---
@@ -120,6 +132,7 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 
 ![Table Merge](../images/pos/ipad_table_merge.svg)
 ![Seat Management](../images/pos/ipad_seat_management.svg)
+![Table Editor](../images/pos/ipad_table_editor.svg)
 
 </details>
 
@@ -143,6 +156,9 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 - Tickets color-coded by order type: blue (dine-in), orange (takeout), purple (delivery)
 - All-day count: toggle to see total pending per item
 - Void button removes ticket and marks items voided
+- Bump bar support (USB HID physical buttons)
+
+![Printer Routing](../images/pos/settings_printer_routing.svg)
 - Bump bar support (USB HID physical buttons)
 
 </details>
@@ -175,6 +191,12 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 
 ![Split Check](../images/pos/ipad_split_check.svg)
 ![Post-Payment Tip](../images/pos/ipad_post_payment_tip.svg)
+![EBT/SNAP Payment](../images/pos/ipad_ebt_payment.svg)
+![House Accounts](../images/pos/settings_house_accounts.svg)
+![Receipts](../images/pos/settings_receipts.svg)
+![Chargebacks](../images/pos/settings_chargebacks.svg)
+![Cash Rounding](../images/pos/settings_rounding.svg)
+![Wallet Pay](../images/pos/ipad_wallet_pay.svg)
 
 </details>
 
@@ -201,6 +223,8 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 Training orders excluded automatically.
 
 ![Menu Engineering](../images/pos/settings_menu_engineering.svg)
+![Advanced Reports](../images/pos/settings_reports_advanced.svg)
+![Revenue Centers](../images/pos/settings_revenue_centers.svg)
 
 </details>
 
@@ -226,8 +250,11 @@ PIN auth. 7-level RBAC. Clock in/out. Break tracking. Scheduling with predictive
 - Payroll: regular/OT hours, tip credit (FLSA §3m), IRS Form 8027, CSV export
 
 ![Scheduling](../images/pos/settings_scheduling.svg)
+![Break Tracking](../images/pos/settings_break_tracking.svg)
+![Overtime](../images/pos/settings_overtime.svg)
 ![Tip Pooling](../images/pos/settings_tip_pooling.svg)
 ![Payroll](../images/pos/settings_payroll.svg)
+![IRS Form 8027](../images/pos/settings_form_8027.svg)
 
 </details>
 
@@ -246,6 +273,7 @@ Customer-facing menu. No app install. Orders go to KDS.
 - **QR table ordering**: Copy QR link from Settings > Floor Plan per table. Print as table tent. Guest scans → orders → KDS.
 
 ![QR Ordering](../images/pos/ipad_qr_ordering.svg)
+![Scheduled Orders](../images/pos/ipad_scheduled_orders.svg)
 
 </details>
 
@@ -310,6 +338,8 @@ Age verification, alcohol incidents, RBS tracking, audit trail, tax-exempt, CCPA
 
 ![Age Verification](../images/pos/ipad_age_verification.svg)
 ![Tax Exempt](../images/pos/settings_tax_exempt.svg)
+![Taxes](../images/pos/settings_taxes.svg)
+![Privacy (CCPA/GDPR)](../images/pos/settings_privacy.svg)
 
 </details>
 
@@ -331,6 +361,8 @@ Denomination count, cash management, tip pool, GL journal export, close register
 5. Export GL journal (CSV for QuickBooks/Xero)
 6. Print Z-Report
 7. Close register
+
+![Cash Management](../images/pos/settings_cash_management.svg)
 
 </details>
 
@@ -369,6 +401,7 @@ Live order + idle mode with promos. Any tablet/TV.
 <summary><strong>Refunds</strong></summary>
 
 ![Refund](../images/pos/ipad_refund.svg)
+![Reopen Check](../images/pos/ipad_reopen_check.svg)
 
 Partial/full refund with reason codes. Reopen closed checks.
 
@@ -378,8 +411,9 @@ Partial/full refund with reason codes. Reopen closed checks.
 <summary><strong>Multi-Location</strong></summary>
 
 ![Multi-Location](../images/pos/settings_multi_location.svg)
+![Franchise](../images/pos/settings_franchise.svg)
 
-Per-venue KPIs, consolidated P&L, venue switcher.
+Per-venue KPIs, consolidated P&L, venue switcher, franchise reporting.
 
 </details>
 
@@ -420,6 +454,87 @@ Stripe, DoorDash, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, G
 ![Forms](../images/pos/settings_forms.svg)
 
 Cash Count Sheet, Void Authorization, Tax-Exempt Certificate, Catering BEO, Server Tip Declaration, Inventory Count, Time-Off Request, Purchase Order, Incident Log, Daily Specials, Prep List, Server Checkout. Print or download.
+
+</details>
+
+<details>
+<summary><strong>Reservations</strong></summary>
+
+![Reservations](../images/pos/ipad_reservations.svg)
+
+Timeline view with party size, special requests, table assignment. Google Reserve, OpenTable, Yelp webhook integration.
+
+</details>
+
+<details>
+<summary><strong>Catering</strong></summary>
+
+![Catering](../images/pos/ipad_catering.svg)
+
+Large order entry, Banquet Event Orders (BEO), delivery scheduling, deposit tracking.
+
+</details>
+
+<details>
+<summary><strong>AI Ordering</strong></summary>
+
+![AI Ordering](../images/pos/ai_ordering.svg)
+
+Natural language order parsing from phone/SMS. Fuzzy menu matching. Runs locally via Ollama (Prism Coder) — no cloud API needed.
+
+</details>
+
+<details>
+<summary><strong>Digital Menu Board</strong></summary>
+
+![Menu Board](../images/pos/settings_menu_board.svg)
+
+Configure layout, sections, pricing display. Assign to TV/display devices.
+
+</details>
+
+<details>
+<summary><strong>Marketing & Campaigns</strong></summary>
+
+![Marketing](../images/pos/settings_marketing.svg)
+
+Email/SMS blasts, promo codes, audience segments, send history.
+
+</details>
+
+<details>
+<summary><strong>Customer Feedback</strong></summary>
+
+![Customer Feedback](../images/pos/settings_customer_feedback.svg)
+
+Post-visit survey, star ratings, comment review queue, response templates.
+
+</details>
+
+<details>
+<summary><strong>Label Printer</strong></summary>
+
+![Label Printer](../images/pos/settings_label_printer.svg)
+
+ZPL-compatible printers (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
+
+</details>
+
+<details>
+<summary><strong>Equipment Tracking</strong></summary>
+
+![Equipment](../images/pos/settings_equipment.svg)
+
+Device registry, serial numbers, warranty, maintenance schedule, depreciation.
+
+</details>
+
+<details>
+<summary><strong>Synalux Advantage</strong></summary>
+
+![Advantage](../images/pos/settings_advantage.svg)
+
+Referral tracking, partner benefits, commission tiers.
 
 </details>
 
