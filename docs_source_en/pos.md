@@ -17,7 +17,15 @@ Use your own iPad — or any device with a browser.
 
 ## Try the demo
 
-Open [synalux.ai/pos](https://synalux.ai/pos) and log in with any demo account below.
+Open [synalux.ai/pos](https://synalux.ai/pos) and log in with the demo credentials below.
+
+| | |
+|---|---|
+| **Login** | `demo@synalux.ai` |
+| **Password** | `demo` |
+| **Venue** | Riverside Grill |
+
+After login, enter a staff PIN to access the POS:
 
 | Role | Name | PIN | What you see |
 |---|---|---|---|
@@ -29,7 +37,7 @@ Open [synalux.ai/pos](https://synalux.ai/pos) and log in with any demo account b
 | **Manager** | Sara R. | `9012` | Dashboard + All screens + EOD |
 | **Admin** | Dmitri C. | `0000` | Settings + All screens |
 
-**Demo venue:** Riverside Grill · **Login:** `demo@synalux.ai` · **Password:** `demo` · **All data resets hourly**
+**All demo data resets hourly.**
 
 ---
 
