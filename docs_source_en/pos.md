@@ -17,7 +17,7 @@ Use your own iPad — or any device with a browser.
 
 ## Try the demo
 
-Open [synalux.ai/pos](https://synalux.ai/pos) and log in with the demo credentials below.
+Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log in with the demo credentials below.
 
 | | |
 |---|---|
