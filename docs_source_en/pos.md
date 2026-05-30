@@ -15,6 +15,24 @@ Use your own iPad — or any device with a browser.
 
 ---
 
+## Try the demo
+
+Open [synalux.ai/pos](https://synalux.ai/pos) and log in with any demo account below.
+
+| Role | Name | PIN | What you see |
+|---|---|---|---|
+| **Cashier** | Maria G. | `3456` | Register + Payment |
+| **Host** | Lisa W. | `5678` | Tables + Waitlist + Reservations |
+| **Server** | John S. | `1234` | Register + Tables + Handheld |
+| **Bartender** | Mike R. | `7890` | Bar Register + Age Verification |
+| **Supervisor** | Alex K. | `2468` | Register + Reports + Voids + Discounts |
+| **Manager** | Sara R. | `9012` | Dashboard + All screens + EOD |
+| **Admin** | Dmitri C. | `0000` | Settings + All screens |
+
+**Demo venue:** Riverside Grill · **Password:** `demo` · **All data resets hourly**
+
+---
+
 ## Why switch?
 
 Your current POS costs too much. Toast charges $400–600/mo. Square hits $250–350/mo. Clover locks you into 3-year contracts with $2,000+ hardware.
