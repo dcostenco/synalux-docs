@@ -29,7 +29,7 @@ Open [synalux.ai/pos](https://synalux.ai/pos) and log in with any demo account b
 | **Manager** | Sara R. | `9012` | Dashboard + All screens + EOD |
 | **Admin** | Dmitri C. | `0000` | Settings + All screens |
 
-**Demo venue:** Riverside Grill · **Password:** `demo` · **All data resets hourly**
+**Demo venue:** Riverside Grill · **Login:** `demo@synalux.ai` · **Password:** `demo` · **All data resets hourly**
 
 ---
 
