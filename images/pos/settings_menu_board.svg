@@ -1,401 +1,608 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-settings_menu_board-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- ======================== BACKGROUND ======================== -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <!-- ============================================================ -->
+  <!--  REUSABLE DEFINITIONS                                        -->
+  <title id="title-settings_menu_board-svg">Synalux POS — menu Uoard</title>
+  <desc>Synalux POS mockup screen for menu Uoard. All UI elements admin-configurable.</desc>
+  <!--  <defs>: gradients, filters, symbols – zero copy-paste      -->
+  <!-- ============================================================ -->
+  <title id="title-settings_menu_board-svg">Synalux POS — menu Uoard</title>
+  <desc>Synalux POS mockup screen for menu Uoard. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#0A0C16"/>
+    </linearGradient>
 
-  <!-- ======================== LEFT SIDEBAR (210px) ======================== -->
-  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+    <!-- Sidebar gradient -->
+    <linearGradient id="sidebarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141730"/>
+      <stop offset="100%" stop-color="#0F1226"/>
+    </linearGradient>
 
-  <!-- Nav items -->
-  <rect x="0" y="44" width="210" height="36" fill="none"/>
+    <!-- Header gradient -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#1E2138"/>
+    </linearGradient>
+
+    <!-- Card shadow filter -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Amber glow -->
+    <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Admin gear icon (30% opacity default)  -->
+    <!--  Placed on ALL editable/configurable fields     -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="adminGear" viewBox="0 0 16 16">
+      <path d="M8 1l1.2.4.6-1L11.4 1.8l-.2 1.2 1 .6 1.2-.2.8 1.4-1 .8.2 1.2 1 .6-.4 1.6H13l-.4 1 .8 1-.8 1.4-1.2-.2-.6 1-1.2.4L8 15l-1.2-.4-.6 1L4.6 14.2l.2-1.2-1-.6-1.2.2L1.8 11.2l1-.8-.2-1.2-1-.6.4-1.6H3l.4-1-.8-1 .8-1.4 1.2.2.6-1L6.8 1.4 8 1z" fill="none" stroke="#F59E0B" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="8" cy="8" r="2.5" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Nav item (sidebar row, inactive)       -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="navItem" viewBox="0 0 210 36">
+      <rect x="0" y="0" width="210" height="36" fill="none"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Active nav item                        -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="navItemActive" viewBox="0 0 210 36">
+      <rect x="0" y="0" width="210" height="36" fill="#1E2235"/>
+      <rect x="0" y="0" width="3" height="36" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Board card (Connected Boards list)     -->
+    <!--  Reused for each display/board device           -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="boardCard" viewBox="0 0 576 90">
+      <rect x="0" y="0" width="576" height="90" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Live status badge                      -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="liveBadge" viewBox="0 0 42 20">
+      <rect x="0" y="0" width="42" height="20" rx="10" fill="#0D2B1F"/>
+      <circle cx="11" cy="10" r="4" fill="#22C55E"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Offline status badge                   -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="offlineBadge" viewBox="0 0 72 20">
+      <rect x="0" y="0" width="72" height="20" rx="10" fill="#2D1010"/>
+      <circle cx="11" cy="10" r="4" fill="#EF4444"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Config button (small outline)          -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="configBtn" viewBox="0 0 60 24">
+      <rect x="0" y="0" width="60" height="24" rx="5" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Checkbox checked (green)               -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="checkboxOn" viewBox="0 0 14 14">
+      <rect x="0" y="0" width="14" height="14" rx="3" fill="#22C55E"/>
+      <text x="2" y="12" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Checkbox unchecked                     -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="checkboxOff" viewBox="0 0 14 14">
+      <rect x="0" y="0" width="14" height="14" rx="3" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Layout template button (inactive)      -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="layoutBtnInactive" viewBox="0 0 108 32">
+      <rect x="0" y="0" width="108" height="32" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Layout template button (selected)      -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="layoutBtnActive" viewBox="0 0 108 32">
+      <rect x="0" y="0" width="108" height="32" rx="6" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Screen chip (rotation order)           -->
+    <!--  Reused for each screen in the rotation list    -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="screenChip" viewBox="0 0 170 34">
+      <rect x="0" y="0" width="170" height="34" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Toggle switch ON                       -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="toggleOn" viewBox="0 0 40 22">
+      <rect x="0" y="0" width="40" height="22" rx="11" fill="#F59E0B"/>
+      <circle cx="29" cy="11" r="9" fill="#fff"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Screen thumbnail (preview strip)       -->
+    <!--  Reused for each screen preview at bottom       -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="screenThumb" viewBox="0 0 164 92">
+      <rect x="0" y="0" width="164" height="92" rx="6" fill="#111318" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: QR corner block (for QR code)          -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="qrCorner" viewBox="0 0 16 16">
+      <rect x="0" y="0" width="16" height="16" rx="2" fill="#E2E8F0"/>
+      <rect x="2" y="2" width="12" height="12" rx="1" fill="#0C0E1A"/>
+      <rect x="4" y="4" width="8" height="8" rx="1" fill="#E2E8F0"/>
+    </symbol>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!--  BACKGROUND                                                  -->
+  <!-- ============================================================ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- ============================================================ -->
+  <!--  LEFT SIDEBAR (210px)                                        -->
+  <!--  DB: pos_admin_navigation                                    -->
+  <!-- ============================================================ -->
+  <rect x="0" y="0" width="210" height="1024" fill="url(#sidebarGrad)"/>
+  <rect x="210" y="0" width="1" height="1024" fill="#2A2E45"/>
+
+  <!-- DB: pos_restaurant_info.name -->
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">Back Office</text>
+  <use href="#adminGear" x="130" y="18" width="14" height="14" opacity="0.3"/>
+
+  <!-- DB: pos_navigation_items -->
+  <use href="#navItem" x="0" y="44"/>
   <text x="16" y="67" font-size="12" fill="#64748B">Restaurant Info</text>
-  <rect x="0" y="80" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="57" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="80"/>
   <text x="16" y="103" font-size="12" fill="#64748B">Menu Builder</text>
-  <rect x="0" y="116" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="93" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="116"/>
   <text x="16" y="139" font-size="12" fill="#64748B">Menu Scheduling</text>
-  <rect x="0" y="152" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="129" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="152"/>
   <text x="16" y="175" font-size="12" fill="#64748B">Taxes</text>
-  <rect x="0" y="188" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="165" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="188"/>
   <text x="16" y="211" font-size="12" fill="#64748B">Employees</text>
-  <rect x="0" y="224" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="201" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="224"/>
   <text x="16" y="247" font-size="12" fill="#64748B">Equipment</text>
-  <rect x="0" y="260" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="237" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="260"/>
   <text x="16" y="283" font-size="12" fill="#64748B">Printers</text>
-  <rect x="0" y="296" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="273" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="296"/>
   <text x="16" y="319" font-size="12" fill="#64748B">Payments</text>
-  <rect x="0" y="332" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="309" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="332"/>
   <text x="16" y="355" font-size="12" fill="#64748B">Discounts</text>
-  <rect x="0" y="368" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="345" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="368"/>
   <text x="16" y="391" font-size="12" fill="#64748B">Loyalty</text>
-  <rect x="0" y="404" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="381" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="404"/>
   <text x="16" y="427" font-size="12" fill="#64748B">Gift Cards</text>
-  <!-- HIGHLIGHTED: Menu Boards -->
-  <rect x="0" y="440" width="210" height="36" fill="#1E2240" rx="0"/>
-  <rect x="0" y="440" width="3" height="36" fill="#F59E0B"/>
+  <use href="#adminGear" x="186" y="417" width="10" height="10" opacity="0.3"/>
+
+  <!-- Menu Boards – HIGHLIGHTED -->
+  <!-- DB: pos_navigation_items.active = true -->
+  <use href="#navItemActive" x="0" y="440"/>
   <text x="16" y="463" font-size="12" font-weight="600" fill="#F59E0B">Menu Boards</text>
-  <rect x="0" y="476" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="453" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="476"/>
   <text x="16" y="499" font-size="12" fill="#64748B">Customer Display</text>
-  <rect x="0" y="512" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="489" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="512"/>
   <text x="16" y="535" font-size="12" fill="#64748B">Revenue Centers</text>
-  <rect x="0" y="548" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="525" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="548"/>
   <text x="16" y="571" font-size="12" fill="#64748B">Integrations</text>
-  <rect x="0" y="584" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="561" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="584"/>
   <text x="16" y="607" font-size="12" fill="#64748B">Reports</text>
-  <rect x="0" y="620" width="210" height="36" fill="none"/>
+  <use href="#adminGear" x="186" y="597" width="10" height="10" opacity="0.3"/>
+  <use href="#navItem" x="0" y="620"/>
   <text x="16" y="643" font-size="12" fill="#64748B">Inventory</text>
+  <use href="#adminGear" x="186" y="633" width="10" height="10" opacity="0.3"/>
 
-  <!-- ======================== HEADER BAR ======================== -->
-  <rect x="210" y="0" width="1156" height="56" fill="#1A1D2E"/>
-  <text x="228" y="33" font-size="18" font-weight="700" fill="#F1F5F9">Digital Menu Boards</text>
-  <text x="228" y="49" font-size="11" fill="#64748B">TV/display output for dining room and counter &#xB7; any browser or Chromecast</text>
-  <!-- Add Board button in header -->
-  <rect x="1240" y="12" width="110" height="32" rx="6" fill="#F59E0B"/>
-  <text x="1258" y="32" font-size="12" font-weight="600" fill="#000000">+ Add Board</text>
+  <!-- ============================================================ -->
+  <!--  HEADER BAR                                                  -->
+  <!--  DB: pos_menu_boards (board management)                      -->
+  <!-- ============================================================ -->
+  <rect x="210" y="0" width="1156" height="56" fill="url(#headerGrad)" filter="url(#cardShadow)"/>
+  <rect x="210" y="55" width="1156" height="1" fill="#2A2E45"/>
+  <text x="228" y="33" font-size="18" font-weight="700" fill="#E2E8F0">Digital Menu Boards</text>
+  <text x="228" y="49" font-size="11" fill="#64748B">TV/display output for dining room and counter – any browser or Chromecast</text>
+  <use href="#adminGear" x="570" y="37" width="12" height="12" opacity="0.3"/>
 
-  <!-- ======================== LEFT MAIN PANEL (600px wide) ======================== -->
-  <!-- Board list area -->
-  <rect x="210" y="56" width="600" height="968" fill="#0F1117"/>
+  <!-- + Add Board button -->
+  <!-- DB: INSERT INTO pos_menu_boards -->
+  <rect x="1240" y="12" width="110" height="32" rx="6" fill="#F59E0B" filter="url(#amberGlow)"/>
+  <text x="1258" y="32" font-size="12" font-weight="600" fill="#000">+ Add Board</text>
 
-  <!-- Section label -->
-  <text x="228" y="88" font-size="13" font-weight="600" fill="#F1F5F9">Connected Boards</text>
+  <!-- ============================================================ -->
+  <!--  LEFT MAIN PANEL (600px): Connected Boards                   -->
+  <!--  DB: pos_menu_boards (all rows, ordered by position)         -->
+  <!-- ============================================================ -->
+  <rect x="210" y="56" width="600" height="968" fill="#0C0E1A"/>
+
+  <text x="228" y="88" font-size="13" font-weight="600" fill="#E2E8F0">Connected Boards</text>
   <text x="476" y="88" font-size="11" fill="#64748B">3 boards configured</text>
+  <use href="#adminGear" x="586" y="76" width="12" height="12" opacity="0.3"/>
 
   <!-- ── BOARD CARD 1: Counter Board 1 ── -->
-  <rect x="220" y="98" width="576" height="90" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <!-- Green live dot -->
-  <circle cx="244" cy="130" r="5" fill="#10B981"/>
-  <text x="256" y="135" font-size="13" font-weight="700" fill="#F1F5F9">Counter Board 1</text>
-  <text x="256" y="152" font-size="11" fill="#94A3B8">55&#x22; Samsung &#xB7; HDMI connected</text>
+  <!-- DB: pos_menu_boards.id = 'BOARD-001', status = 'live' -->
+  <use href="#boardCard" x="220" y="98"/>
+  <circle cx="244" cy="130" r="5" fill="#22C55E"/>
+  <!-- DB: pos_menu_boards.name -->
+  <text x="256" y="135" font-size="13" font-weight="700" fill="#E2E8F0">Counter Board 1</text>
+  <!-- DB: pos_menu_boards.display_model, .connection_type -->
+  <text x="256" y="152" font-size="11" fill="#94A3B8">55" Samsung – HDMI connected</text>
+  <!-- DB: pos_menu_boards.public_url -->
   <text x="256" y="167" font-size="11" fill="#64748B">synalux.ai/pos/board/1</text>
-  <!-- Live badge -->
-  <rect x="640" y="122" width="42" height="20" rx="10" fill="#0D2B1F"/>
-  <circle cx="651" cy="132" r="4" fill="#10B981"/>
-  <text x="658" y="136" font-size="10" font-weight="600" fill="#10B981">Live</text>
-  <!-- Last updated -->
+  <use href="#liveBadge" x="640" y="122"/>
+  <text x="658" y="136" font-size="10" font-weight="600" fill="#22C55E">Live</text>
   <text x="640" y="160" font-size="10" fill="#64748B">Updated 2 min ago</text>
-  <!-- Edit/Config button -->
-  <rect x="724" y="120" width="60" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <use href="#configBtn" x="724" y="120"/>
   <text x="740" y="136" font-size="11" fill="#94A3B8">Config</text>
+  <use href="#adminGear" x="724" y="150" width="10" height="10" opacity="0.3"/>
 
   <!-- ── BOARD CARD 2: Counter Board 2 ── -->
-  <rect x="220" y="200" width="576" height="82" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <circle cx="244" cy="228" r="5" fill="#10B981"/>
-  <text x="256" y="233" font-size="13" font-weight="700" fill="#F1F5F9">Counter Board 2</text>
-  <text x="256" y="250" font-size="11" fill="#94A3B8">43&#x22; LG &#xB7; HDMI connected</text>
-  <text x="256" y="265" font-size="11" fill="#64748B">synalux.ai/pos/board/2</text>
-  <rect x="640" y="220" width="42" height="20" rx="10" fill="#0D2B1F"/>
-  <circle cx="651" cy="230" r="4" fill="#10B981"/>
-  <text x="658" y="234" font-size="10" font-weight="600" fill="#10B981">Live</text>
-  <rect x="724" y="218" width="60" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
-  <text x="740" y="234" font-size="11" fill="#94A3B8">Config</text>
+  <!-- DB: pos_menu_boards.id = 'BOARD-002', status = 'live' -->
+  <use href="#boardCard" x="220" y="200"/>
+  <circle cx="244" cy="232" r="5" fill="#22C55E"/>
+  <text x="256" y="237" font-size="13" font-weight="700" fill="#E2E8F0">Counter Board 2</text>
+  <text x="256" y="254" font-size="11" fill="#94A3B8">43" LG – HDMI connected</text>
+  <text x="256" y="269" font-size="11" fill="#64748B">synalux.ai/pos/board/2</text>
+  <use href="#liveBadge" x="640" y="224"/>
+  <text x="658" y="238" font-size="10" font-weight="600" fill="#22C55E">Live</text>
+  <use href="#configBtn" x="724" y="222"/>
+  <text x="740" y="238" font-size="11" fill="#94A3B8">Config</text>
+  <use href="#adminGear" x="724" y="252" width="10" height="10" opacity="0.3"/>
 
-  <!-- ── BOARD CARD 3: Patio Board ── -->
-  <rect x="220" y="294" width="576" height="90" rx="8" fill="#1A1D2E" stroke="#EF4444" stroke-width="1"/>
-  <circle cx="244" cy="326" r="5" fill="#EF4444"/>
-  <text x="256" y="331" font-size="13" font-weight="700" fill="#F1F5F9">Patio Board</text>
-  <text x="256" y="348" font-size="11" fill="#94A3B8">32&#x22; Outdoor Display &#xB7; WiFi</text>
-  <text x="256" y="363" font-size="11" fill="#64748B">synalux.ai/pos/board/3</text>
-  <rect x="626" y="318" width="72" height="20" rx="10" fill="#2D1010"/>
-  <circle cx="637" cy="328" r="4" fill="#EF4444"/>
-  <text x="645" y="332" font-size="10" font-weight="600" fill="#EF4444">Offline</text>
-  <text x="256" y="377" font-size="10" fill="#EF4444">&#9888; Device unreachable &#x2014; check network connection</text>
-  <rect x="724" y="316" width="60" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
-  <text x="740" y="332" font-size="11" fill="#94A3B8">Config</text>
+  <!-- ── BOARD CARD 3: Patio Board (offline) ── -->
+  <!-- DB: pos_menu_boards.id = 'BOARD-003', status = 'offline' -->
+  <rect x="220" y="302" width="576" height="90" rx="8" fill="#1A1D2E" stroke="#EF4444" stroke-width="1" filter="url(#cardShadow)"/>
+  <circle cx="244" cy="334" r="5" fill="#EF4444"/>
+  <text x="256" y="339" font-size="13" font-weight="700" fill="#E2E8F0">Patio Board</text>
+  <text x="256" y="356" font-size="11" fill="#94A3B8">32" Outdoor Display – WiFi</text>
+  <text x="256" y="371" font-size="11" fill="#64748B">synalux.ai/pos/board/3</text>
+  <use href="#offlineBadge" x="626" y="326"/>
+  <text x="645" y="340" font-size="10" font-weight="600" fill="#EF4444">Offline</text>
+  <text x="256" y="385" font-size="10" fill="#EF4444">Device unreachable – check network connection</text>
+  <use href="#configBtn" x="724" y="324"/>
+  <text x="740" y="340" font-size="11" fill="#94A3B8">Config</text>
+  <use href="#adminGear" x="724" y="354" width="10" height="10" opacity="0.3"/>
 
   <!-- Add board hint -->
-  <rect x="220" y="396" width="576" height="52" rx="8" fill="none" stroke="#2D3148" stroke-width="1" stroke-dasharray="6,4"/>
-  <text x="450" y="418" font-size="12" fill="#64748B" text-anchor="middle">+ Add Board</text>
-  <text x="450" y="436" font-size="10" fill="#64748B" text-anchor="middle">Any display with a browser &#xB7; HDMI adapter &#xB7; Chromecast</text>
+  <rect x="220" y="404" width="576" height="52" rx="8" fill="none" stroke="#2A2E45" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="450" y="426" font-size="12" fill="#64748B" text-anchor="middle">+ Add Board</text>
+  <text x="450" y="444" font-size="10" fill="#64748B" text-anchor="middle">Any display with a browser – HDMI adapter – Chromecast</text>
 
-  <!-- ════════════ BOARD CONFIG PANEL (Counter Board 1) ════════════ -->
-  <rect x="210" y="460" width="600" height="564" fill="#0F1117"/>
-  <!-- Config section header -->
-  <rect x="218" y="462" width="578" height="2" fill="#2D3148"/>
-  <text x="228" y="492" font-size="13" font-weight="700" fill="#F1F5F9">Board Config &#x2014;</text>
+  <!-- ════════════════════════════════════════════════════ -->
+  <!--  BOARD CONFIG PANEL (Counter Board 1)               -->
+  <!--  DB: pos_menu_boards.id = 'BOARD-001' (editable)    -->
+  <!--  Admin portal: all fields editable + saveable        -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <rect x="210" y="460" width="600" height="564" fill="#0C0E1A"/>
+  <rect x="218" y="462" width="578" height="2" fill="#2A2E45"/>
+  <text x="228" y="492" font-size="13" font-weight="700" fill="#E2E8F0">Board Config --</text>
   <text x="330" y="492" font-size="13" font-weight="600" fill="#F59E0B">Counter Board 1</text>
+  <use href="#adminGear" x="490" y="480" width="14" height="14" opacity="0.3"/>
 
   <!-- Layout templates -->
+  <!-- DB: pos_menu_boards.layout_template -->
   <text x="228" y="518" font-size="11" font-weight="600" fill="#94A3B8">LAYOUT TEMPLATE</text>
-  <!-- Template buttons row -->
-  <rect x="228" y="526" width="108" height="32" rx="6" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <use href="#adminGear" x="358" y="508" width="10" height="10" opacity="0.3"/>
+
+  <use href="#layoutBtnInactive" x="228" y="526"/>
   <text x="250" y="546" font-size="11" fill="#94A3B8">2-Column</text>
-  <rect x="342" y="526" width="108" height="32" rx="6" fill="#F59E0B"/>
-  <text x="361" y="546" font-size="11" font-weight="700" fill="#000">3-Column &#x25CF;</text>
-  <rect x="456" y="526" width="140" height="32" rx="6" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <use href="#layoutBtnActive" x="342" y="526"/>
+  <text x="361" y="546" font-size="11" font-weight="700" fill="#000">3-Column</text>
+  <rect x="456" y="526" width="140" height="32" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="466" y="546" font-size="11" fill="#94A3B8">Featured + Grid</text>
-  <rect x="602" y="526" width="130" height="32" rx="6" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <rect x="602" y="526" width="130" height="32" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="612" y="546" font-size="11" fill="#94A3B8">Full Screen Promo</text>
 
-  <!-- Show fields -->
+  <!-- Show on Board (checkboxes) -->
+  <!-- DB: pos_menu_boards.show_names, .show_prices, .show_calories, .show_images, .show_descriptions -->
   <text x="228" y="582" font-size="11" font-weight="600" fill="#94A3B8">SHOW ON BOARD</text>
-  <!-- Checkbox row 1 -->
-  <rect x="228" y="590" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="230" y="602" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="248" y="602" font-size="12" fill="#F1F5F9">Item Names</text>
-  <rect x="338" y="590" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="340" y="602" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="358" y="602" font-size="12" fill="#F1F5F9">Prices</text>
-  <rect x="418" y="590" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="420" y="602" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="438" y="602" font-size="12" fill="#F1F5F9">Calories</text>
-  <rect x="514" y="590" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="516" y="602" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="534" y="602" font-size="12" fill="#F1F5F9">Images</text>
-  <rect x="228" y="612" width="14" height="14" rx="3" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <use href="#adminGear" x="336" y="572" width="10" height="10" opacity="0.3"/>
+
+  <use href="#checkboxOn" x="228" y="590"/>
+  <text x="248" y="602" font-size="12" fill="#E2E8F0">Item Names</text>
+  <use href="#checkboxOn" x="338" y="590"/>
+  <text x="358" y="602" font-size="12" fill="#E2E8F0">Prices</text>
+  <use href="#checkboxOn" x="418" y="590"/>
+  <text x="438" y="602" font-size="12" fill="#E2E8F0">Calories</text>
+  <use href="#checkboxOn" x="514" y="590"/>
+  <text x="534" y="602" font-size="12" fill="#E2E8F0">Images</text>
+
+  <use href="#checkboxOff" x="228" y="612"/>
   <text x="248" y="624" font-size="12" fill="#64748B">Descriptions</text>
   <text x="348" y="624" font-size="10" fill="#64748B">(too long for display)</text>
 
   <!-- Auto-updates -->
+  <!-- DB: pos_menu_boards.auto_update_on_change, .auto_update_on_86, .auto_update_happy_hour -->
   <text x="228" y="652" font-size="11" font-weight="600" fill="#94A3B8">AUTO-UPDATES</text>
-  <rect x="228" y="660" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="230" y="672" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="248" y="672" font-size="12" fill="#F1F5F9">On menu change</text>
-  <rect x="370" y="660" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="372" y="672" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="390" y="672" font-size="12" fill="#F1F5F9">On 86</text>
-  <rect x="444" y="660" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="446" y="672" font-size="10" font-weight="700" fill="#fff">&#10003;</text>
-  <text x="464" y="672" font-size="12" fill="#F1F5F9">Happy hour start/end</text>
+  <use href="#adminGear" x="330" y="642" width="10" height="10" opacity="0.3"/>
+  <use href="#checkboxOn" x="228" y="660"/>
+  <text x="248" y="672" font-size="12" fill="#E2E8F0">On menu change</text>
+  <use href="#checkboxOn" x="370" y="660"/>
+  <text x="390" y="672" font-size="12" fill="#E2E8F0">On 86</text>
+  <use href="#checkboxOn" x="444" y="660"/>
+  <text x="464" y="672" font-size="12" fill="#E2E8F0">Happy hour start/end</text>
 
-  <!-- Rotation -->
+  <!-- Rotation config -->
+  <!-- DB: pos_menu_boards.rotation_seconds, pos_board_screens (ordered) -->
   <text x="228" y="702" font-size="11" font-weight="600" fill="#94A3B8">SCREEN ROTATION</text>
-  <text x="228" y="720" font-size="12" fill="#94A3B8">3 screens &#xB7;</text>
+  <use href="#adminGear" x="358" y="692" width="10" height="10" opacity="0.3"/>
+  <text x="228" y="720" font-size="12" fill="#94A3B8">3 screens --</text>
   <text x="296" y="720" font-size="12" font-weight="600" fill="#F59E0B">15 seconds</text>
-  <text x="356" y="720" font-size="12" fill="#94A3B8">each &#xB7; drag to reorder</text>
+  <text x="356" y="720" font-size="12" fill="#94A3B8">each – drag to reorder</text>
 
-  <!-- Screen chips -->
-  <rect x="228" y="730" width="170" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="236" y="744" font-size="10" fill="#64748B">&#8597;</text>
-  <text x="248" y="744" font-size="10" font-weight="600" fill="#F1F5F9">Screen 1</text>
+  <!-- Screen chips using reusable symbol -->
+  <use href="#screenChip" x="228" y="730"/>
+  <text x="248" y="744" font-size="10" font-weight="600" fill="#E2E8F0">Screen 1</text>
   <text x="248" y="757" font-size="10" fill="#94A3B8">Burgers + Sides</text>
-  <rect x="406" y="730" width="170" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="414" y="744" font-size="10" fill="#64748B">&#8597;</text>
-  <text x="426" y="744" font-size="10" font-weight="600" fill="#F1F5F9">Screen 2</text>
+
+  <use href="#screenChip" x="406" y="730"/>
+  <text x="426" y="744" font-size="10" font-weight="600" fill="#E2E8F0">Screen 2</text>
   <text x="426" y="757" font-size="10" fill="#94A3B8">Drinks + Desserts</text>
-  <rect x="584" y="730" width="162" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="592" y="744" font-size="10" fill="#64748B">&#8597;</text>
-  <text x="604" y="744" font-size="10" font-weight="600" fill="#F1F5F9">Screen 3</text>
+
+  <use href="#screenChip" x="584" y="730" width="162" height="34"/>
+  <text x="604" y="744" font-size="10" font-weight="600" fill="#E2E8F0">Screen 3</text>
   <text x="604" y="757" font-size="10" fill="#94A3B8">Specials</text>
 
   <!-- Happy hour banner toggle -->
-  <rect x="220" y="778" width="576" height="58" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="236" y="800" font-size="12" font-weight="600" fill="#F1F5F9">Happy Hour Banner</text>
-  <text x="236" y="818" font-size="11" fill="#94A3B8">&#x201C;HAPPY HOUR 4&#x2013;7pm &#x2014; Drinks 20% off&#x201D; shown as overlay banner</text>
-  <!-- Toggle ON -->
-  <rect x="706" y="790" width="40" height="22" rx="11" fill="#F59E0B"/>
-  <circle cx="735" cy="801" r="9" fill="#fff"/>
-  <text x="700" y="803" font-size="10" font-weight="600" fill="#F59E0B">ON</text>
+  <!-- DB: pos_menu_boards.happy_hour_banner_enabled -->
+  <rect x="220" y="778" width="576" height="58" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="236" y="800" font-size="12" font-weight="600" fill="#E2E8F0">Happy Hour Banner</text>
+  <text x="236" y="818" font-size="11" fill="#94A3B8">"HAPPY HOUR 4-7pm – Drinks 20% off" shown as overlay banner</text>
+  <use href="#toggleOn" x="706" y="790"/>
+  <text x="690" y="803" font-size="10" font-weight="600" fill="#F59E0B">ON</text>
+  <use href="#adminGear" x="756" y="794" width="10" height="10" opacity="0.3"/>
 
-  <!-- Save button -->
+  <!-- Save / Cancel buttons -->
+  <!-- DB: UPDATE pos_menu_boards SET ... WHERE id = 'BOARD-001' -->
   <rect x="228" y="848" width="120" height="34" rx="6" fill="#F59E0B"/>
   <text x="264" y="870" font-size="13" font-weight="700" fill="#000" text-anchor="middle">Save Config</text>
-  <rect x="358" y="848" width="100" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <use href="#adminGear" x="360" y="856" width="10" height="10" opacity="0.3"/>
+
+  <rect x="358" y="848" width="100" height="34" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
   <text x="408" y="870" font-size="12" fill="#94A3B8" text-anchor="middle">Cancel</text>
 
-  <!-- ======================== RIGHT MAIN PANEL (556px) ======================== -->
-  <rect x="810" y="56" width="556" height="968" fill="#0F1117"/>
+  <!-- Delete Board -->
+  <!-- DB: DELETE FROM pos_menu_boards WHERE id = 'BOARD-001' -->
+  <rect x="468" y="848" width="120" height="34" rx="6" fill="#1A1D2E" stroke="#EF4444" stroke-width="1"/>
+  <text x="528" y="870" font-size="12" fill="#EF4444" text-anchor="middle">Delete Board</text>
 
-  <!-- Section label -->
-  <text x="826" y="88" font-size="13" font-weight="600" fill="#F1F5F9">Live Preview</text>
-  <text x="920" y="88" font-size="11" fill="#94A3B8">&#xB7; Counter Board 1</text>
+  <!-- ============================================================ -->
+  <!--  RIGHT MAIN PANEL: Live Preview                              -->
+  <!--  DB: pos_menu_boards.id = 'BOARD-001' (rendered preview)     -->
+  <!-- ============================================================ -->
+  <rect x="810" y="56" width="556" height="968" fill="#0C0E1A"/>
+  <line x1="810" y1="56" x2="810" y2="1024" stroke="#2A2E45" stroke-width="1"/>
+
+  <text x="826" y="88" font-size="13" font-weight="600" fill="#E2E8F0">Live Preview</text>
+  <text x="920" y="88" font-size="11" fill="#94A3B8">-- Counter Board 1</text>
 
   <!-- TV bezel outer -->
-  <rect x="820" y="100" width="534" height="318" rx="14" fill="#1A1D2E" stroke="#2D3148" stroke-width="3"/>
-  <!-- TV bezel inner dark frame -->
+  <rect x="820" y="100" width="534" height="318" rx="14" fill="#1A1D2E" stroke="#2A2E45" stroke-width="3"/>
+  <!-- TV bezel inner -->
   <rect x="832" y="110" width="510" height="296" rx="6" fill="#111318"/>
   <!-- TV stand -->
   <polygon points="1050,418 1096,418 1102,432 1044,432" fill="#1A1D2E"/>
-  <rect x="1020" y="432" width="126" height="8" rx="4" fill="#2D3148"/>
+  <rect x="1020" y="432" width="126" height="8" rx="4" fill="#2A2E45"/>
 
-  <!-- ===== MENU BOARD CONTENT inside TV ===== -->
+  <!-- ════ MENU BOARD CONTENT inside TV ════ -->
+  <!-- DB: pos_menu_items rendered via pos_board_screens -->
   <rect x="834" y="112" width="506" height="290" fill="#0A0C10"/>
 
   <!-- Amber top accent bar -->
   <rect x="834" y="112" width="506" height="5" fill="#F59E0B"/>
 
-  <!-- Restaurant name header inside board -->
-  <rect x="834" y="117" width="506" height="36" fill="#0F1117"/>
+  <!-- Restaurant name header -->
+  <!-- DB: pos_restaurant_info.name -->
+  <rect x="834" y="117" width="506" height="36" fill="#0C0E1A"/>
   <text x="1087" y="141" font-size="16" font-weight="800" fill="#F59E0B" text-anchor="middle" letter-spacing="2">BURGER PLACE</text>
 
-  <!-- 2-column menu layout inside TV -->
-  <!-- Column divider -->
-  <line x1="1088" y1="153" x2="1088" y2="370" stroke="#2D3148" stroke-width="1"/>
+  <!-- 2-column divider -->
+  <line x1="1088" y1="153" x2="1088" y2="370" stroke="#2A2E45" stroke-width="1"/>
 
   <!-- LEFT COLUMN: Burgers + Sides -->
-  <!-- BURGERS header -->
+  <!-- DB: pos_menu_items WHERE category IN ('burgers','sides') -->
   <rect x="834" y="153" width="254" height="22" fill="#1A0F00"/>
   <text x="962" y="169" font-size="12" font-weight="800" fill="#F59E0B" text-anchor="middle" letter-spacing="1">BURGERS</text>
 
-  <!-- Burger items -->
-  <text x="840" y="189" font-size="10" font-weight="600" fill="#F1F5F9">Classic Burger</text>
+  <text x="840" y="189" font-size="10" font-weight="600" fill="#E2E8F0">Classic Burger</text>
   <text x="840" y="200" font-size="9" fill="#64748B">820 cal</text>
   <text x="1082" y="189" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$12.00</text>
 
-  <text x="840" y="216" font-size="10" font-weight="600" fill="#F1F5F9">Veggie Burger</text>
+  <text x="840" y="216" font-size="10" font-weight="600" fill="#E2E8F0">Veggie Burger</text>
   <text x="840" y="227" font-size="9" fill="#64748B">420 cal</text>
   <text x="1082" y="216" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$11.00</text>
 
-  <text x="840" y="243" font-size="10" font-weight="600" fill="#F1F5F9">BBQ Bacon Burger</text>
+  <text x="840" y="243" font-size="10" font-weight="600" fill="#E2E8F0">BBQ Bacon Burger</text>
   <text x="840" y="254" font-size="9" fill="#64748B">940 cal</text>
   <text x="1082" y="243" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$13.00</text>
 
-  <!-- SIDES header -->
   <rect x="834" y="262" width="254" height="22" fill="#1A0F00"/>
   <text x="962" y="278" font-size="12" font-weight="800" fill="#F59E0B" text-anchor="middle" letter-spacing="1">SIDES</text>
 
-  <text x="840" y="298" font-size="10" font-weight="600" fill="#F1F5F9">French Fries</text>
+  <text x="840" y="298" font-size="10" font-weight="600" fill="#E2E8F0">French Fries</text>
   <text x="840" y="309" font-size="9" fill="#64748B">420 cal</text>
   <text x="1082" y="298" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$4.50</text>
 
-  <text x="840" y="325" font-size="10" font-weight="600" fill="#F1F5F9">Onion Rings</text>
+  <text x="840" y="325" font-size="10" font-weight="600" fill="#E2E8F0">Onion Rings</text>
   <text x="840" y="336" font-size="9" fill="#64748B">480 cal</text>
   <text x="1082" y="325" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$5.00</text>
 
-  <!-- RIGHT COLUMN: Drinks -->
-  <!-- DRINKS header -->
+  <!-- RIGHT COLUMN: Drinks + Specials -->
+  <!-- DB: pos_menu_items WHERE category IN ('drinks','specials') -->
   <rect x="1088" y="153" width="252" height="22" fill="#1A0F00"/>
   <text x="1215" y="169" font-size="12" font-weight="800" fill="#F59E0B" text-anchor="middle" letter-spacing="1">DRINKS</text>
 
-  <text x="1094" y="189" font-size="10" font-weight="600" fill="#F1F5F9">Pepsi / Diet / Sprite</text>
+  <text x="1094" y="189" font-size="10" font-weight="600" fill="#E2E8F0">Pepsi / Diet / Sprite</text>
   <text x="1336" y="189" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$3.00</text>
 
-  <text x="1094" y="210" font-size="10" font-weight="600" fill="#F1F5F9">Lemonade</text>
+  <text x="1094" y="210" font-size="10" font-weight="600" fill="#E2E8F0">Lemonade</text>
   <text x="1336" y="210" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$3.50</text>
 
-  <text x="1094" y="231" font-size="10" font-weight="600" fill="#F1F5F9">Iced Tea</text>
+  <text x="1094" y="231" font-size="10" font-weight="600" fill="#E2E8F0">Iced Tea</text>
   <text x="1336" y="231" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$3.00</text>
 
-  <text x="1094" y="252" font-size="10" font-weight="600" fill="#F1F5F9">Draft Beer</text>
+  <text x="1094" y="252" font-size="10" font-weight="600" fill="#E2E8F0">Draft Beer</text>
   <text x="1094" y="263" font-size="9" fill="#64748B">Happy Hour $5</text>
   <text x="1336" y="252" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="end">$7.00</text>
 
-  <!-- SPECIALS header right col -->
   <rect x="1088" y="270" width="252" height="22" fill="#1A0F00"/>
   <text x="1215" y="286" font-size="12" font-weight="800" fill="#8B5CF6" text-anchor="middle" letter-spacing="1">SPECIALS</text>
 
-  <text x="1094" y="306" font-size="10" font-weight="600" fill="#F1F5F9">Combo Meal</text>
+  <text x="1094" y="306" font-size="10" font-weight="600" fill="#E2E8F0">Combo Meal</text>
   <text x="1094" y="317" font-size="9" fill="#64748B">Burger + Fries + Drink</text>
   <text x="1336" y="306" font-size="10" font-weight="700" fill="#8B5CF6" text-anchor="end">$16.00</text>
 
-  <text x="1094" y="333" font-size="10" font-weight="600" fill="#F1F5F9">Kids Meal</text>
+  <text x="1094" y="333" font-size="10" font-weight="600" fill="#E2E8F0">Kids Meal</text>
   <text x="1094" y="344" font-size="9" fill="#64748B">Mini burger + juice</text>
   <text x="1336" y="344" font-size="10" font-weight="700" fill="#8B5CF6" text-anchor="end">$8.00</text>
 
   <!-- Happy Hour banner overlay -->
+  <!-- DB: pos_menu_boards.happy_hour_banner_text -->
   <rect x="834" y="354" width="506" height="28" fill="#92400E" opacity="0.95"/>
-  <text x="1087" y="371" font-size="11" font-weight="700" fill="#FEF3C7" text-anchor="middle" letter-spacing="0.5">&#9733; HAPPY HOUR Mon&#x2013;Fri 4&#x2013;7pm &#xB7; All Draft Beers $5 &#xB7; Drinks 20% Off &#9733;</text>
+  <text x="1087" y="371" font-size="11" font-weight="700" fill="#FEF3C7" text-anchor="middle" letter-spacing="0.5">HAPPY HOUR Mon-Fri 4-7pm – All Draft Beers $5 – Drinks 20% Off</text>
 
   <!-- Scrolling ticker bar -->
+  <!-- DB: pos_menu_boards.ticker_text -->
   <rect x="834" y="382" width="506" height="20" fill="#0F0E08"/>
-  <text x="840" y="395" font-size="9" fill="#D97706">&#9658; Happy Hour Mon&#x2013;Fri 4&#x2013;7pm &#xB7; All draft beers $5 &#xB7; Combo meals from $16 &#xB7; Follow us @burgerplace &#xB7; Order at the counter or scan QR &#xB7;</text>
+  <text x="840" y="395" font-size="9" fill="#D97706">Happy Hour Mon-Fri 4-7pm – All draft beers $5 – Combo meals from $16 – Follow us @burgerplace</text>
 
-  <!-- TV bottom bezel label -->
-  <text x="1087" y="424" font-size="9" fill="#64748B" text-anchor="middle">SAMSUNG 55&#x22; &#xB7; HDMI-1 &#xB7; 1920&#xD7;1080</text>
+  <!-- TV bottom label -->
+  <text x="1087" y="424" font-size="9" fill="#64748B" text-anchor="middle">SAMSUNG 55" – HDMI-1 – 1920x1080</text>
 
   <!-- URL info below TV -->
-  <rect x="820" y="446" width="534" height="42" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- DB: pos_menu_boards.public_url -->
+  <rect x="820" y="446" width="534" height="42" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
   <text x="834" y="462" font-size="11" fill="#94A3B8">Live at:</text>
   <text x="878" y="462" font-size="11" font-weight="600" fill="#F59E0B">synalux.ai/pos/board/1</text>
-  <text x="1006" y="462" font-size="11" fill="#64748B">&#x2014; open on any browser or Chromecast</text>
-  <text x="834" y="480" font-size="10" fill="#64748B">Auto-refreshes on menu change &#xB7; HDMI connected &#xB7; Last sync: 2 min ago</text>
+  <text x="1006" y="462" font-size="11" fill="#64748B">-- open on any browser or Chromecast</text>
+  <text x="834" y="480" font-size="10" fill="#64748B">Auto-refreshes on menu change – HDMI connected – Last sync: 2 min ago</text>
+  <use href="#adminGear" x="1330" y="454" width="10" height="10" opacity="0.3"/>
 
   <!-- Preview action buttons -->
   <rect x="820" y="498" width="200" height="34" rx="6" fill="#F59E0B"/>
   <text x="920" y="520" font-size="12" font-weight="600" fill="#000" text-anchor="middle">Preview on This Screen</text>
-  <rect x="1030" y="498" width="160" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1110" y="520" font-size="12" fill="#94A3B8" text-anchor="middle">Open in New Tab &#x2197;</text>
+  <rect x="1030" y="498" width="160" height="34" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1110" y="520" font-size="12" fill="#94A3B8" text-anchor="middle">Open in New Tab</text>
 
   <!-- Board stats row -->
-  <rect x="820" y="546" width="534" height="70" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- DB: pos_menu_boards aggregate stats -->
+  <rect x="820" y="546" width="534" height="70" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
   <text x="836" y="568" font-size="11" font-weight="600" fill="#94A3B8">BOARD STATS</text>
-  <!-- Stat 1 -->
-  <text x="836" y="590" font-size="18" font-weight="800" fill="#F1F5F9">3</text>
+  <use href="#adminGear" x="920" y="558" width="10" height="10" opacity="0.3"/>
+
+  <text x="836" y="590" font-size="18" font-weight="800" fill="#E2E8F0">3</text>
   <text x="836" y="606" font-size="10" fill="#64748B">Screens</text>
-  <!-- Stat 2 -->
-  <text x="920" y="590" font-size="18" font-weight="800" fill="#10B981">Live</text>
+  <text x="920" y="590" font-size="18" font-weight="800" fill="#22C55E">Live</text>
   <text x="920" y="606" font-size="10" fill="#64748B">Status</text>
-  <!-- Stat 3 -->
-  <text x="1010" y="590" font-size="18" font-weight="800" fill="#F1F5F9">15s</text>
+  <text x="1010" y="590" font-size="18" font-weight="800" fill="#E2E8F0">15s</text>
   <text x="1010" y="606" font-size="10" fill="#64748B">Rotation</text>
-  <!-- Stat 4 -->
   <text x="1100" y="590" font-size="18" font-weight="800" fill="#F59E0B">3</text>
   <text x="1100" y="606" font-size="10" fill="#64748B">Categories</text>
-  <!-- Stat 5 -->
   <text x="1196" y="590" font-size="18" font-weight="800" fill="#8B5CF6">10</text>
   <text x="1196" y="606" font-size="10" fill="#64748B">Items shown</text>
-  <!-- Stat 6 -->
   <text x="1288" y="590" font-size="18" font-weight="800" fill="#F97316">HH</text>
   <text x="1280" y="606" font-size="10" fill="#64748B">Banner ON</text>
 
   <!-- How to connect info card -->
-  <rect x="820" y="630" width="534" height="120" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="836" y="652" font-size="12" font-weight="700" fill="#F1F5F9">How to Connect a Display</text>
+  <rect x="820" y="630" width="534" height="120" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="836" y="652" font-size="12" font-weight="700" fill="#E2E8F0">How to Connect a Display</text>
   <rect x="836" y="662" width="4" height="72" rx="2" fill="#F59E0B"/>
-  <text x="848" y="678" font-size="11" fill="#94A3B8">Option 1 &#x2014; Any browser:</text>
-  <text x="848" y="694" font-size="11" fill="#F1F5F9">Open synalux.ai/pos/board/1 on TV browser, hit fullscreen (F11)</text>
-  <text x="848" y="714" font-size="11" fill="#94A3B8">Option 2 &#x2014; Chromecast:</text>
-  <text x="848" y="730" font-size="11" fill="#F1F5F9">Cast tab from Chrome &#x2192; select board URL, set to fullscreen</text>
+  <text x="848" y="678" font-size="11" fill="#94A3B8">Option 1 – Any browser:</text>
+  <text x="848" y="694" font-size="11" fill="#E2E8F0">Open synalux.ai/pos/board/1 on TV browser, hit fullscreen (F11)</text>
+  <text x="848" y="714" font-size="11" fill="#94A3B8">Option 2 – Chromecast:</text>
+  <text x="848" y="730" font-size="11" fill="#E2E8F0">Cast tab from Chrome, select board URL, set to fullscreen</text>
   <text x="848" y="746" font-size="11" fill="#64748B">Board auto-updates in real time. No refresh needed.</text>
 
   <!-- Screens preview strip -->
-  <text x="826" y="776" font-size="11" font-weight="600" fill="#94A3B8">ROTATION SCREENS &#x2014; 15s each</text>
+  <!-- DB: pos_board_screens (ordered by position) -->
+  <text x="826" y="776" font-size="11" font-weight="600" fill="#94A3B8">ROTATION SCREENS – 15s each</text>
+  <use href="#adminGear" x="1000" y="766" width="10" height="10" opacity="0.3"/>
 
-  <!-- Screen 1 thumbnail -->
+  <!-- Screen 1 thumbnail (current / selected) -->
   <rect x="820" y="784" width="164" height="92" rx="6" fill="#111318" stroke="#F59E0B" stroke-width="1.5"/>
   <text x="902" y="800" font-size="9" font-weight="700" fill="#F59E0B" text-anchor="middle">Screen 1 (current)</text>
-  <text x="902" y="815" font-size="9" fill="#F1F5F9" text-anchor="middle">Burgers + Sides</text>
+  <text x="902" y="815" font-size="9" fill="#E2E8F0" text-anchor="middle">Burgers + Sides</text>
   <text x="902" y="829" font-size="8" fill="#64748B" text-anchor="middle">5 items shown</text>
   <rect x="836" y="838" width="130" height="30" rx="3" fill="#1A0F00"/>
-  <text x="902" y="857" font-size="8" fill="#F59E0B" text-anchor="middle">BURGERS &#xB7; SIDES</text>
+  <text x="902" y="857" font-size="8" fill="#F59E0B" text-anchor="middle">BURGERS – SIDES</text>
 
   <!-- Screen 2 thumbnail -->
-  <rect x="992" y="784" width="164" height="92" rx="6" fill="#111318" stroke="#2D3148" stroke-width="1"/>
+  <use href="#screenThumb" x="992" y="784"/>
   <text x="1074" y="800" font-size="9" font-weight="600" fill="#94A3B8" text-anchor="middle">Screen 2</text>
-  <text x="1074" y="815" font-size="9" fill="#F1F5F9" text-anchor="middle">Drinks + Desserts</text>
+  <text x="1074" y="815" font-size="9" fill="#E2E8F0" text-anchor="middle">Drinks + Desserts</text>
   <text x="1074" y="829" font-size="8" fill="#64748B" text-anchor="middle">4 items shown</text>
   <rect x="1008" y="838" width="130" height="30" rx="3" fill="#1A0F00"/>
-  <text x="1074" y="857" font-size="8" fill="#F59E0B" text-anchor="middle">DRINKS &#xB7; DESSERTS</text>
+  <text x="1074" y="857" font-size="8" fill="#F59E0B" text-anchor="middle">DRINKS – DESSERTS</text>
 
   <!-- Screen 3 thumbnail -->
-  <rect x="1164" y="784" width="164" height="92" rx="6" fill="#111318" stroke="#2D3148" stroke-width="1"/>
+  <use href="#screenThumb" x="1164" y="784"/>
   <text x="1246" y="800" font-size="9" font-weight="600" fill="#94A3B8" text-anchor="middle">Screen 3</text>
-  <text x="1246" y="815" font-size="9" fill="#F1F5F9" text-anchor="middle">Specials</text>
+  <text x="1246" y="815" font-size="9" fill="#E2E8F0" text-anchor="middle">Specials</text>
   <text x="1246" y="829" font-size="8" fill="#64748B" text-anchor="middle">Today's specials</text>
   <rect x="1180" y="838" width="130" height="30" rx="3" fill="#1A0B1A"/>
-  <text x="1246" y="857" font-size="8" fill="#8B5CF6" text-anchor="middle">SPECIALS &#xB7; PROMOS</text>
+  <text x="1246" y="857" font-size="8" fill="#8B5CF6" text-anchor="middle">SPECIALS – PROMOS</text>
 
-  <!-- QR code placeholder for board URL -->
-  <rect x="820" y="890" width="534" height="90" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <!-- Mini QR grid -->
-  <rect x="836" y="902" width="66" height="66" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <!-- QR corner squares -->
-  <rect x="840" y="906" width="16" height="16" rx="2" fill="#F1F5F9"/>
-  <rect x="842" y="908" width="12" height="12" rx="1" fill="#0F1117"/>
-  <rect x="844" y="910" width="8" height="8" rx="1" fill="#F1F5F9"/>
-  <rect x="882" y="906" width="16" height="16" rx="2" fill="#F1F5F9"/>
-  <rect x="884" y="908" width="12" height="12" rx="1" fill="#0F1117"/>
-  <rect x="886" y="910" width="8" height="8" rx="1" fill="#F1F5F9"/>
-  <rect x="840" y="948" width="16" height="16" rx="2" fill="#F1F5F9"/>
-  <rect x="842" y="950" width="12" height="12" rx="1" fill="#0F1117"/>
-  <rect x="844" y="952" width="8" height="8" rx="1" fill="#F1F5F9"/>
+  <!-- QR code section -->
+  <!-- DB: pos_menu_boards.public_url (QR auto-generated from URL) -->
+  <rect x="820" y="890" width="534" height="90" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+
+  <!-- Mini QR grid using reusable corner symbols -->
+  <rect x="836" y="902" width="66" height="66" rx="4" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#qrCorner" x="840" y="906"/>
+  <use href="#qrCorner" x="882" y="906"/>
+  <use href="#qrCorner" x="840" y="948"/>
   <!-- QR data dots -->
-  <rect x="860" y="924" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="866" y="924" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="860" y="930" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="872" y="930" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="866" y="936" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="860" y="942" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="872" y="942" width="4" height="4" fill="#F1F5F9"/>
-  <rect x="866" y="948" width="4" height="4" fill="#F1F5F9"/>
+  <rect x="860" y="924" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="866" y="924" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="860" y="930" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="872" y="930" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="866" y="936" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="860" y="942" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="872" y="942" width="4" height="4" fill="#E2E8F0"/>
+  <rect x="866" y="948" width="4" height="4" fill="#E2E8F0"/>
 
-  <text x="914" y="920" font-size="12" font-weight="700" fill="#F1F5F9">Scan to open board on any device</text>
+  <text x="914" y="920" font-size="12" font-weight="700" fill="#E2E8F0">Scan to open board on any device</text>
   <text x="914" y="937" font-size="11" fill="#94A3B8">synalux.ai/pos/board/1</text>
   <text x="914" y="953" font-size="10" fill="#64748B">Works on smart TV browser, tablet, Chromecast, Fire Stick</text>
   <rect x="1216" y="912" width="122" height="28" rx="5" fill="#F59E0B"/>
   <text x="1277" y="931" font-size="11" font-weight="600" fill="#000" text-anchor="middle">Copy Board URL</text>
+  <use href="#adminGear" x="1330" y="918" width="10" height="10" opacity="0.3"/>
 
-  <!-- Divider between left and right panels -->
-  <line x1="810" y1="56" x2="810" y2="1024" stroke="#2D3148" stroke-width="1"/>
+  <!-- Footer -->
+  <text x="826" y="1006" font-size="10" fill="#475569">Synalux POS Admin Portal – Digital Menu Boards – pos_menu_boards</text>
 
 </svg>

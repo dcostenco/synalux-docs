@@ -1,64 +1,170 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-settings_overtime-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 
-  <!-- Background -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <title id="title-settings_overtime-svg">Synalux POS — overtime</title>
+  <desc>Synalux POS mockup screen for overtime. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- ============================================================ -->
+    <!-- REUSABLE DEFINITIONS                                          -->
+    <!-- ============================================================ -->
 
-  <!-- ===== LEFT NAV (210px) ===== -->
-  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
-  <rect x="210" y="0" width="1" height="1024" fill="#2D3148"/>
+    <!-- Gradient: Header bar -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#181B30"/>
+    </linearGradient>
 
-  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+    <!-- Gradient: Amber button -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
 
-  <text x="16" y="67"  font-size="12" fill="#8B92A5">Restaurant Info</text>
-  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
-  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
-  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
-  <text x="16" y="211" font-size="12" fill="#8B92A5">Equipment</text>
-  <text x="16" y="247" font-size="12" fill="#8B92A5">Floor Plans</text>
-  <text x="16" y="283" font-size="12" fill="#8B92A5">Payments</text>
-  <text x="16" y="319" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
-  <text x="16" y="355" font-size="12" fill="#8B92A5">Tip Pooling</text>
-  <text x="16" y="391" font-size="12" fill="#8B92A5">Auto-Gratuity</text>
-  <text x="16" y="427" font-size="12" fill="#8B92A5">Cash Management</text>
+    <!-- Gradient: Card surface -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161929"/>
+    </linearGradient>
+
+    <!-- Drop shadow for cards -->
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Drop shadow for buttons -->
+    <filter id="btnShadow" x="-4%" y="-8%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- SYMBOL: Admin gear icon (editable field indicator) -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <path d="M7 4.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM5.5 7a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="#F59E0B"/>
+      <path d="M7 0l1.09 2.08 2.28-.47.47 2.28L13 5l-1.09 2 1.09 2-2.12 1.11-.47 2.28-2.28-.47L7 14l-1.09-2.08-2.28.47-.47-2.28L1 9l1.09-2L1 5l2.12-1.11.47-2.28 2.28.47z" fill="none" stroke="#F59E0B" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- SYMBOL: Toggle switch ON -->
+    <symbol id="toggleOn" viewBox="0 0 44 20">
+      <rect width="44" height="20" rx="10" fill="#22C55E"/>
+  <!-- Synalux POS -->
+      <circle cx="34" cy="10" r="8" fill="#FFF"/>
+    </symbol>
+
+    <!-- SYMBOL: Toggle switch OFF -->
+    <symbol id="toggleOff" viewBox="0 0 44 20">
+      <rect width="44" height="20" rx="10" fill="#374151"/>
+      <circle cx="10" cy="10" r="8" fill="#94A3B8"/>
+    </symbol>
+
+    <!-- SYMBOL: OT Alert badge (red) -->
+    <symbol id="badgeOTAlert" viewBox="0 0 108 22">
+      <rect width="108" height="22" rx="4" fill="#EF4444"/>
+      <text x="10" y="15" font-size="10" font-weight="700" fill="#FFF" font-family="-apple-system,sans-serif">CA OT ALERT</text>
+    </symbol>
+
+    <!-- SYMBOL: No OT badge (green) -->
+    <symbol id="badgeNoOT" viewBox="0 0 84 22">
+      <rect width="84" height="22" rx="4" fill="#0F2218" stroke="#22C55E" stroke-width="1"/>
+      <text x="22" y="15" font-size="10" font-weight="700" fill="#22C55E" font-family="-apple-system,sans-serif">No OT</text>
+    </symbol>
+
+    <!-- SYMBOL: At Limit badge (amber) -->
+    <symbol id="badgeAtLimit" viewBox="0 0 158 22">
+      <rect width="158" height="22" rx="4" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
+      <text x="12" y="15" font-size="10" font-weight="700" fill="#F59E0B" font-family="-apple-system,sans-serif">At limit &#8212; any shift = OT</text>
+    </symbol>
+
+    <!-- SYMBOL: Daily OT violation cell -->
+    <symbol id="cellOTViolation" viewBox="0 0 48 20">
+      <rect width="48" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
+    </symbol>
+
+    <!-- SYMBOL: Legend card -->
+    <symbol id="legendCard" viewBox="0 0 320 44">
+      <rect width="320" height="44" rx="5"/>
+    </symbol>
+
+    <!-- SYMBOL: State chip -->
+    <symbol id="stateChip" viewBox="0 0 36 20">
+      <rect width="36" height="20" rx="4" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- SYMBOL: Progress bar background -->
+    <symbol id="progressBg" viewBox="0 0 340 12">
+      <rect width="340" height="12" rx="6" fill="#161930"/>
+    </symbol>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- BACKGROUND — #0C0E1A per design spec                         -->
+  <!-- ============================================================ -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
+
+  <!-- ============================================================ -->
+  <!-- LEFT SIDEBAR — Navigation                                     -->
+  <!-- DB source: pos_admin_nav                                      -->
+  <!-- ============================================================ -->
+  <rect x="0" y="0" width="210" height="1024" fill="#11132A"/>
+  <rect x="210" y="0" width="1" height="1024" fill="#2A2E45"/>
+
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+  <rect x="0" y="40" width="210" height="1" fill="#2A2E45"/>
+
+  <text x="16" y="67"  font-size="12" fill="#94A3B8">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#94A3B8">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#94A3B8">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#94A3B8">Employees</text>
+  <text x="16" y="211" font-size="12" fill="#94A3B8">Equipment</text>
+  <text x="16" y="247" font-size="12" fill="#94A3B8">Floor Plans</text>
+  <text x="16" y="283" font-size="12" fill="#94A3B8">Payments</text>
+  <text x="16" y="319" font-size="12" fill="#94A3B8">Discounts &amp; Promos</text>
+  <text x="16" y="355" font-size="12" fill="#94A3B8">Tip Pooling</text>
+  <text x="16" y="391" font-size="12" fill="#94A3B8">Auto-Gratuity</text>
+  <text x="16" y="427" font-size="12" fill="#94A3B8">Cash Management</text>
 
   <!-- Active: Labor Compliance -->
-  <rect x="0" y="440" width="210" height="36" fill="#1E2240"/>
+  <rect x="0" y="440" width="210" height="36" fill="#1E2235"/>
   <rect x="0" y="440" width="3" height="36" fill="#F59E0B"/>
   <text x="16" y="463" font-size="12" font-weight="700" fill="#F59E0B">Labor Compliance</text>
 
-  <text x="16" y="499" font-size="12" fill="#8B92A5">Revenue Centers</text>
-  <text x="16" y="535" font-size="12" fill="#8B92A5">Menu Scheduling</text>
-  <text x="16" y="571" font-size="12" fill="#8B92A5">Reports</text>
-  <text x="16" y="607" font-size="12" fill="#8B92A5">Integrations</text>
-  <text x="16" y="643" font-size="12" fill="#8B92A5">Tax Exempt</text>
-  <text x="16" y="679" font-size="12" fill="#8B92A5">Label Printer</text>
-  <text x="16" y="715" font-size="12" fill="#8B92A5">Training Mode</text>
+  <text x="16" y="499" font-size="12" fill="#94A3B8">Revenue Centers</text>
+  <text x="16" y="535" font-size="12" fill="#94A3B8">Menu Scheduling</text>
+  <text x="16" y="571" font-size="12" fill="#94A3B8">Reports</text>
+  <text x="16" y="607" font-size="12" fill="#94A3B8">Integrations</text>
+  <text x="16" y="643" font-size="12" fill="#94A3B8">Tax Exempt</text>
+  <text x="16" y="679" font-size="12" fill="#94A3B8">Label Printer</text>
+  <text x="16" y="715" font-size="12" fill="#94A3B8">Training Mode</text>
 
-  <!-- ===== MAIN CONTENT AREA ===== -->
+  <!-- ============================================================ -->
+  <!-- HEADER BAR                                                     -->
+  <!-- DB source: pos_labor_config, pos_shifts                       -->
+  <!-- ============================================================ -->
+  <rect x="211" y="0" width="1155" height="56" fill="url(#headerGrad)"/>
+  <rect x="211" y="56" width="1155" height="1" fill="#2A2E45"/>
+  <text x="228" y="30" font-size="20" font-weight="700" fill="#E2E8F0">Labor Compliance</text>
+  <text x="228" y="48" font-size="11" fill="#64748B">CA daily overtime &#183; federal weekly OT &#183; tip credit &#183; minor labor &#183; predictive scheduling</text>
+  <!-- DB source annotation -->
+  <text x="720" y="48" font-size="10" fill="#475569" font-style="italic">&#8594; pos_labor_config / pos_shifts</text>
 
-  <!-- Page header bar -->
-  <rect x="210" y="0" width="1156" height="56" fill="#1A1D2E"/>
-  <rect x="210" y="56" width="1156" height="1" fill="#2D3148"/>
-  <text x="228" y="30" font-size="20" font-weight="700" fill="#F1F5F9">Labor Compliance</text>
-  <text x="228" y="48" font-size="11" fill="#64748B">CA daily overtime · federal weekly OT · tip credit · minor labor · predictive scheduling</text>
   <!-- Export button -->
-  <rect x="1232" y="11" width="118" height="34" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1232" y="11" width="118" height="34" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="1291" y="33" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">Export Report</text>
 
-  <!-- ===================================================================== -->
-  <!-- CARD 1 — Overtime Rules (full width)                                   -->
-  <!-- ===================================================================== -->
-  <rect x="218" y="66" width="1130" height="420" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- ============================================================ -->
+  <!-- CARD 1 – Overtime Compliance (full width)                   -->
+  <!-- DB source: pos_shifts.daily_hours, pos_labor_config           -->
+  <!-- ============================================================ -->
+  <rect x="218" y="66" width="1130" height="420" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
   <!-- Card header -->
-  <text x="234" y="91" font-size="14" font-weight="700" fill="#F1F5F9">Overtime Compliance</text>
-  <text x="234" y="108" font-size="11" fill="#64748B">Current Pay Period: May 26 – Jun 1, 2026</text>
+  <text x="234" y="91" font-size="14" font-weight="700" fill="#E2E8F0">Overtime Compliance</text>
+  <use href="#adminGear" x="370" y="80" width="14" height="14"/>
+  <text x="234" y="108" font-size="11" fill="#64748B">Current Pay Period: May 26 &#8211; Jun 1, 2026</text>
+
   <!-- CA OT ALERT badge -->
   <rect x="1178" y="74" width="154" height="26" rx="5" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
-  <text x="1255" y="92" font-size="11" font-weight="700" fill="#EF4444" text-anchor="middle">CA OT ALERT — 1 staff</text>
+  <text x="1255" y="92" font-size="11" font-weight="700" fill="#EF4444" text-anchor="middle">CA OT ALERT &#8212; 1 staff</text>
 
   <!-- Table header row -->
-  <rect x="218" y="120" width="1130" height="30" fill="#13162A"/>
+  <rect x="218" y="120" width="1130" height="30" fill="#161930"/>
   <text x="234"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">NAME</text>
   <text x="354"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">ROLE</text>
   <text x="454"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">MON</text>
@@ -72,169 +178,161 @@
   <text x="900"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">WKLY OT</text>
   <text x="980"  y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">EST OT PAY</text>
   <text x="1100" y="140" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">STATUS</text>
+  <rect x="218" y="150" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider -->
-  <rect x="218" y="150" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- ROW 1 — Carlos R. (OT alert) -->
+  <!-- ROW 1 – Carlos R. (OT alert) -->
+  <!-- DB source: pos_shifts WHERE staff_id=carlos, pay_period=current -->
   <rect x="218" y="151" width="1130" height="44" fill="#1C1215"/>
-  <text x="234"  y="171" font-size="12" font-weight="600" fill="#F1F5F9">Carlos R.</text>
+  <text x="234"  y="171" font-size="12" font-weight="600" fill="#E2E8F0">Carlos R.</text>
   <text x="354"  y="171" font-size="11" fill="#94A3B8">Cook</text>
-  <!-- Mon 9.5h OT -->
-  <rect x="446" y="156" width="48" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
-  <text x="470"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9.5h ⚠</text>
+  <!-- Mon 9.5h OT — DB source: pos_shifts.daily_hours[0] (editable) -->
+  <use href="#cellOTViolation" x="446" y="156" width="48" height="20"/>
+  <text x="470"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9.5h &#9888;</text>
+  <use href="#adminGear" x="496" y="158" width="8" height="8"/>
   <!-- Tue 8h -->
   <text x="516"  y="171" font-size="11" fill="#94A3B8">8h</text>
   <!-- Wed 9h OT -->
-  <rect x="546" y="156" width="44" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
-  <text x="568"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9h ⚠</text>
+  <use href="#cellOTViolation" x="546" y="156" width="44" height="20"/>
+  <text x="568"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9h &#9888;</text>
   <!-- Thu 8h -->
   <text x="616"  y="171" font-size="11" fill="#94A3B8">8h</text>
   <!-- Fri 9.5h OT -->
-  <rect x="646" y="156" width="48" height="20" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
-  <text x="670"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9.5h ⚠</text>
-  <!-- Sat — -->
-  <text x="716"  y="171" font-size="11" fill="#64748B">—</text>
-  <!-- Wk hours -->
+  <use href="#cellOTViolation" x="646" y="156" width="48" height="20"/>
+  <text x="670"  y="170" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">9.5h &#9888;</text>
+  <!-- Sat -->
+  <text x="716"  y="171" font-size="11" fill="#64748B">&#8212;</text>
+  <!-- Weekly totals -->
   <text x="760"  y="171" font-size="12" font-weight="700" fill="#EF4444">44h</text>
-  <!-- Daily OT -->
   <text x="820"  y="171" font-size="12" font-weight="700" fill="#EF4444">3.5h</text>
-  <!-- Wkly OT -->
   <text x="900"  y="171" font-size="12" font-weight="700" fill="#F59E0B">4h</text>
-  <!-- Est OT Pay -->
   <text x="980"  y="171" font-size="12" font-weight="700" fill="#EF4444">+$63.00</text>
-  <!-- Status badge -->
-  <rect x="1090" y="158" width="108" height="22" rx="4" fill="#EF4444"/>
-  <text x="1144" y="173" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">CA OT ALERT</text>
-  <!-- Row 2 note -->
-  <text x="234"  y="189" font-size="10" fill="#64748B">Daily OT (§510): 0.5h×1.5 on Mon/Wed/Fri · Weekly OT: 4h×1.5 over 40h federal threshold</text>
+  <use href="#badgeOTAlert" x="1090" y="158" width="108" height="22"/>
+  <!-- Detail note -->
+  <text x="234"  y="189" font-size="10" fill="#64748B">Daily OT (&#167;510): 0.5h&#215;1.5 on Mon/Wed/Fri &#183; Weekly OT: 4h&#215;1.5 over 40h federal threshold</text>
+  <rect x="218" y="196" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider -->
-  <rect x="218" y="196" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- ROW 2 — Sarah M. -->
-  <rect x="218" y="197" width="1130" height="36" fill="#1A1D2E"/>
-  <text x="234"  y="220" font-size="12" font-weight="600" fill="#F1F5F9">Sarah M.</text>
+  <!-- ROW 2 – Sarah M. -->
+  <rect x="218" y="197" width="1130" height="36" fill="url(#cardGrad)"/>
+  <text x="234"  y="220" font-size="12" font-weight="600" fill="#E2E8F0">Sarah M.</text>
   <text x="354"  y="220" font-size="11" fill="#94A3B8">Server</text>
   <text x="466"  y="220" font-size="11" fill="#94A3B8">6h</text>
   <text x="516"  y="220" font-size="11" fill="#94A3B8">6h</text>
-  <text x="566"  y="220" font-size="11" fill="#64748B">—</text>
+  <text x="566"  y="220" font-size="11" fill="#64748B">&#8212;</text>
   <text x="616"  y="220" font-size="11" fill="#94A3B8">6h</text>
   <text x="666"  y="220" font-size="11" fill="#94A3B8">6h</text>
   <text x="716"  y="220" font-size="11" fill="#94A3B8">6h</text>
   <text x="760"  y="220" font-size="12" fill="#94A3B8">30h</text>
-  <text x="820"  y="220" font-size="11" fill="#64748B">—</text>
-  <text x="900"  y="220" font-size="11" fill="#64748B">—</text>
-  <text x="980"  y="220" font-size="11" fill="#64748B">—</text>
-  <rect x="1090" y="207" width="84" height="22" rx="4" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
-  <text x="1132" y="222" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">No OT</text>
+  <text x="820"  y="220" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="900"  y="220" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="980"  y="220" font-size="11" fill="#64748B">&#8212;</text>
+  <use href="#badgeNoOT" x="1090" y="207" width="84" height="22"/>
+  <rect x="218" y="233" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider -->
-  <rect x="218" y="233" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- ROW 3 — John D. -->
-  <rect x="218" y="234" width="1130" height="36" fill="#1A1D2E"/>
-  <text x="234"  y="257" font-size="12" font-weight="600" fill="#F1F5F9">John D.</text>
+  <!-- ROW 3 – John D. -->
+  <rect x="218" y="234" width="1130" height="36" fill="url(#cardGrad)"/>
+  <text x="234"  y="257" font-size="12" font-weight="600" fill="#E2E8F0">John D.</text>
   <text x="354"  y="257" font-size="11" fill="#94A3B8">Server</text>
-  <text x="466"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="466"  y="257" font-size="11" fill="#64748B">&#8212;</text>
   <text x="516"  y="257" font-size="11" fill="#94A3B8">8h</text>
   <text x="566"  y="257" font-size="11" fill="#94A3B8">8h</text>
   <text x="616"  y="257" font-size="11" fill="#94A3B8">8h</text>
-  <text x="666"  y="257" font-size="11" fill="#64748B">—</text>
-  <text x="716"  y="257" font-size="11" fill="#64748B">—</text>
+  <text x="666"  y="257" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="716"  y="257" font-size="11" fill="#64748B">&#8212;</text>
   <text x="760"  y="257" font-size="12" fill="#94A3B8">24h</text>
-  <text x="820"  y="257" font-size="11" fill="#64748B">—</text>
-  <text x="900"  y="257" font-size="11" fill="#64748B">—</text>
-  <text x="980"  y="257" font-size="11" fill="#64748B">—</text>
-  <rect x="1090" y="244" width="84" height="22" rx="4" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
-  <text x="1132" y="259" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">No OT</text>
+  <text x="820"  y="257" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="900"  y="257" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="980"  y="257" font-size="11" fill="#64748B">&#8212;</text>
+  <use href="#badgeNoOT" x="1090" y="244" width="84" height="22"/>
+  <rect x="218" y="270" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider -->
-  <rect x="218" y="270" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- ROW 4 — Ana L. -->
-  <rect x="218" y="271" width="1130" height="36" fill="#1A1D2E"/>
-  <text x="234"  y="294" font-size="12" font-weight="600" fill="#F1F5F9">Ana L.</text>
+  <!-- ROW 4 – Ana L. -->
+  <rect x="218" y="271" width="1130" height="36" fill="url(#cardGrad)"/>
+  <text x="234"  y="294" font-size="12" font-weight="600" fill="#E2E8F0">Ana L.</text>
   <text x="354"  y="294" font-size="11" fill="#94A3B8">Cashier</text>
   <text x="466"  y="294" font-size="11" fill="#94A3B8">5h</text>
   <text x="516"  y="294" font-size="11" fill="#94A3B8">5h</text>
   <text x="566"  y="294" font-size="11" fill="#94A3B8">5h</text>
   <text x="616"  y="294" font-size="11" fill="#94A3B8">5h</text>
   <text x="666"  y="294" font-size="11" fill="#94A3B8">5h</text>
-  <text x="716"  y="294" font-size="11" fill="#64748B">—</text>
+  <text x="716"  y="294" font-size="11" fill="#64748B">&#8212;</text>
   <text x="760"  y="294" font-size="12" fill="#94A3B8">25h</text>
-  <text x="820"  y="294" font-size="11" fill="#64748B">—</text>
-  <text x="900"  y="294" font-size="11" fill="#64748B">—</text>
-  <text x="980"  y="294" font-size="11" fill="#64748B">—</text>
-  <rect x="1090" y="281" width="84" height="22" rx="4" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
-  <text x="1132" y="296" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">No OT</text>
+  <text x="820"  y="294" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="900"  y="294" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="980"  y="294" font-size="11" fill="#64748B">&#8212;</text>
+  <use href="#badgeNoOT" x="1090" y="281" width="84" height="22"/>
+  <rect x="218" y="307" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider -->
-  <rect x="218" y="307" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- ROW 5 — Dan O. -->
-  <rect x="218" y="308" width="1130" height="36" fill="#1A1D2E"/>
-  <text x="234"  y="331" font-size="12" font-weight="600" fill="#F1F5F9">Dan O.</text>
+  <!-- ROW 5 – Dan O. (at limit) -->
+  <rect x="218" y="308" width="1130" height="36" fill="url(#cardGrad)"/>
+  <text x="234"  y="331" font-size="12" font-weight="600" fill="#E2E8F0">Dan O.</text>
   <text x="354"  y="331" font-size="11" fill="#94A3B8">Manager</text>
   <text x="466"  y="331" font-size="11" fill="#94A3B8">8h</text>
   <text x="516"  y="331" font-size="11" fill="#94A3B8">8h</text>
   <text x="566"  y="331" font-size="11" fill="#94A3B8">8h</text>
   <text x="616"  y="331" font-size="11" fill="#94A3B8">8h</text>
   <text x="666"  y="331" font-size="11" fill="#94A3B8">8h</text>
-  <text x="716"  y="331" font-size="11" fill="#64748B">—</text>
+  <text x="716"  y="331" font-size="11" fill="#64748B">&#8212;</text>
   <text x="760"  y="331" font-size="12" font-weight="700" fill="#F59E0B">40h</text>
-  <text x="820"  y="331" font-size="11" fill="#64748B">—</text>
-  <text x="900"  y="331" font-size="11" fill="#64748B">—</text>
-  <text x="980"  y="331" font-size="11" fill="#64748B">—</text>
-  <rect x="1090" y="318" width="158" height="22" rx="4" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
-  <text x="1169" y="333" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="middle">At limit — any shift = OT</text>
+  <text x="820"  y="331" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="900"  y="331" font-size="11" fill="#64748B">&#8212;</text>
+  <text x="980"  y="331" font-size="11" fill="#64748B">&#8212;</text>
+  <use href="#badgeAtLimit" x="1090" y="318" width="158" height="22"/>
+  <rect x="218" y="344" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider -->
-  <rect x="218" y="344" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- Rules legend -->
-  <rect x="218" y="345" width="1130" height="78" fill="#13162A" rx="0"/>
+  <!-- ============================================================ -->
+  <!-- OT RULES LEGEND                                               -->
+  <!-- DB source: pos_labor_config (rule definitions, editable)      -->
+  <!-- ============================================================ -->
+  <rect x="218" y="345" width="1130" height="78" fill="#161930" rx="0"/>
   <text x="234" y="364" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="0.5">OT RULES LEGEND</text>
-  <rect x="234" y="370" width="320" height="44" rx="5" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
-  <text x="246" y="386" font-size="10" font-weight="700" fill="#EF4444">🔴 CA Daily OT — Labor Code §510</text>
-  <text x="246" y="400" font-size="10" fill="#94A3B8">&gt;8h/day = 1.5×   |   &gt;12h/day = 2×</text>
-  <text x="246" y="413" font-size="10" fill="#64748B">7th consecutive day: first 8h = 1.5×, after = 2×</text>
+  <use href="#adminGear" x="346" y="354" width="12" height="12"/>
 
-  <rect x="566" y="370" width="300" height="44" rx="5" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
-  <text x="578" y="386" font-size="10" font-weight="700" fill="#F59E0B">🟡 Federal Weekly OT — FLSA</text>
-  <text x="578" y="400" font-size="10" fill="#94A3B8">&gt;40h/week = 1.5×   |   No daily OT at federal level</text>
+  <!-- CA Daily OT rule card (editable) -->
+  <use href="#legendCard" x="234" y="370" width="320" height="44" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
+  <text x="246" y="386" font-size="10" font-weight="700" fill="#EF4444">CA Daily OT &#8212; Labor Code &#167;510</text>
+  <use href="#adminGear" x="438" y="377" width="10" height="10"/>
+  <text x="246" y="400" font-size="10" fill="#94A3B8">&gt;8h/day = 1.5&#215;   |   &gt;12h/day = 2&#215;</text>
+  <text x="246" y="413" font-size="10" fill="#64748B">7th consecutive day: first 8h = 1.5&#215;, after = 2&#215;</text>
+
+  <!-- Federal Weekly OT rule card (editable) -->
+  <use href="#legendCard" x="566" y="370" width="300" height="44" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="578" y="386" font-size="10" font-weight="700" fill="#F59E0B">Federal Weekly OT &#8212; FLSA</text>
+  <use href="#adminGear" x="764" y="377" width="10" height="10"/>
+  <text x="578" y="400" font-size="10" fill="#94A3B8">&gt;40h/week = 1.5&#215;   |   No daily OT at federal level</text>
   <text x="578" y="413" font-size="10" fill="#64748B">CA daily OT applies in addition to federal weekly OT</text>
 
+  <!-- Export Schema card -->
   <rect x="878" y="370" width="452" height="44" rx="5" fill="#131A1E" stroke="#8B5CF6" stroke-width="1"/>
-  <text x="890" y="386" font-size="10" font-weight="700" fill="#8B5CF6">📋 Export Schema — ADP / Gusto CA Payroll Compliance</text>
-  <text x="890" y="400" font-size="10" fill="#94A3B8">pos_shifts.daily_hours decimal[]  ← per-day array required for CA daily OT calc</text>
-  <text x="890" y="413" font-size="10" fill="#64748B">Columns: [mon, tue, wed, thu, fri, sat, sun] — zero-padded for days off</text>
+  <text x="890" y="386" font-size="10" font-weight="700" fill="#8B5CF6">Export Schema &#8212; ADP / Gusto CA Payroll Compliance</text>
+  <text x="890" y="400" font-size="10" fill="#94A3B8">pos_shifts.daily_hours decimal[]  &#8592; per-day array required for CA daily OT calc</text>
+  <text x="890" y="413" font-size="10" fill="#64748B">Columns: [mon, tue, wed, thu, fri, sat, sun] &#8212; zero-padded for days off</text>
 
-  <!-- Card 1 bottom border (rounds bottom of card at y=486) -->
-  <!-- The card rect already handles this -->
+  <!-- ============================================================ -->
+  <!-- CARD 2 – Tip Credit Compliance (left half)                  -->
+  <!-- DB source: pos_labor_config.tip_credit_allowed                -->
+  <!-- ============================================================ -->
+  <rect x="218" y="498" width="553" height="248" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
-  <!-- ===================================================================== -->
-  <!-- CARD 2 — Tip Credit (left half)                                        -->
-  <!-- ===================================================================== -->
-  <rect x="218" y="498" width="553" height="248" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="234" y="522" font-size="14" font-weight="700" fill="#E2E8F0">Tip Credit Compliance</text>
+  <use href="#adminGear" x="396" y="511" width="14" height="14"/>
+  <text x="234" y="538" font-size="11" fill="#64748B">FLSA &#167;3(m) &#8212; Tipped Minimum Wage</text>
 
-  <text x="234" y="522" font-size="14" font-weight="700" fill="#F1F5F9">Tip Credit Compliance</text>
-  <text x="234" y="538" font-size="11" fill="#64748B">FLSA §3(m) — Tipped Minimum Wage</text>
-
-  <!-- State row -->
-  <rect x="234" y="548" width="520" height="1" fill="#2D3148"/>
+  <!-- State selector (editable) -->
+  <rect x="234" y="548" width="520" height="1" fill="#2A2E45"/>
   <text x="234" y="565" font-size="11" fill="#94A3B8">Venue State:</text>
-  <rect x="318" y="552" width="100" height="22" rx="4" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <rect x="318" y="552" width="100" height="22" rx="4" fill="#1E2235" stroke="#8B5CF6" stroke-width="1"/>
   <text x="368" y="567" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="middle">California</text>
+  <use href="#adminGear" x="424" y="555" width="10" height="10"/>
 
   <!-- Prohibited banner -->
   <rect x="234" y="580" width="520" height="38" rx="6" fill="#2D1515" stroke="#EF4444" stroke-width="1.5"/>
-  <text x="254" y="596" font-size="12" font-weight="700" fill="#EF4444">❌  PROHIBITED IN CA — Full minimum wage required</text>
-  <text x="254" y="611" font-size="11" fill="#FCA5A5">CA Labor Code §351: All tips belong to the employee. Tip credit = $0.</text>
+  <text x="254" y="596" font-size="12" font-weight="700" fill="#EF4444">PROHIBITED IN CA &#8212; Full minimum wage required</text>
+  <text x="254" y="611" font-size="11" fill="#FCA5A5">CA Labor Code &#167;351: All tips belong to the employee. Tip credit = $0.</text>
 
-  <!-- Min wage -->
+  <!-- Min wage (editable) -->
   <text x="234" y="634" font-size="11" fill="#94A3B8">CA Minimum Wage (2026):</text>
-  <text x="390" y="634" font-size="12" font-weight="700" fill="#10B981">$16.50 / hr (base, no credit allowed)</text>
+  <text x="390" y="634" font-size="12" font-weight="700" fill="#22C55E">$16.50 / hr (base, no credit allowed)</text>
+  <use href="#adminGear" x="640" y="625" width="10" height="10"/>
 
   <!-- Block badge -->
   <rect x="234" y="642" width="342" height="24" rx="5" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
@@ -242,72 +340,75 @@
 
   <!-- States blocking table -->
   <text x="234" y="681" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">STATES PROHIBITING TIP CREDIT</text>
-  <!-- 8 state chips -->
-  <rect x="234" y="686" width="36" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="234" y="686" width="36" height="20"/>
   <text x="252" y="700" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">CA</text>
-  <rect x="278" y="686" width="36" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="278" y="686" width="36" height="20"/>
   <text x="296" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">MN</text>
-  <rect x="322" y="686" width="34" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="322" y="686" width="34" height="20"/>
   <text x="339" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">OR</text>
-  <rect x="364" y="686" width="36" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="364" y="686" width="36" height="20"/>
   <text x="382" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">WA</text>
-  <rect x="408" y="686" width="34" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="408" y="686" width="34" height="20"/>
   <text x="425" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">NV</text>
-  <rect x="450" y="686" width="32" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="450" y="686" width="32" height="20"/>
   <text x="466" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">AK</text>
-  <rect x="490" y="686" width="34" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="490" y="686" width="34" height="20"/>
   <text x="507" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">MT</text>
-  <rect x="532" y="686" width="30" height="20" rx="4" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <use href="#stateChip" x="532" y="686" width="30" height="20"/>
   <text x="547" y="700" font-size="10" fill="#94A3B8" text-anchor="middle">HI</text>
 
-  <text x="234" y="724" font-size="10" fill="#64748B">Federal tipped minimum: $2.13/hr — allowed in 42 states</text>
-  <text x="234" y="738" font-size="10" fill="#F97316">⚠ Alert: scheduling tipped staff below $16.50 base → warning fired at clock-in</text>
+  <text x="234" y="724" font-size="10" fill="#64748B">Federal tipped minimum: $2.13/hr &#8212; allowed in 42 states</text>
+  <text x="234" y="738" font-size="10" fill="#F97316">&#9888; Alert: scheduling tipped staff below $16.50 base &#8594; warning fired at clock-in</text>
 
-  <!-- ===================================================================== -->
-  <!-- CARD 3 — Minor Labor (right half)                                      -->
-  <!-- ===================================================================== -->
-  <rect x="783" y="498" width="565" height="248" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- ============================================================ -->
+  <!-- CARD 3 – Minor Labor Restrictions (right half)              -->
+  <!-- DB source: pos_staff.dob, pos_staff.is_minor                  -->
+  <!-- ============================================================ -->
+  <rect x="783" y="498" width="565" height="248" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
-  <text x="799" y="522" font-size="14" font-weight="700" fill="#F1F5F9">Minor Labor Restrictions</text>
-  <text x="799" y="538" font-size="11" fill="#64748B">FLSA §3(l) — Child Labor Provisions</text>
+  <text x="799" y="522" font-size="14" font-weight="700" fill="#E2E8F0">Minor Labor Restrictions</text>
+  <use href="#adminGear" x="974" y="511" width="14" height="14"/>
+  <text x="799" y="538" font-size="11" fill="#64748B">FLSA &#167;3(l) &#8212; Child Labor Provisions</text>
 
   <!-- Minors count badge -->
-  <rect x="1231" y="505" width="100" height="26" rx="5" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <rect x="1231" y="505" width="100" height="26" rx="5" fill="#1E2235" stroke="#8B5CF6" stroke-width="1"/>
   <text x="1281" y="522" font-size="11" font-weight="700" fill="#8B5CF6" text-anchor="middle">2 minors on clock</text>
 
-  <rect x="799" y="548" width="532" height="1" fill="#2D3148"/>
+  <rect x="799" y="548" width="532" height="1" fill="#2A2E45"/>
 
-  <!-- Jamie L. row -->
+  <!-- Jamie L. row (approaching limit) -->
+  <!-- DB source: pos_shifts WHERE staff_id=jamie (minor, age 17) -->
   <rect x="799" y="554" width="532" height="60" rx="5" fill="#1C1A0A" stroke="#F59E0B" stroke-width="1"/>
-  <text x="813" y="573" font-size="12" font-weight="700" fill="#F1F5F9">Jamie L.</text>
+  <text x="813" y="573" font-size="12" font-weight="700" fill="#E2E8F0">Jamie L.</text>
   <text x="877" y="573" font-size="10" fill="#94A3B8">Age 17</text>
   <text x="924" y="573" font-size="10" fill="#64748B">Clock-in: 3:30 PM</text>
-  <text x="1070" y="573" font-size="10" fill="#64748B">School day — max 3h</text>
-  <rect x="813" y="579" width="504" height="1" fill="#2D3148" opacity="0.4"/>
+  <!-- pos_labor_config.minor_max_school_day_hours (editable) -->
+  <text x="1070" y="573" font-size="10" fill="#64748B">School day &#8212; max 3h</text>
+  <use href="#adminGear" x="1194" y="564" width="10" height="10"/>
+  <rect x="813" y="579" width="504" height="1" fill="#2A2E45" opacity="0.4"/>
   <text x="813" y="597" font-size="10" fill="#64748B">Elapsed:</text>
-  <!-- Progress bar background -->
-  <rect x="860" y="588" width="340" height="12" rx="6" fill="#13162A"/>
-  <!-- Progress fill ~92% of 3h = 2h45min -->
+  <use href="#progressBg" x="860" y="588" width="340" height="12"/>
   <rect x="860" y="588" width="313" height="12" rx="6" fill="#F59E0B"/>
   <text x="1208" y="599" font-size="10" font-weight="700" fill="#F59E0B">2h 45min</text>
-  <text x="813" y="609" font-size="10" font-weight="700" fill="#F59E0B">⚠ Approaching 3h school-day limit — 15 min remaining</text>
+  <text x="813" y="609" font-size="10" font-weight="700" fill="#F59E0B">&#9888; Approaching 3h school-day limit &#8212; 15 min remaining</text>
 
-  <!-- Kai M. row -->
-  <rect x="799" y="622" width="532" height="50" rx="5" fill="#0F2218" stroke="#10B981" stroke-width="1"/>
-  <text x="813" y="641" font-size="12" font-weight="700" fill="#F1F5F9">Kai M.</text>
+  <!-- Kai M. row (OK) -->
+  <rect x="799" y="622" width="532" height="50" rx="5" fill="#0F2218" stroke="#22C55E" stroke-width="1"/>
+  <text x="813" y="641" font-size="12" font-weight="700" fill="#E2E8F0">Kai M.</text>
   <text x="857" y="641" font-size="10" fill="#94A3B8">Age 16</text>
   <text x="903" y="641" font-size="10" fill="#64748B">Clock-in: 4:00 PM</text>
-  <text x="1046" y="641" font-size="10" fill="#64748B">No school — max 8h</text>
-  <rect x="813" y="647" width="504" height="1" fill="#2D3148" opacity="0.4"/>
+  <text x="1046" y="641" font-size="10" fill="#64748B">No school &#8212; max 8h</text>
+  <use href="#adminGear" x="1164" y="632" width="10" height="10"/>
+  <rect x="813" y="647" width="504" height="1" fill="#2A2E45" opacity="0.4"/>
   <text x="813" y="663" font-size="10" fill="#64748B">Elapsed:</text>
-  <rect x="860" y="654" width="340" height="12" rx="6" fill="#13162A"/>
-  <!-- 4h / 8h = 50% -->
-  <rect x="860" y="654" width="170" height="12" rx="6" fill="#10B981"/>
-  <text x="1208" y="665" font-size="10" font-weight="700" fill="#10B981">4h in — OK</text>
+  <use href="#progressBg" x="860" y="654" width="340" height="12"/>
+  <rect x="860" y="654" width="170" height="12" rx="6" fill="#22C55E"/>
+  <text x="1208" y="665" font-size="10" font-weight="700" fill="#22C55E">4h in &#8212; OK</text>
 
-  <!-- Equipment block -->
-  <rect x="799" y="680" width="532" height="1" fill="#2D3148"/>
+  <!-- Equipment blocked for minors -->
+  <rect x="799" y="680" width="532" height="1" fill="#2A2E45"/>
   <text x="799" y="697" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">EQUIPMENT AUTO-BLOCKED FOR MINORS</text>
+  <use href="#adminGear" x="1010" y="688" width="10" height="10"/>
   <rect x="799" y="702" width="90" height="22" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
   <text x="844" y="717" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Slicer</text>
   <rect x="897" y="702" width="100" height="22" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
@@ -315,55 +416,58 @@
   <rect x="1005" y="702" width="144" height="22" rx="4" fill="#2D1515" stroke="#EF4444" stroke-width="1"/>
   <text x="1077" y="717" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Commercial Mixer</text>
 
-  <!-- Toggle -->
+  <!-- Toggle: Block clock-in for minors (editable) -->
   <text x="799" y="737" font-size="10" fill="#94A3B8">Block clock-in for minors during school hours</text>
-  <!-- Toggle ON -->
-  <rect x="1094" y="727" width="44" height="20" rx="10" fill="#10B981"/>
-  <circle cx="1128" cy="737" r="8" fill="#FFF"/>
-  <text x="1148" y="740" font-size="10" font-weight="700" fill="#10B981">ON</text>
+  <use href="#toggleOn" x="1094" y="727" width="44" height="20"/>
+  <use href="#adminGear" x="1074" y="731" width="10" height="10"/>
+  <text x="1148" y="740" font-size="10" font-weight="700" fill="#22C55E">ON</text>
 
-  <!-- ===================================================================== -->
-  <!-- CARD 4 — Predictive Scheduling (full width)                            -->
-  <!-- ===================================================================== -->
-  <rect x="218" y="758" width="1130" height="208" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- ============================================================ -->
+  <!-- CARD 4 – Fair Workweek Compliance (full width)              -->
+  <!-- DB source: pos_labor_config.predictive_scheduling_days        -->
+  <!-- ============================================================ -->
+  <rect x="218" y="758" width="1130" height="208" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
-  <text x="234" y="782" font-size="14" font-weight="700" fill="#F1F5F9">Fair Workweek Compliance</text>
-  <text x="234" y="798" font-size="11" fill="#64748B">Predictive Scheduling — Advance notice requirements by jurisdiction</text>
+  <text x="234" y="782" font-size="14" font-weight="700" fill="#E2E8F0">Fair Workweek Compliance</text>
+  <use href="#adminGear" x="418" y="771" width="14" height="14"/>
+  <text x="234" y="798" font-size="11" fill="#64748B">Predictive Scheduling &#8212; Advance notice requirements by jurisdiction</text>
 
-  <!-- Jurisdiction -->
+  <!-- Jurisdiction (editable) -->
   <text x="234" y="820" font-size="11" fill="#94A3B8">Jurisdiction (auto-detected):</text>
-  <rect x="388" y="808" width="120" height="24" rx="5" fill="#1E2240" stroke="#8B5CF6" stroke-width="1"/>
+  <rect x="388" y="808" width="120" height="24" rx="5" fill="#1E2235" stroke="#8B5CF6" stroke-width="1"/>
   <text x="448" y="824" font-size="12" font-weight="700" fill="#8B5CF6" text-anchor="middle">Chicago, IL</text>
+  <use href="#adminGear" x="514" y="812" width="10" height="10"/>
 
-  <text x="520" y="820" font-size="11" fill="#64748B">Requirement:</text>
-  <text x="604" y="820" font-size="11" font-weight="700" fill="#F1F5F9">Schedules must be posted 7+ days in advance</text>
+  <!-- Requirement (editable) -->
+  <text x="536" y="820" font-size="11" fill="#64748B">Requirement:</text>
+  <text x="620" y="820" font-size="11" font-weight="700" fill="#E2E8F0">Schedules must be posted 7+ days in advance</text>
+  <use href="#adminGear" x="918" y="811" width="10" height="10"/>
 
   <!-- Status warning -->
   <rect x="234" y="832" width="1096" height="52" rx="6" fill="#1C1A0A" stroke="#F97316" stroke-width="1.5"/>
-  <text x="252" y="852" font-size="13" font-weight="700" fill="#F97316">⚠  Week of Jun 2 not published</text>
-  <text x="252" y="870" font-size="11" fill="#94A3B8">5 days until posting required (deadline: May 26) — premium pay applies for any last-minute changes after publication</text>
+  <text x="252" y="852" font-size="13" font-weight="700" fill="#F97316">&#9888;  Week of Jun 2 not published</text>
+  <text x="252" y="870" font-size="11" fill="#94A3B8">5 days until posting required (deadline: May 26) &#8212; premium pay applies for any last-minute changes after publication</text>
   <rect x="1125" y="839" width="190" height="38" rx="5" fill="#1C1215" stroke="#EF4444" stroke-width="1"/>
   <text x="1220" y="855" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">Penalty: Premium Pay</text>
   <text x="1220" y="870" font-size="10" fill="#94A3B8" text-anchor="middle">for late schedule changes</text>
 
-  <!-- Info row -->
-  <rect x="234" y="892" width="1096" height="1" fill="#2D3148"/>
-
-  <text x="234" y="912" font-size="11" fill="#64748B">Cities with predictive scheduling laws: Chicago · NYC · Seattle · Philadelphia · San Francisco · Emeryville · Los Angeles (hospitality)</text>
+  <rect x="234" y="892" width="1096" height="1" fill="#2A2E45"/>
+  <text x="234" y="912" font-size="11" fill="#64748B">Cities with predictive scheduling laws: Chicago &#183; NYC &#183; Seattle &#183; Philadelphia &#183; San Francisco &#183; Emeryville &#183; Los Angeles (hospitality)</text>
 
   <!-- Action buttons -->
-  <rect x="234" y="926" width="220" height="36" rx="7" fill="#F59E0B"/>
-  <text x="344" y="949" font-size="13" font-weight="700" fill="#0F1117" text-anchor="middle">Publish Jun 2 Schedule</text>
+  <rect x="234" y="926" width="220" height="36" rx="7" fill="url(#amberBtnGrad)" filter="url(#btnShadow)"/>
+  <text x="344" y="949" font-size="13" font-weight="700" fill="#0C0E1A" text-anchor="middle">Publish Jun 2 Schedule</text>
 
-  <text x="468" y="948" font-size="12" fill="#8B5CF6" text-decoration="underline">View predictive scheduling laws by city →</text>
+  <text x="468" y="948" font-size="12" fill="#8B5CF6" text-decoration="underline">View predictive scheduling laws by city &#8594;</text>
 
-  <!-- ===================================================================== -->
-  <!-- DB SCHEMA FOOTER                                                        -->
-  <!-- ===================================================================== -->
-  <rect x="218" y="974" width="1130" height="46" rx="6" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <!-- ============================================================ -->
+  <!-- DB SCHEMA FOOTER                                              -->
+  <!-- DB source: pos_shifts, pos_staff, pos_labor_config schemas    -->
+  <!-- ============================================================ -->
+  <rect x="218" y="974" width="1130" height="46" rx="6" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
   <text x="234" y="990" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">DB SCHEMA</text>
   <text x="234" y="1005" font-size="10" fill="#8B5CF6" font-family="monospace">pos_shifts.daily_hours decimal[]</text>
-  <text x="440" y="1005" font-size="10" fill="#64748B" font-family="monospace">· pos_staff.dob date · pos_staff.is_minor boolean</text>
+  <text x="440" y="1005" font-size="10" fill="#64748B" font-family="monospace">&#183; pos_staff.dob date &#183; pos_staff.is_minor boolean</text>
   <text x="234" y="1017" font-size="10" fill="#8B5CF6" font-family="monospace">pos_labor_config(venue_id, jurisdiction, tip_credit_allowed boolean, predictive_scheduling_days smallint, minor_max_school_day_hours smallint)</text>
 
 </svg>

@@ -1,237 +1,473 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
-  <!-- Background / dimmed register behind -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
-  <rect width="1366" height="1024" fill="#000" opacity="0.65"/>
+<svg role="img" aria-labelledby="title-ipad_age_verification-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- === MAIN MODAL === -->
-  <rect x="100" y="60" width="1166" height="904" rx="20" fill="#13162A"/>
+  <!-- ============================================================
+       Synalux POS — Age Verification Modal (iPad 1366x1024)
+       Admin settings source: Settings > Compliance > Age Verification
+       ============================================================ -->
+
+  <!-- ======================== DEFS ======================== -->
+  <title id="title-ipad_age_verification-svg">Synalux POS — age verification</title>
+  <desc>Synalux POS mockup screen for age verification. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#080A14"/>
+    </linearGradient>
+    <linearGradient id="modalGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161930"/>
+      <stop offset="100%" stop-color="#131528"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="scanLineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="passCardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D2B12"/>
+      <stop offset="100%" stop-color="#071A0A"/>
+    </linearGradient>
+    <linearGradient id="failCardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D0808"/>
+      <stop offset="100%" stop-color="#1A0404"/>
+    </linearGradient>
+
+    <!-- Drop shadows -->
+    <filter id="shadowLg" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="shadowMd" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="shadowSm" x="-6%" y="-6%" width="112%" height="118%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glowAmber" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#F59E0B" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glowGreen" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#22C55E" flood-opacity="0.35"/>
+    </filter>
+    <filter id="glowRed" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#EF4444" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- ====== SYMBOLS for repeated UI elements ====== -->
+
+    <!-- Section label (reused for each panel heading) -->
+    <symbol id="sectionLabel" overflow="visible">
+      <!-- Usage: <use href="#sectionLabel" x="X" y="Y"/> then position <text> child manually -->
+      <!-- This is a structural marker; text placed via <text> at call site -->
+    </symbol>
+
+    <!-- Admin-configurable gear icon (shows this value is admin-settable) -->
+    <!-- Settings > Compliance > Age Verification -->
+    <symbol id="adminGear" viewBox="0 0 20 20" overflow="visible">
+      <circle cx="10" cy="10" r="8" fill="none" stroke="#F59E0B" stroke-width="1.2" stroke-dasharray="2,2" opacity="0.6"/>
+      <text x="10" y="14" fill="#F59E0B" font-size="12" text-anchor="middle" opacity="0.7">&#x2699;</text>
+    </symbol>
+
+    <!-- Flow step circle (numbered step indicator for scan flow) -->
+    <symbol id="flowStepCircle" viewBox="0 0 32 32" overflow="visible">
+      <circle cx="16" cy="16" r="16" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- Flow step circle - complete/green variant -->
+    <symbol id="flowStepCircleGreen" viewBox="0 0 32 32" overflow="visible">
+      <circle cx="16" cy="16" r="16" fill="#22C55E"/>
+    </symbol>
+
+    <!-- Flow connector line (vertical dashed connector between steps) -->
+    <symbol id="flowConnector" viewBox="0 0 2 28" overflow="visible">
+      <rect x="0" y="0" width="2" height="28" fill="#2D3050"/>
+    </symbol>
+
+    <!-- Card base - dark panel (reused for left/right side panels) -->
+    <symbol id="darkPanel" overflow="visible">
+      <rect width="100%" height="100%" rx="12" fill="#0C0E1A"/>
+    </symbol>
+
+    <!-- Verification method card (reused for scan/DOB/loyalty options) -->
+    <symbol id="methodCard" viewBox="0 0 456 100" overflow="visible">
+      <rect x="0" y="0" width="456" height="100" rx="14" fill="#1E2235"/>
+    </symbol>
+
+    <!-- Numpad key (reused in manual DOB entry) -->
+    <symbol id="numKey" viewBox="0 0 40 30" overflow="visible">
+      <rect x="0" y="0" width="40" height="30" rx="4" fill="#1E2235"/>
+    </symbol>
+
+    <!-- Outcome state card - pass -->
+    <symbol id="stateCardPass" viewBox="0 0 202 120" overflow="visible">
+      <rect x="0" y="0" width="202" height="120" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="1"/>
+    </symbol>
+
+    <!-- Outcome state card - blocked -->
+    <symbol id="stateCardBlocked" viewBox="0 0 202 130" overflow="visible">
+      <rect x="0" y="0" width="202" height="130" rx="10" fill="#2D0808" stroke="#EF4444" stroke-width="1"/>
+    </symbol>
+
+    <!-- Outcome state card - warning/expired -->
+    <symbol id="stateCardWarning" viewBox="0 0 202 120" overflow="visible">
+      <rect x="0" y="0" width="202" height="120" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
+    </symbol>
+
+    <!-- Outcome state card - info/manual -->
+    <symbol id="stateCardInfo" viewBox="0 0 202 130" overflow="visible">
+      <rect x="0" y="0" width="202" height="130" rx="10" fill="#10202D" stroke="#3B82F6" stroke-width="1"/>
+    </symbol>
+
+    <!-- Outcome state card - loyalty -->
+    <symbol id="stateCardLoyalty" viewBox="0 0 202 80" overflow="visible">
+      <rect x="0" y="0" width="202" height="80" rx="10" fill="#1A102D" stroke="#A855F7" stroke-width="1"/>
+    </symbol>
+
+    <!-- Action button - primary (green) -->
+    <symbol id="btnPrimary" viewBox="0 0 186 32" overflow="visible">
+      <rect x="0" y="0" width="186" height="32" rx="8" fill="url(#greenGrad)"/>
+    </symbol>
+
+    <!-- Action button - outline -->
+    <symbol id="btnOutline" viewBox="0 0 186 32" overflow="visible">
+      <rect x="0" y="0" width="186" height="32" rx="8" fill="none" stroke="#64748B" stroke-width="1"/>
+    </symbol>
+
+    <!-- Close button (X) -->
+    <symbol id="closeBtn" viewBox="0 0 50 44" overflow="visible">
+      <rect x="0" y="0" width="50" height="44" rx="8" fill="#1E2235"/>
+      <text x="25" y="26" fill="#64748B" font-size="20" text-anchor="middle">&#x2715;</text>
+    </symbol>
+
+    <!-- Corner guide (camera viewfinder corners) -->
+    <symbol id="cornerTL" viewBox="0 0 30 30" overflow="visible">
+      <rect x="0" y="0" width="30" height="3" fill="#F59E0B"/>
+      <rect x="0" y="0" width="3" height="30" fill="#F59E0B"/>
+    </symbol>
+    <symbol id="cornerTR" viewBox="0 0 30 30" overflow="visible">
+      <rect x="0" y="0" width="30" height="3" fill="#F59E0B"/>
+      <rect x="27" y="0" width="3" height="30" fill="#F59E0B"/>
+    </symbol>
+    <symbol id="cornerBL" viewBox="0 0 30 30" overflow="visible">
+      <rect x="0" y="27" width="30" height="3" fill="#F59E0B"/>
+      <rect x="0" y="0" width="3" height="30" fill="#F59E0B"/>
+    </symbol>
+    <symbol id="cornerBR" viewBox="0 0 30 30" overflow="visible">
+      <rect x="0" y="27" width="30" height="3" fill="#F59E0B"/>
+      <rect x="27" y="0" width="3" height="30" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- Privacy badge -->
+    <symbol id="privacyBadge" viewBox="0 0 440 56" overflow="visible">
+      <rect x="0" y="0" width="440" height="56" rx="8" fill="#102020"/>
+    </symbol>
+
+    <!-- Quick-check "Born before" shortcut button -->
+    <symbol id="bornBeforeBtn" viewBox="0 0 360 44" overflow="visible">
+      <rect x="0" y="0" width="360" height="44" rx="10" fill="#1E2235" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </symbol>
+
+    <!-- Incident log link -->
+    <symbol id="incidentLogLink" viewBox="0 0 220 30" overflow="visible">
+      <rect x="0" y="0" width="220" height="30" rx="6" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+  </defs>
+
+  <!-- ======================== BACKGROUND ======================== -->
+  <!-- Dimmed register view behind modal -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+  <rect width="1366" height="1024" fill="#000" opacity="0.6"/>
+
+  <!-- ======================== MAIN MODAL ======================== -->
+  <rect x="100" y="60" width="1166" height="904" rx="20" fill="url(#modalGrad)" filter="url(#shadowLg)"/>
   <rect x="100" y="60" width="1166" height="904" rx="20" fill="none" stroke="#F59E0B" stroke-width="2"/>
 
-  <!-- Red alert top bar (alcohol trigger) -->
-  <rect x="100" y="60" width="1166" height="8" rx="4" fill="#EF4444"/>
+  <!-- Red alert top bar — indicates alcohol/restricted item trigger -->
+  <!-- Admin: Settings > Compliance > Age Verification > Trigger Items configures which items activate this modal -->
+  <rect x="100" y="60" width="1166" height="8" rx="4" fill="url(#redGrad)"/>
 
-  <!-- Header -->
+  <!-- ======================== HEADER ======================== -->
   <rect x="100" y="68" width="1166" height="70" rx="20" fill="#2D0808"/>
   <rect x="100" y="108" width="1166" height="30" fill="#2D0808"/>
-  <text x="140" y="100" fill="#EF4444" font-size="28" font-weight="700">🔞  Age Verification Required</text>
-  <text x="140" y="128" fill="#F87171" font-size="15">Alcohol item detected: 1× Draft Beer — ID must be verified before adding to order</text>
-  <rect x="1190" y="80" width="50" height="44" rx="8" fill="#1E2235"/>
-  <text x="1215" y="106" fill="#64748B" font-size="20" text-anchor="middle">✕</text>
+  <text x="140" y="100" fill="#EF4444" font-size="28" font-weight="700">&#x1F51E;  Age Verification Required</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Trigger Items — which product categories/tags activate this modal -->
+  <text x="140" y="128" fill="#F87171" font-size="15">Alcohol item detected: 1&#xD7; Draft Beer ($6.00) at T9 &#x2014; ID must be verified before adding to order</text>
+  <!-- Admin gear: indicates trigger items are admin-configurable -->
+  <use href="#adminGear" x="605" y="118" width="16" height="16"/>
+  <!-- Server & table indicator -->
+  <rect x="940" y="84" width="240" height="36" rx="8" fill="#1E2235"/>
+  <circle cx="962" cy="102" r="14" fill="#4ADE80"/>
+  <text x="962" y="107" fill="#0C0E1A" font-size="11" font-weight="700" text-anchor="middle">JS</text>
+  <text x="982" y="98" fill="#CBD5E1" font-size="12" font-weight="600">John S. (Server)</text>
+  <text x="982" y="114" fill="#94A3B8" font-size="11">T9 &#xB7; 3:10 PM</text>
+  <!-- Close button -->
+  <use href="#closeBtn" x="1190" y="80" width="50" height="44"/>
 
-  <!-- === LEFT: Scan Flow Steps === -->
-  <rect x="120" y="148" width="480" height="796" rx="12" fill="#0F1117"/>
+  <!-- ======================== LEFT PANEL: Verification Methods ======================== -->
+  <rect x="120" y="148" width="480" height="796" rx="12" fill="#0C0E1A" filter="url(#shadowMd)"/>
 
-  <!-- Step indicator -->
+  <!-- Section: VERIFICATION METHOD -->
   <text x="140" y="184" fill="#64748B" font-size="11" font-weight="700" letter-spacing="2">VERIFICATION METHOD</text>
 
-  <!-- Step 1: Scan ID (primary) -->
-  <rect x="132" y="194" width="456" height="130" rx="14" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2"/>
-  <!-- Active indicator -->
-  <rect x="132" y="194" width="6" height="130" rx="3" fill="#F59E0B"/>
+  <!-- === Method 1: Scan ID (active/primary) === -->
+  <rect x="132" y="194" width="456" height="130" rx="14" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2" filter="url(#shadowSm)"/>
+  <!-- Active indicator bar -->
+  <rect x="132" y="194" width="6" height="130" rx="3" fill="url(#amberGrad)"/>
+  <!-- Icon -->
   <rect x="148" y="208" width="56" height="56" rx="10" fill="#F59E0B"/>
-  <text x="176" y="246" fill="#0F1117" font-size="28" text-anchor="middle">📷</text>
-  <text x="215" y="228" fill="#E2E8F0" font-size="16" font-weight="700">Scan Driver's License</text>
+  <text x="176" y="246" fill="#0C0E1A" font-size="28" text-anchor="middle">&#x1F4F7;</text>
+  <!-- Labels -->
+  <text x="215" y="228" fill="#E2E8F0" font-size="16" font-weight="700">Scan Driver&#x2019;s License</text>
   <text x="215" y="248" fill="#94A3B8" font-size="13">Point camera at back of ID (PDF417 barcode)</text>
   <text x="215" y="266" fill="#94A3B8" font-size="13">or swipe magnetic stripe reader</text>
-  <!-- RECOMMENDED badge -->
+  <!-- Recommended badge -->
   <rect x="215" y="276" width="100" height="22" rx="6" fill="#1A3320"/>
-  <text x="265" y="291" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">✓ Recommended</text>
+  <text x="265" y="291" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">&#x2713; Recommended</text>
   <text x="570" y="262" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">Fastest</text>
 
-  <!-- Step 2: Manual DOB -->
-  <rect x="132" y="336" width="456" height="100" rx="14" fill="#1E2235"/>
+  <!-- === Method 2: Manual DOB Entry === -->
+  <use href="#methodCard" x="132" y="336" width="456" height="100"/>
   <rect x="148" y="352" width="44" height="44" rx="10" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
-  <text x="170" y="380" fill="#64748B" font-size="22" text-anchor="middle">⌨</text>
+  <text x="170" y="380" fill="#64748B" font-size="22" text-anchor="middle">&#x2328;</text>
   <text x="204" y="374" fill="#CBD5E1" font-size="16" font-weight="600">Enter Date of Birth</text>
-  <text x="204" y="394" fill="#64748B" font-size="13">Manual entry · requires manager PIN</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Manual Entry requires Manager PIN (toggle) -->
+  <text x="204" y="394" fill="#64748B" font-size="13">Manual entry &#xB7; requires manager PIN</text>
+  <use href="#adminGear" x="378" y="384" width="14" height="14"/>
   <text x="204" y="412" fill="#64748B" font-size="12">MM / DD / YYYY</text>
 
-  <!-- Step 3: Known customer -->
-  <rect x="132" y="448" width="456" height="100" rx="14" fill="#1E2235"/>
+  <!-- === Method 3: Loyalty Customer === -->
+  <use href="#methodCard" x="132" y="448" width="456" height="100"/>
   <rect x="148" y="464" width="44" height="44" rx="10" fill="#1E2235" stroke="#64748B" stroke-width="1"/>
-  <text x="170" y="492" fill="#64748B" font-size="22" text-anchor="middle">👤</text>
+  <text x="170" y="492" fill="#64748B" font-size="22" text-anchor="middle">&#x1F464;</text>
   <text x="204" y="484" fill="#CBD5E1" font-size="16" font-weight="600">Loyalty Customer</text>
   <text x="204" y="504" fill="#64748B" font-size="13">DOB on file from loyalty profile</text>
   <text x="204" y="522" fill="#64748B" font-size="12">Auto-verified if DOB confirmed previously</text>
 
-  <!-- How scanning works -->
-  <text x="140" y="584" fill="#64748B" font-size="11" font-weight="700" letter-spacing="2">HOW DL SCANNING WORKS</text>
+  <!-- ======================== "Born before" Quick Shortcut ======================== -->
+  <!-- Admin: Settings > Compliance > Age Verification > Minimum Age (default: 21) determines the cutoff date -->
+  <use href="#bornBeforeBtn" x="140" y="560" width="360" height="44"/>
+  <text x="320" y="578" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">&#x26A1; Quick Check: Born before May 30, 2005?</text>
+  <text x="320" y="594" fill="#94A3B8" font-size="11" text-anchor="middle">Tap YES to approve &#xB7; Tap NO to require full DOB entry</text>
+  <!-- Admin gear: min age is configurable -->
+  <use href="#adminGear" x="504" y="564" width="14" height="14"/>
+  <!-- Approve / Deny shortcut buttons -->
+  <rect x="140" y="608" width="172" height="36" rx="8" fill="#0D2B12" stroke="#22C55E" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="226" y="630" fill="#22C55E" font-size="14" font-weight="700" text-anchor="middle">&#x2713; Yes &#x2014; Approve</text>
+  <rect x="322" y="608" width="172" height="36" rx="8" fill="#2D0808" stroke="#EF4444" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="408" y="630" fill="#EF4444" font-size="14" font-weight="700" text-anchor="middle">&#x2717; No &#x2014; Deny</text>
 
-  <!-- iOS flow diagram -->
-  <rect x="132" y="594" width="456" height="280" rx="12" fill="#1A1D2E"/>
+  <!-- ======================== LEFT: How DL Scanning Works ======================== -->
+  <text x="140" y="672" fill="#64748B" font-size="11" font-weight="700" letter-spacing="2">HOW DL SCANNING WORKS</text>
 
-  <!-- Flow steps -->
-  <circle cx="160" cy="626" r="16" fill="#F59E0B"/>
-  <text x="160" y="631" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">1</text>
-  <text x="186" y="622" fill="#E2E8F0" font-size="13" font-weight="600">iOS AVCaptureSession activates camera</text>
-  <text x="186" y="640" fill="#64748B" font-size="12">Back-facing camera, auto-focus on barcode</text>
+  <rect x="132" y="682" width="456" height="210" rx="12" fill="#1A1D2E" filter="url(#shadowSm)"/>
 
-  <rect x="158" y="650" width="2" height="28" fill="#2D3050"/>
+  <!-- Flow Step 1 -->
+  <use href="#flowStepCircle" x="144" y="698" width="32" height="32"/>
+  <text x="160" y="719" fill="#0C0E1A" font-size="12" font-weight="700" text-anchor="middle">1</text>
+  <text x="186" y="710" fill="#E2E8F0" font-size="13" font-weight="600">iOS AVCaptureSession activates camera</text>
+  <text x="186" y="726" fill="#64748B" font-size="12">Back-facing camera, auto-focus on barcode</text>
 
-  <circle cx="160" cy="690" r="16" fill="#F59E0B"/>
-  <text x="160" y="695" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">2</text>
-  <text x="186" y="686" fill="#E2E8F0" font-size="13" font-weight="600">Vision framework decodes PDF417</text>
-  <text x="186" y="704" fill="#64748B" font-size="12">AAMVA standard DL data format extracted</text>
+  <use href="#flowConnector" x="158" y="736" width="2" height="28"/>
 
-  <rect x="158" y="714" width="2" height="28" fill="#2D3050"/>
+  <!-- Flow Step 2 -->
+  <use href="#flowStepCircle" x="144" y="770" width="32" height="32"/>
+  <text x="160" y="791" fill="#0C0E1A" font-size="12" font-weight="700" text-anchor="middle">2</text>
+  <text x="186" y="782" fill="#E2E8F0" font-size="13" font-weight="600">Vision framework decodes PDF417</text>
+  <text x="186" y="798" fill="#64748B" font-size="12">AAMVA standard DL data format extracted</text>
 
-  <circle cx="160" cy="754" r="16" fill="#F59E0B"/>
-  <text x="160" y="759" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">3</text>
-  <text x="186" y="750" fill="#E2E8F0" font-size="13" font-weight="600">IDScanBridge.swift sends DOB to WebView</text>
-  <text x="186" y="768" fill="#64748B" font-size="12">postMessage({type:'id_scan', dob:'19850412', expiry:'20280415'})</text>
+  <use href="#flowConnector" x="158" y="808" width="2" height="28"/>
 
-  <rect x="158" y="778" width="2" height="28" fill="#2D3050"/>
-
-  <circle cx="160" cy="818" r="16" fill="#22C55E"/>
-  <text x="160" y="823" fill="white" font-size="12" font-weight="700" text-anchor="middle">4</text>
-  <text x="186" y="814" fill="#E2E8F0" font-size="13" font-weight="600">POS calculates age → allow / block</text>
-  <text x="186" y="832" fill="#64748B" font-size="12">Logs to pos_audit_log (DOB + doc_last_4 only)</text>
-
-  <rect x="158" y="842" width="2" height="18" fill="#2D3050"/>
+  <!-- Flow Step 3 -->
+  <use href="#flowStepCircle" x="144" y="842" width="32" height="32"/>
+  <text x="160" y="863" fill="#0C0E1A" font-size="12" font-weight="700" text-anchor="middle">3</text>
+  <text x="186" y="854" fill="#E2E8F0" font-size="13" font-weight="600">IDScanBridge.swift sends DOB to WebView</text>
+  <text x="186" y="870" fill="#64748B" font-size="11">postMessage({type:'id_scan', dob:'19900315', expiry:'20290320'})</text>
 
   <!-- Privacy note -->
-  <rect x="140" y="868" width="452" height="56" rx="8" fill="#102020"/>
-  <text x="156" y="892" fill="#06B6D4" font-size="13" font-weight="600">🔒  Privacy: Full ID data NOT stored</text>
-  <text x="156" y="910" fill="#64748B" font-size="12">Only: verification result (pass/fail) + last 4 of document number + timestamp</text>
+  <use href="#privacyBadge" x="140" y="888" width="440" height="56"/>
+  <text x="156" y="912" fill="#06B6D4" font-size="13" font-weight="600">&#x1F512;  Privacy: Full ID data NOT stored</text>
+  <text x="156" y="928" fill="#64748B" font-size="12">Only: pass/fail result + last 4 of doc number + timestamp</text>
 
-  <!-- === CENTER: Camera View === -->
-  <rect x="620" y="148" width="380" height="500" rx="14" fill="#080C14"/>
+  <!-- ======================== CENTER: Camera Viewfinder ======================== -->
+  <rect x="620" y="148" width="380" height="500" rx="14" fill="#080C14" filter="url(#shadowMd)"/>
   <rect x="620" y="148" width="380" height="500" rx="14" fill="none" stroke="#F59E0B" stroke-width="2"/>
 
-  <!-- Camera viewfinder -->
   <text x="810" y="210" fill="#94A3B8" font-size="14" text-anchor="middle">Point at back of ID</text>
 
-  <!-- Simulated camera view - ID card -->
+  <!-- Simulated camera view - ID card area -->
   <rect x="660" y="220" width="300" height="200" rx="8" fill="#1A2A3A"/>
-  <!-- Corner guides -->
-  <rect x="662" y="222" width="30" height="3" fill="#F59E0B"/>
-  <rect x="662" y="222" width="3" height="30" fill="#F59E0B"/>
-  <rect x="928" y="222" width="30" height="3" fill="#F59E0B"/>
-  <rect x="955" y="222" width="3" height="30" fill="#F59E0B"/>
-  <rect x="662" y="417" width="30" height="3" fill="#F59E0B"/>
-  <rect x="662" y="389" width="3" height="30" fill="#F59E0B"/>
-  <rect x="928" y="417" width="30" height="3" fill="#F59E0B"/>
-  <rect x="955" y="389" width="3" height="30" fill="#F59E0B"/>
+
+  <!-- Corner guides (reused symbols) -->
+  <use href="#cornerTL" x="662" y="222" width="30" height="30"/>
+  <use href="#cornerTR" x="930" y="222" width="30" height="30"/>
+  <use href="#cornerBL" x="662" y="390" width="30" height="30"/>
+  <use href="#cornerBR" x="930" y="390" width="30" height="30"/>
 
   <!-- ID card representation -->
   <rect x="670" y="230" width="282" height="182" rx="8" fill="#1C3054"/>
-  <!-- State name area -->
+  <!-- State header -->
   <rect x="678" y="238" width="266" height="30" rx="4" fill="#142040"/>
   <text x="811" y="257" fill="#E2E8F0" font-size="14" font-weight="700" text-anchor="middle">DRIVER LICENSE</text>
   <text x="811" y="271" fill="#94A3B8" font-size="11" text-anchor="middle">STATE OF CALIFORNIA</text>
   <!-- Photo placeholder -->
   <rect x="678" y="274" width="64" height="80" rx="4" fill="#0D1A2A"/>
-  <text x="710" y="320" fill="#2D3050" font-size="28" text-anchor="middle">👤</text>
-  <!-- Text fields -->
-  <text x="752" y="288" fill="#94A3B8" font-size="9">LN: GARCIA</text>
-  <text x="752" y="302" fill="#94A3B8" font-size="9">FN: MARIA ELENA</text>
-  <text x="752" y="316" fill="#94A3B8" font-size="9">DOB: 04/12/1985</text>
-  <text x="752" y="330" fill="#94A3B8" font-size="9">EXP: 04/15/2028</text>
-  <text x="752" y="344" fill="#94A3B8" font-size="9">ID: D1234567</text>
-  <!-- PDF417 barcode representation -->
+  <text x="710" y="320" fill="#2D3050" font-size="28" text-anchor="middle">&#x1F464;</text>
+  <!-- ID data fields -->
+  <text x="752" y="288" fill="#94A3B8" font-size="9">LN: CUSTOMER</text>
+  <text x="752" y="302" fill="#94A3B8" font-size="9">FN: GUEST</text>
+  <text x="752" y="316" fill="#94A3B8" font-size="9">DOB: 03/15/1990</text>
+  <text x="752" y="330" fill="#94A3B8" font-size="9">EXP: 03/20/2029</text>
+  <text x="752" y="344" fill="#94A3B8" font-size="9">ID: D9876543</text>
+  <!-- PDF417 barcode -->
   <rect x="678" y="366" width="266" height="38" rx="4" fill="#0A0A0A"/>
-  <text x="811" y="390" fill="#333" font-size="9" text-anchor="middle">▐▌▌▌▐▌▐▌▌▌▐▐▌▌▌▐▌▐▐▌▌▌▐▌▐▌▌▌▐▐▌▌▌▐▌▐▐▌▌▌▐▌▐▌▌▌▐▐▌▌▌▐▌</text>
-  <text x="811" y="402" fill="#333" font-size="9" text-anchor="middle">▐▐▌▌▌▐▌▐▌▌▐▐▌▌▌▐▌▐▐▌▌▌▐▌▐▌▌▌▐▐▌▌▌▐▌▐▐▌▌▌▐▌▐▌▌▌▐▐▌▌▌▐</text>
+  <text x="811" y="390" fill="#333" font-size="9" text-anchor="middle">&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;</text>
+  <text x="811" y="402" fill="#333" font-size="9" text-anchor="middle">&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x258C;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x258C;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;&#x2590;&#x258C;&#x258C;&#x258C;&#x2590;</text>
 
-  <!-- Scan line animation -->
-  <rect x="660" y="318" width="300" height="2" fill="#F59E0B" opacity="0.8"/>
-  <rect x="660" y="318" width="300" height="40" fill="#F59E0B" opacity="0.05"/>
+  <!-- Scan line -->
+  <rect x="660" y="318" width="300" height="2" fill="url(#scanLineGrad)"/>
+  <rect x="660" y="318" width="300" height="40" fill="#F59E0B" opacity="0.04"/>
 
   <!-- Camera controls -->
   <text x="810" y="448" fill="#94A3B8" font-size="13" text-anchor="middle">Align PDF417 barcode in frame</text>
   <!-- Flash toggle -->
   <rect x="680" y="460" width="80" height="34" rx="8" fill="#1E2235"/>
-  <text x="720" y="481" fill="#94A3B8" font-size="13" text-anchor="middle">⚡ Flash</text>
+  <text x="720" y="481" fill="#94A3B8" font-size="13" text-anchor="middle">&#x26A1; Flash</text>
   <!-- Manual entry fallback -->
   <rect x="850" y="460" width="130" height="34" rx="8" fill="#1E2235"/>
-  <text x="915" y="481" fill="#94A3B8" font-size="13" text-anchor="middle">⌨ Manual entry</text>
+  <text x="915" y="481" fill="#94A3B8" font-size="13" text-anchor="middle">&#x2328; Manual entry</text>
 
   <!-- Scanning status -->
   <rect x="630" y="510" width="360" height="50" rx="10" fill="#1A3320"/>
-  <text x="810" y="532" fill="#22C55E" font-size="14" font-weight="600" text-anchor="middle">🔍 Scanning... barcode detected</text>
+  <text x="810" y="532" fill="#22C55E" font-size="14" font-weight="600" text-anchor="middle">&#x1F50D; Scanning... barcode detected</text>
   <text x="810" y="550" fill="#4ADE80" font-size="12" text-anchor="middle">Reading PDF417 data...</text>
 
   <!-- Progress bar -->
   <rect x="630" y="570" width="360" height="6" rx="3" fill="#1E2235"/>
-  <rect x="630" y="570" width="280" height="6" rx="3" fill="#22C55E"/>
+  <rect x="630" y="570" width="280" height="6" rx="3" fill="url(#greenGrad)"/>
 
-  <!-- === CENTER BOTTOM: Result card === -->
-  <!-- PASS case -->
-  <rect x="620" y="590" width="380" height="200" rx="14" fill="#0D2B12" stroke="#22C55E" stroke-width="2"/>
-  <rect x="620" y="590" width="380" height="8" rx="4" fill="#22C55E"/>
-  <text x="810" y="640" fill="#22C55E" font-size="40" text-anchor="middle">✓</text>
-  <text x="810" y="672" fill="#22C55E" font-size="22" font-weight="700" text-anchor="middle">ID VERIFIED — PASS</text>
-  <text x="810" y="696" fill="#4ADE80" font-size="15" text-anchor="middle">Maria Garcia · DOB: April 12, 1985</text>
-  <text x="810" y="716" fill="#4ADE80" font-size="14" text-anchor="middle">Age: 41 years · Legal drinking age ✓</text>
-  <text x="810" y="736" fill="#64748B" font-size="12" text-anchor="middle">ID expires: Apr 15, 2028 · Valid ✓</text>
-  <text x="810" y="756" fill="#64748B" font-size="12" text-anchor="middle">Logged: doc •••• 4567 · 2:22 PM</text>
-  <rect x="660" y="768" width="300" height="14" rx="5" fill="#22C55E" opacity="0.2"/>
+  <!-- ======================== CENTER: Auto Age Calculation Result ======================== -->
+  <!-- Admin: Settings > Compliance > Age Verification > Minimum Age — default 21 (US), configurable per jurisdiction -->
 
-  <!-- FAIL case (shown smaller below as reference) -->
-  <rect x="620" y="798" width="380" height="130" rx="14" fill="#2D0808" stroke="#EF4444" stroke-width="2"/>
-  <rect x="620" y="798" width="380" height="8" rx="4" fill="#EF4444"/>
-  <text x="810" y="828" fill="#EF4444" font-size="18" font-weight="700" text-anchor="middle">✗ ID BLOCKED — UNDER AGE</text>
-  <text x="810" y="850" fill="#F87171" font-size="14" text-anchor="middle">DOB: July 3, 2006 · Age: 18 years</text>
-  <text x="810" y="870" fill="#F87171" font-size="13" text-anchor="middle">Legal drinking age: 21 (US) · Denied</text>
-  <text x="810" y="892" fill="#EF4444" font-size="13" font-weight="700" text-anchor="middle">Item REMOVED from order automatically</text>
-  <text x="810" y="910" fill="#64748B" font-size="11" text-anchor="middle">Refusal logged · Manager notified</text>
+  <!-- PASS result card -->
+  <rect x="620" y="590" width="380" height="200" rx="14" fill="url(#passCardGrad)" stroke="#22C55E" stroke-width="2" filter="url(#glowGreen)"/>
+  <rect x="620" y="590" width="380" height="8" rx="4" fill="url(#greenGrad)"/>
+  <text x="810" y="640" fill="#22C55E" font-size="40" text-anchor="middle">&#x2713;</text>
+  <text x="810" y="672" fill="#22C55E" font-size="22" font-weight="700" text-anchor="middle">ID VERIFIED &#x2014; PASS</text>
+  <text x="810" y="696" fill="#4ADE80" font-size="15" text-anchor="middle">Guest Customer &#xB7; DOB: March 15, 1990</text>
+  <!-- Auto-calculated age display -->
+  <text x="810" y="716" fill="#4ADE80" font-size="14" text-anchor="middle">Age: 36 years &#xB7; Legal drinking age &#x2713;</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Minimum Age configures the threshold shown here -->
+  <use href="#adminGear" x="904" y="706" width="14" height="14"/>
+  <text x="810" y="736" fill="#64748B" font-size="12" text-anchor="middle">ID expires: Mar 20, 2029 &#xB7; Valid &#x2713;</text>
+  <text x="810" y="756" fill="#64748B" font-size="12" text-anchor="middle">Logged: doc &#x2022;&#x2022;&#x2022;&#x2022; 6543 &#xB7; 3:10 PM</text>
+  <!-- Incident log link -->
+  <use href="#incidentLogLink" x="700" y="765" width="220" height="30"/>
+  <text x="810" y="784" fill="#60A5FA" font-size="11" font-weight="600" text-anchor="middle" text-decoration="underline">&#x1F4CB; View Incident Log</text>
 
-  <!-- === RIGHT: Interaction states === -->
-  <rect x="1020" y="148" width="226" height="796" rx="12" fill="#0F1117"/>
+  <!-- FAIL result card -->
+  <rect x="620" y="808" width="380" height="130" rx="14" fill="url(#failCardGrad)" stroke="#EF4444" stroke-width="2" filter="url(#glowRed)"/>
+  <rect x="620" y="808" width="380" height="8" rx="4" fill="url(#redGrad)"/>
+  <text x="810" y="840" fill="#EF4444" font-size="18" font-weight="700" text-anchor="middle">&#x2717; ID BLOCKED &#x2014; UNDER AGE</text>
+  <text x="810" y="862" fill="#F87171" font-size="14" text-anchor="middle">DOB: July 3, 2006 &#xB7; Age: 19 years</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Minimum Age — shows configured threshold -->
+  <text x="810" y="882" fill="#F87171" font-size="13" text-anchor="middle">Legal drinking age: 21 (US) &#xB7; Denied</text>
+  <use href="#adminGear" x="916" y="872" width="14" height="14"/>
+  <text x="810" y="902" fill="#EF4444" font-size="13" font-weight="700" text-anchor="middle">Item REMOVED from order automatically</text>
+  <text x="810" y="922" fill="#64748B" font-size="11" text-anchor="middle">Refusal logged &#xB7; Manager notified</text>
+
+  <!-- ======================== RIGHT PANEL: Outcome States ======================== -->
+  <rect x="1020" y="148" width="226" height="796" rx="12" fill="#0C0E1A" filter="url(#shadowMd)"/>
 
   <text x="1040" y="184" fill="#64748B" font-size="11" font-weight="700" letter-spacing="2">OUTCOME STATES</text>
 
-  <!-- State 1: Pass -->
-  <rect x="1032" y="194" width="202" height="120" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="1"/>
-  <text x="1133" y="218" fill="#22C55E" font-size="16" font-weight="700" text-anchor="middle">✓ PASS</text>
+  <!-- State 1: PASS -->
+  <use href="#stateCardPass" x="1032" y="194" width="202" height="120"/>
+  <text x="1133" y="218" fill="#22C55E" font-size="16" font-weight="700" text-anchor="middle">&#x2713; PASS</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Minimum Age per jurisdiction -->
   <text x="1133" y="238" fill="#4ADE80" font-size="12" text-anchor="middle">Age 21+ (US)</text>
   <text x="1133" y="256" fill="#4ADE80" font-size="12" text-anchor="middle">Age 18+ (CA/EU)</text>
-  <rect x="1040" y="268" width="186" height="32" rx="8" fill="#22C55E"/>
+  <use href="#adminGear" x="1190" y="228" width="14" height="14"/>
+  <use href="#btnPrimary" x="1040" y="268" width="186" height="32"/>
   <text x="1133" y="288" fill="white" font-size="13" font-weight="700" text-anchor="middle">Add Beer to Order</text>
   <text x="1133" y="306" fill="#64748B" font-size="11" text-anchor="middle">Staff sees green banner</text>
 
-  <!-- State 2: Under age -->
-  <rect x="1032" y="330" width="202" height="130" rx="10" fill="#2D0808" stroke="#EF4444" stroke-width="1"/>
-  <text x="1133" y="354" fill="#EF4444" font-size="16" font-weight="700" text-anchor="middle">✗ BLOCKED</text>
+  <!-- State 2: BLOCKED (under age) -->
+  <use href="#stateCardBlocked" x="1032" y="330" width="202" height="130"/>
+  <text x="1133" y="354" fill="#EF4444" font-size="16" font-weight="700" text-anchor="middle">&#x2717; BLOCKED</text>
   <text x="1133" y="374" fill="#F87171" font-size="12" text-anchor="middle">Under drinking age</text>
   <text x="1133" y="392" fill="#F87171" font-size="12" text-anchor="middle">Item auto-removed</text>
   <rect x="1040" y="402" width="186" height="32" rx="8" fill="#2D0808" stroke="#EF4444" stroke-width="1"/>
   <text x="1133" y="422" fill="#EF4444" font-size="13" font-weight="600" text-anchor="middle">Refusal Logged</text>
   <text x="1133" y="452" fill="#64748B" font-size="11" text-anchor="middle">Manager auto-notified</text>
 
-  <!-- State 3: Expired ID -->
-  <rect x="1032" y="476" width="202" height="120" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
-  <text x="1133" y="500" fill="#F59E0B" font-size="16" font-weight="700" text-anchor="middle">⚠ EXPIRED ID</text>
+  <!-- State 3: EXPIRED ID -->
+  <use href="#stateCardWarning" x="1032" y="476" width="202" height="120"/>
+  <text x="1133" y="500" fill="#F59E0B" font-size="16" font-weight="700" text-anchor="middle">&#x26A0; EXPIRED ID</text>
   <text x="1133" y="520" fill="#FBBF24" font-size="12" text-anchor="middle">Age OK, ID expired</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Expired ID Policy (warn/block) -->
   <text x="1133" y="540" fill="#94A3B8" font-size="11" text-anchor="middle">Operator choice:</text>
   <text x="1133" y="558" fill="#94A3B8" font-size="11" text-anchor="middle">Warn or Block</text>
+  <use href="#adminGear" x="1190" y="530" width="14" height="14"/>
   <rect x="1040" y="566" width="186" height="28" rx="8" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
   <text x="1133" y="584" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">Manager Override PIN</text>
 
-  <!-- State 4: Manual DOB entry -->
-  <rect x="1032" y="612" width="202" height="130" rx="10" fill="#10202D" stroke="#3B82F6" stroke-width="1"/>
-  <text x="1133" y="636" fill="#60A5FA" font-size="15" font-weight="700" text-anchor="middle">⌨ Manual DOB</text>
+  <!-- State 4: Manual DOB Entry -->
+  <use href="#stateCardInfo" x="1032" y="612" width="202" height="130"/>
+  <text x="1133" y="636" fill="#60A5FA" font-size="15" font-weight="700" text-anchor="middle">&#x2328; Manual DOB</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Manual Entry requires Manager PIN -->
   <text x="1133" y="656" fill="#94A3B8" font-size="12" text-anchor="middle">Requires mgr PIN</text>
-  <!-- Mini numpad -->
-  <rect x="1048" y="668" width="40" height="30" rx="4" fill="#1E2235"/>
+  <use href="#adminGear" x="1200" y="646" width="14" height="14"/>
+  <!-- Numpad keys (reused symbol) -->
+  <use href="#numKey" x="1048" y="668" width="40" height="30"/>
   <text x="1068" y="687" fill="#E2E8F0" font-size="13" text-anchor="middle">1</text>
-  <rect x="1094" y="668" width="40" height="30" rx="4" fill="#1E2235"/>
+  <use href="#numKey" x="1094" y="668" width="40" height="30"/>
   <text x="1114" y="687" fill="#E2E8F0" font-size="13" text-anchor="middle">2</text>
-  <rect x="1140" y="668" width="40" height="30" rx="4" fill="#1E2235"/>
+  <use href="#numKey" x="1140" y="668" width="40" height="30"/>
   <text x="1160" y="687" fill="#E2E8F0" font-size="13" text-anchor="middle">3</text>
+  <!-- Delete key -->
   <rect x="1186" y="668" width="40" height="30" rx="4" fill="#EF4444"/>
-  <text x="1206" y="687" fill="white" font-size="12" text-anchor="middle">⌫</text>
+  <text x="1206" y="687" fill="white" font-size="12" text-anchor="middle">&#x232B;</text>
+  <!-- DOB entry field -->
   <rect x="1048" y="704" width="178" height="30" rx="4" fill="#1E2235"/>
   <text x="1137" y="723" fill="#64748B" font-size="13" text-anchor="middle">MM / DD / YYYY</text>
 
-  <!-- State 5: Repeat customer -->
-  <rect x="1032" y="756" width="202" height="80" rx="10" fill="#1A102D" stroke="#A855F7" stroke-width="1"/>
-  <text x="1133" y="778" fill="#A855F7" font-size="14" font-weight="700" text-anchor="middle">👤 Loyalty Match</text>
+  <!-- State 5: Loyalty Match -->
+  <use href="#stateCardLoyalty" x="1032" y="756" width="202" height="80"/>
+  <text x="1133" y="778" fill="#A855F7" font-size="14" font-weight="700" text-anchor="middle">&#x1F464; Loyalty Match</text>
   <text x="1133" y="798" fill="#94A3B8" font-size="12" text-anchor="middle">DOB on profile</text>
   <text x="1133" y="814" fill="#A855F7" font-size="12" text-anchor="middle">Auto-verified</text>
   <rect x="1040" y="820" width="186" height="24" rx="6" fill="#1A102D" stroke="#A855F7" stroke-width="1"/>
-  <text x="1133" y="836" fill="#A855F7" font-size="12" text-anchor="middle">Skip scan · Auto-pass</text>
+  <text x="1133" y="836" fill="#A855F7" font-size="12" text-anchor="middle">Skip scan &#xB7; Auto-pass</text>
 
-  <!-- Screen label -->
-  <text x="683" y="1018" fill="#0F1117" font-size="11" text-anchor="middle">Synalux POS — Age Verification / ID Scan (MVP · iOS Vision PDF417 + Manual DOB · 1366×1024)</text>
+  <!-- ======================== RIGHT: Admin Config Summary ======================== -->
+  <!-- Admin: Settings > Compliance > Age Verification — all configurable fields -->
+  <rect x="1032" y="856" width="202" height="80" rx="10" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#adminGear" x="1042" y="864" width="14" height="14"/>
+  <text x="1062" y="876" fill="#F59E0B" font-size="10" font-weight="700" letter-spacing="1">ADMIN CONFIG</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Minimum Age -->
+  <text x="1042" y="892" fill="#94A3B8" font-size="10">Min age: 21 (US default)</text>
+  <!-- Admin: Settings > Compliance > Age Verification > Trigger Items -->
+  <text x="1042" y="906" fill="#94A3B8" font-size="10">Triggers: Alcohol, Tobacco</text>
+  <!-- Admin: Settings > Compliance > Age Verification > RBS Certification Required -->
+  <text x="1042" y="920" fill="#94A3B8" font-size="10">RBS cert required: Yes</text>
+  <use href="#adminGear" x="1168" y="910" width="14" height="14"/>
+  <!-- Admin: Settings > Compliance > Age Verification > RBS Certification — staff must have valid RBS cert on file -->
+  <text x="1042" y="932" fill="#64748B" font-size="9">Settings &#x203A; Compliance &#x203A; Age</text>
+
+  <!-- ======================== FOOTER LABEL ======================== -->
+  <text x="683" y="1018" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS &#x2014; Age Verification / ID Scan (MVP &#xB7; iOS Vision PDF417 + Manual DOB &#xB7; 1366&#xD7;1024)</text>
+
 </svg>

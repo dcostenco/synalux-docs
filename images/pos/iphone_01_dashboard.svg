@@ -1,170 +1,457 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" font-family="system-ui,-apple-system,sans-serif">
-  <!-- iPhone frame -->
-  <rect width="390" height="844" rx="40" fill="#1A1D2E"/>
-  <rect x="2" y="2" width="386" height="840" rx="38" fill="#0F1117"/>
+<svg role="img" aria-labelledby="title-iphone_01_dashboard-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
+  <title id="title-iphone_01_dashboard-svg">Synalux POS — iPhone 01 dashUoard</title>
+  <desc>Synalux POS mockup screen for iPhone 01 dashUoard. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E1225"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+    <linearGradient id="navGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141729"/>
+      <stop offset="100%" stop-color="#0E1225"/>
+    </linearGradient>
+    <linearGradient id="statusOnline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="chartBarToday" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="60%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="chartBarYesterday" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A2E45"/>
+      <stop offset="100%" stop-color="#1E2235"/>
+    </linearGradient>
+    <linearGradient id="alertRedBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D0A0A"/>
+      <stop offset="100%" stop-color="#1F0808"/>
+    </linearGradient>
+    <linearGradient id="alertAmberBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D1D08"/>
+      <stop offset="100%" stop-color="#1F1505"/>
+    </linearGradient>
+    <linearGradient id="btnGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
 
-  <!-- Status bar -->
-  <rect x="0" y="0" width="390" height="50" rx="40" fill="#0F1117"/>
-  <rect x="0" y="40" width="390" height="10" fill="#0F1117"/>
-  <!-- Notch -->
-  <rect x="120" y="0" width="150" height="34" rx="17" fill="#1A1D2E"/>
-  <text x="30" y="22" fill="#E2E8F0" font-size="13" font-weight="600">9:41</text>
-  <text x="330" y="22" fill="#E2E8F0" font-size="11" text-anchor="middle">● ● ▲</text>
+    <!-- Shadows -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="cardShadowLg" x="-4%" y="-4%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glowAmber" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#22C55E" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#EF4444" flood-opacity="0.4"/>
+    </filter>
+    <filter id="subtleShadow" x="-2%" y="-2%" width="104%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
 
-  <!-- App header -->
-  <rect x="0" y="50" width="390" height="56" fill="#13162A"/>
-  <text x="20" y="73" fill="#F59E0B" font-size="16" font-weight="700">Synalux Manager</text>
-  <text x="20" y="92" fill="#94A3B8" font-size="12">Riverside Grill · Today</text>
-  <circle cx="355" cy="70" r="22" fill="#1E2235"/>
-  <text x="355" y="77" fill="#E2E8F0" font-size="18" text-anchor="middle">👤</text>
+    <!-- Clip for iPhone frame -->
+    <clipPath id="screenClip">
+      <rect width="390" height="844" rx="44"/>
+  <!-- Synalux POS -->
+    </clipPath>
 
-  <!-- Quick stats row -->
-  <rect x="0" y="106" width="390" height="1" fill="#2D3050"/>
-  <rect x="0" y="107" width="390" height="86" fill="#13162A"/>
+    <!-- ============================================ -->
+    <!-- REUSABLE SYMBOLS                              -->
+    <!-- ============================================ -->
 
-  <!-- Revenue card -->
-  <rect x="12" y="116" width="112" height="68" rx="10" fill="#1A1D2E"/>
-  <text x="68" y="134" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">TODAY</text>
-  <text x="68" y="156" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="middle">$4,230</text>
-  <text x="68" y="174" fill="#22C55E" font-size="10" text-anchor="middle">↑ 12% vs yesterday</text>
+    <!-- Admin gear icon for configurable elements -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="2.5" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3"/>
+      <path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M2.8 2.8l1 1M10.2 10.2l1 1M2.8 11.2l1-1M10.2 3.8l1-1" stroke="#F59E0B" stroke-width="0.6" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
 
-  <!-- Covers card -->
-  <rect x="138" y="116" width="112" height="68" rx="10" fill="#1A1D2E"/>
-  <text x="194" y="134" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">COVERS</text>
-  <text x="194" y="156" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">127</text>
-  <text x="194" y="174" fill="#22C55E" font-size="10" text-anchor="middle">↑ 8 vs yesterday</text>
+    <!-- KPI card base -->
+    <symbol id="kpiCard" viewBox="0 0 88 78">
+      <rect x="0" y="0" width="88" height="78" rx="14" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="88" height="78" rx="14" fill="none" stroke="#2A2E45" stroke-width="0.5"/>
+    </symbol>
 
-  <!-- Avg check -->
-  <rect x="266" y="116" width="112" height="68" rx="10" fill="#1A1D2E"/>
-  <text x="322" y="134" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">AVG CHECK</text>
-  <text x="322" y="156" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">$33.30</text>
-  <text x="322" y="174" fill="#94A3B8" font-size="10" text-anchor="middle">Target: $35.00</text>
+    <!-- Alert card base -->
+    <symbol id="alertCard" viewBox="0 0 366 56">
+      <rect x="0" y="0" width="366" height="56" rx="12" filter="url(#cardShadow)"/>
+    </symbol>
 
-  <!-- Section: Live Floor Status -->
-  <rect x="0" y="193" width="390" height="1" fill="#2D3050"/>
-  <text x="20" y="218" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">LIVE FLOOR</text>
-  <text x="370" y="218" fill="#60A5FA" font-size="12" text-anchor="end">See All</text>
+    <!-- Table tile (floor status) -->
+    <symbol id="tableTile" viewBox="0 0 40 36">
+      <rect x="0" y="0" width="40" height="36" rx="8"/>
+    </symbol>
 
-  <!-- Table tiles -->
-  <rect x="12" y="226" width="82" height="72" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
-  <text x="53" y="248" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">T3</text>
-  <text x="53" y="264" fill="#EF4444" font-size="10" text-anchor="middle">⚠ 78min</text>
-  <text x="53" y="280" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">$124</text>
-  <text x="53" y="293" fill="#64748B" font-size="9" text-anchor="middle">5 guests</text>
+    <!-- Quick action button -->
+    <symbol id="quickActionBtn" viewBox="0 0 114 46">
+      <rect x="0" y="0" width="114" height="46" rx="12" fill="url(#btnGrad1)" filter="url(#subtleShadow)"/>
+      <rect x="0" y="0" width="114" height="46" rx="12" fill="none" stroke="#2A2E45" stroke-width="0.5"/>
+    </symbol>
 
-  <rect x="102" y="226" width="82" height="72" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
-  <text x="143" y="248" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">T4</text>
-  <text x="143" y="264" fill="#94A3B8" font-size="10" text-anchor="middle">12 min</text>
-  <text x="143" y="280" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">$32</text>
-  <text x="143" y="293" fill="#64748B" font-size="9" text-anchor="middle">2 guests</text>
+    <!-- Bottom nav tab base -->
+    <symbol id="navTab" viewBox="0 0 60 32">
+      <rect x="0" y="0" width="60" height="32" rx="10"/>
+    </symbol>
+  </defs>
 
-  <rect x="192" y="226" width="82" height="72" rx="10" fill="#2D1A00" stroke="#F59E0B" stroke-width="1"/>
-  <text x="233" y="248" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">T7</text>
-  <text x="233" y="264" fill="#94A3B8" font-size="10" text-anchor="middle">28 min</text>
-  <text x="233" y="280" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">$54</text>
-  <text x="233" y="293" fill="#64748B" font-size="9" text-anchor="middle">4 guests</text>
+  <!-- ============================================ -->
+  <!-- iPhone Frame                                  -->
+  <!-- ============================================ -->
+  <rect width="390" height="844" rx="44" fill="#0C0E1A"/>
+  <g clip-path="url(#screenClip)">
 
-  <rect x="282" y="226" width="96" height="72" rx="10" fill="#0D2B12" stroke="#22C55E" stroke-width="1"/>
-  <text x="330" y="248" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">7 Open</text>
-  <text x="330" y="264" fill="#64748B" font-size="10" text-anchor="middle">of 18 tables</text>
-  <text x="330" y="285" fill="#22C55E" font-size="11" font-weight="600" text-anchor="middle">Available</text>
+    <!-- Background -->
+    <rect width="390" height="844" fill="#0C0E1A"/>
 
-  <!-- Section: Alerts -->
-  <text x="20" y="326" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">ALERTS</text>
-  <rect x="330" y="314" width="48" height="22" rx="6" fill="#EF4444"/>
-  <text x="354" y="329" fill="white" font-size="12" font-weight="700" text-anchor="middle">2 new</text>
+    <!-- ============================================ -->
+    <!-- iOS Status Bar                                -->
+    <!-- ============================================ -->
+    <rect x="0" y="0" width="390" height="54" fill="#0C0E1A"/>
+    <!-- Dynamic Island -->
+    <rect x="126" y="8" width="138" height="32" rx="16" fill="#000000"/>
+    <!-- Time -->
+    <text x="34" y="30" fill="#E2E8F0" font-size="15" font-weight="600">10:20</text>
+    <!-- Signal bars -->
+    <rect x="298" y="20" width="3" height="6" rx="1" fill="#E2E8F0"/>
+    <rect x="303" y="17" width="3" height="9" rx="1" fill="#E2E8F0"/>
+    <rect x="308" y="14" width="3" height="12" rx="1" fill="#E2E8F0"/>
+    <rect x="313" y="11" width="3" height="15" rx="1" fill="#E2E8F0"/>
+    <!-- WiFi icon (simplified) -->
+    <path d="M326,22 Q332,14 338,22" stroke="#E2E8F0" stroke-width="1.5" fill="none"/>
+    <path d="M329,20 Q332,16 335,20" stroke="#E2E8F0" stroke-width="1.5" fill="none"/>
+    <circle cx="332" cy="22" r="1.2" fill="#E2E8F0"/>
+    <!-- Battery -->
+    <rect x="346" y="16" width="24" height="12" rx="3" stroke="#E2E8F0" stroke-width="1" fill="none"/>
+    <rect x="370" y="20" width="2" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="348" y="18" width="18" height="8" rx="1.5" fill="#22C55E"/>
 
-  <rect x="12" y="334" width="366" height="64" rx="10" fill="#2D0808"/>
-  <text x="28" y="354" fill="#EF4444" font-size="18">⚠</text>
-  <text x="56" y="354" fill="#EF4444" font-size="13" font-weight="700">Table 3 — Check Requested</text>
-  <text x="56" y="372" fill="#94A3B8" font-size="12">Guest at T3 has been waiting 6 min for check</text>
-  <text x="56" y="388" fill="#EF4444" font-size="11">78 min total · $124 open · Mike R.</text>
-  <text x="354" y="360" fill="#60A5FA" font-size="12" text-anchor="end">Act →</text>
+    <!-- ============================================ -->
+    <!-- App Header                                    -->
+    <!-- ============================================ -->
+    <rect x="0" y="54" width="390" height="62" fill="url(#headerGrad)"/>
+    <!-- Venue name + status -->
+    <text x="20" y="78" fill="#F59E0B" font-size="18" font-weight="700" filter="url(#glowAmber)">Riverside Grill</text>
+    <!-- Online indicator dot -->
+    <circle cx="20" cy="94" r="3.5" fill="url(#statusOnline)" filter="url(#glowGreen)"/>
+    <text x="30" y="98" fill="#94A3B8" font-size="12" font-weight="500">Closing -- open since 10:00 AM</text>
+    <text x="238" y="98" fill="#475569" font-size="12">|</text>
+    <text x="248" y="98" fill="#94A3B8" font-size="12" font-weight="500">Thu, May 29</text>
+    <!-- Profile avatar -->
+    <circle cx="356" cy="85" r="20" fill="#1E2235" filter="url(#subtleShadow)"/>
+    <circle cx="356" cy="85" r="19" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+    <text x="356" y="82" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">SR</text>
+    <text x="356" y="93" fill="#64748B" font-size="7" text-anchor="middle">MGR</text>
+    <!-- No notification badge — all clear at EOD -->
 
-  <rect x="12" y="406" width="366" height="64" rx="10" fill="#2D1A00"/>
-  <text x="28" y="426" fill="#F59E0B" font-size="18">⚠</text>
-  <text x="56" y="426" fill="#F59E0B" font-size="13" font-weight="700">Low inventory — Salmon (2 left)</text>
-  <text x="56" y="444" fill="#94A3B8" font-size="12">86 item or update stock count</text>
-  <text x="56" y="460" fill="#64748B" font-size="11">Auto-alert at 3 units</text>
-  <text x="354" y="432" fill="#60A5FA" font-size="12" text-anchor="end">Act →</text>
+    <!-- Divider -->
+    <rect x="16" y="116" width="358" height="1" fill="#1E2235" opacity="0.6"/>
 
-  <!-- Section: Revenue chart (mini) -->
-  <text x="20" y="496" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">TODAY vs YESTERDAY</text>
-  <rect x="12" y="504" width="366" height="100" rx="10" fill="#13162A"/>
+    <!-- ============================================ -->
+    <!-- KPI Cards Row                                 -->
+    <!-- Admin: kpi_cards_displayed, kpi_goals (configurable) -->
+    <!-- ============================================ -->
+    <!-- Revenue -->
+    <use href="#kpiCard" x="12" y="124" width="88" height="78"/>
+    <text x="56" y="144" fill="#64748B" font-size="9" font-weight="600" text-anchor="middle" letter-spacing="0.5">REVENUE</text>
+    <text x="56" y="168" fill="#F59E0B" font-size="20" font-weight="700" text-anchor="middle" filter="url(#glowAmber)">$4,230</text>
+    <rect x="24" y="176" width="64" height="18" rx="9" fill="#0D2B12" opacity="0.8"/>
+    <text x="56" y="189" fill="#4ADE80" font-size="9" font-weight="600" text-anchor="middle">+12.3%</text>
 
-  <!-- Chart bars -->
-  <rect x="32" y="564" width="14" height="30" rx="3" fill="#2D3050"/>
-  <rect x="32" y="554" width="14" height="10" rx="3" fill="#F59E0B" opacity="0.6"/>
-  <text x="39" y="580" fill="#64748B" font-size="8" text-anchor="middle">10a</text>
+    <!-- Orders -->
+    <use href="#kpiCard" x="107" y="124" width="88" height="78"/>
+    <text x="151" y="144" fill="#64748B" font-size="9" font-weight="600" text-anchor="middle" letter-spacing="0.5">ORDERS</text>
+    <text x="151" y="168" fill="#E2E8F0" font-size="20" font-weight="700" text-anchor="middle">127</text>
+    <rect x="119" y="176" width="64" height="18" rx="9" fill="#0D2B12" opacity="0.8"/>
+    <text x="151" y="189" fill="#4ADE80" font-size="9" font-weight="600" text-anchor="middle">+8 covers</text>
 
-  <rect x="64" y="547" width="14" height="47" rx="3" fill="#2D3050"/>
-  <rect x="64" y="539" width="14" height="8" rx="3" fill="#F59E0B" opacity="0.6"/>
-  <text x="71" y="580" fill="#64748B" font-size="8" text-anchor="middle">11a</text>
+    <!-- Avg Ticket -->
+    <use href="#kpiCard" x="202" y="124" width="88" height="78"/>
+    <text x="246" y="144" fill="#64748B" font-size="9" font-weight="600" text-anchor="middle" letter-spacing="0.5">AVG TICKET</text>
+    <text x="246" y="168" fill="#E2E8F0" font-size="20" font-weight="700" text-anchor="middle">$33.31</text>
+    <rect x="214" y="176" width="64" height="18" rx="9" fill="#1A1520" opacity="0.8"/>
+    <text x="246" y="189" fill="#94A3B8" font-size="9" font-weight="600" text-anchor="middle">goal $35</text>
 
-  <rect x="96" y="530" width="14" height="64" rx="3" fill="#2D3050"/>
-  <rect x="96" y="520" width="14" height="10" rx="3" fill="#F59E0B"/>
-  <text x="103" y="580" fill="#64748B" font-size="8" text-anchor="middle">12p</text>
+    <!-- Tips -->
+    <use href="#kpiCard" x="297" y="124" width="81" height="78"/>
+    <text x="337.5" y="144" fill="#64748B" font-size="9" font-weight="600" text-anchor="middle" letter-spacing="0.5">TIPS</text>
+    <text x="337.5" y="168" fill="#4ADE80" font-size="20" font-weight="700" text-anchor="middle">$618</text>
+    <rect x="309" y="176" width="57" height="18" rx="9" fill="#0D2B12" opacity="0.8"/>
+    <text x="337.5" y="189" fill="#4ADE80" font-size="9" font-weight="600" text-anchor="middle">14.6%</text>
 
-  <rect x="128" y="534" width="14" height="60" rx="3" fill="#2D3050"/>
-  <rect x="128" y="522" width="14" height="12" rx="3" fill="#F59E0B"/>
-  <text x="135" y="580" fill="#64748B" font-size="8" text-anchor="middle">1p</text>
+    <!-- ============================================ -->
+    <!-- Quick Alerts Section                          -->
+    <!-- Admin: alert_thresholds, check_wait_time_alert, kitchen_delay_alert -->
+    <!-- ============================================ -->
+    <text x="20" y="226" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">ALERTS</text>
+    <use href="#adminGear" x="56" y="216" width="10" height="10"/>
+    <rect x="60" y="216" width="20" height="16" rx="8" fill="#0D2B12"/>
+    <text x="70" y="227" fill="#4ADE80" font-size="9" font-weight="700" text-anchor="middle">0</text>
 
-  <rect x="160" y="540" width="14" height="54" rx="3" fill="#2D3050"/>
-  <rect x="160" y="536" width="14" height="4" rx="3" fill="#F59E0B"/>
-  <text x="167" y="580" fill="#64748B" font-size="8" text-anchor="middle">2p</text>
+    <!-- All clear — no active alerts at EOD -->
+    <rect x="12" y="236" width="366" height="48" rx="12" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+    <rect x="12" y="236" width="366" height="48" rx="12" fill="none" stroke="#22C55E" stroke-width="0.4" opacity="0.4"/>
+    <!-- Green indicator bar -->
+    <rect x="12" y="236" width="4" height="48" rx="2" fill="#22C55E"/>
+    <!-- Check icon -->
+    <circle cx="34" cy="260" r="12" fill="#0D2B12"/>
+    <text x="34" y="265" fill="#4ADE80" font-size="14" font-weight="700" text-anchor="middle">&#x2713;</text>
+    <!-- All clear text -->
+    <text x="54" y="256" fill="#4ADE80" font-size="12" font-weight="700">All Clear</text>
+    <text x="54" y="272" fill="#94A3B8" font-size="10.5">No active alerts -- ready for end-of-day close</text>
 
-  <rect x="192" y="554" width="14" height="40" rx="3" fill="#2D3050"/>
-  <text x="199" y="580" fill="#64748B" font-size="8" text-anchor="middle">3p</text>
+    <!-- ============================================ -->
+    <!-- Table Status Summary                          -->
+    <!-- Admin: table_count, table_shapes, floor_layout -->
+    <!-- ============================================ -->
+    <text x="20" y="326" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">FLOOR STATUS</text>
+    <use href="#adminGear" x="98" y="316" width="10" height="10"/>
+    <text x="370" y="326" fill="#60A5FA" font-size="11" font-weight="600" text-anchor="end">Full Map</text>
 
-  <rect x="224" y="560" width="14" height="34" rx="3" fill="#2D3050"/>
-  <text x="231" y="580" fill="#64748B" font-size="8" text-anchor="middle">4p</text>
+    <rect x="12" y="336" width="366" height="76" rx="14" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+    <rect x="12" y="336" width="366" height="76" rx="14" fill="none" stroke="#2A2E45" stroke-width="0.5"/>
 
-  <!-- Legend -->
-  <rect x="240" y="512" width="12" height="8" rx="2" fill="#F59E0B"/>
-  <text x="256" y="519" fill="#94A3B8" font-size="9">Today</text>
-  <rect x="300" y="512" width="12" height="8" rx="2" fill="#2D3050"/>
-  <text x="316" y="519" fill="#94A3B8" font-size="9">Yesterday</text>
+    <!-- All tables closed at EOD -->
+    <rect x="22" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="42" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T1</text>
+    <text x="42" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <!-- Staff on duty -->
-  <text x="20" y="628" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">STAFF ON DUTY</text>
-  <text x="370" y="628" fill="#60A5FA" font-size="12" text-anchor="end">Manage</text>
+    <rect x="67" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="87" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T2</text>
+    <text x="87" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <rect x="12" y="636" width="366" height="56" rx="10" fill="#13162A"/>
-  <circle cx="44" cy="664" r="16" fill="#1E2235"/>
-  <text x="44" y="669" fill="#E2E8F0" font-size="14" text-anchor="middle">JS</text>
-  <circle cx="90" cy="664" r="16" fill="#1E2235"/>
-  <text x="90" y="669" fill="#E2E8F0" font-size="14" text-anchor="middle">SR</text>
-  <circle cx="136" cy="664" r="16" fill="#1E2235"/>
-  <text x="136" y="669" fill="#E2E8F0" font-size="14" text-anchor="middle">MK</text>
-  <circle cx="182" cy="664" r="16" fill="#1E2235"/>
-  <text x="182" y="669" fill="#E2E8F0" font-size="14" text-anchor="middle">LW</text>
-  <circle cx="228" cy="664" r="16" fill="#1E2235"/>
-  <text x="228" y="669" fill="#E2E8F0" font-size="14" text-anchor="middle">+4</text>
-  <text x="270" y="664" fill="#94A3B8" font-size="12">8 clocked in</text>
-  <text x="370" y="659" fill="#22C55E" font-size="12" text-anchor="end">All present</text>
+    <rect x="112" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="132" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T3</text>
+    <text x="132" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <!-- Bottom nav bar -->
-  <rect x="0" y="770" width="390" height="74" fill="#13162A"/>
-  <rect x="0" y="770" width="390" height="1" fill="#2D3050"/>
+    <rect x="157" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="177" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T4</text>
+    <text x="177" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <!-- Nav items -->
-  <rect x="0" y="770" width="390" height="74" rx="0" fill="#13162A"/>
+    <rect x="202" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="222" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T5</text>
+    <text x="222" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <text x="48" y="800" font-size="20" text-anchor="middle">🏠</text>
-  <text x="48" y="818" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">Home</text>
+    <rect x="247" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="267" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T6</text>
+    <text x="267" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <text x="126" y="800" font-size="20" text-anchor="middle">📋</text>
-  <text x="126" y="818" fill="#64748B" font-size="10" text-anchor="middle">Orders</text>
+    <rect x="292" y="346" width="40" height="36" rx="8" fill="#1E2235" stroke="#475569" stroke-width="0.6"/>
+    <text x="312" y="361" fill="#64748B" font-size="10" font-weight="700" text-anchor="middle">T7</text>
+    <text x="312" y="375" fill="#475569" font-size="8" text-anchor="middle">Closed</text>
 
-  <text x="195" y="800" font-size="20" text-anchor="middle">📊</text>
-  <text x="195" y="818" fill="#64748B" font-size="10" text-anchor="middle">Reports</text>
+    <!-- Summary pill -->
+    <rect x="337" y="346" width="36" height="36" rx="8" fill="#1E2235"/>
+    <text x="355" y="361" fill="#64748B" font-size="11" font-weight="700" text-anchor="middle">+11</text>
+    <text x="355" y="375" fill="#475569" font-size="7" text-anchor="middle">closed</text>
 
-  <text x="264" y="800" font-size="20" text-anchor="middle">👥</text>
-  <text x="264" y="818" fill="#64748B" font-size="10" text-anchor="middle">Staff</text>
+    <!-- Floor summary stats -->
+    <circle cx="30" cy="400" r="4" fill="#475569"/>
+    <text x="39" y="404" fill="#94A3B8" font-size="10" font-weight="500">0 open</text>
+    <circle cx="100" cy="400" r="4" fill="#475569"/>
+    <text x="109" y="404" fill="#94A3B8" font-size="10" font-weight="500">0 seated</text>
+    <circle cx="186" cy="400" r="4" fill="#475569"/>
+    <text x="195" y="404" fill="#94A3B8" font-size="10" font-weight="500">0 overdue</text>
+    <text x="270" y="404" fill="#475569" font-size="10">|</text>
+    <text x="282" y="404" fill="#94A3B8" font-size="10">18 total -- all closed</text>
 
-  <text x="342" y="800" font-size="20" text-anchor="middle">⚙️</text>
-  <text x="342" y="818" fill="#64748B" font-size="10" text-anchor="middle">Settings</text>
+    <!-- ============================================ -->
+    <!-- Revenue Chart (Mini)                          -->
+    <!-- ============================================ -->
+    <text x="20" y="434" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">HOURLY REVENUE</text>
 
-  <!-- Home indicator -->
-  <rect x="140" y="830" width="110" height="5" rx="3" fill="#2D3050"/>
+    <rect x="12" y="442" width="366" height="104" rx="14" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+    <rect x="12" y="442" width="366" height="104" rx="14" fill="none" stroke="#2A2E45" stroke-width="0.5"/>
+
+    <!-- Legend -->
+    <rect x="250" y="450" width="8" height="8" rx="2" fill="url(#chartBarToday)"/>
+    <text x="262" y="458" fill="#94A3B8" font-size="9" font-weight="500">Today</text>
+    <rect x="304" y="450" width="8" height="8" rx="2" fill="url(#chartBarYesterday)"/>
+    <text x="316" y="458" fill="#94A3B8" font-size="9" font-weight="500">Yesterday</text>
+
+    <!-- Chart baseline -->
+    <line x1="28" y1="528" x2="370" y2="528" stroke="#1E2235" stroke-width="0.5"/>
+    <!-- Grid lines -->
+    <line x1="28" y1="503" x2="370" y2="503" stroke="#1E2235" stroke-width="0.3" stroke-dasharray="3,3"/>
+    <line x1="28" y1="478" x2="370" y2="478" stroke="#1E2235" stroke-width="0.3" stroke-dasharray="3,3"/>
+
+    <!-- Y-axis labels -->
+    <text x="24" y="531" fill="#475569" font-size="7" text-anchor="end">$0</text>
+    <text x="24" y="506" fill="#475569" font-size="7" text-anchor="end">$400</text>
+    <text x="24" y="481" fill="#475569" font-size="7" text-anchor="end">$800</text>
+
+    <!-- Full-day bar pairs: Yesterday (back) + Today (front) -->
+    <!-- 10 AM -->
+    <rect x="30" y="515" width="8" height="13" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="39" y="518" width="8" height="10" rx="2" fill="url(#chartBarToday)"/>
+    <text x="38" y="538" fill="#475569" font-size="6" text-anchor="middle">10a</text>
+
+    <!-- 11 AM -->
+    <rect x="54" y="506" width="8" height="22" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="63" y="503" width="8" height="25" rx="2" fill="url(#chartBarToday)"/>
+    <text x="62" y="538" fill="#475569" font-size="6" text-anchor="middle">11a</text>
+
+    <!-- 12 PM (lunch peak) -->
+    <rect x="78" y="496" width="8" height="32" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="87" y="490" width="8" height="38" rx="2" fill="url(#chartBarToday)"/>
+    <text x="86" y="538" fill="#475569" font-size="6" text-anchor="middle">12p</text>
+
+    <!-- 1 PM -->
+    <rect x="102" y="499" width="8" height="29" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="111" y="493" width="8" height="35" rx="2" fill="url(#chartBarToday)"/>
+    <text x="110" y="538" fill="#475569" font-size="6" text-anchor="middle">1p</text>
+
+    <!-- 2 PM -->
+    <rect x="126" y="510" width="8" height="18" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="135" y="506" width="8" height="22" rx="2" fill="url(#chartBarToday)"/>
+    <text x="134" y="538" fill="#475569" font-size="6" text-anchor="middle">2p</text>
+
+    <!-- 3 PM -->
+    <rect x="150" y="515" width="8" height="13" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="159" y="513" width="8" height="15" rx="2" fill="url(#chartBarToday)"/>
+    <text x="158" y="538" fill="#475569" font-size="6" text-anchor="middle">3p</text>
+
+    <!-- 4 PM -->
+    <rect x="174" y="518" width="8" height="10" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="183" y="516" width="8" height="12" rx="2" fill="url(#chartBarToday)"/>
+    <text x="182" y="538" fill="#475569" font-size="6" text-anchor="middle">4p</text>
+
+    <!-- 5 PM -->
+    <rect x="198" y="510" width="8" height="18" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="207" y="507" width="8" height="21" rx="2" fill="url(#chartBarToday)"/>
+    <text x="206" y="538" fill="#475569" font-size="6" text-anchor="middle">5p</text>
+
+    <!-- 6 PM (dinner peak) -->
+    <rect x="222" y="494" width="8" height="34" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="231" y="486" width="8" height="42" rx="2" fill="url(#chartBarToday)"/>
+    <text x="230" y="538" fill="#475569" font-size="6" text-anchor="middle">6p</text>
+
+    <!-- 7 PM (dinner peak) -->
+    <rect x="246" y="490" width="8" height="38" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="255" y="482" width="8" height="46" rx="2" fill="url(#chartBarToday)"/>
+    <text x="254" y="538" fill="#475569" font-size="6" text-anchor="middle">7p</text>
+
+    <!-- 8 PM -->
+    <rect x="270" y="496" width="8" height="32" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="279" y="490" width="8" height="38" rx="2" fill="url(#chartBarToday)"/>
+    <text x="278" y="538" fill="#475569" font-size="6" text-anchor="middle">8p</text>
+
+    <!-- 9 PM -->
+    <rect x="294" y="506" width="8" height="22" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="303" y="503" width="8" height="25" rx="2" fill="url(#chartBarToday)"/>
+    <text x="302" y="538" fill="#475569" font-size="6" text-anchor="middle">9p</text>
+
+    <!-- 10 PM (final hour, winding down) -->
+    <rect x="318" y="518" width="8" height="10" rx="2" fill="url(#chartBarYesterday)"/>
+    <rect x="327" y="520" width="8" height="8" rx="2" fill="url(#chartBarToday)"/>
+    <text x="326" y="538" fill="#475569" font-size="6" text-anchor="middle">10p</text>
+
+    <!-- ============================================ -->
+    <!-- Staff On Duty                                 -->
+    <!-- ============================================ -->
+    <text x="20" y="568" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">STAFF ON DUTY</text>
+    <text x="370" y="568" fill="#60A5FA" font-size="11" font-weight="600" text-anchor="end">Manage</text>
+
+    <rect x="12" y="576" width="366" height="52" rx="14" fill="url(#cardGrad1)" filter="url(#cardShadow)"/>
+    <rect x="12" y="576" width="366" height="52" rx="14" fill="none" stroke="#2A2E45" stroke-width="0.5"/>
+
+    <!-- Staff avatars — 2 remaining at EOD -->
+    <circle cx="38" cy="602" r="14" fill="#1E2235" stroke="#F59E0B" stroke-width="0.8"/>
+    <text x="38" y="606" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">SR</text>
+    <circle cx="68" cy="602" r="14" fill="#1E2235" stroke="#4ADE80" stroke-width="0.8"/>
+    <text x="68" y="606" fill="#4ADE80" font-size="10" font-weight="600" text-anchor="middle">JS</text>
+
+    <text x="100" y="598" fill="#CBD5E1" font-size="11" font-weight="600">2 clocked in</text>
+    <text x="100" y="612" fill="#94A3B8" font-size="10" font-weight="500">Sara R. (Mgr) + John S. (Server)</text>
+
+    <!-- ============================================ -->
+    <!-- Quick Action Buttons                          -->
+    <!-- Admin: quick_actions_displayed (configurable) -->
+    <!-- ============================================ -->
+    <text x="20" y="650" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">QUICK ACTIONS</text>
+    <use href="#adminGear" x="110" y="640" width="10" height="10"/>
+
+    <!-- View Reports -->
+    <use href="#quickActionBtn" x="12" y="660" width="175" height="46"/>
+    <circle cx="34" cy="683" r="10" fill="#111827"/>
+    <text x="34" y="687" fill="#60A5FA" font-size="12" font-weight="700" text-anchor="middle">R</text>
+    <text x="54" y="679" fill="#E2E8F0" font-size="11" font-weight="600">View Reports</text>
+    <text x="54" y="692" fill="#64748B" font-size="9">EOD Summary &amp; P&amp;L</text>
+
+    <!-- Close Register -->
+    <use href="#quickActionBtn" x="198" y="660" width="180" height="46"/>
+    <circle cx="220" cy="683" r="10" fill="#2D0A0A"/>
+    <text x="220" y="687" fill="#EF4444" font-size="12" font-weight="700" text-anchor="middle">X</text>
+    <text x="240" y="679" fill="#E2E8F0" font-size="11" font-weight="600">Close Register</text>
+    <text x="240" y="692" fill="#64748B" font-size="9">POS #1 -- end of day</text>
+
+    <!-- ============================================ -->
+    <!-- Bottom Tab Bar                                -->
+    <!-- ============================================ -->
+    <rect x="0" y="770" width="390" height="74" fill="url(#navGrad)"/>
+    <line x1="0" y1="770" x2="390" y2="770" stroke="#1E2235" stroke-width="0.5"/>
+
+    <!-- Active: Home -->
+    <!-- Admin: nav_tabs_displayed (configurable) -->
+    <g fill="#1E2235" opacity="0.6"><use href="#navTab" x="18" y="776" width="60" height="32"/></g>
+    <!-- Home icon -->
+    <path d="M44,785 L48,781 L56,788 L56,797 L52,797 L52,791 L44,791 L44,797 L40,797 L40,788 Z" fill="#F59E0B" opacity="0.9"/>
+    <text x="48" y="818" fill="#F59E0B" font-size="9" font-weight="700" text-anchor="middle">Home</text>
+
+    <!-- Orders -->
+    <rect x="88" y="784" width="16" height="12" rx="2" fill="none" stroke="#64748B" stroke-width="1"/>
+    <line x1="91" y1="789" x2="101" y2="789" stroke="#64748B" stroke-width="0.8"/>
+    <line x1="91" y1="792" x2="99" y2="792" stroke="#64748B" stroke-width="0.8"/>
+    <text x="126" y="818" fill="#64748B" font-size="9" text-anchor="middle">Orders</text>
+
+    <!-- Reports -->
+    <!-- Mini bar chart icon -->
+    <rect x="187" y="792" width="3" height="6" rx="0.5" fill="#64748B"/>
+    <rect x="192" y="788" width="3" height="10" rx="0.5" fill="#64748B"/>
+    <rect x="197" y="785" width="3" height="13" rx="0.5" fill="#64748B"/>
+    <text x="195" y="818" fill="#64748B" font-size="9" text-anchor="middle">Reports</text>
+
+    <!-- Staff -->
+    <circle cx="261" cy="790" r="4" fill="none" stroke="#64748B" stroke-width="1"/>
+    <circle cx="268" cy="790" r="4" fill="none" stroke="#64748B" stroke-width="1"/>
+    <text x="264" y="818" fill="#64748B" font-size="9" text-anchor="middle">Staff</text>
+
+    <!-- Settings -->
+    <circle cx="340" cy="790" r="7" fill="none" stroke="#64748B" stroke-width="1"/>
+    <circle cx="340" cy="790" r="2" fill="#64748B"/>
+    <text x="342" y="818" fill="#64748B" font-size="9" text-anchor="middle">Settings</text>
+
+    <!-- Home indicator -->
+    <rect x="140" y="834" width="110" height="5" rx="2.5" fill="#2A2E45"/>
+
+  </g>
+
+  <!-- iPhone frame border (outer) -->
+  <rect width="390" height="844" rx="44" fill="none" stroke="#2A2E45" stroke-width="1"/>
 </svg>

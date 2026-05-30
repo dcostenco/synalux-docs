@@ -1,141 +1,371 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
-  <rect width="1366" height="1024" fill="#0F1117"/>
+<svg role="img" aria-labelledby="title-ipad_table_editor-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- Header -->
-  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
-  <text x="20" y="24" font-size="11" fill="#8B92A5">← Back to Floor Plans</text>
+  <!-- ================================================================== -->
+  <!-- DEFS: Shared gradients, filters, symbols for repeated UI elements  -->
+  <!-- ================================================================== -->
+  <title id="title-ipad_table_editor-svg">Synalux POS — taUle editor</title>
+  <desc>Synalux POS mockup screen for taUle editor. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#0A0C16"/>
+    </linearGradient>
+
+    <!-- Side panel gradient -->
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161930"/>
+      <stop offset="100%" stop-color="#131528"/>
+    </linearGradient>
+
+    <!-- Card gradient -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+
+    <!-- Amber button gradient -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Green button gradient -->
+    <linearGradient id="greenBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <!-- Red button gradient -->
+    <linearGradient id="redBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+
+    <!-- Canvas background gradient -->
+    <linearGradient id="canvasGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D0F1A"/>
+      <stop offset="100%" stop-color="#0B0D16"/>
+    </linearGradient>
+
+    <!-- Card drop shadow -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Elevated card shadow -->
+    <filter id="elevShadow" x="-4%" y="-4%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Amber glow for selected table -->
+    <filter id="amberGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Green glow for available tables -->
+    <filter id="greenGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#22C55E" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Red glow for alert tables -->
+    <filter id="redGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#EF4444" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Ghost drag glow -->
+    <filter id="ghostGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Seat Dot — repeated for every seat on every table    -->
+    <!-- Admin: Settings > Floor Plan > Seat Display                   -->
+    <!-- ============================================================ -->
+    <symbol id="seatDot" overflow="visible">
+      <circle r="7" fill="#2D3748" stroke="#64748B" stroke-width="1"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Large Seat Dot (8-top tables)                        -->
+    <!-- ============================================================ -->
+    <symbol id="seatDotLg" overflow="visible">
+      <circle r="8" fill="#2D3748" stroke="#64748B" stroke-width="1"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Round Table Tool — used in left tools panel          -->
+    <!-- Admin: Settings > Floor Plan > Available Table Shapes        -->
+    <!-- ============================================================ -->
+    <symbol id="roundTableTool" overflow="visible">
+      <rect width="156" height="72" rx="6" fill="url(#cardGrad)"/>
+      <circle cx="36" cy="32" r="20" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
+      <text x="32" y="36" font-size="10" fill="#F59E0B">2</text>
+      <text x="64" y="26" font-size="11" fill="#CBD5E1">Round</text>
+      <text x="64" y="42" font-size="10" fill="#64748B">2-10 seats</text>
+      <text x="64" y="56" font-size="9" fill="#475569">drag to canvas</text>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Rect Table Tool — used in left tools panel           -->
+    <!-- Admin: Settings > Floor Plan > Available Table Shapes        -->
+    <!-- ============================================================ -->
+    <symbol id="rectTableTool" overflow="visible">
+      <rect width="156" height="72" rx="6" fill="url(#cardGrad)"/>
+      <rect x="12" y="16" width="42" height="28" rx="3" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
+      <text x="24" y="35" font-size="10" fill="#F59E0B">4</text>
+      <text x="64" y="28" font-size="11" fill="#CBD5E1">Rectangular</text>
+      <text x="64" y="44" font-size="10" fill="#64748B">2-12 seats</text>
+      <text x="64" y="58" font-size="9" fill="#475569">drag to canvas</text>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Decor Tool — repeated for each decor type            -->
+    <!-- Admin: Settings > Floor Plan > Decor Elements                -->
+    <!-- ============================================================ -->
+    <symbol id="decorTool" overflow="visible">
+      <rect width="72" height="36" rx="4" fill="url(#cardGrad)"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Legend Dot — repeated 5x in legend panel             -->
+    <!-- Admin: Settings > Floor Plan > Status Colors                  -->
+    <!-- ============================================================ -->
+    <symbol id="legendDot" overflow="visible">
+      <circle r="8" opacity="0.3"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Edit Panel Input Field — repeated in right panel     -->
+    <!-- Admin: This IS the admin settings screen                      -->
+    <!-- ============================================================ -->
+    <symbol id="editInput" overflow="visible">
+      <rect width="294" height="32" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Seat Label Row — repeated 4x in seat config          -->
+    <!-- ============================================================ -->
+    <symbol id="seatLabelRow" overflow="visible">
+      <rect width="120" height="22" rx="4" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Shape Chip (inactive) — repeated in shape selector   -->
+    <!-- ============================================================ -->
+    <symbol id="shapeChipInactive" overflow="visible">
+      <rect width="96" height="32" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Room Tab (inactive) — repeated for each room         -->
+    <!-- Admin: Settings > Floor Plan > Rooms (pos_rooms)             -->
+    <!-- ============================================================ -->
+    <symbol id="roomTabInactive" overflow="visible">
+      <rect width="90" height="32" rx="6" fill="none"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Admin Gear Icon — admin-configurability affordance   -->
+    <!-- ============================================================ -->
+    <symbol id="gearIcon" viewBox="0 0 16 16" overflow="visible">
+      <path d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM6.5 8a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="currentColor"/>
+      <path d="M7 1h2l.35 1.8.9.37 1.6-.93 1.41 1.42-.93 1.6.37.89L14.5 7v2l-1.8.35-.37.9.93 1.6-1.42 1.41-1.6-.93-.89.37L9 14.5H7l-.35-1.8-.9-.37-1.6.93L2.74 11.84l.93-1.6-.37-.89L1.5 9V7l1.8-.35.37-.9-.93-1.6L4.16 2.74l1.6.93.89-.37L7 1.5z" fill="none" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Toggle Switch ON                                     -->
+    <!-- ============================================================ -->
+    <symbol id="toggleOn" overflow="visible">
+      <rect width="34" height="20" rx="10" fill="#22C55E"/>
+      <circle cx="24" cy="10" r="8" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Header Action Button                                 -->
+    <!-- ============================================================ -->
+    <symbol id="headerBtn" overflow="visible">
+      <rect width="80" height="32" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <!-- ================================================================== -->
+  <!-- BACKGROUND                                                         -->
+  <!-- ================================================================== -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- ================================================================== -->
+  <!-- HEADER BAR h=56                                                    -->
+  <!-- Admin: This IS the admin settings screen for floor plan config     -->
+  <!-- ================================================================== -->
+  <rect x="0" y="0" width="1366" height="56" fill="url(#cardGrad)"/>
+  <rect x="0" y="55" width="1366" height="1" fill="#1E2235"/>
+
+  <!-- Back nav -->
+  <text x="20" y="24" font-size="11" fill="#8B92A5">&#x2190; Back to Floor Plans</text>
   <text x="20" y="44" font-size="18" font-weight="700" fill="#FFFFFF">Floor Plan Editor — Multi-Room</text>
+  <!-- Admin: pos_tables + pos_rooms tables -->
   <text x="450" y="34" font-size="12" fill="#8B92A5">Drag tables to position · Click to edit seats/name · Changes auto-save to pos_tables / pos_rooms</text>
-  <!-- Header actions -->
-  <rect x="1080" y="12" width="80" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1102" y="32" font-size="12" fill="#D1D5DB">Preview</text>
-  <rect x="1168" y="12" width="80" height="32" rx="6" fill="#10B981"/>
-  <text x="1185" y="32" font-size="12" font-weight="600" fill="#FFFFFF">Save</text>
-  <rect x="1256" y="12" width="90" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1268" y="32" font-size="12" fill="#D1D5DB">Discard</text>
+  <use href="#gearIcon" x="850" y="26" width="12" height="12" color="#8B92A5"/>
 
-  <!-- Room tabs -->
-  <rect x="0" y="56" width="1366" height="44" fill="#13162A"/>
-  <rect x="8" y="62" width="130" height="32" rx="6" fill="#1E2240"/>
+  <!-- Header actions -->
+  <use href="#headerBtn" x="1080" y="12"/>
+  <text x="1102" y="32" font-size="12" fill="#CBD5E1">Preview</text>
+  <rect x="1168" y="12" width="80" height="32" rx="6" fill="url(#greenBtnGrad)" filter="url(#cardShadow)"/>
+  <text x="1185" y="32" font-size="12" font-weight="600" fill="#FFFFFF">Save</text>
+  <use href="#headerBtn" x="1256" y="12"/>
+  <text x="1268" y="32" font-size="12" fill="#CBD5E1">Discard</text>
+
+  <!-- ================================================================== -->
+  <!-- ROOM TABS h=44 y=56                                               -->
+  <!-- Admin: Settings > Floor Plan > Rooms (pos_rooms) — add/rename/delete -->
+  <!-- ================================================================== -->
+  <rect x="0" y="56" width="1366" height="44" fill="url(#panelGrad)"/>
+  <rect x="0" y="99" width="1366" height="1" fill="#1E2235"/>
+
+  <!-- Active room: Main Dining -->
+  <rect x="8" y="62" width="130" height="32" rx="6" fill="#1E2235"/>
   <text x="40" y="82" font-size="12" font-weight="600" fill="#F59E0B">Main Dining</text>
-  <rect x="146" y="62" width="90" height="32" rx="6" fill="none"/>
+  <use href="#gearIcon" x="122" y="72" width="10" height="10" color="#F59E0B" opacity="0.4"/>
+
+  <!-- Inactive rooms -->
+  <use href="#roomTabInactive" x="146" y="62"/>
   <text x="166" y="82" font-size="12" fill="#8B92A5">Patio</text>
+
   <rect x="244" y="62" width="60" height="32" rx="6" fill="none"/>
   <text x="258" y="82" font-size="12" fill="#8B92A5">Bar</text>
+
   <rect x="312" y="62" width="120" height="32" rx="6" fill="none"/>
   <text x="326" y="82" font-size="12" fill="#8B92A5">Private Room</text>
-  <rect x="440" y="68" width="100" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+
+  <!-- Add Room button — Admin: pos_rooms.insert -->
+  <rect x="440" y="68" width="100" height="20" rx="4" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="452" y="82" font-size="11" fill="#F59E0B">+ Add Room</text>
 
-  <!-- ===== Left Tools Panel ===== -->
-  <rect x="0" y="100" width="180" height="924" fill="#13162A"/>
+  <!-- ================================================================== -->
+  <!-- LEFT TOOLS PANEL  x=0 w=180                                       -->
+  <!-- Admin: Settings > Floor Plan > Tool Palette                        -->
+  <!-- ================================================================== -->
+  <rect x="0" y="100" width="180" height="924" fill="url(#panelGrad)"/>
+  <rect x="180" y="100" width="1" height="924" fill="#1E2235"/>
+
+  <!-- ADD TABLE section header -->
   <text x="16" y="128" font-size="11" font-weight="600" fill="#8B92A5">ADD TABLE</text>
+  <use href="#gearIcon" x="88" y="118" width="10" height="10" color="#8B92A5" opacity="0.4"/>
 
-  <!-- Table shapes -->
-  <rect x="12" y="136" width="156" height="72" rx="6" fill="#1A1D2E"/>
-  <!-- Round table tool -->
-  <circle cx="48" cy="168" r="20" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
-  <text x="44" y="172" font-size="10" fill="#F59E0B">2</text>
-  <text x="76" y="162" font-size="11" fill="#D1D5DB">Round</text>
-  <text x="76" y="178" font-size="10" fill="#6B7280">2–10 seats</text>
-  <text x="76" y="192" font-size="9" fill="#4B5563">drag to canvas</text>
+  <!-- Table shape tools — Admin: Settings > Floor Plan > Available Table Shapes -->
+  <use href="#roundTableTool" x="12" y="136"/>
+  <use href="#rectTableTool" x="12" y="216"/>
 
-  <rect x="12" y="216" width="156" height="72" rx="6" fill="#1A1D2E"/>
-  <!-- Rect table tool -->
-  <rect x="24" y="232" width="42" height="28" rx="3" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
-  <text x="36" y="251" font-size="10" fill="#F59E0B">4</text>
-  <text x="76" y="244" font-size="11" fill="#D1D5DB">Rectangular</text>
-  <text x="76" y="260" font-size="10" fill="#6B7280">2–12 seats</text>
-  <text x="76" y="274" font-size="9" fill="#4B5563">drag to canvas</text>
-
-  <rect x="12" y="296" width="156" height="72" rx="6" fill="#1A1D2E"/>
-  <!-- L-shaped -->
+  <!-- L-shaped table tool -->
+  <rect x="12" y="296" width="156" height="72" rx="6" fill="url(#cardGrad)"/>
   <rect x="24" y="310" width="24" height="40" rx="2" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
   <rect x="24" y="334" width="42" height="16" rx="2" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
-  <text x="76" y="324" font-size="11" fill="#D1D5DB">L-Shaped</text>
-  <text x="76" y="340" font-size="10" fill="#6B7280">4–16 seats</text>
-  <text x="76" y="354" font-size="9" fill="#4B5563">drag to canvas</text>
+  <text x="76" y="324" font-size="11" fill="#CBD5E1">L-Shaped</text>
+  <text x="76" y="340" font-size="10" fill="#64748B">4-16 seats</text>
+  <text x="76" y="354" font-size="9" fill="#475569">drag to canvas</text>
 
-  <rect x="12" y="376" width="156" height="72" rx="6" fill="#1A1D2E"/>
-  <!-- Bar stool row -->
+  <!-- Bar stool row tool -->
+  <rect x="12" y="376" width="156" height="72" rx="6" fill="url(#cardGrad)"/>
   <circle cx="30" cy="408" r="6" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3"/>
   <circle cx="48" cy="408" r="6" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3"/>
   <circle cx="66" cy="408" r="6" fill="#2D2F44" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3"/>
-  <text x="76" y="404" font-size="11" fill="#D1D5DB">Bar Stools</text>
-  <text x="76" y="420" font-size="10" fill="#6B7280">row of 2–10</text>
-  <text x="76" y="434" font-size="9" fill="#4B5563">drag to canvas</text>
+  <text x="76" y="404" font-size="11" fill="#CBD5E1">Bar Stools</text>
+  <text x="76" y="420" font-size="10" fill="#64748B">row of 2-10</text>
+  <text x="76" y="434" font-size="9" fill="#475569">drag to canvas</text>
 
   <!-- Separator -->
-  <rect x="16" y="460" width="148" height="1" fill="#374151"/>
+  <rect x="16" y="460" width="148" height="1" fill="#2A2E45"/>
+  <!-- DECOR / ZONES — Admin: Settings > Floor Plan > Decor Elements -->
   <text x="16" y="480" font-size="11" font-weight="600" fill="#8B92A5">DECOR / ZONES</text>
-  <rect x="12" y="488" width="72" height="36" rx="4" fill="#1A1D2E"/>
-  <text x="30" y="510" font-size="20">🌿</text>
-  <text x="22" y="522" font-size="8" fill="#6B7280">Plants</text>
-  <rect x="92" y="488" width="76" height="36" rx="4" fill="#1A1D2E"/>
-  <text x="104" y="510" font-size="20">🚪</text>
-  <text x="100" y="522" font-size="8" fill="#6B7280">Door/Exit</text>
-  <rect x="12" y="532" width="72" height="36" rx="4" fill="#1A1D2E"/>
-  <text x="30" y="554" font-size="20">🏧</text>
-  <text x="24" y="566" font-size="8" fill="#6B7280">Bar/Counter</text>
-  <rect x="92" y="532" width="76" height="36" rx="4" fill="#1A1D2E"/>
-  <text x="110" y="554" font-size="20">🌡</text>
-  <text x="100" y="566" font-size="8" fill="#6B7280">Wait Station</text>
+  <use href="#gearIcon" x="110" y="470" width="10" height="10" color="#8B92A5" opacity="0.4"/>
+
+  <use href="#decorTool" x="12" y="488"/>
+  <text x="32" y="512" font-size="14" fill="#64748B">&#x1F33F;</text>
+  <text x="22" y="522" font-size="8" fill="#64748B">Plants</text>
+
+  <rect x="92" y="488" width="76" height="36" rx="4" fill="url(#cardGrad)"/>
+  <text x="112" y="512" font-size="14" fill="#64748B">&#x1F6AA;</text>
+  <text x="100" y="522" font-size="8" fill="#64748B">Door/Exit</text>
+
+  <use href="#decorTool" x="12" y="532"/>
+  <text x="24" y="554" font-size="14" fill="#64748B">&#x1F3E7;</text>
+  <text x="16" y="566" font-size="8" fill="#64748B">Bar/Counter</text>
+
+  <rect x="92" y="532" width="76" height="36" rx="4" fill="url(#cardGrad)"/>
+  <text x="112" y="554" font-size="14" fill="#64748B">&#x1F321;</text>
+  <text x="100" y="566" font-size="8" fill="#64748B">Wait Station</text>
 
   <!-- Separator -->
-  <rect x="16" y="580" width="148" height="1" fill="#374151"/>
+  <rect x="16" y="580" width="148" height="1" fill="#2A2E45"/>
+  <!-- GRID & SNAP — Admin: Settings > Floor Plan > Grid & Snap Settings -->
   <text x="16" y="600" font-size="11" font-weight="600" fill="#8B92A5">GRID &amp; SNAP</text>
-  <rect x="12" y="608" width="156" height="36" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="28" y="626" font-size="11" fill="#D1D5DB">Grid: 20px</text>
-  <rect x="128" y="614" width="34" height="20" rx="10" fill="#10B981"/>
-  <circle cx="152" cy="624" r="8" fill="#FFFFFF"/>
-  <text x="12" y="660" font-size="10" fill="#6B7280">Snap to grid: ON</text>
-  <rect x="12" y="668" width="156" height="28" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="28" y="686" font-size="11" fill="#D1D5DB">Show seat numbers</text>
-  <rect x="140" y="674" width="22" height="16" rx="8" fill="#10B981"/>
+  <use href="#gearIcon" x="100" y="590" width="10" height="10" color="#8B92A5" opacity="0.4"/>
+
+  <rect x="12" y="608" width="156" height="36" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="28" y="626" font-size="11" fill="#CBD5E1">Grid: 20px</text>
+  <use href="#toggleOn" x="128" y="614"/>
+
+  <text x="12" y="660" font-size="10" fill="#64748B">Snap to grid: ON</text>
+
+  <rect x="12" y="668" width="156" height="28" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="28" y="686" font-size="11" fill="#CBD5E1">Show seat numbers</text>
+  <rect x="140" y="674" width="22" height="16" rx="8" fill="#22C55E"/>
   <circle cx="152" cy="682" r="6" fill="#FFFFFF"/>
 
-  <!-- Legend -->
-  <rect x="16" y="710" width="148" height="1" fill="#374151"/>
+  <!-- Legend — Admin: Settings > Floor Plan > Status Colors -->
+  <rect x="16" y="710" width="148" height="1" fill="#2A2E45"/>
   <text x="16" y="730" font-size="11" font-weight="600" fill="#8B92A5">LEGEND</text>
-  <circle cx="26" cy="748" r="8" fill="#10B981" opacity="0.3"/>
+  <use href="#gearIcon" x="66" y="720" width="10" height="10" color="#8B92A5" opacity="0.4"/>
+
+  <use href="#legendDot" x="26" y="748" fill="#22C55E"/>
   <text x="40" y="753" font-size="10" fill="#8B92A5">Available</text>
-  <circle cx="26" cy="768" r="8" fill="#F59E0B" opacity="0.3"/>
+
+  <use href="#legendDot" x="26" y="768" fill="#F59E0B"/>
   <text x="40" y="773" font-size="10" fill="#8B92A5">Occupied (live)</text>
-  <circle cx="26" cy="788" r="8" fill="#EF4444" opacity="0.3"/>
+
+  <use href="#legendDot" x="26" y="788" fill="#EF4444"/>
   <text x="40" y="793" font-size="10" fill="#8B92A5">Alert / needs attn.</text>
-  <circle cx="26" cy="808" r="8" fill="#7C3AED" opacity="0.3"/>
+
+  <use href="#legendDot" x="26" y="808" fill="#7C3AED"/>
   <text x="40" y="813" font-size="10" fill="#8B92A5">Reserved</text>
+
   <circle cx="26" cy="828" r="8" fill="#2563EB" opacity="0.3" stroke="#2563EB" stroke-width="1" stroke-dasharray="3"/>
   <text x="40" y="833" font-size="10" fill="#8B92A5">Dirty / cleaning</text>
 
-  <!-- ===== Center: Canvas ===== -->
-  <rect x="180" y="100" width="860" height="924" fill="#0D0F1A"/>
+  <!-- ================================================================== -->
+  <!-- CENTER: CANVAS  x=181 w=859                                       -->
+  <!-- Admin: This IS the floor plan editor canvas                        -->
+  <!-- ================================================================== -->
+  <rect x="181" y="100" width="859" height="924" fill="url(#canvasGrad)"/>
+
   <!-- Grid lines -->
   <g stroke="#1A1D2E" stroke-width="0.5" opacity="0.6">
-    <line x1="180" y1="120" x2="1040" y2="120"/>
-    <line x1="180" y1="140" x2="1040" y2="140"/>
-    <line x1="180" y1="160" x2="1040" y2="160"/>
-    <line x1="180" y1="180" x2="1040" y2="180"/>
-    <line x1="180" y1="200" x2="1040" y2="200"/>
-    <line x1="180" y1="220" x2="1040" y2="220"/>
-    <line x1="180" y1="240" x2="1040" y2="240"/>
-    <line x1="180" y1="260" x2="1040" y2="260"/>
-    <line x1="180" y1="280" x2="1040" y2="280"/>
-    <line x1="180" y1="300" x2="1040" y2="300"/>
-    <line x1="180" y1="320" x2="1040" y2="320"/>
-    <line x1="180" y1="340" x2="1040" y2="340"/>
-    <line x1="180" y1="360" x2="1040" y2="360"/>
-    <line x1="180" y1="380" x2="1040" y2="380"/>
-    <line x1="180" y1="400" x2="1040" y2="400"/>
-    <line x1="180" y1="420" x2="1040" y2="420"/>
-    <line x1="180" y1="440" x2="1040" y2="440"/>
-    <line x1="180" y1="460" x2="1040" y2="460"/>
-    <line x1="180" y1="480" x2="1040" y2="480"/>
-    <line x1="180" y1="500" x2="1040" y2="500"/>
-    <line x1="180" y1="520" x2="1040" y2="520"/>
-    <line x1="180" y1="540" x2="1040" y2="540"/>
-    <line x1="180" y1="560" x2="1040" y2="560"/>
-    <line x1="180" y1="580" x2="1040" y2="580"/>
+    <line x1="181" y1="120" x2="1040" y2="120"/>
+    <line x1="181" y1="140" x2="1040" y2="140"/>
+    <line x1="181" y1="160" x2="1040" y2="160"/>
+    <line x1="181" y1="180" x2="1040" y2="180"/>
+    <line x1="181" y1="200" x2="1040" y2="200"/>
+    <line x1="181" y1="220" x2="1040" y2="220"/>
+    <line x1="181" y1="240" x2="1040" y2="240"/>
+    <line x1="181" y1="260" x2="1040" y2="260"/>
+    <line x1="181" y1="280" x2="1040" y2="280"/>
+    <line x1="181" y1="300" x2="1040" y2="300"/>
+    <line x1="181" y1="320" x2="1040" y2="320"/>
+    <line x1="181" y1="340" x2="1040" y2="340"/>
+    <line x1="181" y1="360" x2="1040" y2="360"/>
+    <line x1="181" y1="380" x2="1040" y2="380"/>
+    <line x1="181" y1="400" x2="1040" y2="400"/>
+    <line x1="181" y1="420" x2="1040" y2="420"/>
+    <line x1="181" y1="440" x2="1040" y2="440"/>
+    <line x1="181" y1="460" x2="1040" y2="460"/>
+    <line x1="181" y1="480" x2="1040" y2="480"/>
+    <line x1="181" y1="500" x2="1040" y2="500"/>
+    <line x1="181" y1="520" x2="1040" y2="520"/>
+    <line x1="181" y1="540" x2="1040" y2="540"/>
+    <line x1="181" y1="560" x2="1040" y2="560"/>
+    <line x1="181" y1="580" x2="1040" y2="580"/>
     <line x1="200" y1="100" x2="200" y2="1024"/>
     <line x1="220" y1="100" x2="220" y2="1024"/>
     <line x1="240" y1="100" x2="240" y2="1024"/>
@@ -181,214 +411,261 @@
   </g>
 
   <!-- Room boundary label -->
-  <text x="196" y="120" font-size="10" fill="#374151">Main Dining Room</text>
+  <text x="196" y="120" font-size="10" fill="#2A2E45">Main Dining Room</text>
 
-  <!-- Decor: Bar counter -->
-  <rect x="196" y="126" width="160" height="30" rx="4" fill="#1E2240" stroke="#4B5563" stroke-width="1"/>
-  <text x="220" y="146" font-size="11" fill="#6B7280">🏧 Bar / Counter</text>
+  <!-- Decor: Bar counter — Admin: pos_room_decor -->
+  <rect x="196" y="126" width="160" height="30" rx="4" fill="#1E2235" stroke="#475569" stroke-width="1"/>
+  <text x="220" y="146" font-size="11" fill="#64748B">Bar / Counter</text>
 
   <!-- Decor: plants -->
-  <text x="690" y="126" font-size="18">🌿</text>
-  <text x="780" y="126" font-size="18">🌿</text>
-  <text x="870" y="126" font-size="18">🌿</text>
+  <text x="690" y="126" font-size="14" fill="#475569">&#x1F33F;</text>
+  <text x="780" y="126" font-size="14" fill="#475569">&#x1F33F;</text>
+  <text x="870" y="126" font-size="14" fill="#475569">&#x1F33F;</text>
 
   <!-- Exit door -->
-  <rect x="970" y="100" width="70" height="16" rx="0" fill="#4B5563"/>
-  <text x="975" y="113" font-size="9" fill="#9CA3AF">🚪 EXIT</text>
+  <rect x="970" y="100" width="70" height="16" rx="0" fill="#475569"/>
+  <text x="978" y="113" font-size="9" fill="#94A3B8">EXIT</text>
 
-  <!-- TABLE 1 — Round, 4 seats, selected (editing) amber glow -->
-  <circle cx="290" cy="220" r="36" fill="#1E2240" stroke="#F59E0B" stroke-width="2"/>
-  <!-- seat dots around circle -->
-  <circle cx="290" cy="180" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="287" y="184" font-size="7" fill="#9CA3AF">1</text>
-  <circle cx="326" cy="220" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="323" y="224" font-size="7" fill="#9CA3AF">2</text>
-  <circle cx="290" cy="256" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="287" y="260" font-size="7" fill="#9CA3AF">3</text>
-  <circle cx="254" cy="220" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="251" y="224" font-size="7" fill="#9CA3AF">4</text>
+  <!-- ================================================================== -->
+  <!-- TABLE 1 — Round, 4 seats, SELECTED (editing) — amber glow         -->
+  <!-- Admin: pos_tables.id = T1 — currently selected for editing         -->
+  <!-- ================================================================== -->
+  <circle cx="290" cy="220" r="36" fill="#1E2235" stroke="#F59E0B" stroke-width="2" filter="url(#amberGlow)"/>
+  <!-- Seats using symbol -->
+  <use href="#seatDot" x="290" y="180"/>
+  <text x="287" y="184" font-size="7" fill="#94A3B8">1</text>
+  <use href="#seatDot" x="326" y="220"/>
+  <text x="323" y="224" font-size="7" fill="#94A3B8">2</text>
+  <use href="#seatDot" x="290" y="256"/>
+  <text x="287" y="260" font-size="7" fill="#94A3B8">3</text>
+  <use href="#seatDot" x="254" y="220"/>
+  <text x="251" y="224" font-size="7" fill="#94A3B8">4</text>
   <text x="282" y="218" font-size="10" font-weight="700" fill="#F59E0B">T1</text>
   <text x="276" y="232" font-size="8" fill="#8B92A5">4 seats</text>
   <!-- Move handle indicator -->
-  <text x="308" y="194" font-size="10" fill="#F59E0B">✥</text>
+  <text x="308" y="194" font-size="10" fill="#F59E0B">&#x2725;</text>
 
-  <!-- TABLE 2 — Round 2 seats -->
-  <circle cx="420" cy="200" r="28" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
-  <circle cx="420" cy="168" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="417" y="172" font-size="7" fill="#9CA3AF">1</text>
-  <circle cx="420" cy="232" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="417" y="236" font-size="7" fill="#9CA3AF">2</text>
-  <text x="413" y="198" font-size="10" font-weight="700" fill="#10B981">T2</text>
+  <!-- ================================================================== -->
+  <!-- TABLE 2 — Round 2 seats, available                                -->
+  <!-- Admin: pos_tables.id = T2                                          -->
+  <!-- ================================================================== -->
+  <circle cx="420" cy="200" r="28" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5" filter="url(#greenGlow)"/>
+  <use href="#seatDot" x="420" y="168"/>
+  <text x="417" y="172" font-size="7" fill="#94A3B8">1</text>
+  <use href="#seatDot" x="420" y="232"/>
+  <text x="417" y="236" font-size="7" fill="#94A3B8">2</text>
+  <text x="413" y="198" font-size="10" font-weight="700" fill="#22C55E">T2</text>
   <text x="409" y="210" font-size="8" fill="#8B92A5">2 seats</text>
 
-  <!-- TABLE 3 — Rect 4 seats -->
-  <rect x="490" y="162" width="80" height="56" rx="4" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
-  <!-- seats top/bottom -->
-  <circle cx="510" cy="157" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="507" y="161" font-size="7" fill="#9CA3AF">1</text>
-  <circle cx="550" cy="157" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="547" y="161" font-size="7" fill="#9CA3AF">2</text>
-  <circle cx="510" cy="224" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="507" y="228" font-size="7" fill="#9CA3AF">3</text>
-  <circle cx="550" cy="224" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="547" y="228" font-size="7" fill="#9CA3AF">4</text>
-  <text x="516" y="187" font-size="10" font-weight="700" fill="#10B981">T3</text>
+  <!-- ================================================================== -->
+  <!-- TABLE 3 — Rect 4 seats, available                                 -->
+  <!-- Admin: pos_tables.id = T3                                          -->
+  <!-- ================================================================== -->
+  <rect x="490" y="162" width="80" height="56" rx="4" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5" filter="url(#greenGlow)"/>
+  <use href="#seatDot" x="510" y="157"/>
+  <text x="507" y="161" font-size="7" fill="#94A3B8">1</text>
+  <use href="#seatDot" x="550" y="157"/>
+  <text x="547" y="161" font-size="7" fill="#94A3B8">2</text>
+  <use href="#seatDot" x="510" y="224"/>
+  <text x="507" y="228" font-size="7" fill="#94A3B8">3</text>
+  <use href="#seatDot" x="550" y="224"/>
+  <text x="547" y="228" font-size="7" fill="#94A3B8">4</text>
+  <text x="516" y="187" font-size="10" font-weight="700" fill="#22C55E">T3</text>
   <text x="510" y="201" font-size="8" fill="#8B92A5">4 seats</text>
 
-  <!-- TABLE 4 — Rect 6 seats occupied -->
-  <rect x="620" y="152" width="100" height="66" rx="4" fill="#1E2240" stroke="#F59E0B" stroke-width="1.5"/>
-  <circle cx="640" cy="145" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="670" cy="145" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="700" cy="145" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="640" cy="225" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="670" cy="225" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="700" cy="225" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
+  <!-- ================================================================== -->
+  <!-- TABLE 4 — Rect 6 seats, occupied (amber)                          -->
+  <!-- Admin: pos_tables.id = T4                                          -->
+  <!-- ================================================================== -->
+  <rect x="620" y="152" width="100" height="66" rx="4" fill="#1E2235" stroke="#F59E0B" stroke-width="1.5"/>
+  <use href="#seatDot" x="640" y="145"/>
+  <use href="#seatDot" x="670" y="145"/>
+  <use href="#seatDot" x="700" y="145"/>
+  <use href="#seatDot" x="640" y="225"/>
+  <use href="#seatDot" x="670" y="225"/>
+  <use href="#seatDot" x="700" y="225"/>
   <text x="648" y="183" font-size="10" font-weight="700" fill="#F59E0B">T4</text>
   <text x="640" y="197" font-size="8" fill="#8B92A5">6 seats</text>
   <text x="638" y="209" font-size="7" fill="#F59E0B">Occupied</text>
 
-  <!-- TABLE 5 — Round 8 seats, large -->
-  <circle cx="860" cy="220" r="52" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
-  <!-- 8 seats around circle -->
-  <circle cx="860" cy="162" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="857" y="166" font-size="7" fill="#9CA3AF">1</text>
-  <circle cx="897" cy="177" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="894" y="181" font-size="7" fill="#9CA3AF">2</text>
-  <circle cx="912" cy="220" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="909" y="224" font-size="7" fill="#9CA3AF">3</text>
-  <circle cx="897" cy="263" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="894" y="267" font-size="7" fill="#9CA3AF">4</text>
-  <circle cx="860" cy="278" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="857" y="282" font-size="7" fill="#9CA3AF">5</text>
-  <circle cx="823" cy="263" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="820" y="267" font-size="7" fill="#9CA3AF">6</text>
-  <circle cx="808" cy="220" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="805" y="224" font-size="7" fill="#9CA3AF">7</text>
-  <circle cx="823" cy="177" r="8" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="820" y="181" font-size="7" fill="#9CA3AF">8</text>
-  <text x="851" y="218" font-size="12" font-weight="700" fill="#10B981">T5</text>
+  <!-- ================================================================== -->
+  <!-- TABLE 5 — Round 8 seats, large, available                         -->
+  <!-- Admin: pos_tables.id = T5                                          -->
+  <!-- ================================================================== -->
+  <circle cx="860" cy="220" r="52" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5" filter="url(#greenGlow)"/>
+  <!-- 8 seats using large dot symbol -->
+  <use href="#seatDotLg" x="860" y="162"/>
+  <text x="857" y="166" font-size="7" fill="#94A3B8">1</text>
+  <use href="#seatDotLg" x="897" y="177"/>
+  <text x="894" y="181" font-size="7" fill="#94A3B8">2</text>
+  <use href="#seatDotLg" x="912" y="220"/>
+  <text x="909" y="224" font-size="7" fill="#94A3B8">3</text>
+  <use href="#seatDotLg" x="897" y="263"/>
+  <text x="894" y="267" font-size="7" fill="#94A3B8">4</text>
+  <use href="#seatDotLg" x="860" y="278"/>
+  <text x="857" y="282" font-size="7" fill="#94A3B8">5</text>
+  <use href="#seatDotLg" x="823" y="263"/>
+  <text x="820" y="267" font-size="7" fill="#94A3B8">6</text>
+  <use href="#seatDotLg" x="808" y="220"/>
+  <text x="805" y="224" font-size="7" fill="#94A3B8">7</text>
+  <use href="#seatDotLg" x="823" y="177"/>
+  <text x="820" y="181" font-size="7" fill="#94A3B8">8</text>
+  <text x="851" y="218" font-size="12" font-weight="700" fill="#22C55E">T5</text>
   <text x="845" y="232" font-size="8" fill="#8B92A5">8 seats</text>
 
-  <!-- Row 2 of tables -->
-  <!-- T6 -->
-  <rect x="200" y="340" width="80" height="56" rx="4" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
-  <circle cx="220" cy="333" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="260" cy="333" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="220" cy="403" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="260" cy="403" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <text x="226" y="367" font-size="10" font-weight="700" fill="#10B981">T6</text>
+  <!-- ================================================================== -->
+  <!-- ROW 2 OF TABLES                                                    -->
+  <!-- ================================================================== -->
+
+  <!-- TABLE 6 — Rect 4 seats, available -->
+  <!-- Admin: pos_tables.id = T6 -->
+  <rect x="200" y="340" width="80" height="56" rx="4" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5" filter="url(#greenGlow)"/>
+  <use href="#seatDot" x="220" y="333"/>
+  <use href="#seatDot" x="260" y="333"/>
+  <use href="#seatDot" x="220" y="403"/>
+  <use href="#seatDot" x="260" y="403"/>
+  <text x="226" y="367" font-size="10" font-weight="700" fill="#22C55E">T6</text>
   <text x="220" y="381" font-size="8" fill="#8B92A5">4 seats</text>
 
-  <!-- T7 reserved -->
-  <circle cx="380" cy="380" r="36" fill="#1E2240" stroke="#7C3AED" stroke-width="1.5"/>
-  <circle cx="380" cy="340" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="416" cy="380" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="380" cy="416" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
-  <circle cx="344" cy="380" r="7" fill="#2D3748" stroke="#6B7280" stroke-width="1"/>
+  <!-- TABLE 7 — Round, reserved (purple) -->
+  <!-- Admin: pos_tables.id = T7 -->
+  <circle cx="380" cy="380" r="36" fill="#1E2235" stroke="#7C3AED" stroke-width="1.5"/>
+  <use href="#seatDot" x="380" y="340"/>
+  <use href="#seatDot" x="416" y="380"/>
+  <use href="#seatDot" x="380" y="416"/>
+  <use href="#seatDot" x="344" y="380"/>
   <text x="372" y="378" font-size="10" font-weight="700" fill="#7C3AED">T7</text>
   <text x="364" y="391" font-size="8" fill="#7C3AED">Reserved</text>
 
-  <!-- T8 alert red -->
-  <rect x="490" y="320" width="100" height="66" rx="4" fill="#1E2240" stroke="#EF4444" stroke-width="2"/>
+  <!-- TABLE 8 — Rect, alert/needs attention (red) -->
+  <!-- Admin: pos_tables.id = T8 -->
+  <rect x="490" y="320" width="100" height="66" rx="4" fill="#1E2235" stroke="#EF4444" stroke-width="2" filter="url(#redGlow)"/>
   <text x="516" y="353" font-size="10" font-weight="700" fill="#EF4444">T8</text>
   <text x="504" y="367" font-size="8" fill="#EF4444">CHECK REQ.</text>
   <text x="504" y="379" font-size="7" fill="#8B92A5">6 seats · 72min</text>
 
-  <!-- T9 -->
-  <circle cx="680" cy="380" r="28" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
-  <text x="673" y="378" font-size="10" font-weight="700" fill="#10B981">T9</text>
+  <!-- TABLE 9 — Round 2 seats, available -->
+  <!-- Admin: pos_tables.id = T9 -->
+  <circle cx="680" cy="380" r="28" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5" filter="url(#greenGlow)"/>
+  <text x="673" y="378" font-size="10" font-weight="700" fill="#22C55E">T9</text>
   <text x="666" y="390" font-size="8" fill="#8B92A5">2 seats</text>
 
-  <!-- T10 dirty/cleaning -->
-  <rect x="780" y="320" width="100" height="66" rx="4" fill="#1A1D2E" stroke="#2563EB" stroke-width="2" stroke-dasharray="5"/>
+  <!-- TABLE 10 — Rect, dirty/cleaning (blue dashed) -->
+  <!-- Admin: pos_tables.id = T10 -->
+  <rect x="780" y="320" width="100" height="66" rx="4" fill="url(#cardGrad)" stroke="#2563EB" stroke-width="2" stroke-dasharray="5"/>
   <text x="808" y="353" font-size="10" font-weight="700" fill="#2563EB">T10</text>
   <text x="800" y="367" font-size="8" fill="#2563EB">Cleaning</text>
   <text x="800" y="379" font-size="7" fill="#8B92A5">4 seats</text>
 
-  <!-- Ghost table being dragged (drag indicator) -->
-  <circle cx="600" cy="500" r="36" fill="#F59E0B" opacity="0.2" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6"/>
+  <!-- Ghost table being dragged — drag indicator -->
+  <circle cx="600" cy="500" r="36" fill="#F59E0B" opacity="0.2" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6" filter="url(#ghostGlow)"/>
   <text x="590" y="498" font-size="10" font-weight="700" fill="#F59E0B" opacity="0.8">NEW</text>
-  <text x="582" y="512" font-size="9" fill="#F59E0B" opacity="0.8">Drop here…</text>
+  <text x="582" y="512" font-size="9" fill="#F59E0B" opacity="0.8">Drop here...</text>
 
-  <!-- ===== Right: Table Edit Panel ===== -->
-  <rect x="1040" y="100" width="326" height="924" fill="#1A1D2E"/>
+  <!-- ================================================================== -->
+  <!-- RIGHT PANEL: Table Edit Panel  x=1040 w=326                       -->
+  <!-- Admin: This IS the admin editor — all fields are configurable      -->
+  <!-- ================================================================== -->
+  <rect x="1040" y="100" width="326" height="924" fill="url(#cardGrad)"/>
+  <rect x="1040" y="100" width="1" height="924" fill="#1E2235"/>
+
   <text x="1056" y="128" font-size="14" font-weight="600" fill="#FFFFFF">Edit Table</text>
+  <use href="#gearIcon" x="1128" y="116" width="12" height="12" color="#F59E0B" opacity="0.5"/>
+  <!-- Admin: pos_tables primary key -->
   <text x="1056" y="144" font-size="10" fill="#8B92A5">pos_tables.id = T1</text>
 
-  <!-- Table name -->
+  <!-- TABLE NAME — Admin: pos_tables.name_i18n -->
   <text x="1056" y="172" font-size="10" fill="#8B92A5">TABLE NAME (name_i18n)</text>
-  <rect x="1056" y="178" width="294" height="32" rx="6" fill="#0F1117" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="1056" y="178" width="294" height="32" rx="6" fill="#0C0E1A" stroke="#F59E0B" stroke-width="1"/>
   <text x="1070" y="199" font-size="13" font-weight="600" fill="#FFFFFF">Table 1</text>
 
-  <!-- Seat count -->
+  <!-- SEAT COUNT — Admin: pos_tables.seat_count -->
   <text x="1056" y="232" font-size="10" fill="#8B92A5">SEAT COUNT</text>
-  <rect x="1056" y="238" width="80" height="36" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <rect x="1056" y="238" width="80" height="36" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
   <text x="1074" y="261" font-size="18" font-weight="700" fill="#F59E0B">4</text>
-  <rect x="1144" y="238" width="32" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1152" y="261" font-size="18" fill="#F59E0B">−</text>
-  <rect x="1184" y="238" width="32" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
+  <rect x="1144" y="238" width="32" height="36" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1152" y="261" font-size="18" fill="#F59E0B">&#x2212;</text>
+  <rect x="1184" y="238" width="32" height="36" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="1192" y="261" font-size="18" fill="#F59E0B">+</text>
-  <text x="1228" y="261" font-size="10" fill="#6B7280">max 20</text>
+  <text x="1228" y="261" font-size="10" fill="#64748B">max 20</text>
 
-  <!-- Shape -->
+  <!-- SHAPE — Admin: pos_tables.shape -->
   <text x="1056" y="298" font-size="10" fill="#8B92A5">SHAPE</text>
-  <rect x="1056" y="304" width="90" height="32" rx="6" fill="#F59E0B"/>
+  <!-- Active shape: Round -->
+  <rect x="1056" y="304" width="90" height="32" rx="6" fill="url(#amberBtnGrad)"/>
   <text x="1076" y="324" font-size="12" font-weight="600" fill="#000">Round</text>
-  <rect x="1154" y="304" width="96" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1174" y="324" font-size="12" fill="#6B7280">Rectangle</text>
-  <rect x="1258" y="304" width="72" height="32" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1272" y="324" font-size="12" fill="#6B7280">L-Shape</text>
+  <!-- Inactive shapes -->
+  <use href="#shapeChipInactive" x="1154" y="304"/>
+  <text x="1174" y="324" font-size="12" fill="#64748B">Rectangle</text>
+  <rect x="1258" y="304" width="72" height="32" rx="6" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1272" y="324" font-size="12" fill="#64748B">L-Shape</text>
 
-  <!-- Revenue center assignment -->
+  <!-- REVENUE CENTER — Admin: pos_tables.revenue_center_id (FK to pos_revenue_centers) -->
   <text x="1056" y="360" font-size="10" fill="#8B92A5">REVENUE CENTER</text>
-  <rect x="1056" y="366" width="294" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <use href="#editInput" x="1056" y="366"/>
   <text x="1070" y="387" font-size="12" fill="#FFFFFF">Main Dining (RC-001)</text>
-  <text x="1318" y="387" font-size="16" fill="#6B7280">▾</text>
+  <text x="1318" y="387" font-size="16" fill="#64748B">&#x25BE;</text>
 
-  <!-- Server assignment -->
+  <!-- DEFAULT SERVER — Admin: pos_tables.default_server_id (FK to pos_staff) -->
   <text x="1056" y="422" font-size="10" fill="#8B92A5">DEFAULT SERVER</text>
-  <rect x="1056" y="428" width="294" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <use href="#editInput" x="1056" y="428"/>
   <text x="1070" y="449" font-size="12" fill="#FFFFFF">Carlos Ruiz</text>
-  <text x="1318" y="449" font-size="16" fill="#6B7280">▾</text>
+  <text x="1318" y="449" font-size="16" fill="#64748B">&#x25BE;</text>
 
-  <!-- Position coordinates -->
+  <!-- POSITION — Admin: pos_tables.position_x, pos_tables.position_y -->
   <text x="1056" y="486" font-size="10" fill="#8B92A5">POSITION (px on canvas)</text>
-  <rect x="1056" y="492" width="136" height="28" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="1066" y="511" font-size="11" fill="#6B7280">X:</text>
+  <rect x="1056" y="492" width="136" height="28" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1066" y="511" font-size="11" fill="#64748B">X:</text>
   <text x="1082" y="511" font-size="11" fill="#FFFFFF">290</text>
-  <rect x="1200" y="492" width="150" height="28" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="1210" y="511" font-size="11" fill="#6B7280">Y:</text>
+  <rect x="1200" y="492" width="150" height="28" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1210" y="511" font-size="11" fill="#64748B">Y:</text>
   <text x="1226" y="511" font-size="11" fill="#FFFFFF">220</text>
 
-  <!-- Seat label config -->
+  <!-- SEAT LABELS — Admin: pos_tables.seat_config (jsonb column) -->
   <text x="1056" y="546" font-size="10" fill="#8B92A5">SEAT LABELS (pos_tables.seat_config jsonb)</text>
-  <rect x="1056" y="552" width="294" height="100" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="1070" y="574" font-size="11" fill="#6B7280">S1:</text>
-  <rect x="1098" y="560" width="120" height="22" rx="4" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="1108" y="576" font-size="11" fill="#D1D5DB">Window Seat</text>
-  <text x="1070" y="596" font-size="11" fill="#6B7280">S2:</text>
-  <rect x="1098" y="584" width="120" height="22" rx="4" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="1108" y="600" font-size="11" fill="#D1D5DB">Seat 2</text>
-  <text x="1070" y="618" font-size="11" fill="#6B7280">S3:</text>
-  <rect x="1098" y="608" width="120" height="22" rx="4" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="1108" y="624" font-size="11" fill="#D1D5DB">Seat 3</text>
-  <text x="1070" y="640" font-size="11" fill="#6B7280">S4:</text>
-  <rect x="1098" y="630" width="120" height="22" rx="4" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="1108" y="646" font-size="11" fill="#D1D5DB">Seat 4</text>
+  <use href="#gearIcon" x="1300" y="536" width="10" height="10" color="#8B92A5" opacity="0.4"/>
+  <rect x="1056" y="552" width="294" height="100" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+
+  <text x="1070" y="574" font-size="11" fill="#64748B">S1:</text>
+  <use href="#seatLabelRow" x="1098" y="560"/>
+  <text x="1108" y="576" font-size="11" fill="#CBD5E1">Window Seat</text>
+
+  <text x="1070" y="596" font-size="11" fill="#64748B">S2:</text>
+  <use href="#seatLabelRow" x="1098" y="584"/>
+  <text x="1108" y="600" font-size="11" fill="#CBD5E1">Seat 2</text>
+
+  <text x="1070" y="618" font-size="11" fill="#64748B">S3:</text>
+  <use href="#seatLabelRow" x="1098" y="608"/>
+  <text x="1108" y="624" font-size="11" fill="#CBD5E1">Seat 3</text>
+
+  <text x="1070" y="640" font-size="11" fill="#64748B">S4:</text>
+  <use href="#seatLabelRow" x="1098" y="630"/>
+  <text x="1108" y="646" font-size="11" fill="#CBD5E1">Seat 4</text>
+
+  <!-- SECTION ASSIGNMENT — Admin: pos_tables.section_id (FK to pos_sections) -->
+  <text x="1056" y="678" font-size="10" fill="#8B92A5">SECTION</text>
+  <use href="#editInput" x="1056" y="684"/>
+  <text x="1070" y="705" font-size="12" fill="#FFFFFF">Section A — Window</text>
+  <text x="1318" y="705" font-size="16" fill="#64748B">&#x25BE;</text>
 
   <!-- Live mode note -->
-  <rect x="1056" y="666" width="294" height="60" rx="6" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
-  <text x="1072" y="688" font-size="11" font-weight="600" fill="#93C5FD">Live Operation</text>
-  <text x="1072" y="704" font-size="10" fill="#D1D5DB">Layout changes take effect immediately.</text>
-  <text x="1072" y="718" font-size="10" fill="#D1D5DB">Active orders are not affected by moves.</text>
+  <rect x="1056" y="726" width="294" height="60" rx="6" fill="#1E3A5F" stroke="#60A5FA" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="1072" y="748" font-size="11" font-weight="600" fill="#93C5FD">Live Operation</text>
+  <text x="1072" y="764" font-size="10" fill="#CBD5E1">Layout changes take effect immediately.</text>
+  <text x="1072" y="778" font-size="10" fill="#CBD5E1">Active orders are not affected by moves.</text>
 
-  <!-- Delete table -->
-  <rect x="1056" y="740" width="294" height="36" rx="6" fill="#7F1D1D"/>
-  <text x="1162" y="763" font-size="13" font-weight="600" fill="#FCA5A5">Delete Table</text>
+  <!-- Delete table — Admin: pos_tables.delete -->
+  <rect x="1056" y="800" width="294" height="36" rx="6" fill="url(#redBtnGrad)" fill-opacity="0.3" filter="url(#cardShadow)"/>
+  <text x="1162" y="823" font-size="13" font-weight="600" fill="#FCA5A5" text-anchor="middle">Delete Table</text>
 
   <!-- Save button -->
-  <rect x="1056" y="786" width="294" height="40" rx="6" fill="#F59E0B"/>
-  <text x="1162" y="811" font-size="14" font-weight="700" fill="#000000">Save Layout</text>
+  <rect x="1056" y="846" width="294" height="40" rx="6" fill="url(#amberBtnGrad)" filter="url(#elevShadow)"/>
+  <text x="1162" y="871" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">Save Layout</text>
 
-  <text x="683" y="1014" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Floor Plan Editor · pos_tables + pos_rooms — drag &amp; drop · multi-room · no hardcodes</text>
+  <!-- ================================================================== -->
+  <!-- BOTTOM LABEL                                                       -->
+  <!-- Admin: pos_tables + pos_rooms — all config via this editor         -->
+  <!-- ================================================================== -->
+  <text x="683" y="1014" font-size="11" text-anchor="middle" fill="#475569">Synalux POS · Floor Plan Editor · pos_tables + pos_rooms — drag &amp; drop · multi-room · no hardcodes · 1366&#xD7;1024</text>
+
 </svg>

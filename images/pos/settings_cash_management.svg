@@ -1,224 +1,429 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
-  <rect width="1440" height="900" fill="#0F1117"/>
-  <!-- Left Nav -->
-  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
-  <text x="16" y="67" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
-  <text x="16" y="103" font-size="12" fill="#8B92A5">Gift Cards</text>
-  <text x="16" y="139" font-size="12" fill="#8B92A5">Rounding</text>
-  <rect x="0" y="152" width="200" height="36" fill="#1E2240" rx="4"/>
-  <rect x="0" y="152" width="3" height="36" fill="#F59E0B"/>
-  <text x="16" y="175" font-size="12" font-weight="600" fill="#F59E0B">Cash Management</text>
-  <text x="16" y="211" font-size="12" fill="#8B92A5">Inventory</text>
-  <text x="16" y="247" font-size="12" fill="#8B92A5">Receipts</text>
-  <text x="16" y="283" font-size="12" fill="#8B92A5">Reports</text>
-  <text x="16" y="319" font-size="12" fill="#8B92A5">EOD</text>
+<svg role="img" aria-labelledby="title-settings_cash_management-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif">
 
-  <!-- Header -->
-  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
+  <title id="title-settings_cash_management-svg">Synalux POS — cash management</title>
+  <desc>Synalux POS mockup screen for cash management. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- ==================== REUSABLE DEFINITIONS ==================== -->
+
+    <!-- Gradient: Header bar -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#181B30"/>
+    </linearGradient>
+
+    <!-- Gradient: Amber button -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Gradient: Green button -->
+    <linearGradient id="greenBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <!-- Gradient: Card surface -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161929"/>
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="btnShadow" x="-4%" y="-8%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- SYMBOL: Admin gear icon (16x16) -->
+    <symbol id="adminGear" viewBox="0 0 16 16">
+      <path d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM6.5 8a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="#F59E0B"/>
+      <path d="M7.3 1h1.4l.3 1.5c.3.1.6.3.9.5l1.4-.6.7.7.7.7-.6 1.4c.2.3.4.6.5.9l1.5.3v1.4l-1.5.3c-.1.3-.3.6-.5.9l.6 1.4-.7.7-.7.7-1.4-.6c-.3.2-.6.4-.9.5L8.7 15H7.3l-.3-1.5c-.3-.1-.6-.3-.9-.5l-1.4.6-.7-.7-.7-.7.6-1.4c-.2-.3-.4-.6-.5-.9L2 9.6V8.2l1.5-.3c.1-.3.3-.6.5-.9l-.6-1.4.7-.7.7-.7 1.4.6c.3-.2.6-.4.9-.5L7.3 1z" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- SYMBOL: Toggle switch ON (44x20) -->
+    <symbol id="toggleOn" viewBox="0 0 44 20">
+      <rect width="44" height="20" rx="10" fill="#22C55E"/>
+      <circle cx="34" cy="10" r="8" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- SYMBOL: Toggle switch OFF (44x20) -->
+    <symbol id="toggleOff" viewBox="0 0 44 20">
+      <rect width="44" height="20" rx="10" fill="#374151"/>
+      <circle cx="10" cy="10" r="8" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- SYMBOL: Left nav active indicator -->
+    <symbol id="navActive" viewBox="0 0 200 36">
+      <rect width="200" height="36" fill="#1E2235"/>
+      <rect width="3" height="36" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- SYMBOL: Stat card (reusable background) -->
+    <symbol id="statCard" viewBox="0 0 200 72">
+      <rect width="200" height="72" rx="8" fill="#1A1D2E"/>
+    </symbol>
+
+    <!-- SYMBOL: Event type badge -->
+    <symbol id="badgePaidIn" viewBox="0 0 68 20">
+      <rect width="68" height="20" rx="4" fill="#065F46"/>
+      <text x="34" y="14" font-size="10" fill="#6EE7B7" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">PAID-IN</text>
+    </symbol>
+
+    <symbol id="badgePaidOut" viewBox="0 0 74 20">
+      <rect width="74" height="20" rx="4" fill="#7F1D1D"/>
+      <text x="37" y="14" font-size="10" fill="#FCA5A5" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">PAID-OUT</text>
+    </symbol>
+
+    <symbol id="badgeSafeDrop" viewBox="0 0 80 20">
+      <rect width="80" height="20" rx="4" fill="#B45309"/>
+      <text x="40" y="14" font-size="10" fill="#FDE68A" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">SAFE DROP</text>
+    </symbol>
+
+    <symbol id="badgeOpenDay" viewBox="0 0 80 20">
+      <rect width="80" height="20" rx="4" fill="#1E3A5F"/>
+      <text x="40" y="14" font-size="10" fill="#93C5FD" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">OPEN DAY</text>
+    </symbol>
+
+  </defs>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
+
+  <!-- ==================== LEFT NAV SIDEBAR ==================== -->
+  <rect x="0" y="0" width="200" height="1024" fill="#111425"/>
+  <rect x="200" y="0" width="1" height="1024" fill="#2A2E45"/>
+
+  <text x="16" y="32" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+
+  <text x="16" y="67" font-size="12" fill="#94A3B8">Restaurant Info</text>
+  <text x="16" y="99" font-size="12" fill="#94A3B8">Menu Builder</text>
+  <text x="16" y="131" font-size="12" fill="#94A3B8">Employees</text>
+  <text x="16" y="163" font-size="12" fill="#94A3B8">Discounts &amp; Promos</text>
+  <text x="16" y="195" font-size="12" fill="#94A3B8">Gift Cards</text>
+  <text x="16" y="227" font-size="12" fill="#94A3B8">Rounding</text>
+  <text x="16" y="259" font-size="12" fill="#94A3B8">Auto-Gratuity</text>
+
+  <!-- Active nav item: Cash Management -->
+  <use href="#navActive" x="0" y="272"/>
+  <text x="16" y="295" font-size="12" font-weight="700" fill="#F59E0B">Cash Management</text>
+
+  <text x="16" y="327" font-size="12" fill="#94A3B8">House Accounts</text>
+  <text x="16" y="359" font-size="12" fill="#94A3B8">Chargebacks</text>
+  <text x="16" y="391" font-size="12" fill="#94A3B8">RBS Compliance</text>
+  <text x="16" y="423" font-size="12" fill="#94A3B8">Inventory</text>
+  <text x="16" y="455" font-size="12" fill="#94A3B8">Receipts</text>
+  <text x="16" y="487" font-size="12" fill="#94A3B8">Reports</text>
+  <text x="16" y="519" font-size="12" fill="#94A3B8">EOD</text>
+
+  <!-- ==================== HEADER BAR ==================== -->
+  <rect x="201" y="0" width="1165" height="56" fill="url(#headerGrad)"/>
+  <rect x="201" y="56" width="1165" height="1" fill="#2A2E45"/>
   <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Cash Management</text>
-  <text x="220" y="50" font-size="11" fill="#8B92A5">Paid-In · Paid-Out · Petty cash · Open day drawer · Safe drops — pos_cash_events table</text>
+  <!-- DB: pos_cash_events table -->
+  <text x="220" y="50" font-size="11" fill="#94A3B8">Paid-In &#183; Paid-Out &#183; Petty cash &#183; Open day drawer &#183; Safe drops &#8212; pos_cash_events table</text>
 
-  <!-- Today cash status bar -->
-  <rect x="202" y="58" width="230" height="76" rx="8" fill="#1A1D2E"/>
-  <text x="222" y="82" font-size="12" fill="#8B92A5">Drawer Balance</text>
-  <text x="222" y="108" font-size="28" font-weight="700" fill="#10B981">$1,282.40</text>
-  <rect x="444" y="58" width="230" height="76" rx="8" fill="#1A1D2E"/>
-  <text x="464" y="82" font-size="12" fill="#8B92A5">Opening Float</text>
-  <text x="464" y="108" font-size="28" font-weight="700" fill="#FFFFFF">$200.00</text>
-  <rect x="686" y="58" width="230" height="76" rx="8" fill="#1A1D2E"/>
-  <text x="706" y="82" font-size="12" fill="#8B92A5">Paid-In Today</text>
-  <text x="706" y="108" font-size="28" font-weight="700" fill="#10B981">+$45.00</text>
-  <rect x="928" y="58" width="230" height="76" rx="8" fill="#1A1D2E"/>
-  <text x="948" y="82" font-size="12" fill="#8B92A5">Paid-Out Today</text>
-  <text x="948" y="108" font-size="28" font-weight="700" fill="#EF4444">−$22.80</text>
-  <rect x="1170" y="58" width="268" height="76" rx="8" fill="#1A1D2E"/>
-  <text x="1190" y="82" font-size="12" fill="#8B92A5">Safe Drops Today</text>
-  <text x="1190" y="108" font-size="28" font-weight="700" fill="#F59E0B">$500.00</text>
+  <!-- Save Settings button -->
+  <rect x="1220" y="10" width="130" height="36" rx="7" fill="url(#amberBtnGrad)" filter="url(#btnShadow)"/>
+  <text x="1285" y="33" font-size="13" font-weight="700" fill="#0C0E1A" text-anchor="middle">Save Settings</text>
 
-  <!-- Left: Quick actions -->
-  <rect x="200" y="144" width="420" height="756" fill="#13162A"/>
+  <!-- ==================== STAT CARDS ROW ==================== -->
+  <!-- DB: pos_cash_events aggregate queries -->
+  <use href="#statCard" x="210" y="64" width="200" height="72"/>
+  <text x="230" y="88" font-size="12" fill="#94A3B8">Drawer Balance</text>
+  <text x="230" y="118" font-size="26" font-weight="700" fill="#22C55E">$1,282.40</text>
+
+  <use href="#statCard" x="420" y="64" width="200" height="72"/>
+  <text x="440" y="88" font-size="12" fill="#94A3B8">Opening Float</text>
+  <use href="#adminGear" x="530" y="78" width="14" height="14"/>
+  <text x="440" y="118" font-size="26" font-weight="700" fill="#FFFFFF">$200.00</text>
+
+  <use href="#statCard" x="630" y="64" width="200" height="72"/>
+  <text x="650" y="88" font-size="12" fill="#94A3B8">Paid-In Today</text>
+  <text x="650" y="118" font-size="26" font-weight="700" fill="#22C55E">+$45.00</text>
+
+  <use href="#statCard" x="840" y="64" width="200" height="72"/>
+  <text x="860" y="88" font-size="12" fill="#94A3B8">Paid-Out Today</text>
+  <text x="860" y="118" font-size="26" font-weight="700" fill="#EF4444">&#8722;$22.80</text>
+
+  <rect x="1050" y="64" width="300" height="72" rx="8" fill="#1A1D2E"/>
+  <text x="1070" y="88" font-size="12" fill="#94A3B8">Safe Drops Today</text>
+  <text x="1070" y="118" font-size="26" font-weight="700" fill="#F59E0B">$500.00</text>
+
+  <!-- ==================== LEFT: RECORD CASH EVENT ==================== -->
+  <rect x="201" y="144" width="420" height="880" fill="#111425"/>
   <text x="220" y="172" font-size="14" font-weight="700" fill="#FFFFFF">Record Cash Event</text>
 
   <!-- Event type buttons -->
-  <rect x="212" y="184" width="396" height="52" rx="8" fill="#1A1D2E"/>
-  <rect x="220" y="192" width="115" height="36" rx="6" fill="#10B981"/>
+  <rect x="212" y="184" width="396" height="52" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <rect x="220" y="192" width="115" height="36" rx="6" fill="url(#greenBtnGrad)"/>
   <text x="252" y="215" font-size="12" font-weight="700" fill="#FFF">Paid-In</text>
-  <rect x="341" y="192" width="115" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="370" y="215" font-size="12" fill="#D1D5DB">Paid-Out</text>
-  <rect x="462" y="192" width="138" height="36" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="486" y="215" font-size="12" fill="#D1D5DB">Safe Drop</text>
+  <rect x="341" y="192" width="115" height="36" rx="6" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="370" y="215" font-size="12" fill="#CBD5E1">Paid-Out</text>
+  <rect x="462" y="192" width="138" height="36" rx="6" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="486" y="215" font-size="12" fill="#CBD5E1">Safe Drop</text>
 
-  <!-- Amount entry -->
-  <text x="212" y="262" font-size="10" fill="#8B92A5">AMOUNT</text>
-  <rect x="212" y="268" width="396" height="52" rx="8" fill="#0F1117" stroke="#F59E0B" stroke-width="1"/>
+  <!-- Amount entry (editable) -->
+  <!-- DB: pos_cash_events.amount_cents -->
+  <text x="212" y="262" font-size="10" fill="#94A3B8">AMOUNT</text>
+  <use href="#adminGear" x="260" y="250" width="14" height="14"/>
+  <rect x="212" y="268" width="396" height="52" rx="8" fill="#0C0E1A" stroke="#F59E0B" stroke-width="1"/>
   <text x="228" y="302" font-size="28" font-weight="700" fill="#FFFFFF">$ 45.00</text>
 
-  <!-- Reason / category -->
-  <text x="212" y="344" font-size="10" fill="#8B92A5">REASON (pos_cash_events.reason)</text>
-  <rect x="212" y="350" width="396" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="228" y="371" font-size="13" fill="#FFFFFF">Vendor payment — produce delivery</text>
-  <text x="580" y="371" font-size="16" fill="#6B7280">▾</text>
+  <!-- Reason / category (editable) -->
+  <!-- DB: pos_cash_events.reason (text) -->
+  <text x="212" y="344" font-size="10" fill="#94A3B8">REASON (pos_cash_events.reason)</text>
+  <use href="#adminGear" x="390" y="332" width="14" height="14"/>
+  <rect x="212" y="350" width="396" height="32" rx="6" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="371" font-size="13" fill="#FFFFFF">Vendor payment &#8212; produce delivery</text>
+  <text x="580" y="371" font-size="16" fill="#64748B">&#9662;</text>
 
-  <!-- Preset reasons -->
-  <rect x="212" y="390" width="396" height="80" rx="6" fill="#1A1D2E"/>
-  <text x="228" y="410" font-size="10" fill="#8B92A5">QUICK REASONS</text>
-  <rect x="228" y="418" width="90" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="238" y="433" font-size="10" fill="#D1D5DB">Produce</text>
-  <rect x="326" y="418" width="100" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="336" y="433" font-size="10" fill="#D1D5DB">Liquor order</text>
-  <rect x="434" y="418" width="80" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="444" y="433" font-size="10" fill="#D1D5DB">Supplies</text>
-  <rect x="228" y="446" width="80" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="238" y="461" font-size="10" fill="#D1D5DB">Tips payout</text>
-  <rect x="316" y="446" width="80" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="326" y="461" font-size="10" fill="#D1D5DB">Petty cash</text>
-  <rect x="404" y="446" width="90" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="414" y="461" font-size="10" fill="#D1D5DB">Other (custom)</text>
+  <!-- Preset reasons (editable categories) -->
+  <!-- DB: pos_cash_event_categories (admin-managed lookup) -->
+  <rect x="212" y="390" width="396" height="80" rx="6" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <text x="228" y="410" font-size="10" fill="#94A3B8">QUICK REASONS</text>
+  <use href="#adminGear" x="320" y="398" width="14" height="14"/>
+  <rect x="228" y="418" width="90" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="238" y="433" font-size="10" fill="#CBD5E1">Produce</text>
+  <rect x="326" y="418" width="100" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="336" y="433" font-size="10" fill="#CBD5E1">Liquor order</text>
+  <rect x="434" y="418" width="80" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="444" y="433" font-size="10" fill="#CBD5E1">Supplies</text>
+  <rect x="228" y="446" width="80" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="238" y="461" font-size="10" fill="#CBD5E1">Tips payout</text>
+  <rect x="316" y="446" width="80" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="326" y="461" font-size="10" fill="#CBD5E1">Petty cash</text>
+  <rect x="404" y="446" width="90" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="414" y="461" font-size="10" fill="#CBD5E1">Other (custom)</text>
 
   <!-- Manager PIN -->
-  <text x="212" y="494" font-size="10" fill="#8B92A5">MANAGER PIN (required for paid-out)</text>
-  <rect x="212" y="500" width="180" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="228" y="521" font-size="20" fill="#FFFFFF">● ● ● ●</text>
+  <!-- DB: pos_cash_events.authorized_by (FK to pos_employees) -->
+  <text x="212" y="494" font-size="10" fill="#94A3B8">MANAGER PIN (required for paid-out)</text>
+  <rect x="212" y="500" width="180" height="32" rx="6" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="521" font-size="20" fill="#FFFFFF">&#9679; &#9679; &#9679; &#9679;</text>
 
   <!-- Receipt option -->
-  <rect x="212" y="544" width="396" height="32" rx="6" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="228" y="565" font-size="12" fill="#D1D5DB">Print receipt for this event</text>
-  <rect x="556" y="550" width="44" height="20" rx="10" fill="#374151"/>
-  <circle cx="568" cy="560" r="8" fill="#FFFFFF"/>
+  <rect x="212" y="544" width="396" height="32" rx="6" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="228" y="565" font-size="12" fill="#CBD5E1">Print receipt for this event</text>
+  <use href="#toggleOff" x="556" y="550" width="44" height="20"/>
 
-  <!-- Submit -->
-  <rect x="212" y="590" width="396" height="44" rx="8" fill="#10B981"/>
+  <!-- Submit button -->
+  <rect x="212" y="590" width="396" height="44" rx="8" fill="url(#greenBtnGrad)"/>
   <text x="368" y="618" font-size="14" font-weight="700" fill="#FFF" text-anchor="middle">Record Paid-In</text>
 
-  <!-- Open day settings -->
+  <!-- ==================== OPEN DAY SETTINGS ==================== -->
   <text x="212" y="660" font-size="12" font-weight="600" fill="#FFFFFF">Open Day Settings</text>
-  <rect x="212" y="668" width="396" height="80" rx="8" fill="#1A1D2E"/>
-  <text x="228" y="692" font-size="11" fill="#D1D5DB">Starting float amount:</text>
-  <rect x="380" y="682" width="120" height="24" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
+  <rect x="212" y="668" width="396" height="100" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <!-- DB: pos_config.opening_float_cents -->
+  <text x="228" y="692" font-size="11" fill="#CBD5E1">Starting float amount:</text>
+  <use href="#adminGear" x="360" y="680" width="14" height="14"/>
+  <rect x="380" y="682" width="120" height="24" rx="4" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
   <text x="396" y="699" font-size="12" fill="#FFFFFF">$200.00</text>
-  <text x="228" y="720" font-size="10" fill="#6B7280">pos_config.opening_float_cents — set once, applies every open</text>
-  <text x="228" y="736" font-size="10" fill="#6B7280">Prompt cashier to verify count at Open Day</text>
+  <text x="228" y="720" font-size="10" fill="#64748B">pos_config.opening_float_cents &#8212; set once, applies every open</text>
+  <text x="228" y="736" font-size="10" fill="#64748B">Prompt cashier to verify count at Open Day</text>
+  <use href="#adminGear" x="422" y="725" width="14" height="14"/>
+  <!-- DB: pos_config.require_open_day_count (boolean) -->
+  <use href="#toggleOn" x="444" y="727" width="44" height="20"/>
 
-  <!-- ===== Center + Right: Event Log ===== -->
-  <rect x="620" y="144" width="820" height="756" fill="#0F1117"/>
-  <text x="640" y="172" font-size="14" font-weight="700" fill="#FFFFFF">Cash Event Log — Today</text>
-  <text x="640" y="188" font-size="10" fill="#8B92A5">All events timestamped + cashier logged · pos_cash_events</text>
+  <!-- ==================== DENOMINATION COUNT TEMPLATE ==================== -->
+  <!-- DB: pos_denomination_template -->
+  <text x="212" y="790" font-size="12" font-weight="600" fill="#FFFFFF">Denomination Count Template</text>
+  <use href="#adminGear" x="410" y="778" width="14" height="14"/>
+  <rect x="212" y="798" width="396" height="192" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <text x="228" y="818" font-size="10" fill="#94A3B8">Used at Open Day &amp; Close of Day for cash verification</text>
 
   <!-- Column headers -->
-  <rect x="636" y="196" width="788" height="32" fill="#1A1D2E"/>
-  <text x="652" y="216" font-size="10" font-weight="600" fill="#6B7280">TIME</text>
-  <text x="730" y="216" font-size="10" font-weight="600" fill="#6B7280">TYPE</text>
-  <text x="870" y="216" font-size="10" font-weight="600" fill="#6B7280">AMOUNT</text>
-  <text x="970" y="216" font-size="10" font-weight="600" fill="#6B7280">REASON</text>
-  <text x="1200" y="216" font-size="10" font-weight="600" fill="#6B7280">CASHIER</text>
-  <text x="1320" y="216" font-size="10" font-weight="600" fill="#6B7280">RUNNING BAL.</text>
+  <text x="228" y="838" font-size="10" font-weight="700" fill="#64748B">DENOMINATION</text>
+  <text x="400" y="838" font-size="10" font-weight="700" fill="#64748B">QTY</text>
+  <text x="480" y="838" font-size="10" font-weight="700" fill="#64748B">SUBTOTAL</text>
 
-  <!-- Rows -->
-  <rect x="636" y="228" width="788" height="32" fill="#1A1D2E"/>
-  <text x="652" y="248" font-size="11" fill="#8B92A5">9:00 AM</text>
-  <rect x="718" y="234" width="80" height="20" rx="4" fill="#1E3A5F"/>
-  <text x="726" y="248" font-size="10" fill="#93C5FD">OPEN DAY</text>
-  <text x="870" y="248" font-size="11" fill="#FFFFFF">$200.00</text>
-  <text x="970" y="248" font-size="10" fill="#8B92A5">Opening float</text>
-  <text x="1200" y="248" font-size="11" fill="#D1D5DB">Maria S.</text>
-  <text x="1320" y="248" font-size="11" fill="#FFFFFF">$200.00</text>
+  <!-- Denomination rows -->
+  <text x="228" y="858" font-size="11" fill="#E2E8F0">$100 bills</text>
+  <rect x="390" y="846" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="858" font-size="10" fill="#94A3B8" text-anchor="middle">0</text>
+  <text x="480" y="858" font-size="11" fill="#64748B">$0.00</text>
 
-  <rect x="636" y="260" width="788" height="32" fill="#13162A"/>
-  <text x="652" y="280" font-size="11" fill="#8B92A5">10:34 AM</text>
-  <rect x="718" y="266" width="68" height="20" rx="4" fill="#065F46"/>
-  <text x="728" y="280" font-size="10" fill="#6EE7B7">PAID-IN</text>
-  <text x="870" y="280" font-size="11" fill="#10B981">+$45.00</text>
-  <text x="970" y="280" font-size="10" fill="#8B92A5">Vendor — produce delivery</text>
-  <text x="1200" y="280" font-size="11" fill="#D1D5DB">Carlos R.</text>
-  <text x="1320" y="280" font-size="11" fill="#FFFFFF">$245.00</text>
+  <text x="228" y="878" font-size="11" fill="#E2E8F0">$50 bills</text>
+  <rect x="390" y="866" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="878" font-size="10" fill="#94A3B8" text-anchor="middle">0</text>
+  <text x="480" y="878" font-size="11" fill="#64748B">$0.00</text>
 
-  <rect x="636" y="292" width="788" height="32" fill="#1A1D2E"/>
-  <text x="652" y="312" font-size="11" fill="#8B92A5">11:48 AM</text>
-  <rect x="718" y="298" width="74" height="20" rx="4" fill="#7F1D1D"/>
-  <text x="726" y="312" font-size="10" fill="#FCA5A5">PAID-OUT</text>
-  <text x="870" y="312" font-size="11" fill="#EF4444">−$22.80</text>
-  <text x="970" y="312" font-size="10" fill="#8B92A5">Petty cash — stamps + office supply</text>
-  <text x="1200" y="312" font-size="11" fill="#D1D5DB">Maria S.</text>
-  <text x="1320" y="312" font-size="11" fill="#FFFFFF">$222.20</text>
+  <text x="228" y="898" font-size="11" fill="#E2E8F0">$20 bills</text>
+  <rect x="390" y="886" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="898" font-size="10" fill="#E2E8F0" text-anchor="middle">5</text>
+  <text x="480" y="898" font-size="11" fill="#22C55E">$100.00</text>
 
-  <rect x="636" y="324" width="788" height="32" fill="#13162A"/>
-  <text x="652" y="344" font-size="11" fill="#8B92A5">2:15 PM</text>
-  <rect x="718" y="330" width="74" height="20" rx="4" fill="#B45309"/>
-  <text x="726" y="344" font-size="10" fill="#FDE68A">SAFE DROP</text>
-  <text x="870" y="344" font-size="11" fill="#F59E0B">$500.00</text>
-  <text x="970" y="344" font-size="10" fill="#8B92A5">Mid-day safe drop</text>
-  <text x="1200" y="344" font-size="11" fill="#D1D5DB">Maria S.</text>
-  <text x="1320" y="344" font-size="11" fill="#FFFFFF">$782.40+sales</text>
+  <text x="228" y="918" font-size="11" fill="#E2E8F0">$10 bills</text>
+  <rect x="390" y="906" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="918" font-size="10" fill="#E2E8F0" text-anchor="middle">5</text>
+  <text x="480" y="918" font-size="11" fill="#22C55E">$50.00</text>
 
-  <rect x="636" y="356" width="788" height="32" fill="#1A1D2E"/>
-  <text x="652" y="376" font-size="11" fill="#8B92A5">4:02 PM</text>
-  <rect x="718" y="362" width="68" height="20" rx="4" fill="#065F46"/>
-  <text x="728" y="376" font-size="10" fill="#6EE7B7">PAID-IN</text>
-  <text x="870" y="376" font-size="11" fill="#10B981">+$120.00</text>
-  <text x="970" y="376" font-size="10" fill="#8B92A5">Change drawer — got $100 from bar</text>
-  <text x="1200" y="376" font-size="11" fill="#D1D5DB">Carlos R.</text>
-  <text x="1320" y="376" font-size="11" fill="#FFFFFF">$922.40+sales</text>
+  <text x="228" y="938" font-size="11" fill="#E2E8F0">$5 bills</text>
+  <rect x="390" y="926" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="938" font-size="10" fill="#E2E8F0" text-anchor="middle">6</text>
+  <text x="480" y="938" font-size="11" fill="#22C55E">$30.00</text>
 
-  <rect x="636" y="388" width="788" height="32" fill="#13162A"/>
-  <text x="652" y="408" font-size="11" fill="#8B92A5">6:30 PM</text>
-  <rect x="718" y="394" width="68" height="20" rx="4" fill="#065F46"/>
-  <text x="728" y="408" font-size="10" fill="#6EE7B7">TIPS OUT</text>
-  <text x="870" y="408" font-size="11" fill="#EF4444">−$180.00</text>
-  <text x="970" y="408" font-size="10" fill="#8B92A5">Server tips paid out (3 servers)</text>
-  <text x="1200" y="408" font-size="11" fill="#D1D5DB">Maria S.</text>
-  <text x="1320" y="408" font-size="11" fill="#FFFFFF">$1,282.40</text>
+  <text x="228" y="958" font-size="11" fill="#E2E8F0">$1 bills</text>
+  <rect x="390" y="946" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="958" font-size="10" fill="#E2E8F0" text-anchor="middle">10</text>
+  <text x="480" y="958" font-size="11" fill="#22C55E">$10.00</text>
 
-  <!-- Summary chart area -->
-  <rect x="636" y="436" width="788" height="200" rx="8" fill="#1A1D2E"/>
-  <text x="656" y="462" font-size="12" font-weight="600" fill="#FFFFFF">Cash Flow — Today (bar chart)</text>
-  <!-- Simple bar chart visualization -->
+  <text x="228" y="978" font-size="11" fill="#E2E8F0">Coins</text>
+  <rect x="390" y="966" width="50" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="410" y="978" font-size="10" fill="#E2E8F0" text-anchor="middle">&#8212;</text>
+  <text x="480" y="978" font-size="11" fill="#22C55E">$10.00</text>
+
+  <line x1="228" y1="984" x2="560" y2="984" stroke="#2A2E45" stroke-width="1"/>
+  <text x="400" y="996" font-size="11" font-weight="700" fill="#E2E8F0">TOTAL:</text>
+  <text x="480" y="996" font-size="12" font-weight="700" fill="#F59E0B">$200.00</text>
+
+  <!-- ==================== CENTER + RIGHT: EVENT LOG ==================== -->
+  <rect x="621" y="144" width="745" height="540" fill="#0C0E1A"/>
+  <text x="640" y="172" font-size="14" font-weight="700" fill="#FFFFFF">Cash Event Log &#8212; Today</text>
+  <!-- DB: pos_cash_events (all events timestamped + cashier logged) -->
+  <text x="640" y="188" font-size="10" fill="#94A3B8">All events timestamped + cashier logged &#183; pos_cash_events</text>
+
+  <!-- Column headers -->
+  <rect x="636" y="196" width="718" height="32" fill="url(#cardGrad)"/>
+  <text x="652" y="216" font-size="10" font-weight="600" fill="#64748B">TIME</text>
+  <text x="730" y="216" font-size="10" font-weight="600" fill="#64748B">TYPE</text>
+  <text x="850" y="216" font-size="10" font-weight="600" fill="#64748B">AMOUNT</text>
+  <text x="940" y="216" font-size="10" font-weight="600" fill="#64748B">REASON</text>
+  <text x="1160" y="216" font-size="10" font-weight="600" fill="#64748B">CASHIER</text>
+  <text x="1270" y="216" font-size="10" font-weight="600" fill="#64748B">RUNNING BAL.</text>
+
+  <!-- Row 1: Open Day -->
+  <rect x="636" y="228" width="718" height="32" fill="url(#cardGrad)"/>
+  <text x="652" y="248" font-size="11" fill="#94A3B8">9:00 AM</text>
+  <use href="#badgeOpenDay" x="718" y="234" width="80" height="20"/>
+  <text x="850" y="248" font-size="11" fill="#FFFFFF">$200.00</text>
+  <text x="940" y="248" font-size="10" fill="#94A3B8">Opening float</text>
+  <text x="1160" y="248" font-size="11" fill="#CBD5E1">Maria S.</text>
+  <text x="1270" y="248" font-size="11" fill="#FFFFFF">$200.00</text>
+
+  <!-- Row 2: Paid-In -->
+  <rect x="636" y="260" width="718" height="32" fill="#111425"/>
+  <text x="652" y="280" font-size="11" fill="#94A3B8">10:34 AM</text>
+  <use href="#badgePaidIn" x="718" y="266" width="68" height="20"/>
+  <text x="850" y="280" font-size="11" fill="#22C55E">+$45.00</text>
+  <text x="940" y="280" font-size="10" fill="#94A3B8">Vendor &#8212; produce delivery</text>
+  <text x="1160" y="280" font-size="11" fill="#CBD5E1">Carlos R.</text>
+  <text x="1270" y="280" font-size="11" fill="#FFFFFF">$245.00</text>
+
+  <!-- Row 3: Paid-Out -->
+  <rect x="636" y="292" width="718" height="32" fill="url(#cardGrad)"/>
+  <text x="652" y="312" font-size="11" fill="#94A3B8">11:48 AM</text>
+  <use href="#badgePaidOut" x="718" y="298" width="74" height="20"/>
+  <text x="850" y="312" font-size="11" fill="#EF4444">&#8722;$22.80</text>
+  <text x="940" y="312" font-size="10" fill="#94A3B8">Petty cash &#8212; stamps + office supply</text>
+  <text x="1160" y="312" font-size="11" fill="#CBD5E1">Maria S.</text>
+  <text x="1270" y="312" font-size="11" fill="#FFFFFF">$222.20</text>
+
+  <!-- Row 4: Safe Drop -->
+  <rect x="636" y="324" width="718" height="32" fill="#111425"/>
+  <text x="652" y="344" font-size="11" fill="#94A3B8">2:15 PM</text>
+  <use href="#badgeSafeDrop" x="718" y="330" width="80" height="20"/>
+  <text x="850" y="344" font-size="11" fill="#F59E0B">$500.00</text>
+  <text x="940" y="344" font-size="10" fill="#94A3B8">Mid-day safe drop</text>
+  <text x="1160" y="344" font-size="11" fill="#CBD5E1">Maria S.</text>
+  <text x="1270" y="344" font-size="11" fill="#FFFFFF">$782.40</text>
+
+  <!-- Row 5: Paid-In -->
+  <rect x="636" y="356" width="718" height="32" fill="url(#cardGrad)"/>
+  <text x="652" y="376" font-size="11" fill="#94A3B8">4:02 PM</text>
+  <use href="#badgePaidIn" x="718" y="362" width="68" height="20"/>
+  <text x="850" y="376" font-size="11" fill="#22C55E">+$120.00</text>
+  <text x="940" y="376" font-size="10" fill="#94A3B8">Change drawer &#8212; got $100 from bar</text>
+  <text x="1160" y="376" font-size="11" fill="#CBD5E1">Carlos R.</text>
+  <text x="1270" y="376" font-size="11" fill="#FFFFFF">$922.40</text>
+
+  <!-- Row 6: Tips Out -->
+  <rect x="636" y="388" width="718" height="32" fill="#111425"/>
+  <text x="652" y="408" font-size="11" fill="#94A3B8">6:30 PM</text>
+  <use href="#badgePaidOut" x="718" y="394" width="74" height="20"/>
+  <text x="850" y="408" font-size="11" fill="#EF4444">&#8722;$180.00</text>
+  <text x="940" y="408" font-size="10" fill="#94A3B8">Server tips paid out (3 servers)</text>
+  <text x="1160" y="408" font-size="11" fill="#CBD5E1">Maria S.</text>
+  <text x="1270" y="408" font-size="11" fill="#FFFFFF">$1,282.40</text>
+
+  <!-- ==================== CASH FLOW CHART ==================== -->
+  <rect x="636" y="436" width="718" height="200" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <text x="656" y="462" font-size="12" font-weight="600" fill="#FFFFFF">Cash Flow &#8212; Today (bar chart)</text>
+
+  <!-- Bar chart -->
   <rect x="680" y="548" width="60" height="60" rx="3" fill="#065F46"/>
-  <text x="686" y="622" font-size="9" fill="#6B7280">9am Open</text>
+  <text x="686" y="622" font-size="9" fill="#64748B">9am Open</text>
   <text x="686" y="542" font-size="9" fill="#6EE7B7">$200</text>
 
-  <rect x="780" y="524" width="60" height="84" rx="3" fill="#10B981"/>
-  <text x="786" y="622" font-size="9" fill="#6B7280">10am Paid-In</text>
+  <rect x="780" y="524" width="60" height="84" rx="3" fill="#22C55E"/>
+  <text x="786" y="622" font-size="9" fill="#64748B">10am In</text>
   <text x="786" y="518" font-size="9" fill="#6EE7B7">$245</text>
 
   <rect x="880" y="488" width="60" height="120" rx="3" fill="#374151"/>
-  <text x="886" y="622" font-size="9" fill="#6B7280">11am Out</text>
-  <text x="886" y="482" font-size="9" fill="#9CA3AF">$222</text>
+  <text x="886" y="622" font-size="9" fill="#64748B">11am Out</text>
+  <text x="886" y="482" font-size="9" fill="#94A3B8">$222</text>
 
   <rect x="980" y="392" width="60" height="216" rx="3" fill="#B45309"/>
-  <text x="986" y="622" font-size="9" fill="#6B7280">Sales flow</text>
+  <text x="986" y="622" font-size="9" fill="#64748B">Sales flow</text>
   <text x="986" y="386" font-size="9" fill="#FDE68A">$1,282</text>
 
   <rect x="1080" y="448" width="60" height="160" rx="3" fill="#F59E0B"/>
-  <text x="1086" y="622" font-size="9" fill="#6B7280">Safe drop</text>
-  <text x="1086" y="442" font-size="9" fill="#FDE68A">After drop</text>
+  <text x="1086" y="622" font-size="9" fill="#64748B">Safe drop</text>
 
-  <rect x="1180" y="488" width="60" height="120" rx="3" fill="#10B981"/>
-  <text x="1186" y="622" font-size="9" fill="#6B7280">Current</text>
+  <rect x="1180" y="488" width="60" height="120" rx="3" fill="#22C55E"/>
+  <text x="1186" y="622" font-size="9" fill="#64748B">Current</text>
   <text x="1186" y="482" font-size="9" fill="#6EE7B7">$1,282</text>
 
-  <!-- Petty cash config -->
-  <rect x="636" y="648" width="380" height="120" rx="8" fill="#1A1D2E"/>
+  <!-- ==================== PETTY CASH SETTINGS ==================== -->
+  <!-- DB: pos_config.petty_cash_limit_cents, pos_config.require_receipt_cents -->
+  <rect x="636" y="648" width="350" height="140" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
   <text x="656" y="672" font-size="12" font-weight="600" fill="#FFFFFF">Petty Cash Settings</text>
-  <text x="656" y="692" font-size="11" fill="#8B92A5">Daily petty cash limit:</text>
-  <rect x="810" y="682" width="100" height="24" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="826" y="699" font-size="12" fill="#FFFFFF">$100.00</text>
-  <text x="656" y="720" font-size="11" fill="#8B92A5">Requires manager PIN for paid-out:</text>
-  <rect x="950" y="710" width="44" height="20" rx="10" fill="#10B981"/>
-  <circle cx="984" cy="720" r="8" fill="#FFFFFF"/>
-  <text x="656" y="744" font-size="10" fill="#6B7280">Receipts required for paid-out over:</text>
-  <rect x="898" y="734" width="100" height="20" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="914" y="749" font-size="11" fill="#FFFFFF">$25.00</text>
-  <text x="656" y="760" font-size="9" fill="#4B5563">pos_config.petty_cash_limit_cents / require_receipt_cents</text>
+  <use href="#adminGear" x="780" y="660" width="14" height="14"/>
 
-  <!-- Export -->
-  <rect x="1028" y="648" width="396" height="120" rx="8" fill="#1A1D2E"/>
-  <text x="1048" y="672" font-size="12" font-weight="600" fill="#FFFFFF">Export &amp; Reporting</text>
-  <text x="1048" y="700" font-size="11" fill="#D1D5DB">Cash event log exports to CSV / PDF</text>
-  <text x="1048" y="718" font-size="11" fill="#D1D5DB">Integrates with QuickBooks / Xero</text>
-  <text x="1048" y="736" font-size="11" fill="#D1D5DB">EOD cash reconciliation auto-cross-check</text>
-  <rect x="1048" y="748" width="180" height="28" rx="6" fill="#F59E0B"/>
-  <text x="1096" y="767" font-size="12" font-weight="600" fill="#000">Export to CSV</text>
+  <text x="656" y="696" font-size="11" fill="#94A3B8">Daily petty cash limit:</text>
+  <use href="#adminGear" x="790" y="684" width="14" height="14"/>
+  <rect x="810" y="686" width="100" height="24" rx="4" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="826" y="703" font-size="12" fill="#FFFFFF">$100.00</text>
 
-  <text x="720" y="890" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Cash Management · pos_cash_events — paid-in/out · safe drop · petty cash · EOD reconcile</text>
+  <text x="656" y="720" font-size="11" fill="#94A3B8">Requires manager PIN for paid-out:</text>
+  <use href="#toggleOn" x="890" y="710" width="44" height="20"/>
+
+  <text x="656" y="746" font-size="10" fill="#64748B">Receipts required for paid-out over:</text>
+  <use href="#adminGear" x="850" y="734" width="14" height="14"/>
+  <rect x="870" y="736" width="100" height="20" rx="4" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="886" y="751" font-size="11" fill="#FFFFFF">$25.00</text>
+
+  <text x="656" y="772" font-size="9" fill="#475569">pos_config.petty_cash_limit_cents / require_receipt_cents</text>
+
+  <!-- ==================== SAFE DROP SETTINGS ==================== -->
+  <!-- DB: pos_config.safe_drop_threshold_cents, pos_config.safe_drop_require_count -->
+  <rect x="636" y="800" width="350" height="100" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <text x="656" y="824" font-size="12" font-weight="600" fill="#FFFFFF">Safe Drop Rules</text>
+  <use href="#adminGear" x="770" y="812" width="14" height="14"/>
+
+  <text x="656" y="848" font-size="11" fill="#94A3B8">Auto-prompt safe drop at:</text>
+  <use href="#adminGear" x="820" y="836" width="14" height="14"/>
+  <rect x="840" y="838" width="100" height="20" rx="4" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="856" y="853" font-size="11" fill="#FFFFFF">$500.00</text>
+
+  <text x="656" y="872" font-size="11" fill="#94A3B8">Require denomination count:</text>
+  <use href="#toggleOn" x="840" y="862" width="44" height="20"/>
+
+  <text x="656" y="892" font-size="9" fill="#475569">pos_config.safe_drop_threshold_cents</text>
+
+  <!-- ==================== EXPORT & REPORTING ==================== -->
+  <rect x="998" y="648" width="358" height="140" rx="8" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+  <text x="1018" y="672" font-size="12" font-weight="600" fill="#FFFFFF">Export &amp; Reporting</text>
+  <text x="1018" y="700" font-size="11" fill="#CBD5E1">Cash event log exports to CSV / PDF</text>
+  <text x="1018" y="718" font-size="11" fill="#CBD5E1">Integrates with QuickBooks / Xero</text>
+  <text x="1018" y="736" font-size="11" fill="#CBD5E1">EOD cash reconciliation auto-cross-check</text>
+  <rect x="1018" y="748" width="180" height="28" rx="6" fill="url(#amberBtnGrad)" filter="url(#btnShadow)"/>
+  <text x="1066" y="767" font-size="12" font-weight="600" fill="#000">Export to CSV</text>
+
+  <!-- ==================== FOOTER ==================== -->
+  <!-- DB: pos_cash_events, pos_config -->
+  <text x="680" y="1010" font-size="11" text-anchor="middle" fill="#475569">Synalux POS &#183; Cash Management &#183; pos_cash_events &#8212; paid-in/out &#183; safe drop &#183; petty cash &#183; EOD reconcile</text>
+
 </svg>

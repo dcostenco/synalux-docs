@@ -17,6 +17,22 @@ Use your own iPad — or any device with a browser.
 
 ## At a glance
 
+**E2E Workflow** — Complete daily workflow for all 7 roles
+
+![E2E Workflow](../images/pos/ipad_00_e2e_workflow.svg)
+
+**PIN Login** — Staff PIN entry with clock-in, role-based routing
+
+![PIN Login](../images/pos/ipad_00_pin_entry.svg)
+
+**Role Selection** — Multi-role staff choose their role; single-role staff skip to their assigned screen
+
+![Role Selection](../images/pos/ipad_00b_role_select.svg)
+
+**Combined Role Tests** — Multi-role staff workflows: Server+Bartender, Host+Cashier, Manager+Server, Supervisor+Cashier+Host
+
+![Combined Roles](../images/pos/ipad_00c_combined_roles.svg)
+
 **Register** — 3-panel layout with categories, product grid, order ticket
 
 ![Register](../images/pos/ipad_01_register.svg)

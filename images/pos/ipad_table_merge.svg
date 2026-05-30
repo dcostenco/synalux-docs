@@ -1,510 +1,666 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-ipad_table_merge-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- DEFINITIONS: Gradients, Filters, Clip Paths            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <title id="title-ipad_table_merge-svg">Synalux POS — taUle merge</title>
+  <desc>Synalux POS mockup screen for taUle merge. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#080A14"/>
+    </linearGradient>
+
+    <!-- Nav bar gradient -->
+    <linearGradient id="navGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+
+    <!-- Card gradient -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+
+    <!-- Card header gradient -->
+    <linearGradient id="cardHeaderGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+
+    <!-- Amber accent gradient -->
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Amber button gradient -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Green accent gradient -->
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <!-- Floor plan surface -->
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111428"/>
+      <stop offset="100%" stop-color="#0D1020"/>
+    </linearGradient>
+
+    <!-- Confirmation card amber glow -->
+    <linearGradient id="confirmHeaderGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A1F00"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+
+    <!-- Bottom banner gradient -->
+    <linearGradient id="bannerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161930"/>
+      <stop offset="100%" stop-color="#111428"/>
+    </linearGradient>
+
+    <!-- Selected table glow -->
+    <radialGradient id="tableGlowAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Merge arrow glow -->
+    <linearGradient id="mergeArrowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Toggle gradient -->
+    <linearGradient id="toggleOnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Drop shadows -->
+    <filter id="shadowSm" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="shadowMd" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="shadowLg" x="-6%" y="-6%" width="112%" height="118%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowAmber" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.35"/>
+    </filter>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#22C55E" flood-opacity="0.3"/>
+    </filter>
+    <filter id="btnGlow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- REUSABLE SYMBOLS                                       -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <!-- Admin gear icon for configurable elements -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="2.5" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3"/>
+      <path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M2.8 2.8l1 1M10.2 10.2l1 1M2.8 11.2l1-1M10.2 3.8l1-1" stroke="#F59E0B" stroke-width="0.6" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- Round table shape (selected, amber) -->
+    <symbol id="tableRoundSelected" viewBox="0 0 76 76">
+      <circle cx="38" cy="38" r="38" fill="#1A1A08" stroke="#F59E0B" stroke-width="2" filter="url(#glowAmber)"/>
+      <circle cx="38" cy="38" r="34" fill="none" stroke="#F59E0B" stroke-width="0.5" opacity="0.3"/>
+    </symbol>
+
+    <!-- Chair indicator (round, for round tables) -->
+    <symbol id="chairDot" viewBox="0 0 12 12">
+      <circle cx="6" cy="6" r="6" opacity="0.4"/>
+    </symbol>
+
+    <!-- Action button base -->
+    <symbol id="actionBtn" viewBox="0 0 362 48">
+      <rect x="0" y="0" width="362" height="48" rx="10"/>
+    </symbol>
+
+    <!-- Toggle switch (on) -->
+    <symbol id="toggleOn" viewBox="0 0 40 22">
+      <rect x="0" y="0" width="40" height="22" rx="11" fill="url(#toggleOnGrad)" filter="url(#shadowSm)"/>
+      <circle cx="28" cy="11" r="9" fill="white"/>
+    </symbol>
+
+    <!-- Order item row badge (T3/T4 source labels) -->
+    <symbol id="sourceLabel" viewBox="0 0 28 17">
+      <rect x="0" y="0" width="28" height="17" rx="4" opacity="0.12"/>
+      <rect x="0" y="0" width="28" height="17" rx="4" fill="none" stroke-width="0.8"/>
+    </symbol>
+  </defs>
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- BACKGROUND                                              -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- TOP NAV (h=56)                                          -->
+  <!-- TOP NAV BAR (h=56)                                      -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
-  <rect x="0" y="56" width="1366" height="1" fill="#2D3148"/>
+  <rect x="0" y="0" width="1366" height="56" fill="url(#navGrad)" filter="url(#shadowSm)"/>
+  <rect x="0" y="55" width="1366" height="1" fill="#1E2235"/>
 
   <!-- Logo + live badge -->
-  <circle cx="20" cy="28" r="7" fill="#10B981"/>
-  <text x="34" y="33" fill="#10B981" font-size="12" font-weight="600">LIVE</text>
-  <text x="68" y="35" fill="#F59E0B" font-size="18" font-weight="700">Synalux POS</text>
+  <circle cx="22" cy="28" r="7" fill="url(#greenGrad)" filter="url(#glowGreen)"/>
+  <text x="36" y="33" fill="#22C55E" font-size="11" font-weight="600" letter-spacing="0.5">LIVE</text>
+  <text x="72" y="34" fill="#F59E0B" font-size="17" font-weight="700">Synalux POS</text>
 
   <!-- Nav tabs -->
-  <text x="220" y="34" fill="#94A3B8" font-size="13" text-anchor="middle">Register</text>
-  <!-- Tables tab active -->
+  <text x="220" y="34" fill="#64748B" font-size="13" text-anchor="middle">Register</text>
   <text x="310" y="34" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="middle">Tables</text>
-  <rect x="281" y="53" width="58" height="3" rx="1.5" fill="#F59E0B"/>
-  <text x="400" y="34" fill="#94A3B8" font-size="13" text-anchor="middle">Kitchen</text>
-  <text x="490" y="34" fill="#94A3B8" font-size="13" text-anchor="middle">Reports</text>
-  <text x="576" y="34" fill="#94A3B8" font-size="13" text-anchor="middle">Staff</text>
+  <rect x="281" y="52" width="58" height="3" rx="1.5" fill="url(#amberGrad)"/>
+  <text x="400" y="34" fill="#64748B" font-size="13" text-anchor="middle">Kitchen</text>
+  <text x="490" y="34" fill="#64748B" font-size="13" text-anchor="middle">Reports</text>
+  <text x="576" y="34" fill="#64748B" font-size="13" text-anchor="middle">Staff</text>
 
   <!-- Right side: server, time -->
-  <text x="900" y="22" fill="#94A3B8" font-size="11">Server on duty</text>
-  <text x="900" y="38" fill="#F1F5F9" font-size="13" font-weight="600">Sarah W.</text>
-  <text x="1220" y="22" fill="#94A3B8" font-size="11">Wednesday</text>
-  <text x="1220" y="38" fill="#F1F5F9" font-size="14" font-weight="600">6:44 PM</text>
-  <text x="1310" y="36" fill="#94A3B8" font-size="20">⚙</text>
-  <text x="1340" y="36" fill="#94A3B8" font-size="20">🔔</text>
+  <text x="920" y="22" fill="#475569" font-size="11">Server on duty</text>
+  <text x="920" y="38" fill="#E2E8F0" font-size="13" font-weight="600">Sarah W.</text>
+  <text x="1220" y="22" fill="#475569" font-size="11">Wednesday</text>
+  <text x="1220" y="38" fill="#E2E8F0" font-size="14" font-weight="600">6:44 PM</text>
+  <circle cx="1316" cy="28" r="14" fill="none" stroke="#1E2235" stroke-width="1"/>
+  <text x="1316" y="33" fill="#64748B" font-size="16" text-anchor="middle">&#x2699;</text>
+  <circle cx="1346" cy="28" r="14" fill="none" stroke="#1E2235" stroke-width="1"/>
+  <text x="1346" y="33" fill="#64748B" font-size="16" text-anchor="middle">&#x1F514;</text>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- HEADER BAR (y=57, h=48)                                -->
+  <!-- HEADER BAR (y=56, h=48)                                 -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <rect x="0" y="57" width="1366" height="48" fill="#1A1D2E"/>
-  <rect x="0" y="105" width="1366" height="1" fill="#2D3148"/>
+  <rect x="0" y="56" width="1366" height="48" fill="#161930"/>
+  <rect x="0" y="103" width="1366" height="1" fill="#1E2235"/>
 
-  <text x="24" y="87" fill="#F1F5F9" font-size="15" font-weight="700">Table Operations — Merge / Split / Transfer</text>
+  <text x="24" y="86" fill="#E2E8F0" font-size="15" font-weight="700">Table Operations</text>
+  <text x="168" y="86" fill="#475569" font-size="15">&#x2014; Merge / Split / Transfer</text>
 
-  <!-- Tabs -->
-  <!-- Merge Tables tab (active) -->
-  <rect x="360" y="65" width="136" height="32" rx="6" fill="#F59E0B"/>
-  <text x="428" y="86" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">Merge Tables</text>
+  <!-- Tabs: Merge (active), Split, Transfer -->
+  <rect x="360" y="64" width="136" height="32" rx="8" fill="url(#amberGrad)" filter="url(#shadowSm)"/>
+  <text x="428" y="85" fill="#0C0E1A" font-size="13" font-weight="700" text-anchor="middle">Merge Tables</text>
 
-  <!-- Split Table tab -->
-  <rect x="504" y="65" width="114" height="32" rx="6" fill="#1A1D2E"/>
-  <rect x="504" y="65" width="114" height="32" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="561" y="86" fill="#94A3B8" font-size="13" text-anchor="middle">Split Table</text>
+  <rect x="504" y="64" width="114" height="32" rx="8" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <text x="561" y="85" fill="#64748B" font-size="13" text-anchor="middle">Split Table</text>
 
-  <!-- Transfer Order tab -->
-  <rect x="626" y="65" width="136" height="32" rx="6" fill="#1A1D2E"/>
-  <rect x="626" y="65" width="136" height="32" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="694" y="86" fill="#94A3B8" font-size="13" text-anchor="middle">Transfer Order</text>
+  <rect x="626" y="64" width="136" height="32" rx="8" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <text x="694" y="85" fill="#64748B" font-size="13" text-anchor="middle">Transfer Order</text>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- LEFT PANEL (x=0, w=560, y=106)                         -->
+  <!-- LEFT PANEL: Floor Plan (x=0, w=560, y=104)             -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <rect x="0" y="106" width="560" height="918" fill="#0F1117"/>
-  <rect x="559" y="106" width="1" height="918" fill="#2D3148"/>
+  <rect x="0" y="104" width="560" height="920" fill="#0C0E1A"/>
+  <rect x="559" y="104" width="1" height="920" fill="#1E2235"/>
 
   <!-- Panel label -->
-  <text x="20" y="132" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">FLOOR PLAN — SELECT TWO TABLES</text>
+  <!-- Admin: floor_plan_layout, table_shapes, table_capacities (configurable) -->
+  <text x="20" y="132" fill="#475569" font-size="11" font-weight="700" letter-spacing="1.2">FLOOR PLAN</text>
+  <text x="110" y="132" fill="#64748B" font-size="11">&#x2014; Select two tables to merge</text>
+  <use href="#adminGear" x="346" y="122" width="14" height="14"/>
 
-  <!-- "2 tables selected" amber chip (top-right of floor plan area) -->
-  <rect x="430" y="118" width="118" height="24" rx="12" fill="#F59E0B" opacity="0.15"/>
-  <rect x="430" y="118" width="118" height="24" rx="12" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <circle cx="449" cy="130" r="5" fill="#F59E0B"/>
-  <text x="460" y="134" fill="#F59E0B" font-size="11" font-weight="700">2 tables selected</text>
+  <!-- 2 tables selected badge -->
+  <rect x="420" y="118" width="128" height="26" rx="13" fill="#F59E0B" opacity="0.1"/>
+  <rect x="420" y="118" width="128" height="26" rx="13" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="438" cy="131" r="4" fill="#F59E0B"/>
+  <text x="450" y="135" fill="#F59E0B" font-size="11" font-weight="600">2 tables selected</text>
 
-  <!-- ─── MINI FLOOR PLAN ─────────────────────────────────── -->
-  <!-- Floor plan card -->
-  <rect x="12" y="144" width="536" height="500" rx="10" fill="#13162A"/>
-  <rect x="12" y="144" width="536" height="500" rx="10" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <!-- ─── FLOOR PLAN CARD ────────────────────────────────── -->
+  <rect x="12" y="146" width="536" height="496" rx="12" fill="url(#floorGrad)" stroke="#1E2235" stroke-width="1" filter="url(#shadowMd)"/>
 
-  <!-- Grid lines (dark) -->
-  <g stroke="#1E2235" stroke-width="1" opacity="0.7">
-    <line x1="12" y1="188" x2="548" y2="188"/>
-    <line x1="12" y1="232" x2="548" y2="232"/>
-    <line x1="12" y1="276" x2="548" y2="276"/>
-    <line x1="12" y1="320" x2="548" y2="320"/>
-    <line x1="12" y1="364" x2="548" y2="364"/>
-    <line x1="12" y1="408" x2="548" y2="408"/>
-    <line x1="12" y1="452" x2="548" y2="452"/>
-    <line x1="12" y1="496" x2="548" y2="496"/>
-    <line x1="12" y1="540" x2="548" y2="540"/>
-    <line x1="80" y1="144" x2="80" y2="644"/>
-    <line x1="148" y1="144" x2="148" y2="644"/>
-    <line x1="216" y1="144" x2="216" y2="644"/>
-    <line x1="284" y1="144" x2="284" y2="644"/>
-    <line x1="352" y1="144" x2="352" y2="644"/>
-    <line x1="420" y1="144" x2="420" y2="644"/>
-    <line x1="488" y1="144" x2="488" y2="644"/>
+  <!-- Subtle grid -->
+  <g stroke="#1E2235" stroke-width="0.5" opacity="0.5">
+    <line x1="80" y1="146" x2="80" y2="642"/>
+    <line x1="148" y1="146" x2="148" y2="642"/>
+    <line x1="216" y1="146" x2="216" y2="642"/>
+    <line x1="284" y1="146" x2="284" y2="642"/>
+    <line x1="352" y1="146" x2="352" y2="642"/>
+    <line x1="420" y1="146" x2="420" y2="642"/>
+    <line x1="488" y1="146" x2="488" y2="642"/>
+    <line x1="12" y1="190" x2="548" y2="190"/>
+    <line x1="12" y1="234" x2="548" y2="234"/>
+    <line x1="12" y1="278" x2="548" y2="278"/>
+    <line x1="12" y1="322" x2="548" y2="322"/>
+    <line x1="12" y1="366" x2="548" y2="366"/>
+    <line x1="12" y1="410" x2="548" y2="410"/>
+    <line x1="12" y1="454" x2="548" y2="454"/>
+    <line x1="12" y1="498" x2="548" y2="498"/>
+    <line x1="12" y1="542" x2="548" y2="542"/>
+    <line x1="12" y1="586" x2="548" y2="586"/>
   </g>
 
   <!-- Instruction banner -->
-  <rect x="20" y="150" width="528" height="26" rx="5" fill="#1A1D2E" opacity="0.9"/>
-  <text x="284" y="167" fill="#94A3B8" font-size="12" text-anchor="middle">Tap two tables to merge · Drag to rearrange · Long-press to edit</text>
+  <rect x="18" y="152" width="524" height="28" rx="6" fill="#161930" opacity="0.95" stroke="#1E2235" stroke-width="0.5"/>
+  <text x="280" y="170" fill="#64748B" font-size="11" text-anchor="middle">Tap two tables to merge  &#x2022;  Drag to rearrange  &#x2022;  Long-press to edit</text>
 
-  <!-- ─── TABLE 3 — SELECTED (amber, round) ─────────────────── -->
-  <!-- Glow effect -->
-  <circle cx="130" cy="270" r="52" fill="#F59E0B" opacity="0.08"/>
-  <!-- Dashed amber border -->
-  <circle cx="130" cy="270" r="44" fill="#1A2010" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <!-- ─── TABLE 3: SELECTED (amber, round) ───────────────── -->
+  <!-- Outer glow -->
+  <circle cx="130" cy="274" r="56" fill="url(#tableGlowAmber)"/>
+  <!-- Animated dashed selection ring -->
+  <circle cx="130" cy="274" r="46" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
   <!-- Table surface -->
-  <circle cx="130" cy="270" r="36" fill="#2A2A0A"/>
-  <circle cx="130" cy="270" r="36" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
-  <!-- Table number -->
-  <text x="130" y="264" fill="#F59E0B" font-size="16" font-weight="700" text-anchor="middle">T3</text>
-  <text x="130" y="280" fill="#F59E0B" font-size="10" text-anchor="middle">4 guests</text>
-  <!-- Chair indicators (round table) -->
-  <circle cx="130" cy="222" r="6" fill="#F59E0B" opacity="0.5"/>
-  <circle cx="130" cy="318" r="6" fill="#F59E0B" opacity="0.5"/>
-  <circle cx="82" cy="270" r="6" fill="#F59E0B" opacity="0.5"/>
-  <circle cx="178" cy="270" r="6" fill="#F59E0B" opacity="0.5"/>
-  <!-- Label below -->
-  <text x="130" y="328" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">$42.00 · Sarah W.</text>
-  <text x="130" y="341" fill="#64748B" font-size="10" text-anchor="middle">Open 34 min</text>
+  <circle cx="130" cy="274" r="38" fill="#1A1A08" stroke="#F59E0B" stroke-width="2" filter="url(#glowAmber)"/>
+  <!-- Inner highlight ring -->
+  <circle cx="130" cy="274" r="34" fill="none" stroke="#F59E0B" stroke-width="0.5" opacity="0.3"/>
+  <!-- Table label -->
+  <text x="130" y="268" fill="#F59E0B" font-size="17" font-weight="700" text-anchor="middle">T3</text>
+  <text x="130" y="284" fill="#F59E0B" font-size="10" font-weight="500" text-anchor="middle">4 guests</text>
+  <!-- Chair indicators -->
+  <circle cx="130" cy="224" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="130" cy="324" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="80" cy="274" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="180" cy="274" r="6" fill="#F59E0B" opacity="0.4"/>
+  <!-- Info below -->
+  <text x="130" y="337" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">$42.00 &#x2022; Sarah W.</text>
+  <text x="130" y="350" fill="#475569" font-size="10" text-anchor="middle">Open 34 min</text>
   <!-- Selected check badge -->
-  <circle cx="164" cy="236" r="10" fill="#F59E0B"/>
-  <text x="164" y="240" fill="#0F1117" font-size="11" font-weight="700" text-anchor="middle">✓</text>
+  <circle cx="162" cy="240" r="11" fill="url(#amberGrad)" filter="url(#shadowSm)"/>
+  <text x="162" y="244" fill="#0C0E1A" font-size="12" font-weight="800" text-anchor="middle">&#x2713;</text>
 
-  <!-- ─── TABLE 4 — SELECTED (amber, round) ─────────────────── -->
-  <circle cx="310" cy="270" r="52" fill="#F59E0B" opacity="0.08"/>
-  <circle cx="310" cy="270" r="44" fill="#1A2010" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6,3"/>
-  <circle cx="310" cy="270" r="36" fill="#2A2A0A"/>
-  <circle cx="310" cy="270" r="36" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
-  <text x="310" y="264" fill="#F59E0B" font-size="16" font-weight="700" text-anchor="middle">T4</text>
-  <text x="310" y="280" fill="#F59E0B" font-size="10" text-anchor="middle">3 guests</text>
-  <circle cx="310" cy="222" r="6" fill="#F59E0B" opacity="0.5"/>
-  <circle cx="310" cy="318" r="6" fill="#F59E0B" opacity="0.5"/>
-  <circle cx="262" cy="270" r="6" fill="#F59E0B" opacity="0.5"/>
-  <circle cx="358" cy="270" r="6" fill="#F59E0B" opacity="0.5"/>
-  <text x="310" y="328" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">$31.50 · Marcus</text>
-  <text x="310" y="341" fill="#64748B" font-size="10" text-anchor="middle">Open 22 min</text>
-  <circle cx="344" cy="236" r="10" fill="#F59E0B"/>
-  <text x="344" y="240" fill="#0F1117" font-size="11" font-weight="700" text-anchor="middle">✓</text>
+  <!-- ─── TABLE 4: SELECTED (amber, round) ───────────────── -->
+  <circle cx="310" cy="274" r="56" fill="url(#tableGlowAmber)"/>
+  <circle cx="310" cy="274" r="46" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+  <circle cx="310" cy="274" r="38" fill="#1A1A08" stroke="#F59E0B" stroke-width="2" filter="url(#glowAmber)"/>
+  <circle cx="310" cy="274" r="34" fill="none" stroke="#F59E0B" stroke-width="0.5" opacity="0.3"/>
+  <text x="310" y="268" fill="#F59E0B" font-size="17" font-weight="700" text-anchor="middle">T4</text>
+  <text x="310" y="284" fill="#F59E0B" font-size="10" font-weight="500" text-anchor="middle">3 guests</text>
+  <circle cx="310" cy="224" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="310" cy="324" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="260" cy="274" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="360" cy="274" r="6" fill="#F59E0B" opacity="0.4"/>
+  <text x="310" y="337" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">$31.50 &#x2022; Marcus</text>
+  <text x="310" y="350" fill="#475569" font-size="10" text-anchor="middle">Open 22 min</text>
+  <circle cx="342" cy="240" r="11" fill="url(#amberGrad)" filter="url(#shadowSm)"/>
+  <text x="342" y="244" fill="#0C0E1A" font-size="12" font-weight="800" text-anchor="middle">&#x2713;</text>
 
-  <!-- ─── MERGE ARROW between T3 and T4 ─────────────────────── -->
-  <!-- Arrow shaft -->
-  <line x1="178" y1="270" x2="262" y2="270" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="5,3"/>
-  <!-- Left arrowhead -->
-  <polygon points="182,264 174,270 182,276" fill="#F59E0B"/>
-  <!-- Right arrowhead -->
-  <polygon points="258,264 266,270 258,276" fill="#F59E0B"/>
+  <!-- ─── MERGE ARROW between T3 and T4 ──────────────────── -->
+  <line x1="182" y1="274" x2="258" y2="274" stroke="url(#mergeArrowGrad)" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <polygon points="186,268 177,274 186,280" fill="#F59E0B"/>
+  <polygon points="254,268 263,274 254,280" fill="#F59E0B"/>
   <!-- Center merge icon -->
-  <circle cx="220" cy="270" r="12" fill="#2D3148"/>
-  <text x="220" y="274" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">⇄</text>
+  <circle cx="220" cy="274" r="14" fill="#161930" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="220" y="279" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="middle">&#x21C4;</text>
 
-  <!-- ─── TABLE 5 — AVAILABLE (green, rect) ─────────────────── -->
-  <rect x="400" y="188" width="80" height="56" rx="8" fill="#0D2010"/>
-  <rect x="400" y="188" width="80" height="56" rx="8" fill="none" stroke="#10B981" stroke-width="1.5"/>
-  <text x="440" y="213" fill="#10B981" font-size="14" font-weight="700" text-anchor="middle">T5</text>
-  <text x="440" y="228" fill="#10B981" font-size="10" text-anchor="middle">Available</text>
+  <!-- ─── TABLE 5: AVAILABLE (green, rect) ───────────────── -->
+  <rect x="404" y="192" width="82" height="58" rx="10" fill="#0A1A10" stroke="#22C55E" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="445" y="217" fill="#4ADE80" font-size="15" font-weight="700" text-anchor="middle">T5</text>
+  <text x="445" y="233" fill="#22C55E" font-size="10" text-anchor="middle">Available</text>
   <!-- Chair nubs -->
-  <rect x="415" y="182" width="12" height="6" rx="2" fill="#10B981" opacity="0.4"/>
-  <rect x="453" y="182" width="12" height="6" rx="2" fill="#10B981" opacity="0.4"/>
-  <rect x="415" y="244" width="12" height="6" rx="2" fill="#10B981" opacity="0.4"/>
-  <rect x="453" y="244" width="12" height="6" rx="2" fill="#10B981" opacity="0.4"/>
+  <rect x="418" y="186" width="12" height="6" rx="3" fill="#22C55E" opacity="0.35"/>
+  <rect x="456" y="186" width="12" height="6" rx="3" fill="#22C55E" opacity="0.35"/>
+  <rect x="418" y="250" width="12" height="6" rx="3" fill="#22C55E" opacity="0.35"/>
+  <rect x="456" y="250" width="12" height="6" rx="3" fill="#22C55E" opacity="0.35"/>
 
-  <!-- ─── TABLE 6 — OCCUPIED (blue/teal, rect) ──────────────── -->
-  <rect x="400" y="340" width="80" height="60" rx="8" fill="#101828"/>
-  <rect x="400" y="340" width="80" height="60" rx="8" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
-  <text x="440" y="365" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="middle">T6</text>
-  <text x="440" y="379" fill="#94A3B8" font-size="10" text-anchor="middle">2 guests</text>
-  <text x="440" y="392" fill="#64748B" font-size="10" text-anchor="middle">Sarah W. · 18m</text>
-  <rect x="418" y="334" width="10" height="6" rx="2" fill="#3B82F6" opacity="0.4"/>
-  <rect x="452" y="334" width="10" height="6" rx="2" fill="#3B82F6" opacity="0.4"/>
-  <rect x="418" y="400" width="10" height="6" rx="2" fill="#3B82F6" opacity="0.4"/>
-  <rect x="452" y="400" width="10" height="6" rx="2" fill="#3B82F6" opacity="0.4"/>
+  <!-- ─── TABLE 6: OCCUPIED (blue, rect) ─────────────────── -->
+  <rect x="404" y="340" width="82" height="62" rx="10" fill="#0C1424" stroke="#60A5FA" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="445" y="365" fill="#E2E8F0" font-size="15" font-weight="700" text-anchor="middle">T6</text>
+  <text x="445" y="380" fill="#94A3B8" font-size="10" text-anchor="middle">2 guests</text>
+  <text x="445" y="393" fill="#475569" font-size="9" text-anchor="middle">Sarah W. &#x2022; 18m</text>
+  <rect x="420" y="334" width="10" height="6" rx="3" fill="#60A5FA" opacity="0.35"/>
+  <rect x="454" y="334" width="10" height="6" rx="3" fill="#60A5FA" opacity="0.35"/>
+  <rect x="420" y="402" width="10" height="6" rx="3" fill="#60A5FA" opacity="0.35"/>
+  <rect x="454" y="402" width="10" height="6" rx="3" fill="#60A5FA" opacity="0.35"/>
 
-  <!-- ─── TABLE 7 — OCCUPIED (round) ───────────────────────── -->
-  <circle cx="130" cy="470" r="36" fill="#181020"/>
-  <circle cx="130" cy="470" r="36" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="130" y="465" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="middle">T7</text>
-  <text x="130" y="479" fill="#94A3B8" font-size="10" text-anchor="middle">5 guests · Tyler</text>
-  <circle cx="130" cy="430" r="6" fill="#8B5CF6" opacity="0.4"/>
-  <circle cx="130" cy="510" r="6" fill="#8B5CF6" opacity="0.4"/>
-  <circle cx="90" cy="450" r="6" fill="#8B5CF6" opacity="0.4"/>
-  <circle cx="170" cy="450" r="6" fill="#8B5CF6" opacity="0.4"/>
-  <circle cx="90" cy="490" r="6" fill="#8B5CF6" opacity="0.4"/>
-  <text x="130" y="524" fill="#64748B" font-size="10" text-anchor="middle">Open 8 min</text>
+  <!-- ─── TABLE 7: OCCUPIED (round, purple) ──────────────── -->
+  <circle cx="130" cy="470" r="38" fill="#140E22" stroke="#8B5CF6" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="130" y="465" fill="#E2E8F0" font-size="15" font-weight="700" text-anchor="middle">T7</text>
+  <text x="130" y="480" fill="#94A3B8" font-size="10" text-anchor="middle">5 guests &#x2022; Tyler</text>
+  <circle cx="130" cy="428" r="6" fill="#8B5CF6" opacity="0.35"/>
+  <circle cx="130" cy="512" r="6" fill="#8B5CF6" opacity="0.35"/>
+  <circle cx="88" cy="450" r="6" fill="#8B5CF6" opacity="0.35"/>
+  <circle cx="172" cy="450" r="6" fill="#8B5CF6" opacity="0.35"/>
+  <circle cx="88" cy="490" r="6" fill="#8B5CF6" opacity="0.35"/>
+  <text x="130" y="526" fill="#475569" font-size="10" text-anchor="middle">Open 8 min</text>
 
-  <!-- ─── TABLE 8 — OCCUPIED (rect) ─────────────────────────── -->
-  <rect x="250" y="430" width="80" height="56" rx="8" fill="#141010"/>
-  <rect x="250" y="430" width="80" height="56" rx="8" fill="none" stroke="#F97316" stroke-width="1.5"/>
-  <text x="290" y="455" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="middle">T8</text>
-  <text x="290" y="469" fill="#94A3B8" font-size="10" text-anchor="middle">6 guests · 52m</text>
-  <rect x="262" y="424" width="12" height="6" rx="2" fill="#F97316" opacity="0.4"/>
-  <rect x="304" y="424" width="12" height="6" rx="2" fill="#F97316" opacity="0.4"/>
-  <rect x="262" y="486" width="12" height="6" rx="2" fill="#F97316" opacity="0.4"/>
-  <rect x="304" y="486" width="12" height="6" rx="2" fill="#F97316" opacity="0.4"/>
+  <!-- ─── TABLE 8: OCCUPIED (rect, orange) ───────────────── -->
+  <rect x="250" y="432" width="82" height="58" rx="10" fill="#1A1008" stroke="#F97316" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="291" y="458" fill="#E2E8F0" font-size="15" font-weight="700" text-anchor="middle">T8</text>
+  <text x="291" y="473" fill="#94A3B8" font-size="10" text-anchor="middle">6 guests &#x2022; 52m</text>
+  <rect x="264" y="426" width="12" height="6" rx="3" fill="#F97316" opacity="0.35"/>
+  <rect x="306" y="426" width="12" height="6" rx="3" fill="#F97316" opacity="0.35"/>
+  <rect x="264" y="490" width="12" height="6" rx="3" fill="#F97316" opacity="0.35"/>
+  <rect x="306" y="490" width="12" height="6" rx="3" fill="#F97316" opacity="0.35"/>
 
-  <!-- ─── TABLE 9 — RESERVED (round) ───────────────────────── -->
-  <circle cx="460" cy="490" r="32" fill="#120D20"/>
-  <circle cx="460" cy="490" r="32" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="460" y="485" fill="#94A3B8" font-size="13" font-weight="700" text-anchor="middle">T9</text>
-  <text x="460" y="499" fill="#64748B" font-size="10" text-anchor="middle">Reserved</text>
-  <text x="460" y="512" fill="#64748B" font-size="10" text-anchor="middle">7:00 PM</text>
+  <!-- ─── TABLE 9: RESERVED (round, purple dashed) ───────── -->
+  <circle cx="460" cy="490" r="34" fill="#100C1E" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4,3" filter="url(#shadowSm)"/>
+  <text x="460" y="485" fill="#94A3B8" font-size="14" font-weight="700" text-anchor="middle">T9</text>
+  <text x="460" y="499" fill="#475569" font-size="10" text-anchor="middle">Reserved</text>
+  <text x="460" y="512" fill="#475569" font-size="10" text-anchor="middle">7:00 PM</text>
 
-  <!-- ─── TABLE 10 — DIRTY (rect) ───────────────────────────── -->
-  <rect x="380" y="510" width="72" height="50" rx="8" fill="#101010"/>
-  <rect x="380" y="510" width="72" height="50" rx="8" fill="none" stroke="#64748B" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="416" y="533" fill="#64748B" font-size="13" font-weight="700" text-anchor="middle">T10</text>
-  <text x="416" y="547" fill="#64748B" font-size="10" text-anchor="middle">Cleaning</text>
+  <!-- ─── TABLE 10: DIRTY (rect, muted dashed) ──────────── -->
+  <rect x="384" y="554" width="74" height="50" rx="10" fill="#0E0E14" stroke="#475569" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="421" y="576" fill="#475569" font-size="13" font-weight="700" text-anchor="middle">T10</text>
+  <text x="421" y="590" fill="#475569" font-size="10" text-anchor="middle">Cleaning</text>
 
-  <!-- ─── LEGEND strips bottom of floor plan ────────────────── -->
-  <circle cx="30" cy="628" r="6" fill="#F59E0B"/>
-  <text x="44" y="632" fill="#94A3B8" font-size="11">Selected</text>
-  <circle cx="120" cy="628" r="6" fill="#10B981"/>
-  <text x="134" y="632" fill="#94A3B8" font-size="11">Available</text>
-  <circle cx="220" cy="628" r="6" fill="#3B82F6"/>
-  <text x="234" y="632" fill="#94A3B8" font-size="11">Occupied</text>
-  <circle cx="320" cy="628" r="6" fill="#8B5CF6"/>
-  <text x="334" y="632" fill="#94A3B8" font-size="11">Reserved</text>
-  <circle cx="420" cy="628" r="6" fill="#64748B"/>
-  <text x="434" y="632" fill="#94A3B8" font-size="11">Dirty</text>
+  <!-- ─── LEGEND (bottom of floor plan) ──────────────────── -->
+  <g transform="translate(0, 0)">
+    <circle cx="30" cy="628" r="5" fill="#F59E0B"/>
+    <text x="42" y="632" fill="#64748B" font-size="10">Selected</text>
+    <circle cx="110" cy="628" r="5" fill="#22C55E"/>
+    <text x="122" y="632" fill="#64748B" font-size="10">Available</text>
+    <circle cx="200" cy="628" r="5" fill="#60A5FA"/>
+    <text x="212" y="632" fill="#64748B" font-size="10">Occupied</text>
+    <circle cx="290" cy="628" r="5" fill="#8B5CF6"/>
+    <text x="302" y="632" fill="#64748B" font-size="10">Reserved</text>
+    <circle cx="376" cy="628" r="5" fill="#F97316"/>
+    <text x="388" y="632" fill="#64748B" font-size="10">Long wait</text>
+    <circle cx="462" cy="628" r="5" fill="#475569"/>
+    <text x="474" y="632" fill="#64748B" font-size="10">Dirty</text>
+  </g>
 
-  <!-- ─── SELECTION SUMMARY CARD (below floor plan) ─────────── -->
-  <rect x="12" y="650" width="536" height="270" rx="10" fill="#1A1D2E"/>
-  <rect x="12" y="650" width="536" height="270" rx="10" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SELECTION SUMMARY CARD (below floor plan)               -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="12" y="650" width="536" height="272" rx="12" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#shadowMd)"/>
 
   <!-- Summary header -->
-  <text x="28" y="676" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="1">MERGE SUMMARY</text>
-  <text x="28" y="700" fill="#F1F5F9" font-size="15" font-weight="700">Merging: Table 3 + Table 4</text>
+  <text x="28" y="676" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.2">MERGE SUMMARY</text>
+  <text x="28" y="698" fill="#E2E8F0" font-size="15" font-weight="700">Merging: Table 3 + Table 4</text>
 
   <!-- Table 3 row -->
-  <rect x="28" y="710" width="10" height="36" rx="2" fill="#F59E0B"/>
-  <text x="48" y="724" fill="#F1F5F9" font-size="13" font-weight="600">Table 3</text>
-  <text x="48" y="740" fill="#94A3B8" font-size="12">4 guests · 3 items open</text>
-  <text x="520" y="724" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$42.00</text>
+  <rect x="28" y="710" width="4" height="36" rx="2" fill="url(#amberGrad)"/>
+  <text x="42" y="724" fill="#E2E8F0" font-size="13" font-weight="600">Table 3</text>
+  <text x="42" y="740" fill="#94A3B8" font-size="11">4 guests &#x2022; 3 items open</text>
+  <text x="530" y="724" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$42.00</text>
 
   <!-- Table 4 row -->
-  <rect x="28" y="752" width="10" height="36" rx="2" fill="#3B82F6"/>
-  <text x="48" y="766" fill="#F1F5F9" font-size="13" font-weight="600">Table 4</text>
-  <text x="48" y="782" fill="#94A3B8" font-size="12">3 guests · 4 items open</text>
-  <text x="520" y="766" fill="#3B82F6" font-size="13" font-weight="700" text-anchor="end">$31.50</text>
+  <rect x="28" y="752" width="4" height="36" rx="2" fill="#60A5FA"/>
+  <text x="42" y="766" fill="#E2E8F0" font-size="13" font-weight="600">Table 4</text>
+  <text x="42" y="782" fill="#94A3B8" font-size="11">3 guests &#x2022; 4 items open</text>
+  <text x="530" y="766" fill="#60A5FA" font-size="13" font-weight="700" text-anchor="end">$31.50</text>
 
   <!-- Divider + combined total -->
-  <line x1="28" y1="796" x2="536" y2="796" stroke="#2D3148" stroke-width="1"/>
+  <line x1="28" y1="796" x2="536" y2="796" stroke="#2A2E45" stroke-width="1"/>
   <text x="28" y="814" fill="#94A3B8" font-size="12">Combined</text>
-  <text x="160" y="814" fill="#F1F5F9" font-size="12">7 guests · 7 items</text>
-  <text x="520" y="814" fill="#10B981" font-size="14" font-weight="700" text-anchor="end">$73.50</text>
+  <text x="120" y="814" fill="#CBD5E1" font-size="12" font-weight="500">7 guests &#x2022; 7 items</text>
+  <text x="530" y="814" fill="#22C55E" font-size="14" font-weight="700" text-anchor="end">$73.50</text>
 
   <!-- Primary table selector -->
-  <text x="28" y="838" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">PRIMARY TABLE (combined check):</text>
+  <text x="28" y="838" fill="#475569" font-size="10" font-weight="700" letter-spacing="1">PRIMARY TABLE (COMBINED CHECK)</text>
 
   <!-- Radio: Table 3 selected -->
-  <circle cx="40" cy="856" r="7" fill="none" stroke="#F59E0B" stroke-width="2"/>
-  <circle cx="40" cy="856" r="3.5" fill="#F59E0B"/>
-  <text x="54" y="860" fill="#F1F5F9" font-size="12" font-weight="600">Table 3 (larger party)</text>
-  <rect x="190" y="849" width="78" height="16" rx="8" fill="#10B981" opacity="0.15"/>
-  <text x="229" y="861" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">RECOMMENDED</text>
+  <circle cx="40" cy="858" r="8" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="40" cy="858" r="4" fill="#F59E0B"/>
+  <text x="56" y="862" fill="#E2E8F0" font-size="12" font-weight="600">Table 3 (larger party)</text>
+  <rect x="198" y="851" width="86" height="17" rx="8" fill="#22C55E" opacity="0.12"/>
+  <rect x="198" y="851" width="86" height="17" rx="8" fill="none" stroke="#22C55E" stroke-width="0.5" opacity="0.4"/>
+  <text x="241" y="863" fill="#4ADE80" font-size="9" font-weight="700" text-anchor="middle">RECOMMENDED</text>
 
   <!-- Radio: Table 4 -->
-  <circle cx="40" cy="876" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
-  <text x="54" y="880" fill="#94A3B8" font-size="12">Table 4</text>
+  <circle cx="40" cy="880" r="8" fill="none" stroke="#2A2E45" stroke-width="1.5"/>
+  <text x="56" y="884" fill="#64748B" font-size="12">Table 4</text>
 
   <!-- Radio: New combined -->
-  <circle cx="40" cy="896" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
-  <text x="54" y="900" fill="#94A3B8" font-size="12">New combined: "Table 3+4"</text>
+  <circle cx="40" cy="900" r="8" fill="none" stroke="#2A2E45" stroke-width="1.5"/>
+  <text x="56" y="904" fill="#64748B" font-size="12">New combined: "Table 3+4"</text>
 
   <!-- Server note -->
-  <text x="28" y="916" fill="#64748B" font-size="11">Server: Sarah W. (Table 3) — Marcus's items transferred to Sarah</text>
+  <text x="28" y="918" fill="#475569" font-size="10">Server: Sarah W. (Table 3) &#x2014; Marcus's items transferred to Sarah</text>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- RIGHT PANEL (x=560, w=806, y=106)                      -->
+  <!-- RIGHT PANEL (x=560)                                     -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <!-- ─── COMBINED ORDER PREVIEW CARD ──────────────────────── -->
-  <rect x="572" y="114" width="782" height="378" rx="10" fill="#1A1D2E"/>
-  <rect x="572" y="114" width="782" height="378" rx="10" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <!-- ─── COMBINED ORDER PREVIEW CARD ─────────────────────── -->
+  <rect x="572" y="114" width="782" height="378" rx="12" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#shadowLg)"/>
 
-  <!-- Card header -->
-  <rect x="572" y="114" width="782" height="44" rx="10" fill="#1E2235"/>
-  <rect x="572" y="144" width="782" height="14" fill="#1E2235"/>
-  <text x="592" y="141" fill="#F1F5F9" font-size="14" font-weight="700">Combined Order — Table 3 + Table 4</text>
-  <text x="1290" y="141" fill="#94A3B8" font-size="12" text-anchor="end">7 guests</text>
+  <!-- Card header bar -->
+  <rect x="572" y="114" width="782" height="44" rx="12" fill="url(#cardHeaderGrad)"/>
+  <rect x="572" y="146" width="782" height="12" fill="#1E2235"/>
+  <rect x="572" y="157" width="782" height="1" fill="#2A2E45" opacity="0.5"/>
+
+  <text x="592" y="142" fill="#E2E8F0" font-size="14" font-weight="700">Combined Order</text>
+  <text x="710" y="142" fill="#475569" font-size="14">&#x2014; Table 3 + Table 4</text>
+  <!-- Guest count badge -->
+  <rect x="1268" y="127" width="72" height="22" rx="11" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1304" y="142" fill="#94A3B8" font-size="11" font-weight="500" text-anchor="middle">7 guests</text>
 
   <!-- Column headers -->
-  <text x="592" y="172" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">ITEM</text>
-  <text x="910" y="172" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1" text-anchor="end">PRICE</text>
-  <line x1="572" y1="178" x2="1354" y2="178" stroke="#2D3148" stroke-width="1"/>
+  <text x="592" y="175" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.2">ITEM</text>
+  <text x="910" y="175" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.2" text-anchor="end">PRICE</text>
+  <line x1="572" y1="181" x2="1354" y2="181" stroke="#1E2235" stroke-width="1"/>
 
   <!-- ── Table 3 items (amber T3 badge) ── -->
   <!-- Item 1: Classic Burger -->
-  <rect x="592" y="183" width="26" height="16" rx="3" fill="#F59E0B" opacity="0.2"/>
-  <rect x="592" y="183" width="26" height="16" rx="3" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="605" y="195" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">T3</text>
-  <text x="626" y="195" fill="#F1F5F9" font-size="13">Classic Burger</text>
-  <text x="910" y="195" fill="#F1F5F9" font-size="13" text-anchor="end">$18.00</text>
+  <rect x="592" y="188" width="28" height="17" rx="4" fill="#F59E0B" opacity="0.12"/>
+  <rect x="592" y="188" width="28" height="17" rx="4" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+  <text x="606" y="200" fill="#F59E0B" font-size="9" font-weight="700" text-anchor="middle">T3</text>
+  <text x="628" y="201" fill="#CBD5E1" font-size="13">Classic Burger</text>
+  <text x="910" y="201" fill="#CBD5E1" font-size="13" text-anchor="end">$18.00</text>
 
   <!-- Item 2: Caesar Salad -->
-  <rect x="592" y="203" width="26" height="16" rx="3" fill="#F59E0B" opacity="0.2"/>
-  <rect x="592" y="203" width="26" height="16" rx="3" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="605" y="215" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">T3</text>
-  <text x="626" y="215" fill="#F1F5F9" font-size="13">Caesar Salad</text>
-  <text x="910" y="215" fill="#F1F5F9" font-size="13" text-anchor="end">$14.00</text>
+  <rect x="592" y="210" width="28" height="17" rx="4" fill="#F59E0B" opacity="0.12"/>
+  <rect x="592" y="210" width="28" height="17" rx="4" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+  <text x="606" y="222" fill="#F59E0B" font-size="9" font-weight="700" text-anchor="middle">T3</text>
+  <text x="628" y="223" fill="#CBD5E1" font-size="13">Caesar Salad</text>
+  <text x="910" y="223" fill="#CBD5E1" font-size="13" text-anchor="end">$14.00</text>
 
   <!-- Item 3: Craft Beer x2 -->
-  <rect x="592" y="223" width="26" height="16" rx="3" fill="#F59E0B" opacity="0.2"/>
-  <rect x="592" y="223" width="26" height="16" rx="3" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="605" y="235" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">T3</text>
-  <text x="626" y="235" fill="#F1F5F9" font-size="13">Craft Beer</text>
-  <text x="670" y="235" fill="#64748B" font-size="11">× 2</text>
-  <text x="910" y="235" fill="#F1F5F9" font-size="13" text-anchor="end">$18.00</text>
+  <rect x="592" y="232" width="28" height="17" rx="4" fill="#F59E0B" opacity="0.12"/>
+  <rect x="592" y="232" width="28" height="17" rx="4" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+  <text x="606" y="244" fill="#F59E0B" font-size="9" font-weight="700" text-anchor="middle">T3</text>
+  <text x="628" y="245" fill="#CBD5E1" font-size="13">Craft Beer</text>
+  <text x="706" y="245" fill="#475569" font-size="11">&#x00D7; 2</text>
+  <text x="910" y="245" fill="#CBD5E1" font-size="13" text-anchor="end">$18.00</text>
 
   <!-- T3 subtotal line -->
-  <line x1="592" y1="244" x2="910" y2="244" stroke="#F59E0B" stroke-width="0.5" opacity="0.3"/>
-  <text x="592" y="256" fill="#F59E0B" font-size="11" font-weight="600">Table 3 subtotal</text>
-  <text x="910" y="256" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="end">$50.00</text>
+  <line x1="592" y1="256" x2="910" y2="256" stroke="#F59E0B" stroke-width="0.5" opacity="0.25"/>
+  <text x="592" y="270" fill="#F59E0B" font-size="11" font-weight="600">Table 3 subtotal</text>
+  <text x="910" y="270" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="end">$50.00</text>
 
   <!-- Divider between T3 and T4 items -->
-  <line x1="572" y1="262" x2="920" y2="262" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="580" y1="280" x2="916" y2="280" stroke="#2A2E45" stroke-width="1" stroke-dasharray="4,4"/>
 
   <!-- ── Table 4 items (blue T4 badge) ── -->
   <!-- Item 4: Margherita Pizza -->
-  <rect x="592" y="267" width="26" height="16" rx="3" fill="#3B82F6" opacity="0.2"/>
-  <rect x="592" y="267" width="26" height="16" rx="3" fill="none" stroke="#3B82F6" stroke-width="1"/>
-  <text x="605" y="279" fill="#3B82F6" font-size="10" font-weight="700" text-anchor="middle">T4</text>
-  <text x="626" y="279" fill="#F1F5F9" font-size="13">Margherita Pizza</text>
-  <text x="910" y="279" fill="#F1F5F9" font-size="13" text-anchor="end">$16.00</text>
+  <rect x="592" y="288" width="28" height="17" rx="4" fill="#60A5FA" opacity="0.12"/>
+  <rect x="592" y="288" width="28" height="17" rx="4" fill="none" stroke="#60A5FA" stroke-width="0.8"/>
+  <text x="606" y="300" fill="#60A5FA" font-size="9" font-weight="700" text-anchor="middle">T4</text>
+  <text x="628" y="301" fill="#CBD5E1" font-size="13">Margherita Pizza</text>
+  <text x="910" y="301" fill="#CBD5E1" font-size="13" text-anchor="end">$16.00</text>
 
   <!-- Item 5: House Wine x2 -->
-  <rect x="592" y="287" width="26" height="16" rx="3" fill="#3B82F6" opacity="0.2"/>
-  <rect x="592" y="287" width="26" height="16" rx="3" fill="none" stroke="#3B82F6" stroke-width="1"/>
-  <text x="605" y="299" fill="#3B82F6" font-size="10" font-weight="700" text-anchor="middle">T4</text>
-  <text x="626" y="299" fill="#F1F5F9" font-size="13">House Wine</text>
-  <text x="670" y="299" fill="#64748B" font-size="11">× 2</text>
-  <text x="910" y="299" fill="#F1F5F9" font-size="13" text-anchor="end">$24.00</text>
+  <rect x="592" y="310" width="28" height="17" rx="4" fill="#60A5FA" opacity="0.12"/>
+  <rect x="592" y="310" width="28" height="17" rx="4" fill="none" stroke="#60A5FA" stroke-width="0.8"/>
+  <text x="606" y="322" fill="#60A5FA" font-size="9" font-weight="700" text-anchor="middle">T4</text>
+  <text x="628" y="323" fill="#CBD5E1" font-size="13">House Wine</text>
+  <text x="706" y="323" fill="#475569" font-size="11">&#x00D7; 2</text>
+  <text x="910" y="323" fill="#CBD5E1" font-size="13" text-anchor="end">$24.00</text>
 
   <!-- Item 6: Garlic Bread -->
-  <rect x="592" y="307" width="26" height="16" rx="3" fill="#3B82F6" opacity="0.2"/>
-  <rect x="592" y="307" width="26" height="16" rx="3" fill="none" stroke="#3B82F6" stroke-width="1"/>
-  <text x="605" y="319" fill="#3B82F6" font-size="10" font-weight="700" text-anchor="middle">T4</text>
-  <text x="626" y="319" fill="#F1F5F9" font-size="13">Garlic Bread</text>
-  <text x="910" y="319" fill="#F1F5F9" font-size="13" text-anchor="end">$7.00</text>
+  <rect x="592" y="332" width="28" height="17" rx="4" fill="#60A5FA" opacity="0.12"/>
+  <rect x="592" y="332" width="28" height="17" rx="4" fill="none" stroke="#60A5FA" stroke-width="0.8"/>
+  <text x="606" y="344" fill="#60A5FA" font-size="9" font-weight="700" text-anchor="middle">T4</text>
+  <text x="628" y="345" fill="#CBD5E1" font-size="13">Garlic Bread</text>
+  <text x="910" y="345" fill="#CBD5E1" font-size="13" text-anchor="end">$7.00</text>
 
   <!-- Item 7: Sparkling Water -->
-  <rect x="592" y="327" width="26" height="16" rx="3" fill="#3B82F6" opacity="0.2"/>
-  <rect x="592" y="327" width="26" height="16" rx="3" fill="none" stroke="#3B82F6" stroke-width="1"/>
-  <text x="605" y="339" fill="#3B82F6" font-size="10" font-weight="700" text-anchor="middle">T4</text>
-  <text x="626" y="339" fill="#F1F5F9" font-size="13">Sparkling Water</text>
-  <text x="910" y="339" fill="#F1F5F9" font-size="13" text-anchor="end">$4.50</text>
+  <rect x="592" y="354" width="28" height="17" rx="4" fill="#60A5FA" opacity="0.12"/>
+  <rect x="592" y="354" width="28" height="17" rx="4" fill="none" stroke="#60A5FA" stroke-width="0.8"/>
+  <text x="606" y="366" fill="#60A5FA" font-size="9" font-weight="700" text-anchor="middle">T4</text>
+  <text x="628" y="367" fill="#CBD5E1" font-size="13">Sparkling Water</text>
+  <text x="910" y="367" fill="#CBD5E1" font-size="13" text-anchor="end">$4.50</text>
 
   <!-- T4 subtotal line -->
-  <line x1="592" y1="348" x2="910" y2="348" stroke="#3B82F6" stroke-width="0.5" opacity="0.3"/>
-  <text x="592" y="360" fill="#3B82F6" font-size="11" font-weight="600">Table 4 subtotal</text>
-  <text x="910" y="360" fill="#3B82F6" font-size="11" font-weight="600" text-anchor="end">$51.50</text>
+  <line x1="592" y1="378" x2="910" y2="378" stroke="#60A5FA" stroke-width="0.5" opacity="0.25"/>
+  <text x="592" y="392" fill="#60A5FA" font-size="11" font-weight="600">Table 4 subtotal</text>
+  <text x="910" y="392" fill="#60A5FA" font-size="11" font-weight="600" text-anchor="end">$51.50</text>
 
-  <!-- Grand totals (right side) -->
-  <line x1="920" y1="178" x2="920" y2="476" stroke="#2D3148" stroke-width="1"/>
+  <!-- Grand totals panel (right side of order card) -->
+  <line x1="924" y1="181" x2="924" y2="490" stroke="#1E2235" stroke-width="1"/>
 
-  <text x="940" y="195" fill="#64748B" font-size="12">Subtotal</text>
-  <text x="1344" y="195" fill="#F1F5F9" font-size="13" text-anchor="end">$101.50</text>
-  <text x="940" y="218" fill="#64748B" font-size="12">Tax (8.875%)</text>
-  <text x="1344" y="218" fill="#F1F5F9" font-size="13" text-anchor="end">$9.01</text>
-  <text x="940" y="241" fill="#64748B" font-size="12">Tip</text>
-  <text x="1344" y="241" fill="#64748B" font-size="13" text-anchor="end">—</text>
-  <line x1="930" y1="252" x2="1354" y2="252" stroke="#2D3148" stroke-width="1"/>
-  <text x="940" y="272" fill="#F1F5F9" font-size="14" font-weight="700">Total</text>
-  <text x="1344" y="272" fill="#10B981" font-size="18" font-weight="700" text-anchor="end">$110.51</text>
-  <text x="940" y="295" fill="#64748B" font-size="12">Guests</text>
-  <text x="1344" y="295" fill="#F1F5F9" font-size="13" text-anchor="end">7</text>
-  <text x="940" y="318" fill="#64748B" font-size="12">Items</text>
-  <text x="1344" y="318" fill="#F1F5F9" font-size="13" text-anchor="end">7</text>
-  <text x="940" y="341" fill="#64748B" font-size="12">Primary table</text>
-  <text x="1344" y="341" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">Table 3</text>
-  <text x="940" y="364" fill="#64748B" font-size="12">Server</text>
-  <text x="1344" y="364" fill="#F1F5F9" font-size="12" text-anchor="end">Sarah W.</text>
+  <text x="944" y="201" fill="#475569" font-size="12">Subtotal</text>
+  <text x="1340" y="201" fill="#CBD5E1" font-size="13" text-anchor="end">$101.50</text>
 
-  <!-- ─── MERGE OPTIONS CARD ─────────────────────────────────── -->
-  <rect x="572" y="502" width="370" height="190" rx="10" fill="#1A1D2E"/>
-  <rect x="572" y="502" width="370" height="190" rx="10" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <text x="944" y="225" fill="#475569" font-size="12">Tax (8.875%)</text>
+  <text x="1340" y="225" fill="#CBD5E1" font-size="13" text-anchor="end">$9.01</text>
 
-  <text x="592" y="526" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">MERGE SETTINGS</text>
+  <text x="944" y="249" fill="#475569" font-size="12">Tip</text>
+  <text x="1340" y="249" fill="#475569" font-size="13" text-anchor="end">&#x2014;</text>
+
+  <line x1="934" y1="260" x2="1350" y2="260" stroke="#2A2E45" stroke-width="1"/>
+
+  <text x="944" y="282" fill="#E2E8F0" font-size="14" font-weight="700">Total</text>
+  <text x="1340" y="282" fill="#22C55E" font-size="20" font-weight="700" text-anchor="end" filter="url(#glowGreen)">$110.51</text>
+
+  <line x1="934" y1="296" x2="1350" y2="296" stroke="#1E2235" stroke-width="0.5"/>
+
+  <text x="944" y="316" fill="#475569" font-size="12">Guests</text>
+  <text x="1340" y="316" fill="#CBD5E1" font-size="13" text-anchor="end">7</text>
+
+  <text x="944" y="340" fill="#475569" font-size="12">Items</text>
+  <text x="1340" y="340" fill="#CBD5E1" font-size="13" text-anchor="end">7</text>
+
+  <text x="944" y="364" fill="#475569" font-size="12">Primary table</text>
+  <text x="1340" y="364" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">Table 3</text>
+
+  <text x="944" y="388" fill="#475569" font-size="12">Server</text>
+  <text x="1340" y="388" fill="#CBD5E1" font-size="12" text-anchor="end">Sarah W.</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- MERGE SETTINGS CARD                                     -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="572" y="502" width="370" height="196" rx="12" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#shadowMd)"/>
+
+  <!-- Admin: merge_keep_seats, merge_keep_courses, merge_notify_kds, receipt_label_options -->
+  <text x="592" y="526" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.2">MERGE SETTINGS</text>
+  <use href="#adminGear" x="700" y="516" width="14" height="14"/>
 
   <!-- Toggle 1: Keep separate seat assignments -->
-  <text x="592" y="551" fill="#F1F5F9" font-size="13">Keep separate seat assignments</text>
-  <text x="592" y="566" fill="#64748B" font-size="11">Seats 1–4 from T3, seats 5–7 from T4</text>
-  <!-- Toggle ON (amber) -->
-  <rect x="886" y="542" width="40" height="22" rx="11" fill="#F59E0B"/>
-  <circle cx="914" cy="553" r="9" fill="white"/>
+  <text x="592" y="552" fill="#CBD5E1" font-size="13">Keep separate seat assignments</text>
+  <text x="592" y="567" fill="#475569" font-size="10">Seats 1-4 from T3, seats 5-7 from T4</text>
+  <use href="#toggleOn" x="886" y="542" width="40" height="22"/>
 
   <!-- Toggle 2: Keep course history -->
-  <text x="592" y="596" fill="#F1F5F9" font-size="13">Keep course history</text>
-  <rect x="886" y="587" width="40" height="22" rx="11" fill="#F59E0B"/>
-  <circle cx="914" cy="598" r="9" fill="white"/>
+  <text x="592" y="596" fill="#CBD5E1" font-size="13">Keep course history</text>
+  <use href="#toggleOn" x="886" y="587" width="40" height="22"/>
 
   <!-- Toggle 3: Notify kitchen -->
-  <text x="592" y="630" fill="#F1F5F9" font-size="13">Send merge note to KDS</text>
-  <rect x="592" y="638" width="220" height="20" rx="4" fill="#1E2235"/>
-  <text x="601" y="652" fill="#64748B" font-size="11">TABLES MERGED: T3+T4 — bump to all stations</text>
-  <rect x="886" y="621" width="40" height="22" rx="11" fill="#F59E0B"/>
-  <circle cx="914" cy="632" r="9" fill="white"/>
+  <text x="592" y="630" fill="#CBD5E1" font-size="13">Send merge note to KDS</text>
+  <rect x="592" y="638" width="230" height="22" rx="5" fill="#0C0E1A" stroke="#1E2235" stroke-width="0.5"/>
+  <text x="601" y="653" fill="#475569" font-size="10">TABLES MERGED: T3+T4 &#x2014; bump all stations</text>
+  <use href="#toggleOn" x="886" y="625" width="40" height="22"/>
 
-  <!-- Receipt label -->
-  <text x="592" y="676" fill="#F1F5F9" font-size="13">Receipt label</text>
-  <rect x="700" y="663" width="80" height="22" rx="5" fill="#1E2235"/>
-  <rect x="700" y="663" width="80" height="22" rx="5" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="740" y="678" fill="#F59E0B" font-size="12" text-anchor="middle">Table 3</text>
-  <rect x="788" y="663" width="90" height="22" rx="5" fill="#1E2235"/>
-  <rect x="788" y="663" width="90" height="22" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="833" y="678" fill="#94A3B8" font-size="12" text-anchor="middle">Table 3+4</text>
+  <!-- Receipt label selector -->
+  <text x="592" y="682" fill="#CBD5E1" font-size="13">Receipt label</text>
+  <rect x="700" y="668" width="80" height="24" rx="6" fill="#0C0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="740" y="684" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">Table 3</text>
+  <rect x="788" y="668" width="90" height="24" rx="6" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <text x="833" y="684" fill="#64748B" font-size="12" text-anchor="middle">Table 3+4</text>
 
-  <!-- ─── MERGE CONFIRMATION CARD ────────────────────────────── -->
-  <rect x="952" y="502" width="402" height="190" rx="10" fill="#1A1D2E"/>
-  <rect x="952" y="502" width="402" height="190" rx="10" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- MERGE CONFIRMATION CARD                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="952" y="502" width="402" height="196" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadowLg)"/>
 
-  <!-- Amber glow top -->
-  <rect x="952" y="502" width="402" height="44" rx="10" fill="#2A1F00"/>
-  <rect x="952" y="532" width="402" height="14" fill="#2A1F00"/>
+  <!-- Amber glow header -->
+  <rect x="952" y="502" width="402" height="46" rx="12" fill="url(#confirmHeaderGrad)"/>
+  <rect x="952" y="536" width="402" height="12" fill="#2A1F00" opacity="0.6"/>
 
-  <text x="1153" y="530" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">Ready to Merge</text>
+  <!-- Ready to merge label -->
+  <text x="1153" y="532" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="middle">Ready to Merge</text>
 
-  <text x="1153" y="562" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">Tables 3 and 4 → Combined Order at Table 3</text>
-  <text x="1153" y="582" fill="#94A3B8" font-size="12" text-anchor="middle">7 guests · 7 items · $110.51 total</text>
+  <!-- Details -->
+  <text x="1153" y="564" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">Tables 3 and 4 &#x2192; Combined Order at Table 3</text>
+  <text x="1153" y="584" fill="#94A3B8" font-size="12" text-anchor="middle">7 guests &#x2022; 7 items &#x2022; $110.51 total</text>
 
   <!-- Merge button -->
-  <rect x="972" y="598" width="362" height="46" rx="10" fill="#F59E0B"/>
-  <text x="1153" y="626" fill="#0F1117" font-size="16" font-weight="700" text-anchor="middle">Merge Tables</text>
+  <rect x="972" y="598" width="362" height="48" rx="10" fill="url(#amberBtnGrad)" filter="url(#btnGlow)"/>
+  <text x="1153" y="628" fill="#0C0E1A" font-size="16" font-weight="700" text-anchor="middle">Merge Tables</text>
 
   <!-- Cancel button -->
-  <rect x="972" y="652" width="362" height="34" rx="8" fill="#1E2235"/>
-  <rect x="972" y="652" width="362" height="34" rx="8" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="1153" y="674" fill="#94A3B8" font-size="13" text-anchor="middle">Cancel</text>
+  <rect x="972" y="654" width="362" height="36" rx="8" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1153" y="677" fill="#64748B" font-size="13" text-anchor="middle">Cancel</text>
 
-  <!-- ─── SPLIT BACK SECTION (collapsed) ───────────────────── -->
-  <rect x="572" y="702" width="782" height="68" rx="10" fill="#1A1D2E"/>
-  <rect x="572" y="702" width="782" height="68" rx="10" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SPLIT BACK SECTION (collapsed)                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="572" y="708" width="782" height="68" rx="12" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#shadowSm)"/>
 
-  <!-- Collapse header -->
-  <text x="592" y="724" fill="#F1F5F9" font-size="13" font-weight="700">Split Back — Reverse a merge</text>
-  <text x="592" y="742" fill="#64748B" font-size="12">Split a merged table back into separate checks by seat group or by item. No items voided.</text>
+  <text x="592" y="732" fill="#E2E8F0" font-size="13" font-weight="700">Split Back</text>
+  <text x="668" y="732" fill="#475569" font-size="13">&#x2014; Reverse a merge</text>
+  <text x="592" y="750" fill="#475569" font-size="11">Split a merged table back into separate checks by seat group or by item. No items voided.</text>
+
   <!-- Chevron -->
-  <text x="1334" y="740" fill="#64748B" font-size="18" text-anchor="end">›</text>
+  <text x="1338" y="744" fill="#475569" font-size="20" text-anchor="end">&#x203A;</text>
 
   <!-- Split back button (disabled) -->
-  <rect x="1188" y="714" width="134" height="30" rx="7" fill="#1E2235"/>
-  <rect x="1188" y="714" width="134" height="30" rx="7" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="1255" y="733" fill="#64748B" font-size="12" text-anchor="middle">Split Back (inactive)</text>
-
-  <!-- ─── TABLE TRANSFER SECTION (collapsed) ───────────────── -->
-  <rect x="572" y="780" width="782" height="64" rx="10" fill="#1A1D2E"/>
-  <rect x="572" y="780" width="782" height="64" rx="10" fill="none" stroke="#2D3148" stroke-width="1"/>
-
-  <text x="592" y="802" fill="#F1F5F9" font-size="13" font-weight="700">Transfer Order — Move entire order to different table</text>
-  <!-- T5 destination chip -->
-  <rect x="592" y="812" width="82" height="22" rx="5" fill="#0D2010"/>
-  <rect x="592" y="812" width="82" height="22" rx="5" fill="none" stroke="#10B981" stroke-width="1"/>
-  <circle cx="608" cy="823" r="5" fill="#10B981"/>
-  <text x="634" y="828" fill="#10B981" font-size="11" font-weight="600">T5 available</text>
-  <text x="684" y="828" fill="#64748B" font-size="12">· Select destination table on floor plan</text>
-  <text x="1334" y="820" fill="#64748B" font-size="18" text-anchor="end">›</text>
+  <rect x="1188" y="720" width="134" height="30" rx="8" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1255" y="740" fill="#475569" font-size="11" text-anchor="middle">Split Back (inactive)</text>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- WORKFLOW INTEGRATION BANNER (full width, bottom)        -->
+  <!-- TABLE TRANSFER SECTION (collapsed)                      -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <rect x="0" y="854" width="1366" height="170" fill="#1A1D2E"/>
-  <rect x="0" y="854" width="1366" height="2" fill="#F59E0B" opacity="0.6"/>
-  <rect x="0" y="854" width="6" height="170" fill="#F59E0B"/>
+  <rect x="572" y="786" width="782" height="60" rx="12" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#shadowSm)"/>
 
-  <text x="22" y="876" fill="#F59E0B" font-size="11" font-weight="700" letter-spacing="1">DB INTEGRATION</text>
+  <text x="592" y="810" fill="#E2E8F0" font-size="13" font-weight="700">Transfer Order</text>
+  <text x="700" y="810" fill="#475569" font-size="13">&#x2014; Move entire order to different table</text>
 
-  <text x="22" y="898" fill="#94A3B8" font-size="12">Merge: pos_tables.merged_from int[] tracks source tables. pos_orders.table_id updated to primary table. pos_table_merge_log records event.</text>
-  <text x="22" y="918" fill="#94A3B8" font-size="12">KDS receives merge notification bump. Merged table shown as 'T3+T4' on floor map with amber double-border.</text>
-  <text x="22" y="940" fill="#64748B" font-size="12">Split back: new pos_orders created per original table, items split by source tag. No items are voided — pure reassignment via</text>
-  <text x="22" y="958" fill="#64748B" font-size="12">UPDATE pos_order_items SET table_id = ... audit logged. Seat assignments preserved via pos_order_items.seat_number column.</text>
+  <!-- T5 chip -->
+  <rect x="592" y="820" width="86" height="22" rx="6" fill="#0A1A10" stroke="#22C55E" stroke-width="0.8"/>
+  <circle cx="608" cy="831" r="4" fill="#22C55E"/>
+  <text x="636" y="835" fill="#22C55E" font-size="10" font-weight="600">T5 available</text>
+  <text x="688" y="835" fill="#475569" font-size="11">&#x2022; Select destination on floor plan</text>
+  <text x="1338" y="828" fill="#475569" font-size="20" text-anchor="end">&#x203A;</text>
 
-  <!-- Merge flow pills -->
-  <rect x="22" y="968" width="100" height="22" rx="4" fill="#2A1F00"/>
-  <rect x="22" y="968" width="100" height="22" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="72" y="983" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">pos_orders</text>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- DB INTEGRATION BANNER (full width, bottom)              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="0" y="856" width="1366" height="168" fill="url(#bannerGrad)"/>
+  <!-- Amber top accent line -->
+  <rect x="0" y="856" width="1366" height="2" fill="url(#amberGrad)" opacity="0.5"/>
+  <!-- Left accent bar -->
+  <rect x="0" y="856" width="4" height="168" fill="url(#amberGrad)"/>
 
-  <text x="130" y="983" fill="#64748B" font-size="13">→</text>
+  <text x="22" y="880" fill="#F59E0B" font-size="10" font-weight="700" letter-spacing="1.5">DB INTEGRATION</text>
 
-  <rect x="144" y="968" width="120" height="22" rx="4" fill="#2A1F00"/>
-  <rect x="144" y="968" width="120" height="22" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="204" y="983" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">pos_order_items</text>
+  <text x="22" y="900" fill="#94A3B8" font-size="11">Merge: pos_tables.merged_from int[] tracks source tables. pos_orders.table_id updated to primary table. pos_table_merge_log records event.</text>
+  <text x="22" y="918" fill="#94A3B8" font-size="11">KDS receives merge notification bump. Merged table shown as "T3+T4" on floor map with amber double-border.</text>
+  <text x="22" y="938" fill="#475569" font-size="11">Split back: new pos_orders created per original table, items split by source tag. No items voided &#x2014; pure reassignment via</text>
+  <text x="22" y="956" fill="#475569" font-size="11">UPDATE pos_order_items SET table_id = ... audit logged. Seat assignments preserved via pos_order_items.seat_number column.</text>
 
-  <text x="272" y="983" fill="#64748B" font-size="13">→</text>
+  <!-- Data flow pills -->
+  <g transform="translate(0, 0)">
+    <rect x="22" y="968" width="100" height="24" rx="6" fill="#1A1500" stroke="#F59E0B" stroke-width="0.8"/>
+    <text x="72" y="984" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">pos_orders</text>
 
-  <rect x="286" y="968" width="140" height="22" rx="4" fill="#2A1F00"/>
-  <rect x="286" y="968" width="140" height="22" rx="4" fill="none" stroke="#F59E0B" stroke-width="1"/>
-  <text x="356" y="983" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">pos_table_merge_log</text>
+    <text x="130" y="984" fill="#475569" font-size="12">&#x2192;</text>
 
-  <text x="434" y="983" fill="#64748B" font-size="13">→</text>
+    <rect x="144" y="968" width="122" height="24" rx="6" fill="#1A1500" stroke="#F59E0B" stroke-width="0.8"/>
+    <text x="205" y="984" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">pos_order_items</text>
 
-  <rect x="448" y="968" width="80" height="22" rx="4" fill="#0D1F10"/>
-  <rect x="448" y="968" width="80" height="22" rx="4" fill="none" stroke="#10B981" stroke-width="1"/>
-  <text x="488" y="983" fill="#10B981" font-size="11" font-weight="600" text-anchor="middle">KDS bump</text>
+    <text x="274" y="984" fill="#475569" font-size="12">&#x2192;</text>
 
-  <text x="536" y="983" fill="#64748B" font-size="13">→</text>
+    <rect x="288" y="968" width="144" height="24" rx="6" fill="#1A1500" stroke="#F59E0B" stroke-width="0.8"/>
+    <text x="360" y="984" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">pos_table_merge_log</text>
 
-  <rect x="550" y="968" width="106" height="22" rx="4" fill="#0D1F10"/>
-  <rect x="550" y="968" width="106" height="22" rx="4" fill="none" stroke="#10B981" stroke-width="1"/>
-  <text x="603" y="983" fill="#10B981" font-size="11" font-weight="600" text-anchor="middle">Floor map update</text>
+    <text x="440" y="984" fill="#475569" font-size="12">&#x2192;</text>
 
-  <!-- Audit log pill -->
-  <rect x="1200" y="968" width="148" height="22" rx="4" fill="#101828"/>
-  <rect x="1200" y="968" width="148" height="22" rx="4" fill="none" stroke="#3B82F6" stroke-width="1"/>
-  <text x="1274" y="983" fill="#3B82F6" font-size="11" font-weight="600" text-anchor="middle">audit log: immutable</text>
+    <rect x="454" y="968" width="84" height="24" rx="6" fill="#0A1A10" stroke="#22C55E" stroke-width="0.8"/>
+    <text x="496" y="984" fill="#22C55E" font-size="10" font-weight="600" text-anchor="middle">KDS bump</text>
+
+    <text x="546" y="984" fill="#475569" font-size="12">&#x2192;</text>
+
+    <rect x="560" y="968" width="112" height="24" rx="6" fill="#0A1A10" stroke="#22C55E" stroke-width="0.8"/>
+    <text x="616" y="984" fill="#22C55E" font-size="10" font-weight="600" text-anchor="middle">Floor map update</text>
+
+    <!-- Audit log pill -->
+    <rect x="1198" y="968" width="152" height="24" rx="6" fill="#0C1424" stroke="#60A5FA" stroke-width="0.8"/>
+    <text x="1274" y="984" fill="#60A5FA" font-size="10" font-weight="600" text-anchor="middle">audit log: immutable</text>
+  </g>
 
   <!-- Version/timestamp -->
-  <text x="1344" y="1018" fill="#2D3148" font-size="10" text-anchor="end">Synalux POS · Table Merge/Split · v2.4</text>
+  <text x="1344" y="1016" fill="#1E2235" font-size="10" font-weight="500" text-anchor="end">Synalux POS &#x2022; Table Merge/Split &#x2022; v2.4</text>
 
 </svg>

@@ -1,210 +1,450 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
-  <rect width="1440" height="900" fill="#0F1117"/>
+<svg role="img" aria-labelledby="title-settings_equipment-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 
-  <!-- Left Nav Sidebar -->
-  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
-  <text x="16" y="67" font-size="12" fill="#8B92A5">Restaurant Info</text>
-  <text x="16" y="103" font-size="12" fill="#8B92A5">Menu Builder</text>
-  <text x="16" y="139" font-size="12" fill="#8B92A5">Taxes</text>
-  <text x="16" y="175" font-size="12" fill="#8B92A5">Employees</text>
-  <rect x="0" y="188" width="200" height="36" fill="#1E2240" rx="4"/>
+  <title id="title-settings_equipment-svg">Synalux POS — equipment</title>
+  <desc>Synalux POS mockup screen for equipment. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- ============================================================ -->
+    <!-- REUSABLE DEFINITIONS                                          -->
+    <!-- ============================================================ -->
+
+    <!-- Gradient: Header bar -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#181B30"/>
+    </linearGradient>
+
+    <!-- Gradient: Amber button -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Gradient: Card surface -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161929"/>
+    </linearGradient>
+
+    <!-- Drop shadow for cards -->
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Drop shadow for buttons -->
+    <filter id="btnShadow" x="-4%" y="-8%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- SYMBOL: Admin gear icon (editable field indicator) -->
+    <!-- DB source: pos_config / admin-editable field indicator -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <path d="M7 4.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM5.5 7a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="#F59E0B"/>
+      <path d="M7 0l1.09 2.08 2.28-.47.47 2.28L13 5l-1.09 2 1.09 2-2.12 1.11-.47 2.28-2.28-.47L7 14l-1.09-2.08-2.28.47-.47-2.28L1 9l1.09-2L1 5l2.12-1.11.47-2.28 2.28.47z" fill="none" stroke="#F59E0B" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- SYMBOL: Online status badge -->
+    <symbol id="statusOnline" viewBox="0 0 60 18">
+      <rect width="60" height="18" rx="9" fill="#065F46"/>
+      <text x="12" y="13" font-size="9" fill="#6EE7B7" font-family="-apple-system,sans-serif">&#9679; Online</text>
+    </symbol>
+
+    <!-- SYMBOL: Offline status badge -->
+    <symbol id="statusOffline" viewBox="0 0 60 18">
+      <rect width="60" height="18" rx="9" fill="#374151"/>
+      <text x="6" y="13" font-size="9" fill="#94A3B8" font-family="-apple-system,sans-serif">&#9675; Offline</text>
+    </symbol>
+
+    <!-- SYMBOL: Ready status badge -->
+    <symbol id="statusReady" viewBox="0 0 60 18">
+      <rect width="60" height="18" rx="9" fill="#065F46"/>
+      <text x="12" y="13" font-size="9" fill="#6EE7B7" font-family="-apple-system,sans-serif">&#9679; Ready</text>
+    </symbol>
+
+    <!-- SYMBOL: Live status badge -->
+    <symbol id="statusLive" viewBox="0 0 60 18">
+      <rect width="60" height="18" rx="9" fill="#065F46"/>
+      <text x="16" y="13" font-size="9" fill="#6EE7B7" font-family="-apple-system,sans-serif">&#9679; Live</text>
+    </symbol>
+
+    <!-- SYMBOL: Detected status badge -->
+    <symbol id="statusDetected" viewBox="0 0 70 18">
+      <rect width="70" height="18" rx="9" fill="#065F46"/>
+      <text x="6" y="13" font-size="9" fill="#6EE7B7" font-family="-apple-system,sans-serif">&#9679; Detected</text>
+    </symbol>
+
+    <!-- SYMBOL: Paired status badge -->
+    <symbol id="statusPaired" viewBox="0 0 60 18">
+      <rect width="60" height="18" rx="9" fill="#065F46"/>
+      <text x="10" y="13" font-size="9" fill="#6EE7B7" font-family="-apple-system,sans-serif">&#9679; Paired</text>
+    </symbol>
+
+    <!-- SYMBOL: Configure button -->
+    <symbol id="btnConfigure" viewBox="0 0 80 26">
+      <rect width="80" height="26" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+      <text x="16" y="17" font-size="11" fill="#CBD5E1" font-family="-apple-system,sans-serif">Configure</text>
+    </symbol>
+
+    <!-- SYMBOL: Small action button -->
+    <symbol id="btnSmallAction" viewBox="0 0 60 24">
+      <rect width="60" height="24" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+    </symbol>
+
+    <!-- SYMBOL: Device icon placeholder (iPad) -->
+    <symbol id="deviceiPad" viewBox="0 0 50 66">
+      <rect width="50" height="66" rx="6" fill="#0C0E1A"/>
+      <rect x="12" y="8" width="26" height="42" rx="2" fill="#1A1D2E"/>
+      <circle cx="25" cy="58" r="3" fill="#2A2E45"/>
+    </symbol>
+
+    <!-- SYMBOL: Printer icon placeholder -->
+    <symbol id="devicePrinter" viewBox="0 0 40 40">
+      <rect x="4" y="14" width="32" height="18" rx="3" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+      <rect x="10" y="4" width="20" height="12" rx="2" fill="#0C0E1A"/>
+      <rect x="12" y="30" width="16" height="8" rx="1" fill="#0C0E1A"/>
+    </symbol>
+
+    <!-- SYMBOL: KDS screen icon -->
+    <symbol id="deviceKDS" viewBox="0 0 40 36">
+      <rect x="2" y="2" width="36" height="24" rx="3" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+      <rect x="14" y="26" width="12" height="4" fill="#374151"/>
+      <rect x="8" y="30" width="24" height="3" rx="1" fill="#374151"/>
+    </symbol>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- BACKGROUND — #0C0E1A per design spec                         -->
+  <!-- ============================================================ -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
+
+  <!-- ============================================================ -->
+  <!-- LEFT SIDEBAR — Navigation                                     -->
+  <!-- DB source: pos_admin_nav (static menu structure)              -->
+  <!-- ============================================================ -->
+  <rect x="0" y="0" width="210" height="1024" fill="#11132A"/>
+  <rect x="210" y="0" width="1" height="1024" fill="#2A2E45"/>
+
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">&#9881; Back Office</text>
+  <rect x="0" y="40" width="210" height="1" fill="#2A2E45"/>
+
+  <text x="16" y="67" font-size="12" fill="#94A3B8">Restaurant Info</text>
+  <text x="16" y="103" font-size="12" fill="#94A3B8">Menu Builder</text>
+  <text x="16" y="139" font-size="12" fill="#94A3B8">Taxes</text>
+  <text x="16" y="175" font-size="12" fill="#94A3B8">Employees</text>
+
+  <!-- Active: Equipment -->
+  <rect x="0" y="188" width="210" height="36" fill="#1E2235" rx="4"/>
   <rect x="0" y="188" width="3" height="36" fill="#F59E0B"/>
   <text x="16" y="211" font-size="12" font-weight="600" fill="#F59E0B">Equipment</text>
-  <text x="16" y="247" font-size="12" fill="#8B92A5">Floor Plans</text>
-  <text x="16" y="283" font-size="12" fill="#8B92A5">Payments</text>
-  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
-  <text x="16" y="355" font-size="12" fill="#8B92A5">Advantage Prog.</text>
-  <text x="16" y="391" font-size="12" fill="#8B92A5">Revenue Centers</text>
-  <text x="16" y="427" font-size="12" fill="#8B92A5">Integrations</text>
 
-  <!-- Header -->
-  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
-  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Equipment &amp; Hardware</text>
-  <text x="220" y="50" font-size="11" fill="#8B92A5">Printers · KDS stations · Cash drawers · Card terminals · Barcode &amp; DL scanners · All stored in pos_devices</text>
-  <rect x="1280" y="12" width="140" height="32" rx="6" fill="#F59E0B"/>
-  <text x="1298" y="32" font-size="12" font-weight="600" fill="#000000">+ Add Device</text>
+  <text x="16" y="247" font-size="12" fill="#94A3B8">Floor Plans</text>
+  <text x="16" y="283" font-size="12" fill="#94A3B8">Payments</text>
+  <text x="16" y="319" font-size="12" fill="#94A3B8">Reports</text>
+  <text x="16" y="355" font-size="12" fill="#94A3B8">Advantage Prog.</text>
+  <text x="16" y="391" font-size="12" fill="#94A3B8">Revenue Centers</text>
+  <text x="16" y="427" font-size="12" fill="#94A3B8">Integrations</text>
 
-  <!-- ===== Section: Register / iPad Terminals ===== -->
-  <text x="220" y="80" font-size="13" font-weight="700" fill="#FFFFFF">Register Terminals (iPad)</text>
-  <text x="220" y="94" font-size="10" fill="#8B92A5">Each terminal = one pos_devices row · name/station_id from DB</text>
+  <!-- ============================================================ -->
+  <!-- HEADER BAR                                                     -->
+  <!-- DB source: pos_devices (page title)                           -->
+  <!-- ============================================================ -->
+  <rect x="211" y="0" width="1155" height="56" fill="url(#headerGrad)"/>
+  <text x="228" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Equipment &amp; Hardware</text>
+  <text x="228" y="50" font-size="11" fill="#94A3B8">Printers &#183; KDS stations &#183; Cash drawers &#183; Card terminals &#183; Scanners</text>
+  <!-- DB source annotation -->
+  <text x="640" y="50" font-size="10" fill="#475569" font-style="italic">&#8594; pos_devices</text>
 
-  <!-- Terminal 1 -->
-  <rect x="220" y="100" width="374" height="110" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <rect x="236" y="116" width="50" height="66" rx="6" fill="#0F1117"/>
-  <text x="244" y="155" font-size="28">📱</text>
-  <text x="300" y="132" font-size="13" font-weight="600" fill="#FFFFFF">Front Register</text>
-  <text x="300" y="148" font-size="11" fill="#8B92A5">station_id: POS-01 · iPad Pro 13"</text>
-  <rect x="300" y="156" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="312" y="169" font-size="9" fill="#6EE7B7">● Online</text>
-  <text x="300" y="188" font-size="10" fill="#6B7280">iOS 18.3 · WKWebView bridge v2.4</text>
-  <rect x="500" y="108" width="80" height="26" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="516" y="125" font-size="11" fill="#D1D5DB">Configure</text>
+  <!-- + Add Device button (admin action) -->
+  <rect x="1210" y="12" width="140" height="32" rx="6" fill="url(#amberBtnGrad)" filter="url(#btnShadow)"/>
+  <text x="1236" y="32" font-size="12" font-weight="600" fill="#000000">+ Add Device</text>
+  <use href="#adminGear" x="1336" y="18" width="14" height="14"/>
 
-  <!-- Terminal 2 -->
-  <rect x="606" y="100" width="374" height="110" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <rect x="622" y="116" width="50" height="66" rx="6" fill="#0F1117"/>
-  <text x="630" y="155" font-size="28">📱</text>
-  <text x="686" y="132" font-size="13" font-weight="600" fill="#FFFFFF">Bar Terminal</text>
-  <text x="686" y="148" font-size="11" fill="#8B92A5">station_id: POS-02 · iPad Air 11"</text>
-  <rect x="686" y="156" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="698" y="169" font-size="9" fill="#6EE7B7">● Online</text>
-  <text x="686" y="188" font-size="10" fill="#6B7280">iOS 17.6 · WKWebView bridge v2.4</text>
-  <rect x="886" y="108" width="80" height="26" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="902" y="125" font-size="11" fill="#D1D5DB">Configure</text>
+  <!-- ============================================================ -->
+  <!-- SECTION: Register / iPad Terminals                            -->
+  <!-- DB source: pos_devices WHERE type='terminal'                  -->
+  <!-- ============================================================ -->
+  <text x="228" y="80" font-size="13" font-weight="700" fill="#FFFFFF">Register Terminals (iPad)</text>
+  <text x="228" y="94" font-size="10" fill="#94A3B8">Each terminal = one pos_devices row &#183; name/station_id from DB</text>
 
-  <!-- Terminal 3 - offline -->
-  <rect x="992" y="100" width="374" height="110" rx="8" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <rect x="1008" y="116" width="50" height="66" rx="6" fill="#0F1117" opacity="0.5"/>
-  <text x="1016" y="155" font-size="28" opacity="0.4">📱</text>
-  <text x="1072" y="132" font-size="13" font-weight="600" fill="#6B7280">Patio Terminal</text>
-  <text x="1072" y="148" font-size="11" fill="#6B7280">station_id: POS-03 · iPad 10th Gen</text>
-  <rect x="1072" y="156" width="60" height="18" rx="9" fill="#374151"/>
-  <text x="1078" y="169" font-size="9" fill="#9CA3AF">○ Offline</text>
-  <text x="1072" y="188" font-size="10" fill="#4B5563">Last seen: 4h ago</text>
-  <rect x="1272" y="108" width="80" height="26" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1288" y="125" font-size="11" fill="#D1D5DB">Configure</text>
+  <!-- Terminal 1: Front Register (online) -->
+  <!-- DB source: pos_devices WHERE station_id='POS-01' -->
+  <rect x="228" y="100" width="296" height="110" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceiPad" x="244" y="116" width="50" height="66"/>
+  <!-- pos_devices.name (editable) -->
+  <text x="306" y="132" font-size="13" font-weight="600" fill="#FFFFFF">Front Register</text>
+  <use href="#adminGear" x="410" y="123" width="12" height="12"/>
+  <!-- pos_devices.station_id, model -->
+  <text x="306" y="148" font-size="11" fill="#94A3B8">station_id: POS-01 &#183; iPad Pro 13"</text>
+  <use href="#statusOnline" x="306" y="156" width="60" height="18"/>
+  <text x="306" y="188" font-size="10" fill="#64748B">iOS 18.3 &#183; WKWebView bridge v2.4</text>
+  <use href="#btnConfigure" x="440" y="108" width="80" height="26"/>
 
-  <!-- ===== Section: Receipt Printers ===== -->
-  <text x="220" y="238" font-size="13" font-weight="700" fill="#FFFFFF">Receipt Printers</text>
+  <!-- Terminal 2: Bar Terminal (online) -->
+  <!-- DB source: pos_devices WHERE station_id='POS-02' -->
+  <rect x="536" y="100" width="296" height="110" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceiPad" x="552" y="116" width="50" height="66"/>
+  <text x="614" y="132" font-size="13" font-weight="600" fill="#FFFFFF">Bar Terminal</text>
+  <use href="#adminGear" x="704" y="123" width="12" height="12"/>
+  <text x="614" y="148" font-size="11" fill="#94A3B8">station_id: POS-02 &#183; iPad Air 11"</text>
+  <use href="#statusOnline" x="614" y="156" width="60" height="18"/>
+  <text x="614" y="188" font-size="10" fill="#64748B">iOS 17.6 &#183; WKWebView bridge v2.4</text>
+  <use href="#btnConfigure" x="748" y="108" width="80" height="26"/>
 
-  <!-- Printer 1 -->
-  <rect x="220" y="250" width="360" height="120" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="244" y="282" font-size="32">🖨</text>
-  <text x="300" y="278" font-size="13" font-weight="600" fill="#FFFFFF">Front Counter Printer</text>
-  <text x="300" y="296" font-size="11" fill="#8B92A5">Star TSP143IV · LAN · 192.168.1.10</text>
-  <rect x="300" y="306" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="312" y="319" font-size="9" fill="#6EE7B7">● Ready</text>
-  <text x="300" y="340" font-size="10" fill="#6B7280">Paper: 75% · Cuts: 4,821 today</text>
-  <text x="300" y="356" font-size="10" fill="#6B7280">Assigned to: POS-01, POS-02</text>
-  <rect x="450" y="258" width="60" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="460" y="274" font-size="10" fill="#D1D5DB">Test Print</text>
-  <rect x="450" y="288" width="60" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="462" y="304" font-size="10" fill="#D1D5DB">Edit</text>
+  <!-- Terminal 3: Patio Terminal (offline) -->
+  <!-- DB source: pos_devices WHERE station_id='POS-03' -->
+  <rect x="844" y="100" width="296" height="110" rx="8" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceiPad" x="860" y="116" width="50" height="66" opacity="0.4"/>
+  <text x="922" y="132" font-size="13" font-weight="600" fill="#64748B">Patio Terminal</text>
+  <use href="#adminGear" x="1028" y="123" width="12" height="12"/>
+  <text x="922" y="148" font-size="11" fill="#64748B">station_id: POS-03 &#183; iPad 10th Gen</text>
+  <use href="#statusOffline" x="922" y="156" width="60" height="18"/>
+  <text x="922" y="188" font-size="10" fill="#475569">Last seen: 4h ago</text>
+  <use href="#btnConfigure" x="1056" y="108" width="80" height="26"/>
 
-  <!-- Printer 2 - Kitchen -->
-  <rect x="596" y="250" width="360" height="120" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="620" y="282" font-size="32">🖨</text>
+  <!-- ============================================================ -->
+  <!-- SECTION: Receipt Printers                                     -->
+  <!-- DB source: pos_devices WHERE type='printer'                   -->
+  <!-- ============================================================ -->
+  <text x="228" y="238" font-size="13" font-weight="700" fill="#FFFFFF">Receipt Printers</text>
+
+  <!-- Printer 1: Front Counter -->
+  <!-- DB source: pos_devices WHERE name='Front Counter Printer' -->
+  <rect x="228" y="250" width="360" height="120" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#devicePrinter" x="248" y="268" width="40" height="40"/>
+  <!-- pos_devices.name (editable) -->
+  <text x="304" y="278" font-size="13" font-weight="600" fill="#FFFFFF">Front Counter Printer</text>
+  <use href="#adminGear" x="460" y="269" width="12" height="12"/>
+  <!-- pos_devices.model, connection, ip_address -->
+  <text x="304" y="296" font-size="11" fill="#94A3B8">Star TSP143IV &#183; LAN &#183; 192.168.1.10</text>
+  <use href="#adminGear" x="506" y="287" width="10" height="10"/>
+  <use href="#statusReady" x="304" y="306" width="60" height="18"/>
+  <text x="304" y="340" font-size="10" fill="#64748B">Paper: 75% &#183; Cuts: 4,821 today</text>
+  <!-- pos_devices.assigned_stations -->
+  <text x="304" y="356" font-size="10" fill="#64748B">Assigned to: POS-01, POS-02</text>
+  <use href="#adminGear" x="440" y="347" width="10" height="10"/>
+  <!-- Action buttons -->
+  <use href="#btnSmallAction" x="510" y="258" width="60" height="24"/>
+  <text x="520" y="274" font-size="10" fill="#CBD5E1">Test Print</text>
+  <use href="#btnSmallAction" x="510" y="288" width="60" height="24"/>
+  <text x="528" y="304" font-size="10" fill="#CBD5E1">Edit</text>
+
+  <!-- Printer 2: Kitchen -->
+  <!-- DB source: pos_devices WHERE name='Kitchen Printer' -->
+  <rect x="600" y="250" width="360" height="120" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#devicePrinter" x="620" y="268" width="40" height="40"/>
   <text x="676" y="278" font-size="13" font-weight="600" fill="#FFFFFF">Kitchen Printer</text>
-  <text x="676" y="296" font-size="11" fill="#8B92A5">Epson TM-T88VII · LAN · 192.168.1.11</text>
-  <rect x="676" y="306" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="688" y="319" font-size="9" fill="#6EE7B7">● Ready</text>
-  <text x="676" y="340" font-size="10" fill="#6B7280">Paper: 40% · Print: 287 tickets today</text>
-  <text x="676" y="356" font-size="10" fill="#F59E0B">⚠ Low paper — reorder soon</text>
-  <rect x="826" y="258" width="60" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="836" y="274" font-size="10" fill="#D1D5DB">Test Print</text>
-  <rect x="826" y="288" width="60" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="838" y="304" font-size="10" fill="#D1D5DB">Edit</text>
+  <use href="#adminGear" x="790" y="269" width="12" height="12"/>
+  <text x="676" y="296" font-size="11" fill="#94A3B8">Epson TM-T88VII &#183; LAN &#183; 192.168.1.11</text>
+  <use href="#adminGear" x="880" y="287" width="10" height="10"/>
+  <use href="#statusReady" x="676" y="306" width="60" height="18"/>
+  <text x="676" y="340" font-size="10" fill="#64748B">Paper: 40% &#183; Print: 287 tickets today</text>
+  <!-- Low paper warning -->
+  <text x="676" y="356" font-size="10" fill="#F59E0B">&#9888; Low paper &#8212; reorder soon</text>
+  <use href="#btnSmallAction" x="882" y="258" width="60" height="24"/>
+  <text x="892" y="274" font-size="10" fill="#CBD5E1">Test Print</text>
+  <use href="#btnSmallAction" x="882" y="288" width="60" height="24"/>
+  <text x="900" y="304" font-size="10" fill="#CBD5E1">Edit</text>
 
-  <!-- ===== Section: KDS Screens ===== -->
-  <text x="220" y="398" font-size="13" font-weight="700" fill="#FFFFFF">KDS Screens (Kitchen Display)</text>
+  <!-- ============================================================ -->
+  <!-- SECTION: KDS Screens                                          -->
+  <!-- DB source: pos_devices WHERE type='kds'                       -->
+  <!-- ============================================================ -->
+  <text x="228" y="398" font-size="13" font-weight="700" fill="#FFFFFF">KDS Screens (Kitchen Display)</text>
 
-  <!-- KDS 1 - Grill -->
-  <rect x="220" y="410" width="280" height="120" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="244" y="442" font-size="30">🖥</text>
-  <text x="295" y="438" font-size="13" font-weight="600" fill="#FFFFFF">Grill Station</text>
-  <text x="295" y="456" font-size="10" fill="#8B92A5">kds_id: KDS-01 · 27" Samsung</text>
-  <rect x="295" y="464" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="307" y="477" font-size="9" fill="#6EE7B7">● Live</text>
-  <text x="295" y="498" font-size="10" fill="#6B7280">Routes: GRILL tag · 8 tickets open</text>
-  <text x="295" y="514" font-size="10" fill="#6B7280">Avg time: 9m 34s</text>
+  <!-- KDS 1: Grill Station -->
+  <!-- DB source: pos_devices WHERE kds_id='KDS-01' -->
+  <rect x="228" y="410" width="280" height="120" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceKDS" x="248" y="426" width="40" height="36"/>
+  <text x="300" y="438" font-size="13" font-weight="600" fill="#FFFFFF">Grill Station</text>
+  <use href="#adminGear" x="400" y="429" width="12" height="12"/>
+  <!-- pos_devices.kds_id, model -->
+  <text x="300" y="456" font-size="10" fill="#94A3B8">kds_id: KDS-01 &#183; 27" Samsung</text>
+  <use href="#statusLive" x="300" y="464" width="60" height="18"/>
+  <!-- pos_devices.route_tags -->
+  <text x="300" y="498" font-size="10" fill="#64748B">Routes: GRILL tag &#183; 8 tickets open</text>
+  <use href="#adminGear" x="448" y="489" width="10" height="10"/>
+  <text x="300" y="514" font-size="10" fill="#64748B">Avg time: 9m 34s</text>
 
-  <!-- KDS 2 - Fryer -->
-  <rect x="514" y="410" width="280" height="120" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="538" y="442" font-size="30">🖥</text>
-  <text x="589" y="438" font-size="13" font-weight="600" fill="#FFFFFF">Fryer Station</text>
-  <text x="589" y="456" font-size="10" fill="#8B92A5">kds_id: KDS-02 · 24" LG</text>
-  <rect x="589" y="464" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="601" y="477" font-size="9" fill="#6EE7B7">● Live</text>
-  <text x="589" y="498" font-size="10" fill="#6B7280">Routes: FRYER tag · 5 tickets open</text>
-  <text x="589" y="514" font-size="10" fill="#6B7280">Avg time: 6m 12s</text>
+  <!-- KDS 2: Fryer Station -->
+  <!-- DB source: pos_devices WHERE kds_id='KDS-02' -->
+  <rect x="520" y="410" width="280" height="120" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceKDS" x="540" y="426" width="40" height="36"/>
+  <text x="592" y="438" font-size="13" font-weight="600" fill="#FFFFFF">Fryer Station</text>
+  <use href="#adminGear" x="692" y="429" width="12" height="12"/>
+  <text x="592" y="456" font-size="10" fill="#94A3B8">kds_id: KDS-02 &#183; 24" LG</text>
+  <use href="#statusLive" x="592" y="464" width="60" height="18"/>
+  <text x="592" y="498" font-size="10" fill="#64748B">Routes: FRYER tag &#183; 5 tickets open</text>
+  <use href="#adminGear" x="742" y="489" width="10" height="10"/>
+  <text x="592" y="514" font-size="10" fill="#64748B">Avg time: 6m 12s</text>
 
-  <!-- KDS 3 - Expo -->
-  <rect x="808" y="410" width="280" height="120" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="832" y="442" font-size="30">🖥</text>
-  <text x="883" y="438" font-size="13" font-weight="600" fill="#FFFFFF">Expediter (Expo)</text>
-  <text x="883" y="456" font-size="10" fill="#8B92A5">kds_id: KDS-03 · 32" Samsung</text>
-  <rect x="883" y="464" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="895" y="477" font-size="9" fill="#6EE7B7">● Live</text>
-  <text x="883" y="498" font-size="10" fill="#6B7280">Routes: all stations (expo view)</text>
-  <text x="883" y="514" font-size="10" fill="#6B7280">Shows READY items for pickup</text>
+  <!-- KDS 3: Expo -->
+  <!-- DB source: pos_devices WHERE kds_id='KDS-03' -->
+  <rect x="812" y="410" width="280" height="120" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceKDS" x="832" y="426" width="40" height="36"/>
+  <text x="884" y="438" font-size="13" font-weight="600" fill="#FFFFFF">Expediter (Expo)</text>
+  <use href="#adminGear" x="1002" y="429" width="12" height="12"/>
+  <text x="884" y="456" font-size="10" fill="#94A3B8">kds_id: KDS-03 &#183; 32" Samsung</text>
+  <use href="#statusLive" x="884" y="464" width="60" height="18"/>
+  <text x="884" y="498" font-size="10" fill="#64748B">Routes: all stations (expo view)</text>
+  <use href="#adminGear" x="1036" y="489" width="10" height="10"/>
+  <text x="884" y="514" font-size="10" fill="#64748B">Shows READY items for pickup</text>
 
-  <!-- ===== Section: Cash Drawers ===== -->
-  <text x="220" y="558" font-size="13" font-weight="700" fill="#FFFFFF">Cash Drawers</text>
+  <!-- ============================================================ -->
+  <!-- SECTION: Cash Drawers                                         -->
+  <!-- DB source: pos_devices WHERE type='cash_drawer'               -->
+  <!-- ============================================================ -->
+  <text x="228" y="558" font-size="13" font-weight="700" fill="#FFFFFF">Cash Drawers</text>
 
-  <rect x="220" y="570" width="280" height="100" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="244" y="600" font-size="28">💵</text>
-  <text x="294" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Front Drawer</text>
-  <text x="294" y="614" font-size="10" fill="#8B92A5">APG Vasario · Connected via printer kick</text>
-  <text x="294" y="630" font-size="10" fill="#8B92A5">Assigned: POS-01 (Front Printer)</text>
-  <rect x="294" y="642" width="70" height="18" rx="9" fill="#065F46"/>
-  <text x="306" y="655" font-size="9" fill="#6EE7B7">● Detected</text>
+  <!-- Drawer 1: Front -->
+  <!-- DB source: pos_devices WHERE name='Front Drawer' -->
+  <rect x="228" y="570" width="280" height="100" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="248" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Front Drawer</text>
+  <use href="#adminGear" x="360" y="587" width="12" height="12"/>
+  <!-- pos_devices.model, connection -->
+  <text x="248" y="614" font-size="10" fill="#94A3B8">APG Vasario &#183; Connected via printer kick</text>
+  <!-- pos_devices.assigned_stations -->
+  <text x="248" y="630" font-size="10" fill="#94A3B8">Assigned: POS-01 (Front Printer)</text>
+  <use href="#adminGear" x="430" y="621" width="10" height="10"/>
+  <use href="#statusDetected" x="248" y="642" width="70" height="18"/>
 
-  <rect x="514" y="570" width="280" height="100" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="538" y="600" font-size="28">💵</text>
-  <text x="588" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Bar Drawer</text>
-  <text x="588" y="614" font-size="10" fill="#8B92A5">APG Vasario · USB direct</text>
-  <text x="588" y="630" font-size="10" fill="#8B92A5">Assigned: POS-02 (Bar Terminal)</text>
-  <rect x="588" y="642" width="70" height="18" rx="9" fill="#065F46"/>
-  <text x="600" y="655" font-size="9" fill="#6EE7B7">● Detected</text>
+  <!-- Drawer 2: Bar -->
+  <!-- DB source: pos_devices WHERE name='Bar Drawer' -->
+  <rect x="520" y="570" width="280" height="100" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="540" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Bar Drawer</text>
+  <use href="#adminGear" x="635" y="587" width="12" height="12"/>
+  <text x="540" y="614" font-size="10" fill="#94A3B8">APG Vasario &#183; USB direct</text>
+  <text x="540" y="630" font-size="10" fill="#94A3B8">Assigned: POS-02 (Bar Terminal)</text>
+  <use href="#adminGear" x="714" y="621" width="10" height="10"/>
+  <use href="#statusDetected" x="540" y="642" width="70" height="18"/>
 
-  <!-- ===== Section: Card Terminals ===== -->
+  <!-- ============================================================ -->
+  <!-- SECTION: Card Terminals                                       -->
+  <!-- DB source: pos_devices WHERE type='card_terminal'             -->
+  <!-- ============================================================ -->
   <text x="828" y="558" font-size="13" font-weight="700" fill="#FFFFFF">Card Terminals (Stripe Terminal)</text>
 
-  <rect x="828" y="570" width="260" height="100" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="852" y="600" font-size="28">💳</text>
-  <text x="904" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Front P400</text>
-  <text x="904" y="614" font-size="10" fill="#8B92A5">Stripe Terminal P400</text>
-  <text x="904" y="630" font-size="10" fill="#8B92A5">NFC · Chip · Swipe · Offline mode</text>
-  <rect x="904" y="640" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="916" y="653" font-size="9" fill="#6EE7B7">● Paired</text>
+  <!-- Card Terminal 1: Front P400 -->
+  <!-- DB source: pos_devices WHERE name='Front P400' -->
+  <rect x="828" y="570" width="256" height="100" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="848" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Front P400</text>
+  <use href="#adminGear" x="942" y="587" width="12" height="12"/>
+  <text x="848" y="614" font-size="10" fill="#94A3B8">Stripe Terminal P400</text>
+  <text x="848" y="630" font-size="10" fill="#94A3B8">NFC &#183; Chip &#183; Swipe &#183; Offline mode</text>
+  <use href="#statusPaired" x="848" y="640" width="60" height="18"/>
 
-  <rect x="1100" y="570" width="260" height="100" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="1124" y="600" font-size="28">💳</text>
-  <text x="1176" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Bar P400</text>
-  <text x="1176" y="614" font-size="10" fill="#8B92A5">Stripe Terminal P400</text>
-  <text x="1176" y="630" font-size="10" fill="#8B92A5">NFC · Chip · Swipe · Offline mode</text>
-  <rect x="1176" y="640" width="60" height="18" rx="9" fill="#065F46"/>
-  <text x="1188" y="653" font-size="9" fill="#6EE7B7">● Paired</text>
+  <!-- Card Terminal 2: Bar P400 -->
+  <!-- DB source: pos_devices WHERE name='Bar P400' -->
+  <rect x="1096" y="570" width="256" height="100" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="1116" y="596" font-size="13" font-weight="600" fill="#FFFFFF">Bar P400</text>
+  <use href="#adminGear" x="1194" y="587" width="12" height="12"/>
+  <text x="1116" y="614" font-size="10" fill="#94A3B8">Stripe Terminal P400</text>
+  <text x="1116" y="630" font-size="10" fill="#94A3B8">NFC &#183; Chip &#183; Swipe &#183; Offline mode</text>
+  <use href="#statusPaired" x="1116" y="640" width="60" height="18"/>
 
-  <!-- ===== Section: Scanners ===== -->
-  <text x="220" y="698" font-size="13" font-weight="700" fill="#FFFFFF">Barcode &amp; ID Scanners</text>
+  <!-- ============================================================ -->
+  <!-- SECTION: Barcode & ID Scanners                                -->
+  <!-- DB source: pos_devices WHERE type IN ('barcode_scanner','id_scanner') -->
+  <!-- ============================================================ -->
+  <text x="228" y="698" font-size="13" font-weight="700" fill="#FFFFFF">Barcode &amp; ID Scanners</text>
 
-  <!-- Barcode scanner 1 -->
-  <rect x="220" y="710" width="360" height="100" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1"/>
-  <text x="244" y="748" font-size="36">📷</text>
-  <text x="304" y="738" font-size="13" font-weight="600" fill="#FFFFFF">Product Barcode Scanner</text>
-  <text x="304" y="756" font-size="10" fill="#8B92A5">Zebra DS2208 · USB HID · POS-01</text>
-  <text x="304" y="772" font-size="10" fill="#6B7280">Scans: EAN-13, UPC-A, QR, Code128</text>
-  <text x="304" y="788" font-size="10" fill="#6B7280">Lookup: pos_menu_items.barcode</text>
-  <rect x="490" y="718" width="60" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="502" y="734" font-size="10" fill="#D1D5DB">Test Scan</text>
+  <!-- Barcode Scanner -->
+  <!-- DB source: pos_devices WHERE name='Product Barcode Scanner' -->
+  <rect x="228" y="710" width="356" height="100" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="248" y="738" font-size="13" font-weight="600" fill="#FFFFFF">Product Barcode Scanner</text>
+  <use href="#adminGear" x="430" y="729" width="12" height="12"/>
+  <!-- pos_devices.model, connection, assigned_station -->
+  <text x="248" y="756" font-size="10" fill="#94A3B8">Zebra DS2208 &#183; USB HID &#183; POS-01</text>
+  <text x="248" y="772" font-size="10" fill="#64748B">Scans: EAN-13, UPC-A, QR, Code128</text>
+  <!-- pos_menu_items.barcode lookup -->
+  <text x="248" y="788" font-size="10" fill="#64748B">Lookup: pos_menu_items.barcode</text>
+  <use href="#btnSmallAction" x="510" y="718" width="60" height="24"/>
+  <text x="518" y="734" font-size="10" fill="#CBD5E1">Test Scan</text>
 
-  <!-- DL Scanner -->
-  <rect x="596" y="710" width="400" height="100" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
-  <text x="620" y="748" font-size="36">🪪</text>
-  <text x="680" y="738" font-size="13" font-weight="600" fill="#FFFFFF">Driver's License Scanner (Age Verify)</text>
-  <text x="680" y="756" font-size="10" fill="#F59E0B">iOS Vision · PDF417 · IDScanBridge.swift</text>
-  <text x="680" y="772" font-size="10" fill="#6B7280">AVCaptureSession → VNRecognizeTextRequest → DOB</text>
-  <text x="680" y="788" font-size="10" fill="#6B7280">Logs: pos_audit_log (DOB + doc_last_4 only)</text>
-  <rect x="904" y="718" width="80" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="916" y="734" font-size="10" fill="#D1D5DB">Test Verify</text>
+  <!-- DL Scanner (Age Verify) -->
+  <!-- DB source: pos_devices WHERE name='DL Scanner' -->
+  <rect x="596" y="710" width="400" height="100" rx="8" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="616" y="738" font-size="13" font-weight="600" fill="#FFFFFF">Driver's License Scanner (Age Verify)</text>
+  <use href="#adminGear" x="910" y="729" width="12" height="12"/>
+  <text x="616" y="756" font-size="10" fill="#F59E0B">iOS Vision &#183; PDF417 &#183; IDScanBridge.swift</text>
+  <text x="616" y="772" font-size="10" fill="#64748B">AVCaptureSession &#8594; VNRecognizeTextRequest &#8594; DOB</text>
+  <!-- pos_audit_log (privacy note) -->
+  <text x="616" y="788" font-size="10" fill="#64748B">Logs: pos_audit_log (DOB + doc_last_4 only)</text>
+  <use href="#btnSmallAction" x="932" y="718" width="80" height="24"/>
+  <text x="946" y="734" font-size="10" fill="#CBD5E1">Test Verify</text>
 
   <!-- Customer Display -->
-  <rect x="1010" y="710" width="410" height="100" rx="8" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="1034" y="748" font-size="36">🖥</text>
-  <text x="1094" y="738" font-size="13" font-weight="600" fill="#FFFFFF">Customer Display (F07)</text>
-  <text x="1094" y="756" font-size="10" fill="#8B92A5">Second iPad / monitor · pos_customer_display</text>
-  <text x="1094" y="772" font-size="10" fill="#6B7280">Shows: order items, total, loyalty prompt</text>
-  <text x="1094" y="788" font-size="10" fill="#6B7280">URL: /pos/customer-display?station=POS-01</text>
-  <rect x="1330" y="718" width="80" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1342" y="734" font-size="10" fill="#D1D5DB">Preview</text>
+  <!-- DB source: pos_devices WHERE type='customer_display' -->
+  <rect x="1008" y="710" width="344" height="100" rx="8" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#deviceKDS" x="1028" y="724" width="40" height="36"/>
+  <text x="1080" y="738" font-size="13" font-weight="600" fill="#FFFFFF">Customer Display (F07)</text>
+  <use href="#adminGear" x="1260" y="729" width="12" height="12"/>
+  <!-- pos_customer_display config -->
+  <text x="1080" y="756" font-size="10" fill="#94A3B8">Second iPad / monitor &#183; pos_customer_display</text>
+  <text x="1080" y="772" font-size="10" fill="#64748B">Shows: order items, total, loyalty prompt</text>
+  <text x="1080" y="788" font-size="10" fill="#64748B">URL: /pos/customer-display?station=POS-01</text>
+  <use href="#btnSmallAction" x="1282" y="718" width="60" height="24"/>
+  <text x="1292" y="734" font-size="10" fill="#CBD5E1">Preview</text>
 
-  <!-- Architecture note -->
-  <rect x="220" y="826" width="1200" height="52" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="240" y="850" font-size="11" font-weight="600" fill="#8B92A5">iOS Bridge Architecture:</text>
-  <text x="370" y="850" font-size="11" fill="#D1D5DB">iPad native app (WKWebView) exposes JS bridges: PrintBridge · DrawerBridge · BarcodeBridge · IDScanBridge · StripeBridge</text>
-  <text x="240" y="868" font-size="10" fill="#6B7280">All bridge registrations in pos_devices — device capabilities auto-detected on first connect, stored per station_id</text>
+  <!-- ============================================================ -->
+  <!-- ARCHITECTURE NOTE (full-width bottom)                         -->
+  <!-- DB source: pos_devices (bridge architecture documentation)    -->
+  <!-- ============================================================ -->
+  <rect x="228" y="826" width="1124" height="52" rx="6" fill="#1E2235" stroke="#374151" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="248" y="850" font-size="11" font-weight="600" fill="#94A3B8">iOS Bridge Architecture:</text>
+  <text x="378" y="850" font-size="11" fill="#CBD5E1">iPad native app (WKWebView) exposes JS bridges: PrintBridge &#183; DrawerBridge &#183; BarcodeBridge &#183; IDScanBridge &#183; StripeBridge</text>
+  <text x="248" y="868" font-size="10" fill="#64748B">All bridge registrations in pos_devices &#8212; device capabilities auto-detected on first connect, stored per station_id</text>
 
-  <text x="720" y="892" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Equipment — pos_devices table · WKWebView bridge v2.4 · No hardcoded IPs</text>
+  <!-- ============================================================ -->
+  <!-- DEPRECIATION SCHEDULE (new section for equipment registry)    -->
+  <!-- DB source: pos_devices (purchase_date, warranty_expiry,       -->
+  <!--            depreciation_method, useful_life_months)           -->
+  <!-- ============================================================ -->
+  <rect x="228" y="890" width="1124" height="120" rx="6" fill="#0A0C14" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="248" y="912" font-size="11" font-weight="700" fill="#94A3B8">EQUIPMENT REGISTRY &#8212; WARRANTY &amp; DEPRECIATION</text>
+  <use href="#adminGear" x="498" y="902" width="12" height="12"/>
+  <line x1="248" y1="917" x2="1336" y2="917" stroke="#2A2E45" stroke-width="1"/>
+
+  <!-- Table header -->
+  <text x="260" y="932" font-size="9" font-weight="600" fill="#64748B">DEVICE</text>
+  <text x="440" y="932" font-size="9" font-weight="600" fill="#64748B">SERIAL #</text>
+  <text x="580" y="932" font-size="9" font-weight="600" fill="#64748B">PURCHASE DATE</text>
+  <text x="720" y="932" font-size="9" font-weight="600" fill="#64748B">WARRANTY</text>
+  <text x="860" y="932" font-size="9" font-weight="600" fill="#64748B">NEXT MAINT.</text>
+  <text x="1000" y="932" font-size="9" font-weight="600" fill="#64748B">DEPRECIATION</text>
+  <text x="1160" y="932" font-size="9" font-weight="600" fill="#64748B">BOOK VALUE</text>
+  <rect x="248" y="936" width="1096" height="1" fill="#2A2E45"/>
+
+  <!-- Row 1: Star TSP143IV -->
+  <text x="260" y="952" font-size="10" fill="#E2E8F0">Star TSP143IV</text>
+  <text x="440" y="952" font-size="10" fill="#94A3B8">SN-TSP-44821</text>
+  <use href="#adminGear" x="534" y="943" width="10" height="10"/>
+  <text x="580" y="952" font-size="10" fill="#94A3B8">2024-03-15</text>
+  <use href="#adminGear" x="658" y="943" width="10" height="10"/>
+  <text x="720" y="952" font-size="10" fill="#22C55E">Active (exp 2027-03)</text>
+  <use href="#adminGear" x="848" y="943" width="10" height="10"/>
+  <text x="860" y="952" font-size="10" fill="#94A3B8">2026-09-15</text>
+  <use href="#adminGear" x="938" y="943" width="10" height="10"/>
+  <text x="1000" y="952" font-size="10" fill="#94A3B8">Straight-line / 60mo</text>
+  <text x="1160" y="952" font-size="10" fill="#E2E8F0">$289.00</text>
+
+  <!-- Row 2: Epson TM-T88VII -->
+  <text x="260" y="970" font-size="10" fill="#E2E8F0">Epson TM-T88VII</text>
+  <text x="440" y="970" font-size="10" fill="#94A3B8">SN-EP-77103</text>
+  <text x="580" y="970" font-size="10" fill="#94A3B8">2024-06-01</text>
+  <text x="720" y="970" font-size="10" fill="#F59E0B">6mo remaining</text>
+  <text x="860" y="970" font-size="10" fill="#94A3B8">2026-12-01</text>
+  <text x="1000" y="970" font-size="10" fill="#94A3B8">Straight-line / 60mo</text>
+  <text x="1160" y="970" font-size="10" fill="#E2E8F0">$342.00</text>
+
+  <!-- Row 3: Stripe P400 (x2) -->
+  <text x="260" y="988" font-size="10" fill="#E2E8F0">Stripe P400 (x2)</text>
+  <text x="440" y="988" font-size="10" fill="#94A3B8">SN-SP-991/992</text>
+  <text x="580" y="988" font-size="10" fill="#94A3B8">2025-01-10</text>
+  <text x="720" y="988" font-size="10" fill="#22C55E">Active (exp 2028-01)</text>
+  <text x="860" y="988" font-size="10" fill="#94A3B8">N/A</text>
+  <text x="1000" y="988" font-size="10" fill="#94A3B8">Straight-line / 36mo</text>
+  <text x="1160" y="988" font-size="10" fill="#E2E8F0">$460.00 ea</text>
+
+  <!-- Footer -->
+  <text x="683" y="1018" font-size="11" text-anchor="middle" fill="#475569">Synalux POS &#183; Equipment &#8212; pos_devices table &#183; WKWebView bridge v2.4 &#183; No hardcoded IPs</text>
+
 </svg>

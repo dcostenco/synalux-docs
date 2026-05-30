@@ -1,224 +1,480 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
-  <rect width="1440" height="900" fill="#0F1117"/>
-  <!-- Left Nav -->
-  <rect x="0" y="0" width="200" height="900" fill="#13162A"/>
-  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
-  <text x="16" y="67" font-size="12" fill="#8B92A5">Menu Builder</text>
-  <text x="16" y="103" font-size="12" fill="#8B92A5">Gift Cards</text>
-  <text x="16" y="139" font-size="12" fill="#8B92A5">Loyalty</text>
-  <rect x="0" y="152" width="200" height="36" fill="#1E2240" rx="4"/>
-  <rect x="0" y="152" width="3" height="36" fill="#F59E0B"/>
-  <text x="16" y="175" font-size="12" font-weight="600" fill="#F59E0B">Menu Scheduling</text>
-  <text x="16" y="211" font-size="12" fill="#8B92A5">Rounding</text>
-  <text x="16" y="247" font-size="12" fill="#8B92A5">Discounts &amp; Promos</text>
-  <text x="16" y="283" font-size="12" fill="#8B92A5">Inventory</text>
-  <text x="16" y="319" font-size="12" fill="#8B92A5">Reports</text>
+<svg role="img" aria-labelledby="title-settings_menu_scheduling-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- Header -->
-  <rect x="200" y="0" width="1240" height="56" fill="#1A1D2E"/>
-  <text x="220" y="34" font-size="18" font-weight="700" fill="#FFFFFF">Menu Scheduling</text>
-  <text x="220" y="50" font-size="11" fill="#8B92A5">Time-based menu activation — Breakfast / Lunch / Dinner / Late Night / Happy Hour — pos_menu_schedules</text>
-  <rect x="1268" y="12" width="152" height="32" rx="6" fill="#F59E0B"/>
-  <text x="1284" y="32" font-size="12" font-weight="600" fill="#000">+ Add Schedule</text>
+  <!-- ============================================================ -->
+  <!--  REUSABLE DEFINITIONS                                        -->
+  <title id="title-settings_menu_scheduling-svg">Synalux POS — menu scheduling</title>
+  <desc>Synalux POS mockup screen for menu scheduling. All UI elements admin-configurable.</desc>
+  <!--  <defs>: gradients, filters, symbols – zero copy-paste      -->
+  <!-- ============================================================ -->
+  <title id="title-settings_menu_scheduling-svg">Synalux POS — menu scheduling</title>
+  <desc>Synalux POS mockup screen for menu scheduling. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#0A0C16"/>
+    </linearGradient>
 
-  <!-- Timeline visual at top -->
-  <rect x="220" y="68" width="1200" height="100" rx="8" fill="#1A1D2E"/>
-  <text x="244" y="92" font-size="12" font-weight="600" fill="#8B92A5">Today's Menu Timeline</text>
+    <!-- Sidebar gradient -->
+    <linearGradient id="sidebarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141730"/>
+      <stop offset="100%" stop-color="#0F1226"/>
+    </linearGradient>
+
+    <!-- Header gradient -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#1E2138"/>
+    </linearGradient>
+
+    <!-- Card shadow filter -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Amber glow -->
+    <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Admin gear icon (30% opacity default)  -->
+    <!--  Placed on ALL editable/configurable fields     -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="adminGear" viewBox="0 0 16 16">
+      <path d="M8 1l1.2.4.6-1L11.4 1.8l-.2 1.2 1 .6 1.2-.2.8 1.4-1 .8.2 1.2 1 .6-.4 1.6H13l-.4 1 .8 1-.8 1.4-1.2-.2-.6 1-1.2.4L8 15l-1.2-.4-.6 1L4.6 14.2l.2-1.2-1-.6-1.2.2L1.8 11.2l1-.8-.2-1.2-1-.6.4-1.6H3l.4-1-.8-1 .8-1.4 1.2.2.6-1L6.8 1.4 8 1z" fill="none" stroke="#F59E0B" stroke-width="1.2" stroke-linejoin="round"/>
+      <circle cx="8" cy="8" r="2.5" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Nav item (sidebar row, inactive)       -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="navItem" viewBox="0 0 210 32">
+      <rect x="0" y="0" width="210" height="32" fill="none"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Active nav item                        -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="navItemActive" viewBox="0 0 210 36">
+      <rect x="0" y="0" width="210" height="36" fill="#1E2235"/>
+      <rect x="0" y="0" width="3" height="36" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Day-of-week toggle button (selected)   -->
+    <!--  Reused for Mon-Sun day selectors               -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="dayBtnActive" viewBox="0 0 32 28">
+      <rect x="0" y="0" width="32" height="28" rx="4" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Day-of-week toggle button (inactive)   -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="dayBtnInactive" viewBox="0 0 32 28">
+      <rect x="0" y="0" width="32" height="28" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Category tag (show/green)              -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="catTagShow" viewBox="0 0 100 22">
+      <rect x="0" y="0" width="100" height="22" rx="4" fill="#065F46"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Category tag (hide/red)                -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="catTagHide" viewBox="0 0 80 22">
+      <rect x="0" y="0" width="80" height="22" rx="4" fill="#7F1D1D"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Active badge (green pill)              -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="activeBadge" viewBox="0 0 54 20">
+      <rect x="0" y="0" width="54" height="20" rx="10" fill="#065F46"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Edit button (small outline)            -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="editBtn" viewBox="0 0 44 20">
+      <rect x="0" y="0" width="44" height="20" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Form field row                         -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="formField" viewBox="0 0 380 30">
+      <rect x="0" y="0" width="380" height="30" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Primary button (amber)                 -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="primaryBtn" viewBox="0 0 180 36">
+      <rect x="0" y="0" width="180" height="36" rx="6" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!--  SYMBOL: Schedule card (left panel)             -->
+    <!--  Reused for Breakfast/Lunch/Dinner/HH/LateNight -->
+    <!-- ════════════════════════════════════════════════ -->
+    <symbol id="scheduleCard" viewBox="0 0 416 96">
+      <rect x="0" y="0" width="416" height="96" rx="6" fill="#1A1D2E" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!--  BACKGROUND                                                  -->
+  <!-- ============================================================ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- ============================================================ -->
+  <!--  LEFT SIDEBAR (210px)                                        -->
+  <!--  DB: pos_admin_navigation                                    -->
+  <!-- ============================================================ -->
+  <rect x="0" y="0" width="210" height="1024" fill="url(#sidebarGrad)"/>
+  <rect x="210" y="0" width="1" height="1024" fill="#2A2E45"/>
+
+  <!-- DB: pos_restaurant_info.name -->
+  <text x="16" y="30" font-size="13" font-weight="700" fill="#F59E0B">Back Office</text>
+  <use href="#adminGear" x="130" y="18" width="14" height="14" opacity="0.3"/>
+
+  <!-- DB: pos_navigation_items -->
+  <use href="#navItem" x="0" y="44"/>
+  <text x="16" y="65" font-size="12" fill="#94A3B8">Menu Builder</text>
+  <use href="#adminGear" x="186" y="55" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="76"/>
+  <text x="16" y="97" font-size="12" fill="#94A3B8">Gift Cards</text>
+  <use href="#adminGear" x="186" y="87" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="108"/>
+  <text x="16" y="129" font-size="12" fill="#94A3B8">Loyalty</text>
+  <use href="#adminGear" x="186" y="119" width="10" height="10" opacity="0.3"/>
+
+  <!-- Menu Scheduling – HIGHLIGHTED -->
+  <!-- DB: pos_navigation_items.active = true -->
+  <use href="#navItemActive" x="0" y="140"/>
+  <text x="16" y="163" font-size="12" font-weight="600" fill="#F59E0B">Menu Scheduling</text>
+  <use href="#adminGear" x="186" y="153" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="176"/>
+  <text x="16" y="197" font-size="12" fill="#94A3B8">Rounding</text>
+  <use href="#adminGear" x="186" y="187" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="208"/>
+  <text x="16" y="229" font-size="12" fill="#94A3B8">Discounts &amp; Promos</text>
+  <use href="#adminGear" x="186" y="219" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="240"/>
+  <text x="16" y="261" font-size="12" fill="#94A3B8">Inventory</text>
+  <use href="#adminGear" x="186" y="251" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="272"/>
+  <text x="16" y="293" font-size="12" fill="#94A3B8">Reports</text>
+  <use href="#adminGear" x="186" y="283" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="304"/>
+  <text x="16" y="325" font-size="12" fill="#94A3B8">Equipment</text>
+  <use href="#adminGear" x="186" y="315" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="336"/>
+  <text x="16" y="357" font-size="12" fill="#94A3B8">Floor Plans</text>
+  <use href="#adminGear" x="186" y="347" width="10" height="10" opacity="0.3"/>
+
+  <use href="#navItem" x="0" y="368"/>
+  <text x="16" y="389" font-size="12" fill="#94A3B8">Payments</text>
+  <use href="#adminGear" x="186" y="379" width="10" height="10" opacity="0.3"/>
+
+  <!-- ============================================================ -->
+  <!--  TOP HEADER BAR                                              -->
+  <!--  DB: pos_menu_schedules (schedule management)                -->
+  <!-- ============================================================ -->
+  <rect x="210" y="0" width="1156" height="56" fill="url(#headerGrad)" filter="url(#cardShadow)"/>
+  <rect x="210" y="55" width="1156" height="1" fill="#2A2E45"/>
+  <text x="228" y="24" font-size="18" font-weight="700" fill="#E2E8F0">Menu Scheduling</text>
+  <text x="228" y="44" font-size="11" fill="#64748B">Time-based menu activation – Breakfast / Lunch / Dinner / Late Night / Happy Hour</text>
+  <!-- Admin gear – editable schedule config -->
+  <use href="#adminGear" x="620" y="32" width="12" height="12" opacity="0.3"/>
+
+  <!-- + Add Schedule button -->
+  <!-- DB: INSERT INTO pos_menu_schedules -->
+  <rect x="1200" y="12" width="148" height="32" rx="6" fill="#F59E0B" filter="url(#amberGlow)"/>
+  <text x="1216" y="32" font-size="12" font-weight="600" fill="#000">+ Add Schedule</text>
+
+  <!-- ============================================================ -->
+  <!--  TIMELINE VISUAL (top)                                       -->
+  <!--  DB: pos_menu_schedules (all active schedules for today)     -->
+  <!-- ============================================================ -->
+  <rect x="218" y="64" width="1130" height="100" rx="8" fill="#1A1D2E" filter="url(#cardShadow)"/>
+  <text x="244" y="88" font-size="12" font-weight="600" fill="#94A3B8">Today's Menu Timeline</text>
+  <use href="#adminGear" x="396" y="76" width="12" height="12" opacity="0.3"/>
 
   <!-- Timeline bar background -->
-  <rect x="244" y="100" width="1152" height="32" rx="4" fill="#0F1117"/>
+  <rect x="244" y="100" width="1080" height="32" rx="4" fill="#0C0E1A"/>
 
   <!-- Breakfast 7am-11am -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-001' -->
   <rect x="340" y="100" width="192" height="32" rx="4" fill="#B45309"/>
   <text x="408" y="120" font-size="11" font-weight="600" fill="#FDE68A">Breakfast</text>
 
   <!-- Lunch 11am-3pm -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-002' -->
   <rect x="532" y="100" width="192" height="32" rx="4" fill="#0369A1"/>
   <text x="598" y="120" font-size="11" font-weight="600" fill="#93C5FD">Lunch</text>
 
-  <!-- Happy Hour 4-6pm -->
+  <!-- Happy Hour 4-6pm (overlay) -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-004', type = 'overlay' -->
   <rect x="724" y="100" width="96" height="32" rx="4" fill="#7C3AED"/>
   <text x="744" y="120" font-size="11" font-weight="600" fill="#DDD6FE">HH</text>
 
   <!-- Dinner 3pm-10pm -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-003' -->
   <rect x="628" y="100" width="384" height="32" rx="4" fill="#065F46" opacity="0.5"/>
-  <text x="784" y="120" font-size="11" font-weight="600" fill="#6EE7B7">Dinner</text>
+  <text x="784" y="120" font-size="11" font-weight="600" fill="#4ADE80">Dinner</text>
 
-  <!-- Late night 10pm-2am -->
+  <!-- Late Night 10pm-2am -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-005' -->
   <rect x="1012" y="100" width="192" height="32" rx="4" fill="#374151"/>
-  <text x="1060" y="120" font-size="11" font-weight="600" fill="#9CA3AF">Late Night</text>
+  <text x="1060" y="120" font-size="11" font-weight="600" fill="#94A3B8">Late Night</text>
 
   <!-- Time labels -->
-  <text x="244" y="148" font-size="9" fill="#6B7280">12am</text>
-  <text x="292" y="148" font-size="9" fill="#6B7280">3am</text>
+  <text x="244" y="148" font-size="9" fill="#64748B">12am</text>
+  <text x="292" y="148" font-size="9" fill="#64748B">3am</text>
   <text x="340" y="148" font-size="9" fill="#F59E0B">7am</text>
-  <text x="388" y="148" font-size="9" fill="#6B7280">9am</text>
-  <text x="436" y="148" font-size="9" fill="#6B7280">10am</text>
-  <text x="484" y="148" font-size="9" fill="#6B7280">10:30</text>
+  <text x="436" y="148" font-size="9" fill="#64748B">10am</text>
   <text x="532" y="148" font-size="9" fill="#93C5FD">11am</text>
-  <text x="628" y="148" font-size="9" fill="#6EE7B7">3pm</text>
+  <text x="628" y="148" font-size="9" fill="#4ADE80">3pm</text>
   <text x="724" y="148" font-size="9" fill="#DDD6FE">4pm</text>
-  <text x="820" y="148" font-size="9" fill="#6EE7B7">6pm</text>
-  <text x="1012" y="148" font-size="9" fill="#9CA3AF">10pm</text>
-  <text x="1204" y="148" font-size="9" fill="#6B7280">2am</text>
+  <text x="820" y="148" font-size="9" fill="#4ADE80">6pm</text>
+  <text x="1012" y="148" font-size="9" fill="#94A3B8">10pm</text>
+  <text x="1204" y="148" font-size="9" fill="#64748B">2am</text>
+
   <!-- NOW indicator -->
   <rect x="756" y="96" width="2" height="40" fill="#EF4444"/>
   <text x="752" y="94" font-size="9" fill="#EF4444">NOW</text>
 
-  <!-- ===== Left: Schedule List ===== -->
-  <rect x="220" y="180" width="440" height="700" fill="#13162A"/>
-  <text x="236" y="208" font-size="13" font-weight="600" fill="#FFFFFF">Menu Schedules</text>
+  <!-- ============================================================ -->
+  <!--  LEFT: SCHEDULE LIST                                         -->
+  <!--  DB: pos_menu_schedules (all rows)                           -->
+  <!-- ============================================================ -->
+  <rect x="218" y="176" width="440" height="848" fill="url(#sidebarGrad)"/>
+  <text x="236" y="204" font-size="13" font-weight="600" fill="#E2E8F0">Menu Schedules</text>
+  <use href="#adminGear" x="358" y="192" width="12" height="12" opacity="0.3"/>
 
-  <!-- Breakfast -->
-  <rect x="232" y="218" width="416" height="96" rx="6" fill="#1E2240" stroke="#B45309" stroke-width="1"/>
+  <!-- ── Breakfast Schedule Card ── -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-001' -->
+  <rect x="232" y="218" width="416" height="96" rx="6" fill="#1E2235" stroke="#B45309" stroke-width="1" filter="url(#cardShadow)"/>
   <rect x="232" y="218" width="6" height="96" rx="3" fill="#B45309"/>
+  <!-- DB: pos_menu_schedules.name -->
   <text x="254" y="244" font-size="13" font-weight="600" fill="#FDE68A">Breakfast Menu</text>
-  <text x="254" y="262" font-size="11" fill="#8B92A5">7:00 AM – 11:00 AM · Mon–Sun</text>
-  <text x="254" y="278" font-size="10" fill="#8B92A5">Menu: Breakfast · Adds: Eggs Benedict, Pancakes…</text>
-  <text x="254" y="294" font-size="10" fill="#8B92A5">Hides: Alcohol, Dinner Entrées</text>
-  <rect x="560" y="228" width="54" height="20" rx="10" fill="#065F46"/>
-  <text x="572" y="242" font-size="9" fill="#6EE7B7">● Active</text>
-  <rect x="560" y="254" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="572" y="268" font-size="10" fill="#D1D5DB">Edit</text>
+  <!-- DB: pos_menu_schedules.start_time, .end_time, .days_of_week -->
+  <text x="254" y="262" font-size="11" fill="#94A3B8">7:00 AM - 11:00 AM – Mon-Sun</text>
+  <!-- DB: pos_menu_schedule_categories -->
+  <text x="254" y="278" font-size="10" fill="#94A3B8">Menu: Breakfast – Adds: Eggs Benedict, Pancakes...</text>
+  <text x="254" y="294" font-size="10" fill="#94A3B8">Hides: Alcohol, Dinner Entrees</text>
+  <use href="#activeBadge" x="560" y="228"/>
+  <text x="568" y="242" font-size="9" fill="#4ADE80">Active</text>
+  <use href="#editBtn" x="560" y="254"/>
+  <text x="572" y="268" font-size="10" fill="#CBD5E1">Edit</text>
+  <use href="#adminGear" x="618" y="256" width="10" height="10" opacity="0.3"/>
 
-  <!-- Lunch -->
-  <rect x="232" y="322" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#0369A1" stroke-width="1"/>
+  <!-- ── Lunch Schedule Card ── -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-002' -->
+  <rect x="232" y="322" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#0369A1" stroke-width="1" filter="url(#cardShadow)"/>
   <rect x="232" y="322" width="6" height="96" rx="3" fill="#0369A1"/>
   <text x="254" y="348" font-size="13" font-weight="600" fill="#93C5FD">Lunch Menu</text>
-  <text x="254" y="366" font-size="11" fill="#8B92A5">11:00 AM – 3:00 PM · Mon–Fri</text>
-  <text x="254" y="382" font-size="10" fill="#8B92A5">Menu: Lunch Specials · Adds: Soup, Sandwiches</text>
-  <text x="254" y="398" font-size="10" fill="#8B92A5">Hides: Breakfast items</text>
-  <rect x="560" y="332" width="54" height="20" rx="10" fill="#065F46"/>
-  <text x="572" y="346" font-size="9" fill="#6EE7B7">● Active</text>
-  <rect x="560" y="358" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="572" y="372" font-size="10" fill="#D1D5DB">Edit</text>
+  <text x="254" y="366" font-size="11" fill="#94A3B8">11:00 AM - 3:00 PM – Mon-Fri</text>
+  <text x="254" y="382" font-size="10" fill="#94A3B8">Menu: Lunch Specials – Adds: Soup, Sandwiches</text>
+  <text x="254" y="398" font-size="10" fill="#94A3B8">Hides: Breakfast items</text>
+  <use href="#activeBadge" x="560" y="332"/>
+  <text x="568" y="346" font-size="9" fill="#4ADE80">Active</text>
+  <use href="#editBtn" x="560" y="358"/>
+  <text x="572" y="372" font-size="10" fill="#CBD5E1">Edit</text>
+  <use href="#adminGear" x="618" y="360" width="10" height="10" opacity="0.3"/>
 
-  <!-- Dinner -->
-  <rect x="232" y="426" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#065F46" stroke-width="1"/>
+  <!-- ── Dinner Schedule Card ── -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-003' -->
+  <rect x="232" y="426" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#065F46" stroke-width="1" filter="url(#cardShadow)"/>
   <rect x="232" y="426" width="6" height="96" rx="3" fill="#065F46"/>
-  <text x="254" y="452" font-size="13" font-weight="600" fill="#6EE7B7">Dinner Menu</text>
-  <text x="254" y="470" font-size="11" fill="#8B92A5">3:00 PM – 10:00 PM · Mon–Sun</text>
-  <text x="254" y="486" font-size="10" fill="#8B92A5">Menu: Full Menu · All categories</text>
-  <text x="254" y="502" font-size="10" fill="#8B92A5">Full alcohol service enabled</text>
-  <rect x="560" y="436" width="54" height="20" rx="10" fill="#065F46"/>
-  <text x="572" y="450" font-size="9" fill="#6EE7B7">● Active</text>
+  <text x="254" y="452" font-size="13" font-weight="600" fill="#4ADE80">Dinner Menu</text>
+  <text x="254" y="470" font-size="11" fill="#94A3B8">3:00 PM - 10:00 PM – Mon-Sun</text>
+  <text x="254" y="486" font-size="10" fill="#94A3B8">Menu: Full Menu – All categories</text>
+  <text x="254" y="502" font-size="10" fill="#94A3B8">Full alcohol service enabled</text>
+  <use href="#activeBadge" x="560" y="436"/>
+  <text x="568" y="450" font-size="9" fill="#4ADE80">Active</text>
+  <use href="#adminGear" x="618" y="438" width="10" height="10" opacity="0.3"/>
 
-  <!-- Happy Hour -->
-  <rect x="232" y="530" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#7C3AED" stroke-width="1"/>
+  <!-- ── Happy Hour Schedule Card ── -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-004', type = 'overlay' -->
+  <rect x="232" y="530" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#7C3AED" stroke-width="1" filter="url(#cardShadow)"/>
   <rect x="232" y="530" width="6" height="96" rx="3" fill="#7C3AED"/>
   <text x="254" y="556" font-size="13" font-weight="600" fill="#DDD6FE">Happy Hour Overlay</text>
-  <text x="254" y="574" font-size="11" fill="#8B92A5">4:00 PM – 6:00 PM · Mon–Fri</text>
-  <text x="254" y="590" font-size="10" fill="#8B92A5">Overlay ON TOP of Dinner — adds HH pricing</text>
+  <text x="254" y="574" font-size="11" fill="#94A3B8">4:00 PM - 6:00 PM – Mon-Fri</text>
+  <text x="254" y="590" font-size="10" fill="#94A3B8">Overlay ON TOP of Dinner – adds HH pricing</text>
+  <!-- DB: pos_menu_schedules.discount_id -->
   <text x="254" y="606" font-size="10" fill="#DDD6FE">Links to Discount: DISC-001 (20% drinks)</text>
+  <use href="#adminGear" x="618" y="542" width="10" height="10" opacity="0.3"/>
 
-  <!-- Late Night -->
-  <rect x="232" y="634" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+  <!-- ── Late Night Schedule Card ── -->
+  <!-- DB: pos_menu_schedules.id = 'SCHED-005' -->
+  <rect x="232" y="634" width="416" height="96" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1" filter="url(#cardShadow)"/>
   <rect x="232" y="634" width="6" height="96" rx="3" fill="#374151"/>
-  <text x="254" y="660" font-size="13" font-weight="600" fill="#9CA3AF">Late Night Menu</text>
-  <text x="254" y="678" font-size="11" fill="#8B92A5">10:00 PM – 2:00 AM · Fri–Sat only</text>
-  <text x="254" y="694" font-size="10" fill="#8B92A5">Reduced menu — bar snacks + drinks only</text>
-  <text x="254" y="710" font-size="10" fill="#8B92A5">Age-gated: 21+ enforcement active</text>
+  <text x="254" y="660" font-size="13" font-weight="600" fill="#94A3B8">Late Night Menu</text>
+  <text x="254" y="678" font-size="11" fill="#94A3B8">10:00 PM - 2:00 AM – Fri-Sat only</text>
+  <text x="254" y="694" font-size="10" fill="#94A3B8">Reduced menu – bar snacks + drinks only</text>
+  <text x="254" y="710" font-size="10" fill="#94A3B8">Age-gated: 21+ enforcement active</text>
+  <use href="#adminGear" x="618" y="646" width="10" height="10" opacity="0.3"/>
 
-  <!-- ===== Right: Edit Panel ===== -->
-  <rect x="676" y="180" width="764" height="700" fill="#0F1117"/>
+  <!-- ============================================================ -->
+  <!--  RIGHT: SCHEDULE EDITOR                                      -->
+  <!--  DB: pos_menu_schedules.id = 'SCHED-001' (editable form)     -->
+  <!--  Admin portal: all fields editable + saveable                -->
+  <!-- ============================================================ -->
+  <rect x="658" y="176" width="690" height="848" fill="#0C0E1A"/>
+  <rect x="658" y="176" width="1" height="848" fill="#2A2E45"/>
 
-  <!-- Schedule editor -->
-  <rect x="692" y="192" width="732" height="52" rx="8" fill="#1A1D2E"/>
-  <text x="712" y="218" font-size="15" font-weight="700" fill="#B45309">Edit: Breakfast Menu</text>
-  <text x="712" y="236" font-size="10" fill="#8B92A5">pos_menu_schedules.id = SCHED-001</text>
+  <!-- Editor header -->
+  <rect x="674" y="188" width="658" height="52" rx="8" fill="#1A1D2E" filter="url(#cardShadow)"/>
+  <text x="694" y="214" font-size="15" font-weight="700" fill="#B45309">Edit: Breakfast Menu</text>
+  <!-- DB: pos_menu_schedules.id -->
+  <text x="694" y="232" font-size="10" fill="#94A3B8">pos_menu_schedules.id = SCHED-001</text>
+  <use href="#adminGear" x="1296" y="200" width="14" height="14" opacity="0.3"/>
 
-  <!-- Name -->
-  <text x="692" y="268" font-size="10" fill="#8B92A5">SCHEDULE NAME</text>
-  <rect x="692" y="274" width="380" height="30" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="708" y="294" font-size="13" fill="#FFFFFF">Breakfast Menu</text>
+  <!-- Schedule Name field -->
+  <!-- DB: pos_menu_schedules.name -->
+  <text x="674" y="264" font-size="10" fill="#94A3B8">SCHEDULE NAME</text>
+  <use href="#adminGear" x="770" y="254" width="10" height="10" opacity="0.3"/>
+  <use href="#formField" x="674" y="270"/>
+  <text x="690" y="290" font-size="13" fill="#E2E8F0">Breakfast Menu</text>
 
-  <!-- Schedule type -->
-  <text x="1088" y="268" font-size="10" fill="#8B92A5">TYPE</text>
-  <rect x="1088" y="274" width="120" height="30" rx="6" fill="#F59E0B"/>
-  <text x="1116" y="294" font-size="12" font-weight="600" fill="#000">Replace</text>
-  <rect x="1216" y="274" width="120" height="30" rx="6" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1242" y="294" font-size="12" fill="#6B7280">Overlay</text>
-  <text x="1088" y="318" font-size="9" fill="#6B7280">Replace = full menu swap · Overlay = adds/hides items on top of active menu</text>
+  <!-- Schedule Type toggle -->
+  <!-- DB: pos_menu_schedules.type ('replace' | 'overlay') -->
+  <text x="1070" y="264" font-size="10" fill="#94A3B8">TYPE</text>
+  <use href="#adminGear" x="1104" y="254" width="10" height="10" opacity="0.3"/>
+  <rect x="1070" y="270" width="120" height="30" rx="6" fill="#F59E0B"/>
+  <text x="1098" y="290" font-size="12" font-weight="600" fill="#000">Replace</text>
+  <rect x="1198" y="270" width="120" height="30" rx="6" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="1224" y="290" font-size="12" fill="#64748B">Overlay</text>
+  <text x="1070" y="314" font-size="9" fill="#64748B">Replace = full menu swap – Overlay = adds/hides items on top of active menu</text>
 
-  <!-- Time config -->
-  <text x="692" y="340" font-size="10" fill="#8B92A5">TIME WINDOW</text>
-  <rect x="692" y="346" width="732" height="50" rx="6" fill="#1A1D2E"/>
-  <text x="712" y="370" font-size="10" fill="#8B92A5">Start</text>
-  <rect x="748" y="356" width="100" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="764" y="375" font-size="13" fill="#FFFFFF">7:00 AM</text>
-  <text x="858" y="370" font-size="10" fill="#8B92A5">End</text>
-  <rect x="894" y="356" width="100" height="28" rx="4" fill="#0F1117" stroke="#374151" stroke-width="1"/>
-  <text x="910" y="375" font-size="13" fill="#FFFFFF">11:00 AM</text>
-  <text x="1004" y="370" font-size="10" fill="#8B92A5">Days</text>
-  <rect x="1040" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1050" y="375" font-size="11" fill="#000">M</text>
-  <rect x="1078" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1088" y="375" font-size="11" fill="#000">T</text>
-  <rect x="1116" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1126" y="375" font-size="11" fill="#000">W</text>
-  <rect x="1154" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1160" y="375" font-size="11" fill="#000">Th</text>
-  <rect x="1192" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1202" y="375" font-size="11" fill="#000">F</text>
-  <rect x="1230" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1238" y="375" font-size="11" fill="#000">Sa</text>
-  <rect x="1268" y="356" width="32" height="28" rx="4" fill="#F59E0B"/>
-  <text x="1276" y="375" font-size="11" fill="#000">Su</text>
-  <text x="1310" y="370" font-size="9" fill="#6B7280">all</text>
+  <!-- Time Window -->
+  <!-- DB: pos_menu_schedules.start_time, .end_time, .days_of_week -->
+  <text x="674" y="336" font-size="10" fill="#94A3B8">TIME WINDOW</text>
+  <use href="#adminGear" x="762" y="326" width="10" height="10" opacity="0.3"/>
+  <rect x="674" y="342" width="658" height="50" rx="6" fill="#1A1D2E"/>
 
-  <!-- Revenue centers -->
-  <text x="692" y="420" font-size="10" fill="#8B92A5">APPLY TO REVENUE CENTERS</text>
-  <rect x="692" y="426" width="732" height="36" rx="6" fill="#1A1D2E"/>
-  <rect x="708" y="434" width="100" height="20" rx="4" fill="#F59E0B"/>
-  <text x="732" y="448" font-size="11" font-weight="600" fill="#000">All RCs</text>
-  <rect x="816" y="434" width="110" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="828" y="448" font-size="11" fill="#6B7280">Main Dining</text>
-  <rect x="934" y="434" width="60" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="944" y="448" font-size="11" fill="#6B7280">Patio</text>
-  <rect x="1002" y="434" width="44" height="20" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1014" y="448" font-size="11" fill="#6B7280">Bar</text>
+  <text x="694" y="366" font-size="10" fill="#94A3B8">Start</text>
+  <rect x="730" y="352" width="100" height="28" rx="4" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="746" y="371" font-size="13" fill="#E2E8F0">7:00 AM</text>
 
-  <!-- Menu assignment -->
-  <text x="692" y="484" font-size="10" fill="#8B92A5">ACTIVE MENU (pos_menus)</text>
-  <rect x="692" y="490" width="380" height="32" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="708" y="511" font-size="13" fill="#FFFFFF">Breakfast Menu</text>
-  <text x="1068" y="511" font-size="16" fill="#6B7280">▾</text>
+  <text x="840" y="366" font-size="10" fill="#94A3B8">End</text>
+  <rect x="876" y="352" width="100" height="28" rx="4" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="892" y="371" font-size="13" fill="#E2E8F0">11:00 AM</text>
 
-  <!-- Show/hide categories -->
-  <text x="692" y="546" font-size="10" fill="#8B92A5">SHOW CATEGORIES (during this window)</text>
-  <rect x="692" y="552" width="732" height="64" rx="6" fill="#1A1D2E"/>
-  <rect x="708" y="562" width="100" height="22" rx="4" fill="#065F46"/>
-  <text x="720" y="577" font-size="11" fill="#6EE7B7">Breakfast ✓</text>
-  <rect x="816" y="562" width="72" height="22" rx="4" fill="#065F46"/>
-  <text x="828" y="577" font-size="11" fill="#6EE7B7">Coffee ✓</text>
-  <rect x="896" y="562" width="72" height="22" rx="4" fill="#065F46"/>
-  <text x="908" y="577" font-size="11" fill="#6EE7B7">Pastries ✓</text>
-  <rect x="976" y="562" width="60" height="22" rx="4" fill="#7F1D1D"/>
-  <text x="988" y="577" font-size="11" fill="#FCA5A5">Alcohol ✗</text>
-  <rect x="1044" y="562" width="80" height="22" rx="4" fill="#7F1D1D"/>
-  <text x="1054" y="577" font-size="11" fill="#FCA5A5">Dinner Entrées ✗</text>
-  <rect x="1132" y="562" width="72" height="22" rx="4" fill="#7F1D1D"/>
-  <text x="1144" y="577" font-size="11" fill="#FCA5A5">Cocktails ✗</text>
-  <rect x="708" y="588" width="70" height="22" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="720" y="603" font-size="11" fill="#F59E0B">+ Add</text>
+  <text x="986" y="366" font-size="10" fill="#94A3B8">Days</text>
+  <!-- Day-of-week toggles using reusable symbols -->
+  <use href="#dayBtnActive" x="1022" y="352"/>
+  <text x="1032" y="371" font-size="11" fill="#000">M</text>
+  <use href="#dayBtnActive" x="1060" y="352"/>
+  <text x="1070" y="371" font-size="11" fill="#000">T</text>
+  <use href="#dayBtnActive" x="1098" y="352"/>
+  <text x="1108" y="371" font-size="11" fill="#000">W</text>
+  <use href="#dayBtnActive" x="1136" y="352"/>
+  <text x="1142" y="371" font-size="11" fill="#000">Th</text>
+  <use href="#dayBtnActive" x="1174" y="352"/>
+  <text x="1184" y="371" font-size="11" fill="#000">F</text>
+  <use href="#dayBtnActive" x="1212" y="352"/>
+  <text x="1220" y="371" font-size="11" fill="#000">Sa</text>
+  <use href="#dayBtnActive" x="1250" y="352"/>
+  <text x="1258" y="371" font-size="11" fill="#000">Su</text>
+  <text x="1292" y="366" font-size="9" fill="#64748B">all</text>
 
-  <!-- Pricing override -->
-  <text x="692" y="638" font-size="10" fill="#8B92A5">SPECIAL PRICING (optional — links to pos_discounts)</text>
-  <rect x="692" y="644" width="732" height="40" rx="6" fill="#1A1D2E"/>
-  <text x="712" y="668" font-size="12" fill="#6B7280">No special pricing — use regular item prices</text>
-  <rect x="1228" y="650" width="180" height="24" rx="4" fill="#1E2240" stroke="#374151" stroke-width="1"/>
-  <text x="1248" y="666" font-size="11" fill="#F59E0B">Link Discount Rule</text>
+  <!-- Revenue Centers -->
+  <!-- DB: pos_menu_schedules.revenue_center_ids (FK to pos_revenue_centers) -->
+  <text x="674" y="416" font-size="10" fill="#94A3B8">APPLY TO REVENUE CENTERS</text>
+  <use href="#adminGear" x="852" y="406" width="10" height="10" opacity="0.3"/>
+  <rect x="674" y="422" width="658" height="36" rx="6" fill="#1A1D2E"/>
+  <rect x="690" y="430" width="100" height="20" rx="4" fill="#F59E0B"/>
+  <text x="714" y="444" font-size="11" font-weight="600" fill="#000">All RCs</text>
+  <rect x="798" y="430" width="110" height="20" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="810" y="444" font-size="11" fill="#64748B">Main Dining</text>
+  <rect x="916" y="430" width="60" height="20" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="926" y="444" font-size="11" fill="#64748B">Patio</text>
+  <rect x="984" y="430" width="44" height="20" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="996" y="444" font-size="11" fill="#64748B">Bar</text>
 
-  <!-- Workflow box -->
-  <rect x="692" y="700" width="732" height="80" rx="6" fill="#1E3A5F" stroke="#3B82F6" stroke-width="1"/>
-  <text x="712" y="724" font-size="11" font-weight="600" fill="#93C5FD">Workflow Integration</text>
-  <text x="712" y="742" font-size="10" fill="#D1D5DB">• Register auto-switches active menu at scheduled time — cashier sees banner "Breakfast Menu Active"</text>
-  <text x="712" y="758" font-size="10" fill="#D1D5DB">• Online menu updates live — items outside schedule are hidden from customers automatically</text>
-  <text x="712" y="774" font-size="10" fill="#D1D5DB">• KDS shows schedule name on ticket header — kitchen knows which menu period is active</text>
+  <!-- Active Menu -->
+  <!-- DB: pos_menu_schedules.menu_id (FK to pos_menus) -->
+  <text x="674" y="480" font-size="10" fill="#94A3B8">ACTIVE MENU (pos_menus)</text>
+  <use href="#adminGear" x="842" y="470" width="10" height="10" opacity="0.3"/>
+  <rect x="674" y="486" width="380" height="32" rx="6" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
+  <text x="690" y="507" font-size="13" fill="#E2E8F0">Breakfast Menu</text>
+  <text x="1050" y="507" font-size="16" fill="#64748B">&#9662;</text>
 
-  <!-- Save -->
-  <rect x="692" y="796" width="180" height="36" rx="6" fill="#F59E0B"/>
-  <text x="748" y="819" font-size="13" font-weight="600" fill="#000">Save Schedule</text>
+  <!-- Show/Hide Categories -->
+  <!-- DB: pos_menu_schedule_categories (join table, show/hide flag per category) -->
+  <text x="674" y="542" font-size="10" fill="#94A3B8">SHOW CATEGORIES (during this window)</text>
+  <use href="#adminGear" x="920" y="532" width="10" height="10" opacity="0.3"/>
+  <rect x="674" y="548" width="658" height="64" rx="6" fill="#1A1D2E"/>
 
-  <text x="720" y="886" font-size="11" text-anchor="middle" fill="#4B5563">Synalux POS · Menu Scheduling · pos_menu_schedules — auto-switch at time · category show/hide · no rebuilds</text>
+  <!-- Category tags using reusable symbols -->
+  <use href="#catTagShow" x="690" y="558"/>
+  <text x="702" y="573" font-size="11" fill="#4ADE80">Breakfast</text>
+  <use href="#catTagShow" x="798" y="558" width="72" height="22"/>
+  <text x="810" y="573" font-size="11" fill="#4ADE80">Coffee</text>
+  <use href="#catTagShow" x="878" y="558" width="72" height="22"/>
+  <text x="890" y="573" font-size="11" fill="#4ADE80">Pastries</text>
+
+  <use href="#catTagHide" x="958" y="558" width="60" height="22"/>
+  <text x="970" y="573" font-size="11" fill="#FCA5A5">Alcohol</text>
+  <use href="#catTagHide" x="1026" y="558"/>
+  <text x="1036" y="573" font-size="11" fill="#FCA5A5">Dinner Entrees</text>
+  <use href="#catTagHide" x="1134" y="558" width="72" height="22"/>
+  <text x="1146" y="573" font-size="11" fill="#FCA5A5">Cocktails</text>
+
+  <rect x="690" y="584" width="70" height="22" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="702" y="599" font-size="11" fill="#F59E0B">+ Add</text>
+
+  <!-- Special Pricing -->
+  <!-- DB: pos_menu_schedules.discount_id (FK to pos_discounts, nullable) -->
+  <text x="674" y="634" font-size="10" fill="#94A3B8">SPECIAL PRICING (optional – links to pos_discounts)</text>
+  <use href="#adminGear" x="962" y="624" width="10" height="10" opacity="0.3"/>
+  <rect x="674" y="640" width="658" height="40" rx="6" fill="#1A1D2E"/>
+  <text x="694" y="664" font-size="12" fill="#64748B">No special pricing – use regular item prices</text>
+  <rect x="1160" y="646" width="160" height="24" rx="4" fill="#1E2235" stroke="#374151" stroke-width="1"/>
+  <text x="1180" y="662" font-size="11" fill="#F59E0B">Link Discount Rule</text>
+
+  <!-- Workflow Integration info box -->
+  <rect x="674" y="696" width="658" height="80" rx="6" fill="#1E3A5F" stroke="#60A5FA" stroke-width="1"/>
+  <text x="694" y="720" font-size="11" font-weight="600" fill="#93C5FD">Workflow Integration</text>
+  <text x="694" y="738" font-size="10" fill="#CBD5E1">Register auto-switches active menu at scheduled time – cashier sees banner</text>
+  <text x="694" y="754" font-size="10" fill="#CBD5E1">Online menu updates live – items outside schedule hidden from customers</text>
+  <text x="694" y="770" font-size="10" fill="#CBD5E1">KDS shows schedule name on ticket header – kitchen knows which menu period</text>
+
+  <!-- Save Schedule button (admin portal primary action) -->
+  <!-- DB: UPDATE pos_menu_schedules SET ... WHERE id = 'SCHED-001' -->
+  <use href="#primaryBtn" x="674" y="790"/>
+  <text x="730" y="813" font-size="13" font-weight="600" fill="#000">Save Schedule</text>
+  <use href="#adminGear" x="864" y="798" width="12" height="12" opacity="0.3"/>
+
+  <!-- Cancel button -->
+  <rect x="866" y="790" width="120" height="36" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="900" y="813" font-size="13" fill="#94A3B8">Cancel</text>
+
+  <!-- Delete Schedule button -->
+  <!-- DB: DELETE FROM pos_menu_schedules WHERE id = 'SCHED-001' -->
+  <rect x="1000" y="790" width="140" height="36" rx="6" fill="#1A1D2E" stroke="#EF4444" stroke-width="1"/>
+  <text x="1028" y="813" font-size="13" fill="#EF4444">Delete Schedule</text>
+
+  <!-- ============================================================ -->
+  <!--  FOOTER                                                      -->
+  <!-- ============================================================ -->
+  <text x="688" y="860" font-size="10" fill="#475569">Synalux POS Admin Portal – Menu Scheduling – pos_menu_schedules</text>
+  <text x="688" y="876" font-size="10" fill="#475569">Auto-switch at time – category show/hide – no rebuilds needed</text>
+
 </svg>

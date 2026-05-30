@@ -1,37 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-settings_nutritional-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 
-  <!-- Background -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <!-- ═══════════════════════════════════════════════
+       REUSABLE DEFINITIONS
+  ═══════════════════════════════════════════════ -->
+  <title id="title-settings_nutritional-svg">Synalux POS — nutritional</title>
+  <desc>Synalux POS mockup screen for nutritional. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient for cards -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+    <!-- Amber button gradient -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <!-- Header bar gradient -->
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#1E2235"/>
+    </linearGradient>
+    <!-- Purple button gradient -->
+    <linearGradient id="purpleBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <!-- Card shadow -->
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <!-- Amber glow -->
+    <filter id="amberGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
 
-  <!-- ===================== LEFT SIDEBAR ===================== -->
-  <rect x="0" y="0" width="210" height="1024" fill="#13162A"/>
+    <!-- ── SYMBOL: Admin gear icon ── -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <path d="M7 4.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm0 4a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#F59E0B"/>
+      <path d="M12.7 5.8l-1.1-.2a4.8 4.8 0 00-.4-1l.6-1a.5.5 0 00-.1-.6l-.7-.7a.5.5 0 00-.6-.1l-1 .6a4.8 4.8 0 00-1-.4L8.2 1.3a.5.5 0 00-.5-.3h-1a.5.5 0 00-.5.3l-.2 1.1a4.8 4.8 0 00-1 .4l-1-.6a.5.5 0 00-.6.1l-.7.7a.5.5 0 00-.1.6l.6 1a4.8 4.8 0 00-.4 1l-1.1.2a.5.5 0 00-.3.5v1a.5.5 0 00.3.5l1.1.2a4.8 4.8 0 00.4 1l-.6 1a.5.5 0 00.1.6l.7.7a.5.5 0 00.6.1l1-.6a4.8 4.8 0 001 .4l.2 1.1a.5.5 0 00.5.3h1a.5.5 0 00.5-.3l.2-1.1a4.8 4.8 0 001-.4l1 .6a.5.5 0 00.6-.1l.7-.7a.5.5 0 00.1-.6l-.6-1a4.8 4.8 0 00.4-1l1.1-.2a.5.5 0 00.3-.5v-1a.5.5 0 00-.3-.5z" fill="#F59E0B" opacity="0.7"/>
+    </symbol>
 
-  <!-- Logo / Back Office label -->
-  <text x="16" y="32" font-size="13" font-weight="700" fill="#F59E0B">⚙ Back Office</text>
+    <!-- ── SYMBOL: Checkbox checked (amber) ── -->
+    <symbol id="checkOn" viewBox="0 0 14 14">
+      <rect width="14" height="14" rx="3" fill="#F59E0B"/>
+      <text x="3" y="11" font-size="9" font-weight="700" fill="#000">&#x2713;</text>
+    </symbol>
 
-  <!-- Nav categories -->
+    <!-- ── SYMBOL: Checkbox unchecked ── -->
+    <symbol id="checkOff" viewBox="0 0 14 14">
+      <rect width="14" height="14" rx="3" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ── SYMBOL: Checkbox checked (green) ── -->
+    <symbol id="checkGreen" viewBox="0 0 14 14">
+      <rect width="14" height="14" rx="3" fill="#22C55E"/>
+      <text x="3" y="11" font-size="9" font-weight="700" fill="#000">&#x2713;</text>
+    </symbol>
+
+    <!-- ── SYMBOL: Display badge (green "Menu") ── -->
+    <symbol id="menuBadge" viewBox="0 0 52 18">
+      <rect width="52" height="18" rx="9" fill="#22C55E"/>
+      <text x="8" y="13" font-size="9" font-weight="600" fill="#FFF">&#x2713; Menu</text>
+    </symbol>
+
+    <!-- ── SYMBOL: Edit button (inactive) ── -->
+    <symbol id="editBtn" viewBox="0 0 38 18">
+      <rect width="38" height="18" rx="4" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+      <text x="10" y="13" font-size="9" fill="#94A3B8">Edit</text>
+    </symbol>
+
+    <!-- ── SYMBOL: Edit button (active) ── -->
+    <symbol id="editBtnActive" viewBox="0 0 38 18">
+      <rect width="38" height="18" rx="4" fill="url(#amberBtnGrad)"/>
+      <text x="10" y="13" font-size="9" font-weight="700" fill="#000">Edit</text>
+    </symbol>
+
+    <!-- ── SYMBOL: Input field (standard) ── -->
+    <symbol id="inputField" viewBox="0 0 100 32">
+      <rect width="100" height="32" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- ── SYMBOL: Nav divider ── -->
+    <symbol id="navDivider" viewBox="0 0 196 1">
+      <line x1="0" y1="0" x2="196" y2="0" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════
+       BACKGROUND
+  ═══════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
+
+  <!-- ═══════════════════════════════════════════════
+       LEFT SIDEBAR (210px)
+       DB: pos_admin_nav
+  ═══════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="210" height="1024" fill="#161930"/>
+  <text x="16" y="32" font-size="13" font-weight="700" fill="#F59E0B">&#x2699; Back Office</text>
+
+  <!-- Nav section: SETTINGS -->
   <text x="16" y="65" font-size="11" font-weight="600" fill="#64748B">SETTINGS</text>
-
-  <text x="16" y="93"  font-size="12" fill="#94A3B8">Restaurant Info</text>
+  <text x="16" y="93" font-size="12" fill="#94A3B8">Restaurant Info</text>
 
   <!-- Menu Items — parent selected -->
   <rect x="0" y="104" width="210" height="32" fill="#1A1D2E"/>
-  <rect x="0" y="104" width="3"   height="32" fill="#F59E0B"/>
-  <text x="16" y="124" font-size="12" font-weight="600" fill="#F1F5F9">Menu Items</text>
+  <rect x="0" y="104" width="3" height="32" fill="#F59E0B"/>
+  <text x="16" y="124" font-size="12" font-weight="600" fill="#E2E8F0">Menu Items</text>
 
-  <!-- Sub-items under Menu Items -->
+  <!-- Sub-items -->
   <text x="28" y="150" font-size="11" fill="#94A3B8">Menu Builder</text>
   <text x="28" y="172" font-size="11" fill="#94A3B8">Combos &amp; Modifiers</text>
   <text x="28" y="194" font-size="11" fill="#94A3B8">Price Levels</text>
   <text x="28" y="216" font-size="11" fill="#94A3B8">Menu Scheduling</text>
 
-  <!-- Nutritional Info sub-item — highlighted amber -->
+  <!-- Nutritional Info — active sub-item -->
   <rect x="14" y="224" width="196" height="28" rx="4" fill="#2D2410"/>
-  <rect x="14" y="224" width="3"   height="28" fill="#F59E0B"/>
+  <rect x="14" y="224" width="3" height="28" fill="#F59E0B"/>
   <text x="30" y="242" font-size="11" font-weight="700" fill="#F59E0B">Nutritional Info</text>
 
   <text x="28" y="268" font-size="11" fill="#94A3B8">Open Price</text>
-
   <text x="16" y="298" font-size="11" fill="#94A3B8">Taxes</text>
   <text x="16" y="320" font-size="11" fill="#94A3B8">Employees</text>
   <text x="16" y="342" font-size="11" fill="#94A3B8">Discounts</text>
@@ -47,69 +135,77 @@
   <text x="16" y="562" font-size="11" fill="#94A3B8">Advantage Program</text>
   <text x="16" y="584" font-size="11" fill="#94A3B8">Multi-Location</text>
 
-  <!-- ===================== TOP HEADER BAR ===================== -->
-  <rect x="210" y="0" width="1156" height="54" fill="#1A1D2E"/>
-  <text x="228" y="30" font-size="17" font-weight="700" fill="#F1F5F9">Nutritional Information</text>
-  <text x="228" y="46" font-size="10" fill="#64748B">FDA 21 CFR 101.11 · Calorie display for chains with 20+ locations · pos_nutritional_info table</text>
+  <!-- ═══════════════════════════════════════════════
+       TOP HEADER BAR
+  ═══════════════════════════════════════════════ -->
+  <rect x="210" y="0" width="1156" height="54" fill="url(#headerGrad)"/>
+  <text x="228" y="30" font-size="17" font-weight="700" fill="#E2E8F0">Nutritional Information</text>
+  <!-- DB: pos_nutritional_info — FDA 21 CFR 101.11 -->
+  <text x="228" y="46" font-size="10" fill="#64748B">FDA 21 CFR 101.11 &#xB7; Calorie display for chains with 20+ locations &#xB7; pos_nutritional_info table</text>
 
   <!-- Export CSV button -->
-  <rect x="1054" y="12" width="136" height="30" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1070" y="31" font-size="11" fill="#94A3B8">↓ Export CSV</text>
+  <rect x="1054" y="12" width="136" height="30" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1070" y="31" font-size="11" fill="#94A3B8">&#x2193; Export CSV</text>
 
   <!-- Import Nutritionix button -->
-  <rect x="1200" y="12" width="150" height="30" rx="6" fill="#8B5CF6"/>
-  <text x="1218" y="31" font-size="11" font-weight="600" fill="#FFFFFF">⟳ Import Nutritionix</text>
+  <rect x="1200" y="12" width="150" height="30" rx="6" fill="url(#purpleBtnGrad)"/>
+  <text x="1218" y="31" font-size="11" font-weight="600" fill="#FFFFFF">&#x21BB; Import Nutritionix</text>
 
-  <!-- ===================== FDA COMPLIANCE BANNER ===================== -->
+  <!-- ═══════════════════════════════════════════════
+       FDA COMPLIANCE BANNER
+  ═══════════════════════════════════════════════ -->
   <rect x="210" y="54" width="1156" height="44" fill="#1E1428" stroke="#8B5CF6" stroke-width="1"/>
-  <!-- purple left bar -->
   <rect x="210" y="54" width="4" height="44" fill="#8B5CF6"/>
-  <text x="226" y="72" font-size="11" font-weight="700" fill="#C4B5FD">ⓘ FDA Nutrition Labeling Rule</text>
+  <text x="226" y="72" font-size="11" font-weight="700" fill="#C4B5FD">&#x24D8; FDA Nutrition Labeling Rule</text>
   <text x="226" y="89" font-size="10" fill="#A78BFA">Chains with 20+ locations must display calorie counts on menus and menu boards (21 CFR 101.11). Voluntary for smaller chains.</text>
 
-  <!-- ===================== MAIN CONTENT SPLIT ===================== -->
-  <!-- Left table area: x=210 to x=856, width=646 -->
-  <!-- Right edit panel: x=856 to x=1366, width=510 -->
-
-  <!-- ========== NUTRITION TABLE (left panel) ========== -->
-  <rect x="210" y="98" width="646" height="34" fill="#1A1D2E"/>
+  <!-- ═══════════════════════════════════════════════
+       NUTRITION TABLE (left panel, x=210..856)
+       DB: pos_nutritional_info JOIN pos_menu_items
+  ═══════════════════════════════════════════════ -->
+  <rect x="210" y="98" width="646" height="34" fill="url(#headerGrad)"/>
   <!-- Table column headers -->
   <text x="220" y="119" font-size="9" font-weight="700" fill="#64748B">ITEM</text>
+  <!-- DB: pos_nutritional_info.calories -->
   <text x="338" y="119" font-size="9" font-weight="700" fill="#64748B">CALORIES</text>
+  <!-- DB: pos_nutritional_info.fat_g -->
   <text x="400" y="119" font-size="9" font-weight="700" fill="#64748B">FAT(g)</text>
+  <!-- DB: pos_nutritional_info.carbs_g -->
   <text x="444" y="119" font-size="9" font-weight="700" fill="#64748B">CARBS(g)</text>
+  <!-- DB: pos_nutritional_info.protein_g -->
   <text x="500" y="119" font-size="9" font-weight="700" fill="#64748B">PROT(g)</text>
+  <!-- DB: pos_nutritional_info.sodium_mg -->
   <text x="550" y="119" font-size="9" font-weight="700" fill="#64748B">NA(mg)</text>
+  <!-- DB: pos_nutritional_info.allergens text[] -->
   <text x="598" y="119" font-size="9" font-weight="700" fill="#64748B">ALLERGENS</text>
   <text x="688" y="119" font-size="9" font-weight="700" fill="#64748B">DISPLAY</text>
   <text x="748" y="119" font-size="9" font-weight="700" fill="#64748B">ACTIONS</text>
+  <line x1="210" y1="132" x2="856" y2="132" stroke="#2A2E45" stroke-width="1"/>
 
-  <!-- Divider -->
-  <line x1="210" y1="132" x2="856" y2="132" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Row 1: Classic Burger — selected/active row -->
-  <rect x="210" y="132" width="646" height="38" fill="#1E2240" stroke="#F59E0B" stroke-width="1"/>
+  <!-- Row 1: Classic Burger — selected row -->
+  <!-- DB: pos_nutritional_info WHERE menu_item_id = '...' -->
+  <rect x="210" y="132" width="646" height="38" fill="#1E2235" stroke="#F59E0B" stroke-width="1"/>
   <rect x="210" y="132" width="3" height="38" fill="#F59E0B"/>
-  <text x="220" y="150" font-size="11" font-weight="600" fill="#F1F5F9">Classic Burger</text>
-  <text x="220" y="164" font-size="9" fill="#64748B">Entrées</text>
+  <text x="220" y="150" font-size="11" font-weight="600" fill="#E2E8F0">Classic Burger</text>
+  <text x="220" y="164" font-size="9" fill="#64748B">Entr&#xE9;es</text>
+  <use href="#adminGear" x="312" y="142" width="14" height="14"/>
   <text x="342" y="156" font-size="12" font-weight="700" fill="#F59E0B">820</text>
   <text x="342" y="167" font-size="9" fill="#64748B">cal</text>
-  <text x="402" y="156" font-size="11" fill="#F1F5F9">48</text>
-  <text x="446" y="156" font-size="11" fill="#F1F5F9">55</text>
-  <text x="502" y="156" font-size="11" fill="#F1F5F9">42</text>
-  <text x="552" y="156" font-size="11" fill="#F1F5F9">1240</text>
+  <text x="402" y="156" font-size="11" fill="#E2E8F0">48</text>
+  <text x="446" y="156" font-size="11" fill="#E2E8F0">55</text>
+  <text x="502" y="156" font-size="11" fill="#E2E8F0">42</text>
+  <text x="552" y="156" font-size="11" fill="#E2E8F0">1240</text>
   <text x="598" y="152" font-size="9" fill="#FCA5A5">Gluten,</text>
   <text x="598" y="164" font-size="9" fill="#FCA5A5">Dairy</text>
-  <rect x="686" y="140" width="52" height="18" rx="9" fill="#10B981"/>
-  <text x="694" y="153" font-size="9" font-weight="600" fill="#FFF">✓ Menu</text>
-  <rect x="748" y="140" width="38" height="18" rx="4" fill="#F59E0B"/>
-  <text x="756" y="153" font-size="9" font-weight="700" fill="#000">Edit</text>
+  <use href="#menuBadge" x="686" y="140" width="52" height="18"/>
+  <use href="#editBtnActive" x="748" y="140" width="38" height="18"/>
 
   <!-- Row 2: Caesar Salad -->
-  <rect x="210" y="170" width="646" height="38" fill="#13162A"/>
-  <text x="220" y="188" font-size="11" font-weight="600" fill="#F1F5F9">Caesar Salad</text>
+  <!-- DB: pos_nutritional_info WHERE menu_item_id = '...' -->
+  <rect x="210" y="170" width="646" height="38" fill="#161930"/>
+  <text x="220" y="188" font-size="11" font-weight="600" fill="#E2E8F0">Caesar Salad</text>
   <text x="220" y="200" font-size="9" fill="#64748B">Salads</text>
-  <text x="342" y="192" font-size="12" font-weight="700" fill="#10B981">380</text>
+  <text x="342" y="192" font-size="12" font-weight="700" fill="#22C55E">380</text>
   <text x="342" y="204" font-size="9" fill="#64748B">cal</text>
   <text x="402" y="194" font-size="11" fill="#94A3B8">22</text>
   <text x="446" y="194" font-size="11" fill="#94A3B8">28</text>
@@ -117,62 +213,55 @@
   <text x="552" y="194" font-size="11" fill="#94A3B8">890</text>
   <text x="598" y="190" font-size="9" fill="#94A3B8">Dairy,</text>
   <text x="598" y="202" font-size="9" fill="#94A3B8">Egg</text>
-  <rect x="686" y="178" width="52" height="18" rx="9" fill="#10B981"/>
-  <text x="694" y="191" font-size="9" font-weight="600" fill="#FFF">✓ Menu</text>
-  <rect x="748" y="178" width="38" height="18" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="756" y="191" font-size="9" fill="#94A3B8">Edit</text>
+  <use href="#menuBadge" x="686" y="178" width="52" height="18"/>
+  <use href="#editBtn" x="748" y="178" width="38" height="18"/>
 
   <!-- Row 3: Grilled Salmon -->
   <rect x="210" y="208" width="646" height="38" fill="#1A1D2E"/>
-  <text x="220" y="226" font-size="11" font-weight="600" fill="#F1F5F9">Grilled Salmon</text>
-  <text x="220" y="238" font-size="9" fill="#64748B">Entrées</text>
-  <text x="342" y="230" font-size="12" font-weight="700" fill="#10B981">490</text>
+  <text x="220" y="226" font-size="11" font-weight="600" fill="#E2E8F0">Grilled Salmon</text>
+  <text x="220" y="238" font-size="9" fill="#64748B">Entr&#xE9;es</text>
+  <text x="342" y="230" font-size="12" font-weight="700" fill="#22C55E">490</text>
   <text x="342" y="242" font-size="9" fill="#64748B">cal</text>
   <text x="402" y="232" font-size="11" fill="#94A3B8">24</text>
   <text x="446" y="232" font-size="11" fill="#94A3B8">12</text>
   <text x="502" y="232" font-size="11" fill="#94A3B8">58</text>
   <text x="552" y="232" font-size="11" fill="#94A3B8">680</text>
+  <!-- DB: allergens = ['Fish'] -->
   <text x="598" y="232" font-size="9" fill="#94A3B8">Fish</text>
-  <rect x="686" y="216" width="52" height="18" rx="9" fill="#10B981"/>
-  <text x="694" y="229" font-size="9" font-weight="600" fill="#FFF">✓ Menu</text>
-  <rect x="748" y="216" width="38" height="18" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="756" y="229" font-size="9" fill="#94A3B8">Edit</text>
+  <use href="#menuBadge" x="686" y="216" width="52" height="18"/>
+  <use href="#editBtn" x="748" y="216" width="38" height="18"/>
 
   <!-- Row 4: French Fries -->
-  <rect x="210" y="246" width="646" height="38" fill="#13162A"/>
-  <text x="220" y="264" font-size="11" font-weight="600" fill="#F1F5F9">French Fries</text>
+  <rect x="210" y="246" width="646" height="38" fill="#161930"/>
+  <text x="220" y="264" font-size="11" font-weight="600" fill="#E2E8F0">French Fries</text>
   <text x="220" y="276" font-size="9" fill="#64748B">Sides</text>
-  <text x="342" y="268" font-size="12" font-weight="700" fill="#10B981">420</text>
+  <text x="342" y="268" font-size="12" font-weight="700" fill="#22C55E">420</text>
   <text x="342" y="280" font-size="9" fill="#64748B">cal</text>
   <text x="402" y="270" font-size="11" fill="#94A3B8">22</text>
   <text x="446" y="270" font-size="11" fill="#94A3B8">52</text>
   <text x="502" y="270" font-size="11" fill="#94A3B8">5</text>
   <text x="552" y="270" font-size="11" fill="#94A3B8">610</text>
   <text x="598" y="270" font-size="9" fill="#94A3B8">Gluten</text>
-  <rect x="686" y="254" width="52" height="18" rx="9" fill="#10B981"/>
-  <text x="694" y="267" font-size="9" font-weight="600" fill="#FFF">✓ Menu</text>
-  <rect x="748" y="254" width="38" height="18" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="756" y="267" font-size="9" fill="#94A3B8">Edit</text>
+  <use href="#menuBadge" x="686" y="254" width="52" height="18"/>
+  <use href="#editBtn" x="748" y="254" width="38" height="18"/>
 
   <!-- Row 5: House Lemonade -->
   <rect x="210" y="284" width="646" height="38" fill="#1A1D2E"/>
-  <text x="220" y="302" font-size="11" font-weight="600" fill="#F1F5F9">House Lemonade</text>
+  <text x="220" y="302" font-size="11" font-weight="600" fill="#E2E8F0">House Lemonade</text>
   <text x="220" y="314" font-size="9" fill="#64748B">Beverages</text>
-  <text x="342" y="306" font-size="12" font-weight="700" fill="#10B981">180</text>
+  <text x="342" y="306" font-size="12" font-weight="700" fill="#22C55E">180</text>
   <text x="342" y="318" font-size="9" fill="#64748B">cal</text>
   <text x="402" y="308" font-size="11" fill="#94A3B8">0</text>
   <text x="446" y="308" font-size="11" fill="#94A3B8">46</text>
   <text x="502" y="308" font-size="11" fill="#94A3B8">0</text>
   <text x="552" y="308" font-size="11" fill="#94A3B8">15</text>
   <text x="598" y="308" font-size="9" fill="#94A3B8">None</text>
-  <rect x="686" y="292" width="52" height="18" rx="9" fill="#10B981"/>
-  <text x="694" y="305" font-size="9" font-weight="600" fill="#FFF">✓ Menu</text>
-  <rect x="748" y="292" width="38" height="18" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="756" y="305" font-size="9" fill="#94A3B8">Edit</text>
+  <use href="#menuBadge" x="686" y="292" width="52" height="18"/>
+  <use href="#editBtn" x="748" y="292" width="38" height="18"/>
 
   <!-- Row 6: Kids Mac & Cheese -->
-  <rect x="210" y="322" width="646" height="38" fill="#13162A"/>
-  <text x="220" y="340" font-size="11" font-weight="600" fill="#F1F5F9">Kids Mac &amp; Cheese</text>
+  <rect x="210" y="322" width="646" height="38" fill="#161930"/>
+  <text x="220" y="340" font-size="11" font-weight="600" fill="#E2E8F0">Kids Mac &amp; Cheese</text>
   <text x="220" y="352" font-size="9" fill="#64748B">Kids Menu</text>
   <text x="342" y="344" font-size="12" font-weight="700" fill="#F59E0B">520</text>
   <text x="342" y="356" font-size="9" fill="#64748B">cal</text>
@@ -182,230 +271,242 @@
   <text x="552" y="346" font-size="11" fill="#94A3B8">890</text>
   <text x="598" y="342" font-size="9" fill="#94A3B8">Gluten,</text>
   <text x="598" y="354" font-size="9" fill="#94A3B8">Dairy</text>
-  <rect x="686" y="330" width="52" height="18" rx="9" fill="#10B981"/>
-  <text x="694" y="343" font-size="9" font-weight="600" fill="#FFF">✓ Menu</text>
-  <rect x="748" y="330" width="38" height="18" rx="4" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="756" y="343" font-size="9" fill="#94A3B8">Edit</text>
+  <use href="#menuBadge" x="686" y="330" width="52" height="18"/>
+  <use href="#editBtn" x="748" y="330" width="38" height="18"/>
 
   <!-- Warning row: missing data -->
   <rect x="210" y="360" width="646" height="28" fill="#1C1608"/>
-  <text x="228" y="378" font-size="10" fill="#F59E0B">⚠</text>
-  <text x="242" y="378" font-size="10" fill="#94A3B8">2 items missing calorie data — not FDA compliant until resolved</text>
+  <text x="228" y="378" font-size="10" fill="#F59E0B">&#x26A0;</text>
+  <text x="242" y="378" font-size="10" fill="#94A3B8">2 items missing calorie data &#x2014; not FDA compliant until resolved</text>
 
-  <!-- ========== COMPLIANCE STATUS CARD (bottom-left) ========== -->
-  <rect x="210" y="398" width="646" height="222" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="226" y="420" font-size="13" font-weight="700" fill="#F1F5F9">Compliance Status</text>
+  <line x1="210" y1="388" x2="856" y2="388" stroke="#2A2E45" stroke-width="1"/>
 
-  <!-- Progress bar background -->
-  <rect x="226" y="432" width="610" height="8" rx="4" fill="#0F1117"/>
-  <!-- Progress bar fill 95% -->
-  <rect x="226" y="432" width="579" height="8" rx="4" fill="#10B981"/>
+  <!-- ═══════════════════════════════════════════════
+       COMPLIANCE STATUS CARD
+       DB: COUNT(*) FROM pos_nutritional_info WHERE calories IS NOT NULL
+  ═══════════════════════════════════════════════ -->
+  <rect x="210" y="398" width="646" height="222" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="226" y="420" font-size="13" font-weight="700" fill="#E2E8F0">Compliance Status</text>
 
-  <!-- Stats row -->
+  <!-- Progress bar -->
+  <rect x="226" y="432" width="610" height="8" rx="4" fill="#0C0E1A"/>
+  <rect x="226" y="432" width="579" height="8" rx="4" fill="#22C55E"/>
+
   <text x="226" y="458" font-size="11" fill="#94A3B8">Items with calorie data:</text>
-  <text x="380" y="458" font-size="13" font-weight="700" fill="#10B981">42 / 44</text>
+  <text x="380" y="458" font-size="13" font-weight="700" fill="#22C55E">42 / 44</text>
   <text x="440" y="458" font-size="11" fill="#64748B">(95%)</text>
 
-  <!-- FDA status badge -->
+  <!-- FDA status badge — NOT COMPLIANT -->
   <rect x="226" y="468" width="610" height="34" rx="6" fill="#2D0F0F" stroke="#EF4444" stroke-width="1"/>
-  <text x="242" y="482" font-size="10" font-weight="700" fill="#EF4444">✗ NOT COMPLIANT</text>
+  <text x="242" y="482" font-size="10" font-weight="700" fill="#EF4444">&#x2717; NOT COMPLIANT</text>
   <text x="340" y="482" font-size="10" fill="#FCA5A5">2 items need calorie counts before FDA 21 CFR 101.11 is satisfied</text>
-  <text x="242" y="495" font-size="9" fill="#94A3B8">Items: "Seasonal Soup" · "Chef's Special" — click each to add data</text>
+  <text x="242" y="495" font-size="9" fill="#94A3B8">Items: "Seasonal Soup" &#xB7; "Chef's Special" &#x2014; click each to add data</text>
 
-  <!-- Action buttons row -->
-  <rect x="226" y="512" width="190" height="32" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="244" y="532" font-size="11" fill="#94A3B8">↓ Export Nutrition CSV</text>
+  <!-- Action buttons -->
+  <rect x="226" y="512" width="190" height="32" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="244" y="532" font-size="11" fill="#94A3B8">&#x2193; Export Nutrition CSV</text>
+  <rect x="428" y="512" width="210" height="32" rx="6" fill="url(#purpleBtnGrad)"/>
+  <text x="444" y="532" font-size="11" font-weight="600" fill="#FFF">&#x21BB; Import from Nutritionix API</text>
 
-  <rect x="428" y="512" width="210" height="32" rx="6" fill="#8B5CF6"/>
-  <text x="444" y="532" font-size="11" font-weight="600" fill="#FFF">⟳ Import from Nutritionix API</text>
+  <!-- DB: pos_nutritional_info.data_source -->
+  <text x="226" y="560" font-size="9" fill="#64748B">Nutritionix last synced: never &#xB7; Entered manually: 42 items &#xB7; Lab analysis: 0 items</text>
 
-  <!-- Last sync note -->
-  <text x="226" y="560" font-size="9" fill="#64748B">Nutritionix last synced: never · Entered manually: 42 items · Lab analysis: 0 items</text>
-
-  <!-- ========== DB SCHEMA BLOCK ========== -->
-  <rect x="210" y="632" width="646" height="380" rx="8" fill="#0A0C14" stroke="#2D3148" stroke-width="1"/>
-  <text x="226" y="654" font-size="11" font-weight="700" fill="#8B5CF6">DB Schema — pos_nutritional_info</text>
-  <line x1="210" y1="660" x2="856" y2="660" stroke="#2D3148" stroke-width="1"/>
+  <!-- ═══════════════════════════════════════════════
+       DB SCHEMA BLOCK
+       DB: pos_nutritional_info table definition
+  ═══════════════════════════════════════════════ -->
+  <rect x="210" y="632" width="646" height="380" rx="8" fill="#0A0C14" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="226" y="654" font-size="11" font-weight="700" fill="#8B5CF6">DB Schema &#x2014; pos_nutritional_info</text>
+  <line x1="210" y1="660" x2="856" y2="660" stroke="#2A2E45" stroke-width="1"/>
 
   <!-- SQL code block -->
-  <text x="226" y="680" font-size="10" fill="#64748B" font-family="monospace,monospace">-- FDA 21 CFR 101.11: required for chains with 20+ locations</text>
-  <text x="226" y="696" font-size="10" fill="#94A3B8" font-family="monospace,monospace">pos_menu_items.calories_min  int</text>
-  <text x="226" y="712" font-size="10" fill="#94A3B8" font-family="monospace,monospace">pos_menu_items.calories_max  int  -- range for variations (e.g. 780–850 cal)</text>
-  <text x="226" y="730" font-size="10" fill="#64748B" font-family="monospace,monospace"> </text>
-  <text x="226" y="746" font-size="10" fill="#A78BFA" font-family="monospace,monospace">CREATE TABLE pos_nutritional_info (</text>
-  <text x="244" y="762" font-size="10" fill="#94A3B8" font-family="monospace,monospace">menu_item_id   uuid            PRIMARY KEY,</text>
-  <text x="244" y="778" font-size="10" fill="#94A3B8" font-family="monospace,monospace">calories       int,</text>
-  <text x="244" y="794" font-size="10" fill="#94A3B8" font-family="monospace,monospace">fat_g          decimal(5,1),</text>
-  <text x="244" y="810" font-size="10" fill="#94A3B8" font-family="monospace,monospace">carbs_g        decimal(5,1),</text>
-  <text x="244" y="826" font-size="10" fill="#94A3B8" font-family="monospace,monospace">protein_g      decimal(5,1),</text>
-  <text x="244" y="842" font-size="10" fill="#94A3B8" font-family="monospace,monospace">sodium_mg      int,</text>
-  <text x="244" y="858" font-size="10" fill="#94A3B8" font-family="monospace,monospace">fiber_g        decimal(5,1),</text>
-  <text x="244" y="874" font-size="10" fill="#94A3B8" font-family="monospace,monospace">sugar_g        decimal(5,1),</text>
-  <text x="244" y="890" font-size="10" fill="#94A3B8" font-family="monospace,monospace">allergens      text[],         -- ['Gluten','Dairy','Fish',...]</text>
-  <text x="244" y="906" font-size="10" fill="#94A3B8" font-family="monospace,monospace">data_source    varchar,        -- 'manual' | 'lab' | 'nutritionix'</text>
-  <text x="244" y="922" font-size="10" fill="#94A3B8" font-family="monospace,monospace">last_updated_at timestamptz</text>
-  <text x="226" y="938" font-size="10" fill="#A78BFA" font-family="monospace,monospace">);</text>
-  <text x="226" y="956" font-size="10" fill="#64748B" font-family="monospace,monospace">-- displayed on: menus, QR order, KDS, label printer</text>
-  <text x="226" y="972" font-size="10" fill="#64748B" font-family="monospace,monospace">-- FOREIGN KEY (menu_item_id) REFERENCES pos_menu_items(id) ON DELETE CASCADE</text>
+  <!-- DB: FDA 21 CFR 101.11 compliance fields -->
+  <text x="226" y="680" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">-- FDA 21 CFR 101.11: required for chains with 20+ locations</text>
+  <text x="226" y="696" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">pos_menu_items.calories_min  int</text>
+  <text x="226" y="712" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">pos_menu_items.calories_max  int  -- range for variations (e.g. 780&#x2013;850 cal)</text>
 
-  <!-- ===================== RIGHT EDIT PANEL ===================== -->
-  <rect x="856" y="54" width="510" height="970" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <text x="226" y="746" font-size="10" fill="#A78BFA" font-family="'SF Mono',Menlo,monospace">CREATE TABLE pos_nutritional_info (</text>
+  <!-- DB: pos_nutritional_info columns -->
+  <text x="244" y="762" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">menu_item_id   uuid            PRIMARY KEY,</text>
+  <text x="244" y="778" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">calories       int,</text>
+  <text x="244" y="794" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">fat_g          decimal(5,1),</text>
+  <text x="244" y="810" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">carbs_g        decimal(5,1),</text>
+  <text x="244" y="826" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">protein_g      decimal(5,1),</text>
+  <text x="244" y="842" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">sodium_mg      int,</text>
+  <text x="244" y="858" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">fiber_g        decimal(5,1),</text>
+  <text x="244" y="874" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">sugar_g        decimal(5,1),</text>
+  <text x="244" y="890" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">allergens      text[],         -- ['Gluten','Dairy','Fish',...]</text>
+  <text x="244" y="906" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">data_source    varchar,        -- 'manual' | 'lab' | 'nutritionix'</text>
+  <text x="244" y="922" font-size="10" fill="#94A3B8" font-family="'SF Mono',Menlo,monospace">last_updated_at timestamptz</text>
+  <text x="226" y="938" font-size="10" fill="#A78BFA" font-family="'SF Mono',Menlo,monospace">);</text>
+  <text x="226" y="956" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">-- displayed on: menus, QR order, KDS, label printer</text>
+  <text x="226" y="972" font-size="10" fill="#64748B" font-family="'SF Mono',Menlo,monospace">-- FOREIGN KEY (menu_item_id) REFERENCES pos_menu_items(id) ON DELETE CASCADE</text>
+
+  <!-- ═══════════════════════════════════════════════
+       RIGHT EDIT PANEL (x=856..1366)
+       DB: pos_nutritional_info WHERE menu_item_id = (selected item)
+  ═══════════════════════════════════════════════ -->
+  <rect x="856" y="54" width="510" height="970" fill="#161930" stroke="#2A2E45" stroke-width="1"/>
 
   <!-- Panel header -->
-  <rect x="856" y="54" width="510" height="48" fill="#1A1D2E"/>
-  <text x="872" y="74" font-size="13" font-weight="700" fill="#F1F5F9">Edit: Classic Burger</text>
-  <text x="872" y="90" font-size="10" fill="#64748B">Entrées · menu_item_id: 4a2f…</text>
+  <rect x="856" y="54" width="510" height="48" fill="url(#headerGrad)"/>
+  <text x="872" y="74" font-size="13" font-weight="700" fill="#E2E8F0">Edit: Classic Burger</text>
+  <text x="872" y="90" font-size="10" fill="#64748B">Entr&#xE9;es &#xB7; menu_item_id: 4a2f&#x2026;</text>
   <!-- Close X -->
-  <rect x="1326" y="62" width="28" height="28" rx="6" fill="#2D3148"/>
-  <text x="1334" y="81" font-size="12" fill="#94A3B8">✕</text>
+  <rect x="1326" y="62" width="28" height="28" rx="6" fill="#2A2E45"/>
+  <text x="1334" y="81" font-size="12" fill="#94A3B8">&#x2715;</text>
 
   <!-- Calories input (large) -->
+  <!-- DB: pos_nutritional_info.calories -->
   <text x="872" y="126" font-size="10" font-weight="600" fill="#94A3B8">CALORIES</text>
-  <rect x="872" y="132" width="200" height="48" rx="8" fill="#0F1117" stroke="#F59E0B" stroke-width="2"/>
+  <use href="#adminGear" x="926" y="116" width="14" height="14"/>
+  <rect x="872" y="132" width="200" height="48" rx="8" fill="#0C0E1A" stroke="#F59E0B" stroke-width="2"/>
   <text x="892" y="163" font-size="28" font-weight="700" fill="#F59E0B">820</text>
   <text x="1052" y="163" font-size="13" fill="#64748B">kcal</text>
 
-  <!-- Calorie range row -->
+  <!-- Calorie range -->
+  <!-- DB: pos_menu_items.calories_min, calories_max -->
   <text x="872" y="202" font-size="10" font-weight="600" fill="#94A3B8">CALORIE RANGE (for variations)</text>
-  <rect x="872" y="208" width="90" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="884" y="228" font-size="12" fill="#F1F5F9">780</text>
-  <text x="970" y="228" font-size="11" fill="#64748B">–</text>
-  <rect x="982" y="208" width="90" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="994" y="228" font-size="12" fill="#F1F5F9">850</text>
+  <use href="#adminGear" x="1060" y="192" width="14" height="14"/>
+  <use href="#inputField" x="872" y="208" width="90" height="32"/>
+  <text x="884" y="228" font-size="12" fill="#E2E8F0">780</text>
+  <text x="970" y="228" font-size="11" fill="#64748B">&#x2013;</text>
+  <use href="#inputField" x="982" y="208" width="90" height="32"/>
+  <text x="994" y="228" font-size="12" fill="#E2E8F0">850</text>
   <text x="1082" y="228" font-size="11" fill="#64748B">cal</text>
   <text x="1100" y="228" font-size="9" fill="#64748B">(e.g. +cheese option)</text>
 
   <!-- Macros row -->
+  <!-- DB: pos_nutritional_info.fat_g, carbs_g, protein_g, sodium_mg -->
   <text x="872" y="258" font-size="10" font-weight="600" fill="#94A3B8">MACRONUTRIENTS</text>
+  <use href="#adminGear" x="964" y="248" width="14" height="14"/>
   <!-- Fat -->
   <text x="872" y="275" font-size="9" fill="#64748B">Fat (g)</text>
-  <rect x="872" y="279" width="100" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="884" y="299" font-size="12" fill="#F1F5F9">48</text>
+  <use href="#inputField" x="872" y="279" width="100" height="32"/>
+  <text x="884" y="299" font-size="12" fill="#E2E8F0">48</text>
   <!-- Carbs -->
   <text x="982" y="275" font-size="9" fill="#64748B">Carbs (g)</text>
-  <rect x="982" y="279" width="100" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="994" y="299" font-size="12" fill="#F1F5F9">55</text>
+  <use href="#inputField" x="982" y="279" width="100" height="32"/>
+  <text x="994" y="299" font-size="12" fill="#E2E8F0">55</text>
   <!-- Protein -->
   <text x="1092" y="275" font-size="9" fill="#64748B">Protein (g)</text>
-  <rect x="1092" y="279" width="100" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="1104" y="299" font-size="12" fill="#F1F5F9">42</text>
+  <use href="#inputField" x="1092" y="279" width="100" height="32"/>
+  <text x="1104" y="299" font-size="12" fill="#E2E8F0">42</text>
   <!-- Sodium -->
   <text x="1202" y="275" font-size="9" fill="#64748B">Sodium (mg)</text>
-  <rect x="1202" y="279" width="140" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="1214" y="299" font-size="12" fill="#F1F5F9">1240</text>
+  <rect x="1202" y="279" width="140" height="32" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1214" y="299" font-size="12" fill="#E2E8F0">1240</text>
 
-  <!-- Fiber and Sugar (secondary) -->
+  <!-- Fiber and Sugar -->
+  <!-- DB: pos_nutritional_info.fiber_g, sugar_g -->
   <text x="872" y="326" font-size="9" fill="#64748B">Fiber (g)</text>
-  <rect x="872" y="330" width="100" height="28" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="872" y="330" width="100" height="28" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
   <text x="884" y="348" font-size="11" fill="#94A3B8">3</text>
   <text x="982" y="326" font-size="9" fill="#64748B">Sugar (g)</text>
-  <rect x="982" y="330" width="100" height="28" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="982" y="330" width="100" height="28" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
   <text x="994" y="348" font-size="11" fill="#94A3B8">8</text>
 
-  <!-- Allergens section -->
+  <!-- ═══════════════════════════════════════════════
+       ALLERGENS (Big 9) — checkboxes
+       DB: pos_nutritional_info.allergens text[]
+  ═══════════════════════════════════════════════ -->
   <text x="872" y="380" font-size="10" font-weight="600" fill="#94A3B8">ALLERGENS (Big 9)</text>
-  <rect x="872" y="386" width="466" height="148" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#adminGear" x="978" y="370" width="14" height="14"/>
+  <rect x="872" y="386" width="466" height="148" rx="8" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
 
   <!-- Allergen checklist — 2 columns -->
   <!-- Gluten checked -->
-  <rect x="886" y="400" width="14" height="14" rx="3" fill="#F59E0B"/>
-  <text x="889" y="411" font-size="9" font-weight="700" fill="#000">✓</text>
-  <text x="904" y="411" font-size="11" fill="#F1F5F9">Gluten</text>
+  <use href="#checkOn" x="886" y="400" width="14" height="14"/>
+  <text x="904" y="411" font-size="11" fill="#E2E8F0">Gluten</text>
   <!-- Dairy checked -->
-  <rect x="886" y="422" width="14" height="14" rx="3" fill="#F59E0B"/>
-  <text x="889" y="433" font-size="9" font-weight="700" fill="#000">✓</text>
-  <text x="904" y="433" font-size="11" fill="#F1F5F9">Dairy</text>
+  <use href="#checkOn" x="886" y="422" width="14" height="14"/>
+  <text x="904" y="433" font-size="11" fill="#E2E8F0">Dairy</text>
   <!-- Eggs unchecked -->
-  <rect x="886" y="444" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="886" y="444" width="14" height="14"/>
   <text x="904" y="455" font-size="11" fill="#64748B">Eggs</text>
   <!-- Fish unchecked -->
-  <rect x="886" y="466" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="886" y="466" width="14" height="14"/>
   <text x="904" y="477" font-size="11" fill="#64748B">Fish</text>
   <!-- Tree Nuts unchecked -->
-  <rect x="886" y="488" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="886" y="488" width="14" height="14"/>
   <text x="904" y="499" font-size="11" fill="#64748B">Tree Nuts</text>
   <!-- Col 2 -->
   <!-- Peanuts unchecked -->
-  <rect x="1076" y="400" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="1076" y="400" width="14" height="14"/>
   <text x="1094" y="411" font-size="11" fill="#64748B">Peanuts</text>
   <!-- Soy unchecked -->
-  <rect x="1076" y="422" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="1076" y="422" width="14" height="14"/>
   <text x="1094" y="433" font-size="11" fill="#64748B">Soy</text>
   <!-- Shellfish unchecked -->
-  <rect x="1076" y="444" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="1076" y="444" width="14" height="14"/>
   <text x="1094" y="455" font-size="11" fill="#64748B">Shellfish</text>
   <!-- Sesame unchecked -->
-  <rect x="1076" y="466" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="1076" y="466" width="14" height="14"/>
   <text x="1094" y="477" font-size="11" fill="#64748B">Sesame</text>
 
-  <!-- Display On section -->
+  <!-- ═══════════════════════════════════════════════
+       DISPLAY ON — checkboxes
+       DB: pos_nutritional_info display flags
+  ═══════════════════════════════════════════════ -->
   <text x="872" y="554" font-size="10" font-weight="600" fill="#94A3B8">DISPLAY ON</text>
-  <rect x="872" y="560" width="466" height="100" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#adminGear" x="936" y="544" width="14" height="14"/>
+  <rect x="872" y="560" width="466" height="100" rx="8" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
 
   <!-- iPad menu -->
-  <rect x="886" y="574" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="889" y="585" font-size="9" font-weight="700" fill="#000">✓</text>
-  <text x="904" y="585" font-size="11" fill="#F1F5F9">iPad Menu / Register</text>
+  <use href="#checkGreen" x="886" y="574" width="14" height="14"/>
+  <text x="904" y="585" font-size="11" fill="#E2E8F0">iPad Menu / Register</text>
   <!-- QR / Online -->
-  <rect x="886" y="596" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="889" y="607" font-size="9" font-weight="700" fill="#000">✓</text>
-  <text x="904" y="607" font-size="11" fill="#F1F5F9">QR / Online Menu</text>
+  <use href="#checkGreen" x="886" y="596" width="14" height="14"/>
+  <text x="904" y="607" font-size="11" fill="#E2E8F0">QR / Online Menu</text>
   <!-- KDS -->
-  <rect x="1076" y="574" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="1079" y="585" font-size="9" font-weight="700" fill="#000">✓</text>
-  <text x="1094" y="585" font-size="11" fill="#F1F5F9">KDS (Kitchen Display)</text>
+  <use href="#checkGreen" x="1076" y="574" width="14" height="14"/>
+  <text x="1094" y="585" font-size="11" fill="#E2E8F0">KDS (Kitchen Display)</text>
   <!-- Label printer -->
-  <rect x="1076" y="596" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="1079" y="607" font-size="9" font-weight="700" fill="#000">✓</text>
-  <text x="1094" y="607" font-size="11" fill="#F1F5F9">Kitchen Label Printer</text>
+  <use href="#checkGreen" x="1076" y="596" width="14" height="14"/>
+  <text x="1094" y="607" font-size="11" fill="#E2E8F0">Kitchen Label Printer</text>
   <!-- Menu board (future) -->
-  <rect x="886" y="618" width="14" height="14" rx="3" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkOff" x="886" y="618" width="14" height="14"/>
   <text x="904" y="629" font-size="11" fill="#64748B">Digital Menu Board</text>
-  <rect x="970" y="620" width="56" height="12" rx="6" fill="#1E2240"/>
+  <rect x="970" y="620" width="56" height="12" rx="6" fill="#1E2235"/>
   <text x="976" y="629" font-size="8" fill="#64748B">coming soon</text>
 
   <!-- Data Source dropdown -->
+  <!-- DB: pos_nutritional_info.data_source -->
   <text x="872" y="678" font-size="10" font-weight="600" fill="#94A3B8">DATA SOURCE</text>
-  <rect x="872" y="684" width="466" height="36" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="888" y="706" font-size="11" fill="#F1F5F9">Entered manually</text>
-  <text x="1304" y="706" font-size="10" fill="#64748B">▾</text>
-  <!-- dropdown hint -->
-  <text x="872" y="732" font-size="9" fill="#64748B">Options: Entered manually · Lab analysis · Third-party (Nutritionix API)</text>
+  <use href="#adminGear" x="944" y="668" width="14" height="14"/>
+  <rect x="872" y="684" width="466" height="36" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="888" y="706" font-size="11" fill="#E2E8F0">Entered manually</text>
+  <text x="1304" y="706" font-size="10" fill="#64748B">&#x25BE;</text>
+  <text x="872" y="732" font-size="9" fill="#64748B">Options: Entered manually &#xB7; Lab analysis &#xB7; Third-party (Nutritionix API)</text>
 
-  <!-- Last updated note -->
-  <text x="872" y="754" font-size="9" fill="#64748B">Last updated: 2024-03-14 · by Manager (mjohnson@restaurant.com)</text>
+  <!-- Last updated -->
+  <!-- DB: pos_nutritional_info.last_updated_at -->
+  <text x="872" y="754" font-size="9" fill="#64748B">Last updated: 2024-03-14 &#xB7; by Manager (mjohnson@restaurant.com)</text>
 
   <!-- Warning notice about range -->
   <rect x="872" y="764" width="466" height="32" rx="6" fill="#1C1200" stroke="#F59E0B" stroke-width="1"/>
-  <text x="888" y="778" font-size="9" font-weight="600" fill="#F59E0B">⚠  Range displayed as "780–850 cal" on menu</text>
+  <text x="888" y="778" font-size="9" font-weight="600" fill="#F59E0B">&#x26A0;  Range displayed as "780&#x2013;850 cal" on menu</text>
   <text x="888" y="791" font-size="9" fill="#94A3B8">Per FDA guidance, ranges shown when modifications change calories &gt;50 kcal</text>
 
   <!-- Save button -->
-  <rect x="872" y="808" width="320" height="44" rx="8" fill="#F59E0B"/>
+  <rect x="872" y="808" width="320" height="44" rx="8" fill="url(#amberBtnGrad)" filter="url(#amberGlow)"/>
   <text x="980" y="834" font-size="14" font-weight="700" fill="#000">Save Nutritional Data</text>
 
-  <!-- Secondary action: Discard -->
-  <rect x="1204" y="808" width="134" height="44" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Discard button -->
+  <rect x="1204" y="808" width="134" height="44" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
   <text x="1230" y="834" font-size="12" fill="#94A3B8">Discard</text>
 
-  <!-- FDA note at bottom of panel -->
-  <rect x="856" y="864" width="510" height="52" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="872" y="882" font-size="9" font-weight="700" fill="#8B5CF6">ⓘ FDA Accuracy Note</text>
+  <!-- FDA note -->
+  <rect x="856" y="864" width="510" height="52" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="872" y="882" font-size="9" font-weight="700" fill="#8B5CF6">&#x24D8; FDA Accuracy Note</text>
   <text x="872" y="896" font-size="9" fill="#64748B">Declared calorie counts must be based on lab analysis or reasonable basis (NLEA).</text>
-  <text x="872" y="908" font-size="9" fill="#64748B">Manual entries carry ±20% FDA tolerance. Lab analysis recommended for flagship items.</text>
+  <text x="872" y="908" font-size="9" fill="#64748B">Manual entries carry &#xB1;20% FDA tolerance. Lab analysis recommended for flagship items.</text>
 
-  <!-- Nutritionix logo / attribution placeholder -->
-  <rect x="856" y="916" width="510" height="36" fill="#13162A"/>
-  <text x="872" y="938" font-size="9" fill="#64748B">Nutritionix API integration · ~/synalux-pos/integrations/nutritionix.ts · 900K+ food database</text>
+  <!-- Nutritionix attribution -->
+  <rect x="856" y="916" width="510" height="36" fill="#161930"/>
+  <text x="872" y="938" font-size="9" fill="#64748B">Nutritionix API integration &#xB7; ~/synalux-pos/integrations/nutritionix.ts &#xB7; 900K+ food database</text>
 
-  <!-- Bottom divider line on table area -->
-  <line x1="210" y1="388" x2="856" y2="388" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Table bottom border -->
-  <line x1="210" y1="98"  x2="856" y2="98"  stroke="#2D3148" stroke-width="1"/>
-  <line x1="210" y1="132" x2="856" y2="132" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Vertical separator between table and right panel -->
-  <line x1="856" y1="54" x2="856" y2="1024" stroke="#2D3148" stroke-width="1"/>
+  <!-- Vertical separator -->
+  <line x1="856" y1="54" x2="856" y2="1024" stroke="#2A2E45" stroke-width="1"/>
 
 </svg>

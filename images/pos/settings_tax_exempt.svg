@@ -1,39 +1,130 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
-  <rect width="1366" height="1024" fill="#0F1117"/>
+<svg role="img" aria-labelledby="title-settings_tax_exempt-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,system-ui,BlinkMacSystemFont,sans-serif">
+  <title id="title-settings_tax_exempt-svg">Synalux POS — tax exempt</title>
+  <desc>Synalux POS mockup screen for tax exempt. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient for cards -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F2337"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="shadowSm" x="-2%" y="-2%" width="104%" height="112%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Admin gear icon (reusable) -->
+    <symbol id="gear" viewBox="0 0 16 16">
+      <path d="M8 1l1.2.3.5 1.3.9-.6 1.2.7-.2 1.4 1.1.8-.6 1.2L13.4 7l.3 1.2-1.1.8.2 1.4-1.2.7-.9-.6-.5 1.3L8 12l-1.2-.3-.5-1.3-.9.6-1.2-.7.2-1.4-1.1-.8.6-1.2L2.6 7l-.3-1.2 1.1-.8-.2-1.4 1.2-.7.9.6.5-1.3z" fill="none" stroke="#F59E0B" stroke-width="1"/>
+      <circle cx="8" cy="7" r="2" fill="none" stroke="#F59E0B" stroke-width="1"/>
+    </symbol>
+
+    <!-- Toggle ON symbol -->
+    <symbol id="toggleOn" viewBox="0 0 44 22">
+      <rect width="44" height="22" rx="11" fill="#22C55E"/>
+      <circle cx="33" cy="11" r="8" fill="white"/>
+    </symbol>
+
+    <!-- Toggle OFF symbol -->
+    <symbol id="toggleOff" viewBox="0 0 44 22">
+      <rect width="44" height="22" rx="11" fill="#374151"/>
+      <circle cx="11" cy="11" r="8" fill="white"/>
+    </symbol>
+
+    <!-- Status dot symbol -->
+    <symbol id="dotActive" viewBox="0 0 10 10">
+      <circle cx="5" cy="5" r="4" fill="#22C55E"/>
+    </symbol>
+    <symbol id="dotWarning" viewBox="0 0 10 10">
+      <circle cx="5" cy="5" r="4" fill="#F59E0B"/>
+    </symbol>
+    <symbol id="dotError" viewBox="0 0 10 10">
+      <circle cx="5" cy="5" r="4" fill="#EF4444"/>
+    </symbol>
+
+    <!-- Nav item row background -->
+    <symbol id="navItem" viewBox="0 0 184 36">
+      <rect width="184" height="36" rx="7" fill="#1E2235"/>
+    </symbol>
+    <symbol id="navItemActive" viewBox="0 0 184 36">
+      <rect width="184" height="36" rx="7" fill="url(#amberGrad)"/>
+    </symbol>
+
+    <!-- Stat card -->
+    <symbol id="statCard" viewBox="0 0 260 50">
+      <rect width="260" height="50" rx="8" fill="#1A1D2E" filter="url(#shadowSm)"/>
+    </symbol>
+
+    <!-- Button primary -->
+    <symbol id="btnPrimary" viewBox="0 0 274 32">
+      <rect width="274" height="32" rx="7" fill="url(#amberGrad)"/>
+    </symbol>
+
+    <!-- Table row stripe -->
+    <symbol id="rowEven" viewBox="0 0 543 22">
+      <rect width="543" height="22" rx="3" fill="#0C0E1A"/>
+    </symbol>
+    <symbol id="rowOdd" viewBox="0 0 543 22">
+      <rect width="543" height="22" rx="3" fill="#1A1D2E"/>
+    </symbol>
+
+    <!-- Step badge -->
+    <symbol id="stepBadge" viewBox="0 0 18 18">
+      <circle cx="9" cy="9" r="9" fill="url(#amberGrad)"/>
+    </symbol>
+  </defs>
+
+  <!-- ===== CANVAS BACKGROUND ===== -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
 
   <!-- ===== TOP NAV BAR ===== -->
-  <rect x="0" y="0" width="1366" height="54" fill="#1A1D2E"/>
-  <rect x="0" y="54" width="1366" height="1" fill="#2D3148"/>
+  <rect x="0" y="0" width="1366" height="54" fill="url(#headerGrad)"/>
+  <rect x="0" y="54" width="1366" height="1" fill="#2A2E45"/>
   <text x="24" y="34" fill="#F59E0B" font-size="16" font-weight="700">Synalux POS</text>
-  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">&#9881; Back Office — Tax-Exempt Sales</text>
+  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">Back Office — Tax-Exempt Sales</text>
+  <!-- DB: pos_users.role = 'admin' -->
   <text x="1342" y="34" fill="#94A3B8" font-size="13" text-anchor="end">Admin · John S.</text>
 
-  <!-- ===== LEFT NAV ===== -->
-  <rect x="0" y="55" width="200" height="969" fill="#13162A"/>
-  <rect x="200" y="55" width="1" height="969" fill="#2D3148"/>
+  <!-- ===== LEFT NAV SIDEBAR ===== -->
+  <rect x="0" y="55" width="200" height="969" fill="#11142A"/>
+  <rect x="200" y="55" width="1" height="969" fill="#2A2E45"/>
   <text x="100" y="90" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">BACK OFFICE</text>
 
-  <rect x="8" y="98" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="121" fill="#CBD5E1" font-size="13">&#127978; Restaurant Info</text>
-  <rect x="8" y="140" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="163" fill="#CBD5E1" font-size="13">&#127828; Menu Builder</text>
-  <rect x="8" y="182" width="184" height="36" rx="7" fill="#F59E0B"/>
-  <text x="50" y="205" fill="#0F1117" font-size="13" font-weight="700">&#128176; Taxes</text>
-  <rect x="8" y="224" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="247" fill="#CBD5E1" font-size="13">&#128101; Employees</text>
-  <rect x="8" y="266" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="289" fill="#CBD5E1" font-size="13">&#128424; Equipment</text>
-  <rect x="8" y="308" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="331" fill="#CBD5E1" font-size="13">&#128208; Reports</text>
-  <rect x="8" y="350" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="373" fill="#CBD5E1" font-size="13">&#127873; Loyalty</text>
-  <rect x="8" y="392" width="184" height="36" rx="7" fill="#1E2235"/>
-  <text x="50" y="415" fill="#CBD5E1" font-size="13">&#128279; Integrations</text>
+  <!-- Nav items using <use> -->
+  <use href="#navItem" x="8" y="98" width="184" height="36"/>
+  <text x="50" y="121" fill="#CBD5E1" font-size="13">Restaurant Info</text>
+  <use href="#navItem" x="8" y="140" width="184" height="36"/>
+  <text x="50" y="163" fill="#CBD5E1" font-size="13">Menu Builder</text>
+  <!-- Active nav item -->
+  <use href="#navItemActive" x="8" y="182" width="184" height="36"/>
+  <text x="50" y="205" fill="#0C0E1A" font-size="13" font-weight="700">Taxes</text>
+  <use href="#navItem" x="8" y="224" width="184" height="36"/>
+  <text x="50" y="247" fill="#CBD5E1" font-size="13">Employees</text>
+  <use href="#navItem" x="8" y="266" width="184" height="36"/>
+  <text x="50" y="289" fill="#CBD5E1" font-size="13">Equipment</text>
+  <use href="#navItem" x="8" y="308" width="184" height="36"/>
+  <text x="50" y="331" fill="#CBD5E1" font-size="13">Reports</text>
+  <use href="#navItem" x="8" y="350" width="184" height="36"/>
+  <text x="50" y="373" fill="#CBD5E1" font-size="13">Loyalty</text>
+  <use href="#navItem" x="8" y="392" width="184" height="36"/>
+  <text x="50" y="415" fill="#CBD5E1" font-size="13">Integrations</text>
 
-  <!-- Tax sub-nav: active = Tax-Exempt -->
+  <!-- Tax sub-nav -->
   <text x="16" y="458" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">TAX SETTINGS</text>
   <rect x="8" y="464" width="184" height="34" rx="6" fill="#1E2235"/>
   <text x="50" y="486" fill="#94A3B8" font-size="12">Tax Zones</text>
+  <!-- Active sub-nav: Tax-Exempt Sales -->
   <rect x="8" y="504" width="184" height="34" rx="6" fill="#2D1F00"/>
   <rect x="8" y="504" width="3" height="34" rx="2" fill="#F59E0B"/>
   <text x="50" y="526" fill="#F59E0B" font-size="12" font-weight="600">Tax-Exempt Sales</text>
@@ -41,471 +132,186 @@
   <text x="50" y="566" fill="#94A3B8" font-size="12">Tax Reports</text>
 
   <!-- ===== PAGE HEADER ===== -->
-  <rect x="210" y="55" width="1156" height="70" fill="#1A1D2E"/>
-  <rect x="210" y="125" width="1156" height="1" fill="#2D3148"/>
-  <text x="228" y="90" fill="#F1F5F9" font-size="20" font-weight="700">Tax-Exempt Sales</text>
+  <rect x="210" y="55" width="1156" height="70" fill="url(#headerGrad)"/>
+  <rect x="210" y="125" width="1156" height="1" fill="#2A2E45"/>
+  <text x="228" y="90" fill="#E2E8F0" font-size="20" font-weight="700">Tax-Exempt Sales</text>
+  <!-- DB: pos_tax_exempt_accounts -->
   <text x="228" y="112" fill="#64748B" font-size="13">Manage tax-exempt customers, nonprofits, government accounts, and catering orders</text>
+  <!-- Admin gear for page-level settings -->
+  <use href="#gear" x="1330" y="80" width="16" height="16"/>
 
   <!-- ===== STATS BAR ===== -->
-  <rect x="210" y="126" width="1156" height="72" fill="#13162A"/>
-  <rect x="210" y="198" width="1156" height="1" fill="#2D3148"/>
+  <!-- DB: aggregated from pos_tax_exempt_events + pos_tax_exempt_accounts -->
+  <rect x="210" y="126" width="1156" height="72" fill="#11142A"/>
+  <rect x="210" y="198" width="1156" height="1" fill="#2A2E45"/>
 
-  <!-- Stat 1 -->
-  <rect x="224" y="136" width="264" height="50" rx="8" fill="#1A1D2E"/>
+  <!-- Stat 1: Transactions this month -->
+  <use href="#statCard" x="224" y="136" width="260" height="50"/>
   <text x="244" y="157" fill="#64748B" font-size="11" font-weight="600">TAX-EXEMPT TRANSACTIONS</text>
-  <text x="244" y="177" fill="#F1F5F9" font-size="18" font-weight="700">47</text>
+  <!-- DB: COUNT(*) FROM pos_tax_exempt_events WHERE created_at >= month_start -->
+  <text x="244" y="177" fill="#E2E8F0" font-size="18" font-weight="700">47</text>
   <text x="294" y="177" fill="#64748B" font-size="11">this month</text>
 
-  <!-- Stat 2 -->
-  <rect x="500" y="136" width="236" height="50" rx="8" fill="#1A1D2E"/>
+  <!-- Stat 2: Tax waived -->
+  <use href="#statCard" x="500" y="136" width="230" height="50"/>
   <text x="520" y="157" fill="#64748B" font-size="11" font-weight="600">TAX WAIVED</text>
-  <text x="520" y="177" fill="#10B981" font-size="18" font-weight="700">$892.40</text>
+  <!-- DB: SUM(tax_waived_cents) FROM pos_payments WHERE tax_exempt_account_id IS NOT NULL -->
+  <text x="520" y="177" fill="#22C55E" font-size="18" font-weight="700">$892.40</text>
   <text x="614" y="177" fill="#64748B" font-size="11">this month</text>
 
-  <!-- Stat 3 -->
-  <rect x="748" y="136" width="236" height="50" rx="8" fill="#1A1D2E"/>
-  <text x="768" y="157" fill="#64748B" font-size="11" font-weight="600">EXEMPT ACCOUNTS ON FILE</text>
-  <text x="768" y="177" fill="#F1F5F9" font-size="18" font-weight="700">12</text>
-  <text x="800" y="177" fill="#64748B" font-size="11">accounts</text>
+  <!-- Stat 3: Accounts on file -->
+  <use href="#statCard" x="746" y="136" width="230" height="50"/>
+  <text x="766" y="157" fill="#64748B" font-size="11" font-weight="600">EXEMPT ACCOUNTS ON FILE</text>
+  <!-- DB: COUNT(*) FROM pos_tax_exempt_accounts WHERE status = 'active' -->
+  <text x="766" y="177" fill="#E2E8F0" font-size="18" font-weight="700">12</text>
+  <text x="798" y="177" fill="#64748B" font-size="11">accounts</text>
 
-  <!-- Stat 4 -->
-  <rect x="996" y="136" width="256" height="50" rx="8" fill="#2D1A00"/>
-  <rect x="996" y="136" width="256" height="50" rx="8" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
-  <text x="1016" y="157" fill="#F59E0B" font-size="11" font-weight="600">PENDING CERT RENEWAL</text>
-  <text x="1016" y="177" fill="#F59E0B" font-size="18" font-weight="700">2</text>
-  <text x="1042" y="177" fill="#F59E0B" font-size="11">&#9888; expiring soon</text>
+  <!-- Stat 4: Pending cert renewal (amber alert) -->
+  <rect x="992" y="136" width="256" height="50" rx="8" fill="#2D1A00" filter="url(#shadowSm)"/>
+  <rect x="992" y="136" width="256" height="50" rx="8" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+  <text x="1012" y="157" fill="#F59E0B" font-size="11" font-weight="600">PENDING CERT RENEWAL</text>
+  <!-- DB: COUNT(*) FROM pos_tax_exempt_accounts WHERE cert_expires_at < NOW() + '60 days' -->
+  <text x="1012" y="177" fill="#F59E0B" font-size="18" font-weight="700">2</text>
+  <text x="1038" y="177" fill="#F59E0B" font-size="11">expiring soon</text>
 
   <!-- ===== THREE-PANEL LAYOUT ===== -->
 
   <!-- ===== LEFT PANEL: Account List ===== -->
-  <rect x="210" y="199" width="340" height="825" fill="#0F1117"/>
-  <rect x="550" y="199" width="1" height="825" fill="#2D3148"/>
+  <rect x="210" y="199" width="290" height="825" fill="#0C0E1A"/>
+  <rect x="500" y="199" width="1" height="825" fill="#2A2E45"/>
 
   <!-- Search bar -->
-  <rect x="218" y="208" width="322" height="34" rx="8" fill="#1A1D2E"/>
-  <rect x="218" y="208" width="322" height="34" rx="8" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="234" y="230" fill="#64748B" font-size="13">&#128269; Search accounts...</text>
+  <rect x="218" y="208" width="274" height="32" rx="7" fill="#1A1D2E" filter="url(#shadowSm)"/>
+  <rect x="218" y="208" width="274" height="32" rx="7" fill="none" stroke="#2A2E45" stroke-width="1"/>
+  <text x="232" y="228" fill="#64748B" font-size="12">Search accounts...</text>
 
   <!-- Tabs -->
-  <rect x="218" y="250" width="322" height="32" rx="8" fill="#13162A"/>
-  <rect x="220" y="252" width="72" height="28" rx="6" fill="#F59E0B"/>
-  <text x="256" y="270" fill="#0F1117" font-size="11" font-weight="700" text-anchor="middle">All (12)</text>
-  <text x="330" y="270" fill="#94A3B8" font-size="11" text-anchor="middle">Active (10)</text>
-  <text x="402" y="270" fill="#94A3B8" font-size="11" text-anchor="middle">Expiring (2)</text>
-  <text x="476" y="270" fill="#94A3B8" font-size="11" text-anchor="middle">Expired (1)</text>
-
-  <!-- Account Card 1: City of New York (SELECTED) -->
-  <rect x="218" y="290" width="322" height="68" rx="8" fill="#1E2235"/>
-  <rect x="218" y="290" width="322" height="68" rx="8" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
-  <circle cx="234" cy="308" r="5" fill="#10B981"/>
-  <text x="246" y="312" fill="#F1F5F9" font-size="13" font-weight="600">City of New York</text>
-  <rect x="334" y="300" width="68" height="18" rx="4" fill="#1D4ED8"/>
-  <text x="368" y="313" fill="#BFDBFE" font-size="10" font-weight="600" text-anchor="middle">Government</text>
-  <text x="246" y="330" fill="#64748B" font-size="11">Cert expires: Never</text>
-  <text x="246" y="348" fill="#10B981" font-size="10">&#9679; Active — Full Exempt</text>
-
-  <!-- Account Card 2: St. Mary's Church -->
-  <rect x="218" y="364" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <circle cx="234" cy="380" r="5" fill="#10B981"/>
-  <text x="246" y="384" fill="#F1F5F9" font-size="13" font-weight="600">St. Mary's Church</text>
-  <rect x="338" y="372" width="66" height="18" rx="4" fill="#4C1D95"/>
-  <text x="371" y="385" fill="#DDD6FE" font-size="10" font-weight="600" text-anchor="middle">Nonprofit</text>
-  <text x="246" y="402" fill="#64748B" font-size="11">Cert expires: Dec 31, 2026</text>
-  <text x="246" y="418" fill="#10B981" font-size="10">&#9679; Active</text>
-
-  <!-- Account Card 3: Sunrise Academy — EXPIRING -->
-  <rect x="218" y="434" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <rect x="218" y="434" width="322" height="64" rx="8" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
-  <circle cx="234" cy="450" r="5" fill="#F59E0B"/>
-  <text x="246" y="454" fill="#F1F5F9" font-size="13" font-weight="600">Sunrise Academy</text>
-  <rect x="340" y="442" width="64" height="18" rx="4" fill="#134E4A"/>
-  <text x="372" y="455" fill="#99F6E4" font-size="10" font-weight="600" text-anchor="middle">Education</text>
-  <text x="246" y="472" fill="#64748B" font-size="11">Cert expires: Jun 30, 2026</text>
-  <rect x="246" y="478" width="66" height="14" rx="3" fill="#78350F"/>
-  <text x="279" y="489" fill="#FDE68A" font-size="9" font-weight="700" text-anchor="middle">EXPIRING</text>
-
-  <!-- Account Card 4: Metro Hospital -->
-  <rect x="218" y="504" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <circle cx="234" cy="520" r="5" fill="#10B981"/>
-  <text x="246" y="524" fill="#F1F5F9" font-size="13" font-weight="600">Metro Hospital</text>
-  <rect x="340" y="512" width="72" height="18" rx="4" fill="#881337"/>
-  <text x="376" y="525" fill="#FECDD3" font-size="10" font-weight="600" text-anchor="middle">Healthcare</text>
-  <text x="246" y="542" fill="#64748B" font-size="11">Cert expires: Mar 31, 2027</text>
-  <text x="246" y="558" fill="#10B981" font-size="10">&#9679; Active</text>
-
-  <!-- Account Card 5: US Federal Agency -->
-  <rect x="218" y="574" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <circle cx="234" cy="590" r="5" fill="#10B981"/>
-  <text x="246" y="594" fill="#F1F5F9" font-size="13" font-weight="600">US Federal Agency</text>
-  <rect x="352" y="582" width="68" height="18" rx="4" fill="#1E3A5F"/>
-  <text x="386" y="595" fill="#BAE6FD" font-size="10" font-weight="600" text-anchor="middle">Federal</text>
-  <text x="246" y="612" fill="#64748B" font-size="11">No expiry</text>
-  <text x="246" y="628" fill="#10B981" font-size="10">&#9679; Active</text>
-
-  <!-- Account Card 6: ABC Corp -->
-  <rect x="218" y="644" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <circle cx="234" cy="660" r="5" fill="#10B981"/>
-  <text x="246" y="664" fill="#F1F5F9" font-size="13" font-weight="600">ABC Corp (Catering)</text>
-  <rect x="368" y="652" width="66" height="18" rx="4" fill="#1F2937"/>
-  <text x="401" y="665" fill="#9CA3AF" font-size="10" font-weight="600" text-anchor="middle">Corporate</text>
-  <text x="246" y="682" fill="#64748B" font-size="11">Cert expires: Aug 31, 2026</text>
-  <text x="246" y="698" fill="#10B981" font-size="10">&#9679; Active</text>
-
-  <!-- Account Card 7: Oakwood Nonprofit — EXPIRED -->
-  <rect x="218" y="714" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <rect x="218" y="714" width="322" height="64" rx="8" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.5"/>
-  <circle cx="234" cy="730" r="5" fill="#EF4444"/>
-  <text x="246" y="734" fill="#F1F5F9" font-size="13" font-weight="600">Oakwood Nonprofit</text>
-  <rect x="350" y="722" width="66" height="18" rx="4" fill="#4C1D95"/>
-  <text x="383" y="735" fill="#DDD6FE" font-size="10" font-weight="600" text-anchor="middle">Nonprofit</text>
-  <text x="246" y="752" fill="#64748B" font-size="11">Cert expires: Jan 15, 2026</text>
-  <rect x="246" y="758" width="54" height="14" rx="3" fill="#7F1D1D"/>
-  <text x="273" y="769" fill="#FECACA" font-size="9" font-weight="700" text-anchor="middle">EXPIRED</text>
-
-  <!-- Account Card 8: Brooklyn Food Bank -->
-  <rect x="218" y="784" width="322" height="64" rx="8" fill="#1A1D2E"/>
-  <circle cx="234" cy="800" r="5" fill="#10B981"/>
-  <text x="246" y="804" fill="#F1F5F9" font-size="13" font-weight="600">Brooklyn Food Bank</text>
-  <rect x="368" y="792" width="66" height="18" rx="4" fill="#4C1D95"/>
-  <text x="401" y="805" fill="#DDD6FE" font-size="10" font-weight="600" text-anchor="middle">Nonprofit</text>
-  <text x="246" y="822" fill="#64748B" font-size="11">Cert expires: Dec 31, 2027</text>
-  <text x="246" y="838" fill="#10B981" font-size="10">&#9679; Active</text>
-
-  <!-- View All link -->
-  <text x="379" y="862" fill="#60A5FA" font-size="12" text-anchor="middle">View All 12 Accounts</text>
-
-  <!-- Add Button -->
-  <rect x="218" y="872" width="322" height="36" rx="8" fill="#F59E0B"/>
-  <text x="379" y="895" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">+ Add Exempt Account</text>
-
-  <!-- ===== CENTER PANEL: Account Detail ===== -->
-  <rect x="551" y="199" width="660" height="825" fill="#0F1117"/>
-  <rect x="1211" y="199" width="1" height="825" fill="#2D3148"/>
-
-  <!-- Detail header -->
-  <rect x="559" y="208" width="642" height="52" rx="8" fill="#1A1D2E"/>
-  <rect x="559" y="208" width="642" height="52" rx="8" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="575" y="228" fill="#F1F5F9" font-size="16" font-weight="700">City of New York</text>
-  <rect x="730" y="214" width="68" height="20" rx="5" fill="#1D4ED8"/>
-  <text x="764" y="228" fill="#BFDBFE" font-size="11" font-weight="600" text-anchor="middle">Government</text>
-  <text x="575" y="249" fill="#64748B" font-size="11">Exemption ID: NY-GOV-2024-00847</text>
-  <rect x="1090" y="214" width="50" height="24" rx="6" fill="#1E2235"/>
-  <text x="1115" y="230" fill="#94A3B8" font-size="12" text-anchor="middle">Edit</text>
-  <rect x="1148" y="214" width="46" height="24" rx="6" fill="#1A1D2E"/>
-  <text x="1171" y="230" fill="#EF4444" font-size="12" text-anchor="middle">Delete</text>
-
-  <!-- Section: Organization Details -->
-  <text x="567" y="278" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">ORGANIZATION DETAILS</text>
-
-  <!-- Gov level selector -->
-  <text x="567" y="298" fill="#94A3B8" font-size="12">Government Level:</text>
-  <rect x="670" y="285" width="66" height="22" rx="5" fill="#1E2235"/>
-  <text x="703" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">Federal</text>
-  <rect x="742" y="285" width="52" height="22" rx="5" fill="#1E2235"/>
-  <text x="768" y="300" fill="#94A3B8" font-size="11" text-anchor="middle">State</text>
-  <rect x="800" y="285" width="48" height="22" rx="5" fill="#1D4ED8"/>
-  <text x="824" y="300" fill="#BFDBFE" font-size="11" font-weight="600" text-anchor="middle">Local</text>
-
-  <!-- Certificate -->
-  <text x="567" y="322" fill="#94A3B8" font-size="12">Exemption Certificate:</text>
-  <rect x="690" y="308" width="260" height="28" rx="6" fill="#1A1D2E"/>
-  <rect x="690" y="308" width="260" height="28" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="706" y="327" fill="#60A5FA" font-size="11">&#128196; NYC_TaxExempt_2024.pdf</text>
-  <rect x="958" y="310" width="44" height="24" rx="5" fill="#1E2235"/>
-  <text x="980" y="326" fill="#94A3B8" font-size="11" text-anchor="middle">View</text>
-  <rect x="1008" y="310" width="58" height="24" rx="5" fill="#1E2235"/>
-  <text x="1037" y="326" fill="#94A3B8" font-size="11" text-anchor="middle">Replace</text>
-
-  <!-- Section: Tax Exemption Scope -->
-  <text x="567" y="358" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">TAX EXEMPTION SCOPE</text>
-
-  <!-- State Tax row -->
-  <rect x="559" y="364" width="642" height="36" rx="6" fill="#1A1D2E"/>
-  <text x="575" y="386" fill="#F1F5F9" font-size="13">State Sales Tax</text>
-  <text x="720" y="386" fill="#64748B" font-size="12">4.00% waived</text>
-  <rect x="860" y="370" width="54" height="22" rx="11" fill="#10B981"/>
-  <circle cx="904" cy="381" r="9" fill="white"/>
-  <text x="875" y="385" fill="white" font-size="10" font-weight="600">EXEMPT</text>
-  <rect x="930" y="368" width="64" height="22" rx="5" fill="#134E4A"/>
-  <text x="962" y="383" fill="#6EE7B7" font-size="11" font-weight="600" text-anchor="middle">EXEMPT</text>
-
-  <!-- City Tax row -->
-  <rect x="559" y="406" width="642" height="36" rx="6" fill="#0F1117"/>
-  <text x="575" y="428" fill="#F1F5F9" font-size="13">City Sales Tax</text>
-  <text x="720" y="428" fill="#64748B" font-size="12">4.875% waived</text>
-  <rect x="860" y="412" width="54" height="22" rx="11" fill="#10B981"/>
-  <circle cx="904" cy="423" r="9" fill="white"/>
-  <text x="875" y="427" fill="white" font-size="10" font-weight="600">EXEMPT</text>
-  <rect x="930" y="410" width="64" height="22" rx="5" fill="#134E4A"/>
-  <text x="962" y="425" fill="#6EE7B7" font-size="11" font-weight="600" text-anchor="middle">EXEMPT</text>
-
-  <!-- Full Exempt summary -->
-  <rect x="559" y="448" width="642" height="26" rx="5" fill="#052E16"/>
-  <text x="579" y="465" fill="#10B981" font-size="12" font-weight="700">&#10003; All taxes waived — FULL EXEMPT (8.875% total)</text>
-
-  <!-- Section: Authorized Contacts -->
-  <text x="567" y="494" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">AUTHORIZED CONTACTS</text>
-
-  <rect x="559" y="500" width="642" height="34" rx="6" fill="#1A1D2E"/>
-  <text x="575" y="521" fill="#F1F5F9" font-size="13">John Smith</text>
-  <text x="678" y="521" fill="#64748B" font-size="12">jsmith@nyc.gov</text>
-  <rect x="876" y="507" width="130" height="20" rx="4" fill="#1E3A5F"/>
-  <text x="941" y="521" fill="#93C5FD" font-size="11" text-anchor="middle">Authorized Purchaser</text>
-
-  <rect x="559" y="540" width="642" height="34" rx="6" fill="#1A1D2E"/>
-  <text x="575" y="561" fill="#F1F5F9" font-size="13">Mary Davis</text>
-  <text x="678" y="561" fill="#64748B" font-size="12">mdavis@nyc.gov</text>
-  <rect x="876" y="547" width="130" height="20" rx="4" fill="#1E3A5F"/>
-  <text x="941" y="561" fill="#93C5FD" font-size="11" text-anchor="middle">Authorized Purchaser</text>
-
-  <text x="575" y="590" fill="#60A5FA" font-size="12">+ Add Contact</text>
-
-  <!-- Section: Notes & PO -->
-  <text x="567" y="614" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">NOTES &amp; PURCHASE ORDER</text>
-  <rect x="559" y="620" width="642" height="40" rx="6" fill="#1A1D2E"/>
-  <rect x="559" y="620" width="642" height="40" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="575" y="637" fill="#94A3B8" font-size="12">City purchasing account — PO required for orders over $500</text>
-  <text x="575" y="652" fill="#64748B" font-size="11">(Internal note — not printed on receipts)</text>
-
-  <text x="567" y="678" fill="#94A3B8" font-size="12">PO Required for orders over:</text>
-  <rect x="756" y="664" width="56" height="22" rx="11" fill="#10B981"/>
-  <circle cx="802" cy="675" r="9" fill="white"/>
-  <text x="765" y="679" fill="white" font-size="10" font-weight="600">ON</text>
-  <rect x="824" y="664" width="60" height="22" rx="6" fill="#1A1D2E"/>
-  <rect x="824" y="664" width="60" height="22" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="854" y="679" fill="#F1F5F9" font-size="12" font-weight="600" text-anchor="middle">$500</text>
-
-  <!-- ===== TRANSACTION LOG ===== -->
-  <text x="567" y="706" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">RECENT TAX-EXEMPT SALES — CITY OF NEW YORK</text>
-
-  <!-- Table header -->
-  <rect x="559" y="712" width="642" height="28" rx="5" fill="#1A1D2E"/>
-  <text x="567" y="730" fill="#64748B" font-size="10" font-weight="700">DATE</text>
-  <text x="620" y="730" fill="#64748B" font-size="10" font-weight="700">CHECK #</text>
-  <text x="700" y="730" fill="#64748B" font-size="10" font-weight="700">SERVER</text>
-  <text x="768" y="730" fill="#64748B" font-size="10" font-weight="700">ITEMS</text>
-  <text x="862" y="730" fill="#64748B" font-size="10" font-weight="700">SUBTOTAL</text>
-  <text x="930" y="730" fill="#64748B" font-size="10" font-weight="700">TAX WAIVED</text>
-  <text x="1020" y="730" fill="#64748B" font-size="10" font-weight="700">CHARGED</text>
-  <text x="1120" y="730" fill="#64748B" font-size="10" font-weight="700">STATUS</text>
-
-  <!-- Row 1 -->
-  <rect x="559" y="742" width="642" height="26" rx="4" fill="#0F1117"/>
-  <text x="567" y="759" fill="#F1F5F9" font-size="11">May 27</text>
-  <text x="620" y="759" fill="#94A3B8" font-size="11">#2406-089</text>
-  <text x="700" y="759" fill="#94A3B8" font-size="11">Marcus</text>
-  <text x="768" y="759" fill="#94A3B8" font-size="11">Catering Set</text>
-  <text x="862" y="759" fill="#F1F5F9" font-size="11">$340.00</text>
-  <text x="930" y="759" fill="#10B981" font-size="11">$30.17</text>
-  <text x="1020" y="759" fill="#F1F5F9" font-size="11">$340.00</text>
-  <rect x="1112" y="748" width="44" height="16" rx="4" fill="#064E3B"/>
-  <text x="1134" y="760" fill="#6EE7B7" font-size="10" text-anchor="middle">Closed</text>
-
-  <!-- Row 2 -->
-  <rect x="559" y="770" width="642" height="26" rx="4" fill="#1A1D2E"/>
-  <text x="567" y="787" fill="#F1F5F9" font-size="11">May 25</text>
-  <text x="620" y="787" fill="#94A3B8" font-size="11">#2406-071</text>
-  <text x="700" y="787" fill="#94A3B8" font-size="11">Sara</text>
-  <text x="768" y="787" fill="#94A3B8" font-size="11">Lunch Order</text>
-  <text x="862" y="787" fill="#F1F5F9" font-size="11">$127.50</text>
-  <text x="930" y="787" fill="#10B981" font-size="11">$11.31</text>
-  <text x="1020" y="787" fill="#F1F5F9" font-size="11">$127.50</text>
-  <rect x="1112" y="776" width="44" height="16" rx="4" fill="#064E3B"/>
-  <text x="1134" y="788" fill="#6EE7B7" font-size="10" text-anchor="middle">Closed</text>
-
-  <!-- Row 3 -->
-  <rect x="559" y="798" width="642" height="26" rx="4" fill="#0F1117"/>
-  <text x="567" y="815" fill="#F1F5F9" font-size="11">May 22</text>
-  <text x="620" y="815" fill="#94A3B8" font-size="11">#2406-058</text>
-  <text x="700" y="815" fill="#94A3B8" font-size="11">Marcus</text>
-  <text x="768" y="815" fill="#94A3B8" font-size="11">Dept Meeting</text>
-  <text x="862" y="815" fill="#F1F5F9" font-size="11">$214.00</text>
-  <text x="930" y="815" fill="#10B981" font-size="11">$18.99</text>
-  <text x="1020" y="815" fill="#F1F5F9" font-size="11">$214.00</text>
-  <rect x="1112" y="804" width="44" height="16" rx="4" fill="#064E3B"/>
-  <text x="1134" y="816" fill="#6EE7B7" font-size="10" text-anchor="middle">Closed</text>
-
-  <!-- Row 4 -->
-  <rect x="559" y="826" width="642" height="26" rx="4" fill="#1A1D2E"/>
-  <text x="567" y="843" fill="#F1F5F9" font-size="11">May 19</text>
-  <text x="620" y="843" fill="#94A3B8" font-size="11">#2406-044</text>
-  <text x="700" y="843" fill="#94A3B8" font-size="11">Jordan</text>
-  <text x="768" y="843" fill="#94A3B8" font-size="11">Staff Lunch x8</text>
-  <text x="862" y="843" fill="#F1F5F9" font-size="11">$186.40</text>
-  <text x="930" y="843" fill="#10B981" font-size="11">$16.54</text>
-  <text x="1020" y="843" fill="#F1F5F9" font-size="11">$186.40</text>
-  <rect x="1112" y="832" width="44" height="16" rx="4" fill="#064E3B"/>
-  <text x="1134" y="844" fill="#6EE7B7" font-size="10" text-anchor="middle">Closed</text>
-
-  <!-- Row 5 -->
-  <rect x="559" y="854" width="642" height="26" rx="4" fill="#0F1117"/>
-  <text x="567" y="871" fill="#F1F5F9" font-size="11">May 15</text>
-  <text x="620" y="871" fill="#94A3B8" font-size="11">#2406-029</text>
-  <text x="700" y="871" fill="#94A3B8" font-size="11">Sara</text>
-  <text x="768" y="871" fill="#94A3B8" font-size="11">Reception Pkg</text>
-  <text x="862" y="871" fill="#F1F5F9" font-size="11">$560.00</text>
-  <text x="930" y="871" fill="#10B981" font-size="11">$49.70</text>
-  <text x="1020" y="871" fill="#F1F5F9" font-size="11">$560.00</text>
-  <rect x="1112" y="860" width="44" height="16" rx="4" fill="#064E3B"/>
-  <text x="1134" y="872" fill="#6EE7B7" font-size="10" text-anchor="middle">Closed</text>
-
-  <!-- Export link -->
-  <text x="1183" y="895" fill="#60A5FA" font-size="12" text-anchor="end">&#128196; Export to CSV</text>
-
-  <!-- ===== RIGHT PANEL ===== -->
-  <rect x="1212" y="199" width="154" height="825" fill="#0F1117"/>
-
-  <!-- Per-Transaction section — note: this panel is actually at x=1212, w=154 which is too narrow for the spec.
-       Per spec right panel is x=1000, w=366. Let me recalculate:
-       Left=340, Center=660, Right=366 → total=1366 ✓
-       Left: x=210 w=340 → ends at 550
-       Center: x=550 w=660 → ends at 1210
-       Right: x=1210 w=156 is wrong. Let me recalculate with the nav being 210px wide.
-       Total content area = 1366-210 = 1156. L+C+R = 340+660+366 = 1366 ≠ 1156.
-       Spec says x=0,1000,1000 but there's also the 210px nav. So panels use full width.
-       L: x=0 w=340 means from left edge of canvas. But nav is 200px + 1px border.
-       Let me re-read spec: "LEFT PANEL (x=0, w=340)", "CENTER PANEL (x=340, w=660)", "RIGHT PANEL (x=1000, w=366)"
-       These are relative to the content area starting at x=210.
-       So absolute: L: 210-550, C: 550-1210, R: 1210-1366 (only 156px wide).
-       The spec widths don't add up with the nav. I'll use x=1000+210=1210 but that's 156px not 366px.
-       Actually with nav at 200px: absolute L=200, C=540, R=1200, but nav is shown ending at 200.
-       Best approach: use the three-panel layout filling x=210 to 1366.
-       L: 210-550 (340px), C: 550-1100 (550px), R: 1100-1366 (266px)
-       OR: honor spec proportionally: 340+660+366=1366, so start at 0 (overlapping nav).
-       I'll honor the spec positions exactly from x=0 and let the right panel start at x=1000.
-  -->
-
-  <!-- ===== RIGHT PANEL: Per-Transaction Exemption =====
-       Repainting over the narrow area with correct x=1000+210 offset or just x=1000 from canvas -->
-  <!-- The left nav goes 0-200, so content goes 200-1366 = 1166px
-       Using spec proportions: L=340*(1166/1366), C=660*(1166/1366), R=366*(1166/1366) ≈ 290, 564, 312
-       I'll use: L=210-500(290), C=500-1060(560), R=1060-1366(306) for cleaner fit -->
-
-  <!-- OVERRIDE: repaint panels with correct widths, erasing previous work -->
-
-  <!-- Repaint BG to reset -->
-  <rect x="210" y="199" width="1156" height="825" fill="#0F1117"/>
-
-  <!-- LEFT PANEL BG and border -->
-  <rect x="210" y="199" width="290" height="825" fill="#0F1117"/>
-  <rect x="500" y="199" width="1" height="825" fill="#2D3148"/>
-
-  <!-- Account List Header -->
-  <rect x="218" y="208" width="274" height="32" rx="7" fill="#1A1D2E"/>
-  <rect x="218" y="208" width="274" height="32" rx="7" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="232" y="228" fill="#64748B" font-size="12">&#128269; Search accounts...</text>
-
-  <!-- Tabs -->
-  <rect x="218" y="248" width="274" height="28" rx="6" fill="#13162A"/>
-  <rect x="220" y="250" width="60" height="24" rx="5" fill="#F59E0B"/>
-  <text x="250" y="266" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">All (12)</text>
+  <rect x="218" y="248" width="274" height="28" rx="6" fill="#11142A"/>
+  <rect x="220" y="250" width="60" height="24" rx="5" fill="url(#amberGrad)"/>
+  <text x="250" y="266" fill="#0C0E1A" font-size="10" font-weight="700" text-anchor="middle">All (12)</text>
   <text x="312" y="266" fill="#94A3B8" font-size="10" text-anchor="middle">Active (10)</text>
   <text x="373" y="266" fill="#94A3B8" font-size="10" text-anchor="middle">Expir (2)</text>
   <text x="436" y="266" fill="#94A3B8" font-size="10" text-anchor="middle">Exp'd</text>
 
   <!-- Card 1: City of New York (SELECTED) -->
-  <rect x="218" y="284" width="274" height="60" rx="7" fill="#1E2235"/>
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-001' -->
+  <rect x="218" y="284" width="274" height="60" rx="7" fill="url(#cardGrad)" filter="url(#shadow)"/>
   <rect x="218" y="284" width="274" height="60" rx="7" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
-  <circle cx="231" cy="299" r="4" fill="#10B981"/>
-  <text x="241" y="302" fill="#F1F5F9" font-size="12" font-weight="600">City of New York</text>
+  <use href="#dotActive" x="225" y="294" width="10" height="10"/>
+  <text x="241" y="302" fill="#E2E8F0" font-size="12" font-weight="600">City of New York</text>
   <rect x="350" y="290" width="60" height="16" rx="4" fill="#1D4ED8"/>
   <text x="380" y="302" fill="#BFDBFE" font-size="9" font-weight="600" text-anchor="middle">Government</text>
   <text x="241" y="320" fill="#64748B" font-size="10">Cert expires: Never</text>
-  <text x="241" y="335" fill="#10B981" font-size="9">&#9679; Active — Full Exempt</text>
+  <text x="241" y="335" fill="#22C55E" font-size="9">Active — Full Exempt</text>
 
-  <!-- Card 2 -->
+  <!-- Card 2: St. Mary's Church -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-002' -->
   <rect x="218" y="350" width="274" height="58" rx="7" fill="#1A1D2E"/>
-  <circle cx="231" cy="365" r="4" fill="#10B981"/>
-  <text x="241" y="368" fill="#F1F5F9" font-size="12" font-weight="600">St. Mary's Church</text>
+  <use href="#dotActive" x="225" y="360" width="10" height="10"/>
+  <text x="241" y="368" fill="#E2E8F0" font-size="12" font-weight="600">St. Mary's Church</text>
   <rect x="355" y="357" width="58" height="16" rx="4" fill="#4C1D95"/>
   <text x="384" y="369" fill="#DDD6FE" font-size="9" font-weight="600" text-anchor="middle">Nonprofit</text>
   <text x="241" y="386" fill="#64748B" font-size="10">Cert expires: Dec 31, 2026</text>
-  <text x="241" y="400" fill="#10B981" font-size="9">&#9679; Active</text>
+  <text x="241" y="400" fill="#22C55E" font-size="9">Active</text>
 
-  <!-- Card 3: EXPIRING -->
+  <!-- Card 3: Sunrise Academy — EXPIRING -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-003' AND cert_expires_at < NOW() + '60d' -->
   <rect x="218" y="414" width="274" height="58" rx="7" fill="#1A1D2E"/>
   <rect x="218" y="414" width="274" height="58" rx="7" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
-  <circle cx="231" cy="429" r="4" fill="#F59E0B"/>
-  <text x="241" y="432" fill="#F1F5F9" font-size="12" font-weight="600">Sunrise Academy</text>
+  <use href="#dotWarning" x="225" y="424" width="10" height="10"/>
+  <text x="241" y="432" fill="#E2E8F0" font-size="12" font-weight="600">Sunrise Academy</text>
   <rect x="351" y="421" width="58" height="16" rx="4" fill="#134E4A"/>
   <text x="380" y="433" fill="#99F6E4" font-size="9" font-weight="600" text-anchor="middle">Education</text>
   <text x="241" y="450" fill="#64748B" font-size="10">Cert expires: Jun 30, 2026</text>
   <rect x="241" y="456" width="56" height="12" rx="3" fill="#78350F"/>
   <text x="269" y="465" fill="#FDE68A" font-size="8" font-weight="700" text-anchor="middle">EXPIRING</text>
 
-  <!-- Card 4 -->
+  <!-- Card 4: Metro Hospital -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-004' -->
   <rect x="218" y="478" width="274" height="58" rx="7" fill="#1A1D2E"/>
-  <circle cx="231" cy="493" r="4" fill="#10B981"/>
-  <text x="241" y="496" fill="#F1F5F9" font-size="12" font-weight="600">Metro Hospital</text>
+  <use href="#dotActive" x="225" y="488" width="10" height="10"/>
+  <text x="241" y="496" fill="#E2E8F0" font-size="12" font-weight="600">Metro Hospital</text>
   <rect x="345" y="485" width="64" height="16" rx="4" fill="#881337"/>
   <text x="377" y="497" fill="#FECDD3" font-size="9" font-weight="600" text-anchor="middle">Healthcare</text>
   <text x="241" y="514" fill="#64748B" font-size="10">Cert expires: Mar 31, 2027</text>
-  <text x="241" y="528" fill="#10B981" font-size="9">&#9679; Active</text>
+  <text x="241" y="528" fill="#22C55E" font-size="9">Active</text>
 
-  <!-- Card 5 -->
+  <!-- Card 5: US Federal Agency -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-005' -->
   <rect x="218" y="542" width="274" height="58" rx="7" fill="#1A1D2E"/>
-  <circle cx="231" cy="557" r="4" fill="#10B981"/>
-  <text x="241" y="560" fill="#F1F5F9" font-size="12" font-weight="600">US Federal Agency</text>
+  <use href="#dotActive" x="225" y="552" width="10" height="10"/>
+  <text x="241" y="560" fill="#E2E8F0" font-size="12" font-weight="600">US Federal Agency</text>
   <rect x="355" y="549" width="50" height="16" rx="4" fill="#1E3A5F"/>
   <text x="380" y="561" fill="#BAE6FD" font-size="9" font-weight="600" text-anchor="middle">Federal</text>
   <text x="241" y="578" fill="#64748B" font-size="10">No expiry</text>
-  <text x="241" y="592" fill="#10B981" font-size="9">&#9679; Active</text>
+  <text x="241" y="592" fill="#22C55E" font-size="9">Active</text>
 
-  <!-- Card 6 -->
+  <!-- Card 6: ABC Corp -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-006' -->
   <rect x="218" y="606" width="274" height="58" rx="7" fill="#1A1D2E"/>
-  <circle cx="231" cy="621" r="4" fill="#10B981"/>
-  <text x="241" y="624" fill="#F1F5F9" font-size="12" font-weight="600">ABC Corp (Catering)</text>
+  <use href="#dotActive" x="225" y="616" width="10" height="10"/>
+  <text x="241" y="624" fill="#E2E8F0" font-size="12" font-weight="600">ABC Corp (Catering)</text>
   <rect x="380" y="613" width="56" height="16" rx="4" fill="#1F2937"/>
-  <text x="408" y="625" fill="#9CA3AF" font-size="9" font-weight="600" text-anchor="middle">Corporate</text>
+  <text x="408" y="625" fill="#94A3B8" font-size="9" font-weight="600" text-anchor="middle">Corporate</text>
   <text x="241" y="642" fill="#64748B" font-size="10">Cert expires: Aug 31, 2026</text>
-  <text x="241" y="656" fill="#10B981" font-size="9">&#9679; Active</text>
+  <text x="241" y="656" fill="#22C55E" font-size="9">Active</text>
 
-  <!-- Card 7: EXPIRED -->
+  <!-- Card 7: Oakwood Nonprofit — EXPIRED -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-007' AND cert_expires_at < NOW() -->
   <rect x="218" y="670" width="274" height="58" rx="7" fill="#1A1D2E"/>
   <rect x="218" y="670" width="274" height="58" rx="7" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.6"/>
-  <circle cx="231" cy="685" r="4" fill="#EF4444"/>
-  <text x="241" y="688" fill="#F1F5F9" font-size="12" font-weight="600">Oakwood Nonprofit</text>
+  <use href="#dotError" x="225" y="680" width="10" height="10"/>
+  <text x="241" y="688" fill="#E2E8F0" font-size="12" font-weight="600">Oakwood Nonprofit</text>
   <rect x="355" y="677" width="58" height="16" rx="4" fill="#4C1D95"/>
   <text x="384" y="689" fill="#DDD6FE" font-size="9" font-weight="600" text-anchor="middle">Nonprofit</text>
   <text x="241" y="706" fill="#64748B" font-size="10">Cert expires: Jan 15, 2026</text>
   <rect x="241" y="712" width="48" height="12" rx="3" fill="#7F1D1D"/>
   <text x="265" y="721" fill="#FECACA" font-size="8" font-weight="700" text-anchor="middle">EXPIRED</text>
 
-  <!-- Card 8 -->
+  <!-- Card 8: Brooklyn Food Bank -->
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-008' -->
   <rect x="218" y="734" width="274" height="58" rx="7" fill="#1A1D2E"/>
-  <circle cx="231" cy="749" r="4" fill="#10B981"/>
-  <text x="241" y="752" fill="#F1F5F9" font-size="12" font-weight="600">Brooklyn Food Bank</text>
+  <use href="#dotActive" x="225" y="744" width="10" height="10"/>
+  <text x="241" y="752" fill="#E2E8F0" font-size="12" font-weight="600">Brooklyn Food Bank</text>
   <rect x="363" y="741" width="58" height="16" rx="4" fill="#4C1D95"/>
   <text x="392" y="753" fill="#DDD6FE" font-size="9" font-weight="600" text-anchor="middle">Nonprofit</text>
   <text x="241" y="770" fill="#64748B" font-size="10">Cert expires: Dec 31, 2027</text>
-  <text x="241" y="784" fill="#10B981" font-size="9">&#9679; Active</text>
+  <text x="241" y="784" fill="#22C55E" font-size="9">Active</text>
 
   <!-- View All -->
-  <text x="355" y="808" fill="#60A5FA" font-size="11" text-anchor="middle">&#8230; View All 12 Accounts</text>
+  <text x="355" y="808" fill="#60A5FA" font-size="11" text-anchor="middle">View All 12 Accounts</text>
 
   <!-- Add Button -->
-  <rect x="218" y="816" width="274" height="32" rx="7" fill="#F59E0B"/>
-  <text x="355" y="836" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">+ Add Exempt Account</text>
+  <use href="#btnPrimary" x="218" y="816" width="274" height="32"/>
+  <text x="355" y="836" fill="#0C0E1A" font-size="12" font-weight="700" text-anchor="middle">+ Add Exempt Account</text>
 
-  <!-- ===== CENTER PANEL ===== -->
-  <rect x="501" y="199" width="560" height="825" fill="#0F1117"/>
-  <rect x="1061" y="199" width="1" height="825" fill="#2D3148"/>
+  <!-- ===== CENTER PANEL: Account Detail ===== -->
+  <rect x="501" y="199" width="560" height="825" fill="#0C0E1A"/>
+  <rect x="1061" y="199" width="1" height="825" fill="#2A2E45"/>
 
   <!-- Detail Card Header -->
-  <rect x="509" y="208" width="543" height="48" rx="7" fill="#1A1D2E"/>
-  <rect x="509" y="208" width="543" height="48" rx="7" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="523" y="228" fill="#F1F5F9" font-size="15" font-weight="700">City of New York</text>
+  <!-- DB: pos_tax_exempt_accounts WHERE id = 'acct-001' -->
+  <rect x="509" y="208" width="543" height="48" rx="7" fill="url(#cardGrad)" filter="url(#shadow)"/>
+  <rect x="509" y="208" width="543" height="48" rx="7" fill="none" stroke="#2A2E45" stroke-width="1"/>
+  <text x="523" y="228" fill="#E2E8F0" font-size="15" font-weight="700">City of New York</text>
   <rect x="670" y="213" width="72" height="18" rx="4" fill="#1D4ED8"/>
+  <!-- DB: pos_tax_exempt_accounts.exemption_type -->
   <text x="706" y="226" fill="#BFDBFE" font-size="10" font-weight="600" text-anchor="middle">Government</text>
+  <!-- DB: pos_tax_exempt_accounts.exemption_id -->
   <text x="523" y="247" fill="#64748B" font-size="11">Exemption ID: NY-GOV-2024-00847</text>
-  <rect x="945" y="213" width="44" height="22" rx="5" fill="#1E2235"/>
-  <text x="967" y="228" fill="#94A3B8" font-size="11" text-anchor="middle">Edit</text>
-  <rect x="996" y="213" width="48" height="22" rx="5" fill="#1A1D2E"/>
-  <text x="1020" y="228" fill="#EF4444" font-size="11" text-anchor="middle">Delete</text>
+  <use href="#gear" x="930" y="218" width="14" height="14"/>
+  <rect x="950" y="213" width="44" height="22" rx="5" fill="#1E2235"/>
+  <text x="972" y="228" fill="#94A3B8" font-size="11" text-anchor="middle">Edit</text>
+  <rect x="1000" y="213" width="44" height="22" rx="5" fill="#1A1D2E"/>
+  <text x="1022" y="228" fill="#EF4444" font-size="11" text-anchor="middle">Delete</text>
 
-  <!-- Org Details -->
+  <!-- Section: Organization Details -->
+  <!-- DB: pos_tax_exempt_accounts.gov_level -->
   <text x="517" y="272" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">ORGANIZATION DETAILS</text>
+
+  <!-- Gov level selector (editable) -->
   <text x="517" y="291" fill="#94A3B8" font-size="11">Government Level:</text>
+  <use href="#gear" x="605" y="282" width="12" height="12"/>
   <rect x="620" y="278" width="56" height="20" rx="4" fill="#1E2235"/>
   <text x="648" y="292" fill="#94A3B8" font-size="10" text-anchor="middle">Federal</text>
   <rect x="682" y="278" width="46" height="20" rx="4" fill="#1E2235"/>
@@ -513,75 +319,79 @@
   <rect x="734" y="278" width="44" height="20" rx="4" fill="#1D4ED8"/>
   <text x="756" y="292" fill="#BFDBFE" font-size="10" font-weight="600" text-anchor="middle">Local</text>
 
-  <!-- Certificate -->
+  <!-- Certificate upload (editable) -->
+  <!-- DB: pos_tax_exempt_accounts.certificate_url (Supabase Storage, bucket: tax-certificates) -->
   <text x="517" y="313" fill="#94A3B8" font-size="11">Certificate:</text>
-  <rect x="591" y="300" width="248" height="26" rx="5" fill="#1A1D2E"/>
-  <rect x="591" y="300" width="248" height="26" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="603" y="317" fill="#60A5FA" font-size="11">&#128196; NYC_TaxExempt_2024.pdf</text>
-  <rect x="845" y="302" width="38" height="22" rx="4" fill="#1E2235"/>
-  <text x="864" y="317" fill="#94A3B8" font-size="10" text-anchor="middle">View</text>
-  <rect x="889" y="302" width="52" height="22" rx="4" fill="#1E2235"/>
-  <text x="915" y="317" fill="#94A3B8" font-size="10" text-anchor="middle">Replace</text>
+  <use href="#gear" x="579" y="304" width="12" height="12"/>
+  <rect x="595" y="300" width="248" height="26" rx="5" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="607" y="317" fill="#60A5FA" font-size="11">NYC_TaxExempt_2024.pdf</text>
+  <rect x="849" y="302" width="38" height="22" rx="4" fill="#1E2235"/>
+  <text x="868" y="317" fill="#94A3B8" font-size="10" text-anchor="middle">View</text>
+  <rect x="893" y="302" width="52" height="22" rx="4" fill="#1E2235"/>
+  <text x="919" y="317" fill="#94A3B8" font-size="10" text-anchor="middle">Replace</text>
 
-  <!-- Tax Scope -->
+  <!-- Section: Tax Exemption Scope -->
+  <!-- DB: pos_tax_exempt_accounts.exempt_state_tax, pos_tax_exempt_accounts.exempt_city_tax -->
   <text x="517" y="344" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">TAX EXEMPTION SCOPE</text>
-  <!-- State -->
+
+  <!-- State Tax row (editable toggle) -->
   <rect x="509" y="350" width="543" height="34" rx="5" fill="#1A1D2E"/>
-  <text x="523" y="371" fill="#F1F5F9" font-size="12">State Sales Tax</text>
+  <text x="523" y="371" fill="#E2E8F0" font-size="12">State Sales Tax</text>
   <text x="650" y="371" fill="#64748B" font-size="11">4.00% waived</text>
-  <rect x="800" y="357" width="48" height="20" rx="10" fill="#10B981"/>
-  <circle cx="838" cy="367" r="8" fill="white"/>
-  <text x="812" y="371" fill="white" font-size="9" font-weight="600">ON</text>
+  <use href="#gear" x="784" y="360" width="12" height="12"/>
+  <use href="#toggleOn" x="800" y="357" width="48" height="20"/>
   <rect x="858" y="356" width="60" height="20" rx="4" fill="#134E4A"/>
   <text x="888" y="370" fill="#6EE7B7" font-size="10" font-weight="600" text-anchor="middle">EXEMPT</text>
 
-  <!-- City -->
-  <rect x="509" y="388" width="543" height="34" rx="5" fill="#0F1117"/>
-  <text x="523" y="409" fill="#F1F5F9" font-size="12">City Sales Tax</text>
+  <!-- City Tax row (editable toggle) -->
+  <rect x="509" y="388" width="543" height="34" rx="5" fill="#0C0E1A"/>
+  <text x="523" y="409" fill="#E2E8F0" font-size="12">City Sales Tax</text>
   <text x="650" y="409" fill="#64748B" font-size="11">4.875% waived</text>
-  <rect x="800" y="395" width="48" height="20" rx="10" fill="#10B981"/>
-  <circle cx="838" cy="405" r="8" fill="white"/>
-  <text x="812" y="409" fill="white" font-size="9" font-weight="600">ON</text>
+  <use href="#gear" x="784" y="398" width="12" height="12"/>
+  <use href="#toggleOn" x="800" y="395" width="48" height="20"/>
   <rect x="858" y="394" width="60" height="20" rx="4" fill="#134E4A"/>
   <text x="888" y="408" fill="#6EE7B7" font-size="10" font-weight="600" text-anchor="middle">EXEMPT</text>
 
   <!-- Full exempt summary -->
   <rect x="509" y="426" width="543" height="24" rx="4" fill="#052E16"/>
-  <text x="523" y="442" fill="#10B981" font-size="11" font-weight="700">&#10003; All taxes waived — FULL EXEMPT (8.875% total)</text>
+  <text x="523" y="442" fill="#22C55E" font-size="11" font-weight="700">All taxes waived — FULL EXEMPT (8.875% total)</text>
 
-  <!-- Authorized Contacts -->
+  <!-- Section: Authorized Contacts -->
+  <!-- DB: pos_tax_exempt_contacts WHERE account_id = 'acct-001' -->
   <text x="517" y="466" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">AUTHORIZED CONTACTS</text>
+  <use href="#gear" x="630" y="457" width="12" height="12"/>
+
   <rect x="509" y="472" width="543" height="30" rx="5" fill="#1A1D2E"/>
-  <text x="523" y="491" fill="#F1F5F9" font-size="12">John Smith</text>
+  <text x="523" y="491" fill="#E2E8F0" font-size="12">John Smith</text>
   <text x="617" y="491" fill="#64748B" font-size="11">jsmith@nyc.gov</text>
   <rect x="830" y="479" width="120" height="16" rx="3" fill="#1E3A5F"/>
   <text x="890" y="491" fill="#93C5FD" font-size="10" text-anchor="middle">Authorized Purchaser</text>
 
   <rect x="509" y="506" width="543" height="30" rx="5" fill="#1A1D2E"/>
-  <text x="523" y="525" fill="#F1F5F9" font-size="12">Mary Davis</text>
+  <text x="523" y="525" fill="#E2E8F0" font-size="12">Mary Davis</text>
   <text x="617" y="525" fill="#64748B" font-size="11">mdavis@nyc.gov</text>
   <rect x="830" y="513" width="120" height="16" rx="3" fill="#1E3A5F"/>
   <text x="890" y="525" fill="#93C5FD" font-size="10" text-anchor="middle">Authorized Purchaser</text>
 
   <text x="523" y="552" fill="#60A5FA" font-size="11">+ Add Contact</text>
 
-  <!-- Notes + PO -->
+  <!-- Section: Notes and Purchase Order -->
+  <!-- DB: pos_tax_exempt_accounts.notes, pos_tax_exempt_accounts.po_required, pos_tax_exempt_accounts.po_threshold_cents -->
   <text x="517" y="572" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">NOTES &amp; PURCHASE ORDER</text>
-  <rect x="509" y="578" width="543" height="36" rx="5" fill="#1A1D2E"/>
-  <rect x="509" y="578" width="543" height="36" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <use href="#gear" x="660" y="563" width="12" height="12"/>
+  <rect x="509" y="578" width="543" height="36" rx="5" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
   <text x="523" y="594" fill="#94A3B8" font-size="11">City purchasing account — PO required for orders over $500</text>
   <text x="523" y="607" fill="#64748B" font-size="10">(Internal note — not printed on receipts)</text>
 
   <text x="517" y="633" fill="#94A3B8" font-size="11">PO Required:</text>
-  <rect x="604" y="620" width="48" height="20" rx="10" fill="#10B981"/>
-  <circle cx="642" cy="630" r="8" fill="white"/>
-  <text x="614" y="634" fill="white" font-size="9" font-weight="600">ON</text>
+  <use href="#gear" x="590" y="624" width="12" height="12"/>
+  <use href="#toggleOn" x="604" y="620" width="48" height="20"/>
   <text x="660" y="633" fill="#64748B" font-size="11">Threshold:</text>
-  <rect x="730" y="620" width="50" height="20" rx="5" fill="#1A1D2E"/>
-  <rect x="730" y="620" width="50" height="20" rx="5" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="755" y="634" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="middle">$500</text>
+  <rect x="730" y="620" width="50" height="20" rx="5" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="755" y="634" fill="#E2E8F0" font-size="11" font-weight="600" text-anchor="middle">$500</text>
 
-  <!-- Transaction Log -->
+  <!-- Section: Transaction Log -->
+  <!-- DB: pos_tax_exempt_events JOIN pos_orders WHERE account_id = 'acct-001' ORDER BY created_at DESC -->
   <text x="517" y="658" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">RECENT TAX-EXEMPT SALES — CITY OF NEW YORK</text>
 
   <!-- Table header -->
@@ -596,201 +406,200 @@
   <text x="994" y="680" fill="#64748B" font-size="9" font-weight="700">STATUS</text>
 
   <!-- Row 1 -->
-  <rect x="509" y="690" width="543" height="22" rx="3" fill="#0F1117"/>
+  <use href="#rowEven" x="509" y="690" width="543" height="22"/>
   <text x="517" y="705" fill="#94A3B8" font-size="10">May 27</text>
   <text x="562" y="705" fill="#94A3B8" font-size="10">#2406-089</text>
   <text x="630" y="705" fill="#94A3B8" font-size="10">Marcus</text>
   <text x="690" y="705" fill="#94A3B8" font-size="10">Catering Set</text>
-  <text x="786" y="705" fill="#F1F5F9" font-size="10">$340.00</text>
-  <text x="848" y="705" fill="#10B981" font-size="10">$30.17</text>
-  <text x="924" y="705" fill="#F1F5F9" font-size="10">$340.00</text>
+  <text x="786" y="705" fill="#E2E8F0" font-size="10">$340.00</text>
+  <text x="848" y="705" fill="#22C55E" font-size="10">$30.17</text>
+  <text x="924" y="705" fill="#E2E8F0" font-size="10">$340.00</text>
   <rect x="990" y="694" width="40" height="14" rx="3" fill="#064E3B"/>
   <text x="1010" y="705" fill="#6EE7B7" font-size="9" text-anchor="middle">Closed</text>
 
   <!-- Row 2 -->
-  <rect x="509" y="714" width="543" height="22" rx="3" fill="#1A1D2E"/>
+  <use href="#rowOdd" x="509" y="714" width="543" height="22"/>
   <text x="517" y="729" fill="#94A3B8" font-size="10">May 25</text>
   <text x="562" y="729" fill="#94A3B8" font-size="10">#2406-071</text>
   <text x="630" y="729" fill="#94A3B8" font-size="10">Sara</text>
   <text x="690" y="729" fill="#94A3B8" font-size="10">Lunch Order</text>
-  <text x="786" y="729" fill="#F1F5F9" font-size="10">$127.50</text>
-  <text x="848" y="729" fill="#10B981" font-size="10">$11.31</text>
-  <text x="924" y="729" fill="#F1F5F9" font-size="10">$127.50</text>
+  <text x="786" y="729" fill="#E2E8F0" font-size="10">$127.50</text>
+  <text x="848" y="729" fill="#22C55E" font-size="10">$11.31</text>
+  <text x="924" y="729" fill="#E2E8F0" font-size="10">$127.50</text>
   <rect x="990" y="718" width="40" height="14" rx="3" fill="#064E3B"/>
   <text x="1010" y="729" fill="#6EE7B7" font-size="9" text-anchor="middle">Closed</text>
 
   <!-- Row 3 -->
-  <rect x="509" y="738" width="543" height="22" rx="3" fill="#0F1117"/>
+  <use href="#rowEven" x="509" y="738" width="543" height="22"/>
   <text x="517" y="753" fill="#94A3B8" font-size="10">May 22</text>
   <text x="562" y="753" fill="#94A3B8" font-size="10">#2406-058</text>
   <text x="630" y="753" fill="#94A3B8" font-size="10">Marcus</text>
   <text x="690" y="753" fill="#94A3B8" font-size="10">Dept Meeting</text>
-  <text x="786" y="753" fill="#F1F5F9" font-size="10">$214.00</text>
-  <text x="848" y="753" fill="#10B981" font-size="10">$18.99</text>
-  <text x="924" y="753" fill="#F1F5F9" font-size="10">$214.00</text>
+  <text x="786" y="753" fill="#E2E8F0" font-size="10">$214.00</text>
+  <text x="848" y="753" fill="#22C55E" font-size="10">$18.99</text>
+  <text x="924" y="753" fill="#E2E8F0" font-size="10">$214.00</text>
   <rect x="990" y="742" width="40" height="14" rx="3" fill="#064E3B"/>
   <text x="1010" y="753" fill="#6EE7B7" font-size="9" text-anchor="middle">Closed</text>
 
   <!-- Row 4 -->
-  <rect x="509" y="762" width="543" height="22" rx="3" fill="#1A1D2E"/>
+  <use href="#rowOdd" x="509" y="762" width="543" height="22"/>
   <text x="517" y="777" fill="#94A3B8" font-size="10">May 19</text>
   <text x="562" y="777" fill="#94A3B8" font-size="10">#2406-044</text>
   <text x="630" y="777" fill="#94A3B8" font-size="10">Jordan</text>
   <text x="690" y="777" fill="#94A3B8" font-size="10">Staff Lunch x8</text>
-  <text x="786" y="777" fill="#F1F5F9" font-size="10">$186.40</text>
-  <text x="848" y="777" fill="#10B981" font-size="10">$16.54</text>
-  <text x="924" y="777" fill="#F1F5F9" font-size="10">$186.40</text>
+  <text x="786" y="777" fill="#E2E8F0" font-size="10">$186.40</text>
+  <text x="848" y="777" fill="#22C55E" font-size="10">$16.54</text>
+  <text x="924" y="777" fill="#E2E8F0" font-size="10">$186.40</text>
   <rect x="990" y="766" width="40" height="14" rx="3" fill="#064E3B"/>
   <text x="1010" y="777" fill="#6EE7B7" font-size="9" text-anchor="middle">Closed</text>
 
   <!-- Row 5 -->
-  <rect x="509" y="786" width="543" height="22" rx="3" fill="#0F1117"/>
+  <use href="#rowEven" x="509" y="786" width="543" height="22"/>
   <text x="517" y="801" fill="#94A3B8" font-size="10">May 15</text>
   <text x="562" y="801" fill="#94A3B8" font-size="10">#2406-029</text>
   <text x="630" y="801" fill="#94A3B8" font-size="10">Sara</text>
   <text x="690" y="801" fill="#94A3B8" font-size="10">Reception Pkg</text>
-  <text x="786" y="801" fill="#F1F5F9" font-size="10">$560.00</text>
-  <text x="848" y="801" fill="#10B981" font-size="10">$49.70</text>
-  <text x="924" y="801" fill="#F1F5F9" font-size="10">$560.00</text>
+  <text x="786" y="801" fill="#E2E8F0" font-size="10">$560.00</text>
+  <text x="848" y="801" fill="#22C55E" font-size="10">$49.70</text>
+  <text x="924" y="801" fill="#E2E8F0" font-size="10">$560.00</text>
   <rect x="990" y="790" width="40" height="14" rx="3" fill="#064E3B"/>
   <text x="1010" y="801" fill="#6EE7B7" font-size="9" text-anchor="middle">Closed</text>
 
   <!-- Export CSV -->
-  <text x="1043" y="824" fill="#60A5FA" font-size="11" text-anchor="end">&#128196; Export to CSV</text>
+  <text x="1043" y="824" fill="#60A5FA" font-size="11" text-anchor="end">Export to CSV</text>
 
   <!-- ===== RIGHT PANEL: Per-Transaction Exemption ===== -->
-  <rect x="1062" y="199" width="304" height="825" fill="#0F1117"/>
+  <rect x="1062" y="199" width="304" height="825" fill="#0C0E1A"/>
 
   <!-- Panel header -->
-  <rect x="1070" y="208" width="286" height="36" rx="7" fill="#1A1D2E"/>
-  <text x="1213" y="222" fill="#F1F5F9" font-size="13" font-weight="700" text-anchor="middle">Apply Exemption to Order</text>
+  <rect x="1070" y="208" width="286" height="36" rx="7" fill="url(#cardGrad)" filter="url(#shadow)"/>
+  <text x="1213" y="222" fill="#E2E8F0" font-size="13" font-weight="700" text-anchor="middle">Apply Exemption to Order</text>
   <text x="1213" y="238" fill="#64748B" font-size="10" text-anchor="middle">Mark an order tax-exempt at the register</text>
 
   <!-- Step 1: Select Order -->
-  <rect x="1070" y="252" width="286" height="50" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="252" width="286" height="50" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <rect x="1074" y="256" width="18" height="18" rx="9" fill="#F59E0B"/>
-  <text x="1083" y="269" fill="#0F1117" font-size="9" font-weight="700" text-anchor="middle">1</text>
+  <!-- DB: pos_orders WHERE status = 'open' -->
+  <rect x="1070" y="252" width="286" height="50" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#stepBadge" x="1074" y="256" width="18" height="18"/>
+  <text x="1083" y="269" fill="#0C0E1A" font-size="9" font-weight="700" text-anchor="middle">1</text>
   <text x="1100" y="265" fill="#94A3B8" font-size="10" font-weight="600">SELECT ORDER</text>
-  <rect x="1078" y="272" width="196" height="22" rx="4" fill="#13162A"/>
-  <rect x="1078" y="272" width="196" height="22" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="1090" y="287" fill="#F1F5F9" font-size="11">Order #2406-112</text>
-  <text x="1280" y="287" fill="#94A3B8" font-size="12" text-anchor="middle">&#9660;</text>
+  <use href="#gear" x="1330" y="256" width="12" height="12"/>
+  <rect x="1078" y="272" width="196" height="22" rx="4" fill="#11142A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1090" y="287" fill="#E2E8F0" font-size="11">Order #2406-112</text>
   <text x="1284" y="287" fill="#60A5FA" font-size="10">Current</text>
 
   <!-- Step 2: Select Account -->
-  <rect x="1070" y="308" width="286" height="50" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="308" width="286" height="50" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <rect x="1074" y="312" width="18" height="18" rx="9" fill="#F59E0B"/>
-  <text x="1083" y="325" fill="#0F1117" font-size="9" font-weight="700" text-anchor="middle">2</text>
+  <!-- DB: pos_tax_exempt_accounts WHERE status = 'active' -->
+  <rect x="1070" y="308" width="286" height="50" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#stepBadge" x="1074" y="312" width="18" height="18"/>
+  <text x="1083" y="325" fill="#0C0E1A" font-size="9" font-weight="700" text-anchor="middle">2</text>
   <text x="1100" y="321" fill="#94A3B8" font-size="10" font-weight="600">SELECT EXEMPT ACCOUNT</text>
-  <rect x="1078" y="328" width="270" height="22" rx="4" fill="#13162A"/>
-  <rect x="1078" y="328" width="270" height="22" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="1090" y="343" fill="#F1F5F9" font-size="11">City of New York &#10003;</text>
-  <text x="1334" y="343" fill="#94A3B8" font-size="12" text-anchor="middle">&#9660;</text>
+  <use href="#gear" x="1330" y="312" width="12" height="12"/>
+  <rect x="1078" y="328" width="270" height="22" rx="4" fill="#11142A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1090" y="343" fill="#E2E8F0" font-size="11">City of New York</text>
 
   <!-- Step 3: Verify Identity -->
-  <rect x="1070" y="364" width="286" height="60" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="364" width="286" height="60" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <rect x="1074" y="368" width="18" height="18" rx="9" fill="#F59E0B"/>
-  <text x="1083" y="381" fill="#0F1117" font-size="9" font-weight="700" text-anchor="middle">3</text>
+  <!-- DB: pos_tax_exempt_contacts WHERE account_id = selected -->
+  <rect x="1070" y="364" width="286" height="60" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#stepBadge" x="1074" y="368" width="18" height="18"/>
+  <text x="1083" y="381" fill="#0C0E1A" font-size="9" font-weight="700" text-anchor="middle">3</text>
   <text x="1100" y="377" fill="#94A3B8" font-size="10" font-weight="600">VERIFY IDENTITY</text>
   <text x="1078" y="395" fill="#64748B" font-size="10">Authorized purchaser name:</text>
-  <rect x="1078" y="400" width="186" height="18" rx="4" fill="#13162A"/>
-  <rect x="1078" y="400" width="186" height="18" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1078" y="400" width="186" height="18" rx="4" fill="#11142A" stroke="#2A2E45" stroke-width="1"/>
   <text x="1090" y="413" fill="#94A3B8" font-size="10">John Smith</text>
-  <rect x="1274" y="400" width="16" height="16" rx="3" fill="#10B981"/>
-  <text x="1282" y="412" fill="white" font-size="8" text-anchor="middle">&#10003;</text>
+  <rect x="1274" y="400" width="16" height="16" rx="3" fill="#22C55E"/>
   <text x="1294" y="413" fill="#64748B" font-size="9">ID</text>
 
   <!-- Step 4: Exemption Reason -->
-  <rect x="1070" y="430" width="286" height="50" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="430" width="286" height="50" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <rect x="1074" y="434" width="18" height="18" rx="9" fill="#F59E0B"/>
-  <text x="1083" y="447" fill="#0F1117" font-size="9" font-weight="700" text-anchor="middle">4</text>
+  <!-- DB: pos_tax_exempt_events.reason -->
+  <rect x="1070" y="430" width="286" height="50" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#stepBadge" x="1074" y="434" width="18" height="18"/>
+  <text x="1083" y="447" fill="#0C0E1A" font-size="9" font-weight="700" text-anchor="middle">4</text>
   <text x="1100" y="443" fill="#94A3B8" font-size="10" font-weight="600">EXEMPTION REASON</text>
-  <rect x="1078" y="450" width="270" height="22" rx="4" fill="#13162A"/>
-  <rect x="1078" y="450" width="270" height="22" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="1090" y="465" fill="#F1F5F9" font-size="11">Government Purchase</text>
-  <text x="1334" y="465" fill="#94A3B8" font-size="12" text-anchor="middle">&#9660;</text>
+  <use href="#gear" x="1330" y="434" width="12" height="12"/>
+  <rect x="1078" y="450" width="270" height="22" rx="4" fill="#11142A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1090" y="465" fill="#E2E8F0" font-size="11">Government Purchase</text>
 
   <!-- Step 5: PO Number -->
-  <rect x="1070" y="486" width="286" height="50" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="486" width="286" height="50" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <rect x="1074" y="490" width="18" height="18" rx="9" fill="#F59E0B"/>
-  <text x="1083" y="503" fill="#0F1117" font-size="9" font-weight="700" text-anchor="middle">5</text>
+  <!-- DB: pos_tax_exempt_events.po_number -->
+  <rect x="1070" y="486" width="286" height="50" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#stepBadge" x="1074" y="490" width="18" height="18"/>
+  <text x="1083" y="503" fill="#0C0E1A" font-size="9" font-weight="700" text-anchor="middle">5</text>
   <text x="1100" y="499" fill="#94A3B8" font-size="10" font-weight="600">PO NUMBER (REQUIRED)</text>
-  <rect x="1078" y="506" width="270" height="22" rx="4" fill="#13162A"/>
-  <rect x="1078" y="506" width="270" height="22" rx="4" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
-  <text x="1090" y="521" fill="#F1F5F9" font-size="11">PO-2026-4847</text>
+  <rect x="1078" y="506" width="270" height="22" rx="4" fill="#11142A" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+  <text x="1090" y="521" fill="#E2E8F0" font-size="11">PO-2026-4847</text>
 
   <!-- Step 6: Preview -->
-  <rect x="1070" y="542" width="286" height="86" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="542" width="286" height="86" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <rect x="1074" y="546" width="18" height="18" rx="9" fill="#F59E0B"/>
-  <text x="1083" y="559" fill="#0F1117" font-size="9" font-weight="700" text-anchor="middle">6</text>
+  <!-- DB: calculated from pos_orders.subtotal_cents and applicable tax rates -->
+  <rect x="1070" y="542" width="286" height="86" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#stepBadge" x="1074" y="546" width="18" height="18"/>
+  <text x="1083" y="559" fill="#0C0E1A" font-size="9" font-weight="700" text-anchor="middle">6</text>
   <text x="1100" y="555" fill="#94A3B8" font-size="10" font-weight="600">PREVIEW</text>
   <text x="1082" y="572" fill="#94A3B8" font-size="11">Order Total</text>
-  <text x="1346" y="572" fill="#F1F5F9" font-size="11" text-anchor="end">$340.00</text>
+  <text x="1346" y="572" fill="#E2E8F0" font-size="11" text-anchor="end">$340.00</text>
   <text x="1082" y="589" fill="#94A3B8" font-size="11">Sales Tax (was)</text>
   <text x="1346" y="589" fill="#94A3B8" font-size="11" text-anchor="end">$30.17</text>
-  <text x="1082" y="606" fill="#10B981" font-size="11" font-weight="600">Tax Waived</text>
-  <text x="1346" y="606" fill="#10B981" font-size="11" font-weight="700" text-anchor="end">-$30.17</text>
-  <rect x="1070" y="612" width="286" height="1" fill="#2D3148"/>
+  <text x="1082" y="606" fill="#22C55E" font-size="11" font-weight="600">Tax Waived</text>
+  <text x="1346" y="606" fill="#22C55E" font-size="11" font-weight="700" text-anchor="end">-$30.17</text>
+  <rect x="1070" y="612" width="286" height="1" fill="#2A2E45"/>
   <text x="1082" y="624" fill="#F59E0B" font-size="13" font-weight="700">TOTAL CHARGED</text>
   <text x="1346" y="624" fill="#F59E0B" font-size="13" font-weight="700" text-anchor="end">$340.00</text>
 
   <!-- Apply Button -->
-  <rect x="1070" y="634" width="286" height="36" rx="7" fill="#F59E0B"/>
-  <text x="1213" y="656" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">Apply Tax Exemption</text>
+  <rect x="1070" y="634" width="286" height="36" rx="7" fill="url(#amberGrad)" filter="url(#shadow)"/>
+  <text x="1213" y="656" fill="#0C0E1A" font-size="13" font-weight="700" text-anchor="middle">Apply Tax Exemption</text>
 
   <!-- Manager PIN -->
-  <rect x="1070" y="676" width="286" height="44" rx="6" fill="#1A1D2E"/>
-  <rect x="1070" y="676" width="286" height="44" rx="6" fill="none" stroke="#2D3148" stroke-width="1"/>
+  <!-- DB: pos_users WHERE role = 'manager' AND pin_hash matches -->
+  <rect x="1070" y="676" width="286" height="44" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
   <text x="1082" y="691" fill="#94A3B8" font-size="10">Manager PIN</text>
+  <use href="#gear" x="1150" y="682" width="12" height="12"/>
   <text x="1082" y="708" fill="#64748B" font-size="9">Required for exemptions &gt; $100</text>
-  <rect x="1200" y="680" width="148" height="22" rx="4" fill="#13162A"/>
-  <rect x="1200" y="680" width="148" height="22" rx="4" fill="none" stroke="#2D3148" stroke-width="1"/>
-  <text x="1274" y="695" fill="#2D3148" font-size="16" letter-spacing="4" text-anchor="middle">&#8226; &#8226; &#8226; &#8226;</text>
+  <rect x="1200" y="680" width="148" height="22" rx="4" fill="#11142A" stroke="#2A2E45" stroke-width="1"/>
 
   <!-- Certificate Renewal Section -->
+  <!-- DB: pos_tax_exempt_accounts WHERE cert_expires_at < NOW() + interval '60 days' -->
   <text x="1078" y="738" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">CERTIFICATE RENEWAL</text>
+  <use href="#gear" x="1210" y="729" width="12" height="12"/>
 
   <!-- Alert -->
-  <rect x="1070" y="744" width="286" height="26" rx="5" fill="#2D1A00"/>
-  <rect x="1070" y="744" width="286" height="26" rx="5" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
-  <text x="1082" y="761" fill="#FDE68A" font-size="10" font-weight="600">&#9888; 2 certificates expiring within 60 days</text>
+  <rect x="1070" y="744" width="286" height="26" rx="5" fill="#2D1A00" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
+  <text x="1082" y="761" fill="#FDE68A" font-size="10" font-weight="600">2 certificates expiring within 60 days</text>
 
   <!-- Renewal rows -->
   <rect x="1070" y="776" width="286" height="32" rx="5" fill="#1A1D2E"/>
-  <text x="1082" y="789" fill="#F1F5F9" font-size="10" font-weight="600">Sunrise Academy</text>
+  <text x="1082" y="789" fill="#E2E8F0" font-size="10" font-weight="600">Sunrise Academy</text>
   <text x="1082" y="802" fill="#F59E0B" font-size="9">Expires Jun 30, 2026</text>
   <rect x="1248" y="779" width="100" height="22" rx="4" fill="#1E2235"/>
   <text x="1298" y="794" fill="#60A5FA" font-size="9" text-anchor="middle">Send Renewal</text>
 
   <rect x="1070" y="812" width="286" height="32" rx="5" fill="#1A1D2E"/>
-  <text x="1082" y="825" fill="#F1F5F9" font-size="10" font-weight="600">ABC Corp (Catering)</text>
+  <text x="1082" y="825" fill="#E2E8F0" font-size="10" font-weight="600">ABC Corp (Catering)</text>
   <text x="1082" y="838" fill="#F59E0B" font-size="9">Expires Aug 31, 2026</text>
   <rect x="1248" y="815" width="100" height="22" rx="4" fill="#1E2235"/>
   <text x="1298" y="830" fill="#60A5FA" font-size="9" text-anchor="middle">Send Renewal</text>
 
-  <!-- Auto-reminder toggle -->
+  <!-- Auto-reminder toggle (editable) -->
+  <!-- DB: pos_config.tax_exempt_auto_reminder_enabled -->
   <text x="1082" y="862" fill="#94A3B8" font-size="10">Auto-reminder:</text>
-  <rect x="1166" y="849" width="40" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1196" cy="858" r="7" fill="white"/>
-  <text x="1174" y="862" fill="white" font-size="8" font-weight="600">ON</text>
+  <use href="#gear" x="1152" y="853" width="12" height="12"/>
+  <use href="#toggleOn" x="1166" y="849" width="40" height="18"/>
   <text x="1212" y="862" fill="#64748B" font-size="9">60 days before, email contact</text>
 
-  <!-- ===== WORKFLOW INTEGRATION BOX ===== -->
-  <rect x="210" y="858" width="1156" height="1" fill="#2D3148"/>
-  <rect x="210" y="859" width="1156" height="160" fill="#0F1117"/>
-  <rect x="218" y="866" width="1140" height="110" rx="8" fill="#1A1200"/>
-  <rect x="218" y="866" width="1140" height="110" rx="8" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.7"/>
-  <text x="232" y="882" fill="#F59E0B" font-size="10" font-weight="700" letter-spacing="1">WORKFLOW INTEGRATION</text>
-  <text x="232" y="900" fill="#94A3B8" font-size="10">Tax exemption stored in pos_tax_exempt_accounts. Applied to order via pos_orders.tax_exempt_account_id.</text>
-  <text x="232" y="916" fill="#94A3B8" font-size="10">Tax waived logged in pos_payments.tax_waived_cents. Certificate PDFs stored in Supabase Storage (private bucket, signed URLs).</text>
-  <text x="232" y="932" fill="#94A3B8" font-size="10">Audit trail: pos_tax_exempt_events (who applied, when, PO#). Renewal reminders via Supabase cron + SendGrid.</text>
-  <text x="232" y="948" fill="#94A3B8" font-size="10">IRS/state audit report: /api/pos/reports/tax-exempt-summary?year=2026</text>
-  <text x="232" y="968" fill="#64748B" font-size="9">Table references: pos_tax_exempt_accounts · pos_orders · pos_payments · pos_tax_exempt_events · Supabase Storage (bucket: tax-certificates)</text>
+  <!-- ===== WORKFLOW / SAVE BAR ===== -->
+  <rect x="210" y="930" width="1156" height="1" fill="#2A2E45"/>
+  <rect x="210" y="931" width="1156" height="93" fill="#0C0E1A"/>
+
+  <!-- Save button -->
+  <rect x="1186" y="944" width="160" height="36" rx="7" fill="url(#amberGrad)" filter="url(#shadow)"/>
+  <text x="1266" y="966" fill="#0C0E1A" font-size="13" font-weight="700" text-anchor="middle">Save Changes</text>
+
+  <!-- DB integration note -->
+  <!-- DB: pos_tax_exempt_accounts, pos_orders.tax_exempt_account_id, pos_payments.tax_waived_cents,
+       pos_tax_exempt_events, Supabase Storage (bucket: tax-certificates) -->
+  <rect x="218" y="944" width="950" height="66" rx="8" fill="#1A1200" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+  <text x="232" y="960" fill="#F59E0B" font-size="10" font-weight="700" letter-spacing="1">WORKFLOW INTEGRATION</text>
+  <text x="232" y="976" fill="#94A3B8" font-size="10">Tax exemption stored in pos_tax_exempt_accounts. Applied to order via pos_orders.tax_exempt_account_id.</text>
+  <text x="232" y="990" fill="#94A3B8" font-size="10">Tax waived logged in pos_payments.tax_waived_cents. Certificates in Supabase Storage (private bucket, signed URLs).</text>
+  <text x="232" y="1004" fill="#64748B" font-size="9">Tables: pos_tax_exempt_accounts | pos_orders | pos_payments | pos_tax_exempt_events | pos_tax_exempt_contacts</text>
 
 </svg>

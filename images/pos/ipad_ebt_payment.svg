@@ -1,363 +1,464 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+<svg role="img" aria-labelledby="title-ipad_ebt_payment-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
+       DESIGN SYSTEM DEFS — shared gradients, filters, symbols
+       ═══════════════════════════════════════════════════════════════ -->
+  <title id="title-ipad_ebt_payment-svg">Synalux POS — eUt payment</title>
+  <desc>Synalux POS mockup screen for eUt payment. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#10132A"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+    <linearGradient id="amberBtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="greenBtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="ebtBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="65.8%" stop-color="#22C55E"/>
+      <stop offset="65.8%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="splitBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="65.8%" stop-color="#22C55E"/>
+      <stop offset="65.8%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="iconShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#22C55E" flood-opacity="0.2"/>
+    </filter>
+    <filter id="glowAmber" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- ─── REUSABLE SYMBOLS ─── -->
+
+    <!-- Admin configurability pencil icon (30% opacity) -->
+    <symbol id="adminEdit" viewBox="0 0 14 14">
+      <path d="M10.5 1.5l2 2-7 7H3.5v-2l7-7z M9 3l2 2" fill="none" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- Admin gear icon (30% opacity) -->
+    <symbol id="adminGear" viewBox="0 0 16 16">
+      <circle cx="8" cy="8" r="2.5" fill="none" stroke="#94A3B8" stroke-width="1.2" opacity="0.3"/>
+      <path d="M8 1v2M8 13v2M1 8h2M13 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- SNAP eligible badge -->
+    <symbol id="snapOk" viewBox="0 0 72 16">
+      <rect width="72" height="16" rx="4" fill="#22C55E" opacity="0.18"/>
+      <text x="36" y="12" fill="#22C55E" font-size="10" font-weight="700" text-anchor="middle">SNAP &#x2713;</text>
+    </symbol>
+
+    <!-- SNAP ineligible badge (amber supplement) -->
+    <symbol id="snapNoAmber" viewBox="0 0 140 16">
+      <rect width="140" height="16" rx="4" fill="#F59E0B" opacity="0.15"/>
+      <text x="70" y="12" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">SNAP &#x2717; (supplement)</text>
+    </symbol>
+
+    <!-- SNAP ineligible badge (red) -->
+    <symbol id="snapNoRed" viewBox="0 0 130 16">
+      <rect width="130" height="16" rx="4" fill="#EF4444" opacity="0.15"/>
+    </symbol>
+
+    <!-- PIN dot (empty) -->
+    <symbol id="pinDotEmpty" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="10" fill="#2A2E45"/>
+    </symbol>
+
+    <!-- PIN pad key -->
+    <symbol id="pinKey" viewBox="0 0 80 64">
+      <rect width="80" height="64" rx="10" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1.5"/>
+    </symbol>
+
+    <!-- Status dot -->
+    <symbol id="statusDot" viewBox="0 0 10 10">
+      <circle cx="5" cy="5" r="4" fill="#22C55E"/>
+    </symbol>
+
+    <!-- Signal bar group -->
+    <symbol id="signalBars" viewBox="0 0 30 24">
+      <rect x="0" y="12" width="5" height="12" rx="1" fill="#F59E0B" opacity="0.3"/>
+      <rect x="8" y="8" width="5" height="16" rx="1" fill="#F59E0B" opacity="0.5"/>
+      <rect x="16" y="4" width="5" height="20" rx="1" fill="#F59E0B" opacity="0.8"/>
+      <rect x="24" y="0" width="5" height="24" rx="1" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- EBT card icon -->
+    <symbol id="ebtCard" viewBox="0 0 54 36">
+      <rect width="54" height="36" rx="5" fill="#22C55E" opacity="0.2" stroke="#22C55E" stroke-width="1.5"/>
+      <rect x="0" y="10" width="54" height="6" fill="#22C55E" opacity="0.4"/>
+      <rect x="6" y="22" width="18" height="10" rx="2" fill="#F59E0B" opacity="0.7"/>
+    </symbol>
+
+    <!-- Forage badge -->
+    <symbol id="forageBadge" viewBox="0 0 52 18">
+      <rect width="52" height="18" rx="4" fill="#8B5CF6" opacity="0.25"/>
+      <text x="26" y="13" fill="#8B5CF6" font-size="10" font-weight="700" text-anchor="middle">FORAGE</text>
+    </symbol>
+
+    <!-- Checkmark circle -->
+    <symbol id="checkCircle" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="10" fill="#22C55E" opacity="0.15"/>
+      <text x="10" y="14" fill="#22C55E" font-size="11" text-anchor="middle">&#x2713;</text>
+    </symbol>
+
+    <!-- USDA shield -->
+    <symbol id="usdaShield" viewBox="0 0 30 34">
+      <rect width="30" height="34" rx="4" fill="#22C55E" opacity="0.15"/>
+      <text x="15" y="14" fill="#22C55E" font-size="9" font-weight="700" text-anchor="middle">USDA</text>
+      <text x="15" y="26" fill="#22C55E" font-size="9" font-weight="700" text-anchor="middle">FNS</text>
+    </symbol>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════════════
        BACKGROUND
-       ═══════════════════════════════════════════════════════════ -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
 
   <!-- Panel dividers -->
-  <rect x="420" y="0" width="1" height="1024" fill="#2D3148"/>
-  <rect x="946" y="0" width="1" height="1024" fill="#2D3148"/>
+  <rect x="420" y="0" width="1" height="1024" fill="#1E2235"/>
+  <rect x="946" y="0" width="1" height="1024" fill="#1E2235"/>
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
        LEFT PANEL — Order Items with SNAP Eligibility (w=420)
-       ═══════════════════════════════════════════════════════════ -->
-
-  <!-- Left panel background -->
-  <rect x="0" y="0" width="420" height="1024" fill="#0F1117"/>
+       Admin: Settings > Payments > EBT > Eligibility Rules
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="420" height="1024" fill="#0C0E1A"/>
 
   <!-- Header card -->
-  <rect x="12" y="12" width="396" height="82" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="12" y="12" width="396" height="82" rx="10" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#shadow)"/>
 
   <!-- EBT icon badge -->
-  <rect x="24" y="22" width="44" height="28" rx="5" fill="#10B981" opacity="0.18"/>
-  <text x="46" y="41" fill="#10B981" font-size="13" font-weight="700" text-anchor="middle">EBT</text>
+  <rect x="24" y="22" width="44" height="28" rx="5" fill="#22C55E" opacity="0.18"/>
+  <text x="46" y="41" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">EBT</text>
 
   <text x="78" y="37" fill="#F1F5F9" font-size="17" font-weight="700">Order Total: $47.82</text>
   <text x="78" y="57" fill="#94A3B8" font-size="12">EBT Eligible:</text>
-  <text x="156" y="57" fill="#10B981" font-size="12" font-weight="600">$31.45</text>
+  <text x="156" y="57" fill="#22C55E" font-size="12" font-weight="600">$31.45</text>
   <text x="195" y="57" fill="#94A3B8" font-size="12">  |  Ineligible:</text>
   <text x="285" y="57" fill="#EF4444" font-size="12" font-weight="600">$16.37</text>
+  <!-- Admin affordance: EBT eligibility settings -->
+  <use href="#adminGear" x="390" y="18" width="14" height="14"/>
 
-  <!-- Progress bar: eligible portion -->
+  <!-- Progress bar using gradient -->
   <rect x="24" y="78" width="384" height="6" rx="3" fill="#1E2235"/>
-  <rect x="24" y="78" width="252" height="6" rx="3" fill="#10B981" opacity="0.7"/>
-  <!-- ineligible portion -->
-  <rect x="276" y="78" width="132" height="6" rx="3" fill="#EF4444" opacity="0.5"/>
+  <rect x="24" y="78" width="384" height="6" rx="3" fill="url(#ebtBar)" opacity="0.6"/>
 
   <!-- Section label -->
   <text x="24" y="115" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">SNAP ELIGIBILITY BREAKDOWN</text>
+  <use href="#adminEdit" x="208" y="103" width="11" height="11"/>
 
-  <!-- ─── Item rows ─── -->
+  <!-- ─── Eligible Item rows ─── -->
 
-  <!-- Row helper: card bg alternating -->
-  <rect x="12" y="122" width="396" height="48" rx="6" fill="#1A1D2E"/>
-  <!-- Whole Milk -->
+  <!-- Row 1: Whole Milk -->
+  <rect x="12" y="122" width="396" height="48" rx="6" fill="url(#cardGrad)"/>
   <text x="24" y="143" fill="#F1F5F9" font-size="13" font-weight="500">Whole Milk 1gal</text>
   <text x="395" y="143" fill="#F1F5F9" font-size="13" text-anchor="end">$4.29</text>
-  <rect x="24" y="150" width="72" height="16" rx="4" fill="#10B981" opacity="0.18"/>
-  <text x="60" y="162" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">SNAP ✓</text>
+  <use href="#snapOk" x="24" y="150" width="72" height="16"/>
 
-  <rect x="12" y="172" width="396" height="48" rx="6" fill="#0F1117"/>
-  <!-- Bread -->
+  <!-- Row 2: Bread -->
+  <rect x="12" y="172" width="396" height="48" rx="6" fill="#0C0E1A"/>
   <text x="24" y="193" fill="#F1F5F9" font-size="13" font-weight="500">Bread (Wheat)</text>
   <text x="395" y="193" fill="#F1F5F9" font-size="13" text-anchor="end">$3.49</text>
-  <rect x="24" y="200" width="72" height="16" rx="4" fill="#10B981" opacity="0.18"/>
-  <text x="60" y="212" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">SNAP ✓</text>
+  <use href="#snapOk" x="24" y="200" width="72" height="16"/>
 
-  <rect x="12" y="222" width="396" height="48" rx="6" fill="#1A1D2E"/>
-  <!-- Cheese -->
+  <!-- Row 3: Cheese -->
+  <rect x="12" y="222" width="396" height="48" rx="6" fill="url(#cardGrad)"/>
   <text x="24" y="243" fill="#F1F5F9" font-size="13" font-weight="500">Cheese Slices</text>
   <text x="395" y="243" fill="#F1F5F9" font-size="13" text-anchor="end">$5.99</text>
-  <rect x="24" y="250" width="72" height="16" rx="4" fill="#10B981" opacity="0.18"/>
-  <text x="60" y="262" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">SNAP ✓</text>
+  <use href="#snapOk" x="24" y="250" width="72" height="16"/>
 
-  <rect x="12" y="272" width="396" height="48" rx="6" fill="#0F1117"/>
-  <!-- Apples -->
+  <!-- Row 4: Apples -->
+  <rect x="12" y="272" width="396" height="48" rx="6" fill="#0C0E1A"/>
   <text x="24" y="293" fill="#F1F5F9" font-size="13" font-weight="500">Apples 3lb</text>
   <text x="395" y="293" fill="#F1F5F9" font-size="13" text-anchor="end">$4.99</text>
-  <rect x="24" y="300" width="72" height="16" rx="4" fill="#10B981" opacity="0.18"/>
-  <text x="60" y="312" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">SNAP ✓</text>
+  <use href="#snapOk" x="24" y="300" width="72" height="16"/>
 
-  <rect x="12" y="322" width="396" height="48" rx="6" fill="#1A1D2E"/>
-  <!-- Orange Juice -->
+  <!-- Row 5: Orange Juice -->
+  <rect x="12" y="322" width="396" height="48" rx="6" fill="url(#cardGrad)"/>
   <text x="24" y="343" fill="#F1F5F9" font-size="13" font-weight="500">Orange Juice</text>
   <text x="395" y="343" fill="#F1F5F9" font-size="13" text-anchor="end">$3.79</text>
-  <rect x="24" y="350" width="72" height="16" rx="4" fill="#10B981" opacity="0.18"/>
-  <text x="60" y="362" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">SNAP ✓</text>
+  <use href="#snapOk" x="24" y="350" width="72" height="16"/>
 
   <!-- Divider: ineligible items -->
-  <rect x="12" y="372" width="396" height="1" fill="#2D3148"/>
+  <rect x="12" y="372" width="396" height="1" fill="#2A2E45"/>
+  <!-- Admin: Settings > Payments > EBT > Ineligibility Categories -->
   <rect x="24" y="378" width="160" height="14" rx="3" fill="#F97316" opacity="0.12"/>
   <text x="104" y="389" fill="#F97316" font-size="10" font-weight="700" text-anchor="middle">INELIGIBLE ITEMS BELOW</text>
+  <use href="#adminEdit" x="188" y="378" width="10" height="10"/>
 
-  <rect x="12" y="396" width="396" height="52" rx="6" fill="#0F1117"/>
-  <!-- Energy Drink -->
+  <!-- Row 6: Energy Drink (supplement) -->
+  <rect x="12" y="396" width="396" height="52" rx="6" fill="#0C0E1A"/>
   <text x="24" y="418" fill="#94A3B8" font-size="13" font-weight="500">Energy Drink</text>
   <text x="395" y="418" fill="#94A3B8" font-size="13" text-anchor="end">$3.49</text>
-  <rect x="24" y="424" width="140" height="16" rx="4" fill="#F59E0B" opacity="0.15"/>
-  <text x="94" y="436" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">SNAP ✗ (supplement)</text>
+  <use href="#snapNoAmber" x="24" y="424" width="140" height="16"/>
 
-  <rect x="12" y="450" width="396" height="52" rx="6" fill="#1A1D2E"/>
-  <!-- Hot Rotisserie -->
+  <!-- Row 7: Hot Rotisserie (hot food) -->
+  <rect x="12" y="450" width="396" height="52" rx="6" fill="url(#cardGrad)"/>
   <text x="24" y="472" fill="#94A3B8" font-size="13" font-weight="500">Hot Rotisserie Chicken</text>
   <text x="395" y="472" fill="#94A3B8" font-size="13" text-anchor="end">$8.99</text>
-  <rect x="24" y="478" width="130" height="16" rx="4" fill="#EF4444" opacity="0.15"/>
-  <text x="89" y="490" fill="#EF4444" font-size="10" font-weight="700" text-anchor="middle">SNAP ✗ (hot food)</text>
+  <use href="#snapNoRed" x="24" y="478" width="130" height="16"/>
+  <text x="89" y="490" fill="#EF4444" font-size="10" font-weight="700" text-anchor="middle">SNAP &#x2717; (hot food)</text>
 
-  <rect x="12" y="504" width="396" height="52" rx="6" fill="#0F1117"/>
-  <!-- Beer -->
+  <!-- Row 8: Beer (alcohol) -->
+  <rect x="12" y="504" width="396" height="52" rx="6" fill="#0C0E1A"/>
   <text x="24" y="526" fill="#94A3B8" font-size="13" font-weight="500">Beer 6-pack</text>
   <text x="395" y="526" fill="#94A3B8" font-size="13" text-anchor="end">$9.99</text>
-  <rect x="24" y="532" width="112" height="16" rx="4" fill="#EF4444" opacity="0.15"/>
-  <text x="80" y="544" fill="#EF4444" font-size="10" font-weight="700" text-anchor="middle">SNAP ✗ (alcohol)</text>
+  <use href="#snapNoRed" x="24" y="532" width="112" height="16"/>
+  <text x="80" y="544" fill="#EF4444" font-size="10" font-weight="700" text-anchor="middle">SNAP &#x2717; (alcohol)</text>
 
   <!-- Separator -->
-  <rect x="12" y="560" width="396" height="1" fill="#2D3148"/>
+  <rect x="12" y="560" width="396" height="1" fill="#2A2E45"/>
 
   <!-- Totals recap -->
-  <rect x="12" y="564" width="396" height="80" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="12" y="564" width="396" height="80" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#shadow)"/>
   <text x="24" y="585" fill="#94A3B8" font-size="12">EBT Subtotal</text>
-  <text x="396" y="585" fill="#10B981" font-size="13" font-weight="600" text-anchor="end">$31.45</text>
+  <text x="396" y="585" fill="#22C55E" font-size="13" font-weight="600" text-anchor="end">$31.45</text>
   <text x="24" y="605" fill="#94A3B8" font-size="12">Non-EBT Subtotal</text>
   <text x="396" y="605" fill="#EF4444" font-size="13" font-weight="600" text-anchor="end">$16.37</text>
-  <rect x="24" y="613" width="384" height="1" fill="#2D3148"/>
+  <rect x="24" y="613" width="384" height="1" fill="#2A2E45"/>
   <text x="24" y="631" fill="#F1F5F9" font-size="13" font-weight="700">Order Total</text>
   <text x="396" y="631" fill="#F1F5F9" font-size="15" font-weight="700" text-anchor="end">$47.82</text>
 
-  <!-- USDA FNS info card -->
-  <rect x="12" y="658" width="396" height="54" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <!-- USDA shield icon (simplified) -->
-  <rect x="24" y="668" width="30" height="34" rx="4" fill="#10B981" opacity="0.15"/>
-  <text x="39" y="681" fill="#10B981" font-size="9" font-weight="700" text-anchor="middle">USDA</text>
-  <text x="39" y="693" fill="#10B981" font-size="9" font-weight="700" text-anchor="middle">FNS</text>
+  <!-- USDA FNS info card — Admin: Settings > Payments > EBT > Merchant ID -->
+  <rect x="12" y="658" width="396" height="54" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#usdaShield" x="24" y="668" width="30" height="34"/>
   <text x="62" y="681" fill="#94A3B8" font-size="11">USDA FNS Merchant ID:</text>
   <text x="62" y="695" fill="#F1F5F9" font-size="12" font-weight="600">1234567890</text>
-  <text x="200" y="695" fill="#64748B" font-size="11">  ·  Authorized since 2023</text>
+  <text x="200" y="695" fill="#64748B" font-size="11">  &#xB7;  Authorized since 2023</text>
+  <use href="#adminEdit" x="392" y="664" width="10" height="10"/>
 
   <!-- SNAP rules info -->
-  <rect x="12" y="724" width="396" height="58" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <rect x="12" y="724" width="396" height="58" rx="8" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="24" y="742" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.8">SNAP ELIGIBILITY RULES</text>
-  <text x="24" y="757" fill="#64748B" font-size="10">✓ Eligible: grocery food for home prep</text>
-  <text x="24" y="770" fill="#64748B" font-size="10">✗ Ineligible: hot foods, alcohol, supplements, non-food</text>
+  <use href="#adminGear" x="172" y="730" width="12" height="12"/>
+  <text x="24" y="757" fill="#64748B" font-size="10">&#x2713; Eligible: grocery food for home prep</text>
+  <text x="24" y="770" fill="#64748B" font-size="10">&#x2717; Ineligible: hot foods, alcohol, supplements, non-food</text>
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
        CENTER PANEL — EBT PIN Entry (x=420, w=526)
-       ═══════════════════════════════════════════════════════════ -->
-
-  <rect x="421" y="0" width="525" height="1024" fill="#0F1117"/>
+       Admin: Settings > Payments > EBT > PIN Entry
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="421" y="0" width="525" height="1024" fill="#0C0E1A"/>
 
   <!-- Panel header -->
-  <rect x="433" y="12" width="501" height="70" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- EBT card icon (stylized) -->
-  <rect x="447" y="22" width="54" height="36" rx="5" fill="#10B981" opacity="0.2" stroke="#10B981" stroke-width="1.5"/>
-  <rect x="447" y="30" width="54" height="6" fill="#10B981" opacity="0.4"/>
-  <rect x="453" y="42" width="18" height="10" rx="2" fill="#F59E0B" opacity="0.7"/>
+  <rect x="433" y="12" width="501" height="70" rx="10" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#shadow)"/>
+  <use href="#ebtCard" x="447" y="22" width="54" height="36"/>
 
   <text x="514" y="40" fill="#F1F5F9" font-size="20" font-weight="700">EBT / SNAP Payment</text>
-  <text x="514" y="60" fill="#94A3B8" font-size="12">Government SNAP benefits · Powered by Forage</text>
+  <text x="514" y="60" fill="#94A3B8" font-size="12">Government SNAP benefits &#xB7; Powered by Forage</text>
+  <use href="#adminGear" x="910" y="18" width="14" height="14"/>
 
   <!-- Amount display card -->
-  <rect x="433" y="96" width="501" height="110" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-
+  <rect x="433" y="96" width="501" height="110" rx="10" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#glowGreen)"/>
   <text x="683" y="125" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">EBT AMOUNT TO CHARGE</text>
-  <text x="683" y="168" fill="#10B981" font-size="52" font-weight="700" text-anchor="middle">$31.45</text>
+  <text x="683" y="168" fill="#22C55E" font-size="52" font-weight="700" text-anchor="middle">$31.45</text>
 
-  <rect x="447" y="176" width="473" height="1" fill="#2D3148"/>
+  <rect x="447" y="176" width="473" height="1" fill="#2A2E45"/>
   <text x="530" y="194" fill="#64748B" font-size="12">Est. Remaining Balance After:</text>
   <text x="780" y="194" fill="#94A3B8" font-size="14" font-weight="600" text-anchor="end">$148.22</text>
   <text x="790" y="194" fill="#64748B" font-size="10">(estimated)</text>
 
-  <!-- Card instruction -->
-  <rect x="433" y="220" width="501" height="50" rx="10" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <!-- card insert icon -->
-  <rect x="455" y="235" width="36" height="24" rx="4" fill="none" stroke="#10B981" stroke-width="2"/>
-  <rect x="455" y="241" width="36" height="6" fill="#10B981" opacity="0.3"/>
-  <!-- arrow -->
-  <line x1="496" y1="247" x2="510" y2="247" stroke="#10B981" stroke-width="2"/>
-  <polyline points="506,243 510,247 506,251" fill="none" stroke="#10B981" stroke-width="2"/>
-
-  <text x="526" y="243" fill="#10B981" font-size="13" font-weight="600">Insert / Tap EBT Card</text>
+  <!-- Card instruction — Admin: Settings > Payments > EBT > Card Instructions -->
+  <rect x="433" y="220" width="501" height="50" rx="10" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="455" y="235" width="36" height="24" rx="4" fill="none" stroke="#22C55E" stroke-width="2"/>
+  <rect x="455" y="241" width="36" height="6" fill="#22C55E" opacity="0.3"/>
+  <line x1="496" y1="247" x2="510" y2="247" stroke="#22C55E" stroke-width="2"/>
+  <polyline points="506,243 510,247 506,251" fill="none" stroke="#22C55E" stroke-width="2"/>
+  <text x="526" y="243" fill="#22C55E" font-size="13" font-weight="600">Insert / Tap EBT Card</text>
   <text x="526" y="259" fill="#64748B" font-size="11">Customer must enter PIN on terminal below</text>
+  <use href="#adminEdit" x="910" y="226" width="10" height="10"/>
 
   <!-- PIN display -->
   <text x="683" y="298" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">CUSTOMER PIN ENTRY</text>
-
-  <rect x="555" y="306" width="256" height="52" rx="8" fill="#13162A" stroke="#2D3148" stroke-width="1.5"/>
-  <!-- PIN dots -->
-  <circle cx="601" cy="332" r="10" fill="#2D3148"/>
-  <circle cx="637" cy="332" r="10" fill="#2D3148"/>
-  <circle cx="673" cy="332" r="10" fill="#2D3148"/>
-  <circle cx="709" cy="332" r="10" fill="#2D3148"/>
+  <rect x="555" y="306" width="256" height="52" rx="8" fill="#080A12" stroke="#2A2E45" stroke-width="1.5"/>
+  <!-- PIN dots via symbol -->
+  <use href="#pinDotEmpty" x="591" y="322" width="20" height="20"/>
+  <use href="#pinDotEmpty" x="627" y="322" width="20" height="20"/>
+  <use href="#pinDotEmpty" x="663" y="322" width="20" height="20"/>
+  <use href="#pinDotEmpty" x="699" y="322" width="20" height="20"/>
   <!-- Cursor blink indicator -->
-  <rect x="723" y="320" width="3" height="24" rx="1" fill="#10B981" opacity="0.8"/>
+  <rect x="723" y="320" width="3" height="24" rx="1" fill="#22C55E" opacity="0.8"/>
+  <text x="820" y="338" fill="#64748B" font-size="20">&#x232B;</text>
 
-  <text x="820" y="338" fill="#64748B" font-size="20">⌫</text>
-
-  <!-- PIN Pad grid -->
-  <!-- Row 1: 1, 2, 3 -->
-  <rect x="490" y="372" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
-  <rect x="490" y="372" width="80" height="64" rx="10" fill="none" stroke="#3D4168" stroke-width="0.5"/>
+  <!-- PIN Pad grid — using symbol for key backgrounds -->
+  <!-- Row 1: 1, 2, 3, 4 -->
+  <use href="#pinKey" x="490" y="372" width="80" height="64"/>
   <text x="530" y="408" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">1</text>
-  <text x="530" y="424" fill="#64748B" font-size="9" text-anchor="middle">· · ·</text>
+  <text x="530" y="424" fill="#64748B" font-size="9" text-anchor="middle">&#xB7; &#xB7; &#xB7;</text>
 
-  <rect x="582" y="372" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="582" y="372" width="80" height="64"/>
   <text x="622" y="408" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">2</text>
   <text x="622" y="424" fill="#64748B" font-size="9" text-anchor="middle">A B C</text>
 
-  <rect x="674" y="372" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="674" y="372" width="80" height="64"/>
   <text x="714" y="408" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">3</text>
   <text x="714" y="424" fill="#64748B" font-size="9" text-anchor="middle">D E F</text>
 
-  <rect x="766" y="372" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="766" y="372" width="80" height="64"/>
   <text x="806" y="408" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">4</text>
   <text x="806" y="424" fill="#64748B" font-size="9" text-anchor="middle">G H I</text>
 
   <!-- Row 2: 5, 6, 7, 8 -->
-  <rect x="490" y="448" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="490" y="448" width="80" height="64"/>
   <text x="530" y="484" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">5</text>
   <text x="530" y="500" fill="#64748B" font-size="9" text-anchor="middle">J K L</text>
 
-  <rect x="582" y="448" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="582" y="448" width="80" height="64"/>
   <text x="622" y="484" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">6</text>
   <text x="622" y="500" fill="#64748B" font-size="9" text-anchor="middle">M N O</text>
 
-  <rect x="674" y="448" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="674" y="448" width="80" height="64"/>
   <text x="714" y="484" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">7</text>
   <text x="714" y="500" fill="#64748B" font-size="9" text-anchor="middle">P Q R S</text>
 
-  <rect x="766" y="448" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="766" y="448" width="80" height="64"/>
   <text x="806" y="484" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">8</text>
   <text x="806" y="500" fill="#64748B" font-size="9" text-anchor="middle">T U V</text>
 
   <!-- Row 3: 9, 0, Clear, Enter -->
-  <rect x="490" y="524" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="490" y="524" width="80" height="64"/>
   <text x="530" y="560" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">9</text>
   <text x="530" y="576" fill="#64748B" font-size="9" text-anchor="middle">W X Y Z</text>
 
-  <rect x="582" y="524" width="80" height="64" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1.5"/>
+  <use href="#pinKey" x="582" y="524" width="80" height="64"/>
   <text x="622" y="563" fill="#F1F5F9" font-size="22" font-weight="600" text-anchor="middle">0</text>
 
-  <rect x="674" y="524" width="80" height="64" rx="10" fill="#1E2235" stroke="#2D3148" stroke-width="1.5"/>
+  <rect x="674" y="524" width="80" height="64" rx="10" fill="#1E2235" stroke="#2A2E45" stroke-width="1.5"/>
   <text x="714" y="563" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">CLEAR</text>
 
-  <rect x="766" y="524" width="80" height="64" rx="10" fill="#10B981" opacity="0.9"/>
-  <text x="806" y="552" fill="#0F1117" font-size="12" font-weight="700" text-anchor="middle">ENTER</text>
-  <text x="806" y="568" fill="#0F1117" font-size="11" text-anchor="middle">↵</text>
+  <rect x="766" y="524" width="80" height="64" rx="10" fill="url(#greenBtn)" opacity="0.9"/>
+  <text x="806" y="552" fill="#0C0E1A" font-size="12" font-weight="700" text-anchor="middle">ENTER</text>
+  <text x="806" y="568" fill="#0C0E1A" font-size="11" text-anchor="middle">&#x21B5;</text>
 
-  <!-- Network status bar -->
-  <rect x="433" y="605" width="501" height="40" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
-  <!-- Animated-look pulse dot -->
+  <!-- Network status bar — Admin: Settings > Payments > EBT > Network -->
+  <rect x="433" y="605" width="501" height="40" rx="8" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#glowAmber)"/>
   <circle cx="453" cy="625" r="6" fill="#F59E0B" opacity="0.9"/>
   <circle cx="453" cy="625" r="10" fill="#F59E0B" opacity="0.2"/>
   <text x="470" y="630" fill="#F59E0B" font-size="12" font-weight="600">Connecting to EBT Network (Forage)...</text>
-  <!-- Signal bars -->
-  <rect x="888" y="619" width="5" height="12" rx="1" fill="#F59E0B" opacity="0.3"/>
-  <rect x="896" y="615" width="5" height="16" rx="1" fill="#F59E0B" opacity="0.5"/>
-  <rect x="904" y="611" width="5" height="20" rx="1" fill="#F59E0B" opacity="0.8"/>
-  <rect x="912" y="607" width="5" height="24" rx="1" fill="#F59E0B"/>
+  <use href="#signalBars" x="888" y="607" width="30" height="24"/>
   <text x="924" y="630" fill="#64748B" font-size="10">LTE</text>
+  <use href="#adminGear" x="910" y="610" width="12" height="12"/>
 
   <!-- Warning banner -->
   <rect x="433" y="658" width="501" height="42" rx="8" fill="#F97316" opacity="0.1" stroke="#F97316" stroke-width="1.5"/>
-  <text x="453" y="674" fill="#F97316" font-size="11" font-weight="700">⚠  EBT requires live network connection</text>
+  <text x="453" y="674" fill="#F97316" font-size="11" font-weight="700">EBT requires live network connection</text>
   <text x="453" y="690" fill="#F97316" font-size="11">Offline processing is not available for EBT/SNAP transactions.</text>
 
-  <!-- Forage processor row -->
-  <rect x="433" y="712" width="501" height="38" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <!-- Forage logo placeholder -->
-  <rect x="449" y="722" width="52" height="18" rx="4" fill="#8B5CF6" opacity="0.25"/>
-  <text x="475" y="735" fill="#8B5CF6" font-size="10" font-weight="700" text-anchor="middle">FORAGE</text>
-  <text x="510" y="731" fill="#64748B" font-size="11">Powered by Forage  ·  USDA FNS Authorized Processor</text>
-  <!-- Checkmark badge -->
-  <circle cx="900" cy="731" r="10" fill="#10B981" opacity="0.15"/>
-  <text x="900" y="735" fill="#10B981" font-size="11" text-anchor="middle">✓</text>
+  <!-- Forage processor row — Admin: Settings > Payments > EBT > Processor -->
+  <rect x="433" y="712" width="501" height="38" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#forageBadge" x="449" y="722" width="52" height="18"/>
+  <text x="510" y="731" fill="#64748B" font-size="11">Powered by Forage  &#xB7;  USDA FNS Authorized Processor</text>
+  <use href="#checkCircle" x="890" y="721" width="20" height="20"/>
+  <use href="#adminEdit" x="916" y="718" width="10" height="10"/>
 
   <!-- Cancel / Help row -->
-  <rect x="433" y="764" width="240" height="44" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <rect x="433" y="764" width="240" height="44" rx="8" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="553" y="791" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Cancel Transaction</text>
 
-  <rect x="685" y="764" width="249" height="44" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <rect x="685" y="764" width="249" height="44" rx="8" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="809" y="791" fill="#64748B" font-size="13" text-anchor="middle">? Need Help</text>
 
   <!-- PIN security note -->
-  <text x="683" y="830" fill="#64748B" font-size="11" text-anchor="middle">🔒  PIN is encrypted end-to-end · Never stored · PCI-DSS Compliant</text>
+  <text x="683" y="830" fill="#64748B" font-size="11" text-anchor="middle">PIN is encrypted end-to-end &#xB7; Never stored &#xB7; PCI-DSS Compliant</text>
 
-  <!-- SNAP benefit usage guide -->
-  <rect x="433" y="842" width="501" height="80" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Forage EBT network status — Admin: Settings > Payments > EBT > Timeout -->
+  <rect x="433" y="842" width="501" height="80" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="447" y="860" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">FORAGE EBT NETWORK STATUS</text>
-  <rect x="447" y="868" width="473" height="1" fill="#2D3148"/>
-
+  <use href="#adminGear" x="620" y="848" width="12" height="12"/>
+  <rect x="447" y="868" width="473" height="1" fill="#2A2E45"/>
   <text x="447" y="882" fill="#64748B" font-size="11">Issuing State:</text>
   <text x="535" y="882" fill="#94A3B8" font-size="11" font-weight="500">Detected from card BIN</text>
   <text x="447" y="897" fill="#64748B" font-size="11">Network:</text>
   <text x="500" y="897" fill="#94A3B8" font-size="11" font-weight="500">Forage eWIC / SNAP Gateway</text>
   <text x="447" y="912" fill="#64748B" font-size="11">Timeout:</text>
-  <text x="500" y="912" fill="#94A3B8" font-size="11" font-weight="500">30s · Auto-void on expiry</text>
+  <text x="500" y="912" fill="#94A3B8" font-size="11" font-weight="500">30s &#xB7; Auto-void on expiry</text>
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
        RIGHT PANEL — Split Tender Summary (x=946, w=420)
-       ═══════════════════════════════════════════════════════════ -->
-
-  <rect x="947" y="0" width="419" height="1024" fill="#0F1117"/>
+       Admin: Settings > Payments > EBT > Split Tender
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="947" y="0" width="419" height="1024" fill="#0C0E1A"/>
 
   <!-- Header -->
-  <rect x="959" y="12" width="395" height="56" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="959" y="12" width="395" height="56" rx="10" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#shadow)"/>
   <text x="971" y="38" fill="#F1F5F9" font-size="18" font-weight="700">Split Tender</text>
-  <text x="971" y="56" fill="#94A3B8" font-size="12">2 payment methods · $47.82 total</text>
+  <text x="971" y="56" fill="#94A3B8" font-size="12">2 payment methods &#xB7; $47.82 total</text>
+  <use href="#adminGear" x="1334" y="18" width="14" height="14"/>
 
-  <!-- Progress total bar -->
+  <!-- Progress total bar using gradient -->
   <rect x="959" y="74" width="395" height="8" rx="4" fill="#1E2235"/>
-  <!-- EBT portion -->
-  <rect x="959" y="74" width="259" height="8" rx="4" fill="#10B981" opacity="0.7"/>
-  <!-- Remaining portion -->
-  <rect x="1218" y="74" width="136" height="8" rx="4" fill="#F59E0B" opacity="0.5"/>
-
-  <text x="959" y="92" fill="#10B981" font-size="10">$31.45 EBT</text>
+  <rect x="959" y="74" width="395" height="8" rx="4" fill="url(#splitBar)" opacity="0.6"/>
+  <text x="959" y="92" fill="#22C55E" font-size="10">$31.45 EBT</text>
   <text x="1218" y="92" fill="#F59E0B" font-size="10">$16.37 Card</text>
 
-  <!-- ── Payment Card 1: EBT/SNAP — APPROVED ── -->
-  <rect x="959" y="100" width="395" height="118" rx="10" fill="#1A1D2E" stroke="#10B981" stroke-width="2"/>
+  <!-- Payment Card 1: EBT/SNAP — APPROVED -->
+  <rect x="959" y="100" width="395" height="118" rx="10" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="959" y="100" width="395" height="36" rx="10" fill="#22C55E" opacity="0.15"/>
+  <rect x="959" y="118" width="395" height="18" fill="#22C55E" opacity="0.15"/>
+  <text x="971" y="124" fill="#22C55E" font-size="12" font-weight="700">&#x2713;  APPROVED</text>
+  <text x="1340" y="124" fill="#22C55E" font-size="12" font-weight="700" text-anchor="end">EBT / SNAP</text>
 
-  <!-- Approved badge -->
-  <rect x="959" y="100" width="395" height="36" rx="10" fill="#10B981" opacity="0.15"/>
-  <rect x="959" y="118" width="395" height="18" fill="#10B981" opacity="0.15"/>
-  <text x="971" y="124" fill="#10B981" font-size="12" font-weight="700">✓  APPROVED</text>
-  <text x="1340" y="124" fill="#10B981" font-size="12" font-weight="700" text-anchor="end">EBT / SNAP</text>
-
-  <rect x="971" y="140" width="54" height="34" rx="5" fill="#10B981" opacity="0.2" stroke="#10B981" stroke-width="1.5"/>
-  <text x="998" y="153" fill="#10B981" font-size="9" font-weight="700" text-anchor="middle">SNAP</text>
-  <text x="998" y="165" fill="#10B981" font-size="9" font-weight="700" text-anchor="middle">EBT</text>
+  <rect x="971" y="140" width="54" height="34" rx="5" fill="#22C55E" opacity="0.2" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="998" y="153" fill="#22C55E" font-size="9" font-weight="700" text-anchor="middle">SNAP</text>
+  <text x="998" y="165" fill="#22C55E" font-size="9" font-weight="700" text-anchor="middle">EBT</text>
 
   <text x="1035" y="153" fill="#F1F5F9" font-size="14" font-weight="600">EBT / SNAP Card</text>
   <text x="1035" y="170" fill="#94A3B8" font-size="12">Auth Code: FNS-8821-XK</text>
+  <text x="1340" y="160" fill="#22C55E" font-size="26" font-weight="700" text-anchor="end">$31.45</text>
 
-  <text x="1340" y="160" fill="#10B981" font-size="26" font-weight="700" text-anchor="end">$31.45</text>
+  <rect x="971" y="182" width="371" height="1" fill="#2A2E45"/>
+  <text x="971" y="198" fill="#64748B" font-size="11">Response: APPROVED &#xB7; Issuer Auth &#xB7; 0.8s</text>
+  <text x="1340" y="198" fill="#22C55E" font-size="11" text-anchor="end">&#x2713; Settled</text>
 
-  <rect x="971" y="182" width="371" height="1" fill="#2D3148"/>
-  <text x="971" y="198" fill="#64748B" font-size="11">Response: APPROVED · Issuer Auth · 0.8s</text>
-  <text x="1340" y="198" fill="#10B981" font-size="11" text-anchor="end">✓ Settled</text>
-
-  <!-- ── Payment Card 2: Credit Card — PENDING ── -->
-  <rect x="959" y="232" width="395" height="108" rx="10" fill="#1A1D2E" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,3"/>
-
+  <!-- Payment Card 2: Credit Card — PENDING -->
+  <rect x="959" y="232" width="395" height="108" rx="10" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow)"/>
   <rect x="959" y="232" width="395" height="36" rx="10" fill="#F59E0B" opacity="0.08"/>
   <rect x="959" y="250" width="395" height="18" fill="#F59E0B" opacity="0.08"/>
-  <text x="971" y="256" fill="#F59E0B" font-size="12" font-weight="700">◌  PENDING</text>
+  <text x="971" y="256" fill="#F59E0B" font-size="12" font-weight="700">&#x25CC;  PENDING</text>
   <text x="1340" y="256" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">Credit Card</text>
 
   <!-- Visa card visual -->
-  <rect x="971" y="272" width="54" height="34" rx="5" fill="#1E3A8A" opacity="0.8" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="971" y="272" width="54" height="34" rx="5" fill="#1E3A8A" opacity="0.8" stroke="#60A5FA" stroke-width="1"/>
   <text x="998" y="293" fill="#FFFFFF" font-size="10" font-weight="700" text-anchor="middle">VISA</text>
 
-  <text x="1035" y="283" fill="#94A3B8" font-size="14" font-weight="600">Visa ••••4521</text>
+  <text x="1035" y="283" fill="#94A3B8" font-size="14" font-weight="600">Visa &#x2022;&#x2022;&#x2022;&#x2022;4521</text>
   <text x="1035" y="299" fill="#64748B" font-size="11">Awaiting card swipe / tap / insert</text>
-
   <text x="1340" y="293" fill="#F1F5F9" font-size="22" font-weight="700" text-anchor="end">$16.37</text>
 
-  <rect x="971" y="308" width="371" height="1" fill="#2D3148"/>
+  <rect x="971" y="308" width="371" height="1" fill="#2A2E45"/>
   <text x="971" y="326" fill="#64748B" font-size="11">Customer owes this amount after EBT</text>
 
   <!-- Totals summary -->
-  <rect x="959" y="354" width="395" height="90" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="959" y="354" width="395" height="90" rx="10" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="971" y="374" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">TRANSACTION SUMMARY</text>
-  <rect x="971" y="380" width="371" height="1" fill="#2D3148"/>
+  <rect x="971" y="380" width="371" height="1" fill="#2A2E45"/>
   <text x="971" y="396" fill="#94A3B8" font-size="12">EBT / SNAP</text>
-  <text x="1340" y="396" fill="#10B981" font-size="12" font-weight="600" text-anchor="end">−$31.45</text>
+  <text x="1340" y="396" fill="#22C55E" font-size="12" font-weight="600" text-anchor="end">&#x2212;$31.45</text>
   <text x="971" y="414" fill="#94A3B8" font-size="12">Credit Card (remaining)</text>
-  <text x="1340" y="414" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">−$16.37</text>
-  <rect x="971" y="420" width="371" height="1" fill="#2D3148"/>
+  <text x="1340" y="414" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="end">&#x2212;$16.37</text>
+  <rect x="971" y="420" width="371" height="1" fill="#2A2E45"/>
   <text x="971" y="438" fill="#F1F5F9" font-size="13" font-weight="700">Order Total</text>
   <text x="1340" y="438" fill="#F1F5F9" font-size="14" font-weight="700" text-anchor="end">$47.82</text>
 
@@ -367,14 +468,13 @@
 
   <!-- Receipt Preview -->
   <text x="971" y="524" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">RECEIPT PREVIEW</text>
-  <rect x="959" y="530" width="395" height="220" rx="10" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
+  <rect x="959" y="530" width="395" height="220" rx="10" fill="#080A12" stroke="#2A2E45" stroke-width="1" filter="url(#shadow)"/>
 
-  <!-- Receipt content — monospace style using system-ui -->
-  <text x="1156" y="556" fill="#94A3B8" font-size="12" font-weight="700" text-anchor="middle" font-style="normal">SYNALUX POS</text>
+  <text x="1156" y="556" fill="#94A3B8" font-size="12" font-weight="700" text-anchor="middle">SYNALUX POS</text>
   <text x="1156" y="572" fill="#64748B" font-size="11" text-anchor="middle">Trans #: TXN-20260527-04821</text>
   <text x="1156" y="586" fill="#64748B" font-size="11" text-anchor="middle">Date: May 27, 2026  14:33:07</text>
 
-  <rect x="975" y="593" width="363" height="1" fill="#2D3148"/>
+  <rect x="975" y="593" width="363" height="1" fill="#2A2E45"/>
 
   <text x="975" y="608" fill="#94A3B8" font-size="11">Whole Milk 1gal</text>
   <text x="1338" y="608" fill="#94A3B8" font-size="11" text-anchor="end">$4.29</text>
@@ -384,17 +484,17 @@
   <text x="1338" y="636" fill="#94A3B8" font-size="11" text-anchor="end">$5.99</text>
   <text x="975" y="650" fill="#64748B" font-size="10">[...5 SNAP-eligible items...]</text>
 
-  <rect x="975" y="657" width="363" height="1" fill="#2D3148"/>
+  <rect x="975" y="657" width="363" height="1" fill="#2A2E45"/>
 
   <!-- EBT line — highlighted (federal requirement) -->
-  <rect x="975" y="662" width="363" height="20" rx="3" fill="#10B981" opacity="0.08"/>
-  <text x="975" y="677" fill="#10B981" font-size="11" font-weight="700">EBT/SNAP PAYMENT</text>
-  <text x="1338" y="677" fill="#10B981" font-size="11" font-weight="700" text-anchor="end">−$31.45</text>
+  <rect x="975" y="662" width="363" height="20" rx="3" fill="#22C55E" opacity="0.08"/>
+  <text x="975" y="677" fill="#22C55E" font-size="11" font-weight="700">EBT/SNAP PAYMENT</text>
+  <text x="1338" y="677" fill="#22C55E" font-size="11" font-weight="700" text-anchor="end">&#x2212;$31.45</text>
 
-  <text x="975" y="695" fill="#94A3B8" font-size="11">Visa ••••4521</text>
-  <text x="1338" y="695" fill="#94A3B8" font-size="11" text-anchor="end">−$16.37</text>
+  <text x="975" y="695" fill="#94A3B8" font-size="11">Visa &#x2022;&#x2022;&#x2022;&#x2022;4521</text>
+  <text x="1338" y="695" fill="#94A3B8" font-size="11" text-anchor="end">&#x2212;$16.37</text>
 
-  <rect x="975" y="702" width="363" height="1" fill="#2D3148"/>
+  <rect x="975" y="702" width="363" height="1" fill="#2A2E45"/>
 
   <text x="975" y="718" fill="#F1F5F9" font-size="12" font-weight="700">TOTAL CHARGED</text>
   <text x="1338" y="718" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$47.82</text>
@@ -402,37 +502,40 @@
   <text x="1156" y="744" fill="#64748B" font-size="9" text-anchor="middle">Federal law req: EBT shown separately</text>
 
   <!-- Process Card button -->
-  <rect x="959" y="764" width="395" height="56" rx="10" fill="#F59E0B"/>
-  <text x="1156" y="791" fill="#0F1117" font-size="16" font-weight="700" text-anchor="middle">Process Card $16.37</text>
-  <text x="1156" y="808" fill="#0F1117" font-size="11" text-anchor="middle" opacity="0.7">Visa ••••4521  ·  Tap / Insert / Swipe</text>
+  <rect x="959" y="764" width="395" height="56" rx="10" fill="url(#amberBtn)" filter="url(#shadow)"/>
+  <text x="1156" y="791" fill="#0C0E1A" font-size="16" font-weight="700" text-anchor="middle">Process Card $16.37</text>
+  <text x="1156" y="808" fill="#0C0E1A" font-size="11" text-anchor="middle" opacity="0.7">Visa &#x2022;&#x2022;&#x2022;&#x2022;4521  &#xB7;  Tap / Insert / Swipe</text>
 
-  <!-- Alternative: Cash -->
-  <rect x="959" y="832" width="190" height="44" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <!-- Alternative: Cash / Other — Admin: Settings > Payments > Methods -->
+  <rect x="959" y="832" width="190" height="44" rx="8" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="1054" y="859" fill="#94A3B8" font-size="13" text-anchor="middle">Pay Cash</text>
 
-  <rect x="1161" y="832" width="193" height="44" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
+  <rect x="1161" y="832" width="193" height="44" rx="8" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="1257" y="859" fill="#94A3B8" font-size="13" text-anchor="middle">Other Method</text>
+  <use href="#adminEdit" x="1340" y="838" width="10" height="10"/>
 
   <!-- EBT tips not allowed footer -->
   <rect x="959" y="888" width="395" height="36" rx="8" fill="#EF4444" opacity="0.08" stroke="#EF4444" stroke-width="1"/>
-  <text x="1156" y="911" fill="#EF4444" font-size="11" font-weight="600" text-anchor="middle">⚠  EBT tips not allowed by law (7 U.S.C. § 2016)</text>
+  <text x="1156" y="911" fill="#EF4444" font-size="11" font-weight="600" text-anchor="middle">EBT tips not allowed by law (7 U.S.C. &#xA7; 2016)</text>
 
   <!-- Forage / USDA footer -->
-  <rect x="959" y="938" width="395" height="36" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1156" y="960" fill="#64748B" font-size="11" text-anchor="middle">Forage EBT  ·  USDA FNS Auth  ·  PCI-DSS Level 1</text>
+  <rect x="959" y="938" width="395" height="36" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1156" y="960" fill="#64748B" font-size="11" text-anchor="middle">Forage EBT  &#xB7;  USDA FNS Auth  &#xB7;  PCI-DSS Level 1</text>
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
        GLOBAL BOTTOM STATUS BAR
-       ═══════════════════════════════════════════════════════════ -->
-  <rect x="0" y="992" width="1366" height="32" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
-  <circle cx="18" cy="1008" r="5" fill="#10B981"/>
+       Admin: Settings > General > Status Bar
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="992" width="1366" height="32" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
+  <use href="#statusDot" x="13" y="1003" width="10" height="10"/>
   <text x="30" y="1012" fill="#64748B" font-size="11">EBT Network: Connected</text>
-  <text x="220" y="1012" fill="#2D3148" font-size="11">|</text>
+  <text x="220" y="1012" fill="#1E2235" font-size="11">|</text>
   <text x="232" y="1012" fill="#64748B" font-size="11">Merchant: SYNALUX CAFE #001</text>
-  <text x="470" y="1012" fill="#2D3148" font-size="11">|</text>
+  <text x="470" y="1012" fill="#1E2235" font-size="11">|</text>
   <text x="482" y="1012" fill="#64748B" font-size="11">FNS: 1234567890</text>
-  <text x="620" y="1012" fill="#2D3148" font-size="11">|</text>
+  <text x="620" y="1012" fill="#1E2235" font-size="11">|</text>
   <text x="632" y="1012" fill="#64748B" font-size="11">Forage Gateway v2.4.1</text>
+  <use href="#adminGear" x="780" y="1000" width="12" height="12"/>
   <text x="1320" y="1012" fill="#64748B" font-size="11" text-anchor="end">14:33:07</text>
 
 </svg>

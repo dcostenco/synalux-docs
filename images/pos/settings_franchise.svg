@@ -1,483 +1,494 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-settings_franchise-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1366 1024" font-family="-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif">
 
-  <!-- Background -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <!-- ==========================================================
+       DEFS — Reusable symbols
+       ========================================================== -->
+  <title id="title-settings_franchise-svg">Synalux POS — franchise</title>
+  <desc>Synalux POS mockup screen for franchise. All UI elements admin-configurable.</desc>
+  <defs>
+    <linearGradient id="cardHeaderGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
 
-  <!-- ═══════════════════════════════════════════════════════
-       TOP NAV BAR
-  ════════════════════════════════════════════════════════════ -->
-  <rect x="0" y="0" width="1366" height="54" fill="#1A1D2E"/>
-  <rect x="0" y="54" width="1366" height="1" fill="#2D3148"/>
-  <text x="24" y="34" fill="#F59E0B" font-size="16" font-weight="700">Synalux POS</text>
-  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">Franchise Corporate View — Burger Co. Franchise (12 Locations)</text>
-  <!-- Corporate Admin role badge -->
-  <rect x="1100" y="16" width="130" height="22" rx="11" fill="#8B5CF6"/>
-  <text x="1165" y="31" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle">Corporate Admin</text>
-  <text x="1342" y="34" fill="#94A3B8" font-size="13" text-anchor="end">May 2026</text>
+    <!-- Admin gear icon — editable field indicator -->
+    <symbol id="gearIcon" viewBox="0 0 16 16">
+      <path d="M7.07 1.29A1 1 0 0 1 8.93 1.29l.47 1.06a1 1 0 0 0 .94.58l1.15-.08a1 1 0 0 1 .92 1.45l-.68.93a1 1 0 0 0 0 1.1l.68.93a1 1 0 0 1-.92 1.45l-1.15-.08a1 1 0 0 0-.94.58l-.47 1.06a1 1 0 0 1-1.86 0l-.47-1.06a1 1 0 0 0-.94-.58l-1.15.08a1 1 0 0 1-.92-1.45l.68-.93a1 1 0 0 0 0-1.1l-.68-.93A1 1 0 0 1 4.51 2.85l1.15.08a1 1 0 0 0 .94-.58z"
+            fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+      <circle cx="8" cy="8" r="2.5" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+    </symbol>
 
-  <!-- ═══════════════════════════════════════════════════════
-       KPI SUMMARY ROW (y=55, h=68)
-  ════════════════════════════════════════════════════════════ -->
-  <rect x="0" y="55" width="1366" height="68" fill="#13162A"/>
-  <rect x="0" y="123" width="1366" height="1" fill="#2D3148"/>
+    <!-- Toggle ON -->
+    <symbol id="toggleOn" viewBox="0 0 44 24">
+      <rect width="44" height="24" rx="12" fill="#059669"/>
+      <circle cx="32" cy="12" r="9" fill="#FFFFFF"/>
+    </symbol>
 
-  <!-- KPI 1: Total Revenue -->
-  <rect x="12" y="63" width="255" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="24" y="79" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.5">TOTAL REVENUE</text>
-  <text x="24" y="103" fill="#F59E0B" font-size="22" font-weight="700">$842,400</text>
+    <!-- Toggle OFF -->
+    <symbol id="toggleOff" viewBox="0 0 44 24">
+      <rect width="44" height="24" rx="12" fill="#374151"/>
+      <circle cx="12" cy="12" r="9" fill="#94A3B8"/>
+    </symbol>
 
-  <!-- KPI 2: Labor % -->
-  <rect x="279" y="63" width="210" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="291" y="79" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.5">LABOR %</text>
-  <text x="291" y="103" fill="#F97316" font-size="22" font-weight="700">27.3%</text>
+    <!-- Save button -->
+    <symbol id="saveBtn" viewBox="0 0 140 36">
+      <rect width="140" height="36" rx="6" fill="url(#amberGrad)"/>
+      <text x="70" y="23" font-size="12" font-weight="700" fill="#0C0E1A" text-anchor="middle">Save Changes</text>
+    </symbol>
+
+    <!-- Dropdown arrow -->
+    <symbol id="dropdown" viewBox="0 0 12 8">
+      <path d="M1 1l5 5 5-5" fill="none" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Status pill: OK -->
+    <symbol id="statusOk" viewBox="0 0 60 20">
+      <rect width="60" height="20" rx="10" fill="#22C55E22"/>
+      <text x="30" y="14" font-size="9" font-weight="700" fill="#22C55E" text-anchor="middle">OK</text>
+    </symbol>
+
+    <!-- Status pill: Warning -->
+    <symbol id="statusWarn" viewBox="0 0 80 20">
+      <rect width="80" height="20" rx="10" fill="#F59E0B22"/>
+      <text x="40" y="14" font-size="9" font-weight="700" fill="#F59E0B" text-anchor="middle">Warning</text>
+    </symbol>
+
+    <!-- Status pill: Critical -->
+    <symbol id="statusCrit" viewBox="0 0 80 20">
+      <rect width="80" height="20" rx="10" fill="#EF444422"/>
+      <text x="40" y="14" font-size="9" font-weight="700" fill="#EF4444" text-anchor="middle">Critical</text>
+    </symbol>
+
+    <!-- Location card row background (even) -->
+    <symbol id="rowEven" viewBox="0 0 640 38">
+      <rect width="640" height="38" fill="#1A1D2E"/>
+    </symbol>
+
+    <!-- Location card row background (odd) -->
+    <symbol id="rowOdd" viewBox="0 0 640 38">
+      <rect width="640" height="38" fill="#161930"/>
+    </symbol>
+  </defs>
+
+  <!-- ==========================================================
+       BACKGROUND
+       ========================================================== -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
+
+  <!-- ==========================================================
+       LEFT NAV SIDEBAR — x=0, w=200
+       ========================================================== -->
+  <rect x="0" y="0" width="200" height="1024" fill="#161930"/>
+  <rect x="12" y="12" width="28" height="28" rx="6" fill="#F59E0B"/>
+  <text x="18" y="31" font-size="14" font-weight="800" fill="#0C0E1A">S</text>
+  <text x="48" y="32" font-size="14" font-weight="700" fill="#E2E8F0">Synalux POS</text>
+  <line x1="12" y1="48" x2="188" y2="48" stroke="#2A2E45" stroke-width="1"/>
+
+  <text x="16" y="72" font-size="12" fill="#94A3B8">Restaurant Info</text>
+  <text x="16" y="100" font-size="12" fill="#94A3B8">Menu Builder</text>
+  <text x="16" y="128" font-size="12" fill="#94A3B8">Taxes</text>
+  <text x="16" y="156" font-size="12" fill="#94A3B8">Employees</text>
+  <text x="16" y="184" font-size="12" fill="#94A3B8">Equipment</text>
+  <text x="16" y="212" font-size="12" fill="#94A3B8">Payments</text>
+  <text x="16" y="240" font-size="12" fill="#94A3B8">Inventory</text>
+  <text x="16" y="268" font-size="12" fill="#94A3B8">Reports</text>
+  <text x="16" y="296" font-size="12" fill="#94A3B8">Multi-Location</text>
+  <!-- Active: Franchise -->
+  <rect x="0" y="308" width="200" height="36" fill="#1E2235" rx="4"/>
+  <rect x="0" y="308" width="3" height="36" fill="#F59E0B"/>
+  <text x="16" y="331" font-size="12" font-weight="600" fill="#F59E0B">Franchise Mgmt</text>
+  <text x="16" y="360" font-size="12" fill="#94A3B8">Integrations</text>
+  <text x="16" y="388" font-size="12" fill="#94A3B8">Floor Plans</text>
+  <text x="16" y="416" font-size="12" fill="#94A3B8">Training Mode</text>
+  <text x="16" y="444" font-size="12" fill="#94A3B8">Forms</text>
+
+  <!-- ==========================================================
+       HEADER — DB: pos_franchise_configs
+       ========================================================== -->
+  <rect x="200" y="0" width="1166" height="56" fill="#1A1D2E"/>
+  <text x="220" y="24" font-size="18" font-weight="700" fill="#E2E8F0">Franchise Management</text>
+  <text x="220" y="44" font-size="11" fill="#94A3B8">Location list, P&amp;L comparison, config push, brand compliance -- DB: pos_franchise_configs + pos_locations</text>
+  <use xlink:href="#gearIcon" x="700" y="14" width="16" height="16"/>
+  <!-- Corporate Admin badge -->
+  <rect x="1100" y="12" width="130" height="28" rx="14" fill="#8B5CF6"/>
+  <text x="1165" y="31" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Corporate Admin</text>
+  <use xlink:href="#saveBtn" x="1240" y="10" width="110" height="36"/>
+  <line x1="200" y1="56" x2="1366" y2="56" stroke="#2A2E45" stroke-width="1"/>
+
+  <!-- ==========================================================
+       KPI SUMMARY ROW
+       DB: pos_locations aggregate, pos_royalty_configs
+       ========================================================== -->
+  <rect x="200" y="56" width="1166" height="68" fill="#161930"/>
+  <line x1="200" y1="124" x2="1366" y2="124" stroke="#2A2E45" stroke-width="1"/>
+
+  <!-- KPI 1: Total Revenue — DB: SUM(pos_payments.amount_cents) -->
+  <rect x="212" y="64" width="220" height="52" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="224" y="80" font-size="10" font-weight="600" fill="#64748B" letter-spacing="0.5">TOTAL REVENUE</text>
+  <text x="224" y="104" font-size="20" font-weight="700" fill="#F59E0B">$842,400</text>
+
+  <!-- KPI 2: Labor % — DB: pos_payroll aggregate -->
+  <rect x="444" y="64" width="180" height="52" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="456" y="80" font-size="10" font-weight="600" fill="#64748B">LABOR %</text>
+  <text x="456" y="104" font-size="20" font-weight="700" fill="#F97316">27.3%</text>
 
   <!-- KPI 3: Food Cost % -->
-  <rect x="501" y="63" width="215" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="513" y="79" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.5">FOOD COST %</text>
-  <text x="513" y="103" fill="#F97316" font-size="22" font-weight="700">29.1%</text>
+  <rect x="636" y="64" width="180" height="52" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="648" y="80" font-size="10" font-weight="600" fill="#64748B">FOOD COST %</text>
+  <text x="648" y="104" font-size="20" font-weight="700" fill="#F97316">29.1%</text>
 
-  <!-- KPI 4: Avg Ticket -->
-  <rect x="728" y="63" width="215" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="740" y="79" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.5">AVG TICKET</text>
-  <text x="740" y="103" fill="#10B981" font-size="22" font-weight="700">$22.40</text>
+  <!-- KPI 4: Avg Ticket — DB: AVG(pos_orders.total_cents) -->
+  <rect x="828" y="64" width="180" height="52" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="840" y="80" font-size="10" font-weight="600" fill="#64748B">AVG TICKET</text>
+  <text x="840" y="104" font-size="20" font-weight="700" fill="#22C55E">$22.40</text>
 
-  <!-- KPI 5: Total Royalties -->
-  <rect x="955" y="63" width="230" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="967" y="79" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.5">TOTAL ROYALTIES</text>
-  <text x="967" y="103" fill="#8B5CF6" font-size="22" font-weight="700">$25,272</text>
+  <!-- KPI 5: Total Royalties — DB: pos_royalty_ledger -->
+  <rect x="1020" y="64" width="180" height="52" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1032" y="80" font-size="10" font-weight="600" fill="#64748B">TOTAL ROYALTIES</text>
+  <text x="1032" y="104" font-size="20" font-weight="700" fill="#8B5CF6">$25,272</text>
 
-  <!-- Month badge -->
-  <rect x="1197" y="63" width="157" height="52" rx="8" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
-  <text x="1275" y="79" fill="#64748B" font-size="10" font-weight="600" text-anchor="middle" letter-spacing="0.5">PERIOD</text>
-  <text x="1275" y="103" fill="#F1F5F9" font-size="18" font-weight="700" text-anchor="middle">May 2026</text>
+  <!-- Period badge -->
+  <rect x="1212" y="64" width="140" height="52" rx="8" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="1282" y="80" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">PERIOD</text>
+  <text x="1282" y="104" font-size="16" font-weight="700" fill="#E2E8F0" text-anchor="middle">May 2026</text>
 
-  <!-- ═══════════════════════════════════════════════════════
-       MAIN CONTENT AREA (y=124 to y=1014)
-  ════════════════════════════════════════════════════════════ -->
-
-  <!-- ─── LEFT COLUMN: Location Comparison Table (x=12, w=700) ─── -->
-  <rect x="12" y="132" width="700" height="882" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Table header -->
-  <rect x="12" y="132" width="700" height="40" rx="10" fill="#13162A"/>
-  <rect x="12" y="162" width="700" height="10" fill="#13162A"/>
-  <rect x="12" y="172" width="700" height="1" fill="#2D3148"/>
-  <text x="28" y="156" fill="#F1F5F9" font-size="14" font-weight="700">Location Performance Comparison</text>
-  <text x="680" y="156" fill="#64748B" font-size="11" text-anchor="end">12 locations · May 2026</text>
+  <!-- ==========================================================
+       LOCATION PERFORMANCE TABLE
+       DB: pos_locations JOIN pos_payments
+       x=212, w=660
+       ========================================================== -->
+  <rect x="212" y="132" width="660" height="38" rx="8" fill="url(#cardHeaderGrad)" filter="url(#cardShadow)"/>
+  <text x="228" y="156" font-size="13" font-weight="700" fill="#E2E8F0">Location Performance Comparison</text>
+  <use xlink:href="#gearIcon" x="430" y="142" width="14" height="14"/>
+  <text x="844" y="156" font-size="10" fill="#64748B" text-anchor="end">12 locations -- May 2026</text>
 
   <!-- Column Headers -->
-  <rect x="12" y="173" width="700" height="30" fill="#0F1117"/>
-  <text x="28" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">LOCATION</text>
-  <text x="175" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">REVENUE</text>
-  <text x="265" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">LABOR %</text>
-  <text x="335" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">FOOD %</text>
-  <text x="408" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">AVG TKT</text>
-  <text x="478" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">ROYALTY</text>
-  <text x="560" y="193" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.4">FLAG</text>
-  <rect x="12" y="203" width="700" height="1" fill="#2D3148"/>
+  <rect x="212" y="170" width="660" height="28" fill="#0C0E1A"/>
+  <text x="228" y="188" font-size="9" font-weight="700" fill="#64748B" letter-spacing="0.4">LOCATION</text>
+  <text x="370" y="188" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">REVENUE</text>
+  <text x="430" y="188" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">LABOR</text>
+  <text x="490" y="188" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">FOOD</text>
+  <text x="548" y="188" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">AVG TKT</text>
+  <text x="616" y="188" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">ROYALTY</text>
+  <text x="680" y="188" font-size="9" font-weight="700" fill="#64748B" text-anchor="end">FLAG</text>
+  <!-- DB source comment: pos_locations + pos_payments + pos_royalty_ledger -->
+  <line x1="212" y1="198" x2="872" y2="198" stroke="#2A2E45" stroke-width="1"/>
 
-  <!-- Row 1: Downtown — green -->
-  <rect x="12" y="204" width="700" height="36" fill="#1A1D2E"/>
-  <rect x="12" y="240" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="204" width="3" height="36" fill="#10B981"/>
-  <text x="28" y="227" fill="#F1F5F9" font-size="12" font-weight="600">Downtown</text>
-  <text x="185" y="227" fill="#F1F5F9" font-size="12" text-anchor="end">$124,200</text>
-  <text x="290" y="227" fill="#10B981" font-size="12" text-anchor="end">24.1%</text>
-  <text x="360" y="227" fill="#10B981" font-size="12" text-anchor="end">27.4%</text>
-  <text x="435" y="227" fill="#F1F5F9" font-size="12" text-anchor="end">$24.80</text>
-  <text x="510" y="227" fill="#94A3B8" font-size="12" text-anchor="end">$3,726</text>
-  <rect x="562" y="213" width="60" height="18" rx="9" fill="#10B98122"/>
-  <text x="592" y="226" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">✓ OK</text>
+  <!-- Row 1: Downtown — DB: pos_locations.id = loc_downtown -->
+  <use xlink:href="#rowEven" x="212" y="199" width="660" height="36"/>
+  <rect x="212" y="199" width="3" height="36" fill="#22C55E"/>
+  <text x="228" y="222" font-size="11" font-weight="600" fill="#E2E8F0">Downtown</text>
+  <text x="370" y="222" font-size="11" fill="#E2E8F0" text-anchor="end">$124,200</text>
+  <text x="430" y="222" font-size="11" fill="#22C55E" text-anchor="end">24.1%</text>
+  <text x="490" y="222" font-size="11" fill="#22C55E" text-anchor="end">27.4%</text>
+  <text x="548" y="222" font-size="11" fill="#E2E8F0" text-anchor="end">$24.80</text>
+  <text x="616" y="222" font-size="11" fill="#94A3B8" text-anchor="end">$3,726</text>
+  <use xlink:href="#statusOk" x="640" y="209" width="60" height="20"/>
 
-  <!-- Row 2: Midtown — amber food cost -->
-  <rect x="12" y="241" width="700" height="36" fill="#13162A"/>
-  <rect x="12" y="277" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="241" width="3" height="36" fill="#F59E0B"/>
-  <text x="28" y="264" fill="#F1F5F9" font-size="12" font-weight="600">Midtown</text>
-  <text x="185" y="264" fill="#F1F5F9" font-size="12" text-anchor="end">$98,400</text>
-  <text x="290" y="264" fill="#94A3B8" font-size="12" text-anchor="end">28.3%</text>
-  <text x="360" y="264" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">31.2%</text>
-  <text x="435" y="264" fill="#F1F5F9" font-size="12" text-anchor="end">$21.60</text>
-  <text x="510" y="264" fill="#94A3B8" font-size="12" text-anchor="end">$2,952</text>
-  <rect x="560" y="250" width="100" height="18" rx="9" fill="#F59E0B22"/>
-  <text x="610" y="263" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">⚠ Food High</text>
+  <!-- Row 2: Midtown -->
+  <use xlink:href="#rowOdd" x="212" y="235" width="660" height="36"/>
+  <rect x="212" y="235" width="3" height="36" fill="#F59E0B"/>
+  <text x="228" y="258" font-size="11" font-weight="600" fill="#E2E8F0">Midtown</text>
+  <text x="370" y="258" font-size="11" fill="#E2E8F0" text-anchor="end">$98,400</text>
+  <text x="430" y="258" font-size="11" fill="#94A3B8" text-anchor="end">28.3%</text>
+  <text x="490" y="258" font-size="11" fill="#F59E0B" font-weight="700" text-anchor="end">31.2%</text>
+  <text x="548" y="258" font-size="11" fill="#E2E8F0" text-anchor="end">$21.60</text>
+  <text x="616" y="258" font-size="11" fill="#94A3B8" text-anchor="end">$2,952</text>
+  <use xlink:href="#statusWarn" x="632" y="245" width="80" height="20"/>
 
-  <!-- Row 3: Airport — green -->
-  <rect x="12" y="278" width="700" height="36" fill="#1A1D2E"/>
-  <rect x="12" y="314" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="278" width="3" height="36" fill="#10B981"/>
-  <text x="28" y="301" fill="#F1F5F9" font-size="12" font-weight="600">Airport</text>
-  <text x="185" y="301" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">$187,300</text>
-  <text x="290" y="301" fill="#94A3B8" font-size="12" text-anchor="end">29.4%</text>
-  <text x="360" y="301" fill="#10B981" font-size="12" text-anchor="end">26.8%</text>
-  <text x="435" y="301" fill="#10B981" font-size="12" font-weight="700" text-anchor="end">$28.40</text>
-  <text x="510" y="301" fill="#8B5CF6" font-size="12" font-weight="700" text-anchor="end">$5,619</text>
-  <rect x="562" y="287" width="60" height="18" rx="9" fill="#10B98122"/>
-  <text x="592" y="300" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">✓ OK</text>
+  <!-- Row 3: Airport -->
+  <use xlink:href="#rowEven" x="212" y="271" width="660" height="36"/>
+  <rect x="212" y="271" width="3" height="36" fill="#22C55E"/>
+  <text x="228" y="294" font-size="11" font-weight="600" fill="#E2E8F0">Airport</text>
+  <text x="370" y="294" font-size="11" fill="#F59E0B" font-weight="700" text-anchor="end">$187,300</text>
+  <text x="430" y="294" font-size="11" fill="#94A3B8" text-anchor="end">29.4%</text>
+  <text x="490" y="294" font-size="11" fill="#22C55E" text-anchor="end">26.8%</text>
+  <text x="548" y="294" font-size="11" fill="#22C55E" font-weight="700" text-anchor="end">$28.40</text>
+  <text x="616" y="294" font-size="11" fill="#8B5CF6" font-weight="700" text-anchor="end">$5,619</text>
+  <use xlink:href="#statusOk" x="640" y="281" width="60" height="20"/>
 
-  <!-- Row 4: Suburbs North — red both high -->
-  <rect x="12" y="315" width="700" height="36" fill="#13162A"/>
-  <rect x="12" y="351" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="315" width="3" height="36" fill="#EF4444"/>
-  <text x="28" y="338" fill="#F1F5F9" font-size="12" font-weight="600">Suburbs North</text>
-  <text x="185" y="338" fill="#F1F5F9" font-size="12" text-anchor="end">$76,800</text>
-  <text x="290" y="338" fill="#EF4444" font-size="12" font-weight="700" text-anchor="end">31.2%</text>
-  <text x="360" y="338" fill="#EF4444" font-size="12" font-weight="700" text-anchor="end">33.1%</text>
-  <text x="435" y="338" fill="#F1F5F9" font-size="12" text-anchor="end">$18.90</text>
-  <text x="510" y="338" fill="#94A3B8" font-size="12" text-anchor="end">$2,304</text>
-  <rect x="558" y="324" width="110" height="18" rx="9" fill="#EF444422"/>
-  <text x="613" y="337" fill="#EF4444" font-size="10" font-weight="700" text-anchor="middle">⚠ Both High</text>
+  <!-- Row 4: Suburbs North — Critical -->
+  <use xlink:href="#rowOdd" x="212" y="307" width="660" height="36"/>
+  <rect x="212" y="307" width="3" height="36" fill="#EF4444"/>
+  <text x="228" y="330" font-size="11" font-weight="600" fill="#E2E8F0">Suburbs North</text>
+  <text x="370" y="330" font-size="11" fill="#E2E8F0" text-anchor="end">$76,800</text>
+  <text x="430" y="330" font-size="11" fill="#EF4444" font-weight="700" text-anchor="end">31.2%</text>
+  <text x="490" y="330" font-size="11" fill="#EF4444" font-weight="700" text-anchor="end">33.1%</text>
+  <text x="548" y="330" font-size="11" fill="#E2E8F0" text-anchor="end">$18.90</text>
+  <text x="616" y="330" font-size="11" fill="#94A3B8" text-anchor="end">$2,304</text>
+  <use xlink:href="#statusCrit" x="628" y="317" width="80" height="20"/>
 
-  <!-- Row 5: Suburbs South — green -->
-  <rect x="12" y="352" width="700" height="36" fill="#1A1D2E"/>
-  <rect x="12" y="388" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="352" width="3" height="36" fill="#10B981"/>
-  <text x="28" y="375" fill="#F1F5F9" font-size="12" font-weight="600">Suburbs South</text>
-  <text x="185" y="375" fill="#F1F5F9" font-size="12" text-anchor="end">$82,100</text>
-  <text x="290" y="375" fill="#94A3B8" font-size="12" text-anchor="end">27.8%</text>
-  <text x="360" y="375" fill="#94A3B8" font-size="12" text-anchor="end">28.9%</text>
-  <text x="435" y="375" fill="#F1F5F9" font-size="12" text-anchor="end">$20.10</text>
-  <text x="510" y="375" fill="#94A3B8" font-size="12" text-anchor="end">$2,463</text>
-  <rect x="562" y="361" width="60" height="18" rx="9" fill="#10B98122"/>
-  <text x="592" y="374" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">✓ OK</text>
+  <!-- Row 5: Suburbs South -->
+  <use xlink:href="#rowEven" x="212" y="343" width="660" height="36"/>
+  <rect x="212" y="343" width="3" height="36" fill="#22C55E"/>
+  <text x="228" y="366" font-size="11" font-weight="600" fill="#E2E8F0">Suburbs South</text>
+  <text x="370" y="366" font-size="11" fill="#E2E8F0" text-anchor="end">$82,100</text>
+  <text x="430" y="366" font-size="11" fill="#94A3B8" text-anchor="end">27.8%</text>
+  <text x="490" y="366" font-size="11" fill="#94A3B8" text-anchor="end">28.9%</text>
+  <text x="548" y="366" font-size="11" fill="#E2E8F0" text-anchor="end">$20.10</text>
+  <text x="616" y="366" font-size="11" fill="#94A3B8" text-anchor="end">$2,463</text>
+  <use xlink:href="#statusOk" x="640" y="353" width="60" height="20"/>
 
-  <!-- Row 6: University — amber labor high -->
-  <rect x="12" y="389" width="700" height="36" fill="#13162A"/>
-  <rect x="12" y="425" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="389" width="3" height="36" fill="#F97316"/>
-  <text x="28" y="412" fill="#F1F5F9" font-size="12" font-weight="600">University</text>
-  <text x="185" y="412" fill="#F1F5F9" font-size="12" text-anchor="end">$69,400</text>
-  <text x="290" y="412" fill="#EF4444" font-size="12" font-weight="700" text-anchor="end">33.1%</text>
-  <text x="360" y="412" fill="#94A3B8" font-size="12" text-anchor="end">30.2%</text>
-  <text x="435" y="412" fill="#F1F5F9" font-size="12" text-anchor="end">$16.80</text>
-  <text x="510" y="412" fill="#94A3B8" font-size="12" text-anchor="end">$2,082</text>
-  <rect x="558" y="398" width="110" height="18" rx="9" fill="#F9731622"/>
-  <text x="613" y="411" fill="#F97316" font-size="10" font-weight="700" text-anchor="middle">⚠ Labor High</text>
+  <!-- Row 6: University — Warning -->
+  <use xlink:href="#rowOdd" x="212" y="379" width="660" height="36"/>
+  <rect x="212" y="379" width="3" height="36" fill="#F97316"/>
+  <text x="228" y="402" font-size="11" font-weight="600" fill="#E2E8F0">University</text>
+  <text x="370" y="402" font-size="11" fill="#E2E8F0" text-anchor="end">$69,400</text>
+  <text x="430" y="402" font-size="11" fill="#EF4444" font-weight="700" text-anchor="end">33.1%</text>
+  <text x="490" y="402" font-size="11" fill="#94A3B8" text-anchor="end">30.2%</text>
+  <text x="548" y="402" font-size="11" fill="#E2E8F0" text-anchor="end">$16.80</text>
+  <text x="616" y="402" font-size="11" fill="#94A3B8" text-anchor="end">$2,082</text>
+  <use xlink:href="#statusWarn" x="632" y="389" width="80" height="20"/>
 
-  <!-- Row 7: Mall — green -->
-  <rect x="12" y="426" width="700" height="36" fill="#1A1D2E"/>
-  <rect x="12" y="462" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="426" width="3" height="36" fill="#10B981"/>
-  <text x="28" y="449" fill="#F1F5F9" font-size="12" font-weight="600">Mall</text>
-  <text x="185" y="449" fill="#F1F5F9" font-size="12" text-anchor="end">$91,200</text>
-  <text x="290" y="449" fill="#10B981" font-size="12" text-anchor="end">26.4%</text>
-  <text x="360" y="449" fill="#94A3B8" font-size="12" text-anchor="end">29.8%</text>
-  <text x="435" y="449" fill="#F1F5F9" font-size="12" text-anchor="end">$23.20</text>
-  <text x="510" y="449" fill="#94A3B8" font-size="12" text-anchor="end">$2,736</text>
-  <rect x="562" y="435" width="60" height="18" rx="9" fill="#10B98122"/>
-  <text x="592" y="448" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">✓ OK</text>
+  <!-- Rows 7-9: abbreviated -->
+  <use xlink:href="#rowEven" x="212" y="415" width="660" height="30"/>
+  <text x="228" y="435" font-size="10" fill="#64748B">Mall</text>
+  <text x="370" y="435" font-size="10" fill="#64748B" text-anchor="end">$91,200</text>
+  <text x="430" y="435" font-size="10" fill="#64748B" text-anchor="end">26.4%</text>
+  <text x="490" y="435" font-size="10" fill="#64748B" text-anchor="end">29.8%</text>
+  <text x="548" y="435" font-size="10" fill="#64748B" text-anchor="end">$23.20</text>
+  <text x="616" y="435" font-size="10" fill="#64748B" text-anchor="end">$2,736</text>
+  <text x="680" y="435" font-size="9" fill="#22C55E" text-anchor="end">OK</text>
 
-  <!-- Row 8: Stadium — green top performer -->
-  <rect x="12" y="463" width="700" height="36" fill="#13162A"/>
-  <rect x="12" y="499" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="463" width="3" height="36" fill="#10B981"/>
-  <text x="28" y="486" fill="#F1F5F9" font-size="12" font-weight="600">Stadium</text>
-  <text x="185" y="486" fill="#94A3B8" font-size="12" text-anchor="end">$48,200</text>
-  <text x="290" y="486" fill="#10B981" font-size="12" text-anchor="end">22.1%</text>
-  <text x="360" y="486" fill="#10B981" font-size="12" text-anchor="end">24.3%</text>
-  <text x="435" y="486" fill="#10B981" font-size="12" font-weight="700" text-anchor="end">$31.40</text>
-  <text x="510" y="486" fill="#94A3B8" font-size="12" text-anchor="end">$1,446</text>
-  <rect x="562" y="472" width="60" height="18" rx="9" fill="#10B98122"/>
-  <text x="592" y="485" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">✓ OK</text>
+  <use xlink:href="#rowOdd" x="212" y="445" width="660" height="30"/>
+  <text x="228" y="465" font-size="10" fill="#64748B">Stadium</text>
+  <text x="370" y="465" font-size="10" fill="#64748B" text-anchor="end">$48,200</text>
+  <text x="430" y="465" font-size="10" fill="#64748B" text-anchor="end">22.1%</text>
+  <text x="490" y="465" font-size="10" fill="#64748B" text-anchor="end">24.3%</text>
+  <text x="548" y="465" font-size="10" fill="#64748B" text-anchor="end">$31.40</text>
+  <text x="616" y="465" font-size="10" fill="#64748B" text-anchor="end">$1,446</text>
+  <text x="680" y="465" font-size="9" fill="#22C55E" text-anchor="end">OK</text>
 
-  <!-- Row 9: Waterfront — green -->
-  <rect x="12" y="500" width="700" height="36" fill="#1A1D2E"/>
-  <rect x="12" y="536" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="500" width="3" height="36" fill="#10B981"/>
-  <text x="28" y="523" fill="#F1F5F9" font-size="12" font-weight="600">Waterfront</text>
-  <text x="185" y="523" fill="#F1F5F9" font-size="12" text-anchor="end">$112,800</text>
-  <text x="290" y="523" fill="#10B981" font-size="12" text-anchor="end">25.6%</text>
-  <text x="360" y="523" fill="#94A3B8" font-size="12" text-anchor="end">28.1%</text>
-  <text x="435" y="523" fill="#F1F5F9" font-size="12" text-anchor="end">$26.30</text>
-  <text x="510" y="523" fill="#94A3B8" font-size="12" text-anchor="end">$3,384</text>
-  <rect x="562" y="509" width="60" height="18" rx="9" fill="#10B98122"/>
-  <text x="592" y="522" fill="#10B981" font-size="11" font-weight="700" text-anchor="middle">✓ OK</text>
+  <use xlink:href="#rowEven" x="212" y="475" width="660" height="30"/>
+  <text x="228" y="495" font-size="10" fill="#64748B">Waterfront + 3 more...</text>
+  <text x="370" y="495" font-size="10" fill="#64748B" text-anchor="end">$165,600</text>
 
-  <!-- Row 10: East Side (muted) -->
-  <rect x="12" y="537" width="700" height="30" fill="#13162A"/>
-  <rect x="12" y="567" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="537" width="3" height="30" fill="#2D3148"/>
-  <text x="28" y="557" fill="#64748B" font-size="11">East Side</text>
-  <text x="185" y="557" fill="#64748B" font-size="11" text-anchor="end">$31,400</text>
-  <text x="290" y="557" fill="#64748B" font-size="11" text-anchor="end">29.0%</text>
-  <text x="360" y="557" fill="#64748B" font-size="11" text-anchor="end">31.8%</text>
-  <text x="435" y="557" fill="#64748B" font-size="11" text-anchor="end">$19.50</text>
-  <text x="510" y="557" fill="#64748B" font-size="11" text-anchor="end">$942</text>
-  <rect x="560" y="544" width="80" height="16" rx="8" fill="#F59E0B18"/>
-  <text x="600" y="556" fill="#F59E0B" font-size="10" font-weight="600" text-anchor="middle">⚠ Food</text>
+  <!-- Totals row — DB: aggregate -->
+  <rect x="212" y="505" width="660" height="36" fill="#0C0E1A"/>
+  <text x="228" y="528" font-size="11" font-weight="700" fill="#94A3B8">TOTALS</text>
+  <text x="370" y="528" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="end">$842,400</text>
+  <text x="430" y="528" font-size="12" font-weight="700" fill="#F97316" text-anchor="end">27.3%</text>
+  <text x="490" y="528" font-size="12" font-weight="700" fill="#F97316" text-anchor="end">29.1%</text>
+  <text x="548" y="528" font-size="12" font-weight="700" fill="#E2E8F0" text-anchor="end">$22.40</text>
+  <text x="616" y="528" font-size="12" font-weight="700" fill="#8B5CF6" text-anchor="end">$25,272</text>
 
-  <!-- Row 11: Riverside (muted) -->
-  <rect x="12" y="568" width="700" height="30" fill="#1A1D2E"/>
-  <rect x="12" y="598" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="568" width="3" height="30" fill="#2D3148"/>
-  <text x="28" y="588" fill="#64748B" font-size="11">Riverside</text>
-  <text x="185" y="588" fill="#64748B" font-size="11" text-anchor="end">$54,600</text>
-  <text x="290" y="588" fill="#64748B" font-size="11" text-anchor="end">27.1%</text>
-  <text x="360" y="588" fill="#64748B" font-size="11" text-anchor="end">28.4%</text>
-  <text x="435" y="588" fill="#64748B" font-size="11" text-anchor="end">$21.80</text>
-  <text x="510" y="588" fill="#64748B" font-size="11" text-anchor="end">$1,638</text>
-  <rect x="562" y="575" width="60" height="16" rx="8" fill="#10B98118"/>
-  <text x="592" y="587" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">✓ OK</text>
+  <!-- ==========================================================
+       CONSOLIDATED P&L
+       DB: pos_payments, pos_payroll, pos_inventory_costs, pos_royalty_ledger
+       ========================================================== -->
+  <rect x="212" y="548" width="660" height="38" rx="8" fill="url(#cardHeaderGrad)"/>
+  <text x="228" y="572" font-size="13" font-weight="700" fill="#E2E8F0">Consolidated P&amp;L -- May 2026</text>
+  <use xlink:href="#gearIcon" x="440" y="558" width="14" height="14"/>
 
-  <!-- Row 12: North Harbor (muted) -->
-  <rect x="12" y="599" width="700" height="30" fill="#13162A"/>
-  <rect x="12" y="629" width="700" height="1" fill="#2D3148"/>
-  <rect x="12" y="599" width="3" height="30" fill="#2D3148"/>
-  <text x="28" y="619" fill="#64748B" font-size="11">North Harbor</text>
-  <text x="185" y="619" fill="#64748B" font-size="11" text-anchor="end">$65,200</text>
-  <text x="290" y="619" fill="#64748B" font-size="11" text-anchor="end">26.8%</text>
-  <text x="360" y="619" fill="#64748B" font-size="11" text-anchor="end">27.9%</text>
-  <text x="435" y="619" fill="#64748B" font-size="11" text-anchor="end">$23.70</text>
-  <text x="510" y="619" fill="#64748B" font-size="11" text-anchor="end">$1,956</text>
-  <rect x="562" y="606" width="60" height="16" rx="8" fill="#10B98118"/>
-  <text x="592" y="618" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">✓ OK</text>
+  <rect x="212" y="586" width="660" height="180" rx="0" fill="#1A1D2E"/>
+  <!-- P&L rows — DB: aggregated from pos_payments, pos_payroll, pos_inventory_costs -->
+  <text x="228" y="608" font-size="10" font-weight="600" fill="#64748B">GROSS REVENUE</text>
+  <text x="844" y="608" font-size="13" font-weight="700" fill="#22C55E" text-anchor="end">$842,400</text>
 
-  <!-- Totals row -->
-  <rect x="12" y="630" width="700" height="36" fill="#0F1117"/>
-  <rect x="12" y="666" width="700" height="1" fill="#2D3148"/>
-  <text x="28" y="653" fill="#94A3B8" font-size="11" font-weight="700">TOTALS</text>
-  <text x="185" y="653" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="end">$842,400</text>
-  <text x="290" y="653" fill="#F97316" font-size="12" font-weight="700" text-anchor="end">27.3%</text>
-  <text x="360" y="653" fill="#F97316" font-size="12" font-weight="700" text-anchor="end">29.1%</text>
-  <text x="435" y="653" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$22.40</text>
-  <text x="510" y="653" fill="#8B5CF6" font-size="12" font-weight="700" text-anchor="end">$25,272</text>
+  <text x="228" y="628" font-size="10" fill="#64748B">  Food Cost (29.1%)</text>
+  <text x="844" y="628" font-size="11" fill="#EF4444" text-anchor="end">-$245,138</text>
 
-  <!-- P&L Summary mini-chart area -->
-  <rect x="12" y="667" width="700" height="340" rx="0" fill="#13162A"/>
-  <text x="28" y="690" fill="#94A3B8" font-size="12" font-weight="700">Consolidated P&amp;L — May 2026</text>
-  <rect x="12" y="695" width="700" height="1" fill="#2D3148"/>
+  <text x="228" y="646" font-size="10" fill="#64748B">  Labor Cost (27.3%)</text>
+  <text x="844" y="646" font-size="11" fill="#EF4444" text-anchor="end">-$229,975</text>
 
-  <!-- P&L rows -->
-  <text x="28" y="716" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.4">GROSS REVENUE</text>
-  <text x="700" y="716" fill="#10B981" font-size="13" font-weight="700" text-anchor="end">$842,400</text>
-  <rect x="28" y="720" width="672" height="1" fill="#2D3148" opacity="0.4"/>
+  <text x="228" y="664" font-size="10" fill="#64748B">  Royalties (3.0%)</text>
+  <text x="844" y="664" font-size="11" fill="#EF4444" text-anchor="end">-$25,272</text>
 
-  <text x="28" y="737" fill="#64748B" font-size="10">  Food Cost (29.1%)</text>
-  <text x="700" y="737" fill="#EF4444" font-size="12" text-anchor="end">−$245,138</text>
+  <text x="228" y="682" font-size="10" fill="#64748B">  Overhead &amp; Ops</text>
+  <text x="844" y="682" font-size="11" fill="#EF4444" text-anchor="end">-$168,480</text>
+  <line x1="228" y1="688" x2="844" y2="688" stroke="#2A2E45" stroke-width="1"/>
 
-  <text x="28" y="754" fill="#64748B" font-size="10">  Labor Cost (27.3%)</text>
-  <text x="700" y="754" fill="#EF4444" font-size="12" text-anchor="end">−$229,975</text>
-
-  <text x="28" y="771" fill="#64748B" font-size="10">  Royalties (3.0%)</text>
-  <text x="700" y="771" fill="#EF4444" font-size="12" text-anchor="end">−$25,272</text>
-
-  <text x="28" y="788" fill="#64748B" font-size="10">  Overhead &amp; Ops</text>
-  <text x="700" y="788" fill="#EF4444" font-size="12" text-anchor="end">−$168,480</text>
-  <rect x="28" y="793" width="672" height="1" fill="#2D3148" opacity="0.6"/>
-
-  <text x="28" y="812" fill="#F1F5F9" font-size="11" font-weight="700">NET OPERATING INCOME</text>
-  <text x="700" y="812" fill="#10B981" font-size="14" font-weight="700" text-anchor="end">$173,535</text>
+  <text x="228" y="708" font-size="11" font-weight="700" fill="#E2E8F0">NET OPERATING INCOME</text>
+  <text x="844" y="708" font-size="14" font-weight="700" fill="#22C55E" text-anchor="end">$173,535</text>
   <!-- NOI bar -->
-  <rect x="28" y="818" width="672" height="6" rx="3" fill="#2D3148"/>
-  <rect x="28" y="818" width="472" height="6" rx="3" fill="#10B981" opacity="0.7"/>
-  <text x="700" y="836" fill="#64748B" font-size="10" text-anchor="end">20.6% net margin</text>
+  <rect x="228" y="716" width="616" height="6" rx="3" fill="#2A2E45"/>
+  <rect x="228" y="716" width="432" height="6" rx="3" fill="#22C55E" opacity="0.7"/>
+  <text x="844" y="736" font-size="10" fill="#64748B" text-anchor="end">20.6% net margin</text>
 
-  <!-- Location flag summary -->
-  <rect x="28" y="845" width="315" height="90" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="40" y="863" fill="#94A3B8" font-size="11" font-weight="700">Location Health</text>
-  <rect x="40" y="870" width="6" height="6" rx="3" fill="#10B981"/>
-  <text x="52" y="879" fill="#64748B" font-size="10">On track</text>
-  <text x="330" y="879" fill="#10B981" font-size="11" font-weight="700" text-anchor="end">8 locations</text>
-  <rect x="40" y="886" width="6" height="6" rx="3" fill="#F59E0B"/>
-  <text x="52" y="895" fill="#64748B" font-size="10">Warning (1 metric)</text>
-  <text x="330" y="895" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="end">3 locations</text>
-  <rect x="40" y="902" width="6" height="6" rx="3" fill="#EF4444"/>
-  <text x="52" y="911" fill="#64748B" font-size="10">Critical (2+ metrics)</text>
-  <text x="330" y="911" fill="#EF4444" font-size="11" font-weight="700" text-anchor="end">1 location</text>
-  <text x="40" y="927" fill="#64748B" font-size="10">Suburbs North requires immediate review</text>
+  <!-- Location Health Summary -->
+  <rect x="212" y="746" width="320" height="86" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="228" y="764" font-size="11" font-weight="700" fill="#94A3B8">Location Health</text>
+  <rect x="228" y="772" width="6" height="6" rx="3" fill="#22C55E"/>
+  <text x="240" y="778" font-size="10" fill="#64748B">On track</text>
+  <text x="516" y="778" font-size="11" font-weight="700" fill="#22C55E" text-anchor="end">8 locations</text>
+  <rect x="228" y="786" width="6" height="6" rx="3" fill="#F59E0B"/>
+  <text x="240" y="792" font-size="10" fill="#64748B">Warning (1 metric)</text>
+  <text x="516" y="792" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="end">3 locations</text>
+  <rect x="228" y="800" width="6" height="6" rx="3" fill="#EF4444"/>
+  <text x="240" y="806" font-size="10" fill="#64748B">Critical (2+ metrics)</text>
+  <text x="516" y="806" font-size="11" font-weight="700" fill="#EF4444" text-anchor="end">1 location</text>
+  <text x="228" y="824" font-size="9" fill="#64748B">Suburbs North requires immediate review</text>
 
-  <!-- Royalty breakdown mini -->
-  <rect x="360" y="845" width="328" height="90" rx="6" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
-  <text x="374" y="863" fill="#94A3B8" font-size="11" font-weight="700">Top Royalty Contributors</text>
-  <text x="374" y="879" fill="#64748B" font-size="10">Airport</text>
-  <text x="680" y="879" fill="#8B5CF6" font-size="11" font-weight="600" text-anchor="end">$5,619</text>
-  <rect x="374" y="882" width="160" height="3" rx="1" fill="#8B5CF6" opacity="0.6"/>
-  <text x="374" y="897" fill="#64748B" font-size="10">Downtown</text>
-  <text x="680" y="897" fill="#8B5CF6" font-size="11" font-weight="600" text-anchor="end">$3,726</text>
-  <rect x="374" y="900" width="105" height="3" rx="1" fill="#8B5CF6" opacity="0.4"/>
-  <text x="374" y="915" fill="#64748B" font-size="10">Waterfront</text>
-  <text x="680" y="915" fill="#8B5CF6" font-size="11" font-weight="600" text-anchor="end">$3,384</text>
-  <rect x="374" y="918" width="96" height="3" rx="1" fill="#8B5CF6" opacity="0.3"/>
-  <text x="374" y="933" fill="#64748B" font-size="10" font-style="italic">+ 9 more locations...</text>
+  <!-- Top Royalty Contributors -->
+  <rect x="544" y="746" width="328" height="86" rx="6" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="560" y="764" font-size="11" font-weight="700" fill="#94A3B8">Top Royalty Contributors</text>
+  <text x="560" y="782" font-size="10" fill="#64748B">Airport</text>
+  <text x="856" y="782" font-size="11" font-weight="600" fill="#8B5CF6" text-anchor="end">$5,619</text>
+  <rect x="560" y="786" width="150" height="3" rx="1" fill="#8B5CF6" opacity="0.6"/>
+  <text x="560" y="800" font-size="10" fill="#64748B">Downtown</text>
+  <text x="856" y="800" font-size="11" font-weight="600" fill="#8B5CF6" text-anchor="end">$3,726</text>
+  <rect x="560" y="804" width="100" height="3" rx="1" fill="#8B5CF6" opacity="0.4"/>
+  <text x="560" y="818" font-size="10" fill="#64748B">Waterfront</text>
+  <text x="856" y="818" font-size="11" font-weight="600" fill="#8B5CF6" text-anchor="end">$3,384</text>
 
-  <!-- ─── RIGHT COLUMN: Corporate Menu Push Tool (x=724, w=630) ─── -->
-  <rect x="724" y="132" width="630" height="882" rx="10" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- ==========================================================
+       RIGHT PANEL — Config Push + Brand Compliance
+       x=884, w=470
+       DB: pos_franchise_configs, pos_menu_pushes, pos_brand_compliance
+       ========================================================== -->
+  <line x1="884" y1="124" x2="884" y2="1024" stroke="#2A2E45" stroke-width="1"/>
 
-  <!-- Right panel header -->
-  <rect x="724" y="132" width="630" height="44" rx="10" fill="#1A1D2E"/>
-  <rect x="724" y="166" width="630" height="10" fill="#1A1D2E"/>
-  <rect x="724" y="176" width="630" height="1" fill="#F59E0B" opacity="0.4"/>
-  <!-- amber top border accent -->
-  <rect x="724" y="132" width="630" height="3" rx="2" fill="#F59E0B"/>
-  <text x="740" y="158" fill="#F1F5F9" font-size="14" font-weight="700">Corporate Menu Action</text>
-  <rect x="1240" y="140" width="90" height="22" rx="11" fill="#F59E0B22" stroke="#F59E0B" stroke-width="1"/>
-  <text x="1285" y="155" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">CORP PUSH</text>
+  <!-- Config Push section -->
+  <rect x="896" y="132" width="458" height="38" rx="8" fill="url(#cardHeaderGrad)" filter="url(#cardShadow)"/>
+  <text x="912" y="156" font-size="13" font-weight="700" fill="#E2E8F0">Corporate Config Push</text>
+  <use xlink:href="#gearIcon" x="1060" y="142" width="14" height="14"/>
+  <rect x="1250" y="138" width="90" height="24" rx="12" fill="#F59E0B22" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1295" y="155" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="middle">CORP PUSH</text>
 
-  <!-- Push scope radio buttons -->
-  <text x="740" y="200" fill="#94A3B8" font-size="11" font-weight="600" letter-spacing="0.4">PUSH SCOPE</text>
+  <!-- Push scope — DB: pos_menu_pushes.scope -->
+  <text x="912" y="190" font-size="11" font-weight="600" fill="#94A3B8">PUSH SCOPE</text>
+  <use xlink:href="#gearIcon" x="982" y="179" width="12" height="12"/>
+  <!-- Radio: All locations (selected) -->
+  <circle cx="922" cy="210" r="7" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="922" cy="210" r="3.5" fill="#F59E0B"/>
+  <text x="936" y="214" font-size="11" font-weight="600" fill="#E2E8F0">Push to ALL locations</text>
+  <rect x="1060" y="203" width="90" height="16" rx="8" fill="#22C55E22"/>
+  <text x="1105" y="214" font-size="10" font-weight="600" fill="#22C55E" text-anchor="middle">12 locations</text>
+  <!-- Radio: Selected -->
+  <circle cx="922" cy="232" r="7" fill="none" stroke="#2A2E45" stroke-width="2"/>
+  <text x="936" y="236" font-size="11" fill="#64748B">Push to selected locations</text>
 
-  <!-- Radio 1: Push to ALL -->
-  <circle cx="752" cy="218" r="7" fill="none" stroke="#F59E0B" stroke-width="2"/>
-  <circle cx="752" cy="218" r="3.5" fill="#F59E0B"/>
-  <text x="766" y="222" fill="#F1F5F9" font-size="12" font-weight="600">Push to ALL locations</text>
-  <rect x="866" y="211" width="90" height="16" rx="8" fill="#10B98122"/>
-  <text x="911" y="222" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">12 locations</text>
+  <!-- Action type tabs — DB: pos_menu_pushes.action_type -->
+  <text x="912" y="260" font-size="11" font-weight="600" fill="#94A3B8">ACTION TYPE</text>
+  <use xlink:href="#gearIcon" x="988" y="249" width="12" height="12"/>
+  <rect x="912" y="268" width="90" height="26" rx="5" fill="#F59E0B"/>
+  <text x="957" y="286" font-size="10" font-weight="700" fill="#0C0E1A" text-anchor="middle">Price Change</text>
+  <rect x="1008" y="268" width="72" height="26" rx="5" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1044" y="286" font-size="10" fill="#64748B" text-anchor="middle">New Item</text>
+  <rect x="1086" y="268" width="64" height="26" rx="5" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1118" y="286" font-size="10" fill="#64748B" text-anchor="middle">86 Item</text>
+  <rect x="1156" y="268" width="96" height="26" rx="5" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1204" y="286" font-size="10" fill="#64748B" text-anchor="middle">Category</text>
+  <rect x="1258" y="268" width="88" height="26" rx="5" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1302" y="286" font-size="10" fill="#64748B" text-anchor="middle">Modifier</text>
 
-  <!-- Radio 2: Push to selected -->
-  <circle cx="752" cy="242" r="7" fill="none" stroke="#2D3148" stroke-width="2"/>
-  <text x="766" y="246" fill="#64748B" font-size="12">Push to selected locations</text>
+  <!-- Menu item selector — DB: pos_menu_items -->
+  <text x="912" y="314" font-size="11" font-weight="600" fill="#94A3B8">MENU ITEM</text>
+  <use xlink:href="#gearIcon" x="980" y="303" width="12" height="12"/>
+  <rect x="912" y="320" width="430" height="32" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="924" y="341" font-size="11" font-weight="600" fill="#E2E8F0">Classic Burger</text>
+  <use xlink:href="#dropdown" x="1328" y="332" width="12" height="8"/>
 
-  <!-- Mini location checkbox grid (collapsed/preview for selected mode) -->
-  <rect x="740" y="254" width="600" height="64" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="756" y="269" fill="#64748B" font-size="10" font-style="italic">Select specific locations (active when "Push to selected" is chosen)</text>
-  <!-- checkbox grid 4 cols -->
-  <rect x="756" y="275" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="771" y="284" fill="#64748B" font-size="10">Downtown</text>
-  <rect x="856" y="275" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="871" y="284" fill="#64748B" font-size="10">Midtown</text>
-  <rect x="956" y="275" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="971" y="284" fill="#64748B" font-size="10">Airport</text>
-  <rect x="1056" y="275" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="1071" y="284" fill="#64748B" font-size="10">Suburbs N</text>
-  <rect x="756" y="295" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="771" y="304" fill="#64748B" font-size="10">Suburbs S</text>
-  <rect x="856" y="295" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="871" y="304" fill="#64748B" font-size="10">University</text>
-  <rect x="956" y="295" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="971" y="304" fill="#64748B" font-size="10">Mall</text>
-  <rect x="1056" y="295" width="10" height="10" rx="2" fill="none" stroke="#2D3148" stroke-width="1.5"/>
-  <text x="1071" y="304" fill="#64748B" font-size="10">Stadium</text>
+  <!-- New price input — DB: pos_menu_items.price_cents -->
+  <text x="912" y="372" font-size="11" font-weight="600" fill="#94A3B8">NEW BASE PRICE</text>
+  <use xlink:href="#gearIcon" x="1010" y="361" width="12" height="12"/>
+  <rect x="912" y="378" width="140" height="32" rx="6" fill="#0C0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="924" y="400" font-size="15" font-weight="700" fill="#F59E0B">$12.50</text>
+  <text x="1068" y="398" font-size="10" fill="#64748B">was $12.00 -- +4.2%</text>
 
-  <!-- Action type tabs -->
-  <text x="740" y="342" fill="#94A3B8" font-size="11" font-weight="600" letter-spacing="0.4">ACTION TYPE</text>
-  <rect x="740" y="349" width="600" height="1" fill="#2D3148"/>
+  <!-- Keep markup toggle — DB: pos_franchise_configs.keep_markup -->
+  <rect x="912" y="420" width="430" height="32" rx="6" fill="#0C0E1A" stroke="#2A2E45" stroke-width="1"/>
+  <text x="924" y="441" font-size="11" fill="#E2E8F0">Keep existing location markup multipliers</text>
+  <use xlink:href="#toggleOn" x="1298" y="424" width="38" height="22"/>
+  <use xlink:href="#gearIcon" x="1274" y="429" width="12" height="12"/>
 
-  <!-- Tab bar -->
-  <rect x="740" y="354" width="102" height="28" rx="6" fill="#F59E0B"/>
-  <text x="791" y="372" fill="#0F1117" font-size="11" font-weight="700" text-anchor="middle">Price Change</text>
+  <!-- Preview -->
+  <rect x="912" y="460" width="430" height="36" rx="6" fill="#22C55E15" stroke="#22C55E" stroke-width="1"/>
+  <text x="924" y="478" font-size="10" font-weight="700" fill="#22C55E">PREVIEW:</text>
+  <text x="988" y="478" font-size="10" fill="#E2E8F0">Airport: $14.38 (14% markup kept) -- was $13.80</text>
 
-  <rect x="846" y="354" width="80" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="886" y="372" fill="#64748B" font-size="11" text-anchor="middle">New Item</text>
-
-  <rect x="930" y="354" width="70" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="965" y="372" fill="#64748B" font-size="11" text-anchor="middle">86 Item</text>
-
-  <rect x="1004" y="354" width="110" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1059" y="372" fill="#64748B" font-size="11" text-anchor="middle">Category Change</text>
-
-  <rect x="1118" y="354" width="108" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1172" y="372" fill="#64748B" font-size="11" text-anchor="middle">Add Modifier</text>
-
-  <!-- PRICE CHANGE form body -->
-  <rect x="740" y="390" width="600" height="1" fill="#2D3148"/>
-
-  <!-- Item search field -->
-  <text x="740" y="410" fill="#94A3B8" font-size="11" font-weight="600" letter-spacing="0.4">MENU ITEM</text>
-  <rect x="740" y="416" width="380" height="34" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="752" y="438" fill="#F1F5F9" font-size="12" font-weight="600">Classic Burger</text>
-  <text x="1100" y="438" fill="#64748B" font-size="11" text-anchor="end">▼ Search items...</text>
-
-  <!-- Current prices by location grid -->
-  <rect x="740" y="458" width="600" height="90" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="752" y="474" fill="#64748B" font-size="10" font-weight="600" letter-spacing="0.4">CURRENT PRICES BY LOCATION</text>
-  <rect x="752" y="478" width="576" height="1" fill="#2D3148" opacity="0.5"/>
-
-  <!-- price rows in 2 cols -->
-  <text x="752" y="494" fill="#64748B" font-size="11">Downtown</text>
-  <text x="900" y="494" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="end">$12.00</text>
-  <text x="912" y="494" fill="#64748B" font-size="10" font-style="italic">(base)</text>
-
-  <text x="1010" y="494" fill="#64748B" font-size="11">Airport</text>
-  <text x="1200" y="494" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="end">$13.80</text>
-  <text x="1210" y="494" fill="#64748B" font-size="10" font-style="italic">(+15%)</text>
-
-  <text x="752" y="512" fill="#64748B" font-size="11">Midtown</text>
-  <text x="900" y="512" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="end">$12.00</text>
-  <text x="912" y="512" fill="#64748B" font-size="10" font-style="italic">(base)</text>
-
-  <text x="1010" y="512" fill="#64748B" font-size="11">Waterfront</text>
-  <text x="1200" y="512" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="end">$12.60</text>
-  <text x="1210" y="512" fill="#64748B" font-size="10" font-style="italic">(+5%)</text>
-
-  <text x="752" y="530" fill="#64748B" font-size="11">Suburbs North</text>
-  <text x="900" y="530" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="end">$12.00</text>
-  <text x="912" y="530" fill="#64748B" font-size="10" font-style="italic">(base)</text>
-
-  <text x="1010" y="530" fill="#64748B" font-size="11">Stadium</text>
-  <text x="1200" y="530" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="end">$14.40</text>
-  <text x="1210" y="530" fill="#64748B" font-size="10" font-style="italic">(+20%)</text>
-
-  <text x="752" y="540" fill="#64748B" font-size="9" font-style="italic">+ 6 more locations at base price $12.00</text>
-
-  <!-- New base price input -->
-  <text x="740" y="566" fill="#94A3B8" font-size="11" font-weight="600" letter-spacing="0.4">NEW BASE PRICE</text>
-  <rect x="740" y="572" width="160" height="34" rx="6" fill="#0F1117" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="752" y="594" fill="#F59E0B" font-size="16" font-weight="700">$12.50</text>
-  <text x="914" y="592" fill="#64748B" font-size="11">was $12.00 · +4.2%</text>
-
-  <!-- Markup rules toggle -->
-  <rect x="740" y="618" width="600" height="38" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="752" y="641" fill="#F1F5F9" font-size="12">Keep existing location markup multipliers</text>
-  <!-- Toggle ON -->
-  <rect x="1288" y="626" width="40" height="22" rx="11" fill="#10B981"/>
-  <circle cx="1318" cy="637" r="9" fill="#FFFFFF"/>
-  <text x="1282" y="641" fill="#10B981" font-size="10" font-weight="700" text-anchor="end">ON</text>
-
-  <!-- Preview result box -->
-  <rect x="740" y="668" width="600" height="50" rx="6" fill="#10B98115" stroke="#10B981" stroke-width="1"/>
-  <text x="752" y="686" fill="#10B981" font-size="11" font-weight="700">↗ PREVIEW</text>
-  <text x="752" y="704" fill="#F1F5F9" font-size="12">Airport will be: <tspan font-weight="700" fill="#F59E0B">$14.38</tspan>  <tspan fill="#64748B" font-size="11">(14% markup maintained · was $13.80)</tspan></text>
-
-  <!-- Divider -->
-  <rect x="740" y="730" width="600" height="1" fill="#2D3148"/>
-
-  <!-- Schedule checkbox -->
-  <rect x="740" y="740" width="14" height="14" rx="3" fill="#10B981"/>
-  <text x="757" y="752" fill="#F1F5F9" font-size="11">✓</text>
-  <text x="762" y="752" fill="#F1F5F9" font-size="12">Schedule for:  <tspan font-weight="700">tomorrow 6:00 AM</tspan></text>
-  <text x="1050" y="752" fill="#64748B" font-size="11">▼ Change time</text>
+  <!-- Schedule toggle — DB: pos_menu_pushes.scheduled_at -->
+  <rect x="912" y="504" width="430" height="32" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="934" y="525" font-size="11" fill="#E2E8F0">Schedule for: tomorrow 6:00 AM</text>
+  <use xlink:href="#gearIcon" x="1130" y="514" width="12" height="12"/>
+  <use xlink:href="#toggleOn" x="1298" y="508" width="38" height="22"/>
 
   <!-- Push button -->
-  <rect x="740" y="770" width="600" height="44" rx="8" fill="#10B981"/>
-  <text x="1040" y="797" fill="#0F1117" font-size="15" font-weight="700" text-anchor="middle">↑ Push to 12 Locations</text>
+  <rect x="912" y="544" width="430" height="40" rx="8" fill="#22C55E"/>
+  <text x="1127" y="570" font-size="14" font-weight="700" fill="#0C0E1A" text-anchor="middle">Push to 12 Locations</text>
 
-  <!-- Divider -->
-  <rect x="740" y="826" width="600" height="1" fill="#2D3148"/>
+  <!-- ==========================================================
+       Brand Compliance section
+       DB: pos_brand_compliance
+       ========================================================== -->
+  <rect x="896" y="596" width="458" height="38" rx="8" fill="url(#cardHeaderGrad)"/>
+  <text x="912" y="620" font-size="13" font-weight="700" fill="#E2E8F0">Brand Compliance Checks</text>
+  <use xlink:href="#gearIcon" x="1080" y="606" width="14" height="14"/>
 
-  <!-- Recent pushes log -->
-  <text x="740" y="845" fill="#94A3B8" font-size="11" font-weight="600" letter-spacing="0.4">RECENT PUSH HISTORY</text>
+  <!-- Compliance items — DB: pos_brand_compliance rows -->
+  <rect x="896" y="638" width="458" height="40" rx="6" fill="#1A1D2E" stroke="#22C55E" stroke-width="1"/>
+  <text x="912" y="658" font-size="10" font-weight="600" fill="#E2E8F0">Menu naming conventions</text>
+  <text x="912" y="672" font-size="9" fill="#64748B">All locations follow brand menu names</text>
+  <use xlink:href="#statusOk" x="1280" y="648" width="60" height="20"/>
 
-  <!-- Push log row 1 — success -->
-  <rect x="740" y="852" width="600" height="40" rx="6" fill="#10B98112" stroke="#10B981" stroke-width="0.5"/>
-  <rect x="740" y="852" width="3" height="40" rx="1" fill="#10B981"/>
-  <text x="752" y="868" fill="#F1F5F9" font-size="11" font-weight="600">Classic Burger price $12.00 → $12.50</text>
-  <rect x="1050" y="856" width="100" height="16" rx="8" fill="#10B98122"/>
-  <text x="1100" y="868" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">12/12 confirmed</text>
-  <text x="752" y="884" fill="#64748B" font-size="10">Pushed May 26, 2026 · 6:00 AM · by Corporate Admin</text>
-  <text x="1330" y="884" fill="#10B981" font-size="10" font-weight="700" text-anchor="end">✓ Success</text>
+  <rect x="896" y="682" width="458" height="40" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="912" y="702" font-size="10" font-weight="600" fill="#E2E8F0">Price band compliance</text>
+  <text x="912" y="716" font-size="9" fill="#64748B">2 locations outside +/-20% band</text>
+  <use xlink:href="#statusWarn" x="1262" y="692" width="80" height="20"/>
+  <use xlink:href="#gearIcon" x="1244" y="696" width="12" height="12"/>
 
-  <!-- Push log row 2 -->
-  <rect x="740" y="898" width="600" height="40" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="0.5"/>
-  <rect x="740" y="898" width="3" height="40" rx="1" fill="#8B5CF6"/>
-  <text x="752" y="914" fill="#F1F5F9" font-size="11" font-weight="600">Spicy Crispy Sandwich — new item added to menu</text>
-  <rect x="1060" y="902" width="80" height="16" rx="8" fill="#8B5CF622"/>
-  <text x="1100" y="914" fill="#8B5CF6" font-size="10" font-weight="700" text-anchor="middle">12/12 synced</text>
-  <text x="752" y="930" fill="#64748B" font-size="10">Pushed May 21, 2026 · 6:00 AM · by Corporate Admin</text>
-  <text x="1330" y="930" fill="#8B5CF6" font-size="10" font-weight="700" text-anchor="end">✓ Success</text>
+  <rect x="896" y="726" width="458" height="40" rx="6" fill="#1A1D2E" stroke="#22C55E" stroke-width="1"/>
+  <text x="912" y="746" font-size="10" font-weight="600" fill="#E2E8F0">Operating hours alignment</text>
+  <text x="912" y="760" font-size="9" fill="#64748B">All locations within approved hours</text>
+  <use xlink:href="#statusOk" x="1280" y="736" width="60" height="20"/>
 
-  <!-- Push log row 3 -->
-  <rect x="740" y="944" width="600" height="40" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="0.5"/>
-  <rect x="740" y="944" width="3" height="40" rx="1" fill="#F59E0B"/>
-  <text x="752" y="960" fill="#F1F5F9" font-size="11" font-weight="600">Weekend Brunch category — category added</text>
-  <rect x="1060" y="948" width="80" height="16" rx="8" fill="#F59E0B22"/>
-  <text x="1100" y="960" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">11/12 synced</text>
-  <text x="752" y="976" fill="#64748B" font-size="10">Pushed May 18, 2026 · 6:00 AM · by Corporate Admin</text>
-  <text x="1330" y="976" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="end">⚠ 1 pending</text>
+  <rect x="896" y="770" width="458" height="40" rx="6" fill="#1A1D2E" stroke="#EF4444" stroke-width="1"/>
+  <text x="912" y="790" font-size="10" font-weight="600" fill="#E2E8F0">Receipt branding</text>
+  <text x="912" y="804" font-size="9" fill="#64748B">Suburbs North missing logo on receipts</text>
+  <use xlink:href="#statusCrit" x="1262" y="780" width="80" height="20"/>
+  <use xlink:href="#gearIcon" x="1244" y="784" width="12" height="12"/>
 
-  <!-- Footer -->
-  <rect x="0" y="1004" width="1366" height="20" fill="#13162A"/>
-  <rect x="0" y="1004" width="1366" height="1" fill="#2D3148"/>
-  <text x="24" y="1017" fill="#64748B" font-size="10">Synalux POS · Franchise Corporate Dashboard · Burger Co. Franchise · 12 Locations · May 2026</text>
-  <text x="1342" y="1017" fill="#64748B" font-size="10" text-anchor="end">v3.4.1 · Last sync: 2 min ago</text>
+  <!-- ==========================================================
+       PUSH HISTORY
+       DB: pos_menu_pushes WHERE completed_at IS NOT NULL
+       ========================================================== -->
+  <rect x="896" y="822" width="458" height="34" rx="6" fill="url(#cardHeaderGrad)"/>
+  <text x="912" y="844" font-size="12" font-weight="700" fill="#E2E8F0">Recent Push History</text>
+  <use xlink:href="#gearIcon" x="1040" y="832" width="12" height="12"/>
+
+  <!-- Push 1: Success -->
+  <rect x="896" y="860" width="458" height="48" rx="6" fill="#22C55E12" stroke="#22C55E" stroke-width="0.5"/>
+  <rect x="896" y="860" width="3" height="48" fill="#22C55E"/>
+  <text x="912" y="878" font-size="10" font-weight="600" fill="#E2E8F0">Classic Burger $12.00 -&gt; $12.50</text>
+  <text x="1326" y="878" font-size="9" font-weight="700" fill="#22C55E" text-anchor="end">12/12</text>
+  <text x="912" y="900" font-size="9" fill="#64748B">May 26, 2026 6:00 AM -- Corporate Admin</text>
+
+  <!-- Push 2: Success -->
+  <rect x="896" y="912" width="458" height="48" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="0.5"/>
+  <rect x="896" y="912" width="3" height="48" fill="#8B5CF6"/>
+  <text x="912" y="930" font-size="10" font-weight="600" fill="#E2E8F0">Spicy Crispy Sandwich -- new item</text>
+  <text x="1326" y="930" font-size="9" font-weight="700" fill="#8B5CF6" text-anchor="end">12/12</text>
+  <text x="912" y="952" font-size="9" fill="#64748B">May 21, 2026 6:00 AM</text>
+
+  <!-- Push 3: Partial -->
+  <rect x="896" y="964" width="458" height="48" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="0.5"/>
+  <rect x="896" y="964" width="3" height="48" fill="#F59E0B"/>
+  <text x="912" y="982" font-size="10" font-weight="600" fill="#E2E8F0">Weekend Brunch category -- added</text>
+  <text x="1326" y="982" font-size="9" font-weight="700" fill="#F59E0B" text-anchor="end">11/12 (1 pending)</text>
+  <text x="912" y="1004" font-size="9" fill="#64748B">May 18, 2026 6:00 AM</text>
+
+  <!-- ==========================================================
+       WORKFLOW INTEGRATION NOTE
+       ========================================================== -->
+  <rect x="212" y="840" width="660" height="38" rx="6" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="228" y="856" font-size="9" font-weight="700" fill="#F59E0B">SCHEMA:</text>
+  <text x="284" y="856" font-size="9" fill="#94A3B8">pos_locations | pos_franchise_configs | pos_royalty_ledger | pos_menu_pushes | pos_brand_compliance</text>
+  <text x="228" y="870" font-size="9" fill="#64748B">RLS: corporate admin role bypasses location scoping | Royalty: daily cron on pos_payments | Push: /api/pos/franchise/push</text>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <rect x="200" y="1004" width="1166" height="20" fill="#161930"/>
+  <line x1="200" y1="1004" x2="1366" y2="1004" stroke="#2A2E45" stroke-width="1"/>
+  <text x="220" y="1017" font-size="9" fill="#64748B">Synalux POS -- Franchise Corporate Dashboard -- 12 Locations -- May 2026</text>
+  <text x="1346" y="1017" font-size="9" fill="#64748B" text-anchor="end">v3.4.1 -- Last sync: 2 min ago</text>
 
 </svg>

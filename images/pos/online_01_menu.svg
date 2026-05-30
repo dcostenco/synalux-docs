@@ -1,202 +1,469 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" font-family="system-ui,-apple-system,sans-serif">
-  <!-- Background -->
-  <rect width="1440" height="900" fill="#FAFAF8"/>
+<svg role="img" aria-labelledby="title-online_01_menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
+  <!-- ============================================================
+       Synalux POS - Online Ordering: Customer Menu View (F23)
+       ViewBox: 1366x1024 | Dark Theme
+       All menu data sourced from Settings > Menu Builder
+       ============================================================ -->
 
-  <!-- Top navigation -->
-  <rect x="0" y="0" width="1440" height="72" fill="white"/>
-  <rect x="0" y="72" width="1440" height="1" fill="#E5E7EB"/>
-
-  <!-- Logo -->
-  <rect x="32" y="18" width="44" height="36" rx="8" fill="#F59E0B"/>
-  <text x="54" y="42" fill="white" font-size="20" font-weight="700" text-anchor="middle">S</text>
-  <text x="86" y="40" fill="#1A1A1A" font-size="18" font-weight="700">Riverside Grill</text>
-
-  <!-- Order type selector -->
-  <rect x="400" y="16" width="220" height="40" rx="8" fill="#F3F4F6"/>
-  <rect x="402" y="18" width="106" height="36" rx="6" fill="white"/>
-  <text x="455" y="41" fill="#1A1A1A" font-size="14" font-weight="600" text-anchor="middle">🍽 Dine-In</text>
-  <text x="565" y="41" fill="#6B7280" font-size="14" text-anchor="middle">📦 Takeout</text>
-
-  <!-- Location + time -->
-  <text x="660" y="31" fill="#6B7280" font-size="13" text-anchor="middle">📍 123 Main St</text>
-  <text x="660" y="50" fill="#6B7280" font-size="13" text-anchor="middle">⏱ 15–25 min</text>
-
-  <!-- Language selector -->
-  <rect x="900" y="20" width="80" height="34" rx="6" fill="#F3F4F6"/>
-  <text x="940" y="42" fill="#6B7280" font-size="13" text-anchor="middle">🌐 EN</text>
-
-  <!-- Search -->
-  <rect x="1000" y="20" width="280" height="34" rx="8" fill="#F3F4F6"/>
-  <text x="1016" y="41" fill="#9CA3AF" font-size="14">🔍  Search menu...</text>
-
-  <!-- Cart button -->
-  <rect x="1305" y="16" width="106" height="40" rx="8" fill="#F59E0B"/>
-  <text x="1358" y="41" fill="white" font-size="14" font-weight="700" text-anchor="middle">🛒 Cart (3)</text>
-
-  <!-- Hero banner -->
-  <rect x="0" y="73" width="1440" height="140" fill="#1A1A1A"/>
-  <!-- Hero gradient -->
+  <!-- ======================== DEFS ======================== -->
+  <title id="title-online_01_menu-svg">Synalux POS — Online 01 menu</title>
+  <desc>Synalux POS mockup screen for Online 01 menu. All UI elements admin-configurable.</desc>
   <defs>
+    <!-- Admin: Settings > Online Ordering > Branding > Hero gradient -->
     <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#1A1A1A;stop-opacity:1"/>
-      <stop offset="60%" style="stop-color:#2D1A00;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.3"/>
+      <stop offset="0%" stop-color="#0C0E1A" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#1A1000" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.25"/>
     </linearGradient>
+
+    <!-- Admin: Settings > Online Ordering > Branding > Cart bar gradient -->
+    <linearGradient id="cartBarGrad" x1="0%" y1="0%" x2="1%" y2="0%">
+      <stop offset="0%" stop-color="#161930"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+
+    <!-- Admin: Settings > Online Ordering > Branding > Add button gradient -->
+    <linearGradient id="amberBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Shared drop shadows -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="floatShadow" x="-2%" y="-8%" width="104%" height="120%">
+      <feDropShadow dx="0" dy="-4" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="pillShadow" x="-6%" y="-10%" width="112%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- ==================== SYMBOLS ==================== -->
+
+    <!-- SYM: Add-to-cart button (reused per menu item) -->
+    <!-- Admin: Settings > Online Ordering > Branding > Button color -->
+    <symbol id="addBtn" viewBox="0 0 88 34">
+      <rect width="88" height="34" rx="8" fill="url(#amberBtnGrad)"/>
+      <text x="44" y="22" fill="#E2E8F0" font-size="13" font-weight="700" text-anchor="middle">+ Add</text>
+    </symbol>
+
+    <!-- SYM: Quantity stepper (shown when item already in cart) -->
+    <symbol id="qtyStepper" viewBox="0 0 100 34">
+      <rect width="100" height="34" rx="8" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
+      <text x="20" y="23" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="middle">-</text>
+      <text x="50" y="22" fill="#E2E8F0" font-size="14" font-weight="700" text-anchor="middle">1</text>
+      <text x="80" y="23" fill="#F59E0B" font-size="18" font-weight="700" text-anchor="middle">+</text>
+    </symbol>
+
+    <!-- SYM: Category pill (inactive state) -->
+    <!-- Admin: Settings > Menu Builder > Categories (name, icon, sort order) -->
+    <symbol id="catPillInactive" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <rect width="1" height="1" rx="0.5" fill="#1A1D2E" stroke="#2A2E45" stroke-width="0.02"/>
+    </symbol>
+
+    <!-- SYM: Category pill (active state) -->
+    <symbol id="catPillActive" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <rect width="1" height="1" rx="0.5" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- SYM: Dietary badge (vegan/GF filter) -->
+    <symbol id="dietBadge" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <rect width="1" height="1" rx="0.5" fill="none" stroke="#22C55E" stroke-width="0.03"/>
+    </symbol>
+
+    <!-- SYM: Item badge (Popular/Spicy/New/etc.) -->
+    <symbol id="itemBadge" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <rect width="1" height="1" rx="0.15" fill="currentColor"/>
+    </symbol>
+
+    <!-- SYM: Card container (reused per menu item card) -->
+    <symbol id="menuCard" viewBox="0 0 400 200">
+      <rect width="400" height="200" rx="14" fill="#161930" stroke="#1E2235" stroke-width="1"/>
+    </symbol>
+
+    <!-- SYM: Search icon -->
+    <symbol id="searchIcon" viewBox="0 0 16 16">
+      <circle cx="7" cy="7" r="5.5" fill="none" stroke="#64748B" stroke-width="1.5"/>
+      <line x1="11" y1="11" x2="15" y2="15" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- SYM: Cart icon -->
+    <symbol id="cartIcon" viewBox="0 0 20 20">
+      <path d="M6 6h12l-1.5 7H7.5L6 6z" fill="none" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M6 6L5 3H2" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="9" cy="16" r="1.5" fill="#E2E8F0"/>
+      <circle cx="15" cy="16" r="1.5" fill="#E2E8F0"/>
+    </symbol>
+
+    <!-- SYM: Location pin icon -->
+    <symbol id="pinIcon" viewBox="0 0 12 16">
+      <path d="M6 0C2.7 0 0 2.7 0 6c0 4.5 6 10 6 10s6-5.5 6-10c0-3.3-2.7-6-6-6zm0 8.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="#64748B"/>
+    </symbol>
+
+    <!-- SYM: Clock icon -->
+    <symbol id="clockIcon" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="6" fill="none" stroke="#64748B" stroke-width="1.2"/>
+      <path d="M7 3.5V7l3 2" fill="none" stroke="#64748B" stroke-width="1.2" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- SYM: Globe icon (language) -->
+    <symbol id="globeIcon" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="6" fill="none" stroke="#64748B" stroke-width="1.1"/>
+      <ellipse cx="7" cy="7" rx="3" ry="6" fill="none" stroke="#64748B" stroke-width="1.1"/>
+      <line x1="1" y1="5" x2="13" y2="5" stroke="#64748B" stroke-width="0.8"/>
+      <line x1="1" y1="9" x2="13" y2="9" stroke="#64748B" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- SYM: AI sparkle icon -->
+    <symbol id="aiSparkle" viewBox="0 0 16 16">
+      <path d="M8 0l1.5 5.5L14 8l-4.5 2.5L8 16l-1.5-5.5L2 8l4.5-2.5z" fill="#E2E8F0"/>
+    </symbol>
+
+    <!-- SYM: Admin gear affordance (small gear overlay indicating admin-configurable) -->
+    <symbol id="adminGear" viewBox="0 0 12 12">
+      <circle cx="6" cy="6" r="2.5" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.5"/>
+      <path d="M6 1v1.5M6 9.5V11M1 6h1.5M9.5 6H11M2.7 2.7l1 1M8.3 8.3l1 1M2.7 9.3l1-1M8.3 3.7l1-1" stroke="#F59E0B" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+    </symbol>
   </defs>
-  <rect x="0" y="73" width="1440" height="140" fill="url(#heroGrad)"/>
 
-  <!-- Food photography placeholders (colored blocks) -->
-  <rect x="900" y="80" width="200" height="120" rx="12" fill="#2D1A00" opacity="0.8"/>
-  <text x="1000" y="148" font-size="52" text-anchor="middle">🍔</text>
+  <!-- ======================== BACKGROUND ======================== -->
+  <!-- Admin: Settings > Online Ordering > Branding > Background color -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
 
-  <rect x="1110" y="80" width="180" height="120" rx="12" fill="#1A2D00" opacity="0.8"/>
-  <text x="1200" y="148" font-size="52" text-anchor="middle">🥗</text>
+  <!-- ======================== TOP NAVIGATION BAR ======================== -->
+  <!-- Admin: Settings > Online Ordering > Branding > Nav bar -->
+  <rect x="0" y="0" width="1366" height="64" fill="#161930"/>
+  <rect x="0" y="64" width="1366" height="1" fill="#1E2235"/>
 
-  <rect x="1300" y="80" width="128" height="120" rx="12" fill="#2D1A00" opacity="0.8"/>
-  <text x="1364" y="148" font-size="52" text-anchor="middle">🍺</text>
+  <!-- Logo + Restaurant Name -->
+  <!-- Admin: Settings > Restaurant > Name, Logo -->
+  <rect x="28" y="14" width="38" height="36" rx="8" fill="#F59E0B"/>
+  <text x="47" y="38" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">R</text>
+  <use href="#adminGear" x="58" y="12" width="10" height="10"/>
+  <text x="76" y="38" fill="#E2E8F0" font-size="16" font-weight="700">Riverside Grill</text>
+
+  <!-- Order Type Selector -->
+  <!-- Admin: Settings > Online Ordering > Order Types (Dine-In, Takeout, Delivery toggles) -->
+  <rect x="280" y="14" width="210" height="36" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <!-- Active tab: Dine-In -->
+  <rect x="283" y="17" width="100" height="30" rx="6" fill="#F59E0B"/>
+  <text x="333" y="37" fill="#E2E8F0" font-size="12" font-weight="600" text-anchor="middle">Dine-In</text>
+  <!-- Inactive tab: Takeout -->
+  <text x="435" y="37" fill="#64748B" font-size="12" text-anchor="middle">Takeout</text>
+  <use href="#adminGear" x="482" y="14" width="10" height="10"/>
+
+  <!-- Location + Estimated Time -->
+  <!-- Admin: Settings > Restaurant > Address -->
+  <g transform="translate(520,24)">
+    <use href="#pinIcon" x="0" y="0" width="10" height="14"/>
+    <text x="14" y="11" fill="#64748B" font-size="12">123 Main St</text>
+  </g>
+  <!-- Admin: Settings > Online Ordering > Estimated Wait Time -->
+  <g transform="translate(520,42)">
+    <use href="#clockIcon" x="0" y="-1" width="12" height="12"/>
+    <text x="16" y="9" fill="#64748B" font-size="11">15-25 min</text>
+  </g>
+
+  <!-- Language Selector -->
+  <!-- Admin: Settings > Online Ordering > Languages -->
+  <rect x="740" y="17" width="70" height="30" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <g transform="translate(748,23)">
+    <use href="#globeIcon" x="0" y="0" width="12" height="12"/>
+    <text x="18" y="10" fill="#64748B" font-size="11" font-weight="500">EN</text>
+  </g>
+  <use href="#adminGear" x="802" y="17" width="10" height="10"/>
+
+  <!-- Search Bar -->
+  <!-- Admin: Settings > Online Ordering > Search (enabled/disabled) -->
+  <rect x="850" y="17" width="280" height="30" rx="8" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <use href="#searchIcon" x="860" y="22" width="14" height="14"/>
+  <text x="882" y="37" fill="#475569" font-size="12">Search menu...</text>
+
+  <!-- Cart Button -->
+  <!-- Admin: Settings > Online Ordering > Cart (auto-open, min order) -->
+  <rect x="1160" y="14" width="110" height="36" rx="8" fill="url(#amberBtnGrad)" filter="url(#pillShadow)"/>
+  <use href="#cartIcon" x="1172" y="22" width="18" height="18"/>
+  <text x="1240" y="37" fill="#E2E8F0" font-size="13" font-weight="700" text-anchor="middle">Cart (3)</text>
+
+  <!-- User/Login -->
+  <!-- Admin: Settings > Online Ordering > Guest Checkout (allow/require login) -->
+  <rect x="1290" y="17" width="52" height="30" rx="6" fill="#1A1D2E" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1316" y="37" fill="#64748B" font-size="12" text-anchor="middle">Sign In</text>
+
+  <!-- ======================== HERO BANNER ======================== -->
+  <!-- Admin: Settings > Online Ordering > Branding > Hero Image, Title, Subtitle -->
+  <rect x="0" y="65" width="1366" height="130" fill="url(#heroGrad)"/>
+
+  <!-- Food photo placeholders in hero -->
+  <rect x="840" y="74" width="170" height="110" rx="12" fill="#2D1A00" opacity="0.7"/>
+  <text x="925" y="142" font-size="48" text-anchor="middle">&#x1F354;</text>
+  <rect x="1020" y="74" width="160" height="110" rx="12" fill="#1A2D00" opacity="0.7"/>
+  <text x="1100" y="142" font-size="48" text-anchor="middle">&#x1F957;</text>
+  <rect x="1190" y="74" width="140" height="110" rx="12" fill="#2D1A00" opacity="0.7"/>
+  <text x="1260" y="142" font-size="48" text-anchor="middle">&#x1F37A;</text>
 
   <!-- Hero text -->
-  <text x="48" y="120" fill="white" font-size="26" font-weight="700">Order Online</text>
-  <text x="48" y="148" fill="#FCD34D" font-size="14">Fresh · Hot · Ready in 20 min</text>
-  <text x="48" y="170" fill="#9CA3AF" font-size="13">Free delivery over $40 · Pickup discount 5%</text>
+  <use href="#adminGear" x="28" y="82" width="10" height="10"/>
+  <text x="42" y="108" fill="#E2E8F0" font-size="24" font-weight="700">Order Online</text>
+  <!-- Admin: Settings > Online Ordering > Branding > Tagline -->
+  <text x="42" y="132" fill="#FCD34D" font-size="13" font-weight="500">Fresh  &#xB7;  Hot  &#xB7;  Ready in 20 min</text>
+  <!-- Admin: Settings > Online Ordering > Promotions > Banner text -->
+  <text x="42" y="154" fill="#64748B" font-size="12">Free delivery over $40 &#xB7; Pickup discount 5%</text>
 
-  <!-- Category navigation (sticky horizontal bar) -->
-  <rect x="0" y="213" width="1440" height="52" fill="white"/>
-  <rect x="0" y="265" width="1440" height="1" fill="#E5E7EB"/>
+  <!-- ======================== CATEGORY NAVIGATION ======================== -->
+  <!-- Admin: Settings > Menu Builder > Categories (name, icon, sort order, visibility) -->
+  <rect x="0" y="195" width="1366" height="48" fill="#161930"/>
+  <rect x="0" y="243" width="1366" height="1" fill="#1E2235"/>
 
-  <!-- Category pills -->
-  <rect x="32" y="224" width="80" height="30" rx="15" fill="#F59E0B"/>
-  <text x="72" y="244" fill="white" font-size="13" font-weight="700" text-anchor="middle">🍔 Burgers</text>
+  <!-- Category pill: Burgers (ACTIVE) -->
+  <use href="#catPillActive" x="28" y="204" width="86" height="30"/>
+  <text x="71" y="224" fill="#E2E8F0" font-size="12" font-weight="700" text-anchor="middle">Burgers</text>
 
-  <rect x="124" y="224" width="72" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="160" y="244" fill="#6B7280" font-size="13" text-anchor="middle">🍟 Sides</text>
+  <!-- Category pill: Sides -->
+  <use href="#catPillInactive" x="124" y="204" width="66" height="30"/>
+  <text x="157" y="224" fill="#64748B" font-size="12" text-anchor="middle">Sides</text>
 
-  <rect x="208" y="224" width="72" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="244" y="244" fill="#6B7280" font-size="13" text-anchor="middle">🥤 Drinks</text>
+  <!-- Category pill: Drinks -->
+  <use href="#catPillInactive" x="200" y="204" width="72" height="30"/>
+  <text x="236" y="224" fill="#64748B" font-size="12" text-anchor="middle">Drinks</text>
 
-  <rect x="292" y="224" width="90" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="337" y="244" fill="#6B7280" font-size="13" text-anchor="middle">🍰 Desserts</text>
+  <!-- Category pill: Desserts -->
+  <use href="#catPillInactive" x="282" y="204" width="82" height="30"/>
+  <text x="323" y="224" fill="#64748B" font-size="12" text-anchor="middle">Desserts</text>
 
-  <rect x="394" y="224" width="76" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="432" y="244" fill="#6B7280" font-size="13" text-anchor="middle">⭐ Specials</text>
+  <!-- Category pill: Specials -->
+  <use href="#catPillInactive" x="374" y="204" width="78" height="30"/>
+  <text x="413" y="224" fill="#64748B" font-size="12" text-anchor="middle">Specials</text>
 
-  <rect x="482" y="224" width="70" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="517" y="244" fill="#6B7280" font-size="13" text-anchor="middle">🎁 Combos</text>
+  <!-- Category pill: Combos -->
+  <use href="#catPillInactive" x="462" y="204" width="78" height="30"/>
+  <text x="501" y="224" fill="#64748B" font-size="12" text-anchor="middle">Combos</text>
 
-  <rect x="564" y="224" width="70" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="599" y="244" fill="#6B7280" font-size="13" text-anchor="middle">🍺 Bar</text>
+  <!-- Category pill: Bar -->
+  <use href="#catPillInactive" x="550" y="204" width="60" height="30"/>
+  <text x="580" y="224" fill="#64748B" font-size="12" text-anchor="middle">Bar</text>
 
-  <rect x="646" y="224" width="70" height="30" rx="15" fill="#F3F4F6"/>
-  <text x="681" y="244" fill="#6B7280" font-size="13" text-anchor="middle">🧒 Kids</text>
+  <!-- Category pill: Kids -->
+  <use href="#catPillInactive" x="620" y="204" width="60" height="30"/>
+  <text x="650" y="224" fill="#64748B" font-size="12" text-anchor="middle">Kids</text>
 
-  <!-- Dietary filters -->
-  <rect x="790" y="224" width="70" height="30" rx="15" fill="#F0FDF4" stroke="#22C55E" stroke-width="1"/>
-  <text x="825" y="244" fill="#16A34A" font-size="12" text-anchor="middle">🌱 Vegan</text>
+  <use href="#adminGear" x="690" y="206" width="10" height="10"/>
 
-  <rect x="872" y="224" width="84" height="30" rx="15" fill="#F0FDF4" stroke="#22C55E" stroke-width="1"/>
-  <text x="914" y="244" fill="#16A34A" font-size="12" text-anchor="middle">🌾 GF</text>
+  <!-- Dietary filter badges -->
+  <!-- Admin: Settings > Menu Builder > Dietary Tags -->
+  <use href="#dietBadge" x="740" y="204" width="66" height="30"/>
+  <text x="773" y="223" fill="#4ADE80" font-size="11" text-anchor="middle">Vegan</text>
 
-  <!-- AI ordering chip -->
-  <rect x="1200" y="221" width="220" height="36" rx="18" fill="#7C3AED"/>
-  <text x="1310" y="244" fill="white" font-size="13" font-weight="700" text-anchor="middle">🤖 Ask AI to Order</text>
+  <use href="#dietBadge" x="816" y="204" width="50" height="30"/>
+  <text x="841" y="223" fill="#4ADE80" font-size="11" text-anchor="middle">GF</text>
 
-  <!-- Main content area - 2 columns -->
-  <!-- Category section header -->
-  <text x="32" y="296" fill="#1A1A1A" font-size="20" font-weight="700">🍔 Burgers</text>
-  <text x="200" y="296" fill="#6B7280" font-size="14">8 items</text>
+  <use href="#dietBadge" x="876" y="204" width="80" height="30"/>
+  <text x="916" y="223" fill="#4ADE80" font-size="11" text-anchor="middle">Nut-Free</text>
 
-  <!-- Item card grid - 3 per row -->
-  <!-- Item 1 - Classic Burger -->
-  <rect x="32" y="308" width="428" height="180" rx="16" fill="white" stroke="#F3F4F6" stroke-width="1"/>
-  <!-- Food photo area -->
-  <rect x="32" y="308" width="428" height="100" rx="16" fill="#FEF3C7"/>
-  <rect x="32" y="368" width="428" height="40" fill="#FEF3C7"/>
-  <text x="246" y="370" font-size="60" text-anchor="middle">🍔</text>
-  <!-- Badges -->
-  <rect x="48" y="320" width="52" height="22" rx="6" fill="#22C55E"/>
-  <text x="74" y="335" fill="white" font-size="11" font-weight="700" text-anchor="middle">Popular</text>
+  <!-- AI Ordering Chip -->
+  <!-- Admin: Settings > Online Ordering > AI Ordering (enabled/disabled) -->
+  <rect x="1120" y="201" width="218" height="36" rx="18" fill="#7C3AED" filter="url(#pillShadow)"/>
+  <use href="#aiSparkle" x="1134" y="210" width="14" height="14"/>
+  <text x="1240" y="224" fill="#E2E8F0" font-size="12" font-weight="700" text-anchor="middle">Ask AI to Order</text>
+  <use href="#adminGear" x="1330" y="203" width="10" height="10"/>
+
+  <!-- ======================== SECTION HEADER: BURGERS ======================== -->
+  <!-- Admin: Settings > Menu Builder > Category name, description -->
+  <text x="28" y="278" fill="#E2E8F0" font-size="18" font-weight="700">Burgers</text>
+  <text x="120" y="278" fill="#64748B" font-size="13">8 items</text>
+
+  <!-- ======================== MENU ITEM GRID ======================== -->
+  <!-- All item data from: Settings > Menu Builder > Items -->
+  <!-- Row 1 -->
+
+  <!-- Item Card 1: Classic Burger -->
+  <!-- Admin: Settings > Menu Builder > Items > Classic Burger (name, price, desc, photo, badges, modifiers) -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="28" y="292" width="400" height="200"/>
+  </g>
+  <!-- Photo area -->
+  <rect x="28" y="292" width="400" height="96" rx="14" fill="#2A2000"/>
+  <rect x="28" y="348" width="400" height="40" fill="#2A2000"/>
+  <text x="228" y="352" font-size="52" text-anchor="middle">&#x1F354;</text>
+  <!-- Badge: Popular -->
+  <!-- Admin: Settings > Menu Builder > Items > Badges (auto or manual) -->
+  <g filter="url(#badgeShadow)">
+    <rect x="42" y="302" width="56" height="20" rx="5" fill="#22C55E"/>
+    <text x="70" y="316" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">Popular</text>
+  </g>
   <!-- Item info -->
-  <text x="48" y="432" fill="#1A1A1A" font-size="16" font-weight="700">Classic Burger</text>
-  <text x="48" y="452" fill="#6B7280" font-size="13">House-ground beef, lettuce, tomato, pickles</text>
-  <text x="48" y="472" fill="#F59E0B" font-size="16" font-weight="700">$12.00</text>
-  <!-- Add button -->
-  <rect x="360" y="460" width="84" height="32" rx="8" fill="#F59E0B"/>
-  <text x="402" y="480" fill="white" font-size="14" font-weight="700" text-anchor="middle">+ Add</text>
+  <text x="42" y="414" fill="#E2E8F0" font-size="15" font-weight="700">Classic Burger</text>
+  <text x="42" y="432" fill="#64748B" font-size="12">House-ground beef, lettuce, tomato, pickles</text>
+  <!-- Admin: Settings > Menu Builder > Items > Price -->
+  <text x="42" y="476" fill="#F59E0B" font-size="15" font-weight="700">$12.00</text>
+  <!-- Calorie info: Admin: Settings > Menu Builder > Items > Nutrition -->
+  <text x="100" y="476" fill="#475569" font-size="10">680 cal</text>
+  <!-- Add button (reused symbol) -->
+  <use href="#addBtn" x="330" y="458" width="88" height="34"/>
 
-  <!-- Item 2 - Double Smash -->
-  <rect x="478" y="308" width="428" height="180" rx="16" fill="white" stroke="#F3F4F6" stroke-width="1"/>
-  <rect x="478" y="308" width="428" height="100" rx="16" fill="#FEE2E2"/>
-  <rect x="478" y="368" width="428" height="40" fill="#FEE2E2"/>
-  <text x="692" y="370" font-size="60" text-anchor="middle">🍔</text>
-  <rect x="494" y="320" width="60" height="22" rx="6" fill="#EF4444"/>
-  <text x="524" y="335" fill="white" font-size="11" font-weight="700" text-anchor="middle">🔥 Spicy</text>
-  <text x="494" y="432" fill="#1A1A1A" font-size="16" font-weight="700">Double Smash Burger</text>
-  <text x="494" y="452" fill="#6B7280" font-size="13">2× smash patties, American cheese, special sauce</text>
-  <text x="494" y="472" fill="#F59E0B" font-size="16" font-weight="700">$16.00</text>
-  <rect x="806" y="460" width="84" height="32" rx="8" fill="#F59E0B"/>
-  <text x="848" y="480" fill="white" font-size="14" font-weight="700" text-anchor="middle">+ Add</text>
+  <!-- Item Card 2: Double Smash Burger -->
+  <!-- Admin: Settings > Menu Builder > Items > Double Smash Burger -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="448" y="292" width="400" height="200"/>
+  </g>
+  <rect x="448" y="292" width="400" height="96" rx="14" fill="#2A0A0A"/>
+  <rect x="448" y="348" width="400" height="40" fill="#2A0A0A"/>
+  <text x="648" y="352" font-size="52" text-anchor="middle">&#x1F354;</text>
+  <!-- Badge: Spicy -->
+  <g filter="url(#badgeShadow)">
+    <rect x="462" y="302" width="52" height="20" rx="5" fill="#EF4444"/>
+    <text x="488" y="316" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">Spicy</text>
+  </g>
+  <text x="462" y="414" fill="#E2E8F0" font-size="15" font-weight="700">Double Smash Burger</text>
+  <text x="462" y="432" fill="#64748B" font-size="12">2x smash patties, American cheese, special sauce</text>
+  <text x="462" y="476" fill="#F59E0B" font-size="15" font-weight="700">$16.00</text>
+  <text x="524" y="476" fill="#475569" font-size="10">920 cal</text>
+  <use href="#addBtn" x="750" y="458" width="88" height="34"/>
 
-  <!-- Item 3 - Vegan Burger -->
-  <rect x="924" y="308" width="428" height="180" rx="16" fill="white" stroke="#F3F4F6" stroke-width="1"/>
-  <rect x="924" y="308" width="428" height="100" rx="16" fill="#DCFCE7"/>
-  <rect x="924" y="368" width="428" height="40" fill="#DCFCE7"/>
-  <text x="1138" y="370" font-size="60" text-anchor="middle">🌱</text>
-  <rect x="940" y="320" width="52" height="22" rx="6" fill="#22C55E"/>
-  <text x="966" y="335" fill="white" font-size="11" font-weight="700" text-anchor="middle">Vegan</text>
-  <rect x="1000" y="320" width="52" height="22" rx="6" fill="#16A34A"/>
-  <text x="1026" y="335" fill="white" font-size="11" font-weight="700" text-anchor="middle">GF</text>
-  <text x="940" y="432" fill="#1A1A1A" font-size="16" font-weight="700">Impossible Burger</text>
-  <text x="940" y="452" fill="#6B7280" font-size="13">Plant-based patty, vegan cheese, avocado</text>
-  <text x="940" y="472" fill="#F59E0B" font-size="16" font-weight="700">$14.00</text>
-  <rect x="1252" y="460" width="84" height="32" rx="8" fill="#F59E0B"/>
-  <text x="1294" y="480" fill="white" font-size="14" font-weight="700" text-anchor="middle">+ Add</text>
+  <!-- Item Card 3: Impossible Burger -->
+  <!-- Admin: Settings > Menu Builder > Items > Impossible Burger -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="868" y="292" width="400" height="200"/>
+  </g>
+  <rect x="868" y="292" width="400" height="96" rx="14" fill="#0A2A0A"/>
+  <rect x="868" y="348" width="400" height="40" fill="#0A2A0A"/>
+  <text x="1068" y="352" font-size="52" text-anchor="middle">&#x1F331;</text>
+  <!-- Badge: Vegan -->
+  <g filter="url(#badgeShadow)">
+    <rect x="882" y="302" width="50" height="20" rx="5" fill="#22C55E"/>
+    <text x="907" y="316" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">Vegan</text>
+  </g>
+  <!-- Badge: GF -->
+  <g filter="url(#badgeShadow)">
+    <rect x="938" y="302" width="32" height="20" rx="5" fill="#16A34A"/>
+    <text x="954" y="316" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">GF</text>
+  </g>
+  <text x="882" y="414" fill="#E2E8F0" font-size="15" font-weight="700">Impossible Burger</text>
+  <text x="882" y="432" fill="#64748B" font-size="12">Plant-based patty, vegan cheese, avocado</text>
+  <text x="882" y="476" fill="#F59E0B" font-size="15" font-weight="700">$14.00</text>
+  <text x="944" y="476" fill="#475569" font-size="10">540 cal</text>
+  <use href="#addBtn" x="1170" y="458" width="88" height="34"/>
 
-  <!-- Second row of items -->
-  <!-- Item 4 - BBQ Bacon -->
-  <rect x="32" y="504" width="428" height="180" rx="16" fill="white" stroke="#F3F4F6" stroke-width="1"/>
-  <rect x="32" y="504" width="428" height="100" rx="16" fill="#FEF3C7"/>
-  <rect x="32" y="564" width="428" height="40" fill="#FEF3C7"/>
-  <text x="246" y="566" font-size="60" text-anchor="middle">🥓</text>
-  <text x="48" y="628" fill="#1A1A1A" font-size="16" font-weight="700">BBQ Bacon Burger</text>
-  <text x="48" y="648" fill="#6B7280" font-size="13">Beef patty, crispy bacon, BBQ sauce, onion rings</text>
-  <text x="48" y="668" fill="#F59E0B" font-size="16" font-weight="700">$15.00</text>
-  <rect x="360" y="656" width="84" height="32" rx="8" fill="#F59E0B"/>
-  <text x="402" y="676" fill="white" font-size="14" font-weight="700" text-anchor="middle">+ Add</text>
+  <!-- ======================== ROW 2 ======================== -->
 
-  <!-- Item 5 - Mushroom Swiss -->
-  <rect x="478" y="504" width="428" height="180" rx="16" fill="white" stroke="#F3F4F6" stroke-width="1"/>
-  <rect x="478" y="504" width="428" height="100" rx="16" fill="#F3F4F6"/>
-  <rect x="478" y="564" width="428" height="40" fill="#F3F4F6"/>
-  <text x="692" y="566" font-size="60" text-anchor="middle">🍄</text>
-  <text x="494" y="628" fill="#1A1A1A" font-size="16" font-weight="700">Mushroom Swiss</text>
-  <text x="494" y="648" fill="#6B7280" font-size="13">Beef patty, sautéed mushrooms, Swiss cheese</text>
-  <text x="494" y="668" fill="#F59E0B" font-size="16" font-weight="700">$13.50</text>
-  <rect x="806" y="656" width="84" height="32" rx="8" fill="#F59E0B"/>
-  <text x="848" y="676" fill="white" font-size="14" font-weight="700" text-anchor="middle">+ Add</text>
+  <!-- Item Card 4: BBQ Bacon Burger -->
+  <!-- Admin: Settings > Menu Builder > Items > BBQ Bacon Burger -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="28" y="508" width="400" height="200"/>
+  </g>
+  <rect x="28" y="508" width="400" height="96" rx="14" fill="#2A1800"/>
+  <rect x="28" y="564" width="400" height="40" fill="#2A1800"/>
+  <text x="228" y="568" font-size="52" text-anchor="middle">&#x1F953;</text>
+  <text x="42" y="630" fill="#E2E8F0" font-size="15" font-weight="700">BBQ Bacon Burger</text>
+  <text x="42" y="648" fill="#64748B" font-size="12">Beef patty, crispy bacon, BBQ sauce, onion rings</text>
+  <text x="42" y="692" fill="#F59E0B" font-size="15" font-weight="700">$15.00</text>
+  <text x="104" y="692" fill="#475569" font-size="10">810 cal</text>
+  <use href="#addBtn" x="330" y="674" width="88" height="34"/>
 
-  <!-- Item 6 - Kids Slider -->
-  <rect x="924" y="504" width="428" height="180" rx="16" fill="white" stroke="#F3F4F6" stroke-width="1"/>
-  <rect x="924" y="504" width="428" height="100" rx="16" fill="#EFF6FF"/>
-  <rect x="924" y="564" width="428" height="40" fill="#EFF6FF"/>
-  <text x="1138" y="566" font-size="60" text-anchor="middle">🍔</text>
-  <rect x="940" y="516" width="56" height="22" rx="6" fill="#3B82F6"/>
-  <text x="968" y="531" fill="white" font-size="11" font-weight="700" text-anchor="middle">Kids</text>
-  <text x="940" y="628" fill="#1A1A1A" font-size="16" font-weight="700">Kids Slider (2-pack)</text>
-  <text x="940" y="648" fill="#6B7280" font-size="13">Mini beef sliders with ketchup and mild pickles</text>
-  <text x="940" y="668" fill="#F59E0B" font-size="16" font-weight="700">$8.00</text>
-  <rect x="1252" y="656" width="84" height="32" rx="8" fill="#F59E0B"/>
-  <text x="1294" y="676" fill="white" font-size="14" font-weight="700" text-anchor="middle">+ Add</text>
+  <!-- Item Card 5: Mushroom Swiss -->
+  <!-- Admin: Settings > Menu Builder > Items > Mushroom Swiss -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="448" y="508" width="400" height="200"/>
+  </g>
+  <rect x="448" y="508" width="400" height="96" rx="14" fill="#1A1A2E"/>
+  <rect x="448" y="564" width="400" height="40" fill="#1A1A2E"/>
+  <text x="648" y="568" font-size="52" text-anchor="middle">&#x1F344;</text>
+  <text x="462" y="630" fill="#E2E8F0" font-size="15" font-weight="700">Mushroom Swiss</text>
+  <text x="462" y="648" fill="#64748B" font-size="12">Beef patty, sauteed mushrooms, Swiss cheese</text>
+  <text x="462" y="692" fill="#F59E0B" font-size="15" font-weight="700">$13.50</text>
+  <text x="524" y="692" fill="#475569" font-size="10">740 cal</text>
+  <!-- This item is already in cart - show qty stepper instead of Add -->
+  <use href="#qtyStepper" x="738" y="674" width="100" height="34"/>
 
-  <!-- Floating cart summary -->
-  <rect x="32" y="716" width="1376" height="76" rx="16" fill="#1A1A1A"/>
-  <text x="60" y="748" fill="#F59E0B" font-size="20">🛒</text>
-  <text x="90" y="744" fill="white" font-size="15" font-weight="700">3 items in cart</text>
-  <text x="90" y="764" fill="#9CA3AF" font-size="13">Classic Burger, Large Fries, Pepsi</text>
-  <text x="900" y="756" fill="#9CA3AF" font-size="13" text-anchor="middle">Estimated wait: 20 min</text>
-  <rect x="1200" y="726" width="188" height="56" rx="10" fill="#F59E0B"/>
-  <text x="1294" y="748" fill="white" font-size="15" font-weight="700" text-anchor="middle">View Cart</text>
-  <text x="1294" y="768" fill="#FEF3C7" font-size="13" text-anchor="middle">$19.50 →</text>
+  <!-- Item Card 6: Kids Slider (2-pack) -->
+  <!-- Admin: Settings > Menu Builder > Items > Kids Slider -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="868" y="508" width="400" height="200"/>
+  </g>
+  <rect x="868" y="508" width="400" height="96" rx="14" fill="#0A1428"/>
+  <rect x="868" y="564" width="400" height="40" fill="#0A1428"/>
+  <text x="1068" y="568" font-size="52" text-anchor="middle">&#x1F354;</text>
+  <!-- Badge: Kids -->
+  <g filter="url(#badgeShadow)">
+    <rect x="882" y="518" width="42" height="20" rx="5" fill="#60A5FA"/>
+    <text x="903" y="532" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">Kids</text>
+  </g>
+  <text x="882" y="630" fill="#E2E8F0" font-size="15" font-weight="700">Kids Slider (2-pack)</text>
+  <text x="882" y="648" fill="#64748B" font-size="12">Mini beef sliders with ketchup and mild pickles</text>
+  <text x="882" y="692" fill="#F59E0B" font-size="15" font-weight="700">$8.00</text>
+  <text x="938" y="692" fill="#475569" font-size="10">380 cal</text>
+  <use href="#addBtn" x="1170" y="674" width="88" height="34"/>
 
-  <!-- Screen label -->
-  <text x="720" y="858" fill="#D1D5DB" font-size="11" text-anchor="middle">Synalux POS — Online Ordering (F23 · Customer Menu View · 1440×900)</text>
+  <!-- ======================== ROW 3 (partial, scrolled area) ======================== -->
+
+  <!-- Item Card 7: Truffle Burger -->
+  <!-- Admin: Settings > Menu Builder > Items > Truffle Burger -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="28" y="724" width="400" height="200"/>
+  </g>
+  <rect x="28" y="724" width="400" height="96" rx="14" fill="#1A1A00"/>
+  <rect x="28" y="780" width="400" height="40" fill="#1A1A00"/>
+  <text x="228" y="784" font-size="52" text-anchor="middle">&#x1F354;</text>
+  <!-- Badge: New -->
+  <g filter="url(#badgeShadow)">
+    <rect x="42" y="734" width="38" height="20" rx="5" fill="#F59E0B"/>
+    <text x="61" y="748" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">New</text>
+  </g>
+  <text x="42" y="846" fill="#E2E8F0" font-size="15" font-weight="700">Truffle Burger</text>
+  <text x="42" y="864" fill="#64748B" font-size="12">Wagyu patty, truffle aioli, gruyere, arugula</text>
+  <text x="42" y="908" fill="#F59E0B" font-size="15" font-weight="700">$22.00</text>
+  <text x="108" y="908" fill="#475569" font-size="10">760 cal</text>
+  <use href="#addBtn" x="330" y="890" width="88" height="34"/>
+
+  <!-- Item Card 8: Jalape&#xF1;o Burger -->
+  <!-- Admin: Settings > Menu Builder > Items > Jalapeno Burger -->
+  <g filter="url(#cardShadow)">
+    <use href="#menuCard" x="448" y="724" width="400" height="200"/>
+  </g>
+  <rect x="448" y="724" width="400" height="96" rx="14" fill="#2A0A0A"/>
+  <rect x="448" y="780" width="400" height="40" fill="#2A0A0A"/>
+  <text x="648" y="784" font-size="52" text-anchor="middle">&#x1F336;&#xFE0F;</text>
+  <!-- Badge: Spicy -->
+  <g filter="url(#badgeShadow)">
+    <rect x="462" y="734" width="52" height="20" rx="5" fill="#EF4444"/>
+    <text x="488" y="748" fill="#E2E8F0" font-size="10" font-weight="700" text-anchor="middle">Spicy</text>
+  </g>
+  <text x="462" y="846" fill="#E2E8F0" font-size="15" font-weight="700">Jalapeno Burger</text>
+  <text x="462" y="864" fill="#64748B" font-size="12">Pepper jack, pickled jalapenos, chipotle mayo</text>
+  <text x="462" y="908" fill="#F59E0B" font-size="15" font-weight="700">$14.50</text>
+  <text x="528" y="908" fill="#475569" font-size="10">720 cal</text>
+  <use href="#addBtn" x="750" y="890" width="88" height="34"/>
+
+  <!-- ======================== FLOATING CART BAR ======================== -->
+  <!-- Admin: Settings > Online Ordering > Cart > Min order, estimated time, promo display -->
+  <g filter="url(#floatShadow)">
+    <rect x="28" y="940" width="1310" height="68" rx="14" fill="url(#cartBarGrad)" stroke="#2A2E45" stroke-width="1"/>
+  </g>
+
+  <!-- Cart icon in bar -->
+  <use href="#cartIcon" x="48" y="962" width="22" height="22"/>
+
+  <!-- Cart summary text -->
+  <text x="80" y="968" fill="#E2E8F0" font-size="14" font-weight="700">3 items in cart</text>
+  <!-- Admin: Settings > Menu Builder > Item names populate cart list -->
+  <text x="80" y="988" fill="#64748B" font-size="12">Classic Burger, Mushroom Swiss, Pepsi</text>
+
+  <!-- Estimated wait -->
+  <!-- Admin: Settings > Online Ordering > Estimated Wait Time -->
+  <text x="680" y="978" fill="#64748B" font-size="12" text-anchor="middle">Estimated wait: 20 min</text>
+
+  <!-- Checkout / View Cart button -->
+  <rect x="1120" y="950" width="196" height="48" rx="10" fill="url(#amberBtnGrad)"/>
+  <text x="1218" y="970" fill="#E2E8F0" font-size="14" font-weight="700" text-anchor="middle">View Cart</text>
+  <!-- Admin: Settings > Online Ordering > Tax, Service Charges applied at checkout -->
+  <text x="1218" y="990" fill="#FEF3C7" font-size="12" text-anchor="middle">$25.50 &#x2192;</text>
+
+  <!-- ======================== SCREEN LABEL ======================== -->
+  <text x="683" y="1018" fill="#2A2E45" font-size="10" text-anchor="middle">Synalux POS -- Online Ordering (F23 - Customer Menu View - 1366x1024)</text>
+
 </svg>

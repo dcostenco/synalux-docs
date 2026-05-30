@@ -1,34 +1,152 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+<svg role="img" aria-labelledby="title-ipad_wallet_pay-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
+       Synalux POS — Apple/Google Wallet Payment + NFC Tap
+       Design System: Dark theme, amber/green/blue/red accents
+       Admin config: Settings > Payments > Mobile Wallets
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <title id="title-ipad_wallet_pay-svg">Synalux POS — wallet pay</title>
+  <desc>Synalux POS mockup screen for wallet pay. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- ── Shared Gradients ── -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E1020"/>
+      <stop offset="100%" stop-color="#0C0E1A"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FBBF24"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+    <linearGradient id="nfcGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="venmoGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#008CFF"/>
+      <stop offset="100%" stop-color="#3BA0FF"/>
+    </linearGradient>
+    <linearGradient id="cashappGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D632"/>
+      <stop offset="100%" stop-color="#00F040"/>
+    </linearGradient>
+
+    <!-- ── Drop Shadow Filters ── -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="nfcGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#8B5CF6" flood-opacity="0.35"/>
+    </filter>
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#22C55E" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- ── Reusable Symbols ── -->
+
+    <!-- Admin Gear icon (configurability affordance) -->
+    <symbol id="adminGear" overflow="visible">
+      <circle cx="0" cy="0" r="7" fill="#2A2E45"/>
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#64748B" stroke-width="1"/>
+      <line x1="-2" y1="-6" x2="-2" y2="-8" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="2" y1="-6" x2="2" y2="-8" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="6" y1="-2" x2="8" y2="-2" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="6" y1="2" x2="8" y2="2" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="-6" y1="-2" x2="-8" y2="-2" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="-6" y1="2" x2="-8" y2="2" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="-2" y1="6" x2="-2" y2="8" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+      <line x1="2" y1="6" x2="2" y2="8" stroke="#64748B" stroke-width="1" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Toggle: ON -->
+    <symbol id="toggleOn" overflow="visible">
+      <rect x="0" y="0" width="36" height="18" rx="9" fill="#22C55E"/>
+      <circle cx="28" cy="9" r="7" fill="#F1F5F9"/>
+    </symbol>
+
+    <!-- Toggle: OFF -->
+    <symbol id="toggleOff" overflow="visible">
+      <rect x="0" y="0" width="36" height="18" rx="9" fill="#2A2E45"/>
+      <circle cx="8" cy="9" r="7" fill="#64748B"/>
+    </symbol>
+
+    <!-- Checklist checkmark -->
+    <symbol id="checkmark" overflow="visible">
+      <rect x="0" y="0" width="18" height="18" rx="4" fill="#22C55E" opacity="0.2"/>
+      <text x="9" y="14" fill="#22C55E" font-size="12" text-anchor="middle">&#x2713;</text>
+    </symbol>
+
+    <!-- QR code block (reusable mini grid cell group) -->
+    <symbol id="qrCell" overflow="visible">
+      <rect x="0" y="0" width="8" height="8"/>
+    </symbol>
+
+    <!-- Step number circle -->
+    <symbol id="stepCircle" overflow="visible">
+      <circle cx="0" cy="0" r="12" fill="#8B5CF6" opacity="0.2"/>
+    </symbol>
+
+    <!-- Use case card icon box -->
+    <symbol id="useCaseIcon" overflow="visible">
+      <rect x="0" y="0" width="32" height="32" rx="6" opacity="0.15"/>
+    </symbol>
+
+    <!-- Payment method row (alternating bg) -->
+    <symbol id="methodRowLight" overflow="visible">
+      <rect x="0" y="0" width="396" height="36" rx="6" fill="#161930"/>
+    </symbol>
+    <symbol id="methodRowDark" overflow="visible">
+      <rect x="0" y="0" width="396" height="36" rx="6" fill="#0C0E1A"/>
+    </symbol>
+
+    <!-- Legend color swatch -->
+    <symbol id="legendSwatch" overflow="visible">
+      <rect x="0" y="0" width="10" height="10" rx="2"/>
+    </symbol>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════════════
        BACKGROUND
-       ═══════════════════════════════════════════════════════════ -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
 
   <!-- Panel dividers -->
-  <rect x="420" y="0" width="1" height="1024" fill="#2D3148"/>
-  <rect x="946" y="0" width="1" height="1024" fill="#2D3148"/>
+  <rect x="420" y="0" width="1" height="1024" fill="#1E2235"/>
+  <rect x="946" y="0" width="1" height="1024" fill="#1E2235"/>
 
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
        LEFT PANEL — Tap to Pay on iPhone (x=0, w=420)
-       ═══════════════════════════════════════════════════════════ -->
+       Admin: Settings > Payments > Mobile Wallets > Tap to Pay
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- Header card -->
-  <rect x="12" y="12" width="396" height="68" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="12" y="12" width="396" height="68" rx="10" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
   <text x="24" y="38" fill="#F1F5F9" font-size="17" font-weight="700">Tap to Pay on iPhone</text>
   <text x="24" y="58" fill="#94A3B8" font-size="12">No hardware needed</text>
   <!-- NFC badge -->
   <rect x="340" y="22" width="56" height="24" rx="6" fill="#8B5CF6" opacity="0.18"/>
   <text x="368" y="39" fill="#8B5CF6" font-size="10" font-weight="700" text-anchor="middle">NFC</text>
+  <!-- Admin gear — enable/disable Tap to Pay -->
+  <!-- Admin: Settings > Payments > Mobile Wallets > Tap to Pay > Enable -->
+  <use href="#adminGear" x="396" y="34"/>
 
-  <!-- ─── iPhone Outline ─── -->
-  <rect x="115" y="92" width="190" height="360" rx="24" fill="#0F1117" stroke="#64748B" stroke-width="2"/>
-  <!-- Dynamic Island notch -->
-  <rect x="180" y="100" width="60" height="18" rx="9" fill="#1A1D2E"/>
+  <!-- ─── iPhone Outline with NFC Visualization ─── -->
+  <rect x="115" y="92" width="190" height="360" rx="24" fill="#0C0E1A" stroke="#64748B" stroke-width="2"/>
+  <!-- Dynamic Island -->
+  <rect x="180" y="100" width="60" height="18" rx="9" fill="#161930"/>
   <!-- Screen area -->
-  <rect x="123" y="124" width="174" height="310" rx="4" fill="#1A1D2E"/>
+  <rect x="123" y="124" width="174" height="310" rx="4" fill="#161930"/>
 
-  <!-- Synalux POS logo area on phone -->
+  <!-- Synalux POS branding on phone -->
   <rect x="155" y="134" width="110" height="22" rx="4" fill="#F59E0B" opacity="0.15"/>
   <text x="210" y="150" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">SYNALUX POS</text>
 
@@ -36,110 +154,107 @@
   <text x="210" y="190" fill="#F1F5F9" font-size="28" font-weight="800" text-anchor="middle">$47.82</text>
   <text x="210" y="208" fill="#94A3B8" font-size="10" text-anchor="middle">Table 7 - Order #4821</text>
 
-  <!-- NFC wave concentric arcs -->
-  <!-- Inner arc -->
-  <path d="M196,248 a14,14 0 0,1 28,0" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
-  <!-- Middle arc -->
-  <path d="M188,248 a22,22 0 0,1 44,0" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-  <!-- Outer arc -->
-  <path d="M180,248 a30,30 0 0,1 60,0" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <!-- NFC base dot -->
-  <circle cx="210" cy="252" r="4" fill="#8B5CF6"/>
+  <!-- NFC wave concentric arcs (with glow filter) -->
+  <g filter="url(#nfcGlow)">
+    <path d="M196,248 a14,14 0 0,1 28,0" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M188,248 a22,22 0 0,1 44,0" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <path d="M180,248 a30,30 0 0,1 60,0" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="210" cy="252" r="4" fill="#8B5CF6"/>
+  </g>
 
   <!-- Hold card text -->
   <text x="210" y="285" fill="#F1F5F9" font-size="12" font-weight="600" text-anchor="middle">Hold card near iPhone</text>
 
   <!-- Accepted methods on phone -->
-  <rect x="137" y="302" width="146" height="20" rx="4" fill="#0F1117"/>
-  <text x="210" y="316" fill="#64748B" font-size="8.5" text-anchor="middle">Apple Pay  ·  Google Pay  ·  Contactless</text>
+  <rect x="137" y="302" width="146" height="20" rx="4" fill="#0C0E1A"/>
+  <text x="210" y="316" fill="#64748B" font-size="8.5" text-anchor="middle">Apple Pay  .  Google Pay  .  Contactless</text>
 
-  <!-- Animated ring indicator on phone -->
-  <circle cx="210" cy="350" r="16" fill="none" stroke="#10B981" stroke-width="2" opacity="0.3">
+  <!-- Animated ring indicator -->
+  <circle cx="210" cy="350" r="16" fill="none" stroke="#22C55E" stroke-width="2" opacity="0.3">
     <animate attributeName="r" values="10;16" dur="1.5s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.6;0.1" dur="1.5s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="210" cy="350" r="5" fill="#10B981"/>
-  <text x="210" y="380" fill="#10B981" font-size="9" font-weight="600" text-anchor="middle">TAP WHEN READY</text>
+  <circle cx="210" cy="350" r="5" fill="#22C55E"/>
+  <text x="210" y="380" fill="#22C55E" font-size="9" font-weight="600" text-anchor="middle">TAP WHEN READY</text>
 
   <!-- Bottom bar on phone -->
   <rect x="185" y="418" width="50" height="4" rx="2" fill="#64748B"/>
 
-  <!-- Ready status -->
-  <rect x="12" y="462" width="396" height="32" rx="8" fill="#10B981" opacity="0.1" stroke="#10B981" stroke-width="1" stroke-opacity="0.3"/>
-  <circle cx="30" cy="478" r="5" fill="#10B981">
+  <!-- Ready status bar -->
+  <!-- Admin: Settings > Payments > Mobile Wallets > Stripe Connection -->
+  <rect x="12" y="462" width="396" height="32" rx="8" fill="#22C55E" opacity="0.1" stroke="#22C55E" stroke-width="1" stroke-opacity="0.3" filter="url(#greenGlow)"/>
+  <circle cx="30" cy="478" r="5" fill="#22C55E">
     <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <text x="42" y="482" fill="#10B981" font-size="13" font-weight="600">Ready to accept</text>
+  <text x="42" y="482" fill="#22C55E" font-size="13" font-weight="600">Ready to accept</text>
   <text x="396" y="482" fill="#64748B" font-size="11" text-anchor="end">Stripe Connected</text>
 
   <!-- ─── Setup Checklist ─── -->
+  <!-- Admin: Settings > Payments > Mobile Wallets > Requirements -->
   <text x="24" y="516" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">SETUP CHECKLIST</text>
 
-  <rect x="12" y="524" width="396" height="108" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <!-- Check 1 -->
-  <rect x="24" y="534" width="18" height="18" rx="4" fill="#10B981" opacity="0.2"/>
-  <text x="33" y="548" fill="#10B981" font-size="12" text-anchor="middle">&#x2713;</text>
+  <rect x="12" y="524" width="396" height="108" rx="8" fill="#161930" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#checkmark" x="24" y="534"/>
   <text x="50" y="548" fill="#F1F5F9" font-size="12">iPhone XS or later</text>
-  <!-- Check 2 -->
-  <rect x="24" y="558" width="18" height="18" rx="4" fill="#10B981" opacity="0.2"/>
-  <text x="33" y="572" fill="#10B981" font-size="12" text-anchor="middle">&#x2713;</text>
+  <use href="#checkmark" x="24" y="558"/>
   <text x="50" y="572" fill="#F1F5F9" font-size="12">iOS 16.4+</text>
-  <!-- Check 3 -->
-  <rect x="24" y="582" width="18" height="18" rx="4" fill="#10B981" opacity="0.2"/>
-  <text x="33" y="596" fill="#10B981" font-size="12" text-anchor="middle">&#x2713;</text>
+  <use href="#checkmark" x="24" y="582"/>
   <text x="50" y="596" fill="#F1F5F9" font-size="12">Stripe account linked</text>
-  <!-- Check 4 -->
-  <rect x="24" y="606" width="18" height="18" rx="4" fill="#10B981" opacity="0.2"/>
-  <text x="33" y="620" fill="#10B981" font-size="12" text-anchor="middle">&#x2713;</text>
+  <use href="#checkmark" x="24" y="606"/>
   <text x="50" y="620" fill="#F1F5F9" font-size="12">Passcode enabled</text>
 
   <!-- ─── Use Case Cards ─── -->
   <text x="24" y="660" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">USE CASES</text>
 
   <!-- Tableside -->
-  <rect x="12" y="670" width="396" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <rect x="24" y="680" width="32" height="32" rx="6" fill="#F59E0B" opacity="0.15"/>
+  <rect x="12" y="670" width="396" height="52" rx="8" fill="#161930" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#useCaseIcon" x="24" y="680" fill="#F59E0B"/>
   <text x="40" y="702" fill="#F59E0B" font-size="16" text-anchor="middle">&#x1F37D;</text>
   <text x="66" y="694" fill="#F1F5F9" font-size="13" font-weight="600">Tableside</text>
   <text x="66" y="710" fill="#94A3B8" font-size="11">Server brings iPhone to table</text>
 
   <!-- Pop-up -->
-  <rect x="12" y="728" width="396" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <rect x="24" y="738" width="32" height="32" rx="6" fill="#8B5CF6" opacity="0.15"/>
+  <rect x="12" y="728" width="396" height="52" rx="8" fill="#161930" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#useCaseIcon" x="24" y="738" fill="#8B5CF6"/>
   <text x="40" y="760" fill="#8B5CF6" font-size="16" text-anchor="middle">&#x1F3AA;</text>
   <text x="66" y="752" fill="#F1F5F9" font-size="13" font-weight="600">Pop-up</text>
   <text x="66" y="768" fill="#94A3B8" font-size="11">No hardware needed for events/catering</text>
 
   <!-- Backup -->
-  <rect x="12" y="786" width="396" height="52" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <rect x="24" y="796" width="32" height="32" rx="6" fill="#10B981" opacity="0.15"/>
-  <text x="40" y="818" fill="#10B981" font-size="16" text-anchor="middle">&#x1F6E1;</text>
+  <rect x="12" y="786" width="396" height="52" rx="8" fill="#161930" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
+  <use href="#useCaseIcon" x="24" y="796" fill="#22C55E"/>
+  <text x="40" y="818" fill="#22C55E" font-size="16" text-anchor="middle">&#x1F6E1;</text>
   <text x="66" y="810" fill="#F1F5F9" font-size="13" font-weight="600">Backup</text>
   <text x="66" y="826" fill="#94A3B8" font-size="11">Works when terminal is down</text>
 
   <!-- Bottom note -->
-  <rect x="12" y="848" width="396" height="32" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="210" y="869" fill="#64748B" font-size="10.5" text-anchor="middle">No additional hardware cost  ·  Same Stripe processing rate</text>
+  <rect x="12" y="848" width="396" height="32" rx="6" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
+  <!-- Admin: Settings > Payments > Processing Rates -->
+  <text x="210" y="869" fill="#64748B" font-size="10.5" text-anchor="middle">No additional hardware cost  .  Same Stripe processing rate</text>
 
-
-  <!-- ═══════════════════════════════════════════════════════════
-       CENTER PANEL — Digital Wallet QR Payments (x=420, w=526)
-       ═══════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       CENTER PANEL — QR Wallet Payments (x=420, w=526)
+       Admin: Settings > Payments > Mobile Wallets > QR Wallets
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- Header card -->
-  <rect x="432" y="12" width="502" height="52" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="432" y="12" width="502" height="52" rx="10" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
   <text x="444" y="38" fill="#F1F5F9" font-size="17" font-weight="700">QR Wallet Payments</text>
   <text x="444" y="52" fill="#94A3B8" font-size="11">Accept Venmo, PayPal, and Cash App via QR codes</text>
+  <!-- Admin gear — global QR wallet toggle -->
+  <!-- Admin: Settings > Payments > Mobile Wallets > QR Wallets > Enable -->
+  <use href="#adminGear" x="920" y="38"/>
 
   <!-- ─── VENMO Card ─── -->
-  <rect x="432" y="74" width="502" height="194" rx="10" fill="#1A1D2E" stroke="#008CFF" stroke-width="1.5" stroke-opacity="0.4"/>
-  <!-- Venmo accent bar -->
-  <rect x="432" y="74" width="502" height="4" rx="2" fill="#008CFF" opacity="0.6"/>
+  <!-- Admin: Settings > Payments > Mobile Wallets > Venmo > Enable/API Key -->
+  <rect x="432" y="74" width="502" height="194" rx="10" fill="url(#cardGrad)" stroke="#008CFF" stroke-width="1.5" stroke-opacity="0.4" filter="url(#cardShadow)"/>
+  <rect x="432" y="74" width="502" height="4" rx="2" fill="url(#venmoGrad)" opacity="0.6"/>
 
   <!-- Venmo header -->
   <rect x="444" y="86" width="66" height="24" rx="5" fill="#008CFF" opacity="0.18"/>
   <text x="477" y="103" fill="#008CFF" font-size="13" font-weight="800" text-anchor="middle">venmo</text>
   <text x="520" y="103" fill="#F1F5F9" font-size="12" font-weight="600">Scan to Pay</text>
+  <use href="#adminGear" x="810" y="98"/>
   <!-- Status -->
   <rect x="826" y="86" width="100" height="24" rx="5" fill="#F59E0B" opacity="0.12"/>
   <circle cx="840" cy="98" r="4" fill="#F59E0B">
@@ -147,42 +262,31 @@
   </circle>
   <text x="850" y="103" fill="#F59E0B" font-size="10" font-weight="600">Waiting for scan...</text>
 
-  <!-- Venmo QR code placeholder -->
-  <rect x="444" y="118" width="130" height="130" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <!-- QR grid pattern -->
+  <!-- Venmo QR code -->
+  <rect x="444" y="118" width="130" height="130" rx="8" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
   <g fill="#008CFF" opacity="0.7">
-    <!-- Row 1 -->
-    <rect x="454" y="128" width="10" height="10"/><rect x="466" y="128" width="10" height="10"/><rect x="478" y="128" width="10" height="10"/>
-    <rect x="514" y="128" width="10" height="10"/><rect x="538" y="128" width="10" height="10"/><rect x="550" y="128" width="10" height="10"/><rect x="562" y="128" width="10" height="10"/>
-    <!-- Row 2 -->
-    <rect x="454" y="140" width="10" height="10"/><rect x="478" y="140" width="10" height="10"/>
-    <rect x="502" y="140" width="10" height="10"/><rect x="526" y="140" width="10" height="10"/>
-    <rect x="538" y="140" width="10" height="10"/><rect x="562" y="140" width="10" height="10"/>
-    <!-- Row 3 -->
-    <rect x="454" y="152" width="10" height="10"/><rect x="466" y="152" width="10" height="10"/><rect x="478" y="152" width="10" height="10"/>
-    <rect x="502" y="152" width="10" height="10"/>
-    <rect x="538" y="152" width="10" height="10"/><rect x="550" y="152" width="10" height="10"/><rect x="562" y="152" width="10" height="10"/>
-    <!-- Row 4 -->
-    <rect x="490" y="164" width="10" height="10"/><rect x="514" y="164" width="10" height="10"/><rect x="526" y="164" width="10" height="10"/>
-    <!-- Row 5 -->
-    <rect x="454" y="176" width="10" height="10"/><rect x="466" y="176" width="10" height="10"/>
-    <rect x="490" y="176" width="10" height="10"/><rect x="514" y="176" width="10" height="10"/>
-    <rect x="538" y="176" width="10" height="10"/><rect x="562" y="176" width="10" height="10"/>
-    <!-- Row 6 -->
-    <rect x="454" y="188" width="10" height="10"/><rect x="478" y="188" width="10" height="10"/>
-    <rect x="502" y="188" width="10" height="10"/><rect x="526" y="188" width="10" height="10"/><rect x="550" y="188" width="10" height="10"/>
-    <!-- Row 7 -->
-    <rect x="454" y="200" width="10" height="10"/><rect x="466" y="200" width="10" height="10"/><rect x="478" y="200" width="10" height="10"/>
-    <rect x="502" y="200" width="10" height="10"/><rect x="514" y="200" width="10" height="10"/>
-    <rect x="538" y="200" width="10" height="10"/><rect x="550" y="200" width="10" height="10"/><rect x="562" y="200" width="10" height="10"/>
-    <!-- Row 8 -->
-    <rect x="454" y="212" width="10" height="10"/><rect x="478" y="212" width="10" height="10"/>
-    <rect x="502" y="212" width="10" height="10"/>
-    <rect x="538" y="212" width="10" height="10"/><rect x="562" y="212" width="10" height="10"/>
-    <!-- Row 9 -->
-    <rect x="454" y="224" width="10" height="10"/><rect x="466" y="224" width="10" height="10"/><rect x="478" y="224" width="10" height="10"/>
-    <rect x="514" y="224" width="10" height="10"/><rect x="526" y="224" width="10" height="10"/>
-    <rect x="538" y="224" width="10" height="10"/><rect x="550" y="224" width="10" height="10"/><rect x="562" y="224" width="10" height="10"/>
+    <use href="#qrCell" x="454" y="128"/><use href="#qrCell" x="466" y="128"/><use href="#qrCell" x="478" y="128"/>
+    <use href="#qrCell" x="514" y="128"/><use href="#qrCell" x="538" y="128"/><use href="#qrCell" x="550" y="128"/><use href="#qrCell" x="562" y="128"/>
+    <use href="#qrCell" x="454" y="140"/><use href="#qrCell" x="478" y="140"/>
+    <use href="#qrCell" x="502" y="140"/><use href="#qrCell" x="526" y="140"/><use href="#qrCell" x="538" y="140"/><use href="#qrCell" x="562" y="140"/>
+    <use href="#qrCell" x="454" y="152"/><use href="#qrCell" x="466" y="152"/><use href="#qrCell" x="478" y="152"/>
+    <use href="#qrCell" x="502" y="152"/>
+    <use href="#qrCell" x="538" y="152"/><use href="#qrCell" x="550" y="152"/><use href="#qrCell" x="562" y="152"/>
+    <use href="#qrCell" x="490" y="164"/><use href="#qrCell" x="514" y="164"/><use href="#qrCell" x="526" y="164"/>
+    <use href="#qrCell" x="454" y="176"/><use href="#qrCell" x="466" y="176"/>
+    <use href="#qrCell" x="490" y="176"/><use href="#qrCell" x="514" y="176"/>
+    <use href="#qrCell" x="538" y="176"/><use href="#qrCell" x="562" y="176"/>
+    <use href="#qrCell" x="454" y="188"/><use href="#qrCell" x="478" y="188"/>
+    <use href="#qrCell" x="502" y="188"/><use href="#qrCell" x="526" y="188"/><use href="#qrCell" x="550" y="188"/>
+    <use href="#qrCell" x="454" y="200"/><use href="#qrCell" x="466" y="200"/><use href="#qrCell" x="478" y="200"/>
+    <use href="#qrCell" x="502" y="200"/><use href="#qrCell" x="514" y="200"/>
+    <use href="#qrCell" x="538" y="200"/><use href="#qrCell" x="550" y="200"/><use href="#qrCell" x="562" y="200"/>
+    <use href="#qrCell" x="454" y="212"/><use href="#qrCell" x="478" y="212"/>
+    <use href="#qrCell" x="502" y="212"/>
+    <use href="#qrCell" x="538" y="212"/><use href="#qrCell" x="562" y="212"/>
+    <use href="#qrCell" x="454" y="224"/><use href="#qrCell" x="466" y="224"/><use href="#qrCell" x="478" y="224"/>
+    <use href="#qrCell" x="514" y="224"/><use href="#qrCell" x="526" y="224"/>
+    <use href="#qrCell" x="538" y="224"/><use href="#qrCell" x="550" y="224"/><use href="#qrCell" x="562" y="224"/>
   </g>
 
   <!-- Venmo details -->
@@ -191,275 +295,269 @@
   <text x="590" y="180" fill="#94A3B8" font-size="11">Table 7 - Dine-in</text>
   <text x="590" y="200" fill="#64748B" font-size="10">Scan with Venmo app to pay</text>
 
-  <!-- Timer -->
+  <!-- Timer — admin: Settings > Payments > Mobile Wallets > QR Expiry -->
   <rect x="590" y="212" width="120" height="22" rx="4" fill="#F59E0B" opacity="0.1"/>
   <text x="600" y="228" fill="#F59E0B" font-size="11" font-weight="600">Expires in 4:32</text>
+  <use href="#adminGear" x="724" y="223"/>
 
   <!-- ─── PAYPAL Card ─── -->
-  <rect x="432" y="278" width="502" height="170" rx="10" fill="#1A1D2E" stroke="#003087" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Admin: Settings > Payments > Mobile Wallets > PayPal > Enable/Client ID -->
+  <rect x="432" y="278" width="502" height="170" rx="10" fill="url(#cardGrad)" stroke="#003087" stroke-width="1.5" stroke-opacity="0.4" filter="url(#cardShadow)"/>
   <rect x="432" y="278" width="502" height="4" rx="2" fill="#003087" opacity="0.6"/>
 
-  <!-- PayPal header -->
   <rect x="444" y="290" width="66" height="24" rx="5" fill="#003087" opacity="0.25"/>
   <text x="477" y="307" fill="#169BD7" font-size="13" font-weight="800" text-anchor="middle">PayPal</text>
   <text x="520" y="307" fill="#F1F5F9" font-size="12" font-weight="600">Scan to Pay</text>
+  <use href="#adminGear" x="810" y="302"/>
 
   <!-- PayPal QR -->
-  <rect x="444" y="322" width="110" height="110" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="444" y="322" width="110" height="110" rx="8" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
   <g fill="#003087" opacity="0.6">
-    <rect x="454" y="332" width="8" height="8"/><rect x="464" y="332" width="8" height="8"/><rect x="474" y="332" width="8" height="8"/>
-    <rect x="504" y="332" width="8" height="8"/><rect x="524" y="332" width="8" height="8"/><rect x="534" y="332" width="8" height="8"/><rect x="544" y="332" width="8" height="8"/>
-    <rect x="454" y="342" width="8" height="8"/><rect x="474" y="342" width="8" height="8"/>
-    <rect x="494" y="342" width="8" height="8"/><rect x="514" y="342" width="8" height="8"/><rect x="544" y="342" width="8" height="8"/>
-    <rect x="454" y="352" width="8" height="8"/><rect x="464" y="352" width="8" height="8"/><rect x="474" y="352" width="8" height="8"/>
-    <rect x="494" y="352" width="8" height="8"/><rect x="524" y="352" width="8" height="8"/><rect x="534" y="352" width="8" height="8"/><rect x="544" y="352" width="8" height="8"/>
-    <rect x="484" y="362" width="8" height="8"/><rect x="504" y="362" width="8" height="8"/><rect x="514" y="362" width="8" height="8"/>
-    <rect x="454" y="372" width="8" height="8"/><rect x="464" y="372" width="8" height="8"/>
-    <rect x="484" y="372" width="8" height="8"/><rect x="504" y="372" width="8" height="8"/><rect x="534" y="372" width="8" height="8"/><rect x="544" y="372" width="8" height="8"/>
-    <rect x="454" y="382" width="8" height="8"/><rect x="474" y="382" width="8" height="8"/>
-    <rect x="494" y="382" width="8" height="8"/><rect x="524" y="382" width="8" height="8"/><rect x="544" y="382" width="8" height="8"/>
-    <rect x="454" y="392" width="8" height="8"/><rect x="464" y="392" width="8" height="8"/><rect x="474" y="392" width="8" height="8"/>
-    <rect x="504" y="392" width="8" height="8"/><rect x="514" y="392" width="8" height="8"/>
-    <rect x="534" y="392" width="8" height="8"/><rect x="544" y="392" width="8" height="8"/>
-    <rect x="454" y="402" width="8" height="8"/><rect x="474" y="402" width="8" height="8"/>
-    <rect x="494" y="402" width="8" height="8"/><rect x="524" y="402" width="8" height="8"/><rect x="544" y="402" width="8" height="8"/>
-    <rect x="454" y="412" width="8" height="8"/><rect x="464" y="412" width="8" height="8"/><rect x="474" y="412" width="8" height="8"/>
-    <rect x="504" y="412" width="8" height="8"/><rect x="514" y="412" width="8" height="8"/>
-    <rect x="534" y="412" width="8" height="8"/><rect x="544" y="412" width="8" height="8"/>
+    <use href="#qrCell" x="454" y="332"/><use href="#qrCell" x="464" y="332"/><use href="#qrCell" x="474" y="332"/>
+    <use href="#qrCell" x="504" y="332"/><use href="#qrCell" x="524" y="332"/><use href="#qrCell" x="534" y="332"/><use href="#qrCell" x="544" y="332"/>
+    <use href="#qrCell" x="454" y="342"/><use href="#qrCell" x="474" y="342"/>
+    <use href="#qrCell" x="494" y="342"/><use href="#qrCell" x="514" y="342"/><use href="#qrCell" x="544" y="342"/>
+    <use href="#qrCell" x="454" y="352"/><use href="#qrCell" x="464" y="352"/><use href="#qrCell" x="474" y="352"/>
+    <use href="#qrCell" x="494" y="352"/><use href="#qrCell" x="524" y="352"/><use href="#qrCell" x="534" y="352"/><use href="#qrCell" x="544" y="352"/>
+    <use href="#qrCell" x="484" y="362"/><use href="#qrCell" x="504" y="362"/><use href="#qrCell" x="514" y="362"/>
+    <use href="#qrCell" x="454" y="372"/><use href="#qrCell" x="464" y="372"/>
+    <use href="#qrCell" x="484" y="372"/><use href="#qrCell" x="504" y="372"/><use href="#qrCell" x="534" y="372"/><use href="#qrCell" x="544" y="372"/>
+    <use href="#qrCell" x="454" y="382"/><use href="#qrCell" x="474" y="382"/>
+    <use href="#qrCell" x="494" y="382"/><use href="#qrCell" x="524" y="382"/><use href="#qrCell" x="544" y="382"/>
+    <use href="#qrCell" x="454" y="392"/><use href="#qrCell" x="464" y="392"/><use href="#qrCell" x="474" y="392"/>
+    <use href="#qrCell" x="504" y="392"/><use href="#qrCell" x="514" y="392"/>
+    <use href="#qrCell" x="534" y="392"/><use href="#qrCell" x="544" y="392"/>
+    <use href="#qrCell" x="454" y="402"/><use href="#qrCell" x="474" y="402"/>
+    <use href="#qrCell" x="494" y="402"/>
+    <use href="#qrCell" x="524" y="402"/><use href="#qrCell" x="544" y="402"/>
+    <use href="#qrCell" x="454" y="412"/><use href="#qrCell" x="464" y="412"/><use href="#qrCell" x="474" y="412"/>
+    <use href="#qrCell" x="504" y="412"/><use href="#qrCell" x="514" y="412"/>
+    <use href="#qrCell" x="534" y="412"/><use href="#qrCell" x="544" y="412"/>
   </g>
 
   <!-- PayPal details -->
-  <text x="572" y="344" fill="#F1F5F9" font-size="14" font-weight="700">Order #4821 · $47.82</text>
+  <text x="572" y="344" fill="#F1F5F9" font-size="14" font-weight="700">Order #4821 . $47.82</text>
   <text x="572" y="366" fill="#94A3B8" font-size="11">Pay with PayPal balance or linked card</text>
   <rect x="572" y="378" width="140" height="22" rx="4" fill="#003087" opacity="0.12"/>
   <text x="582" y="394" fill="#169BD7" font-size="10" font-weight="600">PayPal One Touch eligible</text>
-  <rect x="572" y="410" width="90" height="22" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="572" y="410" width="90" height="22" rx="4" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
   <text x="582" y="426" fill="#64748B" font-size="10">Generate QR</text>
 
   <!-- ─── CASH APP Card ─── -->
-  <rect x="432" y="458" width="502" height="170" rx="10" fill="#1A1D2E" stroke="#00D632" stroke-width="1.5" stroke-opacity="0.4"/>
-  <rect x="432" y="458" width="502" height="4" rx="2" fill="#00D632" opacity="0.6"/>
+  <!-- Admin: Settings > Payments > Mobile Wallets > Cash App > Enable/$Cashtag -->
+  <rect x="432" y="458" width="502" height="170" rx="10" fill="url(#cardGrad)" stroke="#00D632" stroke-width="1.5" stroke-opacity="0.4" filter="url(#cardShadow)"/>
+  <rect x="432" y="458" width="502" height="4" rx="2" fill="url(#cashappGrad)" opacity="0.6"/>
 
-  <!-- Cash App header -->
   <rect x="444" y="470" width="76" height="24" rx="5" fill="#00D632" opacity="0.18"/>
   <text x="482" y="487" fill="#00D632" font-size="13" font-weight="800" text-anchor="middle">Cash App</text>
   <text x="530" y="487" fill="#F1F5F9" font-size="12" font-weight="600">$Cashtag Payment</text>
+  <use href="#adminGear" x="810" y="482"/>
 
   <!-- Cash App QR -->
-  <rect x="444" y="502" width="110" height="110" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="444" y="502" width="110" height="110" rx="8" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
   <g fill="#00D632" opacity="0.6">
-    <rect x="454" y="512" width="8" height="8"/><rect x="464" y="512" width="8" height="8"/><rect x="474" y="512" width="8" height="8"/>
-    <rect x="504" y="512" width="8" height="8"/><rect x="524" y="512" width="8" height="8"/><rect x="534" y="512" width="8" height="8"/><rect x="544" y="512" width="8" height="8"/>
-    <rect x="454" y="522" width="8" height="8"/><rect x="474" y="522" width="8" height="8"/>
-    <rect x="494" y="522" width="8" height="8"/><rect x="514" y="522" width="8" height="8"/><rect x="544" y="522" width="8" height="8"/>
-    <rect x="454" y="532" width="8" height="8"/><rect x="464" y="532" width="8" height="8"/><rect x="474" y="532" width="8" height="8"/>
-    <rect x="504" y="532" width="8" height="8"/><rect x="524" y="532" width="8" height="8"/><rect x="534" y="532" width="8" height="8"/><rect x="544" y="532" width="8" height="8"/>
-    <rect x="484" y="542" width="8" height="8"/><rect x="504" y="542" width="8" height="8"/><rect x="514" y="542" width="8" height="8"/>
-    <rect x="454" y="552" width="8" height="8"/><rect x="464" y="552" width="8" height="8"/>
-    <rect x="484" y="552" width="8" height="8"/><rect x="504" y="552" width="8" height="8"/><rect x="534" y="552" width="8" height="8"/><rect x="544" y="552" width="8" height="8"/>
-    <rect x="454" y="562" width="8" height="8"/><rect x="474" y="562" width="8" height="8"/>
-    <rect x="494" y="562" width="8" height="8"/><rect x="524" y="562" width="8" height="8"/><rect x="544" y="562" width="8" height="8"/>
-    <rect x="454" y="572" width="8" height="8"/><rect x="464" y="572" width="8" height="8"/><rect x="474" y="572" width="8" height="8"/>
-    <rect x="504" y="572" width="8" height="8"/><rect x="514" y="572" width="8" height="8"/>
-    <rect x="534" y="572" width="8" height="8"/><rect x="544" y="572" width="8" height="8"/>
-    <rect x="454" y="582" width="8" height="8"/><rect x="474" y="582" width="8" height="8"/>
-    <rect x="514" y="582" width="8" height="8"/><rect x="534" y="582" width="8" height="8"/><rect x="544" y="582" width="8" height="8"/>
-    <rect x="454" y="592" width="8" height="8"/><rect x="464" y="592" width="8" height="8"/><rect x="474" y="592" width="8" height="8"/>
-    <rect x="504" y="592" width="8" height="8"/>
-    <rect x="524" y="592" width="8" height="8"/><rect x="534" y="592" width="8" height="8"/><rect x="544" y="592" width="8" height="8"/>
+    <use href="#qrCell" x="454" y="512"/><use href="#qrCell" x="464" y="512"/><use href="#qrCell" x="474" y="512"/>
+    <use href="#qrCell" x="504" y="512"/><use href="#qrCell" x="524" y="512"/><use href="#qrCell" x="534" y="512"/><use href="#qrCell" x="544" y="512"/>
+    <use href="#qrCell" x="454" y="522"/><use href="#qrCell" x="474" y="522"/>
+    <use href="#qrCell" x="494" y="522"/><use href="#qrCell" x="514" y="522"/><use href="#qrCell" x="544" y="522"/>
+    <use href="#qrCell" x="454" y="532"/><use href="#qrCell" x="464" y="532"/><use href="#qrCell" x="474" y="532"/>
+    <use href="#qrCell" x="504" y="532"/><use href="#qrCell" x="524" y="532"/><use href="#qrCell" x="534" y="532"/><use href="#qrCell" x="544" y="532"/>
+    <use href="#qrCell" x="484" y="542"/><use href="#qrCell" x="504" y="542"/><use href="#qrCell" x="514" y="542"/>
+    <use href="#qrCell" x="454" y="552"/><use href="#qrCell" x="464" y="552"/>
+    <use href="#qrCell" x="484" y="552"/><use href="#qrCell" x="504" y="552"/><use href="#qrCell" x="534" y="552"/><use href="#qrCell" x="544" y="552"/>
+    <use href="#qrCell" x="454" y="562"/><use href="#qrCell" x="474" y="562"/>
+    <use href="#qrCell" x="494" y="562"/><use href="#qrCell" x="524" y="562"/><use href="#qrCell" x="544" y="562"/>
+    <use href="#qrCell" x="454" y="572"/><use href="#qrCell" x="464" y="572"/><use href="#qrCell" x="474" y="572"/>
+    <use href="#qrCell" x="504" y="572"/><use href="#qrCell" x="514" y="572"/>
+    <use href="#qrCell" x="534" y="572"/><use href="#qrCell" x="544" y="572"/>
+    <use href="#qrCell" x="454" y="582"/><use href="#qrCell" x="474" y="582"/>
+    <use href="#qrCell" x="514" y="582"/><use href="#qrCell" x="534" y="582"/><use href="#qrCell" x="544" y="582"/>
+    <use href="#qrCell" x="454" y="592"/><use href="#qrCell" x="464" y="592"/><use href="#qrCell" x="474" y="592"/>
+    <use href="#qrCell" x="504" y="592"/>
+    <use href="#qrCell" x="524" y="592"/><use href="#qrCell" x="534" y="592"/><use href="#qrCell" x="544" y="592"/>
   </g>
 
   <!-- Cash App details -->
+  <!-- Admin: Settings > Payments > Mobile Wallets > Cash App > $Cashtag -->
   <text x="572" y="524" fill="#00D632" font-size="16" font-weight="800">$SynaluxPOS</text>
   <text x="572" y="546" fill="#F1F5F9" font-size="14" font-weight="700">$47.82</text>
-  <text x="572" y="566" fill="#94A3B8" font-size="11">Order #4821 · Table 7</text>
+  <text x="572" y="566" fill="#94A3B8" font-size="11">Order #4821 . Table 7</text>
   <text x="572" y="586" fill="#64748B" font-size="10">Customer scans with Cash App</text>
-  <rect x="572" y="596" width="90" height="22" rx="4" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="572" y="596" width="90" height="22" rx="4" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
   <text x="582" y="612" fill="#64748B" font-size="10">Generate QR</text>
 
   <!-- ─── How It Works ─── -->
   <text x="444" y="654" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">HOW IT WORKS</text>
 
-  <rect x="432" y="662" width="502" height="118" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="432" y="662" width="502" height="118" rx="10" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
 
-  <!-- Step 1 -->
-  <circle cx="456" cy="682" r="12" fill="#8B5CF6" opacity="0.2"/>
+  <use href="#stepCircle" x="456" y="682"/>
   <text x="456" y="687" fill="#8B5CF6" font-size="11" font-weight="700" text-anchor="middle">1</text>
   <text x="476" y="687" fill="#F1F5F9" font-size="12" font-weight="500">Server selects wallet type on POS</text>
 
-  <!-- Step 2 -->
-  <circle cx="456" cy="708" r="12" fill="#8B5CF6" opacity="0.2"/>
+  <use href="#stepCircle" x="456" y="708"/>
   <text x="456" y="713" fill="#8B5CF6" font-size="11" font-weight="700" text-anchor="middle">2</text>
   <text x="476" y="713" fill="#F1F5F9" font-size="12" font-weight="500">QR displayed on customer screen or printed</text>
 
-  <!-- Step 3 -->
-  <circle cx="456" cy="734" r="12" fill="#8B5CF6" opacity="0.2"/>
+  <use href="#stepCircle" x="456" y="734"/>
   <text x="456" y="739" fill="#8B5CF6" font-size="11" font-weight="700" text-anchor="middle">3</text>
   <text x="476" y="739" fill="#F1F5F9" font-size="12" font-weight="500">Customer scans with their wallet app</text>
 
-  <!-- Step 4 -->
-  <circle cx="456" cy="760" r="12" fill="#8B5CF6" opacity="0.2"/>
+  <use href="#stepCircle" x="456" y="760"/>
   <text x="456" y="765" fill="#8B5CF6" font-size="11" font-weight="700" text-anchor="middle">4</text>
-  <text x="476" y="765" fill="#F1F5F9" font-size="12" font-weight="500">Payment confirmed via webhook &#x2192; POS updates</text>
+  <text x="476" y="765" fill="#F1F5F9" font-size="12" font-weight="500">Payment confirmed via webhook -&gt; POS updates</text>
 
   <!-- Processing note -->
-  <rect x="432" y="790" width="502" height="30" rx="6" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <!-- Admin: Settings > Payments > Settlement > Settlement Schedule -->
+  <rect x="432" y="790" width="502" height="30" rx="6" fill="#0C0E1A" stroke="#1E2235" stroke-width="1"/>
   <text x="444" y="810" fill="#64748B" font-size="11">Processing:</text>
   <text x="510" y="810" fill="#94A3B8" font-size="11">Funds settle T+1 to venue bank account</text>
+  <use href="#adminGear" x="920" y="805"/>
 
-
-  <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════════
        RIGHT PANEL — Payment Method Summary (x=946, w=420)
-       ═══════════════════════════════════════════════════════════ -->
+       Admin: Settings > Payments > Accepted Methods
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- Header -->
-  <rect x="958" y="12" width="396" height="46" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="958" y="12" width="396" height="46" rx="10" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
   <text x="970" y="40" fill="#F1F5F9" font-size="17" font-weight="700">Accepted Payment Methods</text>
+  <!-- Admin gear — master payment methods config -->
+  <!-- Admin: Settings > Payments > Accepted Methods -->
+  <use href="#adminGear" x="1340" y="35"/>
 
   <!-- ─── Method list ─── -->
+  <!-- Admin: Settings > Payments > Accepted Methods > Toggle each method -->
   <text x="970" y="80" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">CONFIGURED METHODS</text>
 
   <!-- Method 1: Credit/Debit -->
-  <rect x="958" y="88" width="396" height="36" rx="6" fill="#1A1D2E"/>
+  <use href="#methodRowLight" x="958" y="88"/>
   <text x="970" y="110" fill="#F1F5F9" font-size="12" font-weight="500">Credit/Debit (Stripe)</text>
-  <!-- On toggle -->
-  <rect x="1270" y="98" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="107" r="7" fill="#F1F5F9"/>
-  <text x="1310" y="110" fill="#94A3B8" font-size="10" text-anchor="start">On</text>
+  <use href="#toggleOn" x="1270" y="98"/>
+  <text x="1310" y="110" fill="#94A3B8" font-size="10">On</text>
+  <!-- Admin: Settings > Payments > Processing Rates -->
   <text x="1342" y="110" fill="#64748B" font-size="10" text-anchor="end">2.6% + $0.10</text>
 
   <!-- Method 2: Apple/Google Pay -->
-  <rect x="958" y="126" width="396" height="36" rx="6" fill="#0F1117"/>
+  <use href="#methodRowDark" x="958" y="126"/>
   <text x="970" y="148" fill="#F1F5F9" font-size="12" font-weight="500">Apple Pay / Google Pay</text>
-  <rect x="1270" y="136" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="145" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="136"/>
   <text x="1310" y="148" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="148" fill="#64748B" font-size="10" text-anchor="end">Same as card</text>
 
   <!-- Method 3: Tap-to-Pay iPhone -->
-  <rect x="958" y="164" width="396" height="36" rx="6" fill="#1A1D2E"/>
+  <use href="#methodRowLight" x="958" y="164"/>
   <text x="970" y="186" fill="#F1F5F9" font-size="12" font-weight="500">Tap-to-Pay iPhone</text>
-  <rect x="1270" y="174" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="183" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="174"/>
   <text x="1310" y="186" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="186" fill="#64748B" font-size="10" text-anchor="end">Same as card</text>
 
   <!-- Method 4: Venmo -->
-  <rect x="958" y="202" width="396" height="36" rx="6" fill="#0F1117"/>
+  <use href="#methodRowDark" x="958" y="202"/>
   <text x="970" y="224" fill="#F1F5F9" font-size="12" font-weight="500">Venmo</text>
-  <rect x="1270" y="212" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="221" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="212"/>
   <text x="1310" y="224" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="224" fill="#64748B" font-size="10" text-anchor="end">1.9% + $0.10</text>
 
   <!-- Method 5: PayPal -->
-  <rect x="958" y="240" width="396" height="36" rx="6" fill="#1A1D2E"/>
+  <use href="#methodRowLight" x="958" y="240"/>
   <text x="970" y="262" fill="#F1F5F9" font-size="12" font-weight="500">PayPal</text>
-  <rect x="1270" y="250" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="259" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="250"/>
   <text x="1310" y="262" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="262" fill="#64748B" font-size="10" text-anchor="end">2.29% + $0.09</text>
 
   <!-- Method 6: Cash App — OFF -->
-  <rect x="958" y="278" width="396" height="36" rx="6" fill="#0F1117"/>
+  <!-- Admin: Settings > Payments > Mobile Wallets > Cash App > Toggle -->
+  <use href="#methodRowDark" x="958" y="278"/>
   <text x="970" y="300" fill="#64748B" font-size="12" font-weight="500">Cash App</text>
-  <rect x="1270" y="288" width="36" height="18" rx="9" fill="#2D3148"/>
-  <circle cx="1278" cy="297" r="7" fill="#64748B"/>
+  <use href="#toggleOff" x="1270" y="288"/>
   <text x="1310" y="300" fill="#64748B" font-size="10">Off</text>
   <text x="1342" y="300" fill="#64748B" font-size="10" text-anchor="end">2.75%</text>
 
   <!-- Method 7: EBT / SNAP -->
-  <rect x="958" y="316" width="396" height="36" rx="6" fill="#1A1D2E"/>
+  <use href="#methodRowLight" x="958" y="316"/>
   <text x="970" y="338" fill="#F1F5F9" font-size="12" font-weight="500">EBT / SNAP</text>
-  <rect x="1270" y="326" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="335" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="326"/>
   <text x="1310" y="338" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="338" fill="#64748B" font-size="10" text-anchor="end">Forage: $0.10/txn</text>
 
   <!-- Method 8: Cash -->
-  <rect x="958" y="354" width="396" height="36" rx="6" fill="#0F1117"/>
+  <use href="#methodRowDark" x="958" y="354"/>
   <text x="970" y="376" fill="#F1F5F9" font-size="12" font-weight="500">Cash</text>
-  <rect x="1270" y="364" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="373" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="364"/>
   <text x="1310" y="376" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="376" fill="#64748B" font-size="10" text-anchor="end">No fee</text>
 
   <!-- Method 9: Gift Card -->
-  <rect x="958" y="392" width="396" height="36" rx="6" fill="#1A1D2E"/>
+  <use href="#methodRowLight" x="958" y="392"/>
   <text x="970" y="414" fill="#F1F5F9" font-size="12" font-weight="500">Gift Card</text>
-  <rect x="1270" y="402" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="411" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="402"/>
   <text x="1310" y="414" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="414" fill="#64748B" font-size="10" text-anchor="end">No fee</text>
 
   <!-- Method 10: House Account -->
-  <rect x="958" y="430" width="396" height="36" rx="6" fill="#0F1117"/>
+  <use href="#methodRowDark" x="958" y="430"/>
   <text x="970" y="452" fill="#F1F5F9" font-size="12" font-weight="500">House Account</text>
-  <rect x="1270" y="440" width="36" height="18" rx="9" fill="#10B981"/>
-  <circle cx="1298" cy="449" r="7" fill="#F1F5F9"/>
+  <use href="#toggleOn" x="1270" y="440"/>
   <text x="1310" y="452" fill="#94A3B8" font-size="10">On</text>
   <text x="1342" y="452" fill="#64748B" font-size="10" text-anchor="end">No fee</text>
 
   <!-- ─── Weekly Payment Mix Pie Chart ─── -->
+  <!-- Admin: Settings > Reports > Payment Analytics -->
   <text x="970" y="496" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.2">WEEKLY PAYMENT MIX</text>
 
-  <rect x="958" y="504" width="396" height="220" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="958" y="504" width="396" height="220" rx="10" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1" filter="url(#cardShadow)"/>
 
   <!-- Pie chart (cx=1060, cy=614, r=80) -->
-  <!-- Card 62% = 223.2deg -->
   <circle cx="1060" cy="614" r="80" fill="none" stroke="#8B5CF6" stroke-width="28"
     stroke-dasharray="310.18 189.82" stroke-dashoffset="0" transform="rotate(-90,1060,614)"/>
-  <!-- Cash 18% = 64.8deg -->
   <circle cx="1060" cy="614" r="80" fill="none" stroke="#F59E0B" stroke-width="28"
     stroke-dasharray="90.24 409.76" stroke-dashoffset="-310.18" transform="rotate(-90,1060,614)"/>
-  <!-- Apple/Google 11% = 39.6deg -->
-  <circle cx="1060" cy="614" r="80" fill="none" stroke="#10B981" stroke-width="28"
+  <circle cx="1060" cy="614" r="80" fill="none" stroke="#22C55E" stroke-width="28"
     stroke-dasharray="55.15 444.85" stroke-dashoffset="-400.42" transform="rotate(-90,1060,614)"/>
-  <!-- Venmo 5% = 18deg -->
   <circle cx="1060" cy="614" r="80" fill="none" stroke="#008CFF" stroke-width="28"
     stroke-dasharray="25.07 474.93" stroke-dashoffset="-455.57" transform="rotate(-90,1060,614)"/>
-  <!-- PayPal 3% = 10.8deg -->
   <circle cx="1060" cy="614" r="80" fill="none" stroke="#003087" stroke-width="28"
     stroke-dasharray="15.04 484.96" stroke-dashoffset="-480.64" transform="rotate(-90,1060,614)"/>
-  <!-- EBT 1% = 3.6deg -->
   <circle cx="1060" cy="614" r="80" fill="none" stroke="#EF4444" stroke-width="28"
     stroke-dasharray="5.01 494.99" stroke-dashoffset="-495.68" transform="rotate(-90,1060,614)"/>
 
   <!-- Center label -->
-  <circle cx="1060" cy="614" r="52" fill="#1A1D2E"/>
+  <circle cx="1060" cy="614" r="52" fill="#161930"/>
   <text x="1060" y="608" fill="#F1F5F9" font-size="16" font-weight="700" text-anchor="middle">100%</text>
   <text x="1060" y="626" fill="#64748B" font-size="10" text-anchor="middle">this week</text>
 
-  <!-- Legend -->
-  <!-- Column 1 -->
-  <rect x="1168" y="530" width="10" height="10" rx="2" fill="#8B5CF6"/>
+  <!-- Legend (using reusable swatches) -->
+  <use href="#legendSwatch" x="1168" y="530" fill="#8B5CF6"/>
   <text x="1184" y="540" fill="#F1F5F9" font-size="11">Card</text>
   <text x="1340" y="540" fill="#94A3B8" font-size="11" text-anchor="end" font-weight="600">62%</text>
 
-  <rect x="1168" y="550" width="10" height="10" rx="2" fill="#F59E0B"/>
+  <use href="#legendSwatch" x="1168" y="550" fill="#F59E0B"/>
   <text x="1184" y="560" fill="#F1F5F9" font-size="11">Cash</text>
   <text x="1340" y="560" fill="#94A3B8" font-size="11" text-anchor="end" font-weight="600">18%</text>
 
-  <rect x="1168" y="570" width="10" height="10" rx="2" fill="#10B981"/>
+  <use href="#legendSwatch" x="1168" y="570" fill="#22C55E"/>
   <text x="1184" y="580" fill="#F1F5F9" font-size="11">Apple/Google Pay</text>
   <text x="1340" y="580" fill="#94A3B8" font-size="11" text-anchor="end" font-weight="600">11%</text>
 
-  <rect x="1168" y="590" width="10" height="10" rx="2" fill="#008CFF"/>
+  <use href="#legendSwatch" x="1168" y="590" fill="#008CFF"/>
   <text x="1184" y="600" fill="#F1F5F9" font-size="11">Venmo</text>
   <text x="1340" y="600" fill="#94A3B8" font-size="11" text-anchor="end" font-weight="600">5%</text>
 
-  <rect x="1168" y="610" width="10" height="10" rx="2" fill="#003087"/>
+  <use href="#legendSwatch" x="1168" y="610" fill="#003087"/>
   <text x="1184" y="620" fill="#F1F5F9" font-size="11">PayPal</text>
   <text x="1340" y="620" fill="#94A3B8" font-size="11" text-anchor="end" font-weight="600">3%</text>
 
-  <rect x="1168" y="630" width="10" height="10" rx="2" fill="#EF4444"/>
+  <use href="#legendSwatch" x="1168" y="630" fill="#EF4444"/>
   <text x="1184" y="640" fill="#F1F5F9" font-size="11">EBT</text>
   <text x="1340" y="640" fill="#94A3B8" font-size="11" text-anchor="end" font-weight="600">1%</text>
 
   <!-- ─── Summary footer ─── -->
+  <!-- Admin: Settings > Payments > Dual Pricing -->
   <rect x="958" y="734" width="396" height="52" rx="8" fill="#F59E0B" opacity="0.08" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.25"/>
   <text x="970" y="756" fill="#F1F5F9" font-size="12" font-weight="600">Total methods: 10</text>
   <text x="970" y="774" fill="#F59E0B" font-size="12" font-weight="700">Processing saved this month: $342</text>
   <text x="1342" y="774" fill="#64748B" font-size="10" text-anchor="end">via dual pricing</text>
+  <use href="#adminGear" x="1340" y="756"/>
 
 </svg>

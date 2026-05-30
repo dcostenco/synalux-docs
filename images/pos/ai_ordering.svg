@@ -1,93 +1,265 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="system-ui,-apple-system,sans-serif">
-  <!-- Background -->
-  <rect width="1200" height="900" fill="#0F1117"/>
+<svg role="img" aria-labelledby="title-ai_ordering-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- Header -->
-  <rect x="0" y="0" width="1200" height="60" fill="#13162A"/>
-  <rect x="0" y="60" width="1200" height="1" fill="#2D3050"/>
+  <!-- ================================================================== -->
+  <!-- DEFS: Shared gradients, filters, symbols for repeated UI elements  -->
+  <!-- ================================================================== -->
+  <title id="title-ai_ordering-svg">Synalux POS — ai ordering</title>
+  <desc>Synalux POS mockup screen for ai ordering. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#0A0C16"/>
+    </linearGradient>
 
+    <!-- Header/panel gradient -->
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161930"/>
+      <stop offset="100%" stop-color="#131528"/>
+    </linearGradient>
+
+    <!-- Card gradient -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+
+    <!-- AI purple bubble gradient -->
+    <linearGradient id="aiBubbleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#1A1D2E"/>
+    </linearGradient>
+
+    <!-- User purple bubble gradient -->
+    <linearGradient id="userBubbleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+    <!-- Green button gradient -->
+    <linearGradient id="greenBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <!-- Amber button gradient -->
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Fire-to-kitchen gradient -->
+    <linearGradient id="fireGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#16A34A"/>
+    </linearGradient>
+
+    <!-- Card drop shadow -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Elevated card shadow -->
+    <filter id="elevShadow" x="-4%" y="-4%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Green glow for new item -->
+    <filter id="greenGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#22C55E" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Purple glow for AI badge -->
+    <filter id="purpleGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#8B5CF6" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: AI Chat Bubble — repeated for each AI message        -->
+    <!-- ============================================================ -->
+    <symbol id="aiBubble" overflow="visible">
+      <rect width="420" height="80" rx="16" fill="url(#aiBubbleGrad)" filter="url(#cardShadow)"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: User Chat Bubble — repeated for each user message    -->
+    <!-- ============================================================ -->
+    <symbol id="userBubble" overflow="visible">
+      <rect width="420" height="60" rx="16" fill="url(#userBubbleGrad)" filter="url(#cardShadow)"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Menu Suggestion Card — repeated 3x in AI response    -->
+    <!-- Admin: Settings > AI > Menu Matching Display                  -->
+    <!-- ============================================================ -->
+    <symbol id="menuSuggestion" overflow="visible">
+      <rect width="580" height="56" rx="10" fill="#0C0E1A" filter="url(#cardShadow)"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Quick Reply Chip — repeated 4x below upsell message  -->
+    <!-- Admin: Settings > AI > Quick Reply Templates                  -->
+    <!-- ============================================================ -->
+    <symbol id="quickReplyChip" overflow="visible">
+      <rect width="80" height="32" rx="16" fill="#1E2235"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Order Line Item — repeated 3x in order panel         -->
+    <!-- Admin: Settings > AI > Order Display Fields                   -->
+    <!-- ============================================================ -->
+    <symbol id="orderItem" overflow="visible">
+      <rect width="610" height="60" rx="8" fill="url(#cardGrad)"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Feature Tile — repeated 6x in capabilities panel     -->
+    <!-- Admin: Settings > AI > Enabled Capabilities                   -->
+    <!-- ============================================================ -->
+    <symbol id="featureTile" overflow="visible">
+      <rect width="296" height="80" rx="10" filter="url(#cardShadow)"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Typing Dot — repeated 3x in typing indicator         -->
+    <!-- ============================================================ -->
+    <symbol id="typingDot" overflow="visible">
+      <circle r="5" fill="#64748B"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Admin Gear Icon — admin-configurability affordance   -->
+    <!-- ============================================================ -->
+    <symbol id="gearIcon" viewBox="0 0 16 16" overflow="visible">
+      <path d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM6.5 8a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="currentColor"/>
+      <path d="M7 1h2l.35 1.8.9.37 1.6-.93 1.41 1.42-.93 1.6.37.89L14.5 7v2l-1.8.35-.37.9.93 1.6-1.42 1.41-1.6-.93-.89.37L9 14.5H7l-.35-1.8-.9-.37-1.6.93L2.74 11.84l.93-1.6-.37-.89L1.5 9V7l1.8-.35.37-.9-.93-1.6L4.16 2.74l1.6.93.89-.37L7 1.5z" fill="none" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- ============================================================ -->
+    <!-- SYMBOL: Divider Line — reused in order panel                 -->
+    <!-- ============================================================ -->
+    <symbol id="hDivider" overflow="visible">
+      <line x1="0" y1="0" x2="610" y2="0" stroke="#1E2235" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <!-- ================================================================== -->
+  <!-- BACKGROUND                                                         -->
+  <!-- ================================================================== -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- ================================================================== -->
+  <!-- HEADER BAR h=60                                                    -->
+  <!-- Admin: Settings > Appearance > Navigation                          -->
+  <!-- ================================================================== -->
+  <rect x="0" y="0" width="1366" height="60" fill="url(#panelGrad)"/>
+  <rect x="0" y="60" width="1366" height="1" fill="#1E2235"/>
+
+  <!-- Logo — Admin: Settings > Branding -->
   <text x="24" y="37" fill="#F59E0B" font-size="16" font-weight="700">Synalux POS</text>
-  <rect x="120" y="16" width="110" height="28" rx="6" fill="#1A102D"/>
-  <text x="175" y="35" fill="#A855F7" font-size="13" font-weight="700" text-anchor="middle">🤖 AI Ordering</text>
 
-  <text x="600" y="37" fill="#E2E8F0" font-size="16" font-weight="700" text-anchor="middle">AI-Powered Order Assistant</text>
+  <!-- AI badge — Admin: Settings > AI > Local LLM > Model Label -->
+  <rect x="130" y="16" width="120" height="28" rx="6" fill="#1A102D" filter="url(#purpleGlow)"/>
+  <text x="190" y="35" fill="#A855F7" font-size="13" font-weight="700" text-anchor="middle">AI Ordering</text>
+  <use href="#gearIcon" x="236" y="24" width="12" height="12" color="#A855F7" opacity="0.5"/>
 
-  <rect x="1060" y="14" width="120" height="32" rx="6" fill="#1E2235"/>
-  <text x="1120" y="35" fill="#94A3B8" font-size="13" text-anchor="middle">Table 4 · John S.</text>
+  <text x="683" y="37" fill="#E2E8F0" font-size="16" font-weight="700" text-anchor="middle">AI-Powered Order Assistant</text>
+  <!-- Admin: Settings > AI > Local LLM > Model Selection -->
+  <text x="683" y="52" fill="#64748B" font-size="10" text-anchor="middle">Powered by Prism Coder (local)</text>
 
-  <!-- LEFT: Chat Interface -->
-  <rect x="0" y="61" width="600" height="839" fill="#0F1117"/>
-  <rect x="600" y="61" width="1" height="839" fill="#2D3050"/>
+  <!-- Table / server context -->
+  <rect x="1180" y="14" width="170" height="32" rx="6" fill="#1E2235"/>
+  <text x="1265" y="35" fill="#94A3B8" font-size="13" text-anchor="middle">Table 4 · John S.</text>
+
+  <!-- ================================================================== -->
+  <!-- LEFT PANEL: Chat Interface  x=0 w=683                             -->
+  <!-- Admin: Settings > AI > Chat Configuration                          -->
+  <!-- ================================================================== -->
+  <rect x="0" y="61" width="683" height="963" fill="url(#bgGrad)"/>
+  <rect x="683" y="61" width="1" height="963" fill="#1E2235"/>
 
   <!-- Chat header -->
-  <rect x="0" y="61" width="600" height="64" fill="#13162A"/>
-  <rect x="0" y="125" width="600" height="1" fill="#2D3050"/>
+  <rect x="0" y="61" width="683" height="64" fill="url(#panelGrad)"/>
+  <rect x="0" y="125" width="683" height="1" fill="#1E2235"/>
 
+  <!-- AI avatar -->
   <circle cx="44" cy="93" r="24" fill="#7C3AED"/>
-  <text x="44" y="100" fill="white" font-size="20" text-anchor="middle">🤖</text>
+  <text x="44" y="100" fill="white" font-size="20" text-anchor="middle">&#x1F916;</text>
+  <!-- Admin: Settings > AI > Assistant Name -->
   <text x="78" y="88" fill="#E2E8F0" font-size="15" font-weight="700">Synalux AI</text>
-  <text x="78" y="106" fill="#22C55E" font-size="12">● Online · Multilingual · 25 languages</text>
+  <!-- Admin: Settings > AI > Language Support -->
+  <text x="78" y="106" fill="#22C55E" font-size="12">&#x25CF; Online · Multilingual · 25 languages</text>
+  <use href="#gearIcon" x="268" y="96" width="12" height="12" color="#22C55E" opacity="0.4"/>
 
-  <!-- Voice toggle -->
-  <rect x="480" y="73" width="108" height="38" rx="8" fill="#1E2235"/>
-  <text x="534" y="97" fill="#94A3B8" font-size="13" text-anchor="middle">🎙 Voice Mode</text>
+  <!-- Voice toggle — Admin: Settings > AI > Voice Ordering -->
+  <rect x="540" y="73" width="128" height="38" rx="8" fill="#1E2235"/>
+  <text x="604" y="97" fill="#94A3B8" font-size="13" text-anchor="middle">&#x1F399; Voice Mode</text>
+  <use href="#gearIcon" x="654" y="83" width="12" height="12" color="#64748B"/>
 
-  <!-- Chat messages -->
-  <!-- AI message 1 -->
-  <rect x="16" y="140" width="420" height="80" rx="16" rx2="4" fill="#1E2235"/>
-  <text x="36" y="164" fill="#E2E8F0" font-size="14" font-weight="500">👋 Hi! I'm your Synalux AI assistant.</text>
+  <!-- ================================================================== -->
+  <!-- CHAT MESSAGES                                                      -->
+  <!-- ================================================================== -->
+
+  <!-- AI message 1: Greeting -->
+  <rect x="16" y="140" width="480" height="80" rx="16" fill="url(#aiBubbleGrad)" filter="url(#cardShadow)"/>
+  <text x="36" y="164" fill="#E2E8F0" font-size="14" font-weight="500">Hi! I'm your Synalux AI assistant.</text>
   <text x="36" y="184" fill="#94A3B8" font-size="13">What can I get you today? I can help you</text>
   <text x="36" y="202" fill="#94A3B8" font-size="13">choose items, filter by diet, or take your order.</text>
 
-  <!-- User message 1 -->
-  <rect x="164" y="238" width="420" height="60" rx="16" fill="#7C3AED"/>
-  <text x="184" y="263" fill="white" font-size="14">Something vegetarian, not too heavy,</text>
-  <text x="184" y="281" fill="white" font-size="14">under $15 please</text>
-  <text x="566" y="294" fill="#94A3B8" font-size="11" text-anchor="end">2:21 PM</text>
+  <!-- User message 1: Natural language order request -->
+  <rect x="220" y="238" width="448" height="60" rx="16" fill="url(#userBubbleGrad)" filter="url(#cardShadow)"/>
+  <text x="240" y="263" fill="white" font-size="14">Something vegetarian, not too heavy,</text>
+  <text x="240" y="281" fill="white" font-size="14">under $15 please</text>
+  <text x="650" y="294" fill="#94A3B8" font-size="11" text-anchor="end">2:21 PM</text>
 
-  <!-- AI message 2 - with suggestions -->
-  <rect x="16" y="314" width="568" height="220" rx="16" rx2="4" fill="#1E2235"/>
-  <text x="36" y="340" fill="#E2E8F0" font-size="14" font-weight="500">Great choice! 🌱 Here are 3 vegetarian options</text>
+  <!-- AI message 2: Fuzzy menu matching results -->
+  <!-- Admin: Settings > AI > Menu Matching > Fuzzy Threshold -->
+  <rect x="16" y="314" width="640" height="220" rx="16" fill="url(#aiBubbleGrad)" filter="url(#cardShadow)"/>
+  <text x="36" y="340" fill="#E2E8F0" font-size="14" font-weight="500">Great choice! Here are 3 vegetarian options</text>
   <text x="36" y="360" fill="#94A3B8" font-size="13">under $15 that are light and popular today:</text>
 
-  <!-- Suggestion cards within AI message -->
-  <rect x="36" y="375" width="520" height="56" rx="10" fill="#13162A" stroke="#22C55E" stroke-width="1"/>
+  <!-- Suggestion 1: Caesar Salad (matched + selected) -->
+  <use href="#menuSuggestion" x="36" y="375"/>
+  <rect x="36" y="375" width="580" height="56" rx="10" stroke="#22C55E" stroke-width="1"/>
   <text x="56" y="398" fill="#22C55E" font-size="14">1.</text>
   <text x="76" y="396" fill="#E2E8F0" font-size="14" font-weight="600">Caesar Salad</text>
   <text x="76" y="414" fill="#64748B" font-size="12">Romaine · parmesan · homemade croutons · Caesar dressing</text>
-  <text x="548" y="398" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$8.00</text>
-  <rect x="490" y="406" width="68" height="22" rx="6" fill="#22C55E"/>
-  <text x="524" y="420" fill="white" font-size="12" font-weight="700" text-anchor="middle">Add →</text>
+  <text x="608" y="398" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$8.00</text>
+  <rect x="548" y="406" width="68" height="22" rx="6" fill="url(#greenBtnGrad)"/>
+  <text x="582" y="420" fill="white" font-size="12" font-weight="700" text-anchor="middle">Add &#x2192;</text>
 
-  <rect x="36" y="438" width="520" height="56" rx="10" fill="#13162A"/>
+  <!-- Suggestion 2: Mushroom Risotto -->
+  <use href="#menuSuggestion" x="36" y="438"/>
   <text x="56" y="461" fill="#22C55E" font-size="14">2.</text>
   <text x="76" y="459" fill="#E2E8F0" font-size="14" font-weight="600">Mushroom Risotto</text>
   <text x="76" y="477" fill="#64748B" font-size="12">Arborio rice · wild mushrooms · parmesan · truffle oil</text>
-  <text x="548" y="461" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$13.00</text>
-  <rect x="490" y="469" width="68" height="22" rx="6" fill="#1E2235" stroke="#F59E0B" stroke-width="1"/>
-  <text x="524" y="483" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">Add →</text>
+  <text x="608" y="461" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$13.00</text>
+  <rect x="548" y="469" width="68" height="22" rx="6" fill="#1E2235" stroke="#F59E0B" stroke-width="1"/>
+  <text x="582" y="483" fill="#F59E0B" font-size="12" font-weight="700" text-anchor="middle">Add &#x2192;</text>
 
-  <rect x="36" y="500" width="520" height="22" rx="6" fill="#13162A"/>
+  <!-- Suggestion 3: Avo Toast (compact) -->
+  <rect x="36" y="500" width="580" height="22" rx="6" fill="#0C0E1A"/>
   <text x="56" y="515" fill="#22C55E" font-size="14">3.</text>
   <text x="76" y="515" fill="#E2E8F0" font-size="14" font-weight="600">Avo Toast</text>
-  <text x="548" y="515" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$11.00</text>
+  <text x="608" y="515" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$11.00</text>
 
-  <!-- User message 2 -->
-  <rect x="214" y="550" width="370" height="44" rx="16" fill="#7C3AED"/>
-  <text x="234" y="576" fill="white" font-size="14">I'll take the Caesar Salad please</text>
-  <text x="566" y="590" fill="#94A3B8" font-size="11" text-anchor="end">2:22 PM</text>
+  <!-- User message 2: Selection -->
+  <rect x="270" y="550" width="398" height="44" rx="16" fill="url(#userBubbleGrad)" filter="url(#cardShadow)"/>
+  <text x="290" y="576" fill="white" font-size="14">I'll take the Caesar Salad please</text>
+  <text x="650" y="590" fill="#94A3B8" font-size="11" text-anchor="end">2:22 PM</text>
 
-  <!-- AI confirmation + upsell -->
-  <rect x="16" y="610" width="500" height="130" rx="16" rx2="4" fill="#1E2235"/>
-  <text x="36" y="636" fill="#22C55E" font-size="14" font-weight="600">✓ Added Caesar Salad to your order!</text>
+  <!-- AI confirmation + upsell — Admin: Settings > AI > Upsell Configuration -->
+  <rect x="16" y="610" width="560" height="130" rx="16" fill="url(#aiBubbleGrad)" filter="url(#cardShadow)"/>
+  <text x="36" y="636" fill="#22C55E" font-size="14" font-weight="600">&#x2713; Added Caesar Salad to your order!</text>
   <text x="36" y="658" fill="#94A3B8" font-size="13">Would you like to add a drink to go with that?</text>
-  <text x="36" y="678" fill="#94A3B8" font-size="13">Lemonade pairs really well with the Caesar. 🍋</text>
+  <text x="36" y="678" fill="#94A3B8" font-size="13">Lemonade pairs really well with the Caesar.</text>
 
-  <!-- Quick reply chips -->
+  <!-- Quick reply chips — Admin: Settings > AI > Quick Reply Templates -->
   <rect x="36" y="694" width="100" height="32" rx="16" fill="#1A3320" stroke="#22C55E" stroke-width="1"/>
   <text x="86" y="714" fill="#22C55E" font-size="12" text-anchor="middle">Yes, add it</text>
 
-  <rect x="144" y="694" width="80" height="32" rx="16" fill="#1E2235"/>
+  <use href="#quickReplyChip" x="144" y="694"/>
   <text x="184" y="714" fill="#94A3B8" font-size="12" text-anchor="middle">No thanks</text>
 
   <rect x="232" y="694" width="120" height="32" rx="16" fill="#1E2235"/>
@@ -97,114 +269,151 @@
   <text x="430" y="714" fill="#94A3B8" font-size="12" text-anchor="middle">That's everything</text>
 
   <!-- Typing indicator -->
-  <rect x="16" y="755" width="100" height="36" rx="16" fill="#1E2235"/>
-  <circle cx="48" cy="773" r="5" fill="#64748B"/>
-  <circle cx="66" cy="773" r="5" fill="#64748B"/>
-  <circle cx="84" cy="773" r="5" fill="#64748B"/>
+  <rect x="16" y="755" width="100" height="36" rx="16" fill="url(#aiBubbleGrad)"/>
+  <use href="#typingDot" x="48" y="773"/>
+  <use href="#typingDot" x="66" y="773"/>
+  <use href="#typingDot" x="84" y="773"/>
 
-  <!-- Input area -->
-  <rect x="0" y="824" width="600" height="76" fill="#13162A"/>
-  <rect x="0" y="824" width="600" height="1" fill="#2D3050"/>
+  <!-- ================================================================== -->
+  <!-- INPUT AREA                                                         -->
+  <!-- Admin: Settings > AI > Input Mode (text/voice/both)                -->
+  <!-- ================================================================== -->
+  <rect x="0" y="930" width="683" height="94" fill="url(#panelGrad)"/>
+  <rect x="0" y="930" width="683" height="1" fill="#1E2235"/>
 
-  <rect x="16" y="836" width="504" height="44" rx="22" fill="#1E2235"/>
-  <text x="36" y="862" fill="#64748B" font-size="14">Type a message or speak...</text>
+  <rect x="16" y="946" width="570" height="44" rx="22" fill="#1E2235"/>
+  <text x="40" y="972" fill="#64748B" font-size="14">Type a message or speak...</text>
 
-  <!-- Voice button -->
-  <rect x="528" y="836" width="44" height="44" rx="22" fill="#7C3AED"/>
-  <text x="550" y="862" fill="white" font-size="20" text-anchor="middle">🎙</text>
+  <!-- Voice button — Admin: Settings > AI > Voice Ordering > Enabled -->
+  <rect x="594" y="946" width="44" height="44" rx="22" fill="#7C3AED"/>
+  <text x="616" y="972" fill="white" font-size="20" text-anchor="middle">&#x1F399;</text>
 
   <!-- Send button -->
-  <rect x="576" y="836" width="16" height="44" rx="8" fill="#F59E0B"/>
+  <rect x="646" y="946" width="28" height="44" rx="8" fill="url(#amberBtnGrad)"/>
+  <text x="660" y="974" fill="#0C0E1A" font-size="16" font-weight="700" text-anchor="middle">&#x2191;</text>
 
-  <!-- RIGHT: Live Order Build + Context Panel -->
-  <rect x="601" y="61" width="599" height="839" fill="#13162A"/>
+  <!-- ================================================================== -->
+  <!-- RIGHT PANEL: Live Order Build + Capabilities                       -->
+  <!-- x=684 w=682                                                        -->
+  <!-- Admin: Settings > AI > Order Panel Display                         -->
+  <!-- ================================================================== -->
+  <rect x="684" y="61" width="682" height="963" fill="url(#panelGrad)"/>
 
   <!-- Order build header -->
-  <text x="628" y="100" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">BUILDING ORDER — TABLE 4</text>
+  <text x="710" y="100" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">BUILDING ORDER — TABLE 4</text>
+  <use href="#gearIcon" x="870" y="89" width="12" height="12" color="#64748B"/>
 
-  <!-- Current order -->
-  <rect x="616" y="110" width="568" height="250" rx="12" fill="#0F1117"/>
+  <!-- Current order card -->
+  <rect x="700" y="110" width="650" height="260" rx="12" fill="#0C0E1A" filter="url(#elevShadow)"/>
 
-  <!-- Already added items -->
-  <rect x="628" y="120" width="544" height="60" rx="8" fill="#1A1D2E"/>
-  <text x="644" y="142" fill="#94A3B8" font-size="13">1×</text>
-  <text x="666" y="142" fill="#E2E8F0" font-size="14" font-weight="600">Classic Burger</text>
-  <text x="1154" y="142" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$12.00</text>
-  <text x="666" y="162" fill="#64748B" font-size="12">No onions · Added via register</text>
-  <text x="1154" y="162" fill="#60A5FA" font-size="12" text-anchor="end">Edit</text>
+  <!-- Order Item 1: Classic Burger (via register) -->
+  <use href="#orderItem" x="712" y="120"/>
+  <text x="728" y="142" fill="#94A3B8" font-size="13">1&#xD7;</text>
+  <text x="750" y="142" fill="#E2E8F0" font-size="14" font-weight="600">Classic Burger</text>
+  <text x="1310" y="142" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$12.00</text>
+  <text x="750" y="162" fill="#64748B" font-size="12">No onions · Added via register</text>
+  <text x="1310" y="162" fill="#60A5FA" font-size="12" text-anchor="end">Edit</text>
 
-  <rect x="628" y="188" width="544" height="60" rx="8" fill="#1A1D2E"/>
-  <text x="644" y="210" fill="#94A3B8" font-size="13">1×</text>
-  <text x="666" y="210" fill="#E2E8F0" font-size="14" font-weight="600">Large Fries</text>
-  <text x="1154" y="210" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$4.50</text>
-  <text x="666" y="230" fill="#64748B" font-size="12">Added via register</text>
+  <!-- Order Item 2: Large Fries -->
+  <use href="#orderItem" x="712" y="188"/>
+  <text x="728" y="210" fill="#94A3B8" font-size="13">1&#xD7;</text>
+  <text x="750" y="210" fill="#E2E8F0" font-size="14" font-weight="600">Large Fries</text>
+  <text x="1310" y="210" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$4.50</text>
+  <text x="750" y="230" fill="#64748B" font-size="12">Added via register</text>
 
-  <!-- NEW item from AI (highlighted) -->
-  <rect x="628" y="256" width="544" height="60" rx="8" fill="#1A2D10" stroke="#22C55E" stroke-width="1"/>
-  <rect x="628" y="256" width="6" height="60" rx="3" fill="#22C55E"/>
-  <text x="644" y="278" fill="#94A3B8" font-size="13">1×</text>
-  <text x="666" y="278" fill="#E2E8F0" font-size="14" font-weight="600">Caesar Salad</text>
-  <text x="1154" y="278" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$8.00</text>
-  <text x="666" y="298" fill="#22C55E" font-size="12">🤖 Just added via AI chat</text>
-  <text x="1154" y="298" fill="#60A5FA" font-size="12" text-anchor="end">Customize</text>
+  <!-- Order Item 3: Caesar Salad (NEW — added via AI chat) -->
+  <rect x="712" y="256" width="610" height="60" rx="8" fill="#1A2D10" stroke="#22C55E" stroke-width="1" filter="url(#greenGlow)"/>
+  <rect x="712" y="256" width="6" height="60" rx="3" fill="#22C55E"/>
+  <text x="728" y="278" fill="#94A3B8" font-size="13">1&#xD7;</text>
+  <text x="750" y="278" fill="#E2E8F0" font-size="14" font-weight="600">Caesar Salad</text>
+  <text x="1310" y="278" fill="#F59E0B" font-size="14" font-weight="700" text-anchor="end">$8.00</text>
+  <text x="750" y="298" fill="#22C55E" font-size="12">Just added via AI chat</text>
+  <text x="1310" y="298" fill="#60A5FA" font-size="12" text-anchor="end">Customize</text>
 
-  <!-- Totals in order area -->
-  <rect x="628" y="324" width="544" height="1" fill="#2D3050"/>
-  <text x="628" y="348" fill="#94A3B8" font-size="13">Subtotal</text>
-  <text x="1172" y="348" fill="#E2E8F0" font-size="13" text-anchor="end">$24.50</text>
-  <text x="628" y="372" fill="#94A3B8" font-size="13">Tax (8.5%)</text>
-  <text x="1172" y="372" fill="#E2E8F0" font-size="13" text-anchor="end">$2.08</text>
-  <rect x="628" y="382" width="544" height="1" fill="#2D3050"/>
-  <text x="628" y="406" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
-  <text x="1172" y="406" fill="#F59E0B" font-size="20" font-weight="700" text-anchor="end">$26.58</text>
+  <!-- Totals -->
+  <use href="#hDivider" x="712" y="324"/>
+  <text x="712" y="348" fill="#94A3B8" font-size="13">Subtotal</text>
+  <text x="1340" y="348" fill="#E2E8F0" font-size="13" text-anchor="end">$24.50</text>
+  <!-- Admin: Settings > Tax > Tax Rate -->
+  <text x="712" y="372" fill="#94A3B8" font-size="13">Tax (8.5%)</text>
+  <text x="1340" y="372" fill="#E2E8F0" font-size="13" text-anchor="end">$2.08</text>
+  <use href="#hDivider" x="712" y="382"/>
+  <text x="712" y="406" fill="#E2E8F0" font-size="16" font-weight="700">Total</text>
+  <text x="1340" y="406" fill="#F59E0B" font-size="20" font-weight="700" text-anchor="end">$26.58</text>
 
-  <!-- AI Features panel -->
-  <rect x="616" y="430" width="568" height="300" rx="12" fill="#0F1117"/>
-  <text x="636" y="458" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">AI ORDERING CAPABILITIES</text>
+  <!-- ================================================================== -->
+  <!-- AI CAPABILITIES PANEL                                              -->
+  <!-- Admin: Settings > AI > Enabled Capabilities                        -->
+  <!-- ================================================================== -->
+  <rect x="700" y="430" width="650" height="320" rx="12" fill="#0C0E1A" filter="url(#elevShadow)"/>
+  <text x="720" y="458" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1">AI ORDERING CAPABILITIES</text>
+  <use href="#gearIcon" x="886" y="447" width="12" height="12" color="#64748B"/>
 
-  <!-- Feature tiles -->
-  <rect x="628" y="468" width="266" height="80" rx="10" fill="#1A102D"/>
-  <text x="648" y="492" fill="#A855F7" font-size="20">🧠</text>
-  <text x="680" y="492" fill="#E2E8F0" font-size="14" font-weight="600">Natural Language</text>
-  <text x="648" y="512" fill="#94A3B8" font-size="12">Ask anything — diet, mood,</text>
-  <text x="648" y="530" fill="#94A3B8" font-size="12">allergies, budget, cuisine type</text>
+  <!-- Feature tile 1: Natural Language — Admin: Settings > AI > Local LLM > NLP Mode -->
+  <rect x="712" y="468" width="296" height="80" rx="10" fill="#1A102D" filter="url(#cardShadow)"/>
+  <text x="732" y="498" fill="#E2E8F0" font-size="14" font-weight="600">Natural Language</text>
+  <text x="732" y="518" fill="#94A3B8" font-size="12">Ask anything — diet, mood,</text>
+  <text x="732" y="536" fill="#94A3B8" font-size="12">allergies, budget, cuisine type</text>
+  <use href="#gearIcon" x="984" y="476" width="12" height="12" color="#A855F7" opacity="0.4"/>
 
-  <rect x="904" y="468" width="264" height="80" rx="10" fill="#102D1A"/>
-  <text x="924" y="492" fill="#22C55E" font-size="20">🌍</text>
-  <text x="956" y="492" fill="#E2E8F0" font-size="14" font-weight="600">25 Languages</text>
-  <text x="924" y="512" fill="#94A3B8" font-size="12">Auto-detects language,</text>
-  <text x="924" y="530" fill="#94A3B8" font-size="12">responds in kind. RTL ready.</text>
+  <!-- Feature tile 2: 25 Languages — Admin: Settings > AI > Language Support -->
+  <rect x="1020" y="468" width="296" height="80" rx="10" fill="#102D1A" filter="url(#cardShadow)"/>
+  <text x="1040" y="498" fill="#E2E8F0" font-size="14" font-weight="600">25 Languages</text>
+  <text x="1040" y="518" fill="#94A3B8" font-size="12">Auto-detects language,</text>
+  <text x="1040" y="536" fill="#94A3B8" font-size="12">responds in kind. RTL ready.</text>
+  <use href="#gearIcon" x="1292" y="476" width="12" height="12" color="#22C55E" opacity="0.4"/>
 
-  <rect x="628" y="558" width="266" height="80" rx="10" fill="#10202D"/>
-  <text x="648" y="582" fill="#3B82F6" font-size="20">🎙</text>
-  <text x="680" y="582" fill="#E2E8F0" font-size="14" font-weight="600">Voice Ordering</text>
-  <text x="648" y="602" fill="#94A3B8" font-size="12">Full speech-to-text ordering</text>
-  <text x="648" y="620" fill="#94A3B8" font-size="12">for kiosk and table-side</text>
+  <!-- Feature tile 3: Voice Ordering — Admin: Settings > AI > Voice Ordering -->
+  <rect x="712" y="558" width="296" height="80" rx="10" fill="#10202D" filter="url(#cardShadow)"/>
+  <text x="732" y="588" fill="#E2E8F0" font-size="14" font-weight="600">Voice Ordering</text>
+  <text x="732" y="608" fill="#94A3B8" font-size="12">Full speech-to-text ordering</text>
+  <text x="732" y="626" fill="#94A3B8" font-size="12">for kiosk and table-side</text>
+  <use href="#gearIcon" x="984" y="566" width="12" height="12" color="#60A5FA" opacity="0.4"/>
 
-  <rect x="904" y="558" width="264" height="80" rx="10" fill="#2D1A00"/>
-  <text x="924" y="582" fill="#F59E0B" font-size="20">⬆️</text>
-  <text x="956" y="582" fill="#E2E8F0" font-size="14" font-weight="600">Smart Upsell</text>
-  <text x="924" y="602" fill="#94A3B8" font-size="12">AI suggests pairings, add-ons</text>
-  <text x="924" y="620" fill="#94A3B8" font-size="12">and seasonal specials</text>
+  <!-- Feature tile 4: Smart Upsell — Admin: Settings > AI > Upsell Configuration -->
+  <rect x="1020" y="558" width="296" height="80" rx="10" fill="#2D1A00" filter="url(#cardShadow)"/>
+  <text x="1040" y="588" fill="#E2E8F0" font-size="14" font-weight="600">Smart Upsell</text>
+  <text x="1040" y="608" fill="#94A3B8" font-size="12">AI suggests pairings, add-ons</text>
+  <text x="1040" y="626" fill="#94A3B8" font-size="12">and seasonal specials</text>
+  <use href="#gearIcon" x="1292" y="566" width="12" height="12" color="#F59E0B" opacity="0.4"/>
 
-  <rect x="628" y="648" width="266" height="70" rx="10" fill="#2D2000"/>
-  <text x="648" y="672" fill="#FBBF24" font-size="20">⚡</text>
-  <text x="680" y="672" fill="#E2E8F0" font-size="14" font-weight="600">Allergy Guard</text>
-  <text x="648" y="692" fill="#94A3B8" font-size="12">Flags allergens, filters menu</text>
-  <text x="648" y="706" fill="#EF4444" font-size="11">celiac · nut · dairy · shellfish</text>
+  <!-- Feature tile 5: Allergy Guard — Admin: Settings > AI > Allergy Detection -->
+  <rect x="712" y="648" width="296" height="70" rx="10" fill="#2D2000" filter="url(#cardShadow)"/>
+  <text x="732" y="678" fill="#E2E8F0" font-size="14" font-weight="600">Allergy Guard</text>
+  <text x="732" y="698" fill="#94A3B8" font-size="12">Flags allergens, filters menu</text>
+  <text x="870" y="698" fill="#EF4444" font-size="11">celiac · nut · dairy · shellfish</text>
+  <use href="#gearIcon" x="984" y="656" width="12" height="12" color="#FBBF24" opacity="0.4"/>
 
-  <rect x="904" y="648" width="264" height="70" rx="10" fill="#102D2D"/>
-  <text x="924" y="672" fill="#06B6D4" font-size="20">📱</text>
-  <text x="956" y="672" fill="#E2E8F0" font-size="14" font-weight="600">Phone Ordering</text>
-  <text x="924" y="692" fill="#94A3B8" font-size="12">Twilio voice AI, SMS confirm,</text>
-  <text x="924" y="706" fill="#94A3B8" font-size="11">routes to KDS automatically</text>
+  <!-- Feature tile 6: Phone Ordering — Admin: Settings > AI > Phone/SMS Integration -->
+  <rect x="1020" y="648" width="296" height="70" rx="10" fill="#102D2D" filter="url(#cardShadow)"/>
+  <text x="1040" y="678" fill="#E2E8F0" font-size="14" font-weight="600">Phone Ordering</text>
+  <text x="1040" y="698" fill="#94A3B8" font-size="12">Twilio voice AI, SMS confirm,</text>
+  <!-- Admin: Settings > Integrations > Twilio > Phone Ordering -->
+  <text x="1040" y="712" fill="#94A3B8" font-size="11">routes to KDS automatically</text>
+  <use href="#gearIcon" x="1292" y="656" width="12" height="12" color="#06B6D4" opacity="0.4"/>
 
-  <!-- Fire to kitchen button -->
-  <rect x="616" y="742" width="568" height="72" rx="12" fill="#22C55E"/>
-  <rect x="616" y="742" width="284" height="72" rx="12" fill="white" opacity="0.05"/>
-  <text x="900" y="774" fill="white" font-size="20" font-weight="700" text-anchor="middle">🔥 Send to Kitchen — $26.58</text>
-  <text x="900" y="800" fill="#D1FAE5" font-size="14" text-anchor="middle">Confirm via AI · Or continue ordering</text>
+  <!-- ================================================================== -->
+  <!-- FIRE TO KITCHEN BUTTON                                             -->
+  <!-- Admin: Settings > KDS > Send-to-Kitchen Workflow                   -->
+  <!-- ================================================================== -->
+  <rect x="700" y="760" width="650" height="72" rx="12" fill="url(#fireGrad)" filter="url(#elevShadow)"/>
+  <rect x="700" y="760" width="325" height="72" rx="12" fill="white" opacity="0.05"/>
+  <text x="1025" y="792" fill="white" font-size="20" font-weight="700" text-anchor="middle">Send to Kitchen — $26.58</text>
+  <text x="1025" y="818" fill="#D1FAE5" font-size="14" text-anchor="middle">Confirm via AI · Or continue ordering</text>
 
-  <!-- Screen label -->
-  <text x="600" y="878" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS — AI Ordering Assistant (F23 Online Ordering + AI Integration · 1200×900)</text>
+  <!-- ================================================================== -->
+  <!-- MODEL INFO BAR                                                     -->
+  <!-- Admin: Settings > AI > Local LLM > Model Selection                 -->
+  <!-- ================================================================== -->
+  <rect x="700" y="844" width="650" height="40" rx="8" fill="url(#cardGrad)" stroke="#1E2235" stroke-width="1"/>
+  <rect x="700" y="844" width="4" height="40" rx="2" fill="#A855F7"/>
+  <text x="716" y="860" fill="#A855F7" font-size="9" font-weight="700">LOCAL AI MODEL</text>
+  <use href="#gearIcon" x="798" y="852" width="10" height="10" color="#A855F7" opacity="0.5"/>
+  <text x="716" y="874" fill="#64748B" font-size="9">Prism Coder (on-device) · Fuzzy menu matching via pos_menu_items · Allergen flags from pos_allergens · Upsell rules from pos_ai_upsell_config · Phone orders via Twilio &#x2192; KDS routing</text>
+
+  <!-- ================================================================== -->
+  <!-- BOTTOM LABEL                                                       -->
+  <!-- ================================================================== -->
+  <text x="683" y="1014" fill="#1E2235" font-size="11" text-anchor="middle">Synalux POS — AI Ordering Assistant · Prism Coder Local LLM · 1366&#xD7;1024</text>
+
 </svg>

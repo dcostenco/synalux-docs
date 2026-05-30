@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+<svg role="img" aria-labelledby="title-ipad_allergen_filter-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+  <title>Synalux POS — Allergen Filter</title>
+  <desc>Synalux POS allergen filter screen. All UI elements admin-configurable.</desc>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
   <!-- BACKGROUND — dark iPad frame                               -->
   <!-- ═══════════════════════════════════════════════════════════ -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
   <!-- DIVIDER LINES between panels                               -->
@@ -271,7 +273,7 @@
   <!-- Dark theme — allergen management + compliance              -->
   <!-- ═══════════════════════════════════════════════════════════ -->
 
-  <rect x="901" y="0" width="465" height="1024" fill="#0F1117"/>
+  <rect x="901" y="0" width="465" height="1024" fill="#0C0E1A"/>
 
   <!-- Panel header -->
   <rect x="901" y="0" width="465" height="64" fill="#13162A"/>
@@ -377,12 +379,12 @@
   <text x="924" y="669" fill="#64748B" font-size="10">Cross-contamination advisory on item cards</text>
   <!-- Toggle pill — OFF state -->
   <rect x="1288" y="644" width="48" height="24" rx="12" fill="#374151"/>
-  <circle cx="1300" cy="656" r="10" fill="#6B7280"/>
+  <circle cx="1300" cy="656" r="10" fill="#64748B"/>
   <text x="1322" y="661" fill="#64748B" font-size="9" font-weight="700">OFF</text>
 
   <!-- Manage link -->
   <rect x="913" y="688" width="441" height="1" fill="#2D3148"/>
-  <rect x="913" y="698" width="441" height="44" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
+  <rect x="913" y="698" width="441" height="44" rx="8" fill="#0C0E1A" stroke="#2D3148" stroke-width="1"/>
   <text x="924" y="718" fill="#F59E0B" font-size="12" font-weight="700">Manage item allergens →</text>
   <text x="924" y="733" fill="#64748B" font-size="10">Edit allergen tags in Nutritional Settings</text>
 

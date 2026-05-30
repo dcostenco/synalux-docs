@@ -1,184 +1,312 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-ipad_reopen_check-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- BACKGROUND                                                      -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <!-- ═══════════════════════════════════════════════════════════════
+       DESIGN SYSTEM DEFS — shared gradients, filters, symbols
+       ═══════════════════════════════════════════════════════════════ -->
+  <title id="title-ipad_reopen_check-svg">Synalux POS — reopen check</title>
+  <desc>Synalux POS mockup screen for reopen check. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#10132A"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+    <linearGradient id="amberBtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="greenBtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="redBtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="receiptGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- TOP NAV BAR (h=56)                                             -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect x="0" y="0" width="1366" height="56" fill="#1A1D2E"/>
-  <rect x="0" y="56" width="1366" height="1" fill="#2D3148"/>
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="iconShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="glowAmber" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#F59E0B" flood-opacity="0.15"/>
+    </filter>
+    <filter id="glowPurple" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#8B5CF6" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- ─── REUSABLE SYMBOLS ─── -->
+
+    <!-- Admin configurability pencil icon (30% opacity) -->
+    <symbol id="adminEdit" viewBox="0 0 14 14">
+      <path d="M10.5 1.5l2 2-7 7H3.5v-2l7-7z M9 3l2 2" fill="none" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- Admin gear icon (30% opacity) -->
+    <symbol id="adminGear" viewBox="0 0 16 16">
+      <circle cx="8" cy="8" r="2.5" fill="none" stroke="#94A3B8" stroke-width="1.2" opacity="0.3"/>
+      <path d="M8 1v2M8 13v2M1 8h2M13 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M13.1 2.9l-1.4 1.4M4.3 11.7l-1.4 1.4" stroke="#94A3B8" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- Check list item (unselected) -->
+    <symbol id="checkItem" viewBox="0 0 336 44">
+      <rect width="336" height="44" rx="7" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- Audit trail entry -->
+    <symbol id="auditRow" viewBox="0 0 369 34">
+      <rect width="369" height="34" rx="5" fill="url(#cardGrad)"/>
+    </symbol>
+
+    <!-- Date filter pill -->
+    <symbol id="datePill" viewBox="0 0 80 26">
+      <rect width="80" height="26" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- Search type pill (inactive) -->
+    <symbol id="searchPill" viewBox="0 0 72 24">
+      <rect width="72" height="24" rx="5" fill="transparent"/>
+    </symbol>
+
+    <!-- Nav tab (active) -->
+    <symbol id="navActive" viewBox="0 0 90 36">
+      <rect width="90" height="36" rx="8" fill="url(#amberBtn)"/>
+    </symbol>
+
+    <!-- Nav tab (inactive) -->
+    <symbol id="navInactive" viewBox="0 0 80 36">
+      <rect width="80" height="36" rx="8" fill="transparent"/>
+    </symbol>
+
+    <!-- Status flow box -->
+    <symbol id="flowBox" viewBox="0 0 70 24">
+      <rect width="70" height="24" rx="5" fill="#1E293B"/>
+    </symbol>
+
+    <!-- PIN dot (filled) -->
+    <symbol id="pinDotFilled" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="7" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- Status dot -->
+    <symbol id="statusDot" viewBox="0 0 10 10">
+      <circle cx="5" cy="5" r="4" fill="#22C55E"/>
+    </symbol>
+
+    <!-- WiFi icon -->
+    <symbol id="wifiIcon" viewBox="0 0 22 18">
+      <path d="M4,10 Q11,2 18,10" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+      <path d="M7,13 Q11,8 15,13" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="11" cy="16" r="2" fill="#22C55E"/>
+    </symbol>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BACKGROUND
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TOP NAV BAR (h=56)
+       Admin: Settings > General > Branding
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1366" height="56" fill="#161930" filter="url(#shadow)"/>
+  <rect x="0" y="56" width="1366" height="1" fill="#1E2235"/>
 
   <!-- Logo -->
-  <rect x="16" y="12" width="32" height="32" rx="8" fill="#F59E0B"/>
-  <text x="32" y="33" fill="#0F1117" font-size="16" font-weight="800" text-anchor="middle">S</text>
+  <rect x="16" y="12" width="32" height="32" rx="8" fill="url(#amberBtn)" filter="url(#iconShadow)"/>
+  <text x="32" y="33" fill="#0C0E1A" font-size="16" font-weight="800" text-anchor="middle">S</text>
   <text x="56" y="30" fill="#F1F5F9" font-size="15" font-weight="700">Synalux</text>
   <text x="110" y="30" fill="#64748B" font-size="15" font-weight="400">POS</text>
+  <use href="#adminEdit" x="140" y="22" width="10" height="10"/>
 
-  <!-- Nav tabs -->
-  <rect x="200" y="10" width="90" height="36" rx="8" fill="#F59E0B"/>
-  <text x="245" y="32" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">Register</text>
+  <!-- Nav tabs — Admin: Settings > Navigation > Tabs -->
+  <use href="#navActive" x="200" y="10" width="90" height="36"/>
+  <text x="245" y="32" fill="#0C0E1A" font-size="13" font-weight="700" text-anchor="middle">Register</text>
 
-  <rect x="298" y="10" width="80" height="36" rx="8" fill="none"/>
+  <use href="#navInactive" x="298" y="10" width="80" height="36"/>
   <text x="338" y="32" fill="#64748B" font-size="13" font-weight="500" text-anchor="middle">Tables</text>
 
-  <rect x="386" y="10" width="70" height="36" rx="8" fill="none"/>
+  <use href="#navInactive" x="386" y="10" width="70" height="36"/>
   <text x="421" y="32" fill="#64748B" font-size="13" font-weight="500" text-anchor="middle">KDS</text>
 
-  <rect x="464" y="10" width="80" height="36" rx="8" fill="none"/>
+  <use href="#navInactive" x="464" y="10" width="80" height="36"/>
   <text x="504" y="32" fill="#64748B" font-size="13" font-weight="500" text-anchor="middle">Reports</text>
 
-  <rect x="552" y="10" width="80" height="36" rx="8" fill="none"/>
+  <use href="#navInactive" x="552" y="10" width="80" height="36"/>
   <text x="592" y="32" fill="#64748B" font-size="13" font-weight="500" text-anchor="middle">Settings</text>
+  <use href="#adminGear" x="630" y="18" width="12" height="12"/>
 
   <!-- Right side nav -->
   <text x="1060" y="32" fill="#F1F5F9" font-size="13" font-weight="600">Dmitri (Manager)</text>
   <text x="1210" y="32" fill="#94A3B8" font-size="13">7:42 PM</text>
-  <path d="M1312,26 Q1321,18 1330,26" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
-  <path d="M1315,30 Q1321,24 1327,30" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="1321" cy="34" r="2" fill="#10B981"/>
-  <text x="1338" y="32" fill="#10B981" font-size="11">●</text>
+  <use href="#wifiIcon" x="1310" y="18" width="22" height="18"/>
+  <use href="#statusDot" x="1336" y="24" width="10" height="10"/>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- HEADER STRIP (h=52, amber bg)                                  -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect x="0" y="57" width="1366" height="52" fill="#F59E0B"/>
-  <text x="683" y="78" fill="#0F1117" font-size="15" font-weight="800" text-anchor="middle">🔓 Reopen Closed Check — Order #2406-089 · Table 4 · Closed 6:14 PM · $52.64 charged</text>
-  <text x="683" y="98" fill="#78350F" font-size="12" font-weight="600" text-anchor="middle">Manager action required · Changes logged to audit trail · Customer may be notified · Payment remains captured until refund is issued</text>
+  <!-- ═══════════════════════════════════════════════════════════════
+       HEADER STRIP (h=52, amber bg)
+       Admin: Settings > Register > Reopen Policy
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="57" width="1366" height="52" fill="url(#amberBtn)" filter="url(#shadow)"/>
+  <text x="683" y="78" fill="#0C0E1A" font-size="15" font-weight="800" text-anchor="middle">Reopen Closed Check &#x2014; Order #2406-089 &#xB7; Table 4 &#xB7; Closed 6:14 PM &#xB7; $52.64 charged</text>
+  <text x="683" y="98" fill="#78350F" font-size="12" font-weight="600" text-anchor="middle">Manager action required &#xB7; Changes logged to audit trail &#xB7; Customer may be notified &#xB7; Payment remains captured until refund is issued</text>
+  <use href="#adminGear" x="1340" y="64" width="14" height="14"/>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- THREE COLUMN LAYOUT starts at y=109                            -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       THREE COLUMN LAYOUT starts at y=109
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- Column dividers -->
-  <rect x="360" y="109" width="1" height="855" fill="#2D3148"/>
-  <rect x="980" y="109" width="1" height="855" fill="#2D3148"/>
+  <rect x="360" y="109" width="1" height="765" fill="#1E2235"/>
+  <rect x="980" y="109" width="1" height="765" fill="#1E2235"/>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LEFT COLUMN (x=0, w=360): Order Search / History              -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       LEFT COLUMN (x=0, w=360): Order Search / History
+       Admin: Settings > Register > Reopen Policy > Search
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- Section header -->
   <text x="16" y="133" fill="#F1F5F9" font-size="14" font-weight="700">Find Closed Check</text>
+  <use href="#adminEdit" x="140" y="121" width="11" height="11"/>
 
-  <!-- Search type pills -->
-  <rect x="12" y="141" width="336" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <rect x="14" y="143" width="72" height="24" rx="5" fill="#F59E0B"/>
-  <text x="50" y="159" fill="#0F1117" font-size="11" font-weight="700" text-anchor="middle">Order #</text>
+  <!-- Search type pills — Admin: Settings > Register > Reopen Policy > Search Fields -->
+  <rect x="12" y="141" width="336" height="28" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <rect x="14" y="143" width="72" height="24" rx="5" fill="url(#amberBtn)"/>
+  <text x="50" y="159" fill="#0C0E1A" font-size="11" font-weight="700" text-anchor="middle">Order #</text>
+  <use href="#searchPill" x="90" y="143" width="72" height="24"/>
   <text x="118" y="159" fill="#64748B" font-size="11" text-anchor="middle">Table</text>
+  <use href="#searchPill" x="156" y="143" width="72" height="24"/>
   <text x="190" y="159" fill="#64748B" font-size="11" text-anchor="middle">Customer</text>
+  <use href="#searchPill" x="230" y="143" width="72" height="24"/>
   <text x="266" y="159" fill="#64748B" font-size="11" text-anchor="middle">Amount</text>
+  <use href="#searchPill" x="302" y="143" width="72" height="24"/>
   <text x="336" y="159" fill="#64748B" font-size="11" text-anchor="middle">Date</text>
+  <use href="#adminGear" x="338" y="144" width="10" height="10"/>
 
   <!-- Search input -->
-  <rect x="12" y="176" width="312" height="34" rx="7" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="28" y="198" fill="#94A3B8" font-size="12">🔍</text>
+  <rect x="12" y="176" width="312" height="34" rx="7" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5"/>
   <text x="46" y="198" fill="#F1F5F9" font-size="13" font-weight="600">2406-089</text>
   <!-- Found checkmark -->
-  <rect x="328" y="178" width="30" height="30" rx="6" fill="#10B981"/>
-  <text x="343" y="198" fill="white" font-size="14" font-weight="900" text-anchor="middle">✓</text>
+  <rect x="328" y="178" width="30" height="30" rx="6" fill="url(#greenBtn)" filter="url(#iconShadow)"/>
+  <text x="343" y="198" fill="white" font-size="14" font-weight="900" text-anchor="middle">&#x2713;</text>
 
-  <!-- Date range -->
+  <!-- Date range — Admin: Settings > Register > Reopen Policy > Time Window -->
   <rect x="12" y="218" width="140" height="26" rx="6" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="1"/>
-  <text x="82" y="235" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">📅 Today</text>
-  <rect x="160" y="218" width="80" height="26" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <text x="82" y="235" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">Today</text>
+  <use href="#datePill" x="160" y="218" width="80" height="26"/>
   <text x="200" y="235" fill="#64748B" font-size="11" text-anchor="middle">Yesterday</text>
-  <rect x="248" y="218" width="104" height="26" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="248" y="218" width="104" height="26" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="300" y="235" fill="#64748B" font-size="11" text-anchor="middle">Custom range</text>
+  <use href="#adminEdit" x="340" y="220" width="10" height="10"/>
 
   <!-- Closed checks list label -->
-  <text x="16" y="260" fill="#94A3B8" font-size="11" font-weight="600">CLOSED TODAY — 47 checks</text>
+  <text x="16" y="260" fill="#94A3B8" font-size="11" font-weight="600">CLOSED TODAY &#x2014; 47 checks</text>
 
   <!-- Check item 1 — SELECTED -->
-  <rect x="12" y="268" width="336" height="52" rx="7" fill="#F59E0B" opacity="0.12" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="12" y="268" width="336" height="52" rx="7" fill="#F59E0B" opacity="0.12" stroke="#F59E0B" stroke-width="1.5" filter="url(#glowAmber)"/>
   <rect x="14" y="270" width="4" height="48" rx="2" fill="#F59E0B"/>
   <text x="28" y="285" fill="#F59E0B" font-size="12" font-weight="700">#2406-089</text>
-  <text x="28" y="301" fill="#94A3B8" font-size="11">Table 4 · Dine-In · Server: Marcus</text>
+  <text x="28" y="301" fill="#94A3B8" font-size="11">Table 4 &#xB7; Dine-In &#xB7; Server: Marcus</text>
   <text x="28" y="314" fill="#64748B" font-size="10">6:14 PM</text>
   <text x="340" y="285" fill="#F59E0B" font-size="13" font-weight="800" text-anchor="end">$52.64</text>
-  <rect x="290" y="305" width="58" height="16" rx="4" fill="#F59E0B"/>
-  <text x="319" y="317" fill="#0F1117" font-size="10" font-weight="700" text-anchor="middle">SELECTED</text>
+  <rect x="290" y="305" width="58" height="16" rx="4" fill="url(#amberBtn)"/>
+  <text x="319" y="317" fill="#0C0E1A" font-size="10" font-weight="700" text-anchor="middle">SELECTED</text>
 
   <!-- Check item 2 -->
-  <rect x="12" y="326" width="336" height="44" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkItem" x="12" y="326" width="336" height="44"/>
   <text x="28" y="343" fill="#F1F5F9" font-size="12" font-weight="600">#2406-078</text>
   <text x="28" y="358" fill="#94A3B8" font-size="11">Tab: John D.</text>
   <text x="28" y="369" fill="#64748B" font-size="10">5:52 PM</text>
   <text x="340" y="343" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$38.20</text>
 
   <!-- Check item 3 — refund issued -->
-  <rect x="12" y="376" width="336" height="44" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkItem" x="12" y="376" width="336" height="44"/>
   <text x="28" y="393" fill="#F1F5F9" font-size="12" font-weight="600">#2406-061</text>
-  <text x="28" y="408" fill="#94A3B8" font-size="11">Table 2 · Dine-In</text>
+  <text x="28" y="408" fill="#94A3B8" font-size="11">Table 2 &#xB7; Dine-In</text>
   <text x="28" y="419" fill="#64748B" font-size="10">5:38 PM</text>
   <text x="340" y="393" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$94.10</text>
-  <rect x="240" y="407" width="90" height="14" rx="3" fill="#10B981" opacity="0.2" stroke="#10B981" stroke-width="1"/>
-  <text x="285" y="418" fill="#10B981" font-size="9" font-weight="700" text-anchor="middle">Refund issued</text>
+  <rect x="240" y="407" width="90" height="14" rx="3" fill="#22C55E" opacity="0.2" stroke="#22C55E" stroke-width="1"/>
+  <text x="285" y="418" fill="#22C55E" font-size="9" font-weight="700" text-anchor="middle">Refund issued</text>
 
   <!-- Check item 4 -->
-  <rect x="12" y="426" width="336" height="44" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkItem" x="12" y="426" width="336" height="44"/>
   <text x="28" y="443" fill="#F1F5F9" font-size="12" font-weight="600">#2406-052</text>
-  <text x="28" y="458" fill="#94A3B8" font-size="11">Table 7 · Dine-In</text>
+  <text x="28" y="458" fill="#94A3B8" font-size="11">Table 7 &#xB7; Dine-In</text>
   <text x="28" y="469" fill="#64748B" font-size="10">5:15 PM</text>
   <text x="340" y="443" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$27.80</text>
 
   <!-- Check item 5 -->
-  <rect x="12" y="476" width="336" height="44" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <use href="#checkItem" x="12" y="476" width="336" height="44"/>
   <text x="28" y="493" fill="#F1F5F9" font-size="12" font-weight="600">#2406-038</text>
   <text x="28" y="508" fill="#94A3B8" font-size="11">Takeout #12</text>
   <text x="28" y="519" fill="#64748B" font-size="10">4:47 PM</text>
   <text x="340" y="493" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$21.50</text>
 
   <!-- More collapse -->
-  <rect x="12" y="526" width="336" height="28" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="180" y="544" fill="#64748B" font-size="11" text-anchor="middle">+ 42 more closed today ▼</text>
+  <rect x="12" y="526" width="336" height="28" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <text x="180" y="544" fill="#64748B" font-size="11" text-anchor="middle">+ 42 more closed today &#x25BC;</text>
 
-  <!-- Reopen rules note -->
-  <rect x="12" y="566" width="336" height="88" rx="8" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Reopen rules note — Admin: Settings > Register > Reopen Policy -->
+  <rect x="12" y="566" width="336" height="88" rx="8" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="12" y="566" width="336" height="3" rx="2" fill="#F59E0B"/>
   <text x="28" y="585" fill="#F59E0B" font-size="11" font-weight="700">Reopen Rules</text>
-  <text x="28" y="601" fill="#94A3B8" font-size="11">⏱ Available for: 24 hours after close</text>
-  <text x="28" y="617" fill="#94A3B8" font-size="11">🔑 Requires: Manager PIN</text>
-  <text x="28" y="633" fill="#94A3B8" font-size="11">📝 Reopen reason: Required field</text>
+  <use href="#adminGear" x="108" y="573" width="12" height="12"/>
+  <text x="28" y="601" fill="#94A3B8" font-size="11">Available for: 24 hours after close</text>
+  <use href="#adminEdit" x="240" y="589" width="10" height="10"/>
+  <text x="28" y="617" fill="#94A3B8" font-size="11">Requires: Manager PIN</text>
+  <use href="#adminEdit" x="170" y="605" width="10" height="10"/>
+  <text x="28" y="633" fill="#94A3B8" font-size="11">Reopen reason: Required field</text>
+  <use href="#adminEdit" x="190" y="621" width="10" height="10"/>
   <text x="28" y="648" fill="#64748B" font-size="10">Reopened checks auto-close after 2 hours</text>
+  <use href="#adminEdit" x="262" y="637" width="10" height="10"/>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- CENTER COLUMN (x=361, w=618): Reopen Details + Order Review   -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       CENTER COLUMN (x=361, w=618): Reopen Details + Order Review
+       Admin: Settings > Register > Reopen Policy > Review
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- CLOSED ORDER CARD — receipt style -->
-  <rect x="373" y="117" width="594" height="282" rx="10" fill="#FAFAFA" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="373" y="117" width="594" height="282" rx="10" fill="url(#receiptGrad)" stroke="#E2E8F0" stroke-width="1" filter="url(#shadow)"/>
 
   <!-- Receipt header stripe -->
   <rect x="373" y="117" width="594" height="36" rx="10" fill="#1E293B"/>
   <rect x="373" y="135" width="594" height="18" fill="#1E293B"/>
-  <text x="670" y="140" fill="white" font-size="12" font-weight="800" text-anchor="middle">CLOSED CHECK — Order #2406-089</text>
+  <text x="670" y="140" fill="white" font-size="12" font-weight="800" text-anchor="middle">CLOSED CHECK &#x2014; Order #2406-089</text>
 
   <!-- Receipt sub-header -->
   <rect x="373" y="153" width="594" height="22" fill="#F8FAFC"/>
-  <text x="670" y="168" fill="#475569" font-size="11" text-anchor="middle">Table 4 · Dine-In · Closed 6:14 PM · Server: Marcus</text>
+  <text x="670" y="168" fill="#475569" font-size="11" text-anchor="middle">Table 4 &#xB7; Dine-In &#xB7; Closed 6:14 PM &#xB7; Server: Marcus</text>
 
   <!-- Divider -->
   <line x1="390" y1="178" x2="950" y2="178" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,3"/>
 
-  <!-- Item rows -->
   <!-- Item 1: Classic Burger -->
-  <text x="390" y="196" fill="#1E293B" font-size="12" font-weight="600">Classic Burger × 1</text>
+  <text x="390" y="196" fill="#1E293B" font-size="12" font-weight="600">Classic Burger &#xD7; 1</text>
   <text x="950" y="196" fill="#1E293B" font-size="12" font-weight="600" text-anchor="end">$18.00</text>
   <text x="390" y="210" fill="#94A3B8" font-size="10">  No Onions, Add Bacon</text>
 
   <!-- Item 2: Craft Beer -->
-  <text x="390" y="227" fill="#1E293B" font-size="12" font-weight="600">Craft Beer — Stella Artois × 1</text>
+  <text x="390" y="227" fill="#1E293B" font-size="12" font-weight="600">Craft Beer &#x2014; Stella Artois &#xD7; 1</text>
   <text x="950" y="227" fill="#1E293B" font-size="12" font-weight="600" text-anchor="end">$9.00</text>
 
   <!-- Item 3: Caesar Salad (price error) -->
-  <text x="390" y="250" fill="#1E293B" font-size="12" font-weight="600">Caesar Salad × 1</text>
+  <text x="390" y="250" fill="#1E293B" font-size="12" font-weight="600">Caesar Salad &#xD7; 1</text>
   <text x="950" y="250" fill="#1E293B" font-size="12" font-weight="600" text-anchor="end">$14.00</text>
   <!-- Error annotation -->
   <rect x="390" y="256" width="310" height="16" rx="3" fill="#EF4444" opacity="0.1"/>
-  <text x="396" y="268" fill="#EF4444" font-size="10" font-weight="600">⚠ Price error — menu price is $12.00 (overcharged $2.00)</text>
+  <text x="396" y="268" fill="#EF4444" font-size="10" font-weight="600">Price error &#x2014; menu price is $12.00 (overcharged $2.00)</text>
 
   <!-- Divider -->
   <line x1="390" y1="278" x2="950" y2="278" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,3"/>
@@ -193,202 +321,214 @@
 
   <line x1="390" y1="330" x2="950" y2="330" stroke="#CBD5E1" stroke-width="1"/>
   <text x="390" y="346" fill="#1E293B" font-size="13" font-weight="800">TOTAL CHARGED</text>
-  <text x="950" y="346" fill="#10B981" font-size="13" font-weight="800" text-anchor="end">$52.64</text>
-  <text x="390" y="360" fill="#94A3B8" font-size="10">Visa ••••4242 · Auth: A8K92L · Stripe charge: ch_xyz789</text>
+  <text x="950" y="346" fill="#22C55E" font-size="13" font-weight="800" text-anchor="end">$52.64</text>
+  <text x="390" y="360" fill="#94A3B8" font-size="10">Visa &#x2022;&#x2022;&#x2022;&#x2022;4242 &#xB7; Auth: A8K92L &#xB7; Stripe charge: ch_xyz789</text>
 
   <!-- Divider between card and reason -->
-  <rect x="373" y="406" width="594" height="1" fill="#2D3148"/>
+  <rect x="373" y="406" width="594" height="1" fill="#2A2E45"/>
 
-  <!-- REOPEN REASON -->
+  <!-- REOPEN REASON — Admin: Settings > Register > Reopen Policy > Reasons -->
   <text x="380" y="426" fill="#F1F5F9" font-size="13" font-weight="700">Reopen Reason</text>
   <rect x="378" y="424" width="3" height="16" rx="1" fill="#EF4444"/>
   <text x="558" y="426" fill="#EF4444" font-size="10" font-weight="700">* Required</text>
+  <use href="#adminGear" x="620" y="414" width="12" height="12"/>
 
   <!-- Reason dropdown -->
-  <rect x="373" y="433" width="594" height="36" rx="7" fill="#1A1D2E" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="390" y="455" fill="#F1F5F9" font-size="12" font-weight="600">Pricing Error — Wrong Amount Charged</text>
-  <text x="957" y="455" fill="#94A3B8" font-size="12" text-anchor="end">▼</text>
+  <rect x="373" y="433" width="594" height="36" rx="7" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="390" y="455" fill="#F1F5F9" font-size="12" font-weight="600">Pricing Error &#x2014; Wrong Amount Charged</text>
+  <text x="957" y="455" fill="#94A3B8" font-size="12" text-anchor="end">&#x25BC;</text>
+  <use href="#adminEdit" x="930" y="440" width="10" height="10"/>
 
   <!-- Note field -->
   <text x="380" y="482" fill="#94A3B8" font-size="11">Note (optional)</text>
-  <rect x="373" y="489" width="594" height="52" rx="7" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="373" y="489" width="594" height="52" rx="7" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="390" y="507" fill="#F1F5F9" font-size="11">Caesar Salad was priced at $14 but menu shows $12.</text>
   <text x="390" y="523" fill="#F1F5F9" font-size="11">Customer called to report the discrepancy.</text>
 
   <!-- WHAT HAPPENS info card -->
-  <rect x="373" y="549" width="594" height="148" rx="10" fill="#1A1D2E" stroke="#8B5CF6" stroke-width="1.5"/>
+  <rect x="373" y="549" width="594" height="148" rx="10" fill="url(#cardGrad)" stroke="#8B5CF6" stroke-width="1.5" filter="url(#glowPurple)"/>
   <rect x="373" y="549" width="594" height="3" rx="2" fill="#8B5CF6"/>
   <text x="390" y="569" fill="#8B5CF6" font-size="12" font-weight="700">What Happens When Reopened</text>
-  <text x="390" y="586" fill="#94A3B8" font-size="11">• pos_orders.status changes: 'closed' → 'reopened'</text>
-  <text x="390" y="602" fill="#94A3B8" font-size="11">• Payment remains captured — NOT reversed automatically</text>
-  <text x="390" y="618" fill="#94A3B8" font-size="11">• Staff can: add / remove / modify items, correct prices</text>
-  <text x="390" y="634" fill="#10B981" font-size="11">• After correction: issue refund for difference ($2.00 + tax)</text>
-  <text x="390" y="650" fill="#94A3B8" font-size="11">• If amount increased: collect additional payment separately</text>
-  <text x="390" y="666" fill="#EF4444" font-size="11">• Cannot: change payment method for already-settled amount</text>
-  <text x="390" y="682" fill="#64748B" font-size="10">• Reopened check expires in 2 hours — then auto-closes with manager alert</text>
+  <text x="390" y="586" fill="#94A3B8" font-size="11">&#x2022; pos_orders.status changes: 'closed' &#x2192; 'reopened'</text>
+  <text x="390" y="602" fill="#94A3B8" font-size="11">&#x2022; Payment remains captured &#x2014; NOT reversed automatically</text>
+  <text x="390" y="618" fill="#94A3B8" font-size="11">&#x2022; Staff can: add / remove / modify items, correct prices</text>
+  <text x="390" y="634" fill="#22C55E" font-size="11">&#x2022; After correction: issue refund for difference ($2.00 + tax)</text>
+  <text x="390" y="650" fill="#94A3B8" font-size="11">&#x2022; If amount increased: collect additional payment separately</text>
+  <text x="390" y="666" fill="#EF4444" font-size="11">&#x2022; Cannot: change payment method for already-settled amount</text>
+  <text x="390" y="682" fill="#64748B" font-size="10">&#x2022; Reopened check expires in 2 hours &#x2014; then auto-closes with manager alert</text>
 
-  <!-- AUTHORIZATION -->
+  <!-- AUTHORIZATION — Admin: Settings > Register > Reopen Policy > Auth -->
   <text x="380" y="714" fill="#F1F5F9" font-size="13" font-weight="700">Authorization</text>
   <text x="380" y="730" fill="#94A3B8" font-size="11">Manager PIN required to reopen this check</text>
+  <use href="#adminGear" x="580" y="718" width="12" height="12"/>
 
   <!-- PIN field -->
-  <rect x="373" y="737" width="594" height="42" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="373" y="737" width="594" height="42" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="390" y="755" fill="#94A3B8" font-size="11">Manager PIN</text>
-  <!-- PIN dots -->
-  <circle cx="520" cy="758" r="7" fill="#F59E0B"/>
-  <circle cx="542" cy="758" r="7" fill="#F59E0B"/>
-  <circle cx="564" cy="758" r="7" fill="#F59E0B"/>
-  <circle cx="586" cy="758" r="7" fill="#F59E0B"/>
-  <text x="620" y="762" fill="#10B981" font-size="11" font-weight="600">✓ Verified</text>
+  <!-- PIN dots via symbol -->
+  <use href="#pinDotFilled" x="513" y="751" width="14" height="14"/>
+  <use href="#pinDotFilled" x="535" y="751" width="14" height="14"/>
+  <use href="#pinDotFilled" x="557" y="751" width="14" height="14"/>
+  <use href="#pinDotFilled" x="579" y="751" width="14" height="14"/>
+  <text x="620" y="762" fill="#22C55E" font-size="11" font-weight="600">&#x2713; Verified</text>
   <text x="740" y="762" fill="#64748B" font-size="10">Dmitri (Manager)</text>
 
-  <!-- Expire note -->
-  <text x="380" y="796" fill="#64748B" font-size="10">⏱ Reopened check expires: 2 hours after reopening (then auto-closes + manager alert)</text>
+  <!-- Expire note — Admin: Settings > Register > Reopen Policy > Expiry -->
+  <text x="380" y="796" fill="#64748B" font-size="10">Reopened check expires: 2 hours after reopening (then auto-closes + manager alert)</text>
+  <use href="#adminEdit" x="620" y="784" width="10" height="10"/>
 
   <!-- Action buttons -->
-  <rect x="373" y="806" width="290" height="40" rx="8" fill="#EF4444"/>
-  <text x="518" y="831" fill="white" font-size="13" font-weight="700" text-anchor="middle">🔓 Reopen Check</text>
+  <rect x="373" y="806" width="290" height="40" rx="8" fill="url(#redBtn)" filter="url(#shadow)"/>
+  <text x="518" y="831" fill="white" font-size="13" font-weight="700" text-anchor="middle">Reopen Check</text>
 
-  <rect x="671" y="806" width="140" height="40" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="671" y="806" width="140" height="40" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="741" y="831" fill="#94A3B8" font-size="13" font-weight="600" text-anchor="middle">Cancel</text>
 
   <!-- Warning note -->
-  <text x="373" y="860" fill="#94A3B8" font-size="10">⚠ Logs to audit trail. Customer may be notified of the change and any resulting refund.</text>
+  <text x="373" y="860" fill="#94A3B8" font-size="10">Logs to audit trail. Customer may be notified of the change and any resulting refund.</text>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- RIGHT COLUMN (x=981, w=385): Reopened Check — Edit Mode       -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       RIGHT COLUMN (x=981, w=385): Reopened Check — Edit Mode
+       Admin: Settings > Register > Reopen Policy > Edit Mode
+       ═══════════════════════════════════════════════════════════════ -->
 
   <!-- Header -->
-  <rect x="981" y="109" width="385" height="36" fill="#10B981" opacity="0.15"/>
-  <text x="1173" y="132" fill="#10B981" font-size="13" font-weight="700" text-anchor="middle">Check Reopened — Editing Mode</text>
+  <rect x="981" y="109" width="385" height="36" fill="#22C55E" opacity="0.15"/>
+  <text x="1173" y="132" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">Check Reopened &#x2014; Editing Mode</text>
+  <use href="#adminGear" x="1346" y="115" width="12" height="12"/>
 
   <!-- Warning banner -->
   <rect x="989" y="152" width="369" height="30" rx="6" fill="#F97316" opacity="0.15" stroke="#F97316" stroke-width="1"/>
-  <text x="1173" y="171" fill="#F97316" font-size="11" font-weight="700" text-anchor="middle">⚠ REOPENED — changes require reconciliation payment or refund</text>
+  <text x="1173" y="171" fill="#F97316" font-size="11" font-weight="700" text-anchor="middle">REOPENED &#x2014; changes require reconciliation payment or refund</text>
 
   <!-- Edited order items -->
-  <text x="997" y="200" fill="#94A3B8" font-size="11" font-weight="600">ORDER ITEMS — EDITABLE</text>
+  <text x="997" y="200" fill="#94A3B8" font-size="11" font-weight="600">ORDER ITEMS &#x2014; EDITABLE</text>
 
   <!-- Item 1: Classic Burger (unchanged) -->
-  <rect x="989" y="208" width="369" height="40" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1005" y="225" fill="#F1F5F9" font-size="12" font-weight="600">Classic Burger × 1</text>
-  <text x="1005" y="241" fill="#64748B" font-size="10">No Onions, Add Bacon · Unchanged</text>
+  <rect x="989" y="208" width="369" height="40" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1005" y="225" fill="#F1F5F9" font-size="12" font-weight="600">Classic Burger &#xD7; 1</text>
+  <text x="1005" y="241" fill="#64748B" font-size="10">No Onions, Add Bacon &#xB7; Unchanged</text>
   <text x="1350" y="225" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$18.00</text>
 
   <!-- Item 2: Craft Beer (unchanged) -->
-  <rect x="989" y="254" width="369" height="40" rx="6" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="1005" y="271" fill="#F1F5F9" font-size="12" font-weight="600">Craft Beer — Stella Artois × 1</text>
+  <rect x="989" y="254" width="369" height="40" rx="6" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+  <text x="1005" y="271" fill="#F1F5F9" font-size="12" font-weight="600">Craft Beer &#x2014; Stella Artois &#xD7; 1</text>
   <text x="1005" y="287" fill="#64748B" font-size="10">Unchanged</text>
   <text x="1350" y="271" fill="#F1F5F9" font-size="12" font-weight="700" text-anchor="end">$9.00</text>
 
-  <!-- Item 3: Caesar Salad (price corrected) -->
+  <!-- Item 3: Caesar Salad (price corrected) — Admin: Settings > Register > Reopen Policy > Price Edit -->
   <rect x="989" y="300" width="369" height="52" rx="6" fill="#F59E0B" opacity="0.08" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="1005" y="317" fill="#F1F5F9" font-size="12" font-weight="600">Caesar Salad × 1</text>
-  <!-- Crossed out old price -->
+  <text x="1005" y="317" fill="#F1F5F9" font-size="12" font-weight="600">Caesar Salad &#xD7; 1</text>
   <text x="1310" y="317" fill="#EF4444" font-size="11" text-decoration="line-through" text-anchor="end">$14.00</text>
-  <!-- New corrected price -->
-  <text x="1350" y="317" fill="#10B981" font-size="13" font-weight="700" text-anchor="end">$12.00</text>
-  <text x="1005" y="332" fill="#F59E0B" font-size="10">Price corrected: $14.00 → $12.00</text>
+  <text x="1350" y="317" fill="#22C55E" font-size="13" font-weight="700" text-anchor="end">$12.00</text>
+  <text x="1005" y="332" fill="#F59E0B" font-size="10">Price corrected: $14.00 &#x2192; $12.00</text>
   <rect x="1005" y="338" width="100" height="12" rx="3" fill="#F59E0B" opacity="0.2"/>
   <text x="1055" y="348" fill="#F59E0B" font-size="9" font-weight="700" text-anchor="middle">AMENDED</text>
+  <use href="#adminEdit" x="1340" y="304" width="10" height="10"/>
 
   <!-- Divider -->
-  <line x1="997" y1="360" x2="1350" y2="360" stroke="#2D3148" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="997" y1="360" x2="1350" y2="360" stroke="#2A2E45" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- Difference calculation -->
-  <rect x="989" y="366" width="369" height="96" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <rect x="989" y="366" width="369" height="96" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#shadow)"/>
   <text x="997" y="383" fill="#94A3B8" font-size="11" font-weight="600">DIFFERENCE CALCULATION</text>
   <text x="997" y="399" fill="#94A3B8" font-size="11">Original total charged</text>
   <text x="1350" y="399" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="end">$52.64</text>
-  <text x="997" y="414" fill="#94A3B8" font-size="10">  Items $39.00 · Tax $2.48 · Tip $8.00</text>
+  <text x="997" y="414" fill="#94A3B8" font-size="10">  Items $39.00 &#xB7; Tax $2.48 &#xB7; Tip $8.00</text>
   <text x="997" y="430" fill="#94A3B8" font-size="11">New total</text>
   <text x="1350" y="430" fill="#F1F5F9" font-size="11" font-weight="600" text-anchor="end">$50.46</text>
-  <text x="997" y="445" fill="#64748B" font-size="10">  Items $39.00 → items now $39.00, tax recalc $2.48, tip $8.00</text>
-  <line x1="997" y1="451" x2="1350" y2="451" stroke="#2D3148" stroke-width="1"/>
-  <text x="997" y="456" fill="#10B981" font-size="13" font-weight="700">Difference</text>
-  <text x="1350" y="456" fill="#10B981" font-size="13" font-weight="800" text-anchor="end">−$2.18</text>
+  <text x="997" y="445" fill="#64748B" font-size="10">  Items $39.00 &#x2192; items now $39.00, tax recalc $2.48, tip $8.00</text>
+  <line x1="997" y1="451" x2="1350" y2="451" stroke="#2A2E45" stroke-width="1"/>
+  <text x="997" y="456" fill="#22C55E" font-size="13" font-weight="700">Difference</text>
+  <text x="1350" y="456" fill="#22C55E" font-size="13" font-weight="800" text-anchor="end">&#x2212;$2.18</text>
 
-  <!-- Resolution options -->
+  <!-- Resolution options — Admin: Settings > Register > Reopen Policy > Resolution -->
   <text x="997" y="478" fill="#94A3B8" font-size="11" font-weight="600">RESOLUTION</text>
+  <use href="#adminGear" x="1080" y="466" width="12" height="12"/>
 
   <!-- Green refund button (recommended) -->
-  <rect x="989" y="484" width="369" height="40" rx="8" fill="#10B981"/>
-  <text x="1173" y="509" fill="white" font-size="12" font-weight="700" text-anchor="middle">Issue Refund of $2.18 to Visa ••••4242</text>
+  <rect x="989" y="484" width="369" height="40" rx="8" fill="url(#greenBtn)" filter="url(#shadow)"/>
+  <text x="1173" y="509" fill="white" font-size="12" font-weight="700" text-anchor="middle">Issue Refund of $2.18 to Visa &#x2022;&#x2022;&#x2022;&#x2022;4242</text>
   <rect x="989" y="490" width="80" height="16" rx="4" fill="white" opacity="0.2"/>
   <text x="1029" y="501" fill="white" font-size="9" font-weight="700" text-anchor="middle">RECOMMENDED</text>
 
-  <!-- Amber button grayed out -->
-  <rect x="989" y="530" width="369" height="36" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Add to bill (grayed out) -->
+  <rect x="989" y="530" width="369" height="36" rx="8" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
   <text x="1173" y="552" fill="#64748B" font-size="12" font-weight="600" text-anchor="middle">Add to Bill (collect more)</text>
-  <text x="1173" y="565" fill="#64748B" font-size="9" text-anchor="middle">N/A — difference is negative (customer owed refund)</text>
+  <text x="1173" y="565" fill="#64748B" font-size="9" text-anchor="middle">N/A &#x2014; difference is negative (customer owed refund)</text>
 
   <!-- Re-close button -->
-  <rect x="989" y="574" width="369" height="36" rx="8" fill="#1A1D2E" stroke="#10B981" stroke-width="1.5"/>
-  <text x="1173" y="596" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">🔒 Re-close Check</text>
+  <rect x="989" y="574" width="369" height="36" rx="8" fill="url(#cardGrad)" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="1173" y="596" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle">Re-close Check</text>
 
-  <!-- AUDIT TRAIL -->
-  <rect x="989" y="618" width="369" height="8" fill="#0F1117"/>
-  <text x="997" y="640" fill="#94A3B8" font-size="11" font-weight="600">AUDIT TRAIL — pos_audit_log</text>
+  <!-- AUDIT TRAIL — Admin: Settings > Register > Reopen Policy > Audit -->
+  <rect x="989" y="618" width="369" height="8" fill="#0C0E1A"/>
+  <text x="997" y="640" fill="#94A3B8" font-size="11" font-weight="600">AUDIT TRAIL &#x2014; pos_audit_log</text>
+  <use href="#adminGear" x="1188" y="628" width="12" height="12"/>
 
-  <!-- Timeline entries -->
+  <!-- Timeline entries using symbol -->
   <!-- Entry 1 -->
-  <rect x="989" y="648" width="369" height="34" rx="5" fill="#1A1D2E"/>
+  <use href="#auditRow" x="989" y="648" width="369" height="34"/>
   <rect x="989" y="648" width="3" height="34" rx="2" fill="#64748B"/>
   <text x="1001" y="662" fill="#64748B" font-size="10">6:14 PM</text>
   <text x="1001" y="676" fill="#94A3B8" font-size="10">Order #2406-089 closed by Marcus</text>
 
   <!-- Entry 2 -->
-  <rect x="989" y="686" width="369" height="34" rx="5" fill="#1A1D2E"/>
+  <use href="#auditRow" x="989" y="686" width="369" height="34"/>
   <rect x="989" y="686" width="3" height="34" rx="2" fill="#F59E0B"/>
   <text x="1001" y="700" fill="#64748B" font-size="10">7:42 PM</text>
-  <text x="1001" y="714" fill="#F59E0B" font-size="10" font-weight="600">Order #2406-089 reopened by Dmitri — Reason: Pricing Error</text>
+  <text x="1001" y="714" fill="#F59E0B" font-size="10" font-weight="600">Order #2406-089 reopened by Dmitri &#x2014; Reason: Pricing Error</text>
 
   <!-- Entry 3 -->
-  <rect x="989" y="724" width="369" height="34" rx="5" fill="#1A1D2E"/>
+  <use href="#auditRow" x="989" y="724" width="369" height="34"/>
   <rect x="989" y="724" width="3" height="34" rx="2" fill="#F59E0B"/>
   <text x="1001" y="738" fill="#64748B" font-size="10">7:43 PM</text>
-  <text x="1001" y="752" fill="#94A3B8" font-size="10">Item price corrected: Caesar Salad $14.00 → $12.00</text>
+  <text x="1001" y="752" fill="#94A3B8" font-size="10">Item price corrected: Caesar Salad $14.00 &#x2192; $12.00</text>
 
   <!-- Entry 4 -->
-  <rect x="989" y="762" width="369" height="34" rx="5" fill="#1A1D2E"/>
-  <rect x="989" y="762" width="3" height="34" rx="2" fill="#10B981"/>
+  <use href="#auditRow" x="989" y="762" width="369" height="34"/>
+  <rect x="989" y="762" width="3" height="34" rx="2" fill="#22C55E"/>
   <text x="1001" y="776" fill="#64748B" font-size="10">7:43 PM</text>
-  <text x="1001" y="790" fill="#10B981" font-size="10" font-weight="600">Refund $2.18 issued — Stripe ref: re_abc123</text>
+  <text x="1001" y="790" fill="#22C55E" font-size="10" font-weight="600">Refund $2.18 issued &#x2014; Stripe ref: re_abc123</text>
 
   <!-- Entry 5 -->
-  <rect x="989" y="800" width="369" height="34" rx="5" fill="#1A1D2E"/>
-  <rect x="989" y="800" width="3" height="34" rx="2" fill="#10B981"/>
+  <use href="#auditRow" x="989" y="800" width="369" height="34"/>
+  <rect x="989" y="800" width="3" height="34" rx="2" fill="#22C55E"/>
   <text x="1001" y="814" fill="#64748B" font-size="10">7:43 PM</text>
   <text x="1001" y="828" fill="#94A3B8" font-size="10">Order re-closed by Dmitri</text>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- WORKFLOW INTEGRATION STRIP (full-width bottom)                 -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect x="0" y="874" width="1366" height="150" fill="#1A1D2E" stroke="#F59E0B" stroke-width="0"/>
+  <!-- ═══════════════════════════════════════════════════════════════
+       WORKFLOW INTEGRATION STRIP (full-width bottom)
+       Admin: Settings > Register > Reopen Policy > Workflow
+       ═══════════════════════════════════════════════════════════════ -->
+  <rect x="0" y="874" width="1366" height="150" fill="url(#cardGrad)"/>
   <rect x="0" y="874" width="1366" height="2" fill="#F59E0B"/>
   <rect x="0" y="874" width="4" height="150" fill="#F59E0B"/>
 
   <text x="20" y="893" fill="#F59E0B" font-size="11" font-weight="700">Workflow Integration</text>
-  <text x="20" y="910" fill="#94A3B8" font-size="10">pos_orders.status: open → closed → reopened → closed    ·    pos_order_reopen_log: order_id, reopened_by, reason, reopened_at, reclosed_at, delta_cents</text>
-  <text x="20" y="925" fill="#94A3B8" font-size="10">RLS: only manager+ role can SET status='reopened'    ·    Reopened order timer: cron checks for expired reopened orders (&gt;2h) → auto-close + manager alert</text>
-  <text x="20" y="940" fill="#94A3B8" font-size="10">If additional payment needed: new pos_payments row (same order_id)    ·    If refund: pos_refunds row + Stripe refunds.create()</text>
-  <text x="20" y="955" fill="#94A3B8" font-size="10">All changes logged in pos_audit_log with actor, timestamp, delta_cents, stripe_ref    ·    Customer notification: email/SMS if Stripe refund issued</text>
+  <use href="#adminGear" x="140" y="881" width="12" height="12"/>
+  <text x="20" y="910" fill="#94A3B8" font-size="10">pos_orders.status: open &#x2192; closed &#x2192; reopened &#x2192; closed    &#xB7;    pos_order_reopen_log: order_id, reopened_by, reason, reopened_at, reclosed_at, delta_cents</text>
+  <text x="20" y="925" fill="#94A3B8" font-size="10">RLS: only manager+ role can SET status='reopened'    &#xB7;    Reopened order timer: cron checks for expired reopened orders (>2h) &#x2192; auto-close + manager alert</text>
+  <text x="20" y="940" fill="#94A3B8" font-size="10">If additional payment needed: new pos_payments row (same order_id)    &#xB7;    If refund: pos_refunds row + Stripe refunds.create()</text>
+  <text x="20" y="955" fill="#94A3B8" font-size="10">All changes logged in pos_audit_log with actor, timestamp, delta_cents, stripe_ref    &#xB7;    Customer notification: email/SMS if Stripe refund issued</text>
 
-  <!-- Status flow diagram -->
-  <rect x="20" y="963" width="70" height="24" rx="5" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
-  <text x="55" y="979" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">open</text>
-  <text x="95" y="979" fill="#64748B" font-size="12">→</text>
-  <rect x="105" y="963" width="70" height="24" rx="5" fill="#1E293B" stroke="#64748B" stroke-width="1.5"/>
+  <!-- Status flow diagram using symbol -->
+  <use href="#flowBox" x="20" y="963" width="70" height="24"/>
+  <text x="55" y="979" fill="#22C55E" font-size="10" font-weight="700" text-anchor="middle">open</text>
+  <text x="95" y="979" fill="#64748B" font-size="12">&#x2192;</text>
+
+  <use href="#flowBox" x="105" y="963" width="70" height="24"/>
   <text x="140" y="979" fill="#94A3B8" font-size="10" font-weight="700" text-anchor="middle">closed</text>
-  <text x="180" y="979" fill="#64748B" font-size="12">→</text>
+  <text x="180" y="979" fill="#64748B" font-size="12">&#x2192;</text>
+
   <rect x="190" y="963" width="80" height="24" rx="5" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="1.5"/>
   <text x="230" y="979" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="middle">reopened</text>
-  <text x="275" y="979" fill="#64748B" font-size="12">→</text>
-  <rect x="285" y="963" width="70" height="24" rx="5" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
-  <text x="320" y="979" fill="#10B981" font-size="10" font-weight="700" text-anchor="middle">closed</text>
+  <text x="275" y="979" fill="#64748B" font-size="12">&#x2192;</text>
+
+  <use href="#flowBox" x="285" y="963" width="70" height="24"/>
+  <text x="320" y="979" fill="#22C55E" font-size="10" font-weight="700" text-anchor="middle">closed</text>
 
   <!-- DB Schema hint -->
-  <text x="400" y="979" fill="#64748B" font-size="10">pos_payments: amount, status, stripe_charge_id    ·    pos_refunds: order_id, amount_cents, stripe_ref, issued_by, issued_at    ·    pos_audit_log: entity_id, actor_id, action, metadata JSONB, created_at</text>
+  <text x="400" y="979" fill="#64748B" font-size="10">pos_payments: amount, status, stripe_charge_id    &#xB7;    pos_refunds: order_id, amount_cents, stripe_ref, issued_by, issued_at    &#xB7;    pos_audit_log: entity_id, actor_id, action, metadata JSONB, created_at</text>
 
 </svg>

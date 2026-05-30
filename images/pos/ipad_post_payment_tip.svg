@@ -1,458 +1,326 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-ipad_post_payment_tip-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024"
+     font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- BACKGROUND                                             -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <title id="title-ipad_post_payment_tip-svg">Synalux POS — post payment tip</title>
+  <desc>Synalux POS mockup screen for post payment tip. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/>
+      <stop offset="100%" stop-color="#080A14"/>
+    </linearGradient>
 
-  <!-- Top nav bar -->
-  <rect x="0" y="0" width="1366" height="52" fill="#1A1D2E"/>
-  <rect x="0" y="52" width="1366" height="1" fill="#2D3148"/>
+    <!-- Card gradient -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
 
-  <!-- Nav: back arrow + breadcrumb -->
-  <text x="20" y="32" fill="#94A3B8" font-size="18">←</text>
-  <text x="44" y="33" fill="#64748B" font-size="13">Tables</text>
-  <text x="96" y="33" fill="#2D3148" font-size="13">/</text>
-  <text x="108" y="33" fill="#94A3B8" font-size="13">Table 7</text>
-  <text x="164" y="33" fill="#2D3148" font-size="13">/</text>
-  <text x="176" y="33" fill="#F1F5F9" font-size="13" font-weight="600">Post-Payment Tip</text>
+    <!-- Amber button gradient -->
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
 
-  <!-- Nav: right side — server chip -->
-  <rect x="1170" y="12" width="176" height="28" rx="14" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
-  <circle cx="1187" cy="26" r="9" fill="#8B5CF6"/>
-  <text x="1187" y="30" fill="#F1F5F9" font-size="10" font-weight="700" text-anchor="middle">S</text>
-  <text x="1200" y="30" fill="#F1F5F9" font-size="12" font-weight="600">Sarah M.</text>
-  <text x="1268" y="30" fill="#64748B" font-size="11">· Shift 4:00 PM</text>
+    <!-- Green submit gradient -->
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
 
-  <!-- Clock -->
-  <text x="1340" y="30" fill="#94A3B8" font-size="13" text-anchor="end">6:14 PM</text>
+    <!-- Phone bezel gradient -->
+    <linearGradient id="bezelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A2E45"/>
+      <stop offset="100%" stop-color="#1E2235"/>
+    </linearGradient>
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- SECTION LABEL ROW                                      -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <text x="30" y="76" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1.2">CUSTOMER VIEW (QR SCAN)</text>
-  <text x="730" y="76" fill="#64748B" font-size="11" font-weight="700" letter-spacing="1.2">STAFF — POST-PAYMENT TIPS TODAY</text>
+    <!-- Phone screen inner glow -->
+    <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1120"/>
+      <stop offset="100%" stop-color="#0C0E1A"/>
+    </linearGradient>
 
-  <!-- Vertical divider -->
-  <rect x="698" y="58" width="1" height="962" fill="#2D3148"/>
+    <!-- Amber glow for selected tip -->
+    <filter id="amberGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#F59E0B" flood-opacity="0.35"/>
+    </filter>
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- LEFT PANEL — Customer Phone Mockup                     -->
-  <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Green glow for submit -->
+    <filter id="greenGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#22C55E" flood-opacity="0.3"/>
+    </filter>
 
-  <!-- Phone outer shell (centered in left half ~349px wide, centered at x=349) -->
-  <rect x="174" y="86" width="350" height="900" rx="40" fill="#0A0C14" stroke="#3A3F5C" stroke-width="3"/>
-  <!-- Phone inner bezel -->
-  <rect x="184" y="96" width="330" height="880" rx="34" fill="#F8FAFC"/>
+    <!-- Card shadow -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
 
-  <!-- Status bar -->
-  <rect x="184" y="96" width="330" height="32" rx="0" fill="#E2E8F0"/>
-  <rect x="184" y="96" width="330" height="32" rx="34" fill="#E2E8F0"/>
-  <rect x="184" y="112" width="330" height="16" fill="#E2E8F0"/>
-  <text x="200" y="117" fill="#1E293B" font-size="10" font-weight="700">9:41</text>
-  <text x="496" y="117" fill="#1E293B" font-size="10" text-anchor="end">●●● ▲ ▊</text>
+    <!-- Phone shadow -->
+    <filter id="phoneShadow" x="-10%" y="-5%" width="120%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
 
-  <!-- Notch -->
-  <rect x="295" y="96" width="108" height="20" rx="10" fill="#0A0C14"/>
+    <!-- Subtle inner card glow -->
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
 
-  <!-- Home bar at bottom -->
-  <rect x="299" y="955" width="100" height="5" rx="3" fill="#CBD5E1"/>
+    <!-- Tip card selected highlight -->
+    <linearGradient id="selectedTipBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2D1F00"/>
+      <stop offset="100%" stop-color="#1C1400"/>
+    </linearGradient>
 
-  <!-- ─── Restaurant header ─── -->
-  <rect x="184" y="128" width="330" height="60" fill="#1E293B"/>
-  <!-- Logo placeholder circle -->
-  <circle cx="218" cy="158" r="18" fill="#F59E0B"/>
-  <text x="218" y="163" fill="#1E293B" font-size="14" font-weight="900" text-anchor="middle">B</text>
-  <text x="242" y="152" fill="#F8FAFC" font-size="14" font-weight="700">Bistro Moderno</text>
-  <text x="242" y="168" fill="#94A3B8" font-size="11">Table 7 · Order #4831</text>
+    <!-- Header brand gradient -->
+    <linearGradient id="brandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
 
-  <!-- ─── "Your Receipt" heading ─── -->
-  <rect x="184" y="188" width="330" height="36" fill="#F1F5F9"/>
-  <text x="349" y="212" fill="#1E293B" font-size="15" font-weight="700" text-anchor="middle">Your Receipt</text>
+    <!-- ════════════════════════════════════════════════════════ -->
+    <!-- REUSABLE SYMBOLS                                        -->
+    <!-- ════════════════════════════════════════════════════════ -->
 
-  <!-- ─── Order line items ─── -->
-  <rect x="184" y="224" width="330" height="170" fill="#FFFFFF"/>
+    <!-- Admin gear icon for configurable elements -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="2.5" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3"/>
+      <path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M2.8 2.8l1 1M10.2 10.2l1 1M2.8 11.2l1-1M10.2 3.8l1-1" stroke="#F59E0B" stroke-width="0.6" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
 
-  <text x="200" y="246" fill="#475569" font-size="12">Grilled Salmon</text>
-  <!-- dotted line -->
-  <line x1="310" y1="242" x2="480" y2="242" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,3"/>
-  <text x="505" y="246" fill="#1E293B" font-size="12" font-weight="600" text-anchor="end">$34.00</text>
+    <!-- Tip percentage button (unselected) -->
+    <symbol id="tipButton" viewBox="0 0 130 80">
+      <rect x="0" y="0" width="130" height="80" rx="14" fill="url(#cardGrad)" filter="url(#subtleGlow)"/>
+  <!-- Synalux POS -->
+      <rect x="0" y="0" width="130" height="80" rx="14" fill="none" stroke="#2A2E45" stroke-width="1.5"/>
+    </symbol>
 
-  <text x="200" y="268" fill="#475569" font-size="12">Caesar Salad</text>
-  <line x1="300" y1="264" x2="480" y2="264" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,3"/>
-  <text x="505" y="268" fill="#1E293B" font-size="12" font-weight="600" text-anchor="end">$14.00</text>
+    <!-- Action button base (full-width card-style) -->
+    <symbol id="actionBtnBase" viewBox="0 0 424 56">
+      <rect x="0" y="0" width="424" height="56" rx="14"/>
+    </symbol>
+  </defs>
 
-  <text x="200" y="290" fill="#475569" font-size="12">House Red Wine</text>
-  <line x1="320" y1="286" x2="480" y2="286" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2,3"/>
-  <text x="505" y="290" fill="#1E293B" font-size="12" font-weight="600" text-anchor="end">$12.00</text>
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- FULL BACKGROUND                                         -->
+  <!-- ════════════════════════════════════════════════════════ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
 
-  <!-- Subtotal separator -->
-  <rect x="196" y="300" width="318" height="1" fill="#E2E8F0"/>
+  <!-- Subtle radial ambient light behind phone -->
+  <ellipse cx="683" cy="480" rx="400" ry="380" fill="#F59E0B" opacity="0.015"/>
 
-  <text x="200" y="318" fill="#64748B" font-size="12">Subtotal</text>
-  <text x="505" y="318" fill="#334155" font-size="12" text-anchor="end">$60.00</text>
+  <!-- Title above phone -->
+  <text x="683" y="40" fill="#475569" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="2">CUSTOMER VIEW  ·  POST-PAYMENT TIP SCREEN</text>
 
-  <text x="200" y="337" fill="#64748B" font-size="12">Tax (8%)</text>
-  <text x="505" y="337" fill="#334155" font-size="12" text-anchor="end">$4.80</text>
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- PHONE DEVICE FRAME                                      -->
+  <!-- ════════════════════════════════════════════════════════ -->
+  <g filter="url(#phoneShadow)">
+    <!-- Phone outer body -->
+    <rect x="433" y="52" width="500" height="940" rx="48" fill="#1A1D2E" stroke="url(#bezelGrad)" stroke-width="3"/>
 
-  <!-- Total separator -->
-  <rect x="196" y="346" width="318" height="2" fill="#CBD5E1"/>
+    <!-- Phone inner screen area -->
+    <rect x="445" y="64" width="476" height="916" rx="40" fill="url(#screenGrad)"/>
 
-  <text x="200" y="367" fill="#1E293B" font-size="14" font-weight="700">Total</text>
-  <text x="505" y="367" fill="#1E293B" font-size="16" font-weight="700" text-anchor="end">$64.80</text>
+    <!-- Notch -->
+    <rect x="618" y="64" width="130" height="26" rx="13" fill="#1A1D2E"/>
 
-  <!-- Paid badge -->
-  <rect x="196" y="374" width="318" height="1" fill="#E2E8F0"/>
-  <rect x="196" y="381" width="318" height="28" rx="6" fill="#ECFDF5"/>
-  <text x="204" y="399" fill="#059669" font-size="10" font-weight="700">✓ PAID</text>
-  <text x="290" y="399" fill="#6B7280" font-size="10">Credit card ending 4242</text>
+    <!-- Status bar -->
+    <text x="470" y="85" fill="#94A3B8" font-size="12" font-weight="600">9:41</text>
+    <text x="903" y="85" fill="#94A3B8" font-size="11" text-anchor="end">5G  ●●●  ▊</text>
 
-  <!-- ─── Add a Tip section ─── -->
-  <rect x="184" y="412" width="330" height="32" fill="#F59E0B"/>
-  <text x="349" y="433" fill="#1E293B" font-size="13" font-weight="700" text-anchor="middle">Add a Tip for Your Server</text>
-
-  <rect x="184" y="444" width="330" height="230" fill="#FFFFFF"/>
-
-  <!-- Tip buttons row -->
-  <!-- 15% button -->
-  <rect x="196" y="456" width="72" height="52" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-  <text x="232" y="479" fill="#475569" font-size="13" font-weight="700" text-anchor="middle">15%</text>
-  <text x="232" y="496" fill="#64748B" font-size="10" text-anchor="middle">$9.72</text>
-
-  <!-- 18% button -->
-  <rect x="275" y="456" width="72" height="52" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-  <text x="311" y="479" fill="#475569" font-size="13" font-weight="700" text-anchor="middle">18%</text>
-  <text x="311" y="496" fill="#64748B" font-size="10" text-anchor="middle">$11.66</text>
-
-  <!-- 20% button — SELECTED (amber) -->
-  <rect x="354" y="452" width="76" height="60" rx="10" fill="#F59E0B" stroke="#D97706" stroke-width="2"/>
-  <!-- Selection indicator -->
-  <text x="392" y="476" fill="#1E293B" font-size="13" font-weight="700" text-anchor="middle">20%</text>
-  <text x="392" y="493" fill="#78350F" font-size="10" font-weight="700" text-anchor="middle">$12.96</text>
-  <!-- checkmark badge -->
-  <circle cx="421" cy="456" r="9" fill="#1E293B"/>
-  <text x="421" y="460" fill="#F59E0B" font-size="10" text-anchor="middle" font-weight="700">✓</text>
-
-  <!-- Custom button -->
-  <rect x="437" y="456" width="72" height="52" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
-  <text x="473" y="479" fill="#475569" font-size="12" font-weight="700" text-anchor="middle">Custom</text>
-  <text x="473" y="496" fill="#64748B" font-size="10" text-anchor="middle">Amount</text>
-
-  <!-- Selected tip amount callout -->
-  <rect x="196" y="522" width="318" height="44" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
-  <text x="349" y="539" fill="#78350F" font-size="11" text-anchor="middle">Tip amount</text>
-  <text x="349" y="556" fill="#D97706" font-size="18" font-weight="700" text-anchor="middle">$12.96</text>
-
-  <!-- Submit Tip button -->
-  <rect x="196" y="574" width="318" height="48" rx="12" fill="#10B981"/>
-  <text x="349" y="604" fill="#FFFFFF" font-size="15" font-weight="700" text-anchor="middle">Submit Tip →</text>
-
-  <!-- Fine print -->
-  <text x="349" y="634" fill="#6B7280" font-size="10" text-anchor="middle">Tips go directly to your server. Thank you!</text>
-
-  <!-- No tip link -->
-  <text x="349" y="658" fill="#CBD5E1" font-size="11" text-anchor="middle" text-decoration="underline">No tip</text>
-
-  <!-- QR code hint at bottom of phone -->
-  <rect x="184" y="674" width="330" height="302" fill="#F8FAFC"/>
-  <rect x="184" y="674" width="330" height="1" fill="#E2E8F0"/>
-  <text x="349" y="696" fill="#64748B" font-size="10" text-anchor="middle" font-weight="700" letter-spacing="0.8">SECURE PAYMENT</text>
-
-  <!-- Mini QR code visual (decorative grid) -->
-  <g transform="translate(299,708)">
-    <!-- QR border -->
-    <rect x="0" y="0" width="100" height="100" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
-    <!-- QR pattern - position squares -->
-    <rect x="8" y="8" width="24" height="24" rx="2" fill="#1E293B"/>
-    <rect x="12" y="12" width="16" height="16" rx="1" fill="#FFFFFF"/>
-    <rect x="15" y="15" width="10" height="10" fill="#1E293B"/>
-    <rect x="68" y="8" width="24" height="24" rx="2" fill="#1E293B"/>
-    <rect x="72" y="12" width="16" height="16" rx="1" fill="#FFFFFF"/>
-    <rect x="75" y="15" width="10" height="10" fill="#1E293B"/>
-    <rect x="8" y="68" width="24" height="24" rx="2" fill="#1E293B"/>
-    <rect x="12" y="72" width="16" height="16" rx="1" fill="#FFFFFF"/>
-    <rect x="15" y="75" width="10" height="10" fill="#1E293B"/>
-    <!-- QR data dots (decorative) -->
-    <rect x="40" y="8" width="6" height="6" fill="#1E293B"/>
-    <rect x="50" y="8" width="6" height="6" fill="#1E293B"/>
-    <rect x="58" y="16" width="6" height="6" fill="#1E293B"/>
-    <rect x="40" y="18" width="6" height="6" fill="#1E293B"/>
-    <rect x="50" y="24" width="6" height="6" fill="#1E293B"/>
-    <rect x="8" y="40" width="6" height="6" fill="#1E293B"/>
-    <rect x="18" y="40" width="6" height="6" fill="#1E293B"/>
-    <rect x="28" y="50" width="6" height="6" fill="#1E293B"/>
-    <rect x="40" y="40" width="6" height="6" fill="#1E293B"/>
-    <rect x="50" y="40" width="6" height="6" fill="#1E293B"/>
-    <rect x="60" y="40" width="6" height="6" fill="#1E293B"/>
-    <rect x="70" y="44" width="6" height="6" fill="#1E293B"/>
-    <rect x="80" y="40" width="6" height="6" fill="#1E293B"/>
-    <rect x="44" y="50" width="6" height="6" fill="#1E293B"/>
-    <rect x="56" y="54" width="6" height="6" fill="#1E293B"/>
-    <rect x="40" y="60" width="6" height="6" fill="#1E293B"/>
-    <rect x="52" y="68" width="6" height="6" fill="#1E293B"/>
-    <rect x="62" y="60" width="6" height="6" fill="#1E293B"/>
-    <rect x="70" y="68" width="6" height="6" fill="#1E293B"/>
-    <rect x="80" y="60" width="6" height="6" fill="#1E293B"/>
-    <rect x="80" y="78" width="6" height="6" fill="#1E293B"/>
-    <rect x="70" y="82" width="6" height="6" fill="#1E293B"/>
-    <rect x="60" y="76" width="6" height="6" fill="#1E293B"/>
-    <rect x="42" y="80" width="6" height="6" fill="#1E293B"/>
-    <!-- Center logo -->
-    <rect x="42" y="42" width="16" height="16" rx="3" fill="#FFFFFF"/>
-    <circle cx="50" cy="50" r="5" fill="#F59E0B"/>
+    <!-- Home indicator -->
+    <rect x="633" y="960" width="100" height="5" rx="3" fill="#475569"/>
   </g>
 
-  <text x="349" y="826" fill="#94A3B8" font-size="10" text-anchor="middle">Scan to tip on your own device</text>
-  <text x="349" y="842" fill="#CBD5E1" font-size="9" text-anchor="middle">bistromoderno.pos/tip/tok_4831_x9kR2p</text>
-  <text x="349" y="858" fill="#CBD5E1" font-size="9" text-anchor="middle">Expires in 23h 51m · Powered by Stripe</text>
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- SCREEN CONTENT                                          -->
+  <!-- ════════════════════════════════════════════════════════ -->
 
-  <!-- Lock icon -->
-  <rect x="326" y="866" width="46" height="20" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
-  <text x="349" y="880" fill="#059669" font-size="9" text-anchor="middle" font-weight="600">🔒 Secure</text>
+  <!-- ── Restaurant Header Bar ── -->
+  <rect x="445" y="96" width="476" height="80" fill="#161930"/>
+  <rect x="445" y="175" width="476" height="1" fill="#1E2235"/>
 
+  <!-- Restaurant logo -->
+  <circle cx="490" cy="136" r="24" fill="#F59E0B" opacity="0.15"/>
+  <circle cx="490" cy="136" r="20" fill="#F59E0B"/>
+  <text x="490" y="142" fill="#0C0E1A" font-size="16" font-weight="800" text-anchor="middle">B</text>
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- RIGHT PANEL — Staff iPad View                          -->
-  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- Restaurant name and details -->
+  <text x="522" y="129" fill="#E2E8F0" font-size="18" font-weight="700">Bistro Moderno</text>
+  <text x="522" y="149" fill="#64748B" font-size="12">Table 7  ·  Order #4831</text>
+  <text x="522" y="165" fill="#475569" font-size="11">May 29, 2026  ·  8:30 PM</text>
 
-  <!-- Panel background -->
-  <rect x="699" y="58" width="667" height="966" fill="#0F1117"/>
+  <!-- ── Thank You Section ── -->
+  <rect x="465" y="196" width="436" height="120" rx="16" fill="url(#cardGrad)" filter="url(#subtleGlow)"/>
+  <rect x="465" y="196" width="436" height="120" rx="16" fill="none" stroke="#1E2235" stroke-width="1"/>
 
-  <!-- ─── Header row ─── -->
-  <rect x="710" y="68" width="646" height="64" rx="12" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Checkmark circle -->
+  <circle cx="683" cy="232" r="18" fill="#22C55E" opacity="0.12"/>
+  <circle cx="683" cy="232" r="14" fill="#22C55E" opacity="0.2"/>
+  <text x="683" y="238" fill="#4ADE80" font-size="16" font-weight="700" text-anchor="middle">&#10003;</text>
 
-  <!-- Header title -->
-  <text x="730" y="92" fill="#F1F5F9" font-size="18" font-weight="700">Post-Payment Tips</text>
-  <rect x="892" y="78" width="52" height="22" rx="11" fill="#0F1117"/>
-  <text x="918" y="93" fill="#64748B" font-size="11" text-anchor="middle">Today</text>
+  <text x="683" y="265" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">Thank you for dining with us!</text>
+  <text x="683" y="286" fill="#94A3B8" font-size="13" text-anchor="middle">Your server today was</text>
+  <text x="683" y="305" fill="#F59E0B" font-size="15" font-weight="700" text-anchor="middle">John S.</text>
 
-  <text x="730" y="116" fill="#94A3B8" font-size="12">Server: <tspan fill="#F1F5F9" font-weight="600">Sarah M.</tspan>  ·  Shift started <tspan fill="#F1F5F9">4:00 PM</tspan>  ·  <tspan fill="#10B981" font-weight="600">● Active</tspan></text>
+  <!-- ── Bill Summary ── -->
+  <rect x="465" y="330" width="436" height="82" rx="12" fill="url(#cardGrad)" filter="url(#subtleGlow)"/>
+  <rect x="465" y="330" width="436" height="82" rx="12" fill="none" stroke="#1E2235" stroke-width="1"/>
 
-  <!-- Tips today running total -->
-  <rect x="1060" y="72" width="284" height="52" rx="10" fill="#052E16"/>
-  <rect x="1060" y="72" width="284" height="52" rx="10" fill="none" stroke="#10B981" stroke-width="1.5"/>
-  <text x="1078" y="92" fill="#6EE7B7" font-size="11" font-weight="700" letter-spacing="0.8">TIPS TODAY</text>
-  <text x="1078" y="115" fill="#10B981" font-size="24" font-weight="800">$62.14</text>
-  <text x="1192" y="115" fill="#34D399" font-size="12">↑ 3 received</text>
+  <text x="487" y="357" fill="#94A3B8" font-size="12">Subtotal</text>
+  <text x="879" y="357" fill="#CBD5E1" font-size="12" text-anchor="end">$59.72</text>
 
-  <!-- ─── Table header ─── -->
-  <rect x="710" y="144" width="646" height="32" rx="6" fill="#1A1D2E"/>
-  <text x="726" y="164" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.8">TABLE</text>
-  <text x="806" y="164" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.8">ORDER</text>
-  <text x="896" y="164" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.8">BILL TOTAL</text>
-  <text x="1000" y="164" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.8">TIP ADDED</text>
-  <text x="1160" y="164" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.8">TIME</text>
-  <text x="1240" y="164" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.8">STATUS</text>
+  <text x="487" y="377" fill="#94A3B8" font-size="12">Tax (8.5%)</text>
+  <text x="879" y="377" fill="#CBD5E1" font-size="12" text-anchor="end">$5.08</text>
 
-  <!-- ─── ROW 1 — Table 7, $12.96 tip, APPLIED ─── -->
-  <rect x="710" y="178" width="646" height="72" rx="10" fill="#0D2818" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="487" y="386" width="392" height="1" fill="#2A2E45"/>
 
-  <!-- New badge -->
-  <rect x="714" y="182" width="36" height="16" rx="8" fill="#10B981"/>
-  <text x="732" y="193" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">NEW</text>
+  <text x="487" y="405" fill="#E2E8F0" font-size="14" font-weight="700">Total Paid</text>
+  <text x="879" y="405" fill="#E2E8F0" font-size="14" font-weight="700" text-anchor="end">$64.80</text>
 
-  <text x="726" y="226" fill="#F1F5F9" font-size="15" font-weight="700">7</text>
-  <rect x="742" y="213" width="30" height="20" rx="4" fill="#1A2E1A"/>
-  <text x="757" y="227" fill="#6EE7B7" font-size="10" text-anchor="middle">dine</text>
+  <!-- ── Section Label: Add a Tip ── -->
+  <!-- Admin: tip_prompt_text (configurable) -->
+  <text x="683" y="444" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.5">WOULD YOU LIKE TO LEAVE A TIP?</text>
+  <use href="#adminGear" x="844" y="434" width="14" height="14"/>
 
-  <text x="800" y="218" fill="#94A3B8" font-size="10">#4831</text>
-  <text x="800" y="234" fill="#F1F5F9" font-size="12" font-weight="600">Order #4831</text>
+  <!-- ── Tip Percentage Buttons ── -->
+  <!-- Admin: tip_percentages, default_selected_tip (configurable) -->
+  <!-- Row 1: 15%, 18%, 20% -->
 
-  <text x="896" y="218" fill="#94A3B8" font-size="10">Bill</text>
-  <text x="896" y="234" fill="#F1F5F9" font-size="14" font-weight="700">$64.80</text>
+  <!-- 15% Button -->
+  <g>
+    <use href="#tipButton" x="471" y="460" width="130" height="80"/>
+    <text x="536" y="494" fill="#CBD5E1" font-size="20" font-weight="700" text-anchor="middle">15%</text>
+    <text x="536" y="516" fill="#64748B" font-size="13" text-anchor="middle">$9.72</text>
+  </g>
 
-  <!-- Tip amount — highlighted -->
-  <rect x="992" y="188" width="148" height="54" rx="8" fill="#052E16"/>
-  <text x="1000" y="208" fill="#6EE7B7" font-size="10" font-weight="700">TIP RECEIVED</text>
-  <text x="1000" y="228" fill="#10B981" font-size="20" font-weight="800">$12.96</text>
-  <text x="1000" y="242" fill="#34D399" font-size="11">20% of $64.80</text>
+  <!-- 18% Button -->
+  <g>
+    <use href="#tipButton" x="614" y="460" width="138" height="80"/>
+    <text x="683" y="494" fill="#CBD5E1" font-size="20" font-weight="700" text-anchor="middle">18%</text>
+    <text x="683" y="516" fill="#64748B" font-size="13" text-anchor="middle">$11.66</text>
+  </g>
 
-  <text x="1160" y="220" fill="#94A3B8" font-size="12">6:14 PM</text>
-  <text x="1160" y="235" fill="#64748B" font-size="10">just now</text>
+  <!-- 20% Button — SELECTED -->
+  <rect x="765" y="456" width="138" height="88" rx="14" fill="url(#selectedTipBg)" filter="url(#amberGlow)"/>
+  <rect x="765" y="456" width="138" height="88" rx="14" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <text x="834" y="490" fill="#F59E0B" font-size="22" font-weight="800" text-anchor="middle">20%</text>
+  <text x="834" y="514" fill="#FBBF24" font-size="14" font-weight="600" text-anchor="middle">$12.96</text>
+  <!-- Selected check badge -->
+  <circle cx="890" cy="466" r="11" fill="#F59E0B"/>
+  <text x="890" y="471" fill="#0C0E1A" font-size="12" font-weight="800" text-anchor="middle">&#10003;</text>
+  <!-- "Popular" label -->
+  <rect x="802" y="528" width="64" height="16" rx="8" fill="#F59E0B" opacity="0.15"/>
+  <text x="834" y="540" fill="#F59E0B" font-size="9" font-weight="600" text-anchor="middle">POPULAR</text>
+  <use href="#adminGear" x="870" y="530" width="14" height="14"/>
 
-  <!-- Status badge -->
-  <rect x="1235" y="197" width="108" height="28" rx="14" fill="#10B981"/>
-  <text x="1289" y="216" fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle">✓ Applied</text>
-  <!-- Stripe note -->
-  <text x="1235" y="238" fill="#34D399" font-size="9">Stripe captured</text>
+  <!-- Row 2: 25%, Custom -->
 
-  <!-- ─── ROW 2 — Table 12, $8.73 tip, APPLIED ─── -->
-  <rect x="710" y="258" width="646" height="66" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- 25% Button -->
+  <g>
+    <rect x="471" y="558" width="202" height="72" rx="14" fill="url(#cardGrad)" filter="url(#subtleGlow)"/>
+    <rect x="471" y="558" width="202" height="72" rx="14" fill="none" stroke="#2A2E45" stroke-width="1.5"/>
+    <text x="572" y="590" fill="#CBD5E1" font-size="20" font-weight="700" text-anchor="middle">25%</text>
+    <text x="572" y="614" fill="#64748B" font-size="13" text-anchor="middle">$16.20</text>
+  </g>
 
-  <text x="726" y="300" fill="#F1F5F9" font-size="15" font-weight="700">12</text>
+  <!-- Custom Button -->
+  <g>
+    <rect x="686" y="558" width="217" height="72" rx="14" fill="url(#cardGrad)" filter="url(#subtleGlow)"/>
+    <rect x="686" y="558" width="217" height="72" rx="14" fill="none" stroke="#2A2E45" stroke-width="1.5"/>
+    <!-- Pencil icon hint -->
+    <text x="775" y="590" fill="#CBD5E1" font-size="18" font-weight="700" text-anchor="middle">Custom</text>
+    <text x="775" y="614" fill="#64748B" font-size="13" text-anchor="middle">Enter amount</text>
+    <!-- Edit icon -->
+    <rect x="845" y="578" width="34" height="34" rx="8" fill="#1E2235"/>
+    <text x="862" y="600" fill="#64748B" font-size="14" text-anchor="middle">&#9998;</text>
+  </g>
 
-  <text x="800" y="284" fill="#94A3B8" font-size="10">#4822</text>
-  <text x="800" y="300" fill="#F1F5F9" font-size="12" font-weight="600">Order #4822</text>
+  <!-- ── Selected Tip Summary ── -->
+  <rect x="471" y="648" width="424" height="58" rx="12" fill="#1C1400" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
+  <text x="683" y="672" fill="#94A3B8" font-size="12" text-anchor="middle">Tip amount</text>
+  <text x="683" y="696" fill="#FBBF24" font-size="22" font-weight="800" text-anchor="middle">$12.96</text>
 
-  <text x="896" y="284" fill="#94A3B8" font-size="10">Bill</text>
-  <text x="896" y="300" fill="#F1F5F9" font-size="14" font-weight="700">$48.50</text>
+  <!-- ── Submit Button ── -->
+  <!-- Admin: submit_button_label (configurable) -->
+  <g filter="url(#greenGlow)">
+    <rect x="471" y="722" width="424" height="56" rx="14" fill="url(#greenGrad)"/>
+  </g>
+  <text x="683" y="756" fill="#0C0E1A" font-size="17" font-weight="700" text-anchor="middle">Submit Tip</text>
 
-  <text x="1000" y="284" fill="#6EE7B7" font-size="10">Tip received</text>
-  <text x="1000" y="300" fill="#10B981" font-size="16" font-weight="700">$8.73</text>
-  <text x="1000" y="314" fill="#64748B" font-size="10">18% of $48.50</text>
+  <!-- ── No Tip Option ── -->
+  <!-- Admin: show_no_tip_option (configurable) -->
+  <rect x="571" y="792" width="224" height="36" rx="10" fill="none" stroke="#2A2E45" stroke-width="1"/>
+  <text x="683" y="815" fill="#64748B" font-size="13" text-anchor="middle">No tip, thanks</text>
+  <use href="#adminGear" x="800" y="796" width="14" height="14"/>
 
-  <text x="1160" y="292" fill="#94A3B8" font-size="12">5:48 PM</text>
-  <text x="1160" y="307" fill="#64748B" font-size="10">26 min ago</text>
+  <!-- ── Footer ── -->
+  <rect x="445" y="844" width="476" height="1" fill="#1E2235"/>
+  <!-- Admin: tip_footer_message (configurable) -->
+  <text x="683" y="866" fill="#475569" font-size="11" text-anchor="middle">Tips go directly to your server. Thank you!</text>
 
-  <rect x="1235" y="276" width="108" height="26" rx="13" fill="#1A3A28" stroke="#10B981" stroke-width="1"/>
-  <text x="1289" y="294" fill="#10B981" font-size="12" font-weight="600" text-anchor="middle">✓ Applied</text>
+  <!-- Security badge -->
+  <rect x="640" y="878" width="86" height="24" rx="12" fill="#22C55E" opacity="0.08"/>
+  <rect x="640" y="878" width="86" height="24" rx="12" fill="none" stroke="#22C55E" stroke-width="0.5" opacity="0.3"/>
+  <text x="683" y="895" fill="#4ADE80" font-size="10" font-weight="600" text-anchor="middle">&#128274; Secure</text>
 
-  <!-- ─── ROW 3 — Table 3, awaiting tip (QR sent) ─── -->
-  <rect x="710" y="332" width="646" height="84" rx="10" fill="#1C1500" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Admin: qr_link_expiry_hours (configurable) -->
+  <text x="683" y="918" fill="#475569" font-size="9" text-anchor="middle">Powered by Stripe  ·  Expires in 23h 51m</text>
+  <use href="#adminGear" x="810" y="908" width="14" height="14"/>
+  <text x="683" y="934" fill="#475569" font-size="9" text-anchor="middle">bistromoderno.pos/tip/tok_4831_x9kR2p</text>
 
-  <!-- Pulsing dot indicator -->
-  <circle cx="717" cy="344" r="6" fill="#F59E0B" opacity="0.3"/>
-  <circle cx="717" cy="344" r="3" fill="#F59E0B"/>
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- SIDE ANNOTATIONS (subtle, documentation-style)          -->
+  <!-- ════════════════════════════════════════════════════════ -->
 
-  <text x="726" y="380" fill="#F1F5F9" font-size="15" font-weight="700">3</text>
+  <!-- Left annotation -->
+  <g opacity="0.5">
+    <rect x="40" y="200" width="340" height="150" rx="12" fill="#161930" stroke="#1E2235" stroke-width="1"/>
+    <text x="60" y="228" fill="#64748B" font-size="11" font-weight="600" letter-spacing="1">HOW IT WORKS</text>
+    <rect x="60" y="238" width="300" height="1" fill="#1E2235"/>
+    <text x="60" y="260" fill="#94A3B8" font-size="11">1. Payment processed at the POS terminal</text>
+    <text x="60" y="280" fill="#94A3B8" font-size="11">2. QR code printed on receipt / displayed</text>
+    <text x="60" y="300" fill="#94A3B8" font-size="11">3. Customer scans with their phone</text>
+    <text x="60" y="320" fill="#94A3B8" font-size="11">4. This tip screen loads in their browser</text>
+    <text x="60" y="340" fill="#94A3B8" font-size="11">5. Tip captured via Stripe PaymentIntent</text>
+  </g>
 
-  <text x="800" y="362" fill="#94A3B8" font-size="10">#4815</text>
-  <text x="800" y="378" fill="#F1F5F9" font-size="12" font-weight="600">Order #4815</text>
-  <text x="800" y="394" fill="#64748B" font-size="10">4 guests</text>
+  <!-- Right annotation -->
+  <g opacity="0.5">
+    <rect x="986" y="200" width="340" height="130" rx="12" fill="#161930" stroke="#1E2235" stroke-width="1"/>
+    <text x="1006" y="228" fill="#64748B" font-size="11" font-weight="600" letter-spacing="1">TIP FLOW</text>
+    <rect x="1006" y="238" width="300" height="1" fill="#1E2235"/>
 
-  <text x="896" y="362" fill="#94A3B8" font-size="10">Bill</text>
-  <text x="896" y="378" fill="#F1F5F9" font-size="14" font-weight="700">$92.00</text>
+    <circle cx="1022" cy="260" r="6" fill="#F59E0B"/>
+    <text x="1036" y="264" fill="#94A3B8" font-size="11">Customer selects tip percentage</text>
 
-  <!-- Awaiting chip -->
-  <rect x="992" y="350" width="140" height="48" rx="8" fill="#291A00"/>
-  <text x="1062" y="370" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="middle">⏳ Awaiting tip...</text>
-  <text x="1062" y="386" fill="#92400E" font-size="10" text-anchor="middle">QR opened · waiting</text>
-  <text x="1062" y="398" fill="#78350F" font-size="9" text-anchor="middle">23h 12m remaining</text>
+    <circle cx="1022" cy="284" r="6" fill="#60A5FA"/>
+    <text x="1036" y="288" fill="#94A3B8" font-size="11">Amount calculated from bill total</text>
 
-  <text x="1160" y="366" fill="#94A3B8" font-size="12">5:31 PM</text>
-  <text x="1160" y="381" fill="#64748B" font-size="10">43 min ago</text>
+    <circle cx="1022" cy="308" r="6" fill="#22C55E"/>
+    <text x="1036" y="312" fill="#94A3B8" font-size="11">Stripe captures the tip amount</text>
+  </g>
 
-  <!-- QR Sent badge + Reminder button -->
-  <rect x="1232" y="344" width="112" height="26" rx="13" fill="#F59E0B"/>
-  <text x="1288" y="362" fill="#1E293B" font-size="11" font-weight="700" text-anchor="middle">QR Sent</text>
+  <!-- Right annotation: data schema -->
+  <g opacity="0.45">
+    <rect x="986" y="360" width="340" height="170" rx="12" fill="#161930" stroke="#1E2235" stroke-width="1"/>
+    <text x="1006" y="388" fill="#64748B" font-size="11" font-weight="600" letter-spacing="1">DB: pos_post_payment_tips</text>
+    <rect x="1006" y="398" width="300" height="1" fill="#1E2235"/>
+    <text x="1006" y="418" fill="#475569" font-size="10" font-family="'SF Mono','Courier New',monospace">tip_token    uuid UNIQUE</text>
+    <text x="1006" y="436" fill="#475569" font-size="10" font-family="'SF Mono','Courier New',monospace">amount_cents int</text>
+    <text x="1006" y="454" fill="#475569" font-size="10" font-family="'SF Mono','Courier New',monospace">tip_pct      decimal(5,2)</text>
+    <text x="1006" y="472" fill="#475569" font-size="10" font-family="'SF Mono','Courier New',monospace">stripe_pi_id varchar</text>
+    <text x="1006" y="490" fill="#475569" font-size="10" font-family="'SF Mono','Courier New',monospace">status       pending|captured</text>
+    <text x="1006" y="516" fill="#475569" font-size="10">Edge Function: confirm-tip</text>
+  </g>
 
-  <!-- Send reminder button -->
-  <rect x="1232" y="376" width="112" height="28" rx="8" fill="#1E2235" stroke="#F59E0B" stroke-width="1"/>
-  <text x="1288" y="395" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">Send Reminder</text>
-
-  <!-- ─── ROW 4 — Table 9, No tip ─── -->
-  <rect x="710" y="424" width="646" height="62" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-
-  <text x="726" y="462" fill="#64748B" font-size="15" font-weight="700">9</text>
-
-  <text x="800" y="446" fill="#94A3B8" font-size="10">#4809</text>
-  <text x="800" y="462" fill="#94A3B8" font-size="12">Order #4809</text>
-
-  <text x="896" y="446" fill="#94A3B8" font-size="10">Bill</text>
-  <text x="896" y="462" fill="#94A3B8" font-size="14">$38.00</text>
-
-  <text x="1000" y="454" fill="#475569" font-size="13">— No tip</text>
-  <text x="1000" y="470" fill="#374151" font-size="10">Link not opened</text>
-
-  <text x="1160" y="452" fill="#64748B" font-size="12">5:12 PM</text>
-  <text x="1160" y="467" fill="#374151" font-size="10">62 min ago</text>
-
-  <rect x="1235" y="440" width="108" height="26" rx="13" fill="#1A1D2E" stroke="#374151" stroke-width="1"/>
-  <text x="1289" y="458" fill="#64748B" font-size="12" text-anchor="middle">✗ No tip</text>
-
-  <!-- ─── DIVIDER ─── -->
-  <rect x="710" y="498" width="646" height="1" fill="#2D3148"/>
-
-  <!-- ─── Summary Stats Row ─── -->
-  <rect x="710" y="508" width="646" height="80" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Stat 1: Tips collected -->
-  <rect x="724" y="520" width="142" height="54" rx="8" fill="#0F1117"/>
-  <text x="796" y="538" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle">TIPS COLLECTED</text>
-  <text x="796" y="558" fill="#10B981" font-size="22" font-weight="800" text-anchor="middle">$62.14</text>
-  <text x="796" y="572" fill="#34D399" font-size="10" text-anchor="middle">from 3 orders</text>
-
-  <!-- Divider -->
-  <rect x="876" y="524" width="1" height="50" fill="#2D3148"/>
-
-  <!-- Stat 2: Avg tip % -->
-  <rect x="886" y="520" width="130" height="54" rx="8" fill="#0F1117"/>
-  <text x="951" y="538" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle">AVG TIP %</text>
-  <text x="951" y="558" fill="#F59E0B" font-size="22" font-weight="800" text-anchor="middle">19.4%</text>
-  <text x="951" y="572" fill="#92400E" font-size="10" text-anchor="middle">vs. 17.2% avg</text>
-
-  <!-- Divider -->
-  <rect x="1026" y="524" width="1" height="50" fill="#2D3148"/>
-
-  <!-- Stat 3: Pending -->
-  <rect x="1036" y="520" width="122" height="54" rx="8" fill="#0F1117"/>
-  <text x="1097" y="538" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle">PENDING</text>
-  <text x="1097" y="558" fill="#F59E0B" font-size="22" font-weight="800" text-anchor="middle">1</text>
-  <text x="1097" y="572" fill="#92400E" font-size="10" text-anchor="middle">Table 3 · $92 bill</text>
-
-  <!-- Divider -->
-  <rect x="1168" y="524" width="1" height="50" fill="#2D3148"/>
-
-  <!-- Stat 4: No tip -->
-  <rect x="1178" y="520" width="164" height="54" rx="8" fill="#0F1117"/>
-  <text x="1260" y="538" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.6" text-anchor="middle">NO TIP</text>
-  <text x="1260" y="558" fill="#64748B" font-size="22" font-weight="800" text-anchor="middle">1</text>
-  <text x="1260" y="572" fill="#374151" font-size="10" text-anchor="middle">Table 9 — link not opened</text>
-
-  <!-- ─── GENERATE QR section ─── -->
-  <rect x="710" y="600" width="646" height="56" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="730" y="622" fill="#94A3B8" font-size="13" font-weight="600">Generate QR Tip Link</text>
-  <text x="730" y="640" fill="#64748B" font-size="11">Send post-payment tip request to any closed table</text>
-
-  <!-- Order # input -->
-  <rect x="980" y="610" width="120" height="32" rx="8" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="994" y="630" fill="#64748B" font-size="12">Order #</text>
-  <rect x="982" y="622" width="60" height="1" fill="#2D3148"/>
-
-  <!-- Generate button -->
-  <rect x="1110" y="610" width="136" height="32" rx="8" fill="#8B5CF6"/>
-  <text x="1178" y="630" fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle">Generate QR Link</text>
-
-  <!-- ─── DB Schema Card ─── -->
-  <rect x="710" y="668" width="646" height="230" rx="10" fill="#0A0C14" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Schema header -->
-  <rect x="710" y="668" width="646" height="32" rx="10" fill="#1A1D2E"/>
-  <rect x="710" y="686" width="646" height="14" fill="#1A1D2E"/>
-  <text x="726" y="689" fill="#8B5CF6" font-size="11" font-weight="700" letter-spacing="0.8">DATABASE SCHEMA</text>
-  <rect x="892" y="673" width="60" height="18" rx="9" fill="#0F1117" stroke="#2D3148" stroke-width="1"/>
-  <text x="922" y="685" fill="#64748B" font-size="10" text-anchor="middle">Supabase</text>
-
-  <!-- Schema code block -->
-  <text x="726" y="718" fill="#64748B" font-size="10" font-family="'Courier New',monospace">-- Post-payment tip tracking</text>
-  <text x="726" y="734" fill="#8B5CF6" font-size="10" font-family="'Courier New',monospace">pos_post_payment_tips </text>
-  <text x="726" y="750" fill="#94A3B8" font-size="10" font-family="'Courier New',monospace">  id               uuid PRIMARY KEY DEFAULT gen_random_uuid()</text>
-  <text x="726" y="764" fill="#94A3B8" font-size="10" font-family="'Courier New',monospace">  order_id         uuid REFERENCES pos_orders(id)</text>
-  <text x="726" y="778" fill="#F59E0B" font-size="10" font-family="'Courier New',monospace">  tip_token        uuid UNIQUE  -- token embedded in QR URL</text>
-  <text x="726" y="792" fill="#94A3B8" font-size="10" font-family="'Courier New',monospace">  amount_cents     int          -- tip in cents</text>
-  <text x="726" y="806" fill="#94A3B8" font-size="10" font-family="'Courier New',monospace">  tip_pct          decimal(5,2) -- e.g. 20.00</text>
-  <text x="726" y="820" fill="#94A3B8" font-size="10" font-family="'Courier New',monospace">  submitted_at     timestamptz</text>
-  <text x="726" y="834" fill="#10B981" font-size="10" font-family="'Courier New',monospace">  stripe_payment_intent_id  varchar -- PaymentIntent.update + confirm</text>
-  <text x="726" y="848" fill="#EF4444" font-size="10" font-family="'Courier New',monospace">  status           varchar  -- pending | captured | expired</text>
-
-  <rect x="726" y="856" width="606" height="1" fill="#2D3148"/>
-
-  <text x="726" y="871" fill="#64748B" font-size="10" font-family="'Courier New',monospace">-- On pos_orders table:</text>
-  <text x="726" y="885" fill="#F59E0B" font-size="10" font-family="'Courier New',monospace">  tip_qr_sent_at     timestamptz   -- when QR was generated &amp; sent</text>
-  <text x="726" y="899" fill="#F59E0B" font-size="10" font-family="'Courier New',monospace">  tip_qr_expires_at  timestamptz   -- now() + interval '24 hours'</text>
-
-  <!-- ─── Settings / Info bar ─── -->
-  <rect x="710" y="910" width="646" height="40" rx="8" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-  <text x="726" y="932" fill="#64748B" font-size="11">⚙</text>
-  <text x="742" y="932" fill="#64748B" font-size="11">QR tip links expire after <tspan fill="#F59E0B" font-weight="600">24 hours</tspan>  ·  Tips captured via <tspan fill="#8B5CF6" font-weight="600">Stripe PaymentIntent</tspan>  ·  Edge Function: <tspan fill="#10B981" font-weight="600">confirm-tip</tspan></text>
-
-  <!-- ─── Bottom action bar ─── -->
-  <rect x="710" y="960" width="646" height="58" rx="10" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
-
-  <!-- Export button -->
-  <rect x="724" y="972" width="130" height="34" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
-  <text x="789" y="994" fill="#94A3B8" font-size="12" font-weight="600" text-anchor="middle">↓ Export CSV</text>
-
-  <!-- Tip pool toggle -->
-  <rect x="864" y="972" width="156" height="34" rx="8" fill="#1E2235" stroke="#2D3148" stroke-width="1"/>
-  <text x="942" y="994" fill="#94A3B8" font-size="12" font-weight="600" text-anchor="middle">⚖ Tip Pool Settings</text>
-
-  <!-- Remind all pending -->
-  <rect x="1030" y="972" width="168" height="34" rx="8" fill="#291A00" stroke="#F59E0B" stroke-width="1"/>
-  <text x="1114" y="994" fill="#F59E0B" font-size="12" font-weight="600" text-anchor="middle">⏰ Remind All Pending</text>
-
-  <!-- End shift summary -->
-  <rect x="1208" y="972" width="134" height="34" rx="8" fill="#8B5CF6"/>
-  <text x="1275" y="994" fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle">End Shift Report</text>
+  <!-- Left annotation: config -->
+  <g opacity="0.45">
+    <rect x="40" y="400" width="340" height="90" rx="12" fill="#161930" stroke="#1E2235" stroke-width="1"/>
+    <text x="60" y="428" fill="#64748B" font-size="11" font-weight="600" letter-spacing="1">CONFIGURATION</text>
+    <rect x="60" y="438" width="300" height="1" fill="#1E2235"/>
+    <text x="60" y="458" fill="#94A3B8" font-size="11">Default tip options: 15%, 18%, 20%, 25%</text>
+    <text x="60" y="478" fill="#94A3B8" font-size="11">QR link expiry: 24 hours</text>
+  </g>
 
 </svg>

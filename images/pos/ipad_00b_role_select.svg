@@ -1,0 +1,147 @@
+<svg role="img" aria-labelledby="title-ipad_00b_role_select-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif">
+  <title id="title-ipad_00b_role_select-svg">Synalux POS — 00U role select</title>
+  <desc>Synalux POS mockup screen for 00U role select. All UI elements admin-configurable.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C0E1A"/><stop offset="100%" stop-color="#080A14"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/><stop offset="100%" stop-color="#161930"/>
+    </linearGradient>
+    <filter id="cardShadow"><feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.4"/></filter>
+    <filter id="roleGlow"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.2"/></filter>
+
+    <!-- ═══ SYMBOLS ═══ -->
+
+    <!-- Admin gear — admin: Settings > General -->
+    <symbol id="adminGear" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="2.5" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3"/>
+      <path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M2.8 2.8l1 1M10.2 10.2l1 1M2.8 11.2l1-1M10.2 3.8l1-1" stroke="#F59E0B" stroke-width="0.6" stroke-linecap="round" opacity="0.3"/>
+    </symbol>
+
+    <!-- Role card — admin: Settings > Staff > Roles -->
+    <symbol id="roleCard" viewBox="0 0 280 160">
+      <rect width="280" height="160" rx="16" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+    <!-- Permission pill — admin: Settings > Staff > Role Permissions -->
+    <symbol id="permPill" viewBox="0 0 80 20">
+      <rect width="80" height="20" rx="4" fill="#1E2235"/>
+    </symbol>
+  </defs>
+
+  <!-- ═══════════ BACKGROUND ═══════════ -->
+  <rect width="1366" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- ═══════════ TOP BAR ═══════════ -->
+  <rect x="0" y="0" width="1366" height="44" fill="#111425" opacity="0.8"/>
+  <rect x="0" y="44" width="1366" height="1" fill="#1E2235"/>
+
+  <text x="20" y="28" fill="#F59E0B" font-size="14" font-weight="800">synalux</text>
+  <text x="83" y="28" fill="#475569" font-size="14">POS</text>
+  <text x="1200" y="20" fill="#475569" font-size="10" letter-spacing="0.5">REGISTER 1</text>
+  <text x="1200" y="36" fill="#94A3B8" font-size="13" font-weight="600">Wed, May 29 · 2:01 PM</text>
+  <circle cx="1346" cy="22" r="5" fill="#22C55E"/>
+
+  <!-- ═══════════ WELCOME + ROLE SELECTION ═══════════ -->
+
+  <!-- User identity (from DB: pos_employees WHERE pin_hash = :input) -->
+  <circle cx="683" cy="120" r="40" fill="#1E3A5F" filter="url(#roleGlow)"/>
+  <text x="683" y="130" fill="#60A5FA" font-size="24" font-weight="700" text-anchor="middle">JS</text>
+
+  <text x="683" y="190" fill="#E2E8F0" font-size="24" font-weight="700" text-anchor="middle">Welcome back, John</text>
+  <text x="683" y="214" fill="#4ADE80" font-size="13" text-anchor="middle">Clocked in at 2:00 PM · Shift: 2:00 PM — 10:00 PM</text>
+
+  <!-- Multi-role prompt (admin: Settings > Staff > Role Assignment) -->
+  <text x="683" y="260" fill="#94A3B8" font-size="14" text-anchor="middle">You have multiple roles assigned. Select one to continue:</text>
+  <use href="#adminGear" x="880" y="250" width="12" height="12"/>
+
+  <!-- ═══ ROLE CARDS GRID (2x2) ═══ -->
+  <!-- admin: Settings > Staff > Roles (all 7 levels configurable) -->
+
+  <!-- Role 1: Server (primary) -->
+  <use href="#roleCard" x="283" y="300" width="280" height="160"/>
+  <rect x="283" y="300" width="280" height="160" rx="16" fill="none" stroke="#F59E0B" stroke-width="2" filter="url(#roleGlow)"/>
+  <rect x="283" y="300" width="280" height="6" rx="3" fill="#4ADE80"/>
+  <text x="423" y="344" fill="#4ADE80" font-size="36" text-anchor="middle">&#128100;</text>
+  <text x="423" y="380" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">Server</text>
+  <text x="423" y="400" fill="#94A3B8" font-size="11" text-anchor="middle">Register + Tables</text>
+  <!-- Permission pills (from DB: pos_role_permissions) -->
+  <use href="#permPill" x="348" y="414" width="64" height="18"/>
+  <text x="380" y="427" fill="#4ADE80" font-size="8" font-weight="500" text-anchor="middle">Register</text>
+  <use href="#permPill" x="418" y="414" width="54" height="18"/>
+  <text x="445" y="427" fill="#60A5FA" font-size="8" font-weight="500" text-anchor="middle">Tables</text>
+  <!-- Primary badge -->
+  <rect x="505" y="308" width="48" height="16" rx="4" fill="#0A2010"/>
+  <text x="529" y="320" fill="#4ADE80" font-size="8" font-weight="700" text-anchor="middle">PRIMARY</text>
+
+  <!-- Role 2: Supervisor -->
+  <use href="#roleCard" x="583" y="300" width="280" height="160"/>
+  <rect x="583" y="300" width="280" height="6" rx="3" fill="#22D3EE"/>
+  <text x="723" y="344" fill="#22D3EE" font-size="36" text-anchor="middle">&#128188;</text>
+  <text x="723" y="380" fill="#E2E8F0" font-size="18" font-weight="700" text-anchor="middle">Supervisor</text>
+  <text x="723" y="400" fill="#94A3B8" font-size="11" text-anchor="middle">Register + Reports + Voids</text>
+  <use href="#permPill" x="648" y="414" width="64" height="18"/>
+  <text x="680" y="427" fill="#22D3EE" font-size="8" font-weight="500" text-anchor="middle">Register</text>
+  <use href="#permPill" x="718" y="414" width="60" height="18"/>
+  <text x="748" y="427" fill="#22D3EE" font-size="8" font-weight="500" text-anchor="middle">Reports</text>
+  <use href="#permPill" x="784" y="414" width="48" height="18"/>
+  <text x="808" y="427" fill="#22D3EE" font-size="8" font-weight="500" text-anchor="middle">Voids</text>
+
+  <!-- ═══ ROLE PERMISSION MATRIX ═══ -->
+  <!-- admin: Settings > Staff > Role Permissions -->
+  <rect x="283" y="680" width="800" height="260" rx="14" fill="#111425" stroke="#1E2235" stroke-width="0.5"/>
+  <text x="303" y="710" fill="#475569" font-size="9" font-weight="700" letter-spacing="1.5">ROLE PERMISSION MATRIX</text>
+  <use href="#adminGear" x="460" y="700" width="10" height="10"/>
+
+  <!-- Column headers -->
+  <text x="540" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Register</text>
+  <text x="610" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Tables</text>
+  <text x="680" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">KDS</text>
+  <text x="750" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Reports</text>
+  <text x="820" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Voids</text>
+  <text x="890" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Discounts</text>
+  <text x="960" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Settings</text>
+  <text x="1030" y="740" fill="#475569" font-size="9" font-weight="600" text-anchor="middle">Staff</text>
+
+  <!-- Rows (from DB: pos_role_permissions) -->
+  <!-- Cashier -->
+  <text x="303" y="766" fill="#E2E8F0" font-size="11" font-weight="500">Cashier</text>
+  <circle cx="540" cy="762" r="5" fill="#22C55E"/><circle cx="610" cy="762" r="5" fill="#2A2E45"/><circle cx="680" cy="762" r="5" fill="#2A2E45"/><circle cx="750" cy="762" r="5" fill="#2A2E45"/><circle cx="820" cy="762" r="5" fill="#2A2E45"/><circle cx="890" cy="762" r="5" fill="#2A2E45"/><circle cx="960" cy="762" r="5" fill="#2A2E45"/><circle cx="1030" cy="762" r="5" fill="#2A2E45"/>
+
+  <!-- Host -->
+  <text x="303" y="790" fill="#E2E8F0" font-size="11" font-weight="500">Host</text>
+  <circle cx="540" cy="786" r="5" fill="#2A2E45"/><circle cx="610" cy="786" r="5" fill="#22C55E"/><circle cx="680" cy="786" r="5" fill="#2A2E45"/><circle cx="750" cy="786" r="5" fill="#2A2E45"/><circle cx="820" cy="786" r="5" fill="#2A2E45"/><circle cx="890" cy="786" r="5" fill="#2A2E45"/><circle cx="960" cy="786" r="5" fill="#2A2E45"/><circle cx="1030" cy="786" r="5" fill="#2A2E45"/>
+
+  <!-- Server -->
+  <rect x="293" y="798" width="750" height="22" rx="4" fill="#F59E0B" opacity="0.06"/>
+  <text x="303" y="814" fill="#4ADE80" font-size="11" font-weight="700">Server</text>
+  <circle cx="540" cy="810" r="5" fill="#22C55E"/><circle cx="610" cy="810" r="5" fill="#22C55E"/><circle cx="680" cy="810" r="5" fill="#2A2E45"/><circle cx="750" cy="810" r="5" fill="#2A2E45"/><circle cx="820" cy="810" r="5" fill="#2A2E45"/><circle cx="890" cy="810" r="5" fill="#2A2E45"/><circle cx="960" cy="810" r="5" fill="#2A2E45"/><circle cx="1030" cy="810" r="5" fill="#2A2E45"/>
+
+  <!-- Bartender -->
+  <text x="303" y="838" fill="#A78BFA" font-size="11" font-weight="500">Bartender</text>
+  <circle cx="540" cy="834" r="5" fill="#22C55E"/><circle cx="610" cy="834" r="5" fill="#2A2E45"/><circle cx="680" cy="834" r="5" fill="#2A2E45"/><circle cx="750" cy="834" r="5" fill="#2A2E45"/><circle cx="820" cy="834" r="5" fill="#2A2E45"/><circle cx="890" cy="834" r="5" fill="#2A2E45"/><circle cx="960" cy="834" r="5" fill="#2A2E45"/><circle cx="1030" cy="834" r="5" fill="#2A2E45"/>
+
+  <!-- Supervisor -->
+  <text x="303" y="862" fill="#22D3EE" font-size="11" font-weight="500">Supervisor</text>
+  <circle cx="540" cy="858" r="5" fill="#22C55E"/><circle cx="610" cy="858" r="5" fill="#22C55E"/><circle cx="680" cy="858" r="5" fill="#22C55E"/><circle cx="750" cy="858" r="5" fill="#22C55E"/><circle cx="820" cy="858" r="5" fill="#22C55E"/><circle cx="890" cy="858" r="5" fill="#22C55E"/><circle cx="960" cy="858" r="5" fill="#2A2E45"/><circle cx="1030" cy="858" r="5" fill="#2A2E45"/>
+
+  <!-- Manager -->
+  <text x="303" y="886" fill="#F59E0B" font-size="11" font-weight="500">Manager</text>
+  <circle cx="540" cy="882" r="5" fill="#22C55E"/><circle cx="610" cy="882" r="5" fill="#22C55E"/><circle cx="680" cy="882" r="5" fill="#22C55E"/><circle cx="750" cy="882" r="5" fill="#22C55E"/><circle cx="820" cy="882" r="5" fill="#22C55E"/><circle cx="890" cy="882" r="5" fill="#22C55E"/><circle cx="960" cy="882" r="5" fill="#22C55E"/><circle cx="1030" cy="882" r="5" fill="#22C55E"/>
+
+  <!-- Admin -->
+  <text x="303" y="910" fill="#EF4444" font-size="11" font-weight="500">Admin</text>
+  <circle cx="540" cy="906" r="5" fill="#22C55E"/><circle cx="610" cy="906" r="5" fill="#22C55E"/><circle cx="680" cy="906" r="5" fill="#22C55E"/><circle cx="750" cy="906" r="5" fill="#22C55E"/><circle cx="820" cy="906" r="5" fill="#22C55E"/><circle cx="890" cy="906" r="5" fill="#22C55E"/><circle cx="960" cy="906" r="5" fill="#22C55E"/><circle cx="1030" cy="906" r="5" fill="#22C55E"/>
+
+  <!-- Legend -->
+  <circle cx="303" cy="932" r="4" fill="#22C55E"/>
+  <text x="313" y="936" fill="#475569" font-size="9">Allowed</text>
+  <circle cx="370" cy="932" r="4" fill="#2A2E45"/>
+  <text x="380" y="936" fill="#475569" font-size="9">Denied</text>
+  <text x="440" y="936" fill="#475569" font-size="9">· All permissions configurable in Settings > Staff > Roles</text>
+
+  <!-- ═══ Auth flow reminder ═══ -->
+  <text x="683" y="980" fill="#475569" font-size="10" text-anchor="middle">Single-role staff skip this screen and go directly to their assigned view</text>
+  <text x="683" y="1000" fill="#475569" font-size="10" text-anchor="middle">Manager override available · Switch role anytime from the user menu</text>
+</svg>

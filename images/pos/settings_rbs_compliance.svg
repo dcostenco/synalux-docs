@@ -1,167 +1,255 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="system-ui,-apple-system,sans-serif">
+<svg role="img" aria-labelledby="title-settings_rbs_compliance-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1024" font-family="-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif">
 
-  <!-- ===== BACKGROUND ===== -->
-  <rect width="1366" height="1024" fill="#0F1117"/>
+  <title id="title-settings_rbs_compliance-svg">Synalux POS — rUs compliance</title>
+  <desc>Synalux POS mockup screen for rUs compliance. All UI elements admin-configurable.</desc>
+  <defs>
+    <!-- ==================== REUSABLE DEFINITIONS ==================== -->
 
-  <!-- ===== TOP NAV BAR ===== -->
-  <rect x="0" y="0" width="1366" height="54" fill="#1A1D2E"/>
-  <rect x="0" y="54" width="1366" height="1" fill="#2D3148"/>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#181B30"/>
+    </linearGradient>
+
+    <linearGradient id="amberBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <linearGradient id="greenBtnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1D2E"/>
+      <stop offset="100%" stop-color="#161929"/>
+    </linearGradient>
+
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="btnShadow" x="-4%" y="-8%" width="108%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- SYMBOL: Admin gear icon (16x16) -->
+    <symbol id="adminGear" viewBox="0 0 16 16">
+      <path d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM6.5 8a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" fill="#F59E0B"/>
+      <path d="M7.3 1h1.4l.3 1.5c.3.1.6.3.9.5l1.4-.6.7.7.7.7-.6 1.4c.2.3.4.6.5.9l1.5.3v1.4l-1.5.3c-.1.3-.3.6-.5.9l.6 1.4-.7.7-.7.7-1.4-.6c-.3.2-.6.4-.9.5L8.7 15H7.3l-.3-1.5c-.3-.1-.6-.3-.9-.5l-1.4.6-.7-.7-.7-.7.6-1.4c-.2-.3-.4-.6-.5-.9L2 9.6V8.2l1.5-.3c.1-.3.3-.6.5-.9l-.6-1.4.7-.7.7-.7 1.4.6c.3-.2.6-.4.9-.5L7.3 1z" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- SYMBOL: Toggle switch ON (46x22) -->
+    <symbol id="toggleOn" viewBox="0 0 46 22">
+      <rect width="46" height="22" rx="11" fill="#22C55E"/>
+      <circle cx="35" cy="11" r="9" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- SYMBOL: Toggle switch OFF (46x22) -->
+    <symbol id="toggleOff" viewBox="0 0 46 22">
+      <rect width="46" height="22" rx="11" fill="#374151"/>
+      <circle cx="11" cy="11" r="9" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- SYMBOL: Left nav active indicator -->
+    <symbol id="navActive" viewBox="0 0 210 36">
+      <rect width="210" height="36" fill="#2D1F00"/>
+      <rect width="3" height="36" fill="#F59E0B"/>
+    </symbol>
+
+    <!-- SYMBOL: Cert status - Current (green) -->
+    <symbol id="certCurrent" viewBox="0 0 102 22">
+      <rect width="102" height="22" rx="5" fill="#052E16"/>
+      <text x="51" y="15" font-size="11" font-weight="600" fill="#22C55E" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">&#10003; Current</text>
+    </symbol>
+
+    <!-- SYMBOL: Cert status - Not Required (gray) -->
+    <symbol id="certNotRequired" viewBox="0 0 118 22">
+      <rect width="118" height="22" rx="5" fill="#1E2235"/>
+      <text x="59" y="15" font-size="11" font-weight="600" fill="#64748B" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">Not required</text>
+    </symbol>
+
+    <!-- SYMBOL: Cert status - Required / Blocked (red) -->
+    <symbol id="certBlocked" viewBox="0 0 116 22">
+      <rect width="116" height="22" rx="5" fill="#2D0808"/>
+      <text x="58" y="15" font-size="11" font-weight="700" fill="#EF4444" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">Required</text>
+    </symbol>
+
+    <!-- SYMBOL: Audit log result - Approved (green) -->
+    <symbol id="logApproved" viewBox="0 0 72 14">
+      <rect width="72" height="14" rx="3" fill="#052E16"/>
+      <text x="36" y="11" font-size="10" font-weight="600" fill="#22C55E" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">&#10003; Approved</text>
+    </symbol>
+
+    <!-- SYMBOL: Audit log result - Blocked (red) -->
+    <symbol id="logBlocked" viewBox="0 0 63 14">
+      <rect width="63" height="14" rx="3" fill="#2D0808"/>
+      <text x="31" y="11" font-size="10" font-weight="600" fill="#EF4444" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif">&#10007; Blocked</text>
+    </symbol>
+
+    <!-- SYMBOL: State cutoff pill -->
+    <symbol id="statePill" viewBox="0 0 108 24">
+      <rect width="108" height="24" rx="5" fill="#111425" stroke="#2A2E45" stroke-width="1"/>
+    </symbol>
+
+  </defs>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <rect width="1366" height="1024" fill="#0C0E1A"/>
+
+  <!-- ==================== TOP NAV BAR ==================== -->
+  <rect x="0" y="0" width="1366" height="54" fill="url(#headerGrad)"/>
+  <rect x="0" y="54" width="1366" height="1" fill="#2A2E45"/>
   <text x="24" y="34" fill="#F59E0B" font-size="16" font-weight="700">Synalux POS</text>
-  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">&#9881; Back Office — Alcohol &amp; Server Compliance</text>
-  <text x="1342" y="34" fill="#94A3B8" font-size="13" text-anchor="end">Admin · Sarah M.</text>
+  <text x="200" y="34" fill="#E2E8F0" font-size="16" font-weight="700">&#9881; Back Office &#8212; Alcohol &amp; Server Compliance</text>
+  <text x="1342" y="34" fill="#94A3B8" font-size="13" text-anchor="end">Admin &#183; Sarah M.</text>
 
-  <!-- ===== LEFT SIDEBAR (210px) ===== -->
-  <rect x="0" y="55" width="210" height="969" fill="#13162A"/>
-  <rect x="210" y="55" width="1" height="969" fill="#2D3148"/>
+  <!-- ==================== LEFT SIDEBAR (210px) ==================== -->
+  <rect x="0" y="55" width="210" height="969" fill="#111425"/>
+  <rect x="210" y="55" width="1" height="969" fill="#2A2E45"/>
 
-  <!-- Sidebar heading -->
   <text x="105" y="84" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">BACK OFFICE</text>
 
-  <!-- Nav items -->
+  <!-- Nav items using consistent background rects -->
   <rect x="8" y="92" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="114" fill="#94A3B8" font-size="12">&#127978; Restaurant Info</text>
-
+  <text x="30" y="114" fill="#94A3B8" font-size="12">Restaurant Info</text>
   <rect x="8" y="132" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="154" fill="#94A3B8" font-size="12">&#127828; Menu Builder</text>
-
+  <text x="30" y="154" fill="#94A3B8" font-size="12">Menu Builder</text>
   <rect x="8" y="172" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="194" fill="#94A3B8" font-size="12">&#128176; Taxes</text>
-
+  <text x="30" y="194" fill="#94A3B8" font-size="12">Taxes</text>
   <rect x="8" y="212" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="234" fill="#94A3B8" font-size="12">&#128101; Employees</text>
-
+  <text x="30" y="234" fill="#94A3B8" font-size="12">Employees</text>
   <rect x="8" y="252" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="274" fill="#94A3B8" font-size="12">&#128424; Equipment</text>
-
+  <text x="30" y="274" fill="#94A3B8" font-size="12">Equipment</text>
   <rect x="8" y="292" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="314" fill="#94A3B8" font-size="12">&#128208; Reports</text>
-
+  <text x="30" y="314" fill="#94A3B8" font-size="12">Reports</text>
   <rect x="8" y="332" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="354" fill="#94A3B8" font-size="12">&#127873; Loyalty</text>
-
+  <text x="30" y="354" fill="#94A3B8" font-size="12">Loyalty</text>
   <rect x="8" y="372" width="194" height="34" rx="6" fill="#1E2235"/>
-  <text x="30" y="394" fill="#94A3B8" font-size="12">&#128279; Integrations</text>
+  <text x="30" y="394" fill="#94A3B8" font-size="12">Integrations</text>
 
-  <!-- Compliance sub-section label -->
+  <!-- Compliance sub-section -->
   <text x="16" y="426" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1">COMPLIANCE</text>
 
   <rect x="8" y="432" width="194" height="34" rx="6" fill="#1E2235"/>
   <text x="30" y="454" fill="#94A3B8" font-size="12">Tax Exempt</text>
-
   <rect x="8" y="472" width="194" height="34" rx="6" fill="#1E2235"/>
   <text x="30" y="494" fill="#94A3B8" font-size="12">Auto-Gratuity</text>
 
   <!-- ACTIVE: Alcohol Compliance -->
-  <rect x="8" y="512" width="194" height="36" rx="6" fill="#2D1F00"/>
-  <rect x="8" y="512" width="3" height="36" rx="2" fill="#F59E0B"/>
-  <text x="30" y="535" fill="#F59E0B" font-size="12" font-weight="700">&#127863; Alcohol Compliance</text>
+  <use href="#navActive" x="8" y="512" width="194" height="36"/>
+  <text x="30" y="535" fill="#F59E0B" font-size="12" font-weight="700">Alcohol Compliance</text>
 
   <rect x="8" y="554" width="194" height="34" rx="6" fill="#1E2235"/>
   <text x="30" y="576" fill="#94A3B8" font-size="12">Break Tracking</text>
-
   <rect x="8" y="594" width="194" height="34" rx="6" fill="#1E2235"/>
   <text x="30" y="616" fill="#94A3B8" font-size="12">Cash Management</text>
 
-  <!-- DB schema hint at bottom of sidebar -->
+  <!-- DB schema hint in sidebar -->
   <text x="16" y="820" fill="#64748B" font-size="9" font-weight="700" letter-spacing="1">DB TABLES</text>
+  <!-- DB: pos_staff_certifications -->
   <text x="16" y="836" fill="#64748B" font-size="9">pos_staff_certifications</text>
+  <!-- DB: pos_config.alcohol_cutoff_time -->
   <text x="16" y="850" fill="#64748B" font-size="9">pos_config.alcohol_cutoff_time</text>
+  <!-- DB: pos_config.alcohol_jurisdiction -->
   <text x="16" y="864" fill="#64748B" font-size="9">pos_config.alcohol_jurisdiction</text>
+  <!-- DB: pos_audit_log (7-year retention) -->
   <text x="16" y="878" fill="#64748B" font-size="9">pos_audit_log (7-year retention)</text>
 
-  <!-- ===== PAGE HEADER ===== -->
-  <rect x="211" y="55" width="1155" height="66" fill="#1A1D2E"/>
-  <rect x="211" y="121" width="1155" height="1" fill="#2D3148"/>
-  <text x="230" y="88" fill="#F1F5F9" font-size="20" font-weight="700">Alcohol &amp; Server Compliance</text>
-  <text x="230" y="108" fill="#64748B" font-size="12">RBS certification tracking · Sale cutoff enforcement · TIPS certification · Dram shop liability logging</text>
+  <!-- ==================== PAGE HEADER ==================== -->
+  <rect x="211" y="55" width="1155" height="66" fill="url(#headerGrad)"/>
+  <rect x="211" y="121" width="1155" height="1" fill="#2A2E45"/>
+  <text x="230" y="88" fill="#E2E8F0" font-size="20" font-weight="700">Alcohol &amp; Server Compliance</text>
+  <text x="230" y="108" fill="#64748B" font-size="12">RBS certification tracking &#183; Sale cutoff enforcement &#183; TIPS certification &#183; Dram shop liability logging</text>
+
   <!-- Save button -->
-  <rect x="1220" y="68" width="130" height="34" rx="7" fill="#F59E0B"/>
-  <text x="1285" y="90" fill="#0F1117" font-size="13" font-weight="700" text-anchor="middle">Save Settings</text>
-
+  <rect x="1220" y="68" width="130" height="34" rx="7" fill="url(#amberBtnGrad)" filter="url(#btnShadow)"/>
+  <text x="1285" y="90" fill="#0C0E1A" font-size="13" font-weight="700" text-anchor="middle">Save Settings</text>
 
   <!-- ================================================================ -->
-  <!-- TOP SECTION — Alcohol Sale Cutoff                                -->
+  <!-- SECTION 1: Alcohol Sale Cutoff Times                             -->
   <!-- ================================================================ -->
+  <!-- DB: pos_config.alcohol_cutoff_time, pos_config.alcohol_jurisdiction -->
+  <rect x="218" y="132" width="1130" height="204" rx="9" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
-  <!-- Card -->
-  <rect x="218" y="132" width="1130" height="204" rx="9" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- Card header -->
+  <rect x="218" y="132" width="1130" height="44" rx="9" fill="#1E2235"/>
+  <rect x="218" y="158" width="1130" height="18" fill="#1E2235"/>
+  <text x="238" y="159" fill="#E2E8F0" font-size="14" font-weight="700">Sale Cutoff Times by Jurisdiction</text>
+  <text x="238" y="173" fill="#64748B" font-size="11">Enforced at POS register &#8212; register refuses alcohol ring-ups after jurisdiction cutoff</text>
 
-  <!-- Card header row -->
-  <rect x="218" y="132" width="1130" height="44" rx="9" fill="#1E2240"/>
-  <rect x="218" y="158" width="1130" height="18" fill="#1E2240"/>
-  <text x="238" y="159" fill="#F1F5F9" font-size="14" font-weight="700">&#128337; Sale Cutoff Times by Jurisdiction</text>
-  <text x="238" y="173" fill="#64748B" font-size="11">Enforced at POS register — register refuses alcohol ring-ups after jurisdiction cutoff</text>
-
-  <!-- CA highlight row -->
-  <rect x="230" y="183" width="1106" height="48" rx="7" fill="#0F1117" stroke="#F59E0B" stroke-width="1.2"/>
+  <!-- CA highlight row (editable) -->
+  <!-- DB: pos_config.alcohol_cutoff_time = '02:00' -->
+  <rect x="230" y="183" width="1106" height="48" rx="7" fill="#0C0E1A" stroke="#F59E0B" stroke-width="1.2"/>
   <text x="246" y="200" fill="#F59E0B" font-size="11" font-weight="700">AUTO-DETECTED VENUE STATE</text>
-  <text x="246" y="218" fill="#F1F5F9" font-size="13" font-weight="700">California (CA)</text>
+  <text x="246" y="218" fill="#E2E8F0" font-size="13" font-weight="700">California (CA)</text>
   <text x="390" y="218" fill="#94A3B8" font-size="12">Hard cutoff:</text>
-  <text x="468" y="218" fill="#F59E0B" font-size="14" font-weight="700">2:00 AM</text>
+  <use href="#adminGear" x="455" y="206" width="14" height="14"/>
+  <text x="475" y="218" fill="#F59E0B" font-size="14" font-weight="700">2:00 AM</text>
 
-  <!-- Hard block toggle -->
+  <!-- Hard block toggle (editable) -->
+  <!-- DB: pos_config.alcohol_hard_block (boolean) -->
   <text x="620" y="200" fill="#94A3B8" font-size="11">Hard block</text>
-  <!-- Toggle ON green -->
-  <rect x="676" y="188" width="46" height="22" rx="11" fill="#10B981"/>
-  <circle cx="711" cy="199" r="9" fill="#FFFFFF"/>
-  <text x="728" y="203" fill="#10B981" font-size="11" font-weight="600">ON</text>
+  <use href="#adminGear" x="678" y="188" width="14" height="14"/>
+  <use href="#toggleOn" x="698" y="188" width="46" height="22"/>
+  <text x="750" y="203" fill="#22C55E" font-size="11" font-weight="600">ON</text>
+  <text x="775" y="207" fill="#94A3B8" font-size="10">Register will refuse alcohol ring-ups after cutoff</text>
 
-  <text x="760" y="207" fill="#94A3B8" font-size="10">Register will refuse alcohol ring-ups after cutoff</text>
-
-  <!-- Override PIN toggle -->
+  <!-- Override PIN toggle (editable) -->
+  <!-- DB: pos_config.alcohol_override_pin (boolean) -->
   <text x="620" y="225" fill="#94A3B8" font-size="11">Override: manager PIN required (logged to audit trail)</text>
-  <!-- Toggle ON green -->
-  <rect x="924" y="213" width="46" height="22" rx="11" fill="#10B981"/>
-  <circle cx="959" cy="224" r="9" fill="#FFFFFF"/>
-  <text x="976" y="228" fill="#10B981" font-size="11" font-weight="600">ON</text>
+  <use href="#adminGear" x="925" y="213" width="14" height="14"/>
+  <use href="#toggleOn" x="945" y="213" width="46" height="22"/>
+  <text x="997" y="228" fill="#22C55E" font-size="11" font-weight="600">ON</text>
 
-  <!-- Other states table header -->
+  <!-- Other states (using reusable pill symbol) -->
   <text x="246" y="250" fill="#64748B" font-size="11" font-weight="700" letter-spacing="0.5">OTHER STATES</text>
 
-  <!-- State mini-pills row -->
-  <!-- NY -->
-  <rect x="310" y="238" width="108" height="24" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
-  <text x="364" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">NY — 4:00 AM</text>
+  <use href="#statePill" x="310" y="238" width="108" height="24"/>
+  <text x="364" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">NY &#8212; 4:00 AM</text>
 
-  <!-- TX -->
-  <rect x="426" y="238" width="108" height="24" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
-  <text x="480" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">TX — 2:00 AM</text>
+  <use href="#statePill" x="426" y="238" width="108" height="24"/>
+  <text x="480" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">TX &#8212; 2:00 AM</text>
 
-  <!-- IL -->
-  <rect x="542" y="238" width="108" height="24" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
-  <text x="596" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">IL — 2:00 AM</text>
+  <use href="#statePill" x="542" y="238" width="108" height="24"/>
+  <text x="596" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">IL &#8212; 2:00 AM</text>
 
-  <!-- FL -->
-  <rect x="658" y="238" width="108" height="24" rx="5" fill="#13162A" stroke="#2D3148" stroke-width="1"/>
-  <text x="712" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">FL — 7:00 AM</text>
+  <use href="#statePill" x="658" y="238" width="108" height="24"/>
+  <text x="712" y="254" fill="#94A3B8" font-size="11" text-anchor="middle">FL &#8212; 7:00 AM</text>
 
-  <!-- NV -->
-  <rect x="774" y="238" width="120" height="24" rx="5" fill="#13162A" stroke="#8B5CF6" stroke-width="1"/>
-  <text x="834" y="254" fill="#8B5CF6" font-size="11" text-anchor="middle">NV — No cutoff</text>
+  <rect x="774" y="238" width="120" height="24" rx="5" fill="#111425" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="834" y="254" fill="#8B5CF6" font-size="11" text-anchor="middle">NV &#8212; No cutoff</text>
 
-  <!-- Dram shop warning banner -->
+  <!-- 30-day expiry alert settings -->
+  <!-- DB: pos_config.cert_expiry_alert_days -->
+  <rect x="930" y="238" width="280" height="24" rx="5" fill="#0C0E1A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="940" y="254" fill="#F59E0B" font-size="11">Expiry alert threshold:</text>
+  <use href="#adminGear" x="1068" y="242" width="14" height="14"/>
+  <rect x="1088" y="241" width="40" height="18" rx="3" fill="#0C0E1A" stroke="#374151" stroke-width="1"/>
+  <text x="1108" y="254" font-size="11" fill="#F59E0B" text-anchor="middle">30</text>
+  <text x="1134" y="254" fill="#94A3B8" font-size="11">days</text>
+
+  <!-- Dram shop warning -->
   <rect x="218" y="340" width="1130" height="36" rx="7" fill="#1C1400" stroke="#F97316" stroke-width="1.2"/>
   <text x="238" y="353" fill="#F97316" font-size="12" font-weight="700">&#9888;</text>
   <text x="255" y="353" fill="#F97316" font-size="11" font-weight="700">Dram shop liability:</text>
-  <text x="370" y="353" fill="#FDE68A" font-size="11">CA requires 7-year transaction retention (Business &amp; Professions Code §25602)</text>
+  <text x="370" y="353" fill="#FDE68A" font-size="11">CA requires 7-year transaction retention (Business &amp; Professions Code &#167;25602)</text>
   <text x="238" y="367" fill="#94A3B8" font-size="10">All alcohol ring-ups, refusals, and ID verifications are logged to pos_audit_log. Deletion is blocked by system policy.</text>
 
-
   <!-- ================================================================ -->
-  <!-- MIDDLE SECTION — RBS/TIPS Certification Tracker                  -->
+  <!-- SECTION 2: RBS/TIPS Certification Tracker                        -->
   <!-- ================================================================ -->
-
-  <!-- Card -->
-  <rect x="218" y="384" width="1130" height="414" rx="9" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- DB: pos_staff_certifications -->
+  <rect x="218" y="384" width="1130" height="414" rx="9" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
   <!-- Card header -->
-  <rect x="218" y="384" width="1130" height="44" rx="9" fill="#1E2240"/>
-  <rect x="218" y="410" width="1130" height="18" fill="#1E2240"/>
-  <text x="238" y="411" fill="#F1F5F9" font-size="14" font-weight="700">&#127894; RBS / TIPS Certification — CA AB 1221 (required Sept 2022)</text>
+  <rect x="218" y="384" width="1130" height="44" rx="9" fill="#1E2235"/>
+  <rect x="218" y="410" width="1130" height="18" fill="#1E2235"/>
+  <text x="238" y="411" fill="#E2E8F0" font-size="14" font-weight="700">RBS / TIPS Certification &#8212; CA AB 1221 (required Sept 2022)</text>
+  <use href="#adminGear" x="598" y="399" width="14" height="14"/>
   <text x="238" y="425" fill="#64748B" font-size="11">All servers, bartenders, and managers must hold valid RBS or TIPS certification to ring up alcohol sales in California.</text>
 
-  <!-- Table header row -->
-  <rect x="218" y="430" width="1130" height="30" fill="#13162A"/>
+  <!-- Table header -->
+  <rect x="218" y="430" width="1130" height="30" fill="#111425"/>
   <text x="238" y="450" fill="#64748B" font-size="11" font-weight="700">STAFF NAME</text>
   <text x="368" y="450" fill="#64748B" font-size="11" font-weight="700">ROLE</text>
   <text x="458" y="450" fill="#64748B" font-size="11" font-weight="700">CERTIFICATION</text>
@@ -170,27 +258,26 @@
   <text x="808" y="450" fill="#64748B" font-size="11" font-weight="700">EXPIRES</text>
   <text x="898" y="450" fill="#64748B" font-size="11" font-weight="700">STATUS</text>
   <text x="1060" y="450" fill="#64748B" font-size="11" font-weight="700">ACTIONS</text>
+  <rect x="218" y="460" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Divider under header -->
-  <rect x="218" y="460" width="1130" height="1" fill="#2D3148"/>
-
-  <!-- ROW 1 — Sarah M. — Current -->
+  <!-- ROW 1: Sarah M. - Current -->
+  <!-- DB: pos_staff_certifications WHERE employee_id = ... -->
   <rect x="218" y="461" width="1130" height="38" fill="#1A1D2E"/>
-  <text x="238" y="484" fill="#F1F5F9" font-size="12" font-weight="600">Sarah M.</text>
+  <text x="238" y="484" fill="#E2E8F0" font-size="12" font-weight="600">Sarah M.</text>
   <text x="368" y="484" fill="#94A3B8" font-size="12">Server</text>
   <text x="458" y="484" fill="#94A3B8" font-size="12">RBS Certified</text>
   <text x="608" y="484" fill="#94A3B8" font-size="12">ABC.ca.gov</text>
   <text x="728" y="484" fill="#94A3B8" font-size="12">Jan 2024</text>
   <text x="808" y="484" fill="#94A3B8" font-size="12">Jan 2026</text>
-  <rect x="892" y="470" width="102" height="22" rx="5" fill="#052E16"/>
-  <text x="943" y="485" fill="#10B981" font-size="11" font-weight="600" text-anchor="middle">&#10003; Current</text>
+  <use href="#certCurrent" x="892" y="470" width="102" height="22"/>
   <text x="1060" y="484" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="484" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="499" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="474" width="14" height="14"/>
+  <text x="1150" y="484" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="499" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 2 — John D. — Expiring soon amber -->
+  <!-- ROW 2: John D. - Expiring soon (30-day alert) -->
   <rect x="218" y="500" width="1130" height="38" fill="#1A1D2E"/>
-  <text x="238" y="523" fill="#F1F5F9" font-size="12" font-weight="600">John D.</text>
+  <text x="238" y="523" fill="#E2E8F0" font-size="12" font-weight="600">John D.</text>
   <text x="368" y="523" fill="#94A3B8" font-size="12">Server</text>
   <text x="458" y="523" fill="#94A3B8" font-size="12">RBS Certified</text>
   <text x="608" y="523" fill="#94A3B8" font-size="12">ABC.ca.gov</text>
@@ -199,26 +286,27 @@
   <rect x="892" y="509" width="152" height="22" rx="5" fill="#2D1F00"/>
   <text x="968" y="524" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">&#9888; Expires in 42 days</text>
   <text x="1060" y="523" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="523" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="538" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="513" width="14" height="14"/>
+  <text x="1150" y="523" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="538" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 3 — Mike T. — Current -->
-  <rect x="218" y="539" width="1130" height="38" fill="#13162A"/>
-  <text x="238" y="562" fill="#F1F5F9" font-size="12" font-weight="600">Mike T.</text>
+  <!-- ROW 3: Mike T. - Current -->
+  <rect x="218" y="539" width="1130" height="38" fill="#111425"/>
+  <text x="238" y="562" fill="#E2E8F0" font-size="12" font-weight="600">Mike T.</text>
   <text x="368" y="562" fill="#94A3B8" font-size="12">Bartender</text>
   <text x="458" y="562" fill="#94A3B8" font-size="12">RBS Certified</text>
   <text x="608" y="562" fill="#94A3B8" font-size="12">ABC.ca.gov</text>
   <text x="728" y="562" fill="#94A3B8" font-size="12">Jun 2024</text>
   <text x="808" y="562" fill="#94A3B8" font-size="12">Jun 2026</text>
-  <rect x="892" y="548" width="102" height="22" rx="5" fill="#052E16"/>
-  <text x="943" y="563" fill="#10B981" font-size="11" font-weight="600" text-anchor="middle">&#10003; Current</text>
+  <use href="#certCurrent" x="892" y="548" width="102" height="22"/>
   <text x="1060" y="562" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="562" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="577" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="552" width="14" height="14"/>
+  <text x="1150" y="562" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="577" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 4 — Ana L. — TIPS expiring -->
+  <!-- ROW 4: Ana L. - TIPS expiring -->
   <rect x="218" y="578" width="1130" height="38" fill="#1A1D2E"/>
-  <text x="238" y="601" fill="#F1F5F9" font-size="12" font-weight="600">Ana L.</text>
+  <text x="238" y="601" fill="#E2E8F0" font-size="12" font-weight="600">Ana L.</text>
   <text x="368" y="601" fill="#94A3B8" font-size="12">Cashier</text>
   <text x="458" y="601" fill="#94A3B8" font-size="12">TIPS Certified</text>
   <text x="608" y="601" fill="#94A3B8" font-size="12">TIPS Program</text>
@@ -227,55 +315,55 @@
   <rect x="892" y="587" width="154" height="22" rx="5" fill="#2D1F00"/>
   <text x="969" y="602" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">&#9888; Expires in 89 days</text>
   <text x="1060" y="601" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="601" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="616" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="591" width="14" height="14"/>
+  <text x="1150" y="601" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="616" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 5 — Carlos R. — Not required -->
-  <rect x="218" y="617" width="1130" height="38" fill="#13162A"/>
-  <text x="238" y="640" fill="#F1F5F9" font-size="12" font-weight="600">Carlos R.</text>
+  <!-- ROW 5: Carlos R. - Not required -->
+  <rect x="218" y="617" width="1130" height="38" fill="#111425"/>
+  <text x="238" y="640" fill="#E2E8F0" font-size="12" font-weight="600">Carlos R.</text>
   <text x="368" y="640" fill="#94A3B8" font-size="12">Cook</text>
   <text x="458" y="640" fill="#64748B" font-size="12">N/A</text>
-  <text x="608" y="640" fill="#64748B" font-size="12">—</text>
-  <text x="728" y="640" fill="#64748B" font-size="12">—</text>
-  <text x="808" y="640" fill="#64748B" font-size="12">—</text>
-  <rect x="892" y="626" width="118" height="22" rx="5" fill="#1E2240"/>
-  <text x="951" y="641" fill="#64748B" font-size="11" font-weight="600" text-anchor="middle">&#11036; Not required</text>
+  <text x="608" y="640" fill="#64748B" font-size="12">&#8212;</text>
+  <text x="728" y="640" fill="#64748B" font-size="12">&#8212;</text>
+  <text x="808" y="640" fill="#64748B" font-size="12">&#8212;</text>
+  <use href="#certNotRequired" x="892" y="626" width="118" height="22"/>
   <text x="1060" y="640" fill="#64748B" font-size="11" opacity="0.4">Update cert</text>
-  <text x="1140" y="640" fill="#64748B" font-size="11" opacity="0.4">Send reminder</text>
-  <rect x="218" y="655" width="1130" height="1" fill="#2D3148"/>
+  <text x="1150" y="640" fill="#64748B" font-size="11" opacity="0.4">Send reminder</text>
+  <rect x="218" y="655" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 6 — Tom W. — Current -->
+  <!-- ROW 6: Tom W. - Current -->
   <rect x="218" y="656" width="1130" height="38" fill="#1A1D2E"/>
-  <text x="238" y="679" fill="#F1F5F9" font-size="12" font-weight="600">Tom W.</text>
+  <text x="238" y="679" fill="#E2E8F0" font-size="12" font-weight="600">Tom W.</text>
   <text x="368" y="679" fill="#94A3B8" font-size="12">Server</text>
   <text x="458" y="679" fill="#94A3B8" font-size="12">RBS Certified</text>
   <text x="608" y="679" fill="#94A3B8" font-size="12">ABC.ca.gov</text>
   <text x="728" y="679" fill="#94A3B8" font-size="12">Feb 2024</text>
   <text x="808" y="679" fill="#94A3B8" font-size="12">Feb 2026</text>
-  <rect x="892" y="665" width="102" height="22" rx="5" fill="#052E16"/>
-  <text x="943" y="680" fill="#10B981" font-size="11" font-weight="600" text-anchor="middle">&#10003; Current</text>
+  <use href="#certCurrent" x="892" y="665" width="102" height="22"/>
   <text x="1060" y="679" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="679" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="694" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="669" width="14" height="14"/>
+  <text x="1150" y="679" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="694" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 7 — Lisa K. — Required / BLOCKED red -->
+  <!-- ROW 7: Lisa K. - Not certified / BLOCKED -->
   <rect x="218" y="695" width="1130" height="40" fill="#1F0808"/>
-  <text x="238" y="719" fill="#F1F5F9" font-size="12" font-weight="600">Lisa K.</text>
+  <text x="238" y="719" fill="#E2E8F0" font-size="12" font-weight="600">Lisa K.</text>
   <text x="368" y="719" fill="#94A3B8" font-size="12">Host</text>
   <text x="458" y="719" fill="#EF4444" font-size="12" font-weight="600">Not certified</text>
-  <text x="608" y="719" fill="#64748B" font-size="12">—</text>
-  <text x="728" y="719" fill="#64748B" font-size="12">—</text>
-  <text x="808" y="719" fill="#64748B" font-size="12">—</text>
-  <rect x="892" y="705" width="116" height="22" rx="5" fill="#2D0808"/>
-  <text x="950" y="720" fill="#EF4444" font-size="11" font-weight="700" text-anchor="middle">&#128308; Required</text>
+  <text x="608" y="719" fill="#64748B" font-size="12">&#8212;</text>
+  <text x="728" y="719" fill="#64748B" font-size="12">&#8212;</text>
+  <text x="808" y="719" fill="#64748B" font-size="12">&#8212;</text>
+  <use href="#certBlocked" x="892" y="705" width="116" height="22"/>
   <text x="1012" y="719" fill="#EF4444" font-size="10">Block alcohol service</text>
   <text x="1060" y="719" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="719" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="735" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="709" width="14" height="14"/>
+  <text x="1150" y="719" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="735" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- ROW 8 — Dan O. — Expiring 155 days -->
-  <rect x="218" y="736" width="1130" height="38" fill="#13162A"/>
-  <text x="238" y="759" fill="#F1F5F9" font-size="12" font-weight="600">Dan O.</text>
+  <!-- ROW 8: Dan O. - Expiring 155 days -->
+  <rect x="218" y="736" width="1130" height="38" fill="#111425"/>
+  <text x="238" y="759" fill="#E2E8F0" font-size="12" font-weight="600">Dan O.</text>
   <text x="368" y="759" fill="#94A3B8" font-size="12">Manager</text>
   <text x="458" y="759" fill="#94A3B8" font-size="12">RBS Certified</text>
   <text x="608" y="759" fill="#94A3B8" font-size="12">ABC.ca.gov</text>
@@ -284,39 +372,34 @@
   <rect x="892" y="745" width="158" height="22" rx="5" fill="#2D1F00"/>
   <text x="971" y="760" fill="#F59E0B" font-size="11" font-weight="600" text-anchor="middle">&#9888; Expires in 155 days</text>
   <text x="1060" y="759" fill="#F59E0B" font-size="11" text-decoration="underline">Update cert</text>
-  <text x="1140" y="759" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
-  <rect x="218" y="774" width="1130" height="1" fill="#2D3148"/>
+  <use href="#adminGear" x="1130" y="749" width="14" height="14"/>
+  <text x="1150" y="759" fill="#64748B" font-size="11" text-decoration="underline">Send reminder</text>
+  <rect x="218" y="774" width="1130" height="1" fill="#2A2E45"/>
 
   <!-- Table action row -->
   <rect x="218" y="775" width="1130" height="22" fill="#1A1D2E"/>
-
-  <!-- + Add Certification button -->
-  <rect x="238" y="779" width="152" height="24" rx="5" fill="#1E2240" stroke="#2D3148" stroke-width="1"/>
+  <rect x="238" y="779" width="152" height="24" rx="5" fill="#1E2235" stroke="#2A2E45" stroke-width="1"/>
   <text x="314" y="796" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">+ Add Certification</text>
+  <use href="#adminGear" x="398" y="783" width="14" height="14"/>
 
-  <!-- Export for ABC audit amber button -->
-  <rect x="1068" y="779" width="162" height="24" rx="5" fill="#F59E0B"/>
-  <text x="1149" y="796" fill="#0F1117" font-size="11" font-weight="700" text-anchor="middle">&#128196; Export for ABC Audit</text>
-
-  <!-- Card bottom cap -->
-  <rect x="218" y="797" width="1130" height="1" fill="#2D3148"/>
-
+  <!-- Export button -->
+  <rect x="1068" y="779" width="162" height="24" rx="5" fill="url(#amberBtnGrad)" filter="url(#btnShadow)"/>
+  <text x="1149" y="796" fill="#0C0E1A" font-size="11" font-weight="700" text-anchor="middle">Export for ABC Audit</text>
 
   <!-- ================================================================ -->
-  <!-- BOTTOM SECTION — ID Verification Audit Log                       -->
+  <!-- SECTION 3: ID Verification Audit Log (Incident Log)              -->
   <!-- ================================================================ -->
-
-  <!-- Card -->
-  <rect x="218" y="804" width="1130" height="208" rx="9" fill="#1A1D2E" stroke="#2D3148" stroke-width="1"/>
+  <!-- DB: pos_audit_log WHERE event_type = 'id_verification' -->
+  <rect x="218" y="804" width="1130" height="208" rx="9" fill="url(#cardGrad)" stroke="#2A2E45" stroke-width="1" filter="url(#cardShadow)"/>
 
   <!-- Card header -->
-  <rect x="218" y="804" width="1130" height="40" rx="9" fill="#1E2240"/>
-  <rect x="218" y="826" width="1130" height="18" fill="#1E2240"/>
-  <text x="238" y="826" fill="#F1F5F9" font-size="13" font-weight="700">&#128196; ID Verification Audit Log — Last 10 Age Verifications</text>
-  <text x="238" y="840" fill="#64748B" font-size="11">Immutable 7-year retention for dram shop defense · Business &amp; Professions Code §25602</text>
+  <rect x="218" y="804" width="1130" height="40" rx="9" fill="#1E2235"/>
+  <rect x="218" y="826" width="1130" height="18" fill="#1E2235"/>
+  <text x="238" y="826" fill="#E2E8F0" font-size="13" font-weight="700">ID Verification Audit Log &#8212; Last 10 Age Verifications</text>
+  <text x="238" y="840" fill="#64748B" font-size="11">Immutable 7-year retention for dram shop defense &#183; Business &amp; Professions Code &#167;25602</text>
 
   <!-- Log table header -->
-  <rect x="218" y="844" width="1130" height="24" fill="#13162A"/>
+  <rect x="218" y="844" width="1130" height="24" fill="#111425"/>
   <text x="238" y="860" fill="#64748B" font-size="10" font-weight="700">TIMESTAMP</text>
   <text x="368" y="860" fill="#64748B" font-size="10" font-weight="700">ORDER #</text>
   <text x="458" y="860" fill="#64748B" font-size="10" font-weight="700">STAFF</text>
@@ -324,96 +407,87 @@
   <text x="668" y="860" fill="#64748B" font-size="10" font-weight="700">RESULT</text>
   <text x="768" y="860" fill="#64748B" font-size="10" font-weight="700">ITEM</text>
 
-  <!-- Log rows (compact, 13px height each) -->
-  <!-- Row 1 -->
+  <!-- Log Row 1 -->
   <rect x="218" y="868" width="1130" height="16" fill="#1A1D2E"/>
   <text x="238" y="880" fill="#64748B" font-size="10">05/27 11:42 PM</text>
   <text x="368" y="880" fill="#64748B" font-size="10">#4418</text>
   <text x="458" y="880" fill="#94A3B8" font-size="10">Tom W.</text>
   <text x="548" y="880" fill="#8B5CF6" font-size="10">DL Scan</text>
-  <rect x="656" y="869" width="72" height="14" rx="3" fill="#052E16"/>
-  <text x="692" y="880" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">&#10003; Approved</text>
+  <use href="#logApproved" x="656" y="869" width="72" height="14"/>
   <text x="768" y="880" fill="#64748B" font-size="10">Chardonnay glass</text>
 
-  <!-- Row 2 -->
-  <rect x="218" y="884" width="1130" height="16" fill="#13162A"/>
+  <!-- Log Row 2 -->
+  <rect x="218" y="884" width="1130" height="16" fill="#111425"/>
   <text x="238" y="896" fill="#64748B" font-size="10">05/27 11:19 PM</text>
   <text x="368" y="896" fill="#64748B" font-size="10">#4411</text>
   <text x="458" y="896" fill="#94A3B8" font-size="10">Sarah M.</text>
   <text x="548" y="896" fill="#8B5CF6" font-size="10">DL Scan</text>
-  <rect x="656" y="885" width="72" height="14" rx="3" fill="#052E16"/>
-  <text x="692" y="896" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">&#10003; Approved</text>
+  <use href="#logApproved" x="656" y="885" width="72" height="14"/>
   <text x="768" y="896" fill="#64748B" font-size="10">IPA pint</text>
 
-  <!-- Row 3 -->
+  <!-- Log Row 3 -->
   <rect x="218" y="900" width="1130" height="16" fill="#1A1D2E"/>
   <text x="238" y="912" fill="#64748B" font-size="10">05/27 10:54 PM</text>
   <text x="368" y="912" fill="#64748B" font-size="10">#4407</text>
   <text x="458" y="912" fill="#94A3B8" font-size="10">Mike T.</text>
   <text x="548" y="912" fill="#94A3B8" font-size="10">Manual check</text>
-  <rect x="656" y="901" width="72" height="14" rx="3" fill="#052E16"/>
-  <text x="692" y="912" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">&#10003; Approved</text>
+  <use href="#logApproved" x="656" y="901" width="72" height="14"/>
   <text x="768" y="912" fill="#64748B" font-size="10">Margarita</text>
 
-  <!-- Row 4 -->
-  <rect x="218" y="916" width="1130" height="16" fill="#13162A"/>
+  <!-- Log Row 4: Blocked -->
+  <rect x="218" y="916" width="1130" height="16" fill="#111425"/>
   <text x="238" y="928" fill="#64748B" font-size="10">05/27 10:31 PM</text>
   <text x="368" y="928" fill="#64748B" font-size="10">#4399</text>
   <text x="458" y="928" fill="#94A3B8" font-size="10">Ana L.</text>
   <text x="548" y="928" fill="#8B5CF6" font-size="10">DL Scan</text>
-  <rect x="656" y="917" width="63" height="14" rx="3" fill="#2D0808"/>
-  <text x="687" y="928" fill="#EF4444" font-size="10" font-weight="600" text-anchor="middle">&#10007; Blocked</text>
+  <use href="#logBlocked" x="656" y="917" width="63" height="14"/>
   <text x="768" y="928" fill="#64748B" font-size="10">Whiskey neat (underage)</text>
 
-  <!-- Row 5 -->
+  <!-- Log Row 5 -->
   <rect x="218" y="932" width="1130" height="16" fill="#1A1D2E"/>
   <text x="238" y="944" fill="#64748B" font-size="10">05/27 10:08 PM</text>
   <text x="368" y="944" fill="#64748B" font-size="10">#4391</text>
   <text x="458" y="944" fill="#94A3B8" font-size="10">Tom W.</text>
   <text x="548" y="944" fill="#8B5CF6" font-size="10">DL Scan</text>
-  <rect x="656" y="933" width="72" height="14" rx="3" fill="#052E16"/>
-  <text x="692" y="944" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">&#10003; Approved</text>
+  <use href="#logApproved" x="656" y="933" width="72" height="14"/>
   <text x="768" y="944" fill="#64748B" font-size="10">Cider 16oz</text>
 
-  <!-- Row 6 -->
-  <rect x="218" y="948" width="1130" height="16" fill="#13162A"/>
+  <!-- Log Row 6 -->
+  <rect x="218" y="948" width="1130" height="16" fill="#111425"/>
   <text x="238" y="960" fill="#64748B" font-size="10">05/27 09:47 PM</text>
   <text x="368" y="960" fill="#64748B" font-size="10">#4382</text>
   <text x="458" y="960" fill="#94A3B8" font-size="10">Sarah M.</text>
   <text x="548" y="960" fill="#94A3B8" font-size="10">Manual check</text>
-  <rect x="656" y="949" width="72" height="14" rx="3" fill="#052E16"/>
-  <text x="692" y="960" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">&#10003; Approved</text>
+  <use href="#logApproved" x="656" y="949" width="72" height="14"/>
   <text x="768" y="960" fill="#64748B" font-size="10">Red wine glass</text>
 
-  <!-- Row 7 -->
+  <!-- Log Row 7: Lisa K. system block -->
   <rect x="218" y="964" width="1130" height="16" fill="#1A1D2E"/>
   <text x="238" y="976" fill="#64748B" font-size="10">05/27 09:22 PM</text>
   <text x="368" y="976" fill="#64748B" font-size="10">#4374</text>
   <text x="458" y="976" fill="#EF4444" font-size="10" font-weight="600">Lisa K.</text>
-  <text x="548" y="976" fill="#94A3B8" font-size="10">—</text>
-  <rect x="656" y="965" width="63" height="14" rx="3" fill="#2D0808"/>
-  <text x="687" y="976" fill="#EF4444" font-size="10" font-weight="600" text-anchor="middle">&#10007; Blocked</text>
-  <text x="768" y="976" fill="#EF4444" font-size="10">Uncertified — system block</text>
+  <text x="548" y="976" fill="#94A3B8" font-size="10">&#8212;</text>
+  <use href="#logBlocked" x="656" y="965" width="63" height="14"/>
+  <text x="768" y="976" fill="#EF4444" font-size="10">Uncertified &#8212; system block</text>
 
-  <!-- Row 8 -->
-  <rect x="218" y="980" width="1130" height="16" fill="#13162A"/>
+  <!-- Log Row 8 -->
+  <rect x="218" y="980" width="1130" height="16" fill="#111425"/>
   <text x="238" y="992" fill="#64748B" font-size="10">05/27 09:01 PM</text>
   <text x="368" y="992" fill="#64748B" font-size="10">#4368</text>
   <text x="458" y="992" fill="#94A3B8" font-size="10">Mike T.</text>
   <text x="548" y="992" fill="#8B5CF6" font-size="10">DL Scan</text>
-  <rect x="656" y="981" width="72" height="14" rx="3" fill="#052E16"/>
-  <text x="692" y="992" fill="#10B981" font-size="10" font-weight="600" text-anchor="middle">&#10003; Approved</text>
+  <use href="#logApproved" x="656" y="981" width="72" height="14"/>
   <text x="768" y="992" fill="#64748B" font-size="10">Modelo bottle</text>
 
-  <!-- Row 9 -->
-  <rect x="218" y="996" width="1130" height="1" fill="#2D3148"/>
+  <rect x="218" y="996" width="1130" height="1" fill="#2A2E45"/>
 
-  <!-- Alert: uncertified server blocked -->
+  <!-- Alert banner: uncertified server -->
   <rect x="218" y="997" width="1130" height="14" fill="#1F0808"/>
-  <text x="238" y="1008" fill="#EF4444" font-size="10" font-weight="700">&#128308; Uncertified server blocked from alcohol ring-ups: Lisa K. — 3 attempts today</text>
+  <text x="238" y="1008" fill="#EF4444" font-size="10" font-weight="700">Uncertified server blocked from alcohol ring-ups: Lisa K. &#8212; 3 attempts today</text>
 
-  <!-- Footer note -->
-  <rect x="218" y="1011" width="1130" height="1" fill="#2D3148"/>
-  <text x="238" y="1022" fill="#64748B" font-size="10">7-year log retention for dram shop defense · Logs cannot be deleted · Export via ABC Audit button above · pos_audit_log table</text>
+  <!-- Footer -->
+  <rect x="218" y="1011" width="1130" height="1" fill="#2A2E45"/>
+  <!-- DB: pos_audit_log -->
+  <text x="238" y="1022" fill="#64748B" font-size="10">7-year log retention for dram shop defense &#183; Logs cannot be deleted &#183; Export via ABC Audit button above &#183; pos_audit_log table</text>
 
 </svg>
