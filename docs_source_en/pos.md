@@ -15,53 +15,9 @@ Use your own iPad — or any device with a browser.
 
 ---
 
-## At a glance
-
-**E2E Workflow** — Complete daily workflow for all 7 roles
-
-![E2E Workflow](../images/pos/ipad_00_e2e_workflow.svg)
-
-**PIN Login** — Staff PIN entry with clock-in, role-based routing
-
-![PIN Login](../images/pos/ipad_00_pin_entry.svg)
-
-**Role Selection** — Multi-role staff choose their role; single-role staff skip to their assigned screen
-
-![Role Selection](../images/pos/ipad_00b_role_select.svg)
-
-**Combined Role Tests** — Multi-role staff workflows: Server+Bartender, Host+Cashier, Manager+Server, Supervisor+Cashier+Host
-
-![Combined Roles](../images/pos/ipad_00c_combined_roles.svg)
-
-**Register** — 3-panel layout with categories, product grid, order ticket
-
-![Register](../images/pos/ipad_01_register.svg)
-
-**Tables** — interactive floor plan with live status
-
-![Tables](../images/pos/ipad_02_tables.svg)
-
-**KDS** — kitchen ticket board with timing and all-day count
-
-![KDS](../images/pos/ipad_03_kds.svg)
-
-**Payment** — 6 methods, tips, split check, cash discount
-
-![Payment](../images/pos/ipad_05_payment.svg)
-
-**Customer Display** — second screen with live order and idle promos
-
-![Customer Display](../images/pos/ipad_customer_display.svg)
-
-**Manager Mobile** — iPhone dashboard
-
-![Manager Mobile](../images/pos/iphone_01_dashboard.svg)
-
----
-
 ## Why switch?
 
-Your current POS costs too much. Toast charges $400–600/mo for a full setup. Square hits $250–350/mo. Clover locks you into 3-year contracts with $2,000+ hardware.
+Your current POS costs too much. Toast charges $400–600/mo. Square hits $250–350/mo. Clover locks you into 3-year contracts with $2,000+ hardware.
 
 **Synalux: Free forever for 1 terminal. $49/mo Pro with 14-day free trial. Your own iPad. Cancel anytime.**
 
@@ -69,31 +25,37 @@ Your current POS costs too much. Toast charges $400–600/mo for a full setup. S
 
 ## Features
 
+### Staff Login
+
+PIN login with clock-in, 7-level role-based access, and automatic screen routing per role.
+
+![PIN Login](../images/pos/ipad_00_pin_entry.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Add staff in **Settings > Staff Management** — name, PIN, role
+2. Assign roles: cashier, host, server, bartender, supervisor, manager, admin
+3. Multi-role staff see a role picker; single-role staff go straight to their screen
+
+![Role Selection](../images/pos/ipad_00b_role_select.svg)
+
+</details>
+
+---
+
 ### Register
+
+Ring orders in seconds. Categories, product grid, and order ticket — all on one screen.
 
 ![Register](../images/pos/ipad_01_register.svg)
 
-3-panel layout: categories on the left, product grid in the center, order ticket on the right. Tap items to add. Modifiers pop up when required. Seat assignment, course firing, barcode scanning, open-price entry, weight-based pricing — all built in.
-
 <details>
-<summary><strong>Setup guide + details</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-**How to set up:**
-1. Go to **Settings > Menu Builder** to add categories and items
-2. Set prices, KDS stations, and modifier groups per item
+1. **Settings > Menu Builder** — add categories and items
+2. Set prices, modifiers, KDS stations, and barcodes per item
 3. Items appear on the register automatically
-4. Assign barcodes in the menu builder for scan-to-add support
-
-**Features:**
-- 4 order types: Dine-in, Takeout, Delivery, Bar Tab — switchable before sending to kitchen
-- Seat number assignment (S1–S8) for split-by-seat payments
-- Age verification prompt for alcohol items
-- Open-price items with floor/ceiling limits
-- Weight-based items with scale input and price-per-unit calculation
-- Barcode scanner support (USB HID keyboard input — any scanner works)
-- Discounts selectable from the order panel (RBAC-gated)
-- Auto-gratuity for large parties (configurable threshold + rate)
-- Tax-exempt toggle per order
 
 ![Menu Builder](../images/pos/settings_menu_builder.svg)
 ![Barcode Scan](../images/pos/ipad_barcode_scan.svg)
@@ -113,22 +75,16 @@ Your current POS costs too much. Toast charges $400–600/mo for a full setup. S
 
 ### Tables & Floor Plan
 
+Visual floor plan with color-coded table status. Tap a table to start or view its order.
+
 ![Tables](../images/pos/ipad_02_tables.svg)
 
-Visual floor plan with positioned table widgets. Color-coded by status. Click a table to start or view its order.
-
 <details>
-<summary><strong>Setup guide + details</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-**How to set up:**
-1. Go to **Settings > Floor Plan**
-2. Click **+ Add Table** — set name, section, capacity, shape
-3. Create sections (Main, Patio, Bar) for quick filtering
-
-**Features:**
-- Table merge, split-back, transfer, reopen closed check
-- QR table ordering: copy QR link per table, print as table tent
-- Real-time status updates via Supabase Realtime
+1. **Settings > Floor Plan** — add tables with name, section, capacity, shape
+2. Create sections (Main, Patio, Bar) for quick filtering
+3. Merge, split-back, transfer, or reopen closed checks from the table detail panel
 
 ![Table Merge](../images/pos/ipad_table_merge.svg)
 ![Seat Management](../images/pos/ipad_seat_management.svg)
@@ -140,26 +96,18 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 
 ### Kitchen Display (KDS)
 
+Ticket board with color-coded timing. Bump, recall, void. All-day count per item.
+
 ![KDS](../images/pos/ipad_03_kds.svg)
 
-4-column ticket board. Color-coded timing. Bump, recall, void. All-day count shows total pending per item.
-
 <details>
-<summary><strong>Setup guide + details</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-**How to set up:**
 1. Open `/pos/kds` on any tablet or TV
-2. Filter by station (Grill, Fry, Prep, Expo, Bar, Cold)
+2. Filter by station: Grill, Fry, Prep, Expo, Bar, Cold
 3. Configure routing rules in **Settings > Printers & KDS**
 
-**Features:**
-- Tickets color-coded by order type: blue (dine-in), orange (takeout), purple (delivery)
-- All-day count: toggle to see total pending per item
-- Void button removes ticket and marks items voided
-- Bump bar support (USB HID physical buttons)
-
 ![Printer Routing](../images/pos/settings_printer_routing.svg)
-- Bump bar support (USB HID physical buttons)
 
 </details>
 
@@ -167,27 +115,16 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 
 ### Payment
 
+Card, cash, gift card, mobile pay, house account, EBT, and bar tabs. Split check, tips, and post-payment tip via QR.
+
 ![Payment](../images/pos/ipad_05_payment.svg)
 
-6 payment methods. Tip selection. Cash discount. Split check. Post-payment tip via QR.
-
 <details>
-<summary><strong>Setup guide + details</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-**How to set up:**
-1. **Card**: Add `STRIPE_SECRET_KEY` in Vercel settings. Pair Stripe Reader M2 ($59).
-2. **Gift cards**: Issue from the Gift Cards page.
-3. **House accounts**: Create in House Accounts page.
-
-**Payment methods:**
-- **Card** — Stripe Terminal (NFC/chip/swipe)
-- **Cash** — tender amounts, change calculation, CAD penny rounding
-- **Gift Card** — enter code, validate, deduct
-- **House Account** — select account, charge to balance
-- **Split Check** — even (2–12 ways) or custom amounts
-- **Bar Tab** — pre-auth hold, add items, close later
-
-**After payment:** Print, email (SendGrid), SMS (Twilio), or skip receipt. Post-payment tip page via QR.
+1. **Card** — add Stripe keys in Settings > Integrations. Pair Reader M2 ($59).
+2. **Gift cards** — issue from the Gift Cards page
+3. **House accounts** — create in Settings > House Accounts
 
 ![Split Check](../images/pos/ipad_split_check.svg)
 ![Post-Payment Tip](../images/pos/ipad_post_payment_tip.svg)
@@ -202,25 +139,22 @@ Visual floor plan with positioned table widgets. Color-coded by status. Click a 
 
 ---
 
+### Customer Display
+
+Second screen facing the customer with live order, running total, and idle promos.
+
+![Customer Display](../images/pos/ipad_customer_display.svg)
+
+---
+
 ### Reports
+
+Sales, PMIX, menu engineering, speed of service, server performance, payments, voids, and labor. CSV export on every report.
 
 ![Reports](../images/pos/ipad_reports.svg)
 
-8 report tabs. CSV export on every report.
-
 <details>
 <summary><strong>Details</strong></summary>
-
-1. **Sales** — net/gross, discounts, hourly heatmap
-2. **PMIX** — product mix: qty, revenue, % of sales
-3. **Menu Engineering** — Star/Dog/Puzzle/Workhorse quadrant
-4. **Speed of Service** — avg kitchen time per station
-5. **Server Performance** — leaderboard with tips + avg ticket
-6. **Payments** — cash/card/gift mix
-7. **Voids/Comps** — voided and comped items
-8. **Labor** — hours, shifts, overtime
-
-Training orders excluded automatically.
 
 ![Menu Engineering](../images/pos/settings_menu_engineering.svg)
 ![Advanced Reports](../images/pos/settings_reports_advanced.svg)
@@ -232,22 +166,16 @@ Training orders excluded automatically.
 
 ### Staff & Labor
 
+Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
+
 ![Employees](../images/pos/settings_employees.svg)
 
-PIN auth. 7-level RBAC. Clock in/out. Break tracking. Scheduling with predictive alerts. Tip pooling. Payroll.
-
 <details>
-<summary><strong>Setup guide + details</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-**How to set up:**
 1. **Settings > Staff Management** — add employees with name, PIN, role
-2. Roles: cashier, host, server, bartender, supervisor, manager, admin
-
-**Features:**
-- Break tracking (meal 30m unpaid, rest 10m paid — CA §226.7)
-- Scheduling with overtime/clopening/minor labor alerts
-- Tip pooling (3 modes: by hours, percentage, points)
-- Payroll: regular/OT hours, tip credit (FLSA §3m), IRS Form 8027, CSV export
+2. Configure pay periods, break rules, and overtime thresholds
+3. Tip pool mode: by hours, percentage, or points
 
 ![Scheduling](../images/pos/settings_scheduling.svg)
 ![Break Tracking](../images/pos/settings_break_tracking.svg)
@@ -262,15 +190,14 @@ PIN auth. 7-level RBAC. Clock in/out. Break tracking. Scheduling with predictive
 
 ### Online Ordering & QR Table
 
+Customers browse your menu, order, and pay — no app needed. QR codes per table go straight to KDS.
+
 ![Online](../images/pos/online_01_menu.svg)
 
-Customer-facing menu. No app install. Orders go to KDS.
-
 <details>
-<summary><strong>Setup guide</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-- **Online ordering**: Share `/pos/order` link. Customers browse, add to cart, checkout.
-- **QR table ordering**: Copy QR link from Settings > Floor Plan per table. Print as table tent. Guest scans → orders → KDS.
+- Share your `/pos/order` link or print QR table tents from **Settings > Floor Plan**
 
 ![QR Ordering](../images/pos/ipad_qr_ordering.svg)
 ![Scheduled Orders](../images/pos/ipad_scheduled_orders.svg)
@@ -281,17 +208,15 @@ Customer-facing menu. No app install. Orders go to KDS.
 
 ### Inventory & Recipes
 
+Stock tracking, low-stock alerts, vendor management, and recipe builder with food cost %.
+
 ![Inventory](../images/pos/settings_inventory.svg)
 
-Stock tracking, cost per unit, stocktake mode, low-stock alerts, vendor management, recipe builder with food cost %.
-
 <details>
-<summary><strong>Setup guide + details</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-- Add items: name, SKU, qty, unit, threshold, cost
-- **Stocktake mode**: enter actual counts, bulk save
-- **Recipes**: select menu item → add ingredients from inventory → food cost % auto-calculates
-- **Vendors**: name, contact, payment terms (Net 30, COD, etc.)
+- Add items with SKU, qty, unit, cost, and reorder threshold
+- Link recipes to menu items — food cost % auto-calculates
 
 ![Recipes](../images/pos/settings_recipes.svg)
 ![Vendors](../images/pos/settings_vendors.svg)
@@ -302,16 +227,12 @@ Stock tracking, cost per unit, stocktake mode, low-stock alerts, vendor manageme
 
 ### Gift Cards & Loyalty
 
+Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gold), and referrals.
+
 ![Gift Cards](../images/pos/settings_gift_cards.svg)
 
-Issue/reload/deactivate gift cards. Loyalty with points, tiers, referrals.
-
 <details>
-<summary><strong>Details</strong></summary>
-
-- **Gift cards**: Issue ($25–$250), auto-generated 16-char code, redeem at payment
-- **Loyalty**: Enroll, check-in (+10 pts), auto-tier (Bronze/Silver/Gold), add/redeem points
-- **Referrals**: 100 pts to referrer, 50 pts to new member
+<summary><strong>Setup</strong></summary>
 
 ![Loyalty](../images/pos/settings_loyalty.svg)
 ![Loyalty Check-in](../images/pos/ipad_loyalty_checkin.svg)
@@ -322,19 +243,12 @@ Issue/reload/deactivate gift cards. Loyalty with points, tiers, referrals.
 
 ### Compliance
 
+Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audit trail.
+
 ![RBS Compliance](../images/pos/settings_rbs_compliance.svg)
 
-Age verification, alcohol incidents, RBS tracking, audit trail, tax-exempt, CCPA/GDPR, IRS 8027.
-
 <details>
-<summary><strong>Details</strong></summary>
-
-- Alcohol items trigger age verification modal
-- RBS cert tracking with 30-day expiry alerts
-- Incident logging (refusal, ID check, cutoff)
-- Tax-exempt toggle per order
-- CCPA/GDPR data deletion API
-- Full audit trail
+<summary><strong>Setup</strong></summary>
 
 ![Age Verification](../images/pos/ipad_age_verification.svg)
 ![Tax Exempt](../images/pos/settings_tax_exempt.svg)
@@ -347,20 +261,12 @@ Age verification, alcohol incidents, RBS tracking, audit trail, tax-exempt, CCPA
 
 ### End of Day
 
+Count cash, distribute tip pool, export GL journal, print Z-Report, close register.
+
 ![EOD](../images/pos/ipad_eod.svg)
 
-Denomination count, cash management, tip pool, GL journal export, close register.
-
 <details>
-<summary><strong>Workflow</strong></summary>
-
-1. Count cash by denomination
-2. Record paid-in/paid-out
-3. Review over/short variance
-4. Distribute tip pool
-5. Export GL journal (CSV for QuickBooks/Xero)
-6. Print Z-Report
-7. Close register
+<summary><strong>Setup</strong></summary>
 
 ![Cash Management](../images/pos/settings_cash_management.svg)
 
@@ -368,173 +274,162 @@ Denomination count, cash management, tip pool, GL journal export, close register
 
 ---
 
-### More features
+### Reservations
 
-<details>
-<summary><strong>Drive-Thru</strong></summary>
+Timeline view with party size, table assignment, and webhook integration for Google Reserve, OpenTable, and Yelp.
+
+![Reservations](../images/pos/ipad_reservations.svg)
+
+---
+
+### Catering
+
+Large-order entry with Banquet Event Orders, delivery scheduling, and deposit tracking.
+
+![Catering](../images/pos/ipad_catering.svg)
+
+---
+
+### Drive-Thru
+
+Lane management with color-coded timing and auto-advance to the next station.
 
 ![Drive-Thru](../images/pos/ipad_drive_thru.svg)
 
-Lane management with status advancement. Auto-refresh.
+---
 
-</details>
+### Handheld Server
 
-<details>
-<summary><strong>Handheld Server</strong></summary>
+Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 
 ![Handheld](../images/pos/ipad_handheld_ordering.svg)
 
-Tableside ordering on any iPhone.
+---
 
-</details>
+### Refunds
 
-<details>
-<summary><strong>Customer Display</strong></summary>
-
-![Customer Display](../images/pos/ipad_customer_display.svg)
-
-Live order + idle mode with promos. Any tablet/TV.
-
-</details>
-
-<details>
-<summary><strong>Refunds</strong></summary>
+Partial or full refund with reason codes. Reopen closed checks for corrections.
 
 ![Refund](../images/pos/ipad_refund.svg)
 ![Reopen Check](../images/pos/ipad_reopen_check.svg)
 
-Partial/full refund with reason codes. Reopen closed checks.
+---
 
-</details>
+### Multi-Location & Franchise
 
-<details>
-<summary><strong>Multi-Location</strong></summary>
+Per-venue KPIs, consolidated P&L, config push, and franchise reporting.
 
 ![Multi-Location](../images/pos/settings_multi_location.svg)
 ![Franchise](../images/pos/settings_franchise.svg)
 
-Per-venue KPIs, consolidated P&L, venue switcher, franchise reporting.
+---
 
-</details>
+### AI Ordering
+
+Natural language order parsing from phone or SMS. Runs locally via Ollama — no cloud API needed.
+
+![AI Ordering](../images/pos/ai_ordering.svg)
+
+---
+
+### More
 
 <details>
 <summary><strong>Training Mode</strong></summary>
 
-![Training](../images/pos/settings_training_mode.svg)
+Isolated sandbox. Orders excluded from reports.
 
-Isolated simulation. Orders excluded from reports.
+![Training](../images/pos/settings_training_mode.svg)
 
 </details>
 
 <details>
 <summary><strong>Offline Mode (PWA)</strong></summary>
 
+Core pages precached for offline use. Orders queue locally and sync on reconnect. Card payments require network.
+
 ![Offline](../images/pos/ipad_offline_mode.svg)
-
-PWA with Service Worker. Core pages (register, KDS, tables, EOD) precached for offline viewing. Offline indicator shows connection status.
-
-**What works offline:** Viewing cached pages, order creation (falls back to localStorage queue when API unreachable), auto-sync on reconnect, connection status indicator.
-
-**What needs network:** Card payments (Stripe API), Supabase queries for live data, receipt email/SMS.
 
 </details>
 
 <details>
 <summary><strong>Integrations</strong></summary>
 
-![Integrations](../images/pos/settings_integrations.svg)
-
 Stripe, DoorDash, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid.
 
+![Integrations](../images/pos/settings_integrations.svg)
+
 </details>
 
 <details>
-<summary><strong>12 Operational Forms</strong></summary>
+<summary><strong>Operational Forms</strong></summary>
+
+Cash Count, Void Auth, Tax-Exempt Cert, Catering BEO, Tip Declaration, Inventory Count, Time-Off, Purchase Order, Incident Log, Daily Specials, Prep List, Server Checkout.
 
 ![Forms](../images/pos/settings_forms.svg)
-
-Cash Count Sheet, Void Authorization, Tax-Exempt Certificate, Catering BEO, Server Tip Declaration, Inventory Count, Time-Off Request, Purchase Order, Incident Log, Daily Specials, Prep List, Server Checkout. Print or download.
-
-</details>
-
-<details>
-<summary><strong>Reservations</strong></summary>
-
-![Reservations](../images/pos/ipad_reservations.svg)
-
-Timeline view with party size, special requests, table assignment. Google Reserve, OpenTable, Yelp webhook integration.
-
-</details>
-
-<details>
-<summary><strong>Catering</strong></summary>
-
-![Catering](../images/pos/ipad_catering.svg)
-
-Large order entry, Banquet Event Orders (BEO), delivery scheduling, deposit tracking.
-
-</details>
-
-<details>
-<summary><strong>AI Ordering</strong></summary>
-
-![AI Ordering](../images/pos/ai_ordering.svg)
-
-Natural language order parsing from phone/SMS. Fuzzy menu matching. Runs locally via Ollama (Prism Coder) — no cloud API needed.
 
 </details>
 
 <details>
 <summary><strong>Digital Menu Board</strong></summary>
 
-![Menu Board](../images/pos/settings_menu_board.svg)
+Configure layout, sections, and pricing display. Assign to any TV or display.
 
-Configure layout, sections, pricing display. Assign to TV/display devices.
+![Menu Board](../images/pos/settings_menu_board.svg)
 
 </details>
 
 <details>
 <summary><strong>Marketing & Campaigns</strong></summary>
 
-![Marketing](../images/pos/settings_marketing.svg)
+Email/SMS blasts, promo codes, audience segments, and send history.
 
-Email/SMS blasts, promo codes, audience segments, send history.
+![Marketing](../images/pos/settings_marketing.svg)
 
 </details>
 
 <details>
 <summary><strong>Customer Feedback</strong></summary>
 
-![Customer Feedback](../images/pos/settings_customer_feedback.svg)
+Post-visit surveys, star ratings, comment review, and response templates.
 
-Post-visit survey, star ratings, comment review queue, response templates.
+![Customer Feedback](../images/pos/settings_customer_feedback.svg)
 
 </details>
 
 <details>
 <summary><strong>Label Printer</strong></summary>
 
-![Label Printer](../images/pos/settings_label_printer.svg)
+ZPL-compatible (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
 
-ZPL-compatible printers (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
+![Label Printer](../images/pos/settings_label_printer.svg)
 
 </details>
 
 <details>
 <summary><strong>Equipment Tracking</strong></summary>
 
+Device registry with serial numbers, warranty, maintenance schedule, and depreciation.
+
 ![Equipment](../images/pos/settings_equipment.svg)
 
-Device registry, serial numbers, warranty, maintenance schedule, depreciation.
+</details>
+
+<details>
+<summary><strong>Manager Mobile</strong></summary>
+
+iPhone dashboard with live KPIs, alerts, and quick actions.
+
+![Manager Mobile](../images/pos/iphone_01_dashboard.svg)
 
 </details>
 
 <details>
 <summary><strong>Synalux Advantage</strong></summary>
 
-![Advantage](../images/pos/settings_advantage.svg)
+Referral tracking, partner benefits, and commission tiers.
 
-Referral tracking, partner benefits, commission tiers.
+![Advantage](../images/pos/settings_advantage.svg)
 
 </details>
 
@@ -542,7 +437,7 @@ Referral tracking, partner benefits, commission tiers.
 
 ## Plans & Pricing
 
-**Free forever** for 1 terminal. **14-day free trial** on all paid plans. Billed via Stripe — cancel anytime.
+**Free forever** for 1 terminal. **14-day free trial** on all paid plans. Cancel anytime.
 
 | | **Free** | **Pro** | **Business** | **Enterprise** |
 |---|:---:|:---:|:---:|:---:|
@@ -556,18 +451,11 @@ Referral tracking, partner benefits, commission tiers.
 | Scheduling + Payroll | — | Yes | Yes | Yes |
 | Reservations + Catering | — | Yes | Yes | Yes |
 | Priority support | — | — | 24h SLA | 4h SLA |
-| Multi-location + Franchise P&L | — | — | — | Yes |
+| Multi-location + Franchise | — | — | — | Yes |
 | API access | — | — | — | Yes |
 | **Contract** | **None** | **None** | **None** | **None** |
-| **Billing** | **Free** | **Stripe** | **Stripe** | **Stripe** |
 
-**Processing rates (via Stripe):**
-
-| Transaction | Rate |
-|-------------|------|
-| In-person (tap/chip/swipe) | 2.6% + $0.10 |
-| Online | 2.9% + $0.30 |
-| Tap-to-Pay on iPhone | 2.6% + $0.10 |
+**Processing:** 2.6% + $0.10 in-person · 2.9% + $0.30 online (via Stripe)
 
 **Hardware — Bring Your Own Device:**
 
@@ -579,14 +467,12 @@ Referral tracking, partner benefits, commission tiers.
 | Card reader | **$59** (Stripe Reader) | $249–299 | $59 | Included |
 | **Total** | **$59** | **$1,500–2,500+** | **$600–1,200** | **$2,000–4,000+** |
 
-**No contract. No early termination fee. No hidden fees. Cancel anytime from your Stripe billing portal.**
-
 ---
 
 ## First-year savings
 
 | vs Competitor | Their Cost | Synalux Pro | **You Save** |
-|---------------|-------------------------------------------:|--------:|-------------:|
+|---|---:|---:|---:|
 | vs Toast | $4,800–7,200/yr + $1,500 HW | $588/yr + $59 HW | **$5,700–8,100** |
 | vs Square | $3,000–4,200/yr + $600 HW | $588/yr + $59 HW | **$3,000–4,200** |
 | vs Clover | $4,200–6,000/yr + $2,000 HW | $588/yr + $59 HW | **$5,600–7,700** |
@@ -595,140 +481,42 @@ Referral tracking, partner benefits, commission tiers.
 
 ---
 
-## Integration Setup Guide
-
-Every integration activates by adding the provider's credentials to your Synalux POS environment. No code changes needed.
-
-### Card Payments (Stripe)
-
-| | Details |
-|---|---|
-| **Who signs up** | You (restaurant owner) at [stripe.com](https://stripe.com) |
-| **What you get** | Secret key (`sk_live_...`) + publishable key (`pk_live_...`) |
-| **Where to add** | Settings → Integrations → Stripe → paste keys |
-| **Env var** | `STRIPE_SECRET_KEY` |
-| **Hardware** | Stripe Reader M2 ($59) — pair in Stripe Dashboard |
-| **What activates** | Card payments (tap/chip/swipe), Tap-to-Pay on iPhone, online payments |
-
-### Email Receipts (SendGrid)
-
-| | Details |
-|---|---|
-| **Who signs up** | You at [sendgrid.com](https://sendgrid.com) (free tier: 100 emails/day) |
-| **What you get** | API key |
-| **Env var** | `SENDGRID_API_KEY` |
-| **Optional** | `RECEIPT_FROM_EMAIL` — sender address (default: receipts@synalux.ai) |
-| **What activates** | Email receipt button after payment, HTML-formatted receipt with items + totals |
-
-### SMS Receipts & Phone Ordering (Twilio)
-
-| | Details |
-|---|---|
-| **Who signs up** | You at [twilio.com](https://www.twilio.com) |
-| **What you get** | Account SID, Auth Token, Phone Number |
-| **Env vars** | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` |
-| **What activates** | SMS receipt button, phone ordering webhook (`/api/v1/pos/webhooks/phone`) |
-
-### Delivery Orders (DoorDash / Uber Eats / Grubhub)
-
-| | Details |
-|---|---|
-| **Who signs up** | You with each delivery platform's merchant portal |
-| **How it works** | Point the platform's webhook URL to your POS: `https://your-pos.vercel.app/api/v1/pos/webhooks/delivery` |
-| **Payload format** | JSON with `provider`, `venue_id`, `customer_name`, `items[]`, `delivery_address` |
-| **What activates** | Delivery orders appear on KDS with purple badge, tracked in reports |
-
-### Reservations (Google Reserve / OpenTable / Yelp)
-
-| | Details |
-|---|---|
-| **Who signs up** | You with each reservation platform |
-| **How it works** | Point webhook to: `https://your-pos.vercel.app/api/v1/pos/webhooks/reservations` |
-| **Payload** | JSON with `provider`, `venue_id`, `guest_name`, `party_size`, `reservation_time` |
-| **What activates** | Reservations auto-created in your reservation list |
-
-### Accounting Sync (QuickBooks / Xero)
-
-| | Details |
-|---|---|
-| **Who signs up** | You at [quickbooks.intuit.com](https://quickbooks.intuit.com) or [xero.com](https://www.xero.com) |
-| **Env vars** | `QUICKBOOKS_ACCESS_TOKEN` or `XERO_ACCESS_TOKEN` |
-| **What activates** | EOD "Export GL Journal" generates double-entry journal entries. With token set, auto-syncs to your accounting software. |
-| **Manual fallback** | CSV export always available — import into any accounting system |
-
-### EBT / SNAP Payments (Forage)
-
-| | Details |
-|---|---|
-| **Who signs up** | You at [joinforage.com](https://www.joinforage.com) — they onboard restaurants for SNAP acceptance |
-| **What you get** | Forage API key after merchant verification |
-| **Env var** | `FORAGE_API_KEY` |
-| **What activates** | EBT payment option, eligible item flagging (food only, excludes alcohol), dual-tender split |
-
-### Payroll Direct Deposit (Dwolla / Stripe Treasury)
-
-| | Details |
-|---|---|
-| **Option A** | [dwolla.com](https://www.dwolla.com) → sign up for API access → `DWOLLA_API_KEY` |
-| **Option B** | Enable Treasury in your Stripe Dashboard → `STRIPE_TREASURY_KEY` |
-| **What activates** | ACH direct deposit from payroll page, tax withholding calculation |
-| **Manual fallback** | CSV payroll export always available for Gusto/ADP import |
-
-### AI Ordering (Prism Coder)
-
-| | Details |
-|---|---|
-| **How it works** | Runs locally via Ollama — no cloud API needed |
-| **Setup** | Install [Ollama](https://ollama.com), then: `ollama pull dcostenco/prism-coder:1b7` |
-| **Env var** | `NEXT_PUBLIC_LOCAL_LLM_URL=http://localhost:11434` |
-| **What activates** | Natural language order parsing from phone/SMS orders, fuzzy menu item matching |
-
-### Label Printer (Zebra / Brother)
-
-| | Details |
-|---|---|
-| **Hardware** | Any ZPL-compatible printer (Zebra ZD420, ZD620, Brother QL-820NWB) |
-| **Setup** | Connect printer to same network → add in Settings → Printers → station: "label" → enter IP |
-| **What activates** | "Label" button on every inventory item and menu item, prints ZPL price/SKU/prep labels |
-| **No printer?** | Falls back to browser print dialog with ZPL preview |
-
-### Apple Wallet / Google Wallet (Loyalty Passes)
-
-| | Details |
-|---|---|
-| **Apple** | Apple Developer account ($99/yr) → create Pass Type ID → signing certificate |
-| **Google** | Google Cloud Console → Wallet API → Issuer ID + service account key |
-| **Env vars** | `APPLE_PASS_TYPE_ID`, `APPLE_TEAM_ID`, `APPLE_PASS_SIGNING_CERT`, `GOOGLE_WALLET_ISSUER_ID`, `GOOGLE_WALLET_SERVICE_KEY` |
-| **What activates** | Loyalty members get "Add to Wallet" with membership barcode |
-
----
-
-## Environment Variables Reference
-
-| Variable | Required | Purpose |
-|----------|:--------:|---------|
-| `NEXT_PUBLIC_POS_SUPABASE_URL` | Yes | Supabase project URL |
-| `NEXT_PUBLIC_POS_SUPABASE_ANON_KEY` | Yes | Supabase anon key |
-| `POS_SUPABASE_SERVICE_ROLE_KEY` | Yes | Supabase service role key |
-| `STRIPE_SECRET_KEY` | Recommended | Card payments |
-| `SENDGRID_API_KEY` | Optional | Email receipts |
-| `TWILIO_ACCOUNT_SID` | Optional | SMS receipts + phone orders |
-| `TWILIO_AUTH_TOKEN` | Optional | SMS receipts + phone orders |
-| `TWILIO_PHONE_NUMBER` | Optional | SMS sender number |
-| `FORAGE_API_KEY` | Optional | EBT/SNAP payments |
-| `DWOLLA_API_KEY` | Optional | Payroll ACH (option A) |
-| `STRIPE_TREASURY_KEY` | Optional | Payroll ACH (option B) |
-| `QUICKBOOKS_ACCESS_TOKEN` | Optional | QuickBooks GL sync |
-| `XERO_ACCESS_TOKEN` | Optional | Xero GL sync |
-| `NEXT_PUBLIC_LOCAL_LLM_URL` | Optional | Local AI (Ollama) |
-| `APPLE_PASS_TYPE_ID` | Optional | Apple Wallet passes |
-| `GOOGLE_WALLET_ISSUER_ID` | Optional | Google Wallet passes |
-
----
-
 ## 25 languages
 
 English, Spanish, French, Chinese, Arabic, Romanian, Portuguese, German, Italian, Japanese, Korean, Vietnamese, Russian, Ukrainian, Polish, Turkish, Dutch, Swedish, Hebrew, Thai, Hindi, Indonesian, Malay, Filipino, Greek. RTL supported.
+
+---
+
+<details>
+<summary><strong>Developer: Integration Setup Guide</strong></summary>
+
+Every integration activates by adding credentials in **Settings > Integrations**. No code changes needed.
+
+| Integration | Env var | What activates |
+|---|---|---|
+| **Stripe** (card payments) | `STRIPE_SECRET_KEY` | Card tap/chip/swipe, Tap-to-Pay, online payments |
+| **SendGrid** (email receipts) | `SENDGRID_API_KEY` | Email receipt button after payment |
+| **Twilio** (SMS) | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` | SMS receipts, phone ordering |
+| **DoorDash / Uber Eats / Grubhub** | Webhook URL | Delivery orders on KDS with purple badge |
+| **Google Reserve / OpenTable / Yelp** | Webhook URL | Auto-created reservations |
+| **QuickBooks / Xero** | `QUICKBOOKS_ACCESS_TOKEN` or `XERO_ACCESS_TOKEN` | EOD GL journal auto-sync |
+| **Forage** (EBT/SNAP) | `FORAGE_API_KEY` | EBT payment, eligible item flagging |
+| **Dwolla / Stripe Treasury** | `DWOLLA_API_KEY` or `STRIPE_TREASURY_KEY` | ACH payroll direct deposit |
+| **Ollama** (AI ordering) | `NEXT_PUBLIC_LOCAL_LLM_URL` | Natural language order parsing |
+| **Apple / Google Wallet** | Pass Type ID + signing cert | Loyalty "Add to Wallet" |
+| **Zebra / Brother** (labels) | Printer IP in Settings | ZPL price/SKU/prep labels |
+
+**Required env vars:** `NEXT_PUBLIC_POS_SUPABASE_URL`, `NEXT_PUBLIC_POS_SUPABASE_ANON_KEY`, `POS_SUPABASE_SERVICE_ROLE_KEY`
+
+</details>
+
+<details>
+<summary><strong>Developer: E2E Workflow & Role Testing</strong></summary>
+
+![E2E Workflow](../images/pos/ipad_00_e2e_workflow.svg)
+![Combined Role Tests](../images/pos/ipad_00c_combined_roles.svg)
+
+</details>
 
 ---
 
