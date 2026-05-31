@@ -29,13 +29,12 @@ After login, enter a staff PIN to access the POS:
 
 | Role | Name | PIN | What you see |
 |---|---|---|---|
-| **Cashier** | Maria G. | `3456` | Register + Payment |
-| **Host** | Lisa W. | `5678` | Tables + Waitlist + Reservations |
-| **Server** | John S. | `1234` | Register + Tables + Handheld |
-| **Bartender** | Mike R. | `7890` | Bar Register + Age Verification |
-| **Supervisor** | Alex K. | `2468` | Register + Reports + Voids + Discounts |
-| **Manager** | Sara R. | `9012` | Dashboard + All screens + EOD |
-| **Admin** | Dmitri C. | `0000` | Settings + All screens |
+| **Admin** | Admin | `1234` | Settings + All screens |
+| **Manager** | Manager | `5678` | Dashboard + All screens + EOD |
+| **Server** | Server 1 | `1111` | Register + Tables + Handheld |
+| **Server** | Server 2 | `2222` | Register + Tables + Handheld |
+| **Bartender** | Bartender | `3333` | Bar Register + Age Verification |
+| **Host** | Host | `4444` | Tables + Waitlist + Reservations |
 
 **All demo data resets hourly.**
 
