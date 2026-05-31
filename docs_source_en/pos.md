@@ -27,14 +27,16 @@ Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log 
 
 After login, enter a staff PIN to access the POS:
 
-| Role | Name | PIN | What you see |
+| Role | Name | PIN | Screens |
 |---|---|---|---|
-| **Admin** | Admin | `1234` | Settings + All screens |
-| **Manager** | Manager | `5678` | Dashboard + All screens + EOD |
-| **Server** | Server 1 | `1111` | Register + Tables + Handheld |
-| **Server** | Server 2 | `2222` | Register + Tables + Handheld |
-| **Bartender** | Bartender | `3333` | Bar Register + Age Verification |
-| **Host** | Host | `4444` | Tables + Waitlist + Reservations |
+| **Cashier** | Cashier | `5555` | Register, Payment |
+| **Host** | Host | `4444` | Tables, Waitlist, Reservations |
+| **Server** | Server 1 | `1111` | Register, Tables, Payment, Handheld |
+| **Server** | Server 2 | `2222` | Register, Tables, Payment, Handheld |
+| **Bartender** | Bartender | `3333` | Bar Register, Payment, Age Verification |
+| **Supervisor** | Supervisor | `6666` | Register, Tables, Reports, Voids, Discounts, KDS |
+| **Manager** | Manager | `5678` | All screens + EOD + Staff |
+| **Admin** | Admin | `1234` | All screens + Settings |
 
 **All demo data resets hourly.**
 
