@@ -691,4 +691,4 @@ Every feature, head-to-head. ✅ = included, 💰 = paid add-on, ❌ = not avail
 
 ## License
 
-BUSL-1.1 — see [`LICENSE`](LICENSE).
+BUSL-1.1 — see [`LICENSE`](../LICENSE).
