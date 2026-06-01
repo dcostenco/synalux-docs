@@ -482,7 +482,13 @@ Referral tracking, partner benefits, and commission tiers.
 | API access | — | — | — | Yes |
 | **Contract** | **None** | **None** | **None** | **None** |
 
-**Processing:** 2.6% + $0.10 in-person · 2.9% + $0.30 online (via Stripe)
+**Processing rates (Direct via Stripe — 0% markup from Synalux):**
+
+| Transaction | Rate |
+|-------------|------|
+| In-person (tap/chip/swipe) | 2.6% + $0.10 |
+| Online | 2.9% + $0.30 |
+| Tap-to-Pay on iPhone | 2.6% + $0.10 |
 
 **Hardware — Bring Your Own Device:**
 
@@ -492,19 +498,21 @@ Referral tracking, partner benefits, and commission tiers.
 | Handheld | **$0** (any iPhone) | $409–627 | $399 | $499–749 |
 | KDS | **$0** (any tablet/TV) | $499–699 | $300–900 | $300–900 |
 | Card reader | **$59** (Stripe Reader) | $249–299 | $59 | Included |
-| **Total** | **$59** | **$1,500–2,500+** | **$600–1,200** | **$2,000–4,000+** |
+| **Total** | **$59 per terminal** | **$1,500–2,500+** | **$600–1,200** | **$2,000–4,000+** |
+
+**No contract. No early termination fee. No hidden fees. Cancel anytime from your Stripe billing portal.**
 
 ---
 
 ## First-year savings
 
 | vs Competitor | Their Cost | Synalux Pro | **You Save** |
-|---|---:|---:|---:|
-| vs Toast | $4,800–7,200/yr + $1,500 HW | $588/yr + $59 HW | **$5,700–8,100** |
-| vs Square | $3,000–4,200/yr + $600 HW | $588/yr + $59 HW | **$3,000–4,200** |
-| vs Clover | $4,200–6,000/yr + $2,000 HW | $588/yr + $59 HW | **$5,600–7,700** |
-| vs TouchBistro | $6,000–9,600/yr + HW | $588/yr + $59 HW | **$6,400–10,000** |
-| vs Lightspeed | $5,400–7,200/yr + $800 HW | $588/yr + $59 HW | **$5,600–7,700** |
+|---------------|-------------------------------------------:|--------:|-------------:|
+| vs Toast | $4,800–7,200/yr + $1,500 HW | $588/yr + $118 HW | **$5,594–7,994** |
+| vs Square | $3,000–4,200/yr + $600 HW | $588/yr + $118 HW | **$2,894–4,094** |
+| vs Clover | $4,200–6,000/yr + $2,000 HW | $588/yr + $118 HW | **$5,494–7,594** |
+| vs TouchBistro | $6,000–9,600/yr + HW | $588/yr + $118 HW | **$6,294–9,894** |
+| vs Lightspeed | $5,400–7,200/yr + $800 HW | $588/yr + $118 HW | **$5,494–7,594** |
 
 ---
 
@@ -661,11 +669,11 @@ Every feature, head-to-head. ✅ = included, 💰 = paid add-on, ❌ = not avail
 | 94 | State-specific tax + labor config (64 jurisdictions) | ✅ | ⚠️ Manual setup | ⚠️ Manual setup | ⚠️ Manual setup |
 | | **PRICING & CONTRACTS** | | | | |
 | 95 | Monthly price (all features) | **$49** | **$200–400** | **$149–250** | **$150–300** |
-| 96 | Hardware cost (2 terminals) | **$59** | **$1,500–3,000+** | **$600–1,200** | **$2,000–4,000+** |
+| 96 | Hardware cost (2 terminals) | **$118** | **$1,500–3,000+** | **$600–1,200** | **$2,000–4,000+** |
 | 97 | Contract length | **Month-to-month** | **2–3 years** | **Month-to-month** | **36–48 months** |
 | 98 | Early termination fee | **$0** | **$500–2,000+** | **$0** | **$500–1,500+** |
 | 99 | Per-terminal fee | **$0** (unlimited) | **Yes** | **Yes** | **Yes** |
-| 100 | Year-1 total (1 loc, 2 terms) | **$647** | **$5,300–10,200+** | **$2,400–4,200+** | **$5,800–8,600+** |
+| 100 | Year-1 total (1 loc, 2 terms) | **$706** | **$5,300–10,200+** | **$2,400–4,200+** | **$5,800–8,600+** |
 
 ### Scorecard
 
@@ -675,7 +683,7 @@ Every feature, head-to-head. ✅ = included, 💰 = paid add-on, ❌ = not avail
 | Features requiring paid add-ons | **0** | **18** | **12** | **22** |
 | Features unavailable at any price | **0** | **24** | **34** | **34** |
 | Synalux-exclusive features | **22** | — | — | — |
-| Year-1 savings vs Synalux | — | **$4,600–9,500** | **$1,700–3,500** | **$5,100–7,900** |
+| Year-1 savings vs Synalux | — | **$4,594–9,494** | **$1,694–3,494** | **$5,094–7,894** |
 
 > **TL;DR** — Synalux includes 86 of 100 features at $49/mo with zero add-on fees. Toast includes 38 and charges $200–400/mo after add-ons. Square includes 34 and charges $149–250/mo. Clover includes 24 and charges $150–300/mo plus $2,000–4,000 in mandatory proprietary hardware. No other POS offers weight-based pricing, menu engineering, predictive scheduling, break tracking, tip credit compliance, CCPA deletion, revenue center filtering, or 12 printable operational forms at any price.
 
