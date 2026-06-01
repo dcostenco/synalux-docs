@@ -608,7 +608,7 @@ Every feature, head-to-head. ✅ = included, 💰 = paid add-on, ❌ = not avail
 | 48 | Reputation management (auto-prompt reviews) | ✅ | ❌ | ❌ | ❌ |
 | | **STAFF & LABOR** | | | | |
 | 49 | PIN authentication + role-based routing | ✅ 7-level RBAC | ✅ | ✅ Basic | ✅ Basic |
-| 50 | Revenue Center strict filtering (MICROS-style) | ✅ | ❌ | ❌ | ❌ |
+| 50 | Revenue Center strict filtering | ✅ | ❌ | ❌ | ❌ |
 | 51 | Clock in / out | ✅ | ✅ | ✅ | ✅ |
 | 52 | Break tracking (meal + rest, CA §226.7) | ✅ | ❌ | ❌ | ❌ |
 | 53 | Predictive scheduling alerts (overtime, clopening, minor labor) | ✅ | ❌ | ❌ | ❌ |
