@@ -193,6 +193,7 @@ Real-time Datadog RUM dashboards (sessions, errors, actions, modules, devices, c
 | **Prism AAC** | [User Analytics](https://app.datadoghq.com/dashboard/shk-8fb-qjk/prism-aac--user-analytics) | `prism-aac` |
 | **Synalux POS** | [Operations Analytics](https://app.datadoghq.com/dashboard/kzw-hj6-u2m/synalux-pos--operations-analytics) | `synalux-pos` |
 | **PrismCoach** | [Analytics](https://app.datadoghq.com/dashboard/bjh-vqb-n6b/prismcoach--analytics) | `prism-coach` (server-side via portal; native iOS SDK pending) |
+| **Prism MCP** | [Server Analytics](https://app.datadoghq.com/dashboard/tdm-92f-myh/prism-mcp--server-analytics) | `prism-mcp` (server-side logs — 50 tool handlers, latency, projects) |
 | **VS Code Extension** | Logs via Portal dashboard | `synalux-vscode` (HTTP intake — activation, sign-in, chat messages, errors) |
 
 Adding Datadog to a new app: see `skills/datadog-rum-dashboard/SKILL.md`.
