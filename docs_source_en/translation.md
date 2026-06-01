@@ -34,11 +34,16 @@ Cloud-only (uses Gemini's 100+ language coverage when online):
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/translate         { text, sourceLang, targetLang, mode? }
                                  → { translated, source, model }
                                  mode: 'word' | 'sentence' (default: auto)
 ```
+
+</details>
 
 Client-side path (in `services/translateService.ts`):
 1. If targetLang in offline dictionary: try local lookup → if hit + mode≠'sentence', return.

@@ -24,11 +24,16 @@ The in-app setup guide modal (`/chat`) walks you through every step with the exa
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/whatsapp/webhook     Meta webhook ingress (signature-validated)
 POST /api/v1/whatsapp/send         Outbound (template or freeform within 24h window)
 GET  /api/v1/whatsapp/templates    List approved templates for the workspace
 ```
+
+</details>
 
 Provider abstraction: `lib/message-providers/whatsapp.ts` matches the generic shape (Gmail / Telegram / SMS / etc.).
 

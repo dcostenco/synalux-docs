@@ -50,6 +50,9 @@ Adding a new mail provider (e.g. Outlook) is ~30 LOC because all providers go th
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 GET  /api/v1/mail/inbox            List threads (folder=inbox|spam|all)
 GET  /api/v1/mail/thread/:id       Full thread with quoted history
@@ -59,6 +62,8 @@ GET  /api/v1/mail/ai-inbox         AI-categorized inbox (smart priority)
 GET  /api/v1/mail/suggest-replies  AI-generated reply suggestions
 GET  /api/v1/mail/settings         Per-user mail preferences
 ```
+
+</details>
 
 | Layer | Tech |
 |---|---|

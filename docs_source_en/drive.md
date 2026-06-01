@@ -40,6 +40,9 @@ Attach a file to a patient record so it appears under their chart automatically.
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 GET    /api/v1/drive               List files (RLS-scoped, filter by type/patient/search)
 POST   /api/v1/drive               Create new doc/sheet/presentation
@@ -48,6 +51,8 @@ PATCH  /api/v1/drive/:id           Update content / rename / move
 DELETE /api/v1/drive/:id           Soft-delete (or hard-delete with admin override)
 POST   /api/v1/drive/upload        Direct file upload (50MB cap, storage_path validated)
 ```
+
+</details>
 
 | Layer | Tech |
 |---|---|

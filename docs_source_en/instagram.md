@@ -21,10 +21,15 @@ Connect an Instagram Business / Creator account to receive + reply to Instagram 
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/instagram/webhook        DMs / story mentions / comment replies
 POST /api/v1/instagram/send            Outbound DM (appsecret_proof protected)
 ```
+
+</details>
 
 ---
 

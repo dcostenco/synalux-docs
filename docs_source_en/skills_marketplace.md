@@ -21,6 +21,9 @@ Each skill declares its OAuth scopes, tool surface (functions exposed to the AI)
 *   **Audit-tagged** — every skill invocation writes an audit row with skill_id + tool_name + caller.
 *   **Sandboxed execution** — skills can't reach beyond their declared scopes; enforced at the dispatcher layer.
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 GET  /api/v1/marketplace/catalog          Browse available skills
 POST /api/v1/marketplace/install         Install a skill into the current workspace
@@ -30,6 +33,8 @@ GET  /api/v1/marketplace/module/:slug    Skill detail page
 GET  /api/v1/skills/content              Skill content for runtime
 GET  /api/v1/skills/routing              Skill routing rules for AI dispatcher
 ```
+
+</details>
 
 ---
 

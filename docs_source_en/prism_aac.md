@@ -189,11 +189,16 @@ Voice picker (paid): all 60+ Inworld voices, including child voices, accents, an
 
 ## 🧪 Self-Host & Fork
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```bash
 git clone https://github.com/dcostenco/prism-aac.git
 cd prism-aac
 npm install
 npm run dev    # http://localhost:3000
 ```
+
+</details>
 
 AGPL-3.0 — fork freely; share modifications. Synalux operates the canonical hosted version. See [prism-aac/CONTRIBUTING.md](https://github.com/dcostenco/prism-aac/blob/main/CONTRIBUTING.md), [ACCESSIBILITY.md](https://github.com/dcostenco/prism-aac/blob/main/ACCESSIBILITY.md), [SECURITY.md](https://github.com/dcostenco/prism-aac/blob/main/SECURITY.md).

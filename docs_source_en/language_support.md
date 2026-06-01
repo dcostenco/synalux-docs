@@ -52,11 +52,16 @@
 
 If your language doesn't have premium TTS, you still get a voice. If you don't have Whisper-trained data, you still get cloud transcription. If you're offline, you still get the AAC dictionary.
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 TTS:        Inworld (Tier 1) → Kokoro WASM (Tier 1.5) → Web Speech API (Tier 2) → espeak-ng WASM (Tier 3)
 Translation: Offline dictionary → Cloud Gemini Flash → original text passthrough
 Autocorrect: Local prism-coder (when running) → Cloud Gemini Flash-Lite → original text passthrough
 ```
+
+</details>
 
 See [Voice TTS Architecture](voice_tts_architecture.md), [Translation](translation.md), [Transcription](transcription.md) for the full per-surface design.
 

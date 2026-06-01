@@ -77,6 +77,9 @@ Each record is a typed-in summary of an assessment the clinician completed elsew
 
 The score data is a free-form JSONB blob the clinician populates with standard-score rows. The recommended shape mirrors how psychometric reports are typically laid out — a **composite** at the top, **domains** beneath it, optional **subdomains** beneath each domain, and **pairwise difference** rows linking any two of the above. None of these fields are instrument-specific.
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```jsonc
 {
   "composite": {
@@ -125,6 +128,8 @@ The score data is a free-form JSONB blob the clinician populates with standard-s
 }
 ```
 
+</details>
+
 ### Why JSONB, not a normalized score table
 
 Two reasons:
@@ -160,7 +165,12 @@ The assistant **must not**:
 
 ### New record (seed default — top-level metadata + composite scores)
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Adaptive Assessment Log new-record form](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/40_adaptive_assessment_log_new_record.png)
+
+</details>
 
 Free-tier view of the runtime form at `/adaptive-assessment-log/form`. Captured against the seed schema with the standard-tier subdomain JSON and pairwise-difference fields correctly filtered out by the route's tier gate. The capture spec is `portal/tests/ui/adaptive-assessment-log-screenshot.spec.ts` — re-run it to refresh the image whenever the seed schema changes.
 

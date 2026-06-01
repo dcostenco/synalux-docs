@@ -3,11 +3,21 @@
 ## Real-Time Document & Spreadsheet Editing
 Experience a true Google Docs-like collaborative environment natively embedded within the Synalux platform. Say goodbye to external windows and disjointed workflows—our suite brings rich text drafting, spreadsheet analytics, and clinical logic together into one unified, HIPAA-compliant workspace.
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Collaborative Editor Suite](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+
+</details>
 
 ## Key Features
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Collaborative Documents Editor](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+
+</details>
 
 ### 1. Collaborative Documents
 - **Rich Text Formatting:** A powerful, intuitive toolbar supporting comprehensive text formatting, dynamic embedded images, and complex table management.
@@ -17,7 +27,12 @@ Experience a true Google Docs-like collaborative environment natively embedded w
 ### 2. Clinical Spreadsheets
 Experience comprehensive tabular data management with our dedicated clinical spreadsheets interface. 
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Collaborative Spreadsheets](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/23_collab_sheets.png)
+
+</details>
 
 - **Split-View Integration:** View patient vitals, lab results, and medications natively alongside your clinical narrative. 
 - **Live Computations:** Utilize rich analytical capabilities to dynamically calculate dosage limits, historical trajectory, and growth percentiles without leaving the portal.

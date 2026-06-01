@@ -13,10 +13,15 @@ Connect a Viber Bot to send + receive Viber messages from the unified Synalux ch
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/viber/webhook    Viber events (validated against bot auth token)
 POST /api/v1/viber/send        Outbound (text / picture / file / rich media)
 ```
+
+</details>
 
 Provider abstraction: `lib/message-providers/viber.ts`.
 

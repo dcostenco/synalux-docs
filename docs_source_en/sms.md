@@ -14,11 +14,16 @@ Two-way SMS via Twilio for appointment reminders, intake links, and patient comm
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/sms/send                Outbound SMS (workspace-scoped Twilio creds)
 POST /api/v1/sms/webhook         Inbound + delivery status webhook
 GET  /api/v1/sms/numbers             List rented Twilio numbers per workspace
 ```
+
+</details>
 
 ---
 

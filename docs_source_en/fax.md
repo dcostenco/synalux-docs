@@ -21,6 +21,9 @@ Send + receive fax for healthcare workflows where it's still required (referrals
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 ⚠️ API routes are planned but not yet deployed. The fax service library
 (`lib/fax-service.ts`) is implemented; API surface ships in next release.
@@ -30,6 +33,8 @@ GET  /api/v1/fax/inbox        Inbound queue (workspace-scoped)               [pl
 GET  /api/v1/fax/:id/status   Delivery status                               [planned]
 GET  /api/v1/fax/:id/pdf      Signed download URL for received PDF           [planned]
 ```
+
+</details>
 
 ---
 

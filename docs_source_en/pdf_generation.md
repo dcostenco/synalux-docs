@@ -20,10 +20,15 @@ Server-side PDF rendering for SOAP notes, progress reports, superbills, claims, 
 *   Optional digital signature via the e-Signature module (BoldSign integration) for docs that need execution.
 *   PDF bytes uploaded to Supabase Storage with the same RLS scoping as other Drive files.
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/pdf            { template, payload, sign?: bool } → returns signed download URL
 GET  /api/v1/pdf/:id        Read PDF metadata + signed URL
 ```
+
+</details>
 
 ---
 

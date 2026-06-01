@@ -33,6 +33,9 @@ Outbound webhooks for workspace events. Receive HTTP POSTs at your endpoint when
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/admin/webhooks                       Configure outbound endpoints (admin)
 GET  /api/v1/admin/webhooks                       List configured endpoints
@@ -40,6 +43,8 @@ DELETE /api/v1/admin/webhooks/:id                 Remove
 GET  /api/v1/admin/webhooks/:id/deliveries        Recent delivery attempts (success / fail / status)
 POST /api/v1/admin/webhooks/:id/replay/:event_id  Manual replay of a failed delivery
 ```
+
+</details>
 
 ---
 

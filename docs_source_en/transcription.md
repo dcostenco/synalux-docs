@@ -35,11 +35,16 @@ For Prism AAC users who can speak some words but use AAC for harder utterances:
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/transcribe      Server-side cloud Whisper (long-form, audit-logged)
                               body: { audio_url | audio_b64, lang?, model?='whisper-large-v3' }
                               returns: { text, segments[], language, duration_ms }
 ```
+
+</details>
 
 In-browser path (`services/whisperService.ts`):
 - Whisper WASM model loaded lazily on first dictation use (~30MB cached in IndexedDB).

@@ -42,6 +42,9 @@ Synalux absorbs Inworld TTS-2 cost for these languages on the free tier so users
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/tts                Generate TTS audio (auto tier-route based on lang + tier + connectivity)
 POST /api/v1/tts/public         Anonymous TTS for AAC widgets (rate-limited per IP)
@@ -49,7 +52,12 @@ GET  /api/v1/tts/voices         List available voices for the user's tier + lang
 POST /api/v1/voices/clone       Submit a voice-clone training sample (paid)
 ```
 
+</details>
+
 Routing logic:
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 synthesize(text, lang, voice?) →
   if voice && Tier1.available(voice): return Tier1.speak(text, voice)
@@ -58,6 +66,8 @@ synthesize(text, lang, voice?) →
   if Tier2.has(lang):        return Tier2.speak(text)          // Web Speech API
   return Tier3.speak(text)                                     // espeak-ng
 ```
+
+</details>
 
 ---
 

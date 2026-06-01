@@ -1,6 +1,11 @@
 # Accounting & Global Finance Module
 
+<details>
+<summary>View Interface / Diagram</summary>
+
 ![Global Finance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+
+</details>
 
 The Synalux Accounting & Global Finance module is designed for multi-national healthcare organizations requiring sophisticated hierarchical reporting and multi-currency support.
 

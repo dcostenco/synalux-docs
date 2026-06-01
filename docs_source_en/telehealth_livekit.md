@@ -42,6 +42,9 @@ The [Calendar module](calendar.md) creator picks the right conferencing provider
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/livekit/token         Mint a per-participant LiveKit JWT (workspace + role-scoped)
 POST /api/v1/meetings              Create a telehealth meeting (resolves room URL + token)
@@ -56,6 +59,8 @@ GET  /api/v1/video/auth-token      Video auth for recording
 GET  /api/v1/video/ice-servers     STUN/TURN server list
 POST /api/v1/video/consent-log     Record consent for recording
 ```
+
+</details>
 
 | Layer | Tech |
 |---|---|

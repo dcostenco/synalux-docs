@@ -38,6 +38,9 @@ For HIPAA-compliant emergency access when primary access path is unavailable.
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 GET  /api/v1/auth/session         NextAuth session (cookie-backed, JWT)
 POST /api/v1/auth/mfa/enroll      Begin TOTP / WebAuthn enrollment
@@ -45,6 +48,8 @@ POST /api/v1/auth/mfa/verify      Verify code at sign-in
 POST /api/v1/break-glass          Initiate break-glass override (admin-gated)
 POST /api/v1/session/heartbeat    Idle-keepalive ping
 ```
+
+</details>
 
 | Layer | Tech |
 |---|---|

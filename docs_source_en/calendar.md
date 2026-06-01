@@ -7,6 +7,9 @@
 ## 🌐 Multi-Provider Aggregation
 Connect Google + Microsoft accounts; events from all calendars render in a single weekly view. The provider routing is invisible to the user — pick a slot, click create, the right provider gets the API call.
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```mermaid
 flowchart LR
     UI[/calendar UI<br/>weekly view/] --> Router[connectedCalendarProviders]
@@ -17,6 +20,8 @@ flowchart LR
     GAdapter --> Goog((Google Calendar API))
     MAdapter --> MS((Microsoft Graph))
 ```
+
+</details>
 
 ---
 
@@ -65,6 +70,9 @@ This was a deliberate UX shift from the original "redirect to provider" pattern 
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 GET    /api/v1/calendar/calendars       List connected calendars (per workspace)
 GET    /api/v1/calendar/capabilities    Per-tier conferencing matrix (UI uses this)
@@ -73,6 +81,8 @@ POST   /api/v1/calendar/events          Create event (body: { provider, calendar
 PATCH  /api/v1/calendar/events          Update event
 DELETE /api/v1/calendar/events?event=   Delete event (410-Gone treated as success)
 ```
+
+</details>
 
 | Layer | Tech |
 |---|---|

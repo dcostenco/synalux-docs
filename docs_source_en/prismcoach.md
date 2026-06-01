@@ -226,7 +226,12 @@ Subscribe at [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — St
 
 904 automated tests covering all core engines — ATR, Body Battery, Muscle Battery, AI routing, Nutrition, Sleep, CNS, Siri Intents, Subscription, CloudKit, VBT, Voice commands, and more.
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 watchOS build:    ✅ BUILD SUCCEEDED
 iOS tests (904):  ✅ 904/904 passed, 0 failures
 ```
+
+</details>

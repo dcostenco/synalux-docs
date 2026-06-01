@@ -23,11 +23,16 @@ End-to-end implementation of the Telegram Login Widget for sign-in.
 
 ## 🏗️ Architecture
 
+<details>
+<summary>Technical Documentation / Specifications</summary>
+
 ```
 POST /api/v1/telegram/webhook      Webhook ingress (validated against bot token + IP allowlist)
 POST /api/v1/telegram/send          Outbound message (workspace-scoped)
 GET  /api/v1/telegram/auth/callback Login Widget callback (HMAC-validated)
 ```
+
+</details>
 
 Provider abstraction: `lib/message-providers/telegram.ts` — same shape as Gmail / Outlook / Slack so the unified chat surface lights up automatically.
 
