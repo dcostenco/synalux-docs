@@ -22,7 +22,7 @@ Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log 
 | | |
 |---|---|
 | **Login** | `demo@synalux.ai` |
-| **Password** | `demo123` |
+| **Password** | `demo1234` |
 | **Venue** | Riverside Grill |
 
 After login, enter a staff PIN to access the POS:
