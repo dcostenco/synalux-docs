@@ -26,6 +26,7 @@ Use your own iPad — or any device with a browser.
   - [Online Ordering & QR Table](#online-ordering--qr-table)
   - [Delivery Management](#delivery-management)
   - [AI Chat Assistant](#ai-chat-assistant)
+  - [AI Voice Ordering (Phone)](#ai-voice-ordering-phone)
   - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
   - [Customer Display](#customer-display)
   - [Reports](#reports)
@@ -307,6 +308,73 @@ Context-aware AI assistant on every POS page (15 surfaces) and on the online ord
 - Tool calls: add_to_cart, remove_from_cart, filter_menu, suggest_combo
 
 <img src="../images/pos/ipad_ai_chat_oo.png" alt="AI Chat (Customer)" width="300">
+
+</details>
+
+---
+
+### AI Voice Ordering (Phone)
+
+Customers call your venue's phone number and place orders through natural AI conversation. Powered by Prism Coder 14B — no per-call AI cost. Multi-language IVR, returning customer recognition, and automatic SMS confirmation.
+
+<img src="../images/pos/voice_ordering_settings.png" alt="Voice Ordering Settings" width="700">
+
+<details>
+<summary><strong>Setup & Configuration</strong></summary>
+
+1. **Enable** in Settings > Integrations > Voice Ordering
+2. Set your **Twilio phone number** in Settings > Venue
+3. Configure the **Twilio console** — Phone Number > Voice > Webhook POST > `https://your-domain.com/api/v1/pos/webhooks/voice`
+
+**Customizable settings:**
+
+| Setting | Description |
+|---------|-------------|
+| Custom Greeting | Opening message with `{venue}` and `{name}` placeholders |
+| AI Persona | Tone and style — "friendly server", "professional concierge", etc. |
+| Today's Specials | AI proactively suggests these items |
+| Supported Languages | 15 languages. Single = no menu. 2+ = IVR: "For English press 1..." |
+| Fallback Number | Transfer to human after repeated AI failures |
+
+</details>
+
+<details>
+<summary><strong>How a call works</strong></summary>
+
+1. Customer calls venue number
+2. If 2+ languages: IVR menu ("For English press 1, Para Español oprima 2")
+3. AI greeting (custom or default, personalized for returning customers)
+4. Free-form conversation — customer orders naturally in their language
+5. AI parses items, resolves modifiers, confirms each addition with price
+6. When done: AI reads back complete order with total, asks confirmation
+7. On "yes": order created → KDS ticket → SMS confirmation sent
+8. Returning customers auto-recognized by phone (loyalty lookup + order history)
+
+**Online ordering** is also available at the same time:
+
+<img src="../images/pos/voice_ordering_oo_menu.png" alt="Online Ordering Menu" width="700">
+
+</details>
+
+<details>
+<summary><strong>Competitor Comparison</strong></summary>
+
+| | **Synalux POS** | **ConverseNow** | **SoundHound** | **Kea AI** | **Slang.ai** |
+|---|---|---|---|---|---|
+| **Price** | Included at $49/mo | $500+/mo enterprise | Contact sales | Contact sales | $200-450/mo |
+| **AI Model** | Own (Prism Coder 14B) | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
+| **Per-call AI cost** | $0 | ~$0.50-2.00 | Unknown | ~$0.50+ | ~$0.30+ |
+| **Languages** | 15 | ~5 | ~5 | ~8 | English only |
+| **Deploy time** | Instant (built-in) | 8-12 weeks | 8-12 weeks | 4 weeks | 24 hours |
+| **POS integration** | Native | Separate vendor | Separate vendor | Separate vendor | Basic |
+| **Customization** | Full (greeting, persona, specials) | Template-based | Enterprise custom | Moderate | Template |
+| **Payment** | Pay at pickup (enterprise) | Separate | Separate | Separate | Separate |
+| **Returning customer** | Auto (loyalty + memory) | Manual config | None | Basic | None |
+| **IVR language menu** | Auto when 2+ langs | Manual | Manual | Manual | N/A |
+| **Human fallback** | Auto after AI failures | Manual escalation | Manual | Manual | Manual |
+| **SMS confirmation** | Auto | Separate setup | No | Separate | No |
+
+**Key advantage:** $0 per-call AI cost because Prism Coder runs on our own infrastructure. Competitors pay OpenAI $0.50-2.00+ per call, which they pass through in pricing.
 
 </details>
 
