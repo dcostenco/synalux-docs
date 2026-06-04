@@ -90,7 +90,7 @@ Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log 
 |---|---|
 | **Login** | `demo@synalux.ai` |
 | **Password** | `demo1234` |
-| **Venue** | Riverside Grill |
+| **Venue** | Synalux Demo Restaurant |
 | **Online Ordering** | [demo-restaurant.synalux.ai](https://demo-restaurant.synalux.ai) |
 | **AI Voice Ordering** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
 | **WhatsApp Ordering** | Text the venue number on WhatsApp — same AI, rich formatting |
