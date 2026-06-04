@@ -322,7 +322,7 @@ Context-aware AI assistant on every POS page (15 surfaces) and on the online ord
 
 ### AI Voice Ordering (Phone)
 
-Customers call your venue's phone number and place orders through natural AI conversation. Powered by Prism Coder 14B. Multi-language IVR, returning customer recognition, and automatic SMS confirmation.
+Customers call your venue's phone number and place orders through natural AI conversation. Best-in-class voice stack: Deepgram Flux (STT) + ElevenLabs (TTS) + Gemini 3.5 Flash (LLM). Streaming architecture via Twilio ConversationRelay. Returning customer recognition, phonetic correction, and automatic SMS confirmation.
 
 <img src="../images/pos/voice_ordering_settings.png" alt="Voice Ordering Settings" width="700">
 
@@ -339,7 +339,7 @@ Customers call your venue's phone number and place orders through natural AI con
 |---------|-------------|
 | Custom Greeting | Opening message with `{venue}` and `{name}` placeholders |
 | AI Persona | Tone and style — "friendly server", "professional concierge", etc. |
-| Today's Specials | AI proactively suggests these items |
+| Today's Specials | AI proactively suggests these when asked "what's good?" |
 | Supported Languages | 15 languages. Single = no menu. 2+ = IVR: "For English press 1..." |
 | Fallback Number | Transfer to human after repeated AI failures |
 
@@ -348,16 +348,33 @@ Customers call your venue's phone number and place orders through natural AI con
 <details>
 <summary><strong>How a call works</strong></summary>
 
-1. Customer calls venue number
-2. If 2+ languages: IVR menu ("For English press 1, Para Español oprima 2")
-3. Real-time streaming connection (Twilio ConversationRelay → WebSocket)
-4. AI greeting (custom or default, personalized for returning customers)
-5. Free-form conversation — Deepgram Flux transcribes in real-time, Gemini responds in ~1s, ElevenLabs speaks naturally
+1. Customer calls venue phone number
+2. If 2+ languages configured: IVR menu ("For English press 1, Para Español oprima 2")
+3. Real-time streaming connection (Twilio ConversationRelay → WebSocket server on Railway)
+4. Returning customers auto-recognized by phone — AI greets by name, knows past orders
+5. Free-form conversation — Deepgram Flux transcribes in real-time, Gemini 3.5 Flash responds in ~1s, ElevenLabs speaks naturally
 6. Customer can interrupt AI mid-sentence (neural turn detection)
-7. AI adds items immediately, confirms price, asks "What else?"
-8. "That's all" → asks for customer name → reads back order with total
-9. "Yes" → order created → KDS ticket → SMS confirmation sent
-10. Returning customers auto-recognized by phone (loyalty lookup)
+7. AI adds items immediately, confirms with price: "Added a Classic Burger for twelve dollars. What else?"
+8. Phonetic correction: garbled phone audio auto-matched to menu items
+9. "Change burger to family pack" → removes old + adds new in one turn
+10. "Repeat my order" → AI reads back all items with prices
+11. "That's all" → asks for customer name → reads back order with total
+12. "Yes" → order created → KDS kitchen ticket → SMS confirmation
+13. Session saved to database for analytics
+
+**Customer commands:**
+
+| Say | What happens |
+|-----|-------------|
+| Any menu item name | Added immediately with price confirmation |
+| "Change X to Y" | Removes X, adds Y |
+| "Remove the fries" | Item removed |
+| "What do you have?" | Top items listed |
+| "Repeat my order" | Current order read back with prices |
+| "My usual" | Adds items from last order (returning customers) |
+| "That's all" / "Done" | Starts confirmation flow |
+| "Yes" / "Confirm" | Places order |
+| "No" / "Wait" | Returns to ordering |
 
 **Online ordering** is also available at the same time:
 
@@ -366,31 +383,53 @@ Customers call your venue's phone number and place orders through natural AI con
 </details>
 
 <details>
+<summary><strong>Voice Stack Architecture</strong></summary>
+
+| Layer | Technology | Latency |
+|-------|-----------|---------|
+| **Speech-to-Text** | Deepgram Flux via ConversationRelay | Real-time streaming |
+| **AI/LLM** | Gemini 3.5 Flash (thinking disabled) | ~1s |
+| **Text-to-Speech** | ElevenLabs via Twilio (included) | Real-time streaming |
+| **Transport** | Twilio ConversationRelay → WebSocket | Streaming |
+| **Turn Detection** | Neural (Deepgram Flux) | Natural |
+| **Server** | Railway (Node.js WebSocket) | ~$5/mo |
+| **Phonetic Correction** | Gemini prompt-based | Zero added latency |
+| **Customer Memory** | Supabase (past orders + loyalty) | ~20ms |
+
+**Total response latency: ~1.3s** from speech to hearing AI response.
+
+**Fallback:** Gemini fails → Claude Sonnet. WebSocket unavailable → Gather/Say IVR mode.
+
+</details>
+
+<details>
 <summary><strong>Competitor Comparison</strong></summary>
 
 | | **Synalux POS** | **ConverseNow** | **SoundHound** | **Kea AI** | **Slang.ai** |
 |---|---|---|---|---|---|
-| **AI Model** | Gemini 3.5 Flash + Prism Coder | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
-| **Speech Recognition** | Deepgram Flux (best-in-class) | Google STT | Proprietary | Google STT | Google STT |
-| **Voice (TTS)** | ElevenLabs (#1 ranked) | Standard | Proprietary | Standard | Standard |
+| **Price** | Included at $49/mo | $500+/mo enterprise | Contact sales | Contact sales | $200-450/mo |
+| **Per-call AI cost** | ~$0.001 | ~$0.50-2.00 | Unknown | ~$0.50+ | ~$0.30+ |
+| **AI Model** | Gemini 3.5 Flash | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
+| **Speech Recognition** | Deepgram Flux | Google STT | Proprietary | Google STT | Google STT |
+| **Voice (TTS)** | ElevenLabs (Elo 1208) | Standard | Proprietary | Standard | Standard |
 | **Architecture** | ConversationRelay (streaming) | IVR/webhook | Proprietary | IVR/webhook | IVR/webhook |
-| **Turn detection** | Neural (Deepgram Flux) | Timer-based | Proprietary | Timer-based | Timer-based |
-| **Interruption** | Caller can interrupt AI | No | Limited | No | No |
+| **Turn detection** | Neural | Timer-based | Proprietary | Timer-based | Timer-based |
+| **Interruption** | Yes | No | Limited | No | No |
+| **Phonetic correction** | Auto (LLM menu matching) | Manual training | Unknown | Manual | None |
+| **"My usual"** | Auto from order history | Manual config | None | Basic | None |
 | **Languages** | 15 | ~5 | ~5 | ~8 | English only |
-| **Deploy time** | Instant (built-in) | 8-12 weeks | 8-12 weeks | 4 weeks | 24 hours |
+| **Deploy time** | Instant | 8-12 weeks | 8-12 weeks | 4 weeks | 24 hours |
 | **POS integration** | Native (KDS, orders, loyalty) | Separate vendor | Separate vendor | Separate vendor | Basic |
-| **Customization** | Full (greeting, persona, specials, languages) | Template-based | Enterprise custom | Moderate | Template |
-| **Returning customer** | Auto (loyalty + order history) | Manual config | None | Basic | None |
-| **Name collection** | Auto before confirmation | Manual | N/A | Manual | N/A |
-| **Order confirmation** | Voice confirmation → KDS + SMS | Varies | Varies | Varies | N/A |
-| **Human fallback** | Auto after AI failures | Manual escalation | Manual | Manual | Manual |
-| **SMS confirmation** | Auto | Separate setup | No | Separate | No |
+| **Customization** | Full | Template-based | Enterprise custom | Moderate | Template |
+| **SMS confirmation** | Auto | Separate | No | Separate | No |
+| **Analytics** | Datadog + Supabase | Proprietary | Proprietary | Basic | Basic |
 
 **Key advantages:**
-- **Best-in-class voice stack**: Deepgram Flux (STT) + ElevenLabs (TTS) + Gemini 3.5 Flash (LLM) — same or better than any competitor at 1/500th the price
-- **50-2.00+ (500-2000x cheaper)
-- **Streaming architecture**: ConversationRelay with neural turn detection, not timer-based IVR
-- **Native POS integration**: orders go directly to kitchen display, no middleware
+- **Best-in-class voice stack** at 500-2000x lower cost per call
+- **Streaming architecture** with neural turn detection and caller interruption
+- **Native POS integration** — orders go directly to kitchen display
+- **Phonetic correction** — AI auto-corrects garbled phone audio
+- **"My usual"** — returning customers reorder with one phrase
 
 </details>
 
