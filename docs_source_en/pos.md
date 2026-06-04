@@ -1,13 +1,11 @@
 # Synalux POS
 
-**The restaurant POS that doesn't nickel-and-dime you.**
+**Full-featured restaurant POS — runs on any device with a browser.**
 
-Every feature included. No add-on fees. No hardware lock-in. No multi-year contracts.
+Every feature included. No hardware lock-in. No multi-year contracts.
 Use your own iPad — or any device with a browser.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Free_Forever-1_terminal-43e97b?style=for-the-badge" alt="Free Forever">
-  <img src="https://img.shields.io/badge/Pro-$49/mo_(14_day_trial)-764ba2?style=for-the-badge" alt="Pro $49/mo">
   <img src="https://img.shields.io/badge/25_Languages-RTL_Supported-blue?style=for-the-badge" alt="25 Languages">
 </p>
 
@@ -39,14 +37,6 @@ After login, enter a staff PIN to access the POS:
 | **Admin** | Admin | `1234` | All screens + Settings |
 
 **All demo data resets hourly.**
-
----
-
-## Why switch?
-
-Your current POS costs too much. Toast charges $400–600/mo. Square hits $250–350/mo. Clover locks you into 3-year contracts with $2,000+ hardware.
-
-**Synalux: Free forever for 1 terminal. $49/mo Pro with 14-day free trial. Your own iPad. Cancel anytime.**
 
 ---
 
@@ -149,7 +139,7 @@ Card, cash, gift card, mobile pay, house account, EBT, and bar tabs. Split check
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Card** — add Stripe keys in Settings > Integrations. Pair Reader M2 ($59).
+1. **Card** — add Stripe keys in Settings > Integrations. Pair a Stripe Reader M2.
 2. **Gift cards** — issue from the Gift Cards page
 3. **House accounts** — create in Settings > House Accounts
 
@@ -462,60 +452,6 @@ Referral tracking, partner benefits, and commission tiers.
 
 ---
 
-## Plans & Pricing
-
-**Free forever** for 1 terminal. **14-day free trial** on all paid plans. Cancel anytime.
-
-| | **Free** | **Pro** | **Business** | **Enterprise** |
-|---|:---:|:---:|:---:|:---:|
-| **Monthly** | **$0 forever** | **$49/mo** | **$99/mo** | **$199/location** |
-| **Trial** | No card needed | **14 days free** | **14 days free** | **14 days free** |
-| Terminals | 1 | Unlimited | Unlimited | Unlimited |
-| Locations | 1 | 1 | 1 | Unlimited |
-| Register + KDS + Reports | Yes | Yes | Yes | Yes |
-| Online ordering | Yes | Yes | Yes | Yes |
-| Loyalty + Marketing | — | Yes | Yes | Yes |
-| Scheduling + Payroll | — | Yes | Yes | Yes |
-| Reservations + Catering | — | Yes | Yes | Yes |
-| Priority support | — | — | 24h SLA | 4h SLA |
-| Multi-location + Franchise | — | — | — | Yes |
-| API access | — | — | — | Yes |
-| **Contract** | **None** | **None** | **None** | **None** |
-
-**Processing rates (Direct via Stripe — 0% markup from Synalux):**
-
-| Transaction | Rate |
-|-------------|------|
-| In-person (tap/chip/swipe) | 2.6% + $0.10 |
-| Online | 2.9% + $0.30 |
-| Tap-to-Pay on iPhone | 2.6% + $0.10 |
-
-**Hardware — Bring Your Own Device:**
-
-| Item | Synalux | Toast | Square | Clover |
-|------|--------:|------:|-------:|-------:|
-| Terminal | **$0** (any iPad) | $799–999 | $299 | $1,399–1,899 |
-| Handheld | **$0** (any iPhone) | $409–627 | $399 | $499–749 |
-| KDS | **$0** (any tablet/TV) | $499–699 | $300–900 | $300–900 |
-| Card reader | **$59** (Stripe Reader) | $249–299 | $59 | Included |
-| **Total** | **$59 per terminal** | **$1,500–2,500+** | **$600–1,200** | **$2,000–4,000+** |
-
-**No contract. No early termination fee. No hidden fees. Cancel anytime from your Stripe billing portal.**
-
----
-
-## First-year savings
-
-| vs Competitor | Their Cost | Synalux Pro | **You Save** |
-|---------------|-------------------------------------------:|--------:|-------------:|
-| vs Toast | $4,800–7,200/yr + $1,500 HW | $588/yr + $118 HW | **$5,594–7,994** |
-| vs Square | $3,000–4,200/yr + $600 HW | $588/yr + $118 HW | **$2,894–4,094** |
-| vs Clover | $4,200–6,000/yr + $2,000 HW | $588/yr + $118 HW | **$5,494–7,594** |
-| vs TouchBistro | $6,000–9,600/yr + HW | $588/yr + $118 HW | **$6,294–9,894** |
-| vs Lightspeed | $5,400–7,200/yr + $800 HW | $588/yr + $118 HW | **$5,494–7,594** |
-
----
-
 ## 25 languages
 
 English, Spanish, French, Chinese, Arabic, Romanian, Portuguese, German, Italian, Japanese, Korean, Vietnamese, Russian, Ukrainian, Polish, Turkish, Dutch, Swedish, Hebrew, Thai, Hindi, Indonesian, Malay, Filipino, Greek. RTL supported.
@@ -552,140 +488,6 @@ Every integration activates by adding credentials in **Settings > Integrations**
 ![Combined Role Tests](../images/pos/ipad_00c_combined_roles.svg)
 
 </details>
-
-## Top 3 Competitors vs Synalux POS — Feature-by-Feature
-
-Every feature, head-to-head. ✅ = included, 💰 = paid add-on, ❌ = not available, 🔒 = locked to proprietary ecosystem.
-
-| # | Feature | **Synalux ($49/mo)** | **Toast ($69–400/mo)** | **Square ($49–250/mo)** | **Clover ($85–300/mo)** |
-|---|---------|:---:|:---:|:---:|:---:|
-| | **REGISTER & ORDER ENTRY** | | | | |
-| 1 | 3-panel register (categories + grid + ticket) | ✅ | ✅ | ✅ | ✅ |
-| 2 | Barcode scan-to-order | ✅ | ✅ | ✅ | ✅ |
-| 3 | Weight-based pricing (deli/produce) | ✅ | ❌ | ❌ | ❌ |
-| 4 | Open-price / market-price items | ✅ | ✅ | ✅ | ✅ |
-| 5 | Combo engine (auto-detect eligible items) | ✅ | 💰 Add-on | ❌ | ❌ |
-| 6 | Seat assignment + course firing | ✅ | ✅ | 💰 Premium only | 💰 App add-on |
-| 7 | Void reason modal (manager required) | ✅ | ✅ | ❌ | ❌ |
-| 8 | AI-generated dish images | ✅ | ❌ | ❌ | ❌ |
-| 9 | Training mode (isolated sandbox) | ✅ | ✅ | ✅ | ❌ |
-| 10 | Reopen closed check | ✅ | ✅ | ❌ | ❌ |
-| 11 | Drive-thru + lane queue | ✅ | ✅ | ✅ | ✅ |
-| | **KITCHEN DISPLAY (KDS)** | | | | |
-| 12 | KDS ticket board | ✅ | ✅ | 💰 $20/mo/device | 💰 Third-party app |
-| 13 | All-day count (total pending per item) | ✅ | ❌ | ❌ | ❌ |
-| 14 | Bump / recall / void | ✅ | ✅ | 💰 Paid KDS | 💰 Third-party app |
-| 15 | Color-coded by order type | ✅ | ✅ | ❌ | ❌ |
-| 16 | Realtime ticket sync (WebSocket) | ✅ | ✅ | ✅ | ✅ |
-| 17 | Auto-print kitchen tickets (ESC/POS) | ✅ | ✅ | ❌ | 💰 App add-on |
-| | **TABLE MANAGEMENT** | | | | |
-| 18 | Interactive floor plan editor | ✅ | ✅ | 💰 Plus+ only | 💰 App add-on |
-| 19 | Table status colors (available/occupied/reserved) | ✅ | ✅ | 💰 Plus+ only | ❌ |
-| 20 | Table merge / split-back / transfer | ✅ | ✅ | ❌ | ❌ |
-| 21 | QR table ordering (guest scans & orders) | ✅ | 💰 Add-on | ❌ | ❌ |
-| | **PAYMENTS** | | | | |
-| 22 | Card (NFC / chip / swipe) | ✅ Stripe | 🔒 Toast only | 🔒 Square only | 🔒 Clover/reseller |
-| 23 | Choose your own processor | ✅ | ❌ | ❌ | ❌ |
-| 24 | Cash with CAD penny rounding | ✅ | ❌ | ❌ | ❌ |
-| 25 | Gift card | ✅ | ✅ | ✅ | ✅ |
-| 26 | House accounts + invoicing | ✅ | 💰 Add-on | ❌ | ❌ |
-| 27 | Split check (even / custom / seat) | ✅ | ✅ | ✅ | ✅ |
-| 28 | Bar tab (pre-auth) | ✅ | ✅ | ❌ | 💰 App add-on |
-| 29 | EBT / SNAP (via Forage) | ✅ | ❌ | ❌ | ❌ |
-| 30 | Post-payment tip via QR code | ✅ | ❌ | ✅ | ❌ |
-| 31 | Cash discount / dual pricing | ✅ | ✅ | ❌ | 💰 App add-on |
-| 32 | Chargeback evidence auto-pack | ✅ | ✅ | ✅ | ❌ |
-| 33 | Tap-to-Pay on iPhone | ✅ | ✅ | ✅ | ❌ |
-| | **MENU MANAGEMENT** | | | | |
-| 34 | Modifier groups + forced modifiers | ✅ | ✅ | ✅ | ✅ |
-| 35 | Recipe management + food cost tracking | ✅ | 💰 Add-on | ❌ | ❌ |
-| 36 | Menu engineering quadrant (Star/Dog/Puzzle/Workhorse) | ✅ | ❌ | ❌ | ❌ |
-| 37 | Allergen filter (customer QR scan) | ✅ | ✅ | ✅ | ❌ |
-| 38 | Price levels (happy hour, lunch, etc.) | ✅ | ✅ | 💰 Plus only | 💰 App add-on |
-| | **ONLINE ORDERING** | | | | |
-| 39 | Branded online ordering page | ✅ | 💰 $50–75/mo | ✅ | 💰 $30–50/mo app |
-| 40 | QR dine-in ordering | ✅ | 💰 Add-on | ❌ | ❌ |
-| 41 | Online order throttling | ✅ | ✅ | ❌ | ❌ |
-| 42 | Delivery webhook (DoorDash/Uber/Grubhub) | ✅ | ✅ | ✅ | 💰 App add-on |
-| | **LOYALTY & MARKETING** | | | | |
-| 43 | Points + tiers (bronze/silver/gold) | ✅ | 💰 $50–75/mo | ✅ Basic only | 💰 $10–30/mo app |
-| 44 | Referral program | ✅ | 💰 Add-on | ❌ | ❌ |
-| 45 | Email campaigns (SendGrid) | ✅ | 💰 $75/mo | 💰 Marketing add-on | 💰 Third-party |
-| 46 | SMS campaigns (Twilio) | ✅ | 💰 $75/mo | 💰 Marketing add-on | 💰 Third-party |
-| 47 | TCPA consent tracking | ✅ | ❌ | ❌ | ❌ |
-| 48 | Reputation management (auto-prompt reviews) | ✅ | ❌ | ❌ | ❌ |
-| | **STAFF & LABOR** | | | | |
-| 49 | PIN authentication + role-based routing | ✅ 7-level RBAC | ✅ | ✅ Basic | ✅ Basic |
-| 50 | Revenue Center strict filtering | ✅ | ❌ | ❌ | ❌ |
-| 51 | Clock in / out | ✅ | ✅ | ✅ | ✅ |
-| 52 | Break tracking (meal + rest, CA §226.7) | ✅ | ❌ | ❌ | ❌ |
-| 53 | Predictive scheduling alerts (overtime, clopening, minor labor) | ✅ | ❌ | ❌ | ❌ |
-| 54 | Tip pooling (FLSA-enforced, 3 modes) | ✅ | ❌ | ❌ | ❌ |
-| 55 | Tip credit compliance | ✅ | ❌ | ❌ | ❌ |
-| 56 | RBS certification tracking + expiry alerts | ✅ | ❌ | ❌ | ❌ |
-| 57 | Payroll export (Gusto/ADP) | ✅ | 💰 $9/emp/mo | 💰 Separate product | 💰 Third-party |
-| | **INVENTORY** | | | | |
-| 58 | Item tracking (SKU, unit, cost, threshold) | ✅ | ✅ Basic | ✅ Plus only | ✅ Basic |
-| 59 | Physical stocktake mode (bulk count) | ✅ | ❌ | ❌ | ❌ |
-| 60 | Low-stock + out-of-stock alerts | ✅ | ✅ | ✅ | 💰 App add-on |
-| 61 | Vendor management + payment terms | ✅ | ❌ | ❌ | ❌ |
-| | **REPORTS & ANALYTICS** | | | | |
-| 62 | Sales report (hourly heatmap) | ✅ | ✅ | ✅ Premium only | ✅ Basic |
-| 63 | PMIX (product mix) | ✅ | ✅ | ✅ | 💰 App add-on |
-| 64 | Menu engineering quadrant report | ✅ | ❌ | ❌ | ❌ |
-| 65 | Speed-of-service (per-station ticket times) | ✅ | ✅ | ❌ | ❌ |
-| 66 | Server performance leaderboard | ✅ | ✅ | ❌ | ❌ |
-| 67 | Voids / comps report | ✅ | ✅ | ✅ | ✅ |
-| 68 | Labor report | ✅ | ✅ | 💰 Separate product | ❌ |
-| 69 | CSV export on every report | ✅ | ✅ | ✅ | 💰 Paid tier |
-| | **COMPLIANCE & AUDIT** | | | | |
-| 70 | CCPA / GDPR data deletion API | ✅ | ❌ | ❌ | ❌ |
-| 71 | Age verification (alcohol, DL scan) | ✅ | ✅ | ❌ | ❌ |
-| 72 | Alcohol incident logging (refusal, cutoff) | ✅ | ❌ | ❌ | ❌ |
-| 73 | IRS Form 8027 tip reporting | ✅ | ✅ | ✅ | ❌ |
-| 74 | Tax-exempt sales toggle | ✅ | ✅ | ✅ | ✅ |
-| 75 | Full audit trail on every action | ✅ | ✅ | ❌ | ❌ |
-| | **BACK OFFICE** | | | | |
-| 76 | End-of-day (denomination counter, cash mgmt) | ✅ | ✅ | ✅ | ✅ |
-| 77 | Tip pool distribution at EOD | ✅ | ❌ | ❌ | ❌ |
-| 78 | GL journal export (QuickBooks / Xero) | ✅ | 💰 Add-on | 💰 Add-on | 💰 Third-party |
-| 79 | 12 printable operational forms | ✅ | ❌ | ❌ | ❌ |
-| 80 | Multi-location dashboard + consolidated P&L | ✅ Enterprise | ✅ $400+/mo/loc | ✅ Premium | 💰 Enterprise only |
-| | **INTEGRATIONS** | | | | |
-| 81 | Stripe Terminal | ✅ | ❌ Locked | ❌ Locked | ❌ Locked |
-| 82 | OpenTable / Google Reserve / Yelp reservations | ✅ | 💰 Add-on | ❌ | ❌ |
-| 83 | QuickBooks / Xero sync | ✅ | 💰 Add-on | 💰 Add-on | 💰 Third-party |
-| 84 | ESC/POS receipt + kitchen printing | ✅ | ✅ | ❌ | 💰 App add-on |
-| 85 | Cash drawer kick | ✅ | ✅ | ✅ | ✅ |
-| 86 | Zebra label printing | ✅ | ❌ | ❌ | ❌ |
-| | **TECHNOLOGY & PLATFORM** | | | | |
-| 87 | Runs on any device (BYOD) | ✅ Browser-based | ❌ Toast HW only | ⚠️ Square HW + iPad | ❌ Clover HW only |
-| 88 | PWA + offline mode | ✅ | ✅ Limited | ❌ | ❌ |
-| 89 | 25 languages + RTL | ✅ | ⚠️ English + Spanish | ⚠️ Limited i18n | ⚠️ English only |
-| 90 | Realtime sync (WebSocket) | ✅ Supabase | ✅ Proprietary | ✅ | ✅ |
-| 91 | REST API access | ✅ 29 routes | ⚠️ Partner API only | ✅ Open API | ⚠️ Limited |
-| 92 | Datadog RUM + Logs monitoring | ✅ | ❌ | ❌ | ❌ |
-| 93 | Instant deploys (Vercel) | ✅ | ❌ Device firmware | ✅ App store | ❌ Device firmware |
-| 94 | State-specific tax + labor config (64 jurisdictions) | ✅ | ⚠️ Manual setup | ⚠️ Manual setup | ⚠️ Manual setup |
-| | **PRICING & CONTRACTS** | | | | |
-| 95 | Monthly price (all features) | **$49** | **$200–400** | **$149–250** | **$150–300** |
-| 96 | Hardware cost (2 terminals) | **$118** | **$1,500–3,000+** | **$600–1,200** | **$2,000–4,000+** |
-| 97 | Contract length | **Month-to-month** | **2–3 years** | **Month-to-month** | **36–48 months** |
-| 98 | Early termination fee | **$0** | **$500–2,000+** | **$0** | **$500–1,500+** |
-| 99 | Per-terminal fee | **$0** (unlimited) | **Yes** | **Yes** | **Yes** |
-| 100 | Year-1 total (1 loc, 2 terms) | **$706** | **$5,300–10,200+** | **$2,400–4,200+** | **$5,800–8,600+** |
-
-### Scorecard
-
-| | **Synalux** | **Toast** | **Square** | **Clover** |
-|---|:---:|:---:|:---:|:---:|
-| Features included at base price | **86 / 100** | **38 / 100** | **34 / 100** | **24 / 100** |
-| Features requiring paid add-ons | **0** | **18** | **12** | **22** |
-| Features unavailable at any price | **0** | **24** | **34** | **34** |
-| Synalux-exclusive features | **22** | — | — | — |
-| Year-1 savings vs Synalux | — | **$4,594–9,494** | **$1,694–3,494** | **$5,094–7,894** |
-
-> **TL;DR** — Synalux includes 86 of 100 features at $49/mo with zero add-on fees. Toast includes 38 and charges $200–400/mo after add-ons. Square includes 34 and charges $149–250/mo. Clover includes 24 and charges $150–300/mo plus $2,000–4,000 in mandatory proprietary hardware. No other POS offers weight-based pricing, menu engineering, predictive scheduling, break tracking, tip credit compliance, CCPA deletion, revenue center filtering, or 12 printable operational forms at any price.
 
 ---
 
