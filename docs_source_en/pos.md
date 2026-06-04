@@ -75,7 +75,7 @@ After login, enter a staff PIN to access the POS:
 | **Manager** | Manager | `5678` | All screens + EOD + Staff |
 | **Admin** | Admin | `1234` | All screens + Settings |
 
-**All demo data resets hourly.**
+**Demo data can be re-seeded anytime with `node seed_demo_data.mjs`.**
 
 ---
 
