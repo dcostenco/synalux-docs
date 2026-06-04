@@ -58,6 +58,8 @@ Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log 
 | **Login** | `demo@synalux.ai` |
 | **Password** | `demo1234` |
 | **Venue** | Riverside Grill |
+| **Online Ordering** | [synalux-pos.vercel.app/pos/order](https://synalux-pos.vercel.app/pos/order) |
+| **AI Voice Ordering** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
 
 After login, enter a staff PIN to access the POS:
 
