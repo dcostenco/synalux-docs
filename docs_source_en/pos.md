@@ -88,7 +88,7 @@ Use your own iPad — or any device with a browser.
 
 | | |
 |---|---|
-| **Order Online** | [demo-restaurant.synalux.ai](https://demo-restaurant.synalux.ai) |
+| **Order Online** | [synalux-pos.vercel.app/pos/order](https://synalux-pos.vercel.app/pos/order?v=00000000-0000-0000-0000-000000000100) |
 | **Order by Phone (AI)** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
 | **Order via WhatsApp** | Text the venue number on WhatsApp — same AI, rich formatting |
 
