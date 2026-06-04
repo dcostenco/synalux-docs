@@ -84,18 +84,17 @@ Use your own iPad — or any device with a browser.
 
 ## Try the demo
 
-**POS Staff Login:** [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) — **Online Ordering:** [demo-restaurant.synalux.ai](https://demo-restaurant.synalux.ai)
+**For customers (no login needed):**
 
 | | |
 |---|---|
-| **Login** | `demo@synalux.ai` |
-| **Password** | `demo1234` |
-| **Venue** | Synalux Demo Restaurant |
-| **Online Ordering** | [demo-restaurant.synalux.ai](https://demo-restaurant.synalux.ai) |
-| **AI Voice Ordering** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
-| **WhatsApp Ordering** | Text the venue number on WhatsApp — same AI, rich formatting |
+| **Order Online** | [demo-restaurant.synalux.ai](https://demo-restaurant.synalux.ai) |
+| **Order by Phone (AI)** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
+| **Order via WhatsApp** | Text the venue number on WhatsApp — same AI, rich formatting |
 
-After login, enter a staff PIN to access the POS:
+**For staff — POS login:**
+
+Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) with `demo@synalux.ai` / `demo1234`, then enter a staff PIN:
 
 | Role | Name | PIN | Screens |
 |---|---|---|---|
