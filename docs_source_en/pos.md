@@ -84,7 +84,7 @@ Use your own iPad — or any device with a browser.
 
 ## Try the demo
 
-Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log in with the demo credentials below.
+**POS Staff Login:** [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) — **Online Ordering:** [demo-restaurant.synalux.ai](https://demo-restaurant.synalux.ai)
 
 | | |
 |---|---|
