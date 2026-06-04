@@ -610,7 +610,7 @@ Rate-limit incoming online orders during peak times to prevent kitchen overwhelm
 
 Leave management, timesheet review, and employee document tracking.
 
-<img src="../images/pos/ipad_hr_timesheets.png" alt="HR" width="700">
+<img src="../images/pos/settings_payroll.png" alt="HR & Payroll" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
