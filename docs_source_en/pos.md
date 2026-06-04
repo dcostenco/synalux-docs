@@ -14,6 +14,20 @@ Use your own iPad — or any device with a browser.
 <details>
 <summary><strong>Feature Comparison vs Competitors</strong></summary>
 
+**Only Synalux** — features no competitor offers:
+
+| Unique to Synalux | What it does |
+|---|---|
+| **AI Chat on 15 POS Surfaces** | Context-aware AI on every screen — register, KDS, tables, reports, delivery, and 10 more. Staff ask natural questions ("What's the oldest ticket?", "Top 5 items today") |
+| **AI Voice Ordering (Phone)** | Customers call your venue and order through natural AI conversation — multi-language IVR, returning customer recognition, auto SMS confirmation |
+| **Pizza Builder (Visual Half/Half)** | Per-topping placement (whole/left/right) and intensity (light/regular/extra) with real-time pricing. No other POS has this |
+| **25 Languages + Full RTL** | Every screen, receipt, and customer-facing page in 25 languages including Arabic and Hebrew with proper RTL layout |
+| **Zero Hardware Lock-in** | Runs on any device with a browser — iPad, Android tablet, PC, phone. No proprietary hardware required |
+| **Payroll + CA 226.7 Compliance** | Built-in OT alerts, break tracking with meal/rest separation, and California Labor Code 226.7 premium calculation |
+| **3-Mode Tip Pooling** | Hours-based, percentage-based, or points-based distribution — all built in with FLSA compliance |
+
+**Full comparison:**
+
 | Feature | **Synalux POS** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha (NCR)** |
 |---|---|---|---|---|---|---|
 | **Runs on any device** | Any browser — iPad, Android, PC | Toast hardware only | iPad, Square hardware | Clover hardware only | iPad | Aloha hardware only |
