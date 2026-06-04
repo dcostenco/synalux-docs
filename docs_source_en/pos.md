@@ -111,10 +111,10 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 3. Items appear on the register automatically
 
 ![Menu Builder](../images/pos/settings_menu_builder.png)
-![Barcode Scan](../images/pos/ipad_barcode_scan.svg)
-![Allergen Filter](../images/pos/ipad_allergen_filter.svg)
+![Barcode Scan](../images/pos/ipad_barcode_scan.png)
+![Allergen Filter](../images/pos/ipad_allergen_filter.png)
 ![Discounts](../images/pos/settings_discounts.png)
-![Auto Gratuity](../images/pos/settings_auto_gratuity.svg)
+![Auto Gratuity](../images/pos/settings_auto_gratuity.png)
 ![Open Price](../images/pos/settings_open_price.svg)
 ![Weight Scale](../images/pos/settings_scale.svg)
 ![Combos](../images/pos/settings_combos.svg)
@@ -141,7 +141,7 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 
 ![Table Merge](../images/pos/ipad_table_merge.svg)
 ![Seat Management](../images/pos/ipad_seat_management.svg)
-![Table Editor](../images/pos/ipad_table_editor.svg)
+![Table Editor](../images/pos/ipad_table_editor.png)
 
 </details>
 
@@ -160,7 +160,7 @@ Ticket board with color-coded timing. Bump, recall, void. All-day count per item
 2. Filter by station: Grill, Fry, Prep, Expo, Bar, Cold
 3. Configure routing rules in **Settings > Printers & KDS**
 
-![Printer Routing](../images/pos/settings_printer_routing.svg)
+![Printer Routing](../images/pos/settings_printer_routing.png)
 
 </details>
 
@@ -190,10 +190,10 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 ![Cash Discount](../images/pos/ipad_cash_discount.png)
 ![Post-Payment Tip](../images/pos/ipad_post_payment_tip.svg)
 ![EBT/SNAP Payment](../images/pos/ipad_ebt_payment.svg)
-![House Accounts](../images/pos/settings_house_accounts.svg)
+![House Accounts](../images/pos/settings_house_accounts.png)
 ![Cash Discount Settings](../images/pos/settings_cash_discount.png)
 ![Receipts](../images/pos/settings_receipts.svg)
-![Chargebacks](../images/pos/settings_chargebacks.svg)
+![Chargebacks](../images/pos/settings_chargebacks.png)
 ![Cash Rounding](../images/pos/settings_rounding.svg)
 ![Wallet Pay](../images/pos/ipad_wallet_pay.svg)
 
@@ -214,12 +214,12 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 2. Configure pay periods, break rules, and overtime thresholds
 3. Tip pool mode: by hours, percentage, or points
 
-![Scheduling](../images/pos/settings_scheduling.svg)
+![Scheduling](../images/pos/settings_scheduling.png)
 ![Break Tracking](../images/pos/settings_break_tracking.svg)
 ![Overtime](../images/pos/settings_overtime.svg)
-![Tip Pooling](../images/pos/settings_tip_pooling.svg)
-![Payroll](../images/pos/settings_payroll.svg)
-![IRS Form 8027](../images/pos/settings_form_8027.svg)
+![Tip Pooling](../images/pos/settings_tip_pooling.png)
+![Payroll](../images/pos/settings_payroll.png)
+![IRS Form 8027](../images/pos/settings_payroll.png)
 
 </details>
 
@@ -245,7 +245,7 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 9. **Promo codes** — one-time-use codes validated server-side. Duplicates are rejected
 10. **AI chat** — customer-facing AI understands your full menu including modifiers and pizza builder. Supports 14 languages with voice input/output
 
-![QR Ordering](../images/pos/ipad_qr_ordering.svg)
+![QR Ordering](../images/pos/ipad_qr_ordering.png)
 ![Scheduled Orders](../images/pos/ipad_scheduled_orders.png)
 ![AI Chat (Customer)](../images/pos/ipad_ai_chat_oo.png)
 ![Order Tracking](../images/pos/ipad_order_tracking.png)
@@ -272,7 +272,7 @@ In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. 
 6. **Route optimization** — batch dispatch clusters nearby deliveries and assigns the optimal driver using proximity scoring
 7. **Order status sync** — when KDS bumps an order to "ready", the system notifies the 3PD provider and triggers auto-dispatch for in-house drivers
 
-![Driver Mobile](../images/pos/ipad_delivery_driver.svg)
+![Driver Mobile](../images/pos/ipad_delivery_driver.png)
 ![Delivery Settings](../images/pos/settings_delivery.png)
 
 </details>
@@ -366,8 +366,8 @@ Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, v
 6. **Server leaderboard** — staff performance ranking at `/pos/reports/leaderboard`
 7. **CSV export** — every report has a one-click CSV download
 
-![Menu Engineering](../images/pos/settings_menu_engineering.svg)
-![Advanced Reports](../images/pos/settings_reports_advanced.svg)
+![Menu Engineering](../images/pos/settings_menu_engineering.png)
+![Advanced Reports](../images/pos/settings_reports_advanced.png)
 ![Revenue Centers](../images/pos/settings_revenue_centers.svg)
 
 </details>
@@ -387,7 +387,7 @@ Stock tracking, low-stock alerts, vendor management, and recipe builder with foo
 - Link recipes to menu items — food cost % auto-calculates
 
 ![Recipes](../images/pos/settings_recipes.png)
-![Vendors](../images/pos/settings_vendors.svg)
+![Vendors](../images/pos/settings_vendors.png)
 
 </details>
 
@@ -418,7 +418,7 @@ Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audi
 <details>
 <summary><strong>Setup</strong></summary>
 
-![Age Verification](../images/pos/ipad_age_verification.svg)
+![Age Verification](../images/pos/ipad_age_verification.png)
 ![Tax Exempt](../images/pos/settings_tax_exempt.svg)
 ![Taxes](../images/pos/settings_taxes.png)
 ![Privacy (CCPA/GDPR)](../images/pos/settings_privacy.svg)
@@ -622,104 +622,193 @@ Leave management, timesheet review, and employee document tracking.
 
 ---
 
-### More
+### Training Mode
+
+Isolated sandbox. Orders excluded from reports. Staff can practice without affecting live data.
+
+![Training](../images/pos/settings_training_mode.png)
 
 <details>
-<summary><strong>Training Mode</strong></summary>
+<summary><strong>Setup</strong></summary>
 
-Isolated sandbox. Orders excluded from reports.
-
-![Training](../images/pos/settings_training_mode.svg)
+1. Enable training mode in **Settings > Venue** — toggle "Training Mode"
+2. All orders created while training mode is active are tagged `[TRAINING]`
+3. Training orders are excluded from sales reports, EOD, and payroll calculations
+4. Disable training mode when done — real orders resume immediately
 
 </details>
 
-<details>
-<summary><strong>Offline Mode (PWA)</strong></summary>
+---
+
+### Offline Mode (PWA)
 
 Core pages precached for offline use. Orders queue locally and sync on reconnect. Card payments require network.
 
 ![Offline](../images/pos/ipad_offline_mode.png)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open the POS in Chrome or Safari and add to home screen — installs as a PWA
+2. When network drops, an offline indicator appears in the top bar
+3. Orders are queued in local storage and auto-sync when connectivity returns
+4. Cash payments work offline. Card payments require network and show an error if attempted offline
+
 </details>
 
-<details>
-<summary><strong>Integrations</strong></summary>
+---
+
+### Integrations
 
 Stripe, DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid, Forage (EBT), Ollama (local AI).
 
 ![Integrations](../images/pos/settings_integrations.png)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open **Settings > Integrations** — all integrations activate by adding credentials
+2. **Stripe** — paste `STRIPE_SECRET_KEY` to enable card payments, Tap-to-Pay, and online checkout
+3. **DoorDash / Uber** — add API credentials for delivery dispatch and menu sync
+4. **Twilio / SendGrid** — add keys for SMS order-ready notifications and email receipts
+5. **QuickBooks / Xero** — connect via OAuth for automatic EOD GL journal sync
+
 </details>
 
-<details>
-<summary><strong>Operational Forms</strong></summary>
+---
+
+### Operational Forms
 
 Cash Count, Void Auth, Tax-Exempt Cert, Catering BEO, Tip Declaration, Inventory Count, Time-Off, Purchase Order, Incident Log, Daily Specials, Prep List, Server Checkout.
 
-![Forms](../images/pos/settings_forms.svg)
+![Forms](../images/pos/settings_forms.png)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/forms` to access all 12 pre-built operational forms
+2. Forms auto-fill venue name, date, and staff info from the current session
+3. Print or export as PDF from the form builder
 
 </details>
 
-<details>
-<summary><strong>Digital Menu Board</strong></summary>
+---
+
+### Digital Menu Board
 
 Configure layout, sections, and pricing display. Assign to any TV or display.
 
-![Menu Board](../images/pos/settings_menu_board.svg)
+![Menu Board](../images/pos/settings_menu_board.png)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/board` on any TV or large display
+2. Configure sections, layout, and which categories to show in **Settings > Menu Board**
+3. Prices and availability auto-sync from the menu builder
 
 </details>
 
-<details>
-<summary><strong>Marketing & Campaigns</strong></summary>
+---
+
+### Marketing & Campaigns
 
 Email/SMS blasts, promo codes, audience segments, and send history.
 
 ![Marketing](../images/pos/settings_marketing.png)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open the **Marketing** page to create email or SMS campaigns
+2. Build audience segments by visit count, loyalty tier, or last-visit date
+3. Create promo codes with percentage or fixed discounts
+4. Requires Twilio (SMS) or SendGrid (email) credentials in **Settings > Integrations**
+
 </details>
 
-<details>
-<summary><strong>Customer Feedback</strong></summary>
+---
+
+### Customer Feedback
 
 Post-visit surveys, star ratings, comment review, and response templates.
 
-![Customer Feedback](../images/pos/settings_customer_feedback.svg)
+![Customer Feedback](../images/pos/settings_customer_feedback.png)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/feedback` to view submitted customer surveys
+2. QR codes on receipts link to the survey form
+3. Star ratings and comments are aggregated per server and per time period
 
 </details>
 
-<details>
-<summary><strong>Label Printer</strong></summary>
+---
+
+### Label Printer
 
 ZPL-compatible (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
 
 ![Label Printer](../images/pos/settings_label_printer.svg)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Add your Zebra or Brother printer IP in **Settings > Printers**
+2. Tap the label icon on any menu item or inventory item to print a ZPL label
+3. Labels include item name, price, SKU, barcode, and expiry date
+
 </details>
 
-<details>
-<summary><strong>Equipment Tracking</strong></summary>
+---
+
+### Equipment Tracking
 
 Device registry with serial numbers, warranty, maintenance schedule, and depreciation.
 
 ![Equipment](../images/pos/settings_equipment.svg)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Add devices in the equipment registry with serial number, purchase date, and warranty info
+2. Set maintenance schedules — the system alerts when service is due
+3. Track depreciation for accounting purposes
+
 </details>
 
-<details>
-<summary><strong>Manager Mobile</strong></summary>
+---
+
+### Manager Mobile
 
 iPhone dashboard with live KPIs, alerts, and quick actions.
 
-![Manager Mobile](../images/pos/iphone_01_dashboard.svg)
+![Manager Mobile](../images/pos/iphone_01_dashboard.png)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/dashboards` on any iPhone or mobile browser
+2. Pin to home screen for quick access
+3. Live KPIs: today's sales, open checks, labor %, voids, and average ticket size
 
 </details>
 
-<details>
-<summary><strong>Synalux Advantage</strong></summary>
+---
+
+### Synalux Advantage
 
 Referral tracking, partner benefits, and commission tiers.
 
 ![Advantage](../images/pos/settings_advantage.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open the Advantage page to manage referral codes and partner tiers
+2. Track which referrals converted to active venues
+3. Commission tiers auto-calculate based on referred venue revenue
 
 </details>
 
