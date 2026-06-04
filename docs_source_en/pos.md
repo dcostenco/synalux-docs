@@ -58,7 +58,6 @@ Use your own iPad — or any device with a browser.
   - [Delivery Management](#delivery-management)
   - [AI Chat Assistant](#ai-chat-assistant)
   - [AI Voice Ordering (Phone)](#ai-voice-ordering-phone)
-  - [WhatsApp Ordering](#whatsapp-ordering)
   - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
   - [Customer Display](#customer-display)
   - [Reports](#reports)
@@ -90,7 +89,6 @@ Use your own iPad — or any device with a browser.
 |---|---|
 | **Order Online** | [synalux-pos.vercel.app/pos/order](https://synalux-pos.vercel.app/pos/order?v=00000000-0000-0000-0000-000000000100) |
 | **Order by Phone (AI)** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
-| **Order via WhatsApp** | Text the venue number on WhatsApp — same AI, rich formatting |
 
 **For staff — POS login:**
 
@@ -404,48 +402,6 @@ Customers call your venue's phone number and place orders through natural AI con
 
 </details>
 
-
----
-
-### WhatsApp Ordering
-
-Same AI assistant as voice ordering, but over WhatsApp. Customers text the venue number, order via natural conversation, and receive rich formatted confirmations with emoji. No app download needed.
-
-<details>
-<summary><strong>How it works</strong></summary>
-
-1. Customer sends a WhatsApp message to the venue number
-2. AI responds instantly — same Gemini 3.5 Flash as voice
-3. Add items: "I want a burger and fries" → AI adds with price confirmation
-4. Cart displayed with each reply:
-   ```
-   🛒 Your cart:
-     1x Classic Burger
-     1x Fries
-
-   Say "done" when ready to order.
-   ```
-5. "done" → asks for name → confirms order → "YES" → order placed
-6. Confirmation with emoji: "✅ Order #a83e placed! Your order will be ready in ~15 min."
-7. Returning customers recognized by phone number — past orders recalled
-
-**Customer commands (same as voice):**
-
-| Text | What happens |
-|------|-------------|
-| Any menu item | Added to cart |
-| "Change X to Y" | Swap items |
-| "Remove fries" | Removed |
-| "My usual" | Last order re-added |
-| "Done" | Starts confirmation |
-| "YES" | Places order |
-
-**Setup:**
-1. Enable WhatsApp in Twilio Console → Messaging → WhatsApp
-2. Set webhook: `https://your-domain.com/api/v1/pos/webhooks/whatsapp` (POST)
-3. Customers text the number — no app, no signup
-
-</details>
 
 ---
 
