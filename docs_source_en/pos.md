@@ -416,36 +416,6 @@ Customers call your venue's phone number and place orders through natural AI con
 
 </details>
 
-<details>
-<summary><strong>Competitor Comparison</strong></summary>
-
-| | **Synalux POS** | **ConverseNow** | **SoundHound** | **Kea AI** | **Slang.ai** |
-|---|---|---|---|---|---|
-| **Price** | Included at $49/mo | $500+/mo enterprise | Contact sales | Contact sales | $200-450/mo |
-| **Per-call AI cost** | ~$0.001 | ~$0.50-2.00 | Unknown | ~$0.50+ | ~$0.30+ |
-| **AI Model** | Gemini 3.5 Flash | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
-| **Speech Recognition** | Deepgram Flux | Google STT | Proprietary | Google STT | Google STT |
-| **Voice (TTS)** | ElevenLabs (Elo 1208) | Standard | Proprietary | Standard | Standard |
-| **Architecture** | ConversationRelay (streaming) | IVR/webhook | Proprietary | IVR/webhook | IVR/webhook |
-| **Turn detection** | Neural | Timer-based | Proprietary | Timer-based | Timer-based |
-| **Interruption** | Yes | No | Limited | No | No |
-| **Phonetic correction** | Auto (LLM menu matching) | Manual training | Unknown | Manual | None |
-| **"My usual"** | Auto from order history | Manual config | None | Basic | None |
-| **Languages** | 15 | ~5 | ~5 | ~8 | English only |
-| **Deploy time** | Instant | 8-12 weeks | 8-12 weeks | 4 weeks | 24 hours |
-| **POS integration** | Native (KDS, orders, loyalty) | Separate vendor | Separate vendor | Separate vendor | Basic |
-| **Customization** | Full | Template-based | Enterprise custom | Moderate | Template |
-| **SMS confirmation** | Auto | Separate | No | Separate | No |
-| **Analytics** | Datadog + Supabase | Proprietary | Proprietary | Basic | Basic |
-
-**Key advantages:**
-- **Best-in-class voice stack** at 500-2000x lower cost per call
-- **Streaming architecture** with neural turn detection and caller interruption
-- **Native POS integration** — orders go directly to kitchen display
-- **Phonetic correction** — AI auto-corrects garbled phone audio
-- **"My usual"** — returning customers reorder with one phrase
-
-</details>
 
 ---
 
