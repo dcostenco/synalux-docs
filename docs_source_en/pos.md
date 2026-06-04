@@ -13,6 +13,42 @@ Use your own iPad — or any device with a browser.
 
 ---
 
+## Table of Contents
+
+- [Try the demo](#try-the-demo)
+- [Features](#features)
+  - [Staff Login](#staff-login)
+  - [Register](#register)
+  - [Tables & Floor Plan](#tables--floor-plan)
+  - [Kitchen Display (KDS)](#kitchen-display-kds)
+  - [Payment](#payment)
+  - [Staff & Labor](#staff--labor)
+  - [Online Ordering & QR Table](#online-ordering--qr-table)
+  - [Delivery Management](#delivery-management)
+  - [AI Chat Assistant](#ai-chat-assistant)
+  - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
+  - [Customer Display](#customer-display)
+  - [Reports](#reports)
+  - [Inventory & Recipes](#inventory--recipes)
+  - [Gift Cards & Loyalty](#gift-cards--loyalty)
+  - [Compliance](#compliance)
+  - [End of Day](#end-of-day)
+  - [Reservations](#reservations)
+  - [Catering](#catering)
+  - [Drive-Thru](#drive-thru)
+  - [Handheld Server](#handheld-server)
+  - [Refunds](#refunds)
+  - [Multi-Location & Franchise](#multi-location--franchise)
+  - [Accounting & Ledger](#accounting--ledger)
+  - [Coursing](#coursing)
+  - [Order Throttling](#order-throttling)
+  - [HR & Timesheets](#hr--timesheets)
+  - [More](#more)
+- [25 Languages](#25-languages)
+- [Developer Guide](#developer-integration-setup-guide)
+
+---
+
 ## Try the demo
 
 Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) and log in with the demo credentials below.
@@ -132,50 +168,34 @@ Ticket board with color-coded timing. Bump, recall, void. All-day count per item
 
 ### Payment
 
-Card, cash, gift card, mobile pay, house account, EBT, and bar tabs. Split check, tips, and post-payment tip via QR.
+Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on iPhone, and cash discount/dual pricing. Split check, tips, and post-payment tip via QR.
 
 ![Payment](../images/pos/ipad_05_payment.svg)
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Card** — add Stripe keys in Settings > Integrations. Pair a Stripe Reader M2.
-2. **Gift cards** — issue from the Gift Cards page
-3. **House accounts** — create in Settings > House Accounts
+1. **Card** — add Stripe keys in **Settings > Integrations**. Pair a Stripe Reader M2
+2. **Tap-to-Pay on iPhone** — enable in Stripe Dashboard, then tap "📱 Tap to Pay" on the payment screen. Uses your iPhone as a contactless card reader — no additional hardware
+3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
+4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
+5. **Gift cards** — issue from the Gift Cards page
+6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
+7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligible items are automatically calculated
+8. **Split check** — split by even, custom amount, or per-seat. Each split can pay by different method (card/cash)
 
 ![Split Check](../images/pos/ipad_split_check.svg)
+![Bar Tab](../images/pos/ipad_bar_tab.svg)
+![Tap-to-Pay](../images/pos/ipad_tap_to_pay.svg)
+![Cash Discount](../images/pos/ipad_cash_discount.svg)
 ![Post-Payment Tip](../images/pos/ipad_post_payment_tip.svg)
 ![EBT/SNAP Payment](../images/pos/ipad_ebt_payment.svg)
 ![House Accounts](../images/pos/settings_house_accounts.svg)
+![Cash Discount Settings](../images/pos/settings_cash_discount.svg)
 ![Receipts](../images/pos/settings_receipts.svg)
 ![Chargebacks](../images/pos/settings_chargebacks.svg)
 ![Cash Rounding](../images/pos/settings_rounding.svg)
 ![Wallet Pay](../images/pos/ipad_wallet_pay.svg)
-
-</details>
-
----
-
-### Customer Display
-
-Second screen facing the customer with live order, running total, and idle promos.
-
-![Customer Display](../images/pos/ipad_customer_display.svg)
-
----
-
-### Reports
-
-Sales, PMIX, menu engineering, speed of service, server performance, payments, voids, and labor. CSV export on every report.
-
-![Reports](../images/pos/ipad_reports.svg)
-
-<details>
-<summary><strong>Details</strong></summary>
-
-![Menu Engineering](../images/pos/settings_menu_engineering.svg)
-![Advanced Reports](../images/pos/settings_reports_advanced.svg)
-![Revenue Centers](../images/pos/settings_revenue_centers.svg)
 
 </details>
 
@@ -207,17 +227,148 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 
 ### Online Ordering & QR Table
 
-Customers browse your menu, order, and pay — no app needed. QR codes per table go straight to KDS.
+Customers browse your menu, order, and pay — no app needed. Pickup and delivery channels. QR codes per table go straight to KDS. Scheduled orders, loyalty points, promo codes, AI chat assistant, and order tracking.
 
 ![Online](../images/pos/online_01_menu.svg)
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-- Share your `/pos/order` link or print QR table tents from **Settings > Floor Plan**
+1. **Enable** — turn on online ordering in **Settings > Online Ordering**
+2. **Business hours** — set per-day open/close times. Orders are blocked outside hours
+3. **Channels** — enable Pickup and/or Delivery independently with separate min-order amounts and prep times
+4. **Delivery zones** — define radius zones with per-zone fees and minimums. Set venue lat/lng coordinates
+5. **Closed dates** — add holidays when the venue is closed
+6. **Share your link** — customers order at `https://your-slug.synalux.ai` or your custom domain
+7. **QR table ordering** — print QR tents from **Settings > Floor Plan**. Customer scans, orders, and the ticket goes straight to KDS
+8. **Scheduled orders** — customers pick a future date/time at checkout. Orders appear on KDS at the scheduled time
+9. **Promo codes** — one-time-use codes validated server-side. Duplicates are rejected
+10. **AI chat** — customer-facing AI understands your full menu including modifiers and pizza builder. Supports 14 languages with voice input/output
 
 ![QR Ordering](../images/pos/ipad_qr_ordering.svg)
 ![Scheduled Orders](../images/pos/ipad_scheduled_orders.svg)
+![AI Chat (Customer)](../images/pos/ipad_ai_chat_oo.svg)
+![Order Tracking](../images/pos/ipad_order_tracking.svg)
+![Online Ordering Settings](../images/pos/settings_online_ordering.svg)
+
+</details>
+
+---
+
+### Delivery Management
+
+In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms.
+
+![Delivery](../images/pos/ipad_delivery_management.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. **Choose mode** in **Settings > Delivery**: 3PD Only, In-House, or Hybrid (try in-house first, fall back to 3PD)
+2. **3PD providers** — add DoorDash Drive or Uber Direct API credentials. The system creates deliveries via the provider API and tracks status
+3. **In-house drivers** — add drivers with name, phone, vehicle type (car/bike/scooter/walk), and max concurrent orders
+4. **Menu sync** — tap "Sync to DoorDash" / "Sync to Uber Eats" to upload your menu. Enable auto-sync to push changes automatically when you edit menu items
+5. **Driver mobile page** — drivers open `/pos/delivery/driver` on their phone. They see assigned orders, tap to navigate, mark picked up / delivered / failed, and auto-report GPS every 30s
+6. **Route optimization** — batch dispatch clusters nearby deliveries and assigns the optimal driver using proximity scoring
+7. **Order status sync** — when KDS bumps an order to "ready", the system notifies the 3PD provider and triggers auto-dispatch for in-house drivers
+
+![Driver Mobile](../images/pos/ipad_delivery_driver.svg)
+![Delivery Settings](../images/pos/settings_delivery.svg)
+
+</details>
+
+---
+
+### AI Chat Assistant
+
+Context-aware AI assistant on every POS page (15 surfaces) and on the online ordering page for customers. Voice input, 14 languages, quick prompts, and Prism memory for learning patterns.
+
+![AI Chat (POS)](../images/pos/ipad_ai_chat_pos.svg)
+
+<details>
+<summary><strong>How it works</strong></summary>
+
+**POS Staff Chat** — appears on every page, auto-loads live data for that screen:
+- **Register** — "What's the most popular item today?", "Find order with 3 cokes", "Customer last name Garcia"
+- **KDS** — "What's the oldest ticket?", "Any allergens on ticket 4?", "Grill count?"
+- **Tables** — "Any 4-tops available?", "How long has table 12 been seated?"
+- **Inventory** — "What's low on stock?", "How many cases of Bud Light?"
+- **Reports** — "Compare lunch vs dinner sales", "Top 5 items this week", "Labor % today?"
+- **EOD** — "Start closing", "What's the tip pool?", "Any cash variance?"
+- **Delivery** — "Where is driver Maria?", "How many pending deliveries?"
+- **+ 8 more surfaces** (Staff, Reservations, Catering, Loyalty, Gift Cards, Disputes, Scheduling, Table Ops)
+
+**OO Customer Chat** — customers ask "Make me a half pepperoni half mushroom pizza" and the AI builds the order with correct modifiers and pricing:
+- Voice input (microphone) + voice output (speaker) with adjustable speed/pitch/gender
+- 14 languages with locale picker
+- Returning customer greeting via cookie
+- Tool calls: add_to_cart, remove_from_cart, filter_menu, suggest_combo
+
+![AI Chat (Customer)](../images/pos/ipad_ai_chat_oo.svg)
+
+</details>
+
+---
+
+### Pizza Builder & Modifiers
+
+Visual half/half pizza builder with per-topping placement and intensity. Standard modifiers with qty, nested groups, forced/optional, and max-quantity limits.
+
+![Pizza Builder](../images/pos/ipad_pizza_builder.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. **Standard modifiers** — create modifier groups in **Settings > Menu Builder**. Set min/max selections, price deltas, and max quantity per option
+2. **Pizza builder** — set a modifier group's display mode to "🍕 Pizza Builder" in the menu builder. This triggers the visual half/half UI instead of checkboxes
+3. **Placement** — customers choose Whole, Left Half, or Right Half for each topping. Half placement = 50% of the topping price
+4. **Intensity** — None (not selected), Light (75% price), Regular (100%), Extra (150% price)
+5. **3PD compatibility** — pizza toppings sync to DoorDash/UberEats as standard modifiers (placement/intensity are stripped since 3PD doesn't support halves). This is logged as an incompatibility
+6. **AI chat** — "Make me a half pepperoni half mushroom pizza" works without the visual builder. The AI maps to the correct modifiers and prices
+
+![Modifier Sheet](../images/pos/ipad_modifier_sheet.svg)
+
+</details>
+
+---
+
+### Customer Display
+
+Second screen facing the customer with live order, running total, and idle promos.
+
+![Customer Display](../images/pos/ipad_customer_display.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/display` on a second iPad or monitor facing the customer
+2. The display auto-syncs with the active register order in real time
+3. Configure idle promo images in **Settings > Venue**
+
+</details>
+
+---
+
+### Reports
+
+Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, voids, and labor. CSV export on every report.
+
+![Reports](../images/pos/ipad_reports.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Access from the **Reports** page — all reports are auto-generated from order data
+2. **Sales** — hourly heatmap, daily/weekly/monthly totals
+3. **PMIX** — product mix by category, item, and modifier
+4. **Menu engineering** — Star/Dog/Puzzle/Workhorse quadrant analysis
+5. **Speed of service** — per-station ticket times at `/pos/reports/speed`
+6. **Server leaderboard** — staff performance ranking at `/pos/reports/leaderboard`
+7. **CSV export** — every report has a one-click CSV download
+
+![Menu Engineering](../images/pos/settings_menu_engineering.svg)
+![Advanced Reports](../images/pos/settings_reports_advanced.svg)
+![Revenue Centers](../images/pos/settings_revenue_centers.svg)
 
 </details>
 
@@ -297,6 +448,16 @@ Timeline view with party size, table assignment, and webhook integration for Goo
 
 ![Reservations](../images/pos/ipad_reservations.svg)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open the **Reservations** page to see the timeline view
+2. Add reservations manually with party size, date/time, and table assignment
+3. **Webhook integration** — configure webhooks in **Settings > Integrations** for Google Reserve, OpenTable, or Yelp. Incoming reservations auto-create in the system
+4. Waitlist mode available for walk-ins
+
+</details>
+
 ---
 
 ### Catering
@@ -304,6 +465,16 @@ Timeline view with party size, table assignment, and webhook integration for Goo
 Large-order entry with Banquet Event Orders, delivery scheduling, and deposit tracking.
 
 ![Catering](../images/pos/ipad_catering.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open the **Catering** page to create catering events
+2. Build a Banquet Event Order (BEO) with menu items, headcount, and timeline
+3. Set delivery date/time and assign a driver or 3PD provider
+4. Track deposits (partial payments) against the event total
+
+</details>
 
 ---
 
@@ -313,6 +484,16 @@ Lane management with color-coded timing and auto-advance to the next station.
 
 ![Drive-Thru](../images/pos/ipad_drive_thru.svg)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/drive-thru` on a dedicated screen per lane
+2. Orders flow through stations: Order → Prep → Window
+3. Color-coded timing (green < 3 min, yellow < 5 min, red > 5 min)
+4. Auto-advance when KDS bumps the ticket
+
+</details>
+
 ---
 
 ### Handheld Server
@@ -320,6 +501,15 @@ Lane management with color-coded timing and auto-advance to the next station.
 Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 
 ![Handheld](../images/pos/ipad_handheld_ordering.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/handheld` on any iPhone or small tablet
+2. Server logs in with their PIN — same role-based access as the register
+3. Tap a table → add items → send to KDS. Full modifier support including pizza builder
+
+</details>
 
 ---
 
@@ -330,6 +520,17 @@ Partial or full refund with reason codes. Reopen closed checks for corrections.
 ![Refund](../images/pos/ipad_refund.svg)
 ![Reopen Check](../images/pos/ipad_reopen_check.svg)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open the **Refunds** page or tap "Refund" on any completed order
+2. Choose partial (specific items) or full refund
+3. Select a reason code (wrong item, quality, customer request, etc.)
+4. Stripe refund is processed automatically. Cash refunds are recorded for drawer reconciliation
+5. **Reopen check** — managers can reopen a closed order for corrections, then re-close
+
+</details>
+
 ---
 
 ### Multi-Location & Franchise
@@ -339,13 +540,85 @@ Per-venue KPIs, consolidated P&L, config push, and franchise reporting.
 ![Multi-Location](../images/pos/settings_multi_location.svg)
 ![Franchise](../images/pos/settings_franchise.svg)
 
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Create additional venues under the same workspace in **Settings > Multi-Location**
+2. Push menu, tax, and discount configs from a template venue to all locations
+3. View consolidated P&L, sales, and labor reports across all venues
+4. Franchise reporting with per-location royalty calculations
+
+</details>
+
 ---
 
-### AI Ordering
+### Accounting & Ledger
 
-Natural language order parsing from phone or SMS. Runs locally via Ollama — no cloud API needed.
+Journal entries, general ledger, and banking integration. QuickBooks and Xero auto-sync at EOD.
 
-![AI Ordering](../images/pos/ai_ordering.svg)
+![Accounting](../images/pos/ipad_accounting.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/accounting` for the main accounting dashboard
+2. `/pos/accounting/ledger` for journal entries and GL
+3. `/pos/accounting/banking` for bank feed integration
+4. Configure QuickBooks or Xero sync in **Settings > Integrations** — GL journal auto-exports at end of day
+
+</details>
+
+---
+
+### Coursing
+
+Multi-course meal sequencing with per-item course assignment and fire-on-demand.
+
+![Coursing](../images/pos/ipad_coursing.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Assign course numbers (1–6) to each item in the order ticket
+2. Course 0 = fire immediately. Courses 1–6 fire in sequence when the server taps "Fire Next Course"
+3. KDS shows course badges on each ticket item
+
+</details>
+
+---
+
+### Order Throttling
+
+Rate-limit incoming online orders during peak times to prevent kitchen overwhelm.
+
+![Throttling](../images/pos/ipad_throttling.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Configure throttle limits in **Settings > Online Ordering**
+2. Set max orders per 15-minute window
+3. When the limit is reached, new customers see "We're busy — try again in a few minutes"
+
+</details>
+
+---
+
+### HR & Timesheets
+
+Leave management, timesheet review, and employee document tracking.
+
+![HR](../images/pos/ipad_hr_timesheets.svg)
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open `/pos/hr` for timesheet review and leave management
+2. Staff submit time-off requests; managers approve/deny
+3. Timesheets auto-populate from clock-in/out records
+4. Export to payroll (Gusto/ADP) from the Payroll page
+
+</details>
 
 ---
 
@@ -372,7 +645,7 @@ Core pages precached for offline use. Orders queue locally and sync on reconnect
 <details>
 <summary><strong>Integrations</strong></summary>
 
-Stripe, DoorDash, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid.
+Stripe, DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid, Forage (EBT), Ollama (local AI).
 
 ![Integrations](../images/pos/settings_integrations.svg)
 
@@ -465,15 +738,18 @@ Every integration activates by adding credentials in **Settings > Integrations**
 
 | Integration | Env var | What activates |
 |---|---|---|
-| **Stripe** (card payments) | `STRIPE_SECRET_KEY` | Card tap/chip/swipe, Tap-to-Pay, online payments |
-| **SendGrid** (email receipts) | `SENDGRID_API_KEY` | Email receipt button after payment |
-| **Twilio** (SMS) | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` | SMS receipts, phone ordering |
-| **DoorDash / Uber Eats / Grubhub** | Webhook URL | Delivery orders on KDS with purple badge |
+| **Stripe** (card payments) | `STRIPE_SECRET_KEY` | Card tap/chip/swipe, Tap-to-Pay on iPhone, online payments |
+| **DoorDash Drive** (delivery dispatch) | `DOORDASH_DEVELOPER_ID`, `DOORDASH_KEY_ID`, `DOORDASH_SIGNING_SECRET` | 3PD delivery delegation, menu sync |
+| **Uber Direct** (delivery dispatch) | `UBER_CLIENT_ID`, `UBER_CLIENT_SECRET` | 3PD delivery delegation, menu sync |
+| **DoorDash / Uber Eats / Grubhub** (marketplace) | Webhook URL | Inbound 3PD orders on KDS with purple badge |
+| **SendGrid** (email) | `SENDGRID_API_KEY` | Email receipts, order confirmations |
+| **Twilio** (SMS) | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` | SMS receipts, order-ready notifications |
 | **Google Reserve / OpenTable / Yelp** | Webhook URL | Auto-created reservations |
 | **QuickBooks / Xero** | `QUICKBOOKS_ACCESS_TOKEN` or `XERO_ACCESS_TOKEN` | EOD GL journal auto-sync |
 | **Forage** (EBT/SNAP) | `FORAGE_API_KEY` | EBT payment, eligible item flagging |
 | **Dwolla / Stripe Treasury** | `DWOLLA_API_KEY` or `STRIPE_TREASURY_KEY` | ACH payroll direct deposit |
-| **Ollama** (AI ordering) | `NEXT_PUBLIC_LOCAL_LLM_URL` | Natural language order parsing |
+| **Ollama** (local AI) | `NEXT_PUBLIC_LOCAL_LLM_URL` | Natural language order parsing (local, no cloud) |
+| **Prism MCP** (AI memory) | `PRISM_MCP_URL` | Per-staff and per-customer AI memory and context |
 | **Apple / Google Wallet** | Pass Type ID + signing cert | Loyalty "Add to Wallet" |
 | **Zebra / Brother** (labels) | Printer IP in Settings | ZPL price/SKU/prep labels |
 
