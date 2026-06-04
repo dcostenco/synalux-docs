@@ -58,6 +58,7 @@ Use your own iPad — or any device with a browser.
   - [Delivery Management](#delivery-management)
   - [AI Chat Assistant](#ai-chat-assistant)
   - [AI Voice Ordering (Phone)](#ai-voice-ordering-phone)
+  - [WhatsApp Ordering](#whatsapp-ordering)
   - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
   - [Customer Display](#customer-display)
   - [Reports](#reports)
@@ -403,6 +404,48 @@ Customers call your venue's phone number and place orders through natural AI con
 
 </details>
 
+
+---
+
+### WhatsApp Ordering
+
+Same AI as voice ordering, over WhatsApp. Customers text the venue, order naturally, see their cart with emoji formatting, and get a confirmation with order number and ETA. No app download needed.
+
+<details>
+<summary><strong>How it works</strong></summary>
+
+1. Customer texts the venue on WhatsApp
+2. AI responds instantly (Gemini 3.5 Flash) — same menu, same intelligence as voice
+3. Add items naturally: "I want a burger and fries"
+4. Cart displayed after each message:
+   ```
+   🛒 Your cart:
+     1x Classic Burger
+     1x Fries
+
+   Say "done" when ready to order.
+   ```
+5. "done" → asks for name → confirms order → "YES" → order placed
+6. Confirmation: "✅ Order #a83e placed! Total: $16.50. Ready in ~15 min."
+7. Returning customers recognized by phone — favorites and past orders recalled
+
+**Commands:**
+
+| Text | What happens |
+|------|-------------|
+| Any menu item | Added to cart with price |
+| "Change X to Y" | Swap items |
+| "Remove fries" | Item removed |
+| "My usual" | Last order re-added |
+| "Done" | Starts confirmation |
+| "YES" | Places order → KDS ticket |
+
+**Setup:**
+1. Register a WhatsApp Business number in Twilio Console
+2. Set webhook: `https://your-domain.com/api/v1/pos/webhooks/whatsapp` (POST)
+3. Customers text the number — no app install, no signup
+
+</details>
 
 ---
 
