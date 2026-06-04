@@ -343,12 +343,14 @@ Customers call your venue's phone number and place orders through natural AI con
 
 1. Customer calls venue number
 2. If 2+ languages: IVR menu ("For English press 1, Para Español oprima 2")
-3. AI greeting (custom or default, personalized for returning customers)
-4. Free-form conversation — customer orders naturally in their language
-5. AI parses items, resolves modifiers, confirms each addition with price
-6. When done: AI reads back complete order with total, asks confirmation
-7. On "yes": order created → KDS ticket → SMS confirmation sent
-8. Returning customers auto-recognized by phone (loyalty lookup + order history)
+3. Real-time streaming connection (Twilio ConversationRelay → WebSocket)
+4. AI greeting (custom or default, personalized for returning customers)
+5. Free-form conversation — Deepgram Flux transcribes in real-time, Gemini responds in ~1s, ElevenLabs speaks naturally
+6. Customer can interrupt AI mid-sentence (neural turn detection)
+7. AI adds items immediately, confirms price, asks "What else?"
+8. "That's all" → asks for customer name → reads back order with total
+9. "Yes" → order created → KDS ticket → SMS confirmation sent
+10. Returning customers auto-recognized by phone (loyalty lookup)
 
 **Online ordering** is also available at the same time:
 
@@ -362,19 +364,28 @@ Customers call your venue's phone number and place orders through natural AI con
 | | **Synalux POS** | **ConverseNow** | **SoundHound** | **Kea AI** | **Slang.ai** |
 |---|---|---|---|---|---|
 | **Price** | Included at $49/mo | $500+/mo enterprise | Contact sales | Contact sales | $200-450/mo |
-| **AI Model** | Own (Prism Coder 14B) | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
-| **Per-call AI cost** | $0 | ~$0.50-2.00 | Unknown | ~$0.50+ | ~$0.30+ |
+| **AI Model** | Gemini 3.5 Flash + Prism Coder | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
+| **Per-call AI cost** | ~$0.001 | ~$0.50-2.00 | Unknown | ~$0.50+ | ~$0.30+ |
+| **Speech Recognition** | Deepgram Flux (best-in-class) | Google STT | Proprietary | Google STT | Google STT |
+| **Voice (TTS)** | ElevenLabs (#1 ranked) | Standard | Proprietary | Standard | Standard |
+| **Architecture** | ConversationRelay (streaming) | IVR/webhook | Proprietary | IVR/webhook | IVR/webhook |
+| **Turn detection** | Neural (Deepgram Flux) | Timer-based | Proprietary | Timer-based | Timer-based |
+| **Interruption** | Caller can interrupt AI | No | Limited | No | No |
 | **Languages** | 15 | ~5 | ~5 | ~8 | English only |
 | **Deploy time** | Instant (built-in) | 8-12 weeks | 8-12 weeks | 4 weeks | 24 hours |
-| **POS integration** | Native | Separate vendor | Separate vendor | Separate vendor | Basic |
-| **Customization** | Full (greeting, persona, specials) | Template-based | Enterprise custom | Moderate | Template |
-| **Payment** | Pay at pickup (enterprise) | Separate | Separate | Separate | Separate |
-| **Returning customer** | Auto (loyalty + memory) | Manual config | None | Basic | None |
-| **IVR language menu** | Auto when 2+ langs | Manual | Manual | Manual | N/A |
+| **POS integration** | Native (KDS, orders, loyalty) | Separate vendor | Separate vendor | Separate vendor | Basic |
+| **Customization** | Full (greeting, persona, specials, languages) | Template-based | Enterprise custom | Moderate | Template |
+| **Returning customer** | Auto (loyalty + order history) | Manual config | None | Basic | None |
+| **Name collection** | Auto before confirmation | Manual | N/A | Manual | N/A |
+| **Order confirmation** | Voice confirmation → KDS + SMS | Varies | Varies | Varies | N/A |
 | **Human fallback** | Auto after AI failures | Manual escalation | Manual | Manual | Manual |
 | **SMS confirmation** | Auto | Separate setup | No | Separate | No |
 
-**Key advantage:** $0 per-call AI cost because Prism Coder runs on our own infrastructure. Competitors pay OpenAI $0.50-2.00+ per call, which they pass through in pricing.
+**Key advantages:**
+- **Best-in-class voice stack**: Deepgram Flux (STT) + ElevenLabs (TTS) + Gemini 3.5 Flash (LLM) — same or better than any competitor at 1/500th the price
+- **~$0.001 per call AI cost** vs competitors at $0.50-2.00+ (500-2000x cheaper)
+- **Streaming architecture**: ConversationRelay with neural turn detection, not timer-based IVR
+- **Native POS integration**: orders go directly to kitchen display, no middleware
 
 </details>
 
