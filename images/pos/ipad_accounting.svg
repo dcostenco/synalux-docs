@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" fill="none">
-  <rect width="1024" height="768" rx="16" fill="#1a1a2e"/>
-  <rect x="24" y="24" width="976" height="720" rx="12" fill="#16213e" stroke="#0f3460" stroke-width="2"/>
-  <text x="512" y="384" text-anchor="middle" fill="#e94560" font-family="system-ui" font-size="32" font-weight="bold">Accounting</text>
-  <text x="512" y="420" text-anchor="middle" fill="#8899aa" font-family="system-ui" font-size="16">Synalux POS</text>
-</svg>
