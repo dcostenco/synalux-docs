@@ -199,7 +199,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 
 1. **Card** — add Stripe keys in **Settings > Integrations**. Pair a Stripe Reader M2
 2. **Tap-to-Pay on iPhone** — enable in Stripe Dashboard, then tap "📱 Tap to Pay" on the payment screen. Uses your iPhone as a contactless card reader — no additional hardware
-3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout
+3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
@@ -490,7 +490,7 @@ Stock tracking, low-stock alerts, vendor management, and recipe builder with foo
 
 ### Gift Cards & Loyalty
 
-Issue gift cards with custom amounts. Loyalty with points, auto-tier (Bronze/Silver/Gold), and referrals.
+Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gold), and referrals.
 
 <img src="../images/pos/settings_gift_cards.png" alt="Gift Cards" width="700">
 
