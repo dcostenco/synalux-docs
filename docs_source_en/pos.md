@@ -113,17 +113,10 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 2. Set prices, modifiers, KDS stations, and barcodes per item
 3. Items appear on the register automatically
 
-<img src="../images/pos/settings_menu_builder.png" alt="Menu Builder" width="700">
 <img src="../images/pos/ipad_barcode_scan.png" alt="Barcode Scan" width="700">
 <img src="../images/pos/ipad_allergen_filter.png" alt="Allergen Filter" width="700">
-<img src="../images/pos/settings_discounts.png" alt="Discounts" width="700">
 <img src="../images/pos/settings_auto_gratuity.png" alt="Auto Gratuity" width="700">
-<img src="../images/pos/settings_open_price.png" alt="Open Price" width="700">
-<img src="../images/pos/settings_scale.png" alt="Weight Scale" width="700">
 <img src="../images/pos/settings_combos.png" alt="Combos" width="700">
-<img src="../images/pos/settings_price_levels.png" alt="Price Levels" width="700">
-<img src="../images/pos/settings_nutritional.png" alt="Nutritional Info" width="700">
-<img src="../images/pos/settings_menu_scheduling.png" alt="Menu Scheduling" width="700">
 
 </details>
 
@@ -142,8 +135,6 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 2. Create sections (Main, Patio, Bar) for quick filtering
 3. Merge, split-back, transfer, or reopen closed checks from the table detail panel
 
-<img src="../images/pos/ipad_table_merge.png" alt="Table Merge" width="700">
-<img src="../images/pos/ipad_seat_management.png" alt="Seat Management" width="700">
 <img src="../images/pos/ipad_table_editor.png" alt="Table Editor" width="700">
 
 </details>
@@ -162,8 +153,6 @@ Ticket board with color-coded timing. Bump, recall, void. All-day count per item
 1. Open `/pos/kds` on any tablet or TV
 2. Filter by station: Grill, Fry, Prep, Expo, Bar, Cold
 3. Configure routing rules in **Settings > Printers & KDS**
-
-<img src="../images/pos/settings_printer_routing.png" alt="Printer Routing" width="700">
 
 </details>
 
@@ -194,11 +183,8 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 <img src="../images/pos/ipad_post_payment_tip.png" alt="Post-Payment Tip" width="700">
 <img src="../images/pos/ipad_ebt_payment.png" alt="EBT/SNAP Payment" width="700">
 <img src="../images/pos/settings_house_accounts.png" alt="House Accounts" width="700">
-<img src="../images/pos/settings_cash_discount.png" alt="Cash Discount Settings" width="700">
 <img src="../images/pos/settings_receipts.png" alt="Receipts" width="700">
 <img src="../images/pos/settings_chargebacks.png" alt="Chargebacks" width="700">
-<img src="../images/pos/settings_rounding.png" alt="Cash Rounding" width="700">
-<img src="../images/pos/ipad_wallet_pay.png" alt="Wallet Pay" width="700">
 
 </details>
 
@@ -207,8 +193,6 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 ### Staff & Labor
 
 Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
-
-<img src="../images/pos/settings_employees.png" alt="Employees" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -219,7 +203,6 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 
 <img src="../images/pos/settings_scheduling.png" alt="Scheduling" width="700">
 <img src="../images/pos/settings_break_tracking.png" alt="Break Tracking" width="700">
-<img src="../images/pos/settings_overtime.png" alt="Overtime" width="700">
 <img src="../images/pos/settings_tip_pooling.png" alt="Tip Pooling" width="700">
 <img src="../images/pos/settings_payroll.png" alt="Payroll" width="700">
 
@@ -250,7 +233,6 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 <img src="../images/pos/ipad_qr_ordering.png" alt="QR Ordering" width="300">
 <img src="../images/pos/ipad_scheduled_orders.png" alt="Scheduled Orders" width="700">
 <img src="../images/pos/ipad_ai_chat_oo.png" alt="AI Chat (Customer)" width="300">
-<img src="../images/pos/ipad_order_tracking.png" alt="Order Tracking" width="300">
 <img src="../images/pos/settings_online_ordering.png" alt="Online Ordering Settings" width="700">
 
 </details>
@@ -260,8 +242,6 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 ### Delivery Management
 
 In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms.
-
-<img src="../images/pos/ipad_delivery_management.png" alt="Delivery" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -305,7 +285,6 @@ Context-aware AI assistant on every POS page (15 surfaces) and on the online ord
 - 14 languages with locale picker
 - Returning customer greeting via cookie
 - Tool calls: add_to_cart, remove_from_cart, filter_menu, suggest_combo
-
 
 </details>
 
@@ -479,7 +458,6 @@ Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gol
 <details>
 <summary><strong>Setup</strong></summary>
 
-<img src="../images/pos/settings_loyalty.png" alt="Loyalty" width="700">
 <img src="../images/pos/ipad_loyalty_checkin.png" alt="Loyalty Check-in" width="700">
 
 </details>
@@ -490,14 +468,11 @@ Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gol
 
 Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audit trail.
 
-<img src="../images/pos/settings_rbs_compliance.png" alt="RBS Compliance" width="700">
-
 <details>
 <summary><strong>Setup</strong></summary>
 
 <img src="../images/pos/ipad_age_verification.png" alt="Age Verification" width="700">
 <img src="../images/pos/settings_tax_exempt.png" alt="Tax Exempt" width="700">
-<img src="../images/pos/settings_taxes.png" alt="Taxes" width="700">
 <img src="../images/pos/settings_privacy.png" alt="Privacy (CCPA/GDPR)" width="700">
 
 </details>
@@ -509,13 +484,6 @@ Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audi
 Count cash, distribute tip pool, export GL journal, print Z-Report, close register.
 
 <img src="../images/pos/ipad_eod.png" alt="EOD" width="700">
-
-<details>
-<summary><strong>Setup</strong></summary>
-
-<img src="../images/pos/settings_cash_management.png" alt="Cash Management" width="700">
-
-</details>
 
 ---
 
@@ -595,7 +563,6 @@ Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 Partial or full refund with reason codes. Reopen closed checks for corrections.
 
 <img src="../images/pos/ipad_refund.png" alt="Refund" width="700">
-<img src="../images/pos/ipad_reopen_check.png" alt="Reopen Check" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -614,7 +581,6 @@ Partial or full refund with reason codes. Reopen closed checks for corrections.
 
 Per-venue KPIs, consolidated P&L, config push, and franchise reporting.
 
-<img src="../images/pos/settings_multi_location.png" alt="Multi-Location" width="700">
 <img src="../images/pos/settings_franchise.png" alt="Franchise" width="700">
 
 <details>
@@ -685,7 +651,6 @@ Rate-limit incoming online orders during peak times to prevent kitchen overwhelm
 
 Leave management, timesheet review, and employee document tracking.
 
-
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -720,8 +685,6 @@ Isolated sandbox. Orders excluded from reports. Staff can practice without affec
 
 Core pages precached for offline use. Orders queue locally and sync on reconnect. Card payments require network.
 
-<img src="../images/pos/ipad_offline_mode.png" alt="Offline" width="700">
-
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -737,8 +700,6 @@ Core pages precached for offline use. Orders queue locally and sync on reconnect
 ### Integrations
 
 Stripe, DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid, Forage (EBT), Ollama (local AI).
-
-<img src="../images/pos/settings_integrations.png" alt="Integrations" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -826,8 +787,6 @@ Post-visit surveys, star ratings, comment review, and response templates.
 
 ZPL-compatible (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
 
-<img src="../images/pos/settings_label_printer.png" alt="Label Printer" width="700">
-
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -873,21 +832,6 @@ iPhone access to reports, KPIs, and quick actions — same data as the desktop, 
 
 ---
 
-### Synalux Advantage
-
-Referral tracking, partner benefits, and commission tiers.
-
-<img src="../images/pos/settings_advantage.png" alt="Advantage" width="700">
-
-<details>
-<summary><strong>Setup</strong></summary>
-
-1. Open the Advantage page to manage referral codes and partner tiers
-2. Track which referrals converted to active venues
-3. Commission tiers auto-calculate based on referred venue revenue
-
-</details>
-
 ---
 
 ## 25 languages
@@ -919,14 +863,6 @@ Every integration activates by adding credentials in **Settings > Integrations**
 | **Zebra / Brother** (labels) | Printer IP in Settings | ZPL price/SKU/prep labels |
 
 **Required env vars:** `NEXT_PUBLIC_POS_SUPABASE_URL`, `NEXT_PUBLIC_POS_SUPABASE_ANON_KEY`, `POS_SUPABASE_SERVICE_ROLE_KEY`
-
-</details>
-
-<details>
-<summary><strong>Developer: E2E Workflow & Role Testing</strong></summary>
-
-<img src="../images/pos/ipad_00_e2e_workflow.png" alt="E2E Workflow" width="700">
-<img src="../images/pos/ipad_00c_combined_roles.png" alt="Combined Role Tests" width="700">
 
 </details>
 
