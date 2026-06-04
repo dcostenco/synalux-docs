@@ -222,7 +222,6 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 <img src="../images/pos/settings_overtime.png" alt="Overtime" width="700">
 <img src="../images/pos/settings_tip_pooling.png" alt="Tip Pooling" width="700">
 <img src="../images/pos/settings_payroll.png" alt="Payroll" width="700">
-<img src="../images/pos/settings_payroll.png" alt="IRS Form 8027" width="700">
 
 </details>
 
@@ -307,7 +306,6 @@ Context-aware AI assistant on every POS page (15 surfaces) and on the online ord
 - Returning customer greeting via cookie
 - Tool calls: add_to_cart, remove_from_cart, filter_menu, suggest_combo
 
-<img src="../images/pos/ipad_ai_chat_oo.png" alt="AI Chat (Customer)" width="300">
 
 </details>
 
@@ -315,7 +313,7 @@ Context-aware AI assistant on every POS page (15 surfaces) and on the online ord
 
 ### AI Voice Ordering (Phone)
 
-Customers call your venue's phone number and place orders through natural AI conversation. Powered by Prism Coder 14B — no per-call AI cost. Multi-language IVR, returning customer recognition, and automatic SMS confirmation.
+Customers call your venue's phone number and place orders through natural AI conversation. Powered by Prism Coder 14B. Multi-language IVR, returning customer recognition, and automatic SMS confirmation.
 
 <img src="../images/pos/voice_ordering_settings.png" alt="Voice Ordering Settings" width="700">
 
@@ -363,9 +361,7 @@ Customers call your venue's phone number and place orders through natural AI con
 
 | | **Synalux POS** | **ConverseNow** | **SoundHound** | **Kea AI** | **Slang.ai** |
 |---|---|---|---|---|---|
-| **Price** | Included at $49/mo | $500+/mo enterprise | Contact sales | Contact sales | $200-450/mo |
 | **AI Model** | Gemini 3.5 Flash + Prism Coder | OpenAI wrapper | Proprietary | OpenAI wrapper | OpenAI wrapper |
-| **Per-call AI cost** | ~$0.001 | ~$0.50-2.00 | Unknown | ~$0.50+ | ~$0.30+ |
 | **Speech Recognition** | Deepgram Flux (best-in-class) | Google STT | Proprietary | Google STT | Google STT |
 | **Voice (TTS)** | ElevenLabs (#1 ranked) | Standard | Proprietary | Standard | Standard |
 | **Architecture** | ConversationRelay (streaming) | IVR/webhook | Proprietary | IVR/webhook | IVR/webhook |
@@ -383,7 +379,7 @@ Customers call your venue's phone number and place orders through natural AI con
 
 **Key advantages:**
 - **Best-in-class voice stack**: Deepgram Flux (STT) + ElevenLabs (TTS) + Gemini 3.5 Flash (LLM) — same or better than any competitor at 1/500th the price
-- **~$0.001 per call AI cost** vs competitors at $0.50-2.00+ (500-2000x cheaper)
+- **50-2.00+ (500-2000x cheaper)
 - **Streaming architecture**: ConversationRelay with neural turn detection, not timer-based IVR
 - **Native POS integration**: orders go directly to kitchen display, no middleware
 
@@ -689,7 +685,6 @@ Rate-limit incoming online orders during peak times to prevent kitchen overwhelm
 
 Leave management, timesheet review, and employee document tracking.
 
-<img src="../images/pos/settings_payroll.png" alt="HR & Payroll" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
