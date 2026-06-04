@@ -201,7 +201,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 
 1. **Card** — add Stripe keys in **Settings > Integrations**. Pair a Stripe Reader M2
 2. **Tap-to-Pay on iPhone** — enable in Stripe Dashboard, then tap "📱 Tap to Pay" on the payment screen. Uses your iPhone as a contactless card reader — no additional hardware
-3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
+3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
@@ -394,7 +394,7 @@ Customers call your venue's phone number and place orders through natural AI con
 | **Text-to-Speech** | ElevenLabs via Twilio (included) | Real-time streaming |
 | **Transport** | Twilio ConversationRelay → WebSocket | Streaming |
 | **Turn Detection** | Neural (Deepgram Flux) | Natural |
-| **Server** | Railway (Node.js WebSocket) | ~$5/mo |
+| **Server** | Railway (Node.js WebSocket) | Low cost |
 | **Phonetic Correction** | Gemini prompt-based | Zero added latency |
 | **Customer Memory** | Supabase (past orders + loyalty) | ~20ms |
 
@@ -426,7 +426,7 @@ Same AI assistant as voice ordering, but over WhatsApp. Customers text the venue
    Say "done" when ready to order.
    ```
 5. "done" → asks for name → confirms order → "YES" → order placed
-6. Confirmation with emoji: "✅ Order #a83e placed! Total: $16.50. Ready in ~15 min."
+6. Confirmation with emoji: "✅ Order #a83e placed! Your order will be ready in ~15 min."
 7. Returning customers recognized by phone number — past orders recalled
 
 **Customer commands (same as voice):**
@@ -534,7 +534,7 @@ Stock tracking, low-stock alerts, vendor management, and recipe builder with foo
 
 ### Gift Cards & Loyalty
 
-Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gold), and referrals.
+Issue gift cards with custom amounts. Loyalty with points, auto-tier (Bronze/Silver/Gold), and referrals.
 
 <img src="../images/pos/settings_gift_cards.png" alt="Gift Cards" width="700">
 
