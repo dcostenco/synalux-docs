@@ -89,7 +89,7 @@ Use your own iPad — or any device with a browser.
 |---|---|
 | **Order Online** | [synalux-pos.vercel.app/pos/order](https://synalux-pos.vercel.app/pos/order?v=00000000-0000-0000-0000-000000000100) |
 | **Order by Phone (AI)** | Call **+1 (256) 787-0815** — press 1 for English, 2 for Spanish |
-| **Order via WhatsApp** | [Open WhatsApp](https://wa.me/14155238886?text=join%20bat-come) — send the join message, then text your order |
+| **Order via WhatsApp** | [<img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat" alt="WhatsApp">](https://wa.me/14155238886?text=join%20bat-come) — tap to join, then text your order |
 
 **For staff — POS login:**
 
