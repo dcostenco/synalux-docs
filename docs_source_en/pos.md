@@ -118,12 +118,12 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 <img src="../images/pos/ipad_allergen_filter.png" alt="Allergen Filter" width="700">
 <img src="../images/pos/settings_discounts.png" alt="Discounts" width="700">
 <img src="../images/pos/settings_auto_gratuity.png" alt="Auto Gratuity" width="700">
-<img src="../images/pos/settings_open_price.svg" alt="Open Price" width="600">
-<img src="../images/pos/settings_scale.svg" alt="Weight Scale" width="600">
-<img src="../images/pos/settings_combos.svg" alt="Combos" width="600">
-<img src="../images/pos/settings_price_levels.svg" alt="Price Levels" width="600">
-<img src="../images/pos/settings_nutritional.svg" alt="Nutritional Info" width="600">
-<img src="../images/pos/settings_menu_scheduling.svg" alt="Menu Scheduling" width="600">
+<img src="../images/pos/settings_open_price.png" alt="Open Price" width="700">
+<img src="../images/pos/settings_scale.png" alt="Weight Scale" width="700">
+<img src="../images/pos/settings_combos.png" alt="Combos" width="700">
+<img src="../images/pos/settings_price_levels.png" alt="Price Levels" width="700">
+<img src="../images/pos/settings_nutritional.png" alt="Nutritional Info" width="700">
+<img src="../images/pos/settings_menu_scheduling.png" alt="Menu Scheduling" width="700">
 
 </details>
 
@@ -142,8 +142,8 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 2. Create sections (Main, Patio, Bar) for quick filtering
 3. Merge, split-back, transfer, or reopen closed checks from the table detail panel
 
-<img src="../images/pos/ipad_table_merge.svg" alt="Table Merge" width="600">
-<img src="../images/pos/ipad_seat_management.svg" alt="Seat Management" width="600">
+<img src="../images/pos/ipad_table_merge.png" alt="Table Merge" width="700">
+<img src="../images/pos/ipad_seat_management.png" alt="Seat Management" width="700">
 <img src="../images/pos/ipad_table_editor.png" alt="Table Editor" width="700">
 
 </details>
@@ -187,18 +187,18 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligible items are automatically calculated
 8. **Split check** — split by even, custom amount, or per-seat. Each split can pay by different method (card/cash)
 
-<img src="../images/pos/ipad_split_check.svg" alt="Split Check" width="600">
+<img src="../images/pos/ipad_split_check.png" alt="Split Check" width="700">
 <img src="../images/pos/ipad_bar_tab.png" alt="Bar Tab" width="700">
 <img src="../images/pos/ipad_tap_to_pay.png" alt="Tap-to-Pay" width="700">
 <img src="../images/pos/ipad_cash_discount.png" alt="Cash Discount" width="700">
-<img src="../images/pos/ipad_post_payment_tip.svg" alt="Post-Payment Tip" width="600">
-<img src="../images/pos/ipad_ebt_payment.svg" alt="EBT/SNAP Payment" width="600">
+<img src="../images/pos/ipad_post_payment_tip.png" alt="Post-Payment Tip" width="700">
+<img src="../images/pos/ipad_ebt_payment.png" alt="EBT/SNAP Payment" width="700">
 <img src="../images/pos/settings_house_accounts.png" alt="House Accounts" width="700">
 <img src="../images/pos/settings_cash_discount.png" alt="Cash Discount Settings" width="700">
-<img src="../images/pos/settings_receipts.svg" alt="Receipts" width="600">
+<img src="../images/pos/settings_receipts.png" alt="Receipts" width="700">
 <img src="../images/pos/settings_chargebacks.png" alt="Chargebacks" width="700">
-<img src="../images/pos/settings_rounding.svg" alt="Cash Rounding" width="600">
-<img src="../images/pos/ipad_wallet_pay.svg" alt="Wallet Pay" width="600">
+<img src="../images/pos/settings_rounding.png" alt="Cash Rounding" width="700">
+<img src="../images/pos/ipad_wallet_pay.png" alt="Wallet Pay" width="700">
 
 </details>
 
@@ -218,8 +218,8 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 3. Tip pool mode: by hours, percentage, or points
 
 <img src="../images/pos/settings_scheduling.png" alt="Scheduling" width="700">
-<img src="../images/pos/settings_break_tracking.svg" alt="Break Tracking" width="600">
-<img src="../images/pos/settings_overtime.svg" alt="Overtime" width="600">
+<img src="../images/pos/settings_break_tracking.png" alt="Break Tracking" width="700">
+<img src="../images/pos/settings_overtime.png" alt="Overtime" width="700">
 <img src="../images/pos/settings_tip_pooling.png" alt="Tip Pooling" width="700">
 <img src="../images/pos/settings_payroll.png" alt="Payroll" width="700">
 <img src="../images/pos/settings_payroll.png" alt="IRS Form 8027" width="700">
@@ -438,7 +438,7 @@ Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, v
 
 <img src="../images/pos/settings_menu_engineering.png" alt="Menu Engineering" width="700">
 <img src="../images/pos/settings_reports_advanced.png" alt="Advanced Reports" width="700">
-<img src="../images/pos/settings_revenue_centers.svg" alt="Revenue Centers" width="600">
+<img src="../images/pos/settings_revenue_centers.png" alt="Revenue Centers" width="700">
 
 </details>
 
@@ -473,7 +473,7 @@ Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gol
 <summary><strong>Setup</strong></summary>
 
 <img src="../images/pos/settings_loyalty.png" alt="Loyalty" width="700">
-<img src="../images/pos/ipad_loyalty_checkin.svg" alt="Loyalty Check-in" width="600">
+<img src="../images/pos/ipad_loyalty_checkin.png" alt="Loyalty Check-in" width="700">
 
 </details>
 
@@ -483,15 +483,15 @@ Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gol
 
 Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audit trail.
 
-<img src="../images/pos/settings_rbs_compliance.svg" alt="RBS Compliance" width="600">
+<img src="../images/pos/settings_rbs_compliance.png" alt="RBS Compliance" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
 <img src="../images/pos/ipad_age_verification.png" alt="Age Verification" width="700">
-<img src="../images/pos/settings_tax_exempt.svg" alt="Tax Exempt" width="600">
+<img src="../images/pos/settings_tax_exempt.png" alt="Tax Exempt" width="700">
 <img src="../images/pos/settings_taxes.png" alt="Taxes" width="700">
-<img src="../images/pos/settings_privacy.svg" alt="Privacy (CCPA/GDPR)" width="600">
+<img src="../images/pos/settings_privacy.png" alt="Privacy (CCPA/GDPR)" width="700">
 
 </details>
 
@@ -506,7 +506,7 @@ Count cash, distribute tip pool, export GL journal, print Z-Report, close regist
 <details>
 <summary><strong>Setup</strong></summary>
 
-<img src="../images/pos/settings_cash_management.svg" alt="Cash Management" width="600">
+<img src="../images/pos/settings_cash_management.png" alt="Cash Management" width="700">
 
 </details>
 
@@ -588,7 +588,7 @@ Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 Partial or full refund with reason codes. Reopen closed checks for corrections.
 
 <img src="../images/pos/ipad_refund.png" alt="Refund" width="700">
-<img src="../images/pos/ipad_reopen_check.svg" alt="Reopen Check" width="600">
+<img src="../images/pos/ipad_reopen_check.png" alt="Reopen Check" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -608,7 +608,7 @@ Partial or full refund with reason codes. Reopen closed checks for corrections.
 Per-venue KPIs, consolidated P&L, config push, and franchise reporting.
 
 <img src="../images/pos/settings_multi_location.png" alt="Multi-Location" width="700">
-<img src="../images/pos/settings_franchise.svg" alt="Franchise" width="600">
+<img src="../images/pos/settings_franchise.png" alt="Franchise" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -820,7 +820,7 @@ Post-visit surveys, star ratings, comment review, and response templates.
 
 ZPL-compatible (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
 
-<img src="../images/pos/settings_label_printer.svg" alt="Label Printer" width="600">
+<img src="../images/pos/settings_label_printer.png" alt="Label Printer" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -837,7 +837,7 @@ ZPL-compatible (Zebra, Brother). Price/SKU/prep labels from any menu or inventor
 
 Device registry with serial numbers, warranty, maintenance schedule, and depreciation.
 
-<img src="../images/pos/settings_equipment.svg" alt="Equipment" width="600">
+<img src="../images/pos/settings_equipment.png" alt="Equipment" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -871,7 +871,7 @@ iPhone access to reports, KPIs, and quick actions — same data as the desktop, 
 
 Referral tracking, partner benefits, and commission tiers.
 
-<img src="../images/pos/settings_advantage.svg" alt="Advantage" width="600">
+<img src="../images/pos/settings_advantage.png" alt="Advantage" width="700">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -919,8 +919,8 @@ Every integration activates by adding credentials in **Settings > Integrations**
 <details>
 <summary><strong>Developer: E2E Workflow & Role Testing</strong></summary>
 
-<img src="../images/pos/ipad_00_e2e_workflow.svg" alt="E2E Workflow" width="600">
-<img src="../images/pos/ipad_00c_combined_roles.svg" alt="Combined Role Tests" width="600">
+<img src="../images/pos/ipad_00_e2e_workflow.png" alt="E2E Workflow" width="700">
+<img src="../images/pos/ipad_00c_combined_roles.png" alt="Combined Role Tests" width="700">
 
 </details>
 
