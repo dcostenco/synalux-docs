@@ -11,49 +11,36 @@ Use your own iPad — or any device with a browser.
 
 🌐 **Translations:** [Español](../docs/i18n/pos_es.md) · [Français](../docs/i18n/pos_fr.md) · [Português](../docs/i18n/pos_pt.md) · [Română](../docs/i18n/pos_ro.md) · [Українська](../docs/i18n/pos_uk.md) · [Русский](../docs/i18n/pos_ru.md) · [Deutsch](../docs/i18n/pos_de.md) · [日本語](../docs/i18n/pos_ja.md) · [한국어](../docs/i18n/pos_ko.md) · [中文](../docs/i18n/pos_zh.md) · [العربية](../docs/i18n/pos_ar.md)
 
-<details>
-<summary><strong>Feature Comparison vs Competitors</strong></summary>
+## Why Synalux POS
 
-**Only Synalux** — features no competitor offers:
+| Feature | **Synalux** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha** |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Runs on any device (BYOD) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| No hardware lock-in | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Month-to-month (no contract) | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Online Ordering + QR Table | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Kitchen Display (KDS) | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Drive-Thru Lane Management | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Catering + BEO | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Delivery (In-House + 3PD) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Coursing (Fire-on-Demand) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Reservations + Webhooks | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Location + Franchise | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| EBT/SNAP Payments | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Tap-to-Pay on iPhone | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Customer-Facing Display | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Offline Mode (PWA) | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| QuickBooks + Xero Sync | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| | | | | | | |
+| **Only Synalux** | | | | | | |
+| AI Chat on 15 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Payroll + CA 226.7 Compliance | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 3-Mode Tip Pooling (FLSA) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
-| Unique to Synalux | What it does |
-|---|---|
-| **AI Chat on 15 POS Surfaces** | Context-aware AI on every screen — register, KDS, tables, reports, delivery, and 10 more. Staff ask natural questions ("What's the oldest ticket?", "Top 5 items today") |
-| **AI Voice Ordering (Phone)** | Customers call your venue and order through natural AI conversation — multi-language IVR, returning customer recognition, auto SMS confirmation |
-| **Pizza Builder (Visual Half/Half)** | Per-topping placement (whole/left/right) and intensity (light/regular/extra) with real-time pricing. No other POS has this |
-| **25 Languages + Full RTL** | Every screen, receipt, and customer-facing page in 25 languages including Arabic and Hebrew with proper RTL layout |
-| **Zero Hardware Lock-in** | Runs on any device with a browser — iPad, Android tablet, PC, phone. No proprietary hardware required |
-| **Payroll + CA 226.7 Compliance** | Built-in OT alerts, break tracking with meal/rest separation, and California Labor Code 226.7 premium calculation |
-| **3-Mode Tip Pooling** | Hours-based, percentage-based, or points-based distribution — all built in with FLSA compliance |
-
-**Full comparison:**
-
-| Feature | **Synalux POS** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha (NCR)** |
-|---|---|---|---|---|---|---|
-| **Runs on any device** | Any browser — iPad, Android, PC | Toast hardware only | iPad, Square hardware | Clover hardware only | iPad | Aloha hardware only |
-| **Online Ordering** | Built-in + QR table ordering | Add-on | Add-on (Square Online) | Add-on | Add-on | Add-on |
-| **AI Chat Assistant** | 15-surface AI on POS + customer OO | No | No | No | No | No |
-| **AI Voice Ordering (Phone)** | Built-in — customers call and order via AI | No | No | No | No | No |
-| **Pizza Builder (Half/Half)** | Visual builder with placement + intensity | No | No | No | No | No |
-| **Kitchen Display (KDS)** | Included | Add-on | Add-on | Add-on | Add-on | Included |
-| **Multi-Location** | Included — consolidated P&L, config push | Add-on | Limited | Limited | Add-on | Enterprise only |
-| **Drive-Thru** | Built-in lane management | Add-on | No | No | No | Add-on |
-| **Catering & BEO** | Built-in with deposits + timeline | No | No | No | No | Add-on |
-| **Delivery (In-House + 3PD)** | Built-in — DoorDash, Uber, in-house drivers | Add-on (DoorDash) | Add-on | No | Add-on | No |
-| **Coursing (Fire-on-Demand)** | Built-in | Add-on | No | No | Add-on | Add-on |
-| **Tip Pooling (3 modes)** | Hours, percentage, points | Basic | Basic | No | Basic | Basic |
-| **Payroll + FLSA** | Built-in — OT alerts, break tracking, CA 226.7 | Add-on (Toast Payroll) | No | No | No | No |
-| **Reservations** | Built-in + OpenTable/Yelp/Google webhooks | No | No | No | Add-on | No |
-| **EBT/SNAP** | Built-in (Forage) | No | Add-on | No | No | No |
-| **Tap-to-Pay on iPhone** | Built-in (Stripe) | No (Toast hardware) | Yes | No | No | No |
-| **Customer Display** | Built-in | Add-on | Limited | Clover screen | No | Add-on |
-| **Offline Mode** | PWA — orders queue + sync | Limited | Limited | No | No | Yes |
-| **25 Languages + RTL** | Yes | ~5 languages | ~5 languages | ~3 languages | ~8 languages | ~3 languages |
-| **Accounting Sync** | QuickBooks + Xero auto-sync | QuickBooks add-on | No | No | QuickBooks add-on | No |
-| **Hardware Lock-in** | None — BYOD | Toast hardware required | Square hardware preferred | Clover hardware required | iPad required | NCR hardware required |
-| **Contract** | Month-to-month | 2-year typical | Month-to-month | 3-year typical | Annual | 3-5 year |
-
-</details>
+❌ = not included (add-on or not available)
 
 ---
 
