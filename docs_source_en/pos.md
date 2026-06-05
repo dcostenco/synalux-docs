@@ -345,7 +345,7 @@ Customers call your venue's phone number and place orders through natural AI con
 | Custom Greeting | Opening message with `{venue}` and `{name}` placeholders |
 | AI Persona | Tone and style — "friendly server", "professional concierge", etc. |
 | Today's Specials | AI proactively suggests these when asked "what's good?" |
-| Supported Languages | 15 languages. Say "switch to Spanish" anytime to change language |
+| Supported Languages | 12 auto-detected + 15 via "switch to" command (see table below) |
 | Fallback Number | Transfer to human after repeated AI failures |
 
 </details>
@@ -354,7 +354,7 @@ Customers call your venue's phone number and place orders through natural AI con
 <summary><strong>How a call works</strong></summary>
 
 1. Customer calls venue phone number
-2. AI greets in default language — customer can say "switch to Spanish" (or any of 15 languages) anytime
+2. AI greets in default language — customer can speak in any of 12 auto-detected languages, or say "switch to Romanian" for additional languages
 3. Real-time streaming connection (Twilio ConversationRelay → WebSocket server on Railway)
 4. Returning customers auto-recognized by phone — AI greets by name, knows past orders
 5. Free-form conversation — Deepgram Flux transcribes in real-time, Gemini 3.5 Flash responds in ~1s, ElevenLabs speaks naturally
@@ -380,6 +380,30 @@ Customers call your venue's phone number and place orders through natural AI con
 | "That's all" / "Done" | Starts confirmation flow |
 | "Yes" / "Confirm" | Places order |
 | "No" / "Wait" | Returns to ordering |
+
+**Language support:**
+
+| Language | Auto-detect | Via "switch to" | Notes |
+|----------|:-:|:-:|-------|
+| English | Yes | Yes | Default |
+| Spanish | Yes | Yes | |
+| French | Yes | Yes | |
+| German | Yes | Yes | |
+| Italian | Yes | Yes | |
+| Portuguese | Yes | Yes | |
+| Russian | Yes | Yes | |
+| Chinese (Mandarin) | Yes | Yes | |
+| Japanese | Yes | Yes | |
+| Korean | Yes | Yes | |
+| Hindi | Yes | Yes | |
+| Dutch | Yes | Yes | |
+| Romanian | — | Yes | TTS + LLM only |
+| Ukrainian | — | Yes | TTS + LLM only |
+| Arabic | — | Yes | TTS + LLM only |
+| Vietnamese | — | Yes | TTS + LLM only |
+
+**Auto-detect**: just speak — AI detects the language automatically (Deepgram Nova-3 multi-language)
+**Via "switch to"**: say "switch to Romanian" in English first, then continue in that language
 
 **Online ordering** is also available at the same time:
 
