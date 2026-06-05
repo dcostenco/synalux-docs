@@ -17,7 +17,6 @@ Use your own iPad — or any device with a browser.
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | Runs on any device (BYOD) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | No hardware lock-in | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Month-to-month (no contract) | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | Online Ordering + QR Table | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Kitchen Display (KDS) | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
 | Drive-Thru Lane Management | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
