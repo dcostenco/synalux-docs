@@ -225,6 +225,8 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 
 Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
 
+<img src="../images/pos/settings_employees.png" alt="Staff">
+
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -273,6 +275,8 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 ### Delivery Management
 
 In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms.
+
+<img src="../images/pos/ipad_delivery_management.png" alt="Delivery Management">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -550,6 +554,8 @@ Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gol
 
 Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audit trail.
 
+<img src="../images/pos/ipad_compliance.png" alt="Compliance">
+
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -769,6 +775,8 @@ Isolated sandbox. Orders excluded from reports. Staff can practice without affec
 
 Core pages precached for offline use. Orders queue locally and sync on reconnect. Card payments require network.
 
+<img src="../images/pos/ipad_offline_mode.png" alt="Offline Mode">
+
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -784,6 +792,8 @@ Core pages precached for offline use. Orders queue locally and sync on reconnect
 ### Integrations
 
 Stripe, DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid, Forage (EBT), Ollama (local AI).
+
+<img src="../images/pos/settings_integrations.png" alt="Integrations">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -870,6 +880,8 @@ Post-visit surveys, star ratings, comment review, and response templates.
 ### Label Printer
 
 ZPL-compatible (Zebra, Brother). Price/SKU/prep labels from any menu or inventory item.
+
+<img src="../images/pos/settings_label_printer.png" alt="Label Printer">
 
 <details>
 <summary><strong>Setup</strong></summary>
