@@ -341,7 +341,7 @@ Customers call your venue's phone number and place orders through natural AI con
 | Custom Greeting | Opening message with `{venue}` and `{name}` placeholders |
 | AI Persona | Tone and style — "friendly server", "professional concierge", etc. |
 | Today's Specials | AI proactively suggests these when asked "what's good?" |
-| Supported Languages | 15 languages. Single = no menu. 2+ = IVR: "For English press 1..." |
+| Supported Languages | 15 languages. Say "switch to Spanish" anytime to change language |
 | Fallback Number | Transfer to human after repeated AI failures |
 
 </details>
@@ -350,7 +350,7 @@ Customers call your venue's phone number and place orders through natural AI con
 <summary><strong>How a call works</strong></summary>
 
 1. Customer calls venue phone number
-2. If 2+ languages configured: IVR menu ("For English press 1, Para Español oprima 2")
+2. AI greets in default language — customer can say "switch to Spanish" (or any of 15 languages) anytime
 3. Real-time streaming connection (Twilio ConversationRelay → WebSocket server on Railway)
 4. Returning customers auto-recognized by phone — AI greets by name, knows past orders
 5. Free-form conversation — Deepgram Flux transcribes in real-time, Gemini 3.5 Flash responds in ~1s, ElevenLabs speaks naturally
