@@ -414,6 +414,8 @@ Customers call your venue's phone number and place orders through natural AI con
 
 Same AI as voice ordering, over WhatsApp. Customers text the venue, order naturally, see their cart with emoji formatting, and get a confirmation with order number and ETA. No app download needed.
 
+<img src="../images/pos/whatsapp_ordering.png" alt="WhatsApp Ordering">
+
 <details>
 <summary><strong>How it works</strong></summary>
 
