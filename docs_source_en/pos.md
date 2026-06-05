@@ -436,16 +436,17 @@ Customers call your venue's phone number and place orders through natural AI con
 
 ### WhatsApp Ordering
 
-Same AI as voice ordering, over WhatsApp. Customers text the venue, order naturally, see their cart with emoji formatting, and get a confirmation with order number and ETA. No app download needed.
+Same AI as voice ordering, over WhatsApp. Text or voice message in **any language** — AI auto-detects. Cart with emoji formatting, order confirmation with ETA. No app download needed.
 
 <img src="../images/pos/whatsapp_ordering.png" alt="WhatsApp Ordering">
 
 <details>
 <summary><strong>How it works</strong></summary>
 
-1. Customer texts the venue on WhatsApp
+1. Customer texts or sends a voice message to the venue on WhatsApp
 2. AI responds instantly (Gemini 3.5 Flash) — same menu, same intelligence as voice
-3. Add items naturally: "I want a burger and fries"
+3. **Any language** — text in English, Russian, Spanish, Chinese, or record a voice message in any of 30+ languages (auto-detected via Deepgram)
+4. Add items naturally: "I want a burger and fries" or "я хочу бургер и картошку"
 4. Cart displayed after each message:
    ```
    🛒 Your cart:
@@ -468,6 +469,15 @@ Same AI as voice ordering, over WhatsApp. Customers text the venue, order natura
 | "My usual" | Last order re-added |
 | "Done" | Starts confirmation |
 | "YES" | Places order → KDS ticket |
+| Voice message (mic button) | Transcribed via Deepgram, processed as text |
+
+**Language support:**
+
+| Input | Languages |
+|-------|-----------|
+| **Text messages** | 100+ (any language Gemini understands) |
+| **Voice messages** | 30+ (auto-detected via Deepgram Nova-2) |
+| **AI responses** | Same language as customer input |
 
 **Setup:**
 1. Register a WhatsApp Business number in Twilio Console
