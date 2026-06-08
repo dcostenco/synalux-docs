@@ -1,5 +1,10 @@
 # Synalux — Changelog
 
+## [12.4.0] - 2026-06-08 — Occam's Razor Protocol (Agent Skill)
+
+### What's New
+- **Occam's Razor Protocol Skill**: Added a new mandatory framework (`occam-razor-protocol`) to ban over-engineering on simple requests. The protocol categorizes tasks into `[DATA_RETRIEVAL]`, `[RESEARCH]/[GENERAL_INQUIRY]`, and `[SYSTEM_MODIFICATION]` to prevent agents from prematurely attempting complex changes for straightforward questions. Also introduces the "Anti-First-Match Trap" for data integrity.
+
 ## [12.3.0] - 2026-05-05 — Copilot pinned to local prism-coder:14b, voice button, TTS auth route fix
 
 ### Copilot widget (FloatingAIAssistant)
