@@ -15,31 +15,32 @@ Use your own iPad — or any device with a browser.
 
 | Feature | **Synalux** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha** |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Runs on any device (BYOD) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Runs on any device (BYOD) | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ |
 | No hardware lock-in | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Online Ordering + QR Table | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Kitchen Display (KDS) | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Drive-Thru Lane Management | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Catering + BEO | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Delivery (In-House + 3PD) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Coursing (Fire-on-Demand) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Reservations + Webhooks | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Location + Franchise | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Online Ordering + QR Table | ✅ | $ | $ | $ | $ | $ |
+| Kitchen Display (KDS) | ✅ | $ | $ | $ | $ | ✅ |
+| Drive-Thru Lane Management | ✅ | $ | ❌ | ❌ | ❌ | $ |
+| Catering + BEO | ✅ | $ | ❌ | ❌ | ❌ | $ |
+| Delivery (In-House + 3PD) | ✅ | $ | $ | $ | $ | $ |
+| Coursing (Fire-on-Demand) | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |
+| Reservations + Waitlist | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Location + Franchise | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | EBT/SNAP Payments | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Tap-to-Pay on iPhone | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
-| Customer-Facing Display | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ |
-| Offline Mode (PWA) | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| QuickBooks + Xero Sync | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Customer-Facing Display | ✅ | $ | $ | ✅ | $ | $ |
+| Offline Mode (PWA) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ |
+| QuickBooks + Xero Sync | ✅ | $ | $ | $ | $ | $ |
 | 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | | | | | | | |
 | **Only Synalux** | | | | | | |
 | AI Chat on 15 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Payroll + CA 226.7 Compliance | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| 3-Mode Tip Pooling (FLSA) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Payroll + CA 226.7 Compliance | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
+| 3-Mode Tip Pooling (FLSA) | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
 
-❌ = not included (add-on or not available)
+❌ = Not available
+$ = Paid add-on / third-party integration
 
 ---
 
@@ -377,6 +378,8 @@ Customers call your venue's phone number and place orders through natural AI con
 | "What do you have?" | Top items listed |
 | "Repeat my order" | Current order read back with prices |
 | "My usual" | Adds items from last order (returning customers) |
+| "Put me on the waitlist" | Asks for party size and adds customer to venue waitlist |
+| "How long is the wait?" | Reads back current waitlist estimate |
 | "That's all" / "Done" | Starts confirmation flow |
 | "Yes" / "Confirm" | Places order |
 | "No" / "Wait" | Returns to ordering |
@@ -397,10 +400,10 @@ Customers call your venue's phone number and place orders through natural AI con
 | Korean | Yes | Yes | |
 | Hindi | Yes | Yes | |
 | Dutch | Yes | Yes | |
-| Romanian | — | Yes | TTS + LLM only |
-| Ukrainian | — | Yes | TTS + LLM only |
-| Arabic | — | Yes | TTS + LLM only |
-| Vietnamese | — | Yes | TTS + LLM only |
+| Romanian | Yes | Yes | Phonetic auto-detection |
+| Ukrainian | Yes | Yes | Phonetic auto-detection |
+| Arabic | Yes | Yes | Phonetic auto-detection |
+| Vietnamese | Yes | Yes | Phonetic auto-detection |
 
 **Auto-detect**: just speak — AI detects the language automatically (Deepgram Nova-3 multi-language)
 **Via "switch to"**: say "switch to Romanian" in English first, then continue in that language
