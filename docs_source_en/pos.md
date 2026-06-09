@@ -354,11 +354,11 @@ Customers call your venue's phone number and place orders through natural AI con
 <summary><strong>How a call works</strong></summary>
 
 1. Customer calls venue phone number
-2. AI greets in default language — customer can speak in any of 12 auto-detected languages, or say "switch to Romanian" for additional languages
-3. Real-time streaming connection (Twilio ConversationRelay → WebSocket server on Railway)
-4. Returning customers auto-recognized by phone — AI greets by name, knows past orders
-5. Free-form conversation — Deepgram Flux transcribes in real-time, Gemini 3.5 Flash responds in ~1s, ElevenLabs speaks naturally
-6. Customer can interrupt AI mid-sentence (neural turn detection)
+2. AI greets in English — if the customer speaks a different supported language (e.g., Spanish, Russian), the AI phonetically detects the language and **automatically switches** the conversation flow before the first item is ordered.
+3. Call audio is processed via Twilio `<Gather>` and pushed to your secure Vercel Edge webhook.
+4. Returning customers auto-recognized by phone — AI greets by name, knows past orders.
+5. The Verifier intercepts background noise, wind, or filler words ("uh", "um"), ensuring the AI only processes clean intent.
+6. Gemini 3.5 Flash processes the phonetic STT text natively and responds in ~1s.
 7. AI adds items immediately, confirms with price: "Added a Classic Burger for twelve dollars. What else?"
 8. Phonetic correction: garbled phone audio auto-matched to menu items
 9. "Change burger to family pack" → removes old + adds new in one turn
@@ -416,18 +416,18 @@ Customers call your venue's phone number and place orders through natural AI con
 
 | Layer | Technology | Latency |
 |-------|-----------|---------|
-| **Speech-to-Text** | Deepgram Flux via ConversationRelay | Real-time streaming |
-| **AI/LLM** | Gemini 3.5 Flash (thinking disabled) | ~1s |
-| **Text-to-Speech** | ElevenLabs via Twilio (included) | Real-time streaming |
-| **Transport** | Twilio ConversationRelay → WebSocket | Streaming |
-| **Turn Detection** | Neural (Deepgram Flux) | Natural |
-| **Server** | Railway (Node.js WebSocket) | Low cost |
-| **Phonetic Correction** | Gemini prompt-based | Zero added latency |
+| **Speech-to-Text** | Twilio `<Gather>` (Phonetic Output) | Sub-second |
+| **AI/LLM** | Gemini 3.5 Flash | ~1s |
+| **Text-to-Speech** | Twilio Native TTS (Polly) | Sub-second |
+| **Transport** | Secure HTTPS Webhook | Sub-second |
+| **Noise Filtering** | Native Verifier Interceptor | 0ms |
+| **Server** | Vercel Edge Function | Scalable |
+| **Phonetic Correction** | Gemini LLM parsing | Zero added latency |
 | **Customer Memory** | Supabase (past orders + loyalty) | ~20ms |
 
-**Total response latency: ~1.3s** from speech to hearing AI response.
+**Total response latency: ~1.5s** from speech to hearing AI response.
 
-**Fallback:** Gemini fails → Claude Sonnet. WebSocket unavailable → Gather/Say IVR mode.
+**Fallback:** If the AI encounters a severe failure or consecutive low-confidence inputs, it gracefully transfers to a human line.
 
 </details>
 
