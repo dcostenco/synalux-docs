@@ -2,9 +2,12 @@
 
 **Help nonverbal kids talk.** Augmentative & Alternative Communication for children with motor impairments and complex communication needs. Tap pictures, build sentences, hear them spoken aloud — in 16+ languages. Works on any tablet or laptop, with or without internet.
 
-Open source ([AGPL-3.0](https://github.com/dcostenco/prism-aac/blob/main/LICENSE)). Hosted free at [prism-aac.vercel.app](https://prism-aac.vercel.app). Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac).
+Open source ([AGPL-3.0](https://github.com/dcostenco/prism-aac/blob/main/LICENSE)). Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac).
 
-<a href="https://apps.apple.com/app/id6764692277"><img src="https://img.shields.io/badge/App_Store-Download-0D96F6?style=for-the-badge&logo=apple&logoColor=white" alt="App Store"></a>
+**Try it now:**
+- **Web app (free):** [synalux.ai/prism-aac](https://synalux.ai/prism-aac) — works on any device with a browser
+- **iOS (iPhone + iPad + Apple Watch):** [App Store](https://apps.apple.com/app/id6764692277)
+- **Pricing:** [synalux.ai/pricing](https://synalux.ai/pricing) — free tier available
 
 <details>
 <summary>View Interface / Diagram</summary>
