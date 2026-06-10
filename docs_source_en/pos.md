@@ -48,9 +48,10 @@ $ = Paid add-on / third-party integration
 
 - [Try the demo](#try-the-demo)
 - [Features](#features)
-  - [Staff Login](#staff-login)
+  - [Staff Login & Authentication](#staff-login--authentication)
   - [Register](#register)
   - [Tables & Floor Plan](#tables--floor-plan)
+  - [Seat Management](#seat-management)
   - [Kitchen Display (KDS)](#kitchen-display-kds)
   - [Payment](#payment)
   - [Staff & Labor](#staff--labor)
@@ -59,6 +60,7 @@ $ = Paid add-on / third-party integration
   - [AI Chat Assistant](#ai-chat-assistant)
   - [AI Voice Ordering (Phone)](#ai-voice-ordering-phone)
   - [WhatsApp Ordering](#whatsapp-ordering)
+  - [AI Dish Image Generation](#ai-dish-image-generation)
   - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
   - [Customer Display](#customer-display)
   - [Reports](#reports)
@@ -73,9 +75,10 @@ $ = Paid add-on / third-party integration
   - [Refunds](#refunds)
   - [Multi-Location & Franchise](#multi-location--franchise)
   - [Accounting & Ledger](#accounting--ledger)
-  - [Coursing](#coursing)
+  - [Coursing & Course Firing](#coursing--course-firing)
   - [Order Throttling](#order-throttling)
   - [HR & Timesheets](#hr--timesheets)
+  - [Back Office Suite](#back-office-suite)
   - [Printers & Cash Drawer](#printers--cash-drawer)
   - [More](#more)
 - [25 Languages](#25-languages)
@@ -114,20 +117,45 @@ Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) with `de
 
 ## Features
 
-### Staff Login
+### Staff Login & Authentication
 
-PIN login with clock-in, 7-level role-based access, and automatic screen routing per role.
+PIN login with clock-in, 7-level role-based access, and automatic screen routing per role. Four authentication methods — PIN is default, biometric and card are progressive enhancements.
 
 <img src="../images/pos/ipad_00_pin_entry.png" alt="PIN Login">
 
 <details>
-<summary><strong>Setup</strong></summary>
+<summary><strong>Authentication Methods</strong></summary>
+
+| Method | How it works | Setup |
+|---|---|---|
+| **PIN** | 4-digit numeric code per staff member | Default — created on staff setup |
+| **WebAuthn Passkeys** | Touch ID, Face ID, Windows Hello, hardware security keys | Settings > Staff > Register Passkey |
+| **Swipe Card** | Magnetic stripe / RFID employee badges | Settings > Staff > Assign Card |
+| **Manual Card Entry** | Keyed card-not-present transactions (admin override required) | Admin PIN + confirmation dialog |
+
+WebAuthn passkeys use the Web Authentication API — credentials are device-bound and never leave the staff member's device. Multiple passkeys can be registered per staff member (e.g., both iPad Touch ID and phone Face ID). Falls back to PIN if biometric fails.
+
+</details>
+
+<details>
+<summary><strong>Roles & Routing</strong></summary>
 
 1. Add staff in **Settings > Staff Management** — name, PIN, role
 2. Assign roles: cashier, host, server, bartender, supervisor, manager, admin
 3. Multi-role staff see a role picker; single-role staff go straight to their screen
 
+| Role | Landing Page | What you see |
+|---|---|---|
+| Admin | Settings | Settings + All screens |
+| Manager | Register | All screens + EOD |
+| Supervisor | Register | Register, Tables, KDS, EOD |
+| Server | Register | Register + Tables + Handheld |
+| Bartender | Register | Bar Register + Age Verification |
+| Host | Tables | Tables + Reservations |
+| Cashier | Register | Register only |
+
 <img src="../images/pos/ipad_00b_role_select.png" alt="Role Selection">
+<img src="../images/pos/settings_staff_mgmt.png" alt="Staff Management Settings">
 
 </details>
 
@@ -146,10 +174,15 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 2. Set prices, modifiers, KDS stations, and barcodes per item
 3. Items appear on the register automatically
 
+<img src="../images/pos/settings_menu_builder.png" alt="Menu Builder">
 <img src="../images/pos/ipad_barcode_scan.png" alt="Barcode Scan">
 <img src="../images/pos/ipad_allergen_filter.png" alt="Allergen Filter">
 <img src="../images/pos/settings_auto_gratuity.png" alt="Auto Gratuity">
 <img src="../images/pos/settings_combos.png" alt="Combos">
+<img src="../images/pos/settings_discounts.png" alt="Discounts">
+<img src="../images/pos/settings_menu_scheduling.png" alt="Menu Scheduling">
+<img src="../images/pos/settings_nutritional.png" alt="Nutritional Info">
+<img src="../images/pos/settings_price_levels.png" alt="Price Levels">
 
 </details>
 
@@ -169,6 +202,26 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 3. Merge, split-back, transfer, or reopen closed checks from the table detail panel
 
 <img src="../images/pos/ipad_table_editor.png" alt="Table Editor">
+<img src="../images/pos/ipad_table_merge.png" alt="Table Merge">
+<img src="../images/pos/ipad_table_ops.png" alt="Table Operations">
+
+</details>
+
+---
+
+### Seat Management
+
+Assign items to individual seats for split checks and per-guest delivery. Seat tabs on the register let servers ring items per guest.
+
+<img src="../images/pos/ipad_seat_management.png" alt="Seat Management">
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Tap **Seat 1 / Seat 2 / + Seat** tabs on the register to assign items to specific guests
+2. Tap the seat badge on any line item to cycle it to the next seat number
+3. Split check by seat — each guest gets their own bill with only their items
+4. Seat assignment works alongside courses — assign items to Seat 1/2/3 and Course 1/2/3 independently
 
 </details>
 
@@ -215,9 +268,11 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 <img src="../images/pos/ipad_cash_discount.png" alt="Cash Discount">
 <img src="../images/pos/ipad_post_payment_tip.png" alt="Post-Payment Tip">
 <img src="../images/pos/ipad_ebt_payment.png" alt="EBT/SNAP Payment">
+<img src="../images/pos/ipad_wallet_pay.png" alt="Apple Pay / Google Pay">
 <img src="../images/pos/settings_house_accounts.png" alt="House Accounts">
 <img src="../images/pos/settings_receipts.png" alt="Receipts">
-<img src="../images/pos/settings_chargebacks.png" alt="Chargebacks">
+<img src="../images/pos/ipad_disputes.png" alt="Disputes & Chargebacks">
+<img src="../images/pos/settings_chargebacks.png" alt="Chargeback Settings">
 
 </details>
 
@@ -240,6 +295,7 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 <img src="../images/pos/settings_break_tracking.png" alt="Break Tracking">
 <img src="../images/pos/settings_tip_pooling.png" alt="Tip Pooling">
 <img src="../images/pos/settings_payroll.png" alt="Payroll">
+<img src="../images/pos/settings_overtime.png" alt="Overtime Rules">
 
 </details>
 
@@ -267,6 +323,7 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 
 <img src="../images/pos/ipad_qr_ordering.png" alt="QR Ordering">
 <img src="../images/pos/ipad_scheduled_orders.png" alt="Scheduled Orders">
+<img src="../images/pos/ipad_order_tracking.png" alt="Order Tracking">
 <img src="../images/pos/ipad_ai_chat_oo.png" alt="AI Chat (Customer)">
 <img src="../images/pos/settings_online_ordering.png" alt="Online Ordering Settings">
 
@@ -492,6 +549,22 @@ Same AI as voice ordering, over WhatsApp. Text or voice message in **any languag
 
 ---
 
+### AI Dish Image Generation
+
+Menu items automatically get AI-generated dish photos — no professional photography needed. Providers: Together AI FLUX.1 (~$0.003/image) or OpenAI gpt-image-1 (~$0.04/image). Generated once per dish, cached in Supabase Storage. Emoji fallback when no API key configured, or upload your own photos.
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Set `TOGETHER_API_KEY` or `OPENAI_API_KEY` in **Settings > Integrations**
+2. Open the Menu Builder — items without photos get an auto-generate button
+3. Images are cached after first generation — no repeated API calls
+4. Upload custom photos to override AI-generated ones at any time
+
+</details>
+
+---
+
 ### Pizza Builder & Modifiers
 
 Visual half/half pizza builder with per-topping placement and intensity. Standard modifiers with qty, nested groups, forced/optional, and max-quantity limits.
@@ -584,7 +657,13 @@ Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gol
 <details>
 <summary><strong>Setup</strong></summary>
 
+1. **Gift cards** — issue from the Gift Cards page ($25–$250). Customers redeem at payment
+2. **Loyalty** — enable in **Settings > Loyalty**. Customers earn points per dollar spent
+3. Auto-tier upgrades: Bronze → Silver → Gold based on cumulative spend
+4. Referral rewards: existing customers share a link, both get bonus points
+
 <img src="../images/pos/ipad_loyalty_checkin.png" alt="Loyalty Check-in">
+<img src="../images/pos/settings_loyalty.png" alt="Loyalty Settings">
 
 </details>
 
@@ -602,6 +681,8 @@ Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audi
 <img src="../images/pos/ipad_age_verification.png" alt="Age Verification">
 <img src="../images/pos/settings_tax_exempt.png" alt="Tax Exempt">
 <img src="../images/pos/settings_privacy.png" alt="Privacy (CCPA/GDPR)">
+<img src="../images/pos/settings_rbs_compliance.png" alt="RBS Compliance">
+<img src="../images/pos/settings_taxes.png" alt="Tax Settings">
 
 </details>
 
@@ -612,6 +693,7 @@ Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audi
 Count cash, distribute tip pool, export GL journal, print Z-Report, close register.
 
 <img src="../images/pos/ipad_eod.png" alt="EOD">
+<img src="../images/pos/settings_cash_management.png" alt="Cash Management">
 
 ---
 
@@ -701,13 +783,15 @@ Partial or full refund with reason codes. Reopen closed checks for corrections.
 4. Stripe refund is processed automatically. Cash refunds are recorded for drawer reconciliation
 5. **Reopen check** — managers can reopen a closed order for corrections, then re-close
 
+<img src="../images/pos/ipad_reopen_check.png" alt="Reopen Check">
+
 </details>
 
 ---
 
 ### Multi-Location & Franchise
 
-Per-venue KPIs, consolidated P&L, config push, and franchise reporting.
+Per-venue KPIs, consolidated P&L, config push, and franchise reporting. Month-to-date comparison across all locations with revenue, COGS, labor, and net profit side-by-side.
 
 <img src="../images/pos/settings_franchise.png" alt="Franchise">
 
@@ -718,6 +802,10 @@ Per-venue KPIs, consolidated P&L, config push, and franchise reporting.
 2. Push menu, tax, and discount configs from a template venue to all locations
 3. View consolidated P&L, sales, and labor reports across all venues
 4. Franchise reporting with per-location royalty calculations
+5. **Month-to-date comparison** — revenue, COGS, labor, net profit per venue side-by-side
+6. **CSV export** — download consolidated P&L for accountant handoff
+
+<img src="../images/pos/settings_multi_location.png" alt="Multi-Location Settings">
 
 </details>
 
@@ -741,18 +829,20 @@ Journal entries, general ledger, and banking integration. QuickBooks and Xero au
 
 ---
 
-### Coursing
+### Coursing & Course Firing
 
-Multi-course meal sequencing with per-item course assignment and fire-on-demand.
+Multi-course meal sequencing with per-item course assignment and fire-on-demand. Assign course numbers to menu items and fire them sequentially from the register.
 
-<img src="../images/pos/ipad_coursing.png" alt="Coursing">
+<img src="../images/pos/ipad_coursing.png" alt="Course Firing">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Assign course numbers (1–6) to each item in the order ticket
-2. Course 0 = fire immediately. Courses 1–6 fire in sequence when the server taps "Fire Next Course"
-3. KDS shows course badges on each ticket item
+1. Assign course numbers (1–6) to each item in the order ticket using the Course dropdown
+2. Course 0 = fire immediately. Courses 1–6 fire in sequence when the server taps **"Fire Next Course"**
+3. KDS shows course badges on each ticket item with color-coded timing
+4. Seat assignment works alongside courses — assign items to Seat 1/2/3 and Course 1/2/3 independently
+5. Kitchen holds later courses until earlier ones are bumped — perfect for appetizer → entree → dessert flow
 
 </details>
 
@@ -777,17 +867,101 @@ Rate-limit incoming online orders during peak times to prevent kitchen overwhelm
 
 ### HR & Timesheets
 
-Leave management, timesheet review, and employee document tracking.
+Leave management, timesheet review, payroll draft with FLSA overtime split, and per-server KPIs. Pulls directly from clock-in/out data — all staff appear automatically including PIN-only staff.
 
-<img src="../images/pos/settings_payroll.png" alt="HR & Payroll">
+<img src="../images/pos/ipad_hr_timesheets.png" alt="HR Timesheets">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open `/pos/hr` for timesheet review and leave management
-2. Staff submit time-off requests; managers approve/deny
-3. Timesheets auto-populate from clock-in/out records
-4. Export to payroll (Gusto/ADP) from the Payroll page
+1. Open `/pos/hr` for the HR command center
+2. **Timesheets tab** — clock-in/clock-out data grouped by staff member for the selected week. Week picker defaults to current Mon–Sun
+3. **Payroll Draft tab** — calculates gross pay: regular hours (up to 40h) + overtime (above 40h at 1.5×). Export CSV for Gusto/ADP
+4. **KPIs tab** — per-server metrics: sales/hour, avg check, tip %, 7-day sparkline trend
+5. Staff submit time-off requests; managers approve/deny
+6. **IRS Form 8027** — Settings > Compliance > Form 8027. Auto-calculates gross receipts, charge tips, and 8% allocation for tipped establishments
+
+<img src="../images/pos/settings_hr.png" alt="HR Settings">
+<img src="../images/pos/settings_payroll.png" alt="Payroll Settings">
+
+</details>
+
+---
+
+### Back Office Suite
+
+Complete back-office suite built into the POS — no separate software needed. Every module is wired to POS data so EOD, timesheets, payroll, and vendor communications flow automatically.
+
+| Module | What it does | Route |
+|---|---|---|
+| **Accounting & GL** | Double-entry ledger, journal entries, P&L, balance sheet. EOD auto-posts to GL | `/pos/accounting` |
+| **Bank Feed** | Connect bank via Plaid/Salt Edge. Auto-match transactions. Reconciliation | `/pos/accounting/banking` |
+| **Documents** | File storage with auto-scaffolded folders. EOD reports auto-filed on close | `/pos/documents` |
+| **Mail** | Gmail + Outlook inbox. Templates, vendor auto-tagging | `/pos/mail` |
+| **Calendar** | Google Calendar + Outlook sync. Reservations, catering, staff meetings | `/pos/calendar` |
+| **Staff Messaging** | Slack-like channels. Real-time via Supabase | `/pos/messages` |
+| **AI Assistant** | Context-aware AI with live POS data | `/pos/assistant` |
+| **Form Builder** | Custom forms with 7 field types including signature capture | `/pos/form-builder` |
+| **Dashboards** | Drag-and-drop widget builder with auto-refresh | `/pos/dashboards` |
+
+<details>
+<summary><strong>Documents</strong></summary>
+
+File storage with auto-scaffolded folders: `/EOD Reports`, `/Vendors`, `/Staff Documents`, `/Receipts`, `/Invoices`. Upload, organize, share. EOD reports auto-filed on close.
+
+<img src="../images/pos/ipad_documents.png" alt="Documents">
+
+</details>
+
+<details>
+<summary><strong>Mail</strong></summary>
+
+Full inbox for your restaurant — connected to Gmail or Outlook. Compose, reply, templates (vendor orders, catering quotes, EOD summary). Vendor emails auto-tagged with vendor name badge when sender matches your vendor records.
+
+Without OAuth credentials configured, mail works standalone using the built-in database — internal mail only. Gmail/Outlook connections are optional enhancements.
+
+</details>
+
+<details>
+<summary><strong>Calendar</strong></summary>
+
+Google Calendar + Outlook sync. Reservations, catering events, staff meetings, and delivery schedules all in one view.
+
+<img src="../images/pos/ipad_calendar.png" alt="Calendar">
+
+</details>
+
+<details>
+<summary><strong>Staff Messaging</strong></summary>
+
+Slack-like internal messaging — no Slack account needed. 6 pre-configured channels:
+
+| Channel | Purpose |
+|---|---|
+| **All Staff** | Broadcast to everyone |
+| **Front of House** | Servers, hosts, bartenders |
+| **Back of House** | Kitchen, prep, expo |
+| **Managers** | Managers and admin only |
+| **Daily Specials** | Push 86'd items, daily features |
+| **Lost & Found** | Customer lost items |
+
+Messages use Supabase Realtime — delivery in < 200ms on the same LAN. Direct messages supported. Messages are venue-scoped: staff at different venues cannot see each other's channels.
+
+</details>
+
+<details>
+<summary><strong>Dashboards</strong></summary>
+
+Drag-and-drop widget builder with metric cards, charts, and tables. Preset templates for Owner, Manager, and Kitchen views. Auto-refresh every 30 seconds.
+
+<img src="../images/pos/ipad_dashboards.png" alt="Dashboards">
+
+</details>
+
+<details>
+<summary><strong>Form Builder</strong></summary>
+
+Custom operational forms with 7 field types: Text, Number, Date, Select, Textarea, Checkbox, and Signature (canvas-based capture). Create templates in `/pos/form-builder`, fill and submit in `/pos/forms`. Submission history is searchable and exportable.
 
 </details>
 
@@ -843,6 +1017,9 @@ Stripe, DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto
 3. **DoorDash / Uber** — add API credentials for delivery dispatch and menu sync
 4. **Twilio / SendGrid** — add keys for SMS order-ready notifications and email receipts
 5. **QuickBooks / Xero** — connect via OAuth for automatic EOD GL journal sync
+
+<img src="../images/pos/settings_main.png" alt="Settings Main">
+<img src="../images/pos/settings_venue_top.png" alt="Venue Settings">
 
 </details>
 
@@ -1031,6 +1208,8 @@ Route menu categories to specific printer stations so bar items print at the bar
 
 When an order is sent to kitchen, items are split by category and routed to the correct station.
 
+<img src="../images/pos/settings_printer_routing.png" alt="Printer Routing">
+
 </details>
 
 <details>
@@ -1092,6 +1271,8 @@ iPhone access to reports, KPIs, and quick actions — same data as the desktop, 
 1. Open `/pos/reports` on any iPhone or mobile browser
 2. Pin to home screen for quick access
 3. Live KPIs: today's sales, open checks, labor %, voids, and average ticket size
+
+<img src="../images/pos/iphone_01_dashboard.png" alt="Manager Dashboard">
 
 </details>
 
