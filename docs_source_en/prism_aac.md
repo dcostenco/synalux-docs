@@ -4,10 +4,12 @@
 
 Open source ([AGPL-3.0](https://github.com/dcostenco/prism-aac/blob/main/LICENSE)). Hosted free at [prism-aac.vercel.app](https://prism-aac.vercel.app). Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac).
 
+<a href="https://apps.apple.com/app/id6764692277"><img src="https://img.shields.io/badge/App_Store-Download-0D96F6?style=for-the-badge&logo=apple&logoColor=white" alt="App Store"></a>
+
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Prism AAC home screen](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/prism_aac_home.png)
+![Prism AAC home screen](../docs/demo/prism_aac_home.png)
 *Home screen — quick categories, math panel, schedule, games, and settings.*
 
 </details>
@@ -24,7 +26,7 @@ The core AAC primitive. Tap picture tiles to build a sentence; the app reads it 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Pictogram categories](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/prism_aac_categories.png)
+![Pictogram categories](../docs/demo/prism_aac_categories.png)
 *Pictogram categories — tap to build a sentence, hear it spoken.*
 
 </details>
@@ -49,7 +51,7 @@ Pre-built sentence chains for common situations — restaurants, doctor visits, 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Food ordering scenario](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/prism_aac_food.png)
+![Food ordering scenario](../docs/demo/prism_aac_food.png)
 *Food ordering — real-world scenario tiles for restaurants, school, doctor visits.*
 
 </details>
@@ -66,7 +68,7 @@ Graph-paper canvas with KaTeX rendering. Designed for school-age users who need 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Math panel with graph paper canvas](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/prism_aac_math.png)
+![Math panel with graph paper canvas](../docs/demo/prism_aac_math.png)
 *Math panel — graph paper, KaTeX equations, optional AI tutor.*
 
 </details>
@@ -109,7 +111,7 @@ Designed with BCBAs and SLPs.
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Settings — voice, language, accessibility](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/prism_aac_settings.png)
+![Settings — voice, language, accessibility](../docs/demo/prism_aac_settings.png)
 *Settings — voice, language, accessibility, gesture calibration.*
 
 </details>
