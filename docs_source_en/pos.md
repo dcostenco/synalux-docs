@@ -76,6 +76,7 @@ $ = Paid add-on / third-party integration
   - [Coursing](#coursing)
   - [Order Throttling](#order-throttling)
   - [HR & Timesheets](#hr--timesheets)
+  - [Printers & Cash Drawer](#printers--cash-drawer)
   - [More](#more)
 - [25 Languages](#25-languages)
 - [Developer Guide](#developer-integration-setup-guide)
@@ -911,6 +912,135 @@ Post-visit surveys, star ratings, comment review, and response templates.
 1. Open `/pos/feedback` to view submitted customer surveys
 2. QR codes on receipts link to the survey form
 3. Star ratings and comments are aggregated per server and per time period
+
+</details>
+
+---
+
+### Printers & Cash Drawer
+
+Thermal receipt printers, kitchen ticket printers, and cash drawers. Network (LAN), USB, and Bluetooth. Epson, Star, and generic ESC/POS. No drivers needed — the browser handles USB and Bluetooth natively.
+
+<details>
+<summary><strong>Supported Hardware</strong></summary>
+
+| Type | Protocol | Connection | Examples |
+|------|----------|------------|----------|
+| Generic ESC/POS | Raw TCP port 9100 | Network, USB, Bluetooth | Most thermal printers |
+| Epson | ePOS (SOAP/HTTP) | Network | TM-T88, TM-T20, TM-m30 |
+| Star | WebPRNT (HTTP) | Network | TSP143, TSP654, mC-Print3 |
+| Zebra | ZPL (HTTP) | Network | ZD421, ZD620, GK420 |
+
+Auto-detection: the system reads the **Model** field and routes accordingly — if it contains "star" it uses Star WebPRNT, "epson" uses Epson ePOS, anything else uses generic ESC/POS (raw TCP port 9100).
+
+</details>
+
+<details>
+<summary><strong>Network Printer Setup (Recommended)</strong></summary>
+
+Best for restaurants — printer connects to the same LAN as the POS terminal.
+
+1. Assign a **static IP** to the printer (check printer's network config sheet — hold Feed button during power-on on most models)
+2. Go to **Settings > Printers & KDS**
+3. Click **Add Printer**
+4. Enter a friendly **Name** (e.g. "Front Receipt", "Kitchen 1")
+5. Enter the **Model** — include "star" or "epson" in this field for correct protocol detection
+6. Select a **Station**: receipt, kitchen, bar, expo, or label
+7. Select **Network (LAN)** and enter the printer's **IP address**
+8. Click **Add Printer**, then **Test Print** to verify
+
+**Network ports used:**
+
+| Protocol | Port/Endpoint |
+|----------|---------------|
+| Generic ESC/POS | TCP `9100` (raw socket) |
+| Epson ePOS | HTTP `POST /cgi-bin/epos/service.cgi` |
+| Star WebPRNT | HTTP `POST /StarWebPRNT/SendMessage` |
+| Zebra ZPL | HTTP `POST /cgi-bin/print` |
+
+**Cloud deployment (Vercel) + local printer:** When the POS is deployed to Vercel but the printer is on a local network, the system automatically relays print jobs via Supabase Realtime broadcast. A local relay agent on the same network picks up the job and forwards to the printer — no VPN or port forwarding needed.
+
+**Printer auto-discovery:** If a local relay is running, discovered printers appear at the top of the settings page. Click **Configure** to auto-fill name, IP, and model.
+
+</details>
+
+<details>
+<summary><strong>USB Printer Setup</strong></summary>
+
+Uses the Web Serial API — no drivers needed. Chrome and Edge only.
+
+1. Connect the printer via USB to the POS terminal
+2. Go to **Settings > Printers & KDS** > **Add Printer**
+3. Enter Name, Model, Station
+4. Select **USB (Browser Native)**
+5. Click **Add Printer**
+6. Click **Test Print** — the browser shows a serial port picker, select your printer
+7. The browser remembers the selection for future prints
+
+**Requirements:** Chrome or Edge. HTTPS or localhost. The first print requires a user click (browser security).
+
+</details>
+
+<details>
+<summary><strong>Bluetooth Printer Setup</strong></summary>
+
+Uses the Web Bluetooth API. Useful for mobile POS terminals.
+
+1. Put the printer in Bluetooth pairing mode
+2. Go to **Settings > Printers & KDS** > **Add Printer**
+3. Enter Name, Model, Station
+4. Select **Bluetooth (Browser Native)**
+5. Click **Add Printer**
+6. Click **Test Print** — the browser shows a Bluetooth device picker, select your printer
+
+**Requirements:** Chrome browser. HTTPS or localhost. Data is chunked into 512-byte segments (Bluetooth LE limitation).
+
+</details>
+
+<details>
+<summary><strong>Cash Drawer Setup</strong></summary>
+
+Cash drawers connect to the receipt printer via an **RJ-12 cable** (the "DK" port on the back of most thermal printers). The POS sends an ESC/POS drawer-kick command through the printer — no separate USB connection needed.
+
+1. Plug the drawer's RJ-12 cable into the printer's **DK port** (labeled "DK" or with a drawer icon)
+2. In **Settings > Printers & KDS**, ensure your receipt printer is configured with station = **receipt**
+3. An **Open Cash Drawer** button appears next to Test Print — click it to kick the drawer
+
+**Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| Drawer doesn't open | Check RJ-12 is in the DK port, not the phone/network port |
+| Opens intermittently | Replace RJ-12 cable — these are fragile |
+| Wrong drawer opens | Check DK1 vs DK2 port on the printer |
+| "Open Cash Drawer" not visible | Printer must be assigned to the **receipt** station |
+
+</details>
+
+<details>
+<summary><strong>KDS Routing (Multi-Printer)</strong></summary>
+
+Route menu categories to specific printer stations so bar items print at the bar, food items print in the kitchen, etc.
+
+1. In **Settings > Printers & KDS**, scroll to **KDS Routing**
+2. Click **Add Route**
+3. Select a **menu category** (e.g. "Appetizers", "Drinks")
+4. Select a **station** (kitchen, bar, expo)
+5. Set **copies** (1–3)
+6. Click **Add**
+
+When an order is sent to kitchen, items are split by category and routed to the correct station.
+
+</details>
+
+<details>
+<summary><strong>Troubleshooting</strong></summary>
+
+| Issue | Steps |
+|-------|-------|
+| Network printer not responding | 1. Ping the IP: `ping 192.168.1.100`. 2. Check port: `nc -zv 192.168.1.100 9100`. 3. Ensure port 9100 is not blocked by firewall. 4. Verify static IP (DHCP lease may have expired). |
+| USB "No port selected" | Ensure Chrome/Edge, HTTPS or localhost. Try unplugging and reconnecting USB. Check `chrome://device-log`. |
+| Print goes to wrong printer | Verify each printer has the correct **station** and check KDS routing rules. |
 
 </details>
 
