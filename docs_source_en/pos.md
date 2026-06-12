@@ -92,13 +92,19 @@ $ = Paid add-on / third-party integration
 
 | | |
 |---|---|
-| **Order Online** | [synalux-pos.vercel.app/pos/order](https://synalux-pos.vercel.app/pos/order?v=00000000-0000-0000-0000-000000000100) |
+| **Order Online (US)** | [pos.synalux.ai/pos/order](https://pos.synalux.ai/pos/order?v=00000000-0000-0000-0000-000000000100) |
+| **Order Online (EU)** | [pos-eu.synalux.ai/pos/order](https://pos-eu.synalux.ai/pos/order?v=b6000000-0000-0000-0000-000000000002) |
 | **Order by Phone (AI)** | Call **+1 (256) 787-0815** — say "switch to Spanish" or just speak any language, AI auto-detects |
 | **Order via WhatsApp** | [<img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat" alt="WhatsApp">](https://wa.me/14155238886?text=join%20bat-come) — tap to join, then text your order |
 
 **For staff — POS login:**
 
-Open [synalux-pos.vercel.app/auth](https://synalux-pos.vercel.app/auth) with `demo@synalux.ai` / `demo1234`, then enter a staff PIN:
+| Region | URL | Credentials |
+|---|---|---|
+| **US** | [pos.synalux.ai/auth](https://pos.synalux.ai/auth) | `demo@synalux.ai` / `demo1234` |
+| **EU** | [pos-eu.synalux.ai/auth](https://pos-eu.synalux.ai/auth) | `demobg@synalux.ai` / `demo1234` |
+
+Then enter a staff PIN:
 
 | Role | Name | PIN | Screens |
 |---|---|---|---|
