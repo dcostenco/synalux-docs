@@ -79,7 +79,9 @@ $ = Paid add-on / third-party integration
   - [Order Throttling](#order-throttling)
   - [HR & Timesheets](#hr--timesheets)
   - [Back Office Suite](#back-office-suite)
+  - [Offline Mode (PWA)](#offline-mode-pwa)
   - [Printers & Cash Drawer](#printers--cash-drawer)
+  - [Security & PCI Compliance](#security--pci-compliance)
   - [More](#more)
 - [25 Languages](#25-languages)
 - [Developer Guide](#developer-integration-setup-guide)
@@ -993,17 +995,52 @@ Isolated sandbox. Orders excluded from reports. Staff can practice without affec
 
 ### Offline Mode (PWA)
 
-Core pages precached for offline use. Orders queue locally and sync on reconnect. Card payments require network.
+Full PWA with Service Worker precaching. The cloud database is the single source of truth — each station queues locally only when the network drops, then auto-syncs on reconnect. No data lives permanently on the device.
 
 <img src="../images/pos/ipad_offline_mode.png" alt="Offline Mode">
+
+**What works offline:**
+
+| Capability | How it works |
+|---|---|
+| **Orders** | Queue locally with idempotency keys — auto-sync on reconnect, no duplicate submissions |
+| **Cash payments** | Fully offline — queued and synced when network returns |
+| **Staff clock in/out** | Shifts queue locally, synced to the server on reconnect |
+| **Menu browsing** | Cached locally (24h TTL) so staff can ring items without network |
+| **EOD summary** | Cached when online (4h TTL), shown from cache when offline with "cached as of" timestamp |
+| **Reports** | Orders and payments cached — Sales, PMIX, Server, and Payment reports available offline |
+| **PDF receipts** | Client-side PDF generation — no network needed |
+| **Page rendering** | Service Worker precaches Register, KDS, Tables, and EOD pages so the app shell loads instantly |
+
+**What requires network:**
+
+| Capability | Why |
+|---|---|
+| **Card payments** | Stripe Terminal requires a live connection — attempting offline shows an error prompting cash payment |
+| **Bar tab pre-authorization** | Requires Stripe hold |
+| **Real-time KDS updates** | Supabase Realtime subscription |
+| **Receipt email / SMS** | Requires SendGrid / Twilio API |
+| **Online Ordering payments** | Stripe Payment Element requires network (Offline CC Vault available as fallback — see below) |
+
+**Offline CC Vault (Online Ordering only):**
+
+When the internet drops during an online ordering checkout, the system falls back to the Offline CC Vault. Card details are encrypted client-side using WebCrypto (RSA-OAEP, 2048-bit) before transmission — the server stores only an encrypted blob and never decrypts it. This keeps your infrastructure at SAQ A-EP scope. The private decryption key is kept offline per your organization's key management procedures. This feature is **not available on the POS register** — register card payments always require network.
+
+**Sync behavior:**
+
+- Auto-sync triggers on reconnect via browser online event
+- Exponential backoff retry on failure (capped to prevent battery/bandwidth waste)
+- Idempotency keys on every queued order to prevent double-submission
+- An offline indicator badge in the top bar shows queue status and connection state
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open the POS in Chrome or Safari and add to home screen — installs as a PWA
-2. When network drops, an offline indicator appears in the top bar
-3. Orders are queued in local storage and auto-sync when connectivity returns
-4. Cash payments work offline. Card payments require network and show an error if attempted offline
+1. Open the POS in Chrome or Safari and add to home screen — installs as a PWA automatically
+2. When network drops, an offline indicator appears in the top bar showing queued items
+3. Orders and cash payments queue locally and auto-sync when connectivity returns
+4. Cash payments work fully offline. Card payments require network and show an error if attempted offline
+5. To enable the Offline CC Vault for online ordering, turn on the feature flag in **Settings > Venue** and configure the encryption key pair
 
 </details>
 
@@ -1283,6 +1320,20 @@ iPhone access to reports, KPIs, and quick actions — same data as the desktop, 
 </details>
 
 ---
+
+### Security & PCI Compliance
+
+Synalux POS minimizes your PCI-DSS scope to the lowest possible levels:
+
+| Scenario | PCI Level | How |
+|---|---|---|
+| **In-person card payments** | SAQ C / P2PE | Stripe Terminal (WisePOS E, Reader S700) — card data never touches your tablet, network, or servers |
+| **Online ordering checkout** | SAQ A | Stripe Elements iframe — your server handles only `PaymentIntent` IDs, never card data |
+| **Offline CC Vault (OO fallback)** | SAQ A-EP | Client-side WebCrypto RSA-OAEP encryption — server stores encrypted blob, never decrypts |
+
+**GDPR Region Routing:** Venues in EU/EEA countries automatically use the EU database region. Region is resolved from country code at workspace creation and cached per venue. US and EU deployments share the same codebase — region routing is transparent to the frontend.
+
+**Data privacy:** Built-in CCPA and GDPR deletion workflows. Customer data purge available in Settings. Minor labor law compliance with age-gated access controls.
 
 ---
 
