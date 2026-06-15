@@ -995,9 +995,11 @@ Isolated sandbox. Orders excluded from reports. Staff can practice without affec
 
 ### Offline Mode (PWA)
 
-Full PWA with Service Worker precaching. The cloud database is the single source of truth — each station queues locally only when the network drops, then auto-syncs on reconnect. No data lives permanently on the device.
+Your restaurant never stops — even when the internet does. Synalux POS is a full Progressive Web App (PWA) that keeps running when your network drops. Staff can continue taking orders, accepting cash payments, clocking in and out, and browsing the menu without interruption. Everything is saved locally on the device and automatically syncs back to the cloud the moment connectivity returns — no manual steps, no lost orders.
 
-<img src="../images/pos/ipad_offline_mode.png" alt="Offline Mode">
+When the network goes down, a red **"Offline"** badge appears in the top-right corner of the screen (visible in the screenshot below). The full menu stays available from cache, and the register works normally. When the connection comes back, the badge disappears and all queued data syncs silently in the background.
+
+<img src="../images/pos/ipad_offline_mode.png" alt="Synalux POS Register in Offline Mode — red Offline badge visible in top-right corner, menu fully loaded from cache">
 
 **What works offline:**
 
