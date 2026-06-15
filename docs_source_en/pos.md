@@ -1014,14 +1014,14 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 | **PDF receipts** | Client-side PDF generation — no network needed |
 | **Page rendering** | Service Worker precaches Register, KDS, Tables, and EOD pages so the app shell loads instantly |
 
-**What requires network:**
+**What requires network (queued or degraded offline):**
 
-| Capability | Why |
+| Capability | Offline behavior |
 |---|---|
-| **Card payments** | Stripe Terminal requires a live connection — attempting offline shows an error prompting cash payment |
-| **Bar tab pre-authorization** | Requires Stripe hold |
-| **Real-time KDS updates** | Supabase Realtime subscription |
-| **Receipt email / SMS** | Requires SendGrid / Twilio API |
+| **Card payments** | Payment record is queued locally with status "pending" — the actual Stripe charge is processed when the connection returns. No error shown to staff; the order flow continues normally |
+| **Bar tab pre-authorization** | Queued as "authorized" — the Stripe hold is created on reconnect |
+| **Real-time KDS updates** | Supabase Realtime subscription pauses — KDS falls back to polling when connection resumes |
+| **Receipt email / SMS** | Requires SendGrid / Twilio API — PDF receipts still work offline (client-side generation) |
 | **Online Ordering payments** | Stripe Payment Element requires network (Offline CC Vault available as fallback — see below) |
 
 **Offline CC Vault (Online Ordering only):**
@@ -1039,9 +1039,9 @@ When the internet drops during an online ordering checkout, the system falls bac
 <summary><strong>Setup</strong></summary>
 
 1. Open the POS in Chrome or Safari and add to home screen — installs as a PWA automatically
-2. When network drops, an offline indicator appears in the top bar showing queued items
-3. Orders and cash payments queue locally and auto-sync when connectivity returns
-4. Cash payments work fully offline. Card payments require network and show an error if attempted offline
+2. When network drops, a red "Offline" badge appears in the top-right corner with queue status
+3. All orders and payments (cash and card) queue locally and auto-sync when connectivity returns
+4. Card charges are processed through Stripe when the connection resumes — no staff intervention needed
 5. To enable the Offline CC Vault for online ordering, turn on the feature flag in **Settings > Venue** and configure the encryption key pair
 
 </details>
