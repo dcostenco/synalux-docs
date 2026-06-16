@@ -1,20 +1,60 @@
-# Prism Browser — Privacy-First Clinical Browser with AAC Accessibility
+# Prism Browser
 
-Prism Browser is an Electron-based web browser built as a **HIPAA-compliant clinical appliance** with full **AAC (Augmentative and Alternative Communication)** support. It enables users who control their computer via head tracking, switch scanning, or voice commands to browse the web independently.
+A web browser built for healthcare providers and AAC users. Designed for people who navigate the web via head tracking, switch scanning, dwell click, and voice commands — and for clinicians who need browsing with HIPAA technical safeguards on shared clinical devices.
 
-> **9/10 security audit score** across 10 adversarial review rounds. All phases complete.
+Available on **macOS**, **Windows**, **Linux** (Electron desktop) and **iPad/iPhone** (native iOS app).
+
+> Implements HIPAA §164.312 technical safeguards. Full HIPAA compliance depends on your practice's BAA, risk assessment, and organizational policies. Consult your compliance officer before deploying on clinical devices.
 
 ---
 
-## Key Features
+## At a Glance
 
-| Category | Features |
-|----------|----------|
-| **AAC Input** | Head tracking (MediaPipe), switch scanning, voice commands, gesture detection (8 types), dwell click |
-| **Browsing** | Tabs, bookmarks, history, downloads, context menu, find-in-page, reader mode |
-| **Clinical** | PHI sanitization (NER + regex), HIPAA session timeout, audit logging, clinical context sidebar |
-| **Portal** | Synalux Mail, Calendar, Drive, Chat — dedicated sidebar with keyboard shortcuts |
-| **Security** | Sandbox + CSP, default-deny permissions, encrypted storage, HMAC audit chain |
+| | |
+|---|---|
+| **Platforms** | macOS, Windows, Linux (desktop) · iPad, iPhone (iOS) |
+| **AAC Input Methods** | Head tracking, switch scanning, dwell click, voice commands, 8 gesture types |
+| **Clinical Features** | PHI scrubbing, audit logging, session timeout, clinical context sidebar, therapy timer |
+| **Security** | Sandbox + CSP, session isolation, HMAC audit chain, encrypted storage, PIN lockout |
+| **Tests** | 172 desktop + 16 iOS = 188 unit tests across 16 test suites |
+| **Audit Score** | 9/10 after 4 adversarial review rounds (70+ findings, all resolved) |
+
+---
+
+## iOS App
+
+![Prism Browser iOS — AI Consent Screen](assets/browser-ios-consent.png)
+
+The iOS app follows the same B2B subscription pattern as Synalux POS and Online Ordering:
+
+| Feature | Implementation |
+|---------|---------------|
+| **Auth flow** | AI consent → Apple Sign-In → Face ID → BrowserShell |
+| **Dual WKWebView** | Portal tab (authenticated, persistent) + browsing tabs (nonPersistent, no auth cookies) |
+| **AAC Content Bridge** | JS IIFE injected via WKUserScript — defineProperty (non-writable), closure-only nonce |
+| **Content blocking** | 3 WKContentRuleList sets (ads, privacy, annoyances) compiled at launch |
+| **Caregiver mode** | PIN in iOS Keychain (constant-time compare), domain allowlist, time limits |
+| **Widgets** | Quick Search, Bookmarks, Shield Stats (App Group shared data) |
+| **Tabs** | Up to 10 tabs, scroll-to-hide toolbar (locked visible in AAC mode) |
+| **iPad multitasking** | Split View + Slide Over support |
+| **Monitoring** | Datadog RUM — separate "Prism Browser iOS" dashboard |
+
+---
+
+## Who It's For
+
+- **AAC users** with cerebral palsy, Down syndrome, SMA, ALS, traumatic brain injury, or other conditions that limit fine motor control
+- **BCBAs and RBTs** who need to browse clinical resources during therapy sessions on shared iPads
+- **Healthcare practices** that need a managed browser with HIPAA technical safeguards for shared clinical devices
+
+### Who It's Not For
+
+Prism Browser uses **camera-based head tracking**, which requires some reliable head movement. It is not a replacement for:
+
+- **Eye-gaze systems** (Tobii Dynavox TD Browse, PCEye) — users with no functional head movement (advanced ALS, locked-in syndrome, severe quadriplegic CP) need dedicated eye-tracking hardware
+- **Full AAC communication systems** (Grid 3, TD Snap, Proloquo2Go) — Prism is a web browser with AAC access methods, not a symbol-based communication platform
+
+If your client needs eye gaze, we recommend evaluating Tobii Dynavox or Smartbox devices alongside (not instead of) Prism Browser.
 
 ---
 
@@ -22,239 +62,235 @@ Prism Browser is an Electron-based web browser built as a **HIPAA-compliant clin
 
 ### Head Tracking
 
-Control the cursor with head movement using your computer's camera:
+Control the cursor with head movement using any built-in camera — no special hardware required:
 
-- **MediaPipe FaceDetector** — GPU-accelerated face detection at 24fps
-- **Kalman smoothing** — confidence-weighted cursor stabilization
-- **Dwell click** — hold cursor on a target for configurable duration to click
-- **Drift detection** — automatically pauses tracking if calibration degrades
-- **Background recalibration** — learns and corrects drift over time
-- **Edge scroll** — move cursor to screen edge to auto-scroll pages
-- **Self-hosted models** — MediaPipe WASM + model bundled in app (no CDN, no IP leakage)
+- **MediaPipe FaceDetector** — GPU-accelerated at 24fps, self-hosted (no CDN, SHA-256 verified)
+- **Kalman smoothing** — confidence-weighted cursor stabilization with EMA tremor filtering
+- **Dwell click** — configurable 200ms–5000ms, visual ring shows progress
+- **Drift detection** — adaptive travel threshold + directional ratio filter (tremor-aware)
+- **Auto-recovery** — 8/10 confidence probe resumes tracking automatically after drift, 60-second hard timeout prevents permanent lockout
+- **Per-side fatigue tracking** — independent left/right accuracy monitoring for hemiplegia/stroke users
+- **Background recalibration** — learns and corrects drift without user intervention
+- **Edge scroll** — cursor at screen edge triggers proportional auto-scroll (disabled during dwell)
 
 ### Gesture Detection
 
-8 gestures recognized from facial expressions and head movement:
+8 gestures with **per-side blink thresholds** for CP asymmetry:
 
-| Gesture | Action | Detection |
-|---------|--------|-----------|
-| Blink (both eyes) | Click at cursor | Eye closure threshold |
-| Wink left | Navigate back | Asymmetric eye closure |
-| Wink right | Navigate forward | Asymmetric eye closure |
-| Nod | Scroll down | Pitch oscillation history |
-| Head shake | Cancel/escape | Yaw oscillation history |
-| Smile | Toggle reader mode | Mouth corner threshold |
-| Brow raise | Scroll up | Brow movement threshold |
-| Mouth open | Stop TTS | Jaw open threshold |
+| Gesture | Action | Notes |
+|---------|--------|-------|
+| **Blink** (both eyes) | Click at cursor | Per-side thresholds — right-side-weak CP users set lower right threshold |
+| **Wink left** | Navigate back | Asymmetric eye closure detection |
+| **Wink right** | Navigate forward | |
+| **Nod** | Scroll down | Pitch oscillation with zero-crossing validation |
+| **Head shake** | Cancel / escape | Yaw oscillation |
+| **Smile** | Toggle reader mode | Suppressed during TTS (conversation mode) |
+| **Brow raise** | Scroll up | |
+| **Mouth open** | Stop TTS | Suppressed during TTS |
 
-- **Conversation mode (A-08)** — mouth gestures automatically suppressed while TTS is speaking
-- **Configurable thresholds** — adjust sensitivity per gesture
-- **500ms cooldown** — prevents accidental repeated triggers
+- **Conversation mode** — mouth gestures automatically suppressed while TTS is speaking + 500ms settle delay. Prevents false activations from speech articulation.
+- **EMA smoothing** (alpha=0.3) — filters single-frame tremor spikes
+- **Configurable thresholds** — per gesture, per side
 
 ### Switch Scanning
 
-Navigate web pages using external switches, a keyboard, or a gamepad:
+Navigate web pages using external switches, keyboard, or gamepad:
 
-- **Two-phase scanning** — first scan groups (ARIA landmarks + spatial rows), then individual items
-- **Input sources** — Space/Enter (keyboard), gamepad button, WebHID switch
-- **ARIA landmark grouping** — discovers `<nav>`, `<main>`, `<aside>` as scan groups
-- **Spatial clustering** — elements not in landmarks are grouped by vertical position (row-based)
-- **Configurable** — scan speed (500-5000ms), loop count, group scan toggle
+- **Two-phase scanning** — first groups (ARIA landmarks + spatial rows), then individual items
+- **Dynamic DOM rebuild** — scan groups refresh on SPA navigation (600ms debounced MutationObserver)
+- **Chrome + content groups** — browser controls scanned alongside page elements
+- **Configurable** — speed (500–5000ms), loop count, group scan toggle
 
 ### Voice Commands
 
-22 offline commands recognized via Web Speech API:
+22 offline commands via Web Speech API — no cloud dependency:
 
-- **Navigation** — "go back", "go forward", "reload", "new tab", "close tab"
-- **Scrolling** — "scroll down", "scroll up", "go to top", "go to bottom"
-- **Actions** — "click", "find", "read page", "stop reading"
-- **Tab management** — "next tab", "previous tab"
-- **Settings** — "settings", "bookmarks", "zoom in", "zoom out"
+| Category | Commands |
+|----------|----------|
+| Navigation | "go back", "go forward", "reload", "new tab", "close tab" |
+| Scrolling | "scroll down", "scroll up", "go to top", "go to bottom" |
+| Actions | "click", "find", "read page", "stop reading" |
+| Tab management | "next tab", "previous tab" |
 
 ### Bootstrap Wizard
 
-First-run setup that works for **every input method**:
+First-run setup accessible via **every input method**:
 
-- **Head tracking** — coarse tracker starts on wizard mount; move head to dwell on tiles
-- **Switch scanning** — Tab + Enter to select
+- **Head tracking** — coarse pre-calibration starts on mount; 2-second dwell targets (120×120px)
+- **Switch scanning** — Tab + Enter
 - **Voice** — speak the option name
 - **Mouse/touch** — click directly
-- **2-second dwell targets** — 120x120px tiles for imprecise cursor control
+- Head tracking stays active during calibration step (no lockout between wizard screens)
 
-### ZoomToClick
+### ZoomToClick Magnifier
 
 Precision selection for dense web content:
 
-- When 3+ interactive elements cluster within 100px of cursor, a **3x magnified lens** appears
-- **300ms settle period** — cursor must stabilize before dwell starts (magnification amplifies tremor)
-- Select the intended element within the lens via dwell click
+- 3+ targets within 100px → **3x magnified lens** appears
+- **Progressive settle radius** — widens over time for tremor users (10px → 40px)
+- **Auto-select** after 10 seconds (most-frequented element in the window)
+- **15-second auto-dismiss** — lens can't trap the user
+- Settle period before dwell starts (magnification amplifies tremor 3x)
+
+### UndoToast
+
+Undo accidental navigation:
+
+- **Centered** — reachable from any cursor position
+- **Extended duration** — max(5s, 3× dwellMs) for slow-dwell users
+- **Hover-pause** — auto-dismiss timer pauses when cursor approaches
+- **5-action undo stack** — covers sequences of accidental clicks
 
 ### Break Reminder
 
-Configurable rest timer for head tracking users:
+Configurable rest timer:
 
 - Default: 20-minute intervals
-- Full-screen pause prompt with oversized "Resume" button (dwell-compatible)
-- Tracking paused during break (not the page)
+- Auto-pause on sustained accuracy drop (<50% for 5 min)
+- Tracking paused during break (not the page), oversized "Resume" button
 
 ---
 
-## Content Bridge Architecture
+## How It Compares
 
-The browser's chrome UI and browsed web pages run in **separate processes** (WebContentsView). AAC features interact with web content via a secure Content Bridge:
+| Feature | Prism Browser | TD Browse (Tobii Dynavox) | Grid 3 Browser (Smartbox) | Chrome + Extensions |
+|---------|:---:|:---:|:---:|:---:|
+| **Head tracking (no hardware)** | Built-in | Requires eye tracker hardware | Requires external tracker | Requires HeadMouse Nano |
+| **Switch scanning** | Built-in (dynamic ARIA) | Not primary | Built-in (Grid 3) | Third-party AT |
+| **Dwell click** | Built-in (configurable) | Built-in (eye gaze) | Built-in | Extension required |
+| **Voice commands** | Offline, built-in | Not available | Voice via Grid 3 | OS Voice Control |
+| **Per-side blink thresholds** | Yes (CP asymmetry) | No | No | No |
+| **Auto-recovery (60s timeout)** | Yes | Manual re-cal | Manual re-enable | N/A |
+| **PHI scrubbing on search** | Automatic (regex + NER) | No | No | No |
+| **HIPAA audit logging** | HMAC-chained | No | No | No |
+| **Content blocking** | Built-in (3 rule sets) | No | No | Extension required |
+| **iPad app** | Yes (native) | TD Pilot only | Grid for iPad | Chrome iOS (no ext.) |
+| **Price** | Included with Synalux | ~$200+ software (hardware from $10,000) | ~$550+ software | Free (no AT) |
 
-```
-Chrome Renderer (AAC)          Browsed Tab (sandboxed)
-┌──────────────────┐          ┌──────────────────┐
-│ Head Tracker      │  ──────► │ Content Bridge    │
-│ Dwell Click       │ IPC      │  - hitTest(x,y)   │
-│ Switch Scanner    │ ◄────── │  - dispatchClick  │
-│ Gesture Detector  │          │  - scanGroups     │
-│ Voice Commands    │          │  - scrollBy       │
-└──────────────────┘          └──────────────────┘
-```
-
-- **Isolated-world preload** — content script invisible to page JavaScript
-- **Same-origin iframes** — bridge traverses into iframes and open shadow DOM
-- **Sender validation** — AAC responses verified against active tab/portal webContents
+**Notes:** TD Browse is the gold standard for eye-tracking-based browsing — Prism's camera tracking is less precise than dedicated eye trackers for users with very limited head movement. Grid 3 offers deeper AAC vocabulary and communication tools.
 
 ---
 
 ## Privacy & Security
 
-### Permissions
+### Session Isolation
 
-**Default-deny** on all sessions (browsing, portal, chrome):
-- Camera: granted only for synalux.ai origin (head tracking)
-- All other permissions (geolocation, USB, HID, serial): denied by default
-
-### Content Security Policy
-
-Production CSP: `script-src 'self'`, `object-src 'none'`, `base-uri 'self'` — no `unsafe-eval` or `unsafe-inline` in scripts.
+| Session | Cookies | Native Bridge | Use |
+|---------|---------|---------------|-----|
+| Portal (authenticated) | Persistent | Full SynaluxBridgeScript | Clinical portal access |
+| Browsing (sandboxed) | nonPersistent | AAC content bridge only | General web |
+| Private (ephemeral) | None (cleared on close) | AAC content bridge only | No history recorded |
 
 ### PHI Sanitization
 
-Two-layer PHI scrubbing on all search queries before they leave the browser:
+Two-layer scrubbing on all search queries:
 
-**Layer 1 (Regex):** SSN, phone, email, DOB, address, ZIP, MRN, NPI, TitleCase names
+**Layer 1 (Regex):** SSN, phone, email, DOB (with/without leading zeros, written dates), address, ZIP/ZIP+4, NPI, hyphenated names
 
-**Layer 2 (NER):** ICD-10 codes, NDC drug codes, medication names (30 common prefixes), age patterns — all gated on medical-context detection to prevent false positives
+**Layer 2 (Context-gated NER):** ICD-10 codes (including U-codes), NDC drug codes, 40 medication name prefixes, MRN patterns, age patterns, 5-digit ZIP, lowercase names — all gated on `hasMedicalContext()` to reduce false positives
 
-### Session Lock (HIPAA Automatic Logoff)
+### Session Lock (HIPAA §164.312(a)(2)(iii))
 
-- **15-minute inactivity timeout** — triggers automatic lock
-- **View detachment** — all tab and portal WebContentsViews hidden + throttled (no JS/websocket/media during lock)
-- **PIN-based unlock** — forced PIN setup on first use, 5-attempt brute-force lockout with 30s cooldown
-- **Encrypted PIN storage** — via Electron safeStorage (OS keychain)
-- **powerMonitor integration** — locks on system suspend/lock-screen
+- 15-minute inactivity timeout → automatic lock
+- PIN-based unlock with **exponential backoff** (30s → 1m → 5m → 15m max)
+- PIN change requires current PIN + blocked while locked
+- Encrypted storage via OS keychain (desktop: safeStorage, iOS: Keychain)
+- Failed attempts audit-logged
+- Locks on system suspend / lock-screen
 
-### Audit Logging
+### Audit Logging (HIPAA §164.312(b))
 
-Append-only JSONL log with **HMAC chain** (per-install key in OS keychain):
+- Append-only JSONL with **HMAC-SHA256 chain** (per-install key in OS keychain)
+- 40+ event types with user identity
+- Renderer can only write allowlisted event types (session/security events restricted to main process)
+- Cross-day chaining for multi-session integrity
+- Private browsing: audit logged, history NOT recorded
 
-- **40+ event types**: session start/lock/unlock, navigation, search, PHI redaction, bookmark/clip CRUD, portal open/close, reader mode, downloads, permissions, clinical context, therapy timer, sync, AI summary
-- **Who/what/when/where** per 164.312(b)
-- **Tamper-evident** — each entry chains to the previous via HMAC-SHA256; `audit:verify` IPC validates the chain
-- **Cross-day chaining** — head hash persisted in safeStorage
+### Content Bridge Security
 
-### Encrypted Storage
-
-All persistent data (bookmarks, history, settings, annotations, caregiver config) encrypted via Electron `safeStorage`:
-- **Fail-closed** — refuses to persist when encryption unavailable (no plaintext fallback)
-
----
-
-## Portal Integration
-
-Synalux portal services as first-class sidebar modules:
-
-| Module | Shortcut | Description |
-|--------|----------|-------------|
-| Dashboard | Cmd+Shift+H | Practice overview |
-| Mail | Cmd+Shift+M | Clinical email |
-| Calendar | Cmd+Shift+C | Scheduling |
-| Drive | Cmd+Shift+D | Document storage |
-| Chat | Cmd+Shift+A | Team messaging |
-
-- **Portal session partition** — isolated cookies/storage from browsing
-- **AAC-navigable** — head tracking and switch scanning work on portal modules
-- **Navigation lock** — portal views restricted to synalux.ai origin
+| | Desktop (Electron) | iOS (WKWebView) |
+|---|---|---|
+| Isolation | Isolated-world preload (invisible to page JS) | Same-world IIFE + defineProperty (non-writable, non-configurable) |
+| Authentication | IPC channel per tab | Closure-only nonce, validated in Swift |
+| Popup prevention | setWindowOpenHandler → deny | createWebViewWith → load in same view |
+| DOM traversal | Iframes + open shadow DOM | Same |
 
 ---
 
 ## Clinical Features
 
-### Reader Mode
+| Feature | Description | Shortcut |
+|---------|-------------|----------|
+| **Reader Mode** | Readability.js extraction + DOMPurify + adjustable font + TTS | Cmd+Shift+R |
+| **Word-by-Word TTS** | 3-tier: Azure Neural → Web Speech → espeak-ng WASM. Adjustable rate. | |
+| **AI Page Summary** | PHI-sanitized text → portal AI → 3-5 bullet summary | Cmd+Shift+P |
+| **Clinical Context** | Active patient data sidebar (name, DOB, dx, meds, notes) | Cmd+Shift+X |
+| **Therapy Timer** | Start/stop/resume with notes, auto-logged to audit trail | Cmd+Shift+T |
+| **PHI-Safe Printing** | Regex-masked rendered text (catches PHI split across tags) | Cmd+P |
+| **Translation** | Portal-routed, LRU cache (500 entries), 25 languages | |
+| **Web Clipper** | Highlight → save with notes, color, URL. Encrypted storage. | |
 
-Extract clean article text from any web page:
-- **Readability.js** extraction with **DOMPurify** sanitization
-- **Adjustable font size** (12-28pt)
-- **TTS read-aloud** via Web Speech API
-- **Portal-origin blocked** — prevents PHI extraction from clinical pages
-- **Cmd+Shift+R** toggle
+---
 
-### AI Page Summary
+## Caregiver Mode
 
-"Summarize this" sends **PHI-sanitized** page text to portal AI:
-- Text sanitized through PHI scrubber before egress
-- **Fail-closed** — aborts if sanitizer errors (no unsanitized egress)
-- 3-5 bullet point summary
-- Cmd+Shift+P
-
-### Clinical Context Sidebar
-
-View active patient data alongside web browsing:
-- Patient name, ID, DOB, diagnoses, medications, notes
-- Fetched from portal API with authentication
-- Audit logged on open/close
-- Cmd+Shift+X
-
-### Therapy Timer
-
-Session timer for clinical appointments:
-- Start/stop/resume/reset with notes field
-- Auto-logs duration to audit trail
-- Cmd+Shift+T
-
-### PHI-Safe Printing
-
-Print pages with PHI redacted:
-- Sanitizes **rendered text** (innerText, not HTML source) — catches PHI fragmented across tags
-- Prints plain text paragraphs (no scripts/active content)
-- HTML-escaped before interpolation
-- Audit logged with redaction count
-- Cmd+P
+| Feature | Description |
+|---------|-------------|
+| **PIN lock** | iOS Keychain / macOS safeStorage, constant-time comparison |
+| **Domain allowlist** | Dot-boundary matching (evil-google.com doesn't pass for google.com) |
+| **Time limits** | Configurable daily session duration |
+| **Usage analytics** | Domains visited (apex only), session time, shield blocks — 30-day rolling |
+| **Content blocking** | 3 rule sets: ads, privacy, annoyances. Per-site exemptions. Shield badge. |
 
 ---
 
 ## Additional Features
 
-### Phishing Protection
-Safe Browsing proxied through Synalux portal — blocks known phishing sites with a warning page.
+| Feature | Description |
+|---------|-------------|
+| **Split view** | Two tabs side-by-side (desktop). iPad Split View + Slide Over. |
+| **Private browsing** | Ephemeral session. No history, no cookies. Audit still fires. |
+| **Bookmarks & history** | Encrypted via OS keychain. Chrome import supported. |
+| **Settings export** | JSON profile + QR code for therapist-to-therapist sharing |
+| **Cross-device sync** | Server-encrypted bookmarks/settings via portal API |
+| **DNS-over-HTTPS** | Cloudflare + Google secure resolvers |
+| **Phishing protection** | Safe Browsing proxy. Degrades gracefully when API unavailable. |
+| **Auto-updater** | Code-signed feed (desktop). App Store updates (iOS). |
 
-### Private Browsing
-Non-persistent session partition with no cache and default-deny permissions.
+---
 
-### Translation Mode
-Portal-routed translation with LRU cache (500 entries), 25 built-in languages.
+## Tracking Pipeline
 
-### 3-Tier TTS
-Azure Neural TTS → Web Speech API → espeak-ng WASM fallback.
+```
+Camera → MediaPipe Face Detection (24 FPS)
+    → EMA Smoothing (alpha=0.3, tremor filter)
+    → Kalman Filter (confidence-weighted)
+    → Drift Detector (adaptive threshold + directional ratio)
+    → Recovery Probe (8/10 window, 60s hard timeout)
+    → Edge Pin Detector
+    → Fatigue Tracker (per-side independent)
+    → Gesture Detector (per-side blink, conversation mode)
+    → Content Bridge → queryInteractive / hitTest / dispatchActivate
+```
 
-### Web Clipper
-Highlight text → save with notes, color, and URL. Encrypted storage, 1000 entry cap.
+---
 
-### Cross-Device Sync
-Server-encrypted bookmark/settings sync via portal API. Per-device ID, merge with dedup.
+## Technical Architecture
 
-### Per-Side Fatigue Tracking
-Left/right independent accuracy tracking for users with cerebral palsy or stroke — alerts when one side's performance degrades.
+### Desktop
 
-### Caregiver Mode
-Content filters (domain blocklist), time limits (persisted daily usage), allowed hours, PIN-protected settings.
+- **Electron** with WebContentsView per tab (not deprecated BrowserView)
+- **61 TypeScript source files**, 15 test suites (172 tests)
+- Two session partitions: `persist:browsing` (shielded) + `persist:portal` (authenticated)
+- Sandbox + context isolation on all views
+- Register/attach/detach lifecycle — no listener leaks on macOS close→reopen
 
-### DNS-over-HTTPS
-Prevents DNS query snooping on clinical searches via Cloudflare + Google DoH servers.
+### iOS
+
+- **19 Swift source files** + 5 widget files, 16 unit tests
+- Same B2B subscription pattern as Synalux POS and Online Ordering
+- WKContentRuleList ad blocking, App Group for widgets
+- Datadog RUM for crash reporting + performance monitoring
 
 ---
 
@@ -274,30 +310,39 @@ Prevents DNS query snooping on clinical searches via Cloudflare + Google DoH ser
 | Cmd+Shift+P | Summarize page |
 | Cmd+Shift+X | Clinical context |
 | Cmd+Shift+T | Therapy timer |
-| Cmd+Shift+K | AAC keyboard |
+| Cmd+Shift+K | AAC phrase board |
 | Cmd+/ | AI chat |
 | Cmd+P | PHI-safe print |
 
 ---
 
-## Technical Architecture
+## System Requirements
 
-- **Electron 42.4** with WebContentsView per tab (not deprecated BrowserView)
-- **React 19** chrome UI with Zustand state management
-- **Two session partitions** — `persist:browsing` (shielded) + `persist:portal` (authenticated)
-- **Sandbox: true** on chrome window + all tab/portal views
-- **Register/attach/detach lifecycle** — no listener leaks on macOS close→reopen
-- **141 unit tests** across 11 test suites
+### Desktop
+- macOS 12+ (Apple Silicon + Intel universal)
+- Windows 10+ (x64)
+- Linux (AppImage, x64)
+- Camera required for head tracking
+- 4 GB RAM minimum
+
+### iOS
+- iPad or iPhone with iOS 16+
+- Front-facing camera for head tracking
+- Synalux subscription (same tier as POS / Online Ordering)
 
 ---
 
-## System Requirements
+## Getting Started
 
-- **macOS** 12+ (Apple Silicon + Intel universal)
-- **Windows** 10+ (x64)
-- **Linux** (AppImage, x64)
-- Camera required for head tracking
-- Internet required for portal features, AI summary, and sync
+Prism Browser is included with your Synalux subscription. No additional purchase required.
+
+1. **Desktop**: Download from [synalux.ai/downloads](https://synalux.ai/downloads)
+2. **iPad/iPhone**: Available on the App Store (search "Prism Browser")
+3. Sign in with your Synalux account
+4. Complete the AAC setup wizard — choose your input method
+5. Start browsing
+
+For shared clinical devices, enable **Caregiver Mode** in Settings.
 
 ---
 
