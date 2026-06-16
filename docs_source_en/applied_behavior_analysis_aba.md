@@ -323,15 +323,49 @@ An AI assistant trained on ABA clinical workflows:
 
 ---
 
-## Connectivity & Data Safety
+## Offline Data Collection
 
-Synalux requires an internet connection for clinical data capture. When offline:
+Designed for the reality of ABA field work — home visits with no WiFi, school basements, rural clinics. RBTs can collect full session data offline; it syncs automatically when connectivity returns.
 
-- **Visible status** — a red "Offline — saves disabled" badge appears immediately
-- **Data preserved in-session** — entered trials and notes remain in the active form until you reconnect and save
-- **Session save protection** — if an end-of-session save fails, the app shows a retry dialog and preserves all session state (no silent data loss)
-- **No client-side PHI storage** — clinical data is never written to browser storage (localStorage or IndexedDB)
-- **PHI purge on boot** — any legacy device data from prior versions is automatically cleared on app load
+### How It Works
+
+1. **RBT records session data normally** — trials, frequency, ABC, task analysis all work offline
+2. **Data is encrypted immediately** — AES-GCM-256 encryption before any write to device storage (PBKDF2 key derivation from session token, 100k iterations)
+3. **Queued locally** — up to 200 encrypted items stored in the browser's localStorage
+4. **Auto-sync on reconnect** — when WiFi returns, queued items decrypt and POST to the server automatically
+5. **Idempotency keys** prevent duplicates if a sync retries
+
+### Status Indicators
+
+| Badge | Meaning |
+|-------|---------|
+| *(hidden)* | Online, all synced — normal operation |
+| 🔴 Offline — saves will queue locally | Offline, no queued items yet |
+| 🟡 Offline · N items queued | Offline with data waiting to sync |
+| 🔄 Syncing N items... | Connection restored, syncing in progress |
+| 🟠 Queue 180/200 — connect soon | Queue nearing capacity |
+| 🔴 Queue full — connect to sync | Queue at max — must reconnect before continuing |
+
+### Session Status Flow
+
+Sessions use the same status lifecycle whether online or offline:
+
+```
+in_progress → completed → submitted
+```
+
+- **in_progress** — session is active, data being collected (online or offline)
+- **completed** — RBT ended the session (EVV signed, data saved or queued)
+- **submitted** — session submitted for billing/review
+
+When offline, the `completed` status is set in the queued payload. On sync, the server receives the session with its original client-side timestamps — billing-accurate per CMS/Medicaid requirements.
+
+### Security
+
+- **Encrypted at rest** — all queued clinical data is AES-GCM-256 encrypted; plaintext PHI never touches device storage
+- **Session-bound keys** — encryption key derives from the logged-in session; expired sessions cannot decrypt queued data
+- **Purge on logout/idle** — encrypted queue cleared on 15-minute idle timeout or explicit logout
+- **48-hour expiry** — queued items older than 48 hours are automatically discarded
 - **SOAP notes** — voice dictation works offline (WASM Whisper runs on-device); generated notes save when reconnected
 
 ---
@@ -388,7 +422,6 @@ In active development:
 - [ ] Phase change lines and celeration/aim lines on graphs
 - [ ] Insurance-ready progress report generator with embedded graphs
 - [ ] Parent/caregiver portal for progress viewing
-- [ ] Encrypted offline data collection with auto-sync
 - [ ] BACB fieldwork hours tracking (restricted/unrestricted split)
 - [ ] Supervision contract management
 
