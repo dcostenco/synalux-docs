@@ -10,9 +10,10 @@ Synalux's ABA module is a full-lifecycle clinical platform for **BCBAs**, **BCaB
 
 | Category | Features |
 |----------|----------|
-| **Data Collection** | Discrete trials, duration recording, frequency counter, task analysis, ABC (antecedent-behavior-consequence) |
-| **Assessments** | VB-MAPP, ABLLS-R, AFLS, Essentials for Living, PEAK, custom instruments |
-| **Treatment Planning** | FBA summaries, BIP display, mastery predictions, AI-assisted goal suggestions |
+| **Data Collection** | Discrete trials, duration recording, frequency counter, interval recording, task analysis, ABC (antecedent-behavior-consequence) |
+| **Assessments** | VB-MAPP, ABLLS-R, AFLS, Essentials for Living, PEAK, custom instruments — with CSV item import for licensed content |
+| **Goals Library** | Evidence-based goal bank with 11 ABA domains, template creation, search/filter, assign-to-patient flow |
+| **Treatment Planning** | Guided FBA→BIP wizard, mastery predictions, AI-assisted goal suggestions |
 | **Graphing** | Auto-generated line charts with mastery thresholds, baseline phase detection, AI trend narratives |
 | **Clinical Notes** | SOAP notes with voice dictation (on-device WASM Whisper), co-signature workflow |
 | **Staff Management** | Credential tracking (BCBA/RBT/BCaBA), supervision logs, expiry alerts |
@@ -56,6 +57,13 @@ Step-by-step recording for complex skill chains:
 - Track which steps need additional prompting
 - Forward and backward chaining support
 
+### Interval Recording
+
+Record whether a behavior occurred during each observation interval:
+- ✓ Occurred / ✗ Absent buttons for each interval
+- Running percentage calculation (intervals with behavior / total intervals)
+- Suitable for partial-interval recording procedures
+
 ### ABC Data Collection
 
 Record the three-term contingency for functional analysis:
@@ -94,11 +102,13 @@ HIPAA-compliant session verification required by many Medicaid programs:
 
 ### Assessment Features
 
-- **Domain-based task generation** — automatically populates milestone items per domain
-- **Historical tracking** — compare scores across assessment periods
+- **Real instrument items** — import actual milestone descriptions from your licensed copy via CSV upload (format: `domain,code,label,description`)
+- **Domain-based scoring grid** — per-item scores with descriptions, tooltips, and color-coded progress
+- **Historical tracking** — compare scores across assessment periods; record completed assessments retroactively
 - **Multiple assessment sessions** per patient per instrument
+- **Barrier analysis & recommendations** — structured clinical notes per assessment
 - **AI-assisted interpretation** — trend analysis across assessment periods
-- **Export** — assessment data available for treatment plan integration
+- **Legacy fallback** — auto-generated item labels for templates without imported items
 
 ### Adaptive Assessment Log
 
@@ -107,6 +117,71 @@ A score repository for externally-administered standardized assessments:
 - **Not an instrument** — Synalux does not administer, score, or reproduce any standardized assessment
 - **AI integration** — BCBA assistant pulls scores verbatim for medical-necessity letters and BIP drafts
 - **Audit trail** — PHI-tier triple-logging on every CRUD operation
+
+---
+
+## Goals Library
+
+A reusable, searchable goal bank for building evidence-based treatment plans.
+
+### Goal Templates
+
+Create and maintain a workspace-wide library of clinical goals:
+- **11 ABA domains** — Behavior Reduction, Skill Acquisition, Communication, Social Skills, Daily Living, Academic, Motor, Play & Leisure, Self-Management, Safety, Other
+- **Structured definitions** — title, operational description, baseline criteria, mastery criteria, measurement method
+- **Goal types** — Short-Term, Long-Term, Maintenance
+- **8 measurement methods** — Percent Correct, Frequency Count, Duration, Rate, Latency, Interval Recording, Task Analysis, Discrete Trial
+- **Search and filter** — find goals by domain, keyword, or type
+
+### Assign to Patient
+
+Clone a template goal into an active patient goal:
+1. Select a goal template from the library
+2. Choose the patient
+3. Optionally link to a treatment plan
+4. Goal is created as `active` with the template's criteria pre-populated
+
+### Active Goals View
+
+Track all patient-assigned goals across the practice:
+- Patient name, domain, current progress, status
+- Filter by domain or search by goal title
+- Status tracking: Active → In Progress → Met → Maintenance → Discontinued
+
+---
+
+## FBA → BIP Builder
+
+A guided 3-step wizard for creating Functional Behavior Assessments and Behavior Intervention Plans.
+
+### Step 1: FBA (Functional Behavior Assessment)
+
+- **Target behavior definitions** — operational definition, examples, non-examples, baseline frequency, severity
+- **A-B-C observations** — structured Antecedent-Behavior-Consequence data entry with setting and time
+- **Assessment summary** — current functioning level, relevant diagnoses, prior interventions
+- **Behavioral history** — onset, previous BIPs, treatment response
+
+### Step 2: BIP (Behavior Intervention Plan)
+
+For each target behavior:
+- **Hypothesized function** — Attention, Escape/Avoidance, Access to Tangible, Automatic/Sensory
+- **Antecedent / prevention strategies** — environmental modifications, visual schedules, pre-teaching, choice-making
+- **Replacement behavior (FCT)** — select from the Goals Library or enter custom replacement
+- **Teaching procedure** — DTT, NET, prompting hierarchy, reinforcement schedule
+- **Consequence strategies** — DRA, DRO, NCR, extinction (if safe)
+- **Crisis / safety protocol** — de-escalation steps, supervisor contact, emergency procedures
+
+Plus:
+- **Caregiver involvement** — parent training goals, home program, communication protocol
+- **Global crisis plan** — emergency contacts, de-escalation protocol
+- **Review date** scheduling
+
+### Step 3: Review & Save
+
+- Full BIP summary with all sections displayed
+- **BCBA disclaimer** — "Clinical support draft; must be reviewed and individualized by a credentialed BCBA before implementation per local policy and applicable laws."
+- Saves as `treatment_plans` with `plan_type = 'bip'` and `status = 'draft'`
+- Draft BIPs appear in the patient's Treatment Plans tab with "(Draft)" label
 
 ---
 
@@ -248,15 +323,16 @@ An AI assistant trained on ABA clinical workflows:
 
 ---
 
-## Offline-First Architecture
+## Connectivity & Data Safety
 
-Designed for the reality of clinical settings — unreliable Wi-Fi, school environments, home visits:
+Synalux requires an internet connection for clinical data capture. When offline:
 
-- **Instant local save** — all data entries persist to device storage immediately
-- **Background sync** — queued mutations auto-upload when connectivity returns
-- **Stale data detection** — visual banner warns when displayed data may be outdated (60-second threshold)
-- **Conflict resolution** — server-side timestamps prevent data overwrites
-- **Multi-device** — data syncs across devices within the same workspace
+- **Visible status** — a red "Offline — saves disabled" badge appears immediately
+- **Data preserved in-session** — entered trials and notes remain in the active form until you reconnect and save
+- **Session save protection** — if an end-of-session save fails, the app shows a retry dialog and preserves all session state (no silent data loss)
+- **No client-side PHI storage** — clinical data is never written to browser storage (localStorage or IndexedDB)
+- **PHI purge on boot** — any legacy device data from prior versions is automatically cleared on app load
+- **SOAP notes** — voice dictation works offline (WASM Whisper runs on-device); generated notes save when reconnected
 
 ---
 
@@ -299,15 +375,22 @@ ABA services are delivered worldwide. Synalux adapts to your region:
 
 ## Roadmap
 
-Features in active development:
+Recently shipped:
 
-- [ ] FBA/BIP structured builder workflow
-- [ ] Goals template library (browse, search, assign from evidence-based bank)
+- [x] FBA/BIP structured builder workflow (3-step wizard)
+- [x] Goals template library (browse, search, assign from evidence-based bank)
+- [x] Real assessment instrument support (CSV item import)
+- [x] Interval recording UI (occurred/absent with running percentage)
+- [x] Task analysis recording in post-hoc data collection
+
+In active development:
+
 - [ ] Phase change lines and celeration/aim lines on graphs
-- [ ] Insurance-ready progress report generator
+- [ ] Insurance-ready progress report generator with embedded graphs
 - [ ] Parent/caregiver portal for progress viewing
-- [ ] Interval recording grid UI
-- [ ] Supervision hours ratio calculator
+- [ ] Encrypted offline data collection with auto-sync
+- [ ] BACB fieldwork hours tracking (restricted/unrestricted split)
+- [ ] Supervision contract management
 
 ---
 
