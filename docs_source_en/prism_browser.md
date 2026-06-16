@@ -23,6 +23,12 @@ Available on **macOS**, **Windows**, **Linux** (Electron desktop) and **iPad/iPh
 
 ## iOS App
 
+### Desktop
+
+![Prism Browser Desktop — Address bar, tabs, sidebar, Synalux portal](assets/browser-desktop-main.png)
+
+### iOS
+
 ![Prism Browser iOS — AI Consent Screen](assets/browser-ios-consent.png)
 
 The iOS app follows the same B2B subscription pattern as Synalux POS and Online Ordering:
