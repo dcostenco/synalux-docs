@@ -23,6 +23,10 @@ Available on **macOS**, **Windows**, **Linux** (Electron desktop) and **iPad/iPh
 
 ## iOS App
 
+### Desktop
+
+![Prism Browser Desktop — Tab bar, address bar, sidebar, portal](assets/browser-desktop-main.png)
+
 ### iOS
 
 ![Prism Browser iOS — AI Consent Screen](assets/browser-ios-consent.png)
