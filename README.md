@@ -19,6 +19,7 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 * **[Prism AAC](docs_source_en/prism_aac.md)** — AI-powered Augmentative and Alternative Communication app
 * **[Prism Coder IDE](docs_source_en/coder.md)** — Local-first AI IDE
 * **[PrismCoach](docs_source_en/prismcoach.md)** — AI Clinical Coaching
+* **[Prism Browser](docs_source_en/prism_browser.md)** — Privacy-first clinical browser with AAC accessibility
 
 ### Clinical & Medical
 * **[Clinical Notes & Documentation](docs_source_en/clinical_notes_documentation.md)**
