@@ -344,12 +344,12 @@ Prism Browser is included with your Synalux subscription. No additional purchase
 
 | Platform | Download | Notes |
 |----------|----------|-------|
-| **macOS** (Apple Silicon + Intel) | [Download DMG](https://github.com/dcostenco/synalux-private/releases/latest/download/prism-browser-0.1.0-mac.dmg) | Universal binary, Apple Developer ID signed + notarized |
-| **Windows** (x64) | [Download Installer](https://github.com/dcostenco/synalux-private/releases/latest/download/prism-browser-0.1.0-setup.exe) | Self-signed (SmartScreen warning on first run) |
-| **Linux** (x64) | [Download AppImage](https://github.com/dcostenco/synalux-private/releases/latest/download/Prism.Browser-0.1.0.AppImage) | Portable, no install needed |
+| **macOS** (Apple Silicon + Intel) | DMG (universal) | Apple Developer ID signed + notarized |
+| **Windows** (x64) | EXE installer | Self-signed (SmartScreen warning on first run) |
+| **Linux** (x64) | AppImage | Portable, no install needed |
 | **iPad / iPhone** | App Store (search "Prism Browser") | Native Swift app |
 
-**[All releases →](https://github.com/dcostenco/synalux-private/releases)**
+**[Download latest release →](https://github.com/dcostenco/synalux-private/releases/latest)**
 
 Releases are built automatically on every version tag via GitHub Actions. macOS DMG is signed with Apple Developer ID and notarized.
 
