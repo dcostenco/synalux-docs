@@ -338,15 +338,25 @@ Camera → MediaPipe Face Detection (24 FPS)
 
 ---
 
-## Getting Started
+## Downloads
 
 Prism Browser is included with your Synalux subscription. No additional purchase required.
 
-1. **Desktop**: Download from [synalux.ai/downloads](https://synalux.ai/downloads)
-2. **iPad/iPhone**: Available on the App Store (search "Prism Browser")
-3. Sign in with your Synalux account
-4. Complete the AAC setup wizard — choose your input method
-5. Start browsing
+| Platform | Download | Notes |
+|----------|----------|-------|
+| **macOS** (Apple Silicon + Intel) | [Download DMG](https://github.com/dcostenco/synalux-private/releases/latest) | Universal binary, code-signed |
+| **Windows** (x64) | [Download Installer](https://github.com/dcostenco/synalux-private/releases/latest) | Azure Trusted Signing (EV certificate) |
+| **Linux** (x64) | [Download AppImage](https://github.com/dcostenco/synalux-private/releases/latest) | Portable, no install needed |
+| **iPad / iPhone** | App Store (search "Prism Browser") | Native Swift app |
+
+Releases are built automatically on every version tag via GitHub Actions.
+
+## Getting Started
+
+1. Download and install for your platform
+2. Sign in with your Synalux account (Apple Sign-In or Google)
+3. Complete the AAC setup wizard — choose your input method
+4. Start browsing
 
 For shared clinical devices, enable **Caregiver Mode** in Settings.
 
