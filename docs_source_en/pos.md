@@ -203,6 +203,8 @@ Revenue Centers control which menu categories appear, which KDS stations receive
 
 Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service.
 
+<img src="../images/pos/settings_stations.png" alt="Station Configuration Settings">
+
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -799,6 +801,8 @@ Issue gift cards ($25–$250) with auto-numbering and multi-location redemption.
 
 Generate billing-cycle invoices for house account (A/R) customers. Itemized charges, payments, and balance with draft → sent → paid → void lifecycle.
 
+<img src="../images/pos/settings_house_accounts.png" alt="House Accounts">
+
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -816,7 +820,7 @@ Generate billing-cycle invoices for house account (A/R) customers. Itemized char
 
 Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, purchase minimums, and usage limits — all server-side enforced.
 
-<img src="../images/pos/ipad_settings_discounts.png" alt="Discount Settings">
+<img src="../images/pos/ipad_settings_discounts.png" alt="Discount Settings — auto-apply, stacking, group, modifiers">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -845,6 +849,8 @@ Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, 
 ### Real-Time Alerts
 
 Automated alerts for low stock, overtime, and order delays. Auto-scan at every shift clock-in. Role-filtered — managers see everything, servers see their own.
+
+<img src="../images/pos/ipad_alerts_reports.png" alt="Reports with Alerts">
 
 <details>
 <summary><strong>Setup</strong></summary>
