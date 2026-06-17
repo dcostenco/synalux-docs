@@ -328,7 +328,9 @@ Ticket board with color-coded timing (green → yellow → orange → red). Bump
 
 ### Timed Course Fire
 
-Automatic kitchen ticket timing — items in a course fire based on prep time so everything lands on the expo at the same time.
+Automatic kitchen ticket timing — items in a course fire based on prep time so everything lands on the expo at the same time. Course numbers are assigned at the register; KDS hides future-course tickets until their fire time.
+
+<img src="../images/pos/ipad_kds_stations.png" alt="KDS — timed tickets appear when fire_at time passes">
 
 <details>
 <summary><strong>How it works</strong></summary>
@@ -353,6 +355,8 @@ Automatic kitchen ticket timing — items in a course fire based on prep time so
 ### Modifier-Based KDS Steering
 
 Modifiers can redirect parent items to additional kitchen stations (additive routing). Example: a "Grilled Shrimp" modifier on a burger sends the burger to both Prep AND Grill stations.
+
+<img src="../images/pos/settings_modifier_steering.png" alt="Modifier KDS Steering — Grilled Shrimp routes to Grill, Side Salad routes to Cold">
 
 <details>
 <summary><strong>Setup</strong></summary>
