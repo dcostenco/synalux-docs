@@ -182,6 +182,7 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 Revenue Centers control which menu categories appear, which KDS stations receive items, which discounts are eligible, and which price level applies — per service area.
 
 <img src="../images/pos/ipad_settings_venue_rc.png" alt="Venue Settings — Revenue Centers">
+<img src="../images/pos/ipad_settings_venue_rc_scroll.png" alt="Revenue Center Configuration">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1327,6 +1328,8 @@ Post-visit surveys, star ratings, comment review, and response templates.
 ### Printers & Cash Drawer
 
 Thermal receipt printers, kitchen ticket printers, and cash drawers. Network (LAN), USB, and Bluetooth. Epson, Star, and generic ESC/POS. No drivers needed — the browser handles USB and Bluetooth natively.
+
+<img src="../images/pos/settings_printers_kds.png" alt="Printers & KDS Settings">
 
 <details>
 <summary><strong>Supported Hardware</strong></summary>
