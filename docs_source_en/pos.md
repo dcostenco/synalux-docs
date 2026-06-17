@@ -31,11 +31,19 @@ Use your own iPad — or any device with a browser.
 | Offline Mode (PWA) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ |
 | QuickBooks + Xero Sync | ✅ | $ | $ | $ | $ | $ |
 | 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Timed Course Fire (Prep-Time Stagger) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Modifier-Based KDS Steering | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Per-Station Terminal Config | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Revenue Center Behavioral Engine | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Auto-Apply Discounts + Group (Nth Free) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Recipe Costing + Auto-Deduction | ✅ | $ | ❌ | ❌ | $ | ❌ |
+| Real-Time Alerts (Stock/OT/Delay) | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
 | | | | | | | |
 | **Only Synalux** | | | | | | |
 | AI Chat on 15 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Payroll + CA 226.7 Compliance | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
 | 3-Mode Tip Pooling (FLSA) | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
 
@@ -169,6 +177,67 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 
 ---
 
+### Revenue Centers
+
+Revenue Centers control which menu categories appear, which KDS stations receive items, which discounts are eligible, and which price level applies — per service area.
+
+<img src="../images/pos/ipad_settings_venue_rc.png" alt="Venue Settings — Revenue Centers">
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Define RCs in **Settings > Venue Settings** (e.g., Main Dining, Bar, Patio, Takeout)
+2. Configure per-RC in **Settings > Venue Settings > Revenue Centers**:
+   - **Menu Categories** — which categories show when this RC is active
+   - **KDS Routes** — remap station routing (e.g., Bar RC sends all items to bar station)
+   - **Eligible Discounts** — restrict which discounts work in this RC
+   - **Price Level** — default pricing for orders in this RC
+3. Staff select their RC at login. Orders are automatically scoped.
+
+</details>
+
+---
+
+### Per-Station Configuration
+
+Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service.
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Go to **Settings > Stations > Add Station**
+2. Set **Name** ("Bar POS", "Hostess", "Drive-Thru 1")
+3. Assign **Menu Categories** — only these categories appear on this terminal
+4. Assign **Printers** — this station sends tickets to specific printers
+5. Set **Default Revenue Center** — auto-selects RC when staff logs in
+6. Set **Allowed Roles** — restrict which staff roles can use this station
+7. Set **Allowed Revenue Centers** — restrict which RCs are available
+8. Auth flow: PIN → Station Picker (filtered by role) → RC Overlay → POS
+
+</details>
+
+---
+
+### Price Levels
+
+Up to 14 price levels per item with automatic day/time scheduling. Happy hour, employee, VIP pricing — all server-side.
+
+<img src="../images/pos/settings_price_levels.png" alt="Price Level Settings">
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Define levels in **Settings > Venue Settings > Price Levels** with name + multiplier
+2. Set **Schedule** for auto-switching: `{days: ["mon","tue","wed","thu","fri"], start: "16:00", end: "18:00"}`
+3. **Overnight windows** work: `{start: "22:00", end: "02:00"}`
+4. Per-item overrides in **Menu Builder > Item > Price Levels** (exact price per level)
+5. **Price cascade:** Station price level → RC price level → Schedule → Base price
+6. Manual override requires `change_price_level` role (manager+)
+
+</details>
+
+---
+
 ### Register
 
 Ring orders in seconds. Categories, product grid, and order ticket — all on one screen.
@@ -237,16 +306,59 @@ Assign items to individual seats for split checks and per-guest delivery. Seat t
 
 ### Kitchen Display (KDS)
 
-Ticket board with color-coded timing. Bump, recall, void. All-day count per item.
+Ticket board with color-coded timing (green → yellow → orange → red). Bump, recall, void. All-day count per item. 8 station types: Kitchen, Grill, Fry, Prep, Expo, Bar, Cold, Pass.
 
-<img src="../images/pos/ipad_03_kds.png" alt="KDS">
+<img src="../images/pos/ipad_kds_stations.png" alt="KDS with station tabs">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
 1. Open `/pos/kds` on any tablet or TV
-2. Filter by station: Grill, Fry, Prep, Expo, Bar, Cold
+2. Filter by station: ALL, Grill, Fry, Prep, Expo, Bar, Cold, Pass
 3. Configure routing rules in **Settings > Printers & KDS**
+4. **Timed Course Fire** — set `prep_time_minutes` per menu item. Items split by course; later courses auto-fire offset by the longest prep time so everything finishes together
+5. **Modifier Steering** — modifiers can redirect items to additional stations. Set "Steer to Station" on any modifier option in Menu Builder. Steering is additive: item goes to default AND modifier station
+
+</details>
+
+---
+
+### Timed Course Fire
+
+Automatic kitchen ticket timing — items in a course fire based on prep time so everything lands on the expo at the same time.
+
+<details>
+<summary><strong>How it works</strong></summary>
+
+1. Set **prep_time_minutes** on each menu item in **Settings > Menu Builder**
+2. Assign **Course 1 / 2 / 3** to items in the cart during order entry
+3. Course 1 fires immediately. Course 2 fires after Course 1's longest prep time elapses
+4. Within a course, faster items are delayed — a 5-min soup waits 13 minutes so it finishes with the 18-min steak
+5. KDS hides future-dated tickets until their fire time passes
+6. Online, voice, and WhatsApp orders receive **estimated_ready_at** computed from the longest prep item
+
+| Feature | **Synalux** | RM | Toast | Square |
+|---------|:-----------:|:--:|:-----:|:------:|
+| Timed course fire | ✅ | ✅ | ❌ | ❌ |
+| Prep-time stagger within course | ✅ | ✅ | ❌ | ❌ |
+| ETA in online order response | ✅ | ❌ | ❌ | ❌ |
+
+</details>
+
+---
+
+### Modifier-Based KDS Steering
+
+Modifiers can redirect parent items to additional kitchen stations (additive routing). Example: a "Grilled Shrimp" modifier on a burger sends the burger to both Prep AND Grill stations.
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open **Settings > Menu Builder > Modifier Options**
+2. Set **Steer to Station** dropdown on any modifier option (e.g., "Grilled Shrimp" → Grill)
+3. Toggle **Follow Item** to control whether modifier text appears on the steered ticket
+4. Steering is **additive** — the item goes to its default station AND the modifier's station
+5. Multiple modifiers can steer to different stations — dedup prevents duplicates
 
 </details>
 
@@ -637,17 +749,20 @@ Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, v
 
 ---
 
-### Inventory & Recipes
+### Inventory & Recipe Costing
 
-Stock tracking, low-stock alerts, vendor management, and recipe builder with food cost %.
+Stock tracking with optimistic-lock deductions, low-stock alerts, vendor management, and recipe builder with ingredient cost + profit margin %.
 
 <img src="../images/pos/settings_inventory.png" alt="Inventory">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-- Add items with SKU, qty, unit, cost, and reorder threshold
-- Link recipes to menu items — food cost % auto-calculates
+1. Add inventory items with SKU, qty, unit, cost per unit, and **low stock threshold**
+2. Link **recipes** to menu items — ingredient cost + margin % auto-calculates
+3. On order completion, inventory **auto-deducts** per recipe (optimistic lock with retry)
+4. **Stock count** with audit trail — records who counted, old vs new quantity
+5. Low-stock items trigger **real-time alerts** at shift clock-in
 
 <img src="../images/pos/settings_recipes.png" alt="Recipes">
 <img src="../images/pos/settings_vendors.png" alt="Vendors">
@@ -658,20 +773,87 @@ Stock tracking, low-stock alerts, vendor management, and recipe builder with foo
 
 ### Gift Cards & Loyalty
 
-Issue gift cards ($25–$250). Loyalty with points, auto-tier (Bronze/Silver/Gold), and referrals.
+Issue gift cards ($25–$250) with auto-numbering and multi-location redemption. Loyalty with points, auto-tier, referrals, and **automatic award coupon generation** when customers cross point thresholds.
 
 <img src="../images/pos/settings_gift_cards.png" alt="Gift Cards">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Gift cards** — issue from the Gift Cards page ($25–$250). Customers redeem at payment
-2. **Loyalty** — enable in **Settings > Loyalty**. Customers earn points per dollar spent
-3. Auto-tier upgrades: Bronze → Silver → Gold based on cumulative spend
-4. Referral rewards: existing customers share a link, both get bonus points
+1. **Gift cards** — issue from the Gift Cards page. Auto-numbered. Customers redeem at payment
+2. **Multi-location** — set `workspace_id` on gift cards/house accounts for cross-venue redemption
+3. **Loyalty** — enable in **Settings > Loyalty**. Customers earn points per dollar spent
+4. Auto-tier upgrades: Bronze → Silver → Gold based on cumulative spend
+5. **Award auto-generation** — configure point thresholds in venue features. When a customer crosses a threshold, a coupon is automatically issued with the source discount's value (single-use, optimistic-lock dedup)
+6. Referral rewards: existing customers share a link, both get bonus points
 
 <img src="../images/pos/ipad_loyalty_checkin.png" alt="Loyalty Check-in">
 <img src="../images/pos/settings_loyalty.png" alt="Loyalty Settings">
+
+</details>
+
+---
+
+### House Account Invoicing
+
+Generate billing-cycle invoices for house account (A/R) customers. Itemized charges, payments, and balance with draft → sent → paid → void lifecycle.
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Open **House Accounts** page → select account
+2. Set billing period (start date + end date)
+3. Generate invoice — itemized charges scoped to that specific account
+4. **Auto-discount** — set `auto_discount_id` on a house account to auto-apply a discount when paying via that account
+5. Uniqueness constraint prevents duplicate invoices per billing period
+
+</details>
+
+---
+
+### Discount Engine
+
+Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, purchase minimums, and usage limits — all server-side enforced.
+
+<img src="../images/pos/ipad_settings_discounts.png" alt="Discount Settings">
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. **Auto-apply** — toggle on any discount. Applied automatically when conditions met (no coupon code needed)
+2. **Group discounts** — set `every_nth` (e.g., 4) and `discount_type` (free or % off). Applies to the lowest-priced qualifying item
+3. **Stacking** — toggle `is_exclusive` to prevent combining with other discounts
+4. **Purchase minimum** — set `min_purchase_cents`. Discount only applies above this subtotal
+5. **Max uses** — set `max_uses` for limited promotions. Enforced atomically via Postgres function (concurrent requests: exactly one succeeds)
+6. **Modifier targeting** — require specific modifier selections (e.g., "large pizza with exactly 2 toppings")
+7. **Revenue Center restrictions** — limit discounts to specific RCs
+8. **Target price** — set a specific final price for promotional items
+
+| Type | Example | How it works |
+|------|---------|-------------|
+| Percent | 10% off | `value: 1000` (basis points) |
+| Amount | $5 off | `value: 500` (cents) |
+| BOGO | Buy 1 get 1 | `discount_type: bogo` |
+| Target price | Item for $5 | `discount_type: target_price, value: 500` |
+| Group | Every 4th free | `group_discount_config: {every_nth: 4, discount_type: "free"}` |
+
+</details>
+
+---
+
+### Real-Time Alerts
+
+Automated alerts for low stock, overtime, and order delays. Auto-scan at every shift clock-in. Role-filtered — managers see everything, servers see their own.
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. **Low stock** — set `low_stock_threshold` on inventory items. Alert fires at threshold (warning) and at zero (critical)
+2. **Overtime** — warning at 8 hours on clock, critical at 10 hours
+3. **Order delay** — warning at 25 minutes ticket age, critical at 40 minutes
+4. Alerts auto-scan at every **staff clock-in** — no manual trigger needed
+5. **Dedup** — duplicate alerts prevented. Same condition only generates one unread alert
+6. View alerts in the Reports dashboard (60-second auto-refresh)
 
 </details>
 
@@ -705,19 +887,22 @@ Count cash, distribute tip pool, export GL journal, print Z-Report, close regist
 
 ---
 
-### Reservations
+### Reservations & Waitlist
 
-Timeline view with party size, table assignment, and webhook integration for Google Reserve, OpenTable, and Yelp.
+Full reservation + waitlist management. Timeline view with party size, table assignment, auto-position waitlist with ETA, and webhook integration.
 
-<img src="../images/pos/ipad_reservations.png" alt="Reservations">
+<img src="../images/pos/ipad_reservations_waitlist.png" alt="Reservations & Waitlist">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open the **Reservations** page to see the timeline view
-2. Add reservations manually with party size, date/time, and table assignment
-3. **Webhook integration** — configure webhooks in **Settings > Integrations** for Google Reserve, OpenTable, or Yelp. Incoming reservations auto-create in the system
-4. Waitlist mode available for walk-ins
+1. Open the **Reservations** page — toggle between Reservations and Waitlist tabs
+2. **Create reservation** — guest name, phone, email, party size, date/time, table assignment
+3. **Add to waitlist** — auto-positions with estimated wait time (15 min × position)
+4. **Seat** a party — assign table, records seated_at timestamp
+5. **Cancel / No-show** — tracked with timestamps for reporting
+6. **Webhook integration** — configure in **Settings > Integrations** for Google Reserve, OpenTable, or Yelp
+7. Auto-refresh: reservations every 30s, waitlist every 15s
 
 </details>
 
