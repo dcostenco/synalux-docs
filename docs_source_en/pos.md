@@ -243,16 +243,18 @@ Up to 14 price levels per item with automatic day/time scheduling. Happy hour, e
 
 ### Register
 
-Ring orders in seconds. Categories, product grid, and order ticket — all on one screen.
+Ring orders in seconds. Categories, product grid, and order ticket — all on one screen. Cart auto-scrolls as items are added. Open Price button creates custom-priced items with a description field. Send to Kitchen button reappears after adding new items to a submitted order.
 
 <img src="../images/pos/ipad_01_register.png" alt="Register">
+<img src="../images/pos/ipad_05_register_cart.png" alt="Cart with items, prices, and Send to Kitchen">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Settings > Menu Builder** — add categories and items
+1. **Settings > Menu Builder** — add categories and items with **Item Type** (Food/Alcohol/Beverage/Merchandise) and **KDS Station** (Grill/Fry/Prep/Expo/Bar/Cold/Pass) dropdowns
 2. Set prices, modifiers, KDS stations, and barcodes per item
-3. Items appear on the register automatically
+3. **Per-item price level overrides** — set custom prices for Employee, Happy Hour, VIP levels in the item edit form
+4. Items appear on the register automatically
 
 <img src="../images/pos/settings_menu_builder.png" alt="Menu Builder">
 <img src="../images/pos/ipad_barcode_scan.png" alt="Barcode Scan">
@@ -361,8 +363,9 @@ Modifiers can redirect parent items to additional kitchen stations (additive rou
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open **Settings > Menu Builder > Modifier Options**
-2. Set **Steer to Station** dropdown on any modifier option (e.g., "Grilled Shrimp" → Grill)
+1. Open **Settings > Menu Builder > Modifiers tab**
+2. Click **Edit** on any modifier option to open the inline edit form
+3. Set **KDS Steer** dropdown on any modifier option (e.g., "Grilled Shrimp" → Grill)
 3. Toggle **Follow Item** to control whether modifier text appears on the steered ticket
 4. Steering is **additive** — the item goes to its default station AND the modifier's station
 5. Multiple modifiers can steer to different stations — dedup prevents duplicates
