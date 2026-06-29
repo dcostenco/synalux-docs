@@ -1495,16 +1495,22 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
 
 **Setup steps:**
 
-1. Download the relay package from your Synalux admin (a zip file with the relay folder)
+1. Download the relay from GitHub:
+   ```bash
+   git clone https://github.com/dcostenco/synalux-local-relay.git
+   cd synalux-local-relay
+   ```
+   Or [download as ZIP](https://github.com/dcostenco/synalux-local-relay/archive/refs/heads/main.zip) and unzip.
 
-2. Unzip and open a terminal in that folder
-
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-4. Create a `.env` file in the relay folder with these values (provided by your Synalux admin):
+3. Copy `.env.example` to `.env` and fill in the values (provided by your Synalux admin):
+   ```bash
+   cp .env.example .env
+   ```
    ```env
    SUPABASE_URL=https://your-project.supabase.co
    SUPABASE_KEY=your-supabase-anon-key
@@ -1512,13 +1518,13 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
    RELAY_HMAC_SECRET=your-hmac-secret
    ```
 
-5. Start the relay:
+4. Start the relay:
    ```bash
    node server.mjs
    ```
    You should see: `Successfully subscribed and listening for events!`
 
-6. Go back to **Settings > Printers & KDS** in the POS and click **Test Print** — it should now reach your printer.
+5. Go back to **Settings > Printers & KDS** in the POS and click **Test Print** — it should now reach your printer.
 
 **Keep it running (production):**
 
