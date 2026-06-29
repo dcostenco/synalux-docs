@@ -1488,6 +1488,8 @@ Best for restaurants — printer connects to the same LAN as the POS terminal.
 
 If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your printers are on a local network (192.168.x.x, 10.x.x.x), you need a small background service running on any computer at your venue. This relay bridges the cloud POS to your local printers.
 
+> **iOS / iPad users:** The Synalux POS iOS app prints **directly** from your device to the printer over your local network — no relay needed. The app uses native TCP connections (port 9100) and Bonjour auto-discovery. Just add the printer in Settings > Printers & KDS and tap Test Print. The relay setup below is only for the **web browser** version running on pos.synalux.ai.
+
 <img src="../images/pos/settings_cloud_relay.png" alt="Cloud Print Relay — Settings > Printers & KDS">
 
 **Step 1: Generate the relay config (admin only)**
