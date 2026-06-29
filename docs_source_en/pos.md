@@ -87,6 +87,7 @@ $ = Paid add-on / third-party integration
   - [Order Throttling](#order-throttling)
   - [HR & Timesheets](#hr--timesheets)
   - [Back Office Suite](#back-office-suite)
+  - [Screen Builder](#screen-builder)
   - [Offline Mode (PWA)](#offline-mode-pwa)
   - [Printers & Cash Drawer](#printers--cash-drawer)
   - [Security & PCI Compliance](#security--pci-compliance)
@@ -1169,6 +1170,101 @@ Drag-and-drop widget builder with metric cards, charts, and tables. Preset templ
 <summary><strong>Form Builder</strong></summary>
 
 Custom operational forms with 7 field types: Text, Number, Date, Select, Textarea, Checkbox, and Signature (canvas-based capture). Create templates in `/pos/form-builder`, fill and submit in `/pos/forms`. Submission history is searchable and exportable.
+
+</details>
+
+---
+
+### Screen Builder
+
+Configure the layout of every POS screen from a single settings page — 15 screens with drag-and-drop button placement, grid columns, display toggles, item sizing, and receipt settings. All saved per venue.
+
+**Navigate to:** Settings > Screen Builder
+
+<details>
+<summary><strong>15 Configurable Screens</strong></summary>
+
+| Screen | Key Settings |
+|--------|-------------|
+| **Register** | 4 button zones (drag-and-drop), check panel width, item display size, quick pay toggles |
+| **KDS** | Columns (1-8), gap spacing, ticket card size, all-day counts, age alert thresholds |
+| **Tables** | Columns, table button size, elapsed timer, revenue display |
+| **Customer Display** | Show modifiers, unit price, font size, idle content (promos/logo/specials/blank) |
+| **Online Ordering** | Grid columns, hero height, AI chat toggle, favorites toggle |
+| **Menu Board** | Columns, font size, show prices, show images |
+| **Drive-Thru** | Columns, card size, vehicle description, elapsed timer |
+| **Bar Tabs** | Columns, card size, show total |
+| **EOD** | Tip pool section, cash denominations, denomination columns |
+| **Reports** | Chart height, labor section visibility |
+| **Staff** | Clock in/out, break tracker, wage info |
+| **Refunds** | Void button, reopen button |
+| **Inventory** | Grid columns, cost column, par levels |
+| **Reservations** | View mode (list/calendar/timeline), notes |
+| **Handheld** | Font size, quick actions |
+
+</details>
+
+<details>
+<summary><strong>Register Layout Builder</strong></summary>
+
+The register screen has four configurable button zones:
+
+- **Quick Pay Zone** — one-tap Cash and Credit buttons in the check panel footer. Enable one, both, or neither
+- **Check Footer Zone** — Send to Kitchen, Print Check, Charge — toggle each on/off and resize (S/M/L)
+- **Action Bar Zone** — Split, Transfer, Merge, Move, Discount, Hold, No Sale, Void Order — drag to reorder, toggle on/off, resize each
+- **Top Bar Zone** — optional buttons above the register content area
+
+**Check Panel Width:**
+
+| Setting | Width | Best for |
+|---------|-------|----------|
+| **Narrow** | 320-380px | Maximum menu grid space |
+| **Standard** | 420-480px | Balanced — recommended |
+| **Wide** | 480-540px | Check-centric workflow, large item names |
+
+**Item Display Size:**
+
+| Setting | Text size | Best for |
+|---------|-----------|----------|
+| **Compact** | Small (14px) | High item count, experienced staff |
+| **Comfortable** | Medium (16px) | General use — recommended |
+| **Spacious** | Large (18px) | Readability, accessibility, training |
+
+</details>
+
+<details>
+<summary><strong>Receipt & Bill</strong></summary>
+
+Configure receipt output from **Settings > Screen Builder > Register > Receipt & Bill**.
+
+**Paper Width** — controls thermal column count, PDF page width, and browser print max-width simultaneously:
+
+| Width | Thermal cols | PDF width | Common hardware |
+|-------|:---:|:---:|-----------------|
+| **80mm** (default) | 42 | 80mm | Epson TM-T88, Star TSP143/TSP654, most desktop receipt printers |
+| **58mm** | 30 | 58mm | Mobile printers (Star SM-S, Epson TM-P), small café countertops |
+| **76mm** | 40 | 76mm | Impact/dot-matrix kitchen printers (Star SP700), wide legacy units |
+
+80mm is the most common. Choose 58mm for mobile/handheld setups. 76mm is typically only used with older impact printers.
+
+Toggle 13 receipt sections on/off:
+
+| Section | Default |
+|---------|:-------:|
+| Header (venue name) | On |
+| Address | On |
+| Logo | Off |
+| Items | On |
+| Modifiers | On |
+| Qty & unit price | On |
+| Tax breakdown | On |
+| Suggested gratuity | On |
+| Tip line | On |
+| Signature line | On |
+| QR code | On |
+| Barcode | Off |
+| CC details | On |
+| Footer message | On |
 
 </details>
 
