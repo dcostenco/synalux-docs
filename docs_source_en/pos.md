@@ -1646,7 +1646,7 @@ When an order is sent to kitchen, items are split by category and routed to the 
 
 | Issue | Steps |
 |-------|-------|
-| Network printer not responding | 1. Ping the IP: `ping 192.168.1.100`. 2. Check port: `nc -zv 192.168.1.100 9100`. 3. Ensure port 9100 is not blocked by firewall. 4. Verify static IP (DHCP lease may have expired). |
+| Network printer not responding | 1. Ping the IP: `ping 192.168.1.100`. 2. Check port — **Mac/Linux:** `nc -zv 192.168.1.100 9100` / **Windows:** `Test-NetConnection 192.168.1.100 -Port 9100` (PowerShell). 3. Ensure port 9100 is not blocked by firewall. 4. Verify static IP (DHCP lease may have expired). |
 | USB "No port selected" | Ensure Chrome/Edge, HTTPS or localhost. Try unplugging and reconnecting USB. Check `chrome://device-log`. |
 | Print goes to wrong printer | Verify each printer has the correct **station** and check KDS routing rules. |
 
