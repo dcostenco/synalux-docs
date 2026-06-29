@@ -1484,6 +1484,69 @@ Best for restaurants — printer connects to the same LAN as the POS terminal.
 </details>
 
 <details>
+<summary><strong>Local Relay Setup (Required for Cloud → Local Printing)</strong></summary>
+
+If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your printers are on a local network (192.168.x.x, 10.x.x.x), you need a small background service running on any computer at your venue. This relay bridges the cloud POS to your local printers.
+
+**What you need:**
+- A computer on the same network as your printers (Mac, Windows PC, or Raspberry Pi — anything that stays on)
+- Node.js v18 or later installed ([download here](https://nodejs.org))
+- Internet access on that machine (to connect to Supabase)
+
+**Setup steps:**
+
+1. Download the relay package from your Synalux admin (a zip file with the relay folder)
+
+2. Unzip and open a terminal in that folder
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Create a `.env` file in the relay folder with these values (provided by your Synalux admin):
+   ```env
+   SUPABASE_URL=https://your-project.supabase.co
+   SUPABASE_KEY=your-supabase-anon-key
+   RELAY_CHANNEL_ID=your-venue-id
+   RELAY_HMAC_SECRET=your-hmac-secret
+   ```
+
+5. Start the relay:
+   ```bash
+   node server.mjs
+   ```
+   You should see: `Successfully subscribed and listening for events!`
+
+6. Go back to **Settings > Printers & KDS** in the POS and click **Test Print** — it should now reach your printer.
+
+**Keep it running (production):**
+
+For production use, install PM2 so the relay auto-starts on boot and restarts on crash:
+
+```bash
+npm install -g pm2
+pm2 start ecosystem.config.cjs
+pm2 startup
+pm2 save
+```
+
+View logs: `pm2 logs synalux-local-relay`
+
+**Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "Missing required environment variables" | Check your `.env` file has all 4 values filled in |
+| "HMAC verification failed" in relay logs | `RELAY_HMAC_SECRET` doesn't match the server — contact your admin |
+| Relay connects but nothing prints | Verify the printer IP in POS settings matches the printer's actual IP. Run `ping <printer-ip>` from the relay machine to confirm network access |
+| Relay disconnects frequently | Check internet stability on the relay machine. PM2 will auto-restart on disconnect |
+
+**How it works:** The POS server detects that the printer IP is private (RFC-1918) and broadcasts the print job on a Supabase Realtime channel. The relay daemon listens on that channel, receives the job, and forwards it directly to the printer over the local network via TCP (port 9100) or HTTP (Epson/Star protocols). All payloads are HMAC-signed to prevent unauthorized use.
+
+</details>
+
+<details>
 <summary><strong>USB Printer Setup</strong></summary>
 
 Uses the Web Serial API — no drivers needed. Chrome and Edge only.
