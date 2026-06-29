@@ -1488,10 +1488,25 @@ Best for restaurants — printer connects to the same LAN as the POS terminal.
 
 If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your printers are on a local network (192.168.x.x, 10.x.x.x), you need a small background service running on any computer at your venue. This relay bridges the cloud POS to your local printers.
 
+<img src="../images/pos/settings_cloud_relay.png" alt="Cloud Print Relay — Settings > Printers & KDS">
+
+**Step 1: Generate the relay config (admin only)**
+
+1. Open **Settings > Printers & KDS** in the POS
+2. Scroll to **☁️ Cloud Print Relay** at the bottom
+3. Click **🔑 Generate Secret** — this creates a unique HMAC key for your venue
+4. Click **⬇️ Download .env** — this downloads a ready-to-use config file with all 4 values pre-filled
+5. Send the `.env` file to whoever is setting up the relay at the venue
+
+<img src="../images/pos/settings_cloud_relay_instructions.png" alt="Cloud Print Relay — Setup instructions with download">
+
+**Step 2: Install the relay at the venue**
+
 **What you need:**
 - A computer on the same network as your printers (Mac, Windows PC, or Raspberry Pi — anything that stays on)
 - Node.js v18 or later installed ([download here](https://nodejs.org))
 - Internet access on that machine (to connect to Supabase)
+- The `.env` file from Step 1
 
 **Setup steps:**
 
@@ -1507,21 +1522,16 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
    npm install
    ```
 
-3. Create a `.env` file with the values provided by your Synalux admin:
+3. Save the `.env` file (downloaded from the POS in Step 1) into the relay folder — the same folder as `server.mjs`.
 
-   **Mac / Linux:**
-   ```bash
-   cp .env.example .env
-   ```
-   Then edit `.env` with any text editor.
+   **If you received the `.env` file from your admin**, just copy it into the relay folder. It already has all 4 values filled in.
 
-   **Windows (Command Prompt):**
-   ```cmd
-   copy .env.example .env
-   notepad .env
-   ```
+   **If you need to create it manually**, copy `.env.example` and fill in the values:
 
-   Fill in all 4 values:
+   **Mac / Linux:** `cp .env.example .env` then edit with any text editor.
+
+   **Windows:** `copy .env.example .env` then `notepad .env`
+
    ```env
    SUPABASE_URL=https://your-project.supabase.co
    SUPABASE_KEY=your-supabase-anon-key
