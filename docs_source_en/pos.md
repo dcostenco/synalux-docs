@@ -1507,10 +1507,21 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
    npm install
    ```
 
-3. Copy `.env.example` to `.env` and fill in the values (provided by your Synalux admin):
+3. Create a `.env` file with the values provided by your Synalux admin:
+
+   **Mac / Linux:**
    ```bash
    cp .env.example .env
    ```
+   Then edit `.env` with any text editor.
+
+   **Windows (Command Prompt):**
+   ```cmd
+   copy .env.example .env
+   notepad .env
+   ```
+
+   Fill in all 4 values:
    ```env
    SUPABASE_URL=https://your-project.supabase.co
    SUPABASE_KEY=your-supabase-anon-key
@@ -1528,12 +1539,19 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
 
 **Keep it running (production):**
 
-For production use, install PM2 so the relay auto-starts on boot and restarts on crash:
+Install PM2 so the relay auto-starts on boot and restarts on crash:
 
 ```bash
 npm install -g pm2
 pm2 start ecosystem.config.cjs
 pm2 startup
+pm2 save
+```
+
+**Windows note:** `pm2 startup` on Windows requires `pm2-startup` or running PM2 as a Windows Service. Install the helper:
+```cmd
+npm install -g pm2-windows-startup
+pm2-startup install
 pm2 save
 ```
 
