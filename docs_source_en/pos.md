@@ -1484,114 +1484,37 @@ Best for restaurants — printer connects to the same LAN as the POS terminal.
 </details>
 
 <details>
-<summary><strong>Local Relay Setup (Required for Cloud → Local Printing)</strong></summary>
+<summary><strong>Cloud Print Relay (Required for Cloud → Local Printing)</strong></summary>
 
-If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your printers are on a local network (192.168.x.x, 10.x.x.x), you need a small background service running on any computer at your venue. This relay bridges the cloud POS to your local printers.
+If your POS is hosted in the cloud (pos.synalux.ai) and your printers are on a local network (192.168.x.x, 10.x.x.x), install the relay app on any computer at your venue.
 
-> **iOS / iPad users:** The Synalux POS iOS app prints **directly** from your device to the printer over your local network — no relay needed. The app uses native TCP connections (port 9100) and Bonjour auto-discovery. Just add the printer in Settings > Printers & KDS and tap Test Print. The relay setup below is only for the **web browser** version running on pos.synalux.ai.
+> **iOS / iPad users:** No relay needed — the iOS app prints directly to printers on your local network via native TCP. Just add the printer in Settings > Printers & KDS and tap Test Print.
 
-<img src="../images/pos/settings_cloud_relay.png" alt="Cloud Print Relay — Settings > Printers & KDS">
+**Download and install:**
 
-**Step 1: Generate the relay config (admin only)**
+| Platform | Download | Size |
+|----------|----------|------|
+| **macOS** | [Download .dmg](https://github.com/dcostenco/synalux-local-relay/releases/latest) | 5 MB |
+| **Windows** | [Download .msi](https://github.com/dcostenco/synalux-local-relay/releases/latest) | 4 MB |
 
-1. Open **Settings > Printers & KDS** in the POS
-2. Scroll to **☁️ Cloud Print Relay** at the bottom
-3. Click **🔑 Generate Secret** — this creates a unique HMAC key for your venue
-4. Click **⬇️ Download .env** — this downloads a ready-to-use config file with all 4 values pre-filled
-5. Send the `.env` file to whoever is setting up the relay at the venue
+**Setup (one time):**
 
-<img src="../images/pos/settings_cloud_relay_instructions.png" alt="Cloud Print Relay — Setup instructions with download">
+1. Download and install the relay app
+2. The app runs invisibly in the system tray — no window needed
+3. Auto-starts on boot, auto-updates, auto-reconnects
+4. Go to POS → **Settings > Printers & KDS** → click **Test Print** on any printer
 
-**Step 2: Install the relay at the venue**
+No Node.js, no command line, no configuration files, no secrets to manage.
 
-**Option A — Desktop App (Recommended)**
-
-Download the native tray app — installs in seconds, runs invisibly, auto-starts on boot. **No Node.js required.**
-
-| Platform | Download |
-|----------|----------|
-| **macOS** | [Download .dmg](https://github.com/dcostenco/synalux-local-relay/releases/latest) |
-| **Windows** | [Download .msi](https://github.com/dcostenco/synalux-local-relay/releases/latest) |
-
-Install → click the setup link from Step 1 → printing works. No command line, no configuration files, auto-updates.
-
-**Option B — Node.js (Manual Setup)**
-
-**What you need:**
-- A computer on the same network as your printers (Mac, Windows PC, or Raspberry Pi — anything that stays on)
-- Node.js v18 or later installed ([download here](https://nodejs.org))
-- Internet access on that machine (to connect to Supabase)
-- The `.env` file from Step 1
-
-**Setup steps:**
-
-1. Download the relay from GitHub:
-   ```bash
-   git clone https://github.com/dcostenco/synalux-local-relay.git
-   cd synalux-local-relay
-   ```
-   Or [download as ZIP](https://github.com/dcostenco/synalux-local-relay/archive/refs/heads/main.zip) and unzip.
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Save the `.env` file (downloaded from the POS in Step 1) into the relay folder — the same folder as `server.mjs`.
-
-   **If you received the `.env` file from your admin**, just copy it into the relay folder. It already has all 4 values filled in.
-
-   **If you need to create it manually**, copy `.env.example` and fill in the values:
-
-   **Mac / Linux:** `cp .env.example .env` then edit with any text editor.
-
-   **Windows:** `copy .env.example .env` then `notepad .env`
-
-   ```env
-   SUPABASE_URL=https://your-project.supabase.co
-   SUPABASE_KEY=your-supabase-anon-key
-   RELAY_CHANNEL_ID=your-venue-id
-   RELAY_HMAC_SECRET=your-hmac-secret
-   ```
-
-4. Start the relay:
-   ```bash
-   node server.mjs
-   ```
-   You should see: `Successfully subscribed and listening for events!`
-
-5. Go back to **Settings > Printers & KDS** in the POS and click **Test Print** — it should now reach your printer.
-
-**Keep it running (production):**
-
-Install PM2 so the relay auto-starts on boot and restarts on crash:
-
-```bash
-npm install -g pm2
-pm2 start ecosystem.config.cjs
-pm2 startup
-pm2 save
-```
-
-**Windows note:** `pm2 startup` on Windows requires `pm2-startup` or running PM2 as a Windows Service. Install the helper:
-```cmd
-npm install -g pm2-windows-startup
-pm2-startup install
-pm2 save
-```
-
-View logs: `pm2 logs synalux-local-relay`
+**How it works:** The POS writes print jobs to a database queue. The relay app polls the queue, picks up jobs for your venue, and forwards them to your local printers via TCP (port 9100) or HTTP (Epson ePOS / Star WebPRNT). Failed jobs retry automatically up to 3 times.
 
 **Troubleshooting:**
 
 | Symptom | Fix |
 |---------|-----|
-| "Missing required environment variables" | Check your `.env` file has all 4 values filled in |
-| "HMAC verification failed" in relay logs | `RELAY_HMAC_SECRET` doesn't match the server — contact your admin |
-| Relay connects but nothing prints | Verify the printer IP in POS settings matches the printer's actual IP. Run `ping <printer-ip>` from the relay machine to confirm network access |
-| Relay disconnects frequently | Check internet stability on the relay machine. PM2 will auto-restart on disconnect |
-
-**How it works:** The POS server detects that the printer IP is private (RFC-1918) and broadcasts the print job on a Supabase Realtime channel. The relay daemon listens on that channel, receives the job, and forwards it directly to the printer over the local network via TCP (port 9100) or HTTP (Epson/Star protocols). All payloads are HMAC-signed to prevent unauthorized use.
+| Nothing prints after Test Print | Make sure the relay app is running (check system tray) |
+| Relay connected but printer doesn't respond | Verify printer IP in POS settings. Run `ping <printer-ip>` from the relay computer |
+| Relay app won't start | Check internet connection — the app needs access to Supabase |
 
 </details>
 
