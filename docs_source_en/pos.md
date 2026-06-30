@@ -1506,14 +1506,14 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
 
 **Option A — Desktop App (Recommended)**
 
-Download the native tray app — installs in seconds, runs invisibly, auto-starts on boot:
+Download the native tray app — installs in seconds, runs invisibly, auto-starts on boot. **No Node.js required.**
 
 | Platform | Download |
 |----------|----------|
-| **macOS** | [Synalux Print Relay.dmg](https://github.com/dcostenco/synalux-local-relay/releases/latest/download/Synalux.Print.Relay_1.0.0_aarch64.dmg) |
-| **Windows** | [Synalux Print Relay.msi](https://github.com/dcostenco/synalux-local-relay/releases/latest/download/Synalux.Print.Relay_1.0.0_x64_en-US.msi) |
+| **macOS** | [Download .dmg](https://github.com/dcostenco/synalux-local-relay/releases/latest) |
+| **Windows** | [Download .msi](https://github.com/dcostenco/synalux-local-relay/releases/latest) |
 
-After installing, click the setup link from Step 1 — the app auto-configures. No command line needed.
+Install → click the setup link from Step 1 → printing works. No command line, no configuration files, auto-updates.
 
 **Option B — Node.js (Manual Setup)**
 
