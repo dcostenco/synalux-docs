@@ -1504,6 +1504,19 @@ If your POS is hosted in the cloud (e.g. pos.synalux.ai on Vercel) and your prin
 
 **Step 2: Install the relay at the venue**
 
+**Option A — Desktop App (Recommended)**
+
+Download the native tray app — installs in seconds, runs invisibly, auto-starts on boot:
+
+| Platform | Download |
+|----------|----------|
+| **macOS** | [Synalux Print Relay.dmg](https://github.com/dcostenco/synalux-local-relay/releases/latest/download/Synalux.Print.Relay_1.0.0_aarch64.dmg) |
+| **Windows** | [Synalux Print Relay.msi](https://github.com/dcostenco/synalux-local-relay/releases/latest) (coming soon) |
+
+After installing, click the setup link from Step 1 — the app auto-configures. No command line needed.
+
+**Option B — Node.js (Manual Setup)**
+
 **What you need:**
 - A computer on the same network as your printers (Mac, Windows PC, or Raspberry Pi — anything that stays on)
 - Node.js v18 or later installed ([download here](https://nodejs.org))
