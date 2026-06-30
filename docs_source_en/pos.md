@@ -1511,7 +1511,7 @@ Download the native tray app — installs in seconds, runs invisibly, auto-start
 | Platform | Download |
 |----------|----------|
 | **macOS** | [Synalux Print Relay.dmg](https://github.com/dcostenco/synalux-local-relay/releases/latest/download/Synalux.Print.Relay_1.0.0_aarch64.dmg) |
-| **Windows** | [Synalux Print Relay.msi](https://github.com/dcostenco/synalux-local-relay/releases/latest) (coming soon) |
+| **Windows** | [Synalux Print Relay.msi](https://github.com/dcostenco/synalux-local-relay/releases/latest/download/Synalux.Print.Relay_1.0.0_x64_en-US.msi) |
 
 After installing, click the setup link from Step 1 — the app auto-configures. No command line needed.
 
