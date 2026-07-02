@@ -628,7 +628,7 @@ Customers call your venue's phone number and place orders through natural AI con
 
 ### WhatsApp Ordering
 
-Same AI as voice ordering, over WhatsApp. Text or voice message in **any language** — AI auto-detects. Cart with emoji formatting, order confirmation with ETA. No app download needed.
+Same AI engine as voice ordering, over WhatsApp — unified in a shared ordering module (`chat-ordering`) with identical state machine, cart handling, and order placement. Text or voice message in **any language** — AI auto-detects. Cart with emoji formatting, order confirmation with ETA. No app download needed.
 
 <img src="../images/pos/whatsapp_ordering.png" alt="WhatsApp Ordering">
 
@@ -648,8 +648,11 @@ Same AI as voice ordering, over WhatsApp. Text or voice message in **any languag
    Say "done" when ready to order.
    ```
 5. "done" → asks for name → confirms order → "YES" → order placed
-6. Confirmation: "✅ Order #a83e placed! Total: $16.50. Ready in ~15 min."
-7. Returning customers recognized by phone — favorites and past orders recalled
+6. Confirmation with order number, total, and estimated pickup time
+7. Payment link sent via Stripe Checkout (works for all payment processors — Dejavoo/Shift4 venues use Stripe as online fallback)
+8. SMS confirmation via Twilio Messaging Service (A2P 10DLC compliant)
+9. Email receipt via Resend (when customer email is on file)
+10. Returning customers recognized by phone — favorites and past orders recalled
 
 **Commands:**
 
@@ -671,10 +674,13 @@ Same AI as voice ordering, over WhatsApp. Text or voice message in **any languag
 | **Voice messages** | 30+ (auto-detected via Deepgram Nova-2) |
 | **AI responses** | Same language as customer input |
 
+**Venue resolution:** The inbound Twilio `To` number must match a venue's `whatsapp_number` or `phone_number`. If no match, the system fails closed — no country-based guessing or fallback to arbitrary venues.
+
 **Setup:**
 1. Register a WhatsApp Business number in Twilio Console
 2. Set webhook: `https://your-domain.com/api/v1/pos/webhooks/whatsapp` (POST)
-3. Customers text the number — no app install, no signup
+3. In POS Settings → Integrations, enter the WhatsApp number for the venue
+4. Customers text the number — no app install, no signup
 
 </details>
 
@@ -978,7 +984,7 @@ Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 
 ### Refunds
 
-Partial or full refund with reason codes. Reopen closed checks for corrections.
+Partial or full refund with reason codes. Works across all payment processors (Stripe, Dejavoo, Shift4). Tip-aware refund ceiling prevents over-refund on tip-adjusted captures. Gift card and house account balances auto-restored on refund.
 
 <img src="../images/pos/ipad_refund.png" alt="Refund">
 
@@ -988,7 +994,7 @@ Partial or full refund with reason codes. Reopen closed checks for corrections.
 1. Open the **Refunds** page or tap "Refund" on any completed order
 2. Choose partial (specific items) or full refund
 3. Select a reason code (wrong item, quality, customer request, etc.)
-4. Stripe refund is processed automatically. Cash refunds are recorded for drawer reconciliation
+4. Refund is processed via the venue's payment processor (Stripe, Dejavoo SPIn, or Shift4). Cash refunds are recorded for drawer reconciliation
 5. **Reopen check** — managers can reopen a closed order for corrections, then re-close
 
 <img src="../images/pos/ipad_reopen_check.png" alt="Reopen Check">
@@ -1300,7 +1306,7 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 
 | Capability | How it works |
 |---|---|
-| **Orders** | Queue locally with idempotency keys — auto-sync on reconnect, no duplicate submissions |
+| **Orders** | Queue locally with idempotency keys — auto-sync on reconnect. Atomic dedup via `pos_order_idempotency` claim table prevents duplicate submissions even across multiple tabs |
 | **Cash payments** | Fully offline — queued and synced when network returns |
 | **Staff clock in/out** | Shifts queue locally, synced to the server on reconnect |
 | **Menu browsing** | Cached locally (24h TTL) so staff can ring items without network |
@@ -1313,10 +1319,10 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 
 | Capability | Offline behavior |
 |---|---|
-| **Card payments** | Payment record is queued locally with status "pending" — the actual Stripe charge is processed when the connection returns. No error shown to staff; the order flow continues normally |
-| **Bar tab pre-authorization** | Queued as "authorized" — the Stripe hold is created on reconnect |
+| **Card payments** | Payment record is queued locally with status "pending" — the actual charge (Stripe/Dejavoo/Shift4) is processed when the connection returns. Payments reference their offline order via `orderIdempotencyKey` for correct linkage after sync. A sweep route forwards `pending_offline` payments and records declined charges in `pos_offline_losses` |
+| **Bar tab pre-authorization** | Queued as "authorized" — the hold is created on reconnect |
 | **Real-time KDS updates** | Supabase Realtime subscription pauses — KDS falls back to polling when connection resumes |
-| **Receipt email / SMS** | Requires SendGrid / Twilio API — PDF receipts still work offline (client-side generation) |
+| **Receipt email / SMS** | Requires Resend / Twilio API — PDF receipts still work offline (client-side generation) |
 | **Online Ordering payments** | Stripe Payment Element requires network (Offline CC Vault available as fallback — see below) |
 
 **Offline CC Vault (Online Ordering only):**
@@ -1327,7 +1333,11 @@ When the internet drops during an online ordering checkout, the system falls bac
 
 - Auto-sync triggers on reconnect via browser online event
 - Exponential backoff retry on failure (capped to prevent battery/bandwidth waste)
-- Idempotency keys on every queued order to prevent double-submission
+- Idempotency keys on every queued order and payment — atomic dedup via claim table prevents double-submission even across multiple browser tabs
+- Multi-tab safety: queue re-reads localStorage before every mutation (no stale-copy resurrection)
+- Permanently rejected orders (400/422) cascade-drop their dependent payments immediately
+- Items queued longer than 48 hours are automatically dropped with a staff notification
+- Queue corruption resilience: malformed entries are isolated and logged without discarding valid siblings
 - An offline indicator badge in the top bar shows queue status and connection state
 
 <details>
@@ -1345,7 +1355,7 @@ When the internet drops during an online ordering checkout, the system falls bac
 
 ### Integrations
 
-Stripe, DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio, SendGrid, Forage (EBT), Ollama (local AI).
+Stripe, Dejavoo (SPIn terminal), Shift4 (Payments Platform), DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio (voice + WhatsApp + SMS), Resend (email), Forage (EBT), Deepgram (speech-to-text), ElevenLabs (text-to-speech), Gemini (AI ordering), Ollama (local AI).
 
 <img src="../images/pos/settings_integrations.png" alt="Integrations">
 
