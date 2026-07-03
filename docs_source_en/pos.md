@@ -1427,10 +1427,6 @@ When paying an order that was created offline, each tender type resolves the off
 | **House account** | Blocks when both remap and idempotency key are unavailable. Key path resolves via claim table |
 | **Split (cash/card)** | Same as single tender — each split payment resolves independently |
 
-**Offline CC Vault (Online Ordering only):**
-
-When the internet drops during an online ordering checkout, the system falls back to the Offline CC Vault. Card details are encrypted client-side using WebCrypto (RSA-OAEP, 2048-bit) before transmission — the server stores only an encrypted blob and never decrypts it. This keeps your infrastructure at SAQ A-EP scope. The private decryption key is kept offline per your organization's key management procedures. This feature is **not available on the POS register** — register card payments always require network.
-
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -1438,8 +1434,7 @@ When the internet drops during an online ordering checkout, the system falls bac
 2. When network drops, a red "Offline" badge appears in the top-right corner with queue status
 3. All orders and payments (cash and card) queue locally and auto-sync when connectivity returns
 4. Card charges are processed through the venue's payment processor when the connection resumes — no staff intervention needed
-5. To enable the Offline CC Vault for online ordering, turn on the feature flag in **Settings > Venue** and configure the encryption key pair
-6. Multi-tab: open on multiple devices — sync engine handles concurrent access safely
+5. Multi-tab: open on multiple devices — sync engine handles concurrent access safely
 
 </details>
 
