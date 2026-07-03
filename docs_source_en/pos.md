@@ -1306,7 +1306,7 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 
 | Capability | How it works |
 |---|---|
-| **Orders** | Queue locally with idempotency keys — auto-sync on reconnect. Atomic dedup via `pos_order_idempotency` claim table prevents duplicate submissions even across multiple tabs |
+| **Orders** | Queue locally with idempotency keys — auto-sync on reconnect |
 | **Cash payments** | Fully offline — queued and synced when network returns |
 | **Staff clock in/out** | Shifts queue locally, synced to the server on reconnect |
 | **Menu browsing** | Cached locally (24h TTL) so staff can ring items without network |
@@ -1314,31 +1314,123 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 | **Reports** | Orders and payments cached — Sales, PMIX, Server, and Payment reports available offline |
 | **PDF receipts** | Client-side PDF generation — no network needed |
 | **Page rendering** | Service Worker precaches Register, KDS, Tables, and EOD pages so the app shell loads instantly |
+| **Split checks** | Splits saved locally with client-side conservation check — applied when order syncs |
 
 **What requires network (queued or degraded offline):**
 
 | Capability | Offline behavior |
 |---|---|
-| **Card payments** | Payment record is queued locally with status "pending" — the actual charge (Stripe/Dejavoo/Shift4) is processed when the connection returns. Payments reference their offline order via `orderIdempotencyKey` for correct linkage after sync. A sweep route forwards `pending_offline` payments and records declined charges in `pos_offline_losses` |
+| **Card payments** | Payment record is queued locally — the actual charge (Stripe/Dejavoo/Shift4) is processed when the connection returns |
 | **Bar tab pre-authorization** | Queued as "authorized" — the hold is created on reconnect |
 | **Real-time KDS updates** | Supabase Realtime subscription pauses — KDS falls back to polling when connection resumes |
 | **Receipt email / SMS** | Requires Resend / Twilio API — PDF receipts still work offline (client-side generation) |
-| **Online Ordering payments** | Stripe Payment Element requires network (Offline CC Vault available as fallback — see below) |
+
+#### Sync Architecture
+
+The offline sync engine handles the full lifecycle of queued orders and payments, with idempotency guarantees that prevent duplicate charges even across browser tabs, page reloads, and network retries.
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        TERMINAL GOES OFFLINE                        │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  Staff places order ──► queueOfflineOrder()                        │
+│                           │                                         │
+│                           ▼                                         │
+│                    ┌──────────────┐                                 │
+│                    │  localStorage │  Queue with idempotency keys   │
+│                    │  offline_queue │  + timestamps for 48h TTL     │
+│                    └──────┬───────┘                                 │
+│                           │                                         │
+│  Staff takes payment ──► queueOfflinePayment()                     │
+│                           │  (carries orderIdempotencyKey           │
+│                           │   for order correlation)                │
+│                           ▼                                         │
+│                    ┌──────────────┐                                 │
+│                    │  localStorage │  Payment linked to order       │
+│                    │  offline_queue │  via idempotency key          │
+│                    └──────────────┘                                 │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                     TERMINAL RECONNECTS                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  syncOfflineQueue() ──► processQueue(syncItem)                     │
+│                           │                                         │
+│     ┌─────────────────────┼──────────────────────────┐             │
+│     │                     │                          │             │
+│     ▼                     ▼                          ▼             │
+│  Orders sync         Payments sync             Sweep route         │
+│  (first, by          (after orders)            (pending_offline    │
+│   insertion order)                              → processor)       │
+│     │                     │                          │             │
+│     ▼                     ▼                          ▼             │
+│  ┌──────────────┐  ┌──────────────┐  ┌───────────────────┐       │
+│  │ Claim table   │  │ Resolve via  │  │ Forward to Stripe/ │       │
+│  │ prevents      │  │ claim table  │  │ Dejavoo/Shift4     │       │
+│  │ duplicates    │  │ (offline-N   │  │ Record losses in   │       │
+│  │ (23505 = noop)│  │  → real UUID)│  │ pos_offline_losses │       │
+│  └──────┬───────┘  └──────────────┘  └───────────────────┘       │
+│         │                                                          │
+│         ▼                                                          │
+│  ┌──────────────────┐                                              │
+│  │ Emit synced event │──► Cart store remaps activeOrderId          │
+│  │ + persist remap   │    (offline-N → real UUID)                   │
+│  │ to localStorage   │──► Cross-tab: any tab can resolve           │
+│  └──────────────────┘                                              │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### Idempotency — No Duplicate Charges
+
+Every money-moving operation is replay-safe:
+
+| Layer | Protection |
+|-------|-----------|
+| **Order creation** | Unpartitioned `pos_order_idempotency` claim table with `PRIMARY KEY (venue_id, idempotency_key)`. Two tabs replaying the same order both hit the claim — the second gets the existing order back, not a duplicate. |
+| **Payment creation** | Every `pos_payments` insert carries an `idempotency_key` (caller-supplied or server-minted). `UNIQUE(venue_id, idempotency_key)` prevents duplicates. |
+| **Card terminal** | CAS status transition (`authorized` → `capturing` → `captured`) — only one caller can claim the payment. Retries see "already captured" and get the success response. |
+| **House account** | Charge route deduplicates via `pos_house_account_charges` table with `UNIQUE(venue_id, idempotency_key)`. Retry returns the original debit result. |
+| **Gift card** | Balance deduction uses CAS (`WHERE balance_cents = {expected}`). A retry after successful deduction fails the CAS and returns 409. |
+| **Processor calls** | Stripe has built-in idempotency. Dejavoo SPIn and Shift4 use PNRef/invoice-based dedup. |
+
+#### Multi-Tab Safety
+
+Multiple browser tabs can be open on the same POS simultaneously. The sync engine handles this:
+
+- **Queue reads from localStorage before every mutation** — tab B can't resurrect items tab A already synced
+- **Queue item IDs use `crypto.randomUUID()`** — no sequential counter collisions across tabs
+- **Order remap persisted to localStorage** — any tab can resolve an offline order ID to the real server UUID, even if a different tab performed the sync
+- **Dropped-order detection persisted** — if an order was permanently rejected (e.g., menu item deleted while offline), any tab surfaces the terminal error instead of retrying forever
+
+#### Error Handling
+
+| Scenario | Behavior |
+|----------|----------|
+| **Transient error (5xx, timeout)** | Exponential backoff retry, capped at 30 seconds |
+| **Deterministic rejection (400/422)** | Item dropped immediately from queue. Staff notified via toast with the order details for re-entry. |
+| **Order rejected → payments orphaned** | Dependent payments cascade-dropped in the same pass — no orphaned retry loop |
+| **Queue items older than 48 hours** | Automatically dropped with a staff notification on next load or sync |
+| **Corrupt localStorage** | Malformed entries isolated and logged; well-formed siblings survive |
+| **Card tap during sync race** | Auto-retry on 409 `ORDER_NOT_SYNCED` (4× with 1/2/3s backoff). Staff sees "Order is still syncing" only if all retries exhaust. |
+
+#### Payment Resolution by Tender Type
+
+When paying an order that was created offline, each tender type resolves the offline order ID:
+
+| Tender | How it resolves |
+|--------|----------------|
+| **Cash, EBT, bar tab** | `createPayment` resolves via server-side claim table lookup using `orderIdempotencyKey` |
+| **Card (terminal)** | `create-intent` resolves via claim table. Auto-retries 409 if order hasn't synced yet |
+| **Card (manual entry)** | Resolved at tap time via persistent remap. Blocks with "still syncing" if unresolved |
+| **Gift card** | Resolved at tap time. Blocks if unresolved to prevent debiting the card against a nonexistent order |
+| **House account** | Blocks when both remap and idempotency key are unavailable. Key path resolves via claim table |
+| **Split (cash/card)** | Same as single tender — each split payment resolves independently |
 
 **Offline CC Vault (Online Ordering only):**
 
 When the internet drops during an online ordering checkout, the system falls back to the Offline CC Vault. Card details are encrypted client-side using WebCrypto (RSA-OAEP, 2048-bit) before transmission — the server stores only an encrypted blob and never decrypts it. This keeps your infrastructure at SAQ A-EP scope. The private decryption key is kept offline per your organization's key management procedures. This feature is **not available on the POS register** — register card payments always require network.
-
-**Sync behavior:**
-
-- Auto-sync triggers on reconnect via browser online event
-- Exponential backoff retry on failure (capped to prevent battery/bandwidth waste)
-- Idempotency keys on every queued order and payment — atomic dedup via claim table prevents double-submission even across multiple browser tabs
-- Multi-tab safety: queue re-reads localStorage before every mutation (no stale-copy resurrection)
-- Permanently rejected orders (400/422) cascade-drop their dependent payments immediately
-- Items queued longer than 48 hours are automatically dropped with a staff notification
-- Queue corruption resilience: malformed entries are isolated and logged without discarding valid siblings
-- An offline indicator badge in the top bar shows queue status and connection state
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1346,8 +1438,9 @@ When the internet drops during an online ordering checkout, the system falls bac
 1. Open the POS in Chrome or Safari and add to home screen — installs as a PWA automatically
 2. When network drops, a red "Offline" badge appears in the top-right corner with queue status
 3. All orders and payments (cash and card) queue locally and auto-sync when connectivity returns
-4. Card charges are processed through Stripe when the connection resumes — no staff intervention needed
+4. Card charges are processed through the venue's payment processor when the connection resumes — no staff intervention needed
 5. To enable the Offline CC Vault for online ordering, turn on the feature flag in **Settings > Venue** and configure the encryption key pair
+6. Multi-tab: open on multiple devices — sync engine handles concurrent access safely
 
 </details>
 
