@@ -1329,57 +1329,56 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 
 The offline sync engine handles the full lifecycle of queued orders and payments, with idempotency guarantees that prevent duplicate charges even across browser tabs, page reloads, and network retries.
 
+**Phase 1 — Terminal goes offline:**
+
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        TERMINAL GOES OFFLINE                        │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Staff places order ──► queueOfflineOrder()                        │
-│                           │                                         │
-│                           ▼                                         │
-│                    ┌──────────────┐                                 │
-│                    │  localStorage │  Queue with idempotency keys   │
-│                    │  offline_queue │  + timestamps for 48h TTL     │
-│                    └──────┬───────┘                                 │
-│                           │                                         │
-│  Staff takes payment ──► queueOfflinePayment()                     │
-│                           │  (carries orderIdempotencyKey           │
-│                           │   for order correlation)                │
-│                           ▼                                         │
-│                    ┌──────────────┐                                 │
-│                    │  localStorage │  Payment linked to order       │
-│                    │  offline_queue │  via idempotency key          │
-│                    └──────────────┘                                 │
-│                                                                     │
-├─────────────────────────────────────────────────────────────────────┤
-│                     TERMINAL RECONNECTS                              │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  syncOfflineQueue() ──► processQueue(syncItem)                     │
-│                           │                                         │
-│     ┌─────────────────────┼──────────────────────────┐             │
-│     │                     │                          │             │
-│     ▼                     ▼                          ▼             │
-│  Orders sync         Payments sync             Sweep route         │
-│  (first, by          (after orders)            (pending_offline    │
-│   insertion order)                              → processor)       │
-│     │                     │                          │             │
-│     ▼                     ▼                          ▼             │
-│  ┌──────────────┐  ┌──────────────┐  ┌───────────────────┐       │
-│  │ Claim table   │  │ Resolve via  │  │ Forward to Stripe/ │       │
-│  │ prevents      │  │ claim table  │  │ Dejavoo/Shift4     │       │
-│  │ duplicates    │  │ (offline-N   │  │ Record losses in   │       │
-│  │ (23505 = noop)│  │  → real UUID)│  │ pos_offline_losses │       │
-│  └──────┬───────┘  └──────────────┘  └───────────────────┘       │
-│         │                                                          │
-│         ▼                                                          │
-│  ┌──────────────────┐                                              │
-│  │ Emit synced event │──► Cart store remaps activeOrderId          │
-│  │ + persist remap   │    (offline-N → real UUID)                   │
-│  │ to localStorage   │──► Cross-tab: any tab can resolve           │
-│  └──────────────────┘                                              │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+Staff places order ──► queueOfflineOrder()
+                              |
+                              v
+                      +----------------+
+                      | localStorage   |  idempotency keys
+                      | offline_queue  |  + 48h TTL timestamps
+                      +-------+--------+
+                              |
+Staff takes payment ──► queueOfflinePayment()
+                              |  (carries orderIdempotencyKey
+                              |   for order correlation)
+                              v
+                      +----------------+
+                      | localStorage   |  payment linked to
+                      | offline_queue  |  order via idem. key
+                      +----------------+
+```
+
+**Phase 2 — Terminal reconnects:**
+
+```
+syncOfflineQueue() ──► processQueue(syncItem)
+                              |
+              +---------------+---------------+
+              |               |               |
+              v               v               v
+        Orders sync     Payments sync    Sweep route
+        (first, by      (after orders)   (pending_offline
+         insertion                        -> processor)
+         order)
+              |               |               |
+              v               v               v
+        +-----------+   +-----------+   +---------------+
+        | Claim     |   | Resolve   |   | Forward to    |
+        | table     |   | via claim |   | Stripe /      |
+        | prevents  |   | table     |   | Dejavoo /     |
+        | duplicates|   | offline-N |   | Shift4        |
+        | (23505 =  |   | -> real   |   | Record losses |
+        | noop)     |   | UUID      |   | in pos_       |
+        +-----------+   +-----------+   | offline_losses|
+              |                         +---------------+
+              v
+        +-------------------+
+        | Emit synced event |---> Cart store remaps activeOrderId
+        | + persist remap   |    (offline-N -> real UUID)
+        | to localStorage   |---> Cross-tab: any tab can resolve
+        +-------------------+
 ```
 
 #### Idempotency — No Duplicate Charges
