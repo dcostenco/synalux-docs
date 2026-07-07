@@ -246,6 +246,14 @@ Up to 14 price levels per item with automatic day/time scheduling. Happy hour, e
 
 Ring orders in seconds. Categories, product grid, and order ticket — all on one screen. Cart auto-scrolls as items are added. Open Price button creates custom-priced items with a description field. Send to Kitchen button reappears after adding new items to a submitted order.
 
+**Customer Name / Order Reference** — every order has a Customer Name field in the order panel. Type a guest name for takeout tickets, bar tabs, or dine-in. The name prints on receipts and appears on KDS tickets.
+
+<img src="../images/pos/ipad_customer_name.png" alt="Customer Name on Takeout Order">
+
+**Item Search** — tap the search icon on the register to search the full menu in real time (2-character minimum). Finds items across all categories instantly — no scrolling needed.
+
+<img src="../images/pos/ipad_item_search.png" alt="Item Search">
+
 <img src="../images/pos/ipad_01_register.png" alt="Register">
 <img src="../images/pos/ipad_05_register_cart.png" alt="Cart with items, prices, and Send to Kitchen">
 
@@ -282,7 +290,9 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 
 1. **Settings > Floor Plan** — add tables with name, section, capacity, shape
 2. Create sections (Main, Patio, Bar) for quick filtering
-3. Merge, split-back, transfer, or reopen closed checks from the table detail panel
+3. **Change Table** — move an order to a different table from the order panel. Pick the new table from the floor plan
+4. **Move seats between orders** — transfer individual seat groups from one table's order to another
+5. Merge, split-back, transfer, or reopen closed checks from the table detail panel
 
 <img src="../images/pos/ipad_table_editor.png" alt="Table Editor">
 <img src="../images/pos/ipad_table_merge.png" alt="Table Merge">
@@ -294,7 +304,7 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 
 ### Seat Management
 
-Assign items to individual seats for split checks and per-guest delivery. Seat tabs on the register let servers ring items per guest.
+Assign items to individual seats for split checks and per-guest delivery. Seat tabs on the register let servers ring items per guest. Split a single item across all seated guests — price is distributed evenly.
 
 <img src="../images/pos/ipad_seat_management.png" alt="Seat Management">
 
@@ -303,8 +313,9 @@ Assign items to individual seats for split checks and per-guest delivery. Seat t
 
 1. Tap **Seat 1 / Seat 2 / + Seat** tabs on the register to assign items to specific guests
 2. Tap the seat badge on any line item to cycle it to the next seat number
-3. Split check by seat — each guest gets their own bill with only their items
-4. Seat assignment works alongside courses — assign items to Seat 1/2/3 and Course 1/2/3 independently
+3. **Split item across guests** — tap the seat popover on a line item, then tap "Split across all (N)." The item is cloned into one line per seat with the price distributed evenly (remainder goes to seat 1). Modifier prices are also split
+4. Split check by seat — each guest gets their own bill with only their items
+5. Seat assignment works alongside courses — assign items to Seat 1/2/3 and Course 1/2/3 independently
 
 </details>
 
@@ -391,7 +402,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
 7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligible items are automatically calculated
-8. **Split check** — split by even, custom amount, or per-seat. Each split can pay by different method (card/cash)
+8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
 
 <img src="../images/pos/ipad_split_check.png" alt="Split Check">
 <img src="../images/pos/ipad_bar_tab.png" alt="Bar Tab">
@@ -882,18 +893,28 @@ Automated alerts for low stock, overtime, and order delays. Auto-scan at every s
 
 ### Compliance
 
-Age verification, RBS cert tracking, tax-exempt orders, CCPA/GDPR, and full audit trail.
+Age verification, RBS cert tracking, tax-exempt orders, per-item taxability, CCPA/GDPR, and full audit trail.
 
 <img src="../images/pos/ipad_compliance.png" alt="Compliance">
 
 <details>
-<summary><strong>Setup</strong></summary>
+<summary><strong>Tax Configuration</strong></summary>
+
+**Order-level tax exempt** — toggle an entire order as non-taxable from the order panel.
+
+**Per-item taxability** — each menu item has an **Item Type** (Food, Alcohol, Beverage, Merchandise). Tax zones define which item types they apply to. Set an item's type to one not included in any active tax zone and it is effectively non-taxable. Configure item types in **Settings > Menu Builder** and tax zones in **Settings > Tax**.
+
+<img src="../images/pos/settings_tax_exempt.png" alt="Tax Exempt">
+<img src="../images/pos/settings_taxes.png" alt="Tax Settings">
+
+</details>
+
+<details>
+<summary><strong>Age Verification & Compliance</strong></summary>
 
 <img src="../images/pos/ipad_age_verification.png" alt="Age Verification">
-<img src="../images/pos/settings_tax_exempt.png" alt="Tax Exempt">
 <img src="../images/pos/settings_privacy.png" alt="Privacy (CCPA/GDPR)">
 <img src="../images/pos/settings_rbs_compliance.png" alt="RBS Compliance">
-<img src="../images/pos/settings_taxes.png" alt="Tax Settings">
 
 </details>
 
