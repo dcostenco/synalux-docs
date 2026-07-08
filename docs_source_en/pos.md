@@ -202,9 +202,9 @@ Revenue Centers control which menu categories appear, which KDS stations receive
 
 ### Per-Station Configuration
 
-Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service.
+Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service. **Assign This Device** — one tap per iPad, and each terminal auto-selects its station on every login. No station picker.
 
-<img src="../images/pos/settings_stations.png" alt="Station Configuration Settings">
+<img src="../images/pos/settings_stations.png" alt="Station Configuration — stations list with Assign button and IP Auto-Assign rules">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -216,7 +216,16 @@ Named terminal configurations with independent menus, printers, and access contr
 5. Set **Default Revenue Center** — auto-selects RC when staff logs in
 6. Set **Allowed Roles** — restrict which staff roles can use this station
 7. Set **Allowed Revenue Centers** — restrict which RCs are available
-8. Auth flow: PIN → Station Picker (filtered by role) → RC Overlay → POS
+
+**One-tap device assignment:**
+
+1. Walk to the bar iPad → open **Settings > Stations**
+2. Tap **📍 Assign** on "Bar POS" → the device is now permanently assigned
+3. On every future login, this iPad auto-selects Bar POS — no station picker, no manual steps
+4. Repeat for each device: dining iPad → "All Access", takeout iPad → "Takeout"
+5. If a device has no assignment, the station picker appears as a fallback
+
+The **IP Auto-Assign** section at the bottom shows all device-to-station mappings. Use `*` as a default for unassigned devices. Advanced: enter IP prefixes (e.g. `192.168.1.`) to assign entire subnets.
 
 </details>
 
