@@ -1,15 +1,17 @@
-# 🏋️ PrismCoach
+# PrismCoach
 
-**Military-grade AI fitness coach.** iPhone · iPad · Apple Watch app. Tracks recovery, predicts fatigue, generates training programs, and coaches you in real-time — in 23 languages. Works fully offline with an on-device AI model (Pro+). Standalone repo: [`forge-watch`](https://github.com/dcostenco/forge-watch).
+**AI-powered strength and recovery coach.** iPhone, iPad, and Apple Watch. Tracks recovery, predicts fatigue, generates training programs, and coaches you in real time — in 23 languages. Core features work fully offline; AI coaching uses on-device inference with optional cloud escalation for complex queries.
+
+> PrismCoach is not medical advice. Consult a physician before starting any exercise program. AI-generated recommendations may be inaccurate and should not replace professional guidance.
 
 ---
 
-## 🔋 Body Battery
+## Body Battery
 
 Your primary readiness score — a composite of overnight HRV, resting heart rate trend, sleep quality, and training load accumulated over the past 7 days.
 
 *   **Scoring** — 0–100. ≥ 75 = Fresh (green), 50–74 = Moderate (yellow), 25–49 = Fatigued (orange), < 25 = Depleted (red).
-*   **HealthKit integration** — reads passive overnight HRV captured by Apple Watch. No manual input required.
+*   **HealthKit integration** — reads passive overnight HRV captured by Apple Watch. No manual input required. When HealthKit data is unavailable, the dashboard displays "No Data" instead of a score.
 *   **Baseline recalibration** — body battery recomputes its rolling baseline weekly so a well-trained athlete and a beginner see correctly normalised scores.
 *   **ATR Engine** — Adaptive Training Readiness synthesises 7+ biometric signals into a single readiness index. Accounts for acute (last 3 days) vs. chronic (28-day) load ratio.
 
@@ -23,15 +25,15 @@ Your primary readiness score — a composite of overnight HRV, resting heart rat
 
 ---
 
-## 💪 Muscle Recovery Map
+## Muscle Recovery Map
 
-Per-muscle fatigue tracking across 14 anatomical regions using a parametric body-map canvas rendered in SwiftUI.
+Per-muscle fatigue tracking across 14 anatomical regions (left/right tracked independently) using a parametric body-map canvas rendered in SwiftUI and an interactive 3D SceneKit avatar.
 
-*   **14 muscle groups** — Chest, Anterior/Lateral/Posterior Delts, Biceps, Triceps, Traps, Lats, Core, Lower Back, Glutes, Quads, Hamstrings, Calves.
+*   **14 anatomical regions** — Chest, Anterior/Lateral/Posterior Delts, Biceps, Triceps, Traps, Lats, Core, Lower Back, Glutes, Quads, Hamstrings, Calves (plus Forearms, Shins, Feet, Neck). Left and right sides tracked independently.
 *   **Charge model** — each muscle decays from 100% to 0% over 48–96 hours post-workout depending on exercise volume and RPE. Recovery follows a sigmoidal curve (not linear).
-*   **Front / Back toggle** — tap to flip the silhouette. iOS uses a segmented picker; watchOS shows both views as swipe tabs.
+*   **3D avatar** — interactive SceneKit model (USDZ) with tap-to-select muscles, front/back rotation, and training mode selection (Heavy/Light/Limited).
 *   **Color coding** — ≥ 75% green, 50–75% yellow, 25–50% orange, < 25% red.
-*   **Training highlights** — muscles targeted by today's program pulse orange on the canvas.
+*   **Injury registry** — mark muscles as "Limited / Pain" to exclude them from AI-generated programs.
 
 <details>
 <summary>View Screenshot — Muscle Map</summary>
@@ -43,85 +45,99 @@ Per-muscle fatigue tracking across 14 anatomical regions using a parametric body
 
 ---
 
-## 📋 Training Programs
+## Training Programs
 
-Six science-based periodisation templates covering all major training goals.
+12 science-based periodisation templates covering all major training goals. 3 free (Starting Strength, StrongLifts 5x5, Bodyweight Basics); 9 require Pro.
 
 | Program | Structure | Goal |
 |---|---|---|
-| PPL (Power/Push/Pull/Legs) | 6-day upper/lower split | Hypertrophy + strength |
-| 5/3/1 Wendler | 4-day barbell + accessory | Powerlifting strength |
-| GZCLP | 3-day tier system | Beginner linear progression |
-| Upper/Lower | 4-day classic split | Balanced hypertrophy |
-| Full Body | 3-day compound-focused | General fitness |
-| Deload / Maintenance | 1-day active recovery | Regeneration |
+| Starting Strength | 3-day A/B barbell | Beginner linear progression |
+| StrongLifts 5x5 | 3-day A/B barbell | Beginner strength |
+| GZCLP | 4-day tier system (T1/T2/T3) | Beginner linear progression |
+| 5/3/1 Boring But Big | 4-day barbell + accessory | Powerlifting strength |
+| PHUL | 4-day upper/lower power+hypertrophy | Balanced strength & size |
+| Reddit PPL | 6-day push/pull/legs | Hypertrophy + strength |
+| Bodyweight Basics | 3-day no-equipment | Home/travel fitness |
+| Upper/Lower Split | 4-day classic split | Balanced hypertrophy |
+| nSuns 5/3/1 LP | 5-day high-volume | Intermediate strength |
+| Arnold Split | 6-day classic bodybuilding | Hypertrophy |
+| Power Building | 4-day powerlifting+hypertrophy | Strength & size |
+| Full Body 3x/Week | 3-day compound-focused | General fitness |
 
-*   **AI-generated programs** (Elite) — describe your goal and constraints; PrismCoach generates a fully custom multi-week block using Prism 4B or Claude Sonnet.
-*   **JSON Program Generator** — programs are represented as typed Swift models; the engine can generate a full 8-week program in < 500 ms on-device.
-*   **Watch sync** — active program caches to Apple Watch for offline coaching (< 100 KB payload).
+*   **AI-generated programs** (Pro) — describe your goal and constraints; PrismCoach generates a fully custom program using the on-device AI or cloud cascade.
+*   **Watch sync** — active program caches to Apple Watch for offline reference.
 
 <details>
 <summary>View Screenshot — Programs</summary>
 
 ![PrismCoach Programs](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_03_programs.png)
-*Training programs — six periodisation templates with AI-generated custom programs for Elite.*
+*Training programs — 12 periodisation templates with AI-generated custom programs for Pro.*
 
 </details>
 
 ---
 
-## 🍎 Nutrition Engine
+## Nutrition Engine
 
-NLP-powered meal logger — describe food in plain language, get macros.
+Meal logger with macro tracking and calorie targets.
 
-*   **NLP meal logging** — type or dictate "2 eggs, toast with butter, black coffee" and the engine parses food entities, quantities, and units using regex + Claude Haiku.
-*   **Macro targets** — calculated from body weight, goal (cut/bulk/maintain), and activity level. Adjusts daily based on training load.
-*   **Caloric tracking** — running daily total with breakdown (protein / carbs / fat / fibre / water).
-*   **Nutrient density scoring** — flags micronutrient gaps based on logged foods.
-*   **Hydration reminders** — adaptive push notifications based on workout sweat rate estimate.
+*   **Meal logging** — type or dictate meals in plain language. The offline NLP parser extracts food entities, quantities, and units using regex and a built-in food database. No cloud AI required.
+*   **Macro targets** — calculated from body weight, goal (cut/bulk/maintain), and activity level using the Mifflin-St Jeor equation. Adjusts daily based on training load.
+*   **Caloric tracking** — running daily total with breakdown (protein / carbs / fat).
+*   **Food database** — search a built-in database of common foods with nutritional data.
 
 <details>
 <summary>View Screenshot — Nutrition</summary>
 
 ![PrismCoach Nutrition](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/iphone_pro_04_nutrition.png)
-*Nutrition tracker — NLP meal logging, daily macro targets, and hydration tracking.*
+*Nutrition tracker — meal logging, daily macro targets, and calorie tracking.*
 
 </details>
 
 ---
 
-## 🤖 AI Coach
+## AI Coach
 
 Conversational coaching that knows your recovery state, last session, and program context.
 
-*   **Free tier** — no AI (static program templates only).
-*   **Pro — Prism 1.7B on-device** — runs via llama.cpp with Metal acceleration. Zero network, fully private. Answers questions about your training, suggests form corrections, adjusts today's volume based on readiness.
-*   **Elite — Prism 1.7B → 4B → Claude Sonnet cascade** — on-device first; escalates to Prism inference server (4B) for complex questions; falls back to Claude Sonnet for nuanced coaching.
-*   **Context window** — ForgeMemoryStore injects last 3 sessions, active program week, current muscle charges, and body battery score into every prompt.
-*   **Voice output** — AI replies are spoken via ForgeTTSEngine: Synalux cloud TTS (MP3, 24 kHz) with AVSpeechSynthesizer offline fallback. Six coaching tones: Friendly, Calm, Excited, Precise, Empathetic, Hopeful.
-*   **Proactive coaching** — ProactiveCoachEngine surfaces unprompted insights (e.g. "Your HRV dropped 15% — consider reducing intensity today") based on 7 trigger types.
+*   **Free tier** — 3 AI messages per day.
+*   **Pro — on-device AI** — Qwen 3.5-4B runs via llama.cpp with Metal acceleration on 6 GB+ devices. Falls back to 1.7B on lower-memory devices. Zero network, fully private for on-device queries.
+*   **Pro — cloud cascade** — for complex queries, the app escalates to Prism 4B inference server, then Claude Sonnet as fallback. Cloud queries send anonymised training context (no PII, no raw HealthKit data).
+*   **Context window** — injects current muscle charges, body battery score, active program, and injury registry into every prompt.
+*   **Voice output** — AI replies spoken via text-to-speech with sentence-level highlighting. Music volume ducks automatically during speech.
+*   **Voice input** — push-to-talk and hands-free set logging via Speech framework.
+
+> AI Coach is not a certified personal trainer or medical professional. Recommendations are generated by AI models and may be inaccurate. Always verify advice with a qualified professional, especially regarding injuries or medical conditions.
 
 <details>
 <summary>View Screenshot — AI Coach</summary>
 
 ![PrismCoach AI Coach](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/screenshots/ipad_05_aicoach.png)
-*AI Coach — context-aware conversational coach with voice output and proactive insights.*
+*AI Coach — context-aware conversational coach with voice output.*
 
 </details>
 
 ---
 
-## ⌚ Apple Watch App
+## Camera Features (Pro)
+
+*   **Body Scan** — uses Apple Vision framework to detect body pose (skeleton joint positions) via the front camera. Measures shoulder/hip proportions to scale the 3D avatar to your body shape. Includes lens distortion compensation for close-range captures.
+*   **Equipment Recognition** — capture a photo of your gym setup; the image is sent to a cloud AI vision model for classification into equipment tiers (full gym / home gym / dumbbells / bodyweight). Requires network connection.
+
+> Note: Equipment recognition sends the captured photo to a cloud API for analysis. No biometric or health data is included in this request.
+
+---
+
+## Apple Watch App
 
 Full companion app — not just notifications. Independent session tracking on wrist.
 
-*   **5 Watch tabs** — Dashboard (Body Battery), Muscle Map, Workout Logger, CNS Tap Test, Settings.
-*   **Workout session** — log sets (exercise, weight, reps, RPE) directly from wrist. 90-second rest timer with haptic countdown.
-*   **CNS Tap Test** — 10-second pre-workout fast-tap test. Measures taps/sec; flags neuromuscular fatigue if below personal baseline.
-*   **Haptic Pace-Keeper** — rhythmic haptics during AMRAP/EMOM circuits.
-*   **Phone sync** — WatchConnectivity bridge pushes batteries, body battery, and feature flags bidirectionally in real time.
-*   **Auto-Set Detection** — accelerometer + gyroscope recognise set start/stop and classify exercise type. Disable to save watch battery.
-*   **Velocity-Based Training** — wrist-mounted bar velocity estimation using CoreMotion. Flags neuromuscular fatigue when bar speed drops > 15%.
+*   **6 Watch tabs** — Dashboard (Body Battery), Muscle Map, Workout Logger, AI Coach, CNS Tap Test, Settings.
+*   **Workout session** — log sets (exercise, weight, reps, RPE) directly from wrist. HR-adaptive rest timer adjusts rest duration based on current vs. resting heart rate. Full HKWorkoutSession + HKLiveWorkoutBuilder integration.
+*   **CNS Tap Test** — 10-second pre-workout fast-tap test. Measures taps/sec; flags neuromuscular fatigue if below personal baseline. 7-day sparkline trend.
+*   **AI Coach on Watch** — queries relay to iPhone via WatchConnectivity. Falls back to direct cloud or on-device SmolLM2-360M (CPU-only) when iPhone is unreachable.
+*   **Watch complications** — Body Battery score available in circular, rectangular, inline, and corner complication families.
+*   **Phone sync** — WatchConnectivity bridge pushes muscle batteries, body battery, streaks, and injury registry bidirectionally.
 
 <details>
 <summary>View Screenshot — Watch Dashboard</summary>
@@ -133,105 +149,120 @@ Full companion app — not just notifications. Independent session tracking on w
 
 ---
 
-## 🧬 Femme Engine
+## Femme Engine
 
-Cycle-phase-aware metric adjustments for female athletes (opt-in).
+Cycle-phase-aware metric adjustments for female athletes (opt-in, Pro).
 
 *   **4 phases** — Menstrual, Follicular, Ovulatory, Luteal.
-*   **Training adjustments** — volume, intensity targets, and RPE recommendations shift per phase based on published research on hormonal effects on strength and recovery.
-*   **Body battery correction** — basal body temperature and heart rate variability baselines are adjusted by phase to prevent false fatigue flags mid-cycle.
-*   **Privacy** — cycle data never leaves the device (CoreData, no sync).
+*   **Training adjustments** — recovery rate multipliers (0.80x–1.15x) and HR zone offsets shift per phase based on published research on hormonal effects on strength and recovery.
+*   **Body battery correction** — heart rate variability baselines are adjusted by phase to prevent false fatigue flags mid-cycle.
+*   **Privacy** — cycle data stored locally only.
 
 ---
 
-## 🧠 Sleep & HRV
+## Sleep & HRV
 
 Overnight recovery science running silently in the background.
 
 *   **HRV capture** — passive HealthKit queries for overnight HRV samples. No active measurement required.
 *   **Sleep stage analysis** — reads Apple's sleep stage data (awake/core/deep/REM) to score sleep quality.
-*   **Training loop** — SleepTrainingLoop correlates prior day's load with next-morning HRV to build a personal stress–recovery model over time.
 *   **Body battery baseline** — rolling 28-day median HRV used as personal reference; deviations drive the battery score.
 
 ---
 
-## 🔊 Voice & TTS
+## Voice & TTS
 
 AI coaching spoken aloud in your language.
 
-*   **Synalux TTS** — cloud MP3 synthesis at 24 kHz/96 kbps mono via Synalux portal. 6 coaching tones.
-*   **Offline fallback** — AVSpeechSynthesizer with auto-selection of highest available voice quality (premium ≥ enhanced ≥ default). Works in all 23 supported languages.
-*   **Music ducking** — ForgeTTSEngine automatically ducks Apple Music / Spotify during coaching speech and restores volume after.
-*   **Auto-tone inference** — message content is scanned for emotional keywords (PR, fatigue, injury, comeback, etc.) and the appropriate tone is selected automatically.
-*   **Voice commands** — VoiceCommandEngine handles hands-free set logging ("log 100kg 5 reps RPE 8") and navigation ("show my muscle map") via Speech framework.
+*   **Text-to-speech** — AVSpeechSynthesizer with auto-selection of highest available voice quality (premium ≥ enhanced ≥ default). Sentence-level highlighting during playback.
+*   **Music ducking** — TTS engine automatically ducks Apple Music / Spotify during coaching speech and restores volume after.
+*   **Auto-tone inference** — message content is scanned for emotional keywords and the appropriate tone is selected automatically.
+*   **Voice input** — push-to-talk set logging and AI chat via Speech framework.
 
 ---
 
-## 🌍 Languages
+## Languages
 
-23 supported languages via Apple's speech stack + Synalux TTS.
+23 supported languages via Apple's speech stack and text-to-speech.
 
 *   **BCP-47 language codes** — per-user language preference stored in LanguageStore; used for TTS voice selection and AI coach system prompt locale.
-*   **AI coaching** — prompts are written in the user's selected language. Claude and Prism models handle all 23 languages.
-*   **23 languages** — English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Russian, Ukrainian, Romanian, Czech, Hungarian, Swedish, Norwegian, Finnish, Japanese, Korean, Mandarin, Arabic, Hindi, Turkish, Hebrew.
+*   **23 languages** — English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Russian, Ukrainian, Romanian, Japanese, Korean, Chinese (Simplified), Chinese (Traditional), Cantonese, Arabic, Hindi, Hebrew, Vietnamese, Filipino, Turkish, Indonesian.
 
 ---
 
-## 🏗️ Architecture
+## Music Integration
 
-*   **PrismCoachCore** — shared Swift Package (SPM) containing all engines, models, and business logic. Consumed by the iOS app, Mac Catalyst app, and watchOS extension.
-*   **llama.cpp (Metal)** — on-device inference for Prism 1.7B GGUF model via a local SPM package (`_llama_cpp_local`). iOS/macOS only; excluded from watchOS at compile time.
-*   **WatchConnectivity bridge** — `WatchBridge` syncs muscle batteries, body battery, and feature flags bidirectionally between iPhone and Watch in real time.
-*   **CloudKit sync** — `CloudKitSyncEngine` replicates workout history and user profile across devices using CKRecord change tokens with conflict resolution.
-*   **HealthKit** — reads HRV, sleep stages, resting HR, active energy, and workout samples. Writes workout session summaries.
-*   **Siri Intents** — `LogWorkoutIntent`, `GetBodyBatteryIntent`, `StartRestTimerIntent` for Shortcuts integration.
+Workout-phase-aware music with BPM sync.
+
+*   **Apple Music & Spotify** — connects to your music library.
+*   **Phase-adaptive BPM** — configurable BPM ranges per workout phase (warmup/working/rest/cooldown). Music automatically transitions between phases.
+*   **Coaching duck** — music volume drops during AI speech and TTS, then restores.
+*   **BPM settings** — per-phase BPM sliders, linked playlists, auto-transition toggle.
 
 ---
 
-## 🔒 Privacy
+## Engagement
 
-*   **Local-first** — all biometric data stays on-device. No analytics SDK. No third-party crash reporting.
+*   **Workout streaks** — consecutive training day tracking with rest-day grace (1 per week). At-risk warnings. Bounce animation on increment.
+*   **Weekly adherence** — circular progress ring showing workouts completed vs. target training days.
+*   **Share card** — branded post-workout image with exercise count, sets, duration, streak badge, and trained muscle silhouette. Share via iOS share sheet.
+*   **Notifications** — streak-at-risk (next day 6pm), recovery-ready (most fatigued muscle's projected recovery), inactivity win-back (3-day repeating). All local.
+
+---
+
+## Privacy
+
+*   **On-device first** — core features (tracking, programs, body battery) work fully offline with no network.
+*   **AI routing** — on-device AI (Qwen 3.5-4B / 1.7B) processes queries locally. For complex queries, Pro users' context is sent to Prism inference server or Claude Sonnet via encrypted HTTPS. Only anonymised training context is sent — no PII, no raw HealthKit samples.
+*   **Equipment recognition** — camera photos are sent to a cloud vision API for equipment classification. No biometric data is included.
 *   **HealthKit** — read-only access except workout session writes. Described in App Store privacy label.
-*   **AI prompts** — Coach tier never sends data to any server. Athlete tier sends anonymised training context to Prism inference server (no PII, no HealthKit data).
-*   **Subscription check** — email posted via HTTPS to `api.prismcoach.app/subscription/check`. Email stored in Keychain with 24-hour TTL and 48-hour grace window.
-*   **Cycle data** — Femme Engine data is CoreData-only, never synced.
+*   **CloudKit** — workout history and profile sync across user's own devices via iCloud.
+*   **Cycle data** — Femme Engine data stored locally only, never synced.
+*   **No analytics SDK** — no third-party crash reporting. Datadog logging for aggregate app-level events only (tab views, launch count).
 
 ---
 
-## 💳 Plans
+## Plans
 
-| Feature | Free | Coach | Athlete |
-|---|---|---|---|
-| Body Battery + HRV dashboard | ✅ | ✅ | ✅ |
-| Muscle recovery map | ✅ | ✅ | ✅ |
-| Workout logging (60-day history) | ✅ | ✅ | ✅ |
-| Unlimited workout history | — | ✅ | ✅ |
-| All 6 training templates | — | ✅ | ✅ |
-| Full nutrition engine + food DB | — | ✅ | ✅ |
-| Body visualizer (front/back canvas) | — | ✅ | ✅ |
-| Apple Watch companion app | — | ✅ | ✅ |
-| Femme Engine (cycle tracking) | — | ✅ | ✅ |
-| AI Coach — Prism 1.7B on-device | — | ✅ | ✅ |
-| AI Coach — Prism 4B server | — | — | ✅ |
-| AI Coach — Claude Sonnet cascade | — | — | ✅ |
-| AI-generated custom programs | — | — | ✅ |
-| **Monthly** | Free | $8.99/mo | $17.99/mo |
-| **Annual** | Free | $69.99/yr | $129.99/yr |
+Billing is 100% Apple In-App Purchase (StoreKit 2). Local currency handled automatically by Apple's price tier system.
 
-Subscribe at [prismcoach.app/subscribe](https://prismcoach.app/subscribe) — Stripe-backed web checkout. No in-app purchase required.
+| Feature | Free | Pro |
+|---|---|---|
+| Body Battery + HRV dashboard | ✅ | ✅ |
+| Muscle recovery map | ✅ | ✅ |
+| 3 training templates | ✅ | ✅ |
+| 3 AI messages / day | ✅ | ✅ |
+| All 12 training templates | — | ✅ |
+| Unlimited AI coaching | — | ✅ |
+| Full nutrition engine | — | ✅ |
+| Camera body scan & equipment recognition | — | ✅ |
+| Femme Engine (cycle tracking) | — | ✅ |
+| Apple Watch companion | — | ✅ |
+| Unlimited workout history | — | ✅ |
+| 3D body visualizer | — | ✅ |
+| **Monthly** | Free | $9.99/mo |
+| **Annual** | Free | $59.99/yr (1-week free trial) |
+
+Product IDs: `ai.synalux.prismcoach.pro.monthly`, `ai.synalux.prismcoach.pro.annual`
 
 ---
 
-## 🧪 Tests
+## Tests
 
-904 automated tests covering all core engines — ATR, Body Battery, Muscle Battery, AI routing, Nutrition, Sleep, CNS, Siri Intents, Subscription, CloudKit, VBT, Voice commands, and more.
+~1,484 automated tests (1,356 unit + 128 UI) covering core engines — ATR, Body Battery, Muscle Battery, AI routing, Nutrition, Sleep, CNS, Subscription, CloudKit, VBT, Voice commands, and more.
 
 <details>
 <summary>Technical Documentation / Specifications</summary>
 
 ```
 watchOS build:    ✅ BUILD SUCCEEDED
-iOS tests (904):  ✅ 904/904 passed, 0 failures
+iOS tests:        ✅ ~1,484 tests
 ```
 
 </details>
+
+---
+
+## Sources
+
+PrismCoach's training algorithms are informed by peer-reviewed research. In-app Sources tab lists 13 citations from Sports Medicine, JSCR, Frontiers in Physiology, and other journals with verifiable PubMed links.
