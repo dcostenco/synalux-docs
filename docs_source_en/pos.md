@@ -13,39 +13,48 @@ Use your own iPad — or any device with a browser.
 
 ## Why Synalux POS
 
-| Feature | **Synalux** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha** |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Runs on any device (BYOD) | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| No hardware lock-in | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Online Ordering + QR Table | ✅ | $ | $ | $ | $ | $ |
-| Kitchen Display (KDS) | ✅ | $ | $ | $ | $ | ✅ |
-| Drive-Thru Lane Management | ✅ | $ | ❌ | ❌ | ❌ | $ |
-| Catering + BEO | ✅ | $ | ❌ | ❌ | ❌ | $ |
-| Delivery (In-House + 3PD) | ✅ | $ | $ | $ | $ | $ |
-| Coursing (Fire-on-Demand) | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |
-| Reservations + Waitlist | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Location + Franchise | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| EBT/SNAP Payments | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Tap-to-Pay on iPhone | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
-| Customer-Facing Display | ✅ | $ | $ | ✅ | $ | $ |
-| Offline Mode (PWA) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ |
-| QuickBooks + Xero Sync | ✅ | $ | $ | $ | $ | $ |
-| 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Timed Course Fire (Prep-Time Stagger) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Modifier-Based KDS Steering | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Per-Station Terminal Config | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Revenue Center Behavioral Engine | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Auto-Apply Discounts + Group (Nth Free) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Recipe Costing + Auto-Deduction | ✅ | $ | ❌ | ❌ | $ | ❌ |
-| Real-Time Alerts (Stock/OT/Delay) | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
-| | | | | | | |
-| **Only Synalux** | | | | | | |
-| AI Chat on 15 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Payroll + CA 226.7 Compliance | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
-| 3-Mode Tip Pooling (FLSA) | ✅ | $ | ❌ | ❌ | ❌ | ❌ |
+| Feature | **Synalux** | **Flexx POS** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha** |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Runs on any device (BYOD) | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ |
+| No hardware lock-in | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Online Ordering + QR Table | ✅ | ❌ | $ | $ | $ | $ | $ |
+| Kitchen Display (KDS) | ✅ | ✅ | $ | $ | $ | $ | ✅ |
+| Drive-Thru Lane Management | ✅ | ❌ | $ | ❌ | ❌ | ❌ | $ |
+| Catering + BEO | ✅ | ❌ | $ | ❌ | ❌ | ❌ | $ |
+| Delivery (In-House + 3PD) | ✅ | ❌ | $ | $ | $ | $ | $ |
+| Coursing (Fire-on-Demand) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |
+| Reservations + Waitlist | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Multi-Location + Franchise | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| EBT/SNAP Payments | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Tap-to-Pay on iPhone | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Customer-Facing Display | ✅ | ❌ | $ | $ | ✅ | $ | $ |
+| Offline Mode (PWA) | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ |
+| QuickBooks + Xero Sync | ✅ | ❌ | $ | $ | $ | $ | $ |
+| 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Timed Course Fire (Prep-Time Stagger) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Modifier-Based KDS Steering | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Per-Station Terminal Config | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Revenue Center Behavioral Engine | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Auto-Apply Discounts + Group (Nth Free) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Recipe Costing + Auto-Deduction | ✅ | ❌ | $ | ❌ | ❌ | $ | ❌ |
+| Real-Time Alerts (Stock/OT/Delay) | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
+| QR Code Employee Login | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Clock In/Out from Login Screen | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Hold/Send Kitchen Timing | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Fractional Item Splits | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Bar Tab Zero-Auth | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Cardholder Name Auto-Capture | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Super Categories (2-level hierarchy) | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Notification Bell (Real-time Alerts) | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Screen Lock (Kiosk Mode) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| | | | | | | | |
+| **Only Synalux** | | | | | | | |
+| AI Chat on 15 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Payroll + CA 226.7 Compliance | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
+| 3-Mode Tip Pooling (FLSA) | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
 
 ❌ = Not available
 $ = Paid add-on / third-party integration
@@ -88,6 +97,11 @@ $ = Paid add-on / third-party integration
   - [HR & Timesheets](#hr--timesheets)
   - [Back Office Suite](#back-office-suite)
   - [Screen Builder](#screen-builder)
+  - [QR Code Login](#qr-code-login)
+  - [Hold/Send Kitchen Timing](#holdsend-kitchen-timing)
+  - [Split Check with Fractional Splits](#split-check-with-fractional-splits)
+  - [Notification Bell](#notification-bell)
+  - [Bar Tab Name Capture](#bar-tab-name-capture)
   - [Offline Mode (PWA)](#offline-mode-pwa)
   - [Printers & Cash Drawer](#printers--cash-drawer)
   - [Security & PCI Compliance](#security--pci-compliance)
@@ -1303,6 +1317,52 @@ Toggle 13 receipt sections on/off:
 | Footer message | On |
 
 </details>
+
+---
+
+### QR Code Login
+
+Staff can scan a QR badge to log in — no PIN needed. Badges are HMAC-signed, venue-scoped, and revocable per employee. Print badges from **Settings > Staff Management** and assign to any staff member. Lost badges can be revoked instantly without affecting other credentials.
+
+![Register with QR Login](assets/pos/01-register-categories.png)
+
+---
+
+### Hold/Send Kitchen Timing
+
+Set a hold timer (5-60 minutes) on an order before sending to kitchen. Kitchen tickets auto-fire when the timer expires — server-authoritative, not client-poll. Servers use this for appetizer-first timing, bar-tab food holds, or coordinating with a reservation arrival.
+
+![Hold/Send Timer](assets/pos/05-hold-send-timer.png)
+
+---
+
+### Split Check with Fractional Splits
+
+Split a single item across multiple checks (1/2, 1/3, 1/4). Share badges show which items are shared across guests. Penny-conserving math ensures totals always balance — remainder cents go to the first split. Works alongside seat management and coursing.
+
+![Split Check](assets/pos/06-split-check-modal.png)
+
+---
+
+### Notification Bell
+
+Real-time alerts for new online orders, order-ready bumps, table timer alerts, and low stock warnings. Configurable per notification type with sound alerts. Bell icon in the top bar shows unread count — tap to expand the notification drawer without leaving the current screen.
+
+---
+
+### Bar Tab Name Capture
+
+When a card is swiped for a bar tab, the cardholder name is automatically captured and used as the tab name. No manual typing needed. Configurable format: as-returned, Last/First, or First Last — set in **Settings > Venue Settings > Bar Tabs**.
+
+![Bar Tabs](assets/pos/19-bar-tabs.png)
+
+---
+
+### Screen Builder (Extended)
+
+Configure every POS screen from one place — button layout, split check modes, tip percentages, receipt format, menu pages, hold timer presets, notification types, and more. No code changes needed. All settings are per-venue and take effect immediately across all terminals.
+
+![Screen Builder](assets/pos/13-screen-builder.png)
 
 ---
 
