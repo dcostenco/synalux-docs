@@ -23,12 +23,12 @@ Use your own iPad — or any device with a browser.
 | Catering + BEO | ✅ | ❌ | $ | ❌ | ❌ | ❌ | $ |
 | Delivery (In-House + 3PD) | ✅ | ❌ | $ | $ | $ | $ | $ |
 | Coursing (Fire-on-Demand) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |
-| Reservations + Waitlist | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Reservations + Waitlist | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
 | Multi-Location + Franchise | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| EBT/SNAP Payments | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| EBT/SNAP Payments | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
 | Tap-to-Pay on iPhone | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | Customer-Facing Display | ✅ | ❌ | $ | $ | ✅ | $ | $ |
-| Offline Mode (PWA) | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ |
+| Offline Mode (PWA) | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | QuickBooks + Xero Sync | ✅ | ❌ | $ | $ | $ | $ | $ |
 | 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Timed Course Fire (Prep-Time Stagger) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
