@@ -421,10 +421,13 @@ Recently shipped:
 - [x] Real assessment instrument support (CSV item import)
 - [x] Interval recording UI (occurred/absent with running percentage)
 - [x] Task analysis recording in post-hoc data collection
+- [x] Trend + aim lines with sessions-to-mastery projection on progress graphs
+- [x] Data-based mastery decision support (advance / maintain / modify)
+- [x] Behavior graphs — frequency/rate, task-analysis, interval, duration, and ABC distribution
 
 In active development:
 
-- [ ] Phase change lines and celeration/aim lines on graphs
+- [ ] Standard Celeration Chart (SCC) view
 - [ ] Insurance-ready progress report generator with embedded graphs
 - [ ] Parent/caregiver portal for progress viewing
 - [ ] BACB fieldwork hours tracking (restricted/unrestricted split)
