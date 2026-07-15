@@ -306,7 +306,7 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 
 ### Tables & Floor Plan
 
-Visual floor plan with color-coded table status. Tap a table to start or view its order.
+Visual floor plan with color-coded table status. Table state syncs across every terminal in real time — no manual refresh.
 
 <img src="../images/pos/ipad_02_tables.png" alt="Tables">
 
@@ -318,7 +318,11 @@ Visual floor plan with color-coded table status. Tap a table to start or view it
 3. **Change Table** — move an order to a different table from the order panel. Pick the new table from the floor plan
 4. **Move seats between orders** — transfer individual seat groups from one table's order to another
 5. Merge, split-back, transfer, or reopen closed checks from the table detail panel
+6. **Occupy-on-add** — adding items to a table opens its check immediately, so the table shows **occupied on every terminal** in real time, before "Send to Kitchen." Toggle in **Settings > Venue > Table Occupancy** (on by default); turn it off to only occupy the table once the order is fired
+7. **Live status** — available / occupied / long-wait syncs across all terminals instantly, with no manual refresh
+8. **Mark Clean** — after a table is vacated, tap **Mark Clean** to flip it back to available (records a bussed timestamp so a fired order is never mistaken for a new one)
 
+<img src="../images/pos/settings_occupy_on_add.png" alt="Occupy table when items are added">
 <img src="../images/pos/ipad_table_editor.png" alt="Table Editor">
 <img src="../images/pos/ipad_table_merge.png" alt="Table Merge">
 <img src="../images/pos/ipad_table_ops.png" alt="Table Operations">
@@ -428,7 +432,9 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
 7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligible items are automatically calculated
 8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
+9. **Over-payment handling** — when a customer pays cash above the amount owed, choose how the excess is handled in **Settings > Venue > Over-payment handling**: *Give change* (cash back, recorded for end-of-day drawer reconciliation — the default), *Add to tip*, or *Ask cashier each time*. The amount applied to the bill is always exactly what's owed
 
+<img src="../images/pos/settings_overpayment.png" alt="Over-payment Handling">
 <img src="../images/pos/ipad_split_check.png" alt="Split Check">
 <img src="../images/pos/ipad_bar_tab.png" alt="Bar Tab">
 <img src="../images/pos/ipad_tap_to_pay.png" alt="Tap-to-Pay">
