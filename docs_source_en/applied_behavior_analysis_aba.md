@@ -119,6 +119,7 @@ items from any instrument you are licensed to use.
 A score repository for externally-administered standardized assessments:
 - **Instrument-agnostic** — stores scores from Vineland-3, ABAS-3, Bayley-4, BASC-3, ADOS-2, and any future instrument
 - **Not an instrument** — Synalux does not administer, score, or reproduce any standardized assessment
+- **Trademarks** — instrument names (Vineland, ABAS, Bayley, BASC, ADOS, etc.) are trademarks of their respective owners; Synalux is not affiliated with or endorsed by them
 - **AI integration** — BCBA assistant pulls scores verbatim for medical-necessity letters and BIP drafts
 - **Audit trail** — PHI-tier triple-logging on every CRUD operation
 
