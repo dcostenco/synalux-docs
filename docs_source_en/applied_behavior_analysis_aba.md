@@ -11,7 +11,7 @@ Synalux's ABA module is a full-lifecycle clinical platform for **BCBAs**, **BCaB
 | Category | Features |
 |----------|----------|
 | **Data Collection** | Discrete trials, duration recording, frequency counter, interval recording, task analysis, ABC (antecedent-behavior-consequence) |
-| **Assessments** | VB-MAPP, ABLLS-R, AFLS, Essentials for Living, PEAK, custom instruments — with CSV item import for licensed content |
+| **Assessments** | Verbal Milestones, Foundational Skills, Adaptive Living, Essential Skills, Relational Skills + custom templates — with CSV import for your own content |
 | **Goals Library** | Evidence-based goal bank with 11 ABA domains, template creation, search/filter, assign-to-patient flow |
 | **Treatment Planning** | Guided FBA→BIP wizard, mastery predictions, AI-assisted goal suggestions |
 | **Graphing** | Auto-generated line charts with mastery thresholds, baseline phase detection, AI trend narratives |
@@ -89,15 +89,19 @@ HIPAA-compliant session verification required by many Medicaid programs:
 
 ## Assessment Suite
 
-### Supported Instruments
+### Assessment Templates
 
-| Instrument | Scoring | Domains |
+Synalux ships its own original assessment templates built from field-standard,
+non-proprietary ABA concepts. You can also create custom templates or CSV-import
+items from any instrument you are licensed to use.
+
+| Template | Scoring | Domains |
 |-----------|---------|---------|
-| **VB-MAPP** (Verbal Behavior Milestones Assessment) | 0, 0.5, 1 | Mand, Tact, Listener Responding, Visual Perceptual Skills, Play, Social, Echoic, Spontaneous Vocal, Intraverbal, Group & Classroom, Linguistics, Reading, Writing, Math |
-| **ABLLS-R** (Assessment of Basic Language and Learning Skills) | 0-4 | Basic Learner Skills, Academic Skills, Self-Help Skills, Motor Skills |
-| **AFLS** (Assessment of Functional Living Skills) | 0-2 | Basic Living Skills, Home Skills, Community Participation, School Skills, Vocational Skills |
-| **Essentials for Living** | 0-1 | 8 domains covering essential functional skills |
-| **PEAK** (Promoting Emergence of Advanced Knowledge) | 0-2 | Direct Training, Generalization, Equivalence, Transformation |
+| **Verbal Milestones Assessment** | 0, 0.5, 1 | Requesting (mand), Labeling (tact), Listener responding, Echoic, Intraverbal, Play & leisure, Social, Imitation, Early academics |
+| **Foundational Skills Assessment** | 0-4 | Basic learner skills, Academic skills, Self-help skills, Motor skills |
+| **Adaptive Living Assessment** | 0-2 | Basic living, Home, Community participation, School, Vocational |
+| **Essential Skills Assessment** | 0-1 | Core communication & functional-life domains |
+| **Relational Skills Assessment** | 0-2 | Direct training, Generalization, Equivalence, Transformation |
 | **Custom** | 0-3 | User-defined domains and milestones |
 
 ### Assessment Features
