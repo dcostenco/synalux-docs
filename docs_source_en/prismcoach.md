@@ -121,7 +121,7 @@ Conversational coaching that knows your recovery state, last session, and progra
 
 ## Camera Features (Pro)
 
-*   **Body Scan** — uses Apple Vision framework to detect body pose (skeleton joint positions) via the front camera. Measures shoulder/hip proportions to scale the 3D avatar to your body shape. Includes lens distortion compensation for close-range captures.
+*   **Body Scan** — provide one clear, full-body photo (choose from your library or take a new one facing the camera). Apple's Vision framework runs on the still image to detect body pose (skeleton joint positions), overlays the detected skeleton so you can confirm the fit, and measures shoulder/hip proportions to scale the 3D avatar to your body shape. Includes lens-distortion compensation for close-range captures. Runs entirely on-device — the photo is never uploaded.
 *   **Equipment Recognition** — capture a photo of your gym setup; the image is sent to a cloud AI vision model for classification into equipment tiers (full gym / home gym / dumbbells / bodyweight). Requires network connection.
 
 > Note: Equipment recognition sends the captured photo to a cloud API for analysis. No biometric or health data is included in this request.
