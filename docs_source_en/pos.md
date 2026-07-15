@@ -153,8 +153,8 @@ Then enter a staff PIN:
 
 PIN login with clock-in, 7-level role-based access, and automatic screen routing per role. Four authentication methods — PIN is default, biometric and card are progressive enhancements.
 
-<img src="../images/pos/ipad_00_pin_entry.png" alt="Sign In">
 <img src="../images/pos/ipad_pin_overlay.png" alt="PIN Numpad — Employee Login">
+<img src="../images/pos/ipad_00_pin_entry.png" alt="Owner Sign In (email/password)">
 
 <details>
 <summary><strong>Authentication Methods</strong></summary>
