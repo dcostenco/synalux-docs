@@ -55,6 +55,7 @@ Use your own iPad — or any device with a browser.
 | Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Payroll + CA 226.7 Compliance | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
 | 3-Mode Tip Pooling (FLSA) | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
+| No-Code Screen Builder (Drag-Drop Register/UI) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 ❌ = Not available
 $ = Paid add-on / third-party integration
@@ -336,8 +337,8 @@ Assign items to individual seats for split checks and per-guest delivery. Seat t
 <summary><strong>Setup</strong></summary>
 
 1. Tap **Seat 1 / Seat 2 / + Seat** tabs on the register to assign items to specific guests
-2. Tap the seat badge on any line item to cycle it to the next seat number
-3. **Split item across guests** — tap the seat popover on a line item, then tap "Split across all (N)." The item is cloned into one line per seat with the price distributed evenly (remainder goes to seat 1). Modifier prices are also split
+2. Tap the **⋯** menu on any line item, then **Move to Seat**, to assign or change which guest it belongs to (the item shows a colored seat chip)
+3. **Split item across guests** — open a line item's **⋯** menu → **Move to Seat**, then tap "Split across all (N)." The item is cloned into one line per seat with the price distributed evenly (remainder goes to seat 1). Modifier prices are also split
 4. Split check by seat — each guest gets their own bill with only their items
 5. Seat assignment works alongside courses — assign items to Seat 1/2/3 and Course 1/2/3 independently
 
