@@ -49,7 +49,7 @@ Use your own iPad — or any device with a browser.
 | Screen Lock (Kiosk Mode) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
 | | | | | | | | |
 | **Only Synalux** | | | | | | | |
-| AI Chat on 15 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| AI Chat + Actions on 46 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -538,22 +538,28 @@ In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. 
 
 ### AI Chat Assistant
 
-Context-aware AI assistant on every POS page (15 surfaces) and on the online ordering page for customers. Voice input, 14 languages, quick prompts, and Prism memory for learning patterns.
+Context-aware AI assistant on every staff-facing POS screen (46 of 50 screens — only the customer menu board, customer display, public online-order page, and the full-page assistant itself are excluded) and on the online ordering page for customers. Voice input, 14 languages, quick prompts, and Prism memory for learning patterns. On most screens it now takes **real actions** — not just answers questions — with every action **module-isolated** (a tool only runs on its own screen) and **role-gated** (only staff with the required role can run it).
 
 <img src="../images/pos/ipad_ai_chat_pos.png" alt="AI Chat (POS)">
 
 <details>
 <summary><strong>How it works</strong></summary>
 
-**POS Staff Chat** — appears on every page, auto-loads live data for that screen:
-- **Register** — "What's the most popular item today?", "Find order with 3 cokes", "Customer last name Garcia"
-- **KDS** — "What's the oldest ticket?", "Any allergens on ticket 4?", "Grill count?"
-- **Tables** — "Any 4-tops available?", "How long has table 12 been seated?"
-- **Inventory** — "What's low on stock?", "How many cases of Bud Light?"
-- **Reports** — "Compare lunch vs dinner sales", "Top 5 items this week", "Labor % today?"
-- **EOD** — "Start closing", "What's the tip pool?", "Any cash variance?"
-- **Delivery** — "Where is driver Maria?", "How many pending deliveries?"
-- **+ 8 more surfaces** (Staff, Reservations, Catering, Loyalty, Gift Cards, Disputes, Scheduling, Table Ops)
+**POS Staff Chat** — appears on every page, auto-loads live data for that screen, and beyond answering questions can **perform the action for you** (it confirms first, then calls a real, audited, tenant-scoped tool):
+- **Register / Handheld / Drive-Thru / Tabs** — add item, apply discount, void item, split check, send payment link, open drawer; "Find order with 3 cokes"
+- **KDS / Coursing / Expo** — bump or recall tickets, check allergens; "What's the oldest ticket?"
+- **Tables / Table Ops** — availability, merge / split / transfer, reopen check
+- **Reservations** — book a reservation, add a walk-in to the waitlist, seat / cancel / mark no-show
+- **Loyalty** — look up a member, enroll a new member
+- **Gift Cards** — check balance, reload, redeem against an order
+- **Staff** — clock a staff member out
+- **Messaging** — post to a staff channel; **Calendar** — schedule an event
+- **Reports / Dashboards** — sales summary (revenue, orders, average ticket, tax, tips, discounts)
+- **Payroll / HR / Multi-Location** — aggregate labor-hours and labor-cost summary
+- **Accounting** — chart-of-accounts summary; **Allergens** — allergen-coverage audit; **Compliance** — RBS certs, incidents, data-deletion deadlines; **Documents** — search the file drive; **Marketing** — campaign performance; **Feedback** — NPS + ratings; **House Accounts / Vendors / Payments / Refunds / Scheduled orders** — read-only summaries
+- **Screen Builder** — toggle receipt display options
+
+Money- and compliance-sensitive actions (payroll ACH, tax changes, journal postings, loyalty point grants, issuing refunds, sending marketing) are deliberately **read-only in chat** — the assistant surfaces the data and points you to the on-screen control to execute them.
 
 **OO Customer Chat** — customers ask "Make me a half pepperoni half mushroom pizza" and the AI builds the order with correct modifiers and pricing:
 - Voice input (microphone) + voice output (speaker) with adjustable speed/pitch/gender
