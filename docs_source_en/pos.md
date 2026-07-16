@@ -279,16 +279,21 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 
 <img src="../images/pos/ipad_item_search.png" alt="Item Search">
 
+**Custom order types** — choose which order types appear on the register (dine-in, takeout, delivery, drive-thru, bar tab, catering) and give them custom labels (e.g. show *drive-thru* as "Curbside") in **Settings > Venue > Order Types**.
+
+**Comp an item** — comp a line item with a configurable reason. Manage the reason list in **Settings > Comp Reasons**; when comping, staff pick a reason (or free-text) so comps are itemized by cause in the Comps report.
+
 <img src="../images/pos/ipad_01_register.png" alt="Register">
 <img src="../images/pos/ipad_05_register_cart.png" alt="Cart with items, prices, and Send to Kitchen">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Settings > Menu Builder** — add categories and items with **Item Type** (Food/Alcohol/Beverage/Merchandise) and **KDS Station** (Grill/Fry/Prep/Expo/Bar/Cold/Pass) dropdowns
+1. **Settings > Menu Builder** — add categories and items with **Item Type** (Food/Alcohol/Beverage/Merchandise), **EBT/SNAP eligibility**, and **KDS Station** (Grill/Fry/Prep/Expo/Bar/Cold/Pass) dropdowns
 2. Set prices, modifiers, KDS stations, and barcodes per item
-3. **Per-item price level overrides** — set custom prices for Employee, Happy Hour, VIP levels in the item edit form
-4. Items appear on the register automatically
+3. **Per-item price level overrides** — set custom prices for Employee, Happy Hour, VIP levels in the item edit form. **Happy-hour pricing applies to online and phone orders too** — the customer is charged the same happy-hour price they see
+4. **Combos** — build meal deals in the Combos tab. A component can be a specific item **or a category slot** ("any item from Sides"), each with its own **quantity** (e.g. Burger + any Side ×2 + any Drink for $10). Combo savings apply on the register and on online/phone/AI orders alike
+5. Items appear on the register automatically
 
 <img src="../images/pos/settings_menu_builder.png" alt="Menu Builder">
 <img src="../images/pos/ipad_barcode_scan.png" alt="Barcode Scan">
@@ -306,15 +311,15 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 
 ### Tables & Floor Plan
 
-Visual floor plan with color-coded table status. Table state syncs across every terminal in real time — no manual refresh.
+Visual floor plan with color-coded table status, multiple rooms, and resizable/rotatable tables. Table state syncs across every terminal in real time — no manual refresh.
 
 <img src="../images/pos/ipad_02_tables.png" alt="Tables">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Settings > Floor Plan** — add tables with name, section, capacity, shape
-2. Create sections (Main, Patio, Bar) for quick filtering
+1. **Settings > Floor Plan** — add tables with name, section, capacity, shape, **size (width/height), and rotation**. Drag to position, resize, and rotate each table to match the real room
+2. **Multiple rooms** — group tables by section (Main, Patio, Bar) into separate rooms; a room switcher draws one room at a time in both the designer and the live floor view
 3. **Change Table** — move an order to a different table from the order panel. Pick the new table from the floor plan
 4. **Move seats between orders** — transfer individual seat groups from one table's order to another
 5. Merge, split-back, transfer, or reopen closed checks from the table detail panel
@@ -364,6 +369,7 @@ Ticket board with color-coded timing (green → yellow → orange → red). Bump
 3. Configure routing rules in **Settings > Printers & KDS**
 4. **Timed Course Fire** — set `prep_time_minutes` per menu item. Items split by course; later courses auto-fire offset by the longest prep time so everything finishes together
 5. **Modifier Steering** — modifiers can redirect items to additional stations. Set "Steer to Station" on any modifier option in Menu Builder. Steering is additive: item goes to default AND modifier station
+6. **Voids reflect on fired tickets** — voiding an item after it's fired marks it struck-through with a **VOID** badge on the kitchen ticket, so the line the kitchen already sees is cancelled instead of leaving a phantom item to be made
 
 </details>
 
@@ -430,7 +436,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
-7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligible items are automatically calculated
+7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligibility is per item: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), so hot/prepared foods can be excluded. At payment the EBT tender covers only the eligible amount and the non-eligible remainder is split to cash or card
 8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
 9. **Over-payment handling** — when a customer pays cash above the amount owed, choose how the excess is handled in **Settings > Venue > Over-payment handling**: *Give change* (cash back, recorded for end-of-day drawer reconciliation — the default), *Add to tip*, or *Ask cashier each time*. The amount applied to the bill is always exactly what's owed
 
@@ -453,7 +459,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 
 ### Staff & Labor
 
-Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
+Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
 
 <img src="../images/pos/settings_employees.png" alt="Staff">
 
@@ -463,6 +469,8 @@ Scheduling, break tracking, overtime alerts, tip pooling (3 modes), and payroll 
 1. **Settings > Staff Management** — add employees with name, PIN, role
 2. Configure pay periods, break rules, and overtime thresholds
 3. Tip pool mode: by hours, percentage, or points
+4. **Break punches** — staff Start/End a meal or rest break from the timeclock. Ending a break resumes the same shift (no clock-out/clock-in), and the break minutes are recorded on the shift
+5. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
 
 <img src="../images/pos/settings_scheduling.png" alt="Scheduling">
 <img src="../images/pos/settings_break_tracking.png" alt="Break Tracking">
@@ -785,7 +793,7 @@ Second screen facing the customer with live order, running total, and idle promo
 
 ### Reports
 
-Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, voids, and labor. CSV export on every report.
+Sales, PMIX, category sales, per-tax/jurisdiction, menu engineering, speed of service, server leaderboard, payments, voids, and comps. CSV export on every report.
 
 <img src="../images/pos/ipad_reports.png" alt="Reports">
 
@@ -795,10 +803,14 @@ Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, v
 1. Access from the **Reports** page — all reports are auto-generated from order data
 2. **Sales** — hourly heatmap, daily/weekly/monthly totals
 3. **PMIX** — product mix by category, item, and modifier
-4. **Menu engineering** — Star/Dog/Puzzle/Workhorse quadrant analysis
-5. **Speed of service** — per-station ticket times at `/pos/reports/speed`
-6. **Server leaderboard** — staff performance ranking at `/pos/reports/leaderboard`
-7. **CSV export** — every report has a one-click CSV download
+4. **Category sales** — sales rolled up by menu category (major group), with each category's share of net sales
+5. **Tax** — a per-jurisdiction breakdown (taxable sales + tax collected per tax zone) that reconciles against the recorded tax
+6. **Comps** — comped items itemized, broken down by (configurable) comp reason, with totals and CSV
+7. **Menu engineering** — Star/Dog/Puzzle/Workhorse quadrant analysis
+8. **Speed of service** — per-station ticket times at `/pos/reports/speed`
+9. **Server leaderboard** — staff performance ranking at `/pos/reports/leaderboard`
+10. **Labor** — hours, break minutes, overtime, and meal-penalty premium folded into gross pay
+11. **CSV export** — every report has a one-click CSV download
 
 <img src="../images/pos/settings_menu_engineering.png" alt="Menu Engineering">
 <img src="../images/pos/settings_reports_advanced.png" alt="Advanced Reports">
@@ -810,18 +822,20 @@ Sales, PMIX, menu engineering, speed of service, server leaderboard, payments, v
 
 ### Inventory & Recipe Costing
 
-Stock tracking with optimistic-lock deductions, low-stock alerts, vendor management, and recipe builder with ingredient cost + profit margin %.
+Stock tracking with optimistic-lock deductions, low-stock alerts, vendor management, recipe builder with ingredient cost + profit margin %, plus reorder suggestions and purchase orders with receiving.
 
 <img src="../images/pos/settings_inventory.png" alt="Inventory">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Add inventory items with SKU, qty, unit, cost per unit, and **low stock threshold**
+1. Add inventory items with SKU, qty, unit, cost per unit, and **low stock threshold** (the reorder point)
 2. Link **recipes** to menu items — ingredient cost + margin % auto-calculates
 3. On order completion, inventory **auto-deducts** per recipe (optimistic lock with retry)
 4. **Stock count** with audit trail — records who counted, old vs new quantity
 5. Low-stock items trigger **real-time alerts** at shift clock-in
+6. **Reorder suggestions** — items at or below their reorder point are surfaced with a suggested order quantity (up to par) and estimated cost, grouped by vendor
+7. **Purchase orders** — raise a PO to a supplier straight from the suggestions (one PO per vendor); **receive** it to add the ordered quantities back into stock. Receiving is idempotent so a PO can't be received twice
 
 <img src="../images/pos/settings_recipes.png" alt="Recipes">
 <img src="../images/pos/settings_vendors.png" alt="Vendors">
@@ -889,6 +903,7 @@ Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, 
 6. **Modifier targeting** — require specific modifier selections (e.g., "large pizza with exactly 2 toppings")
 7. **Revenue Center restrictions** — limit discounts to specific RCs
 8. **Target price** — set a specific final price for promotional items
+9. **Coupon codes** — give a discount a `coupon_code` and it's hidden from the open discount list; the cashier applies it by typing or **scanning the code** in the register's coupon field. Invalid, expired, and not-yet-active codes are rejected with inline feedback
 
 | Type | Example | How it works |
 |------|---------|-------------|
@@ -953,10 +968,20 @@ Age verification, RBS cert tracking, tax-exempt orders, per-item taxability, CCP
 
 ### End of Day
 
-Count cash, distribute tip pool, export GL journal, print Z-Report, close register.
+Count cash (with optional blind close), distribute tip pool, export GL journal, print Z-Report, close register.
 
 <img src="../images/pos/ipad_eod.png" alt="EOD">
 <img src="../images/pos/settings_cash_management.png" alt="Cash Management">
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+1. Enter the closing count by denomination — the counted total, expected amount, and over/short are shown as you count
+2. **Blind drawer count** — enable **Blind Close** in **Settings > Venue** to hide the expected amount and over/short while counting, so the count is unbiased. A manager can reveal the figures after the count is entered; the variance is still recorded
+3. **Tip pool** distribution, **GL journal** export, and **Z-Report** print
+4. Closing the register records the over/short for reconciliation
+
+</details>
 
 ---
 
@@ -1596,7 +1621,7 @@ Configure layout, sections, and pricing display. Assign to any TV or display.
 
 ### Marketing & Campaigns
 
-Email/SMS blasts, promo codes, audience segments, and send history.
+Email/SMS blasts, promo codes, audience segmentation, planned send times, and send history.
 
 <img src="../images/pos/settings_marketing.png" alt="Marketing">
 
@@ -1604,9 +1629,10 @@ Email/SMS blasts, promo codes, audience segments, and send history.
 <summary><strong>Setup</strong></summary>
 
 1. Open the **Marketing** page to create email or SMS campaigns
-2. Build audience segments by visit count, loyalty tier, or last-visit date
-3. Create promo codes with percentage or fixed discounts
-4. Requires Twilio (SMS) or SendGrid (email) credentials in **Settings > Integrations**
+2. **Audience segmentation** — target a campaign by minimum orders, minimum spend, last-visit recency, and whether the contact has an email or phone. A live summary shows who the campaign will reach
+3. **Planned send** — set a planned send time on a campaign; it's shown on the campaign card so staff know when to send it
+4. Create promo codes with percentage or fixed discounts
+5. Requires Twilio (SMS) or SendGrid (email) credentials in **Settings > Integrations**
 
 </details>
 
@@ -1614,16 +1640,17 @@ Email/SMS blasts, promo codes, audience segments, and send history.
 
 ### Customer Feedback
 
-Post-visit surveys, star ratings, comment review, and response templates.
+Post-visit surveys, an at-the-terminal NPS prompt, star ratings, comment review, and response templates.
 
 <img src="../images/pos/settings_customer_feedback.png" alt="Customer Feedback">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open `/pos/feedback` to view submitted customer surveys
-2. QR codes on receipts link to the survey form
-3. Star ratings and comments are aggregated per server and per time period
+1. Open `/pos/feedback` to view submitted customer surveys and the NPS dashboard
+2. **On-terminal NPS capture** — enable **Auto-Prompt** in the Feedback settings and the payment-complete screen shows a 0–10 "how likely to recommend" prompt with an optional comment. Tapping a score records it immediately (non-blocking — it never holds up the close-out)
+3. QR codes on receipts link to the survey form
+4. Star ratings, NPS, and comments are aggregated per server and per time period
 
 </details>
 
@@ -1754,6 +1781,7 @@ Cash drawers connect to the receipt printer via an **RJ-12 cable** (the "DK" por
 1. Plug the drawer's RJ-12 cable into the printer's **DK port** (labeled "DK" or with a drawer icon)
 2. In **Settings > Printers & KDS**, ensure your receipt printer is configured with station = **receipt**
 3. An **Open Cash Drawer** button appears next to Test Print — click it to kick the drawer
+4. The drawer also kicks automatically after a cash payment, and on **No Sale** — the No Sale action physically opens the drawer (to make change) and records a no-sale audit event
 
 **Troubleshooting:**
 
