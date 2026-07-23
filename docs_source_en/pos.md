@@ -435,7 +435,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
-6. **House accounts** — create in **Settings > House Accounts**, then charge at payment
+6. **House accounts** — create the customer account on **House Accounts**, then choose **House Account** at payment or record standalone account activity. See [House Accounts](#house-accounts)
 7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligibility is per item: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), so hot/prepared foods can be excluded. At payment the EBT tender covers only the eligible amount and the non-eligible remainder is split to cash or card
 8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
 9. **Over-payment handling** — when a customer pays cash above the amount owed, choose how the excess is handled in **Settings > Venue > Over-payment handling**: *Give change* (cash back, recorded for end-of-day drawer reconciliation — the default), *Add to tip*, or *Ask cashier each time*. The amount applied to the bill is always exactly what's owed
@@ -873,22 +873,141 @@ Issue gift cards ($25–$250) with auto-numbering and multi-location redemption.
 
 ---
 
-### House Account Invoicing
+### House Accounts
 
-Generate billing-cycle invoices for house account (A/R) customers. Itemized charges, payments, and balance with draft → sent → paid → void lifecycle.
+House Accounts is the customer A/R workspace for companies, schools, municipalities, regular guests, and other customers that buy now and settle later. It includes credit limits, an immutable activity ledger, customer deposits, statements, delivery history, public balance access, and payment collection.
 
-<img src="../images/pos/settings_house_accounts.png" alt="House Accounts">
+<p>
+  <img src="../images/pos/house-accounts-v2/accounts-list.png" alt="House Accounts list with outstanding balances, credits, active accounts, and over-limit summary" width="49%">
+  <img src="../images/pos/house-accounts-v2/account-detail.png" alt="House Account detail with balance, available credit, contact information, and account actions" width="49%">
+</p>
 
-<details>
-<summary><strong>Setup</strong></summary>
+<details open>
+<summary><strong>Manager setup</strong></summary>
 
-1. Open **House Accounts** page → select account
-2. Set billing period (start date + end date)
-3. Generate invoice — itemized charges scoped to that specific account
-4. **Auto-discount** — set `auto_discount_id` on a house account to auto-apply a discount when paying via that account
-5. Uniqueness constraint prevents duplicate invoices per billing period
+1. Confirm the venue has an active **Enterprise** subscription or trial.
+2. Open **House Accounts** from the POS navigation and select **New Account**.
+3. Enter the account name. Add a contact name, email, mobile number, and billing address when statements or payment links will be delivered.
+4. Set the credit limit if your role permits financial overrides. Otherwise the venue default applies.
+5. Open the account, select **Settings**, and optionally configure:
+   - statement frequency: **7, 14, or 30 days**
+   - next statement date
+   - email and/or SMS automatic delivery
+   - an automatic discount
+6. Use **Freeze** instead of deleting an account. Frozen accounts keep their complete ledger and statement history and cannot accept new charges or payments until reactivated.
+
+Managers and supervisors can manage accounts. Credit-limit changes require the same elevated permission used for payment refunds.
 
 </details>
+
+<details>
+<summary><strong>Charge an account</strong></summary>
+
+- **From a sale:** on the payment screen choose **House Account**, select the customer, review available credit, and confirm. The server rejects charges that exceed the account limit.
+- **Standalone charge:** open the account and select **Add Charge** for activity that is not tied to a POS order. Enter the amount and a useful note.
+- **Automatic discount:** when configured in the account Settings tab, the discount is applied to eligible orders before the charge reaches the account.
+
+Order-backed charges are posted to the general ledger by the normal end-of-day journal. Standalone account activity posts immediately, so the same receivable is never posted twice.
+
+</details>
+
+<details>
+<summary><strong>Receive a payment or customer deposit</strong></summary>
+
+Open the account and select **Receive Payment**, then choose the tender that was actually used:
+
+| Tender | Workflow |
+|---|---|
+| **Cash** | An open cash drawer is required. The collection is included in drawer reconciliation. |
+| **Check** | Record the payment and put the check number in the note. It does not change cash-drawer totals. |
+| **Card terminal** | Complete the payment on the venue's configured Stripe, Shift4, or Dejavoo terminal first. Then record it against the account and enter the processor transaction or receipt reference. The configured processor is linked to the ledger entry automatically. |
+| **Other** | Use for a verified external payment method and describe the source/reference in the note. |
+
+If the payment exceeds the current amount due, the POS shows the resulting credit and requires confirmation before holding it as a **customer deposit**. Credits are available for future charges and are shown separately from A/R.
+
+<img src="../images/pos/house-accounts-v2/activity-ledger.png" alt="House Account activity ledger showing charges, payments, tender references, amounts, and running balances">
+
+</details>
+
+<details>
+<summary><strong>Create and send statements</strong></summary>
+
+1. Open the account and select **Statements**.
+2. Choose the period end. The period start is derived from the canonical ledger or the preceding statement so activity cannot be skipped.
+3. Select **Generate**, then **View**, **Print**, or **Send**.
+4. Email and SMS attempts appear in delivery history. A failed channel is visible on both the account list and account detail page.
+5. To correct a statement, select **Void**, enter a reason, and optionally regenerate the same period. Issued history is never deleted.
+
+Automatic statements run daily and process accounts whose configured next-send date is due. The scheduled job skips empty periods and advances the next statement date safely.
+
+<img src="../images/pos/house-accounts-v2/statement.png" alt="House Account statement with opening balance, itemized activity, amounts, and running balance">
+
+</details>
+
+<details>
+<summary><strong>Customer balance and hosted payment links</strong></summary>
+
+Every account can expose a tokenized customer page with the current balance and statement history. Regenerate the public token from the account Settings tab if a link was shared with the wrong recipient.
+
+- **Stripe:** hosted balance-payment links are available when Stripe is the venue processor and the Stripe secret/webhook are configured. Only one active fixed-amount link is allowed, it expires after 24 hours, and a balance change invalidates the old link.
+- **Shift4:** terminal payments can be recorded against the account. Hosted balance links remain disabled until the deployed Shift4 contract provides a verified revoke/expire operation.
+- **Dejavoo:** terminal payments can be recorded against the account. House Account hosted checkout is mock-only in local/non-production testing until the full create/capture/expire lifecycle is configured and verified.
+
+<p>
+  <img src="../images/pos/house-accounts-v2/customer-balance.png" alt="Tokenized customer House Account balance page with secure payment action" width="66%">
+  <img src="../images/pos/house-accounts-v2/mobile-frozen.png" alt="Frozen House Account on a mobile viewport with balance and preserved history" width="30%">
+</p>
+
+</details>
+
+<details>
+<summary><strong>Developer and deployment setup</strong></summary>
+
+1. Apply the POS and shared-accounting migrations using the repository's combined migration runner:
+
+   ```bash
+   cd synalux-pos
+   ./scripts/push-manual.sh --apply
+   ```
+
+   Do not use `supabase db push` while POS and Portal share the same Supabase projects and migration histories.
+
+2. Configure the normal POS database credentials plus:
+
+   ```env
+   # Public URL used in statement and customer links
+   SYNALUX_POS_URL=https://pos.your-domain.example
+
+   # Portal delivery bridge for statement/payment-link email and SMS
+   SYNALUX_PORTAL_URL=https://your-portal-domain.example
+   SYNALUX_SERVICE_KEY=replace-with-a-shared-service-secret
+
+   # Authorizes /api/cron/send-ha-statements
+   CRON_SECRET=replace-with-a-random-secret
+
+   # Stripe hosted balance checkout
+   STRIPE_SECRET_KEY=sk_live_or_test
+   STRIPE_WEBHOOK_SECRET=whsec_replace
+   ```
+
+3. Configure the Stripe webhook on the POS custom domain at `/api/v1/pos/webhooks/stripe`. The House Account balance is updated only after the signed processor completion event is reconciled.
+4. The included Vercel schedule calls `/api/cron/send-ha-statements` daily at **13:00 UTC**. Non-Vercel deployments must invoke the same route with `Authorization: Bearer $CRON_SECRET`.
+5. For local Dejavoo workflow tests only, set `DEJAVOO_HA_MOCK_MODE=true` with `NODE_ENV` not equal to `production`. Production rejects the mock return and FEED completion paths; do not enable this variable in production.
+
+</details>
+
+#### Accounting behavior
+
+House Accounts uses debit/credit control accounts rather than a second, isolated accounting system:
+
+- a positive amount owed is **House Accounts Receivable**
+- an overpayment or prepaid credit is **Customer Deposits**
+- standalone charges and collections post immediately
+- order-backed charges remain part of the existing end-of-day sales journal
+- payments reduce A/R first; any excess credits Customer Deposits
+- later charges consume Customer Deposits before increasing A/R
+
+The posting path is idempotent and failed accounting posts are retained for retry instead of silently dropping the subledger event.
 
 ---
 
