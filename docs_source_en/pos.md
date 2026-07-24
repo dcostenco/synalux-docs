@@ -218,9 +218,11 @@ Revenue Centers control which menu categories appear, which KDS stations receive
 
 ### Per-Station Configuration
 
-Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service. **Assign This Device** — one tap per iPad, and each terminal auto-selects its station on every login. No station picker.
+Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service. **📍 Assign** — one tap per iPad binds the terminal to its station **by device**, and it auto-selects that station on every login and reload. The binding survives Wi-Fi changes, router reboots, and new DHCP leases — no station picker, no network configuration.
 
-<img src="../images/pos/settings_stations.png" alt="Station Configuration — stations list with Assign button and IP Auto-Assign rules">
+<img src="../images/pos/settings_stations.png" alt="Station Configuration — stations list with This device / Other device badges, Assign and Unassign actions, and the legacy IP Auto-Assign section">
+
+The active station shows next to the staff name in the top bar (e.g. **Alex M. · BAR POS**), so staff always know which terminal identity they're ringing on.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -236,12 +238,16 @@ Named terminal configurations with independent menus, printers, and access contr
 **One-tap device assignment:**
 
 1. Walk to the bar iPad → open **Settings > Stations**
-2. Tap **📍 Assign** on "Bar POS" → the device is now permanently assigned
+2. Tap **📍 Assign** on "Bar POS" → this iPad is now bound to that station, marked with a **📍 This device** badge (stations bound to other terminals show **🔒 Other device**)
 3. On every future login, this iPad auto-selects Bar POS — no station picker, no manual steps
 4. Repeat for each device: dining iPad → "All Access", takeout iPad → "Takeout"
-5. If a device has no assignment, the station picker appears as a fallback
+5. **📍 Unassign** releases the binding; if a device has no assignment, the station picker appears at login
 
-The **IP Auto-Assign** section at the bottom shows all device-to-station mappings. Use `*` as a default for unassigned devices. Advanced: enter IP prefixes (e.g. `192.168.1.`) to assign entire subnets.
+**First-login claim:** on an unassigned terminal, the station picker after PIN entry claims the chosen station for that device — same effect as Assign in Settings. Stations already claimed by another terminal show "In Use"; managers can override to move a station to a new device.
+
+<img src="../images/pos/station_picker_claim.png" alt="Station Picker — claiming a station on first login, with In Use lock and manager override">
+
+**IP Auto-Assign (legacy fallback):** the section at the bottom maps device IPs to stations for terminals that were never device-assigned. Prefer 📍 Assign — IP matching depends on the network exposing a stable local IP, which modern browsers increasingly hide. Existing rules keep working; `*` acts as a default for unmatched devices and IP prefixes (e.g. `192.168.1.`) match whole subnets.
 
 </details>
 
