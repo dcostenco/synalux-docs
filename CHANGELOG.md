@@ -1,5 +1,19 @@
 # Synalux — Changelog
 
+## [Unreleased]
+
+### Seat billing
+
+- Wired measured POS seat quantities into Stripe renewal draft invoices using
+  exact-period order history, invoice-scoped idempotency, cross-region
+  fail-closed reads, currency/item validation, and Stripe/display price parity.
+- Added MFA-gated, audited billing controls to the platform estate and
+  server-authoritative Stripe subscription binding during reseller provisioning.
+- Replaced the invalid direct-POS `pos_venues.plan` webhook write with the exact
+  Stripe subscription and subscription-item binding.
+- Updated reseller and internal onboarding documentation to the measured-seat,
+  direct-invitation workflow.
+
 ## [12.4.0] - 2026-06-08 — Occam's Razor Protocol (Agent Skill)
 
 ### What's New
