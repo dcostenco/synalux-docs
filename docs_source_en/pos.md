@@ -210,7 +210,8 @@ Revenue Centers control which menu categories appear, which KDS stations receive
    - **KDS Routes** — remap station routing (e.g., Bar RC sends all items to bar station)
    - **Eligible Discounts** — restrict which discounts work in this RC
    - **Price Level** — default pricing for orders in this RC
-3. Staff select their RC at login. Orders are automatically scoped.
+   - **🏁 Landing Screen** — where staff land right after picking this RC: Floor Plan (pick a table first), Bar Tabs, Register, or Delivery Board. Table-service RCs typically land on the Floor Plan so servers choose their table before the order opens. Staff only land where their role has access.
+3. Staff select their RC at login and are taken straight to that RC's workflow screen. Orders are automatically scoped.
 
 </details>
 
@@ -310,6 +311,46 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 <img src="../images/pos/settings_menu_scheduling.png" alt="Menu Scheduling">
 <img src="../images/pos/settings_nutritional.png" alt="Nutritional Info">
 <img src="../images/pos/settings_price_levels.png" alt="Price Levels">
+
+</details>
+
+<details>
+<summary><strong>Import & export your menu (CSV)</strong></summary>
+
+**Settings > Menu Builder** has **Export CSV** and **Import CSV** buttons. The quickest way to start is to export first — the file you get back is exactly the format import expects, so you can edit it in Excel or Google Sheets and import it again.
+
+The first row must be a header row. Column order does not matter and header names are not case-sensitive. **`name` and `price` are required**; every other column is optional and may be left out entirely.
+
+| Column | Required | What to put in it |
+|--------|----------|-------------------|
+| `name` | **Yes** | Item name, up to 200 characters |
+| `price` | **Yes** | Price in dollars, e.g. `14.50` |
+| `category` | No | Name of an existing category, e.g. `Appetizers` |
+| `type` | No | `food`, `beverage`, `alcohol`, or `merchandise`. Defaults to `food` |
+| `barcode` | No | Barcode for scanning at the register |
+| `available` | No | `no` marks the item unavailable. Anything else means available |
+| `calories` | No | Whole number |
+| `allergens` | No | Separate multiple allergens with **semicolons**: `nuts;dairy` |
+
+Example:
+
+```csv
+name,price,category,type,available,allergens
+Caesar Salad,8.00,Appetizers,food,yes,dairy;gluten
+House Red,11.50,Drinks,alcohol,yes,
+Cheesecake,7.00,Desserts,food,no,dairy;eggs;gluten
+```
+
+What to expect on import:
+
+- **Import only adds new items — it never changes existing ones.** If an item with the same name already exists in the same category, that row is skipped and the item is left exactly as it is. Editing a price in the CSV and re-importing will **not** update the item; change prices in the Menu Builder instead. The upside is that re-running the same file is always safe and never creates duplicates
+- **Categories are matched, never created.** A category name that does not already exist is reported back in the summary and the item is imported without a category. Create your categories first
+- **Bad rows are skipped, not fatal.** A row missing a name or with an unreadable price is counted and reported; the rest of the file still imports
+- After importing, the summary tells you how many items were imported, skipped as duplicates, skipped as invalid, and how many category names went unmatched
+- Up to **5,000 rows** per file
+- Newly imported items without photos can be filled in from the Menu Images manager — see [AI Dish Image Generation](#ai-dish-image-generation)
+
+Values containing a comma, quote, or line break should be wrapped in double quotes, the same as any spreadsheet export.
 
 </details>
 
@@ -750,15 +791,25 @@ Same AI engine as voice ordering, over WhatsApp — unified in a shared ordering
 
 ### AI Dish Image Generation
 
-Menu items automatically get AI-generated dish photos — no professional photography needed. Providers: Together AI FLUX.1 (~$0.003/image) or OpenAI gpt-image-1 (~$0.04/image). Generated once per dish, cached in Supabase Storage. Emoji fallback when no API key configured, or upload your own photos.
+Menu items automatically get AI-generated dish photos — no professional photography needed. A photo is generated once per dish and cached, so the same item is never billed twice. Items show an emoji placeholder until a photo exists, and photos you upload yourself always take priority.
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Set `TOGETHER_API_KEY` or `OPENAI_API_KEY` in **Settings > Integrations**
-2. Open the Menu Builder — items without photos get an auto-generate button
-3. Images are cached after first generation — no repeated API calls
-4. Upload custom photos to override AI-generated ones at any time
+1. Open **Settings > Menu Builder**. A new item generates its photo in the background — the item is sellable immediately and the picture catches up
+2. **Generate one** — an item without a photo shows a **Generate image** button in its editor
+3. **Generate all missing** — the Menu Images manager generates every item that lacks a photo in one batch, showing the item count and estimated cost for approval before anything runs
+4. **Upload your own** at any time to override a generated photo. Uploads are never overwritten by generation, and clearing generated images leaves your uploads untouched
+5. Each venue has a **monthly image budget**. When it is reached, generation stops rather than continuing to spend, and says so instead of failing quietly
+
+</details>
+
+<details>
+<summary><strong>If an item is missing its photo</strong></summary>
+
+Occasionally a photo cannot be produced at the moment an item is created. The item is still saved and sellable — only the picture is missing.
+
+Opening **Settings > Menu Builder** retries recently added items automatically, so in most cases the photo appears on your next visit to that page with no action needed. To fix one immediately, use **Generate image** in the item's editor, or **Generate all missing** in the Menu Images manager.
 
 </details>
 
@@ -773,12 +824,13 @@ Visual half/half pizza builder with per-topping placement and intensity. Standar
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Standard modifiers** — create modifier groups in **Settings > Menu Builder**. Set min/max selections, price deltas, and max quantity per option
-2. **Pizza builder** — set a modifier group's display mode to "🍕 Pizza Builder" in the menu builder. This triggers the visual half/half UI instead of checkboxes
-3. **Placement** — customers choose Whole, Left Half, or Right Half for each topping. Half placement = 50% of the topping price
-4. **Intensity** — None (not selected), Light (75% price), Regular (100%), Extra (150% price)
-5. **3PD compatibility** — pizza toppings sync to DoorDash/UberEats as standard modifiers (placement/intensity are stripped since 3PD doesn't support halves). This is logged as an incompatibility
-6. **AI chat** — "Make me a half pepperoni half mushroom pizza" works without the visual builder. The AI maps to the correct modifiers and prices
+1. **Modifier sets** — create sets in **Settings > Menu Builder > Modifier Sets**. Set min/max selections, price deltas, and max quantity per option. Use **Items** on a set to tick every menu item that should offer it, instead of opening each item one at a time
+2. **Shared modifiers** — the **Modifiers** tab is your venue's list of modifiers, each one defined once and reused. "Ranch" is a single modifier that can belong to several sets and carry a different price in each, so renaming it or 86'ing it takes effect everywhere at once. Open a set and choose **Edit** to pick modifiers for it from that shared list, set each one's price for this set, and drag them into the order staff will see
+3. **Pizza builder** — set a modifier group's display mode to "🍕 Pizza Builder" in the menu builder. This triggers the visual half/half UI instead of checkboxes
+4. **Placement** — customers choose Whole, Left Half, or Right Half for each topping. Half placement = 50% of the topping price
+5. **Intensity** — None (not selected), Light (75% price), Regular (100%), Extra (150% price)
+6. **3PD compatibility** — pizza toppings sync to DoorDash/UberEats as standard modifiers (placement/intensity are stripped since 3PD doesn't support halves). This is logged as an incompatibility
+7. **AI chat** — "Make me a half pepperoni half mushroom pizza" works without the visual builder. The AI maps to the correct modifiers and prices
 
 <img src="../images/pos/ipad_modifier_sheet.png" alt="Modifier Sheet">
 
@@ -1391,50 +1443,60 @@ Custom operational forms with 7 field types: Text, Number, Date, Select, Textare
 
 ### Screen Builder
 
-Configure the layout of every POS screen from a single settings page — 15 screens with drag-and-drop button placement, grid columns, display toggles, item sizing, and receipt settings. All saved per venue.
+Configure the layout of every POS screen from a single settings page — 12 screens with drag-and-drop button placement, grid columns, display toggles, item sizing, and receipt settings. All saved per venue, and adjustable per device size.
 
 **Navigate to:** Settings > Screen Builder
 
 <details>
-<summary><strong>15 Configurable Screens</strong></summary>
+<summary><strong>12 Configurable Screens</strong></summary>
 
 | Screen | Key Settings |
 |--------|-------------|
-| **Register** | 4 button zones (drag-and-drop), check panel width, item display size, quick pay toggles |
-| **KDS** | Columns (1-8), gap spacing, ticket card size, all-day counts, age alert thresholds |
-| **Tables** | Columns, table button size, elapsed timer, revenue display |
-| **Customer Display** | Show modifiers, unit price, font size, idle content (promos/logo/specials/blank) |
-| **Online Ordering** | Grid columns, hero height, AI chat toggle, favorites toggle |
+| **Register** | Two button zones (drag-and-drop), check panel width, item display size, product grid columns, tile style and imagery, toolbar style, quick pay toggles, receipt settings |
+| **KDS** | Columns, gap spacing, ticket card size, all-day counts, age alert thresholds, per-station colors |
+| **Tables** | Columns, table button size, elapsed timer, revenue display, heat map |
+| **Customer Display** | Show modifiers, unit price, font size, idle content (promos/logo/specials/blank), tax breakdown |
 | **Menu Board** | Columns, font size, show prices, show images |
-| **Drive-Thru** | Columns, card size, vehicle description, elapsed timer |
-| **Bar Tabs** | Columns, card size, show total |
+| **Drive-Thru** | Columns, card size, vehicle description, elapsed timer, timer warning and danger thresholds |
+| **Bar Tabs** | Columns, card size, show total, automatic tab naming |
 | **EOD** | Tip pool section, cash denominations, denomination columns |
-| **Reports** | Chart height, labor section visibility |
-| **Staff** | Clock in/out, break tracker, wage info |
-| **Refunds** | Void button, reopen button |
-| **Inventory** | Grid columns, cost column, par levels |
-| **Reservations** | View mode (list/calendar/timeline), notes |
-| **Handheld** | Font size, quick actions |
+| **Reports** | Chart height, labor section, end-of-day by terminal, card brand breakdown, receipt preview |
+| **Orders** | Which columns appear, summary bar, default tab, page size |
+| **Online Ordering** | Grid columns, tile imagery and density, search, assistant placement |
+| **Appearance** | Default theme, accent colour, font scale, theme toggle, compact mode, high contrast |
+
+</details>
+
+<details>
+<summary><strong>Device layouts — why a setting can look different on the floor</strong></summary>
+
+Each screen has a **Base** layout plus four optional device layouts: **Phone**, **Landscape**, **Tablet**, and **Short height**. A terminal automatically uses whichever one matches its screen size, falling back to Base when you have not customised that size.
+
+This is what lets a phone show three product columns while a wide terminal shows six, without maintaining two separate menus. Device layouts change presentation only — never payments, permissions, or any operational rule.
+
+**Short height** is worth knowing about: it is chosen by window *height*, not width. A laptop browser window with tabs and a bookmarks bar can be short enough to qualify even though it is very wide, so it can pick up the Short height layout rather than Base.
+
+Because of that, the layout you are editing is not always the layout in front of you. The device tab that matches your current screen is marked **THIS DEVICE**, and if you are editing a different one, a note appears telling you which layout your screen is actually rendering, with a one-tap button to jump to it. If you change a setting and the screen does not change, check that banner first — you are almost certainly editing a different device size.
 
 </details>
 
 <details>
 <summary><strong>Register Layout Builder</strong></summary>
 
-The register screen has four configurable button zones:
+The register screen has two configurable button zones:
 
 - **Quick Pay Zone** — one-tap Cash and Credit buttons in the check panel footer. Enable one, both, or neither
-- **Check Footer Zone** — Send to Kitchen, Print Check, Charge — toggle each on/off and resize (S/M/L)
-- **Action Bar Zone** — Split, Transfer, Merge, Move, Discount, Hold, No Sale, Void Order — drag to reorder, toggle on/off, resize each
-- **Top Bar Zone** — optional buttons above the register content area
+- **Action Bar Zone** — Split, Transfer, Merge, Move, Discount, Hold, No Sale, Void Order, Payments — drag to reorder, toggle on/off, resize each (S/M/L)
 
 **Check Panel Width:**
 
-| Setting | Width | Best for |
-|---------|-------|----------|
-| **Narrow** | 320-380px | Maximum menu grid space |
-| **Standard** | 420-480px | Balanced — recommended |
-| **Wide** | 480-540px | Check-centric workflow, large item names |
+| Setting | Width on a large screen | Best for |
+|---------|------------------------|----------|
+| **Narrow** | ~340px | Maximum menu grid space |
+| **Standard** | ~420px | Balanced — recommended |
+| **Wide** | ~480px | Check-centric workflow, large item names |
+
+All three narrow to around 300px on smaller screens so the menu grid stays usable — the setting controls how much room the check takes once there is room to give.
 
 **Item Display Size:**
 
@@ -2042,6 +2104,7 @@ Every integration activates by adding credentials in **Settings > Integrations**
 | **DoorDash Drive** (delivery dispatch) | `DOORDASH_DEVELOPER_ID`, `DOORDASH_KEY_ID`, `DOORDASH_SIGNING_SECRET` | 3PD delivery delegation, menu sync |
 | **Uber Direct** (delivery dispatch) | `UBER_CLIENT_ID`, `UBER_CLIENT_SECRET` | 3PD delivery delegation, menu sync |
 | **DoorDash / Uber Eats / Grubhub** (marketplace) | Webhook URL | Inbound 3PD orders on KDS with purple badge |
+| **Gemini** (dish photos) | `GEMINI_API_KEY` | AI-generated menu item images. Without it, items fall back to emoji |
 | **SendGrid** (email) | `SENDGRID_API_KEY` | Email receipts, order confirmations |
 | **Twilio** (SMS) | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` | SMS receipts, order-ready notifications |
 | **Google Reserve / OpenTable / Yelp** | Webhook URL | Auto-created reservations |
