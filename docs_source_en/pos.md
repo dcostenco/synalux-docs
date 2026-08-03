@@ -139,7 +139,7 @@ Then enter a staff PIN:
 | **Server** | Server 1 | `1111` | Register, Tables, Payment, Handheld |
 | **Server** | Server 2 | `2222` | Register, Tables, Payment, Handheld |
 | **Bartender** | Bartender | `3333` | Bar Register, Payment, Age Verification |
-| **Supervisor** | Supervisor | `6666` | Register, Tables, Reports, Voids, Discounts, KDS |
+| **Supervisor** | Supervisor | `9012` | Register, Tables, Reports, Voids, Discounts, KDS |
 | **Manager** | Manager | `5678` | All screens + EOD + Staff |
 | **Admin** | Admin | `1234` | All screens + Settings |
 
