@@ -2,16 +2,36 @@
 
 ## [Unreleased]
 
+## [12.5.0] - 2026-07-31 — Seat billing (reseller channel)
+
+Shipped as PR #152. Live in production; no customer is metered yet — charging
+requires an explicit per-venue flip and every venue defaults to `beta`.
+
 ### Seat billing
 
-- Wired measured POS seat quantities into Stripe renewal draft invoices using
-  exact-period order history, invoice-scoped idempotency, cross-region
-  fail-closed reads, currency/item validation, and Stripe/display price parity.
-- Added MFA-gated, audited billing controls to the platform estate and
+- Bill measured POS seats in arrears: the licensed subscription item stays at
+  quantity zero and one separate invoice item carries the completed period's
+  charge, so a period is never billed using a different period's count.
+- Hold the draft renewal invoice before any measurement and release it only
+  once the invoice items, rendered lines, customer, currency, period and totals
+  all reconcile — every failure leaves it held rather than charging an
+  unverified amount.
+- Count seats from distinct stations that took an order, across every
+  configured region, failing closed when a region cannot answer.
+- Exclude direct POS Pro/Business subscriptions from seat billing entirely.
+  They are flat-rate plans, so the checkout webhook writes nothing to the
+  seat-binding columns and their renewals are never routed to the synchronizer.
+- Settle a cancellation exactly once: an immediate mid-period cancellation
+  produces one standalone final invoice, a scheduled period-end cancellation
+  reuses the renewal invoice, and zero seats produces no invoice at all.
+- Record a durable, audited `needs_review` state when a terminal (void or
+  uncollectible) final invoice cannot be retried, resolvable only through an
+  MFA-gated platform-admin action that archives the snapshot before clearing.
+- Refuse Stripe coupons, discounts and tax on seat subscriptions at activation,
+  renewal and cancellation rather than silently charging a different amount.
+- Add MFA-gated, audited billing controls to the platform estate, with
   server-authoritative Stripe subscription binding during reseller provisioning.
-- Replaced the invalid direct-POS `pos_venues.plan` webhook write with the exact
-  Stripe subscription and subscription-item binding.
-- Updated reseller and internal onboarding documentation to the measured-seat,
+- Update reseller and internal onboarding documentation to the measured-seat,
   direct-invitation workflow.
 
 ## [12.4.0] - 2026-06-08 — Occam's Razor Protocol (Agent Skill)
