@@ -6,10 +6,10 @@ Every feature included. No hardware lock-in. No multi-year contracts.
 Use your own iPad — or any device with a browser.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/25_Languages-RTL_Supported-blue?style=for-the-badge" alt="25 Languages">
+  <img src="https://img.shields.io/badge/26_Languages-RTL_Supported-blue?style=for-the-badge" alt="26 Languages">
 </p>
 
-🌐 **Translations:** [Español](../docs/i18n/pos_es.md) · [Français](../docs/i18n/pos_fr.md) · [Português](../docs/i18n/pos_pt.md) · [Română](../docs/i18n/pos_ro.md) · [Українська](../docs/i18n/pos_uk.md) · [Русский](../docs/i18n/pos_ru.md) · [Deutsch](../docs/i18n/pos_de.md) · [日本語](../docs/i18n/pos_ja.md) · [한국어](../docs/i18n/pos_ko.md) · [中文](../docs/i18n/pos_zh.md) · [العربية](../docs/i18n/pos_ar.md)
+🌐 **Interface languages:** Synalux POS includes 26 interface locales, including Bulgarian and right-to-left Arabic and Hebrew. See [26 languages](#26-languages).
 
 ## Why Synalux POS
 
@@ -30,7 +30,7 @@ Use your own iPad — or any device with a browser.
 | Customer-Facing Display | ✅ | ❌ | $ | $ | ✅ | $ | $ |
 | Offline Mode (PWA) | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | QuickBooks + Xero Sync | ✅ | ❌ | $ | $ | $ | $ | $ |
-| 25 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 26 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Timed Course Fire (Prep-Time Stagger) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Modifier-Based KDS Steering | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Per-Station Terminal Config | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
@@ -49,7 +49,7 @@ Use your own iPad — or any device with a browser.
 | Screen Lock (Kiosk Mode) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
 | | | | | | | | |
 | **Only Synalux** | | | | | | | |
-| AI Chat + Actions on 46 POS Screens | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Context-Aware AI Chat + POS Actions | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -65,12 +65,17 @@ $ = Paid add-on / third-party integration
 ## Table of Contents
 
 - [Try the demo](#try-the-demo)
+- [Settings map](#settings-map)
 - [Features](#features)
   - [Staff Login & Authentication](#staff-login--authentication)
+  - [Revenue Centers](#revenue-centers)
+  - [Per-Station Configuration](#per-station-configuration)
+  - [Price Levels](#price-levels)
   - [Register](#register)
   - [Tables & Floor Plan](#tables--floor-plan)
   - [Seat Management](#seat-management)
   - [Kitchen Display (KDS)](#kitchen-display-kds)
+  - [Expo & Order Management](#expo--order-management)
   - [Payment](#payment)
   - [Staff & Labor](#staff--labor)
   - [Online Ordering & QR Table](#online-ordering--qr-table)
@@ -82,11 +87,12 @@ $ = Paid add-on / third-party integration
   - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
   - [Customer Display](#customer-display)
   - [Reports](#reports)
-  - [Inventory & Recipes](#inventory--recipes)
+  - [Inventory & Recipe Costing](#inventory--recipe-costing)
   - [Gift Cards & Loyalty](#gift-cards--loyalty)
+  - [House Accounts](#house-accounts)
   - [Compliance](#compliance)
   - [End of Day](#end-of-day)
-  - [Reservations](#reservations)
+  - [Reservations & Waitlist](#reservations--waitlist)
   - [Catering](#catering)
   - [Drive-Thru](#drive-thru)
   - [Handheld Server](#handheld-server)
@@ -106,8 +112,7 @@ $ = Paid add-on / third-party integration
   - [Offline Mode (PWA)](#offline-mode-pwa)
   - [Printers & Cash Drawer](#printers--cash-drawer)
   - [Security & PCI Compliance](#security--pci-compliance)
-  - [More](#more)
-- [25 Languages](#25-languages)
+- [26 Languages](#26-languages)
 - [Developer Guide](#developer-integration-setup-guide)
 
 ---
@@ -120,7 +125,7 @@ $ = Paid add-on / third-party integration
 |---|---|
 | **Order Online (US)** | [pos.synalux.ai/pos/order](https://pos.synalux.ai/pos/order?v=00000000-0000-0000-0000-000000000100) |
 | **Order Online (EU)** | [pos-eu.synalux.ai/pos/order](https://pos-eu.synalux.ai/pos/order?v=b6000000-0000-0000-0000-000000000002) |
-| **Order by Phone (AI)** | Call **+1 (256) 787-0815** — say "switch to Spanish" or just speak any language, AI auto-detects |
+| **Order by Phone (AI)** | Call **+1 (256) 787-0815** — say "switch to Spanish" or speak one of the supported voice languages for automatic detection |
 | **Order via WhatsApp** | [<img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat" alt="WhatsApp">](https://wa.me/14155238886?text=join%20bat-come) — tap to join, then text your order |
 
 **For staff — POS login:**
@@ -143,11 +148,44 @@ Then enter a staff PIN:
 | **Manager** | Manager | `5678` | All screens + EOD + Staff |
 | **Admin** | Admin | `1234` | All screens + Settings |
 
-**Demo data can be re-seeded anytime with `node seed_demo_data.mjs`.**
+The public demo is pre-populated. The repository seed command is a maintainer tool for controlled demo environments; staff using the public demo do not need to run it.
+
+> **Screenshot policy:** Production-demo screenshots in this guide were refreshed on **August 10, 2026**. A screen is shown only when the demo contains meaningful records or configured values. Empty queues, blank forms, disconnected integrations, and error states are documented in text instead of being presented as product examples.
+
+---
+
+## Settings map
+
+Open **Settings** from the top bar to reach the 16 linked administration areas. The landing page also shows the recent settings audit trail, including who changed a setting and when.
+
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-hub.png" alt="Production demo Settings hub with linked administration areas and a populated recent audit trail">
+
+| Settings area | Route | What it controls |
+|---|---|---|
+| Menu Builder | `/pos/settings/menu` | Categories, items, modifier sets, shared modifiers, combos, pricing, availability, KDS routing, barcodes, EBT flags, allergens, recipes, price levels, and CSV import/export |
+| Staff Management | `/pos/settings/staff` | Staff records, roles, PINs, cards, QR badges, and passkeys |
+| Role Permissions | `/pos/settings/roles` | Permission matrix for the seven staff roles |
+| Tax Zones | `/pos/settings/tax` | Sales tax, VAT/GST jurisdictions, rates, and taxable item types |
+| Discounts | `/pos/settings/discounts` | Percentage, fixed, BOGO, group, coupon, eligibility, stacking, and usage rules |
+| Floor Plan | `/pos/settings/tables` | Rooms, tables, capacity, position, dimensions, rotation, and QR table codes |
+| Printers & KDS | `/pos/settings/printers` | Receipt/kitchen/label printers, drawers, stations, and category routing |
+| Screen Builder | `/pos/settings/screen-builder` | Venue layout profiles, 12 POS screens, register behavior, receipts, and responsive presentation variants |
+| Stations | `/pos/settings/stations` | Terminal identity, device assignment, menus, printers, revenue centers, and role access |
+| Venue Settings | `/pos/settings/venue` | Venue identity/time zone, processor, table occupancy, revenue centers, price levels, auto-gratuity, cash discount, over-payment behavior, blind drawer, sales tax on discounts, meal rules, and order types |
+| Integrations | `/pos/settings/integrations` | Payment, ordering, accounting, calendar, drive, mail, messaging, and voice providers |
+| Online Ordering | `/pos/settings/online-ordering` | Hours, pickup/delivery channels, minimums, prep times, zones, and closed dates |
+| Void Reasons | `/pos/settings/void-reasons` | Active order/item void reasons and translations |
+| Comp Reasons | `/pos/settings/comp-reasons` | Active item-comp reasons and translations |
+| Account | `/pos/settings/account` | Account data export and deletion controls |
+| Touch Diagnostic | `/pos/settings/touch-diagnostic` | Touchscreen detection and input diagnostics |
+
+**Delivery Management** is also available directly at `/pos/settings/delivery`. It controls 3PD, in-house, and hybrid delivery modes plus provider selection and menu sync, but it is not currently a card on the Settings landing page.
 
 ---
 
 ## Features
+
+<a name="staff-login--authentication"></a>
 
 ### Staff Login & Authentication
 
@@ -188,7 +226,7 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 | Cashier | Register | Register only |
 
 <img src="../images/pos/ipad_00b_role_select.png" alt="Role Selection">
-<img src="../images/pos/settings_staff_mgmt.png" alt="Staff Management Settings">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-staff.png" alt="Production demo Staff Management with populated employee records and credential controls">
 
 </details>
 
@@ -221,7 +259,7 @@ Revenue Centers control which menu categories appear, which KDS stations receive
 
 Named terminal configurations with independent menus, printers, and access controls. The bar terminal sees only drink categories, the hostess station sees only table service. **📍 Assign** — one tap per iPad binds the terminal to its station **by device**, and it auto-selects that station on every login and reload. The binding survives Wi-Fi changes, router reboots, and new DHCP leases — no station picker, no network configuration.
 
-<img src="../images/pos/settings_stations.png" alt="Station Configuration — stations list with This device / Other device badges, Assign and Unassign actions, and the legacy IP Auto-Assign section">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-stations.png" alt="Production demo Station Configuration with five named terminals and device assignment controls">
 
 The active station shows next to the staff name in the top bar (e.g. **Alex M. · BAR POS**), so staff always know which terminal identity they're ringing on.
 
@@ -278,6 +316,8 @@ Up to 14 price levels per item with automatic day/time scheduling. Happy hour, e
 
 Ring orders in seconds. Categories, product grid, and order ticket — all on one screen. Cart auto-scrolls as items are added. Open Price button creates custom-priced items with a description field. Send to Kitchen button reappears after adding new items to a submitted order.
 
+<img src="../images/pos/production-demo-2026-08/prod-20260810-register.png" alt="Production demo Register with populated menu categories and a Cheesecake order showing tax and total">
+
 **Customer Name / Order Reference** — every order has a Customer Name field in the order panel. Type a guest name for takeout tickets, bar tabs, or dine-in. The name prints on receipts and appears on KDS tickets.
 
 <img src="../images/pos/ipad_customer_name.png" alt="Customer Name on Takeout Order">
@@ -288,10 +328,14 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 
 **Custom order types** — choose which order types appear on the register (dine-in, takeout, delivery, drive-thru, bar tab, catering) and give them custom labels (e.g. show *drive-thru* as "Curbside") in **Settings > Venue > Order Types**.
 
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-venue.png" alt="Production demo Venue Settings with configured dine-in, takeout, delivery, and bar-tab order types">
+
 **Comp an item** — comp a line item with a configurable reason. Manage the reason list in **Settings > Comp Reasons**; when comping, staff pick a reason (or free-text) so comps are itemized by cause in the Comps report.
 
-<img src="../images/pos/ipad_01_register.png" alt="Register">
-<img src="../images/pos/ipad_05_register_cart.png" alt="Cart with items, prices, and Send to Kitchen">
+<p>
+  <img src="../images/pos/production-demo-2026-08/prod-20260810-settings-void-reasons.png" alt="Production demo Void Reasons with ten active translated reasons" width="49%">
+  <img src="../images/pos/production-demo-2026-08/prod-20260810-settings-comp-reasons.png" alt="Production demo Comp Reasons with seven active translated reasons" width="49%">
+</p>
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -302,7 +346,7 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 4. **Combos** — build meal deals in the Combos tab. A component can be a specific item **or a category slot** ("any item from Sides"), each with its own **quantity** (e.g. Burger + any Side ×2 + any Drink for $10). Combo savings apply on the register and on online/phone/AI orders alike
 5. Items appear on the register automatically
 
-<img src="../images/pos/settings_menu_builder.png" alt="Menu Builder">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-menu.png" alt="Production demo Menu Builder with 39 configured items, categories, modifiers, combos, and CSV controls">
 <img src="../images/pos/ipad_barcode_scan.png" alt="Barcode Scan">
 <img src="../images/pos/ipad_allergen_filter.png" alt="Allergen Filter">
 <img src="../images/pos/settings_auto_gratuity.png" alt="Auto Gratuity">
@@ -356,11 +400,13 @@ Values containing a comma, quote, or line break should be wrapped in double quot
 
 ---
 
+<a name="tables--floor-plan"></a>
+
 ### Tables & Floor Plan
 
 Visual floor plan with color-coded table status, multiple rooms, and resizable/rotatable tables. Table state syncs across every terminal in real time — no manual refresh.
 
-<img src="../images/pos/ipad_02_tables.png" alt="Tables">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-tables.png" alt="Production demo Floor Plan with 28 tables and active long-wait checks">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -375,9 +421,9 @@ Visual floor plan with color-coded table status, multiple rooms, and resizable/r
 8. **Mark Clean** — after a table is vacated, tap **Mark Clean** to flip it back to available (records a bussed timestamp so a fired order is never mistaken for a new one)
 
 <img src="../images/pos/settings_occupy_on_add.png" alt="Occupy table when items are added">
-<img src="../images/pos/ipad_table_editor.png" alt="Table Editor">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-floor-plan.png" alt="Production demo Floor Plan settings with populated table capacities and layout controls">
 <img src="../images/pos/ipad_table_merge.png" alt="Table Merge">
-<img src="../images/pos/ipad_table_ops.png" alt="Table Operations">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-table-operations.png" alt="Production demo Table Operations with seven active table orders">
 
 </details>
 
@@ -406,7 +452,7 @@ Assign items to individual seats for split checks and per-guest delivery. Seat t
 
 Ticket board with color-coded timing (green → yellow → orange → red). Bump, recall, void. All-day count per item. 8 station types: Kitchen, Grill, Fry, Prep, Expo, Bar, Cold, Pass.
 
-<img src="../images/pos/ipad_kds_stations.png" alt="KDS with station tabs">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-kds.png" alt="Production demo KDS with two active kitchen tickets and station filters">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -422,11 +468,28 @@ Ticket board with color-coded timing (green → yellow → orange → red). Bump
 
 ---
 
+<a name="expo--order-management"></a>
+
+### Expo & Order Management
+
+The KDS is only one part of the live order workflow:
+
+- **Expo** (`/pos/expo`) collects completed kitchen work for final handoff and lets staff mark ready orders complete.
+- **Orders** (`/pos/orders`) is the searchable order ledger for open and completed checks, totals, staff, and tender context.
+- **Table Operations** (`/pos/table-ops`) centralizes active table checks for transfers, merges, split-backs, and reopen workflows.
+- **Scheduled Orders** (`/pos/scheduled`) lists future orders when the venue has scheduled demand. An empty scheduled-order queue is intentionally not illustrated.
+
+<img src="../images/pos/production-demo-2026-08/prod-20260810-expo.png" alt="Production demo Expo board with five ready orders">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-orders.png" alt="Production demo Orders ledger with eight populated order rows and totals">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-table-operations.png" alt="Production demo Table Operations showing seven active orders on tables">
+
+---
+
 ### Timed Course Fire
 
 Automatic kitchen ticket timing — items in a course fire based on prep time so everything lands on the expo at the same time. Course numbers are assigned at the register; KDS hides future-course tickets until their fire time.
 
-<img src="../images/pos/ipad_kds_stations.png" alt="KDS — timed tickets appear when fire_at time passes">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-kds.png" alt="Production demo KDS where fired course tickets appear for kitchen action">
 
 <details>
 <summary><strong>How it works</strong></summary>
@@ -477,8 +540,8 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Card** — add Stripe keys in **Settings > Integrations**. Pair a Stripe Reader M2
-2. **Tap-to-Pay on iPhone** — enable in Stripe Dashboard, then tap "📱 Tap to Pay" on the payment screen. Uses your iPhone as a contactless card reader — no additional hardware
+1. **Card** — configure Stripe server-side, select Stripe as the venue processor, set the Terminal Location, then pair a supported reader from **Settings > Integrations**
+2. **Tap-to-Pay on iPhone** — requires the Synalux POS iPhone app, Stripe as the venue processor, a supported signed build/device, a Stripe Terminal Location, and Stripe Tap to Pay availability. When the native capability check passes, tap **Tap to Pay on iPhone** on the payment screen; otherwise that tender stays hidden rather than presenting an unusable button
 3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
@@ -497,18 +560,37 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 <img src="../images/pos/ipad_wallet_pay.png" alt="Apple Pay / Google Pay">
 <img src="../images/pos/settings_house_accounts.png" alt="House Accounts">
 <img src="../images/pos/settings_receipts.png" alt="Receipts">
-<img src="../images/pos/ipad_disputes.png" alt="Disputes & Chargebacks">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-disputes.png" alt="Production demo Disputes and Chargebacks list with three populated cases">
 <img src="../images/pos/settings_chargebacks.png" alt="Chargeback Settings">
+
+</details>
+
+<details>
+<summary><strong>Payment review, receipts, disputes, and refunds</strong></summary>
+
+These pages serve different jobs:
+
+| Page | Route | Purpose |
+|---|---|---|
+| Payment Review | `/pos/payments` | Exception queue for payments that need staff review; it is not the complete payment history and can legitimately be empty |
+| Receipts | `/pos/receipts` | Find an order, select it, then preview, print, email, or text its receipt |
+| Disputes | `/pos/disputes` | Chargeback/dispute cases, evidence, amount, status, and due dates |
+| Refunds | `/pos/refunds` | Search completed sales and process or review partial/full refunds |
+
+Empty review queues and the pre-selection Receipts state are intentionally not used as screenshots.
 
 </details>
 
 ---
 
+<a name="staff--labor"></a>
+
 ### Staff & Labor
 
 Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
 
-<img src="../images/pos/settings_employees.png" alt="Staff">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-staff.png" alt="Production demo Staff Management with 14 configured staff records">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-roles.png" alt="Production demo Role Permissions matrix with configured access controls">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -519,15 +601,11 @@ Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip poolin
 4. **Break punches** — staff Start/End a meal or rest break from the timeclock. Ending a break resumes the same shift (no clock-out/clock-in), and the break minutes are recorded on the shift
 5. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
 
-<img src="../images/pos/settings_scheduling.png" alt="Scheduling">
-<img src="../images/pos/settings_break_tracking.png" alt="Break Tracking">
-<img src="../images/pos/settings_tip_pooling.png" alt="Tip Pooling">
-<img src="../images/pos/settings_payroll.png" alt="Payroll">
-<img src="../images/pos/settings_overtime.png" alt="Overtime Rules">
-
 </details>
 
 ---
+
+<a name="online-ordering--qr-table"></a>
 
 ### Online Ordering & QR Table
 
@@ -550,10 +628,9 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 10. **AI chat** — customer-facing AI understands your full menu including modifiers and pizza builder. Supports 14 languages with voice input/output
 
 <img src="../images/pos/ipad_qr_ordering.png" alt="QR Ordering">
-<img src="../images/pos/ipad_scheduled_orders.png" alt="Scheduled Orders">
 <img src="../images/pos/ipad_order_tracking.png" alt="Order Tracking">
 <img src="../images/pos/ipad_ai_chat_oo.png" alt="AI Chat (Customer)">
-<img src="../images/pos/settings_online_ordering.png" alt="Online Ordering Settings">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-online-ordering.png" alt="Production demo Online Ordering settings with configured business hours and order channels">
 
 </details>
 
@@ -563,7 +640,7 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 
 In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms.
 
-<img src="../images/pos/ipad_delivery_management.png" alt="Delivery Management">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-delivery.png" alt="Production demo Delivery Management menu-sync controls for DoorDash and Uber Eats">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -576,8 +653,7 @@ In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. 
 6. **Route optimization** — batch dispatch clusters nearby deliveries and assigns the optimal driver using proximity scoring
 7. **Order status sync** — when KDS bumps an order to "ready", the system notifies the 3PD provider and triggers auto-dispatch for in-house drivers
 
-<img src="../images/pos/ipad_delivery_driver.png" alt="Driver Mobile">
-<img src="../images/pos/settings_delivery.png" alt="Delivery Settings">
+The driver page is documented without a screenshot when the demo has no assigned deliveries; an empty driver queue is not representative of the workflow.
 
 </details>
 
@@ -585,7 +661,7 @@ In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. 
 
 ### AI Chat Assistant
 
-Context-aware AI assistant on every staff-facing POS screen (46 of 50 screens — only the customer menu board, customer display, public online-order page, and the full-page assistant itself are excluded) and on the online ordering page for customers. Voice input, 14 languages, quick prompts, and Prism memory for learning patterns. On most screens it now takes **real actions** — not just answers questions — with every action **module-isolated** (a tool only runs on its own screen) and **role-gated** (only staff with the required role can run it).
+Context-aware AI assistant across staff POS workflows and the online-ordering experience. It uses the current route to load relevant page context, supports voice input, quick prompts, and Prism memory, and can take **real actions** where that screen exposes a tool. Actions are **module-isolated** (a tool runs only in its own workflow) and **role-gated** (only staff with the required permission can run it). Dedicated display surfaces and screens without an action tool remain read-only or omit the launcher.
 
 <img src="../images/pos/ipad_ai_chat_pos.png" alt="AI Chat (POS)">
 
@@ -620,9 +696,9 @@ Money- and compliance-sensitive actions (payroll ACH, tax changes, journal posti
 
 ### AI Voice Ordering (Phone)
 
-Customers call your venue's phone number and place orders through natural AI conversation. Best-in-class voice stack: Deepgram Flux (STT) + ElevenLabs (TTS) + Gemini 3.5 Flash (LLM). Streaming architecture via Twilio ConversationRelay. Returning customer recognition, phonetic correction, and automatic SMS confirmation.
+Customers call your venue's phone number and place orders through natural AI conversation. The current voice stack uses Deepgram Nova-3 multilingual speech recognition, ElevenLabs Flash v2.5 speech synthesis, Gemini 3.6 Flash ordering logic, and Twilio ConversationRelay. Returning customer recognition, phonetic correction, and automatic SMS confirmation are built into the workflow.
 
-<img src="../images/pos/voice_ordering_settings.png" alt="Voice Ordering Settings">
+The production demo's integration card is not shown while its payment processor reports a disconnected state; enabling Voice Ordering alone does not prove the complete order-to-payment path is connected.
 
 <details>
 <summary><strong>Setup & Configuration</strong></summary>
@@ -638,7 +714,7 @@ Customers call your venue's phone number and place orders through natural AI con
 | Custom Greeting | Opening message with `{venue}` and `{name}` placeholders |
 | AI Persona | Tone and style — "friendly server", "professional concierge", etc. |
 | Today's Specials | AI proactively suggests these when asked "what's good?" |
-| Supported Languages | 12 auto-detected + 15 via "switch to" command (see table below) |
+| Supported Languages | 26 configured conversation languages with multilingual detection and explicit "switch to" commands (see below) |
 | Fallback Number | Transfer to human after repeated AI failures |
 
 </details>
@@ -648,10 +724,10 @@ Customers call your venue's phone number and place orders through natural AI con
 
 1. Customer calls venue phone number
 2. AI greets in English — if the customer speaks a different supported language (e.g., Spanish, Russian), the AI phonetically detects the language and **automatically switches** the conversation flow before the first item is ordered.
-3. Call audio is processed via Twilio `<Gather>` and pushed to your secure Vercel Edge webhook.
+3. Twilio ConversationRelay streams speech and responses over the secure voice relay connection.
 4. Returning customers auto-recognized by phone — AI greets by name, knows past orders.
 5. The Verifier intercepts background noise, wind, or filler words ("uh", "um"), ensuring the AI only processes clean intent.
-6. Gemini 3.5 Flash processes the phonetic STT text natively and responds in ~1s.
+6. Gemini 3.6 Flash processes the transcribed order context and returns the next response or cart action.
 7. AI adds items immediately, confirms with price: "Added a Classic Burger for twelve dollars. What else?"
 8. Phonetic correction: garbled phone audio auto-matched to menu items
 9. "Change burger to family pack" → removes old + adds new in one turn
@@ -696,6 +772,16 @@ Customers call your venue's phone number and place orders through natural AI con
 | Ukrainian | Yes | Yes | Phonetic auto-detection |
 | Arabic | Yes | Yes | Phonetic auto-detection |
 | Vietnamese | Yes | Yes | Phonetic auto-detection |
+| Bulgarian | Yes | Yes | |
+| Czech | Yes | Yes | |
+| Danish | Yes | Yes | |
+| Finnish | Yes | Yes | |
+| Hungarian | Yes | Yes | |
+| Indonesian | Yes | Yes | |
+| Polish | Yes | Yes | |
+| Swedish | Yes | Yes | |
+| Tamil | Yes | Yes | |
+| Turkish | Yes | Yes | |
 
 **Auto-detect**: just speak — AI detects the language automatically (Deepgram Nova-3 multi-language)
 **Via "switch to"**: say "switch to Romanian" in English first, then continue in that language
@@ -709,18 +795,16 @@ Customers call your venue's phone number and place orders through natural AI con
 <details>
 <summary><strong>Voice Stack Architecture</strong></summary>
 
-| Layer | Technology | Latency |
+| Layer | Technology | Behavior |
 |-------|-----------|---------|
-| **Speech-to-Text** | Twilio `<Gather>` (Phonetic Output) | Sub-second |
-| **AI/LLM** | Gemini 3.5 Flash | ~1s |
-| **Text-to-Speech** | Twilio Native TTS (Polly) | Sub-second |
-| **Transport** | Secure HTTPS Webhook | Sub-second |
-| **Noise Filtering** | Native Verifier Interceptor | 0ms |
-| **Server** | Vercel Edge Function | Scalable |
-| **Phonetic Correction** | Gemini LLM parsing | Zero added latency |
-| **Customer Memory** | Supabase (past orders + loyalty) | ~20ms |
-
-**Total response latency: ~1.5s** from speech to hearing AI response.
+| **Speech-to-Text** | Deepgram Nova-3 multilingual through ConversationRelay | Streaming |
+| **AI/LLM** | Gemini 3.6 Flash | Streaming turn processing |
+| **Text-to-Speech** | ElevenLabs Flash v2.5 through ConversationRelay | Streaming |
+| **Transport** | Twilio ConversationRelay over a secure WebSocket | Bidirectional |
+| **Noise Filtering** | Relay input verifier for empty, repeated, filler-only, and malformed speech | Before model invocation |
+| **Server** | POS voice webhook and relay-chat routes | Venue-scoped |
+| **Phonetic Correction** | Menu-aware Gemini parsing | During the ordering turn |
+| **Customer Memory** | Supabase past-order and loyalty context | Loaded per session |
 
 **Fallback:** If the AI encounters a severe failure or consecutive low-confidence inputs, it gracefully transfers to a human line.
 
@@ -739,7 +823,7 @@ Same AI engine as voice ordering, over WhatsApp — unified in a shared ordering
 <summary><strong>How it works</strong></summary>
 
 1. Customer texts or sends a voice message to the venue on WhatsApp
-2. AI responds instantly (Gemini 3.5 Flash) — same menu, same intelligence as voice
+2. AI responds with Gemini 3.6 Flash — the same menu and ordering logic used by the voice workflow
 3. **Any language** — text in English, Russian, Spanish, Chinese, or record a voice message in any of 30+ languages (auto-detected via Deepgram)
 4. Add items naturally: "I want a burger and fries" or "я хочу бургер и картошку"
 4. Cart displayed after each message:
@@ -815,6 +899,8 @@ Opening **Settings > Menu Builder** retries recently added items automatically, 
 
 ---
 
+<a name="pizza-builder--modifiers"></a>
+
 ### Pizza Builder & Modifiers
 
 Visual half/half pizza builder with per-topping placement and intensity. Standard modifiers with qty, nested groups, forced/optional, and max-quantity limits.
@@ -842,7 +928,7 @@ Visual half/half pizza builder with per-topping placement and intensity. Standar
 
 Second screen facing the customer with live order, running total, and idle promos.
 
-<img src="../images/pos/ipad_customer_display.png" alt="Customer Display">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-customer-display.png" alt="Production demo Customer Display with two items and a populated total">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -859,7 +945,7 @@ Second screen facing the customer with live order, running total, and idle promo
 
 Sales, PMIX, category sales, per-tax/jurisdiction, menu engineering, speed of service, server leaderboard, payments, voids, and comps. CSV export on every report.
 
-<img src="../images/pos/ipad_reports.png" alt="Reports">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-reports.png" alt="Production demo Reports dashboard showing a populated weekly sales period">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -873,22 +959,26 @@ Sales, PMIX, category sales, per-tax/jurisdiction, menu engineering, speed of se
 7. **Menu engineering** — Star/Dog/Puzzle/Workhorse quadrant analysis
 8. **Speed of service** — per-station ticket times at `/pos/reports/speed`
 9. **Server leaderboard** — staff performance ranking at `/pos/reports/leaderboard`
-10. **Labor** — hours, break minutes, overtime, and meal-penalty premium folded into gross pay
-11. **CSV export** — every report has a one-click CSV download
+10. **Audit** — actor, action, entity, timestamp, and details at `/pos/reports/audit`
+11. **Labor** — hours, break minutes, overtime, and meal-penalty premium folded into gross pay
+12. **CSV export** — every report has a one-click CSV download
 
 <img src="../images/pos/settings_menu_engineering.png" alt="Menu Engineering">
-<img src="../images/pos/settings_reports_advanced.png" alt="Advanced Reports">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-report-speed.png" alt="Production demo Speed of Service report with populated station metrics">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-report-audit.png" alt="Production demo Audit report with populated activity rows">
 <img src="../images/pos/settings_revenue_centers.png" alt="Revenue Centers">
 
 </details>
 
 ---
 
+<a name="inventory--recipe-costing"></a>
+
 ### Inventory & Recipe Costing
 
 Stock tracking with optimistic-lock deductions, low-stock alerts, vendor management, recipe builder with ingredient cost + profit margin %, plus reorder suggestions and purchase orders with receiving.
 
-<img src="../images/pos/settings_inventory.png" alt="Inventory">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-inventory.png" alt="Production demo Inventory with five populated SKU records and stock values">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -901,18 +991,21 @@ Stock tracking with optimistic-lock deductions, low-stock alerts, vendor managem
 6. **Reorder suggestions** — items at or below their reorder point are surfaced with a suggested order quantity (up to par) and estimated cost, grouped by vendor
 7. **Purchase orders** — raise a PO to a supplier straight from the suggestions (one PO per vendor); **receive** it to add the ordered quantities back into stock. Receiving is idempotent so a PO can't be received twice
 
-<img src="../images/pos/settings_recipes.png" alt="Recipes">
-<img src="../images/pos/settings_vendors.png" alt="Vendors">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-vendors.png" alt="Production demo Vendors with three configured supplier records">
+
+Recipe configuration is described without a production screenshot when the demo has no recipe records.
 
 </details>
 
 ---
 
+<a name="gift-cards--loyalty"></a>
+
 ### Gift Cards & Loyalty
 
 Issue gift cards ($25–$250) with auto-numbering and multi-location redemption. Loyalty with points, auto-tier, referrals, and **automatic award coupon generation** when customers cross point thresholds.
 
-<img src="../images/pos/settings_gift_cards.png" alt="Gift Cards">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-gift-cards.png" alt="Production demo Gift Cards with two active cards and a combined balance">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -924,8 +1017,7 @@ Issue gift cards ($25–$250) with auto-numbering and multi-location redemption.
 5. **Award auto-generation** — configure point thresholds in venue features. When a customer crosses a threshold, a coupon is automatically issued with the source discount's value (single-use, optimistic-lock dedup)
 6. Referral rewards: existing customers share a link, both get bonus points
 
-<img src="../images/pos/ipad_loyalty_checkin.png" alt="Loyalty Check-in">
-<img src="../images/pos/settings_loyalty.png" alt="Loyalty Settings">
+The Loyalty workspace is documented without a screenshot when the production demo has no enrolled members.
 
 </details>
 
@@ -934,6 +1026,8 @@ Issue gift cards ($25–$250) with auto-numbering and multi-location redemption.
 ### House Accounts
 
 House Accounts is the customer A/R workspace for companies, schools, municipalities, regular guests, and other customers that buy now and settle later. It includes credit limits, an immutable activity ledger, customer deposits, statements, delivery history, public balance access, and payment collection.
+
+<img src="../images/pos/production-demo-2026-08/prod-20260810-house-accounts.png" alt="Production demo House Accounts with three customers and populated receivable balances">
 
 <p>
   <img src="../images/pos/house-accounts-v2/accounts-list.png" alt="House Accounts list with outstanding balances, credits, active accounts, and over-limit summary" width="49%">
@@ -1073,7 +1167,7 @@ The posting path is idempotent and failed accounting posts are retained for retr
 
 Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, purchase minimums, and usage limits — all server-side enforced.
 
-<img src="../images/pos/ipad_settings_discounts.png" alt="Discount Settings — auto-apply, stacking, group, modifiers">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-discounts.png" alt="Production demo Discount Settings with three configured discount rules">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1124,7 +1218,7 @@ Automated alerts for low stock, overtime, and order delays. Auto-scan at every s
 
 Age verification, RBS cert tracking, tax-exempt orders, per-item taxability, CCPA/GDPR, and full audit trail.
 
-<img src="../images/pos/ipad_compliance.png" alt="Compliance">
+The production demo Compliance page is currently omitted from screenshots because it does not render successfully. The configuration paths below remain the source-backed workflow; this is not a visual acceptance claim for that page.
 
 <details>
 <summary><strong>Tax Configuration</strong></summary>
@@ -1134,16 +1228,14 @@ Age verification, RBS cert tracking, tax-exempt orders, per-item taxability, CCP
 **Per-item taxability** — each menu item has an **Item Type** (Food, Alcohol, Beverage, Merchandise). Tax zones define which item types they apply to. Set an item's type to one not included in any active tax zone and it is effectively non-taxable. Configure item types in **Settings > Menu Builder** and tax zones in **Settings > Tax**.
 
 <img src="../images/pos/settings_tax_exempt.png" alt="Tax Exempt">
-<img src="../images/pos/settings_taxes.png" alt="Tax Settings">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-tax.png" alt="Production demo Tax Settings with two populated jurisdiction and rate records">
 
 </details>
 
 <details>
 <summary><strong>Age Verification & Compliance</strong></summary>
 
-<img src="../images/pos/ipad_age_verification.png" alt="Age Verification">
-<img src="../images/pos/settings_privacy.png" alt="Privacy (CCPA/GDPR)">
-<img src="../images/pos/settings_rbs_compliance.png" alt="RBS Compliance">
+Age checks are enforced for alcohol items; privacy controls cover CCPA/GDPR data requests; and RBS certificates are tracked by staff member. These controls are not shown as production-demo screenshots until the Compliance page renders successfully.
 
 </details>
 
@@ -1153,8 +1245,7 @@ Age verification, RBS cert tracking, tax-exempt orders, per-item taxability, CCP
 
 Count cash (with optional blind close), distribute tip pool, export GL journal, print Z-Report, close register.
 
-<img src="../images/pos/ipad_eod.png" alt="EOD">
-<img src="../images/pos/settings_cash_management.png" alt="Cash Management">
+An end-of-day screenshot is shown only after the demo has a recorded batch close; the current empty batch state is intentionally not pictured.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1168,11 +1259,13 @@ Count cash (with optional blind close), distribute tip pool, export GL journal, 
 
 ---
 
+<a name="reservations--waitlist"></a>
+
 ### Reservations & Waitlist
 
 Full reservation + waitlist management. Timeline view with party size, table assignment, auto-position waitlist with ETA, and webhook integration.
 
-<img src="../images/pos/ipad_reservations_waitlist.png" alt="Reservations & Waitlist">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-reservations.png" alt="Production demo Reservations and Waitlist with three reservations and populated waitlist records">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1193,7 +1286,7 @@ Full reservation + waitlist management. Timeline view with party size, table ass
 
 Large-order entry with Banquet Event Orders, delivery scheduling, and deposit tracking.
 
-<img src="../images/pos/ipad_catering.png" alt="Catering">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-catering.png" alt="Production demo Catering workspace with three completed events and order totals">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1211,7 +1304,7 @@ Large-order entry with Banquet Event Orders, delivery scheduling, and deposit tr
 
 Lane management with color-coded timing and auto-advance to the next station.
 
-<img src="../images/pos/ipad_drive_thru.png" alt="Drive-Thru">
+The production demo currently has no active drive-thru tickets, so this workflow is documented without an empty lane-board screenshot.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1246,7 +1339,7 @@ Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 
 Partial or full refund with reason codes. Works across all payment processors (Stripe, Dejavoo, Shift4). Tip-aware refund ceiling prevents over-refund on tip-adjusted captures. Gift card and house account balances auto-restored on refund.
 
-<img src="../images/pos/ipad_refund.png" alt="Refund">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-refunds.png" alt="Production demo Refunds workspace with populated completed-payment rows">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1263,11 +1356,13 @@ Partial or full refund with reason codes. Works across all payment processors (S
 
 ---
 
+<a name="multi-location--franchise"></a>
+
 ### Multi-Location & Franchise
 
 Per-venue KPIs, consolidated P&L, config push, and franchise reporting. Month-to-date comparison across all locations with revenue, COGS, labor, and net profit side-by-side.
 
-<img src="../images/pos/settings_franchise.png" alt="Franchise">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-multi-location.png" alt="Production demo Multi-Location dashboard with populated revenue and order KPIs">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1279,17 +1374,17 @@ Per-venue KPIs, consolidated P&L, config push, and franchise reporting. Month-to
 5. **Month-to-date comparison** — revenue, COGS, labor, net profit per venue side-by-side
 6. **CSV export** — download consolidated P&L for accountant handoff
 
-<img src="../images/pos/settings_multi_location.png" alt="Multi-Location Settings">
-
 </details>
 
 ---
+
+<a name="accounting--ledger"></a>
 
 ### Accounting & Ledger
 
 Journal entries, general ledger, and banking integration. QuickBooks and Xero auto-sync at EOD.
 
-<img src="../images/pos/ipad_accounting.png" alt="Accounting">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-general-ledger.png" alt="Production demo General Ledger with ten populated journal rows">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1299,15 +1394,19 @@ Journal entries, general ledger, and banking integration. QuickBooks and Xero au
 3. `/pos/accounting/banking` for bank feed integration
 4. Configure QuickBooks or Xero sync in **Settings > Integrations** — GL journal auto-exports at end of day
 
+Banking is documented without a screenshot until a bank connection is present; the disconnected setup state is not used as an example.
+
 </details>
 
 ---
+
+<a name="coursing--course-firing"></a>
 
 ### Coursing & Course Firing
 
 Multi-course meal sequencing with per-item course assignment and fire-on-demand. Assign course numbers to menu items and fire them sequentially from the register.
 
-<img src="../images/pos/ipad_coursing.png" alt="Course Firing">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-coursing.png" alt="Production demo Coursing workspace with populated course groups and fire controls">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1326,7 +1425,7 @@ Multi-course meal sequencing with per-item course assignment and fire-on-demand.
 
 Rate-limit incoming online orders during peak times to prevent kitchen overwhelm.
 
-<img src="../images/pos/ipad_throttling.png" alt="Throttling">
+The production demo currently has no queued throttled orders, so the zero-queue state is not shown as a product screenshot.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1339,11 +1438,13 @@ Rate-limit incoming online orders during peak times to prevent kitchen overwhelm
 
 ---
 
+<a name="hr--timesheets"></a>
+
 ### HR & Timesheets
 
 Leave management, timesheet review, payroll draft with FLSA overtime split, and per-server KPIs. Pulls directly from clock-in/out data — all staff appear automatically including PIN-only staff.
 
-<img src="../images/pos/ipad_hr_timesheets.png" alt="HR Timesheets">
+HR, timesheet, and payroll pages are documented without demo screenshots until the selected pay period contains populated shift and payroll records.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1355,9 +1456,6 @@ Leave management, timesheet review, payroll draft with FLSA overtime split, and 
 5. Staff submit time-off requests; managers approve/deny
 6. **IRS Form 8027** — Settings > Compliance > Form 8027. Auto-calculates gross receipts, charge tips, and 8% allocation for tipped establishments
 
-<img src="../images/pos/settings_hr.png" alt="HR Settings">
-<img src="../images/pos/settings_payroll.png" alt="Payroll Settings">
-
 </details>
 
 ---
@@ -1366,24 +1464,27 @@ Leave management, timesheet review, payroll draft with FLSA overtime split, and 
 
 Complete back-office suite built into the POS — no separate software needed. Every module is wired to POS data so EOD, timesheets, payroll, and vendor communications flow automatically.
 
+The `/pos/backoffice/*` paths are the canonical routes and keep the back-office sidebar visible. Legacy standalone paths such as `/pos/documents`, `/pos/mail`, `/pos/calendar`, `/pos/dashboards`, `/pos/forms`, and `/pos/payroll` redirect into that shell.
+
 | Module | What it does | Route |
 |---|---|---|
 | **Accounting & GL** | Double-entry ledger, journal entries, P&L, balance sheet. EOD auto-posts to GL | `/pos/accounting` |
 | **Bank Feed** | Connect bank via Plaid/Salt Edge. Auto-match transactions. Reconciliation | `/pos/accounting/banking` |
-| **Documents** | File storage with auto-scaffolded folders. EOD reports auto-filed on close | `/pos/documents` |
-| **Mail** | Gmail + Outlook inbox. Templates, vendor auto-tagging | `/pos/mail` |
-| **Calendar** | Google Calendar + Outlook sync. Reservations, catering, staff meetings | `/pos/calendar` |
-| **Staff Messaging** | Slack-like channels. Real-time via Supabase | `/pos/messages` |
+| **Payroll** | Pay-period review, payroll drafts, history, and exports | `/pos/backoffice/payroll` |
+| **Documents** | Connected cloud file storage, folders, uploads, and sharing | `/pos/backoffice/documents` |
+| **Mail** | Connected mailbox, compose/reply, templates, and vendor auto-tagging | `/pos/backoffice/mail` |
+| **Calendar** | Connected calendar events, reservations, catering, and staff meetings | `/pos/backoffice/calendar` |
+| **Back Office Messaging** | Venue-scoped channels and real-time staff communication | `/pos/backoffice/messaging` |
+| **Staff Messages** | Standalone staff messaging workspace outside the back-office shell | `/pos/messages` |
 | **AI Assistant** | Context-aware AI with live POS data | `/pos/assistant` |
-| **Form Builder** | Custom forms with 7 field types including signature capture | `/pos/form-builder` |
-| **Dashboards** | Drag-and-drop widget builder with auto-refresh | `/pos/dashboards` |
+| **Operational Forms** | 12 ready-to-print/download restaurant forms | `/pos/backoffice/forms` |
+| **Custom Form Builder** | API-backed templates and submissions with 10 field types | `/pos/form-builder` |
+| **Dashboards** | Drag-and-drop widget builder with auto-refresh | `/pos/backoffice/dashboards` |
 
 <details>
 <summary><strong>Documents</strong></summary>
 
-File storage with auto-scaffolded folders: `/EOD Reports`, `/Vendors`, `/Staff Documents`, `/Receipts`, `/Invoices`. Upload, organize, share. EOD reports auto-filed on close.
-
-<img src="../images/pos/ipad_documents.png" alt="Documents">
+Documents uses the portal-connected cloud drive. Connect the appropriate provider/account before expecting files; without that authorization the page presents a connection requirement rather than a local standalone drive.
 
 </details>
 
@@ -1392,16 +1493,14 @@ File storage with auto-scaffolded folders: `/EOD Reports`, `/Vendors`, `/Staff D
 
 Full inbox for your restaurant — connected to Gmail or Outlook. Compose, reply, templates (vendor orders, catering quotes, EOD summary). Vendor emails auto-tagged with vendor name badge when sender matches your vendor records.
 
-Without OAuth credentials configured, mail works standalone using the built-in database — internal mail only. Gmail/Outlook connections are optional enhancements.
+Mail is provider-backed and requires portal authentication plus a connected mailbox. It does not fall back to a separate local inbox.
 
 </details>
 
 <details>
 <summary><strong>Calendar</strong></summary>
 
-Google Calendar + Outlook sync. Reservations, catering events, staff meetings, and delivery schedules all in one view.
-
-<img src="../images/pos/ipad_calendar.png" alt="Calendar">
+Connected calendar events, reservations, catering events, staff meetings, and delivery schedules appear in one view. A provider connection is required; the production demo connection prompt is not used as a feature screenshot.
 
 </details>
 
@@ -1428,14 +1527,19 @@ Messages use Supabase Realtime — delivery in < 200ms on the same LAN. Direct m
 
 Drag-and-drop widget builder with metric cards, charts, and tables. Preset templates for Owner, Manager, and Kitchen views. Auto-refresh every 30 seconds.
 
-<img src="../images/pos/ipad_dashboards.png" alt="Dashboards">
+The dashboard builder is documented without a screenshot when the venue has no saved dashboard widgets.
 
 </details>
 
 <details>
-<summary><strong>Form Builder</strong></summary>
+<summary><strong>Operational Forms vs. Custom Form Builder</strong></summary>
 
-Custom operational forms with 7 field types: Text, Number, Date, Select, Textarea, Checkbox, and Signature (canvas-based capture). Create templates in `/pos/form-builder`, fill and submit in `/pos/forms`. Submission history is searchable and exportable.
+These are separate workflows:
+
+- `/pos/backoffice/forms` contains the 12 built-in restaurant forms. Staff choose a form and print or download a prefilled document; it is not an empty template library.
+- `/pos/form-builder` creates custom API-backed templates, collects submissions, and provides searchable history. It supports 10 field types: Text, Email, Telephone, Number, Date, Select, Radio, Textarea, Checkbox, and Signature.
+
+Use Operational Forms for standard restaurant paperwork and Custom Form Builder when the venue needs its own data-entry schema.
 
 </details>
 
@@ -1443,9 +1547,21 @@ Custom operational forms with 7 field types: Text, Number, Date, Select, Textare
 
 ### Screen Builder
 
-Configure the layout of every POS screen from a single settings page — 12 screens with drag-and-drop button placement, grid columns, display toggles, item sizing, and receipt settings. All saved per venue, and adjustable per device size.
+Configure every POS screen from a single settings page — button layout, split modes and limits, tip controls, hold timing, login methods, kiosk lock, receipt format, grid columns, display toggles, item sizing, and responsive presentation. Configuration is stored in named venue layout profiles rather than only in the current browser.
 
 **Navigate to:** Settings > Screen Builder
+
+<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-screen-builder.png" alt="Production demo Screen Builder showing its active venue profile and 12 configurable screen tabs">
+
+<details>
+<summary><strong>Profiles, persistence, and runtime precedence</strong></summary>
+
+- Create, save, and activate named layout profiles for the venue. Saving writes the profile through the POS settings API and updates the venue's active profile.
+- Each screen consumes the active stored layout at runtime; Screen Builder is not a documentation-only preview.
+- Register settings layer from **Base venue profile → Revenue Center profile → Station override**. The most specific configured value wins and an unset value inherits from the previous layer.
+- The matching Phone, Landscape, Tablet, or Short-height variant is then used for responsive presentation fields.
+
+</details>
 
 <details>
 <summary><strong>12 Configurable Screens</strong></summary>
@@ -1470,9 +1586,11 @@ Configure the layout of every POS screen from a single settings page — 12 scre
 <details>
 <summary><strong>Device layouts — why a setting can look different on the floor</strong></summary>
 
-Each screen has a **Base** layout plus four optional device layouts: **Phone**, **Landscape**, **Tablet**, and **Short height**. A terminal automatically uses whichever one matches its screen size, falling back to Base when you have not customised that size.
+Each screen has a **Base** layout plus four optional responsive variants: **Phone**, **Landscape**, **Tablet**, and **Short height**. A terminal automatically uses whichever one matches its screen size, falling back to Base when you have not customised that size.
 
 This is what lets a phone show three product columns while a wide terminal shows six, without maintaining two separate menus. Device layouts change presentation only — never payments, permissions, or any operational rule.
+
+That presentation-only restriction applies to the responsive variants, not the Base layout profile. Base and profile configuration also contains operational controls such as maximum tip percentage, allowed/default split modes, hold auto-send timing, receipt content, login-method visibility, and kiosk auto-lock.
 
 **Short height** is worth knowing about: it is chosen by window *height*, not width. A laptop browser window with tabs and a bookmarks bar can be short enough to qualify even though it is very wide, so it can pick up the Short height layout rather than Base.
 
@@ -1523,7 +1641,7 @@ Configure receipt output from **Settings > Screen Builder > Register > Receipt &
 
 80mm is the most common. Choose 58mm for mobile/handheld setups. 76mm is typically only used with older impact printers.
 
-Toggle 13 receipt sections on/off:
+Toggle 14 receipt sections on/off:
 
 | Section | Default |
 |---------|:-------:|
@@ -1578,17 +1696,9 @@ Real-time alerts for new online orders, order-ready bumps, table timer alerts, a
 
 ### Bar Tab Name Capture
 
-When a card is swiped for a bar tab, the cardholder name is automatically captured and used as the tab name. No manual typing needed. Configurable format: as-returned, Last/First, or First Last — set in **Settings > Venue Settings > Bar Tabs**.
+When a card is swiped for a bar tab, the cardholder name is automatically captured and used as the tab name. No manual typing needed. Configure automatic naming and the as-returned, Last/First, or First Last format in **Settings > Screen Builder > Bar Tabs**.
 
 ![Bar Tabs](assets/pos/19-bar-tabs.png)
-
----
-
-### Screen Builder (Extended)
-
-Configure every POS screen from one place — button layout, split check modes, tip percentages, receipt format, menu pages, hold timer presets, notification types, and more. No code changes needed. All settings are per-venue and take effect immediately across all terminals.
-
-![Screen Builder](assets/pos/13-screen-builder.png)
 
 ---
 
@@ -1760,19 +1870,16 @@ When paying an order that was created offline, each tender type resolves the off
 
 Stripe, Dejavoo (SPIn terminal), Shift4 (Payments Platform), DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio (voice + WhatsApp + SMS), Resend (email), Forage (EBT), Deepgram (speech-to-text), ElevenLabs (text-to-speech), Gemini (AI ordering), Ollama (local AI).
 
-<img src="../images/pos/settings_integrations.png" alt="Integrations">
+The Settings page is a control surface, not proof that a provider is connected. A production screenshot is included only after the relevant processor/provider reports a connected state; the demo's disconnected integration cards are intentionally not shown.
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open **Settings > Integrations** — all integrations activate by adding credentials
-2. **Stripe** — paste `STRIPE_SECRET_KEY` to enable card payments, Tap-to-Pay, and online checkout
+1. Open **Settings > Integrations** and use the provider-specific connection flow. Some providers use OAuth, some use server-managed credentials, and payment terminals also require pairing/location setup
+2. **Stripe** — configure the server-side Stripe credentials and Terminal Location, then pair supported readers; Tap to Pay additionally requires the supported native iPhone app/build
 3. **DoorDash / Uber** — add API credentials for delivery dispatch and menu sync
 4. **Twilio / SendGrid** — add keys for SMS order-ready notifications and email receipts
 5. **QuickBooks / Xero** — connect via OAuth for automatic EOD GL journal sync
-
-<img src="../images/pos/settings_main.png" alt="Settings Main">
-<img src="../images/pos/settings_venue_top.png" alt="Venue Settings">
 
 </details>
 
@@ -1782,14 +1889,14 @@ Stripe, Dejavoo (SPIn terminal), Shift4 (Payments Platform), DoorDash Drive, Ube
 
 Cash Count, Void Auth, Tax-Exempt Cert, Catering BEO, Tip Declaration, Inventory Count, Time-Off, Purchase Order, Incident Log, Daily Specials, Prep List, Server Checkout.
 
-<img src="../images/pos/settings_forms.png" alt="Forms">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-operational-forms.png" alt="Production demo Operational Forms with all 12 built-in restaurant forms">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open `/pos/forms` to access all 12 pre-built operational forms
+1. Open `/pos/backoffice/forms` to access all 12 pre-built operational forms (`/pos/forms` redirects there)
 2. Forms auto-fill venue name, date, and staff info from the current session
-3. Print or export as PDF from the form builder
+3. Open a form, then print or download it; use `/pos/form-builder` only for custom templates and submissions
 
 </details>
 
@@ -1799,13 +1906,13 @@ Cash Count, Void Auth, Tax-Exempt Cert, Catering BEO, Tip Declaration, Inventory
 
 Configure layout, sections, and pricing display. Assign to any TV or display.
 
-<img src="../images/pos/settings_menu_board.png" alt="Menu Board">
+<img src="../images/pos/production-demo-2026-08/prod-20260810-menu-board.png" alt="Production demo Digital Menu Board with populated categories, items, and prices">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
 1. Open `/pos/board` on any TV or large display
-2. Configure sections, layout, and which categories to show in **Settings > Menu Board**
+2. Configure columns, font size, prices, and images in **Settings > Screen Builder > Menu Board**. The board groups the active Menu Builder items by category
 3. Prices and availability auto-sync from the menu builder
 
 </details>
@@ -1816,7 +1923,7 @@ Configure layout, sections, and pricing display. Assign to any TV or display.
 
 Email/SMS blasts, promo codes, audience segmentation, planned send times, and send history.
 
-<img src="../images/pos/settings_marketing.png" alt="Marketing">
+Marketing is documented without a production screenshot when the demo has no campaign records.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1835,7 +1942,7 @@ Email/SMS blasts, promo codes, audience segmentation, planned send times, and se
 
 Post-visit surveys, an at-the-terminal NPS prompt, star ratings, comment review, and response templates.
 
-<img src="../images/pos/settings_customer_feedback.png" alt="Customer Feedback">
+Feedback is documented without a production screenshot when the demo has no submitted responses; a zero-response dashboard is not used as an example.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1849,11 +1956,13 @@ Post-visit surveys, an at-the-terminal NPS prompt, star ratings, comment review,
 
 ---
 
+<a name="printers--cash-drawer"></a>
+
 ### Printers & Cash Drawer
 
 Thermal receipt printers, kitchen ticket printers, and cash drawers. Network (LAN), USB, and Bluetooth. Epson, Star, and generic ESC/POS. No drivers needed — the browser handles USB and Bluetooth natively.
 
-<img src="../images/pos/settings_printers_kds.png" alt="Printers & KDS Settings">
+The demo has configured printers but no explicit category routing rules, so its settings page is not used as a screenshot. With no routing rules, order items continue to route by each item's configured `kds_station`; explicit rules override that default for selected categories.
 
 <details>
 <summary><strong>Supported Hardware</strong></summary>
@@ -2001,8 +2110,6 @@ Route menu categories to specific printer stations so bar items print at the bar
 
 When an order is sent to kitchen, items are split by category and routed to the correct station.
 
-<img src="../images/pos/settings_printer_routing.png" alt="Printer Routing">
-
 </details>
 
 <details>
@@ -2071,6 +2178,8 @@ iPhone access to reports, KPIs, and quick actions — same data as the desktop, 
 
 ---
 
+<a name="security--pci-compliance"></a>
+
 ### Security & PCI Compliance
 
 Synalux POS minimizes your PCI-DSS scope to the lowest possible levels:
@@ -2087,16 +2196,18 @@ Synalux POS minimizes your PCI-DSS scope to the lowest possible levels:
 
 ---
 
-## 25 languages
+## 26 languages
 
-English, Spanish, French, Chinese, Arabic, Romanian, Portuguese, German, Italian, Japanese, Korean, Vietnamese, Russian, Ukrainian, Polish, Turkish, Dutch, Swedish, Hebrew, Thai, Hindi, Indonesian, Malay, Filipino, Greek. RTL supported.
+English, Spanish, French, Chinese, Arabic, Romanian, Portuguese, German, Italian, Japanese, Korean, Vietnamese, Russian, Ukrainian, Polish, Turkish, Dutch, Swedish, Hebrew, Thai, Hindi, Indonesian, Malay, Filipino, Greek, Bulgarian. Arabic and Hebrew use right-to-left layout support.
 
 ---
 
-<details>
-<summary><strong>Developer: Integration Setup Guide</strong></summary>
+## Developer integration setup guide
 
-Every integration activates by adding credentials in **Settings > Integrations**. No code changes needed.
+<details>
+<summary><strong>Environment and provider reference</strong></summary>
+
+Integration setup varies by provider: OAuth connections are completed through their connect flow, server-managed services use deployment credentials, and terminal providers also require device/location setup. **Settings > Integrations** exposes the applicable workflow; a card appearing there does not by itself mean the provider is connected.
 
 | Integration | Env var | What activates |
 |---|---|---|
