@@ -208,6 +208,10 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 
 </details>
 
+**Account sign-in and staff PIN are separate authorization layers.** Email/password signs the device into a venue account. A PIN then selects the on-duty staff identity for shared-terminal workflows. When someone opens Settings or another account-managed route, the POS verifies the signed-in account's venue membership and switches to that account's linked, active staff record; it never carries a cashier or server PIN identity into management as authority. If the account has no accessible venue or linked active staff record, management access stops with an account-access error.
+
+**Sign Out is a staff handoff, not a venue-account logout.** It clears the active staff identity and returns the terminal to the PIN pad while retaining the venue account session, so the next employee can enter their own PIN without re-entering the venue email and password.
+
 <details>
 <summary><strong>Roles & Routing</strong></summary>
 
@@ -224,6 +228,8 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 | Bartender | Register | Bar Register + Age Verification |
 | Host | Tables | Tables + Reservations |
 | Cashier | Register | Register only |
+
+These rows are the standard terminal-role baseline, not an immutable list. **Settings > Role Permissions** can add or remove terminal routes for each venue, Revenue Center configuration can choose the post-login landing screen, and a station's **Allowed Roles** can restrict who may use that terminal. None of those terminal settings bypasses the separate account-membership check for Settings and other management routes.
 
 <img src="../images/pos/ipad_00b_role_select.png" alt="Role Selection">
 <img src="../images/pos/production-demo-2026-08/prod-20260810-settings-staff.png" alt="Production demo Staff Management with populated employee records and credential controls">
@@ -638,9 +644,7 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 
 ### Delivery Management
 
-In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms.
-
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-delivery.png" alt="Production demo Delivery Management menu-sync controls for DoorDash and Uber Eats">
+In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms. This section intentionally omits a screenshot while the demo has no configured provider or active delivery data; empty demo controls are not representative of the workflow.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1560,6 +1564,7 @@ Configure every POS screen from a single settings page — button layout, split 
 - Each screen consumes the active stored layout at runtime; Screen Builder is not a documentation-only preview.
 - Register settings layer from **Base venue profile → Revenue Center profile → Station override**. The most specific configured value wins and an unset value inherits from the previous layer.
 - The matching Phone, Landscape, Tablet, or Short-height variant is then used for responsive presentation fields.
+- Upgrades preserve the historic behavior of two formerly display-only controls: profiles that have never explicitly set them continue to show **Custom Tip** and keep **Receipt Logo** off. The first explicit toggle in Screen Builder activates that control; the authorized Screen Builder receipt action can also activate **Receipt Logo**. After **Save changes**, the saved on/off value is enforced at runtime. This avoids silently changing a live terminal during an upgrade.
 
 </details>
 
@@ -1624,6 +1629,14 @@ All three narrow to around 300px on smaller screens so the menu grid stays usabl
 | **Comfortable** | Medium (16px) | General use — recommended |
 | **Spacious** | Large (18px) | Readability, accessibility, training |
 
+**Operational controls that are easy to miss:**
+
+- **Login Methods** — show or hide PIN, swipe-card, and QR login choices on the shared-terminal gate
+- **Split Check** — enable Even, By Seat, By Item, and By Amount; choose the default tab; set 2–20 maximum splits; use the full-screen split board; allow fractional item splits; and show shared-item badges
+- **Tip** — edit the suggested percentages, show or hide Custom Tip, and set the 10–50% maximum tip limit used for card authorization and checkout validation
+- **Hold** — edit hold-time presets, show future date/time, show the hold badge, and choose whether held checks auto-send when due
+- **Notifications** — show order-ready, table, stock, and clock events; enable sound; and cap the retained notification list
+
 </details>
 
 <details>
@@ -1659,6 +1672,8 @@ Toggle 14 receipt sections on/off:
 | Barcode | Off |
 | CC details | On |
 | Footer message | On |
+
+The **Logo** switch applies to all three receipt surfaces: the on-screen/browser receipt, generated PDF, and thermal ESC/POS output (a monochrome raster is used for thermal printers). When QR is enabled, choose **Tip link**, **Order details**, **Feedback**, or **Custom URL**. When Barcode is enabled, choose **Order ID**, **Order Number**, or **Payment ID**. The footer text is editable independently of the footer on/off switch.
 
 </details>
 
