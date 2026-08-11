@@ -1,9 +1,8 @@
 # Synalux POS
 
-**Full-featured restaurant POS — runs on any device with a browser.**
+**Restaurant POS for browser-based register, kitchen, payment, and venue operations.**
 
-Every feature included. No hardware lock-in. No multi-year contracts.
-Use your own iPad — or any device with a browser.
+Synalux POS connects front-of-house, kitchen, ordering, payment, and back-office workflows in one browser-based system for compatible tablets and computers. Configure the experience by venue, revenue center, station, staff role, and screen layout.
 
 <p align="center">
   <img src="https://img.shields.io/badge/26_Languages-RTL_Supported-blue?style=for-the-badge" alt="26 Languages">
@@ -11,109 +10,26 @@ Use your own iPad — or any device with a browser.
 
 🌐 **Interface languages:** Synalux POS includes 26 interface locales, including Bulgarian and right-to-left Arabic and Hebrew. See [26 languages](#26-languages).
 
+## Register at a glance
+
+The Register keeps the menu, order ticket, totals, and service actions together so staff can build and route an order without leaving the screen.
+
+<img src="../images/pos/production-demo-2026-08/prod-20260810-register.png" alt="Production demo Register with populated menu categories and a Cheesecake order showing tax and total">
+
+- Ring configured dine-in, takeout, delivery, drive-thru, bar-tab, and catering orders.
+- Search the menu, select modifiers, add open-price items, and apply permitted comps or discounts.
+- Keep the customer reference, line items, tax, total, and order state visible while building the check.
+- Send items to the kitchen and continue through the payment workflow.
+
+See the [detailed Register workflow](#register) for setup, menu tools, order controls, and service behavior.
+
 ## Why Synalux POS
 
-| Feature | **Synalux** | **Flexx POS** | **Toast** | **Square** | **Clover** | **Lightspeed** | **Aloha** |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Runs on any device (BYOD) | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| No hardware lock-in | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Online Ordering + QR Table | ✅ | ❌ | $ | $ | $ | $ | $ |
-| Kitchen Display (KDS) | ✅ | ✅ | $ | $ | $ | $ | ✅ |
-| Drive-Thru Lane Management | ✅ | ❌ | $ | ❌ | ❌ | ❌ | $ |
-| Catering + BEO | ✅ | ❌ | $ | ❌ | ❌ | ❌ | $ |
-| Delivery (In-House + 3PD) | ✅ | ❌ | $ | $ | $ | $ | $ |
-| Coursing (Fire-on-Demand) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |
-| Reservations + Waitlist | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
-| Multi-Location + Franchise | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| EBT/SNAP Payments | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Tap-to-Pay on iPhone | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
-| Customer-Facing Display | ✅ | ❌ | $ | $ | ✅ | $ | $ |
-| Offline Mode (PWA) | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| QuickBooks + Xero Sync | ✅ | ❌ | $ | $ | $ | $ | $ |
-| 26 Languages + RTL | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Timed Course Fire (Prep-Time Stagger) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Modifier-Based KDS Steering | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Per-Station Terminal Config | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Revenue Center Behavioral Engine | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Auto-Apply Discounts + Group (Nth Free) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Recipe Costing + Auto-Deduction | ✅ | ❌ | $ | ❌ | ❌ | $ | ❌ |
-| Real-Time Alerts (Stock/OT/Delay) | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
-| QR Code Employee Login | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Clock In/Out from Login Screen | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Hold/Send Kitchen Timing | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Fractional Item Splits | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Bar Tab Zero-Auth | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Cardholder Name Auto-Capture | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Super Categories (2-level hierarchy) | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Notification Bell (Real-time Alerts) | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Screen Lock (Kiosk Mode) | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| | | | | | | | |
-| **Only Synalux** | | | | | | | |
-| Context-Aware AI Chat + POS Actions | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| AI Voice Ordering (Phone) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Pizza Builder (Visual Half/Half) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Prep-Time ETA in Online Orders | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Payroll + CA 226.7 Compliance | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
-| 3-Mode Tip Pooling (FLSA) | ✅ | ❌ | $ | ❌ | ❌ | ❌ | ❌ |
-| No-Code Screen Builder (Drag-Drop Register/UI) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-
-❌ = Not available
-$ = Paid add-on / third-party integration
-
----
-
-## Table of Contents
-
-- [Try the demo](#try-the-demo)
-- [Settings map](#settings-map)
-- [Features](#features)
-  - [Staff Login & Authentication](#staff-login--authentication)
-  - [Revenue Centers](#revenue-centers)
-  - [Per-Station Configuration](#per-station-configuration)
-  - [Price Levels](#price-levels)
-  - [Register](#register)
-  - [Tables & Floor Plan](#tables--floor-plan)
-  - [Seat Management](#seat-management)
-  - [Kitchen Display (KDS)](#kitchen-display-kds)
-  - [Expo & Order Management](#expo--order-management)
-  - [Payment](#payment)
-  - [Staff & Labor](#staff--labor)
-  - [Online Ordering & QR Table](#online-ordering--qr-table)
-  - [Delivery Management](#delivery-management)
-  - [AI Chat Assistant](#ai-chat-assistant)
-  - [AI Voice Ordering (Phone)](#ai-voice-ordering-phone)
-  - [WhatsApp Ordering](#whatsapp-ordering)
-  - [AI Dish Image Generation](#ai-dish-image-generation)
-  - [Pizza Builder & Modifiers](#pizza-builder--modifiers)
-  - [Customer Display](#customer-display)
-  - [Reports](#reports)
-  - [Inventory & Recipe Costing](#inventory--recipe-costing)
-  - [Gift Cards & Loyalty](#gift-cards--loyalty)
-  - [House Accounts](#house-accounts)
-  - [Compliance](#compliance)
-  - [End of Day](#end-of-day)
-  - [Reservations & Waitlist](#reservations--waitlist)
-  - [Catering](#catering)
-  - [Drive-Thru](#drive-thru)
-  - [Handheld Server](#handheld-server)
-  - [Refunds](#refunds)
-  - [Multi-Location & Franchise](#multi-location--franchise)
-  - [Accounting & Ledger](#accounting--ledger)
-  - [Coursing & Course Firing](#coursing--course-firing)
-  - [Order Throttling](#order-throttling)
-  - [HR & Timesheets](#hr--timesheets)
-  - [Back Office Suite](#back-office-suite)
-  - [Screen Builder](#screen-builder)
-  - [QR Code Login](#qr-code-login)
-  - [Hold/Send Kitchen Timing](#holdsend-kitchen-timing)
-  - [Split Check with Fractional Splits](#split-check-with-fractional-splits)
-  - [Notification Bell](#notification-bell)
-  - [Bar Tab Name Capture](#bar-tab-name-capture)
-  - [Offline Mode (PWA)](#offline-mode-pwa)
-  - [Printers & Cash Drawer](#printers--cash-drawer)
-  - [Security & PCI Compliance](#security--pci-compliance)
-- [26 Languages](#26-languages)
-- [Developer Guide](#developer-integration-setup-guide)
+- **One connected service flow:** Follow an order from Register through tables and seats, KDS and expo, and payment in the Synalux POS workspace.
+- **Venue-specific control:** Configure revenue centers, stations, price levels, staff roles, and screen layouts around each service model.
+- **Multiple ordering channels:** Manage in-venue, online, QR-table, delivery, phone, WhatsApp, catering, drive-thru, and handheld workflows from the same venue data.
+- **Operational depth:** Bring labor, inventory, loyalty, house accounts, reporting, accounting, and end-of-day controls into the POS workspace.
+- **International interface:** Use 26 interface locales, including right-to-left Arabic and Hebrew.
 
 ---
 
@@ -151,6 +67,17 @@ Then enter a staff PIN:
 The public demo is pre-populated. The repository seed command is a maintainer tool for controlled demo environments; staff using the public demo do not need to run it.
 
 > **Screenshot policy:** Production-demo screenshots in this guide were refreshed on **August 10, 2026**. A screen is shown only when the demo contains meaningful records or configured values. Empty queues, blank forms, disconnected integrations, and error states are documented in text instead of being presented as product examples.
+
+---
+
+## Table of Contents
+
+- **Start and configure:** [Settings map](#settings-map), [staff authentication](#staff-login--authentication), [revenue centers](#revenue-centers), [stations](#per-station-configuration), [price levels](#price-levels), and [Screen Builder](#screen-builder).
+- **Serve guests:** [Register](#register), [tables and floor plan](#tables--floor-plan), [seat management](#seat-management), [KDS](#kitchen-display-kds), [expo](#expo--order-management), and [payment](#payment).
+- **Accept orders:** [Online and QR table](#online-ordering--qr-table), [delivery](#delivery-management), [AI chat](#ai-chat-assistant), [voice](#ai-voice-ordering-phone), [WhatsApp](#whatsapp-ordering), [catering](#catering), [drive-thru](#drive-thru), and [handheld](#handheld-server).
+- **Operate the venue:** [Staff and labor](#staff--labor), [reports](#reports), [inventory](#inventory--recipe-costing), [gift cards and loyalty](#gift-cards--loyalty), [house accounts](#house-accounts), [compliance](#compliance), [end of day](#end-of-day), and [reservations](#reservations--waitlist).
+- **Manage at scale:** [Refunds](#refunds), [multi-location](#multi-location--franchise), [accounting](#accounting--ledger), [coursing](#coursing--course-firing), [order throttling](#order-throttling), [HR and timesheets](#hr--timesheets), and [Back Office](#back-office-suite).
+- **Platform and setup:** [Offline mode](#offline-mode-pwa), [integrations](#integrations), [printers and drawers](#printers--cash-drawer), [security](#security--pci-compliance), [26 languages](#26-languages), and the [developer guide](#developer-integration-setup-guide).
 
 ---
 
@@ -321,8 +248,6 @@ Up to 14 price levels per item with automatic day/time scheduling. Happy hour, e
 ### Register
 
 Ring orders in seconds. Categories, product grid, and order ticket — all on one screen. Cart auto-scrolls as items are added. Open Price button creates custom-priced items with a description field. Send to Kitchen button reappears after adding new items to a submitted order.
-
-<img src="../images/pos/production-demo-2026-08/prod-20260810-register.png" alt="Production demo Register with populated menu categories and a Cheesecake order showing tax and total">
 
 **Customer Name / Order Reference** — every order has a Customer Name field in the order panel. Type a guest name for takeout tickets, bar tabs, or dine-in. The name prints on receipts and appears on KDS tickets.
 
@@ -506,12 +431,6 @@ Automatic kitchen ticket timing — items in a course fire based on prep time so
 4. Within a course, faster items are delayed — a 5-min soup waits 13 minutes so it finishes with the 18-min steak
 5. KDS hides future-dated tickets until their fire time passes
 6. Online, voice, and WhatsApp orders receive **estimated_ready_at** computed from the longest prep item
-
-| Feature | **Synalux** | RM | Toast | Square |
-|---------|:-----------:|:--:|:-----:|:------:|
-| Timed course fire | ✅ | ✅ | ❌ | ❌ |
-| Prep-time stagger within course | ✅ | ✅ | ❌ | ❌ |
-| ETA in online order response | ✅ | ❌ | ❌ | ❌ |
 
 </details>
 
