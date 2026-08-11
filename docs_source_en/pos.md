@@ -840,7 +840,7 @@ Same AI engine as voice ordering, over WhatsApp — unified in a shared ordering
    ```
 5. "done" → asks for name → confirms order → "YES" → order placed
 6. Confirmation with order number, total, and estimated pickup time
-7. Payment link sent via Stripe Checkout (works for all payment processors — Dejavoo/Shift4 venues use Stripe as online fallback)
+7. Payment link sent via Stripe Checkout
 8. SMS confirmation via Twilio Messaging Service (A2P 10DLC compliant)
 9. Email receipt via Resend (when customer email is on file)
 10. Returning customers recognized by phone — favorites and past orders recalled
@@ -1076,7 +1076,7 @@ Open the account and select **Receive Payment**, then choose the tender that was
 |---|---|
 | **Cash** | An open cash drawer is required. The collection is included in drawer reconciliation. |
 | **Check** | Record the payment and put the check number in the note. It does not change cash-drawer totals. |
-| **Card terminal** | Complete the payment on the venue's configured Stripe, Shift4, or Dejavoo terminal first. Then record it against the account and enter the processor transaction or receipt reference. The configured processor is linked to the ledger entry automatically. |
+| **Card terminal** | Complete the payment on the venue's configured Stripe or Dejavoo terminal first. Then record it against the account and enter the processor transaction or receipt reference. The configured processor is linked to the ledger entry automatically. |
 | **Other** | Use for a verified external payment method and describe the source/reference in the note. |
 
 If the payment exceeds the current amount due, the POS shows the resulting credit and requires confirmation before holding it as a **customer deposit**. Credits are available for future charges and are shown separately from A/R.
@@ -1106,7 +1106,6 @@ Automatic statements run daily and process accounts whose configured next-send d
 Every account can expose a tokenized customer page with the current balance and statement history. Regenerate the public token from the account Settings tab if a link was shared with the wrong recipient.
 
 - **Stripe:** hosted balance-payment links are available when Stripe is the venue processor and the Stripe secret/webhook are configured. Only one active fixed-amount link is allowed, it expires after 24 hours, and a balance change invalidates the old link.
-- **Shift4:** terminal payments can be recorded against the account. Hosted balance links remain disabled until the deployed Shift4 contract provides a verified revoke/expire operation.
 - **Dejavoo:** terminal payments can be recorded against the account. House Account hosted checkout is mock-only in local/non-production testing until the full create/capture/expire lifecycle is configured and verified.
 
 <p>
@@ -1341,7 +1340,7 @@ Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 
 ### Refunds
 
-Partial or full refund with reason codes. Works across all payment processors (Stripe, Dejavoo, Shift4). Tip-aware refund ceiling prevents over-refund on tip-adjusted captures. Gift card and house account balances auto-restored on refund.
+Partial or full refund with reason codes for Stripe and Dejavoo payments. Tip-aware refund ceiling prevents over-refund on tip-adjusted captures. Gift card and house account balances auto-restored on refund.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260810-refunds.png" alt="Production demo Refunds workspace with populated completed-payment rows">
 
@@ -1351,7 +1350,7 @@ Partial or full refund with reason codes. Works across all payment processors (S
 1. Open the **Refunds** page or tap "Refund" on any completed order
 2. Choose partial (specific items) or full refund
 3. Select a reason code (wrong item, quality, customer request, etc.)
-4. Refund is processed via the venue's payment processor (Stripe, Dejavoo SPIn, or Shift4). Cash refunds are recorded for drawer reconciliation
+4. Refund is processed via the venue's payment processor (Stripe or Dejavoo SPIn). Cash refunds are recorded for drawer reconciliation
 5. **Reopen check** — managers can reopen a closed order for corrections, then re-close
 
 <img src="../images/pos/ipad_reopen_check.png" alt="Reopen Check">
@@ -1761,7 +1760,7 @@ When the network goes down, a red **"Offline"** badge appears in the top-right c
 
 | Capability | Offline behavior |
 |---|---|
-| **Card payments** | Payment record is queued locally — the actual charge (Stripe/Dejavoo/Shift4) is processed when the connection returns |
+| **Card payments** | Payment record is queued locally — the actual charge (Stripe/Dejavoo) is processed when the connection returns |
 | **Bar tab pre-authorization** | Queued as "authorized" — the hold is created on reconnect |
 | **Real-time KDS updates** | Supabase Realtime subscription pauses — KDS falls back to polling when connection resumes |
 | **Receipt email / SMS** | Requires Resend / Twilio API — PDF receipts still work offline (client-side generation) |
@@ -1808,12 +1807,12 @@ syncOfflineQueue() ──► processQueue(syncItem)
         +-----------+   +-----------+   +---------------+
         | Claim     |   | Resolve   |   | Forward to    |
         | table     |   | via claim |   | Stripe /      |
-        | prevents  |   | table     |   | Dejavoo /     |
-        | duplicates|   | offline-N |   | Shift4        |
-        | (23505 =  |   | -> real   |   | Record losses |
-        | noop)     |   | UUID      |   | in pos_       |
-        +-----------+   +-----------+   | offline_losses|
-              |                         +---------------+
+        | prevents  |   | table     |   | Dejavoo       |
+        | duplicates|   | offline-N |   | Record losses |
+        | (23505 =  |   | -> real   |   | in pos_       |
+        | noop)     |   | UUID      |   | offline_losses|
+        +-----------+   +-----------+   +---------------+
+              |
               v
         +-------------------+
         | Emit synced event |---> Cart store remaps activeOrderId
@@ -1833,7 +1832,7 @@ Every money-moving operation is replay-safe:
 | **Card terminal** | CAS status transition (`authorized` → `capturing` → `captured`) — only one caller can claim the payment. Retries see "already captured" and get the success response. |
 | **House account** | Charge route deduplicates via `pos_house_account_charges` table with `UNIQUE(venue_id, idempotency_key)`. Retry returns the original debit result. |
 | **Gift card** | Balance deduction uses CAS (`WHERE balance_cents = {expected}`). A retry after successful deduction fails the CAS and returns 409. |
-| **Processor calls** | Stripe has built-in idempotency. Dejavoo SPIn and Shift4 use PNRef/invoice-based dedup. |
+| **Processor calls** | Stripe has built-in idempotency. Dejavoo SPIn uses PNRef/invoice-based dedup. |
 
 #### Multi-Tab Safety
 
@@ -1883,7 +1882,7 @@ When paying an order that was created offline, each tender type resolves the off
 
 ### Integrations
 
-Stripe, Dejavoo (SPIn terminal), Shift4 (Payments Platform), DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio (voice + WhatsApp + SMS), Resend (email), Forage (EBT), Deepgram (speech-to-text), ElevenLabs (text-to-speech), Gemini (AI ordering), Ollama (local AI).
+Stripe, Dejavoo (SPIn terminal), DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio (voice + WhatsApp + SMS), Resend (email), Forage (EBT), Deepgram (speech-to-text), ElevenLabs (text-to-speech), Gemini (AI ordering), Ollama (local AI).
 
 The Settings page is a control surface, not proof that a provider is connected. A production screenshot is included only after the relevant processor/provider reports a connected state; the demo's disconnected integration cards are intentionally not shown.
 
