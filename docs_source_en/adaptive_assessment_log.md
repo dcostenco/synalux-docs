@@ -161,7 +161,7 @@ The assistant **must not**:
 
 ## Screenshots
 
-> The form schema is workspace-admin-editable via `/admin/form-builder` (see Synalux Dev Rule 6 in `synalux-private/DEV_RULES.md`), so the screenshot below shows the seed default — your tenant may look different after admin customization.
+> The form schema is workspace-admin-editable via `/admin/form-builder` (per the Synalux form-builder rules), so the screenshot below shows the seed default — your tenant may look different after admin customization.
 
 ### New record (seed default — top-level metadata + composite scores)
 

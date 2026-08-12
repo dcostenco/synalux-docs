@@ -73,4 +73,4 @@ POST /api/v1/session/heartbeat    Idle-keepalive ping
 
 [See full pricing →](https://synalux.ai/pricing)
 
-See also: [`portal/docs/security/oauth-token-isolation.md`](https://github.com/dcostenco/synalux-private/blob/main/portal/docs/security/oauth-token-isolation.md) (private) for the full Pattern C OAuth token isolation spec.
+The full Pattern C OAuth token isolation spec is maintained internally and is not published.
