@@ -37,11 +37,26 @@ PATTERNS=(
   'BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY' # private key material
 )
 
+# Adversarial review of the first version of this guard planted seven leak
+# variants; it caught NONE. Case was the one that mattered — a heading reading
+# "SYNALUX-PRIVATE" or "Synalux-Private" is entirely ordinary prose and slipped
+# straight through, in a guard whose only job is to catch that string. Hence -i
+# below.
+#
+# Knowingly still uncaught, recorded rather than left as a silent gap:
+#   - separator variants ("synalux private", "synalux_private"). A
+#     separator-tolerant pattern would flag legitimate marketing prose such as
+#     "Synalux private cloud", and a guard that blocks correct copy gets
+#     disabled. Hyphenated is the form that actually appears.
+#   - deliberate obfuscation (unicode hyphens, "name (at) gmail.com", a token
+#     split across a line break). This guards against accident, not against an
+#     author who is trying to evade it.
 status=0
 for pattern in "${PATTERNS[@]}"; do
-  # -I skips binaries (images); scan tracked files only, so untracked
-  # scratch work never fails someone's push.
-  if hits=$(git grep -nIE "$pattern" -- . ':!scripts/check-no-private-refs.sh' 2>/dev/null); then
+  # -I skips binaries (images); -i because case is not a meaningful difference
+  # in a leak. Scans tracked files only, so untracked scratch work never fails
+  # someone's push.
+  if hits=$(git grep -nIiE "$pattern" -- . ':!scripts/check-no-private-refs.sh' 2>/dev/null); then
     if [ -n "$hits" ]; then
       echo "LEAK: pattern /$pattern/ found in this PUBLIC repo:"
       echo "$hits" | sed 's/^/  /'
