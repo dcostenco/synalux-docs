@@ -12,7 +12,7 @@ Multi-source clinical research synthesis across academic databases, web, and int
 *   **Web fallback** — DuckDuckGo (free, no API key) when academic sources return insufficient results.
 *   **Web search** (non-research) — Firecrawl via `POST /api/v1/web-search` for general queries (tier-gated, separate from research).
 *   **Synthesis** — Gemini 2.5 Flash with thinking enabled combines all sources into a cited clinical summary.
-*   **Knowledge search** — internal Prism MCP knowledge base (workspace-scoped) — see `synalux-private` for the full Prism architecture.
+*   **Knowledge search** — internal Prism MCP knowledge base (workspace-scoped).
 
 ---
 

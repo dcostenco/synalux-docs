@@ -739,53 +739,6 @@ Synalux deliberately avoids Azure, AWS, and traditional IaaS:
 
 </details>
 
----
-
-<details>
-<summary><h2>📁 Project Structure</h2></summary>
-
-```
-synalux-private/
-├── portal/                   # Next.js web portal + clinical web app
-│   ├── src/app/app/          # 🏥 Synalux Health (Web App)
-│   │   ├── page.tsx          # SOAP Notes workspace
-│   │   ├── chat/page.tsx     # AI Chat
-│   │   ├── team/page.tsx     # Team Chat (Pro+)
-│   │   └── layout.tsx        # App shell + sidebar
-│   ├── src/app/patient-portal/  # 🏥 Patient Portal
-│   │   └── page.tsx          # Dashboard, Documents, Appointments, Billing, Messages
-│   ├── src/app/api/v1/       # REST APIs
-│   │   ├── chat/route.ts     # Streaming chat (SSE)
-│   │   ├── soap/route.ts     # SOAP note generation
-│   │   ├── pdf/route.ts      # Server-side PDF export
-│   │   ├── messages/         # Team Chat API
-│   │   ├── roles/            # RBAC management
-│   │   ├── billing/          # Stripe integration + checkout
-│   │   └── webhooks/stripe/  # Stripe webhook handler
-│   ├── src/lib/              # Auth, DB, i18n, SOAP templates
-│   │   ├── stripe.ts         # Stripe Connect + Checkout + Portal
-│   │   ├── db.ts             # Supabase client + user management
-│   │   └── auth-options.ts   # NextAuth + Google OAuth
-│   └── supabase/             # Database migrations + seed data
-│       ├── seed_poc_part1.sql          # Core users/workspaces
-│       ├── seed_poc_part2b_*.sql       # HR tables + clinical catalogs
-│       ├── seed_poc_part2c.sql         # Cross-practice links + payers
-│       ├── seed_poc_part2d.sql         # Appointments (61 records)
-│       ├── seed_poc_part2e.sql         # Treatment plans (16 records)
-│       ├── seed_poc_part2f.sql         # HR module (staff/credentials/reviews)
-│       ├── seed_poc_part2g.sql         # Billing entries, SOAP notes, documents
-│       ├── seed_poc_part2h.sql         # Portal data (messages, consents, forms)
-│       └── seed_poc_part2i_*.sql       # Per-practice billing config + Stripe Connect
-├── synalux-vscode/           # 🧑‍💻 VS Code extension
-│   ├── src/chat-panel.ts     # Agentic chat + tool execution
-│   ├── src/mcp-server.ts     # Local MCP tool dispatcher
-│   └── tools/                # Python tool implementations
-├── README.md                 # This file
-├── LICENSE                   # BSL-1.1
-└── REVIEW_PROMPT.md          # Adversarial security review
-```
-
-</details>
 
 ---
 

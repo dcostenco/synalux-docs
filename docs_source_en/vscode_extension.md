@@ -17,7 +17,7 @@ On first use the extension opens `/auth/vscode` in the browser → user signs in
 ---
 
 ## 🏗️ Architecture
-Source: `synalux-vscode/src/` in `synalux-private`.
+Built and maintained by the Synalux team.
 *   `backend-router.ts` — picks Gemini direct vs OpenRouter based on user's tier + selected model
 *   `chat-panel.ts` — VSCode webview hosting the chat UI
 *   `gemini-oauth.ts` — alternative auth flow when user prefers a Gemini account over their workspace login
