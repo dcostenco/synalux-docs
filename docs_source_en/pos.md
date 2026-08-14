@@ -458,7 +458,7 @@ Modifiers can redirect parent items to additional kitchen stations (additive rou
 
 ### Payment
 
-Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on iPhone, and cash discount/dual pricing. Split check, tips, and post-payment tip via QR.
+Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/dual pricing. EBT/SNAP and Tap-to-Pay on iPhone are in implementation. Split check, tips, and post-payment tip via QR.
 
 <img src="../images/pos/ipad_05_payment.png" alt="Payment">
 
@@ -471,7 +471,7 @@ Card, cash, gift card, mobile pay, house account, EBT, bar tabs, Tap-to-Pay on i
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create the customer account on **House Accounts**, then choose **House Account** at payment or record standalone account activity. See [House Accounts](#house-accounts)
-7. **EBT/SNAP** — add Forage API key in Settings > Integrations. Eligibility is per item: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), so hot/prepared foods can be excluded. At payment the EBT tender covers only the eligible amount and the non-eligible remainder is split to cash or card
+7. **EBT/SNAP** — *in implementation*. Per-item eligibility already works: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), and the register exempts eligible items from tax at tender. Authorization is not yet wired to a processor, so the EBT tender cannot complete a payment — contact support before promising EBT to a venue
 8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
 9. **Over-payment handling** — when a customer pays cash above the amount owed, choose how the excess is handled in **Settings > Venue > Over-payment handling**: *Give change* (cash back, recorded for end-of-day drawer reconciliation — the default), *Add to tip*, or *Ask cashier each time*. The amount applied to the bill is always exactly what's owed
 
@@ -2153,7 +2153,7 @@ Integration setup varies by provider: OAuth connections are completed through th
 | **Twilio** (SMS) | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` | SMS receipts, order-ready notifications |
 | **Google Reserve / OpenTable / Yelp** | Webhook URL | Auto-created reservations |
 | **QuickBooks / Xero** | `QUICKBOOKS_ACCESS_TOKEN` or `XERO_ACCESS_TOKEN` | EOD GL journal auto-sync |
-| **Forage** (EBT/SNAP) | `FORAGE_API_KEY` | EBT payment, eligible item flagging |
+| **Forage** (EBT/SNAP) | `FORAGE_API_KEY` | Eligible item flagging. EBT payment authorization is in implementation |
 | **Dwolla / Stripe Treasury** | `DWOLLA_API_KEY` or `STRIPE_TREASURY_KEY` | ACH payroll direct deposit |
 | **Ollama** (local AI) | `NEXT_PUBLIC_LOCAL_LLM_URL` | Natural language order parsing (local, no cloud) |
 | **Prism MCP** (AI memory) | `PRISM_MCP_URL` | Per-staff and per-customer AI memory and context |
