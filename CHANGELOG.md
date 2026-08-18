@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.7
+
+- Detect Epson printer identity and capabilities on raw TCP port 9100, while
+  keeping unknown devices on conservative manual-tear defaults.
+- Add compact per-printer kitchen-ticket setup for paper width, cutter, ribbon,
+  spacing, reference placement, columns, and modifier emphasis.
+- Fence print dispatch with durable idempotency so another relay can take over
+  before dispatch without duplicating a job already sent to a printer.
+- Improve iOS print/PDF confirmation and preview behavior.
+
 ### Synalux Print Relay 2.1.6
 
 - Discover compatible local ESC/POS printers from physical LAN interfaces and
