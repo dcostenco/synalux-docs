@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.4
+
+- Allow the Windows and macOS relay apps to claim one-time POS setup links
+  without a browser `Origin` header while continuing to reject foreign browser
+  origins and origin-less mutations on every other API route.
+- Keep Windows setup confirmation, success, and error dialogs in front of the
+  POS browser so setup cannot appear to do nothing behind another window.
+
 ## [12.5.0] - 2026-07-31 — Seat billing (reseller channel)
 
 Shipped as PR #152. Live in production; no customer is metered yet — charging
@@ -652,9 +660,9 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
   - Stripe products/prices (Standard $19, Advanced $49, Enterprise $99) via Stripe CLI
   - Google OAuth client (GCP project `synalux-ai-portal`, ports 3000-3005)
   - Stripe webhook listener (`stripe listen → localhost:3000/api/webhooks/stripe`)
-- Seeded a free-tier demo user with 3 API tokens (VSCode, CLI, CI-CD)
+- Seeded user (`dcostenco@gmail.com`, free tier) with 3 API tokens (VSCode, CLI, CI-CD)
 - Portal `.env.local` with all credentials
-- CLI-First Policy rule added to the internal engineering rules
+- CLI-First Policy rule added to `bcba-private`
 
 ---
 
