@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.5
+
+- Fix relay credential hashing in Supabase's restricted SECURITY DEFINER search
+  path so one-time setup can store the secret and relay workers can claim and
+  complete print jobs.
+- Own Windows setup dialogs with the foreground POS browser window so an
+  already-running tray relay cannot leave confirmation or errors behind it.
+
 ### Synalux Print Relay 2.1.4
 
 - Allow the Windows and macOS relay apps to claim one-time POS setup links
