@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.6
+
+- Discover compatible local ESC/POS printers from physical LAN interfaces and
+  publish them on a credential-derived venue channel.
+- Show only unassigned, recently seen printers in POS Settings and prefill safe
+  editable raw-TCP defaults.
+- Send Epson ESC/POS payloads over raw TCP so an HTTP success cannot falsely
+  mark an unprinted receipt complete.
+
 ### Synalux Print Relay 2.1.5
 
 - Fix relay credential hashing in Supabase's restricted SECURITY DEFINER search
