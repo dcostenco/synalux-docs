@@ -2,6 +2,22 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.8
+
+- Route every queued job by explicit physical-network and printer identity so
+  identical private IP addresses at different sites cannot cross-print.
+- Elect one active relay computer per local network with lease-based failover,
+  plus database-enforced per-printer serialization.
+- Give each relay computer an independent credential; adding a backup no
+  longer rotates another relay's token.
+- Preserve printing through a rolling portal deployment by assigning legacy
+  queue rows to the default site, and canonicalize port 9100 so equivalent
+  address spellings cannot bypass printer serialization.
+- Register setup tokens and relay instances atomically and return the owning
+  US or EU database endpoint instead of the deployment's default endpoint.
+- Keep self-hosted production smoke runners awake through their deployment wait
+  so the browser checks actually execute.
+
 ### Synalux Print Relay 2.1.7
 
 - Detect Epson printer identity and capabilities on raw TCP port 9100, while
