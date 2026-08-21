@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.9
+
+- Enable the Relay app to launch automatically when the operator logs in.
+- Verify that Windows Credential Manager or macOS Keychain can read back a
+  saved relay credential before removing it from the local config fallback.
+- Retry saved configuration after transient credential-store failures during
+  startup instead of remaining incorrectly marked as unconfigured.
+- Distinguish a saved configuration that is temporarily unavailable from a
+  Relay installation that has never been configured.
+
 ### Synalux Print Relay 2.1.8
 
 - Route every queued job by explicit physical-network and printer identity so
