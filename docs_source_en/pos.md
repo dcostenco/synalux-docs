@@ -313,7 +313,8 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 2. Set prices, KDS stations, barcodes, and item details in **Edit Item**; use **Assign Sets** to attach reusable modifier sets
 3. **Per-item price level overrides** — set custom prices for Employee, Happy Hour, VIP levels in the item edit form. **Happy-hour pricing applies to online and phone orders too** — the customer is charged the same happy-hour price they see
 4. **Combos** — build meal deals in the Combos tab. A component can be a specific item **or a category slot** ("any item from Sides"), each with its own **quantity** (e.g. Burger + any Side ×2 + any Drink for $10). Combo savings apply on the register and on online/phone/AI orders alike
-5. Items appear on the register automatically
+5. **Category scheduling** — open the category editor to set day/time availability for the whole category. The same schedule is enforced before an order is accepted or charged across the Register, public ordering, voice, WhatsApp, and other ordering channels; item-level schedules can still narrow an individual item's availability
+6. Items appear on the register automatically
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-menu.png" alt="Current production Menu Builder Table view with 39 configured items, category navigation, item types, modifier-set assignments, status, and CSV controls">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-item-details.png" alt="Current Menu Builder item details with barcode, item type, EBT eligibility, and pricing controls">
@@ -859,6 +860,7 @@ Visual half/half pizza builder with per-topping placement and intensity. Standar
 5. **Intensity** — None (not selected), Light (75% price), Regular (100%), Extra (150% price)
 6. **3PD compatibility** — pizza toppings sync to DoorDash/UberEats as standard modifiers (placement/intensity are stripped since 3PD doesn't support halves). This is logged as an incompatibility
 7. **AI chat** — "Make me a half pepperoni half mushroom pizza" works without the visual builder. The AI maps to the correct modifiers and prices
+8. **Special requests on touch terminals** — tap the Special Request field to focus it and request the terminal's native touch keyboard. The same POS-wide bridge covers eligible text inputs and text areas; a hardware keyboard still works, and fields explicitly marked to opt out do not force the on-screen keyboard
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-modifier-sheet.png" alt="Current modifier sheet with required cooking instructions and special request field">
 
