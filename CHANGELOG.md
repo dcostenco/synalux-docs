@@ -2,6 +2,21 @@
 
 ## [Unreleased]
 
+### POS multi-venue beta readiness
+
+- Enforce each reseller customer's signed location and seat allocation in the
+  global Portal ledger before a regional POS tenant can be provisioned.
+- Provision each POS location transactionally, reuse the customer's workspace
+  for later locations, and make retries idempotent without permitting a caller
+  to select another customer's workspace.
+- Attribute metered orders to a verified claimed station and fail closed for
+  metered venues while preserving the documented beta/demo exclusions.
+- Add a repeatable local US-demo clone, seeded multi-venue isolation checks,
+  Portal allocation UI coverage, clean-schema SQL contracts, and dealer,
+  platform-admin, and site-admin operating guides.
+- Remove cross-workspace end-user access to the universal audit trail and make
+  the regional provisioning-claim ledger explicitly service-role-only.
+
 ### Synalux Print Relay 2.1.10
 
 - Select the native Windows Credential Manager and macOS Keychain backends
