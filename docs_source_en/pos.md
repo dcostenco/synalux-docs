@@ -82,7 +82,7 @@ Then enter a staff PIN:
 | **Manager** | Manager | `5678` | All screens + EOD + Staff |
 | **Admin** | Admin | `1234` | All screens + Settings |
 
-The public demo is pre-populated. The repository seed command is a maintainer tool for controlled demo environments; staff using the public demo do not need to run it. The credentials and PINs above are intentionally public demo access; create unique accounts, PINs, and role assignments for a production venue.
+The public demo is pre-populated and does not require setup commands. The credentials and PINs above are intentionally public demo access; create unique accounts, PINs, and role assignments for a production venue.
 
 > **Screenshot policy:** The POS guide was re-swept against the US production demo on **August 22, 2026**. Every workflow image in this page is now a current production capture; responsive examples identify their device size in the surrounding text. Screenshots show configured data when the demo has it and may show an intentional empty state when that state explains the workflow. No screenshot with a visible error state is used. Network addresses, contact values, processor identifiers, and free-form receipt text are masked in the browser before capture; that masking does not change saved production data.
 
@@ -115,7 +115,7 @@ Useful starting points: [Settings map](#settings-map), [Register](#register), [T
 - **Accept orders:** [Online and QR table](#online-ordering--qr-table), [delivery](#delivery-management), [AI chat](#ai-chat-assistant), [voice](#ai-voice-ordering-phone), [WhatsApp](#whatsapp-ordering), [catering](#catering), [drive-thru](#drive-thru), and [handheld](#handheld-server).
 - **Operate the venue:** [Staff and labor](#staff--labor), [reports](#reports), [inventory](#inventory--recipe-costing), [gift cards and loyalty](#gift-cards--loyalty), [house accounts](#house-accounts), [compliance](#compliance), [end of day](#end-of-day), and [reservations](#reservations--waitlist).
 - **Manage at scale:** [Refunds](#refunds), [multi-location](#multi-location--franchise), [accounting](#accounting--ledger), [coursing](#coursing--course-firing), [order throttling](#order-throttling), [HR and timesheets](#hr--timesheets), and [Back Office](#back-office-suite).
-- **Platform and setup:** [Offline mode](#offline-mode-pwa), [integrations](#integrations), [printers and drawers](#printers--cash-drawer), [security](#security--pci-compliance), [26 languages](#26-languages), and the [developer guide](#developer-integration-setup-guide).
+- **Platform and setup:** [Offline mode](#offline-mode-pwa), [integrations](#integrations), [printers and drawers](#printers--cash-drawer), [security](#security--pci-compliance), [26 languages](#26-languages), and [integration onboarding](#connect-services-and-integrations).
 
 ---
 
@@ -169,7 +169,7 @@ PIN login with clock-in, 7-level role-based access, and automatic screen routing
 | **Swipe Card** | Magnetic stripe / RFID employee badges | Settings > Staff > Assign Card |
 | **Manual Card Entry** | Keyed card-not-present transactions (admin override required) | Admin PIN + confirmation dialog |
 
-WebAuthn passkeys use the Web Authentication API — credentials are device-bound and never leave the staff member's device. Multiple passkeys can be registered per staff member (e.g., both iPad Touch ID and phone Face ID). Falls back to PIN if biometric fails.
+Touch ID and Face ID passkeys are registered to supported devices. Multiple passkeys can be registered per staff member, and PIN remains available as the fallback sign-in method.
 
 </details>
 
@@ -277,7 +277,7 @@ Create multiple named price levels with optional day/time scheduling. Happy hour
 3. **Overnight windows** work: `{start: "22:00", end: "02:00"}`
 4. Per-item overrides in **Menu Builder > Item > Price Levels** (exact price per level)
 5. **Price cascade:** Station price level → RC price level → Schedule → Base price
-6. Manual override requires `change_price_level` role (manager+)
+6. Manual price-level override requires manager permission or higher
 
 </details>
 
@@ -430,7 +430,7 @@ Ticket board with color-coded timing (green → yellow → orange → red). Bump
 1. Open `/pos/kds` on any tablet or TV
 2. Filter by station: ALL, Grill, Fry, Prep, Expo, Bar, Cold, Pass
 3. Configure routing rules in **Settings > Printers & KDS**
-4. **Timed Course Fire** — set `prep_time_minutes` per menu item. Items split by course; later courses auto-fire offset by the longest prep time so everything finishes together
+4. **Timed Course Fire** — set **Prep time (minutes)** for each menu item. Items split by course; later courses auto-fire based on the longest preparation time so everything finishes together
 5. **Modifier Steering** — modifiers can redirect items to additional stations. Set "Steer to Station" on any modifier option in Menu Builder. Steering is additive: item goes to default AND modifier station
 6. **Voids reflect on fired tickets** — voiding an item after it's fired marks it struck-through with a **VOID** badge on the kitchen ticket, so the line the kitchen already sees is cancelled instead of leaving a phantom item to be made
 
@@ -464,12 +464,12 @@ Automatic kitchen ticket timing — items in a course fire based on prep time so
 <details>
 <summary><strong>How it works</strong></summary>
 
-1. Set **prep_time_minutes** on each menu item in **Settings > Menu Builder**
+1. Set **Prep time (minutes)** on each menu item in **Settings > Menu Builder**
 2. Assign **Course 1 / 2 / 3** to items in the cart during order entry
 3. Course 1 fires immediately. Course 2 fires after Course 1's longest prep time elapses
 4. Within a course, faster items are delayed — a 5-min soup waits 13 minutes so it finishes with the 18-min steak
 5. KDS hides future-dated tickets until their fire time passes
-6. Online, voice, and WhatsApp orders receive **estimated_ready_at** computed from the longest prep item
+6. Online, voice, and WhatsApp orders receive an estimated ready time based on the longest-preparation item
 
 </details>
 
@@ -489,7 +489,7 @@ Modifiers can redirect parent items to additional kitchen stations (additive rou
 3. Set **KDS Steer** dropdown on any modifier option (e.g., "Grilled Shrimp" → Grill)
 4. Toggle **Follow Item** to control whether modifier text appears on the steered ticket
 5. Steering is **additive** — the item goes to its default station AND the modifier's station
-6. Multiple modifiers can steer to different stations — dedup prevents duplicates
+6. Multiple modifiers can steer to different stations without printing the same routed item twice
 
 </details>
 
@@ -497,7 +497,7 @@ Modifiers can redirect parent items to additional kitchen stations (additive rou
 
 ### Payment
 
-Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/dual pricing. Tap to Pay on iPhone appears only when the supported native capability and Stripe Terminal setup are available; EBT/SNAP authorization remains in implementation. Split check, tips, and post-payment tip via QR are also supported.
+Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/dual pricing. Tap to Pay on iPhone appears only after the supported iPhone and Stripe Terminal setup are ready; EBT/SNAP authorization is not currently available. Split check, tips, and post-payment tip via QR are also supported.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-screen-builder-payments.png" alt="Current tender-specific payment, tip, receipt, and excess-payment configuration">
 
@@ -506,13 +506,13 @@ Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/du
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-screen-builder-payments.png" alt="Production Screen Builder Payments tab showing the tender-specific cash tip and excess-payment policy">
 
-1. **Card** — configure Stripe server-side, select Stripe as the venue processor, set the Terminal Location, then pair a supported reader from **Settings > Integrations**
+1. **Card** — connect the venue's Stripe merchant account and location, then pair a supported reader from **Settings > Integrations** and complete an authorization/refund test
 2. **Tap-to-Pay on iPhone** — requires the Synalux POS iPhone app, Stripe as the venue processor, a supported signed build/device, a Stripe Terminal Location, and Stripe Tap to Pay availability. When the native capability check passes, tap **Tap to Pay on iPhone** on the payment screen; otherwise that tender stays hidden rather than presenting an unusable button
 3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
 4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create the customer account on **House Accounts**, then choose **House Account** at payment or record standalone account activity. See [House Accounts](#house-accounts)
-7. **EBT/SNAP** — *in implementation*. Per-item eligibility already works: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), and the register exempts eligible items from tax at tender. Authorization is not yet wired to a processor, so the EBT tender cannot complete a payment — contact support before promising EBT to a venue
+7. **EBT/SNAP** — *not currently available for payment authorization*. Per-item eligibility already works: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), and the register exempts eligible items from tax at tender. The EBT tender cannot currently complete a payment, so contact support before promising EBT to a venue
 8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
 9. **Tender-specific tips and excess payments** — open **Settings > Screen Builder > Register > Payments**, then select **Cash**, **Card**, **Wallet**, **Gift Card**, or **On Account**. Each tender can use its own tip timing. Cash can route an amount above the balance to change/base tender, tip, gratuity, or a cashier prompt. EBT/SNAP remains non-tippable
 10. **Auto-gratuity and receipt tips** — in the same Payments tab, decide per tender whether an additional tip is allowed after auto-gratuity and whether the receipt shows an additional-tip line. Suggested percentages, custom-tip visibility, and the maximum tip percentage are configured below the tender policy. The receipt's master tip-line control must also be enabled
@@ -597,7 +597,7 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 8. **Share your link** — customers order at `https://your-slug.synalux.ai` or your configured enterprise custom domain. Manage the slug and custom domain in **Settings > Venue**
 9. **QR table ordering** — print QR tents from **Settings > Floor Plan**. Customer scans, orders, and the ticket goes straight to KDS
 10. **Scheduled orders** — customers pick a future date/time at checkout. Orders appear on KDS at the scheduled time
-11. **Promo codes** — one-time-use codes validated server-side. Duplicates are rejected
+11. **Promo codes** — one-time-use codes are validated at checkout and duplicate redemption is rejected
 12. **AI chat** — customer-facing AI understands your full menu including modifiers and pizza builder. Supports 14 languages with voice input/output
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-online-ordering-desktop.png" alt="Current public Online Ordering storefront on desktop">
@@ -619,7 +619,7 @@ In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. 
 <summary><strong>Setup</strong></summary>
 
 1. **Choose mode** in **Settings > Delivery**: 3PD Only, In-House, or Hybrid (try in-house first, fall back to 3PD)
-2. **3PD providers** — add DoorDash Drive or Uber Direct API credentials. The system creates deliveries via the provider API and tracks status
+2. **3PD providers** — connect DoorDash Drive or Uber Direct in **Settings > Integrations**, then test delivery creation, status updates, and cancellation
 3. **In-house drivers** — add drivers with name, phone, vehicle type (car/bike/scooter/walk), and max concurrent orders
 4. **Menu sync** — tap "Sync to DoorDash" / "Sync to Uber Eats" to upload your menu. Enable auto-sync to push changes automatically when you edit menu items
 5. **Driver mobile page** — drivers open `/pos/delivery/driver` on their phone. They see assigned orders, tap to navigate, mark picked up / delivered / failed, and auto-report GPS every 30s
@@ -661,7 +661,7 @@ Money- and compliance-sensitive actions (payroll ACH, tax changes, journal posti
 - Voice input (microphone) + voice output (speaker) with adjustable speed/pitch/gender
 - 14 languages with locale picker
 - Returning customer greeting via cookie
-- Tool calls: add_to_cart, remove_from_cart, filter_menu, suggest_combo
+- Confirmed AI actions can add or remove items, filter the menu, and suggest a combo
 
 </details>
 
@@ -678,7 +678,7 @@ Voice Ordering is configured from **Settings > Integrations**. A provider card o
 
 1. **Enable** in Settings > Integrations > Voice Ordering
 2. Set your **Twilio phone number** in Settings > Venue
-3. Configure the **Twilio console** — Phone Number > Voice > Webhook POST > `https://your-domain.com/api/v1/pos/webhooks/voice`
+3. Complete the phone-number connection with Synalux onboarding, then place a live test call that reaches the menu, payment choice, kitchen, and configured notification path
 
 **Customizable settings:**
 
@@ -707,7 +707,7 @@ Voice Ordering is configured from **Settings > Integrations**. A provider card o
 10. "Repeat my order" → AI reads back all items with prices
 11. "That's all" → asks for customer name → reads back order with total
 12. "Yes" → order created → KDS kitchen ticket → SMS confirmation
-13. Session saved to database for analytics
+13. Authorized managers can review the completed call and order activity in reporting
 
 **Customer commands:**
 
@@ -736,20 +736,13 @@ The order language locks after the first cart item so a menu name or noisy utter
 </details>
 
 <details>
-<summary><strong>Voice Stack Architecture</strong></summary>
+<summary><strong>Go-live checklist</strong></summary>
 
-| Layer | Technology | Behavior |
-|-------|-----------|---------|
-| **Speech-to-Text** | Deepgram Nova-3 multilingual through ConversationRelay | Streaming |
-| **AI/LLM** | Gemini 3.6 Flash | Streaming turn processing |
-| **Text-to-Speech** | ElevenLabs Flash v2.5 through ConversationRelay | Streaming |
-| **Transport** | Twilio ConversationRelay over a secure WebSocket | Bidirectional |
-| **Noise Filtering** | Relay input verifier for empty, repeated, filler-only, and malformed speech | Before model invocation |
-| **Server** | POS voice webhook and relay-chat routes | Venue-scoped |
-| **Phonetic Correction** | Menu-aware Gemini parsing | During the ordering turn |
-| **Customer Memory** | Supabase past-order and loyalty context | Loaded per session |
-
-**Fallback:** If the AI encounters a severe failure or consecutive low-confidence inputs, it gracefully transfers to a human line.
+- Confirm the venue phone number, supported languages, greeting, fallback number, and operating hours
+- Place test calls for a new customer and a recognized returning customer
+- Verify menu pricing, modifiers, substitutions, order read-back, kitchen routing, and payment handling
+- Verify any configured SMS notification with the venue's approved sender and customer consent flow
+- Confirm that repeated low-confidence input transfers to the configured human line
 
 </details>
 
@@ -758,7 +751,7 @@ The order language locks after the first cart item so a menu name or noisy utter
 
 ### WhatsApp Ordering
 
-WhatsApp uses the shared `chat-ordering` order state, cart validation, pricing, and placement path, with channel-specific language detection and delivery behavior. Customers can send text or a voice note, receive the cart in the thread, and confirm the order without installing a separate restaurant app.
+WhatsApp uses the same menu, cart validation, pricing, and order-placement rules as the other ordering channels, with channel-specific language and delivery behavior. Customers can send text or a voice note, receive the cart in the thread, and confirm the order without installing a separate restaurant app.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-integrations.png" alt="Current Integrations workspace where messaging and ordering providers are configured; contact values are masked">
 
@@ -781,7 +774,7 @@ WhatsApp uses the shared `chat-ordering` order state, cart validation, pricing, 
 7. Confirmation with order number, total, and estimated pickup time
 8. When the configured processor returns a checkout URL, the payment link is sent in the WhatsApp thread; otherwise the order falls back to the configured pay-at-pickup message
 9. The order confirmation is delivered in the WhatsApp conversation through Twilio's WhatsApp sender, not as a separate SMS
-10. A Resend confirmation email is attempted only when the recognized loyalty member has an email address and the deployment has email configured
+10. A confirmation email is attempted only when the recognized loyalty member has an email address and the venue has email delivery enabled
 11. Returning customers recognized by phone — favorites and past orders recalled
 
 **Commands:**
@@ -804,13 +797,13 @@ WhatsApp uses the shared `chat-ordering` order state, cart validation, pricing, 
 | **Voice messages** | Deepgram transcription using the deployed shared transcription configuration; validate each language before launch |
 | **AI responses** | Requested session locale when it can be determined; unsupported or ambiguous input falls back to the venue language |
 
-**Venue resolution:** The inbound Twilio `To` number must match a venue's `whatsapp_number` or `phone_number`. If no match, the system fails closed — no country-based guessing or fallback to arbitrary venues.
+**Venue assignment:** The inbound WhatsApp number must be assigned to the venue. Unassigned numbers are rejected rather than guessed from a country code or routed to another venue.
 
 **Setup:**
-1. Register a WhatsApp Business number in Twilio Console
-2. Set webhook: `https://your-domain.com/api/v1/pos/webhooks/whatsapp` (POST)
-3. In POS Settings → Integrations, enter the WhatsApp number for the venue
-4. Customers text the number — no app install, no signup
+1. Register and approve the venue's WhatsApp Business sender
+2. Complete the WhatsApp connection with Synalux onboarding
+3. In **Settings > Integrations**, confirm the number assigned to the venue
+4. Send a real text and voice-note order, confirm the kitchen ticket, payment choice, and customer reply before publishing the number
 
 </details>
 
@@ -920,7 +913,7 @@ Sales, PMIX, category sales, per-tax/jurisdiction, menu engineering, speed of se
 
 ### Inventory & Recipe Costing
 
-Stock tracking with optimistic-lock deductions, low-stock alerts, vendor management, recipe builder with ingredient cost + profit margin %, plus reorder suggestions and purchase orders with receiving.
+Stock tracking with protected deductions, low-stock alerts, vendor management, recipe builder with ingredient cost + profit margin %, plus reorder suggestions and purchase orders with receiving.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-inventory.png" alt="Current production Inventory with populated SKU records and stock values">
 
@@ -929,7 +922,7 @@ Stock tracking with optimistic-lock deductions, low-stock alerts, vendor managem
 
 1. Add inventory items with SKU, qty, unit, cost per unit, and **low stock threshold** (the reorder point)
 2. Link **recipes** to menu items — ingredient cost + margin % auto-calculates
-3. On order completion, inventory **auto-deducts** per recipe (optimistic lock with retry)
+3. On order completion, inventory **auto-deducts** per recipe and safely retries if another stock update happened at the same time
 4. **Stock count** with audit trail — records who counted, old vs new quantity
 5. Low-stock items trigger **real-time alerts** at shift clock-in
 6. **Reorder suggestions** — items at or below their reorder point are surfaced with a suggested order quantity (up to par) and estimated cost, grouped by vendor
@@ -957,10 +950,10 @@ Issue gift cards ($25–$250) with auto-numbering and multi-location redemption.
 <summary><strong>Setup</strong></summary>
 
 1. **Gift cards** — issue from the Gift Cards page. Auto-numbered. Customers redeem at payment
-2. **Multi-location** — set `workspace_id` on gift cards/house accounts for cross-venue redemption
+2. **Multi-location** — enable cross-location redemption for the venue group during onboarding, then test issue and redemption at each participating location
 3. **Loyalty** — enable in **Settings > Loyalty**. Customers earn points per dollar spent
 4. Auto-tier upgrades: Bronze → Silver → Gold based on cumulative spend
-5. **Award auto-generation** — configure point thresholds in venue features. When a customer crosses a threshold, a coupon is automatically issued with the source discount's value (single-use, optimistic-lock dedup)
+5. **Award auto-generation** — configure point thresholds in venue features. When a customer crosses a threshold, one single-use coupon is issued with the configured discount value
 6. Referral rewards: existing customers share a link, both get bonus points
 
 The current demo has no enrolled loyalty members, so the screenshot shows the real enrollment and retention controls without implying live member activity:
@@ -1003,7 +996,7 @@ Managers and supervisors can manage accounts. Credit-limit changes require the s
 <details>
 <summary><strong>Charge an account</strong></summary>
 
-- **From a sale:** on the payment screen choose **House Account**, select the customer, review available credit, and confirm. The server rejects charges that exceed the account limit.
+- **From a sale:** on the payment screen choose **House Account**, select the customer, review available credit, and confirm. The POS blocks charges that exceed the account limit.
 - **Standalone charge:** open the account and select **Add Charge** for activity that is not tied to a POS order. Enter the amount and a useful note.
 - **Automatic discount:** when configured in the account Settings tab, the discount is applied to eligible orders before the charge reaches the account.
 
@@ -1049,51 +1042,15 @@ The public demo currently has no issued statements, so the current screenshot sh
 <details>
 <summary><strong>Customer balance and hosted payment links</strong></summary>
 
-Every account can expose a tokenized customer page with the current balance and statement history. Regenerate the public token from the account Settings tab if a link was shared with the wrong recipient. The production demo currently reports online payment as unavailable, so the screenshots below document the account controls without implying that hosted payment is connected.
+Every account can provide a secure customer page with the current balance and statement history. Replace the public access link from the account Settings tab if it was shared with the wrong recipient. The production demo currently reports online payment as unavailable, so the screenshots below document the account controls without implying that hosted payment is connected.
 
-- **Stripe:** hosted balance-payment links are available when Stripe is the venue processor and the Stripe secret/webhook are configured. Only one active fixed-amount link is allowed, it expires after 24 hours, and a balance change invalidates the old link.
-- **Dejavoo:** terminal payments can be recorded against the account. House Account hosted checkout is mock-only in local/non-production testing until the full create/capture/expire lifecycle is configured and verified.
+- **Stripe:** hosted balance-payment links are available after hosted House Account payments have been enabled and verified for the venue. Only one active fixed-amount link is allowed, it expires after 24 hours, and a balance change invalidates the old link.
+- **Dejavoo:** terminal payments can be recorded against the account. Hosted House Account checkout is shown only when that processor workflow is available and verified for the venue.
 
 <p>
   <img src="../images/pos/production-demo-2026-08/prod-20260822-house-account-settings.png" alt="Current House Account settings with automatic-statement controls and public-link regeneration" width="66%">
   <img src="../images/pos/production-demo-2026-08/prod-20260822-house-account-mobile.png" alt="Current House Account detail on a mobile viewport with balance and account actions" width="30%">
 </p>
-
-</details>
-
-<details>
-<summary><strong>Developer and deployment setup</strong></summary>
-
-1. Apply the POS and shared-accounting migrations using the repository's combined migration runner:
-
-   ```bash
-   cd synalux-pos
-   ./scripts/push-manual.sh --apply
-   ```
-
-   Do not use `supabase db push` while POS and Portal share the same Supabase projects and migration histories.
-
-2. Configure the normal POS database credentials plus:
-
-   ```env
-   # Public URL used in statement and customer links
-   SYNALUX_POS_URL=https://pos.your-domain.example
-
-   # Portal delivery bridge for statement/payment-link email and SMS
-   SYNALUX_PORTAL_URL=https://your-portal-domain.example
-   SYNALUX_SERVICE_KEY=replace-with-a-shared-service-secret
-
-   # Authorizes /api/cron/send-ha-statements
-   CRON_SECRET=replace-with-a-random-secret
-
-   # Stripe hosted balance checkout
-   STRIPE_SECRET_KEY=sk_live_or_test
-   STRIPE_WEBHOOK_SECRET=whsec_replace
-   ```
-
-3. Configure the Stripe webhook on the POS custom domain at `/api/v1/pos/webhooks/stripe`. The House Account balance is updated only after the signed processor completion event is reconciled.
-4. The included Vercel schedule calls `/api/cron/send-ha-statements` daily at **13:00 UTC**. Non-Vercel deployments must invoke the same route with `Authorization: Bearer $CRON_SECRET`.
-5. For local Dejavoo workflow tests only, set `DEJAVOO_HA_MOCK_MODE=true` with `NODE_ENV` not equal to `production`. Production rejects the mock return and FEED completion paths; do not enable this variable in production.
 
 </details>
 
@@ -1114,7 +1071,7 @@ The posting path is idempotent and failed accounting posts are retained for retr
 
 ### Discount Engine
 
-Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, purchase minimums, and usage limits — all server-side enforced.
+Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, purchase minimums, and usage limits — all enforced by the POS.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-discounts.png" alt="Current production Discount Settings with configured rules">
 
@@ -1122,22 +1079,22 @@ Auto-apply discounts, group discounts ("every 4th pizza free"), stacking rules, 
 <summary><strong>Setup</strong></summary>
 
 1. **Auto-apply** — toggle on any discount. Applied automatically when conditions met (no coupon code needed)
-2. **Group discounts** — set `every_nth` (e.g., 4) and `discount_type` (free or % off). Applies to the lowest-priced qualifying item
-3. **Stacking** — toggle `is_exclusive` to prevent combining with other discounts
-4. **Purchase minimum** — set `min_purchase_cents`. Discount only applies above this subtotal
-5. **Max uses** — set `max_uses` for limited promotions. Enforced atomically via Postgres function (concurrent requests: exactly one succeeds)
+2. **Group discounts** — choose the qualifying item count (for example, every fourth item) and whether the reward is free or percentage-off. The discount applies to the lowest-priced qualifying item
+3. **Stacking** — enable **Exclusive** to prevent combining with other discounts
+4. **Purchase minimum** — enter the minimum subtotal required before the discount applies
+5. **Max uses** — set a usage limit for a promotion. The POS prevents redemption beyond that limit
 6. **Modifier targeting** — require specific modifier selections (e.g., "large pizza with exactly 2 toppings")
 7. **Revenue Center restrictions** — limit discounts to specific RCs
 8. **Target price** — set a specific final price for promotional items
-9. **Coupon codes** — give a discount a `coupon_code` and it's hidden from the open discount list; the cashier applies it by typing or **scanning the code** in the register's coupon field. Invalid, expired, and not-yet-active codes are rejected with inline feedback
+9. **Coupon codes** — add a code to keep the discount out of the open discount list; the cashier applies it by typing or **scanning the code** in the Register's coupon field. Invalid, expired, and not-yet-active codes are rejected with inline feedback
 
 | Type | Example | How it works |
 |------|---------|-------------|
-| Percent | 10% off | `value: 1000` (basis points) |
-| Amount | $5 off | `value: 500` (cents) |
-| BOGO | Buy 1 get 1 | `discount_type: bogo` |
-| Target price | Item for $5 | `discount_type: target_price, value: 500` |
-| Group | Every 4th free | `group_discount_config: {every_nth: 4, discount_type: "free"}` |
+| Percent | 10% off | Choose **Percent** and enter **10%** |
+| Amount | $5 off | Choose **Amount** and enter **$5.00** |
+| BOGO | Buy one, get one | Configure the qualifying quantity and free-item reward |
+| Target price | Item for $5 | Choose **Target price** and enter $5.00 |
+| Group | Every fourth item free | Choose every fourth qualifying item and the free-item reward |
 
 </details>
 
@@ -1152,11 +1109,11 @@ Automated alerts for low stock, overtime, and order delays. Auto-scan at every s
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Low stock** — set `low_stock_threshold` on inventory items. Alert fires at threshold (warning) and at zero (critical)
+1. **Low stock** — set **Low Stock Threshold** on inventory items. The POS warns at the threshold and marks zero stock as critical
 2. **Overtime** — warning at 8 hours on clock, critical at 10 hours
 3. **Order delay** — warning at 25 minutes ticket age, critical at 40 minutes
 4. Alerts auto-scan at every **staff clock-in** — no manual trigger needed
-5. **Dedup** — duplicate alerts prevented. Same condition only generates one unread alert
+5. **Duplicate protection** — the same condition generates only one unread alert
 6. View alerts in the Reports dashboard (60-second auto-refresh)
 
 </details>
@@ -1216,7 +1173,7 @@ The current demo screenshot shows the End of Day cash-management inputs and Z-re
 
 ### Reservations & Waitlist
 
-Full reservation + waitlist management. Timeline view with party size, table assignment, auto-position waitlist with ETA, and webhook integration.
+Full reservation + waitlist management. Timeline view with party size, table assignment, auto-position waitlist with ETA, and connected reservation partners.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-reservations.png" alt="Current production Reservations and Waitlist with populated records">
 
@@ -1226,9 +1183,9 @@ Full reservation + waitlist management. Timeline view with party size, table ass
 1. Open the **Reservations** page — toggle between Reservations and Waitlist tabs
 2. **Create reservation** — guest name, phone, email, party size, date/time, table assignment
 3. **Add to waitlist** — auto-positions with estimated wait time (15 min × position)
-4. **Seat** a party — assign table, records seated_at timestamp
+4. **Seat** a party — assign a table and record the seating time
 5. **Cancel / No-show** — tracked with timestamps for reporting
-6. **Webhook integration** — configure in **Settings > Integrations** for Google Reserve, OpenTable, or Yelp
+6. **Reservation partners** — connect Google Reserve, OpenTable, or Yelp in **Settings > Integrations**, then test booking creation, updates, and cancellation
 7. Auto-refresh: reservations every 30s, waitlist every 15s
 
 </details>
@@ -1335,7 +1292,7 @@ Per-venue KPIs, consolidated P&L, config push, and franchise reporting. Month-to
 
 ### Accounting & Ledger
 
-Journal entries, general ledger, and connected banking are available in the POS accounting workspace. End-of-day activity is posted through the internal accounting outbox; QuickBooks and Xero have OAuth connection flows, but a connected card is not by itself proof that an external journal export completed.
+Journal entries, general ledger, and connected banking are available in the POS accounting workspace. End-of-day activity is recorded in Synalux accounting; a connected QuickBooks or Xero card is not by itself proof that an external journal export completed.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-accounting-ledger.png" alt="Current production General Ledger with populated journal rows">
 
@@ -1345,7 +1302,7 @@ Journal entries, general ledger, and connected banking are available in the POS 
 1. Open `/pos/accounting` for the main accounting dashboard
 2. `/pos/accounting/ledger` for journal entries and GL
 3. `/pos/accounting/banking` for bank feed integration
-4. Connect QuickBooks or Xero in **Settings > Integrations** when the venue uses that provider, then run an end-to-end export and reconciliation test before relying on it for close. The current source exposes OAuth setup but this guide does not claim a successful external EOD sync without provider evidence
+4. Connect QuickBooks or Xero in **Settings > Integrations** when the venue uses that provider, then run an end-to-end export and reconciliation test before relying on it for close. A connected status alone does not prove that an external end-of-day journal was delivered and reconciled
 
 Banking is documented without a screenshot until a bank connection is present; the disconnected setup state is not used as an example.
 
@@ -1431,7 +1388,7 @@ The `/pos/backoffice/*` paths are the canonical routes and keep the back-office 
 | **Staff Messages** | Standalone staff messaging workspace outside the back-office shell | `/pos/messages` |
 | **AI Assistant** | Context-aware AI with live POS data | `/pos/assistant` |
 | **Operational Forms** | 12 ready-to-print/download restaurant forms | `/pos/backoffice/forms` |
-| **Custom Form Builder** | API-backed templates and submissions with 10 field types | `/pos/form-builder` |
+| **Custom Form Builder** | Custom templates and searchable submissions with 10 field types | `/pos/form-builder` |
 | **Dashboards** | Drag-and-drop widget builder with auto-refresh | `/pos/backoffice/dashboards` |
 
 <details>
@@ -1471,7 +1428,7 @@ Slack-like internal messaging — no Slack account needed. 6 pre-configured chan
 | **Daily Specials** | Push 86'd items, daily features |
 | **Lost & Found** | Customer lost items |
 
-Messages use a Supabase Realtime subscription for channel updates and are scoped to the venue/workspace. The current POS messaging screens are channel-based; this guide does not promise direct-message UI or a fixed delivery-latency SLA.
+Messages update live within venue-scoped channels. The current POS messaging screens are channel-based; this guide does not promise direct-message UI or a fixed delivery-latency SLA.
 
 </details>
 
@@ -1490,9 +1447,9 @@ The dashboard builder is documented without a screenshot when the venue has no s
 These are separate workflows:
 
 - `/pos/backoffice/forms` contains the 12 built-in restaurant forms. Staff choose a form and print or download a prefilled document; it is not an empty template library.
-- `/pos/form-builder` creates custom API-backed templates, collects submissions, and provides searchable history. It supports 10 field types: Text, Email, Telephone, Number, Date, Select, Radio, Textarea, Checkbox, and Signature.
+- `/pos/form-builder` creates custom templates, collects submissions, and provides searchable history. It supports 10 field types: Text, Email, Telephone, Number, Date, Select, Radio, Textarea, Checkbox, and Signature.
 
-Use Operational Forms for standard restaurant paperwork and Custom Form Builder when the venue needs its own data-entry schema.
+Use Operational Forms for standard restaurant paperwork and Custom Form Builder when the venue needs its own form structure.
 
 </details>
 
@@ -1509,7 +1466,7 @@ Configure every POS screen from a single settings page — button layout, split 
 <details>
 <summary><strong>Profiles, persistence, and runtime precedence</strong></summary>
 
-- Create, save, and activate named layout profiles for the venue. Saving writes the profile through the POS settings API and updates the venue's active profile.
+- Create, save, and activate named layout profiles for the venue. The active profile is used by the venue's configured terminals.
 - Each screen consumes the active stored layout at runtime; Screen Builder is not a documentation-only preview.
 - Register settings inherit in this order: **Venue profile → Revenue Center profile → Station override → Device layout**. The most specific configured value wins and an unset value inherits from the previous layer.
 - The final Phone, Landscape, Tablet, or Short-height layer changes responsive presentation fields for that device without bypassing venue rules, staff permissions, or payment authorization.
@@ -1653,7 +1610,7 @@ The **Logo** switch applies to all three receipt surfaces: the on-screen/browser
 
 ### QR Code Login
 
-Staff can scan a QR badge to log in — no PIN needed. Badges are HMAC-signed, venue-scoped, and revocable per employee. Print badges from **Settings > Staff Management** and assign to any staff member. Lost badges can be revoked instantly without affecting other credentials.
+Staff can scan a QR badge to log in — no PIN needed. Badges are secure, venue-scoped, and revocable per employee. Print badges from **Settings > Staff Management** and assign them to staff members. Lost badges can be revoked instantly without affecting other credentials.
 
 ![Current Staff Management with QR badge controls](../images/pos/production-demo-2026-08/prod-20260822-settings-staff.png)
 
@@ -1661,7 +1618,7 @@ Staff can scan a QR badge to log in — no PIN needed. Badges are HMAC-signed, v
 
 ### Hold/Send Kitchen Timing
 
-Set a hold timer (5-60 minutes) on an order before sending to kitchen. Kitchen tickets auto-fire when the timer expires — server-authoritative, not client-poll. Servers use this for appetizer-first timing, bar-tab food holds, or coordinating with a reservation arrival.
+Set a hold timer (5-60 minutes) on an order before sending to kitchen. Kitchen tickets auto-fire when the timer expires even if the Register page is no longer open. Servers use this for appetizer-first timing, bar-tab food holds, or coordinating with a reservation arrival.
 
 ![Current hybrid Register Actions menu with Hold](../images/pos/production-demo-2026-08/prod-20260822-register-actions.png)
 
@@ -1719,12 +1676,12 @@ When the network goes down, a warning banner and red **"Offline"** badge appear 
 
 | Capability | How it works |
 |---|---|
-| **Orders** | Queue locally with idempotency keys — auto-sync on reconnect |
+| **Orders** | Queued on the terminal and submitted once connectivity returns |
 | **Cash payments** | Recorded locally with the order and synced when network returns |
-| **Menu browsing** | Cached locally (24h TTL) so staff can ring items without network |
+| **Menu browsing** | A recently loaded menu remains available for up to 24 hours so staff can ring items without network |
 | **Reports** | Recently loaded order and payment data is cached for four hours. Sales totals and payment mix can use that cache; reports that require uncached item, labor, or provider data still need a connection |
 | **PDF receipts** | Generated in the browser when the receipt/PDF code and order data were already loaded on that terminal |
-| **Page rendering** | The service worker attempts to cache Register, KDS, Tables, EOD, and their loaded assets. A route can open offline only when its shell was cached successfully; live data still follows the capability rules in this section |
+| **Screen availability** | Recently opened Register, KDS, Tables, and EOD screens may reopen offline. Live data and uncached screens still require a connection |
 
 **What requires network or an explicitly enabled fallback:**
 
@@ -1732,114 +1689,29 @@ When the network goes down, a warning banner and red **"Offline"** badge appear 
 |---|---|
 | **Card payments** | By default, the Register requires internet and directs staff to cash. A venue may enable Store & Forward only after reviewing processor support, per-transaction/queue limits, staff permissions, and chargeback risk; eligible offline card attempts then enter the review/sweep workflow |
 | **Bar tab pre-authorization** | Requires the processor connection; do not treat a locally queued order as an active card hold |
-| **Staff clock in/out** | Requires the server connection; shift punches are not part of the offline order/payment queue |
+| **Staff clock in/out** | Requires a network connection; shift punches are not part of the offline order/payment queue |
 | **New split-check persistence** | Requires a connection. Do not start a new split while the order still exists only as an unresolved offline order |
-| **End-of-day totals** | Requires current server data. The EOD page shell may be cached, but an uncached or stale summary is not a safe closing figure |
-| **Real-time KDS updates** | Supabase Realtime subscription pauses — KDS falls back to polling when connection resumes |
-| **Receipt email / SMS** | Requires Resend / Twilio API — PDF receipts still work offline (client-side generation) |
+| **End-of-day totals** | Requires current synchronized data. A previously opened EOD screen may appear, but an uncached or stale summary is not a safe closing figure |
+| **Real-time KDS updates** | Live updates pause while disconnected. Confirm the kitchen display is current after connectivity returns |
+| **Receipt email / SMS** | Requires an active connection and configured delivery service. A PDF receipt may still be available when its screen and order were already loaded |
 
-#### Sync Architecture
+#### Offline safeguards and reconciliation
 
-The offline sync engine handles the full lifecycle of queued orders and payments, with idempotency guarantees that prevent duplicate charges even across browser tabs, page reloads, and network retries.
+- Queued orders and supported payments are tracked so reconnect and page reloads do not invite duplicate submission
+- Temporary failures retry automatically; rejected or expired work is surfaced to staff instead of disappearing silently
+- Multiple open tabs are reconciled against the same order state after reconnect
+- If a card result is uncertain, do not repeat the charge manually. Review **Payments > Needs Review** and follow the processor reconciliation workflow
+- Queue entries older than 48 hours expire with a staff notification and must be reviewed or re-entered
 
-**Phase 1 — Terminal goes offline:**
+#### Tender behavior after reconnect
 
-```
-Staff places order ──► queueOfflineOrder()
-                              |
-                              v
-                      +----------------+
-                      | localStorage   |  idempotency keys
-                      | offline_queue  |  + 48h TTL timestamps
-                      +-------+--------+
-                              |
-Eligible SAF payment ─► queueOfflinePayment()
-                              |  (carries orderIdempotencyKey
-                              |   for order correlation)
-                              v
-                      +----------------+
-                      | localStorage   |  payment linked to
-                      | offline_queue  |  order via idem. key
-                      +----------------+
-```
-
-**Phase 2 — Terminal reconnects:**
-
-```
-syncOfflineQueue() ──► processQueue(syncItem)
-                              |
-              +---------------+---------------+
-              |               |               |
-              v               v               v
-        Orders sync     Payments sync    Sweep route
-        (first, by      (after orders)   (pending_offline
-         insertion                        -> processor)
-         order)
-              |               |               |
-              v               v               v
-        +-----------+   +-----------+   +---------------+
-        | Claim     |   | Resolve   |   | Forward to    |
-        | table     |   | via claim |   | Stripe /      |
-        | prevents  |   | table     |   | Dejavoo       |
-        | duplicates|   | offline-N |   | Record losses |
-        | (23505 =  |   | -> real   |   | in pos_       |
-        | noop)     |   | UUID      |   | offline_losses|
-        +-----------+   +-----------+   +---------------+
-              |
-              v
-        +-------------------+
-        | Emit synced event |---> Cart store remaps activeOrderId
-        | + persist remap   |    (offline-N -> real UUID)
-        | to localStorage   |---> Cross-tab: any tab can resolve
-        +-------------------+
-```
-
-#### Idempotency — No Duplicate Charges
-
-Every money-moving operation is replay-safe:
-
-| Layer | Protection |
-|-------|-----------|
-| **Order creation** | Unpartitioned `pos_order_idempotency` claim table with `PRIMARY KEY (venue_id, idempotency_key)`. Two tabs replaying the same order both hit the claim — the second gets the existing order back, not a duplicate. |
-| **Payment creation** | Every `pos_payments` insert carries an `idempotency_key` (caller-supplied or server-minted). `UNIQUE(venue_id, idempotency_key)` prevents duplicates. |
-| **Card terminal** | CAS status transition (`authorized` → `capturing` → `captured`) — only one caller can claim the payment. Retries see "already captured" and get the success response. |
-| **House account** | Charge route deduplicates via `pos_house_account_charges` table with `UNIQUE(venue_id, idempotency_key)`. Retry returns the original debit result. |
-| **Gift card** | Balance deduction uses CAS (`WHERE balance_cents = {expected}`). A retry after successful deduction fails the CAS and returns 409. |
-| **Processor calls** | Stripe has built-in idempotency. Dejavoo SPIn uses PNRef/invoice-based dedup. |
-
-#### Multi-Tab Safety
-
-Multiple browser tabs can be open on the same POS simultaneously. The sync engine handles this:
-
-- **Queue reads from localStorage before every mutation** — tab B can't resurrect items tab A already synced
-- **Queue item IDs use `crypto.randomUUID()`** — no sequential counter collisions across tabs
-- **Order remap persisted to localStorage** — any tab can resolve an offline order ID to the real server UUID, even if a different tab performed the sync
-- **Dropped-order detection persisted** — if an order was permanently rejected (e.g., menu item deleted while offline), any tab surfaces the terminal error instead of retrying forever
-
-#### Error Handling
-
-| Scenario | Behavior |
-|----------|----------|
-| **Transient error (5xx, timeout)** | Exponential backoff retry, capped at 30 seconds |
-| **Deterministic rejection (400/422)** | Item dropped immediately from queue. Staff notified via toast with the order details for re-entry. |
-| **Order rejected → payments orphaned** | Dependent payments cascade-dropped in the same pass — no orphaned retry loop |
-| **Queue items older than 48 hours** | Automatically dropped with a staff notification on next load or sync |
-| **Corrupt localStorage** | Malformed entries isolated and logged; well-formed siblings survive |
-| **Card tap during sync race** | Auto-retry on 409 `ORDER_NOT_SYNCED` (4× with 1/2/3s backoff). Staff sees "Order is still syncing" only if all retries exhaust. |
-
-#### Payment Resolution by Tender Type
-
-When paying an order that was created offline, each tender type resolves the offline order ID:
-
-| Tender | How it resolves |
-|--------|----------------|
-| **Cash** | `createPayment` resolves via the server-side order claim using `orderIdempotencyKey`; offline cash gratuity allocation is blocked because it requires atomic server settlement |
-| **Bar tab charge-later fallback** | A local order can be marked for later collection, but this is not a card pre-authorization; the actual hold requires the processor connection |
-| **Card (terminal)** | `create-intent` resolves via claim table. Auto-retries 409 if order hasn't synced yet |
-| **Card (manual entry)** | Resolved at tap time via persistent remap. Blocks with "still syncing" if unresolved |
-| **Gift card** | Resolved at tap time. Blocks if unresolved to prevent debiting the card against a nonexistent order |
-| **House account** | Blocks when both remap and idempotency key are unavailable. Key path resolves via claim table |
-| **Split (cash/card)** | Same as single tender — each split payment resolves independently |
+| Tender | Staff-facing behavior |
+|--------|-----------------------|
+| **Cash** | The payment follows the queued order after reconnect. Offline cash gratuity allocation is unavailable because the complete settlement must be recorded together |
+| **Store & Forward card** | Available only for approved processor/device combinations with venue limits enabled. Attempts appear in **Payments > Needs Review** until the processor result is known |
+| **Bar tab pre-authorization** | Requires the processor connection; a queued order is not an active card hold |
+| **Manual card, gift card, and House Account** | Wait for connectivity and for the order to finish syncing before collecting payment |
+| **Split payment** | Reconnect and confirm the order before starting or completing a split |
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1865,11 +1737,11 @@ The Settings page is a control surface, not proof that a provider is connected. 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. Open **Settings > Integrations** and use the provider-specific connection flow. Some providers use OAuth, some use server-managed credentials, and payment terminals also require pairing/location setup
-2. **Stripe** — configure the server-side Stripe credentials and Terminal Location, then pair supported readers; Tap to Pay additionally requires the supported native iPhone app/build
-3. **DoorDash / Uber** — complete the provider connection and verify the encrypted workspace credential before testing delivery dispatch or menu sync
-4. **Twilio / email delivery** — configure Twilio for SMS. Email paths use the deployment's configured Resend and/or SendGrid transport, depending on the workflow and fallback policy
-5. **QuickBooks / Xero** — connect via OAuth, then verify an external export and reconciliation before relying on the integration for close
+1. Open **Settings > Integrations** and use the connection flow shown for the provider. Contact Synalux onboarding when a provider requires account approval or assisted activation
+2. **Stripe** — connect the venue merchant account and location, pair supported readers, then authorize and refund a real test payment. Tap to Pay additionally requires the supported iPhone app and device
+3. **DoorDash / Uber** — connect the venue's provider account, then verify a menu sync, delivery quote, dispatch, status update, and cancellation as applicable
+4. **SMS / email delivery** — confirm the approved sender, customer-consent flow, receipt or notification content, and real delivery to an accessible test recipient
+5. **QuickBooks / Xero** — connect the venue account, then verify an external export and reconciliation before relying on the integration for close
 
 </details>
 
@@ -1952,21 +1824,19 @@ Feedback is documented without a production screenshot when the demo has no subm
 
 Thermal receipt printers, kitchen ticket printers, and cash drawers. Network (LAN), USB, and Bluetooth options are available for Epson, Star, and generic ESC/POS hardware. Browser-native USB/Bluetooth still depends on a compatible browser, operating system, device permission, and printer interface; some hardware may require its vendor driver or utility.
 
-The demo has configured receipt and KDS destinations but no explicit category routing rules. The current screenshot shows those configured devices with network addresses masked. With no routing rules, items continue to route by each item's configured `kds_station`; explicit category rules override that default for selected categories.
+The demo has configured receipt and KDS destinations but no explicit category routing rules. The current screenshot shows those configured devices with network addresses masked. With no routing rules, items continue to use each item's selected KDS Station; explicit category rules override that default for selected categories.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-printers.png" alt="Current Printers and KDS settings with configured devices and sanitized network addresses">
 
 <details>
 <summary><strong>Supported Hardware</strong></summary>
 
-| Type | Protocol | Connection | Examples |
-|------|----------|------------|----------|
-| Generic ESC/POS | Raw TCP port 9100 | Network, USB, Bluetooth | Most thermal printers |
-| Epson | ePOS (SOAP/HTTP) | Network | TM-T88, TM-T20, TM-m30 |
-| Star | WebPRNT (HTTP) | Network | TSP143, TSP654, mC-Print3 |
-| Zebra | ZPL (HTTP) | Network | ZD421, ZD620, GK420 |
+| Use | Connection | Examples |
+|-----|------------|----------|
+| Receipt and kitchen tickets | Network, USB, or Bluetooth where supported | Common Epson, Star, and compatible thermal printers |
+| Labels | Network connection | Compatible Zebra label printers |
 
-Auto-detection: the system reads the **Model** field and routes accordingly — if it contains "star" it uses Star WebPRNT, "epson" uses Epson ePOS, anything else uses generic ESC/POS (raw TCP port 9100).
+Select the correct make and model in **Settings > Printers & KDS**, then run a test print on the exact printer and media used by the venue. Hardware and browser support varies by model.
 
 </details>
 
@@ -1979,21 +1849,12 @@ Best for restaurants — printer connects to the same LAN as the POS terminal.
 2. Go to **Settings > Printers & KDS**
 3. Click **Add Printer**
 4. Enter a friendly **Name** (e.g. "Front Receipt", "Kitchen 1")
-5. Enter the **Model** — include "star" or "epson" in this field for correct protocol detection
+5. Select or enter the printer's correct make and model
 6. Select a **Station**: receipt, kitchen, bar, expo, or label
 7. Select **Network (LAN)** and enter the printer's **IP address**
 8. Click **Add Printer**, then **Test Print** to verify
 
-**Network ports used:**
-
-| Protocol | Port/Endpoint |
-|----------|---------------|
-| Generic ESC/POS | TCP `9100` (raw socket) |
-| Epson ePOS | HTTP `POST /cgi-bin/epos/service.cgi` |
-| Star WebPRNT | HTTP `POST /StarWebPRNT/SendMessage` |
-| Zebra ZPL | HTTP `POST /cgi-bin/print` |
-
-**Cloud deployment + local printer:** When the POS is hosted in the cloud but the printer is on a private local network, the POS writes an authenticated, idempotent job to the venue's regional print queue. A registered relay on the selected physical site claims the job and forwards it to the printer — no inbound VPN or port forwarding is required.
+**Cloud POS + local printer:** When the POS is hosted online but the printer is on the venue's private network, install and register the Synalux Print Relay at that physical site. The relay delivers print jobs to the local printer without exposing the venue network to inbound internet traffic.
 
 **Printer auto-discovery:** If a local relay is running, discovered printers appear at the top of the settings page. Click **Configure** to auto-fill name, IP, and model.
 
@@ -2004,7 +1865,7 @@ Best for restaurants — printer connects to the same LAN as the POS terminal.
 
 If your POS is hosted in the cloud (pos.synalux.ai) and your printers are on a local network (192.168.x.x, 10.x.x.x), install the relay app on any computer at your venue.
 
-> **iOS / iPad users:** No relay needed — the iOS app prints directly to printers on your local network via native TCP. Just add the printer in Settings > Printers & KDS and tap Test Print.
+> **iOS / iPad users:** No relay is needed for supported direct printing from the iOS app to a printer on the venue network. Add the printer in **Settings > Printers & KDS** and tap **Test Print**.
 
 **Download and install:**
 
@@ -2021,24 +1882,24 @@ If your POS is hosted in the cloud (pos.synalux.ai) and your printers are on a l
 4. Confirm that the relay is reported as configured, then use **Test Print** on each printer at that site
 5. Configure startup and update behavior according to the installer and operating-system policy used at the venue
 
-The desktop relay uses the one-time setup link and does not require staff to edit a `.env` file. Protect relay setup access as an administrative operation and replace a relay from the same settings panel when a computer is retired.
+The desktop relay uses the one-time setup link and does not require staff to edit configuration files. Protect relay setup access as an administrative operation and replace a relay from the same settings panel when a computer is retired.
 
-**How it works:** The POS writes idempotent print jobs to the regional database queue. A registered relay claims jobs for its venue and physical site, forwards them to local printers via TCP or the configured printer protocol, then records a completed, failed, or unknown delivery state. Retry behavior is bounded so an uncertain delivery is not silently printed twice.
+**How it works:** The registered relay receives jobs for its assigned venue and site, delivers them to the selected local printer, and reports the result back to the POS. If delivery is uncertain, review the job before reprinting so a receipt or kitchen ticket is not duplicated.
 
 **Troubleshooting:**
 
 | Symptom | Fix |
 |---------|-----|
 | Nothing prints after Test Print | Make sure the relay app is running (check system tray) |
-| Relay connected but printer doesn't respond | Verify printer IP in POS settings. Run `ping <printer-ip>` from the relay computer |
-| Relay app won't start | Check internet connection — the app needs access to Supabase |
+| Relay connected but printer doesn't respond | Verify the printer address in POS settings, confirm the printer is powered on and on the same venue network, then run **Test Print** again |
+| Relay app won't start | Check the computer's internet connection and restart the installed relay. Contact Synalux support if it still does not connect |
 
 </details>
 
 <details>
 <summary><strong>USB Printer Setup</strong></summary>
 
-Uses the Web Serial API in a compatible browser. Chrome and Edge are the supported browser path; operating-system or vendor drivers may still be required for the printer to expose a serial interface.
+Uses the browser's USB device connection. Chrome and Edge are the supported browser path; operating-system or vendor drivers may still be required for the printer to appear as an available device.
 
 1. Connect the printer via USB to the POS terminal
 2. Go to **Settings > Printers & KDS** > **Add Printer**
@@ -2048,14 +1909,14 @@ Uses the Web Serial API in a compatible browser. Chrome and Edge are the support
 6. Click **Test Print** — the browser shows a serial port picker, select your printer
 7. The browser remembers the selection for future prints
 
-**Requirements:** Chrome or Edge. HTTPS or localhost. The first print requires a user click (browser security).
+**Requirements:** Use a supported Chrome or Edge release and allow the browser's device permission when prompted. The first test print requires a staff action.
 
 </details>
 
 <details>
 <summary><strong>Bluetooth Printer Setup</strong></summary>
 
-Uses the Web Bluetooth API. Useful for mobile POS terminals.
+Uses the browser's Bluetooth device connection. This can be useful for supported mobile POS terminals.
 
 1. Put the printer in Bluetooth pairing mode
 2. Go to **Settings > Printers & KDS** > **Add Printer**
@@ -2064,14 +1925,14 @@ Uses the Web Bluetooth API. Useful for mobile POS terminals.
 5. Click **Add Printer**
 6. Click **Test Print** — the browser shows a Bluetooth device picker, select your printer
 
-**Requirements:** Chrome browser. HTTPS or localhost. Data is chunked into 512-byte segments (Bluetooth LE limitation).
+**Requirements:** Use a supported Chrome release and allow the browser's Bluetooth permission when prompted. Confirm the exact printer model supports browser-based Bluetooth printing.
 
 </details>
 
 <details>
 <summary><strong>Cash Drawer Setup</strong></summary>
 
-Cash drawers connect to the receipt printer via an **RJ-12 cable** (the "DK" port on the back of most thermal printers). The POS sends an ESC/POS drawer-kick command through the printer — no separate USB connection needed.
+Cash drawers connect to the receipt printer via an **RJ-12 cable** (the "DK" port on the back of most thermal printers). The configured receipt printer opens the drawer, so the drawer does not need a separate USB connection.
 
 1. Plug the drawer's RJ-12 cable into the printer's **DK port** (labeled "DK" or with a drawer icon)
 2. In **Settings > Printers & KDS**, ensure your receipt printer is configured with station = **receipt**
@@ -2110,8 +1971,8 @@ When an order is sent to kitchen, items are split by category and routed to the 
 
 | Issue | Steps |
 |-------|-------|
-| Network printer not responding | 1. Ping the IP: `ping 192.168.1.100`. 2. Check port — **Mac/Linux:** `nc -zv 192.168.1.100 9100` / **Windows:** `Test-NetConnection 192.168.1.100 -Port 9100` (PowerShell). 3. Ensure port 9100 is not blocked by firewall. 4. Verify static IP (DHCP lease may have expired). |
-| USB "No port selected" | Ensure Chrome/Edge, HTTPS or localhost. Try unplugging and reconnecting USB. Check `chrome://device-log`. |
+| Network printer not responding | Confirm the printer is powered on, on the same venue network, and still uses the address saved in **Settings > Printers & KDS**. Run **Test Print** and contact the venue network administrator or Synalux support if it remains unavailable |
+| USB "No port selected" | Use a supported Chrome or Edge release, reconnect the USB cable, run **Test Print**, and choose the printer when the browser asks for device permission |
 | Print goes to wrong printer | Verify each printer has the correct **station** and check KDS routing rules. |
 
 </details>
@@ -2183,7 +2044,7 @@ Synalux POS is designed to keep raw card entry inside supported processor surfac
 |---|---|
 | **In-person card payments** | Supported Stripe Terminal or Dejavoo terminal workflows keep card capture in the configured provider/device path. Pair only approved hardware and follow that provider's network and PCI instructions |
 | **Keyed/manual card entry** | The Stripe path uses Stripe's hosted Payment Element rather than a POS-owned raw-card form. Access remains permission-controlled |
-| **Online ordering checkout** | Uses the configured hosted/processor checkout path. Verify the actual live storefront and webhook completion before launch |
+| **Online ordering checkout** | Uses the configured hosted/processor checkout path. Verify the actual live storefront, authorized payment, confirmation, refund, and settlement before launch |
 | **Offline card handling** | The old Online Ordering “Offline CC Vault” UI is disabled. Register card payments require internet unless the venue has explicitly configured and accepted the risk of a supported Store & Forward path |
 
 **Regional data routing:** Customer provisioning maps supported EU/EEA/UK/Swiss country codes to the EU project and supported North American country codes to the US project. Unknown countries are rejected rather than guessed, and the region choice is treated as permanent. Confirm country, region, and regional services before the venue begins trading.
@@ -2198,35 +2059,25 @@ English, Spanish, French, Chinese, Arabic, Romanian, Portuguese, German, Italian
 
 ---
 
-## Developer integration setup guide
+## Connect services and integrations
 
-<details>
-<summary><strong>Environment and provider reference</strong></summary>
+Integration onboarding is completed from **Settings > Integrations** or with Synalux support. Only an authorized venue administrator should connect a provider account. Never place private provider credentials in documentation, support chat, screenshots, or shared notes.
 
-Integration setup varies by provider: OAuth connections are completed through their connect flow, server-managed services use deployment credentials, and terminal providers also require device/location setup. **Settings > Integrations** exposes the applicable workflow; a card appearing there does not by itself mean the provider is connected.
+| Service | Customer setup and acceptance |
+|---|---|
+| **Card payments** | Connect the venue merchant account and location, pair supported readers, then complete an authorization, receipt, refund, and settlement check. Tap to Pay also requires a supported iPhone app and device |
+| **DoorDash, Uber, and Grubhub** | Connect the venue provider account, then test menu publication, order or delivery creation, status updates, cancellation, and reconciliation as applicable |
+| **SMS, WhatsApp, email, and voice** | Confirm the approved sender or phone number, consent flow, operating hours, fallback behavior, and real delivery to an accessible test recipient |
+| **Google Reserve, OpenTable, and Yelp** | Connect the venue account, then test a booking creation, update, cancellation, table assignment, and guest notification |
+| **QuickBooks and Xero** | Connect the venue accounting account, export a test period, and reconcile the result before relying on it for close |
+| **Gusto and ADP** | Connect the venue payroll account or use the reviewed payroll export, then confirm the completed result in the provider account before treating a run as delivered |
+| **Banking and ACH** | Connect the authorized Synalux Back Office banking account, verify the intended account and permissions, and test the approved workflow with finance oversight |
+| **Menu images and AI features** | Enable only the services approved for the venue, review cost controls and data policy, and verify the customer-visible result before launch |
+| **EBT/SNAP** | Use Menu Builder to mark item eligibility. Eligibility totals do not authorize an EBT payment; processor authorization is not currently available in the POS |
+| **Apple and Google Wallet** | Complete the venue wallet-program onboarding and test an issued loyalty pass. The POS falls back to a barcode when wallet delivery is unavailable |
+| **Label printers** | Choose the printer model in **Settings > Printers & KDS**, assign it to the label station, and test the final label on the exact media used by the venue |
 
-| Integration | Current configuration | What it enables or proves |
-|---|---|---|
-| **Stripe** (card payments) | Server-side Stripe credentials, platform-admin merchant binding, venue Terminal Location, and supported reader/native capability | Enables the configured Stripe card path. Tap to Pay also requires the supported signed iPhone app/device; test a real authorized payment before launch |
-| **DoorDash / Uber Eats / Grubhub** | OAuth client ID and secret for the provider (`NEXT_PUBLIC_*_CLIENT_ID` plus the matching server-side `*_CLIENT_SECRET`), completed through **Settings > Integrations** | Stores an encrypted workspace grant for supported menu/order/delivery operations. A visible card alone does not prove the provider accepted a menu or delivery |
-| **Uber Direct** | Connected encrypted workspace credential for the `uber_direct` provider | Enables direct-delivery creation/status when the provider credential is valid |
-| **Gemini** (dish photos) | `GEMINI_API_KEY` | AI-generated menu item images. Without it, items fall back to emoji |
-| **SendGrid** (email) | `SENDGRID_API_KEY` | Email receipts, order confirmations |
-| **Resend** (transactional email) | `RESEND_API_KEY`, `EMAIL_FROM` | Payment links, ordering confirmations, and workflows configured to use the Resend transport |
-| **Twilio** (SMS, WhatsApp, voice) | `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, the applicable sender/number, and provider webhooks; some connection flows also use the Twilio OAuth client ID/secret | Enables only the configured channel. Verify sender approval, consent, webhook signature handling, and actual delivery separately |
-| **Google Reserve / OpenTable / Yelp** | Provider OAuth client ID/secret and completed connection | Enables the authenticated reservation integration path; test inbound and update webhooks before launch |
-| **QuickBooks / Xero** | `NEXT_PUBLIC_QUICKBOOKS_CLIENT_ID` + `QUICKBOOKS_CLIENT_SECRET`, or `NEXT_PUBLIC_XERO_CLIENT_ID` + `XERO_CLIENT_SECRET` | Enables the OAuth connection flow. It does not by itself prove that an EOD journal reached or reconciled in the external ledger |
-| **Gusto / ADP** | Matching `NEXT_PUBLIC_*_CLIENT_ID` and server-side `*_CLIENT_SECRET`, or use the payroll CSV export | Enables the provider connection flow. Confirm the provider-side payroll result before treating a run as delivered |
-| **Mercury ACH / banking** | Connected Synalux Back Office banking account and authorized Portal session | POS payroll and banking requests are proxied to the venue-scoped Back Office workflow; there is no POS-side Dwolla or Stripe Treasury env-var path in the current build |
-| **EBT/SNAP eligibility** | Per-item setting in Menu Builder | Calculates eligible amounts. The current EBT server endpoint is a `501` stub, so no environment variable in this guide turns eligibility into processor authorization |
-| **Ollama** (local AI) | `NEXT_PUBLIC_LOCAL_LLM_URL` | Natural language order parsing (local, no cloud) |
-| **Prism MCP** (AI memory) | `PRISM_MCP_URL` | Per-staff and per-customer AI memory and context |
-| **Apple / Google Wallet** | `APPLE_PASS_TYPE_ID` plus the certificate/provider setup owned by the connected wallet service | Exposes loyalty Add to Wallet when configured; otherwise the UI falls back to a barcode |
-| **ZPL label printer** | Printer IP/model in **Settings > Printers & KDS** | Inventory price/SKU labels after a successful test print on the exact printer/media |
-
-**Required env vars:** `NEXT_PUBLIC_POS_SUPABASE_URL`, `NEXT_PUBLIC_POS_SUPABASE_ANON_KEY`, `POS_SUPABASE_SERVICE_ROLE_KEY`
-
-</details>
+A provider card or “connected” status confirms configuration only. Complete the real customer journey—including failure, cancellation, refund, and reconciliation where applicable—before enabling the service for staff or guests.
 
 ---
 
