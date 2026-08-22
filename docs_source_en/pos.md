@@ -503,6 +503,8 @@ Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/du
 <details>
 <summary><strong>Setup</strong></summary>
 
+<img src="../images/pos/production-demo-2026-08/prod-20260822-screen-builder-payments.png" alt="Production Screen Builder Payments tab showing the tender-specific cash tip and excess-payment policy">
+
 1. **Card** — configure Stripe server-side, select Stripe as the venue processor, set the Terminal Location, then pair a supported reader from **Settings > Integrations**
 2. **Tap-to-Pay on iPhone** — requires the Synalux POS iPhone app, Stripe as the venue processor, a supported signed build/device, a Stripe Terminal Location, and Stripe Tap to Pay availability. When the native capability check passes, tap **Tap to Pay on iPhone** on the payment screen; otherwise that tender stays hidden rather than presenting an unusable button
 3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
@@ -511,7 +513,10 @@ Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/du
 6. **House accounts** — create the customer account on **House Accounts**, then choose **House Account** at payment or record standalone account activity. See [House Accounts](#house-accounts)
 7. **EBT/SNAP** — *in implementation*. Per-item eligibility already works: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), and the register exempts eligible items from tax at tender. Authorization is not yet wired to a processor, so the EBT tender cannot complete a payment — contact support before promising EBT to a venue
 8. **Split check** — four modes: even split, by seat, by item, and by custom amount. Each split can pay by a different method (card/cash/gift card). Unsplit (merge) an open split back into one check from the order panel
-9. **Over-payment handling** — when a customer pays cash above the amount owed, choose how the excess is handled in **Settings > Venue > Over-payment handling**: *Give change* (cash back, recorded for end-of-day drawer reconciliation — the default), *Add to tip*, or *Ask cashier each time*. The amount applied to the bill is always exactly what's owed
+9. **Tender-specific tips and excess payments** — open **Settings > Screen Builder > Register > Payments**, then select **Cash**, **Card**, **Wallet**, **Gift Card**, or **On Account**. Each tender can use its own tip timing. Cash can route an amount above the balance to change/base tender, tip, gratuity, or a cashier prompt. EBT/SNAP remains non-tippable
+10. **Auto-gratuity and receipt tips** — in the same Payments tab, decide per tender whether an additional tip is allowed after auto-gratuity and whether the receipt shows an additional-tip line. Suggested percentages, custom-tip visibility, and the maximum tip percentage are configured below the tender policy. The receipt's master tip-line control must also be enabled
+11. **Venue-level pricing rules** — **Settings > Venue** remains the source for cash discount/advantage-program pricing, auto-gratuity party-size and rate rules, and cash rounding. Canadian cash is rounded to the nearest five cents; another currency follows penny amounts unless nickel rounding is enabled. These rules are applied before the tender-specific policy
+12. **Legacy/default over-payment fallback** — **Settings > Venue > Over-payment handling** supplies the venue fallback (*Give change*, *Add to tip*, or *Ask cashier each time*) when the Screen Builder payment-tip policy is not active. Once the Screen Builder policy is active, its Cash excess setting controls the tender workflow. The amount applied to the bill remains the amount owed; excess is recorded according to the selected policy
 
 <img src="../images/pos/settings_overpayment.png" alt="Over-payment Handling">
 <img src="../images/pos/ipad_split_check.png" alt="Split Check">
