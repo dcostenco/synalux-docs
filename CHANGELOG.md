@@ -728,9 +728,9 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
   - Stripe products/prices (Standard $19, Advanced $49, Enterprise $99) via Stripe CLI
   - Google OAuth client (GCP project `synalux-ai-portal`, ports 3000-3005)
   - Stripe webhook listener (`stripe listen → localhost:3000/api/webhooks/stripe`)
-- Seeded user (`dcostenco@gmail.com`, free tier) with 3 API tokens (VSCode, CLI, CI-CD)
-- Portal `.env.local` with all credentials
-- CLI-First Policy rule added to `bcba-private`
+- Validated a seeded free-tier account and development token flows for the supported clients
+- Completed the portal's managed environment configuration
+- Documented the internal CLI-first contributor policy
 
 ---
 
