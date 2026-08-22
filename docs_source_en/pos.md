@@ -581,20 +581,22 @@ Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip poolin
 
 Customers browse your menu, order, and pay — no app needed. Pickup and delivery channels. QR codes per table go straight to KDS. Scheduled orders, loyalty points, promo codes, AI chat assistant, and order tracking.
 
-<img src="../images/pos/online_01_menu.png" alt="Online">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-online-ordering.png" alt="Production Online Ordering settings with enablement, storefront branding, announcement, cover photo, and AI chat controls">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
 1. **Enable** — turn on online ordering in **Settings > Online Ordering**
-2. **Business hours** — set per-day open/close times. Orders are blocked outside hours
-3. **Channels** — enable Pickup and/or Delivery independently with separate min-order amounts and prep times
-4. **Delivery zones** — define radius zones with per-zone fees and minimums. Set venue lat/lng coordinates
-5. **Closed dates** — add holidays when the venue is closed
-6. **Share your link** — customers order at `https://your-slug.synalux.ai` or your custom domain
-7. **QR table ordering** — print QR tents from **Settings > Floor Plan**. Customer scans, orders, and the ticket goes straight to KDS
-8. **Scheduled orders** — customers pick a future date/time at checkout. Orders appear on KDS at the scheduled time
-9. **Promo codes** — one-time-use codes validated server-side. Duplicates are rejected
+2. **Branding** — set the storefront tagline, announcement banner, and cover-photo URL
+3. **AI ordering assistant** — customize returning-customer and new-customer greetings plus the assistant persona. The supported `{name}` and `{venue}` placeholders are filled at runtime
+4. **Business hours** — set per-day open/close times. Orders are blocked outside hours
+5. **Channels** — enable Pickup and/or Delivery independently with separate minimum-order amounts and preparation times; Delivery also has a base fee
+6. **Delivery zones** — set the venue coordinates, then define radius zones with their own fee and minimum order
+7. **Closed dates** — add holidays or other dates when online ordering is unavailable
+8. **Share your link** — customers order at `https://your-slug.synalux.ai` or your configured enterprise custom domain. Manage the slug and custom domain in **Settings > Venue**
+9. **QR table ordering** — print QR tents from **Settings > Floor Plan**. Customer scans, orders, and the ticket goes straight to KDS
+10. **Scheduled orders** — customers pick a future date/time at checkout. Orders appear on KDS at the scheduled time
+11. **Promo codes** — one-time-use codes validated server-side. Duplicates are rejected
 10. **AI chat** — customer-facing AI understands your full menu including modifiers and pizza builder. Supports 14 languages with voice input/output
 
 <img src="../images/pos/ipad_qr_ordering.png" alt="QR Ordering">
