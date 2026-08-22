@@ -180,9 +180,9 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 <details>
 <summary><strong>Roles & Routing</strong></summary>
 
-1. Add staff in **Settings > Staff Management** — name, PIN, role
+1. Add staff in **Settings > Staff Management** — display name, four-digit PIN, and one assigned role
 2. Assign roles: cashier, host, server, bartender, supervisor, manager, admin
-3. Multi-role staff see a role picker; single-role staff go straight to their screen
+3. After staff authentication, the selected Revenue Center and its configured landing page determine where that role starts. If the device has not selected a station, the employee chooses an allowed station or skips station filtering; stations already locked to another device require manager override permission
 
 | Role | Landing Page | What you see |
 |---|---|---|
@@ -197,7 +197,7 @@ WebAuthn passkeys use the Web Authentication API — credentials are device-boun
 These rows are the standard terminal-role baseline, not an immutable list. **Settings > Role Permissions** can add or remove terminal routes for each venue, Revenue Center configuration can choose the post-login landing screen, and a station's **Allowed Roles** can restrict who may use that terminal. None of those terminal settings bypasses the separate account-membership check for Settings and other management routes.
 
 <img src="../images/pos/ipad_00b_role_select.png" alt="Role Selection">
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-staff.png" alt="Production demo Staff Management with populated employee records and credential controls">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-staff.png" alt="Production Staff Management list with role, masked PIN, status, card, QR badge, and Touch ID actions">
 
 </details>
 
