@@ -557,17 +557,19 @@ Empty review queues and the pre-selection Receipts state are intentionally not u
 
 Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-staff.png" alt="Production demo Staff Management with 14 configured staff records">
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-roles.png" alt="Production demo Role Permissions matrix with configured access controls">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-staff.png" alt="Production Staff Management list with role, masked PIN, status, card, QR badge, and Touch ID actions">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-roles.png" alt="Production Role Permissions matrix for configurable staff roles and POS screens">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Settings > Staff Management** — add employees with name, PIN, role
-2. Configure pay periods, break rules, and overtime thresholds
-3. Tip pool mode: by hours, percentage, or points
-4. **Break punches** — staff Start/End a meal or rest break from the timeclock. Ending a break resumes the same shift (no clock-out/clock-in), and the break minutes are recorded on the shift
-5. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
+1. **Settings > Staff Management** — add an employee with a display name, four-digit PIN, and role. Search the list or edit an existing employee; PINs remain masked in the table
+2. **Staff sign-in methods** — use **Assign Card** for a magnetic-stripe card or RFID fob, **Show QR Code** to issue a printable badge, **Revoke Badge** before replacing a badge, and **Register Touch ID** on supported WebAuthn hardware. Keep the PIN as the fallback sign-in method
+3. **Settings > Role Permissions** — choose Cashier, Host, Server, Bartender, Supervisor, or Manager, then select the POS screens that role can open. Save the venue override or reset a role to its built-in defaults. Admin is locked to full access
+4. Configure pay periods, break rules, and overtime thresholds
+5. Tip pool mode: by hours, percentage, or points
+6. **Break punches** — staff Start/End a meal or rest break from the timeclock. Ending a break resumes the same shift (no clock-out/clock-in), and the break minutes are recorded on the shift
+7. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
 
 </details>
 
