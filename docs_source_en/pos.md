@@ -123,7 +123,7 @@ Useful starting points: [Settings map](#settings-map), [Register](#register), [T
 
 Open **Settings** from the top bar to reach the 16 linked administration areas. The landing page also shows the recent settings audit trail, including who changed a setting and when.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-hub.png" alt="Production demo Settings hub with linked administration areas and a populated recent audit trail">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-hub.png" alt="Production Settings hub with Menu Builder, staff, role, tax, discount, service configuration, and a current audit trail">
 
 | Settings area | Route | What it controls |
 |---|---|---|
