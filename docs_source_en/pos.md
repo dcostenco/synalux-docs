@@ -12,9 +12,27 @@ Synalux POS connects front-of-house, kitchen, ordering, payment, and back-office
 
 ## Register at a glance
 
-The Register keeps the menu, order ticket, totals, and service actions together so staff can build and route an order without leaving the screen.
+The Register keeps the menu, order ticket, totals, and service actions together so staff can build and route an order without leaving the screen. Its presentation adapts to the available width instead of squeezing the desktop workspace onto a smaller device.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260810-register.png" alt="Production demo Register with populated menu categories and a Cheesecake order showing tax and total">
+**Desktop register — 1920 × 1080**
+
+<img src="../images/pos/production-demo-2026-08/prod-20260822-register-desktop.png" alt="Desktop Synalux POS Register with the full order panel on the left, five menu columns, the menu and open-orders panel on the right, and persistent actions across the bottom">
+
+On a wide desktop, the check stays open on the left while the menu and open-order switcher remain visible on the right.
+
+**Tablet register — 820 × 1180**
+
+<p align="center">
+  <img src="../images/pos/production-demo-2026-08/prod-20260822-register-tablet.png" width="640" alt="Tablet Synalux POS Register with five proportionate menu columns and a View Order action above the bottom navigation">
+</p>
+
+**Phone check view — 390 × 844**
+
+<p align="center">
+  <img src="../images/pos/production-demo-2026-08/prod-20260822-register-phone-order.png" width="390" alt="Phone Synalux POS order view with Back to Menu, Cheesecake line item, tax, total, Send to Kitchen, and Pay actions">
+</p>
+
+On tablet and phone layouts, **View Order** opens the check without compressing the menu into the desktop panel arrangement. The phone example shows the resulting order view with the item, tax, total, send, and payment path visible.
 
 - Ring configured dine-in, takeout, delivery, drive-thru, bar-tab, and catering orders.
 - Search the menu, select modifiers, add open-price items, and apply permitted comps or discounts.
@@ -64,15 +82,35 @@ Then enter a staff PIN:
 | **Manager** | Manager | `5678` | All screens + EOD + Staff |
 | **Admin** | Admin | `1234` | All screens + Settings |
 
-The public demo is pre-populated. The repository seed command is a maintainer tool for controlled demo environments; staff using the public demo do not need to run it.
+The public demo is pre-populated. The repository seed command is a maintainer tool for controlled demo environments; staff using the public demo do not need to run it. The credentials and PINs above are intentionally public demo access; create unique accounts, PINs, and role assignments for a production venue.
 
-> **Screenshot policy:** Production-demo screenshots in this guide were refreshed on **August 10, 2026**. A screen is shown only when the demo contains meaningful records or configured values. Empty queues, blank forms, disconnected integrations, and error states are documented in text instead of being presented as product examples.
+> **Screenshot policy:** The responsive Register screenshots above were captured from the US production demo on **August 22, 2026**. Other production-demo screenshots identify their capture date in the filename or caption. A screen is shown as current evidence only when it contains meaningful configured data and no visible error state; older workflow illustrations are being refreshed section by section.
+
+---
+
+## Customer setup and go-live path
+
+Use this sequence for a new venue. Each step links to the detailed feature documentation and setup controls later in this guide.
+
+1. **Sign in and confirm the venue.** Use the account and region supplied by Synalux or your venue administrator. Confirm the venue name, region, currency, and time zone before entering prices or tax rules.
+2. **Configure venue basics.** In **Settings > Venue Settings**, review order types, table behavior, revenue centers, price levels, gratuity, cash handling, and the payment processor used by the venue.
+3. **Create tax zones and revenue centers.** Confirm rates and taxable item types with the venue's accountant or tax adviser. Create separate revenue centers only for meaningful service differences such as dining room, bar, patio, counter, takeout, or delivery.
+4. **Build the menu.** In **Settings > Menu Builder**, create categories, items, modifier sets, combos, availability schedules, kitchen routes, tax behavior, receipt names, allergens, and consistently framed item images.
+5. **Add staff and permissions.** Create a unique PIN or supported credential for each employee, assign the least-privileged role needed, and test at least one account for every role used by the venue.
+6. **Create and assign stations.** Configure each terminal's operational purpose, default revenue center, allowed roles, menu, and printer routing. Use device assignment when possible; use IP assignment only for managed networks that require it.
+7. **Configure printers and kitchen routing.** Add receipt, kitchen, label, and KDS destinations. Test dine-in, takeout, modifier, void, refire, and multi-course examples used by the venue, and confirm each item arrives once at the correct destination.
+8. **Configure payments, tips, gratuity, rounding, and receipts.** Review each enabled tender separately, including tip timing, cash-overpayment behavior, currency rounding, optional additional tip, auto-gratuity, receipt delivery, refund permissions, and processor-specific hardware.
+9. **Choose screen layouts.** In **Settings > Screen Builder**, start from the closest service profile, then configure Register actions for dine-in, bar tab, quick service, takeout, and delivery. Keep frequent actions persistent, move secondary actions to **Actions**, and preserve at least one reachable payment path.
+10. **Configure ordering channels.** Enable only the online, QR-table, phone, WhatsApp, delivery, catering, drive-thru, or handheld workflows the venue will operate. Verify hours, fulfillment rules, taxes, menu availability, and customer notifications for each enabled channel.
+11. **Run a go-live rehearsal.** Test the complete path for every service mode: staff sign-in, order entry, modifiers, seats or customer reference, kitchen routing, payment, receipt, refund/void permissions, reporting, and end-of-day. A saved setting alone does not prove that a processor, printer, message, or third-party integration completed its external action.
+
+Useful starting points: [Settings map](#settings-map), [Register](#register), [Tables](#tables--floor-plan), [KDS](#kitchen-display-kds), [Payment](#payment), [Screen Builder](#screen-builder), [Printers](#printers--cash-drawer), and [Security](#security--pci-compliance).
 
 ---
 
 ## Table of Contents
 
-- **Start and configure:** [Settings map](#settings-map), [staff authentication](#staff-login--authentication), [revenue centers](#revenue-centers), [stations](#per-station-configuration), [price levels](#price-levels), and [Screen Builder](#screen-builder).
+- **Start and configure:** [Customer setup and go-live path](#customer-setup-and-go-live-path), [Settings map](#settings-map), [staff authentication](#staff-login--authentication), [revenue centers](#revenue-centers), [stations](#per-station-configuration), [price levels](#price-levels), and [Screen Builder](#screen-builder).
 - **Serve guests:** [Register](#register), [tables and floor plan](#tables--floor-plan), [seat management](#seat-management), [KDS](#kitchen-display-kds), [expo](#expo--order-management), and [payment](#payment).
 - **Accept orders:** [Online and QR table](#online-ordering--qr-table), [delivery](#delivery-management), [AI chat](#ai-chat-assistant), [voice](#ai-voice-ordering-phone), [WhatsApp](#whatsapp-ordering), [catering](#catering), [drive-thru](#drive-thru), and [handheld](#handheld-server).
 - **Operate the venue:** [Staff and labor](#staff--labor), [reports](#reports), [inventory](#inventory--recipe-costing), [gift cards and loyalty](#gift-cards--loyalty), [house accounts](#house-accounts), [compliance](#compliance), [end of day](#end-of-day), and [reservations](#reservations--waitlist).
