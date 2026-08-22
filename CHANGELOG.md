@@ -2,6 +2,21 @@
 
 ## [Unreleased]
 
+### Synalux Print Relay 2.1.10
+
+- Select the native Windows Credential Manager and macOS Keychain backends
+  instead of keyring's non-persistent in-memory mock.
+- Verify saved credentials through a newly opened credential-store entry so a
+  same-process mock cannot pass the persistence check.
+- Tell affected 2.1.9 installations that setup must be renewed once from POS
+  Settings, while retaining automatic retries for temporary store failures.
+- Gate pull requests and release installers on relay tests, clippy, and the
+  expected native credential-store feature for each platform.
+- Close an already-running Windows relay before replacing it during an MSI
+  upgrade. Operators should finish active print jobs before installing an
+  update.
+- Point POS Settings at the matching 2.1.10 Windows and macOS installers.
+
 ### Synalux Print Relay 2.1.9
 
 - Enable the Relay app to launch automatically when the operator logs in.
