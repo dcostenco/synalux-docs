@@ -309,13 +309,13 @@ Ring orders in seconds. Categories, product grid, and order ticket — all on on
 <details>
 <summary><strong>Setup</strong></summary>
 
-1. **Settings > Menu Builder** — add categories and items with **Item Type** (Food/Alcohol/Beverage/Merchandise), **EBT/SNAP eligibility**, and **KDS Station** (Grill/Fry/Prep/Expo/Bar/Cold/Pass) dropdowns
-2. Set prices, modifiers, KDS stations, and barcodes per item
+1. **Settings > Menu Builder > Items** — add categories and items with **Item Type** (Food/Alcohol/Beverage/Merchandise), **EBT/SNAP eligibility**, and **KDS Station** (Grill/Fry/Prep/Expo/Bar/Cold/Pass) dropdowns
+2. Set prices, KDS stations, barcodes, and item details in **Edit Item**; use **Assign Sets** to attach reusable modifier sets
 3. **Per-item price level overrides** — set custom prices for Employee, Happy Hour, VIP levels in the item edit form. **Happy-hour pricing applies to online and phone orders too** — the customer is charged the same happy-hour price they see
 4. **Combos** — build meal deals in the Combos tab. A component can be a specific item **or a category slot** ("any item from Sides"), each with its own **quantity** (e.g. Burger + any Side ×2 + any Drink for $10). Combo savings apply on the register and on online/phone/AI orders alike
 5. Items appear on the register automatically
 
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-menu.png" alt="Production demo Menu Builder with 39 configured items, categories, modifiers, combos, and CSV controls">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-menu.png" alt="Current production Menu Builder Table view with 39 configured items, category navigation, item types, modifier-set assignments, status, and CSV controls">
 <img src="../images/pos/ipad_barcode_scan.png" alt="Barcode Scan">
 <img src="../images/pos/ipad_allergen_filter.png" alt="Allergen Filter">
 <img src="../images/pos/settings_auto_gratuity.png" alt="Auto Gratuity">
@@ -1511,15 +1511,15 @@ Configure every POS screen from a single settings page — button layout, split 
 
 **Navigate to:** Settings > Screen Builder
 
-<img src="../images/pos/production-demo-2026-08/prod-20260810-settings-screen-builder.png" alt="Production demo Screen Builder showing its active venue profile and 12 configurable screen tabs">
+<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-screen-builder.png" alt="Current production Screen Builder with Dense Register profile, 12 POS screens, device layouts, and separate Actions, Payments, and Layout tabs">
 
 <details>
 <summary><strong>Profiles, persistence, and runtime precedence</strong></summary>
 
 - Create, save, and activate named layout profiles for the venue. Saving writes the profile through the POS settings API and updates the venue's active profile.
 - Each screen consumes the active stored layout at runtime; Screen Builder is not a documentation-only preview.
-- Register settings layer from **Base venue profile → Revenue Center profile → Station override**. The most specific configured value wins and an unset value inherits from the previous layer.
-- The matching Phone, Landscape, Tablet, or Short-height variant is then used for responsive presentation fields.
+- Register settings inherit in this order: **Venue profile → Revenue Center profile → Station override → Device layout**. The most specific configured value wins and an unset value inherits from the previous layer.
+- The final Phone, Landscape, Tablet, or Short-height layer changes responsive presentation fields for that device without bypassing venue rules, staff permissions, or payment authorization.
 - Upgrades preserve the historic behavior of two formerly display-only controls: profiles that have never explicitly set them continue to show **Custom Tip** and keep **Receipt Logo** off. The first explicit toggle in Screen Builder activates that control; the authorized Screen Builder receipt action can also activate **Receipt Logo**. After **Save changes**, the saved on/off value is enforced at runtime. This avoids silently changing a live terminal during an upgrade.
 
 </details>
@@ -1529,7 +1529,7 @@ Configure every POS screen from a single settings page — button layout, split 
 
 | Screen | Key Settings |
 |--------|-------------|
-| **Register** | Two button zones (drag-and-drop), check panel width, item display size, product grid columns, tile style and imagery, toolbar style, quick pay toggles, receipt settings |
+| **Register** | Mode-specific Persistent / Actions / Hidden buttons, tender and tip behavior, check/menu panel arrangement, item display size, responsive grid, imagery, toolbar, and receipt settings |
 | **KDS** | Columns, gap spacing, ticket card size, all-day counts, age alert thresholds, per-station colors |
 | **Tables** | Columns, table button size, elapsed timer, revenue display, heat map |
 | **Customer Display** | Show modifiers, unit price, font size, idle content (promos/logo/specials/blank), tax breakdown |
@@ -1549,7 +1549,7 @@ Configure every POS screen from a single settings page — button layout, split 
 
 Each screen has a **Base** layout plus four optional responsive variants: **Phone**, **Landscape**, **Tablet**, and **Short height**. A terminal automatically uses whichever one matches its screen size, falling back to Base when you have not customised that size.
 
-This is what lets a phone show three product columns while a wide terminal shows six, without maintaining two separate menus. Device layouts change presentation only — never payments, permissions, or any operational rule.
+This is what lets a phone use a compact grid while a wide terminal shows more columns, without maintaining two separate menus. Column count is configured per layout and is not hardcoded to one value for every phone, tablet, or desktop. Device layouts change presentation only — never payments, permissions, or any operational rule.
 
 That presentation-only restriction applies to the responsive variants, not the Base layout profile. Base and profile configuration also contains operational controls such as maximum tip percentage, allowed/default split modes, hold auto-send timing, receipt content, login-method visibility, and kiosk auto-lock.
 
@@ -1562,10 +1562,33 @@ Because of that, the layout you are editing is not always the layout in front of
 <details>
 <summary><strong>Register Layout Builder</strong></summary>
 
-The register screen has two configurable button zones:
+Register settings are divided into three tabs so the editor does not crowd unrelated controls together:
 
-- **Quick Pay Zone** — one-tap Cash and Credit buttons in the check panel footer. Enable one, both, or neither
-- **Action Bar Zone** — Split, Transfer, Merge, Move, Discount, Hold, No Sale, Void Order, Payments — drag to reorder, toggle on/off, resize each (S/M/L)
+- **Actions** — configure each ordering mode independently: Dine-in, Bar Tab, Quick Service, Takeout, and Delivery
+- **Payments** — configure tender-specific tip prompts, excess-payment allocation, additional tip after gratuity, receipt tip behavior, suggested percentages, Custom Tip, and the maximum tip percentage
+- **Layout** — configure the category rail, quantity selector, search and order-type controls, check/menu panel arrangement, item sizing, images, grid density, receipts, login choices, splits, holds, and notifications
+
+Every configurable Register action belongs to exactly one placement for each service mode:
+
+- **Persistent** — visible on the primary register surface for frequent or time-critical work
+- **Actions** — reachable from the Actions menu without consuming the primary row
+- **Hidden** — omitted for that mode
+
+The default is a dense hybrid, not a hardcoded workflow. These are the starting recommendations:
+
+| Service mode | Persistent by default | Actions menu by default |
+|---|---|---|
+| **Dine-in** | Send to Kitchen, Pay, Split | Refire, Transfer, Merge, Move, Hold, Discount, Payments, Print Check, QR Pay, No Sale, Void Order |
+| **Bar Tab** | Send to Kitchen, Pay, Hold, Split | Refire, Transfer, Merge, Move, Discount, Payments, Print Check, QR Pay, No Sale, Void Order |
+| **Quick Service** | Quick Cash, Quick Card, Send to Kitchen, Pay | Refire, Split, Hold, Discount, Payments, Print Check, QR Pay, No Sale, Void Order, Transfer, Merge, Move |
+| **Takeout** | Send to Kitchen, Pay, Print Check | Refire, Split, Hold, Discount, Payments, QR Pay, No Sale, Void Order, Transfer, Merge, Move |
+| **Delivery** | Send to Kitchen, Pay, Print Check | Refire, Hold, Discount, Payments, QR Pay, Void Order, Split, Transfer, Merge, Move, No Sale |
+
+Scan, Open Price, Weight, and any other action can also be moved between placements when that service model needs it. Reorder actions by dragging or with the move controls, choose Small/Medium/Large, edit the default button name, and add a translated name for any supported POS locale. Empty custom names fall back to the built-in translated label.
+
+Role locks remain visible so staff can discover the action, but Screen Builder never grants authority: RBAC and manager-override rules are still enforced when the action is used. The editor also preserves a usable service path: **Send to Kitchen** and **Pay** cannot be hidden, and at least one payment action must remain reachable through Persistent or Actions.
+
+Venues may keep the expanded dense layout, adopt the hybrid defaults, or streamline individual modes. Moving a button to Actions changes discoverability, not its underlying capability or permission requirement.
 
 **Check Panel Width:**
 
