@@ -1,102 +1,49 @@
 # 🌍 Language Support
 
-**25 UI locales · 21 TTS languages · 21 AAC offline dictionaries.** Synalux is built for multilingual practices and the families they serve. Below is the honest coverage matrix per surface.
+Synalux lets users change the portal interface language and offers language-aware voice, captions, translation, and AAC features. Coverage differs by feature, device, browser, and connected service, so selecting an interface language does not automatically enable every voice or translation workflow in that language.
 
 ---
 
-## Coverage Matrix
+## Change the interface language
 
-| Language | UI translation | Premium TTS (Inworld) | Fallback TTS (Azure) | Offline TTS (Kokoro) | AAC offline dict (500 words) | Cloud autocorrect (Gemini) |
-|---|---|---|---|---|---|---|
-| 🇺🇸 English (US/GB/AU) | ✅ | ✅ 6 voices | — | ✅ | ✅ | ✅ |
-| 🇪🇸 Spanish (ES/MX) | ✅ | ✅ Carmen / Diego | — | ✅ | ✅ | ✅ |
-| 🇫🇷 French | ✅ | ✅ Camille / Lucas | — | ✅ | ✅ | ✅ |
-| 🇩🇪 German | ✅ | ✅ Hans / Lena | — | — | ✅ | ✅ |
-| 🇧🇷🇵🇹 Portuguese | ✅ | ✅ Luana | — | ✅ | ✅ | ✅ |
-| 🇮🇹 Italian | ✅ | ✅ Giulia | — | — | ✅ | ✅ |
-| 🇳🇱 Dutch | ✅ | ✅ Lotte | — | — | ✅ | ✅ |
-| 🇵🇱 Polish | ✅ | ✅ Zofia | — | — | ✅ | ✅ |
-| 🇯🇵 Japanese | ✅ | ✅ さくら | — | ✅ | ✅ | ✅ |
-| 🇨🇳 Chinese (Mandarin) | ✅ | ✅ 美 | — | ✅ | ✅ | ✅ |
-| 🇨🇳 Chinese (zh-TW) | — | — | ✅ 曉臻 | — | — | ✅ |
-| 🇨🇳 Chinese (zh-HK) | — | — | ✅ 曉曼 | — | — | ✅ |
-| 🇰🇷 Korean | ✅ | ✅ 지수 | — | — | ✅ | ✅ |
-| 🇷🇺 Russian | ✅ | ✅ Аня | — | — | ✅ | ✅ |
-| 🇷🇴 Romanian | ✅ | — (subsidized via Azure on free tier) | ✅ Alina | — | ✅ | ✅ |
-| 🇺🇦 Ukrainian | ✅ | — (subsidized via Azure on free tier) | ✅ Поліна | — | ✅ | ✅ |
-| 🇸🇦 Arabic (RTL) | ✅ | ✅ ليلى | — | — | ✅ | ✅ |
-| 🇮🇱 Hebrew (RTL) | ✅ | ✅ נועה | — | — | ✅ | ✅ |
-| 🇮🇳 Hindi | ✅ | ✅ आन्या | — | — | ✅ | ✅ |
-| 🇻🇳 Vietnamese | ✅ | — | ✅ Hoài Mỹ + Nam Minh | — | ✅ | ✅ |
-| 🇵🇭 Filipino (Tagalog) | ✅ | — | ✅ Blessica + Angelo | — | ✅ | ✅ |
-| 🇹🇷 Turkish | ✅ | — | ✅ Emel + Ahmet | — | ✅ | ✅ |
-| 🇮🇩 Indonesian | ✅ | — | ✅ Gadis + Ardi | — | ✅ | ✅ |
+1. Open the language menu in the Synalux navigation bar.
+2. Select the language and regional variant you want.
+3. Continue working; the choice is remembered for future visits on that browser.
+
+On a new browser, Synalux may initially use the browser language. You can change it at any time.
+
+The current language menu includes regional English, Spanish, and Portuguese choices plus Romanian, Ukrainian, Russian, French, German, Chinese, Japanese, Korean, Arabic, Hindi, Italian, Polish, Hebrew, Dutch, Vietnamese, Filipino, Turkish, and Indonesian.
+
+Arabic and Hebrew use right-to-left page direction. Some newer or specialized labels may fall back to English until their reviewed translation is available.
 
 ---
 
-## Counts at a Glance
+## Language coverage by workflow
 
-| Surface | Languages | Notes |
-|---|---|---|
-| **UI translations** | **25 locales (100% coverage each)** | en×3, es×2, pt×2 + 18 single-region locales |
-| **Premium TTS (Inworld)** | 14 base languages, ~24 voices | en, es, fr, de, pt, it, nl, pl, ja, zh, ko, ru, he, ar, hi |
-| **Fallback TTS (Azure)** | 8 languages, ~14 voices | ro, uk, zh-tw, zh-hk, vi, tl, tr, id |
-| **Offline neural TTS (Kokoro)** | 6 languages | en, es, fr, pt, ja, zh — bundled WASM |
-| **AAC offline dictionary** | 21 languages × 500 words each | Index-aligned across langs |
-| **Whisper transcription** | ~99 languages | Whisper's full coverage; quality varies by language |
-| **Cloud autocorrect (Gemini Flash-Lite)** | ~100+ languages | Bench-validated for en/ro/ru/es/uk/pl |
+| Workflow | What to expect |
+|---|---|
+| **Portal interface** | Navigation and common workflows follow the selected interface language. Untranslated labels may appear in English. |
+| **SOAP dictation and live captions** | Recognition uses the language selected in the workflow or the active locale. Accuracy depends on microphone quality, speech, noise, browser, and device support. |
+| **Live-call caption translation** | When captions are on, choose one of the translation languages shown in the call controls. The original caption remains the reference. |
+| **Text-to-speech** | Available voices depend on the selected language, device, and workspace configuration. |
+| **Prism AAC** | Interface, vocabulary, prediction, and speech coverage can differ. Test the complete communication flow on the user’s actual device. |
 
----
-
-## How the Layered Fallback Works
-
-If your language doesn't have premium TTS, you still get a voice. If you don't have Whisper-trained data, you still get cloud transcription. If you're offline, you still get the AAC dictionary.
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-TTS:        Inworld (Tier 1) → Kokoro WASM (Tier 1.5) → Web Speech API (Tier 2) → espeak-ng WASM (Tier 3)
-Translation: Offline dictionary → Cloud Gemini Flash → original text passthrough
-Autocorrect: Local prism-coder (when running) → Cloud Gemini Flash-Lite → original text passthrough
-```
-
-</details>
-
-See [Voice TTS Architecture](voice_tts_architecture.md), [Translation](translation.md), [Transcription](transcription.md) for the full per-surface design.
+Do not assume a language shown in one selector is supported by every other feature. Before rollout, test the exact combination of interface, dictation, caption, translation, and voice features that the user needs.
 
 ---
 
-## Subsidized Languages (Free Tier)
+## Clinical and accessibility review
 
-For users in regions where Synalux serves underserved populations, Synalux absorbs Inworld TTS-2 cost on the free tier so users get premium voices at no charge:
+- Have a fluent speaker review clinical, consent, safety, and medication terminology.
+- Keep the original text available when reviewing a translation.
+- Confirm names, numbers, dates, dosages, and negations before saving or sending.
+- Provide another communication method when recognition or speech output is unreliable.
+- Test right-to-left layouts and large text on the actual device before clinical use.
 
-`ro` Romanian · `uk` Ukrainian · `ru` Russian · `de` German · `ko` Korean · `ar` Arabic
-
-Without this subsidy, users in these regions would either pay or use Tier 1.5/2/3 fallbacks.
-
----
-
-## Adding a Language
-
-The translation pipeline is automated. To add a 26th UI locale:
-
-1. Add the locale code to `Locale` type + `LOCALE_LABELS` in `portal/src/lib/i18n.ts`.
-2. Add an empty `'<locale>': {}` entry in the `translations` map.
-3. Run the bulk-translation script (one-shot, not committed) — pulls all 257 keys from `en-US`, batch-translates via Gemini Flash-Lite (~$0.005), writes back the locale block.
-4. Add a voice entry to `portal/src/shared/voice-catalog.ts` (Inworld if available; else Azure fallback).
-5. Run the AAC dict script for the matching prism-aac repo (translates 500 entries via Gemini, ~$0.005).
-6. tsc + commit.
-
-End-to-end: ~10 minutes per new language, ~$0.01 in API spend.
+See [Voice and TTS](voice_tts_architecture.md), [Translation](translation.md), [Transcription](transcription.md), and [Prism AAC](prism_aac.md) for feature-specific guidance.
 
 ---
 
-## Roadmap
+## Request another language
 
-Languages frequently requested but not yet supported:
-- Greek (el), Czech (cs), Hungarian (hu), Swedish (sv), Norwegian (no), Danish (da), Finnish (fi)
-- Bengali (bn), Tamil (ta), Telugu (te), Marathi (mr), Punjabi (pa) — South Asian sub-languages
-- Swahili (sw), Yoruba (yo), Hausa (ha) — African languages
-
-If you need a specific language for your practice, [contact us](https://synalux.ai/contact) — turnaround is typically 1-2 weeks for adding a new locale across all surfaces.
+Contact [Synalux support](https://synalux.ai/support) with the requested locale and the workflows that need it—for example interface text, dictation, captions, translation, voice, or AAC vocabulary. Support can confirm current coverage and the appropriate validation steps for your workspace.

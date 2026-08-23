@@ -1,0 +1,120 @@
+{
+  "developer_docs": [
+    "docs_source_en/coder.md",
+    "docs_source_en/vscode_extension.md",
+    "docs_source_en/webhooks.md"
+  ],
+  "repository_raw_image_prefix": "https://raw.githubusercontent.com/dcostenco/synalux-docs/main/",
+  "forbidden_image_targets": [
+    "docs/demo/05_fba_report.png",
+    "docs/demo/30_intelligent_assistant.png",
+    "docs/demo/31_mental_health.png",
+    "docs/demo/31_mental_health_00001_.png",
+    "docs/demo/32_physical_therapy.png",
+    "docs/demo/34_dermatology.png",
+    "docs/demo/35_hedis_dashboard.png",
+    "docs/demo/39_branch_isolation.png",
+    "docs/demo/generated/global_dashboard_ui.png",
+    "docs/demo/generated/offline_sync_ui.png",
+    "docs/demo/generated/security_audit_logs_ui.png",
+    "docs/demo/generated/smart_keyword_ui.png",
+    "docs/demo/generated/telehealth_conference_ui.png",
+    "docs/demo/generated/voice_dictation_ipad_mockup.png",
+    "docs/demo/generated/voice_dictation_ui.png"
+  ],
+  "forbidden_patterns": [
+    {
+      "name": "implementation heading",
+      "pattern": "(?im)^#{1,6}\\s+.*\\b(?:architecture|developer setup|deployment|implementation|database schema|technical integration|tests?)\\b",
+      "help": "Describe the customer workflow or move the material to an explicitly classified developer page."
+    },
+    {
+      "name": "raw API endpoint",
+      "pattern": "(?i)\\b(?:GET|POST|PUT|PATCH|DELETE)\\s+/api/",
+      "help": "Customer pages should describe the action in the product, not an internal endpoint."
+    },
+    {
+      "name": "internal source or test path",
+      "pattern": "(?i)(?:portal/src|(?:^|[\\s`])(?:src|tests?|scripts)/[A-Za-z0-9._/-]+)",
+      "help": "Remove repository paths from customer documentation."
+    },
+    {
+      "name": "source filename",
+      "pattern": "(?i)`[^`\\n]*(?:\\.tsx?|\\.mjs|\\.py|\\.sql)[^`\\n]*`",
+      "help": "Move source-level references to a developer page."
+    },
+    {
+      "name": "environment assignment",
+      "pattern": "(?m)^\\s*(?:export\\s+)?[A-Z][A-Z0-9_]{3,}\\s*=",
+      "help": "Environment and deployment configuration is not customer setup guidance."
+    },
+    {
+      "name": "internal implementation identifier",
+      "pattern": "(?i)\\b(?:requireWorkspaceMember|oauth_token_access_log|storage_path|service_role|schema_migrations)\\b",
+      "help": "Replace internal identifiers with customer-visible behavior."
+    },
+    {
+      "name": "internal release language",
+      "pattern": "(?i)\\b(?:acceptance criteria|developer and deployment setup|release gate|CI check|test fixture|capture spec)\\b",
+      "help": "Customer documentation should explain the supported workflow, not internal development or release evidence."
+    },
+    {
+      "name": "cloud implementation vendor",
+      "pattern": "(?i)\\b(?:Vercel|Supabase|OpenRouter)\\b",
+      "help": "Customer pages should describe the supported product workflow, not its hosting or model-routing implementation."
+    },
+    {
+      "name": "unsupported absolute claim",
+      "pattern": "(?i)\\b(?:100% (?:billing |documentation )?compliance|bulletproof|absolute accountability|permanent, unalterable|exceed(?:s|ing)? (?:the )?federal standards|always works)\\b",
+      "help": "Use bounded, verifiable customer language and identify the user's compliance responsibility."
+    },
+    {
+      "name": "fixed plan entitlement",
+      "pattern": "(?im)(?:^available on \\*\\*[^*\\n]+\\*\\*|^\\|\\s*\\|\\s*Free\\s*\\|\\s*Standard\\s*\\|\\s*Advanced\\s*\\|\\s*Enterprise\\s*\\||\\b(?:free|standard|advanced|enterprise)[ -]tier\\b)",
+      "help": "Plan availability changes over time; link to current pricing or tell the customer to check the subscription shown in the product."
+    },
+    {
+      "name": "fixed provider price snapshot",
+      "pattern": "(?i)\\b(?:roughly\\s+\\$\\d|at\\s+20\\d{2}\\s+rates)\\b",
+      "help": "Provider prices and fees are time-sensitive; direct customers to current provider or subscription information."
+    },
+    {
+      "name": "fixed monthly price snapshot",
+      "pattern": "(?i)(?:[$€£]\\s?\\d[\\d., ]*(?:\\+)?\\s*/\\s*(?:mo|month|mes|mois|m[eê]s|lun[aă]|місяц|месяц|月|개월|شهر))",
+      "help": "Monthly prices become stale; link customers to current pricing instead."
+    },
+    {
+      "name": "unsupported BAA roadmap claim",
+      "pattern": "(?is)\\bsigned BAA\\b.{0,120}\\broadmap\\b",
+      "help": "Do not promise a vendor agreement or roadmap item that the current customer workflow cannot prove."
+    },
+    {
+      "name": "unsupported revenue claim",
+      "pattern": "(?i)\\b(?:typically recovers?|annual revenue restoration|5-figure annual revenue|highest-impact billing tools?)\\b",
+      "help": "Remove unsubstantiated earnings or recovery claims and describe the verified customer workflow instead."
+    },
+    {
+      "name": "raw provider permission scope",
+      "pattern": "(?i)`(?:instagram_[a-z_]+|pages_[a-z_]+|https://www\\.googleapis\\.com/auth/[a-z0-9._/-]+)`",
+      "help": "Customer setup should follow the provider permission screen; raw authorization scopes belong in developer documentation."
+    }
+  ],
+  "pos_preservation": {
+    "minimum_image_references": 100,
+    "required_text": [
+      "Try the demo",
+      "demo@synalux.ai",
+      "demobg@synalux.ai",
+      "demo1234",
+      "### Register",
+      "### Tables & Floor Plan",
+      "### Payment",
+      "### Screen Builder"
+    ],
+    "required_images": [
+      "prod-20260822-register-desktop.png",
+      "prod-20260822-register-tablet.png",
+      "prod-20260822-register-phone-order.png"
+    ]
+  }
+}

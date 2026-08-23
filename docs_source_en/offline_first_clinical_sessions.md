@@ -1,54 +1,30 @@
-# 📴 Offline-First Clinical Workflow
+# 📴 Offline Clinical Workflows
 
-Synalux v11.1 Elite is built for the real world. Whether you're in a rural clinic with spotty Wi-Fi or a hospital basement with zero signal, our offline-first engine ensures your data is saved instantly and synced securely the moment you're back online.
+Supported Synalux clinical workflows can queue selected activity on the active device when the browser reports that it is offline, then attempt synchronization after the connection returns. Offline behavior is workflow- and configuration-specific: test the exact devices and tasks your organization plans to use before relying on them.
 
----
+## Connection and queue status
 
-## ⚡ Zero-Data-Loss Drafting
-Type with confidence knowing every keystroke is protected.
-*   **Local Persistence:** Clinical notes are saved to your device's secure local storage as you type.
-*   **Crash Recovery:** If your browser or tablet crashes, your draft is waiting for you exactly where you left off.
-*   **Real-Time Status:** A subtle indicator in the sidebar shows your current sync status and the number of pending items.
+The application’s connection indicator distinguishes online, offline, and queued states where offline support is active. Do not sign out, clear browser data, remove the device profile, or assume another device has the queued work until synchronization is confirmed.
+
+## Session event timing
+
+Supported session events retain client event time and connection status so authorized staff can distinguish when activity occurred from when an offline event synchronized. Review those records before using them for billing or payroll.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the current clinical note workspace</summary>
 
-![Offline Sync Status Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/offline_sync_ui.png)
+![Current Synalux clinical note workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 </details>
 
 ---
 
-## 🕒 Precision Billing (Client-Side Timestamps)
-Capture accurate session durations for 100% billing compliance.
-*   **Real Start/End Times:** We record timestamps from your device, not when the server receives the data.
-*   **Clinical Overtime:** The calendar is a guide, not a switch. Sessions stay active until you explicitly sign off.
-*   **Sync Transparency:** Admins see both the clinical event time and the server sync time in the audit log.
+## Dictation while connectivity is limited
+
+The current SOAP workspace uses its local WASM Whisper worker for speech recognition, so audio for that dictation path is processed in the active browser. Confirm recording consent and review the resulting text. Browser, microphone, worker, and model availability still affect whether dictation can start, and a first load may need assets that are not already available on the device. Use typed entry if dictation is unavailable. A working dictation control also does not prove that the related note save or attachment can complete while offline.
 
 <details>
-<summary>View Interface / Diagram</summary>
-
-![Clinical Session Lifecycle Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
-
-</details>
-
----
-
-## 🛡️ Emergency Session Auto-Quarantine (ESAQ)
-Maintain HIPAA compliance even during an unexpected timeout or battery failure.
-*   **Asymmetric Vaulting:** If your device idles out while offline, your drafts are instantly encrypted using a server-only public key.
-*   **Zero-Plaintext:** Sensitive PHI is purged from your browser's readable memory, leaving only an encrypted "emergency vault" blob.
-*   **Recovery Sync:** Log back in on any device to securely restore and complete your quarantined sessions.
-
----
-
-## 🎙️ Audio-Aware Idling
-Stay logged in during long patient conversations without touching your device.
-*   **Mic Detection:** If WASM Whisper is active and listening, the system prevents idle timeouts entirely.
-*   **Hands-Free Liberty:** Focus 100% on the patient—your session won't time out as long as the conversation continues.
-
-<details>
-<summary>View Interface / Diagram</summary>
+<summary>View the SOAP dictation workspace</summary>
 
 ![Ambient Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
@@ -56,21 +32,20 @@ Stay logged in during long patient conversations without touching your device.
 
 ---
 
-## 🔄 Idempotent Background Sync
-*   **Smart Reconciliation:** Our sync engine prevents duplicate records even if you switch devices mid-session.
-*   **Conflict Resolution:** If a note is edited on two devices, Synalux helps you choose the correct version.
-*   **Time Drift Logic:** Automated detection and correction of device clock inaccuracies for audit integrity.
+## Reconnect checklist
 
----
+1. Keep the application open and restore the expected network connection.
+2. Wait for the connection indicator to return online and the queued count to clear.
+3. Open the intended patient and confirm that the record reflects the queued work.
+4. If synchronization reports an error or the record is incomplete, stop duplicate entry and contact your administrator.
 
-## 🔐 Security & Audit
-*   **RSA-2048 Encryption:** Offline data is secured with industry-standard asymmetric encryption.
-*   **Immutable Logs:** Every 🟢 Online and 🔴 Offline event is tracked with its original device ID.
-*   **Role-Based Gating:** Access to offline drafts is restricted to the original author and authorized clinical directors.
+## Audit review
+
+Authorized administrators can review the recorded events available in the audit log. Offline support does not remove the organization’s responsibility to protect the device, control access, verify synchronization, and maintain downtime procedures.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

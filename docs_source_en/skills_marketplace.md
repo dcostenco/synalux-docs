@@ -1,50 +1,15 @@
-# 🛒 Skills Marketplace
+# Prism Skills
 
-Workspace-installable AI skills + automations. Add a skill once, available across the workspace's chat surface, calendar, mail, drive, and clinical workflows.
+A skill is a bounded set of instructions that helps Prism handle a particular kind of request consistently. Available skills depend on the signed-in account, workspace, product, and plan.
 
----
+## How skills appear
 
-## 🧩 What's a Skill?
-A scoped, declared capability the chat assistant can invoke when context warrants. Examples:
-*   **Insurance Eligibility** — verify a patient's benefits against the payer in real time.
-*   **CPT Suggester** — given a SOAP note, propose the right billing codes.
-*   **Spam Blocker** — auto-classify incoming mail per the workspace's policy.
-*   **Telehealth Pre-Call Prep** — pull patient summary + last 3 sessions into a brief before the call.
+Supported Prism clients load the skills available to the current user and team. A skill can guide an assistant response or a workflow, but it does not bypass the user's permissions and it does not prove that an external action completed.
 
-Each skill declares its OAuth scopes, tool surface (functions exposed to the AI), and tier gating.
+When a skill is used for clinical, financial, or operational work, review the result before relying on it. Generated suggestions are drafts unless the product explicitly records an authorized action and confirms its result.
 
----
+## Current customer boundary
 
-## 🏗️ Architecture
-*   **Per-workspace install** — admins enable skills in the Marketplace UI; install writes a `workspace_skills` row that gates `/api/v1/chat`'s tool exposure.
-*   **Permission scopes** — each skill declares the data it touches (mail, drive, patients, billing) — opt-in per scope.
-*   **Audit-tagged** — every skill invocation writes an audit row with skill_id + tool_name + caller.
-*   **Sandboxed execution** — skills can't reach beyond their declared scopes; enforced at the dispatcher layer.
+The Synalux customer portal does not currently provide a browse-and-install **Skills Marketplace** screen, active-skill counter, or customer skill builder. Do not expect a skill added in one product to appear automatically in Calendar, Mail, Drive, or every clinical screen.
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-GET  /api/v1/marketplace/catalog          Browse available skills
-POST /api/v1/marketplace/install         Install a skill into the current workspace
-POST /api/v1/marketplace/uninstall       Uninstall (revokes scopes + tool exposure)
-GET  /api/v1/marketplace/installed       List installed skills for the workspace
-GET  /api/v1/marketplace/module/:slug    Skill detail page
-GET  /api/v1/skills/content              Skill content for runtime
-GET  /api/v1/skills/routing              Skill routing rules for AI dispatcher
-```
-
-</details>
-
----
-
-## 💳 Plans
-
-| | Free | Standard | Advanced | Enterprise |
-|---|---|---|---|---|
-| Browse marketplace | ✅ | ✅ | ✅ | ✅ |
-| Install skills | — | ✅ 5 active | ✅ 20 active | ✅ unlimited |
-| Custom workspace-private skill | — | — | — | ✅ |
-| Skill SDK (build your own) | — | — | — | ✅ |
-
-[See full pricing →](https://synalux.ai/pricing)
+For the current Prism skill options available to your organization, contact Synalux support or your account administrator.

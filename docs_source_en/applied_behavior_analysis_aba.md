@@ -1,438 +1,188 @@
-# Applied Behavior Analysis (ABA) — Complete Clinical Platform
+# Applied Behavior Analysis (ABA)
 
-Synalux's ABA module is a full-lifecycle clinical platform for **BCBAs**, **BCaBAs**, **RBTs**, and **clinical supervisors**. Every workflow — from initial assessment to insurance billing — is integrated into a single HIPAA-compliant system with offline-first resilience.
+Synalux brings session work, data collection, assessments, goals, behavior plans, progress graphs, clinical notes, staff oversight, authorizations, and billing into one role-controlled workspace.
 
-> **Who it's for:** ABA therapy practices serving children and adults with autism spectrum disorder, developmental disabilities, and behavioral health needs.
+This guide describes the controls available in the current customer application. Your organization decides which workflows, assessment content, billing rules, and roles to use.
 
----
+## Start with the daily workflow
 
-## Key Capabilities
+For a typical clinical session:
 
-| Category | Features |
-|----------|----------|
-| **Data Collection** | Discrete trials, duration recording, frequency counter, interval recording, task analysis, ABC (antecedent-behavior-consequence) |
-| **Assessments** | Verbal Milestones, Foundational Skills, Adaptive Living, Essential Skills, Relational Skills + custom templates — with CSV import for your own content |
-| **Goals Library** | Evidence-based goal bank with 11 ABA domains, template creation, search/filter, assign-to-patient flow |
-| **Treatment Planning** | Guided FBA→BIP wizard, mastery predictions, AI-assisted goal suggestions |
-| **Graphing** | Auto-generated line charts with mastery thresholds, baseline phase detection, AI trend narratives |
-| **Clinical Notes** | SOAP notes with voice dictation (on-device WASM Whisper), co-signature workflow |
-| **Staff Management** | Credential tracking (BCBA/RBT/BCaBA), supervision logs, expiry alerts |
-| **Insurance** | CPT code integration (97151-97158), authorization tracking, utilization monitoring |
-| **Offline Mode** | Full data collection without internet; auto-sync when connectivity returns |
+1. Open **Sessions** and select or create the patient session.
+2. Use the session workspace to record skill trials, behavior counts, duration, ABC observations, or task-analysis steps.
+3. If the visit requires electronic verification, collect the required location, PIN, or caregiver signature before completing it.
+4. Open **Notes** to create the session note, link relevant goals, and submit it for review when ready.
+5. Review progress in **Graphs** and update goals or curriculum targets only after clinical review.
 
----
+Available controls depend on the user’s role and workspace configuration.
 
-## Live Data Collection
+## Sessions and data collection
 
-Record session data in real-time on any device — desktop, iPad, or phone. The interface is optimized for rapid data entry during therapy sessions.
+The session workspace is designed for touch entry on desktop, tablet, and phone. It includes:
 
-### Discrete Trial Training (DTT)
+- skill-trial recording with response and prompt information;
+- behavior frequency counters;
+- duration timers;
+- ABC entries for antecedent, behavior, and consequence;
+- task-analysis steps;
+- session summary and completion controls.
 
-Large touch targets (+/-) for recording correct and incorrect responses. Each trial captures:
-- **Response** (correct/incorrect/no response)
-- **Prompt level** (Independent, Gestural, Verbal, Partial Physical, Full Physical)
-- **Target** being addressed
-- **Timestamp** for rate calculations
+The separate **Data Collection** page can record discrete, duration, interval, and task-analysis data against the selected patient and target.
 
-### Duration Recording
+### Electronic visit verification
 
-Built-in stopwatch for timing behaviors:
-- Start/stop with single tap
-- Automatic duration calculation
-- Running total per session
-- Ideal for measuring on-task behavior, tantrums, or stereotypy duration
+When electronic visit verification is enabled for the workflow, the completion form can collect:
 
-### Frequency Counter
+- browser-provided GPS location;
+- a caregiver or parent signature;
+- a verification PIN;
+- completion metadata and timestamps.
 
-Count occurrences of target behaviors during observation windows:
-- Real-time counter with large increment/decrement buttons
-- Rate calculation (count per minute/hour)
-- Session-level aggregation
+The browser must have location permission for GPS capture. Synalux records the values supplied through the form; your organization remains responsible for deciding which verification fields and payer rules apply.
 
-### Task Analysis
+## Assessments
 
-Step-by-step recording for complex skill chains:
-- Define steps in the chain
-- Record independence level per step
-- Track which steps need additional prompting
-- Forward and backward chaining support
+Open **Assessments** to start, resume, review, or complete an assessment session.
 
-### Interval Recording
+The current assessment workflow supports:
 
-Record whether a behavior occurred during each observation interval:
-- ✓ Occurred / ✗ Absent buttons for each interval
-- Running percentage calculation (intervals with behavior / total intervals)
-- Suitable for partial-interval recording procedures
+- workspace-configured and custom assessment templates;
+- per-item scoring grouped by domain;
+- barriers, readiness, and narrative notes when those sections are part of the template;
+- historical assessment sessions;
+- report generation from the recorded assessment;
+- starting an assessment with a prior completion date when appropriate.
 
-### ABC Data Collection
+Workspace administrators can create a custom template with a name, type, description, milestone count, domains, and items. Items can also be imported from a CSV file using the columns `domain,code,label,description`.
 
-Record the three-term contingency for functional analysis:
-- **Antecedent** — what happened before the behavior
-- **Behavior** — the observable behavior
-- **Consequence** — what happened after
-- Structured dropdowns with common options + free text
-- Direct link to FBA hypothesis development
+> Import only material your organization is licensed or otherwise authorized to use. Synalux does not grant rights to third-party assessment instruments.
 
----
+The **Adaptive Assessment Log** stores scores and notes from externally administered instruments. It is a record repository; it does not administer or reproduce those instruments.
 
-## Electronic Visit Verification (EVV)
+## Goals
 
-HIPAA-compliant session verification required by many Medicaid programs:
+Open **Goals** to maintain reusable goal templates and patient goals.
 
-- **GPS location capture** at session start and end
-- **Parent/caregiver signature** via touch-screen signature pad
-- **PIN verification** for identity confirmation
-- **Session timestamps** with client-side and server-side clocks
-- **Device information** logged for audit trail
+Goal templates can include:
 
----
+- title and operational description;
+- domain and goal type;
+- baseline and mastery criteria;
+- measurement method;
+- active or archived status.
 
-## Assessment Suite
+Use search and filters to find a template, then assign it to a patient when it fits the treatment plan. Assigned goals can be tracked by patient, status, and current progress.
 
-### Assessment Templates
+## FBA and BIP drafts
 
-Synalux ships its own original assessment templates built from field-standard,
-non-proprietary ABA concepts. You can also create custom templates or CSV-import
-items from any instrument you are licensed to use.
+Open **FBA/BIP** to use the guided three-step workspace:
 
-| Template | Scoring | Domains |
-|-----------|---------|---------|
-| **Verbal Milestones Assessment** | 0, 0.5, 1 | Requesting (mand), Labeling (tact), Listener responding, Echoic, Intraverbal, Play & leisure, Social, Imitation, Early academics |
-| **Foundational Skills Assessment** | 0-4 | Basic learner skills, Academic skills, Self-help skills, Motor skills |
-| **Adaptive Living Assessment** | 0-2 | Basic living, Home, Community participation, School, Vocational |
-| **Essential Skills Assessment** | 0-1 | Core communication & functional-life domains |
-| **Relational Skills Assessment** | 0-2 | Direct training, Generalization, Equivalence, Transformation |
-| **Custom** | 0-3 | User-defined domains and milestones |
+1. Record the functional behavior assessment information, target behavior, baseline details, and ABC observations.
+2. Draft the behavior intervention plan, including hypothesized function, prevention strategies, replacement behavior, teaching and consequence strategies, caregiver involvement, and safety information.
+3. Review the combined draft and save it.
 
-### Assessment Features
+The builder supports documentation and clinical review; it does not replace an individualized assessment or professional judgment. An authorized clinician should review the plan before implementation.
 
-- **Real instrument items** — import actual milestone descriptions from your licensed copy via CSV upload (format: `domain,code,label,description`)
-- **Domain-based scoring grid** — per-item scores with descriptions, tooltips, and color-coded progress
-- **Historical tracking** — compare scores across assessment periods; record completed assessments retroactively
-- **Multiple assessment sessions** per patient per instrument
-- **Barrier analysis & recommendations** — structured clinical notes per assessment
-- **AI-assisted interpretation** — trend analysis across assessment periods
-- **Legacy fallback** — auto-generated item labels for templates without imported items
+## Curriculum and targets
 
-### Adaptive Assessment Log
+Open **Curriculum** to organize domains, subdomains, and targets. You can:
 
-A score repository for externally-administered standardized assessments:
-- **Instrument-agnostic** — stores scores from Vineland-3, ABAS-3, Bayley-4, BASC-3, ADOS-2, and any future instrument
-- **Not an instrument** — Synalux does not administer, score, or reproduce any standardized assessment
-- **Trademarks** — instrument names (Vineland, ABAS, Bayley, BASC, ADOS, etc.) are trademarks of their respective owners; Synalux is not affiliated with or endorsed by them
-- **AI integration** — BCBA assistant pulls scores verbatim for medical-necessity letters and BIP drafts
-- **Audit trail** — PHI-tier triple-logging on every CRUD operation
+- add domains, subdomains, and targets;
+- set target status, mastery threshold, prompt level, and optional stimulus or distractor image links;
+- search and filter targets;
+- edit target status and criteria;
+- print the current curriculum view.
 
----
+The page can display a stored mastery prediction when prediction data already exists for a target. Its insights panel also highlights conditions such as near-mastery, slow progress, or a mastered target based on recorded values. Treat these displays as decision support, not as an automatic clinical decision or a newly generated treatment recommendation.
 
-## Goals Library
+## Graphs
 
-A reusable, searchable goal bank for building evidence-based treatment plans.
+Open **Graphs**, choose a patient and target, and review the recorded data over time. The current graph workspace provides:
 
-### Goal Templates
+- a line chart of recorded values;
+- a configurable mastery reference criterion;
+- deterministic trend and aim lines;
+- a trend summary based on the selected data;
+- a mastery-rule result when enough points exist.
 
-Create and maintain a workspace-wide library of clinical goals:
-- **11 ABA domains** — Behavior Reduction, Skill Acquisition, Communication, Social Skills, Daily Living, Academic, Motor, Play & Leisure, Self-Management, Safety, Other
-- **Structured definitions** — title, operational description, baseline criteria, mastery criteria, measurement method
-- **Goal types** — Short-Term, Long-Term, Maintenance
-- **8 measurement methods** — Percent Correct, Frequency Count, Duration, Rate, Latency, Interval Recording, Task Analysis, Discrete Trial
-- **Search and filter** — find goals by domain, keyword, or type
+Trend summaries and mastery results are calculated from the displayed data. Review the underlying points and clinical context before changing a program.
 
-### Assign to Patient
+## Clinical notes
 
-Clone a template goal into an active patient goal:
-1. Select a goal template from the library
-2. Choose the patient
-3. Optionally link to a treatment plan
-4. Goal is created as `active` with the template's criteria pre-populated
+Open **Notes** to create and manage SOAP-style session notes.
 
-### Active Goals View
+### Create and submit a note
 
-Track all patient-assigned goals across the practice:
-- Patient name, domain, current progress, status
-- Filter by domain or search by goal title
-- Status tracking: Active → In Progress → Met → Maintenance → Discontinued
+1. Select **New SOAP Note**.
+2. Choose the patient and, when useful, a configured note template.
+3. Enter the session date, duration, note type, and Subjective, Objective, Assessment, and Plan sections.
+4. Optionally link treatment-plan goals.
+5. Save the note as a draft.
+6. Open the draft and select **Submit for review** when it is ready.
 
----
+The review workflow is:
 
-## FBA → BIP Builder
+`Draft → Submitted → Co-Signed → Finalized`
 
-A guided 3-step wizard for creating Functional Behavior Assessments and Behavior Intervention Plans.
+A note author cannot co-sign their own submitted note. A different authorized clinician must co-sign it before it can be finalized. Finalization locks the note through the application workflow.
 
-### Step 1: FBA (Functional Behavior Assessment)
+### Dictation and assisted drafting
 
-- **Target behavior definitions** — operational definition, examples, non-examples, baseline frequency, severity
-- **A-B-C observations** — structured Antecedent-Behavior-Consequence data entry with setting and time
-- **Assessment summary** — current functioning level, relevant diagnoses, prior interventions
-- **Behavioral history** — onset, previous BIPs, treatment response
+The SOAP workspace also offers live dictation when the browser and configured speech service support it. Staff can type or dictate raw observations, load selected-patient context, and request a structured draft. The result remains editable and must be reviewed for accuracy before it is used or signed.
 
-### Step 2: BIP (Behavior Intervention Plan)
+Do not assume every browser supports the same speech path. If the listening control reports a warning or does not start, type the observations and contact your workspace administrator.
 
-For each target behavior:
-- **Hypothesized function** — Attention, Escape/Avoidance, Access to Tangible, Automatic/Sensory
-- **Antecedent / prevention strategies** — environmental modifications, visual schedules, pre-teaching, choice-making
-- **Replacement behavior (FCT)** — select from the Goals Library or enter custom replacement
-- **Teaching procedure** — DTT, NET, prompting hierarchy, reinforcement schedule
-- **Consequence strategies** — DRA, DRO, NCR, extinction (if safe)
-- **Crisis / safety protocol** — de-escalation steps, supervisor contact, emergency procedures
+## Staff, credentials, training, and supervision
 
-Plus:
-- **Caregiver involvement** — parent training goals, home program, communication protocol
-- **Global crisis plan** — emergency contacts, de-escalation protocol
-- **Review date** scheduling
+Open **Staff** to review the staff directory and switch among **Credentials**, **Training**, and **Supervision**.
 
-### Step 3: Review & Save
+### Credentials
 
-- Full BIP summary with all sections displayed
-- **BCBA disclaimer** — "Clinical support draft; must be reviewed and individualized by a credentialed BCBA before implementation per local policy and applicable laws."
-- Saves as `treatment_plans` with `plan_type = 'bip'` and `status = 'draft'`
-- Draft BIPs appear in the patient's Treatment Plans tab with "(Draft)" label
+Authorized users can add or edit a credential with its type, number, issuing authority, expiration date, and staff member. The credentials view shows expired credentials and credentials expiring within 30 days, with additional countdown states for later expiration dates.
 
----
+### Training
 
-## Curriculum & Target Bank
+The Training tab lists assigned training records and can filter overdue items. Training assignment and configuration may be managed elsewhere by your organization; the current Staff tab is primarily a tracker.
 
-Manage your entire ABA curriculum in a hierarchical tree view:
+### Supervision
 
-```
-Program
-  └── Domain
-       └── Target
-            ├── Mastery Threshold (default 80%)
-            ├── Current Performance
-            ├── Prompt Level History
-            └── AI Mastery Prediction
-```
+Authorized users can log or edit a supervision session with the supervisee, date, duration, supervision type, topics, and feedback. Pending records can be reviewed and approved in the Supervision tab.
 
-### Features
+## Authorizations and billing
 
-- **Program → Domain → Target** hierarchy
-- **Real-time progress bars** showing completion toward mastery
-- **Mastery tracking** — flags targets meeting criteria (e.g., 80% across 3 consecutive sessions)
-- **AI-powered mastery predictions** — projects sessions-to-mastery based on clinical velocity
-- **Smart goal suggestions** — recommends next targets based on assessment data and curriculum sequence
-- **Behavioral pattern analysis** — identifies stagnation and suggests intervention modifications
+Use **Authorizations** to maintain authorization periods, approved units or hours, utilization, renewal status, and exported records. Confirm payer-specific units, dates, and service rules before relying on remaining-balance displays.
 
----
+Use **Billing** for the configured claim, eligibility, payment, and reporting workflows available to your workspace. Billing codes, modifiers, clearinghouse connectivity, and submission controls depend on organization and payer configuration. A code appearing in the system does not by itself establish coverage or reimbursement.
 
-## Graphing & Data Visualization
+## Offline collection and synchronization
 
-Auto-generated graphs from collected session data:
+Supported clinical mutations can be queued when the browser loses connectivity and retried after connection returns. The local queue is encrypted, bounded, and time-limited.
 
-### Graph Types
-- **Line charts** — data points with session dates on x-axis, percentage/frequency on y-axis
-- **Mastery reference lines** — horizontal line at mastery threshold (configurable per target)
-- **Baseline phase detection** — automatically identifies baseline vs. intervention data points
+For field use:
 
-### AI Trend Analysis
+1. Sign in and open the patient and session while connected whenever possible.
+2. Watch the application’s offline and queue status.
+3. Continue only while the application confirms that entries are being queued.
+4. Reconnect before the queue reaches its limit.
+5. Wait for synchronization to finish, then reopen the session and verify the expected records before submission or billing.
 
-Each graph includes a natural-language narrative:
-- **Trend direction** — accelerating, decelerating, or stable
-- **Performance summary** — current level relative to mastery
-- **Mastery recommendation** — suggests when to probe for mastery or modify intervention
+Do not clear browser storage, sign out, or change devices while unsynchronized work remains. Offline availability can vary by action; a visible page alone does not prove that a particular save was queued.
 
----
+## Roles, privacy, and clinical responsibility
 
-## Clinical Notes (SOAP)
+- Access is controlled by workspace membership and assigned permissions.
+- Patient and clinical records remain scoped to the active workspace and authorized users.
+- Audit and application records support review, but customers must configure access, retention, consent, and payer procedures for their organization.
+- Automated summaries, stored predictions, and assisted drafts require professional review.
+- Synalux does not replace clinical judgment, credentialing requirements, payer policy, or applicable law.
 
-### Voice Dictation
+## Getting started
 
-Focus on the patient while Synalux captures your clinical observations:
-- **WASM Whisper engine** — on-device speech recognition (no audio leaves the device)
-- **Real-time transcription** — see your words appear as you speak
-- **HIPAA-compliant** — processing happens locally, not in the cloud
+1. Ask a workspace administrator to invite staff and assign appropriate roles.
+2. Add or verify patients, coverage, diagnoses, and required consents.
+3. Configure the assessment, goal, curriculum, note, authorization, and billing records your organization uses.
+4. Run a supervised test session before field use.
+5. Confirm data collection, EVV, note review, graphing, and billing handoffs with your organization’s policies.
+6. For offline work, test disconnection and successful resynchronization with non-production training data first.
 
-### AI-Assisted Note Generation
-
-- **Smart drafting** — generates SOAP format from session observations
-- **Template selection** — therapy session, progress note, supervision note
-- **Clinical vocabulary** — trained on ABA terminology
-
-### Note Workflow
-
-```
-Draft → Submitted → Co-Signed → Finalized
-```
-
-- **Co-signature support** — supervising BCBA can review and co-sign RBT notes
-- **CRDT persistence** — real-time collaboration without data loss
-- **Audit trail** — every edit tracked with timestamp and author
-
----
-
-## Staff & Supervision Management
-
-### Credential Tracking
-
-Monitor certification status for your entire clinical team:
-
-| Credential | Tracked Fields |
-|-----------|---------------|
-| BCBA | Certification #, expiry, CEU status |
-| BCBA-D | Doctoral-level board certification |
-| BCaBA | Assistant analyst certification |
-| RBT | Technician certification, renewal date |
-| LABA | Licensed Applied Behavior Analyst (state-specific) |
-| QBA | Qualified Behavior Analyst |
-
-- **Expiry alerts** — automated notifications before credential expiration
-- **Training tracker** — log completed CEUs and training hours
-- **State license integration** — tracks state-specific licensing requirements
-
-### Supervision Logging
-
-Record supervision sessions per BACB requirements:
-- **Supervision types**: Direct, Indirect, Group, Individual, Competency Assessment
-- **Duration tracking** — minutes per session
-- **Topics covered** — free text + structured topic categories
-- **BCBA ↔ RBT pairing** — track who supervises whom
-
----
-
-## Insurance & Authorization Management
-
-### CPT Code Integration
-
-Direct support for ABA-specific billing codes:
-
-| Code | Description |
-|------|-------------|
-| 97151 | Behavior identification assessment |
-| 97152 | Behavior identification supporting assessment |
-| 97153 | Adaptive behavior treatment by protocol |
-| 97154 | Group adaptive behavior treatment |
-| 97155 | Adaptive behavior treatment with protocol modification |
-| 97156 | Family adaptive behavior treatment guidance |
-| 97157 | Multiple-family group adaptive behavior treatment |
-| 97158 | Group adaptive behavior treatment by protocol modification |
-
-Plus telehealth variants (modifier 95) for all codes.
-
-### Authorization Tracking
-
-- **Units vs. hours toggle** — track authorized amounts in either format
-- **Utilization monitoring** — real-time view of used vs. remaining authorizations
-- **Expiration alerts** — notifications before authorization periods end
-- **CSV export** — for insurance submission and internal reporting
-
----
-
-## AI Clinical Copilot
-
-An AI assistant trained on ABA clinical workflows:
-
-- **Treatment plan assistance** — suggests evidence-based interventions based on assessment data
-- **Note drafting** — generates clinical language from session observations
-- **Clinical questions** — answers questions about ABA methodology, BACB ethics, and best practices
-- **Privacy-first** — runs on local Ollama instance with DLP redaction; patient data processed with HIPAA safeguards
-
----
-
-## Offline Data Collection
-
-Designed for the reality of ABA field work — home visits with no WiFi, school basements, rural clinics. RBTs can collect full session data offline; it syncs automatically when connectivity returns.
-
-### How It Works
-
-1. **RBT records session data normally** — trials, frequency, ABC, task analysis all work offline
-2. **Data is encrypted immediately** — AES-GCM-256 encryption before any write to device storage (PBKDF2 key derivation from session token, 100k iterations)
-3. **Queued locally** — up to 200 encrypted items stored in the browser's localStorage
-4. **Auto-sync on reconnect** — when WiFi returns, queued items decrypt and POST to the server automatically
-5. **Idempotency keys** prevent duplicates if a sync retries
-
-### Status Indicators
-
-| Badge | Meaning |
-|-------|---------|
-| *(hidden)* | Online, all synced — normal operation |
-| 🔴 Offline — saves will queue locally | Offline, no queued items yet |
-| 🟡 Offline · N items queued | Offline with data waiting to sync |
-| 🔄 Syncing N items... | Connection restored, syncing in progress |
-| 🟠 Queue 180/200 — connect soon | Queue nearing capacity |
-| 🔴 Queue full — connect to sync | Queue at max — must reconnect before continuing |
-
-### Session Status Flow
-
-Sessions use the same status lifecycle whether online or offline:
-
-```
-in_progress → completed → submitted
-```
-
-- **in_progress** — session is active, data being collected (online or offline)
-- **completed** — RBT ended the session (EVV signed, data saved or queued)
-- **submitted** — session submitted for billing/review
-
-When offline, the `completed` status is set in the queued payload. On sync, the server receives the session with its original client-side timestamps — billing-accurate per CMS/Medicaid requirements.
-
-### Security
-
-- **Encrypted at rest** — all queued clinical data is AES-GCM-256 encrypted; plaintext PHI never touches device storage
-- **Session-bound keys** — encryption key derives from the logged-in session; expired sessions cannot decrypt queued data
-- **Purge on logout/idle** — encrypted queue cleared on 15-minute idle timeout or explicit logout
-- **48-hour expiry** — queued items older than 48 hours are automatically discarded
-- **SOAP notes** — voice dictation works offline (WASM Whisper runs on-device); generated notes save when reconnected
-
----
-
-## Multi-Locale Support
-
-ABA services are delivered worldwide. Synalux adapts to your region:
-
-| Region | Insurance | Credentials | Diagnosis Codes |
-|--------|-----------|-------------|-----------------|
-| **United States** | US commercial + Medicaid | BACB (BCBA, RBT) | ICD-10-CM |
-| **Canada** | Provincial (Ontario, BC, Alberta) | BACB + provincial | ICD-10-CA |
-| **United Kingdom** | NHS + private | HCPC, DBS | ICD-10 |
-| **European Union** | National systems (DE, FR, NL) | Country-specific | ICD-10 |
-
----
-
-## Security & Compliance
-
-- **HIPAA audit trails** — every data access, edit, and deletion logged with user identity
-- **Workspace isolation** — multi-tenant architecture prevents cross-practice data leakage
-- **Role-based access** — BCBAs see all patients; RBTs see only assigned patients
-- **E-signatures** — secure consent via integrated signature workflow
-- **Encryption at rest** — all clinical data encrypted via platform-level safeStorage
-- **SOC 2 controls** — rate limiting, SSRF protection, input validation on all clinical endpoints
-
----
-
-## Getting Started
-
-1. **Create a workspace** at [synalux.ai](https://synalux.ai)
-2. **Add your team** — invite BCBAs, RBTs, and administrative staff
-3. **Set up patients** — enter demographics, insurance, and diagnosis codes
-4. **Create curriculum** — build your program tree with targets and mastery criteria
-5. **Start collecting data** — use any device for real-time session data entry
-6. **Review and graph** — analyze progress with auto-generated charts
-7. **Generate notes** — use voice dictation for zero-paperwork documentation
-8. **Bill insurance** — track authorizations and submit claims with CPT codes
-
----
-
-## Roadmap
-
-Recently shipped:
-
-- [x] FBA/BIP structured builder workflow (3-step wizard)
-- [x] Goals template library (browse, search, assign from evidence-based bank)
-- [x] Real assessment instrument support (CSV item import)
-- [x] Interval recording UI (occurred/absent with running percentage)
-- [x] Task analysis recording in post-hoc data collection
-- [x] Trend + aim lines with sessions-to-mastery projection on progress graphs
-- [x] Data-based mastery decision support (advance / maintain / modify)
-- [x] Behavior graphs — frequency/rate, task-analysis, interval, duration, and ABC distribution
-
-In active development:
-
-- [ ] Standard Celeration Chart (SCC) view
-- [ ] Insurance-ready progress report generator with embedded graphs
-- [ ] Parent/caregiver portal for progress viewing
-- [ ] BACB fieldwork hours tracking (restricted/unrestricted split)
-- [ ] Supervision contract management
-
----
-
-*For questions or feature requests, contact [support@synalux.ai](mailto:support@synalux.ai) or visit [synalux.ai/docs](https://synalux.ai/docs).*
+For help, contact [support@synalux.ai](mailto:support@synalux.ai).

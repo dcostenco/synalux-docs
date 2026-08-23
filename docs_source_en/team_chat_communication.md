@@ -1,87 +1,66 @@
-# 💬 Team Chat & Clinical Communication
+# 💬 Team Chat & Practice Communication
 
-Synalux v11.1 Elite keeps your entire practice connected through a high-security, HIPAA-compliant collaboration hub. Coordinate care in real-time, conduct HD video scrums, and share clinical assets securely without ever leaving the platform.
+Synalux brings staff conversations, meeting access, and shared workspace files into the same signed-in experience. Available channels, files, and meeting features depend on your workspace and permissions.
 
----
+## Team conversations
 
-## 🔐 HIPAA-Compliant Team Channels
-Keep your practice organized and your patient data private.
-*   **Department Channels:** Dedicated spaces for #clinical, #billing, #front-desk, and #management.
-*   **Threaded Conversations:** Stay focused on specific topics without cluttering the main channel.
-*   **Urgent Mentions:** Use @urgent to trigger immediate notifications for time-sensitive clinical alerts.
+Use the Team Chat workspace to find conversations available to your role and communicate with other staff members. Follow your organization’s privacy policy before sharing patient information.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View Team Chat</summary>
 
-![Team Chat Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
+![Current Synalux Team Chat workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
 
 </details>
 
 ---
 
-## 📹 Enterprise Video Scrums (LiveKit SFU)
-Conduct high-definition telehealth and team meetings with rock-solid stability.
-*   **Massive Capacity:** Support for 25+ concurrent participants with crystal-clear 1080p FHD video.
-*   **Bandwidth Optimized:** Our SFU architecture ensures you only upload 1 stream, no matter how many people are in the room.
-*   **Active-Speaker Routing:** The UI dynamically highlights the person speaking and dims background participants to save your CPU.
+## Meetings and telehealth
+
+Open the telehealth area to review available meeting actions and scheduled sessions. Confirm patient consent and your organization’s telehealth procedures before starting a clinical meeting.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the telehealth workspace</summary>
 
-![HD Video Conference Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/telehealth_conference_ui.png)
+![Current Synalux telehealth meeting workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/17_telehealth.png)
 
 </details>
 
 ---
 
-## 📂 Secure Clinical File Sharing
-Share the right information with the right people, instantly.
-*   **Contextual Sharing:** Forward a treatment plan or lab result directly into a billing or clinical channel.
-*   **Encryption at Rest:** Every file shared in chat is secured with AES-256-GCM and inherits workspace RLS policies.
-*   **Mobile Review:** Clinicians can securely view X-rays, photos, and PDFs on their tablets during sessions.
+## Shared workspace tools
+
+The collaboration area gives staff a central place to open the tools made available to their workspace. Access remains subject to the signed-in user’s permissions.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the collaboration workspace</summary>
 
-![Clinical Asset Sharing](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+![Current Synalux collaboration workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
 
 </details>
 
 ---
 
-## 🔄 Cross-Practice Collaboration
-Bridge the gap between your branches and external partners.
-*   **Referral Threads:** Dedicated chat groups for coordinating care with external specialists.
-*   **HQ Announcements:** Broadcast critical organization-wide updates to all branches simultaneously.
-*   **Global Directory:** Quickly find and message providers and staff across your entire enterprise network.
+## Multi-location visibility
+
+Organizations with access to the multi-location dashboard can review the locations and operational summaries available to their account. This dashboard is separate from Team Chat; it does not imply that every location shares the same conversations or records.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the multi-location dashboard</summary>
 
-![Global Practice Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
+![Current Synalux multi-location dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/36_global_dash.png)
 
 </details>
 
 ---
 
-## 📊 Capacity & Performance
-| Feature | Synalux Standard | Synalux Enterprise |
-| :--- | :--- | :--- |
-| **Room Capacity** | 8 Participants | **25+ (Scales to 100)** |
-| **Daily Call Volume** | Unlimited | **Unlimited** |
-| **Video Resolution** | 720p HD | **1080p FHD** |
-| **Network Impact** | Mesh (Heavy) | **SFU (Lightweight)** |
+## Access review
 
----
-
-## 🔐 Security & Compliance
-*   **Zero-PHI Notifications:** Email and push alerts never contain patient names or sensitive data.
-*   **Access Expiration:** Temporary staff (e.g., interns) are automatically removed from channels on their end-date.
-*   **Tamper-Proof Logs:** A permanent, searchable audit trail of every message and file access.
+Administrators can review recorded workspace activity in the audit log. Availability of a particular event depends on the action and workspace configuration.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Synalux audit log showing recorded workspace activity](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

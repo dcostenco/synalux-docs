@@ -1,92 +1,68 @@
-# 🏥 Secure Patient Portal
+# 🏥 Patient Portal
 
-Synalux v11.1 Elite empowers your patients to take control of their healthcare journey. Our secure, mobile-optimized portal provides a seamless bridge between the patient and the clinical team—reducing administrative friction and improving care outcomes.
+The Synalux patient portal gives a signed-in patient access to the portal features enabled by their organization. Available appointments, messages, documents, forms, and tasks depend on the patient account and workspace configuration.
 
----
+## Patient dashboard
 
-## 📱 Mobile-First Patient Experience
-Patients can manage their health from any device, anywhere. No app download required.
-*   **One-Click Login:** Secure access via practice-issued codes with SHA-256 hashing.
-*   **Intuitive Dashboard:** A single view for upcoming appointments, unread messages, and pending tasks.
-*   **Real-Time Alerts:** Push notifications (via browser) for new test results or appointment reminders.
+The dashboard brings the patient’s available portal information into a mobile-friendly view. Patients should confirm that they are using the correct account before viewing or submitting information.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the patient dashboard</summary>
 
-![Patient Portal Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
+![Current Synalux patient portal dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
 </details>
 
 ---
 
-## ✍️ Digital Intake & Consents
-Eliminate the clipboard. Collect everything before the patient walks through the door.
-*   **Smart Forms:** Mobile-friendly intake, PHQ-9/GAD-7, and Vanderbilt questionnaires.
-*   **E-Signatures:** Legally-binding digital signatures for HIPAA, Telehealth, and Financial policies via BoldSign.
-*   **Document Upload:** Patients can securely snap and upload photos of insurance cards and prior records.
+## Account onboarding
+
+When onboarding is enabled, the patient follows the guided portal steps shown by the organization. Read each request before entering information or accepting a consent; contact the practice if the account, form, or requested action is unexpected.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View patient onboarding</summary>
 
-![Patient Portal Onboarding](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
+![Current Synalux patient portal onboarding flow](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
 
 </details>
 
 ---
 
-## 💬 Secure Clinical Messaging
-Threaded, HIPAA-compliant communication that keeps the conversation professional and private.
-*   **Provider Threads:** Dedicated channels for clinical questions, refill requests, and billing inquiries.
-*   **Read Receipts:** Peace of mind for patients knowing their message was seen.
-*   **Urgent Flags:** Automated prioritization for messages containing safety-critical keywords.
+## Staff-side billing and scheduling
+
+Portal information is prepared and managed from the organization’s staff workspaces. The following screens are staff views, not patient portal screens. They show where authorized staff review billing and scheduling records that may affect what a patient sees.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the staff billing workspace</summary>
 
-![Patient Messaging Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/10_team_chat.png)
+![Current Synalux staff billing workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 </details>
 
 ---
 
-## 💳 Billing & Online Payments
-Transparent financial management that improves collection rates.
-*   **Stripe Integration:** Secure, one-click payments for copays and self-pay balances.
-*   **Payment Plans:** Automated installments for high-value dental or orthodontic procedures.
-*   **Itemized Statements:** Clear breakdown of charges with CPT/CDT codes for patient records.
-
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the staff scheduling workspace</summary>
 
-![Patient Billing & Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+![Current Synalux staff scheduling workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png)
 
 </details>
 
 ---
 
-## 📅 Scheduling & Requests
-Reduce no-shows and fill your calendar with easy appointment management.
-*   **Request New Visits:** Patients select their preferred dates and times for staff approval.
-*   **Visit History:** Full visibility into past and upcoming appointments with specific providers.
-*   **Preparation Guides:** Automated instructions sent to the portal before specialized procedures (e.g., surgery prep).
+## Privacy and account safety
+
+- Use only the portal link supplied by the organization.
+- Do not share sign-in codes or account credentials.
+- Sign out on shared devices.
+- Contact the organization if information appears under the wrong account or a requested action is unexpected.
+- Call the practice or emergency services as appropriate; portal messages are not a substitute for emergency care.
+
+Authorized staff can review recorded workspace activity in the administrative audit log.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the administrative audit log</summary>
 
-![Patient Scheduling Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/15_scheduling.png)
-
-</details>
-
----
-
-## 🔐 Privacy & Trust
-*   **Encryption at Rest:** All portal data is secured with AES-256-GCM encryption.
-*   **Access Expiration:** Secure codes automatically expire after use or timeout to prevent unauthorized access.
-*   **Audit Trail:** Patients can see a log of when their records were accessed, ensuring full transparency.
-
-<details>
-<summary>View Interface / Diagram</summary>
-
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux administrative audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

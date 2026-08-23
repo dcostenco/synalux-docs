@@ -600,8 +600,8 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 11. **Promo codes** — one-time-use codes are validated at checkout and duplicate redemption is rejected
 12. **AI chat** — customer-facing AI understands your full menu including modifiers and pizza builder. Supports 14 languages with voice input/output
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-online-ordering-desktop.png" alt="Current public Online Ordering storefront on desktop">
-<img src="../images/pos/production-demo-2026-08/prod-20260822-online-ordering-mobile.png" alt="Current public Online Ordering storefront on mobile">
+<img src="../images/pos/production-demo-2026-08/prod-20260823-online-ordering-desktop.png" alt="Validated Online Ordering storefront from the current POS build on desktop, with the customer menu and order panel">
+<img src="../images/pos/production-demo-2026-08/prod-20260823-online-ordering-mobile.png" alt="Validated Online Ordering storefront from the current POS build on a phone, with responsive menu cards and cart access">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-online-ordering-ai-chat.png" alt="Current customer Order Assistant on the populated storefront">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-online-ordering.png" alt="Current production Online Ordering settings with configured business hours and order channels">
 
@@ -669,7 +669,7 @@ Money- and compliance-sensitive actions (payroll ACH, tax changes, journal posti
 
 ### AI Voice Ordering (Phone)
 
-Customers call your venue's phone number and place orders through natural AI conversation. The current voice stack uses Deepgram Nova-3 multilingual speech recognition, ElevenLabs Flash v2.5 speech synthesis, Gemini 3.6 Flash ordering logic, and Twilio ConversationRelay. Returning-customer context and menu-aware correction are built into the workflow; SMS notifications remain conditional on sender configuration, consent, and content restrictions.
+Customers call your venue's configured phone number and place orders through a spoken conversation. Returning-customer context and menu-aware correction are built into the workflow; SMS notifications remain conditional on sender configuration, consent, and content restrictions.
 
 Voice Ordering is configured from **Settings > Integrations**. A provider card or enabled toggle documents configuration only; it does not prove that a live phone number, payment processor, SMS sender, and kitchen path have all completed an end-to-end order.
 
@@ -687,7 +687,7 @@ Voice Ordering is configured from **Settings > Integrations**. A provider card o
 | Custom Greeting | Opening message with `{venue}` and `{name}` placeholders |
 | AI Persona | Tone and style — "friendly server", "professional concierge", etc. |
 | Today's Specials | AI proactively suggests these when asked "what's good?" |
-| Supported Languages | 16 selectable conversation languages in the current Settings UI. Automatic first-utterance detection covers the Nova-3 multilingual subset; explicit venue selection covers the remaining configured choices (see below) |
+| Supported Languages | 16 selectable conversation languages in the current Settings UI. Automatic first-utterance recognition varies by language, so explicitly configure and test every language the venue offers |
 | Fallback Number | Transfer to human after repeated AI failures |
 
 </details>
@@ -696,11 +696,11 @@ Voice Ordering is configured from **Settings > Integrations**. A provider card o
 <summary><strong>How a call works</strong></summary>
 
 1. Customer calls venue phone number
-2. AI starts in the venue or returning caller's configured language. For a first-time caller using a language in Deepgram Nova-3's multilingual detection subset, the relay can switch before the first cart item; the language is then locked for that order.
-3. Twilio ConversationRelay streams speech and responses over the secure voice relay connection.
+2. The assistant starts in the venue or returning caller's configured language. For a first-time caller, automatic language recognition can switch before the first cart item when the deployed phone service recognizes the language; the language is then locked for that order.
+3. The configured phone service carries speech and responses between the caller and the ordering workflow.
 4. Returning customers auto-recognized by phone — AI greets by name, knows past orders.
-5. The relay input verifier rejects empty, repeated, filler-only, or malformed input before model invocation; it reduces noise-related turns but is not a guarantee that every noisy utterance will be classified correctly.
-6. Gemini 3.6 Flash processes the transcribed order context and returns the next response or cart action.
+5. Input checks reject empty, repeated, filler-only, or malformed input before the order assistant acts; this reduces noise-related turns but does not guarantee that every noisy utterance will be classified correctly.
+6. The order assistant uses the recognized request and current cart to return the next response or cart action.
 7. AI adds items immediately, confirms with price: "Added a Classic Burger for twelve dollars. What else?"
 8. Phonetic correction: garbled phone audio auto-matched to menu items
 9. "Change burger to family pack" → removes old + adds new in one turn
@@ -725,13 +725,13 @@ Voice Ordering is configured from **Settings > Integrations**. A provider card o
 | "Yes" / "Confirm" | Places order |
 | "No" / "Wait" | Returns to ordering |
 
-**Language support:** The current integration screen lets the venue select English, Spanish, French, Chinese, Russian, Arabic, Portuguese, German, Italian, Japanese, Korean, Vietnamese, Hindi, Ukrainian, Romanian, and Bulgarian. Deepgram Nova-3 multilingual detection can label English, Spanish, French, German, Hindi, Russian, Portuguese, Japanese, Italian, and Dutch on a first-time call. A returning caller can start with the stored supported language. Languages outside automatic detection should be selected in venue configuration rather than advertised as automatic.
+**Language support:** The current integration screen lets the venue select English, Spanish, French, Chinese, Russian, Arabic, Portuguese, German, Italian, Japanese, Korean, Vietnamese, Hindi, Ukrainian, Romanian, and Bulgarian. A returning caller can start with the stored supported language. Automatic first-utterance recognition is more limited than the settings list, so configure and test each offered language rather than advertising every selected language as automatically detected.
 
 The order language locks after the first cart item so a menu name or noisy utterance cannot silently change the language mid-order. Test every enabled language with the venue's actual phone number before launch; configuration is not proof that the provider accepted a specific accent, device, or call path.
 
 **Online ordering** is also available at the same time:
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-online-ordering-desktop.png" alt="Current public Online Ordering storefront used alongside phone ordering">
+<img src="../images/pos/production-demo-2026-08/prod-20260823-online-ordering-desktop.png" alt="Validated Online Ordering storefront from the current POS build used alongside phone ordering">
 
 </details>
 
@@ -759,8 +759,8 @@ WhatsApp uses the same menu, cart validation, pricing, and order-placement rules
 <summary><strong>How it works</strong></summary>
 
 1. Customer texts or sends a voice message to the venue on WhatsApp
-2. AI responds with Gemini 3.6 Flash — the same menu and ordering logic used by the voice workflow
-3. The initial reply language comes from supported text/script detection, the mapped caller locale, or the venue locale. Voice notes are transcribed through the configured Deepgram service; do not advertise an untested language as automatically detected
+2. The order assistant responds using the same menu, pricing, and cart rules used by the voice workflow
+3. The initial reply language comes from supported text/script detection, the mapped caller locale, or the venue locale. Voice notes use the configured transcription service; do not advertise an untested language as automatically detected
 4. Add items naturally: "I want a burger and fries" or "я хочу бургер и картошку"
 5. Cart displayed after each message:
    ```
@@ -787,14 +787,14 @@ WhatsApp uses the same menu, cart validation, pricing, and order-placement rules
 | "My usual" | Last order re-added |
 | "Done" | Starts confirmation |
 | "YES" | Places order → KDS ticket |
-| Voice message (mic button) | Transcribed via Deepgram, processed as text |
+| Voice message (mic button) | Transcribed by the configured speech service, then processed as text |
 
 **Language support:**
 
 | Input | Languages |
 |-------|-----------|
-| **Text messages** | Venue locale plus the route's currently recognized script/caller-locale mappings; model comprehension alone is not an automatic-language guarantee |
-| **Voice messages** | Deepgram transcription using the deployed shared transcription configuration; validate each language before launch |
+| **Text messages** | Venue locale plus the route's currently recognized script/caller-locale mappings; a successful reply does not prove automatic language recognition for every future message |
+| **Voice messages** | The deployed speech configuration; validate each language before launch |
 | **AI responses** | Requested session locale when it can be determined; unsupported or ambiguous input falls back to the venue language |
 
 **Venue assignment:** The inbound WhatsApp number must be assigned to the venue. Unassigned numbers are rejected rather than guessed from a country code or routed to another venue.
@@ -1728,7 +1728,7 @@ When the network goes down, a warning banner and red **"Offline"** badge appear 
 
 ### Integrations
 
-Stripe, Dejavoo (SPIn terminal), DoorDash Drive, Uber Direct, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Twilio (voice + WhatsApp + SMS), Resend and SendGrid (email), Forage (EBT), Deepgram (speech-to-text), ElevenLabs (text-to-speech), Gemini (AI ordering), and Ollama (local AI).
+Customer-configurable connection cards currently include Stripe Terminal, DoorDash, Uber Eats, Grubhub, QuickBooks, Xero, Gusto, ADP, OpenTable, Google Reserve, Yelp, Google Calendar, Google Drive, Gmail, Outlook, and Slack. Voice Ordering and WhatsApp use their dedicated setup section. Dejavoo terminal settings are managed with the venue's payment configuration rather than through a generic connection card.
 
 The Settings page is a control surface, not proof that a provider is connected. The current screenshot is included to show where integrations are configured; any disconnected status remains visible and must not be interpreted as end-to-end provider acceptance.
 

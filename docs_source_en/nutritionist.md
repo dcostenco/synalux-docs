@@ -1,28 +1,22 @@
-# 🥗 Nutritionist
+# Nutrition & Dietetics
 
-Practice-management module for registered dietitians and nutritionists. Same chart + scheduling + billing primitives as the clinical core, tuned for nutritional intake, food logs, and macro tracking.
+Choose **Nutrition & Dietetics** during workspace onboarding to start with role, chart, form, and dashboard defaults suited to dietitians and nutrition coaches.
 
----
+## Current nutrition workflow
 
-## 🍽️ What's Different from Standard Clinical
-*   **Food log** — patient-side daily entries with photo support; clinician sees aggregated macro + calorie trends.
-*   **Macro / micro nutrient tracking** — per-meal breakdown, comparison to RDI / clinical-goal targets.
-*   **Diet plan templates** — Mediterranean, DASH, low-FODMAP, ketogenic, custom — assignable per patient with weekly check-in scheduling.
-*   **Nutrition-specific CPT codes** — 97802 (initial), 97803 (re-assessment), 97804 (group MNT) — tracked alongside session counts.
+The nutrition workspace uses the same customer-operable tools as the clinical platform:
 
----
+- **Patients** for demographics, insurance, measurements, documents, and chart history
+- **Schedule** for intake visits, follow-ups, and recurring appointments
+- **Clinical Notes** for nutrition assessments and session documentation
+- **Forms** for the configured Nutrition Intake and Nutrition Session Note templates
+- **Authorizations** and **Billing** for approved services, procedure codes, claims, and payments
+- **Patient Portal** for appointments, documents, education, billing, and messages
 
-## 🏗️ Built On
-The Nutritionist module reuses every Synalux primitive:
-*   [Patient Portal](patient_portal.md) — patient-side food log + plan adherence
-*   [Scheduling](scheduling_appointments.md) — recurring weekly check-ins
-*   [SOAP / Clinical Notes](clinical_notes_documentation.md) — session notes with macro adherence summary
-*   [Billing & Insurance](billing_payments_module.md) — nutrition CPT codes + Medicare-correct billing
-*   [Mail](mail.md) / [SMS](sms.md) — appointment reminders + plan check-in nudges
+Synalux drafting prompts can help an authorized clinician prepare a nutritional assessment, dietitian SOAP note, or meal-plan draft. The clinician must review, individualize, and approve any generated clinical content.
 
----
+## Current boundary
 
-## 💳 Plans
-Bundled with **Standard+** — no separate Nutritionist tier. The same workspace can serve clinicians from any specialty (BCBA, dietitian, dermatologist, dentist, mental health, peds, PT, vet) — Synalux is multi-specialty by design.
+The current customer portal does not provide a dedicated patient food diary, meal-photo upload, automatic nutrient calculation, RDI comparison dashboard, recipe database, grocery-list generator, or assignable diet-plan library. Record nutrition information in the practice's approved forms and notes rather than expecting those specialty screens.
 
-[See full pricing →](https://synalux.ai/pricing)
+For current package and pricing information, visit [Synalux pricing](https://synalux.ai/pricing) or contact Synalux.

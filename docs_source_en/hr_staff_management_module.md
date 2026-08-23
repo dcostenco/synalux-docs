@@ -1,24 +1,23 @@
-# HR & Staff Management Module
+# HR & Staff Management
 
-## Overview
-The Synalux HR & Staff Management Module is designed to streamline and enhance the administration of human resources within your organization. It provides robust tools for managing staff profiles, credentials, time off, training, performance reviews, and onboarding processes, ensuring compliance and efficiency.
+The **Staff** screen brings the active staff directory, credential tracking, training status, and supervision records into one workspace.
 
-## Features
+## Staff directory
 
-### Staff Profiles
-Efficiently manage detailed information about each employee, including their employment type (full-time, part-time), hire date, salary or hourly rate, specialties, and department assignments. This feature facilitates easy tracking and organization of staff data, supporting informed decision-making and operational planning.
+Open **Staff** to search the directory and review each person's role, contact details, status, and credential count. Select a staff member to open the available profile details and operational metrics.
 
-### Credentials
-Maintain a comprehensive record of all licenses and certifications held by employees, along with expiration dates and renewal workflows. Automated alerts notify administrators when credentials are approaching expiration, ensuring timely updates and compliance with legal requirements. This feature is essential for maintaining high standards of professionalism and safety within the workplace.
+## Credentials
 
-### Time Off
-Streamline the management of various types of time off, such as vacation, sick leave, continuing education (CE), maternity leave, bereavement leave, and jury duty. The module supports approval workflows that ensure all requests are properly reviewed and processed, maintaining fairness and consistency across the organization.
+The **Credentials** tab supports adding and editing a credential type, number, issuing authority, issue date, expiration date, and status. Expiration filters and summary cards help administrators find credentials that are approaching renewal.
 
-### Training
-Track compliance training for essential certifications like HIPAA, BLS, and CPR, including due dates and completion statuses. This feature helps organizations meet regulatory requirements while ensuring that all staff members are adequately trained to perform their duties safely and effectively.
+## Training
 
-### Performance Reviews
-Conduct annual or semi-annual performance evaluations with ease. The module allows administrators to assign ratings, set goals, develop improvement plans, and request acknowledgments from employees. Regular performance reviews are crucial for fostering growth, enhancing job satisfaction, and maintaining high standards of service.
+The **Training** tab lists existing training assignments with the staff member, training name, status, and due or completion date. Filters help surface overdue and completed records. The current Staff screen is a tracker; it does not include a control for creating a new training assignment.
 
-### Onboarding
-Simplify the onboarding process by tracking pending statuses, credential verification pipelines, and training assignments. This feature ensures that new hires receive the necessary information and support to integrate smoothly into the organization, reducing turnover and improving productivity from day one.
+## Supervision
+
+The **Supervision** tab supports logging, editing, and approving supervision records. A record can include the supervisee, session date, duration, supervision type, topics, and feedback.
+
+## Payroll and broader HR workflows
+
+Payroll can display available and year-to-date time-off balances in pay-stub details when those records are configured. The current **Staff** screen does not provide employee time-off requests, performance-review forms, or an employee-onboarding checklist. Keep those workflows in the practice's approved HR process until a customer-facing screen is available.

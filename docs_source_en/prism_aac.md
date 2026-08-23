@@ -1,209 +1,177 @@
-# 🗣️ Prism AAC
+# Prism AAC
 
-**Help nonverbal kids talk.** Augmentative & Alternative Communication for children with motor impairments and complex communication needs. Tap pictures, build sentences, hear them spoken aloud — in 16+ languages. Works on any tablet or laptop, with or without internet.
+Prism AAC is an augmentative and alternative communication workspace for people who communicate with pictograms, phrase boards, typing, speech output, or alternative input methods.
 
-Open source ([AGPL-3.0](https://github.com/dcostenco/prism-aac/blob/main/LICENSE)). Standalone repo: [`prism-aac`](https://github.com/dcostenco/prism-aac).
+- [Open the web app](https://synalux.ai/prism-aac)
+- [View current plans](https://synalux.ai/pricing)
+- [View the open-source project](https://github.com/dcostenco/prism-aac)
 
-**Try it now:**
-- **Web app (free):** [synalux.ai/prism-aac](https://synalux.ai/prism-aac) — works on any device with a browser
-- **iOS (iPhone + iPad + Apple Watch):** [App Store](https://apps.apple.com/app/id6764692277)
-- **Pricing:** [synalux.ai/pricing](https://synalux.ai/pricing) — free tier available
+The controls available on a device can vary by browser, operating system, permissions, account, installed modules, and plan.
 
-<details>
-<summary>View Interface / Diagram</summary>
+## Communication board at a glance
 
-![Prism AAC home screen](../docs/demo/prism_aac_home.png)
-*Home screen — quick categories, math panel, schedule, games, and settings.*
+![Current Prism AAC communication board with pictogram predictions, keyboard, language controls, and Speak action](../docs/demo/prism_aac_home.png)
 
-</details>
+The main board keeps the communication path visible:
 
----
+- a message bar for the sentence being built;
+- Undo, Speak, and Delete actions;
+- pictogram prediction tiles;
+- an on-screen keyboard;
+- input and output language selectors;
+- optional Echo and Tone controls;
+- a persistent Speak action.
 
-## 🖼️ Pictures → Words → Speech (PECS-style)
-The core AAC primitive. Tap picture tiles to build a sentence; the app reads it aloud in the child's language.
-*   **22 default categories** — Food, Feelings, School, Body, Animals, Colors, Time, Help/Needs, Quick Talk, etc. Caregiver-extendable.
-*   **Pictogram library** — high-contrast, high-readability symbols designed for low-vision users.
-*   **Sentence bar** — tap-and-build, then 🔊 to speak. Long-press to edit a tile.
-*   **Per-child layouts** — a BCBA can lock categories visible to a specific child.
+Tap pictograms or type words to build the message, then select **Speak**. The exact speech voice depends on the selected language and the voices available through the current device and configured services.
 
-<details>
-<summary>View Interface / Diagram</summary>
+## Categories and phrase boards
 
-![Pictogram categories](../docs/demo/prism_aac_categories.png)
-*Pictogram categories — tap to build a sentence, hear it spoken.*
+Select **Categories** from the toolbar to open the phrase board. The current board includes core words, quick talk, help and needs, feelings, questions, actions, people, food and drink, places, school or work, health and body, time, and other vocabulary groups.
 
-</details>
+![Current Prism AAC core phrase board with category navigation and keyboard/search controls](../docs/demo/prism_aac_categories.png)
 
----
+Use the controls on the right to show the keyboard, search, move through the board, or return home. The category strip provides direct movement between vocabulary groups.
 
-## ⌨️ Keyboard + Word Prediction
-For older or higher-functioning users, a full keyboard with multilingual prediction.
-*   **Per-user learning** — prediction model adapts to the child's vocabulary over weeks.
-*   **Autocorrect** — fixes hurried/motor-impaired typing (typos, dropped letters, missing diacritics) via Gemini 2.5 Flash-Lite. Multilingual: en/ru/ro/es/uk/pl + Cyrillic/Hebrew/Arabic script detection.
-*   **Word completion** — partial → full word in 750ms median (`hw` → `how are you`).
-*   **Local-first** — when prism-coder:14b is running on the device, autocorrect runs offline with zero network.
+Caregivers can open **Settings → Categories → Open Category Manager** to manage board categories. Category visibility and the selected grid size affect how much vocabulary appears at once; choose a layout that the communicator can target reliably.
 
----
+## Real-world scenarios
 
-## 🍽️ Food Ordering & Real-World Scenarios
-Pre-built sentence chains for common situations — restaurants, doctor visits, school transitions.
-*   **Quick-order tiles** — "I want pizza", "with cheese", "no onions" — chained in 3 taps.
-*   **Allergy alerts** — child can self-advocate ("I am allergic to peanuts") with a single tap.
-*   **Caregiver-customizable menus** per restaurant chain (McDonalds, Subway, Olive Garden, etc.).
+Some categories contain guided phrase sequences for common activities. In **Food & Drink**, for example, the current General Restaurant sequence starts with phrases such as “Can I see the menu?”, “I’d like to order,” and “Table for two please.”
 
-<details>
-<summary>View Interface / Diagram</summary>
+![Current Prism AAC General Restaurant phrase sequence](../docs/demo/prism_aac_food.png)
 
-![Food ordering scenario](../docs/demo/prism_aac_food.png)
-*Food ordering — real-world scenario tiles for restaurants, school, doctor visits.*
+Use **Next** and **Prev** to move through a sequence. Available scenario packs can change with the installed vocabulary and marketplace modules, so review the actual phrases before relying on a board in a new setting.
 
-</details>
+## Keyboard, prediction, and languages
 
----
+The keyboard supports direct typing alongside the pictogram board. Prediction tiles can be selected without finishing a word manually.
 
-## 🧮 Math Panel (Panther Math Paper-style)
-Graph-paper canvas with KaTeX rendering. Designed for school-age users who need to do math without speech.
-*   **Drawing surface** — pen + eraser, snapping grid, geometric figures (circle, triangle, parallelogram).
-*   **KaTeX equation editor** — write `\frac{x^2}{y}` and have it rendered + spoken aloud.
-*   **AI tutor (paid)** — speaks answers, explains step by step. Backed by Claude Sonnet 4 with Claude Haiku 3.5 fallback.
-*   **Save & share** — exports to caregiver notes for homework review.
+The toolbar exposes separate input and output languages where translation is available. Confirm both language buttons before speaking a translated message. Translation, assisted correction, and some prediction paths may require an account, a configured model, or a network connection; the keyboard and stored board remain the fallback communication path.
 
-<details>
-<summary>View Interface / Diagram</summary>
+## Math workspace
 
-![Math panel with graph paper canvas](../docs/demo/prism_aac_math.png)
-*Math panel — graph paper, KaTeX equations, optional AI tutor.*
+Select **Math** to open the graph-paper workspace.
 
-</details>
+![Current Prism AAC Math workspace with graph-paper canvas, study controls, subject tabs, and math keyboard](../docs/demo/prism_aac_math.png)
 
----
+The current Math panel includes:
 
-## 🎮 Therapeutic Games (9, evidence-based)
-Built to teach communication, NOT for screen-time entertainment.
-*   **Bubble Pop** — single-cause-effect for early causality learners.
-*   **Color Hunt / Match It / Category Sort** — receptive language + categorization.
-*   **My Story** — generative narrative building with picture sequences.
-*   **Yes/No / Finish It / Emotion Match / What Comes Next** — comprehension + theory of mind.
-*   **Free tier**: 3 games. **Paid tier**: all 9 + caregiver-tuned difficulty.
+- a graph-paper canvas;
+- Hint, Check, Solve, and Eval actions;
+- Save, Open, Lock, Unlock, Delete, and Done controls;
+- Main and advanced math symbol sets;
+- subject tabs such as time and distance, weight, volume, geometry, money, chemistry, physics, Python, Java, biology, statistics, music, earth science, history, and language;
+- a touch-friendly numeric and symbol keyboard.
 
----
+Assisted explanations and evaluation depend on the selected subject and configured services. Review generated work before using it for instruction or assessment.
 
-## 👋 Hands-Free with Gesture Recognition
-For users who can't reliably tap a touchscreen.
-*   **Head-pose tracking** + dwell-click via FaceLandmarker (MediaPipe Tasks). Local, browser-only — no video uploaded.
-*   **Hand-pose tracking** for users with limited fine motor control — pinch, point, swipe.
-*   **Per-user gesture profiles** — calibrate once, the app remembers.
-*   **Configurable dwell time** — 200ms (fast) to 2000ms (cautious).
+## Schedule, messages, notes, and history
 
----
+The toolbar can open:
 
-## 🗓️ Visual Schedule & Reward Shop
-Picture-based daily routines that reduce transition anxiety.
-*   **Time-blocked tiles** — "8am Breakfast", "9am School", "12pm Lunch", with pictograms and a check-off ritual.
-*   **Reward shop (paid)** — children earn tokens for completed tasks, redeem for caregiver-approved rewards (extra game time, choice of dinner, etc.). Trauma-informed: opt-in, no punishment mechanic.
+- **Schedule** for visual routines and tasks;
+- **Messages** for configured caregiver or contact communication;
+- **Notes** for saved caregiver or user notes;
+- **History** for previously spoken or composed communication.
 
----
+These modules use the active device and account state. A message shown as composed is not proof it was delivered; verify the module’s sent or error state.
 
-## 🩺 Clinical-Grade Defaults
-Designed with BCBAs and SLPs.
-*   **Verbal operant tracking** — matches BACB Task List 5th Edition (mand, tact, intraverbal, echoic).
-*   **Caregiver notes sync** (paid) — ABC-format notes travel encrypted between home, school, and clinic via the Synalux portal.
-*   **AAC access never restricted as a consequence** — hard-coded into the app design. A child must always have their voice.
-*   **Trauma-informed defaults** — no punishment mechanics, reward shop is opt-in, all "negative feedback" UX flows have been removed.
+## Games, marketplace, and reading tools
 
-<details>
-<summary>View Interface / Diagram</summary>
+Depending on the current configuration, toolbar modules can include:
 
-![Settings — voice, language, accessibility](../docs/demo/prism_aac_settings.png)
-*Settings — voice, language, accessibility, gesture calibration.*
+- **Games** for communication and interaction activities;
+- **Marketplace** for available vocabulary, board, and first-party modules;
+- **PDF Reader** for supported documents;
+- **Screenshot Reader** for on-screen text recognition;
+- **Comfort Player** for a simplified media experience.
 
-</details>
+Marketplace entries can be installed, active, unavailable, or marked for a future release. Use the status shown on the item instead of assuming every listed module is immediately usable.
 
----
+Text recognition and document reading depend on file quality, browser support, and permissions. Verify important text against the source document.
 
-## 📴 Works Offline
-The AAC primitive is the user's voice. It cannot depend on a network.
+## Accessibility and alternative input
 
-| Feature | Offline-capable | How |
-|---|---|---|
-| Keyboard input | ✅ | Pure UI |
-| Pictogram tiles + categories | ✅ | Bundled assets, IndexedDB persist |
-| Local word prediction | ✅ | `engine/predictionEngine.ts` (n-gram + user history) |
-| Translation (14 locales) | ✅ | Bundled `offlineDictionary.ts` (4000+ word pairs) |
-| Whisper transcription | ✅ | WASM in-browser model |
-| Neural TTS (Tier 1.5: Kokoro-82M) | ✅ en/es/fr/pt/ja/zh | Bundled neural model |
-| OS Web Speech API premium voices | ✅ | Browser-native |
-| WASM espeak-ng (last resort) | ✅ | Bundled fallback |
-| Categories/phrases/notes | ✅ | Zustand + IndexedDB |
-| Emergency alerts (10-min queue TTL) | ✅ | Local queue, retry on reconnect |
-| Sync to Synalux cloud | ❌ online-only | Background, non-blocking |
-| AI chat assistant | ❌ online-only | Claude Sonnet 4 via portal |
-| Cloud autocorrect (Gemini Flash-Lite) | ⚠️ degrades to local | 5s timeout → local prediction engine |
+Open **Settings → Accessibility & Input Modes** to review the controls available on the device. The current application includes configuration for:
 
-When the network goes, the device still talks.
+- direct touch;
+- switch scanning;
+- head tracking and dwell selection;
+- eye-gaze weighting within the tracking controls;
+- built-in gesture recognition and action mapping;
+- keyboard size and board density;
+- reduced-motion and visual theme preferences.
 
----
+Camera-based controls require explicit camera permission. Tracking accuracy varies with device placement, lighting, movement range, and camera quality. Complete calibration with the communicator, keep a reliable touch or switch fallback available, and use the emergency tracking-reset path if pointer control becomes unstable.
 
-## 🎙️ Voice (TTS) Architecture — 4-Tier Fallback Chain
+Custom-gesture recording may be shown as unavailable in the current build. Do not treat the presence of a control as evidence that training completed.
 
-| Tier | Engine | Quality | Offline | Notes |
-|---|---|---|---|---|
-| 1 | Inworld TTS-2 | Best (paid all langs; free for ro/uk/ru/de/ko/ar — Synalux absorbs cost) | — | Default for paid tier |
-| 1.5 | Kokoro-82M neural | Very good | ✅ en/es/fr/pt/ja/zh | Bundled WASM |
-| 2 | OS Web Speech API premium voices | Good | ✅ | Browser-native |
-| 3 | WASM espeak-ng | Acceptable | ✅ | Last resort |
+## Emergency alert
 
-Voice picker (paid): all 60+ Inworld voices, including child voices, accents, and voice cloning ("speak in MY voice — I trained it last week").
+The Alert button opens a confirmation workflow. If a primary caregiver and delivery route are configured, confirm the alert and wait for the application’s sent or failed status.
 
----
+An in-app alert is not a replacement for an emergency call system. If no caregiver is configured, delivery fails, or immediate assistance is required, use the person’s established emergency procedure.
 
-## 🏗️ Architecture (server-side via Synalux portal)
+## Settings
 
-| Path | Function | Model |
-|---|---|---|
-| `/api/v1/text/correct` | Autocorrect + word completion | **Gemini 2.5 Flash-Lite** (multilingual bench-validated; 752ms avg; 4.3× cheaper than 2.5 Flash) |
-| `/api/v1/prism-aac/predict` | 5-word continuation prediction | **Gemini 2.5 Flash-Lite** (free tier); Claude Haiku/Sonnet (paid) |
-| `/api/v1/prism-aac/chat` | AAC AI assistant | Local prism-coder:14b (primary) → **Claude Sonnet 4** (cloud paid). Fallback: Claude Haiku 3.5 / Gemini 2.5 Flash by tier. |
-| `/api/v1/prism-aac/tts` | Text-to-speech | Inworld TTS-2 + Azure Neural fallback |
-| `/api/v1/translate` | Sentence translation | Gemini 2.5 Flash + offline dictionary fallback |
-| `/api/v1/transcribe` | Voice → text | Whisper (WASM, in-browser primary) |
+![Current Prism AAC Settings with category visibility, grid size, theme, and voice controls](../docs/demo/prism_aac_settings.png)
 
-**Stack**: Next.js 15 (App Router), Zustand state, Whisper WASM, Inworld TTS-2 + Azure Neural fallback, Kokoro-82M offline TTS, FaceLandmarker (gestures), MediaPipe Tasks (hand pose).
+Settings are organized into collapsible sections so the communication board remains uncluttered. Current sections can include:
 
----
+- category visibility and Category Manager;
+- grid size;
+- light and dark themes;
+- voice speed, volume, and voice selection;
+- language and vocabulary set;
+- word visibility;
+- contacts;
+- toolbar customization;
+- accessibility and input modes;
+- Math;
+- hand calibration;
+- custom categories and phrases;
+- export and import;
+- Synalux account;
+- caregiver PIN;
+- local model configuration;
+- AAC resources.
 
-## 💳 Plans (Synalux pricing)
+Use a caregiver PIN when settings should not be changed accidentally. Keep a recoverable record of the PIN according to your organization’s policy.
 
-| | Free | Paid |
-|---|---|---|
-| Picture tiles + 22 categories | ✅ | ✅ |
-| Type-to-speak | ✅ | ✅ |
-| Default voice (Inworld) | ✅ | ✅ |
-| Math panel | ✅ basic | ✅ + AI tutor |
-| Schedule | ✅ | ✅ + reward shop |
-| Games | 3 | All 9 |
-| Voice picker (60+ Inworld voices) | — | ✅ |
-| Voice cloning | — | ✅ |
-| Caregiver notes sync | — | ✅ |
-| Word prediction (per-user learning) | — | ✅ |
-| AI chat (Claude Sonnet 4 + tier fallback) | — | ✅ |
+## Offline use
 
-[See full pricing →](https://synalux.ai/pricing)
+Prism AAC caches parts of the application for supported installed-browser use. After the app and needed vocabulary have loaded successfully, core typing, stored boards, and device speech may remain available without a connection.
 
----
+Network-dependent features—including synchronization, cloud-assisted tools, marketplace refreshes, and message delivery—cannot be assumed to work offline.
 
-## 🧪 Self-Host & Fork
+Before relying on offline use:
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+1. Open the app while connected.
+2. Load the board, language, and voice the communicator needs.
+3. Disconnect the test device.
+4. Compose and speak a test phrase.
+5. Reconnect and verify any queued or synchronized activity.
 
-```bash
-git clone https://github.com/dcostenco/prism-aac.git
-cd prism-aac
-npm install
-npm run dev    # http://localhost:3000
-```
+Repeat this check after browser storage is cleared, the app is updated, or the device changes.
 
-</details>
+## Privacy and safe use
 
-AGPL-3.0 — fork freely; share modifications. Synalux operates the canonical hosted version. See [prism-aac/CONTRIBUTING.md](https://github.com/dcostenco/prism-aac/blob/main/CONTRIBUTING.md), [ACCESSIBILITY.md](https://github.com/dcostenco/prism-aac/blob/main/ACCESSIBILITY.md), [SECURITY.md](https://github.com/dcostenco/prism-aac/blob/main/SECURITY.md).
+- Speech, camera, contact, and notification permissions are requested by the relevant feature; grant only what the communicator needs.
+- Camera-based input should show a permission or status error rather than silently claiming it is active.
+- AI-assisted text, recognition results, translations, and tutoring require human review.
+- Do not use the application as the sole route for urgent medical or safety communication.
+- Caregivers and clinicians remain responsible for vocabulary selection, access-method fit, consent, and backup communication.
+
+## First-time setup
+
+1. Open Prism AAC on the communicator’s device.
+2. Select the input and output languages.
+3. Test the Speak control and choose an available voice.
+4. Open **Settings** and select a comfortable grid size and theme.
+5. Use **Category Manager** to show the vocabulary groups needed most.
+6. Configure contacts or a primary caregiver before testing Alerts or Messages.
+7. Calibrate alternative input with the communicator if touch is not the primary access method.
+8. Practice one core phrase, one real-world scenario, and the emergency backup procedure.
+9. Test offline behavior on that exact device before field use.
+
+For help, contact [support@synalux.ai](mailto:support@synalux.ai).

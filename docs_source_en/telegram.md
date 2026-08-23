@@ -1,49 +1,24 @@
-# 💬 Telegram Bot
+# Telegram messaging
 
-**Two ways to use Telegram in Synalux:** as a chat provider for your team and patients, or as a sign-in method via Telegram Login Widget.
+Synalux can connect a Telegram bot for text conversations. Availability depends on your organization’s approved messaging configuration and the access assigned to your account.
 
----
+## Use the connection
 
-## 📨 Telegram Bot API Integration
-Send and receive Telegram messages from inside Synalux's unified chat surface. No separate Telegram app for staff to monitor.
-*   **Webhook-driven** — incoming messages POST to `/api/v1/telegram/webhook` and surface in the Synalux chat surface in real time.
-*   **Send** — outbound replies via `/api/v1/telegram/send`. Workspace-scoped bot token; one bot per workspace.
-*   **Bot setup** — provide your bot token from `@BotFather` in the workspace settings; webhook URL auto-registers via `setWebhook`.
-*   **Media support** — text, images, documents, voice notes (transcribed via the Transcription module on receipt).
+1. Open **Chat > Integrations**.
+2. Find **Telegram** and review its status.
+3. If setup is available to your account, follow the on-screen connection flow. Otherwise, ask your workspace administrator or Synalux support to enable the approved bot.
+4. Send a real inbound message to the bot and verify that an authorized operator can reply before using it with customers.
 
----
+When Telegram conversations are enabled for your account, text threads appear under **Chat > Inbox**. Select a thread, enter a reply, and choose **Send**.
 
-## 🔐 Telegram Login Widget
-End-to-end implementation of the Telegram Login Widget for sign-in.
-*   Users click a Telegram-blue button on `/auth`; Telegram OAuth flow returns user identity (telegram_id, name, photo).
-*   Identity is bound to a Synalux user record; subsequent sign-ins are one-tap.
-*   `bot_token` HMAC validation per the [Telegram Login Widget spec](https://core.telegram.org/widgets/login) — replay-attack proof.
+The Telegram widget on the Integrations screen connects a Telegram identity to the messaging integration. It is not a substitute for signing in to the Synalux portal.
 
----
+## Current boundary
 
-## 🏗️ Architecture
+- The current Synalux Telegram workflow is for text messages.
+- Photos, documents, voice notes, and automatic transcription are not part of this documented workflow.
+- Inbox access is restricted. If **Chat > Inbox** reports that access is unavailable, contact your administrator rather than sharing credentials or switching to an unapproved account.
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+## Privacy
 
-```
-POST /api/v1/telegram/webhook      Webhook ingress (validated against bot token + IP allowlist)
-POST /api/v1/telegram/send          Outbound message (workspace-scoped)
-GET  /api/v1/telegram/auth/callback Login Widget callback (HMAC-validated)
-```
-
-</details>
-
-Provider abstraction: `lib/message-providers/telegram.ts` — same shape as Gmail / Outlook / Slack so the unified chat surface lights up automatically.
-
----
-
-## 🧪 Tests
-24+ tests cover bot routes + lib (auth callback HMAC validation, webhook ingestion, send queue, error paths, retry logic). See `portal/src/app/api/v1/telegram/__tests__/`.
-
----
-
-## 💳 Plans
-Available on **Standard+** as part of the unified chat experience. Free tier: receive only via the public landing page contact form.
-
-[See full pricing →](https://synalux.ai/pricing)
+Telegram is an external network, not Synalux’s internal team channel. Do not send protected or sensitive information until your organization has approved the use case, completed its privacy and contractual review, and trained staff on the permitted content.

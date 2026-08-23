@@ -1,46 +1,19 @@
-# 💬 Facebook Messenger
+# Facebook Messenger
 
-Connect a Facebook Page Messenger account to send + receive messages from inside Synalux.
+Synalux can connect an approved Facebook Page for text Messenger conversations. Availability depends on the organization’s Meta configuration and assigned access.
 
----
+## Use the connection
 
-## 📨 Messenger Send / Receive
-*   **Webhook** — `/api/v1/messenger/webhook` receives Page-bound messages; Meta signature validated.
-*   **Send** — `/api/v1/messenger/send` posts to Meta's `/me/messages` endpoint with `appsecret_proof` HMAC-SHA256 protection on every call (defense against access-token leak).
-*   **Page-scoped** — one Facebook Page connection per workspace.
-*   **24-hour window + tags** — outbound after 24h must use `MESSAGE_TAG` per Meta policy.
+1. Open **Chat > Integrations** and review the **Messenger** status.
+2. Ask your workspace administrator or Synalux support to complete any connection or approval steps that are not available to your role.
+3. Send a real text message to the connected Page.
+4. If your account has inbox access, open **Chat > Inbox**, select the Messenger thread, enter a reply, and choose **Send**.
+5. Confirm both directions before relying on the Page for customer communication.
 
----
+## Current boundary
 
-## 🔐 App Review
-For Meta App Review, Synalux exposes admin endpoints to fire test calls per requested permission so the App Review counter increments:
-<details>
-<summary>Technical Documentation / Specifications</summary>
+The documented Synalux workflow covers text messages. It does not promise attachments, comments, Page-post management, automated campaigns, or messages outside the provider’s permitted response rules. A connected Page does not automatically make its inbox available to every workspace user.
 
-```
-POST /api/v1/messenger/admin/test-send                 Fire a test message (CRON_SECRET-gated)
-POST /api/v1/messenger/admin/test-all-permissions      One Graph API call per requested permission
-```
+## Privacy
 
-</details>
-This is what gets you through Meta App Review's "exercise the API" requirement without scripting it manually.
-
----
-
-## 🏗️ Architecture
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-POST /api/v1/messenger/webhook        Meta webhook (signature-validated)
-POST /api/v1/messenger/send            Outbound message (appsecret_proof on every call)
-POST /api/v1/messenger/admin/test-*    App Review counter exercises
-```
-
-</details>
-
----
-
-## 💳 Plans
-Available on **Standard+**.
+Messenger is an external social network. Do not request or send protected health information through this channel. Move sensitive conversations to an organization-approved secure workflow.

@@ -1,62 +1,52 @@
-# 🔬 Dermatology
+# 🔬 Dermatology Workflows
 
-Synalux v11.1 Elite provides a visually-driven clinical suite for modern dermatology. From high-resolution photo documentation and full-body lesion mapping to automated iPLEDGE and biologics tracking, we ensure clinical precision for every patient.
+Dermatology teams can use the shared Synalux patient record, laboratory, medication, note, billing, and audit workspaces. Availability of specialty forms and fields depends on the modules configured for the organization.
 
----
+## Patient record
 
-## 🔍 Full-Body Lesion Mapping
-Track every mole, lesion, and biopsy with anatomical precision.
-*   **Interactive Body Map:** Pin lesions on a 3D-rotatable anatomical model.
-*   **ABCDE Criteria:** Built-in templates for melanoma screening with dermoscopy integration.
-*   **Comparison Engine:** Side-by-side photo comparison to monitor lesion changes over months or years.
+Start from the current patient record and confirm identity before reviewing or adding clinical information. The overview brings available demographics and clinical sections together; it is not a lesion-mapping screen.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the patient record</summary>
 
-![Dermatology Body Mapping](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/34_dermatology.png)
+![Current Synalux patient record overview](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
 </details>
 
 ---
 
-## 🧪 Biopsy & Pathology Tracking
-Close the loop on every specimen.
-*   **Specimen Logs:** Track every biopsy from the operatory to the lab (Quest/LabCorp).
-*   **Pathology Correlation:** Auto-import pathology results and correlate them with clinical photos.
-*   **Abnormal Alerts:** Immediate notification for malignant or atypical pathology findings.
+## Laboratory records
+
+Use the laboratory workspace to review the orders and results available in the patient record. Verify external results and patient association before using them for clinical decisions.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View laboratory records</summary>
 
-![Biopsy & Lab Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
+![Current Synalux laboratory orders and results](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
 
 </details>
 
 ---
 
-## 💊 Biologics & Accutane (iPLEDGE)
-Manage high-complexity medication regimens with automated compliance.
-*   **iPLEDGE Dashboard:** Monthly lab tracking (CBC, LFT, pregnancy) with automated reminders.
-*   **Biologics Vault:** Track Humira, Dupixent, and Skyrizi dosing, injection sites, and prior authorizations.
-*   **Phototherapy Logs:** Integrated recording of UV doses and treatment response.
+## Medications
+
+Review the medication list available in the patient record. Clinicians remain responsible for medication reconciliation, monitoring requirements, program requirements, and prescribing decisions.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the medication workspace</summary>
 
-![Medication & Biologics Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
+![Current Synalux medication workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
 </details>
 
 ---
 
-## 📝 High-Speed Derm SOAP Notes
-Document complex skin exams in seconds.
-*   **Ambient Voice Dictation:** WASM-powered voice engine drafts your notes while you perform the exam.
-*   **Derm-Specific Keywords:** Use `@biopsy`, `@cryo`, or `@skinexam` to trigger pre-formatted clinical instructions.
-*   **Tab-to-Accept:** Ghost-text for common morphology descriptions (e.g., "well-demarcated erythematous plaque...").
+## Clinical notes
+
+Use the SOAP workspace to enter or dictate source text and organize the clinical draft. Confirm consent before recording and review every section before signing.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the SOAP workspace</summary>
 
 ![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
@@ -64,28 +54,26 @@ Document complex skin exams in seconds.
 
 ---
 
-## 🧾 Billing & Prior Authorizations
-*   **Surgical Coding:** Direct support for 11102 (Biopsy), 17000 (Cryotherapy), and complex repairs.
-*   **Auth Tracking:** Monitor biologic prior authorizations and renewal dates in real-time.
-*   **Patient Payments:** Offer Stripe-powered payment plans for cosmetic procedures.
+## Billing review
+
+Authorized staff can use the billing workspace to review the charges, claims, payments, authorizations, and related records enabled for the organization. Verify codes, coverage, and payer requirements before submission.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the billing workspace</summary>
 
-![Dermatology Billing Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+![Current Synalux billing workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 </details>
 
 ---
 
-## 🔐 Security & Compliance
-*   **HIPAA Photo Security:** All clinical photos are encrypted at rest and never stored in the device's camera roll.
-*   **E-Signatures:** Secure consent for biopsies and surgical procedures via BoldSign.
-*   **Full Audit Trail:** Every photo view and chart edit is tracked and timestamped.
+## Access and audit review
+
+Limit access to appropriate roles and review the events available in the audit log. Follow your organization’s procedures for clinical images, consents, exports, and device storage.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

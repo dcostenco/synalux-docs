@@ -1,76 +1,68 @@
-# 🔐 Authentication, MFA & Break-Glass
+# 🔐 Sign-In and Account Protection
 
-NextAuth-backed OAuth (Google, Microsoft) with multi-factor enrollment, session heartbeat, and break-glass admin override for emergency clinical access.
-
----
-
-## 🔑 Sign-in Methods
-*   **Google OAuth** — primary; enforced for new workspaces.
-*   **Microsoft OAuth** — for organizations on Microsoft 365.
-*   **Telegram Login Widget** — see [Telegram](telegram.md).
-*   **Magic-link email** — fallback for users without Google/Microsoft.
+Synalux protects portal access with an acknowledgment at sign-in, supported account credentials, optional or required authenticator verification, recovery codes, and automatic sign-out after inactivity.
 
 ---
 
-## 🛡️ Multi-Factor Authentication
-*   **TOTP** (authenticator app) — RFC 6238; 30-second window.
-*   **WebAuthn / Passkey** — preferred; platform authenticator (Touch ID / Windows Hello / Android biometrics).
-*   **Per-workspace policy** — admins can require MFA for any role; clinical roles enforced by default.
-*   **Recovery codes** — 10 single-use codes generated at enrollment.
+## Sign in
+
+1. Open the Synalux sign-in page.
+2. Read and accept the Terms of Service, Privacy Policy, and clinical-content acknowledgment.
+3. Continue with **Google**, or use the email-and-password option when it has been provided for your account.
+4. If two-factor authentication is enabled, enter the six-digit code from your authenticator app.
+
+The sign-in screen does not currently present Microsoft sign-in or an email magic-link action. Connected Microsoft 365 services are managed separately from portal sign-in.
+
+Never share a password, verification code, recovery code, or sign-in approval with support or another user.
 
 ---
 
-## 🚨 Break-Glass Override
-For HIPAA-compliant emergency access when primary access path is unavailable.
-*   **Audit-logged on use** — every break-glass invocation writes a row that can NEVER be deleted (append-only audit table).
-*   **Notifies workspace admins immediately** via [Mail](mail.md) + [SMS](sms.md).
-*   **Time-bounded** — 60-minute access window; automatic re-lockout after.
-*   **Justification required** — admin must enter a reason at break-glass invocation; reason becomes part of the audit record.
+## Set up an authenticator
+
+When your account or administrator directs you to two-factor setup:
+
+1. Open the two-factor enrollment screen and choose **Begin setup**.
+2. Scan the QR code with an authenticator app. If scanning is not available, expand the manual-key option.
+3. Enter the six-digit code from the authenticator app.
+4. Choose **Turn on two-factor**.
+5. Save the recovery codes before continuing. They are shown once and each code can be used one time.
+
+Replacing an existing authenticator requires a valid code from the current authenticator first.
 
 ---
 
-## 💗 Session Heartbeat
-*   Client pings `/api/v1/session/heartbeat` every 60s while active.
-*   Idle timeout (configurable per workspace; default 15min for clinical roles, 60min for admin).
-*   Force re-auth on sensitive actions (export, delete, payment) regardless of heartbeat state.
+## Use a recovery code
+
+If you cannot access your authenticator, enter an unused recovery code on the two-factor verification screen. A successfully used recovery code is consumed and cannot be used again.
+
+Store recovery codes in an organization-approved secure location separate from the device running the authenticator. If all recovery methods are unavailable, contact your workspace administrator through a verified support channel.
 
 ---
 
-## 🏗️ Architecture
+## Automatic sign-out
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+Clinical and administrative portal areas sign the user out after a period of inactivity. Mouse, keyboard, and touch activity keep an active session current; returning to a tab after the inactivity period can require sign-in again.
 
-```
-GET  /api/v1/auth/session         NextAuth session (cookie-backed, JWT)
-POST /api/v1/auth/mfa/enroll      Begin TOTP / WebAuthn enrollment
-POST /api/v1/auth/mfa/verify      Verify code at sign-in
-POST /api/v1/break-glass          Initiate break-glass override (admin-gated)
-POST /api/v1/session/heartbeat    Idle-keepalive ping
-```
+Save work before leaving a shared workstation, sign out when finished, and do not rely on automatic sign-out as the only privacy control.
 
-</details>
+---
 
-| Layer | Tech |
+## Emergency clinical access
+
+Break-glass access is a controlled clinical-staff workflow, not an alternate sign-in method. Where configured, it requires a reason, is time-limited, and is recorded for administrative review. It does not give a user access to another workspace or bypass the normal requirement to authenticate.
+
+If emergency access is needed and no approved action is visible in your workflow, follow your organization’s emergency-access procedure or contact an authorized administrator. Do not repeatedly retry or attempt to work around a denied access control.
+
+---
+
+## Troubleshooting
+
+| Problem | What to do |
 |---|---|
-| Session | NextAuth + Postgres adapter; JWT cookies, HttpOnly + Secure + SameSite=Lax |
-| MFA storage | Encrypted at rest (AES-256-GCM via `lib/oauth-crypto.ts`) |
-| Audit | `withAudit({ module: 'auth' })` on every endpoint; break-glass rows pinned to immutable table |
+| Sign-in button is disabled | Accept the terms and clinical acknowledgment first. |
+| Authenticator code is rejected | Confirm the correct Synalux account is selected in the authenticator, check the device clock, and try the next code. |
+| Phone or authenticator is unavailable | Use one unused recovery code. |
+| Replacing the authenticator fails | Enter a valid code from the currently enrolled authenticator before beginning replacement. |
+| Session ended while the page was open | Sign in again and reopen the intended workspace. |
 
----
-
-## 💳 Plans
-
-| | Free | Standard | Advanced | Enterprise |
-|---|---|---|---|---|
-| OAuth sign-in | ✅ | ✅ | ✅ | ✅ |
-| TOTP MFA | ✅ | ✅ | ✅ | ✅ |
-| WebAuthn / Passkey | — | ✅ | ✅ | ✅ |
-| Workspace-enforced MFA policy | — | — | ✅ | ✅ |
-| Break-glass override | — | — | ✅ | ✅ |
-| SAML / SSO | — | — | — | ✅ |
-| Custom session policy | — | — | — | ✅ |
-
-[See full pricing →](https://synalux.ai/pricing)
-
-The full Pattern C OAuth token isolation spec is maintained internally and is not published.
+For account recovery, use a verified administrator or [Synalux support](https://synalux.ai/support). Do not send secrets or recovery codes in email, chat, or screenshots.

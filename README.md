@@ -18,12 +18,12 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 * **[Synalux POS](docs_source_en/pos.md)** — Point of Sale for hospitality and retail
 * **[Prism AAC](docs_source_en/prism_aac.md)** — AI-powered Augmentative and Alternative Communication app
 * **[Prism Coder IDE](docs_source_en/coder.md)** — Local-first AI IDE
-* **[PrismCoach](docs_source_en/prismcoach.md)** — AI Clinical Coaching
-* **[Prism Browser](docs_source_en/prism_browser.md)** — Privacy-first clinical browser with AAC accessibility
+* **[PrismCoach](docs_source_en/prismcoach.md)** — Fitness, recovery, and readiness coaching
+* **[Prism Browser](docs_source_en/prism_browser.md)** — iPhone and iPad browser with AAC communication controls
 
 ### Clinical & Medical
 * **[Clinical Notes & Documentation](docs_source_en/clinical_notes_documentation.md)**
-* **[Telehealth (LiveKit)](docs_source_en/telehealth_livekit.md)**
+* **[Telehealth](docs_source_en/telehealth_livekit.md)**
 * **[Patient Portal](docs_source_en/patient_portal.md)**
 * **[Scheduling & Appointments](docs_source_en/scheduling_appointments.md)**
 * **[Offline-First Clinical Sessions](docs_source_en/offline_first_clinical_sessions.md)**
@@ -50,8 +50,8 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 * **[Team Chat](docs_source_en/team_chat_communication.md)** & **[Direct Messages](docs_source_en/direct_messages.md)**
 * Integrations: [WhatsApp](docs_source_en/whatsapp.md), [Telegram](docs_source_en/telegram.md), [Instagram](docs_source_en/instagram.md), [Messenger](docs_source_en/messenger.md), [Viber](docs_source_en/viber.md), [SMS](docs_source_en/sms.md), [Fax](docs_source_en/fax.md)
 
-### AI, Architecture & Security
-* **[Voice & TTS Architecture](docs_source_en/voice_tts_architecture.md)**
+### AI, Voice & Security
+* **[Voice & text-to-speech](docs_source_en/voice_tts_architecture.md)**
 * **[Transcription](docs_source_en/transcription.md)** & **[Translation](docs_source_en/translation.md)**
 * **[Auth & MFA](docs_source_en/auth_mfa.md)**
 * **[Security & Compliance](docs_source_en/security_compliance.md)**

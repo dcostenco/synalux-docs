@@ -1,30 +1,22 @@
-# Accounting & Global Finance Module
+# Accounting & Finance
+
+The Synalux accounting workspace gives authorized users a current view of financial summaries, ledger activity, compliance reminders, and connected-service status for their workspace.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the accounting workspace</summary>
 
-![Global Finance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+![Current Synalux accounting workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 </details>
 
-The Synalux Accounting & Global Finance module is designed for multi-national healthcare organizations requiring sophisticated hierarchical reporting and multi-currency support.
+## What you can review
 
-## Core Features
+- **Summary metrics:** Review the financial totals and status cards available to the selected workspace.
+- **Ledger activity:** Inspect the current ledger entries and use the available filters to narrow the view.
+- **Compliance reminders:** Review the compliance items shown for the workspace and follow your organization’s accounting procedures.
+- **Connection status:** Check whether supported financial connections are available and connected before relying on imported activity.
 
-### Hierarchical Financial Reporting
-- **HQ Level:** View consolidated revenue across all international branches.
-- **Branch Level:** Isolated financial tracking for regional compliance (US/MD, RO, CA).
-- **Service-Level Analysis:** Track profitability by clinical department (ABA, Dental, Pediatrics).
+The workspace currency and available connections are configuration-dependent. The screen does not imply automatic currency conversion, tax filing, payout reconciliation, or consolidated reporting across every location.
 
-### Multi-Currency & Cross-Border Billing
-- **Dynamic Conversion:** Real-time billing in USD, RON, and CAD based on the patient's branch location.
-- **Tax Compliance:** Automatic calculation of VAT (Romania) and Sales Tax (CA/US) per jurisdiction.
-- **Global Payouts:** Support for international payment gateways with automatic reconciliation.
-
-### Audit & Compliance
-- **DDA Approval (Maryland):** Specialized compliance reporting for Maryland Developmental Disabilities Administration.
-- **GAAP/IFRS Ready:** Standardized financial exports for external audit and tax preparation.
-- **RBAC Financial Locks:** Restrict sensitive financial data to authorized CFO and Management roles only.
-
-## Technical Integration
-The module utilizes PostgREST-level RLS policies to ensure that branch-level accountants can only see their specific regional data, while the global CFO has full visibility via the `service_role_unrestricted` policy.
+## Access and permissions
+Only grant finance access to staff who need it. Confirm workspace scope, currency, connection status, and opening balances before using the figures for reconciliation or reporting. Your organization and accounting professionals remain responsible for review, adjustments, filings, and compliance decisions.

@@ -1,18 +1,17 @@
-# Patient Education Module
+# Patient Education
 
-## Content Library
+Synalux keeps assigned education records visible to both the care team and the patient.
 
-Curated library of patient education materials organized by condition, procedure, and specialty. Supports text, images, and video content for comprehensive education.
+## Care-team view
 
-## Prescription of Education
+Open the patient's chart and select **Education**. The tab shows each assigned resource's title, category, delivery method, assigning provider, date, and acknowledgment status. Summary cards show total, reviewed, and pending resources.
 
-Providers can "prescribe" education materials during encounters. Assigned materials appear in the Patient Portal with read-tracking for compliance monitoring.
+The current care-team tab is a review screen; it does not include an **Add** or **Prescribe Education** control.
 
-## Multi-Language Support
+## Patient Portal
 
-Education materials available in 16 languages matching the platform's i18n support. Automatic language selection based on patient language preferences.
+In the Patient Portal, the patient can open **Education**, review an assigned resource, follow its available content link, and select **Mark reviewed**. The acknowledgment then appears in the care-team view.
 
-## Custom Content
+## Current content boundary
 
-Practices can create and publish custom education materials. Supports rich text editing with image embedding and printable PDF generation for handouts.
-
+The current screens do not provide a customer-managed education library, rich-text content editor, automatic language selection, or printable handout generator. Resource assignment and content availability depend on the practice's configured clinical workflow.

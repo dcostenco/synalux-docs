@@ -1,18 +1,21 @@
-# Clinical Tasks Module
+# Clinical Tasks
 
-## Task Management
+Use **Tasks** for patient-related and operational follow-up work that needs an owner and due date.
 
-Create, assign, and track clinical tasks with priority levels, due dates, and category tags. Supports delegation between providers and staff with notification alerts.
+## Create and manage a task
 
-## Workflow Automation
+1. Open **Tasks**.
+2. Select **New Task**.
+3. Enter a title and optional description.
+4. Optionally link a patient, assign a staff member, set a due date, and choose a priority.
+5. Save the task.
 
-Trigger-based task creation from clinical events (e.g., abnormal lab result → follow-up task). Reduces manual overhead and ensures nothing falls through cracks.
+The task list supports search and status filters. Staff can mark a task complete, reopen it, or delete it. Overdue open tasks remain visible so they can be addressed.
 
-## Team Collaboration
+## Patient chart view
 
-Shared task lists with real-time status updates. Comments and attachments support collaborative task resolution across care teams with full audit history.
+The **Tasks** tab in a patient chart shows tasks linked to that patient, including assignee, due date, priority, and status. It also provides all/open/completed filters.
 
-## Reporting
+## Current workflow boundary
 
-Task completion analytics with turnaround time metrics, overdue tracking, and workload distribution reports per provider for management oversight.
-
+The current Tasks screen does not expose trigger-based task creation, comments, file attachments, or a task-performance analytics dashboard. Use the description field for the task instructions and Team Chat for conversation that must be shared with other staff.

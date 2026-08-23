@@ -1,37 +1,21 @@
-# 💬 Instagram Direct
+# Instagram Direct messaging
 
-Connect an Instagram Business / Creator account to receive + reply to Instagram DMs from inside Synalux.
+Synalux can connect an approved Instagram professional account for text direct messages. Availability depends on your organization’s provider configuration and assigned access.
 
----
+## Use the connection
 
-## 📨 Instagram Direct Messaging
-*   **Built on the Messenger Platform** — Instagram DMs use Meta's Messenger infrastructure under the hood; Synalux uses the same provider abstraction.
-*   **Webhook ingress** — `/api/v1/instagram/webhook` receives DMs from connected Instagram Business accounts.
-*   **Send** — `/api/v1/instagram/send` posts via Meta's `/me/messages` endpoint with `appsecret_proof` on every call.
-*   **Story mentions, comment replies** — receive notifications when your account is mentioned or commented on; reply inline.
+1. Confirm that the Instagram professional account is linked to the organization’s approved Meta business assets.
+2. Open **Chat > Integrations** and review the **Instagram** status.
+3. Ask your workspace administrator or Synalux support to complete the connection if the control is not available to your role.
+4. Send a real text direct message to the connected account.
+5. If your account has inbox access, open **Chat > Inbox**, select the Instagram thread, enter a reply, and choose **Send**.
 
----
+## Current boundary
 
-## 🔐 Setup
-1. Connect a Facebook Page to your Instagram Business account.
-2. Authorize Synalux for `instagram_basic` + `instagram_manage_messages` + `pages_messaging` scopes.
-3. Subscribe the Facebook Page to messaging webhooks (auto-handled by Synalux on connect).
+- The current documented workflow covers text direct messages.
+- Story mentions, comment management, media attachments, and automatic replies are not part of this workflow.
+- Inbox access is restricted and can differ from integration-management access.
 
----
+## Privacy
 
-## 🏗️ Architecture
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-POST /api/v1/instagram/webhook        DMs / story mentions / comment replies
-POST /api/v1/instagram/send            Outbound DM (appsecret_proof protected)
-```
-
-</details>
-
----
-
-## 💳 Plans
-Available on **Standard+**. Free tier: receive only via the contact form.
+Instagram is a public social network. Do not request or send protected health information through this channel. Move the conversation to an organization-approved secure workflow when identity verification, clinical detail, payment information, or other sensitive content is required.

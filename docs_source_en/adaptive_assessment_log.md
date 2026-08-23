@@ -1,217 +1,90 @@
-# 📋 Adaptive Assessment Log
+# Adaptive Assessment Log
 
-> A **score log** for externally-administered standardized assessments. Synalux stores, charts, and trends scores that you collected and scored on the publisher's official platform. **It is not an assessment instrument** — it does not administer, score, or reproduce any standardized test.
+The Adaptive Assessment Log records results from standardized assessments that a qualified clinician administered and scored outside Synalux. It is a documentation form, not an assessment instrument or scoring service.
 
-## What This Module Is — And Is Not
+Use it to keep the assessment label, administration details, summary scores, and clinician narrative with the rest of the client's documentation.
 
-**This module IS:**
-- A longitudinal record of standard scores entered by the credentialed clinician.
-- A trend chart across reassessments (e.g., 6-month, annual).
-- A way to attach the score record to the rest of the client's chart (treatment plan, BIP, progress notes).
-- A reporting helper — pulls the latest scores into your draft narratives.
+## What the current form supports
 
-**This module IS NOT:**
-- An adaptive-behavior, cognitive, language, or skill-acquisition test.
-- A scoring engine or normative table.
-- A replacement for the publisher's official platform (Pearson Q-global, WPS Online Evaluation System, Stoelting, Brookes, Pro-Ed, etc.).
-- A tool that reproduces or paraphrases items from any standardized instrument.
+The default form includes:
 
-You administer and score the assessment on the publisher's platform under the qualification rules they require. You then **type the resulting standard scores into Synalux** so the clinical record is complete in one place.
+- Client ID
+- Clinician-entered instrument label and form or version
+- Administration date and examiner
+- Respondent name and relationship, when applicable
+- Administration language
+- Composite label, standard score, confidence interval, and percentile rank
+- Domain scores
+- Additional subdomain and pairwise-comparison fields when they are available in the workspace
+- Clinician narrative
+- A field labeled **Source PDF**
 
-## Strict Naming & Content Policy
+A workspace may show a published custom version of the form, so labels and available fields can differ from the default shown here. The current **Admin > Form Builder** opens a blank form canvas; it does not load this default form for direct editing. Confirm the replacement workflow with the workspace administrator before publishing a custom version.
 
-The Adaptive Assessment Log is **instrument-agnostic by design**. The following rules apply to every UI label, database column, code identifier, marketing page, comparison table, and AI-assistant prompt:
+## Assessment-content boundary
 
-### ✅ Allowed
-- The module name **"Adaptive Assessment Log"** (and translations).
-- A **list of supported instruments** that the module can store scores for, presented as a neutral list with each instrument's trademark notice (see below).
-- **Direct comparison tables** that name competitor products (e.g., "Synalux | CentralReach | Catalyst"). Nominative use of trademarks for honest comparison is permitted under U.S. trademark law.
-- **Nominative use** when the clinician explicitly types "I just administered a [Instrument-3]" — the AI assistant may echo the instrument name back when summarizing what the clinician told it.
+Synalux stores only the information the clinician is authorized to enter. It does not:
 
-### ❌ Forbidden
-- Naming the module after a competitor product, an instrument, or a "-style" / "-like" / "-alternative" of either ("our Vineland", "Vineland clone", "Vineland alternative", "ABAS-style log", "ABLLS replacement").
-- Reproducing, paraphrasing, or summarizing item content from any instrument.
-- Reproducing scoring rubrics, cutoff tables, normative tables, or weighting formulas from any instrument.
-- Implying that Synalux administers, scores, or normatively interprets any instrument.
-- Using competitor product names outside of an explicit comparison table (no "like CentralReach…", "we beat Catalyst at…", "Rethink-style workflow").
+- administer or score a standardized assessment;
+- provide publisher items, prompts, scoring rules, norms, or cutoff tables;
+- replace a publisher's official assessment platform;
+- infer missing scores or simulate an administration; or
+- reproduce proprietary report content.
 
-The forbidden list is enforced by the [BCBA AI Assistant skill](../../.agent/skills/bcba_ai_assistant/SKILL.md) and by a CI check that greps documentation for the forbidden patterns outside of compare-table delimiters.
+Clinicians remain responsible for meeting each publisher's qualification, licensing, administration, scoring, and documentation requirements.
 
-## Supported Instruments (Score Storage Only)
+### Examples of records clinicians can label
 
-The module accepts standard scores from any norm-referenced or criterion-referenced assessment the clinician chooses. Instruments below are **named only for the clinician's reference** when they enter a record. Synalux does not include item content, scoring algorithms, or normative data for any of them.
+The form is instrument-neutral. A clinician may enter the name of an assessment they administered externally, including assessments in areas such as adaptive functioning, language, behavior rating, skill acquisition, cognitive or developmental evaluation, sensory processing, or autism evaluation.
 
-| Domain | Examples of instruments scores can be stored for |
-|---|---|
-| Adaptive functioning | Vineland-3, ABAS-3 |
-| Verbal behavior / skill acquisition | VB-MAPP, ABLLS-R, AFLS, Essential for Living |
-| Cognitive / developmental | Bayley-4, Mullen, DAS-II, WPPSI, WISC, Stanford-Binet |
-| Language | CELF, PLS, REEL |
-| Behavior rating | BASC-3, CBCL, Conners-3 |
-| Autism-specific | ADOS-2, ADI-R, GARS-3, CARS-2 |
-| Sensory | SP-2 |
+Instrument names entered by a clinician remain the property of their respective publishers. Synalux is not affiliated with or endorsed by those publishers.
 
-> **Trademark notices.** Vineland-3® is a registered trademark of NCS Pearson, Inc. ABAS-3® is a registered trademark of Western Psychological Services. VB-MAPP® and ABLLS-R® are registered trademarks of their respective publishers. AFLS® is a trademark of Partington Behavior Analysts. Essential for Living® is a registered trademark of Patrick McGreevy. ADOS-2® and ADI-R® are registered trademarks of Western Psychological Services. BASC-3® is a registered trademark of NCS Pearson, Inc. All other instrument names are trademarks of their respective owners. Synalux is not affiliated with, endorsed by, or sponsored by any of these publishers. Use of these names is **nominative**: it identifies the instrument the clinician administered externally so they can label the score record correctly.
+## Enter a record
 
-## Data Model — What Gets Stored
+1. Administer and score the assessment through the publisher's approved process.
+2. Open **Adaptive Assessment Log** and select **New Record**.
+3. Enter the client, assessment label, administration details, and the scores you are authorized to document.
+4. Add a clinician narrative when needed.
+5. Review required fields and select **Submit Form**.
+6. Confirm the success message before leaving the page.
 
-Each record is a typed-in summary of an assessment the clinician completed elsewhere. The module **does not** store derived items, response patterns, or any content the publisher considers part of the test. The shape uses textbook psychometric vocabulary (composite, domain, subdomain, standard score, confidence interval, v-scale / scaled score, age equivalent, percentile rank, pairwise difference) — these are generic statistical concepts that appear across virtually every adaptive / cognitive / language battery, not specifics of any one instrument.
+Required fields in the default form are Client ID, instrument label, administration date, and examiner. Synalux displays a validation message when a required field is blank.
 
-### Top-level record
+## Score entry
 
-| Field | Type | Notes |
-|---|---|---|
-| Client | FK | Links record to client chart |
-| Instrument | string (free text) | Clinician types the instrument label they administered |
-| Form / version | string | E.g., "3" / "Comprehensive" / "Parent/Caregiver Form" |
-| Administered on | date | Date of administration |
-| Administered by | string (free text) | Examiner name (often the workspace clinician, sometimes external) |
-| Respondent name | string (free text) | When the form is informant-based (parent, caregiver, teacher, support staff) |
-| Respondent relationship | string (free text) | E.g., "parent", "personal support staff" |
-| Administration language | string | ISO-639-1 |
-| Source PDF | file attachment | Optional — raw report from publisher's platform |
-| Narrative | rich text | Clinician's own prose summary |
-| Created / updated | timestamps | Standard audit trail |
+The default form provides individual composite fields plus text areas for structured score details:
 
-### Score block — generic shape
+- **Domain Scores (JSON array)**
+- **Subdomain Scores (JSON array)**, when available
+- **Pairwise Difference Comparisons (JSON array)**, when available
 
-The score data is a free-form JSONB blob the clinician populates with standard-score rows. The recommended shape mirrors how psychometric reports are typically laid out — a **composite** at the top, **domains** beneath it, optional **subdomains** beneath each domain, and **pairwise difference** rows linking any two of the above. None of these fields are instrument-specific.
+Enter only values copied from an authorized report. The current entry screen does not calculate scores or interpret normative meaning.
+
+## Source PDF field
+
+The current screen displays **Source PDF** as a text field; it is not a working file picker. Do not enter a local file path, public link, access token, or report contents in that field. Store assessment reports using your organization's approved document workflow until a managed attachment control is available in this form.
+
+## Current screen boundaries
+
+The current Adaptive Assessment Log screen supports form entry and submission. It does not currently show a record list, longitudinal trend chart, attachment viewer, or export controls. Use the success message as confirmation that the form submission completed.
+
+## Screenshot
+
+The screenshot shows the current default form. A published workspace-specific version may contain different labels or fields.
 
 <details>
-<summary>Technical Documentation / Specifications</summary>
+<summary>View the Adaptive Assessment Log form</summary>
 
-```jsonc
-{
-  "composite": {
-    "label": "<clinician-typed name of the overall composite>",
-    "standard_score": 0,           // numeric
-    "ci_95_low": 0, "ci_95_high": 0,
-    "percentile": "<1"             // string — supports "<1" / ">99" / "50"
-  },
-  "domains": [
-    {
-      "label": "<clinician-typed domain name>",
-      "standard_score": 0,
-      "ci_95_low": 0, "ci_95_high": 0,
-      "percentile": "<1",
-      "ss_minus_mean": 0,          // numeric — clinician copies from report
-      "strength_or_weakness": null, // "strength" | "weakness" | null
-      "base_rate": "<=25%"         // string label
-    }
-  ],
-  "subdomains": [
-    {
-      "domain_label": "<parent domain>",
-      "label": "<clinician-typed subdomain name>",
-      "raw_score": 0,
-      "scaled_score": 0,           // generic name — covers v-scale, scaled, T, etc.
-      "age_equivalent": "2:6",     // string, year:month — supports "<3:0", ">21:0"
-      "growth_value": 0,           // optional — some instruments report this
-      "percent_estimated": 0,      // optional — used when items are skipped/extrapolated
-      "scaled_minus_mean": 0,
-      "strength_or_weakness": null,
-      "base_rate": "<=10%"
-    }
-  ],
-  "pairwise_diffs": [
-    {
-      "left_label": "<first composite/domain/subdomain>",
-      "right_label": "<second>",
-      "left_value": 0, "right_value": 0,
-      "diff": 0,
-      "significant": true,         // boolean
-      "base_rate": "<=15%"
-    }
-  ],
-  "out_of_age_range": ["<labels with limited derived scores>"],
-  "significance_level": 0.10
-}
-```
+![Adaptive Assessment Log new-record form showing client, administration, and composite-score fields](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/40_adaptive_assessment_log_new_record.png)
 
 </details>
 
-### Why JSONB, not a normalized score table
+## Assistant use
 
-Two reasons:
+If assessment information is included in an assistant prompt, treat the response as a draft for clinician review. The assistant must not generate assessment items, scoring rules, norms, or fabricated results. Verify every score, date, instrument label, and interpretation against the authorized source before using the draft in a clinical record.
 
-1. **Instrument neutrality.** A normalized table with hardcoded subdomain rows (e.g., `receptive`, `expressive`, `written` for Vineland-3) would encode that instrument's specific construct hierarchy in our schema, which crosses the line from "storing what the clinician typed" into "modeling the instrument's structure". JSONB with clinician-typed labels keeps Synalux on the right side of that line.
-2. **Real-world variance.** Even within one instrument, optional sections (Motor for out-of-age examinees, Maladaptive Behavior Index, etc.) come and go. Some instruments report Growth Scale Values; many do not. A free-form JSON block tolerates the variance without schema migrations.
+## Privacy and access
 
-Charts, exports, and AI-assistant pulls iterate over `domains[]` and `subdomains[]` generically, reading whatever labels the clinician typed.
+Enter only the minimum necessary information and follow your organization's privacy, access, and record-handling policies. Do not place licensed test items or other proprietary assessment content in score or narrative fields.
 
-## How the BCBA AI Assistant Uses Adaptive Assessment Log Records
-
-When the clinician asks the assistant to draft a medical-necessity letter, BIP rationale, or DDA narrative, the assistant can:
-1. Pull the most recent scores the clinician typed into the log.
-2. Quote them verbatim ("on the most recent administration, the client scored …").
-3. Connect those scores to ABA goals, prevention plans, and replacement-behavior selection per the clinician's prompt.
-
-The assistant **must not**:
-- Generate item-level content, sample items, or "what a Vineland-3 looks like" mockups.
-- Predict scores, simulate administration, or fabricate normative ranges.
-- Compare the client's score to a normative population beyond what the clinician typed in.
-
-## Workflow
-
-1. Clinician administers the standardized assessment on the publisher's official platform under their qualification rules.
-2. Clinician opens the client chart in Synalux → **Adaptive Assessment Log** tab → **+ New Record**.
-3. Clinician types the instrument label, form, date, scores, and narrative; optionally attaches the publisher's PDF.
-4. Score record persists in the chart and appears on the trend graph.
-5. When drafting reports, the AI assistant references the typed scores by date and instrument label.
-
-## Screenshots
-
-> The form schema is workspace-admin-editable via `/admin/form-builder` (per the Synalux form-builder rules), so the screenshot below shows the seed default — your tenant may look different after admin customization.
-
-### New record (seed default — top-level metadata + composite scores)
-
-<details>
-<summary>View Interface / Diagram</summary>
-
-![Adaptive Assessment Log new-record form](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/40_adaptive_assessment_log_new_record.png)
-
-</details>
-
-Free-tier view of the runtime form at `/adaptive-assessment-log/form`. Captured against the seed schema with the standard-tier subdomain JSON and pairwise-difference fields correctly filtered out by the route's tier gate. The capture spec is `portal/tests/ui/adaptive-assessment-log-screenshot.spec.ts` — re-run it to refresh the image whenever the seed schema changes.
-
-### Pending capture (when those UI surfaces ship)
-
-| Screen | Status |
-|---|---|
-| Record list / trend chart in the client chart | TBD — trend view not yet built |
-| Practice admin editing the form via `/admin/form-builder` | TBD — form-builder edit flow needs to load existing `form_configs` first |
-| Source-PDF attachment view (audit-logged on every open) | TBD — viewer flow not yet built |
-
-UI behavior is pinned by the test at `portal/src/__tests__/adaptive-assessment-log-form.test.tsx` — 5 cases covering the seed-default field set, free-tier filtering of the standard-tier subdomain JSON field, the audit-logged Source-PDF control, and required-field validation on submit.
-
-## Audit & Compliance
-
-- All record creates / updates / deletes are PHI-tier audited (see Triple-Logging Architecture in the platform README).
-- Soft-delete with 30-day grace before purge.
-- Export: CSV (scores only) and PDF attachments included on Drive sync if enabled.
-- The module is gated behind the standard clinical RBAC: only credentialed providers (BCBA / Psychologist / SLP / OT / PT / RN, depending on workspace specialty) can create records. RBT / Office Manager have read-only or no access.
-
-### Source PDF Attachments — Sensitive Handling
-
-The optional **Source PDF** attachment field is the highest-sensitivity artifact this module touches: it's the unredacted report exported from the publisher's platform (e.g., `Vineland-3-Comprehensive-Report_<id>_<ts>.pdf` from Pearson Q-global). These reports contain client name, DOB, age, full subdomain item-level breakdowns, and scoring narratives.
-
-Required handling for every Source PDF attachment:
-
-- **Encrypted at rest** in object storage with workspace-scoped KMS keys; never stored on app server disk.
-- **Access-token URLs** with short TTL (≤ 5 min) — no persistent direct URLs.
-- **Audit-logged on every view, download, and delete** with the requesting user's session id and IP.
-- **Excluded from AI training and embedding pipelines.** The file is content-tagged `source_assessment_pdf` and the platform's training-data pipelines treat that tag as a hard exclusion.
-- **Excluded from full-text search indexes.** The PDF is not OCR'd, not text-extracted, not chunked.
-- **Never sent to third-party AI providers.** When the BCBA assistant references scores, it reads the typed-in `Standard scores` JSONB only — never the source PDF.
-- **Workspace admins can delete on demand** for incident response (e.g., wrong client uploaded). Deletes are tombstoned and the underlying object is purged within 24 h.
-- **Synalux engineers do not read these files.** Production access to attachment storage is gated behind the break-glass workflow, two-person approval, and a customer-visible audit entry.
-
-## Roadmap
-
-- v1: Manual entry + trending (this document).
-- v2: Optional CSV import from publisher exports — clinician chooses fields explicitly; Synalux never parses derivative content.
-- v3: Reassessment reminder rules (e.g., annual re-administration prompts) tied to the workspace's clinical-cadence settings.
-
----
-
-🔗 Related: [BCBA AI Assistant skill](../../.agent/skills/bcba_ai_assistant/SKILL.md) · [Applied Behavior Analysis (ABA) Module](./applied_behavior_analysis_aba.md) · [Audit & Compliance Architecture](../README.md#-audit--compliance-architecture)
+Related guides: [Applied Behavior Analysis](./applied_behavior_analysis_aba.md) · [Clinical Notes](./clinical_notes_documentation.md) · [Security and Compliance](./security_compliance.md)

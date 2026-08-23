@@ -1,102 +1,32 @@
-# 📨 Mail
+# Mail
 
-**Read and reply to your work email without switching tabs.** Gmail today; Outlook + Yahoo + custom IMAP next. Connect once via OAuth, get a unified inbox with full folder support, spam filtering, and HIPAA-grade audit on every read.
+Mail lets authorized users read and send work email from [synalux.ai/mail](https://synalux.ai/mail). The current connection controls support Gmail and Outlook.
 
-Live at [synalux.ai/mail](https://synalux.ai/mail).
+## Connect an account
 
----
+1. Open **Mail**.
+2. In **Inbox**, choose **Connect Gmail** or **Connect Outlook**.
+3. Review the provider’s sign-in and permission screen, then approve the connection only for the intended work account.
+4. Return to Mail and confirm that folders and messages load.
 
-## ✉️ Unified Inbox Across Providers
-One inbox view that combines mail from every connected provider. Click a thread to read inline; reply without leaving the page.
-*   **Connect once** — OAuth handshake via the [generic Connect-Integration pattern](#-connect-integration-pattern); no per-provider page changes.
-*   **Folder support** — inbox, spam, all, plus user-specific labels (Gmail) / folders (Outlook).
-*   **Thread view** — full RFC 2822 threading; collapses replies; expands quoted history on demand.
-*   **Search** — server-side search across subject, from, body (workspace-scoped, RLS-enforced).
+If the provider asks you to reconnect, use the connection control rather than sharing a password with another person.
 
----
+## Read and organize mail
 
-## 📤 Send + Reply In-Place
-*   **Compose** — rich-text + plain-text modes; auto-saves drafts every 3 seconds.
-*   **Reply / Reply-All** — threads on the original Message-ID, preserves provider-side conversation grouping.
-*   **Attachments** — uploaded via the Drive module; storage_path validated against allowlist (no path traversal).
-*   **Body sanitization** — `body_html` is HTML-escaped on render to close stored XSS via crafted incoming mail.
+- Select **Inbox**, **Sent**, **Drafts**, **Spam**, **Trash**, or **Starred**.
+- Use search to find messages in the connected account.
+- Open a thread to read its messages.
+- Use the row actions to mark read, archive, or move a message to trash when supported by the provider.
+- Adjust the message-list density or page size when those controls are shown.
 
----
+## Compose, reply, and forward
 
-## 🛡️ Spam Blocker Module
-Built-in spam classification with per-workspace block lists.
-*   **Per-workspace block list** — admins block sender/domain; immediate effect across the workspace.
-*   **Provider-side spam folder** is still respected (Gmail's classifier wins on its own labels).
-*   **Phishing heuristics** — flags links pointing to recently-registered domains, mismatched SPF/DKIM, lookalike-domain tactics.
+1. Choose **Compose** and enter the recipient, subject, and message.
+2. Optionally choose **Attach** to select a file already stored in Synalux Drive.
+3. Choose **Send** and check for an error or delivery warning before closing the task.
 
----
+From an open message, use **Reply** or **Forward**. The Mail settings screen also provides a signature, a Reply All preference, and notification preference. Review all recipients before replying to a group.
 
-## 🔌 Connect-Integration Pattern
-Adding a new mail provider (e.g. Outlook) is ~30 LOC because all providers go through a generic OAuth + message-provider abstraction.
-*   **Connect cards** are auto-rendered from a provider declaration — no per-provider UI page.
-*   **Token storage**: OAuth tokens AES-256-GCM encrypted at rest; per-workspace isolation enforced.
-*   **Token refresh** is centralized; expiry detected and rotated transparently.
-*   **CLI** for ops: `portal/scripts/fetch-messages.mjs` to pull mail outside the web flow (e.g. for bulk import).
+## Privacy and access
 
----
-
-## 🔒 HIPAA + Audit
-*   **Every read writes an `oauth_token_access_log` row** with operation type (list / read / send / delete) so an auditor can reconstruct who accessed what and when.
-*   **Workspace isolation guard** — `requireWorkspaceMember` runs on every endpoint; RLS double-locks at the database layer.
-*   **Credential encryption** — provider tokens never stored in plaintext.
-*   **No PHI in URLs** — all sensitive identifiers in POST body / signed cookies; logs scrub query strings.
-
----
-
-## 🏗️ Architecture
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-GET  /api/v1/mail/inbox            List threads (folder=inbox|spam|all)
-GET  /api/v1/mail/thread/:id       Full thread with quoted history
-POST /api/v1/mail/send             Send / reply (validates attachments)
-POST /api/v1/mail/sync             Force-sync from provider (bulk pull)
-GET  /api/v1/mail/ai-inbox         AI-categorized inbox (smart priority)
-GET  /api/v1/mail/suggest-replies  AI-generated reply suggestions
-GET  /api/v1/mail/settings         Per-user mail preferences
-```
-
-</details>
-
-| Layer | Tech |
-|---|---|
-| Frontend | Next.js 15 App Router, server components |
-| OAuth | NextAuth + per-provider adapter (currently Gmail) |
-| Storage | Postgres (Supabase) with RLS; `mail_threads`, `mail_messages`, `oauth_tokens`, `oauth_token_access_log` |
-| Encryption | AES-256-GCM via `lib/oauth-crypto.ts` |
-| Audit | `withAudit({ module: 'mail' })` middleware |
-| Provider abstraction | `lib/message-providers/` — extend with ~30 LOC for new provider |
-
----
-
-## 💳 Plans
-
-| | Free | Standard | Advanced | Enterprise |
-|---|---|---|---|---|
-| Connect 1 mail account | ✅ | ✅ | ✅ | ✅ |
-| Connect multiple accounts | — | ✅ | ✅ | ✅ |
-| Spam blocker | — | ✅ | ✅ | ✅ |
-| Mail-to-task automation | — | — | ✅ | ✅ |
-| Per-patient mail filing | — | — | ✅ | ✅ |
-| Bulk archive / move / label | — | — | ✅ | ✅ |
-| Custom IMAP / SMTP | — | — | — | ✅ |
-
-[See full pricing →](https://synalux.ai/pricing)
-
----
-
-## 🧰 Setup Guide
-A built-in modal walks the admin through:
-1. Click **Connect Gmail** on the `/chat` or `/mail` page.
-2. Approve the Google OAuth consent screen — Synalux requests `gmail.readonly`, `gmail.send`, `gmail.modify`.
-3. Folder sync starts in the background (typically 30-90s for the first 1000 messages).
-4. Mail appears in the unified inbox; reply directly from the thread view.
-
-For Outlook / Yahoo / custom IMAP support, watch the [Roadmap](https://github.com/dcostenco/synalux-docs/blob/main/ROADMAP.md) or contact sales.
+The connected provider remains responsible for mail delivery and folder behavior. Synalux limits the customer view according to the signed-in account and active workspace, but users must still verify recipients, attachments, and sensitive content before sending. Use an approved secure workflow when ordinary email is not appropriate.

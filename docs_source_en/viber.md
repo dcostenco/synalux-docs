@@ -1,36 +1,19 @@
-# 💬 Viber Bot
+# Viber messaging
 
-Connect a Viber Bot to send + receive Viber messages from the unified Synalux chat surface.
+Synalux can connect an approved Viber bot for text conversations. Availability depends on the organization’s provider configuration and assigned access.
 
----
+## Use the connection
 
-## 📨 Viber Bot API
-*   **Webhook ingress** — `/api/v1/viber/webhook` receives incoming user messages + delivery / seen events.
-*   **Outbound** — `/api/v1/viber/send` posts via Viber's `send_message` endpoint with rich keyboards + carousel cards supported.
-*   **Bot setup** — register a public account at [partners.viber.com](https://partners.viber.com), copy the auth token into Synalux workspace settings; webhook URL auto-set via `set_webhook`.
+1. Open **Chat > Integrations** and review the **Viber** status.
+2. Ask your workspace administrator or Synalux support to complete setup if the connection control is not available to your role.
+3. Send a real text message to the connected bot.
+4. If your account has inbox access, open **Chat > Inbox**, select the Viber thread, enter a reply, and choose **Send**.
+5. Confirm the inbound message and outbound reply before operational use.
 
----
+## Current boundary
 
-## 🏗️ Architecture
+The current documented Synalux workflow covers text messages. Pictures, files, rich-message layouts, calling, and campaign tools are not part of this workflow. Inbox access is restricted and can differ from integration-management access.
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+## Privacy
 
-```
-POST /api/v1/viber/webhook    Viber events (validated against bot auth token)
-POST /api/v1/viber/send        Outbound (text / picture / file / rich media)
-```
-
-</details>
-
-Provider abstraction: `lib/message-providers/viber.ts`.
-
----
-
-## 🌍 Why Viber?
-Significant install base in Eastern Europe (Romania, Ukraine, Russia, Belarus, Bulgaria) — countries where Synalux serves practices that need a non-WhatsApp messenger for patient communication.
-
----
-
-## 💳 Plans
-Available on **Standard+**.
+Viber is an external network. Do not send protected or sensitive information until your organization has approved the channel, its account configuration, and the permitted content.

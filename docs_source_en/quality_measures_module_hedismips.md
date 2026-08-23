@@ -1,18 +1,11 @@
-# Quality Measures Module (HEDIS/MIPS)
+# Quality Measures (HEDIS/MIPS)
 
-## Measure Tracking
+Quality measures are practice-level reporting data rather than an individual charting task.
 
-Automated tracking of HEDIS and MIPS quality measures with real-time performance dashboards. Identifies care gaps and patients needing interventions proactively.
+## Patient chart
 
-## Clinical Decision Support
+Some practice configurations include a **Quality Measures** tab in the patient chart. The current tab identifies the feature as practice-level and does not display patient-level measure results or care-gap actions.
 
-Point-of-care alerts when quality measure opportunities exist during patient encounters. Reduces missed documentation and improves measure capture rates.
+## Current availability
 
-## Reporting
-
-Generate CMS-ready quality measure reports with attestation support. Historical trending shows performance improvement over reporting periods for incentive programs.
-
-## Benchmarking
-
-Compare practice performance against national benchmarks. Identify high-impact measures for targeted improvement initiatives and bonus qualification.
-
+The customer portal does not currently provide a self-service HEDIS/MIPS performance dashboard, point-of-care measure alerts, national benchmarking, attestation workflow, or CMS-ready quality-measure export. Use the reporting tools available to your practice for current operational data, and verify measure-submission requirements with your payer or reporting program before relying on any exported record.

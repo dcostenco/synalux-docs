@@ -1,50 +1,18 @@
-# 💚 Service Health Monitoring
+# Service Health
 
-Internal monitoring of every Synalux dependency (database, OAuth providers, LiveKit, Inworld TTS, Anthropic, Gemini, OpenRouter, Stripe). Failures email the admin team and surface a status banner to affected users.
+Synalux runs platform-side health checks for core records, connected accounts, voice services, and other shared dependencies. These checks help the Synalux operations team detect service failures and investigate degraded behavior.
 
----
+## What customers see
 
-## 🩺 What's Monitored
-*   **Database** — Postgres / Supabase reachability, replication lag, RLS policy presence.
-*   **OAuth providers** — Google / Microsoft / Telegram / Meta token-refresh path health.
-*   **LiveKit SFU** — TURN reachability, room creation success rate.
-*   **TTS** — Inworld TTS-2 latency + error rate; Azure Neural fallback availability.
-*   **AI** — Anthropic, Gemini, OpenRouter latency + 5xx rate; trips fallback chain when degraded.
-*   **Stripe** — checkout + webhook ingress.
-*   **Storage** — Supabase Storage object writes.
-*   **Mail / SMS / chat providers** — incoming webhook acceptance rate.
+Each customer-facing workflow must report its own failure instead of implying that an action succeeded. For example, a failed connection, calendar update, message, payment, or voice request should remain visible as an error or unavailable state in that workflow.
 
----
+## What to do when a feature is unavailable
 
-## 🚨 Alert Path
-*   **Email** to admin distribution list when a dependency drops below SLO.
-*   **In-app banner** to affected users when their experience is degraded — e.g. "Voice cloning is temporarily unavailable; standard voices still work."
-*   **Status page** at `synalux.ai/status` (planned) for public visibility.
+1. Keep any unsaved work visible and note the action that failed.
+2. Retry once after confirming the device is online.
+3. For a connected service, open **Settings > Integrations** and review its connection state.
+4. If the issue continues, contact Synalux support with the affected workspace, feature, approximate time, and visible error message. Do not send passwords, access tokens, payment data, or patient information in a general support message.
 
----
+## Current visibility
 
-## 🛠️ Critical Bug History
-*   Supabase RLS-disabled critical alert — caught when a migration accidentally dropped RLS policies on the `patients` table. Auto-detected within 60 seconds; admins paged; rolled back same hour.
-
----
-
-## 🏗️ Architecture
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-GET  /api/v1/cron/services-health            Aggregate health snapshot (cron-driven)
-GET  /api/v1/cron/tts-health                TTS provider latency + availability
-GET  /api/v1/cron/chain-health-nightly      Nightly deep probe of all dependencies
-GET  /api/v1/integrations/chain-health      Integration health dashboard
-```
-
-</details>
-
-Probes run every 60 seconds via Vercel Cron; results written to `service_health_checks` with TTL retention.
-
----
-
-## 💳 Plans
-Always-on for every workspace. Admin-tier sees the full dashboard; users see degraded-feature banners only.
+The customer portal does not currently include a full service-health dashboard or public status page. Platform monitoring and administrator notifications do not prove that a specific customer action completed; verify the result in the workflow where the action was performed.

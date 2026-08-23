@@ -1,92 +1,68 @@
-# ⏱️ Timesheets & Payroll Integration
+# ⏱️ Timesheets & Payroll Review
 
-Synalux v11.1 Elite bridges the gap between clinical work and financial compensation. By automatically generating timesheets from signed session notes, we eliminate manual entry errors, reduce fraud, and ensure your team is paid accurately and on time.
+The Timesheets workspace lets authorized staff review time entries, distinguish billable and non-billable hours, filter by status, approve or reject pending entries, and export the current list to CSV. Payroll remains a separate review step; a timesheet entry is not proof that wages were calculated or paid.
 
----
+## Review time entries
 
-## ⚡ Auto-Generated from Clinical Notes
-Stop chasing staff for their hours. Timesheets build themselves as the work is done.
-*   **Sign-off Trigger:** The moment a provider signs a clinical note, the session duration is instantly logged to their timesheet.
-*   **Verification:** Timestamps are captured from the provider's device (Offline-First) ensuring accuracy even without Wi-Fi.
-*   **Fraud Prevention:** Sessions cannot be logged without a corresponding clinical record or appointment.
+Check the staff member, date, clock-in and clock-out times, total hours, billable hours, status, and verification indicator shown for each entry. Correct inaccurate entries before approval.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the Timesheets workspace</summary>
 
-![Clinical Session Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
+![Current Synalux Timesheets workspace with approved and pending entries](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/41_timesheets.png)
 
 </details>
 
 ---
 
-## 🚗 Tracking Non-Billable Time
-Account for every minute of the work day, not just face-to-face time.
-*   **Administrative Tasks:** Log time for report writing, emails, and phone calls.
-*   **Drive Time & Mileage:** Integrated tracking for home-based providers (essential for ABA and Mobile Health).
-*   **Training & Prep:** Record hours for mandatory HIPAA training or clinic preparation.
+## Add or correct a time entry
+
+Authorized users can select **Add Time Entry** and enter the date, clock-in and clock-out times, entry type, billable minutes, non-billable minutes, and notes. Review the calculated duration before submitting.
+
+To correct an existing row, select its edit action, update the same fields, and save the change. Follow the organization's correction and approval policy; editing a row does not by itself establish that the time was worked, verified, or payable.
+
+---
+
+## Staff context
+
+Use the staff directory to confirm role, employment status, credentials, training, and supervision information available for the employee. These records do not replace time-entry review.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the staff workspace</summary>
 
-![Staff Dashboard View](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
+![Current Synalux staff workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
 
 </details>
 
 ---
 
-## 🔄 Multi-Step Approval Workflows
-Ensure data integrity with a professional supervisor review process.
-*   **Staff Submission:** Employees review and submit their weekly or bi-weekly blocks.
-*   **Supervisor Audit:** Clinical directors compare timesheets against clinical data in one view.
-*   **Payroll Lock:** Once approved, timesheets are locked to prevent unauthorized changes before export.
+## Approval and export
+
+- Use the status tabs to isolate pending, approved, or rejected entries.
+- Approve or reject only after checking the source records required by your organization.
+- Use **Export CSV** to download the currently filtered list for authorized downstream review.
+- Confirm the payroll period, rates, deductions, taxes, and final payroll totals in the appropriate payroll process before payment.
+
+## Accounting context
+
+Users with finance access can review the accounting workspace separately. The accounting screen does not prove that a timesheet export was imported or that payroll was posted.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the accounting workspace</summary>
 
-![Timesheet Approval Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
+![Current Synalux accounting workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 </details>
 
 ---
 
-## 📤 Native Payroll Exports
-Export your data directly to the industry's most popular payroll providers.
-*   **ADP & Gusto:** One-click CSV or API export formatted exactly for your provider.
-*   **Paycom Integration:** Full support for multi-department and multi-state labor codes.
-*   **Custom Templates:** Create your own export format for local or specialized accounting software.
+## Access and audit review
+
+Limit time and payroll information to appropriate roles. Authorized administrators can review the workspace events available in the audit log. Your organization remains responsible for labor-law compliance, payroll review, retention, and reconciliation.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Global Financial Roll-up](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
-
-</details>
-
----
-
-## ⚖️ Labor Compliance & PTO
-Protect your practice from overtime surprises and labor disputes.
-*   **Overtime Alerts:** Automated warnings when a staff member approaches the 40-hour threshold.
-*   **Mandatory Breaks:** Tracking and alerts for state-mandated rest and meal periods.
-*   **PTO Accrual:** Real-time visibility for staff into their earned vacation and sick leave balances.
-
-<details>
-<summary>View Interface / Diagram</summary>
-
-![HR Compliance Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/16_hr_management.png)
-
-</details>
-
----
-
-## 🔐 Security & Audit
-*   **Immutable Logs:** Every edit to a timesheet is logged with the reason and the author's ID.
-*   **Role-Based Access:** Front-line staff can only see their own timesheets; managers see their department.
-*   **Financial Audit Trail:** 7-year retention of all payroll-related data for tax and legal compliance.
-
-<details>
-<summary>View Interface / Diagram</summary>
-
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

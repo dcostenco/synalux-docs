@@ -1,77 +1,48 @@
-# 📦 Smart Inventory & Supply Chain
+# 📦 Inventory & Assets
 
-Synalux v11.1 Elite provides an enterprise-grade inventory system designed to prevent stock-outs, minimize waste, and track the high-value assets of your practice—from dental implants and biologics to vaccines and office supplies.
+The Synalux Inventory & Assets workspace gives authorized staff a current view of stock items, low-stock alerts, reorder suggestions, open purchase orders, fixed assets, and monthly depreciation. Confirm physical stock and receiving records before relying on the displayed quantity.
 
----
+## Stock and low-stock review
 
-## 📉 Real-Time Stock Tracking
-Maintain absolute visibility into your clinic's physical assets across all storage locations.
-*   **Multi-Location:** Track stock across the vaccine fridge, surgical suites, and administrative closets.
-*   **Barcode Ready:** Instantly receive or dispense items using standard barcode and QR scanners.
-*   **Lot & Expiry Tracking:** Precision logging of lot numbers and expiration dates for every unit.
+Review item name, SKU or lot, category, quantity, and status. Use **Audit Stock** for the organization’s count workflow and investigate differences before making adjustments.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View Inventory & Assets</summary>
 
-![Inventory Management Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/25_inventory.png)
+![Current Synalux Inventory and Assets workspace with stock, reorder, purchase-order, and depreciation panels](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/25_inventory.png)
 
 </details>
 
 ---
 
-## 🔔 Automated Reorder Engine
-Stop running out of critical supplies. Let our engine handle the procurement lifecycle.
-*   **Minimum Thresholds:** Set "Low Stock" alerts for every item category.
-*   **Vendor Management:** One-click purchase order generation for Henry Schein, Patterson, and McKesson.
-*   **Price Comparison:** Track unit costs over time and identify savings opportunities across suppliers.
+## Reorder and receiving
+
+The Smart Reorder panel uses current stock and configured reorder points to suggest attention. Review the item, quantity, vendor, price, and need before placing or receiving an order. The suggestion is not an automatic purchase.
+
+## Fixed assets and depreciation
+
+The fixed-assets area shows purchase cost, useful life, depreciation method, and monthly depreciation for configured assets. Review asset setup and accounting policy before running an accrual.
+
+## Accounting context
+
+The accounting workspace is separate from Inventory & Assets. Confirm that receiving, adjustments, depreciation, and ledger entries agree before financial close.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the accounting workspace</summary>
 
-![Vendor & Supplier Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+![Current Synalux accounting workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
 
 </details>
 
 ---
 
-## 💉 Clinical Safety & Expiration
-Protect your patients and your bottom line with intelligent expiration management.
-*   **Expiry Alerts:** Automated daily reports of items expiring within 30, 60, and 90 days.
-*   **FEFO Dispensing:** "First Expired, First Out" logic suggests which units to use first to minimize waste.
-*   **Recall Management:** Instantly identify and quarantine specific lot numbers in the event of a manufacturer recall.
+## Access and audit review
+
+Limit inventory, purchasing, and asset changes to appropriate roles. Authorized administrators can review the workspace events available in the audit log. Your organization remains responsible for physical controls, recalls, controlled items, disposal, and accounting policy.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Medication & Vaccine Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
-
-</details>
-
----
-
-## 💰 Cost Control & Profitability
-Understand the true cost of every procedure.
-*   **Unit Cost Tracking:** Monitor inflation and supplier price hikes in real-time.
-*   **Markup Configuration:** Automatically suggest procedure prices based on current material costs.
-*   **Shrinkage Reports:** Identify and investigate discrepancies between physical counts and system records.
-
-<details>
-<summary>View Interface / Diagram</summary>
-
-![Financial Analytics Roll-up](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
-
-</details>
-
----
-
-## 🔐 Security & Audit
-*   **Dispensing Logs:** Every item removed from inventory is linked to a specific staff ID and patient record.
-*   **Physical Count Audits:** Streamlined workflow for quarterly or annual physical inventory verification.
-*   **Role-Based Access:** Restrict who can approve purchase orders or edit unit costs.
-
-<details>
-<summary>View Interface / Diagram</summary>
-
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>
