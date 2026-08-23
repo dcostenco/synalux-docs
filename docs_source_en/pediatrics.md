@@ -1,32 +1,37 @@
-# 👶 Pediatrics
+# 👶 Pediatrics Workflows
 
-Synalux v11.1 Elite provides a kid-friendly, parent-approved clinical environment. From automated growth percentiles to proactive immunization alerts and ADHD Vanderbilt scoring, we help pediatricians focus on the milestones that matter.
+Pediatric teams can use the shared Synalux patient record, vitals, immunizations, patient portal, clinical notes, billing, and audit workspaces. Availability of specialty forms, measures, reminders, and templates depends on the modules configured for the organization.
 
----
+## Patient record overview
 
-## 📏 Growth & Milestone Tracking
-Monitor child development with precision using integrated WHO/CDC growth curves.
-*   **Auto-Percentiles:** Instantly calculate weight-for-age, length-for-age, and BMI percentiles.
-*   **Milestone Checklists:** Track gross motor, fine motor, language, and social-emotional development.
-*   **Visual Growth Charts:** Parents can view and download their child's growth progress directly from the portal.
+Start from the current patient record and confirm identity before reviewing or adding clinical information. The overview brings available demographics and clinical sections together; it is not a growth-chart screen.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the patient record</summary>
 
-![Pediatric Growth Charts](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
+![Current Synalux patient record overview](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
 </details>
 
 ---
 
-## 💉 Smart Immunization Management
-Never miss a dose. Our clinical engine tracks the complete CDC/ACIP vaccine schedule.
-*   **Proactive Alerts:** Automatic notifications for due and overdue vaccines (DTaP, MMR, Hep B, etc.).
-*   **Registry Ready:** Export vaccine records for state registries or school forms in one click.
-*   **VIS Documentation:** Integrated Vaccine Information Statement (VIS) tracking for compliance.
+## Vitals and measurements
+
+Use the vitals tab to review the recorded measurements available for the patient. Verify date, units, source, and patient context before using a measurement clinically.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the vitals workspace</summary>
+
+![Current Synalux patient vitals workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/29_vitals.png)
+
+</details>
+
+## Immunization records
+
+Review the vaccines, dates, lots, sites, and statuses recorded in the patient chart. Clinicians remain responsible for schedule review, contraindications, consent, administration, registry reporting, and follow-up.
+
+<details>
+<summary>View immunization records</summary>
 
 ![Immunization Records](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
 
@@ -34,14 +39,12 @@ Never miss a dose. Our clinical engine tracks the complete CDC/ACIP vaccine sche
 
 ---
 
-## 🏠 Parent Portal & Engagement
-Empower parents with 24/7 access to their child's health information.
-*   **Secure Messaging:** Direct communication between parents and the pediatric team.
-*   **Digital Intake:** Parents can complete ASQ or Vanderbilt forms from their phone before the visit.
-*   **School & Camp Forms:** Instant generation of pre-populated physical forms and medication authorizations.
+## Patient or guardian portal
+
+When portal onboarding is enabled, the patient or authorized guardian follows the guided steps provided by the organization. Confirm guardianship, consent authority, and the intended patient account before collecting or sharing information.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View portal onboarding</summary>
 
 ![Patient Portal Onboarding](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/patient_portal_onboarding_ui.png)
 
@@ -49,20 +52,12 @@ Empower parents with 24/7 access to their child's health information.
 
 ---
 
-## 🧠 Specialized Pediatric Workflows
-*   **ADHD Management:** Digital Vanderbilt scoring, medication monitoring, and school accommodation letters.
-*   **Asthma Action Plans:** Automated peak flow tracking and rescue inhaler logs.
-*   **Well-Child Exams:** Age-specific templates for Bright Futures compliance (Newborn to 21 years).
+## Clinical notes
 
----
-
-## 🎙️ Hands-Free Clinical Charting
-Spend less time at the computer and more time with the child.
-*   **Ambient SOAP Notes:** WASM-powered voice dictation drafts your pediatric notes in real-time.
-*   **Kid-Friendly UI:** High-speed iPad interface optimized for the dynamic environment of a pediatric exam room.
+Use the SOAP workspace to enter or dictate source text and organize a draft. Confirm consent before recording and review every section before signing.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the SOAP workspace</summary>
 
 ![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
@@ -70,28 +65,26 @@ Spend less time at the computer and more time with the child.
 
 ---
 
-## 🧾 Billing & Insurance Verification
-*   **Pediatric Coding:** Support for 99392–99395 (Preventive) and 90460 (Immunization).
-*   **Real-Time Eligibility:** Instantly verify Medicaid, BCBS, and UHC coverage during check-in.
-*   **Automatic Superbills:** Itemized receipts for out-of-network reimbursement, including all ICD-10/CPT codes.
+## Billing review
+
+Authorized staff can review the billing, claim, payment, and authorization records enabled for the workspace. Verify coding, units, documentation, consent, coverage, and payer requirements before submission.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the Billing workspace</summary>
 
-![Pediatric Billing & Payments](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+![Current Synalux Billing workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 </details>
 
 ---
 
-## 🔐 Security & Compliance
-*   **HIPAA Audit Trails:** Strict tracking of all access to sensitive pediatric records.
-*   **Parental Consent:** Secure digital signatures for treatment and telehealth via BoldSign.
-*   **Offline-First:** Your charts save locally even if the clinic Wi-Fi drops during a busy flu season.
+## Access and audit review
+
+Limit pediatric records to appropriate roles, verify guardian access, and review the events available in the administrative audit log. Test offline behavior on the exact workflows and devices the organization plans to use before relying on it during care.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

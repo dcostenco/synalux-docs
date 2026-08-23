@@ -1,27 +1,19 @@
-# Immunizations Module
+# Immunizations
 
-The Synalux Platform's Immunizations Module is designed to streamline and enhance the management of vaccination records and compliance within healthcare settings. This module offers robust features that ensure accurate tracking, efficient administration, and adherence to regulatory standards.
+The **Immunizations** tab in a patient chart is a concise history of vaccination records available to Synalux.
 
-## Vaccine Tracking
+## What the chart shows
 
-Central to the Immunizations Module is its comprehensive vaccine tracking capability. The system supports CVX (Centers for Disease Control and Prevention’s Vaccine Codes) codes, enabling precise identification of each vaccine type. It also tracks dose numbers, lot numbers, and manufacturers, providing a detailed audit trail that ensures accuracy and traceability throughout the vaccination process.
+Each record can show:
 
-## Administration
+- Vaccine name
+- Lot number
+- Administration site
+- Administration date
+- Status
 
-The administration feature within the Immunizations Module allows healthcare providers to record essential details about each vaccine administration. This includes the site of injection (e.g., IM, SC, PO, IN, ID), the route used, and the administering provider’s information. Such detailed records are crucial for maintaining accurate patient histories and ensuring proper medical care.
+Use this view when reviewing the patient's documented vaccine history.
 
-## VIS Compliance
+## Current workflow boundary
 
-Compliance with Vaccine Information Statements (VIS) is a critical aspect of immunization practices. The Immunizations Module includes a VIS compliance feature that tracks when VIS materials have been provided to patients or their guardians. This ensures that all necessary information about the vaccine’s benefits and risks has been communicated, adhering to legal requirements and best practices in patient education.
-
-## Registry Reporting
-
-The module facilitates seamless submission of immunization records to state immunization registries. It includes a registry reporting feature that automates the tracking and submission process, ensuring compliance with public health regulations. This integration helps maintain accurate and up-to-date immunization records at both the individual and population levels.
-
-## CDC Schedule
-
-The Immunizations Module supports adherence to the CDC (Centers for Disease Control and Prevention) recommended vaccine schedules. It includes specific vaccines such as DTaP, IPV, MMR, Varicella, Hep A/B, Influenza, and Tdap, allowing healthcare providers to easily manage routine vaccinations according to established guidelines. This ensures that patients receive the correct immunizations at the appropriate times.
-
-## Immunocompromised
-
-Recognizing the unique needs of immunocompromised patients, the module offers special vaccine recommendations tailored for biologic patients. These recommendations take into account the specific medical conditions and treatment regimens of these individuals, ensuring they receive appropriate and safe vaccinations in accordance with clinical guidelines.
+The current patient-chart tab is a review screen. It does not expose controls for administering a vaccine, recording route or dose, documenting a Vaccine Information Statement, calculating a CDC schedule, or submitting a record to a state registry. Registry import and manual-entry workflows depend on the practice's configured integration or data-entry process.

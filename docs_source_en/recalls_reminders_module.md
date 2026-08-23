@@ -1,18 +1,20 @@
-# Recalls & Reminders Module
+# Recalls & Reminders
 
-## Recall Scheduling
+Use **Recalls** to keep a dated follow-up list for patients who need another visit or service.
 
-Configure recall intervals per visit type (e.g., 6-month dental cleaning, annual physical). Automatically generates recall lists when patients are due for follow-up.
+## Create a recall
 
-## Multi-Channel Outreach
+1. Open **Recalls**.
+2. Select **New Recall**.
+3. Choose the patient, recall type, and due date.
+4. Add any notes staff will need, then save.
 
-Send recall notifications via SMS, email, and in-app messages. Tracks delivery status and patient response rates for campaign optimization.
+The recalls list shows upcoming and overdue items. Search the list, filter it by status, open the related patient, or mark the recall complete when the follow-up is finished.
 
-## Campaign Management
+## Patient chart view
 
-Batch recall campaigns for seasonal services (flu shots, back-to-school physicals). Customizable message templates with merge fields for personalization.
+The **Recalls** tab in a patient chart shows that patient's recall type, description, due date, contact-attempt count, and status. This is useful when reviewing the chart before contacting the patient.
 
-## Analytics
+## Current reminder boundary
 
-Recall effectiveness dashboard showing response rates, reactivation metrics, and revenue impact of recall programs for practice growth tracking.
-
+The current **Recalls** screen manages the follow-up list. It does not provide a batch email/SMS campaign button, message-template editor, delivery report, or campaign analytics. Use your configured communication tools for outreach and record the follow-up status in Recalls.

@@ -1,38 +1,34 @@
-# 📄 PDF Generation
+# Documents, Print, and PDF
 
-Server-side PDF rendering for SOAP notes, progress reports, superbills, claims, intake forms, and patient-facing documents.
+Several Synalux workflows can create a downloadable document or open the browser's print dialog. The exact output depends on the screen and workspace configuration; a button labeled **Print**, **Download**, or **Generate Report** does not always create the same file type.
 
----
+## Current customer workflows
 
-## 📑 Use Cases
-*   **SOAP notes** — finalized clinical notes exported as PDFs filed to the patient chart and the [Drive module](drive.md).
-*   **Progress reports** — auto-aggregated session data + graphs + mastery trends (used for ABA authorization renewals).
-*   **Superbills** — patient-side billing summary for self-pay or out-of-network reimbursement.
-*   **Intake packets** — multi-form bundles delivered to new patients via the [Patient Portal](patient_portal.md).
-*   **Receipts / invoices** — Stripe-payment confirmations.
-*   **Recall letters** — bulk-send via [Mail](mail.md).
+- **Assessments:** **Generate Report** creates a report from the selected assessment record and downloads the available document.
+- **Billing:** invoice and superbill actions download the generated document available for that workspace.
+- **Reports:** **Print PDF** opens the printable report workflow.
+- **Drive documents and presentations:** the export menu offers **Print/PDF**, which uses the browser's print dialog so the user can choose **Save as PDF** when the browser supports it.
+- **Payroll:** a pay-stub action can open a print or download workflow from the available pay-stub record.
 
----
+Some document-generation screens return a styled HTML file when direct PDF rendering is not available. Open that file in a supported browser and use **Print → Save as PDF** if a PDF copy is required.
 
-## 🏗️ Architecture
-*   Server-rendered via headless Chromium (per-call worker; no shared state).
-*   Templates live as React components — same design system as the rest of the app, rendered to PDF via Puppeteer.
-*   Optional digital signature via the e-Signature module (BoldSign integration) for docs that need execution.
-*   PDF bytes uploaded to Supabase Storage with the same RLS scoping as other Drive files.
+## Download a document safely
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+1. Open the record you intend to export.
+2. Confirm the patient, customer, date range, and displayed totals.
+3. Select the screen's **Generate**, **Download**, **Print**, or **Print/PDF** action.
+4. Wait for the download or print preview to appear.
+5. Review the document before saving, printing, or sharing it.
+6. Store or transmit the file only through a workflow approved by your organization.
 
-```
-POST /api/v1/pdf            { template, payload, sign?: bool } → returns signed download URL
-GET  /api/v1/pdf/:id        Read PDF metadata + signed URL
-```
+## Current boundaries
 
-</details>
+Generating or downloading a document does not automatically prove that it was filed in a patient chart, uploaded to Drive, sent by email, or delivered to a payer or signer. Confirm each separate action in the destination workflow.
 
----
+Synalux does not guarantee that every screen supports direct PDF output. Browser print support, workspace configuration, permissions, and the selected record affect the available result.
 
-## ⚖️ HIPAA + Audit
-*   PDFs scoped to workspace + (optional) patient — same RLS as Drive.
-*   Generation logged in audit chain.
-*   Download links are short-TTL (5 minutes) signed URLs.
+## Privacy
+
+Downloaded and printed files can contain sensitive information. Verify the destination, use a trusted device and printer, and remove local copies according to your organization's policy. Do not assume a downloaded link, browser history item, or local file is automatically removed after the session ends.
+
+Related guides: [Clinical Notes](./clinical_notes_documentation.md) · [Billing and Payments](./billing_payments_module.md) · [Drive](./drive.md)

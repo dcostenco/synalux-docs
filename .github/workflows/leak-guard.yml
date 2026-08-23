@@ -20,3 +20,7 @@ jobs:
           fetch-depth: 1
       - name: Scan tracked files for private references and secrets
         run: bash scripts/check-no-private-refs.sh
+      - name: Validate customer documentation
+        run: |
+          python3 scripts/check_customer_docs.py
+          python3 scripts/test_check_customer_docs.py

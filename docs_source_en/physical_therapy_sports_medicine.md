@@ -1,62 +1,52 @@
-# 🏃 Physical Therapy & Sports Medicine
+# 🏃 Physical Therapy & Sports Medicine Workflows
 
-Synalux v11.1 Elite is built for high-performance recovery. From automated Range of Motion (ROM) tracking to evidence-based rehab protocols and Home Exercise Programs (HEP), we provide the tools to get your patients moving again.
+Physical therapy teams can use the shared Synalux patient record, vitals, reports, notes, patient portal, billing, and audit workspaces. Availability of specialty forms and measures depends on the modules configured for the organization.
 
----
+## Patient measurements
 
-## 📏 Precision ROM & Strength Tracking
-Measure progress with objective clinical data.
-*   **Active/Passive ROM:** Digital entry for joint-specific degrees with bilateral comparison.
-*   **MMT Scoring:** Standardized Manual Muscle Testing (0-5 scale) with trend tracking.
-*   **Functional Outcomes:** Built-in scoring for LEFS (Lower Extremity Functional Scale) and DASH (Disabilities of the Arm, Shoulder and Hand).
+Use the vitals area to review and record the measurements supported by the current patient record. Verify units, date, and patient context before using a measurement for clinical decisions. The screen below does not show an automated range-of-motion or strength assessment.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View patient measurements</summary>
 
-![PT Evaluation & ROM Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/32_physical_therapy.png)
+![Current Synalux patient vitals workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/29_vitals.png)
 
 </details>
 
 ---
 
-## 🏋️ Automated Home Exercise Programs (HEP)
-Extend the clinic into the patient's home with professional, easy-to-follow exercise guides.
-*   **Visual Guides:** Auto-generated instructions with high-clarity images and videos.
-*   **Sets & Reps:** Customizable frequency and duration for every exercise.
-*   **Portal Access:** Patients can view their HEP and log completions directly from the Secure Patient Portal.
+## Patient portal
+
+Patients can use the portal features enabled by their organization. Confirm what information is available to the patient before directing them to a care-plan document or task.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the patient portal</summary>
 
-![Home Exercise Program Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
+![Current Synalux patient portal dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/14_patient_portal.png)
 
 </details>
 
 ---
 
-## 🏥 Phased Rehab Protocols
-Standardize care for complex post-surgical and orthopedic cases.
-*   **ACL & Rotator Cuff:** Evidence-based, phased progressions (e.g., Phase I: Protection → Phase IV: Return to Sport).
-*   **Neuro Rehab:** Specialized protocols for stroke recovery and chronic neurological conditions.
-*   **Return-to-Play:** Objective criteria for athletes to safely transition back to full competition.
+## Configurable reports
+
+Authorized staff can build a reports dashboard from metrics available to the workspace. The example is an operational summary and does not show a clinical return-to-play decision or validated functional outcome score.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the reports dashboard</summary>
 
-![Rehab Protocol Management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
+![Current Synalux configurable reports dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
 
 </details>
 
 ---
 
-## 📝 High-Speed Daily Treatment Notes
-Document your sessions without falling behind.
-*   **Ambient SOAP Notes:** Use voice dictation to capture the patient's subjective report and your objective findings.
-*   **CPT Suggestion Engine:** Automatically identifies codes like 97110 (Exercise), 97116 (Gait), 97140 (Manual), and 97530 (Functional) based on your interventions.
-*   **8-Minute Rule Calc:** Built-in logic to ensure compliant unit billing for Medicare and commercial payers.
+## Treatment notes
+
+Use the SOAP workspace to enter or dictate source text and organize the note. Confirm recording consent and review the note, units, service codes, and time before signing or billing.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the SOAP workspace</summary>
 
 ![Clinical Voice Dictation Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/03_voice_dictation.png)
 
@@ -64,29 +54,26 @@ Document your sessions without falling behind.
 
 ---
 
-## 🧾 Workers' Comp & PIP Management
-Navigate complex legal and insurance requirements with ease.
-*   **FCE Documentation:** Comprehensive Functional Capacity Evaluation templates.
-*   **Work Restrictions:** Professional letter generation for employers and case managers.
-*   **Authorization Vault:** Track authorized visits vs. utilized visits for Workers' Comp and PIP cases.
+## Billing review
+
+Authorized staff can review the billing, claim, payment, and authorization records enabled for the workspace. Verify payer-specific requirements before submission.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the billing workspace</summary>
 
-![PT Billing & Insurance Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+![Current Synalux billing workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 </details>
 
 ---
 
-## 🔐 Security & Compliance
-*   **HIPAA Audit Trails:** Every access to clinical data is tracked and immutable.
-*   **E-Signatures:** Secure digital signatures for evaluations and plans of care via BoldSign.
-*   **Offline-First:** Your notes save locally even if the gym's Wi-Fi is spotty.
+## Access and audit review
+
+Limit access to appropriate roles and review the recorded events available in the audit log. Verify offline behavior on the devices and workflows your organization intends to use before relying on it during care.
 
 <details>
-<summary>View Interface / Diagram</summary>
+<summary>View the audit log</summary>
 
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>

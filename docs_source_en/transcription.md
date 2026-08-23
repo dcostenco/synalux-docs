@@ -1,83 +1,62 @@
-# 🎙️ Transcription
+# 🎙️ Transcription and Dictation
 
-**Audio → text, in-browser, HIPAA-grade.** Whisper WASM for clinical sessions; cloud Whisper for high-fidelity batch jobs. Audio never leaves the device unless the user explicitly opts into cloud upgrade.
-
----
-
-## 🎚️ Three-Path Transcription
-
-| Path | Engine | When | Quality | Privacy |
-|---|---|---|---|---|
-| **In-browser** | Whisper WASM (Whisper.cpp compiled) | Default for live dictation, AAC voice input | Excellent for clear English/Spanish/French; noise-sensitive | ✅ Audio never leaves device |
-| **Server cloud** | OpenAI Whisper-large-v3 via `/api/v1/transcribe` | Long-form batch jobs (1h+ session recordings); user opts in | Best — handles noise + accents + medical terminology | Audit-logged; HIPAA BAA in place |
-| **Live SOAP dictation** | WhisperX (word-aligned timestamps) | Clinician dictating SOAP notes during session | Excellent + word timestamps for speaker-attribution | In-browser by default |
+Synalux can turn speech into editable text in supported clinical, communication, and live-caption workflows. Always review the text before signing, sending, or placing it in a patient record.
 
 ---
 
-## 🩺 Live SOAP Dictation
-The headline transcription use case. A clinician opens the session note, presses dictate, speaks the session out loud, and Synalux:
-1. Transcribes locally (WASM) with word timestamps.
-2. Identifies sections (Subjective / Objective / Assessment / Plan) by pattern.
-3. Extracts ABC data (Antecedent / Behavior / Consequence) from natural-language descriptions.
-4. Drafts the structured note for one-click sign-off.
+## Dictate a SOAP note
 
-See [Applied Behavior Analysis](applied_behavior_analysis_aba.md) and [Clinical Notes Documentation](clinical_notes_documentation.md) for the downstream flow.
+1. Open **SOAP Notes**.
+2. Select the patient and note template.
+3. Choose **Start dictation** and allow microphone access when the browser asks.
+4. Speak clearly in short sections. The dictated text appears in the source-text panel.
+5. Choose **Stop dictation** when finished.
+6. Correct names, dates, measurements, clinical terms, and negations.
+7. Generate the structured draft, complete any required template fields, and review the entire note before sign-off.
 
----
-
-## 🗣️ AAC Voice Input
-For Prism AAC users who can speak some words but use AAC for harder utterances:
-*   **Whisper WASM** transcribes speech in-browser, populates the keyboard input.
-*   Combined with autocorrect (Gemini 2.5 Flash-Lite) for typo recovery.
-*   Locale-aware: matches the user's chosen language; supports code-switching (e.g. EN words inside a RO sentence).
+You can also type or edit the source text directly. Loading session context or cloning a prior note does not remove the need to confirm that the new note reflects the current service.
 
 ---
 
-## 🏗️ Architecture
+## Live captions
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+During a supported Synalux video call:
 
-```
-POST /api/v1/transcribe      Server-side cloud Whisper (long-form, audit-logged)
-                              body: { audio_url | audio_b64, lang?, model?='whisper-large-v3' }
-                              returns: { text, segments[], language, duration_ms }
-```
+1. Turn on captions.
+2. Review the microphone disclosure and provide the requested consent.
+3. Choose the spoken language shown in the caption controls.
+4. Optionally choose a translation language.
+5. Treat interim captions as provisional and verify the final text with the speaker when accuracy matters.
 
-</details>
-
-In-browser path (`services/whisperService.ts`):
-- Whisper WASM model loaded lazily on first dictation use (~30MB cached in IndexedDB).
-- WhisperX add-on (~10MB) loaded for word timestamps when user enables "speaker tracking".
-- Audio captured via MediaRecorder API → fed in chunks to the WASM transcoder.
+Caption and dictation availability depends on browser microphone support and device resources. A quiet room, close microphone placement, and one speaker at a time usually improve results.
 
 ---
 
-## ⚖️ HIPAA + Privacy
-*   **In-browser default** — audio bytes never traverse Synalux infrastructure.
-*   **Cloud upgrade requires explicit consent** — UI shows a one-time consent gate per session before audio uploads.
-*   **Audit logging** — every cloud transcription writes to `transcription_audit` with user, session, audio duration, model used.
-*   **No retention** — server-side audio bytes deleted within 24h of transcription; only the text result + audit row persist.
+## Other voice-input surfaces
+
+Some message and assistant fields include a microphone action that inserts recognized speech into the text box. The user can edit that text before sending it. If the microphone action is disabled, the browser or device may not support that voice-input path.
 
 ---
 
-## 💳 Plans
+## Privacy and consent
 
-| | Free | Standard | Advanced | Enterprise |
-|---|---|---|---|---|
-| In-browser Whisper (live dictation) | ✅ | ✅ | ✅ | ✅ |
-| AAC voice input (in-browser) | ✅ | ✅ | ✅ | ✅ |
-| Cloud Whisper-large-v3 (long-form) | — | ✅ 30 min/mo | ✅ 5 hr/mo | ✅ unlimited |
-| Speaker-attribution (WhisperX) | — | — | ✅ | ✅ |
-| Custom medical vocabulary boost | — | — | — | ✅ |
+- Ask for and document any consent required by your organization before recording or transcribing a clinical conversation.
+- Use the disclosure shown in the active workflow; different workflows can process audio differently.
+- Do not assume that a local caption workflow and an uploaded recording have the same handling.
+- Limit patient identifiers to what is necessary for the task.
+- Follow your organization’s retention, consent, and record-review policies.
 
-[See full pricing →](https://synalux.ai/pricing)
+For exact processing and retention terms that apply to your workspace, contact your administrator or [Synalux support](https://synalux.ai/support).
 
 ---
 
-## 🔄 Inter-Module Integration
-*   **SOAP / Clinical Notes** — primary consumer; live dictation flow.
-*   **Prism AAC** — voice input → keyboard pre-fill.
-*   **Telehealth** — in-call live captions + recording-time transcription.
-*   **Mail** — voice replies (record → transcribe → edit → send).
-*   **Translation** — transcribed text can pipe directly into the [Translation module](translation.md).
+## Troubleshooting
+
+| Problem | What to check |
+|---|---|
+| Microphone button does not start | Allow microphone access for the Synalux site, confirm the device has an active microphone, and reload the page. |
+| No text appears | Stop and restart dictation, speak closer to the microphone, and check that the selected language matches the speaker. |
+| Words are inaccurate | Reduce background noise, speak in shorter phrases, and manually correct clinical terms. |
+| Captions work but translation does not | Confirm a translation language is selected and that the device is online. Keep using the original captions if translation is unavailable. |
+
+See [Clinical Notes Documentation](clinical_notes_documentation.md), [Telehealth](telehealth_livekit.md), and [Translation](translation.md) for the connected workflows.

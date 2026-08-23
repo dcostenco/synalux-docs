@@ -1,14 +1,22 @@
-# Patient & Intake Guide
+# Patients & Intake
 
-The Patient module handles core demographics, insurance indexing, and relationship tracking.
+Use **Patients** to create a patient record, find an existing patient, and open the patient chart.
 
-## Adding a Patient
-1. Click **Add Patient** in the top right.
-2. Enter standard demographics (DOB, sex, address).
-3. Assign a Primary Diagnosis (e.g., F84.0 Autism Spectrum Disorder).
+## Add a patient
 
-## Guardian Profiles
-Every pediatric patient must have at least one **Guardian/Guarantor** tied to their profile for insurance and billing purposes. Ensure the Guarantor ID matches the primary subscriber on the insurance plan.
+1. Open **Patients**.
+2. Select **Add Patient**.
+3. Enter the patient's name, date of birth, gender, status, and available diagnosis information.
+4. Add the insurance provider and member ID when known.
+5. For a pediatric or supported patient, add the guardian's name, phone, and email when applicable.
+6. Save the record.
 
-## Insurance Integration
-The platform automatically verifies ELIGIBILITY through clearinghouses. Ensure you attach the correct Payer ID.
+Guardian fields are available but are not mandatory for every patient. Enter the responsible party required by your practice and payer workflow.
+
+## Work with the patient chart
+
+Select a patient to open the chart. Available tabs depend on the practice type and may include appointments, vitals, medications, allergies, immunizations, labs, insurance, documents, tasks, referrals, recalls, education, and other specialty records.
+
+## Insurance and eligibility
+
+The patient form stores an insurance provider and member ID for quick reference. The patient chart's **Insurance** tab holds the fuller policy record. Eligibility is a separate, staff-initiated check under **Billing** and requires a configured clearinghouse; saving a patient does not automatically verify coverage.

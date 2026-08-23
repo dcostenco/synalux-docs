@@ -1,10 +1,10 @@
-# UI/UX Enhancements: Synalux Omni-Search
+# Navigation and Workspace Shortcuts
 
-Synalux is built to significantly reduce "click fatigue" typical in other EHRs (e.g. SimplePractice, CentralReach) by offering deep navigation shortcuts and a global command palette.
+Synalux provides keyboard navigation, first-available scheduling, and an assistant panel to keep common actions close to the active workspace.
 
 ## Omni-Search (CMD+K) Command Palette
 
-The global **Command Palette** drastically streamlines user navigation inside the practice portal.
+The global **Command Palette** provides a keyboard-first way to move inside the practice portal.
 Instead of navigating deep into the sidebar for routine operations:
 
 1. Press `Cmd + K` on Mac or `Ctrl + K` on Windows.
@@ -12,24 +12,12 @@ Instead of navigating deep into the sidebar for routine operations:
 3. Type the command or area (e.g. `Billing`, `Patients`).
 4. Instant routing without extra mouse clicks.
 
-<details>
-<summary>Technical Implementation</summary>
+Press **Escape** to close the palette and return focus to the previous screen.
 
-Mounted natively in `RootLayout`, intercepting keydown event listeners globally. 
+## First Available booking
 
-```tsx
-import CommandPalette from '@/components/ui/CommandPalette';
-// Embedded in RootLayout Providers
-<CommandPalette />
-```
-
-Test covered automatically via Playwright mapping (`tests/ui/deep-ui.spec.ts`). Testing ensures the `Escape` key effectively triggers the overlay dropdown dismount to preserve accessibility standards.
-</details>
-
-## Smart "First Available" Booking Widget
-
-Designed to eliminate friction for patients trying to book quick appointments. It masks complex scheduling matrices under an intuitive "First Available" list. Located natively in the scheduling flow (`components/ui/SmartBookingWidget.tsx`).
+The scheduling workflow can present matching openings as a **First Available** list. Review the provider, location, date, and appointment type before choosing a slot.
 
 ## Floating AI Assistant
 
-Provides clinicians with an omni-present contextual side-panel (`components/ui/FloatingAIAssistant.tsx`). Instead of clicking back and forth between tabs to draft notes, the Assistant is pre-loaded with the active patient's context to draft SOAP notes and summarize histories dynamically.
+The assistant provides a contextual side panel. Where patient context is available and permitted, it can help draft text for clinician review. Confirm the active patient and verify every generated statement before saving it to a clinical record.

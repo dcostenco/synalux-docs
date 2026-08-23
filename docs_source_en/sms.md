@@ -1,38 +1,21 @@
-# 📱 SMS (Twilio)
+# SMS messaging
 
-Two-way SMS via Twilio for appointment reminders, intake links, and patient communication. Falls back gracefully when not configured.
+Synalux can use an organization-approved SMS number for two-way text conversations. Availability depends on the configured messaging account, your subscription, and the access assigned to your account.
 
----
+## Use SMS
 
-## 📨 Twilio SMS — Send + Receive
-*   **Outbound** — `/api/v1/sms/send` posts to Twilio's Messages API with workspace-scoped account SID + auth token.
-*   **Inbound webhook** — `/api/v1/sms/webhook` receives replies and surfaces them in the chat thread (workspace's Twilio number → workspace inbox).
-*   **Delivery tracking** — Twilio status callbacks update message rows (queued / sent / delivered / failed).
-*   **Number rental** — instructions to provision a Twilio number with messaging A2P 10DLC compliance.
+1. Confirm that the recipient has provided the consent required by your organization and applicable law.
+2. If your account has access, open **Chat > Inbox** and select the SMS thread.
+3. Enter a text reply and choose **Send**.
+4. Confirm the send result in Synalux. Delivery can still depend on the mobile carrier and recipient number.
 
----
+Administrators should complete a real inbound and outbound test before the number is used for reminders, intake links, or customer communication.
 
-## 🏗️ Architecture
+## Consent and opt-out
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+- Record consent before the first operational message when required.
+- Respect STOP, HELP, and other carrier-required keyword behavior.
+- Do not continue a conversation after an opt-out.
+- Keep messages concise and move sensitive details to an approved secure channel.
 
-```
-POST /api/v1/sms/send                Outbound SMS (workspace-scoped Twilio creds)
-POST /api/v1/sms/webhook         Inbound + delivery status webhook
-GET  /api/v1/sms/numbers             List rented Twilio numbers per workspace
-```
-
-</details>
-
----
-
-## ⚖️ Compliance
-*   **Consent capture** — `/sms-consent` page collects opt-in per HIPAA + TCPA. Required before first send to a patient.
-*   **STOP / HELP keyword handling** — Twilio's compliance layer + Synalux's per-recipient blocklist.
-*   **A2P 10DLC** — guidance for US phone-number registration in the setup modal.
-
----
-
-## 💳 Plans
-Available on **Standard+**. Twilio usage is billed by the workspace directly — Synalux passes through Twilio's per-message pricing (roughly $0.0079 per US SMS at 2026 rates).
+SMS pricing, carrier fees, registration requirements, and availability can change. Use the current subscription and provider information shown by Synalux or your administrator rather than relying on a fixed price in this guide.

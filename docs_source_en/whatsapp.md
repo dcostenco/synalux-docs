@@ -1,50 +1,22 @@
-# 💬 WhatsApp Business
+# WhatsApp Business messaging
 
-Connect a WhatsApp Business account to send + receive messages from inside the unified Synalux chat surface.
+Synalux can connect an approved WhatsApp Business number for text conversations. Availability depends on your organization’s messaging configuration and assigned access.
 
----
+## Use the connection
 
-## 📨 WhatsApp Business Cloud API
-*   **Webhook ingress** — `/api/v1/whatsapp/webhook` receives incoming messages, validates Meta's signature, and surfaces them in the chat thread.
-*   **Outbound** — `/api/v1/whatsapp/send` posts to Meta's Cloud API. Workspace-scoped credentials (Phone Number ID + access token).
-*   **Templates** — pre-approved message templates for transactional sends (appointment reminders, intake confirmations).
-*   **Media** — text, images, documents, audio, location pins. Audio runs through Transcription on receipt.
+1. Open **Chat > Integrations** and find **WhatsApp**.
+2. Ask your workspace administrator or Synalux support to complete any connection steps that are not available to your role.
+3. Send a real message to the approved business number.
+4. If your account has inbox access, open **Chat > Inbox**, select the WhatsApp thread, enter a text reply, and choose **Send**.
+5. Confirm both the inbound message and outbound reply before staff use the connection operationally.
 
----
+## Current boundary
 
-## 🔐 Setup
-1. Create a Meta Business + WhatsApp Business app at [business.facebook.com](https://business.facebook.com).
-2. Generate a permanent System User access token; paste into Synalux workspace settings.
-3. Configure webhook URL `https://synalux.ai/api/v1/whatsapp/webhook` with your verify token.
-4. Subscribe to `messages` + `message_status` events.
+- The documented Synalux reply workflow sends text.
+- An incoming non-text event may be recognized by the provider connection without presenting usable media in the Synalux thread. Use the approved WhatsApp application for media workflows unless your organization has separately verified them.
+- Message templates, location pins, audio transcription, and media attachments are not part of this documented workflow.
+- Inbox access is restricted. A connection status does not by itself grant every workspace user access to conversations.
 
-The in-app setup guide modal (`/chat`) walks you through every step with the exact field names from the Meta dashboard.
+## Privacy and consent
 
----
-
-## 🏗️ Architecture
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-POST /api/v1/whatsapp/webhook     Meta webhook ingress (signature-validated)
-POST /api/v1/whatsapp/send         Outbound (template or freeform within 24h window)
-GET  /api/v1/whatsapp/templates    List approved templates for the workspace
-```
-
-</details>
-
-Provider abstraction: `lib/message-providers/whatsapp.ts` matches the generic shape (Gmail / Telegram / SMS / etc.).
-
----
-
-## ⚖️ HIPAA + Compliance
-WhatsApp's terms restrict PHI for non-Meta-BAA accounts. Synalux flags any message that looks PHI-bearing and requires explicit workspace-admin opt-in to send via WhatsApp. Signed BAA with Meta is on the customer's roadmap.
-
----
-
-## 💳 Plans
-Available on **Standard+**. Free tier: receive only via the contact form.
-
-[See full pricing →](https://synalux.ai/pricing)
+WhatsApp is an external network. Your organization must decide whether a conversation is appropriate for this channel, obtain any required consent, and confirm its contractual and regulatory obligations before sending sensitive information. Do not assume that a Synalux connection creates a business associate agreement with Meta or makes every message suitable for protected health information.

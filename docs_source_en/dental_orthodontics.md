@@ -1,93 +1,90 @@
 # 🦷 Dental & Orthodontics
 
-Synalux v11.1 Elite provides a specialized clinical suite for modern dental and orthodontic practices. From AI-assisted periodontal charting to multi-phase implant sequencing and automated payment plans, we handle the complexity so you can focus on the smile.
+Synalux gives dental and orthodontic teams a configurable clinical workspace for patient records, treatment sequencing, appointments, documents, tasks, billing, and staff access.
 
 ---
 
-## 🦷 Precision Periodontal Charting
-Capture every pocket depth and recession value with speed and accuracy. 
-*   **6-Site Probing:** Comprehensive recording for every tooth.
-*   **BOP & Furcation Tracking:** Visual indicators for bleeding on probing and furcation involvement.
-*   **Comparison Views:** Instantly compare current charting with historical data to track bone loss or healing.
+## 🏗️ Treatment Sequencing and Daily Work
+Keep multi-phase treatment steps and staff tasks visible together.
+*   **Sequenced phases:** Record completed, active, and planned treatment steps.
+*   **Shared work queue:** Surface clinical tasks beside the treatment sequence.
+*   **Configurable layout:** Administrators choose the dashboard tabs and widgets used by the practice.
 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Dental Perio Charting](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
-*(Note: Placeholder for actual Perio UI)*
+![Dental Operations dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/33_dental.png)
 
 </details>
 
 ---
 
-## 🏗️ Multi-Phase Implant Sequencing
-Manage complex implant cases from initial surgical planning to final prosthesis.
-*   **Surgical Phase:** Track implant fixture placement, torque values, and healing abutment sizes.
-*   **Restorative Phase:** Manage impressions, lab tracking for custom abutments, and final crown delivery.
-*   **Lab Integration:** Real-time status updates for your preferred dental labs.
+## 📝 Clinical Documentation
+Use the shared patient-centered documentation workflow.
+*   **SOAP notes:** Record the encounter, findings, assessment, and plan.
+*   **AI-assisted drafting:** Dental exam, periodontal, treatment-plan, and post-operative prompts can help structure a draft; the clinician remains responsible for review and approval.
+*   **Supporting files:** Keep clinical documents and images with the patient record and apply workspace access controls.
 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Implant Workflow](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
-*Managing surgical and restorative components in the clinical vault.*
+![Current SOAP note workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 </details>
 
 ---
 
-## 🦷 Orthodontic Journey Manager
-Scale your ortho practice with automated adjustment tracking and recurring billing.
-*   **Monthly Adjustments:** One-click recording of wire changes, elastics, and progress.
-*   **Photo Tracking:** Securely store and compare intra-oral photos across the 18-24 month treatment plan.
-*   **Ortho Payment Plans:** Automated Stripe-powered installments (e.g., $194/mo) with zero-touch reconciliation.
+## 📋 Patient Record
+The patient record exposes the clinical tabs available to the signed-in role. Confirm patient identity and the intended workspace before reviewing or adding information.
 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Ortho Progress Tracking](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/08_progress_reports.png)
+![Current Synalux patient record overview](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/27_pediatrics.png)
 
 </details>
 
 ---
 
-## 📋 Comprehensive Treatment Planning
-Present clear, sequenced plans to patients that improve case acceptance.
-*   **CDT Integration:** Pre-loaded with D0150, D0210, D2740, D3330, D6010, and D8080.
-*   **Priority Phases:** Group treatments into Urgent, Disease Control, and Corrective phases.
-*   **Pre-Determinations:** Send electronic pre-auths to Delta Dental, MetLife, and Cigna instantly.
+## 💳 Billing and Insurance Workflow
+Use the shared billing workspace for dental codes, charges, claims, payments, and patient balances. Available payer submission and payment options depend on the integrations enabled for the practice.
 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Treatment Planning Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/22_collaboration_suite.png)
+![Current billing workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 </details>
 
 ---
 
-## 💳 High-Value Financial Management
-*   **Stripe Installments:** Offer patients flexible "Pay Over Time" options for crowns and implants.
-*   **Annual Max Tracking:** Real-time visibility into the patient's remaining insurance benefits.
-*   **Superbills:** Automated generation of CDT-compliant receipts for out-of-network reimbursement.
+## 🔐 Roles and Access
+Administrators configure role permissions for clinical records, appointments, notes, documents, billing, and other enabled modules.
 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Dental Billing & Cross-Border Finance](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/37_cross_border_finance.png)
+![Role management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
 
 </details>
 
 ---
 
-## 🔐 Compliance & Patient Safety
-*   **Medication Alerts:** System-wide warnings for patients on blood thinners or bisphosphonates.
-*   **Consent Vault:** Digital signatures for extractions, bone grafts, and surgical procedures via BoldSign.
-*   **HIPAA Audit Trail:** Every radiograph view and chart note is tracked and timestamped.
+## 🛡️ Audit History
+Authorized reviewers can inspect recorded activity according to workspace permissions and retention policies.
 
 <details>
 <summary>View Interface / Diagram</summary>
 
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 </details>
+
+---
+
+## Setup
+1. Select **Dental** during workspace onboarding or in the practice configuration.
+2. Open **Admin → Dashboard Builder** and arrange the dental dashboard tabs and widgets.
+3. Open **Admin → Roles** and grant each staff role only the modules it needs.
+4. Configure billing codes, payers, payment methods, and document policies used by the practice.
+5. Review the workflow with clinical and billing staff before using it with patient records.

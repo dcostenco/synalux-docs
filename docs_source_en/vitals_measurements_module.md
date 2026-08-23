@@ -1,21 +1,22 @@
-# Vitals & Measurements Module
+# Vitals & Measurements
 
-The Vitals & Measurements Module is designed to provide comprehensive patient monitoring and assessment tools within the Synalux platform, ensuring accurate data collection and easy trend analysis.
+The **Vitals** tab in a patient chart is a review screen for measurements already recorded for that patient.
 
-## Standard Vitals
-Capture essential vitals such as blood pressure (systolic/diastolic), heart rate (HR), respiratory rate (RR), temperature with method specified, oxygen saturation (SpO2), weight, height, and body mass index (BMI). These measurements are crucial for a holistic patient assessment.
+## What the chart shows
 
-## Pain Scale
-Utilize a 0-10 numeric pain scale to document the patient's pain level during each visit. This standardized approach helps in tracking changes over time and assessing the effectiveness of interventions.
+The latest-measurement cards and history table can show:
 
-## Pediatric Growth
-For pediatric patients, record head circumference, weight, height, and BMI percentiles according to WHO/CDC standards. This ensures accurate growth monitoring tailored to developmental stages.
+- Blood pressure
+- Heart rate
+- Temperature
+- Oxygen saturation
+- Weight and height
+- Body mass index (BMI)
+- Pain score on a 0–10 scale
+- Recorded date
 
-## PT Assessments
-Incorporate physical therapy (PT) assessments by logging range of motion (ROM) in degrees, functional scores such as Oswestry Disability Index and Lower Extremity Functional Scale (LEFS), and detailed notes on quad activation. These evaluations are vital for tracking patient progress in rehabilitation.
+Color cues make higher pain scores and other notable values easier to spot. The history table keeps previous readings together so staff can compare changes over time.
 
-## Trend Tracking
-Access historical vital signs data for each patient to conduct trend analysis. This feature aids in identifying patterns over time, facilitating more informed clinical decisions.
+## Recording measurements
 
-## Appointment Linked
-Ensure that all vitals and measurements are linked to specific appointment encounters. This linkage maintains the context of when each measurement was taken, enhancing accuracy and traceability in patient records.
+The current patient-chart **Vitals** tab does not contain an **Add Vitals** form. Measurements displayed there come from the practice's configured clinical data-entry or integration workflow. Pediatric percentiles, physical-therapy range-of-motion measures, Oswestry scores, and LEFS scores are not displayed in this tab.

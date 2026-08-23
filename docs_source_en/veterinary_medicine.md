@@ -1,105 +1,63 @@
 # 🐾 Veterinary Medicine
 
-Synalux v11.1 Elite provides a high-fidelity clinical suite for the modern veterinary practice. From species-specific vitals and growth tracking to advanced DICOM imaging and automated wellness plans, we ensure the highest standard of care for every patient—canine, feline, equine, or exotic.
+Configure Synalux for veterinary appointments, animal records, clinical documentation, tasks, medications, vaccinations, billing, and staff access. Veterinary intake can collect species and breed so the chart reflects the animal being treated.
 
 ---
 
-## 🐶 Species-Specific Clinical Records
-Manage diverse patient populations with anatomical and physiological precision.
-*   **Anatomical Body Maps:** Pin findings on species-specific models (Dog, Cat, Horse).
-*   **Breed-Aware Vitals:** Automated flags for out-of-range vitals based on species and breed.
-*   **Growth Curves:** Track weight and body condition score (BCS 1-9) against species norms.
+## 🐶 Veterinary Care Dashboard
 
-<details>
-<summary>View Interface / Diagram</summary>
+Give the care team one workspace for upcoming visits, assigned tasks, and shared documents. Administrators can configure the dashboard for the practice's workflow instead of forcing every specialty into the same layout.
 
-![Veterinary Exam Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/28_veterinary.png)
-
-</details>
+![Veterinary care dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/28_veterinary.png)
 
 ---
 
-## 📸 Advanced Diagnostic Imaging (DICOM)
-Review radiographs, ultrasounds, and dental X-rays with professional-grade tools.
-*   **DICOM Viewer:** High-fidelity web-based viewer with zoom, pan, and contrast adjustment.
-*   **Annotation Tools:** Mark findings directly on the image and link them to the clinical SOAP note.
-*   **Cloud Archiving:** Secure, HIPAA-compliant (and AVMA-aligned) storage for all diagnostic assets.
+## 📝 Exam and Procedure Documentation
 
-<details>
-<summary>View Interface / Diagram</summary>
+Document histories, findings, assessments, and plans in the clinical record. Reusable templates and keyword prompts can speed up drafting, but the treating veterinarian remains responsible for reviewing the record, medication instructions, and clinical decisions before signing.
 
-![Veterinary Radiograph Review](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/26_lab_orders.png)
-
-</details>
+![Clinical documentation workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
 
 ---
 
-## ✂️ Surgical & Anesthesia Management
-Ensure safety and precision in the operating suite.
-*   **Anesthesia Logs:** Real-time recording of vitals, drug administration, and fluid rates.
-*   **Surgical Reports:** Pre-populated templates for common procedures (Spay/Neuter, Dental, Orthopedic).
-*   **Post-Op Care:** Automated generation of client-friendly discharge instructions with medication dosing.
+## 💉 Vaccination and Preventive Records
 
-<details>
-<summary>View Interface / Diagram</summary>
+Record vaccinations and preventive-care history in the patient chart. Practices choose their own protocols, due dates, and reminder workflows according to their clinical policies.
 
-![Surgical Note Interface](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/04_soap_note.png)
-
-</details>
+![Vaccination records](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
 
 ---
 
-## 💉 Automated Wellness & Vaccines
-Drive practice growth with proactive preventive care.
-*   **Core/Non-Core Protocols:** Automatically generate vaccine schedules based on age and lifestyle.
-*   **Wellness Plans:** Offer bundled services (e.g., Puppy/Kitten packs) with Stripe-powered monthly billing.
-*   **Auto-Reminders:** SMS and email alerts for upcoming vaccinations and annual exams.
+## 💊 Medications and Inventory
 
-<details>
-<summary>View Interface / Diagram</summary>
+Keep medication records and inventory activity available to authorized staff. Prescribing, controlled-substance handling, compounding, and third-party integrations depend on the practice's configuration and applicable requirements; Synalux does not replace clinical dose verification.
 
-![Vaccination Records](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/24_immunizations.png)
-
-</details>
+![Medication records](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
 
 ---
 
-## 💊 Veterinary Prescription Vault
-*   **Weight-Based Dosing:** Auto-calculate mg/kg dosages for every medication.
-*   **Compounding Support:** Manage complex prescriptions with specific concentration and flavoring details.
-*   **Controlled Substances:** Digital double-signature logs for narcotics and sedative tracking.
+## 🧾 Billing Workflow
 
-<details>
-<summary>View Interface / Diagram</summary>
+Prepare charges and track payment activity from the billing workspace. Payment processors, pet-insurance workflows, and customer payment links are available only when the corresponding services have been configured for the practice.
 
-![Medication & Pharmacy Vault](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/21_pharmacy.png)
-
-</details>
+![Veterinary billing workspace](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
 
 ---
 
-## 🧾 Billing & Pet Insurance
-*   **Procedure Bundling:** Group surgery, anesthesia, and meds into a single transparent estimate.
-*   **Insurance Integration:** Direct claim submission for Trupanion, Nationwide, and Pumpkin.
-*   **Stripe Payments:** Accept payments at the front desk or via the Client Portal.
+## 🔐 Roles and Audit History
 
-<details>
-<summary>View Interface / Diagram</summary>
+Use role-based access to separate administrative, clinical, and support responsibilities. Audit history helps authorized users review important activity according to the organization's retention and compliance policies.
 
-![Veterinary Billing Dashboard](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/13_billing_payments.png)
+![Role management](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/11_rbt_role_view.png)
 
-</details>
+![Current Synalux audit log](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/38_compliance_audit.png)
 
 ---
 
-## 🔐 Security & Compliance
-*   **RBAC Roles:** Veterinarian (Full clinical) vs. Vet Tech (Intake, Vitals, Prep).
-*   **Audit Trails:** Every chart view and medication edit is tracked and immutable.
-*   **Offline-First:** Document field visits or farm calls even without a data connection.
+## Set Up a Veterinary Workspace
 
-<details>
-<summary>View Interface / Diagram</summary>
-
-![Security & Compliance Audit](https://raw.githubusercontent.com/dcostenco/synalux-docs/main/docs/demo/generated/security_audit_logs_ui.png)
-
-</details>
+1. Select the veterinary practice type during workspace setup.
+2. Configure animal intake fields, appointment types, documentation templates, and dashboard sections.
+3. Add staff and assign only the roles they need.
+4. Configure medication, vaccination, billing, messaging, and reminder workflows used by the practice.
+5. Run a test patient journey before using the workspace for live care.

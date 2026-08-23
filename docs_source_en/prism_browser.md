@@ -1,367 +1,127 @@
-# Prism Browser
+# Prism AAC Browser
 
-A web browser built for healthcare providers and AAC users. Designed for people who navigate the web via head tracking, switch scanning, dwell click, and voice commands — and for clinicians who need browsing with HIPAA technical safeguards on shared clinical devices.
+Prism AAC Browser combines web browsing with the communication tools used in Prism AAC. A person can type a web address or search with the large on-screen keyboard, use one-tap site shortcuts, switch from browsing to spoken communication, and return to the AAC board without leaving the app.
 
-Available on **macOS**, **Windows**, **Linux** (Electron desktop) and **iPad/iPhone** (native iOS app).
+The current release is for **iPhone and iPad running iOS or iPadOS 16 or later**.
 
-> Implements HIPAA §164.312 technical safeguards. Full HIPAA compliance depends on your practice's BAA, risk assessment, and organizational policies. Consult your compliance officer before deploying on clinical devices.
+## Browser at a glance
 
----
+The iPad layout keeps the browser toolbar at the top, the current page or start screen in the center, and the AAC keyboard at the bottom.
 
-## At a Glance
+![Prism AAC Browser on iPad — browser toolbar, site shortcuts, and AAC keyboard](assets/browser-ipad-home.png)
 
-| | |
+The iPhone layout provides the same controls in a narrower, touch-friendly arrangement.
+
+![Prism AAC Browser on iPhone — search, site shortcuts, predictions, and AAC keyboard](assets/browser-iphone-home.png)
+
+These screenshots were captured from the current iOS app. Available shortcuts can change as the app is updated or customized.
+
+## Get started
+
+1. Install Prism AAC Browser from the App Store on an iPhone or iPad.
+2. Open the app while connected to the internet so the current browser and AAC experience can load.
+3. Tap **Search or URL** and use the on-screen keyboard to enter a website or search phrase.
+4. Tap **Go** or select one of the large site shortcuts.
+5. Tap the purple communication button when you want to leave the browser and return to the AAC board. Confirm the change when prompted.
+
+## Browse the web
+
+### Search or open a website
+
+- Enter a complete website address, such as `example.org`, or type ordinary search words.
+- The suggestion row above the keyboard offers site shortcuts while you type.
+- Tap **Go** in the toolbar or on the keyboard to open the result.
+- Tap **Home** to return to the browser start screen.
+- Use **Back** and **Forward** after visiting pages. Forward appears when screen space allows and there is a page to return to.
+
+### Use site shortcuts and bookmarks
+
+The start screen shows large shortcuts for commonly used sites. On larger screens, the bookmark control in the toolbar can show the pinned-site row. While viewing a site, the star control can pin or unpin it for quicker access later.
+
+### Work with external pages
+
+Some websites do not allow their pages to appear inside another page. When that happens, use the offered external-page action. In the iOS app, the native page viewer provides:
+
+- Back and Forward
+- Reload or Stop
+- Share
+- **Done** to return to Prism AAC Browser
+
+If a page still does not load, check the connection and try the site in Safari.
+
+## Switch between Go and Speak
+
+The speaker control in the toolbar changes what happens to the text you compose:
+
+| Mode | What it does |
 |---|---|
-| **Platforms** | macOS, Windows, Linux (desktop) · iPad, iPhone (iOS) |
-| **AAC Input Methods** | Head tracking, switch scanning, dwell click, voice commands, 8 gesture types |
-| **Clinical Features** | PHI scrubbing, audit logging, session timeout, clinical context sidebar, therapy timer |
-| **Security** | Sandbox + CSP, session isolation, HMAC audit chain, encrypted storage, PIN lockout |
-| **Tests** | 172 desktop + 16 iOS = 188 unit tests across 16 test suites |
-| **Audit Score** | 9/10 after 4 adversarial review rounds (70+ findings, all resolved) |
+| **Go** | Uses browser and site suggestions, then opens the typed address or search. |
+| **Speak** | Uses AAC word predictions and speaks the composed phrase instead of navigating. |
 
----
+The icon shows whether speech mode is active. Switch back to **Go** before entering a new address or web search.
 
-## iOS App
+## Use the AAC keyboard
 
-### Desktop
+- Tap letters to compose a search, address, or spoken phrase.
+- Use the suggestion row to complete a site or word more quickly.
+- Use **Shift**, **Backspace**, **123**, punctuation, and **Space** as needed.
+- After a page opens, the keyboard may collapse to make more room. Tap **Show keyboard** to restore it.
+- The large keys and visible focus states also support iOS accessibility input such as Switch Control or Voice Control when those features are configured on the device.
 
-![Prism Browser Desktop — Tab bar, address bar, sidebar, portal](assets/browser-desktop-main.png)
+## Permissions and optional features
 
-### iOS
+Prism AAC Browser asks for an iOS permission only when a related feature needs it. Depending on the features you choose, iOS may ask for access to:
 
-![Prism Browser iOS — AI Consent Screen](assets/browser-ios-consent.png)
+- **Microphone and Speech Recognition** for voice input
+- **Camera** for supported hands-free access or custom picture features
+- **Location, Contacts, and Notifications** for a configured emergency workflow
 
-The iOS app follows the same B2B subscription pattern as Synalux POS and Online Ordering:
+You can review or change permissions in **iOS Settings → Prism Browser**. Denying a permission leaves the related feature unavailable but does not prevent ordinary touch browsing.
 
-| Feature | Implementation |
-|---------|---------------|
-| **Auth flow** | AI consent → Apple Sign-In → Face ID → BrowserShell |
-| **Dual WKWebView** | Portal tab (authenticated, persistent) + browsing tabs (nonPersistent, no auth cookies) |
-| **AAC Content Bridge** | JS IIFE injected via WKUserScript — defineProperty (non-writable), closure-only nonce |
-| **Content blocking** | 3 WKContentRuleList sets (ads, privacy, annoyances) compiled at launch |
-| **Caregiver mode** | PIN in iOS Keychain (constant-time compare), domain allowlist, time limits |
-| **Widgets** | Quick Search, Bookmarks, Shield Stats (App Group shared data) |
-| **Tabs** | Up to 10 tabs, scroll-to-hide toolbar (locked visible in AAC mode) |
-| **iPad multitasking** | Split View + Slide Over support |
-| **Monitoring** | Datadog RUM — separate "Prism Browser iOS" dashboard |
+## Emergency communication
 
----
+Emergency controls belong to the Prism AAC communication experience, not to ordinary web navigation. Configure emergency contacts and test the intended workflow with a caregiver before relying on it.
 
-## Who It's For
+When an emergency action is triggered, the iOS app provides an immediate local audible and notification response. Delivery to a caregiver requires the app to be signed in and the emergency workflow to be configured and connected. If delivery is unavailable, the local response does not mean that a caregiver or emergency service received the alert.
 
-- **AAC users** with cerebral palsy, Down syndrome, SMA, ALS, traumatic brain injury, or other conditions that limit fine motor control
-- **BCBAs and RBTs** who need to browse clinical resources during therapy sessions on shared iPads
-- **Healthcare practices** that need a managed browser with HIPAA technical safeguards for shared clinical devices
+Prism AAC Browser is not a replacement for 911 or your local emergency number.
 
-### Who It's Not For
+## Privacy and safe browsing
 
-Prism Browser uses **camera-based head tracking**, which requires some reliable head movement. It is not a replacement for:
+- Web addresses and search terms are sent to the website or search service you choose.
+- External websites have their own privacy, cookie, accessibility, and content policies.
+- Review the address before entering private or sensitive information.
+- Use the device passcode and keep iOS and the app updated on shared devices.
+- Camera, microphone, speech, contact, and location access remain controlled through iOS permissions.
 
-- **Eye-gaze systems** (Tobii Dynavox TD Browse, PCEye) — users with no functional head movement (advanced ALS, locked-in syndrome, severe quadriplegic CP) need dedicated eye-tracking hardware
-- **Full AAC communication systems** (Grid 3, TD Snap, Proloquo2Go) — Prism is a web browser with AAC access methods, not a symbol-based communication platform
+Read the [Synalux Privacy Policy](https://synalux.ai/legal/privacy) for current details.
 
-If your client needs eye gaze, we recommend evaluating Tobii Dynavox or Smartbox devices alongside (not instead of) Prism Browser.
+## Troubleshooting
 
----
+### The app says there is no connection
 
-## AAC Accessibility
+Confirm that the device can reach the internet, then tap **Retry** or reopen the app. A limited offline communication screen may be available, but live websites require a connection.
 
-### Head Tracking
+### A website does not appear
 
-Control the cursor with head movement using any built-in camera — no special hardware required:
+Some sites block in-app display. Use the external-page option or open the site in Safari. If only one site fails, the problem may be that site's policy rather than the app or network.
 
-- **MediaPipe FaceDetector** — GPU-accelerated at 24fps, self-hosted (no CDN, SHA-256 verified)
-- **Kalman smoothing** — confidence-weighted cursor stabilization with EMA tremor filtering
-- **Dwell click** — configurable 200ms–5000ms, visual ring shows progress
-- **Drift detection** — adaptive travel threshold + directional ratio filter (tremor-aware)
-- **Auto-recovery** — 8/10 confidence probe resumes tracking automatically after drift, 60-second hard timeout prevents permanent lockout
-- **Per-side fatigue tracking** — independent left/right accuracy monitoring for hemiplegia/stroke users
-- **Background recalibration** — learns and corrects drift without user intervention
-- **Edge scroll** — cursor at screen edge triggers proportional auto-scroll (disabled during dwell)
+### The keyboard disappeared
 
-### Gesture Detection
+The app collapses the keyboard after navigation to give the page more space. Tap **Show keyboard** to bring it back.
 
-8 gestures with **per-side blink thresholds** for CP asymmetry:
+### Text does not speak
 
-| Gesture | Action | Notes |
-|---------|--------|-------|
-| **Blink** (both eyes) | Click at cursor | Per-side thresholds — right-side-weak CP users set lower right threshold |
-| **Wink left** | Navigate back | Asymmetric eye closure detection |
-| **Wink right** | Navigate forward | |
-| **Nod** | Scroll down | Pitch oscillation with zero-crossing validation |
-| **Head shake** | Cancel / escape | Yaw oscillation |
-| **Smile** | Toggle reader mode | Suppressed during TTS (conversation mode) |
-| **Brow raise** | Scroll up | |
-| **Mouth open** | Stop TTS | Suppressed during TTS |
+Check that the toolbar is in **Speak** mode, the device volume is audible, and Silent Mode or Focus settings are not suppressing sound. Then try a short phrase.
 
-- **Conversation mode** — mouth gestures automatically suppressed while TTS is speaking + 500ms settle delay. Prevents false activations from speech articulation.
-- **EMA smoothing** (alpha=0.3) — filters single-frame tremor spikes
-- **Configurable thresholds** — per gesture, per side
+### Voice input does not start
 
-### Switch Scanning
+Open **iOS Settings → Prism Browser** and confirm Microphone and Speech Recognition access. Voice input also needs a supported language and may require a network connection depending on the device language.
 
-Navigate web pages using external switches, keyboard, or gamepad:
+### The app is unresponsive after opening a page
 
-- **Two-phase scanning** — first groups (ARIA landmarks + spatial rows), then individual items
-- **Dynamic DOM rebuild** — scan groups refresh on SPA navigation (600ms debounced MutationObserver)
-- **Chrome + content groups** — browser controls scanned alongside page elements
-- **Configurable** — speed (500–5000ms), loop count, group scan toggle
+Tap **Done** in the native page viewer or return to **Home**. If the controls do not respond, close and reopen the app, then retry the page.
 
-### Voice Commands
+## Support
 
-22 offline commands via Web Speech API — no cloud dependency:
-
-| Category | Commands |
-|----------|----------|
-| Navigation | "go back", "go forward", "reload", "new tab", "close tab" |
-| Scrolling | "scroll down", "scroll up", "go to top", "go to bottom" |
-| Actions | "click", "find", "read page", "stop reading" |
-| Tab management | "next tab", "previous tab" |
-
-### Bootstrap Wizard
-
-First-run setup accessible via **every input method**:
-
-- **Head tracking** — coarse pre-calibration starts on mount; 2-second dwell targets (120×120px)
-- **Switch scanning** — Tab + Enter
-- **Voice** — speak the option name
-- **Mouse/touch** — click directly
-- Head tracking stays active during calibration step (no lockout between wizard screens)
-
-### ZoomToClick Magnifier
-
-Precision selection for dense web content:
-
-- 3+ targets within 100px → **3x magnified lens** appears
-- **Progressive settle radius** — widens over time for tremor users (10px → 40px)
-- **Auto-select** after 10 seconds (most-frequented element in the window)
-- **15-second auto-dismiss** — lens can't trap the user
-- Settle period before dwell starts (magnification amplifies tremor 3x)
-
-### UndoToast
-
-Undo accidental navigation:
-
-- **Centered** — reachable from any cursor position
-- **Extended duration** — max(5s, 3× dwellMs) for slow-dwell users
-- **Hover-pause** — auto-dismiss timer pauses when cursor approaches
-- **5-action undo stack** — covers sequences of accidental clicks
-
-### Break Reminder
-
-Configurable rest timer:
-
-- Default: 20-minute intervals
-- Auto-pause on sustained accuracy drop (<50% for 5 min)
-- Tracking paused during break (not the page), oversized "Resume" button
-
----
-
-## How It Compares
-
-| Feature | Prism Browser | TD Browse (Tobii Dynavox) | Grid 3 Browser (Smartbox) | Chrome + Extensions |
-|---------|:---:|:---:|:---:|:---:|
-| **Head tracking (no hardware)** | Built-in | Requires eye tracker hardware | Requires external tracker | Requires HeadMouse Nano |
-| **Switch scanning** | Built-in (dynamic ARIA) | Not primary | Built-in (Grid 3) | Third-party AT |
-| **Dwell click** | Built-in (configurable) | Built-in (eye gaze) | Built-in | Extension required |
-| **Voice commands** | Offline, built-in | Not available | Voice via Grid 3 | OS Voice Control |
-| **Per-side blink thresholds** | Yes (CP asymmetry) | No | No | No |
-| **Auto-recovery (60s timeout)** | Yes | Manual re-cal | Manual re-enable | N/A |
-| **PHI scrubbing on search** | Automatic (regex + NER) | No | No | No |
-| **HIPAA audit logging** | HMAC-chained | No | No | No |
-| **Content blocking** | Built-in (3 rule sets) | No | No | Extension required |
-| **iPad app** | Yes (native) | TD Pilot only | Grid for iPad | Chrome iOS (no ext.) |
-| **Price** | Included with Synalux | ~$200+ software (hardware from $10,000) | ~$550+ software | Free (no AT) |
-
-**Notes:** TD Browse is the gold standard for eye-tracking-based browsing — Prism's camera tracking is less precise than dedicated eye trackers for users with very limited head movement. Grid 3 offers deeper AAC vocabulary and communication tools.
-
----
-
-## Privacy & Security
-
-### Session Isolation
-
-| Session | Cookies | Native Bridge | Use |
-|---------|---------|---------------|-----|
-| Portal (authenticated) | Persistent | Full SynaluxBridgeScript | Clinical portal access |
-| Browsing (sandboxed) | nonPersistent | AAC content bridge only | General web |
-| Private (ephemeral) | None (cleared on close) | AAC content bridge only | No history recorded |
-
-### PHI Sanitization
-
-Two-layer scrubbing on all search queries:
-
-**Layer 1 (Regex):** SSN, phone, email, DOB (with/without leading zeros, written dates), address, ZIP/ZIP+4, NPI, hyphenated names
-
-**Layer 2 (Context-gated NER):** ICD-10 codes (including U-codes), NDC drug codes, 40 medication name prefixes, MRN patterns, age patterns, 5-digit ZIP, lowercase names — all gated on `hasMedicalContext()` to reduce false positives
-
-### Session Lock (HIPAA §164.312(a)(2)(iii))
-
-- 15-minute inactivity timeout → automatic lock
-- PIN-based unlock with **exponential backoff** (30s → 1m → 5m → 15m max)
-- PIN change requires current PIN + blocked while locked
-- Encrypted storage via OS keychain (desktop: safeStorage, iOS: Keychain)
-- Failed attempts audit-logged
-- Locks on system suspend / lock-screen
-
-### Audit Logging (HIPAA §164.312(b))
-
-- Append-only JSONL with **HMAC-SHA256 chain** (per-install key in OS keychain)
-- 40+ event types with user identity
-- Renderer can only write allowlisted event types (session/security events restricted to main process)
-- Cross-day chaining for multi-session integrity
-- Private browsing: audit logged, history NOT recorded
-
-### Content Bridge Security
-
-| | Desktop (Electron) | iOS (WKWebView) |
-|---|---|---|
-| Isolation | Isolated-world preload (invisible to page JS) | Same-world IIFE + defineProperty (non-writable, non-configurable) |
-| Authentication | IPC channel per tab | Closure-only nonce, validated in Swift |
-| Popup prevention | setWindowOpenHandler → deny | createWebViewWith → load in same view |
-| DOM traversal | Iframes + open shadow DOM | Same |
-
----
-
-## Clinical Features
-
-| Feature | Description | Shortcut |
-|---------|-------------|----------|
-| **Reader Mode** | Readability.js extraction + DOMPurify + adjustable font + TTS | Cmd+Shift+R |
-| **Word-by-Word TTS** | 3-tier: Azure Neural → Web Speech → espeak-ng WASM. Adjustable rate. | |
-| **AI Page Summary** | PHI-sanitized text → portal AI → 3-5 bullet summary | Cmd+Shift+P |
-| **Clinical Context** | Active patient data sidebar (name, DOB, dx, meds, notes) | Cmd+Shift+X |
-| **Therapy Timer** | Start/stop/resume with notes, auto-logged to audit trail | Cmd+Shift+T |
-| **PHI-Safe Printing** | Regex-masked rendered text (catches PHI split across tags) | Cmd+P |
-| **Translation** | Portal-routed, LRU cache (500 entries), 25 languages | |
-| **Web Clipper** | Highlight → save with notes, color, URL. Encrypted storage. | |
-
----
-
-## Caregiver Mode
-
-| Feature | Description |
-|---------|-------------|
-| **PIN lock** | iOS Keychain / macOS safeStorage, constant-time comparison |
-| **Domain allowlist** | Dot-boundary matching (evil-google.com doesn't pass for google.com) |
-| **Time limits** | Configurable daily session duration |
-| **Usage analytics** | Domains visited (apex only), session time, shield blocks — 30-day rolling |
-| **Content blocking** | 3 rule sets: ads, privacy, annoyances. Per-site exemptions. Shield badge. |
-
----
-
-## Additional Features
-
-| Feature | Description |
-|---------|-------------|
-| **Split view** | Two tabs side-by-side (desktop). iPad Split View + Slide Over. |
-| **Private browsing** | Ephemeral session. No history, no cookies. Audit still fires. |
-| **Bookmarks & history** | Encrypted via OS keychain. Chrome import supported. |
-| **Settings export** | JSON profile + QR code for therapist-to-therapist sharing |
-| **Cross-device sync** | Server-encrypted bookmarks/settings via portal API |
-| **DNS-over-HTTPS** | Cloudflare + Google secure resolvers |
-| **Phishing protection** | Safe Browsing proxy. Degrades gracefully when API unavailable. |
-| **Auto-updater** | Code-signed feed (desktop). App Store updates (iOS). |
-
----
-
-## Tracking Pipeline
-
-```
-Camera → MediaPipe Face Detection (24 FPS)
-    → EMA Smoothing (alpha=0.3, tremor filter)
-    → Kalman Filter (confidence-weighted)
-    → Drift Detector (adaptive threshold + directional ratio)
-    → Recovery Probe (8/10 window, 60s hard timeout)
-    → Edge Pin Detector
-    → Fatigue Tracker (per-side independent)
-    → Gesture Detector (per-side blink, conversation mode)
-    → Content Bridge → queryInteractive / hitTest / dispatchActivate
-```
-
----
-
-## Technical Architecture
-
-### Desktop
-
-- **Electron** with WebContentsView per tab (not deprecated BrowserView)
-- **61 TypeScript source files**, 15 test suites (172 tests)
-- Two session partitions: `persist:browsing` (shielded) + `persist:portal` (authenticated)
-- Sandbox + context isolation on all views
-- Register/attach/detach lifecycle — no listener leaks on macOS close→reopen
-
-### iOS
-
-- **19 Swift source files** + 5 widget files, 16 unit tests
-- Same B2B subscription pattern as Synalux POS and Online Ordering
-- WKContentRuleList ad blocking, App Group for widgets
-- Datadog RUM for crash reporting + performance monitoring
-
----
-
-## Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| Cmd+T | New tab |
-| Cmd+W | Close tab |
-| Cmd+1-9 | Switch to tab N |
-| Cmd+Shift+]/[ | Next/previous tab |
-| Cmd+L | Focus address bar |
-| Cmd+F | Find in page |
-| Cmd+, | Settings |
-| Cmd+Shift+R | Reader mode |
-| Cmd+Shift+S | Switch scanning |
-| Cmd+Shift+P | Summarize page |
-| Cmd+Shift+X | Clinical context |
-| Cmd+Shift+T | Therapy timer |
-| Cmd+Shift+K | AAC phrase board |
-| Cmd+/ | AI chat |
-| Cmd+P | PHI-safe print |
-
----
-
-## System Requirements
-
-### Desktop
-- macOS 12+ (Apple Silicon + Intel universal)
-- Windows 10+ (x64)
-- Linux (AppImage, x64)
-- Camera required for head tracking
-- 4 GB RAM minimum
-
-### iOS
-- iPad or iPhone with iOS 16+
-- Front-facing camera for head tracking
-- Synalux subscription (same tier as POS / Online Ordering)
-
----
-
-## Downloads
-
-Prism Browser is included with your Synalux subscription. No additional purchase required.
-
-| Platform | Download | Notes |
-|----------|----------|-------|
-| **macOS** (Apple Silicon + Intel) | [Download DMG](https://github.com/dcostenco/synalux-docs/releases/latest/download/prism-browser-0.1.0-mac.dmg) | Apple Developer ID signed + notarized |
-| **Windows** (x64) | [Download Installer](https://github.com/dcostenco/synalux-docs/releases/latest/download/prism-browser-0.1.0-setup.exe) | Self-signed (SmartScreen warning on first run) |
-| **Linux** (x64) | [Download AppImage](https://github.com/dcostenco/synalux-docs/releases/latest/download/Prism.Browser-0.1.0.AppImage) | Portable, no install needed |
-| **iPad / iPhone** | App Store (search "Prism Browser") | Native Swift app |
-
-**[All releases →](https://github.com/dcostenco/synalux-docs/releases)**
-
-Releases are built automatically on every version tag via GitHub Actions. macOS DMG is signed with Apple Developer ID and notarized.
-
-## Getting Started
-
-1. Download and install for your platform
-2. Sign in with your Synalux account (Apple Sign-In or Google)
-3. Complete the AAC setup wizard — choose your input method
-4. Start browsing
-
-For shared clinical devices, enable **Caregiver Mode** in Settings.
-
----
-
-*For questions or feature requests, contact [support@synalux.ai](mailto:support@synalux.ai) or visit [synalux.ai/docs](https://synalux.ai/docs).*
+For help, email [support@synalux.ai](mailto:support@synalux.ai). Include the device model, iOS or iPadOS version, the action you were taking, and the website involved. Do not include passwords or private health information.

@@ -1,46 +1,30 @@
-# 🧮 CPT Calculator (Medicare-Correct)
+# Timed-service unit checks
 
-Built-in CPT code calculator that catches the **Medicare 8-minute rule** + **remainder rollover** most practices miss. Real underbilling fix shipped 2026 — this is one of the highest-impact billing tools in the platform.
+Synalux uses timed-service calculations during the Billing claim-scrub workflow. The check helps staff compare documented treatment minutes with billed units before submission; it does not replace payer guidance or professional billing review.
 
----
+## Run the check
 
-## ⚠️ Why It Matters
-Most practice-management tools implement the 8-minute rule but miss the remainder-rollover rule that Medicare specifically requires. Result: practices systematically under-code time-based services, leaving real revenue on the table.
+1. Open **Billing** and locate the claim or billing entries to review.
+2. Confirm the service code, documented duration, billed units, diagnosis, provider NPI, and authorization information.
+3. Choose **Scrub now**.
+4. Review every error and warning. Correct the underlying record and run the scrub again.
+5. Submit only after the responsible clinician or biller confirms that the claim matches the documentation and payer rules.
 
-Synalux's CPT calculator implements both:
-*   **8-minute rule** — minimum 8 minutes of one-on-one time per billable unit of time-based codes (97530, 97110, 97140, etc.).
-*   **Remainder rollover** — when the total minutes spans multiple service types, leftover minutes from one service can roll over to fill the 8-minute floor of another. Most software doesn't compute this.
+The scrub can flag conditions such as:
 
----
+- missing service or CPT code;
+- fewer than eight documented minutes for a timed unit;
+- billed units above the amount supported by the recorded minutes;
+- possible underbilling when the recorded minutes support more units;
+- missing diagnosis or provider NPI;
+- expired, low, or exceeded authorization units.
 
-## 🧪 Worked Example
-Session has:
-*   23 minutes of therapeutic exercise (97110)
-*   12 minutes of manual therapy (97140)
-*   3 minutes of neuromuscular re-education (97112)
+## Example
 
-Naive calculation: 97110=2 units, 97140=1 unit, 97112=0 units → **3 units billed**.
+Twenty total timed minutes support one unit under the calculator’s current eight-minute-rule boundaries. A claim that bills three timed units for those 20 minutes is flagged for correction.
 
-Synalux's correct calculation: rollover the 3-min orphan to a service that qualifies → **3 units, with the third unit allocated to the highest-RVU service** (97110). Same total but billed correctly per Medicare guidance.
+When several timed services contribute to a session, do not calculate each short remainder in isolation. Confirm the combined-time and allocation rules required by the payer before changing the claim.
 
-For a practice doing 1000 sessions/month, this fix typically recovers 4-8% of billable time = **5-figure annual revenue restoration**.
+## Responsibility and limits
 
----
-
-## 🏗️ Architecture
-*   `services/cpt-calculator.ts` — pure function; no I/O.
-*   `POST /api/v1/billing/cpt-calculate` — server endpoint that takes session minutes + service breakdown, returns the unit allocation with explanation.
-*   Drives the SOAP note's billing block + the [Billing & Insurance](billing_payments_module.md) charge entry.
-
----
-
-## ⚖️ Compliance
-*   Audit log captures every calculation with input + output + timestamp — defensible if questioned by an audit.
-*   Configuration locked to Medicare's published rules; can't be overridden per-workspace (intentional — wrong overrides cause fraud risk).
-
----
-
-## 💳 Plans
-Available on **Standard+**.
-
-[See full pricing →](https://synalux.ai/pricing)
+Payer rules, coding guidance, contracts, and documentation requirements can change. A clean scrub means the entered data passed the product’s current checks; it is not a coverage determination, legal opinion, reimbursement guarantee, or promise of additional revenue. Keep the clinical record and claim consistent, and escalate uncertain coding decisions to a qualified biller or payer.

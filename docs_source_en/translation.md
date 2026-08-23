@@ -1,64 +1,50 @@
 # 🌍 Translation
 
-Sentence-level translation across 16+ languages. Offline-first via bundled dictionary; cloud upgrade via Gemini Flash for richer phrasing when online.
+Synalux provides translation in supported communication workflows. Translation assists communication; it does not replace a qualified interpreter or professional review when consent, diagnosis, medication, safety, or legal meaning is involved.
 
 ---
 
-## 📚 Two-Path Translation Engine
+## Translate live captions
 
-| Path | Engine | When | Quality | Latency | Offline |
-|---|---|---|---|---|---|
-| **Offline dictionary** | Bundled `offlineDictionary.ts` (4000+ word pairs × 14 locales) | Always tried first; sole engine when offline | Word-level: good. Phrase-level: limited. | <10ms | ✅ |
-| **Cloud (Gemini 2.5 Flash)** | `/api/v1/translate` → Gemini Flash | When online + dictionary miss / sentence-level | Excellent — preserves tense, idiom, register | ~700ms | — |
+The current portal translation control is available with live captions in supported video calls.
 
-The Prism AAC keyboard's "translate this sentence" feature uses both: dictionary fallback ensures the device always responds, cloud upgrade kicks in when online for better phrasing.
+1. Start or join the video call.
+2. Turn on captions and complete the microphone disclosure.
+3. Select the spoken caption language.
+4. Select a translation language instead of **No translation**.
+5. Read the translated line together with the original caption.
 
----
-
-## 🌐 Language Coverage
-
-Bundled offline:
-`en` · `es` · `fr` · `pt` · `ja` · `zh` · `de` · `ko` · `ar` · `ro` · `uk` · `ru` · `it` · `nl`
-
-Cloud-only (uses Gemini's 100+ language coverage when online):
-`hi` · `bn` · `tr` · `pl` · `vi` · `th` · ...
+If the spoken and translation languages are the same, Synalux keeps the original caption without adding a duplicate translation.
 
 ---
 
-## 🩺 Why Offline-First Matters
-*   AAC users in school / clinic / remote settings can't depend on Wi-Fi.
-*   Patient communication during home visits — clinician's offline dictionary + premium TTS keeps the conversation going.
-*   School deployments — bandwidth is throttled or filtered; translation must still work.
+## Review before use
+
+- Confirm names, dates, times, numbers, dosages, and negative statements.
+- Ask the speaker to repeat or rephrase unclear content.
+- Keep the original text visible while reviewing the translation.
+- Use a qualified interpreter for high-risk or legally significant communication.
+- Do not copy unreviewed translated text into a clinical record.
+
+Language choices are shown in the active workflow. Interface-language coverage, caption-language coverage, translation choices, and voice availability are separate; support in one area does not guarantee support in another.
 
 ---
 
-## 🏗️ Architecture
+## Availability
 
-<details>
-<summary>Technical Documentation / Specifications</summary>
+Live captions may continue when translation is unavailable. Translation requires a signed-in, authorized session and an active connection to the configured translation service.
 
-```
-POST /api/v1/translate         { text, sourceLang, targetLang, mode? }
-                                 → { translated, source, model }
-                                 mode: 'word' | 'sentence' (default: auto)
-```
-
-</details>
-
-Client-side path (in `services/translateService.ts`):
-1. If targetLang in offline dictionary: try local lookup → if hit + mode≠'sentence', return.
-2. Else call `/api/v1/translate` (5s timeout matching `/text/correct`).
-3. On timeout / error: return original text — never block.
+The portal’s message-toolbar translation action is not documented as a customer workflow until it completes the full translate-and-review path. Use only translation controls that produce a visible result in the active screen.
 
 ---
 
-## 🔄 Inter-Module Integration
-*   **Prism AAC keyboard** — "translate" toggle pre-translates outgoing speech.
-*   **AAC chat** — response auto-translated to the user's locale before display.
-*   **Mail** — incoming non-locale messages get a one-tap translate-inline.
-*   **Patient portal** — UI auto-translates per the patient's preferred language (cookie + browser detect).
+## Troubleshooting
 
----
+| Problem | What to do |
+|---|---|
+| Translation option is not visible | Turn on captions first and check the call’s caption settings. |
+| Original captions appear without translation | Confirm a translation language is selected and check the connection. |
+| Translation is incomplete or incorrect | Continue from the original caption, ask the speaker to repeat the statement, and use an interpreter when the meaning is important. |
+| Needed language is not listed | Contact [Synalux support](https://synalux.ai/support) with the exact spoken and target locales. |
 
-## 💳 Plans
-Available on every tier — translation is an accessibility primitive, not a billing surface. Cloud-translation usage is rate-limited on free tier (200 calls/user/day, same as autocorrect) to control cost.
+See [Language Support](language_support.md), [Transcription](transcription.md), and [Telehealth](telehealth_livekit.md).
