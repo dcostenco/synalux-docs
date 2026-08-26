@@ -263,6 +263,50 @@ The active station shows next to the staff name in the top bar (e.g. **Alex M. �
 
 ---
 
+### Multiple Card Terminals
+
+When a venue runs more than one physical Dejavoo card terminal — say a bar
+terminal and a counter terminal — you can assign each register to its own
+device, so a customer paying at the counter sees the prompt on the counter
+terminal, never the bar's. Venues with a single terminal don't need this: the
+card settings in **Venue Settings** already cover one device.
+
+<details>
+<summary><strong>Setup</strong></summary>
+
+**1. Register each terminal.** In **Settings > Venue Settings**, under the
+Dejavoo card settings, open **"Multiple terminals? Set up a per-device terminal
+registry."** Add one entry per physical device:
+
+- **Label** — a name staff recognize (e.g. "Bar P1", "Counter P1")
+- **TPN** and **Register ID** — from the device's on-screen **SPIN DETAILS**
+  (or your iPOSpays merchant portal)
+- **Auth Key** — the device's SPIn key, entered once and stored securely; it is
+  never shown again, only marked **key ✓**. A terminal still missing its key is
+  flagged **no auth key** so it isn't left unable to take payment.
+
+A venue with terminals registered here uses them for card payments; the
+single-device fields above then act only as a fallback.
+
+**2. Assign a register to a terminal.** In **Settings > Stations**, edit a
+station and set **Dejavoo Terminal** to the device that should take that
+register's card payments. Leave it on **Venue default** to use the first
+registered terminal. The choice is audited.
+
+**3. Everyday behavior.**
+
+- Card payments, voids, and tip adjustments from a register go to *its* assigned
+  terminal — a refund always returns to the device that took the sale.
+- A register with no terminal assigned uses the venue's default (first) terminal.
+- If a terminal is deactivated or removed, any register pointing at it falls
+  back to the default rather than failing — reassign it when convenient.
+- While a station is temporarily failed over to a backup processor, its Dejavoo
+  terminal assignment pauses and resumes automatically when it fails back.
+
+</details>
+
+---
+
 ### Price Levels
 
 Create multiple named price levels with optional day/time scheduling. Happy hour, employee, and VIP-style pricing can use venue multipliers with per-item overrides; the current editor does not impose or advertise a 14-level product limit.
