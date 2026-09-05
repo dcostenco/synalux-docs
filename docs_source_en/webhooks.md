@@ -1,52 +1,39 @@
 # 🪝 Webhooks
 
-Outbound webhooks for workspace events. Receive HTTP POSTs at your endpoint when a patient is created, an appointment is scheduled, a SOAP note is signed, etc.
+Webhooks let another system receive an HTTP POST when something happens in Synalux. This page describes what the current customer portal provides, and what it does not, so an integration is not built against a capability that is not yet exposed.
 
 ---
 
-## 📡 Event Catalog
-*   `patient.created` / `patient.updated`
-*   `appointment.created` / `appointment.cancelled` / `appointment.completed`
-*   `soap_note.signed`
-*   `claim.submitted` / `claim.paid` / `claim.denied`
-*   `mail.received`
-*   `meeting.started` / `meeting.ended`
-*   `auth.signed_in` (admin-only)
-*   `break_glass.invoked` (always sent + admin-emailed)
+## Inbound webhooks (available)
+
+Messaging providers deliver inbound messages to Synalux through provider webhooks. Each provider page documents its connection and boundary:
+
+*   Telegram, WhatsApp, Viber, SMS, Facebook Messenger and Instagram post to `/api/v1/<provider>/webhook`.
+*   Payment providers post to their own verified endpoints; those are configured by Synalux, not by the customer.
+
+Inbound message webhooks ship on **Standard+**. Inbox access is restricted separately from integration management; see each provider page.
 
 ---
 
-## 🔐 Signing
-*   Every payload signed with HMAC-SHA256 over the body using the workspace's webhook secret.
-*   Signature delivered in `X-Synalux-Signature` header — verify in your endpoint to reject spoofs.
-*   Timestamp in `X-Synalux-Timestamp` header — reject if older than 5 minutes (replay protection).
+## Outbound webhooks (current boundary)
+
+The customer portal does **not** currently provide a self-service outbound webhook workflow. There is no screen or API for a customer to register an endpoint URL, choose events, or view deliveries for their workspace, and no workspace events are published to external endpoints today.
+
+What exists is a platform-operated delivery layer, used by Synalux operations rather than by customers:
+
+*   Deliveries are HTTPS-only and signed with HMAC-SHA256 over the request body. The signature is sent in the `X-Synalux-Signature` header as `sha256=<hex>`.
+*   Every delivery attempt is recorded (endpoint, status, HTTP response code, last error) and can be retried manually from the Synalux platform console.
+*   Endpoints that are not HTTPS, that embed credentials, or that resolve to private network addresses are refused.
+
+Not part of the current product: an event catalog (`patient.created`, `appointment.*`, `soap_note.signed`, `claim.*`, `mail.received`, `meeting.*`, `auth.signed_in`, `break_glass.invoked`), automatic retry with backoff, a dead-letter queue with administrator email, a timestamp header for replay protection, or a stable `event_id` for deduplication. Do not build an integration that depends on them.
 
 ---
 
-## 🔁 Delivery
-*   **Retry policy**: exponential backoff (1m, 5m, 30m, 2h, 12h) for non-2xx responses.
-*   **Dead-letter queue** after 5 failures — admin gets an email + the failed event surfaces in the workspace inbox.
-*   **Idempotency** — every event has a stable `event_id` you can use as a deduplication key.
-*   **Inbound webhooks** for messaging providers (Telegram / WhatsApp / Viber / SMS / Messenger / Instagram) live at `/api/v1/<provider>/webhook` — see each provider page.
+## If you need outbound events
 
----
-
-## 🏗️ Architecture
-
-<details>
-<summary>Technical Documentation / Specifications</summary>
-
-```
-POST /api/v1/admin/webhooks                       Configure outbound endpoints (admin)
-GET  /api/v1/admin/webhooks                       List configured endpoints
-DELETE /api/v1/admin/webhooks/:id                 Remove
-GET  /api/v1/admin/webhooks/:id/deliveries        Recent delivery attempts (success / fail / status)
-POST /api/v1/admin/webhooks/:id/replay/:event_id  Manual replay of a failed delivery
-```
-
-</details>
+Contact [Synalux support](https://synalux.ai/support) with the workspace, the events you need, and the receiving system. Requirements gathered this way decide the shape of the first customer-facing release of outbound webhooks.
 
 ---
 
 ## 💳 Plans
-Available on **Advanced+** for outbound; inbound webhooks for messaging providers ship on **Standard+**.
+Inbound webhooks for messaging providers ship on **Standard+**. Outbound webhooks are not yet available on any plan.
