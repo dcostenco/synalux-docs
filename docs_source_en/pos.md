@@ -1687,7 +1687,7 @@ When the network goes down, a warning banner and red **"Offline"** badge appear 
 
 | Capability | Offline behavior |
 |---|---|
-| **Card payments** | By default, the Register requires internet and directs staff to cash. A venue may enable Store & Forward only after reviewing processor support, per-transaction/queue limits, staff permissions, and chargeback risk; eligible offline card attempts then enter the review/sweep workflow |
+| **Card payments** | With no internet, the Register cannot start a card payment: tapping Card shows that internet is required and offers Cash or Start Tab (charge later). Store & Forward is the terminal's own capability for a different case — the Register is online but the terminal cannot reach its processor — and is described in the Store & Forward row below |
 | **Bar tab pre-authorization** | Requires the processor connection; do not treat a locally queued order as an active card hold |
 | **Staff clock in/out** | Requires a network connection; shift punches are not part of the offline order/payment queue |
 | **New split-check persistence** | Requires a connection. Do not start a new split while the order still exists only as an unresolved offline order |
@@ -1708,7 +1708,7 @@ When the network goes down, a warning banner and red **"Offline"** badge appear 
 | Tender | Staff-facing behavior |
 |--------|-----------------------|
 | **Cash** | The payment follows the queued order after reconnect. Offline cash gratuity allocation is unavailable because the complete settlement must be recorded together |
-| **Store & Forward card** | Available only for approved processor/device combinations with venue limits enabled. Attempts appear in **Payments > Needs Review** until the processor result is known |
+| **Store & Forward card** | Applies when the Register is online but the payment terminal cannot reach its processor: a terminal configured for Store & Forward holds the transaction in the device and forwards it on reconnect. The POS records the charge and accepts it up to a configurable per-transaction floor; charges above the floor, or any charge when the venue has turned Store & Forward acceptance off, go to **Payments > Needs Review**. Acceptance is on by default for Dejavoo terminals and off for Stripe Terminal unless the venue turns it on. It is the venue's risk to accept |
 | **Bar tab pre-authorization** | Requires the processor connection; a queued order is not an active card hold |
 | **Manual card, gift card, and House Account** | Wait for connectivity and for the order to finish syncing before collecting payment |
 | **Split payment** | Reconnect and confirm the order before starting or completing a split |
@@ -2045,7 +2045,7 @@ Synalux POS is designed to keep raw card entry inside supported processor surfac
 | **In-person card payments** | Supported Stripe Terminal or Dejavoo terminal workflows keep card capture in the configured provider/device path. Pair only approved hardware and follow that provider's network and PCI instructions |
 | **Keyed/manual card entry** | The Stripe path uses Stripe's hosted Payment Element rather than a POS-owned raw-card form. Access remains permission-controlled |
 | **Online ordering checkout** | Uses the configured hosted/processor checkout path. Verify the actual live storefront, authorized payment, confirmation, refund, and settlement before launch |
-| **Offline card handling** | Synalux never stores card numbers, online or offline. Online Ordering card payments require internet and pause when the venue is offline; where a venue enables pay-at-store, the order is still taken without a card. At the register, offline card acceptance is the terminal's own Store & Forward: the terminal holds the transaction and forwards it on reconnect, so the card data stays in the payment device. It is off unless the venue configures it, carries a per-transaction floor limit, and is the venue's risk to accept |
+| **Offline card handling** | Synalux never stores card numbers. Online Ordering runs on Synalux's servers: it keeps accepting and charging orders while a venue's POS is offline, those orders reach the station when it reconnects, and a venue can pause Online Ordering from the Throttling page. At the register with no internet, tapping Card shows that internet is required and offers Cash or Start Tab (charge later). If the register is online but the payment terminal cannot reach its processor, a terminal configured for Store & Forward holds the transaction in the device and forwards it on reconnect; the POS records the charge and accepts it up to a configurable per-transaction floor, sending anything above the floor to **Payments > Needs Review**. Store & Forward acceptance is on by default for Dejavoo terminals and off for Stripe Terminal unless the venue turns it on, and it is the venue's risk to accept |
 
 **Regional data routing:** Customer provisioning maps supported EU/EEA/UK/Swiss country codes to the EU project and supported North American country codes to the US project. Unknown countries are rejected rather than guessed, and the region choice is treated as permanent. Confirm country, region, and regional services before the venue begins trading.
 
