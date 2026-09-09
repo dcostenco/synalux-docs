@@ -17,6 +17,17 @@
 - Remove cross-workspace end-user access to the universal audit trail and make
   the regional provisioning-claim ledger explicitly service-role-only.
 
+### Synalux Print Relay 2.1.17
+
+- A ticket written to a serial port whose driver has no flush is recorded as delivered instead of unknown. Epson's COM emulation for USB receipt printers accepts the whole ticket and then answers the flush call with "The request is not supported" (Windows error 50); 2.1.16 treated that as a failed print, so the POS asked whether a receipt had printed even when it had. Only that answer is forgiven; a failed or short write, or a flush that fails for any other reason, still fails the job.
+- Nothing else changed. macOS image and app signed as Developer ID Application: Dmitri Costenco, notarized and stapled; the Windows installer is still not code-signed.
+
+### Synalux Print Relay 2.1.16
+
+- Printers on a serial or USB-serial port (`serial:COM3`, `serial:/dev/tty…`, optional baud) can be used; the port stays bound to the computer that owns it, so a second relay on the network does not take its tickets.
+- A serial printer is asked whether it is ready before printing; offline or out of paper is retried instead of being recorded as printed. Every serial operation is bounded (5 s to check, 25 s to print) so a wedged cable cannot stall the queue.
+- The macOS installer is signed and notarized by Apple for the first time (earlier builds were ad-hoc signed). The disk image and the app both carry a stapled ticket.
+
 ### Synalux Print Relay 2.1.10
 
 - Select the native Windows Credential Manager and macOS Keychain backends
