@@ -903,7 +903,7 @@ The portal, documentation, and AI interface are available in 16 languages:
 
 <p align="center">
   <br>
-  <b>© 2024–2026 Dmitri Costenco.</b><br>
-  Licensed under the <a href="LICENSE">Business Source License 1.1 (BSL-1.1)</a>.<br>
+  <b>© 2024–2026 Synalux LLC.</b><br>
+  Licensed under the <a href="LICENSE">Business Source License 1.1 (BUSL-1.1)</a>.<br>
   <a href="https://synalux.ai/docs/disclaimer">Legal & Medical Disclaimer</a>
 </p>

@@ -120,4 +120,4 @@ Have a feature request? Email [dmitri@synalux.ai](mailto:dmitri@synalux.ai) or o
 
 ---
 
-© 2024–2026 Dmitri Costenco. Licensed under [BSL-1.1](LICENSE).
+© 2024–2026 Synalux LLC. Licensed under [BUSL-1.1](LICENSE).
