@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+### Prism dashboard graph contract
+
+- Serve Prism dashboard embeddings through the authenticated Portal contract so
+  local dashboard processes do not need a Google or Gemini API key.
+- Return complete, caller-scoped session graph nodes and stored links for the
+  selected project, with explicit graph filters and optional synthesis vectors.
+- Persist checkpoint keywords atomically and preserve an existing embedding
+  during concurrent synthesis retries.
+- Store graph-link batches through tenant-checked RPCs, deny direct client table
+  access, reject incomplete legacy rows, and bound both streamed request bodies
+  and batch metadata.
+
 ### POS multi-venue beta readiness
 
 - Enforce each reseller customer's signed location and seat allocation in the
