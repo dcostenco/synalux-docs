@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+### Prism paid-plan discovery and billing lifecycle
+
+- Show Free, trialing, active, and payment-recovery states consistently across
+  Portal pricing and the local Prism dashboard, with direct trial and hosted
+  billing actions.
+- Start paid plans with a 14-day no-card trial, expose its exact end date, and
+  cancel automatically when no payment method is added.
+- Bind each billing transition to the exact Stripe customer, subscription, and
+  mapped product, and reject stale concurrent webhook snapshots before they can
+  restore revoked access.
+- Propagate a user's plan only to workspaces that user owns; membership or an
+  administrator role in another workspace no longer changes that workspace's
+  billing state.
+
 ### Prism dashboard graph contract
 
 - Serve Prism dashboard embeddings through the authenticated Portal contract so
