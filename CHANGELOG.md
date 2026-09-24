@@ -2,42 +2,14 @@
 
 ## [Unreleased]
 
-### Prism skill routing: fewer wrong loads, measured on real use
+### Prism skill routing
 
-- Stop loading skills a prompt does not need. Routing table v41 fixes the
-  two false triggers found in a local replay of 30 days of recorded
-  prompts:
-  - `data-before-code` no longer loads for "can't find" about things that
-    are not data, such as a driver, a recipient or a TypeScript error;
-  - `effort-advisor`'s "still broken" signal now needs a failed fix nearby
-    ("I deployed the fix. It's still broken.").
-  Both rules still load for real data and real failed fixes. The data-noun
-  list covers reports, receipts, refunds, bookings, logs, shifts, sales,
-  products, appointments and reservations. The failed-fix signal accepts
-  updated, changed, tried, applied, retried, redeployed, rebuilt, corrected,
-  a workaround or a suggestion, as well as fix, patch and repair. A
-  replay of 378 recorded prompts (3-skill cap applied) shows v41 removes three
-  data-before-code loads and one effort-advisor load. On one of those
-  prompts, the freed slot goes to `task-flow-ui-ux-review`. Clients refetch
-  the table when the portal reports v41. The committed tests use synthetic
-  prompts of the same shape.
-- Pin clinical routing in CI. BCBA requests (FBA, BIP, behavior plans,
-  reinforcement schedules, session summaries) must load
-  `bcba_ai_assistant`, and each team clinical skill must route its own
-  requests and ignore look-alikes. Six designed triggers the table does not
-  yet route are pinned as known gaps, including a plain-language
-  self-injury emergency, so a table fix is caught the moment it lands. A
-  skill that declares more prompt triggers than devices read (5) now fails
-  CI instead of silently losing its extra triggers.
-- Add a private routing measurement harness (`prism-training/evals/skill-routing`):
-  - it measures wrong loads and missed loads from real Claude Code and
-    Codex sessions;
-  - it replays routing through five paths (CLI, matcher, bootstrap,
-    `claude -p`, Codex);
-  - it scores clinical and safety probes.
-  Agent-written turns, scripted runs and subagent threads are no longer
-  counted as a person's prompts. The committed samples and labels hold
-  hashes only; the rater's sheet with prompt text stays local.
+- Fewer skills loaded that a prompt does not need. `data-before-code` no longer
+  loads when "can't find" refers to something other than data, and
+  `effort-advisor` loads for "still broken" only after a fix was attempted.
+  Clients pick up routing table v41 automatically.
+- Automated tests now guard clinical and team skill routing against
+  regressions.
 
 ### Prism paid-plan discovery and billing lifecycle
 
