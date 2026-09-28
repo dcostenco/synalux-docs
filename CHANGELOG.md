@@ -19,6 +19,20 @@
   discounts.
 - The cash drawer opens only after the opening float is recorded.
 
+### POS price level picked at the register
+
+- A price level a manager picks at the register, such as Employee Meal, is now
+  charged. Before, the check showed the lower prices and the order was charged
+  the regular price.
+- Items added to a check that is already open are priced at the level the
+  register shows. Before, they were charged the regular menu price.
+- Items still waiting to be sent are repriced when the level changes, so the
+  total on screen is the total charged. The picker no longer offers scheduled
+  levels, which switch on by themselves.
+- An order queued offline with a manager's price level waits until a manager
+  is signed in, instead of being refused over and over under another staff
+  member.
+
 ### Prism skill routing
 
 - Fewer skills loaded that a prompt does not need. `data-before-code` no longer
