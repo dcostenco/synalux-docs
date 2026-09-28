@@ -2,6 +2,23 @@
 
 ## [Unreleased]
 
+### POS Delivery Board and screen access
+
+- A Delivery Board for supervisors and managers shows delivery orders that are
+  waiting for a driver, assigned, en route, or late, with a drivers panel,
+  one-tap assign and dispatch, and confirmed cancel and re-dispatch.
+- Payments, Refunds, Receipts, and Disputes; Kitchen and Expo; Delivery Board
+  and Drivers; and Accounting, Ledger, and Banking now share tab strips, so every
+  screen has a way in. Payments and Disputes show a count when a payment has an
+  open dispute, and every dispute status reads as words.
+- Register and Orders can no longer be removed from a role, and saving Role
+  Permissions no longer drops screens the page did not list.
+- After a check is sent, paid, or finished, staff return to Bar Tabs or Tables
+  only when their role can open that screen, and the list already shows the check.
+- Orders rung in a revenue center are filed under it and use its price level and
+  discounts.
+- The cash drawer opens only after the opening float is recorded.
+
 ### Prism skill routing
 
 - Fewer skills loaded that a prompt does not need. `data-before-code` no longer
