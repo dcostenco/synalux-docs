@@ -32,6 +32,23 @@
 - An order queued offline with a manager's price level waits until a manager
   is signed in, instead of being refused over and over under another staff
   member.
+- The Price level menu opens on top of the register. On the desktop toolbar it
+  was hidden under the menu rail, so its options could not be tapped. While a
+  level is in force, the button shows its name and opens the same menu.
+
+### POS staff messages
+
+- Back Office > Messaging now opens the staff Messages screen, with its six
+  channels. Before, it showed a separate screen whose channels had to be set up
+  first, and there was no way to set them up.
+- Messages are signed with the staff member who is signed in. Before, a
+  message could be posted under another staff member's name.
+- The Managers channel is for managers and admins, on the screen and through
+  the assistant.
+- Reopen on a finished check is locked, with a note to ask a manager, for staff
+  who cannot reopen checks. Before, it opened a screen that refused them.
+- Settings shows names for HR & Payroll, Accounting and Form Builder instead
+  of raw text keys.
 
 ### Prism skill routing
 
