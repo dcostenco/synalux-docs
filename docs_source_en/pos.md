@@ -121,9 +121,9 @@ Useful starting points: [Settings map](#settings-map), [Register](#register), [T
 
 ## Settings map
 
-Open **Settings** from the top bar to reach the 16 linked administration areas. The landing page also shows the recent settings audit trail, including who changed a setting and when.
+Open **Settings** from the top bar to reach the 17 linked administration areas, grouped in the sidebar as **Settings**, **Service**, **Venue & Integrations**, and **Advanced**. The landing page also shows the recent settings audit trail, including who changed a setting and when.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-hub.png" alt="Production Settings hub with Menu Builder, staff, role, tax, discount, service configuration, and a current audit trail">
+<img src="../images/pos/pos-2026-09/settings-hub.png" alt="Settings hub sidebar grouped into Settings, Service, Venue & Integrations (including Delivery), and Advanced, with the recent audit trail">
 
 | Settings area | Route | What it controls |
 |---|---|---|
@@ -139,12 +139,12 @@ Open **Settings** from the top bar to reach the 16 linked administration areas. 
 | Venue Settings | `/pos/settings/venue` | Venue identity/time zone, processor, table occupancy, revenue centers, price levels, auto-gratuity, cash discount, over-payment behavior, blind drawer, sales tax on discounts, meal rules, and order types |
 | Integrations | `/pos/settings/integrations` | Payment, ordering, accounting, calendar, drive, mail, messaging, and voice providers |
 | Online Ordering | `/pos/settings/online-ordering` | Hours, pickup/delivery channels, minimums, prep times, zones, and closed dates |
+| Delivery | `/pos/settings/delivery` | Delivery mode (3PD, in-house, or hybrid), preferred provider, pickup address and phone, menu sync, and in-house drivers |
 | Void Reasons | `/pos/settings/void-reasons` | Active order/item void reasons and translations |
 | Comp Reasons | `/pos/settings/comp-reasons` | Active item-comp reasons and translations |
 | Account | `/pos/settings/account` | Account data export and deletion controls |
 | Touch Diagnostic | `/pos/settings/touch-diagnostic` | Touchscreen detection and input diagnostics |
 
-**Delivery Management** is also available directly at `/pos/settings/delivery`. It controls 3PD, in-house, and hybrid delivery modes plus provider selection and menu sync, but it is not currently a card on the Settings landing page.
 
 ---
 
@@ -184,19 +184,23 @@ Touch ID and Face ID passkeys are registered to supported devices. Multiple pass
 2. Assign roles: cashier, host, server, bartender, supervisor, manager, admin
 3. After staff authentication, the selected Revenue Center and its configured landing page determine where that role starts. If the device has not selected a station, the employee chooses an allowed station or skips station filtering; stations already locked to another device require manager override permission
 
-| Role | Landing Page | What you see |
+| Role | Landing Page | Screens by default |
 |---|---|---|
-| Admin | Settings | Settings + All screens |
-| Manager | Register | All screens + EOD |
-| Supervisor | Register | Register, Tables, KDS, EOD |
-| Server | Register | Register + Tables + Handheld |
-| Bartender | Register | Bar Register + Age Verification |
-| Host | Tables | Tables + Reservations |
-| Cashier | Register | Register only |
+| Admin | Settings | Every screen |
+| Manager | Register | Register, Orders, Tables, Bar Tabs, KDS, Handheld, Reservations, Table Operations, Payments, Refunds, Receipts, House Accounts, End of Day, Reports, Staff, Compliance, Delivery Board, Settings, AI Assistant, Documents, Forms, Scheduling, Accounting, HR, Mail, Calendar, and Dashboards |
+| Supervisor | Register | Register, Orders, Tables, Bar Tabs, KDS, Table Operations, Refunds, House Accounts, End of Day, Delivery Board, AI Assistant, Documents, Forms, and Scheduling |
+| Server | Register | Register, Orders, Tables, Bar Tabs, Handheld, Table Operations, and Scheduling |
+| Bartender | Register | Register, Orders, Bar Tabs, Compliance (age verification), and Scheduling |
+| Host | Tables | Register, Orders, Tables, Reservations, and Table Operations |
+| Cashier | Register | Register, Orders, and Tables |
 
-These rows are the standard terminal-role baseline, not an immutable list. **Settings > Role Permissions** can add or remove terminal routes for each venue, Revenue Center configuration can choose the post-login landing screen, and a station's **Allowed Roles** can restrict who may use that terminal. None of those terminal settings bypasses the separate account-membership check for Settings and other management routes.
+**Register** and **Orders** are always on for every role, so staff can always reach the checks they have to settle. Expo, Disputes, Back Office, Inventory, and several other back-office screens start as admin-only; a venue can grant them in **Settings > Role Permissions**.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-roles.png" alt="Current role permissions and screen-access configuration">
+These rows are the standard terminal-role baseline, not an immutable list. **Settings > Role Permissions** can add or remove terminal routes for each venue (except Register and Orders), Revenue Center configuration can choose the post-login landing screen, and a station's **Allowed Roles** can restrict who may use that terminal. None of those terminal settings bypasses the separate account-membership check for Settings and other management routes.
+
+Once a venue saves its Role Permissions, that saved list replaces the defaults for the venue. A screen added to Synalux POS later, such as the Delivery Board, stays off for non-admin roles there until an admin ticks it in **Settings > Role Permissions**.
+
+<img src="../images/pos/pos-2026-09/settings-roles.png" alt="Role Permissions for the Supervisor role, with Register and Orders marked Always on and the Delivery Board granted">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-staff.png" alt="Production Staff Management list with role, masked PIN, status, card, QR badge, and Touch ID actions">
 
 </details>
@@ -220,7 +224,7 @@ Revenue Centers control which menu categories appear, which KDS stations receive
    - **Eligible Discounts** — restrict which discounts work in this RC
    - **Price Level** — default pricing for orders in this RC
    - **🏁 Landing Screen** — where staff land right after picking this RC: Floor Plan (pick a table first), Bar Tabs, Register, or Delivery Board. Table-service RCs typically land on the Floor Plan so servers choose their table before the order opens. Staff only land where their role has access.
-3. Staff select their RC at login and are taken straight to that RC's workflow screen. Orders are automatically scoped.
+3. Staff select their RC at login and are taken straight to that RC's workflow screen. Orders rung in that RC are filed under it, use its price level and eligible discounts, and appear on its open-orders rail. Choosing **All Revenue Centers** files new orders under no RC, and orders without an RC stay visible in every RC so they can still be settled.
 
 </details>
 
@@ -422,7 +426,7 @@ Assign items to individual seats for split checks and per-guest delivery. Seat t
 
 Ticket board with color-coded timing (green → yellow → orange → red). Bump, recall, void. All-day count per item. 8 station types: Kitchen, Grill, Fry, Prep, Expo, Bar, Cold, Pass.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-kds.png" alt="Current production KDS with active kitchen tickets and station filters">
+<img src="../images/pos/pos-2026-09/kds.png" alt="Kitchen Display with the Kitchen | Expo tabs, active tickets, and station filters">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -444,12 +448,12 @@ Ticket board with color-coded timing (green → yellow → orange → red). Bump
 
 The KDS is only one part of the live order workflow:
 
-- **Expo** (`/pos/expo`) collects completed kitchen work for final handoff and lets staff mark ready orders complete.
+- **Expo** (`/pos/expo`) collects completed kitchen work for final handoff and lets staff mark ready orders complete. Staff whose role can open both screens switch between them with the **Kitchen | Expo** tabs at the top; Expo is admin-only until granted in **Settings > Role Permissions**.
 - **Orders** (`/pos/orders`) is the searchable order ledger for open and completed checks, totals, staff, and tender context.
 - **Table Operations** (`/pos/table-ops`) centralizes active table checks for transfers, merges, split-backs, and reopen workflows.
 - **Scheduled Orders** (`/pos/scheduled`) lists future orders when the venue has scheduled demand. An empty scheduled-order queue is intentionally not illustrated.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-expo.png" alt="Current production Expo board">
+<img src="../images/pos/pos-2026-09/expo.png" alt="Expo board with the Kitchen | Expo tabs and a ready order">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-orders.png" alt="Current production Orders ledger with populated order rows and totals">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-table-ops.png" alt="Current production Table Operations on the floor plan">
 
@@ -459,7 +463,7 @@ The KDS is only one part of the live order workflow:
 
 Automatic kitchen ticket timing — items in a course fire based on prep time so everything lands on the expo at the same time. Course numbers are assigned at the register; KDS hides future-course tickets until their fire time.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-kds.png" alt="Current production KDS where fired course tickets appear for kitchen action">
+<img src="../images/pos/pos-2026-09/kds.png" alt="Current production KDS where fired course tickets appear for kitchen action">
 
 <details>
 <summary><strong>How it works</strong></summary>
@@ -509,7 +513,7 @@ Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/du
 1. **Card** — connect the venue's Stripe merchant account and location, then pair a supported reader from **Settings > Integrations** and complete an authorization/refund test
 2. **Tap-to-Pay on iPhone** — requires the Synalux POS iPhone app, Stripe as the venue processor, a supported signed build/device, a Stripe Terminal Location, and Stripe Tap to Pay availability. When the native capability check passes, tap **Tap to Pay on iPhone** on the payment screen; otherwise that tender stays hidden rather than presenting an unusable button
 3. **Cash discount / Dual pricing** — configure the cash discount percentage in **Settings > Venue > Cash Discount**. Customers see both card and cash prices at checkout (e.g. Card: $100 | Cash: $96.50)
-4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount
+4. **Bar tabs** — tap "🍺 Start Tab" at payment to pre-authorize a card and hold the check open. Open tabs show in the register sidebar with a one-tap "Close" button to capture the final amount. After a tab is sent, paid, or finished with **Done**, the register returns to the **Bar Tabs** list when the staff member's role can open it, and the list already shows that tab. Dine-in checks return to **Tables** the same way
 5. **Gift cards** — issue from the Gift Cards page
 6. **House accounts** — create the customer account on **House Accounts**, then choose **House Account** at payment or record standalone account activity. See [House Accounts](#house-accounts)
 7. **EBT/SNAP** — *not currently available for payment authorization*. Per-item eligibility already works: mark each menu item **EBT-eligible / not eligible / auto** in Menu Builder (auto infers from item type — food/beverage eligible, alcohol excluded), and the register exempts eligible items from tax at tender. The EBT tender cannot currently complete a payment, so contact support before promising EBT to a venue
@@ -529,8 +533,8 @@ Card, cash, gift card, mobile pay, house account, bar tabs, and cash discount/du
 <img src="../images/pos/production-demo-2026-08/prod-20260822-screen-builder-payments.png" alt="Current Wallet tender policy in Screen Builder">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-house-accounts.png" alt="Current House Accounts workspace">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-receipts.png" alt="Current Receipt Customization with safe demonstration copy">
-<img src="../images/pos/production-demo-2026-08/prod-20260822-disputes.png" alt="Current production Disputes list with populated cases">
-<img src="../images/pos/production-demo-2026-08/prod-20260822-disputes.png" alt="Current chargeback and dispute review workspace">
+<img src="../images/pos/pos-2026-09/disputes.png" alt="Disputes list inside the Payments tab strip, with two open cases and a count on the Disputes tab">
+<img src="../images/pos/pos-2026-09/disputes.png" alt="Dispute review with Needs Response and Under Review statuses and Gather Evidence actions">
 
 </details>
 
@@ -546,6 +550,8 @@ These pages serve different jobs:
 | Disputes | `/pos/disputes` | Chargeback/dispute cases, evidence, amount, status, and due dates |
 | Refunds | `/pos/refunds` | Search completed sales and process or review partial/full refunds |
 
+Payments, Refunds, Receipts, and Disputes share a tab strip at the top of each page. It shows only the pages the staff member's role can open, and it hides when only one is available. When a payment has an open dispute, the **Disputes** tab and the **Payments** button in the bottom bar show a count. Disputes is admin-only until granted in **Settings > Role Permissions**.
+
 Empty review queues and the pre-selection Receipts state are intentionally not used as screenshots.
 
 </details>
@@ -559,18 +565,19 @@ Empty review queues and the pre-selection Receipts state are intentionally not u
 Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip pooling (3 modes), and payroll with FLSA compliance.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-staff.png" alt="Production Staff Management list with role, masked PIN, status, card, QR badge, and Touch ID actions">
-<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-roles.png" alt="Production Role Permissions matrix for configurable staff roles and POS screens">
+<img src="../images/pos/pos-2026-09/settings-roles.png" alt="Role Permissions matrix for configurable staff roles, with Register and Orders marked Always on">
 
 <details>
 <summary><strong>Setup</strong></summary>
 
 1. **Settings > Staff Management** — add an employee with a display name, four-digit PIN, and role. Search the list or edit an existing employee; PINs remain masked in the table
 2. **Staff sign-in methods** — use **Assign Card** for a magnetic-stripe card or RFID fob, **Show QR Code** to issue a printable badge, **Revoke Badge** before replacing a badge, and **Register Touch ID** on supported WebAuthn hardware. Keep the PIN as the fallback sign-in method
-3. **Settings > Role Permissions** — choose Cashier, Host, Server, Bartender, Supervisor, or Manager, then select the POS screens that role can open. Save the venue override or reset a role to its built-in defaults. Admin is locked to full access
+3. **Settings > Role Permissions** — choose Cashier, Host, Server, Bartender, Supervisor, or Manager, then select the POS screens that role can open. Register and Orders are marked **Always on** and cannot be switched off. Save the venue override or reset a role to its built-in defaults. Admin is locked to full access
 4. Configure pay periods, break rules, and overtime thresholds
 5. Tip pool mode: by hours, percentage, or points
 6. **Break punches** — staff Start/End a meal or rest break from the timeclock. Ending a break resumes the same shift (no clock-out/clock-in), and the break minutes are recorded on the shift
-7. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
+7. **Start-of-shift drawer** — on the **Staff** page, pick the opening float and tap **Open Cash Drawer**. The drawer opens only after the float is recorded; if recording fails, the drawer stays shut and the page names the reason
+8. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
 
 </details>
 
@@ -613,7 +620,32 @@ Customers browse your menu, order, and pay — no app needed. Pickup and deliver
 
 In-house drivers, 3PD delegation (DoorDash Drive, Uber Direct), or hybrid mode. Route optimization, driver GPS tracking, auto-dispatch, and menu sync to 3PD platforms. The current settings screen separates 3PD, in-house, and hybrid choices and keeps provider setup and menu sync in the same workflow.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-settings-delivery.png" alt="Current Delivery Management settings with 3PD, in-house, and hybrid modes; contact and address values are masked">
+<img src="../images/pos/pos-2026-09/settings-delivery.png" alt="Delivery settings with the Board | Drivers tabs and 3PD, in-house, and hybrid modes">
+
+**Delivery Board — `/pos/delivery`**
+
+The Delivery Board is where the Delivery revenue center lands. Every delivery order that still needs someone to act sits in one column, with the action it needs on its card.
+
+<img src="../images/pos/pos-2026-09/delivery-board-desktop.png" alt="Delivery Board with To dispatch, Assigned, En route, and Late columns, a drivers panel with each driver's load, and done-today totals">
+
+<p align="center">
+  <img src="../images/pos/pos-2026-09/delivery-board-phone.png" width="390" alt="Delivery Board on a phone with the Late column first">
+</p>
+
+| Column | What is in it | Actions on the card |
+|---|---|---|
+| **To dispatch** | Delivery orders sent to the kitchen with no active courier, marked **Ready** or **In kitchen**. If the last dispatch failed, the card says why | **Assign driver**, **Dispatch** |
+| **Assigned** | Orders given to an in-house driver or booked with DoorDash Drive or Uber Direct, not yet picked up | **Reassign** (in-house), **Call** the driver, **Track** (3PD), **Cancel dispatch** |
+| **En route** | Orders picked up and on the way | **Call** the driver, **Track** (3PD) |
+| **Late** | Anything past its promised time: the provider's estimate, the scheduled time, or 45 minutes after the order was sent to the kitchen | **Call customer**, **Re-dispatch** if not yet picked up, plus the card's usual actions |
+
+- **Drivers panel** — each driver shows as online or off, with current orders against their limit. The panel also shows deliveries done today and the average delivery time.
+- **Assign and reassign** — only online in-house drivers below their order limit can be picked. An order booked with DoorDash or Uber cannot be handed to a driver until that courier is cancelled, so one order is not sent out twice.
+- **Dispatch** and **Dispatch all** use the venue's delivery mode: in-house tries to assign an online driver, 3PD books a courier with the preferred provider, and hybrid tries in-house first. **Dispatch all** asks for confirmation first, because a 3PD booking may charge a fee.
+- **Cancel dispatch** and **Re-dispatch** ask for confirmation. A cancelled or failed order returns to **To dispatch**.
+- **All providers** filters the board to in-house, DoorDash, or Uber deliveries. The board refreshes every 15 seconds.
+- **Where to find it** — for staff who can open the board, the bottom bar shows a **Delivery** tab once the venue runs deliveries: the Delivery revenue center is selected, a delivery mode is set, or online ordering offers delivery. Staff who can open both switch between the board and **Settings > Delivery** with the **Board | Drivers** tabs.
+- **Who can use it** — supervisors and managers by default. The board lists customer names, phone numbers, and addresses, so it is not granted to servers or drivers; drivers use the driver page below.
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -894,7 +926,7 @@ Sales, PMIX, category sales, per-tax/jurisdiction, menu engineering, speed of se
 5. **Tax** — a per-jurisdiction breakdown (taxable sales + tax collected per tax zone) that reconciles against the recorded tax
 6. **Comps** — comped items itemized, broken down by (configurable) comp reason, with totals and CSV
 7. **Menu engineering** — Star/Dog/Puzzle/Workhorse quadrant analysis
-8. **Speed of service** — per-station ticket times at `/pos/reports/speed`
+8. **Speed of service** — per-station ticket times on the Reports **Speed** tab; **Station view** opens the colour-banded station page at `/pos/reports/speed`
 9. **Server leaderboard** — staff performance ranking at `/pos/reports/leaderboard`
 10. **Audit** — actor, action, entity, timestamp, and details at `/pos/reports/audit`
 11. **Labor** — hours, break minutes, overtime, and meal-penalty premium folded into gross pay
@@ -1249,7 +1281,7 @@ Tableside ordering on any iPhone. Same menu, same modifiers, same KDS routing.
 
 Partial or full refund with reason codes for Stripe and Dejavoo payments. Tip-aware refund ceiling prevents over-refund on tip-adjusted captures. Gift card and house account balances auto-restored on refund.
 
-<img src="../images/pos/production-demo-2026-08/prod-20260822-refunds.png" alt="Current production Refunds workspace with populated completed-payment rows">
+<img src="../images/pos/pos-2026-09/refunds.png" alt="Refunds workspace with the Payments, Refunds, Receipts, and Disputes tab strip and completed-payment rows">
 
 <details>
 <summary><strong>Setup</strong></summary>
@@ -1292,7 +1324,7 @@ Per-venue KPIs, consolidated P&L, config push, and franchise reporting. Month-to
 
 ### Accounting & Ledger
 
-Journal entries, general ledger, and connected banking are available in the POS accounting workspace. End-of-day activity is recorded in Synalux accounting; a connected QuickBooks or Xero card is not by itself proof that an external journal export completed.
+Journal entries, general ledger, and connected banking are available in the POS accounting workspace, with **Accounting | Ledger | Banking** tabs at the top of each page. End-of-day activity is recorded in Synalux accounting; a connected QuickBooks or Xero card is not by itself proof that an external journal export completed.
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-accounting-ledger.png" alt="Current production General Ledger with populated journal rows">
 
@@ -1385,7 +1417,7 @@ The `/pos/backoffice/*` paths are the canonical routes and keep the back-office 
 | **Mail** | Connected mailbox, compose/reply, templates, and vendor auto-tagging | `/pos/backoffice/mail` |
 | **Calendar** | Connected calendar events, reservations, catering, and staff meetings | `/pos/backoffice/calendar` |
 | **Back Office Messaging** | Venue-scoped channels and real-time staff communication | `/pos/backoffice/messaging` |
-| **Staff Messages** | Standalone staff messaging workspace outside the back-office shell | `/pos/messages` |
+| **Staff Messages** | Standalone staff messaging workspace outside the back-office shell, listed under **Settings > Tools** | `/pos/messages` |
 | **AI Assistant** | Context-aware AI with live POS data | `/pos/assistant` |
 | **Operational Forms** | 12 ready-to-print/download restaurant forms | `/pos/backoffice/forms` |
 | **Custom Form Builder** | Custom templates and searchable submissions with 10 field types | `/pos/form-builder` |
