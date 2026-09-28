@@ -273,6 +273,14 @@ Create multiple named price levels with optional day/time scheduling. Happy hour
 
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-price-levels.png" alt="Current Price Level Settings">
 
+**At the register.** Managers and admins pick a level from the **Price level** button beside the order types. It offers **Automatic** and every level the venue allows by hand, such as Employee Meal or VIP. Scheduled levels such as Happy Hour are not offered, because they switch on by themselves.
+
+<img src="../images/pos/pos-2026-09/price-level-picker.png" alt="Price level menu open on the register, offering Automatic, Employee Meal, and VIP">
+
+The pick reprices the items on the check that have not been sent yet, and it prices every item added afterwards, including items added to a check that is already open. Items already sent keep the price they were sent at, and so do items with a typed-in price, such as open-price or weighed items. While a level is in force, the button shows its name; tap it to change the level or go back to **Automatic**. The pick applies only while the manager who made it is signed in.
+
+<img src="../images/pos/pos-2026-09/price-level-applied.png" alt="Employee Meal applied: the check line shows half price and the button shows Employee Meal (50% off)">
+
 <details>
 <summary><strong>Setup</strong></summary>
 
@@ -280,7 +288,7 @@ Create multiple named price levels with optional day/time scheduling. Happy hour
 2. Set **Schedule** for auto-switching: `{days: ["mon","tue","wed","thu","fri"], start: "16:00", end: "18:00"}`
 3. **Overnight windows** work: `{start: "22:00", end: "02:00"}`
 4. Per-item overrides in **Menu Builder > Item > Price Levels** (exact price per level)
-5. **Price cascade:** Station price level → RC price level → Schedule → Base price
+5. **Price cascade:** Manual pick at the register → Station price level → RC price level → Schedule → Base price
 6. Manual price-level override requires manager permission or higher
 
 </details>
@@ -1416,12 +1424,13 @@ The `/pos/backoffice/*` paths are the canonical routes and keep the back-office 
 | **Documents** | Connected cloud file storage, folders, uploads, and sharing | `/pos/backoffice/documents` |
 | **Mail** | Connected mailbox, compose/reply, templates, and vendor auto-tagging | `/pos/backoffice/mail` |
 | **Calendar** | Connected calendar events, reservations, catering, and staff meetings | `/pos/backoffice/calendar` |
-| **Back Office Messaging** | Venue-scoped channels and real-time staff communication | `/pos/backoffice/messaging` |
-| **Staff Messages** | Standalone staff messaging workspace outside the back-office shell, listed under **Settings > Tools** | `/pos/messages` |
+| **Staff Messages** | Six venue channels: All Staff, Front of House, Back of House, Managers, Daily Specials, and Lost & Found. Messages appear in real time and are signed by the staff member who is signed in. The Managers channel is shown only to managers and admins. The same screen is also listed under **Settings > Tools** | `/pos/backoffice/messaging` |
 | **AI Assistant** | Context-aware AI with live POS data | `/pos/assistant` |
 | **Operational Forms** | 12 ready-to-print/download restaurant forms | `/pos/backoffice/forms` |
 | **Custom Form Builder** | Custom templates and searchable submissions with 10 field types | `/pos/form-builder` |
 | **Dashboards** | Drag-and-drop widget builder with auto-refresh | `/pos/backoffice/dashboards` |
+
+<img src="../images/pos/pos-2026-09/staff-messages.png" alt="Staff Messages in Back Office with the six venue channels and a posted message">
 
 <details>
 <summary><strong>Documents</strong></summary>
