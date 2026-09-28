@@ -200,7 +200,7 @@ These rows are the standard terminal-role baseline, not an immutable list. **Set
 
 Once a venue saves its Role Permissions, that saved list replaces the defaults for the venue. A screen added to Synalux POS later, such as the Delivery Board, stays off for non-admin roles there until an admin ticks it in **Settings > Role Permissions**.
 
-<img src="../images/pos/pos-2026-09/settings-roles.png" alt="Role Permissions for the Supervisor role, with Register and Orders marked Always on and the Delivery Board granted">
+<img src="../images/pos/pos-2026-09/settings-roles.png" alt="Role Permissions for the Supervisor role, with Register and Orders marked Always on and the supervisor's default screens checked">
 <img src="../images/pos/production-demo-2026-08/prod-20260822-settings-staff.png" alt="Production Staff Management list with role, masked PIN, status, card, QR badge, and Touch ID actions">
 
 </details>
@@ -463,7 +463,7 @@ The KDS is only one part of the live order workflow:
 
 Automatic kitchen ticket timing — items in a course fire based on prep time so everything lands on the expo at the same time. Course numbers are assigned at the register; KDS hides future-course tickets until their fire time.
 
-<img src="../images/pos/pos-2026-09/kds.png" alt="Current production KDS where fired course tickets appear for kitchen action">
+<img src="../images/pos/pos-2026-09/kds.png" alt="KDS where fired course tickets appear for kitchen action">
 
 <details>
 <summary><strong>How it works</strong></summary>
@@ -576,7 +576,7 @@ Scheduling, break punches, meal-penalty enforcement, overtime alerts, tip poolin
 4. Configure pay periods, break rules, and overtime thresholds
 5. Tip pool mode: by hours, percentage, or points
 6. **Break punches** — staff Start/End a meal or rest break from the timeclock. Ending a break resumes the same shift (no clock-out/clock-in), and the break minutes are recorded on the shift
-7. **Start-of-shift drawer** — on the **Staff** page, pick the opening float and tap **Open Cash Drawer**. The drawer opens only after the float is recorded; if recording fails, the drawer stays shut and the page names the reason
+7. **Start-of-shift drawer** — on the **Staff** page, pick the opening float and tap **Open Cash Drawer**. The drawer opens only after the float is recorded; if recording fails, the drawer stays shut and the page says it failed, with the server's reason when it gives one
 8. **Meal penalty** — set the rules in **Settings > Venue > Meal Penalty & Break Rules** (threshold, minimum meal length, premium minutes, and a **grace period**). When someone works past the threshold with no qualifying meal break, a premium is owed; it rolls into the labor report's gross pay. The grace period is slack past the threshold before any penalty applies
 
 </details>
