@@ -36,6 +36,13 @@
   was hidden under the menu rail, so its options could not be tapped. While a
   level is in force, the button shows its name and opens the same menu.
 
+### POS Managers channel privacy
+
+- Other staff can no longer read Managers channel messages directly from the
+  database; they were only hidden on screen before. Managers and admins read
+  them in the Messages screen, where the Managers channel refreshes every few
+  seconds and the other channels still update instantly.
+
 ### POS staff messages
 
 - Back Office > Messaging now opens the staff Messages screen, with its six
