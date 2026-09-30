@@ -1,6 +1,6 @@
 # 💻 Prism Coder IDE
 
-**Local-first AI IDE.** Standalone macOS / Windows desktop app + browser preview at `synalux.ai/coder`. Repo: [`prism-coder`](https://github.com/dcostenco/prism-coder).
+**Local-first AI IDE.** Standalone macOS desktop app + browser preview at `synalux.ai/coder`. Repo: [`prism-coder`](https://github.com/dcostenco/prism-coder).
 
 ---
 
@@ -30,13 +30,8 @@ Same OAuth + audit posture as the rest of the platform — see [Mail](mail.md) /
 
 ---
 
-## 🪟 Windows Code-Signing
-Production Windows binaries are signed via **Azure Trusted Signing** (Microsoft's cloud code-signing service that replaced traditional EV cert flows). Avoids the SmartScreen reputation grind of self-signed binaries.
-
----
-
 ## 🧪 Tests
-Windows-22.x CI hookTimeout regression was fixed in 2026-Q2; the build now passes consistently across macOS-13/14, Windows-22/24, Linux-22/24.
+CI runs the test suite on Ubuntu and macOS, Node 20 and 22.
 
 ---
 
@@ -46,7 +41,6 @@ Windows-22.x CI hookTimeout regression was fixed in 2026-Q2; the build now passe
 |---|---|---|---|---|
 | Web preview at /coder | ✅ | ✅ | ✅ | ✅ |
 | Standalone macOS app | ✅ | ✅ | ✅ | ✅ |
-| Standalone Windows app (signed) | ✅ | ✅ | ✅ | ✅ |
 | Local prism-coder (all sizes) | ✅ | ✅ | ✅ | ✅ |
 | Cloud — Claude Sonnet 4 | — | ✅ | ✅ | ✅ |
 | Cloud — Gemini 2.5 Pro | — | — | ✅ | ✅ |
