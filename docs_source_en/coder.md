@@ -31,7 +31,7 @@ Same OAuth + audit posture as the rest of the platform — see [Mail](mail.md) /
 ---
 
 ## 🧪 Tests
-CI runs the test suite on Ubuntu and macOS, Node 20 and 22.
+The `prism-coder` repository's CI runs its test suite on Ubuntu and macOS, Node 20 and 22.
 
 ---
 
