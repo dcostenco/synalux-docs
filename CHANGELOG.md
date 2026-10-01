@@ -19,6 +19,18 @@
   discounts.
 - The cash drawer opens only after the opening float is recorded.
 
+### POS manual card entry
+
+- A manager or admin signed in with their PIN can key in a card from the Pay
+  screen. Before, every attempt stopped at "Manager authorization token
+  required", because the screen skipped the manager PIN prompt for them and the
+  payment still asked for its approval.
+- When the register is signed in without a PIN, or a manager's approval has run
+  out, the Pay screen asks for a manager PIN instead of stopping with an error.
+- A keyed card payment is recorded even if the card takes longer than five
+  minutes to enter. Before, a slow entry could charge the card and leave the
+  check open.
+
 ### POS price level picked at the register
 
 - A price level a manager picks at the register, such as Employee Meal, is now
