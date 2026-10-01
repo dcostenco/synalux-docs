@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### POS staff sessions
+
+- When a staff member's sign-in runs out during a long shift, the register goes
+  back to the PIN pad and asks for their PIN again. The terminal stays signed in
+  to the account.
+- A terminal with no staff member signed in by PIN can no longer comp, void,
+  refund, change prices or capture payments using the account's own
+  permissions.
+
 ### POS Delivery Board and screen access
 
 - A Delivery Board for supervisors and managers shows delivery orders that are
