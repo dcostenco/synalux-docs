@@ -36,6 +36,25 @@
   was hidden under the menu rail, so its options could not be tapped. While a
   level is in force, the button shows its name and opens the same menu.
 
+### POS screens say who can use them
+
+- End of Day is for managers only. Settings and Accounting can be given to
+  supervisors and above, but no longer to lower roles. Role Permissions shows
+  those screens locked for lower roles. An older grant of them to a lower role
+  is ignored, and the next save removes it.
+- Reloading the page on a screen your venue gave your role no longer sends you
+  back to the register. Before, the reload checked the screen before the
+  venue's settings had loaded.
+- Settings screens that only an admin can change now say so. Role Permissions
+  and Tax open view-only. Venue and Screen Builder show an "admin only" notice.
+  On Staff, adding, editing and removing staff are marked "Admin only", while
+  showing and revoking QR badges still work for managers. Print relay setup and
+  station failover are marked "Admin only"; the failover label used to say
+  "manager only".
+- Bulgarian compliance and payroll exports, the filing deadline list, and
+  reprints from Receipts now send the signed-in session. Before, they were
+  refused for everyone, and the reprint and deadlines failed without a message.
+
 ### POS Managers channel privacy
 
 - Other staff can no longer read Managers channel messages directly from the
