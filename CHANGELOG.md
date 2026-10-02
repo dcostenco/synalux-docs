@@ -97,6 +97,54 @@
 - Settings shows names for HR & Payroll, Accounting and Form Builder instead
   of raw text keys.
 
+### POS actions that needed a manager now ask for one
+
+- Any staff member signed in with their PIN can take a gift card as payment and
+  pay one part of a split check. Before, cashiers (and, for gift cards, hosts)
+  could open these payments and were refused partway through.
+- Voiding an order, voiding or refunding a payment from the register's Payments
+  panel, adding a tip, and opening or closing a bar tab still need the same role
+  as before. Below that role, the screen now asks a manager for their PIN and
+  completes the action with the manager's approval. Before, the register asked
+  for the PIN before a void and then refused the void anyway, and the other
+  actions were refused with no way for a manager to approve.
+- Void on the Bar Tabs and Refunds screens asks for a manager too. On Refunds a
+  refused void used to show nothing.
+- A discount a manager approves is now saved with the order. Before, a cashier
+  was asked for a manager's PIN at the discount button, and the order was then
+  refused when it was sent. A server's item discount over 20% was refused the
+  same way, without a prompt. If the approval from the discount button has run
+  out by the time the order is sent, the register asks the manager again.
+- If a manager's approval runs out before the action is finished, the screen
+  asks for the PIN again instead of showing an error.
+- The manager PIN prompt appears on top of the window that asked for it, and
+  cancelling it no longer closes the screen behind it.
+- The register's Open Tabs list shows open bar tabs again. It had been empty
+  since June, so tabs could only be closed from the Bar Tabs screen, and a
+  failed Close Tab on the register now says why.
+
+### POS discounts and coupons stay on the check
+
+- A discount added to a check that was already sent to the kitchen is now saved
+  on the check. Before, it showed on the register only: Pay charged the lower
+  total, and the check then could not be closed. Check and item discounts,
+  coupons, and removing a discount are saved when tapped, and the register shows
+  the amount the check holds.
+- A check discount over 20% of the check now needs a manager, as an item
+  discount over 20% of the item already did.
+- Once a payment is taken or in progress on a check, its discounts can no longer
+  change. The register says so instead of changing the total. A card hold for an
+  open bar tab does not count, so discounts such as happy hour still apply to a
+  tab until it is closed.
+- Coupon codes are checked when entered. A use is counted when the coupon is
+  saved on a check, and voiding the check gives the use back.
+- Offline, staff can add preset discounts within their own role. Coupons,
+  custom amounts, and discounts that need a manager wait for the connection. An
+  order saved offline with a discount that needs a manager now waits for a
+  manager instead of being retried until it expires.
+- Pay checks the check's total first. If the register shows less than the check
+  holds, it reloads the check so the right amount is charged.
+
 ### Prism skill routing
 
 - Fewer skills loaded that a prompt does not need. `data-before-code` no longer
