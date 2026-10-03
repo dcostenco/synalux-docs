@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+### Prism AAC sign-in
+
+- Prism AAC now stays signed in until you sign out, instead of asking you to
+  sign in again every 8 hours. A device left unused for more than 400 days
+  asks again. Clinical pages in Synalux still ask you to sign in again after
+  8 hours.
+- With Sign in with Apple, Prism AAC also signs out when Apple ends the app's
+  access to that Apple ID, for example when you stop using Sign in with Apple
+  for the app. Prism AAC asks Apple about this at most once a day.
+- Sign out in Prism AAC signs that device out right away.
+
 ### POS staff sessions
 
 - When a staff member's sign-in runs out during a long shift, the register goes
