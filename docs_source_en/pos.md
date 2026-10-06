@@ -51,6 +51,19 @@ See the [detailed Register workflow](#register) for setup, menu tools, order con
 
 ---
 
+## Ordering channels and back office
+
+| Workflow | Start here | Before using it at your venue |
+|---|---|---|
+| Online and QR-table ordering | [Online Ordering & QR Table](#online-ordering--qr-table) | Confirm hours, menu, fulfillment, payment, and order confirmation |
+| Phone ordering | [AI Voice Ordering (Phone)](#ai-voice-ordering-phone) | Confirm the venue number, language support, opening hours, and human fallback |
+| WhatsApp ordering | [WhatsApp Ordering](#whatsapp-ordering) | Connect the approved business sender and test confirmation and kitchen delivery |
+| Staff time and payroll preparation | [HR & Timesheets](#hr--timesheets) | Review hours, rates, drafts, and exports before approving payroll |
+| Banking, GL, and financial reporting | [Accounting & Ledger](#accounting--ledger) and [Back Office Suite](#back-office-suite) | Connect the authorized banking account and reconcile the intended period |
+| Sales and operational reporting | [Reports](#reports) | Confirm venue, date range, filters, and the source orders behind totals |
+
+The software workflows share venue data. Connected services still require the appropriate authorized account and setup; confirm commercial terms, hardware, and provider charges separately. Payroll preparation and exports are distinct from completed wage payments and tax filings.
+
 ## Try the demo
 
 **For customers (no login needed):**
@@ -59,7 +72,7 @@ See the [detailed Register workflow](#register) for setup, menu tools, order con
 |---|---|
 | **Order Online (US)** | [pos.synalux.ai/pos/order](https://pos.synalux.ai/pos/order?v=00000000-0000-0000-0000-000000000100) |
 | **Order Online (EU)** | [pos-eu.synalux.ai/pos/order](https://pos-eu.synalux.ai/pos/order?v=b6000000-0000-0000-0000-000000000002) |
-| **Order by Phone (AI)** | Call **+1 (256) 787-0815** — say "switch to Spanish," or begin in one of the Nova-3 auto-detection languages documented below |
+| **Order by Phone (AI)** | Call [+1 (256) 787-0815](tel:+12567870815) — say "switch to Spanish," or begin in one of the Nova-3 auto-detection languages documented below |
 | **Order via WhatsApp** | [<img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat" alt="WhatsApp">](https://wa.me/14155238886?text=join%20bat-come) — tap to join, then text your order |
 
 **For staff — POS login:**
@@ -84,7 +97,7 @@ Then enter a staff PIN:
 
 The public demo is pre-populated and does not require setup commands. The credentials and PINs above are intentionally public demo access; create unique accounts, PINs, and role assignments for a production venue.
 
-> **Screenshot policy:** The POS guide was re-swept against the US production demo on **August 22, 2026**. Every workflow image in this page is now a current production capture; responsive examples identify their device size in the surrounding text. Screenshots show configured data when the demo has it and may show an intentional empty state when that state explains the workflow. No screenshot with a visible error state is used. Network addresses, contact values, processor identifiers, and free-form receipt text are masked in the browser before capture; that masking does not change saved production data.
+> **Screenshot policy:** The POS guide was re-swept against the US production demo on **August 22, 2026**. Workflow images identify the production demo capture used for the illustrated state; responsive examples identify their device size in the surrounding text. Screenshots show configured data when the demo has it and may show an intentional empty state when that state explains the workflow. No screenshot with a visible error state is used. Network addresses, contact values, processor identifiers, and free-form receipt text are masked in the browser before capture; that masking does not change saved production data.
 
 ---
 
@@ -567,6 +580,31 @@ Empty review queues and the pre-selection Receipts state are intentionally not u
 ---
 
 <a name="staff--labor"></a>
+
+### Backup Processor Failover
+
+If your primary card processor has an outage, an **admin** can switch an individual station to a pre-configured backup processor so the floor keeps taking cards.
+
+**Before you need it (one-time setup):**
+
+1. Configure the backup processor's credentials in **Settings → Integrations** — credentials save independently of which processor is active
+2. For a Stripe backup, complete Stripe onboarding when invited — the switch refuses to activate until the Stripe account can actually charge
+
+**During an outage:**
+
+1. An admin opens **Settings → Stations**, edits the affected station, and uses **Payment Processor — continuity failover**: pick the backup processor, enter a reason, tap **Activate failover**
+2. The register shows an amber banner — *"⚡ Station is on STRIPE failover"* — and its card payments route to the backup processor. Other stations stay on the primary
+3. When the primary recovers, an admin taps **Fail back** on the banner or in station settings
+
+Good to know:
+
+- Both switching over **and** switching back require an admin — a cashier tapping the banner can't accidentally fail back while the primary is still down
+- Every activation and failback is recorded in the audit log with who, when, and why
+- Refunds always go back through the processor that took the original payment, even after switching
+- Payments taken on the backup settle to your bank on the backup processor's own schedule — expect a separate deposit line for those days
+- Failover protects against a processor outage. It does not help if the venue loses all internet connectivity
+
+---
 
 ### Staff & Labor
 
