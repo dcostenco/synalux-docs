@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Prism Factory pipeline lists
+
+- Paid cloud accounts can read their own Factory pipeline lists through the
+  authenticated Portal API, with exact project/status filters and clear failures
+  for unavailable or incomplete data. This slice covers lists; cloud pipeline
+  creation, controls, and execution require separate validation.
+
 ### Prism AAC sign-in
 
 - Prism AAC now stays signed in until you sign out, instead of asking you to
