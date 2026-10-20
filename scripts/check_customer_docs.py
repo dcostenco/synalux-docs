@@ -65,6 +65,9 @@ def scan_customer_doc(root: Path, path: Path, policy: dict) -> list[Finding]:
 
     for rule in policy["forbidden_patterns"]:
         for match in re.finditer(rule["pattern"], text):
+            approved = rule.get("approved_matches", {}).get(path.relative_to(root).as_posix(), [])
+            if match.group(0) in approved:
+                continue
             findings.append(
                 Finding(path, line_number(text, match.start()), f"{rule['name']}: {rule['help']}")
             )

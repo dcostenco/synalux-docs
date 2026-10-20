@@ -3,14 +3,32 @@
 Prism AAC is an augmentative and alternative communication workspace for people who communicate with pictograms, phrase boards, typing, speech output, or alternative input methods.
 
 - [Open the web app](https://synalux.ai/prism-aac)
-- [View current plans](https://synalux.ai/pricing)
 - [View the open-source project](https://github.com/dcostenco/prism-aac)
+
+## Individual cloud plan and limits
+
+Prism AAC has **one optional individual cloud plan, about US$5/month**. The current US offer is **US$4.99/month**; the app or checkout shows the exact local price and any applicable taxes. This is the Prism AAC Cloud subscription, separate from Synalux practice-management plans.
+
+| Included cloud use | Limit per account |
+|---|---|
+| Newly generated natural-voice speech | 50,000 text characters per calendar month |
+| Cloud AI | 100 requests per calendar month, shared across cloud AI features |
+| One cloud AI request | Up to 16 KiB of request data, including conversation context |
+| One cloud AI response | Up to 800 output tokens; response length varies by language |
+
+The monthly allowances reset on the **first day of each month at 00:00 UTC**, independently of the subscription renewal date. Unused allowance does not carry over. The subscription renews monthly until cancelled.
+
+Playing a voice clip already saved on the device and using available device voices do not spend the cloud speech allowance. Generating a new cloud voice clip counts the text again. Very long AI conversations may need a shorter message or a new chat to fit the request limit.
+
+There are **no automatic overage charges**. When an allowance is exhausted, the affected cloud service pauses until the next reset. Core boards, typing, saved phrases, cached speech, and available device speech remain available without a cloud subscription. Keep the needed vocabulary and device voices available before going offline.
+
+To review, purchase, restore, or manage a subscription, sign in and open **Settings → Synalux Account**. Apple purchases are managed through Apple subscription settings; web purchases use the app's **Manage subscription** action. Cancel through the provider used for the purchase. An account with included or beta cloud access may show a different access status.
 
 ## Video overview for BCBAs and caregivers
 
 [Watch the Prism AAC overview on YouTube](https://www.youtube.com/watch?v=E6yL0QgmmMk) — 3 minutes 25 seconds, with English narration and captions. The video introduces communication boards, personalization, access options, everyday routines, and caregiver tools using the production app in Safari.
 
-The controls available on a device can vary by browser, operating system, permissions, account, installed modules, and plan.
+The controls available on a device can vary by browser, operating system, permissions, account, installed modules, and cloud availability. Support the person's own requests, refusals, preferences, and social communication; keep communication available throughout the day.
 
 ## Communication board at a glance
 
@@ -52,6 +70,12 @@ The keyboard supports direct typing alongside the pictogram board. Prediction ti
 
 The toolbar exposes separate input and output languages where translation is available. Confirm both language buttons before speaking a translated message. Translation, assisted correction, and some prediction paths may require an account, a configured model, or a network connection; the keyboard and stored board remain the fallback communication path.
 
+## AI assistance and device differences
+
+AI Chat, assisted text correction, and supported contextual suggestions offer options for the person to review and choose. They do not decide what the person intends to say. Review generated text before speaking it or using it for instruction.
+
+The Safari demonstration uses **cloud AI**. Supported native iPad and iPhone apps can offer on-device AI after the required model is available. A browser cannot be assumed to connect to a local model or provide the same offline AI features. Camera-based suggestions require permission and device support; keep a reliable alternative input method available.
+
 ## Math workspace
 
 Select **Math** to open the graph-paper workspace.
@@ -79,6 +103,10 @@ The toolbar can open:
 - **History** for previously spoken or composed communication.
 
 These modules use the active device and account state. A message shown as composed is not proof it was delivered; verify the module’s sent or error state.
+
+Caregiver Notes can help record instructions and personalization. Review any AI-parsed suggestion before confirming a change. Usage insights describe app activity; they do not establish clinical progress or replace direct assessment and individualized data collection.
+
+Bedside mode provides larger controls and quick phrases for expressing discomfort or requesting assistance. Connected alerts require their own contact setup and connectivity.
 
 ## Games, marketplace, and reading tools
 
@@ -147,6 +175,8 @@ Use a caregiver PIN when settings should not be changed accidentally. Keep a rec
 Prism AAC caches parts of the application for supported installed-browser use. After the app and needed vocabulary have loaded successfully, core typing, stored boards, and device speech may remain available without a connection.
 
 Network-dependent features—including synchronization, cloud-assisted tools, marketplace refreshes, and message delivery—cannot be assumed to work offline.
+
+Queued alerts have not been delivered while the device is offline. Use the person's established backup communication and emergency procedures rather than waiting for connectivity.
 
 Before relying on offline use:
 
