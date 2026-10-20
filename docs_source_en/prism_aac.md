@@ -118,7 +118,7 @@ An in-app alert is not a replacement for an emergency call system. If no caregiv
 
 ## Settings
 
-![Current Prism AAC Settings with category visibility, grid size, theme, and voice controls](../docs/demo/prism_aac_settings.png)
+![Current Prism AAC Settings with grid size, theme, and expandable configuration sections](../docs/demo/prism_aac_settings.png)
 
 Settings are organized into collapsible sections so the communication board remains uncluttered. Current sections can include:
 
