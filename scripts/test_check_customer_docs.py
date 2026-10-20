@@ -117,6 +117,27 @@ class CustomerDocsGateTests(unittest.TestCase):
         plan_findings = [item for item in findings if "fixed plan entitlement" in item.message]
         self.assertEqual(3, len(plan_findings))
 
+    def test_only_approved_aac_monthly_prices_pass(self):
+        self.use_repository_forbidden_patterns()
+        path = self.root / "docs_source_en/prism_aac.md"
+        path.write_text("# Prism AAC\nAbout US$5/month; current US offer US$4.99/month.\n", encoding="utf-8")
+        self.assertEqual([], MODULE.run(self.root))
+        path.write_text("# Prism AAC\nUS$99/month.\n", encoding="utf-8")
+        self.assertTrue(any("fixed monthly price snapshot" in item.message for item in MODULE.run(self.root)))
+
+    def test_aac_price_exception_does_not_apply_to_other_pages(self):
+        self.use_repository_forbidden_patterns()
+        path = self.root / "docs_source_en/guide.md"
+        path.write_text("# Guide\nUS$5/month and US$4.99/month.\n", encoding="utf-8")
+        findings = [item for item in MODULE.run(self.root) if "fixed monthly price snapshot" in item.message]
+        self.assertEqual(2, len(findings))
+
+    def test_aac_price_exception_preserves_other_rules(self):
+        self.use_repository_forbidden_patterns()
+        path = self.root / "docs_source_en/prism_aac.md"
+        path.write_text("# Prism AAC\nUS$5/month.\nPOST /api/internal\n", encoding="utf-8")
+        self.assertTrue(any("raw API endpoint" in item.message for item in MODULE.run(self.root)))
+
     def test_time_sensitive_provider_price_and_revenue_claims_fail(self):
         self.use_repository_forbidden_patterns()
         path = self.root / "docs_source_en/guide.md"

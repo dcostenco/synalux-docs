@@ -80,7 +80,11 @@
     },
     {
       "name": "fixed monthly price snapshot",
-      "pattern": "(?i)(?:[$€£]\\s?\\d[\\d., ]*(?:\\+)?\\s*/\\s*(?:mo|month|mes|mois|m[eê]s|lun[aă]|місяц|месяц|月|개월|شهر))",
+      "pattern": "(?i)(?:[$€£]\\s?\\d[\\d., ]*(?:\\+)?\\s*/\\s*(?:month|mo|mes|mois|m[eê]s|lun[aă]|місяц|месяц|月|개월|شهر))(?!\\w)",
+      "approved_matches": {
+        "docs_source_en/prism_aac.md": ["$5/month", "$4.99/month"]
+      },
+      "approval_note": "Product owner requested explicit individual AAC pricing on 2026-10-20; the guide distinguishes the rounded price from the verified exact US offer.",
       "help": "Monthly prices become stale; link customers to current pricing instead."
     },
     {
