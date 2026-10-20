@@ -6,6 +6,10 @@ Prism AAC is an augmentative and alternative communication workspace for people 
 - [View current plans](https://synalux.ai/pricing)
 - [View the open-source project](https://github.com/dcostenco/prism-aac)
 
+## Video overview for BCBAs and caregivers
+
+[Watch the Prism AAC overview on YouTube](https://www.youtube.com/watch?v=E6yL0QgmmMk) — 3 minutes 25 seconds, with English narration and captions. The video introduces communication boards, personalization, access options, everyday routines, and caregiver tools using the production app in Safari.
+
 The controls available on a device can vary by browser, operating system, permissions, account, installed modules, and plan.
 
 ## Communication board at a glance
