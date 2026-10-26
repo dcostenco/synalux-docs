@@ -1,6 +1,6 @@
 # PrismCoach user guide
 
-> **Release preview — October 20, 2026.** These screenshots show the unreleased 1.2.9 (86) iPhone candidate in the iOS 26.5 simulator with demonstration data. The App Store version may differ. This guide does not announce release availability. The iPhone candidate requires iOS 18 or later.
+> **Development preview — updated October 26, 2026.** Actual app captures from October 25–26 show the unreleased interface in the simulator with demonstration data. Devices shown use iOS 18.5 or 26.5. The App Store version may differ. This guide does not announce release availability. The iPhone candidate requires iOS 18 or later.
 
 PrismCoach is a strength, recovery, workout, and nutrition companion for iPhone and iPad, with an optional Apple Watch app. It brings readiness information, muscle status, training programs, meal logging, and AI-assisted coaching into one app.
 
@@ -28,8 +28,6 @@ The **Home** tab summarizes the information that is most useful before a workout
 
 If Apple Health is not connected or does not contain enough applicable data, PrismCoach displays an unavailable state instead of inventing a readiness score.
 
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/home.png" width="300" alt="Home with the primary workout action and available readiness information">
-
 ## Muscle status and body map
 
 Use **Muscles** to review or change the status of body areas before selecting a workout.
@@ -41,8 +39,6 @@ Use **Muscles** to review or change the status of body areas before selecting a 
 5. Use **Create my session** to carry that context into planning. Clearing training focus keeps pain limitations recorded; use the explicit pain-resolution action only when appropriate.
 
 Treat a pain or limitation selection as planning context only. It is not a diagnosis and does not determine whether an exercise is medically safe.
-
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/muscles.png" width="300" alt="Muscles body map and current body-area context">
 
 ## Training programs and workouts
 
@@ -56,29 +52,37 @@ The **Programs** tab lists available templates and program-building tools.
 
 The templates and availability shown in the app are the current source of truth; they can change as the catalog and plan offerings evolve.
 
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/programs.png" width="300" alt="Programs with available plans and workout planning controls">
+When a draft needs attention, **Review Program Issues** opens the next flagged reason with an action to address it. Expand the review-item list when you need to see all flagged items. Confirm the goal, schedule, equipment and recorded limitations before generating a revision; do not change an equipment answer to something you do not have.
 
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/planning-pain.png" width="300" alt="Workout planner retaining Left Quads pain with schedule and equipment controls">
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/request-review-bodyweight.png" width="280" alt="Bodyweight request review with a confirmed schedule and Confirm and Generate">
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/program-preview-strength.png" width="280" alt="Reviewed whole-body Strength program with Left Shins pain still recorded and a Start action">
 
-*This example keeps the recorded pain visible while the user reviews the goal, schedule and equipment. It does not recommend training the painful area.*
+*These are separate examples: a Bodyweight request review, and a different program with Bodyweight and Dumbbell equipment that keeps Left Shins pain visible. Neither recommends training a painful area.*
 
 ## Exercise guide and illustrated steps
 
-After starting a reviewed program, the active-workout screen keeps the current exercise, prescribed sets and repetitions, **Log set**, and **How to perform this exercise** together.
+After starting a reviewed program, the active-workout screen shows the current exercise, prescribed sets and repetitions, and **Log set**. **Details** expands the compact card to reach the illustrated guide.
 
 1. Select **Exercise guide** to see the available movement preview and equipment.
-2. Use **Play preview** or **Pause preview** to control playback. These controls do not advance or record a set.
-3. Read **Main muscles** and, where present, **Supporting muscles**. The motion preview uses green for main muscles and blue for supporting muscles; the separate anatomical map uses its own labelled legend. Highlights illustrate intended roles, not measured activation or recovery.
-4. Open **How to perform this exercise** for illustrated instructions. Each authored step has its matching picture. Use **Next step**, **Previous step**, or **Back to setup** without waiting for automatic page changes.
-5. Tap **Done** to return, then **Log set** when you have completed the actual set.
+2. Use the play/pause control to choose when the preview moves. With **Reduce Motion** enabled, it starts with still pictures; **Play preview** remains available when you choose to see the movement. Preview controls do not advance or record a set.
+3. Read the muscle-role legend. The motion preview uses green for main muscles and blue for supporting muscles; the separate anatomical map uses its own labelled legend. Highlights illustrate intended roles, not measured activation or recovery.
+4. On the compact card, open **Details**, then **How to perform this exercise** for illustrated instructions. In other layouts, the instruction link is already visible. Each authored step has its matching picture. Use **Next step**, **Previous step**, or **Back to setup** without waiting for automatic page changes.
+5. Tap **Done** to return, then **Log set** when you have completed the actual set. Enter what you performed using the on-screen number controls and choose **Log performed set**. **Complete without details** counts the set without inventing reps, weight or effort.
 
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/workout-incline.png" width="280" alt="Incline Dumbbell Press preview with bench, dumbbells, roles, setup and Log set">
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/guide-incline-setup.png" width="280" alt="Illustrated setup instruction for Incline Dumbbell Press">
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/guide-incline-move.png" width="280" alt="Illustrated movement instruction for Incline Dumbbell Press">
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/workout-push-up.png" width="280" alt="Current Push-Up demonstration, muscle roles and compact set controls">
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/guide-overhead-setup.png" width="280" alt="Overhead Press setup step with its full illustration and written instruction">
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/guide-overhead-roles.png" width="280" alt="Overhead Press guide scrolled to the complete illustration, muscle labels and anatomy-reference explanation">
 
-**Muscle map** is a separate anatomical reference; it is not the technique demonstration. Some regions are hidden naturally by the viewing angle or equipment. Demonstration availability depends on the exercise.
+**Muscle map** is a separate anatomical reference; it is not the technique demonstration. Some regions are hidden naturally by the viewing angle or equipment. A guide may include an anatomy inset or a note directing you to the map. Follow the larger figure for the movement. On a smaller screen or with larger text, scroll to read the remaining explanation. Demonstration availability depends on the exercise.
 
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/workout-muscle-map.png" width="300" alt="Separate anatomical muscle map with main and supporting muscle labels">
+<details>
+  <summary>See an equipment movement example</summary>
+  <p><img src="../docs/screenshots/prismcoach-workout-preview-20261026/overhead-press-preview.gif" width="280" alt="The app's Overhead Press media showing a barbell press and controlled return with a shoulder reference"></p>
+</details>
+
+*The movement example uses the app's demonstration media; the screenshots are actual app captures.*
+
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/log-actual-set.png" width="280" alt="Actual-set entry using plus and minus controls for repetitions and effort without an open keyboard">
 
 ## Nutrition
 
@@ -91,8 +95,6 @@ Use **Nutrition** to record meals and compare the day with the targets shown in 
 5. Remove an incorrect entry from the meal list and add the corrected information.
 
 Calorie and macro targets are estimates. Individual needs vary; consult a registered dietitian or another qualified professional for personalized nutrition advice.
-
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/nutrition.png" width="300" alt="Nutrition meal logging and daily summary">
 
 ## AI Coach
 
@@ -108,7 +110,7 @@ AI responses can be incomplete or wrong. Do not use AI Coach for diagnosis, emer
 
 Free users can explore coaching with recurring AI and scan allowances. Pro offers higher cloud allowances and additional access. Open the allowance details in the app to check the current limit and renewal state; this guide does not promise a fixed quota or response time.
 
-<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/coach.png" width="300" alt="Friendly AI Coach entry with workout planning and suggested questions">
+<img src="../docs/screenshots/prismcoach-workout-preview-20261026/coach-ready-program.png" width="300" alt="AI Coach conversation with a ready program and visible Start and View program actions">
 
 ## Optional camera tools
 
@@ -152,7 +154,7 @@ Check the allowance details for renewal information. Free access renews automati
 
 ### A program says review is required
 
-Open **Review Program** and read the flagged goal, focus, pain, equipment or movement-position issue. Check the specific explanation before changing the plan. Do not clear a real pain limitation just to make a program start.
+Open **Review Program Issues** and read the flagged goal, focus, pain, equipment or movement-position issue. Check the specific explanation before changing the plan. Do not clear a real pain limitation just to make a program start.
 
 ### An equipment scan fails
 
