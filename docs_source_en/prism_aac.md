@@ -6,6 +6,16 @@ Prism AAC is an augmentative and alternative communication workspace for people 
 - [View current plans](https://synalux.ai/pricing)
 - [View the open-source project](https://github.com/dcostenco/prism-aac)
 
+## Plans are changing
+
+The next app update, version 1.9.4, makes Prism AAC a subscription app, with a 2-week free trial for new subscribers. The change starts 14 days after the update is released. When you are signed in, the app shows you the date in advance. Until then, everything works as it does today. [View current plans](https://synalux.ai/pricing).
+
+- Emergency communication, crisis phrases and bedside cards always stay free, with or without a subscription.
+- Subscribe in the iPhone or iPad app with your Apple Account, or in the web app. The subscription is linked to your free Synalux account, so it works on iPhone, iPad and the web when you sign in with the same account.
+- If a subscription ends, your saved boards and phrases are not deleted.
+- New in 1.9.4: "Sign in with Google" in the iPhone and iPad app, next to "Sign in with Apple".
+- Manage or cancel the subscription in your Apple Account settings. You can delete your Synalux account at any time in **Settings → Synalux Account → Delete account**.
+
 ## Video overview for BCBAs and caregivers
 
 [Watch the Prism AAC overview on YouTube](https://www.youtube.com/watch?v=E6yL0QgmmMk) — 3 minutes 25 seconds, with English narration and captions. The video introduces communication boards, personalization, access options, everyday routines, and caregiver tools using the production app in Safari.
