@@ -252,6 +252,18 @@ When you are signed in, Prism AAC checks regularly for new messages from your co
 - When you are signed in, **Save & Parse** reads the note and suggests changes to the board. You confirm before anything changes: select **Apply** on the note in the **Log**. Without sign-in, **Save Note** just saves it.
 - The **Log** lists saved notes with the author and time. You can apply, or delete, each one.
 
+### Insights for caregivers
+
+The **📊 Insights** tab in **Caregiver Notes** summarizes how the app is being used on this device. The numbers are collected on the device every few minutes and kept for a week. The Insights numbers themselves are not uploaded.
+
+- **Prediction Effectiveness:** how often a word was picked from the predictions rather than typed to the end, over the last day.
+- **Vocabulary Adoption** and **Communication Topics:** new and active phrases, and which categories are used most.
+- **Motor Trend** and **Tracking Reliability:** dwell time measured by **Camera Finger Tracking** (not by head tracking), and drift and uptime while the head-tracking camera is running. Each card stays empty until there is something it measured.
+- **Voice Reliability:** how often speech played, and how often a fallback voice was needed.
+- **Correction Burden:** corrections recorded from caregiver notes.
+
+For about the first ten minutes the cards have no data. After that, Motor Trend stays empty until Camera Finger Tracking has been used for a few selections, and Tracking Reliability until the head-tracking camera has run; the other cards can show zero.
+
 ## Games, marketplace, and reading tools
 
 Depending on the current configuration, toolbar modules can include:
@@ -337,8 +349,10 @@ Without translation, the extension makes no network calls itself, and your brows
 Open **Settings → Accessibility & Input Modes** to review the controls available on the device. The current application includes configuration for:
 
 - direct touch;
+- switch scanning;
 - head tracking and dwell selection;
 - an Eye / Gaze tracking option within the head-tracking controls;
+- gestures (blink, smile, head nod and others) assigned to actions;
 - high contrast;
 - spoken feedback for selections and finished sentences;
 - AI Autocorrect.
@@ -353,12 +367,35 @@ Camera-based controls require explicit camera permission. Tracking accuracy vari
 - **High Contrast** is in **Settings → Accessibility & Input Modes**. The app also follows the device's "increase contrast" setting.
 - You can pinch to zoom the screen.
 
+### Switch scanning
+
+Switch scanning is for someone who uses one switch instead of touching the screen. A highlight moves over the buttons, and a press selects the highlighted one.
+
+- Turn on **Enable Switch Scanning** in **Settings → Accessibility & Input Modes**. Use a keyboard key, or a switch that works like a keyboard key. A gamepad, or a switch that works like a gamepad button, can select but cannot move the highlight.
+- **Space** or **Enter** selects. **Tab** moves to the next item, and **Shift+Tab** to the previous one.
+- **Mode:** **Auto (timed)** moves the highlight by itself at the **Scan speed** you set, from 1 to 5 seconds. **Manual (step)** moves it only when **Tab** is pressed, so it needs a switch that sends keyboard keys.
+- **Group scanning** (on at first) highlights a row first, then the buttons in the row you choose. After each choice the highlight goes back to the rows. **Escape** also goes back to the rows.
+- Scanning keeps running after Settings is closed, and starts again by itself when the app is opened.
+- After three passes with no choice, the highlight stops and scanning rests. The next press starts it again; that press does not select anything.
+- While scanning is on, **Space**, **Enter** and **Tab** belong to the scanner, including in text boxes.
+
 ### Head tracking and dwell
 
 - Turn on **Enable Head Tracking** to move a cursor by moving your head. It uses the camera. Holding the cursor over a button selects it.
 - **Dwell Time** sets how long to hold. **Sensitivity** sets how far the cursor moves.
 - The **Head Tracking (advanced)** area adds **Eye / Gaze tracking** (and a camera picker when the device has more than one camera), where the eyes move the cursor instead of head rotation.
 - If the cursor drifts, tracking pauses and a message explains. It can resume on its own when your face is steady again.
+
+### Gestures
+
+With head tracking on, the camera can also recognize gestures and run an action for each one.
+
+- In **Settings → Accessibility & Input Modes**, expand **Gesture Recognition** and turn on **Enable Gestures**. The basic mode needs no training. Built-in gestures include an intentional blink, mouth open, smile, pucker, head nod, head shake and eyebrow raise.
+- Under **Assign gestures to actions**, choose an action for each gesture: **Speak message**, **Backspace**, **Clear message**, **Say "Yes"**, **Say "No"**, **Say "Help"**, **Open Categories**, **Open Settings**, **Emergency Alert** or **Open AI Chat**.
+- **Say "Yes"**, **Say "No"** and **Say "Help"** speak the word at once in the output language, when sound is on.
+- **Emergency Alert** opens the same confirmation as the Alert button; nothing is sent until someone confirms.
+- **Confidence threshold** and **Cooldown** help avoid gestures that were not meant.
+- If head tracking drifts twice within five minutes, the app switches to a safer mode: the cursor moves less, dwell takes twice as long, and gestures are off. The tracking status shows **SAFE MODE**. To leave it, turn **Enable Head Tracking** back on (or choose **Try again** on the drift message), then choose **Exit safe mode** in the **Reliability** section of the **Head Tracking (advanced)** area in **Settings → Accessibility & Input Modes**. **Try again** on the drift message resumes tracking but keeps safe mode, so an unsteady setup stays in the gentler mode.
 
 ### Camera finger tracking
 
@@ -376,7 +413,7 @@ Camera-based controls require explicit camera permission. Tracking accuracy vari
 
 ### Emergency stop
 
-Press Escape three times quickly, or hold five fingers on the screen for two seconds. This stops all speech at once, and the screen flashes green.
+Press Escape three times quickly, or hold five fingers on the screen for two seconds. This stops all speech at once, pauses switch scanning until the next switch press, and the screen flashes green.
 
 ## Emergency alert
 
@@ -393,7 +430,7 @@ Prism AAC also watches for emergency wording when someone presses **Speak** on t
 - A loud alarm sounds, the screen flashes, and a countdown screen appears. It shows **EMERGENCY**, **URGENT** or **MEDICAL**, the phrase, and a number counting down.
 - At the end of the countdown the app tries to alert the caregivers set up in **Settings → Contacts**. You see **Sending alert to caregivers…**, then **Alert sent**, or **Alert not sent** with the reason. Select **Done**.
 - In the iPhone and iPad app, it also opens a text message to each caregiver who has a phone number and starts a phone call to the first one. In a web browser it tries the same, but the browser may block it, so those attempts do not count as sent.
-- **Cancel** is on the countdown screen. If a caregiver PIN is set, cancelling an urgent or medical alert asks for the PIN.
+- **Cancel** is on the countdown screen. If a caregiver PIN is set, **Cancel** asks for it, so someone else nearby cannot stop the alert.
 - If no emergency contact is set up, the screen says "No one was called". The app does not call emergency services by itself. If the person is in danger, call emergency services.
 
 Set up at least one caregiver contact before relying on these alerts.
@@ -469,7 +506,7 @@ Repeat this check after browser storage is cleared, the app is updated, or the d
 - AI-assisted text, recognition results, translations, and tutoring require human review.
 - Do not use the application as the sole route for urgent medical or safety communication.
 - Caregivers and clinicians remain responsible for vocabulary selection, access-method fit, consent, and backup communication.
-- Bedside cards, Comfort Player media, saved speech and your boards are saved on your device.
+- Bedside cards, Comfort Player media, saved speech, your boards and the Insights numbers are saved on your device.
 - Vision Context checks camera images on the device and does not save them.
 - If you turn on translation in the Chrome extension, the text you speak is sent to a public translation service. Leave it off to keep the extension offline.
 

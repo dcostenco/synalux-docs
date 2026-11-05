@@ -27,7 +27,7 @@ Select **Categories** for core words, quick talk, help and needs, feelings, ques
 
 ## Access that fits the communicator
 
-Open **Settings → Accessibility & Input Modes** to set up head tracking with dwell selection, camera finger tracking, high contrast and spoken feedback. Camera-based controls ask for camera permission first. Calibrate with the communicator, and keep a reliable touch backup.
+Open **Settings → Accessibility & Input Modes** to set up switch scanning, head tracking with dwell selection, gestures, camera finger tracking, high contrast and spoken feedback. Camera-based controls ask for camera permission first. Calibrate with the communicator, and keep a reliable touch backup.
 
 ## More in the app
 
