@@ -2,6 +2,37 @@
 
 ## [Unreleased]
 
+### Inventory and fixed assets
+
+- Each fixed asset's monthly depreciation in Inventory now matches what the
+  monthly accrual posts: salvage value is subtracted, declining balance uses
+  the value not yet depreciated, and depreciation stops at salvage value.
+  Before, an asset's row could show a different amount than the Monthly
+  Depreciation card.
+- Fixed Assets (NBV) now shows net book value, cost less depreciation so far,
+  instead of cost.
+- Fixed assets are no longer counted as stock items, in low-stock alerts, or
+  in Smart Reorder.
+
+### Workspace administration
+
+- Someone made a workspace admin through a role assignment can now use the
+  workspace's admin settings.
+- Screen layouts follow the workspace open in each browser tab.
+- E-signature asks you to try again when it cannot confirm your workspace
+  membership, instead of failing.
+
+### Account deletion
+
+- Deleting an account now also removes its role assignments, so a deleted
+  account keeps no workspace access. Role assignments left by earlier
+  deletions were removed.
+- The audit record of a deletion lists the workspace access it removes.
+- Deleting your account is never refused because you are a workspace's only
+  admin, and no one is made admin automatically. The workspace is named in
+  the audit record, so Synalux support can assign a new admin after
+  confirming with the business.
+
 ### Prism Factory pipeline lists
 
 - Paid cloud accounts can read their own Factory pipeline lists through the
