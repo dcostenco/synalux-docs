@@ -258,11 +258,11 @@ The **📊 Insights** tab in **Caregiver Notes** summarizes how the app is being
 
 - **Prediction Effectiveness:** how often a word was picked from the predictions rather than typed to the end, over the last day.
 - **Vocabulary Adoption** and **Communication Topics:** new and active phrases, and which categories are used most.
-- **Motor Trend** and **Tracking Reliability:** dwell time measured by **Camera Finger Tracking** (not by head tracking), and head-tracking drift and uptime. Without Camera Finger Tracking, and for its first few selections, Motor Trend shows a default dwell time; without head tracking, Tracking Reliability shows no drift. These are not measurements.
+- **Motor Trend** and **Tracking Reliability:** dwell time measured by **Camera Finger Tracking** (not by head tracking), and drift and uptime while the head-tracking camera is running. Each card stays empty until there is something it measured.
 - **Voice Reliability:** how often speech played, and how often a fallback voice was needed.
 - **Correction Burden:** corrections recorded from caregiver notes.
 
-For about the first ten minutes the cards have no data. After that, a card for something that is not in use shows zero or a default value, or stays empty, rather than a real measurement.
+For about the first ten minutes the cards have no data. After that, Motor Trend stays empty until Camera Finger Tracking has been used for a few selections, and Tracking Reliability until the head-tracking camera has run; the other cards can show zero.
 
 ## Games, marketplace, and reading tools
 
@@ -373,7 +373,7 @@ Switch scanning is for someone who uses one switch instead of touching the scree
 
 - Turn on **Enable Switch Scanning** in **Settings → Accessibility & Input Modes**. Use a keyboard key, or a switch that works like a keyboard key. A gamepad, or a switch that works like a gamepad button, can select but cannot move the highlight.
 - **Space** or **Enter** selects. **Tab** moves to the next item, and **Shift+Tab** to the previous one.
-- **Mode:** **Auto (timed)** moves the highlight by itself at the **Scan speed** you set. The slider shows a wider range, but the speed used is always between 1 and 5 seconds. **Manual (step)** moves it only when **Tab** is pressed, so it needs a switch that sends keyboard keys.
+- **Mode:** **Auto (timed)** moves the highlight by itself at the **Scan speed** you set, from 1 to 5 seconds. **Manual (step)** moves it only when **Tab** is pressed, so it needs a switch that sends keyboard keys.
 - **Group scanning** (on at first) highlights a row first, then the buttons in the row you choose. After each choice the highlight goes back to the rows. **Escape** also goes back to the rows.
 - Scanning keeps running after Settings is closed, and starts again by itself when the app is opened.
 - After three passes with no choice, the highlight stops and scanning rests. The next press starts it again; that press does not select anything.
@@ -395,7 +395,7 @@ With head tracking on, the camera can also recognize gestures and run an action 
 - **Say "Yes"**, **Say "No"** and **Say "Help"** speak the word at once in the output language, when sound is on.
 - **Emergency Alert** opens the same confirmation as the Alert button; nothing is sent until someone confirms.
 - **Confidence threshold** and **Cooldown** help avoid gestures that were not meant.
-- If head tracking drifts twice within five minutes, the app switches to a safer mode: the cursor moves less, dwell takes twice as long, and gestures are off. A safe-mode badge appears next to the tracking status. It ends when the app is closed and opened again, a few minutes after the last drift.
+- If head tracking drifts twice within five minutes, the app switches to a safer mode: the cursor moves less, dwell takes twice as long, and gestures are off. The tracking status shows **SAFE MODE**. To leave it, turn **Enable Head Tracking** back on (or choose **Try again** on the drift message), then choose **Exit safe mode** in the **Reliability** section of the **Head Tracking (advanced)** area in **Settings → Accessibility & Input Modes**. **Try again** on the drift message resumes tracking but keeps safe mode, so an unsteady setup stays in the gentler mode.
 
 ### Camera finger tracking
 
