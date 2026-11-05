@@ -28,23 +28,24 @@ Prism AAC runs in a web browser, as an iPhone and iPad app, and as an Apple Watc
 
 ### iPhone and iPad
 
-- The first time you open the app, an **On-Device AI** screen explains how AI is used. Choose **Continue**, or choose **Continue without AI**. Core communication works without AI.
+- The first time you open the app, an **On-Device AI** screen explains how AI is used. Choose **Continue**, or choose **Continue without AI**. Core communication works without AI. This choice cannot be changed in Settings; to change it, the app has to be reinstalled.
 - On a device with enough free memory, the app can run an AI model on the device itself. The first time, the app may need to download that model, so connect to Wi-Fi first. If the model is not available, AI features use cloud AI when you are signed in.
 - Press and hold the app icon on the Home Screen for quick actions: **Help**, **Yes**, **No** and **Water please**. Choosing one speaks the phrase with the device voice.
 
 ### Apple Watch
 
-The picture cards work on the watch by itself. Sending an alert or a message to a caregiver needs the paired iPhone.
+The picture cards work on the watch by itself. The **Alert** and **Message…** buttons need the paired iPhone. Emergency cards go through the iPhone when it is connected; otherwise a watch with Wi-Fi or cellular can reach Synalux by itself, if the account is signed in on the iPhone.
 
 - The watch shows picture cards in two columns. **Yes** and **No** come first. Scroll for more. Tap a card to hear it.
 - A bar at the top has four buttons: the language button, **AI** (opens AI Chat), the bell (**Notifications**, with a count of unread messages from caregivers) and the paper plane (opens **Send to caregiver**).
 - **Send to caregiver** offers **Alert** (a quick SOS) or **Message…** (write your own). **Alert** goes through the paired iPhone. If the iPhone is not connected, the watch shows "Phone not connected".
-- Emergency cards, such as **Help**, first ask **Send Emergency?** After you confirm, the watch speaks, vibrates and shows a red countdown screen. It shows "HELP COMING" once the alert is delivered.
-- When the watch is offline, a banner such as "Offline — phrase buttons only" appears. The phrase cards keep working with the phrases built into the watch app.
+- Emergency cards, such as **Help**, first ask **Send Emergency?** After you confirm, the watch speaks, vibrates and shows a red countdown screen. An emergency card cannot be cancelled once confirmed.
+- The screen shows "HELP COMING" once the alert is delivered. If it could not be delivered, the screen keeps showing "SENDING…", a **Force Close** button appears, and the watch says "Emergency. Please call 911." Call emergency services yourself if the person is in danger.
+- If an AI question fails because the watch is offline, a banner such as "Offline — phrase buttons only" appears. The phrase cards keep working with the phrases built into the watch app.
 
 ### Chrome extension
 
-The **PrismAAC Reading Assistant** extension is available on the Chrome Web Store. It adds speech to text fields on other websites. See "Chrome extension: Reading Assistant" below.
+The **PrismAAC Reading Assistant** extension adds speech to text fields on other websites. Search for "PrismAAC Reading Assistant" in the Chrome Web Store to install it. See "Chrome extension: Reading Assistant" below.
 
 ## Communication board at a glance
 
@@ -80,7 +81,7 @@ Select **Categories** from the toolbar to open the phrase board. The current boa
 
 Use the controls on the right to show the keyboard, search, move through the board, or return home. The category strip provides direct movement between vocabulary groups.
 
-Prism AAC has two layouts. **Picture mode** shows the phrase board. **Typing mode** shows the keyboard. Select **KB** to switch to Typing mode. Select **Hide KB** to go back to Picture mode. **Search** looks through all vocabulary.
+Prism AAC has two layouts: the phrase board with pictures, and the keyboard. Select **KB** to show the keyboard. Select **Hide KB** to go back to the pictures. **Search** looks through all vocabulary.
 
 When a category has more tiles than fit on the screen, swipe left or right to change pages. You can also use the **‹** and **›** arrows at the edges. Swiping to a new page does not select a word. Tap a tile to select it.
 
@@ -288,7 +289,7 @@ There are 12 games.
 
 ### Marketplace
 
-- Use the **All** and **Installed** tabs, the filters **Apps**, **Games**, **Symbols**, **Tools**, **Vocab** and **Voices**, and the search box.
+- Use the **All** and **Installed** tabs, the filters **Vocab**, **Games**, **Voices**, **Symbols**, **Tools** and **Apps**, and the search box.
 - Tap an item to install it. Vocabulary sets take effect straight away. A locked item needs a higher subscription plan. Tap **Uninstall**, then tap again to confirm.
 - Items include symbol libraries, board templates, core-vocabulary sets, game packs, a picture editor and a music composer. Some items show **Coming Soon**.
 - Installed apps appear as buttons on the toolbar after the built-in ones.
@@ -321,7 +322,7 @@ Comfort Player plays voice messages, photos and videos that family and friends a
 
 ## Chrome extension: Reading Assistant
 
-The **PrismAAC Reading Assistant** extension works in text fields on other websites. It is available on the Chrome Web Store.
+The **PrismAAC Reading Assistant** extension works in text fields on other websites. Search for "PrismAAC Reading Assistant" in the Chrome Web Store to install it.
 
 - A small bar appears above the text field you are using. **▶ Speak** reads the field aloud. **📌** keeps the bar open. **×** hides it.
 - By default it speaks the sentence you just finished when you type . ? or !. You can also have it speak each word when you press space. Each word is highlighted as it is spoken.
@@ -356,7 +357,7 @@ Camera-based controls require explicit camera permission. Tracking accuracy vari
 
 - Turn on **Enable Head Tracking** to move a cursor by moving your head. It uses the camera. Holding the cursor over a button selects it.
 - **Dwell Time** sets how long to hold. **Sensitivity** sets how far the cursor moves.
-- The **Head Tracking (advanced)** area adds a camera picker and **Eye / Gaze tracking**, where the eyes move the cursor instead of head rotation.
+- The **Head Tracking (advanced)** area adds **Eye / Gaze tracking** (and a camera picker when the device has more than one camera), where the eyes move the cursor instead of head rotation.
 - If the cursor drifts, tracking pauses and a message explains. It can resume on its own when your face is steady again.
 
 ### Camera finger tracking
@@ -391,6 +392,7 @@ Prism AAC also watches for emergency wording when someone presses **Speak** on t
 
 - A loud alarm sounds, the screen flashes, and a countdown screen appears. It shows **EMERGENCY**, **URGENT** or **MEDICAL**, the phrase, and a number counting down.
 - At the end of the countdown the app tries to alert the caregivers set up in **Settings → Contacts**. You see **Sending alert to caregivers…**, then **Alert sent**, or **Alert not sent** with the reason. Select **Done**.
+- In the iPhone and iPad app, it also opens a text message to each caregiver who has a phone number and starts a phone call to the first one. In a web browser it tries the same, but the browser may block it, so those attempts do not count as sent.
 - **Cancel** is on the countdown screen. If a caregiver PIN is set, cancelling an urgent or medical alert asks for the PIN.
 - If no emergency contact is set up, the screen says "No one was called". The app does not call emergency services by itself. If the person is in danger, call emergency services.
 
