@@ -14,7 +14,7 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 
 ### Core Applications
 * **[Synalux POS](docs_source_en/pos.md)** — Point of Sale for hospitality and retail
-* **[Prism AAC](docs_source_en/prism_aac.md)** — AI-powered Augmentative and Alternative Communication app
+* **[Prism AAC](PRISMAAC.md)** — Augmentative and Alternative Communication app for iPhone, iPad, Apple Watch and the web ([full user guide](docs_source_en/prism_aac.md))
 * **[Prism Coder IDE](docs_source_en/coder.md)** — Local-first AI IDE
 * **[PrismCoach](docs_source_en/prismcoach.md)** — Fitness, recovery, and readiness coaching
 * **[Prism Browser](docs_source_en/prism_browser.md)** — iPhone and iPad browser with AAC communication controls
