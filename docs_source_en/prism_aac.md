@@ -34,7 +34,7 @@ Prism AAC runs in a web browser, as an iPhone and iPad app, and as an Apple Watc
 
 ### Apple Watch
 
-The picture cards work on the watch by itself. The **Alert** and **Message…** buttons need the paired iPhone. Emergency cards go through the iPhone when it is connected; otherwise a watch with Wi-Fi or cellular can reach Synalux by itself, if the account is signed in on the iPhone.
+The picture cards work on the watch by itself. Sending an alert or a message to a caregiver needs the paired iPhone: the **Alert** and **Message…** buttons and the emergency cards all go through it. If the iPhone is not connected, an emergency card still speaks and vibrates, but the alert is not delivered (see below).
 
 - The watch shows picture cards in two columns. **Yes** and **No** come first. Scroll for more. Tap a card to hear it.
 - A bar at the top has four buttons: the language button, **AI** (opens AI Chat), the bell (**Notifications**, with a count of unread messages from caregivers) and the paper plane (opens **Send to caregiver**).
