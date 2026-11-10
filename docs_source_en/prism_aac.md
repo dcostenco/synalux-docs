@@ -14,7 +14,7 @@ Prism AAC is a subscription app, with a 2-week free trial for new subscribers. W
 - Subscribe in the iPhone or iPad app with your Apple Account, or in the web app. The subscription is linked to your free Synalux account, so it works on iPhone, iPad and the web when you sign in with the same account.
 - If a subscription ends, your saved boards and phrases are not deleted.
 - New in 1.9.4: "Sign in with Google" in the iPhone and iPad app, next to "Sign in with Apple".
-- Manage or cancel the subscription in your Apple Account settings. You can delete your Synalux account at any time in **Settings → Synalux Account → Delete account**.
+- Manage or cancel the subscription in your Apple Account settings (App Store purchases) or in **Settings → Synalux Account → Manage subscription** (web purchases). You can delete your Synalux account at any time in **Settings → Synalux Account → Delete account**.
 
 ## Video overview for BCBAs and caregivers
 
