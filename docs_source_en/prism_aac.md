@@ -6,9 +6,9 @@ Prism AAC is an augmentative and alternative communication workspace for people 
 - [Get the iPhone and iPad app on the App Store](https://apps.apple.com/app/id6764692277)
 - [View current plans](https://synalux.ai/pricing)
 
-## Plans are changing
+## A subscription app since November 19, 2026
 
-The next app update, version 1.9.4, makes Prism AAC a subscription app, with a 2-week free trial for new subscribers. The change starts 14 days after the update is released. When you are signed in, the app shows you the date in advance. Until then, everything works as it does today. [View current plans](https://synalux.ai/pricing).
+Prism AAC is a subscription app, with a 2-week free trial for new subscribers. Without a subscription, the app opens to a screen to start the trial, subscribe or sign in. [View current plans](https://synalux.ai/pricing).
 
 - Emergency communication, crisis phrases and bedside cards always stay free, with or without a subscription.
 - Subscribe in the iPhone or iPad app with your Apple Account, or in the web app. The subscription is linked to your free Synalux account, so it works on iPhone, iPad and the web when you sign in with the same account.
