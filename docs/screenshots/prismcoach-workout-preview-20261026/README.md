@@ -10,6 +10,7 @@ or an announcement that this interface has been released.
 - `overhead-press-preview.gif` is a reduced-size copy of the app's demonstration
   media, rather than a screen recording. Open the example to view movement.
 
-The guide replaces its earlier October 20 screenshots with this selected
-October 25–26 set. No image implies live health
+Since November 14, 2026 the PrismCoach guides use the App Store screenshots in
+`../prismcoach-1.2.9-preview-20261020/`; only `overhead-press-preview.gif` from this
+folder is still shown. No image implies live health
 measurements, a completed purchase or a medically validated exercise choice.
