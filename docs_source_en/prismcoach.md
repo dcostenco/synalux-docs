@@ -1,6 +1,8 @@
 # PrismCoach user guide
 
-> **Development preview — updated October 26, 2026.** Actual app captures from October 25–26 show the unreleased interface in the simulator with demonstration data. Devices shown use iOS 18.5 or 26.5. The App Store version may differ. This guide does not announce release availability. The iPhone candidate requires iOS 18 or later.
+**[Download PrismCoach on the App Store](https://apps.apple.com/app/id6778001709)** for iPhone and iPad. On a Mac with Apple silicon, the App Store installs the iPad version. PrismCoach requires iOS 18 or iPadOS 18 or later, or macOS 15 or later on a Mac with an Apple M1 chip or later.
+
+> **Screenshots updated November 14, 2026.** The screenshots in this guide are the iPhone screenshots from PrismCoach's App Store listing. They were captured on an earlier build, so a few screens differ in the current version (1.2.14). For example, the workout screen's **Feedback** button is now **Rate & finish**, and on iPhone the workout card on the Exercise guide tab shows **Details**, which expands it to reach **How to perform this exercise**. Your screens also depend on your own goals, equipment and recorded limitations.
 
 PrismCoach is a strength, recovery, workout, and nutrition companion for iPhone and iPad, with an optional Apple Watch app. It brings readiness information, muscle status, training programs, meal logging, and AI-assisted coaching into one app.
 
@@ -40,6 +42,10 @@ Use **Muscles** to review or change the status of body areas before selecting a 
 
 Treat a pain or limitation selection as planning context only. It is not a diagnosis and does not determine whether an exercise is medically safe.
 
+<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/planning-pain.png" width="280" alt="Plan a workout with a recorded Left Quads pain limitation, goal, training days, session limit, equipment and Review my plan">
+
+*The recorded Left Quads pain limitation stays visible while you plan, and recorded pain areas stay excluded from the training focus. This does not recommend training a painful area.*
+
 ## Training programs and workouts
 
 The **Programs** tab lists available templates and program-building tools.
@@ -54,26 +60,25 @@ The templates and availability shown in the app are the current source of truth;
 
 When a draft needs attention, **Review Program Issues** opens the next flagged reason with an action to address it. Expand the review-item list when you need to see all flagged items. Confirm the goal, schedule, equipment and recorded limitations before generating a revision; do not change an equipment answer to something you do not have.
 
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/request-review-bodyweight.png" width="280" alt="Bodyweight request review with a confirmed schedule and Confirm and Generate">
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/program-preview-strength.png" width="280" alt="Reviewed whole-body Strength program with Left Shins pain still recorded and a Start action">
-
-*These are separate examples: a Bodyweight request review, and a different program with Bodyweight and Dumbbell equipment that keeps Left Shins pain visible. Neither recommends training a painful area.*
-
 ## Exercise guide and illustrated steps
 
 After starting a reviewed program, the active-workout screen shows the current exercise, prescribed sets and repetitions, and **Log set**. **Details** expands the compact card to reach the illustrated guide.
 
 1. Select **Exercise guide** to see the available movement preview and equipment.
-2. Use the play/pause control to choose when the preview moves. With **Reduce Motion** enabled, it starts with still pictures; **Play preview** remains available when you choose to see the movement. Preview controls do not advance or record a set.
+2. Use the play/pause control to choose when the preview moves. With **Auto-Play Video Previews** turned off in iOS Settings, it starts with still pictures; **Play preview** remains available when you choose to see the movement. Preview controls do not advance or record a set.
 3. Read the muscle-role legend. The motion preview uses green for main muscles and blue for supporting muscles; the separate anatomical map uses its own labelled legend. Highlights illustrate intended roles, not measured activation or recovery.
 4. On the compact card, open **Details**, then **How to perform this exercise** for illustrated instructions. In other layouts, the instruction link is already visible. Each authored step has its matching picture. Use **Next step**, **Previous step**, or **Back to setup** without waiting for automatic page changes.
 5. Tap **Done** to return, then **Log set** when you have completed the actual set. Enter what you performed using the on-screen number controls and choose **Log performed set**. **Complete without details** counts the set without inventing reps, weight or effort.
 
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/workout-push-up.png" width="280" alt="Current Push-Up demonstration, muscle roles and compact set controls">
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/guide-overhead-setup.png" width="280" alt="Overhead Press setup step with its full illustration and written instruction">
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/guide-overhead-roles.png" width="280" alt="Overhead Press guide scrolled to the complete illustration, muscle labels and anatomy-reference explanation">
+<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/workout-incline.png" width="280" alt="Active Workout for Incline Dumbbell Press with the Exercise guide preview, main and supporting muscles, Pause preview, Log set and How to perform this exercise">
+<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/guide-incline-setup.png" width="280" alt="Incline Dumbbell Press guide, step 1 of 2: set up, with its illustration, written instruction, muscle roles and Next step">
+<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/guide-incline-move.png" width="280" alt="Incline Dumbbell Press guide, step 2 of 2: move, with its illustration, written instruction, Previous step and Back to setup">
+
+*These workout screens are from an earlier build. In 1.2.14 the top-right button reads **Rate & finish**, and on iPhone the Exercise guide tab's card shows **Details** first.*
 
 **Muscle map** is a separate anatomical reference; it is not the technique demonstration. Some regions are hidden naturally by the viewing angle or equipment. A guide may include an anatomy inset or a note directing you to the map. Follow the larger figure for the movement. On a smaller screen or with larger text, scroll to read the remaining explanation. Demonstration availability depends on the exercise.
+
+<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/workout-muscle-map.png" width="280" alt="The same workout on the Muscle map tab, with the main and supporting muscles highlighted on the anatomical view and a note to open the exercise instructions for technique">
 
 <details>
   <summary>See an equipment movement example</summary>
@@ -81,8 +86,6 @@ After starting a reviewed program, the active-workout screen shows the current e
 </details>
 
 *The movement example uses the app's demonstration media; the screenshots are actual app captures.*
-
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/log-actual-set.png" width="280" alt="Actual-set entry using plus and minus controls for repetitions and effort without an open keyboard">
 
 ## Nutrition
 
@@ -110,7 +113,7 @@ AI responses can be incomplete or wrong. Do not use AI Coach for diagnosis, emer
 
 Free users can explore coaching with recurring AI and scan allowances. Pro offers higher cloud allowances and additional access. Open the allowance details in the app to check the current limit and renewal state; this guide does not promise a fixed quota or response time.
 
-<img src="../docs/screenshots/prismcoach-workout-preview-20261026/coach-ready-program.png" width="300" alt="AI Coach conversation with a ready program and visible Start and View program actions">
+<img src="../docs/screenshots/prismcoach-1.2.9-preview-20261020/coach.png" width="280" alt="AI Coach screen with Plan a workout, suggested questions, More ideas, Coach details and the message field">
 
 ## Optional camera tools
 
