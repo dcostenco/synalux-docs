@@ -59,7 +59,7 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 ## 🔗 Quick Links
 * **[Changelog](CHANGELOG.md)** — Latest updates and releases
 * **[Roadmap](ROADMAP.md)** — Upcoming features and modules
-* **[App Store](APPSTORE.md)** — Ecosystem applications
+* **[App Store](APPSTORE.md)** — Synalux apps on the App Store, with download links
 * **[Pricing](https://synalux.ai/pricing)** — Plans and feature breakdown
 
 ## License
