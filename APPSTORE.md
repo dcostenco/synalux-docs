@@ -5,7 +5,7 @@ These Synalux apps are available on the App Store. Each app's App Store page is 
 | App | What it does | Runs on | Download | Guide |
 |---|---|---|---|---|
 | **Prism AAC** | Augmentative and alternative communication: tap pictures, build sentences and hear them spoken | iPhone, iPad, Apple Watch; Mac with Apple silicon (iPad version) | [App Store](https://apps.apple.com/app/id6764692277) | [Prism AAC](PRISMAAC.md) |
-| **Prism AAC Browser** | Web browser for AAC users and healthcare providers, with AAC communication controls | iPhone, iPad, Mac | [App Store](https://apps.apple.com/app/id6781468968) | [Prism Browser](docs_source_en/prism_browser.md) |
+| **Prism AAC Browser** | Web browser for AAC users and healthcare providers. AAC communication controls are on iPhone and iPad; the Mac version is a separate browser without them | iPhone, iPad, Mac | [App Store](https://apps.apple.com/app/id6781468968) | [Prism Browser](docs_source_en/prism_browser.md) |
 | **PrismCoach** | Strength, recovery, workout and nutrition coaching | iPhone, iPad, Apple Watch; Mac with Apple silicon (iPad version) | [App Store](https://apps.apple.com/app/id6778001709) | [PrismCoach](PRISMCOACH.md) |
 | **Synalux POS** | Point of sale for restaurants and retail | iPhone, iPad; Mac with Apple silicon (iPad version) | [App Store](https://apps.apple.com/app/id6777999853) | [Synalux POS](docs_source_en/pos.md) |
 | **Synalux OO** | Online ordering for restaurant customers: browse the menu, customize items and order for pickup or delivery | iPhone, iPad; Mac with Apple silicon (iPad version) | [App Store](https://apps.apple.com/app/id6778045142) | [Online ordering setup (for venues)](docs_source_en/pos.md#online-ordering--qr-table) |

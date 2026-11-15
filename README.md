@@ -17,7 +17,7 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 * **[Prism AAC](PRISMAAC.md)** — Augmentative and Alternative Communication app for iPhone, iPad, Apple Watch and the web ([full user guide](docs_source_en/prism_aac.md))
 * **[Prism Coder IDE](docs_source_en/coder.md)** — Local-first AI IDE
 * **[PrismCoach](docs_source_en/prismcoach.md)** — Fitness, recovery, and readiness coaching ([App Store](https://apps.apple.com/app/id6778001709))
-* **[Prism Browser](docs_source_en/prism_browser.md)** — iPhone and iPad browser with AAC communication controls
+* **[Prism Browser](docs_source_en/prism_browser.md)** — iPhone and iPad browser with AAC communication controls; the [App Store listing](https://apps.apple.com/app/id6781468968) also has a separate Mac browser without the AAC controls
 
 ### Clinical & Medical
 * **[Clinical Notes & Documentation](docs_source_en/clinical_notes_documentation.md)**
