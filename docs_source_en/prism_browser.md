@@ -4,7 +4,7 @@ Prism AAC Browser combines web browsing with the communication tools used in Pri
 
 This guide covers the app for **iPhone and iPad running iOS or iPadOS 16 or later**.
 
-The same [App Store listing](https://apps.apple.com/app/id6781468968) also offers a Mac version for macOS 13 or later. It is an older, separate app: a web browser with bookmarks and shortcuts to clinical websites such as PubMed and the CDC. It does not include the AAC keyboard, spoken communication or the other AAC controls described in this guide.
+The same [App Store listing](https://apps.apple.com/app/id6781468968) also offers a Mac version for macOS 13 or later. It is an older, separate app: a web browser with bookmarks and shortcuts to clinical websites such as PubMed and the CDC. It does not include the AAC keyboard, spoken communication, emergency alerts or the other AAC controls described in this guide.
 
 ## Browser at a glance
 
