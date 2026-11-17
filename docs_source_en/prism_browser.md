@@ -2,7 +2,9 @@
 
 Prism AAC Browser combines web browsing with the communication tools used in Prism AAC. A person can type a web address or search with the large on-screen keyboard, use one-tap site shortcuts, switch from browsing to spoken communication, and return to the AAC board without leaving the app.
 
-The current release is for **iPhone and iPad running iOS or iPadOS 16 or later**.
+This guide covers the app for **iPhone and iPad running iOS or iPadOS 16 or later**.
+
+The same [App Store listing](https://apps.apple.com/app/id6781468968) also offers a Mac version for macOS 13 or later. It is an older, separate app: a web browser with bookmarks and shortcuts to clinical websites such as PubMed and the CDC. It does not include the AAC keyboard, spoken communication, emergency alerts or the other AAC controls described in this guide.
 
 ## Browser at a glance
 
@@ -18,7 +20,7 @@ These screenshots were captured from the current iOS app. Available shortcuts ca
 
 ## Get started
 
-1. Install Prism AAC Browser from the App Store on an iPhone or iPad.
+1. Install Prism AAC Browser from the [App Store](https://apps.apple.com/app/id6781468968) on an iPhone or iPad.
 2. Open the app while connected to the internet so the current browser and AAC experience can load.
 3. Tap **Search or URL** and use the on-screen keyboard to enter a website or search phrase.
 4. Tap **Go** or select one of the large site shortcuts.
@@ -124,4 +126,4 @@ Tap **Done** in the native page viewer or return to **Home**. If the controls do
 
 ## Support
 
-For help, email [support@synalux.ai](mailto:support@synalux.ai). Include the device model, iOS or iPadOS version, the action you were taking, and the website involved. Do not include passwords or private health information.
+For help, email [support@synalux.ai](mailto:support@synalux.ai). Include the device model, iOS, iPadOS or macOS version, the action you were taking, and the website involved. Do not include passwords or private health information.
