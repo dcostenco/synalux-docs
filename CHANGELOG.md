@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+### Portal 14.0.1 — Fusa public website
+
+- Add the Fusa agency website, Maryland resource guides and approved public
+  contact details at `/fusabh`; the configured custom domain serves its root
+  while Synalux keeps its existing homepage and sign-in routes.
+- Keep funding acceptance unconfirmed and direct sensitive intake inquiries to
+  administrative contact until an approved intake destination is configured.
+- Remove unsupported HIPAA-compliance and end-to-end-encryption footer claims
+  from the patient and telehealth pages. This release does not establish
+  compliance or activate the separate new clinical telehealth or billing work.
+
 ### Inventory and fixed assets
 
 - Each fixed asset's monthly depreciation in Inventory now matches what the

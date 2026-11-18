@@ -16,8 +16,8 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 * **[Synalux POS](docs_source_en/pos.md)** — Point of Sale for hospitality and retail
 * **[Prism AAC](PRISMAAC.md)** — Augmentative and Alternative Communication app for iPhone, iPad, Apple Watch and the web ([full user guide](docs_source_en/prism_aac.md))
 * **[Prism Coder IDE](docs_source_en/coder.md)** — Local-first AI IDE
-* **[PrismCoach](docs_source_en/prismcoach.md)** — Fitness, recovery, and readiness coaching
-* **[Prism Browser](docs_source_en/prism_browser.md)** — iPhone and iPad browser with AAC communication controls
+* **[PrismCoach](docs_source_en/prismcoach.md)** — Fitness, recovery, and readiness coaching ([App Store](https://apps.apple.com/app/id6778001709))
+* **[Prism Browser](docs_source_en/prism_browser.md)** — iPhone and iPad browser with AAC communication controls; the [App Store listing](https://apps.apple.com/app/id6781468968) also has a separate Mac browser without the AAC controls
 
 ### Clinical & Medical
 * **[Clinical Notes & Documentation](docs_source_en/clinical_notes_documentation.md)**
@@ -59,7 +59,7 @@ Welcome to the public documentation repository for **Synalux** — the all-in-on
 ## 🔗 Quick Links
 * **[Changelog](CHANGELOG.md)** — Latest updates and releases
 * **[Roadmap](ROADMAP.md)** — Upcoming features and modules
-* **[App Store](APPSTORE.md)** — Ecosystem applications
+* **[App Store](APPSTORE.md)** — Synalux apps on the App Store, with download links
 * **[Pricing](https://synalux.ai/pricing)** — Plans and feature breakdown
 
 ## License
