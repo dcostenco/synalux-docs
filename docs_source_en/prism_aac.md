@@ -109,7 +109,7 @@ For Amharic, Swahili and Bengali, no native speaker has checked the translations
 
 ## Pictures on prediction tiles
 
-Prediction tiles show the built-in picture for words in Prism AAC's vocabulary. For other words, signed-in accounts with Synalux Enterprise or a Prism AAC cloud subscription can get a generated picture (for now, Synalux Standard and Advanced accounts can too). Every generated picture must pass an automatic check that it shows the word's meaning; when no picture passes, the tile shows the word as text. Generated pictures are shared by meaning, so the same word in another language can show the same picture.
+Prediction tiles show the built-in picture for words in Prism AAC's vocabulary. For other words, signed-in accounts with Synalux Enterprise or a Prism AAC cloud subscription can get a generated picture. Every generated picture must pass an automatic check that it shows the word's meaning; when no picture passes, the tile shows the word as text. Generated pictures are shared by meaning, so the same word in another language can show the same picture.
 
 Review pictures with the communicator, especially for abstract words such as "already" or "maybe": these are learned symbols, not pictures a new reader is expected to guess.
 
