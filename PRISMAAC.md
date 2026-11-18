@@ -4,7 +4,7 @@ An augmentative and alternative communication (AAC) app for people who communica
 
 Use it on iPhone, iPad and Apple Watch from the [App Store](https://apps.apple.com/app/id6764692277), or in a web browser at [synalux.ai/prism-aac](https://synalux.ai/prism-aac).
 
-## A subscription app since November 19, 2026
+## A subscription app since November 18, 2026
 
 Prism AAC is a subscription app, with a 2-week free trial for new subscribers. Without a subscription, the app opens to a screen to start the trial, subscribe or sign in. [View current plans](https://synalux.ai/pricing).
 
