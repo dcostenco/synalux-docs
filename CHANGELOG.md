@@ -499,7 +499,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
   - Free and Standard Tiers routed to `gemini-2.5-flash`
 - **Native OS Predictive Text** — optimized inputs across all modules
   - Added `spellCheck={true}` and `autoCorrect="on"` to core FormField
-  - Uses native device keyboard algorithms instead of custom JS ghost-text, ensuring HIPAA compliance and zero layout shifts
+  - Uses native device keyboard algorithms instead of custom JS ghost-text, with zero layout shifts
 - **Update Tool Count** — increased platform capabilities from 15 to 17 tools across 12 UI languages.
 
 #### Fixed
@@ -681,7 +681,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
 
 ## [0.10.0] — 2026-04-14
 
-### 💬 HIPAA-Compliant Team Chat — Secure Workspace Messaging (Extension v0.10.0)
+### 💬 Team Chat — Workspace Messaging (Extension v0.10.0)
 
 #### Added
 - **Team Chat tab** — new tab in chat panel alongside AI Chat for workspace messaging
@@ -698,7 +698,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
 - **Visual message indicators** — colored left borders (blue=you, purple=others, orange=mentions, green=sessions, teal=system)
 - **Long-polling** — 4-second API polling for real-time message updates
 
-#### Security (HIPAA Compliance)
+#### Security
 - **🔐 Pro+ only** — server-side plan gate (advanced/enterprise tiers)
 - **No RLS dependence** — all authorization in TypeScript API layer (custom JWTs bypass Supabase `auth.uid()`)
 - **IDOR prevention** — `workspace_id` verified on every file download request
@@ -740,7 +740,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
   - "📋 Generate SOAP Note from Session" button on conversation end
   - Full session transcript accumulation
 
-#### Security (HIPAA Compliance)
+#### Security
 - **🚨 On-device only** — `requiresOnDeviceRecognition = true` (no audio sent to Apple servers)
   - Fail-closed if on-device recognition unavailable for selected language
 - **Forced local backend** — AI responses via Ollama only during conversation mode (no ambient PHI to cloud)
@@ -772,7 +772,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
 - Updated `feat_voice_desc` and `feat_healthcare_desc` in all 12 portal languages
   to highlight continuous conversation mode for clinical intakes
 
-#### Session Audio Recording (HIPAA-Compliant)
+#### Session Audio Recording
 - **Opt-in recordings** — `synalux.recordSessions` setting (default: off — data minimization)
 - **Patient consent dialog** — modal confirmation before recording (HIPAA + state wiretap compliance)
 - **AES-256-GCM encryption** — raw audio encrypted immediately on stop, plaintext deleted
@@ -854,7 +854,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
 - **UPDATED** Centralized auth middleware — all 6 API routes migrated:
   - `chat`, `soap`, `roles`, `esign`, `integrations`, `workspaces`
   - Removed inline `validateApiToken()` calls in favor of `authenticateRequest()`
-- **NEW** `jwt_auth_log` audit table — HIPAA-safe (logs `jti`, never raw token)
+- **NEW** `jwt_auth_log` audit table — logs the token's `jti`, never the raw token
 
 #### Extension (v0.7.0)
 - **JWT session management** — hybrid refresh strategy (lazy + 401 fallback)
@@ -935,7 +935,7 @@ requires an explicit per-venue flip and every venue defaults to `beta`.
 ## [0.7.0] — 2026-04-13
 
 ### Added
-- **RBAC System (HIPAA-Compliant)**
+- **RBAC System**
   - Multi-tenant workspace architecture (`workspaces` table)
   - 9 default roles with i18n display names (16 languages): restricted, clinician, coder, reviewer, tester, documenter, planner, security, office_manager
   - OAuth-identity-bound admin rights — no shared passwords (HIPAA 164.312(a)(2)(i))

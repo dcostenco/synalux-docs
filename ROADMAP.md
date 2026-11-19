@@ -33,15 +33,15 @@
 - [x] Inventory management
 - [x] Quality measures (HEDIS/MIPS)
 - [x] Patient education materials
-- [x] Team chat (E2E encrypted)
+- [x] Team chat
 
 ### Security & Compliance
-- [x] HIPAA-ready architecture (audit trails, data minimization)
+- [x] Audit trails and data minimization
 - [x] EdDSA (Ed25519) JWT authentication
 - [x] Row-Level Security (RLS) on all tables
 - [x] Output guardrail system (prompt injection defense)
 - [x] HITL safety gate for dangerous tools
-- [x] Fail-closed HIPAA mode (local LLM)
+- [x] On-premise SOAP note drafting on the local model only (LOCAL_LLM_URL)
 
 ### VS Code Extension (v0.12.4)
 - [x] 20+ multimodal tools (voice, OCR, terminal, Git, browser)
