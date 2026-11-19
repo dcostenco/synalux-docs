@@ -117,6 +117,21 @@ class CustomerDocsGateTests(unittest.TestCase):
         plan_findings = [item for item in findings if "fixed plan entitlement" in item.message]
         self.assertEqual(3, len(plan_findings))
 
+    def test_hipaa_compliance_labels_fail_customer_docs(self):
+        self.use_repository_forbidden_patterns()
+        path = self.root / "docs_source_en/guide.md"
+        path.write_text(
+            "# Guide\nHIPAA-compliant team chat.\nA HIPAA Ready platform.\n"
+            '<img src="https://img.shields.io/badge/HIPAA-Ready-blue" alt="HIPAA">\n'
+            "![Compliance](https://img.shields.io/badge/Compliance-HIPAA-green)\n"
+            "HIPAA‑certified hosting.\nA HIPAA-safe pipeline.\n"
+            "A BAA is available on request.\nThe HIPAA Security Rule applies.\nHIPAA requires access logs.\n",
+            encoding="utf-8",
+        )
+        findings = MODULE.run(self.root)
+        hipaa_lines = sorted(item.line for item in findings if "HIPAA compliance label" in item.message)
+        self.assertEqual([2, 3, 4, 5, 6, 7], hipaa_lines)
+
     def test_time_sensitive_provider_price_and_revenue_claims_fail(self):
         self.use_repository_forbidden_patterns()
         path = self.root / "docs_source_en/guide.md"

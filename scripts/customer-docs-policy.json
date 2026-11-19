@@ -97,6 +97,11 @@
       "name": "raw provider permission scope",
       "pattern": "(?i)`(?:instagram_[a-z_]+|pages_[a-z_]+|https://www\\.googleapis\\.com/auth/[a-z0-9._/-]+)`",
       "help": "Customer setup should follow the provider permission screen; raw authorization scopes belong in developer documentation."
+    },
+    {
+      "name": "HIPAA compliance label",
+      "pattern": "(?i)HIPAA[\\s\u00a0\u2010-\u2015-]+(?:compliant|grade|ready|certified|safe|secure)|badge/[^)\"'\\s]*HIPAA",
+      "help": "No HIPAA-compliance labels. Say a BAA is available on request instead."
     }
   ],
   "pos_preservation": {
